@@ -1,0 +1,168 @@
+[
+  {
+    "id": "1",
+    "worker": "Danny",
+    "workerKey": "danny",
+    "task": "Pull 50 property managers in Cuyahoga County + write 3-touch cold email sequence",
+    "priority": "high",
+    "status": "done",
+    "created": "2026-05-12",
+    "completed": "2026-05-12",
+    "output": "outputs/danny/sequence_property_managers_2026-05-12.md",
+    "notes": "Email sequence DONE. Lead list blocked \u2014 Apollo.io API returning error. API key needs plan verification at app.apollo.io. Pull parameters saved in output file for manual pull."
+  },
+  {
+    "id": "2",
+    "worker": "Marcus",
+    "workerKey": "marcus",
+    "task": "Profile top 5 Cleveland power washing competitors \u2014 pricing, reviews, weaknesses",
+    "priority": "high",
+    "status": "done",
+    "created": "2026-05-12",
+    "completed": "2026-05-12",
+    "output": "outputs/marcus/competitor_report_cleveland_2026-05-12.md"
+  },
+  {
+    "id": "9",
+    "worker": "Marcus",
+    "workerKey": "marcus",
+    "task": "Build VOC library from competitor review research",
+    "priority": "high",
+    "status": "done",
+    "created": "2026-05-12",
+    "completed": "2026-05-12",
+    "output": "outputs/marcus/voc_library_2026-05-12.md"
+  },
+  {
+    "id": "3",
+    "worker": "Carla",
+    "workerKey": "carla",
+    "task": "Find 20 siding contractors in Northeast Ohio + write referral partner outreach",
+    "priority": "high",
+    "status": "partial",
+    "created": "2026-05-12",
+    "completed": "2026-05-12",
+    "output": "outputs/carla/outreach_contractors_2026-05-12.md",
+    "notes": "Outreach copy DONE (5 templates for all partner types). Partner list blocked \u2014 same Apollo.io API issue as Danny. Pull parameters saved in output file."
+  },
+  {
+    "id": "4",
+    "worker": "Tommy",
+    "workerKey": "tommy",
+    "task": "Build objection handling cheat sheet for the 5 most common sales call objections",
+    "priority": "medium",
+    "status": "done",
+    "created": "2026-05-12",
+    "completed": "2026-05-12",
+    "output": "outputs/tommy/objection_cheatsheet_2026-05-12.md"
+  },
+  {
+    "id": "10",
+    "worker": "Tommy",
+    "workerKey": "tommy",
+    "task": "Write package descriptions for all 4 packages + estimate follow-up email templates",
+    "priority": "medium",
+    "status": "done",
+    "created": "2026-05-12",
+    "completed": "2026-05-12",
+    "output": "outputs/tommy/package_descriptions_2026-05-12.md, outputs/tommy/estimate_followup_email_2026-05-12.md"
+  },
+  {
+    "id": "5",
+    "worker": "Jasmine",
+    "workerKey": "jasmine",
+    "task": "Write this week's 5 Facebook posts \u2014 focus: spring pre-season",
+    "priority": "medium",
+    "status": "done",
+    "created": "2026-05-12",
+    "completed": "2026-05-12",
+    "output": "outputs/jasmine/facebook_posts_week_2026-05-12.md"
+  },
+  {
+    "id": "11",
+    "worker": "Jasmine",
+    "workerKey": "jasmine",
+    "task": "Build May 2026 content calendar",
+    "priority": "medium",
+    "status": "done",
+    "created": "2026-05-12",
+    "completed": "2026-05-12",
+    "output": "outputs/jasmine/content_calendar_may_2026-05-12.md"
+  },
+  {
+    "id": "6",
+    "worker": "Nina",
+    "workerKey": "nina",
+    "task": "Build out the HubSpot pipeline stages for Forest City (needs HubSpot token first)",
+    "priority": "medium",
+    "status": "done",
+    "created": "2026-05-12",
+    "completed": "2026-05-12",
+    "output": "outputs/nina/pipeline_setup_guide_2026-05-12.md",
+    "notes": "Full setup guide complete. Zapier recipes also delivered. HubSpot token still needed to activate API automation."
+  },
+  {
+    "id": "12",
+    "worker": "Nina",
+    "workerKey": "nina",
+    "task": "Write Zapier automation recipes for the full stack",
+    "priority": "medium",
+    "status": "done",
+    "created": "2026-05-12",
+    "completed": "2026-05-12",
+    "output": "outputs/nina/zapier_recipes_2026-05-12.md"
+  },
+  {
+    "id": "7",
+    "worker": "Donna",
+    "workerKey": "donna",
+    "task": "Build the Northeast Ohio Home Maintenance Checklist lead magnet",
+    "priority": "low",
+    "status": "done",
+    "created": "2026-05-12",
+    "completed": "2026-05-12",
+    "output": "outputs/donna/lead_magnet_home_maintenance_checklist_2026-05-12.md"
+  },
+  {
+    "id": "13",
+    "worker": "Donna",
+    "workerKey": "donna",
+    "task": "Write 3-email nurture sequence for checklist lead magnet",
+    "priority": "low",
+    "status": "done",
+    "created": "2026-05-12",
+    "completed": "2026-05-12",
+    "output": "outputs/donna/nurture_sequence_home_maintenance_checklist_2026-05-12.md"
+  },
+  {
+    "id": "8",
+    "worker": "Rick",
+    "workerKey": "rick",
+    "task": "Write 10 Facebook ad variations for a spring campaign targeting Cleveland homeowners",
+    "priority": "low",
+    "status": "done",
+    "created": "2026-05-12",
+    "completed": "2026-05-12",
+    "output": "outputs/rick/facebook_ads_spring_campaign_2026-05-12.md"
+  },
+  {
+    "id": "14",
+    "worker": "Rick",
+    "workerKey": "rick",
+    "task": "Build full Google Ads asset set for NE Ohio search campaign",
+    "priority": "low",
+    "status": "done",
+    "created": "2026-05-12",
+    "completed": "2026-05-12",
+    "output": "outputs/rick/google_ads_2026-05-12.md"
+  },
+  {
+    "id": "1778608332155",
+    "worker": "",
+    "workerKey": "",
+    "task": "start to have each worker do what they are capable of",
+    "priority": "medium",
+    "status": "pending",
+    "created": "2026-05-12"
+  }
+]

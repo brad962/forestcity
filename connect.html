@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forest City — Connect</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#020617;
+  --surface:#0F172A;
+  --surface2:#1E293B;
+  --border:#1E293B;
+  --border2:#334155;
+  --text:#F8FAFC;
+  --muted:#94A3B8;
+  --muted2:#64748B;
+  --green:#22C55E;
+  --amber:#f0c040;
+  --red:#EF4444;
+  --orange:#F97316;
+  --blue:#3B82F6;
+  --purple:#A855F7;
+}
+body{font-family:'Open Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;font-size:14px;line-height:1.6}
+
+/* HEADER */
+.header{background:rgba(15,23,42,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 28px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.logo{font-family:'Poppins',sans-serif;font-size:16px;font-weight:700;letter-spacing:-.3px;display:flex;align-items:center;gap:8px}
+.logo-icon{width:28px;height:28px;background:linear-gradient(135deg,#1a2744,#243560);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:13px;border:1px solid #2d3f6e}
+.logo span{color:var(--amber)}
+.nav-links{display:flex;gap:6px}
+.nav-link{font-size:12px;font-weight:600;padding:5px 12px;border-radius:7px;cursor:pointer;text-decoration:none;color:var(--muted);border:1px solid transparent;transition:all .15s;font-family:'Poppins',sans-serif}
+.nav-link:hover{color:var(--text);background:var(--surface2);border-color:var(--border2)}
+.nav-link.active{color:var(--amber);background:rgba(240,192,64,.08);border-color:rgba(240,192,64,.2)}
+.header-right{display:flex;align-items:center;gap:10px}
+.live-pill{display:flex;align-items:center;gap:5px;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.25);padding:4px 10px;border-radius:20px;font-size:11px;color:var(--green);font-weight:600}
+.live-dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(34,197,94,.4)}50%{opacity:.8;box-shadow:0 0 0 4px rgba(34,197,94,0)}}
+
+/* MAIN */
+.main{padding:24px 28px;max-width:1400px;margin:0 auto}
+
+/* PAGE HEADER */
+.page-header{margin-bottom:24px}
+.page-title{font-family:'Poppins',sans-serif;font-size:22px;font-weight:700;margin-bottom:4px}
+.page-subtitle{font-size:13px;color:var(--muted)}
+.page-subtitle strong{color:var(--amber)}
+
+/* STATS */
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:24px}
+.stat{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px;position:relative;overflow:hidden}
+.stat::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--accent,var(--border2))}
+.stat-label{font-size:11px;color:var(--muted2);text-transform:uppercase;letter-spacing:.06em;font-weight:600;margin-bottom:5px}
+.stat-value{font-family:'Poppins',sans-serif;font-size:26px;font-weight:700;line-height:1}
+.stat-sub{font-size:11px;color:var(--muted);margin-top:4px}
+
+/* CONTROLS */
+.controls{display:flex;align-items:center;gap:10px;margin-bottom:18px;flex-wrap:wrap}
+.filter-group{display:flex;gap:6px}
+.filter-btn{font-size:12px;font-weight:600;padding:6px 14px;border-radius:7px;border:1px solid var(--border2);background:transparent;color:var(--muted);cursor:pointer;transition:all .15s;font-family:'Poppins',sans-serif}
+.filter-btn:hover{color:var(--text);border-color:var(--muted)}
+.filter-btn.active{color:var(--amber);border-color:rgba(240,192,64,.4);background:rgba(240,192,64,.07)}
+.spacer{flex:1}
+.refresh-btn{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;padding:7px 14px;border-radius:7px;border:1px solid var(--border2);background:var(--surface);color:var(--muted);cursor:pointer;transition:all .15s;font-family:'Poppins',sans-serif}
+.refresh-btn:hover{color:var(--text);border-color:var(--muted)}
+.spin{animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* EMPTY STATE */
+.empty-state{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:60px 32px;text-align:center}
+.empty-icon{font-size:48px;margin-bottom:16px;opacity:.4}
+.empty-title{font-family:'Poppins',sans-serif;font-size:18px;font-weight:600;margin-bottom:8px;color:var(--text)}
+.empty-body{font-size:13px;color:var(--muted);max-width:420px;margin:0 auto;line-height:1.7}
+.empty-body strong{color:var(--amber)}
+.empty-steps{display:flex;gap:12px;justify-content:center;margin-top:24px;flex-wrap:wrap}
+.empty-step{background:var(--surface2);border:1px solid var(--border2);border-radius:8px;padding:10px 16px;font-size:12px;color:var(--muted);text-align:left}
+.empty-step-num{font-family:'Poppins',sans-serif;font-weight:700;color:var(--amber);font-size:16px;margin-bottom:2px}
+
+/* CONTACT CARDS */
+.cards-grid{display:flex;flex-direction:column;gap:10px}
+.contact-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 20px;display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center;transition:border-color .15s}
+.contact-card:hover{border-color:var(--border2)}
+.contact-card.connected{opacity:.55}
+.contact-card.priority{border-left:3px solid var(--amber)}
+
+.card-left{display:flex;align-items:center;gap:14px}
+.avatar{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-size:15px;font-weight:700;flex-shrink:0}
+.avatar.pm{background:rgba(59,130,246,.15);color:#60A5FA;border:1px solid rgba(59,130,246,.2)}
+.avatar.re{background:rgba(168,85,247,.15);color:#C084FC;border:1px solid rgba(168,85,247,.2)}
+.avatar.co{background:rgba(34,197,94,.15);color:#4ADE80;border:1px solid rgba(34,197,94,.2)}
+
+.card-info{}
+.card-name{font-family:'Poppins',sans-serif;font-size:14px;font-weight:600;margin-bottom:2px}
+.card-meta{font-size:12px;color:var(--muted);display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.card-type-badge{font-size:10px;font-weight:700;padding:2px 7px;border-radius:4px;text-transform:uppercase;letter-spacing:.05em}
+.badge-pm{background:rgba(59,130,246,.15);color:#60A5FA}
+.badge-re{background:rgba(168,85,247,.15);color:#C084FC}
+.badge-co{background:rgba(34,197,94,.15);color:#4ADE80}
+
+/* SIGNAL PILLS */
+.signals{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
+.signal{display:flex;align-items:center;gap:4px;font-size:11px;font-weight:600;padding:3px 8px;border-radius:5px}
+.signal-open{background:rgba(240,192,64,.12);color:var(--amber);border:1px solid rgba(240,192,64,.2)}
+.signal-reply{background:rgba(34,197,94,.12);color:var(--green);border:1px solid rgba(34,197,94,.2)}
+.signal-click{background:rgba(59,130,246,.12);color:#60A5FA;border:1px solid rgba(59,130,246,.2)}
+.signal-stage{background:rgba(100,116,139,.12);color:var(--muted);border:1px solid var(--border2)}
+
+/* CARD ACTIONS */
+.card-actions{display:flex;align-items:center;gap:8px;flex-shrink:0}
+
+.linkedin-btn{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;padding:8px 14px;border-radius:8px;border:none;cursor:pointer;transition:all .2s;font-family:'Poppins',sans-serif;text-decoration:none}
+.linkedin-btn.lookup{background:rgba(10,102,194,.15);color:#6BA4D8;border:1px solid rgba(10,102,194,.3)}
+.linkedin-btn.lookup:hover{background:rgba(10,102,194,.25);color:#90BDE8}
+.linkedin-btn.ready{background:#0a66c2;color:#fff;border:1px solid #0a66c2}
+.linkedin-btn.ready:hover{background:#0958a8}
+.linkedin-btn.loading{background:var(--surface2);color:var(--muted);border:1px solid var(--border2);cursor:wait}
+
+.connected-badge{display:flex;align-items:center;gap:5px;font-size:12px;font-weight:600;color:var(--green);padding:8px 14px;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);border-radius:8px}
+
+.mark-btn{display:flex;align-items:center;gap:5px;font-size:12px;font-weight:600;padding:8px 14px;border-radius:8px;border:1px solid var(--border2);background:var(--surface2);color:var(--muted);cursor:pointer;transition:all .15s;font-family:'Poppins',sans-serif}
+.mark-btn:hover{border-color:var(--green);color:var(--green)}
+
+/* SEQUENCE LABEL */
+.seq-label{font-size:11px;color:var(--muted2);white-space:nowrap}
+
+/* LOADING */
+.loading-bar{height:2px;background:linear-gradient(90deg,transparent,var(--amber),transparent);background-size:200% 100%;animation:shimmer 1.2s infinite;border-radius:2px;margin-bottom:16px}
+@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+
+/* TOAST */
+.toast{position:fixed;bottom:24px;right:24px;background:var(--surface2);border:1px solid var(--border2);border-radius:10px;padding:12px 18px;font-size:13px;font-weight:600;z-index:999;opacity:0;transform:translateY(8px);transition:all .2s;pointer-events:none}
+.toast.show{opacity:1;transform:translateY(0)}
+.toast.success{border-color:rgba(34,197,94,.4);color:var(--green)}
+.toast.info{border-color:rgba(240,192,64,.4);color:var(--amber)}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo">
+    <div class="logo-icon">🌲</div>
+    <span>Forest City</span> <span style="color:var(--muted);font-weight:400;margin:0 4px">/</span> <span style="color:var(--text)">AI Office</span>
+  </div>
+  <div class="nav-links">
+    <a href="dashboard.html" class="nav-link">Dashboard</a>
+    <a href="contacts.html" class="nav-link">Contacts</a>
+    <a href="connect.html" class="nav-link active">Connect</a>
+  </div>
+  <div class="header-right">
+    <div class="live-pill"><div class="live-dot"></div>LIVE</div>
+  </div>
+</div>
+
+<div class="main">
+
+  <div class="page-header">
+    <div class="page-title">LinkedIn Connect Queue</div>
+    <div class="page-subtitle">Contacts who opened one of your emails — <strong>warm leads only</strong>. Connect on LinkedIn while you're top of mind.</div>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat" style="--accent:var(--amber)">
+      <div class="stat-label">Ready to Connect</div>
+      <div class="stat-value" id="stat-ready">—</div>
+      <div class="stat-sub">Opened email, not yet connected</div>
+    </div>
+    <div class="stat" style="--accent:var(--green)">
+      <div class="stat-label">Connected</div>
+      <div class="stat-value" id="stat-connected">—</div>
+      <div class="stat-sub">LinkedIn connection sent</div>
+    </div>
+    <div class="stat" style="--accent:var(--blue)">
+      <div class="stat-label">Replied</div>
+      <div class="stat-value" id="stat-replied">—</div>
+      <div class="stat-sub">Responded to email</div>
+    </div>
+    <div class="stat" style="--accent:var(--purple)">
+      <div class="stat-label">Total Monitored</div>
+      <div class="stat-value" id="stat-total">—</div>
+      <div class="stat-sub">Across all 3 sequences</div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <div class="filter-group">
+      <button class="filter-btn active" onclick="setFilter('all',this)">All Openers</button>
+      <button class="filter-btn" onclick="setFilter('replied',this)">Replied</button>
+      <button class="filter-btn" onclick="setFilter('pending',this)">Not Yet Connected</button>
+      <button class="filter-btn" onclick="setFilter('connected',this)">Connected</button>
+    </div>
+    <div class="spacer"></div>
+    <button class="refresh-btn" onclick="loadData(true)">
+      <svg id="refresh-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+      Refresh
+    </button>
+  </div>
+
+  <div id="loading-bar" class="loading-bar" style="display:none"></div>
+  <div id="cards-container"></div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const MIXMAX_TOKEN = '3646d2be-c1be-44b7-b3ef-e7ea047cad83';
+const APOLLO_KEY   = 'aKRZyBffyV7ScWVCuTXBjA';
+const SEQUENCES = {
+  '6a037da614a5158fcfc165fc': { name: 'Property Managers', type: 'pm', label: 'Property Manager' },
+  '6a0382b96c6ce077a2544212': { name: 'Realtor Outreach',  type: 're', label: 'Realtor' },
+  '6a038613e22797c40fc5d457': { name: 'Contractor Outreach', type: 'co', label: 'Contractor' },
+};
+
+let allContacts = [];
+let currentFilter = 'all';
+let linkedinCache = {};
+
+// Load connected state from localStorage
+function getConnected() {
+  try { return JSON.parse(localStorage.getItem('fc_connected') || '{}'); } catch { return {}; }
+}
+function markConnected(email) {
+  const c = getConnected(); c[email] = true;
+  localStorage.setItem('fc_connected', JSON.stringify(c));
+}
+
+function setFilter(f, btn) {
+  currentFilter = f;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderCards();
+}
+
+async function loadData(showLoader) {
+  if (showLoader) {
+    document.getElementById('loading-bar').style.display = 'block';
+    document.getElementById('refresh-icon').classList.add('spin');
+  }
+
+  allContacts = [];
+
+  // Pull recipients from all 3 Mixmax sequences
+  const seqIds = Object.keys(SEQUENCES);
+  for (const seqId of seqIds) {
+    try {
+      const res = await fetch(`/api/mixmax/recipients?seq=${seqId}`);
+      const data = await res.json();
+      const recipients = data.recipients || [];
+      for (const r of recipients) {
+        const opens   = (r.analytics?.events?.opens || 0);
+        const clicks  = (r.analytics?.events?.clicks || 0);
+        // Count replies across all stages
+        const replied = (r.stages || []).reduce((acc, s) => acc + (s.replied || 0), 0);
+        allContacts.push({
+          email:      r.to?.email || '',
+          name:       r.to?.name  || '',
+          sequenceId: seqId,
+          seqMeta:    SEQUENCES[seqId],
+          opens,
+          clicks,
+          replied,
+          currentStage: r.lastStageSentOrdinal || 1,
+          state:      r.state,
+          variables:  r.variables || {},
+          linkedin_url: linkedinCache[r.to?.email] || null,
+        });
+      }
+    } catch(e) {
+      console.error('Failed to load sequence', seqId, e);
+    }
+  }
+
+  updateStats();
+  renderCards();
+
+  document.getElementById('loading-bar').style.display = 'none';
+  document.getElementById('refresh-icon').classList.remove('spin');
+}
+
+function updateStats() {
+  const connected = getConnected();
+  const openers   = allContacts.filter(c => c.opens > 0 || c.replied > 0);
+  const replied   = allContacts.filter(c => c.replied > 0);
+  const connectedCount = openers.filter(c => connected[c.email]).length;
+  const readyCount = openers.filter(c => !connected[c.email]).length;
+
+  document.getElementById('stat-ready').textContent     = readyCount;
+  document.getElementById('stat-connected').textContent = connectedCount;
+  document.getElementById('stat-replied').textContent   = replied.length;
+  document.getElementById('stat-total').textContent     = allContacts.length;
+}
+
+function getFilteredContacts() {
+  const connected = getConnected();
+  // Only show contacts with opens OR replies
+  let contacts = allContacts.filter(c => c.opens > 0 || c.replied > 0);
+
+  if (currentFilter === 'replied')   contacts = contacts.filter(c => c.replied > 0);
+  if (currentFilter === 'pending')   contacts = contacts.filter(c => !connected[c.email]);
+  if (currentFilter === 'connected') contacts = contacts.filter(c => connected[c.email]);
+
+  // Sort: replied first, then by opens desc
+  contacts.sort((a, b) => (b.replied - a.replied) || (b.opens - a.opens));
+  return contacts;
+}
+
+function avatarInitials(name) {
+  const parts = (name || '').trim().split(' ');
+  if (parts.length >= 2) return (parts[0][0] + parts[parts.length-1][0]).toUpperCase();
+  return (name || '?')[0].toUpperCase();
+}
+
+function renderCards() {
+  const container  = document.getElementById('cards-container');
+  const contacts   = getFilteredContacts();
+  const connected  = getConnected();
+
+  if (contacts.length === 0) {
+    const isFiltered = currentFilter !== 'all';
+    container.innerHTML = `
+      <div class="empty-state">
+        <div class="empty-icon">🔗</div>
+        <div class="empty-title">${isFiltered ? 'No contacts match this filter' : 'No openers yet'}</div>
+        <div class="empty-body">
+          ${isFiltered
+            ? 'Try switching the filter above to see all openers.'
+            : `This page automatically flags contacts who open your emails. As soon as someone opens a message from your <strong>3 active sequences</strong>, they'll appear here — ready for a LinkedIn connection while you're top of mind.`
+          }
+        </div>
+        ${!isFiltered ? `
+        <div class="empty-steps">
+          <div class="empty-step"><div class="empty-step-num">1</div>Complete LinkedIn tasks in Mixmax</div>
+          <div class="empty-step"><div class="empty-step-num">2</div>Emails start sending automatically</div>
+          <div class="empty-step"><div class="empty-step-num">3</div>Openers appear here instantly</div>
+        </div>` : ''}
+      </div>`;
+    return;
+  }
+
+  container.innerHTML = `<div class="cards-grid">${contacts.map(c => {
+    const isConnected = connected[c.email];
+    const type = c.seqMeta?.type || 'pm';
+    const label = c.seqMeta?.label || 'Contact';
+    const initials = avatarInitials(c.name);
+    const cachedLi = linkedinCache[c.email];
+    const firstName = c.variables?.firstName || c.variables?.recipientFirstName || c.name?.split(' ')[0] || '';
+    const company   = c.variables?.company   || c.variables?.recipientCompany   || '';
+
+    const liButton = isConnected
+      ? `<div class="connected-badge">
+           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+           Connected
+         </div>`
+      : cachedLi
+        ? `<a href="${cachedLi}" target="_blank" class="linkedin-btn ready" onclick="void(0)">
+             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+             Connect on LinkedIn
+           </a>`
+        : `<button class="linkedin-btn lookup" id="li-btn-${btoa(c.email).replace(/=/g,'')}" onclick="lookupLinkedIn('${c.email}','${firstName}','${company}',this)">
+             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+             Find on LinkedIn
+           </button>`;
+
+    const markBtn = !isConnected
+      ? `<button class="mark-btn" onclick="handleMarkConnected('${c.email}',this)">
+           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+           Mark Connected
+         </button>`
+      : '';
+
+    return `
+    <div class="contact-card ${isConnected ? 'connected' : ''} ${c.replied > 0 ? 'priority' : ''}" id="card-${btoa(c.email).replace(/=/g,'')}">
+      <div class="card-left">
+        <div class="avatar ${type}">${initials}</div>
+        <div class="card-info">
+          <div class="card-name">${c.name || c.email}</div>
+          <div class="card-meta">
+            <span class="card-type-badge badge-${type}">${label}</span>
+            ${company ? `<span>${company}</span>` : ''}
+            <span style="color:var(--muted2)">${c.email}</span>
+          </div>
+          <div class="signals">
+            ${c.opens > 0   ? `<div class="signal signal-open"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> ${c.opens} open${c.opens>1?'s':''}</div>` : ''}
+            ${c.replied > 0 ? `<div class="signal signal-reply"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 17 4 12 9 7"/><path d="M20 18v-2a4 4 0 0 0-4-4H4"/></svg> Replied</div>` : ''}
+            ${c.clicks > 0  ? `<div class="signal signal-click"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg> Clicked link</div>` : ''}
+            <div class="signal signal-stage">Stage ${c.currentStage} · ${c.seqMeta?.name || 'Sequence'}</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-actions">
+        ${liButton}
+        ${markBtn}
+      </div>
+    </div>`;
+  }).join('')}</div>`;
+}
+
+async function lookupLinkedIn(email, firstName, company, btn) {
+  btn.className = 'linkedin-btn loading';
+  btn.innerHTML = `<svg class="spin" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg> Looking up...`;
+
+  try {
+    const res  = await fetch(`/api/apollo/linkedin?email=${encodeURIComponent(email)}&first_name=${encodeURIComponent(firstName)}&company=${encodeURIComponent(company)}`);
+    const data = await res.json();
+    const url  = data.linkedin_url;
+
+    if (url) {
+      linkedinCache[email] = url;
+      renderCards();
+      showToast('LinkedIn profile found!', 'success');
+    } else {
+      btn.className = 'linkedin-btn lookup';
+      btn.innerHTML = `<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg> Not found`;
+      showToast('No LinkedIn profile in Apollo for this contact', 'info');
+    }
+  } catch(e) {
+    btn.className = 'linkedin-btn lookup';
+    btn.innerHTML = `<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg> Retry`;
+  }
+}
+
+function handleMarkConnected(email, btn) {
+  markConnected(email);
+  // Update workflow in server
+  fetch('/api/contacts/workflow', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email, step: 'linkedin_connected', done: true })
+  });
+  updateStats();
+  renderCards();
+  showToast('Marked as connected', 'success');
+}
+
+function showToast(msg, type='info') {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = `toast show ${type}`;
+  setTimeout(() => t.className = 'toast', 2500);
+}
+
+// Init
+loadData(true);
+setInterval(() => loadData(false), 60000);
+</script>
+</body>
+</html>

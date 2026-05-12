@@ -1,0 +1,6 @@
+contacts_cache.json
+logs/cron.log
+__pycache__/
+*.pyc
+.DS_Store
+*.env
