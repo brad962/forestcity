@@ -9,6 +9,7 @@ import json
 import subprocess
 import sys
 import time
+import urllib.request
 from datetime import datetime
 from pathlib import Path
 
@@ -17,8 +18,30 @@ OUTPUTS    = BASE_DIR / 'outputs'
 LOG_FILE   = BASE_DIR / 'logs' / 'activity.log'
 CACHE_FILE = BASE_DIR / 'contacts_cache.json'
 
-APOLLO_KEY   = 'aKRZyBffyV7ScWVCuTXBjA'
-MIXMAX_TOKEN = '3646d2be-c1be-44b7-b3ef-e7ea047cad83'
+APOLLO_KEY    = 'aKRZyBffyV7ScWVCuTXBjA'
+MIXMAX_TOKEN  = '3646d2be-c1be-44b7-b3ef-e7ea047cad83'
+SLACK_WEBHOOK = 'https://hooks.slack.com/services/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'
+
+
+GITHUB_BASE = 'https://github.com/brad962/forestcity/blob/main'
+
+
+def notify_slack(message):
+    try:
+        payload = json.dumps({'text': message}).encode()
+        req = urllib.request.Request(SLACK_WEBHOOK, data=payload, headers={'Content-Type': 'application/json'})
+        urllib.request.urlopen(req, timeout=5)
+    except Exception:
+        pass
+
+
+def git_push(worker, commit_msg):
+    try:
+        subprocess.run(['git', '-C', str(BASE_DIR), 'add', f'outputs/{worker}/', 'logs/'], capture_output=True)
+        subprocess.run(['git', '-C', str(BASE_DIR), 'commit', '-m', commit_msg], capture_output=True)
+        subprocess.run(['git', '-C', str(BASE_DIR), 'push', 'origin', 'main'], capture_output=True, timeout=15)
+    except Exception:
+        pass
 
 # Rotating county batches — Danny cycles through these weekly
 DANNY_SEARCHES = [
@@ -214,8 +237,12 @@ def run_danny():
 
         out_path.write_text('\n'.join(lines))
         log('danny', f'Apollo pull — {len(new_leads)} new property managers in {search["label"]}, {enrolled} enrolled in Mixmax', out_file)
+        git_push('danny', f'Danny: lead pull {search["label"]} {date_str}')
+        url = f'{GITHUB_BASE}/outputs/danny/{out_file}'
+        notify_slack(f'🔵 *Danny — Lead Pull Complete* | {datetime.now().strftime("%b %d")}\n>{len(new_leads)} new property managers in {search["label"]} · {enrolled} enrolled in Mixmax\n<{url}|View leads>')
     else:
         log('danny', f'Apollo pull — {search["label"]} — no new leads found (all duplicates)', 'none', 'Done')
+        notify_slack(f'🔵 *Danny — Lead Pull* | {datetime.now().strftime("%b %d")}\n>No new leads in {search["label"]} this week — all duplicates.')
 
     return new_leads
 
@@ -298,6 +325,9 @@ def run_carla():
 
         out_path.write_text('\n'.join(lines))
         log('carla', f'Apollo pull — {len(all_new)} new referral partners, {enrolled} enrolled in Mixmax', out_file)
+        git_push('carla', f'Carla: lead pull {date_str}')
+        url = f'{GITHUB_BASE}/outputs/carla/{out_file}'
+        notify_slack(f'🟣 *Carla — Lead Pull Complete* | {datetime.now().strftime("%b %d")}\n>{len(all_new)} new referral partners · {enrolled} enrolled in Mixmax\n<{url}|View leads>')
 
     return all_new
 

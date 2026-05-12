@@ -40,6 +40,7 @@ When a worker is activated:
 - Phantombuster LinkedIn Agent ID: (add when ready)
 - Meta Ads: (add token here when ready)
 - Google Ads: (add credentials here when ready)
+- Slack Webhook (fc-ai-office): https://hooks.slack.com/services/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
 - Workiz API Token: (add when ready)
 - Twilio Account SID: (add when ready)
 - Twilio Auth Token: (add when ready)

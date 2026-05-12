@@ -15,7 +15,30 @@ BASE_DIR  = Path(__file__).parent.parent.resolve()
 OUTPUTS   = BASE_DIR / 'outputs' / 'nina'
 LOG_FILE  = BASE_DIR / 'logs' / 'activity.log'
 
-MIXMAX_TOKEN = '3646d2be-c1be-44b7-b3ef-e7ea047cad83'
+MIXMAX_TOKEN  = '3646d2be-c1be-44b7-b3ef-e7ea047cad83'
+SLACK_WEBHOOK = 'https://hooks.slack.com/services/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'
+
+
+GITHUB_BASE = 'https://github.com/brad962/forestcity/blob/main'
+
+
+def notify_slack(message):
+    try:
+        payload = json.dumps({'text': message}).encode()
+        req = urllib.request.Request(SLACK_WEBHOOK, data=payload, headers={'Content-Type': 'application/json'})
+        urllib.request.urlopen(req, timeout=5)
+    except Exception:
+        pass
+
+
+def git_push(commit_msg):
+    import subprocess
+    try:
+        subprocess.run(['git', '-C', str(BASE_DIR), 'add', 'outputs/nina/', 'logs/'], capture_output=True)
+        subprocess.run(['git', '-C', str(BASE_DIR), 'commit', '-m', commit_msg], capture_output=True)
+        subprocess.run(['git', '-C', str(BASE_DIR), 'push', 'origin', 'main'], capture_output=True, timeout=15)
+    except Exception:
+        pass
 SEQUENCES = {
     '6a037da614a5158fcfc165fc': {'name': 'Property Managers', 'worker': 'Danny'},
     '6a0382b96c6ce077a2544212': {'name': 'Realtors',          'worker': 'Carla'},
@@ -139,6 +162,9 @@ def run_daily():
     (OUTPUTS / out_file).write_text('\n'.join(lines))
     log(f'Daily hot leads report — {len(all_replied)} replied, {len(all_hot)} hot', out_file)
     print(f'  → {len(all_replied)} replied, {len(all_hot)} hot leads. Saved to {out_file}')
+    git_push(f'Nina: daily hot leads {date_str}')
+    url = f'{GITHUB_BASE}/outputs/nina/{out_file}'
+    notify_slack(f'🔥 *Nina — Daily Hot Leads* | {datetime.now().strftime("%b %d")}\n>{len(all_replied)} replied · {len(all_hot)} hot openers\n<{url}|View report>')
     return all_hot, all_replied
 
 
@@ -210,6 +236,9 @@ def run_weekly():
     (OUTPUTS / out_file).write_text('\n'.join(lines))
     log(f'Weekly pipeline report — {total_enrolled} enrolled, {total_replied} replied, {total_hot} hot leads', out_file)
     print(f'  → Report saved to {out_file}')
+    git_push(f'Nina: weekly pipeline report {date_str}')
+    url = f'{GITHUB_BASE}/outputs/nina/{out_file}'
+    notify_slack(f'📊 *Nina — Weekly Pipeline Report* | Week of {datetime.now().strftime("%b %d")}\n>{total_enrolled} enrolled · {total_opens} opens · {total_replied} replied · {total_hot} hot leads\n<{url}|View report>')
 
 
 if __name__ == '__main__':
