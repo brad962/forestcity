@@ -32,19 +32,27 @@ When a worker is activated:
 
 ## Keys & Credentials
 
-- Apollo.io API Key: aKRZyBffyV7ScWVCuTXBjA
-- HubSpot: (add token here when ready)
-- Instantly.ai API Key: MzkwMTFkNWMtYTdlMS00MDhmLWJkNGUtMzI5NzNkMWI2MmJiOlpqRkNTWmpqYXhwcQ==
-- Mixmax API Token: 3646d2be-c1be-44b7-b3ef-e7ea047cad83
-- Phantombuster API Key: (add when ready)
-- Phantombuster LinkedIn Agent ID: (add when ready)
-- Meta Ads: (add token here when ready)
-- Google Ads: (add credentials here when ready)
-- Slack Webhook (fc-ai-office): https://hooks.slack.com/services/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
-- Workiz API Token: (add when ready)
-- Twilio Account SID: (add when ready)
-- Twilio Auth Token: (add when ready)
-- Twilio Phone Number: (add when ready)
+All credentials are stored in `.env` (gitignored — never committed).
+Load them with `os.environ.get('KEY_NAME')` in any Python worker.
+
+Available keys in .env:
+- SLACK_WEBHOOK_OFFICE
+- SLACK_WEBHOOK_REQUESTS
+- SLACK_TOKEN
+- GITHUB_PAT
+- APOLLO_KEY
+- MIXMAX_TOKEN
+
+Pending (add to .env when ready):
+- HUBSPOT_TOKEN
+- INSTANTLY_API_KEY
+- PHANTOMBUSTER_API_KEY
+- META_ADS_TOKEN
+- GOOGLE_ADS_TOKEN
+- WORKIZ_API_TOKEN
+- TWILIO_ACCOUNT_SID
+- TWILIO_AUTH_TOKEN
+- TWILIO_PHONE_NUMBER
 
 ## Mixmax Sequence IDs
 
