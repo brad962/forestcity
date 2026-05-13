@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pipeline — Forest City AI Office</title>
+<style>
+  :root {
+    --bg: #0f1117; --surface: #1a1d27; --border: #2a2d3a;
+    --text: #e2e8f0; --muted: #64748b; --accent: #3b82f6;
+    --green: #22c55e; --yellow: #f59e0b; --red: #ef4444;
+    --purple: #a855f7; --cyan: #06b6d4;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px; }
+
+  /* NAV */
+  nav { background: var(--surface); border-bottom: 1px solid var(--border); padding: 0 24px; display: flex; align-items: center; gap: 32px; height: 52px; position: sticky; top: 0; z-index: 100; }
+  nav .brand { font-weight: 700; font-size: 15px; color: var(--text); text-decoration: none; }
+  nav a { color: var(--muted); text-decoration: none; font-size: 13px; transition: color .15s; }
+  nav a:hover, nav a.active { color: var(--text); }
+
+  /* HEADER */
+  .page-header { padding: 24px 24px 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .page-header h1 { font-size: 20px; font-weight: 700; }
+  .header-actions { display: flex; gap: 10px; align-items: center; }
+  .btn { padding: 7px 16px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); color: var(--text); cursor: pointer; font-size: 13px; transition: all .15s; }
+  .btn:hover { border-color: var(--accent); color: var(--accent); }
+  .btn-primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .btn-primary:hover { background: #2563eb; color: #fff; }
+
+  /* STATS BAR */
+  .stats-bar { display: flex; gap: 12px; padding: 16px 24px; flex-wrap: wrap; }
+  .stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 12px 16px; min-width: 120px; flex: 1; }
+  .stat-card .label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 4px; }
+  .stat-card .value { font-size: 22px; font-weight: 700; }
+  .stat-card.warn .value { color: var(--yellow); }
+  .stat-card.good .value { color: var(--green); }
+  .stat-card.hot .value  { color: var(--red); }
+
+  /* FILTERS */
+  .filters { padding: 0 24px 16px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  .filter-btn { padding: 5px 14px; border-radius: 20px; border: 1px solid var(--border); background: transparent; color: var(--muted); cursor: pointer; font-size: 12px; transition: all .15s; }
+  .filter-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .filter-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .search-box { margin-left: auto; padding: 6px 12px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); color: var(--text); font-size: 13px; width: 220px; outline: none; }
+  .search-box:focus { border-color: var(--accent); }
+
+  /* TABLE */
+  .table-wrap { padding: 0 24px 24px; overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; }
+  thead th { padding: 10px 12px; text-align: left; font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; border-bottom: 1px solid var(--border); white-space: nowrap; cursor: pointer; user-select: none; }
+  thead th:hover { color: var(--text); }
+  tbody tr { border-bottom: 1px solid var(--border); transition: background .1s; }
+  tbody tr:hover { background: rgba(59,130,246,.05); }
+  tbody td { padding: 11px 12px; vertical-align: middle; }
+  .td-name { font-weight: 600; color: var(--text); }
+  .td-email { color: var(--muted); font-size: 12px; }
+  .td-company { color: var(--muted); font-size: 12px; }
+
+  /* STAGE SELECT */
+  .stage-select { appearance: none; background: transparent; border: 1px solid var(--border); color: var(--text); padding: 4px 8px; border-radius: 6px; font-size: 12px; cursor: pointer; }
+  .stage-select:focus { outline: none; border-color: var(--accent); }
+  .stage-select.new-lead   { color: #94a3b8; border-color: #334155; }
+  .stage-select.contacted  { color: var(--cyan); border-color: var(--cyan); }
+  .stage-select.replied    { color: var(--yellow); border-color: var(--yellow); }
+  .stage-select.estimate   { color: var(--purple); border-color: var(--purple); }
+  .stage-select.followup   { color: var(--accent); border-color: var(--accent); }
+  .stage-select.won        { color: var(--green); border-color: var(--green); }
+  .stage-select.lost       { color: var(--red); border-color: var(--red); }
+
+  /* BADGES */
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+  .badge-pm   { background: rgba(59,130,246,.15); color: var(--accent); }
+  .badge-re   { background: rgba(168,85,247,.15); color: var(--purple); }
+  .badge-co   { background: rgba(6,182,212,.15);  color: var(--cyan); }
+  .stale-badge { background: rgba(245,158,11,.15); color: var(--yellow); font-size: 11px; padding: 2px 7px; border-radius: 4px; }
+
+  /* SIGNAL PILLS */
+  .signals { display: flex; gap: 4px; }
+  .pill { padding: 2px 7px; border-radius: 4px; font-size: 11px; background: rgba(255,255,255,.05); color: var(--muted); }
+  .pill.active { background: rgba(34,197,94,.15); color: var(--green); }
+
+  /* VALUE INPUT */
+  .val-input { background: transparent; border: 1px solid transparent; border-radius: 6px; color: var(--text); padding: 3px 6px; font-size: 12px; width: 80px; }
+  .val-input:focus { border-color: var(--border); outline: none; background: var(--surface); }
+
+  /* NOTES */
+  .notes-cell { max-width: 200px; }
+  .notes-input { background: transparent; border: 1px solid transparent; border-radius: 6px; color: var(--muted); font-size: 12px; padding: 3px 6px; width: 100%; resize: none; height: 32px; font-family: inherit; }
+  .notes-input:focus { outline: none; border-color: var(--border); background: var(--surface); color: var(--text); }
+
+  /* EMPTY STATE */
+  .empty { text-align: center; padding: 60px 24px; color: var(--muted); }
+  .empty h3 { font-size: 18px; margin-bottom: 8px; color: var(--text); }
+
+  /* LOADING */
+  .loading { text-align: center; padding: 60px; color: var(--muted); }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .spinner { width: 28px; height: 28px; border: 3px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin .7s linear infinite; margin: 0 auto 12px; }
+
+  /* TOAST */
+  #toast { position: fixed; bottom: 24px; right: 24px; background: var(--green); color: #fff; padding: 10px 18px; border-radius: 8px; font-size: 13px; opacity: 0; transform: translateY(10px); transition: all .2s; pointer-events: none; z-index: 999; }
+  #toast.show { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="brand" href="dashboard.html">🏢 Forest City AI Office</a>
+  <a href="dashboard.html">Dashboard</a>
+  <a href="contacts.html">Contacts</a>
+  <a href="pipeline.html" class="active">Pipeline</a>
+  <a href="connect.html">Connect</a>
+</nav>
+
+<div class="page-header">
+  <h1>Pipeline</h1>
+  <div class="header-actions">
+    <span id="last-updated" style="font-size:12px;color:var(--muted)"></span>
+    <button class="btn" onclick="loadPipeline()">↻ Refresh</button>
+  </div>
+</div>
+
+<div class="stats-bar" id="stats-bar">
+  <div class="stat-card"><div class="label">Total Contacts</div><div class="value" id="stat-total">—</div></div>
+  <div class="stat-card hot"><div class="label">Replied</div><div class="value" id="stat-replied">—</div></div>
+  <div class="stat-card warn"><div class="label">Stale Leads</div><div class="value" id="stat-stale">—</div></div>
+  <div class="stat-card"><div class="label">Estimate Sent</div><div class="value" id="stat-estimate">—</div></div>
+  <div class="stat-card good"><div class="label">Closed Won</div><div class="value" id="stat-won">—</div></div>
+  <div class="stat-card"><div class="label">Pipeline Value</div><div class="value" id="stat-value">—</div></div>
+</div>
+
+<div class="filters">
+  <button class="filter-btn active" onclick="setFilter('all', this)">All</button>
+  <button class="filter-btn" onclick="setFilter('New Lead', this)">New Lead</button>
+  <button class="filter-btn" onclick="setFilter('Contacted', this)">Contacted</button>
+  <button class="filter-btn" onclick="setFilter('Replied', this)">Replied</button>
+  <button class="filter-btn" onclick="setFilter('Estimate Sent', this)">Estimate Sent</button>
+  <button class="filter-btn" onclick="setFilter('Follow-Up', this)">Follow-Up</button>
+  <button class="filter-btn" onclick="setFilter('Closed Won', this)">Closed Won</button>
+  <button class="filter-btn" onclick="setFilter('stale', this)">⚠ Stale Only</button>
+  <input class="search-box" type="text" placeholder="Search name, email, company..." oninput="setSearch(this.value)" id="search-box">
+</div>
+
+<div class="table-wrap">
+  <div id="loading" class="loading"><div class="spinner"></div>Loading pipeline...</div>
+  <table id="pipeline-table" style="display:none">
+    <thead>
+      <tr>
+        <th onclick="sortBy('name')">Name ↕</th>
+        <th onclick="sortBy('sequence')">Sequence ↕</th>
+        <th>Stage</th>
+        <th onclick="sortBy('opens')">Opens ↕</th>
+        <th>Est. Value</th>
+        <th onclick="sortBy('last_contact')">Last Contact ↕</th>
+        <th>Next Follow-Up</th>
+        <th class="notes-cell">Notes</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody id="pipeline-body"></tbody>
+  </table>
+  <div id="empty" class="empty" style="display:none">
+    <h3>No leads match this filter</h3>
+    <p>Try a different filter or refresh the data.</p>
+  </div>
+</div>
+
+<div id="toast">Saved</div>
+
+<script>
+const API = 'http://localhost:3737';
+const STAGES = ['New Lead','Contacted','Replied','Estimate Sent','Follow-Up','Closed Won','Closed Lost'];
+const STAGE_CLASS = {
+  'New Lead':'new-lead','Contacted':'contacted','Replied':'replied',
+  'Estimate Sent':'estimate','Follow-Up':'followup','Closed Won':'won','Closed Lost':'lost'
+};
+
+let allContacts = [];
+let activeFilter = 'all';
+let searchQuery  = '';
+let sortKey      = 'name';
+let sortDir      = 1;
+let saveTimer    = {};
+
+async function loadPipeline() {
+  document.getElementById('loading').style.display = 'block';
+  document.getElementById('pipeline-table').style.display = 'none';
+  document.getElementById('empty').style.display = 'none';
+  try {
+    const res = await fetch(`${API}/api/pipeline`);
+    const data = await res.json();
+    allContacts = data.contacts || [];
+    document.getElementById('last-updated').textContent = 'Updated ' + new Date().toLocaleTimeString();
+    updateStats();
+    renderTable();
+  } catch(e) {
+    document.getElementById('loading').innerHTML = '<p style="color:var(--red)">Could not reach server. Make sure server.py is running.</p>';
+  }
+}
+
+function updateStats() {
+  const c = allContacts;
+  document.getElementById('stat-total').textContent    = c.length;
+  document.getElementById('stat-replied').textContent  = c.filter(x=>x.replied).length;
+  document.getElementById('stat-stale').textContent    = c.filter(x=>x.stale).length;
+  document.getElementById('stat-estimate').textContent = c.filter(x=>x.stage==='Estimate Sent').length;
+  document.getElementById('stat-won').textContent      = c.filter(x=>x.stage==='Closed Won').length;
+  const val = c.reduce((sum,x)=>{
+    const v = parseFloat((x.est_value||'').replace(/[$,]/g,'')) || 0;
+    return sum + (x.stage !== 'Closed Lost' ? v : 0);
+  }, 0);
+  document.getElementById('stat-value').textContent = val > 0 ? '$' + val.toLocaleString() : '—';
+}
+
+function setFilter(f, btn) {
+  activeFilter = f;
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderTable();
+}
+
+function setSearch(q) {
+  searchQuery = q.toLowerCase();
+  renderTable();
+}
+
+function sortBy(key) {
+  if (sortKey === key) sortDir *= -1;
+  else { sortKey = key; sortDir = 1; }
+  renderTable();
+}
+
+function filtered() {
+  let contacts = [...allContacts];
+  if (activeFilter === 'stale')    contacts = contacts.filter(c=>c.stale);
+  else if (activeFilter !== 'all') contacts = contacts.filter(c=>c.stage === activeFilter);
+  if (searchQuery) contacts = contacts.filter(c=>
+    (c.name||'').toLowerCase().includes(searchQuery) ||
+    (c.email||'').toLowerCase().includes(searchQuery) ||
+    (c.company||'').toLowerCase().includes(searchQuery)
+  );
+  contacts.sort((a,b)=>{
+    let av = a[sortKey]||'', bv = b[sortKey]||'';
+    if (typeof av === 'boolean') av = av?1:0;
+    if (typeof bv === 'boolean') bv = bv?1:0;
+    return av < bv ? -sortDir : av > bv ? sortDir : 0;
+  });
+  return contacts;
+}
+
+function badgeClass(type) {
+  if (type==='property_manager') return 'badge-pm';
+  if (type==='realtor')          return 'badge-re';
+  return 'badge-co';
+}
+
+function badgeLabel(type) {
+  if (type==='property_manager') return 'Prop Mgr';
+  if (type==='realtor')          return 'Realtor';
+  return 'Contractor';
+}
+
+function renderTable() {
+  const contacts = filtered();
+  const body = document.getElementById('pipeline-body');
+  const tbl  = document.getElementById('pipeline-table');
+  const emp  = document.getElementById('empty');
+  document.getElementById('loading').style.display = 'none';
+
+  if (contacts.length === 0) {
+    tbl.style.display  = 'none';
+    emp.style.display  = 'block';
+    return;
+  }
+  tbl.style.display = 'table';
+  emp.style.display = 'none';
+
+  body.innerHTML = contacts.map(c => {
+    const stageOpts = STAGES.map(s =>
+      `<option value="${s}" ${c.stage===s?'selected':''}>${s}</option>`
+    ).join('');
+
+    const pills = `
+      <div class="signals">
+        <span class="pill ${c.opens>0?'active':''}">${c.opens} opens</span>
+        ${c.replied ? '<span class="pill active">replied</span>' : ''}
+      </div>`;
+
+    return `<tr data-email="${c.email}">
+      <td>
+        <div class="td-name">${c.name || '—'}</div>
+        <div class="td-email">${c.email}</div>
+        <div class="td-company">${c.company||''}</div>
+      </td>
+      <td>
+        <span class="badge ${badgeClass(c.lead_type)}">${badgeLabel(c.lead_type)}</span>
+      </td>
+      <td>
+        <select class="stage-select ${STAGE_CLASS[c.stage]||''}" onchange="updateStage('${c.email}', this)">
+          ${stageOpts}
+        </select>
+        ${c.stale ? '<span class="stale-badge" style="margin-left:6px">⚠ Stale</span>' : ''}
+      </td>
+      <td>${pills}</td>
+      <td>
+        <input class="val-input" type="text" placeholder="$0" value="${c.est_value||''}"
+          onchange="saveField('${c.email}','est_value',this.value)" />
+      </td>
+      <td>
+        <input type="date" class="val-input" style="width:120px" value="${c.last_contact||''}"
+          onchange="saveField('${c.email}','last_contact',this.value)" />
+      </td>
+      <td>
+        <input type="date" class="val-input" style="width:120px" value="${c.next_followup||''}"
+          onchange="saveField('${c.email}','next_followup',this.value)" />
+      </td>
+      <td class="notes-cell">
+        <textarea class="notes-input" placeholder="Add notes..."
+          onchange="saveField('${c.email}','notes',this.value)">${c.notes||''}</textarea>
+      </td>
+      <td>
+        <a href="mailto:${c.email}" style="color:var(--muted);font-size:12px;text-decoration:none" title="Send email">✉</a>
+      </td>
+    </tr>`;
+  }).join('');
+}
+
+function updateStage(email, sel) {
+  const cls = STAGE_CLASS[sel.value] || '';
+  sel.className = 'stage-select ' + cls;
+  saveField(email, 'stage', sel.value);
+  updateStats();
+}
+
+async function saveField(email, field, value) {
+  const key = email + '_' + field;
+  clearTimeout(saveTimer[key]);
+  saveTimer[key] = setTimeout(async () => {
+    try {
+      await fetch(`${API}/api/pipeline`, {
+        method: 'POST',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify({email, [field]: value})
+      });
+      showToast('Saved');
+      // Update local copy
+      const c = allContacts.find(x=>x.email===email);
+      if (c) c[field] = value;
+      updateStats();
+    } catch(e) { showToast('Save failed', true); }
+  }, 600);
+}
+
+function showToast(msg, error=false) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.style.background = error ? 'var(--red)' : 'var(--green)';
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'), 2000);
+}
+
+// Auto-refresh every 2 minutes
+loadPipeline();
+setInterval(loadPipeline, 120000);
+</script>
+</body>
+</html>

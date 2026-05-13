@@ -19,7 +19,20 @@ LOG_FILE      = BASE_DIR / 'logs' / 'activity.log'
 OUTPUTS       = BASE_DIR / 'outputs'
 QUEUE_F       = BASE_DIR / 'queue.json'
 CONTACTS_F    = BASE_DIR / 'contacts_cache.json'
+PIPELINE_F    = BASE_DIR / 'pipeline_data.json'
 PORT          = 3737
+
+MIXMAX_TOKEN  = '3646d2be-c1be-44b7-b3ef-e7ea047cad83'
+MIXMAX_SEQS   = [
+    '6a037da614a5158fcfc165fc',  # Property Managers
+    '6a0382b96c6ce077a2544212',  # Realtors
+    '6a038613e22797c40fc5d457',  # Contractors
+]
+SEQ_LABELS    = {
+    '6a037da614a5158fcfc165fc': {'name': 'Property Managers', 'type': 'property_manager'},
+    '6a0382b96c6ce077a2544212': {'name': 'Realtors',          'type': 'realtor'},
+    '6a038613e22797c40fc5d457': {'name': 'Contractors',       'type': 'contractor'},
+}
 
 INSTANTLY_KEY = 'MzkwMTFkNWMtYTdlMS00MDhmLWJkNGUtMzI5NzNkMWI2MmJiOlpqRkNTWmpqYXhwcQ=='
 INSTANTLY_CAMPAIGNS = {
@@ -231,6 +244,65 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             except Exception as e:
                 self._json({'error': str(e)}, 500)
 
+        elif p.path == '/api/pipeline':
+            # Return merged pipeline: Mixmax recipients + local stage overrides
+            import time as _time
+            pipeline = json.loads(PIPELINE_F.read_text()) if PIPELINE_F.exists() else {}
+            all_contacts = []
+            for seq_id in MIXMAX_SEQS:
+                try:
+                    url = f'https://api.mixmax.com/v1/sequences/{seq_id}/recipients?apiToken={MIXMAX_TOKEN}&limit=200'
+                    with urllib.request.urlopen(url, timeout=10) as resp:
+                        recipients = json.loads(resp.read())
+                    if not isinstance(recipients, list):
+                        continue
+                    for r in recipients:
+                        email = (r.get('to') or {}).get('email', '').lower()
+                        if not email:
+                            continue
+                        opens   = (r.get('analytics') or {}).get('events', {}).get('opens', 0)
+                        clicks  = (r.get('analytics') or {}).get('events', {}).get('clicks', 0)
+                        replied = sum(s.get('replied', 0) for s in r.get('stages', []))
+                        saved   = pipeline.get(email, {})
+                        # Auto-stage from Mixmax signals if no manual override
+                        auto_stage = 'New Lead'
+                        if replied > 0:
+                            auto_stage = 'Replied'
+                        elif r.get('state') == 'active':
+                            auto_stage = 'Contacted'
+                        stage = saved.get('stage', auto_stage)
+                        last_contact = saved.get('last_contact', '')
+                        # Stale detection
+                        stale = False
+                        if last_contact:
+                            try:
+                                from datetime import datetime as _dt
+                                lc = _dt.strptime(last_contact, '%Y-%m-%d')
+                                days = (_dt.now() - lc).days
+                                thresholds = {'New Lead': 2, 'Contacted': 5, 'Replied': 2, 'Estimate Sent': 3, 'Follow-Up': 5}
+                                stale = days >= thresholds.get(stage, 5)
+                            except Exception:
+                                pass
+                        all_contacts.append({
+                            'email':        email,
+                            'name':         (r.get('to') or {}).get('name', ''),
+                            'company':      saved.get('company', ''),
+                            'sequence':     SEQ_LABELS[seq_id]['name'],
+                            'lead_type':    SEQ_LABELS[seq_id]['type'],
+                            'stage':        stage,
+                            'opens':        opens,
+                            'clicks':       clicks,
+                            'replied':      replied > 0,
+                            'last_contact': last_contact,
+                            'next_followup': saved.get('next_followup', ''),
+                            'est_value':    saved.get('est_value', ''),
+                            'notes':        saved.get('notes', ''),
+                            'stale':        stale,
+                        })
+                except Exception:
+                    continue
+            self._json({'contacts': all_contacts, 'total': len(all_contacts)})
+
         elif p.path.startswith('/api/instantly/'):
             # Proxy to Instantly API — avoids CORS issues from browser
             auth = self.headers.get('Authorization', '')
@@ -291,6 +363,25 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                         {'contacts': contacts, 'updated': time.time()}, indent=2
                     ))
                 self._json(result)
+            except Exception as e:
+                self._json({'error': str(e)}, 500)
+
+        elif self.path == '/api/pipeline':
+            # Save stage/notes update for a contact
+            try:
+                data  = json.loads(body)
+                email = data.get('email', '').lower()
+                if not email:
+                    self._json({'error': 'missing email'}, 400)
+                    return
+                pipeline = json.loads(PIPELINE_F.read_text()) if PIPELINE_F.exists() else {}
+                if email not in pipeline:
+                    pipeline[email] = {}
+                for field in ('stage', 'notes', 'last_contact', 'next_followup', 'est_value', 'company'):
+                    if field in data:
+                        pipeline[email][field] = data[field]
+                PIPELINE_F.write_text(json.dumps(pipeline, indent=2))
+                self._json({'ok': True, 'email': email})
             except Exception as e:
                 self._json({'error': str(e)}, 500)
 
