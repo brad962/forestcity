@@ -15,17 +15,17 @@ BASE_URL = 'https://api.mixmax.com/v1'
 # Sequence IDs (created 2026-05-12)
 SEQUENCES = {
     'property_manager': {
-        'id': '6a037da614a5158fcfc165fc',
+        'id': '6a048cfc110bc620ca0f1aee',
         'name': 'Forest City Power Washing – NE Ohio Property Managers',
         'variables': ['firstName', 'company', 'propertyCount', 'Phone'],
     },
     'realtor': {
-        'id': '6a0382b96c6ce077a2544212',
+        'id': '6a048cfba81429e5dfe55010',
         'name': 'Forest City Power Washing – Pre‑Listing Referral Partnership',
         'variables': ['firstName', 'company', 'listingArea', 'recentListingAddress', 'Phone'],
     },
     'contractor': {
-        'id': '6a038613e22797c40fc5d457',
+        'id': '6a048cfd624a5989a68ba16c',
         'name': 'Forest City Power Washing – $50 Referral Partner Sequence',
         'variables': ['recipientFirstName', 'recipientCompany', 'Phone'],
     },

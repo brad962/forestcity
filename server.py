@@ -24,14 +24,14 @@ PORT          = 3737
 
 MIXMAX_TOKEN  = '3646d2be-c1be-44b7-b3ef-e7ea047cad83'
 MIXMAX_SEQS   = [
-    '6a037da614a5158fcfc165fc',  # Property Managers
-    '6a0382b96c6ce077a2544212',  # Realtors
-    '6a038613e22797c40fc5d457',  # Contractors
+    '6a048cfc110bc620ca0f1aee',  # Property Managers
+    '6a048cfba81429e5dfe55010',  # Realtors
+    '6a048cfd624a5989a68ba16c',  # Contractors
 ]
 SEQ_LABELS    = {
-    '6a037da614a5158fcfc165fc': {'name': 'Property Managers', 'type': 'property_manager'},
-    '6a0382b96c6ce077a2544212': {'name': 'Realtors',          'type': 'realtor'},
-    '6a038613e22797c40fc5d457': {'name': 'Contractors',       'type': 'contractor'},
+    '6a048cfc110bc620ca0f1aee': {'name': 'Property Managers', 'type': 'property_manager'},
+    '6a048cfba81429e5dfe55010': {'name': 'Realtors',          'type': 'realtor'},
+    '6a048cfd624a5989a68ba16c': {'name': 'Contractors',       'type': 'contractor'},
 }
 
 INSTANTLY_KEY = 'MzkwMTFkNWMtYTdlMS00MDhmLWJkNGUtMzI5NzNkMWI2MmJiOlpqRkNTWmpqYXhwcQ=='
@@ -301,6 +301,41 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                         })
                 except Exception:
                     continue
+
+            # Include manually imported contacts from pipeline_data.json
+            for mc in pipeline.get('manual_contacts', []):
+                stage       = mc.get('stage', 'New Lead')
+                last_contact = mc.get('last_contact', '')
+                stale = False
+                if last_contact:
+                    try:
+                        from datetime import datetime as _dt
+                        lc = _dt.strptime(last_contact, '%Y-%m-%d')
+                        days = (_dt.now() - lc).days
+                        thresholds = {'New Lead': 2, 'Contacted': 5, 'Replied': 2, 'Estimate Sent': 3, 'Follow-Up': 5}
+                        stale = days >= thresholds.get(stage, 5)
+                    except Exception:
+                        pass
+                name = ' '.join(filter(None, [mc.get('first_name',''), mc.get('last_name','')])).strip()
+                all_contacts.append({
+                    'id':           mc.get('id', ''),
+                    'email':        mc.get('email', ''),
+                    'phone':        mc.get('phone', ''),
+                    'name':         name,
+                    'company':      mc.get('company', ''),
+                    'sequence':     'Manual Import',
+                    'lead_type':    mc.get('lead_type', 'contractor'),
+                    'stage':        stage,
+                    'opens':        0,
+                    'clicks':       0,
+                    'replied':      stage in ('Replied', 'Meeting Set', 'Estimate Sent', 'Closed Won'),
+                    'last_contact': last_contact,
+                    'next_followup': mc.get('next_followup', ''),
+                    'est_value':    mc.get('est_value', ''),
+                    'notes':        mc.get('notes', ''),
+                    'stale':        stale,
+                    'source':       'manual',
+                })
             self._json({'contacts': all_contacts, 'total': len(all_contacts)})
 
         elif p.path.startswith('/api/instantly/'):

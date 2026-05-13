@@ -56,9 +56,9 @@ Pending (add to .env when ready):
 
 ## Mixmax Sequence IDs
 
-- Property Manager Outreach: 6a037da614a5158fcfc165fc
-- Realtor Outreach: 6a0382b96c6ce077a2544212
-- Contractor Outreach: 6a038613e22797c40fc5d457
+- Property Manager Outreach: 6a048cfc110bc620ca0f1aee
+- Realtor Outreach: 6a048cfba81429e5dfe55010
+- Contractor Outreach: 6a048cfd624a5989a68ba16c
 
 ## Daily Rhythm
 

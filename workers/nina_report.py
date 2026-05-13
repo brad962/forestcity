@@ -54,9 +54,9 @@ def git_push(commit_msg):
     except Exception:
         pass
 SEQUENCES = {
-    '6a037da614a5158fcfc165fc': {'name': 'Property Managers', 'worker': 'Danny'},
-    '6a0382b96c6ce077a2544212': {'name': 'Realtors',          'worker': 'Carla'},
-    '6a038613e22797c40fc5d457': {'name': 'Contractors',       'worker': 'Carla'},
+    '6a048cfc110bc620ca0f1aee': {'name': 'Property Managers', 'worker': 'Danny'},
+    '6a048cfba81429e5dfe55010': {'name': 'Realtors',          'worker': 'Carla'},
+    '6a048cfd624a5989a68ba16c': {'name': 'Contractors',       'worker': 'Carla'},
 }
 
 
