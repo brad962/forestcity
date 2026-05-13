@@ -58,10 +58,10 @@
     grid-template-columns: 44px 1fr auto;
     gap: 16px;
     align-items: center;
-    transition: border-color .15s, opacity .2s;
-    cursor: default;
+    transition: border-color .15s, opacity .2s, background .15s;
+    cursor: pointer;
   }
-  .call-card:hover { border-color: #3a3d4a; }
+  .call-card:hover { border-color: var(--accent); background: #1e2235; }
   .call-card.called { opacity: 0.45; }
   .call-card.called .card-company { text-decoration: line-through; color: var(--muted); }
 
@@ -401,13 +401,13 @@ function cardHTML(c) {
   const idx     = allContacts.indexOf(c);
 
   return `
-  <div class="call-card ${called ? 'called' : ''}" id="card-${key.replace(/[@.]/g,'-')}">
-    <div class="call-check ${called ? 'done' : ''}" onclick="toggleCall('${key}', this)" title="${called ? 'Mark uncalled' : 'Mark as called'}">
+  <div class="call-card ${called ? 'called' : ''}" id="card-${key.replace(/[@.]/g,'-')}" onclick="openInfoCard(${idx})">
+    <div class="call-check ${called ? 'done' : ''}" onclick="event.stopPropagation(); toggleCall('${key}', this)" title="${called ? 'Mark uncalled' : 'Mark as called'}">
       ${called ? '✓' : ''}
     </div>
     <div class="card-body">
       <div class="card-top">
-        <span class="card-company" onclick="openInfoCard(${idx})" style="cursor:pointer" title="View contact info">${c.company || '—'}</span>
+        <span class="card-company">${c.company || c.name || '—'}</span>
         ${name}
         ${seq}
       </div>
@@ -417,7 +417,7 @@ function cardHTML(c) {
       </div>
       ${cardNotes}
     </div>
-    <div class="card-actions">
+    <div class="card-actions" onclick="event.stopPropagation()">
       ${badge}
       <textarea class="call-note-input" rows="2" placeholder="Call notes..."
         onchange="saveNote('${key}', this.value)">${note}</textarea>
