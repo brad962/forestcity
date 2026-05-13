@@ -248,6 +248,19 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             # Return merged pipeline: Mixmax recipients + local stage overrides
             import time as _time
             pipeline = json.loads(PIPELINE_F.read_text()) if PIPELINE_F.exists() else {}
+
+            # Build phone + company lookup from contacts cache (email → {phone, company_name})
+            cache_lookup = {}
+            if CONTACTS_F.exists():
+                cache_data = json.loads(CONTACTS_F.read_text())
+                for cc in cache_data.get('contacts', []):
+                    em = (cc.get('email') or '').lower()
+                    if em:
+                        cache_lookup[em] = {
+                            'phone':   cc.get('phone', ''),
+                            'company': cc.get('company_name') or cc.get('organization') or '',
+                        }
+
             all_contacts = []
             for seq_id in MIXMAX_SEQS:
                 try:
@@ -264,6 +277,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                         clicks  = (r.get('analytics') or {}).get('events', {}).get('clicks', 0)
                         replied = sum(s.get('replied', 0) for s in r.get('stages', []))
                         saved   = pipeline.get(email, {})
+                        cached  = cache_lookup.get(email, {})
                         # Auto-stage from Mixmax signals if no manual override
                         auto_stage = 'New Lead'
                         if replied > 0:
@@ -285,8 +299,9 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                                 pass
                         all_contacts.append({
                             'email':        email,
+                            'phone':        cached.get('phone', ''),
                             'name':         (r.get('to') or {}).get('name', ''),
-                            'company':      saved.get('company', ''),
+                            'company':      saved.get('company', '') or cached.get('company', ''),
                             'sequence':     SEQ_LABELS[seq_id]['name'],
                             'lead_type':    SEQ_LABELS[seq_id]['type'],
                             'stage':        stage,
