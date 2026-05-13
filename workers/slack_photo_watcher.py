@@ -73,13 +73,14 @@ def load_pairs():
     return json.loads(PAIRS_FILE.read_text())
 
 
-def record_pair(before_rel, after_rel):
+def record_pair(before_rel, after_rel, description=''):
     pairs = load_pairs()
     pair = {
         'id': f'pair_{datetime.now().strftime("%Y%m%d_%H%M%S")}',
         'before': before_rel,
         'after': after_rel,
         'date': datetime.now().strftime('%Y-%m-%d'),
+        'description': description,
         'processed': False,
     }
     pairs['pairs'].append(pair)
@@ -146,6 +147,9 @@ def run():
     new_pairs  = []
 
     for msg in messages:
+        # Grab any text description from the message (used for Facebook post)
+        msg_text = msg.get('text', '').strip()
+
         files = msg.get('files', [])
         for f in files:
             file_id  = f.get('id', '')
@@ -176,13 +180,16 @@ def run():
                     pending_before = {
                         'file_id': file_id,
                         'path': str(dest.relative_to(BASE_DIR)),
+                        'description': msg_text,
                     }
                 else:
-                    after_rel  = str(dest.relative_to(BASE_DIR))
-                    before_rel = pending_before['path']
-                    pair_id    = record_pair(before_rel, after_rel)
+                    after_rel   = str(dest.relative_to(BASE_DIR))
+                    before_rel  = pending_before['path']
+                    # Use description from either message; prefer the after message if it has one
+                    description = msg_text or pending_before.get('description', '')
+                    pair_id     = record_pair(before_rel, after_rel, description)
                     new_pairs.append((before_rel, after_rel, pair_id))
-                    print(f'Pair complete: {pair_id}')
+                    print(f'Pair complete: {pair_id} | description: "{description[:60]}"')
                     pending_before = None
 
             except Exception as e:

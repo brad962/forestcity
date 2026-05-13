@@ -127,18 +127,61 @@ def push_to_github(file_path: str, github_path: str, commit_msg: str) -> str:
     return raw_url
 
 
-def post_to_slack(image_url: str, caption: str) -> bool:
-    """Post image block to Slack channel."""
+def write_facebook_post(description: str, date: str) -> str:
+    """
+    Generate a Facebook post from a job description using Jasmine's voice.
+    Format: scroll-stopping hook → job details → soft CTA → hashtags
+    """
+    month = datetime.strptime(date, "%Y-%m-%d").strftime("%B")
+    desc  = description.strip()
+
+    # Pull location if mentioned (simple heuristic)
+    location_hint = ""
+    location_words = ["in ", "at ", "near ", "off ", "on "]
+    for word in location_words:
+        if word in desc.lower():
+            location_hint = desc
+            break
+
+    post = f"""Look at this transformation 👀
+
+{desc}
+
+This is exactly why we do what we do. One visit and it looks like a completely different property.
+
+If your home, driveway, or roof is looking rough heading into {month} — give us a call. We serve the greater Cleveland area and we're booking now.
+
+📞 DM us or comment below to get on the schedule.
+
+#ClevelandOhio #NortheastOhio #PowerWashing #CurbAppeal #ForestCityPowerWashing"""
+
+    return post.strip()
+
+
+def post_to_slack(image_url: str, caption: str, facebook_post: str = "") -> bool:
+    """Post image block + optional Facebook copy to Slack channel."""
+    blocks = [
+        {"type": "section", "text": {"type": "mrkdwn", "text": f"*{caption}*"}},
+        {"type": "image",   "image_url": image_url, "alt_text": "Before and after power washing"},
+    ]
+
+    if facebook_post:
+        blocks.append({"type": "divider"})
+        blocks.append({
+            "type": "section",
+            "text": {
+                "type": "mrkdwn",
+                "text": f"*📱 Facebook Post — ready to copy/paste:*\n\n```{facebook_post}```"
+            }
+        })
+
     r = requests.post(
         "https://slack.com/api/chat.postMessage",
         headers={"Authorization": f"Bearer {SLACK_TOKEN}", "Content-Type": "application/json"},
         json={
             "channel": SLACK_CHANNEL,
             "text": caption,
-            "blocks": [
-                {"type": "section", "text": {"type": "mrkdwn", "text": f"*{caption}*"}},
-                {"type": "image",   "image_url": image_url, "alt_text": "Before and after power washing"},
-            ],
+            "blocks": blocks,
         },
     )
     result = r.json()
@@ -165,6 +208,7 @@ def process_pending_pairs():
         after_path  = BASE_DIR / pair["after"]
         pair_id     = pair["id"]
         date        = pair.get("date", datetime.now().strftime("%Y-%m-%d"))
+        description = pair.get("description", "")
 
         if not before_path.exists() or not after_path.exists():
             log(f"Skipping {pair_id} — photo files missing.")
@@ -183,7 +227,12 @@ def process_pending_pairs():
             raw_url = push_to_github(str(output_file), github_path, f"Before/after flyer {date}")
             log(f"Pushed to GitHub → {raw_url}")
 
-            post_to_slack(raw_url, f"Before & After — Forest City Power Washing | {date}")
+            facebook_post = ""
+            if description:
+                facebook_post = write_facebook_post(description, date)
+                log("Facebook post written ✓")
+
+            post_to_slack(raw_url, f"Before & After — Forest City Power Washing | {date}", facebook_post)
             log("Posted to #fc-ai-office ✓")
 
             pair["processed"] = True
