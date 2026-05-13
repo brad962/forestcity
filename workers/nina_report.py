@@ -6,6 +6,7 @@ Usage: python3 workers/nina_report.py [daily|weekly]
 """
 
 import json
+import os
 import urllib.request
 import sys
 from datetime import datetime
@@ -15,8 +16,21 @@ BASE_DIR  = Path(__file__).parent.parent.resolve()
 OUTPUTS   = BASE_DIR / 'outputs' / 'nina'
 LOG_FILE  = BASE_DIR / 'logs' / 'activity.log'
 
-MIXMAX_TOKEN  = '3646d2be-c1be-44b7-b3ef-e7ea047cad83'
-SLACK_WEBHOOK = 'https://hooks.slack.com/services/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'
+
+def _load_env():
+    env_file = BASE_DIR / '.env'
+    if env_file.exists():
+        for line in env_file.read_text().splitlines():
+            line = line.strip()
+            if line and not line.startswith('#') and '=' in line:
+                k, v = line.split('=', 1)
+                os.environ.setdefault(k.strip(), v.strip())
+
+
+_load_env()
+
+MIXMAX_TOKEN  = os.environ.get('MIXMAX_TOKEN', '')
+SLACK_WEBHOOK = os.environ.get('SLACK_WEBHOOK_OFFICE', '')
 
 
 GITHUB_BASE = 'https://github.com/brad962/forestcity/blob/main'

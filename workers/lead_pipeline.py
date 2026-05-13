@@ -6,6 +6,7 @@ Usage: python3 workers/lead_pipeline.py [danny|carla|both]
 """
 
 import json
+import os
 import subprocess
 import sys
 import time
@@ -18,9 +19,22 @@ OUTPUTS    = BASE_DIR / 'outputs'
 LOG_FILE   = BASE_DIR / 'logs' / 'activity.log'
 CACHE_FILE = BASE_DIR / 'contacts_cache.json'
 
-APOLLO_KEY    = 'aKRZyBffyV7ScWVCuTXBjA'
-MIXMAX_TOKEN  = '3646d2be-c1be-44b7-b3ef-e7ea047cad83'
-SLACK_WEBHOOK = 'https://hooks.slack.com/services/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'
+
+def _load_env():
+    env_file = BASE_DIR / '.env'
+    if env_file.exists():
+        for line in env_file.read_text().splitlines():
+            line = line.strip()
+            if line and not line.startswith('#') and '=' in line:
+                k, v = line.split('=', 1)
+                os.environ.setdefault(k.strip(), v.strip())
+
+
+_load_env()
+
+APOLLO_KEY    = os.environ.get('APOLLO_KEY', '')
+MIXMAX_TOKEN  = os.environ.get('MIXMAX_TOKEN', '')
+SLACK_WEBHOOK = os.environ.get('SLACK_WEBHOOK_OFFICE', '')
 
 
 GITHUB_BASE = 'https://github.com/brad962/forestcity/blob/main'
