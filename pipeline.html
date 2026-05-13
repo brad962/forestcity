@@ -111,6 +111,7 @@
   <a href="dashboard.html">Dashboard</a>
   <a href="contacts.html">Contacts</a>
   <a href="pipeline.html" class="active">Pipeline</a>
+  <a href="call_list.html">Call List</a>
   <a href="connect.html">Connect</a>
 </nav>
 
@@ -288,17 +289,25 @@ function renderTable() {
         ${c.replied ? '<span class="pill active">replied</span>' : ''}
       </div>`;
 
-    return `<tr data-email="${c.email}">
+    const contactKey = c.source === 'manual' ? (c.id || c.phone) : c.email;
+    const contactAction = c.source === 'manual'
+      ? (c.phone ? `<a href="sms:${c.phone}" style="color:var(--muted);font-size:12px;text-decoration:none" title="Send text">💬 ${c.phone}</a>` : '')
+      : `<a href="mailto:${c.email}" style="color:var(--muted);font-size:12px;text-decoration:none" title="Send email">✉</a>`;
+    const subLine = c.source === 'manual'
+      ? `<div class="td-email">${c.phone||''}</div>`
+      : `<div class="td-email">${c.email}</div>`;
+
+    return `<tr data-email="${contactKey}">
       <td>
         <div class="td-name">${c.name || '—'}</div>
-        <div class="td-email">${c.email}</div>
+        ${subLine}
         <div class="td-company">${c.company||''}</div>
       </td>
       <td>
         <span class="badge ${badgeClass(c.lead_type)}">${badgeLabel(c.lead_type)}</span>
       </td>
       <td>
-        <select class="stage-select ${STAGE_CLASS[c.stage]||''}" onchange="updateStage('${c.email}', this)">
+        <select class="stage-select ${STAGE_CLASS[c.stage]||''}" onchange="updateStage('${contactKey}', this)">
           ${stageOpts}
         </select>
         ${c.stale ? '<span class="stale-badge" style="margin-left:6px">⚠ Stale</span>' : ''}
@@ -306,23 +315,21 @@ function renderTable() {
       <td>${pills}</td>
       <td>
         <input class="val-input" type="text" placeholder="$0" value="${c.est_value||''}"
-          onchange="saveField('${c.email}','est_value',this.value)" />
+          onchange="saveField('${contactKey}','est_value',this.value)" />
       </td>
       <td>
         <input type="date" class="val-input" style="width:120px" value="${c.last_contact||''}"
-          onchange="saveField('${c.email}','last_contact',this.value)" />
+          onchange="saveField('${contactKey}','last_contact',this.value)" />
       </td>
       <td>
         <input type="date" class="val-input" style="width:120px" value="${c.next_followup||''}"
-          onchange="saveField('${c.email}','next_followup',this.value)" />
+          onchange="saveField('${contactKey}','next_followup',this.value)" />
       </td>
       <td class="notes-cell">
         <textarea class="notes-input" placeholder="Add notes..."
-          onchange="saveField('${c.email}','notes',this.value)">${c.notes||''}</textarea>
+          onchange="saveField('${contactKey}','notes',this.value)">${c.notes||''}</textarea>
       </td>
-      <td>
-        <a href="mailto:${c.email}" style="color:var(--muted);font-size:12px;text-decoration:none" title="Send email">✉</a>
-      </td>
+      <td>${contactAction}</td>
     </tr>`;
   }).join('');
 }

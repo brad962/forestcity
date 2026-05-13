@@ -9,7 +9,7 @@
       "email": "",
       "lead_type": "contractor",
       "stage": "Replied",
-      "notes": "Very interested — send text",
+      "notes": "Very interested \u2014 send text",
       "last_contact": "",
       "next_followup": "",
       "est_value": "",
@@ -24,7 +24,7 @@
       "email": "",
       "lead_type": "contractor",
       "stage": "Replied",
-      "notes": "Very interested — send text",
+      "notes": "Very interested \u2014 send text",
       "last_contact": "",
       "next_followup": "",
       "est_value": "",
@@ -159,7 +159,7 @@
       "email": "",
       "lead_type": "contractor",
       "stage": "Contacted",
-      "notes": "Left off here — follow up",
+      "notes": "Left off here \u2014 follow up",
       "last_contact": "",
       "next_followup": "",
       "est_value": "",
@@ -360,5 +360,127 @@
       "est_value": "",
       "source": "manual"
     }
-  ]
+  ],
+  "calls": {
+    "manual_bulletproof_lawncare": {
+      "called": true,
+      "called_at": "2026-05-13",
+      "notes": "Already called before import"
+    },
+    "manual_damrons_landscaping": {
+      "called": true,
+      "called_at": "2026-05-13",
+      "notes": "Already called before import"
+    },
+    "manual_land_pro_management": {
+      "called": true,
+      "called_at": "2026-05-13",
+      "notes": "Already called before import"
+    },
+    "manual_gtp_landscaping": {
+      "called": true,
+      "called_at": "2026-05-13",
+      "notes": "Already called before import"
+    },
+    "manual_pyro_landscaping": {
+      "called": true,
+      "called_at": "2026-05-13",
+      "notes": "Already called before import"
+    },
+    "manual_garten_gurus": {
+      "called": true,
+      "called_at": "2026-05-13",
+      "notes": "Already called before import"
+    },
+    "manual_dales_landscaping": {
+      "called": true,
+      "called_at": "2026-05-13",
+      "notes": "Already called before import"
+    },
+    "manual_cm_landscaping": {
+      "called": true,
+      "called_at": "2026-05-13",
+      "notes": "Already called before import"
+    },
+    "manual_kays_express": {
+      "called": true,
+      "called_at": "2026-05-13",
+      "notes": "Already called before import"
+    },
+    "manual_walkers_landscape": {
+      "called": true,
+      "called_at": "2026-05-13",
+      "notes": "Already called before import"
+    },
+    "manual_cle_lawn_care_plus": {
+      "called": true,
+      "called_at": "2026-05-13",
+      "notes": "Already called before import"
+    },
+    "manual_clemence_collaborations": {
+      "called": true,
+      "called_at": "2026-05-13",
+      "notes": "Already called before import"
+    },
+    "manual_islander_landscaping": {
+      "called": true,
+      "called_at": "2026-05-13",
+      "notes": "Already called before import"
+    },
+    "manual_lawn_care_for_the_world": {
+      "called": true,
+      "called_at": "2026-05-13",
+      "notes": "Already called before import"
+    },
+    "manual_soldan_landscaping": {
+      "called": true,
+      "called_at": "2026-05-13",
+      "notes": "Already called before import"
+    },
+    "manual_twin_improvements": {
+      "called": true,
+      "called_at": "2026-05-13",
+      "notes": "Already called before import"
+    },
+    "manual_reliable_roofing": {
+      "called": true,
+      "called_at": "2026-05-13",
+      "notes": "Already called before import"
+    },
+    "manual_pagels_quality": {
+      "called": true,
+      "called_at": "2026-05-13",
+      "notes": "Already called before import"
+    },
+    "manual_blue_line_restorations": {
+      "called": true,
+      "called_at": "2026-05-13",
+      "notes": "Already called before import"
+    },
+    "manual_kardiac_construction": {
+      "called": true,
+      "called_at": "2026-05-13",
+      "notes": "Already called before import"
+    },
+    "manual_dont_move_improve": {
+      "called": true,
+      "called_at": "2026-05-13",
+      "notes": "Already called before import"
+    },
+    "manual_woolworth_construction": {
+      "called": true,
+      "called_at": "2026-05-13",
+      "notes": "Already called before import"
+    },
+    "manual_everguard_pros": {
+      "called": true,
+      "called_at": "2026-05-13",
+      "notes": "Already called before import"
+    },
+    "manual_camlin_contracting": {
+      "called": true,
+      "called_at": "2026-05-13",
+      "notes": "Already called before import"
+    }
+  }
 }

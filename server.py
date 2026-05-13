@@ -338,6 +338,10 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 })
             self._json({'contacts': all_contacts, 'total': len(all_contacts)})
 
+        elif p.path == '/api/calls':
+            pipeline = json.loads(PIPELINE_F.read_text()) if PIPELINE_F.exists() else {}
+            self._json(pipeline.get('calls', {}))
+
         elif p.path.startswith('/api/instantly/'):
             # Proxy to Instantly API — avoids CORS issues from browser
             auth = self.headers.get('Authorization', '')
@@ -417,6 +421,27 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                         pipeline[email][field] = data[field]
                 PIPELINE_F.write_text(json.dumps(pipeline, indent=2))
                 self._json({'ok': True, 'email': email})
+            except Exception as e:
+                self._json({'error': str(e)}, 500)
+
+        elif self.path == '/api/calls':
+            # Save call status: POST { key, called, notes }
+            try:
+                data = json.loads(body)
+                key   = data.get('key', '')
+                if not key:
+                    self._json({'error': 'missing key'}, 400)
+                    return
+                pipeline = json.loads(PIPELINE_F.read_text()) if PIPELINE_F.exists() else {}
+                if 'calls' not in pipeline:
+                    pipeline['calls'] = {}
+                pipeline['calls'][key] = {
+                    'called':    data.get('called', True),
+                    'called_at': data.get('called_at', ''),
+                    'notes':     data.get('notes', ''),
+                }
+                PIPELINE_F.write_text(json.dumps(pipeline, indent=2))
+                self._json({'ok': True, 'key': key})
             except Exception as e:
                 self._json({'error': str(e)}, 500)
 
