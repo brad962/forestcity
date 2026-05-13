@@ -165,6 +165,22 @@
   .ic-btn:hover { border-color: var(--accent); color: var(--accent); }
   .ic-btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
   .ic-btn.primary:hover { background: #2563eb; }
+
+  .opener-box {
+    margin-top: 20px;
+    background: rgba(59,130,246,.07);
+    border: 1px solid rgba(59,130,246,.2);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .opener-label {
+    font-size: 10px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .08em; color: var(--accent); margin-bottom: 8px;
+  }
+  .opener-text {
+    font-size: 13px; line-height: 1.6; color: var(--text);
+  }
+  .opener-text em { color: var(--yellow); font-style: normal; font-weight: 600; }
 </style>
 </head>
 <body>
@@ -237,6 +253,10 @@
     <div class="info-card-row" id="ic-notes-row" style="display:none">
       <span class="ic-label">Notes</span>
       <span id="ic-notes" style="color:var(--yellow)"></span>
+    </div>
+    <div class="opener-box">
+      <div class="opener-label">Opening Line</div>
+      <div class="opener-text" id="ic-opener">—</div>
     </div>
     <div class="info-card-actions">
       <a id="ic-call-btn" href="#" class="ic-btn primary">📞 Call</a>
@@ -439,6 +459,15 @@ function openInfoCard(idx) {
 
   document.getElementById('ic-call-btn').href = c.phone ? `tel:${c.phone}` : '#';
   document.getElementById('ic-sms-btn').href  = c.phone ? `sms:${c.phone}` : '#';
+
+  const firstName = (c.name || '').split(' ')[0] || 'there';
+  const openers = {
+    property_manager: `"Hey <em>${firstName}</em>, this is Bradley with Forest City Power Washing — we sent you an email recently about keeping your properties looking sharp. I just wanted to put a voice to it. Do you have 30 seconds?"`,
+    contractor: `"Hey <em>${firstName}</em>, Bradley from Forest City Power Washing. I reached out by email — we're building a referral network with local contractors and I thought you'd be a good fit. Quick question — do you ever run into jobs where the customer needs a wash before or after your work?"`,
+    realtor: `"Hey <em>${firstName}</em>, this is Bradley with Forest City Power Washing. I emailed you about partnering on listings — basically we do a curb appeal wash before you list and split referrals both ways. Is that something you'd want to hear more about?"`,
+  };
+  const openerHTML = openers[c.lead_type] || openers.contractor;
+  document.getElementById('ic-opener').innerHTML = openerHTML;
 
   document.getElementById('modal-backdrop').classList.add('open');
 }
