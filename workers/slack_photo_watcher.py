@@ -75,6 +75,11 @@ def load_pairs():
 
 def record_pair(before_rel, after_rel, description=''):
     pairs = load_pairs()
+    # Dedup — don't create a pair if this before+after combo already exists
+    for existing in pairs['pairs']:
+        if existing.get('before') == before_rel and existing.get('after') == after_rel:
+            print(f'Pair already exists for {before_rel} + {after_rel}, skipping.')
+            return existing['id']
     pair = {
         'id': f'pair_{datetime.now().strftime("%Y%m%d_%H%M%S")}',
         'before': before_rel,
@@ -151,24 +156,51 @@ def run():
         msg_text = msg.get('text', '').strip()
 
         files = msg.get('files', [])
+        # Filter to unseen images only
+        new_images = []
         for f in files:
             file_id  = f.get('id', '')
             filetype = f.get('filetype', '').lower()
             filename = f.get('name', f'{file_id}.jpg')
-
             if file_id in seen:
                 continue
             if filetype not in IMAGE_TYPES and not any(filename.lower().endswith(ext) for ext in IMAGE_TYPES):
                 continue
+            dl_url = f.get('url_private_download') or f.get('url_private', '')
+            if not dl_url:
+                continue
+            new_images.append((file_id, filename, dl_url))
 
+        # If message has 2+ new images, treat as before+after in one shot
+        if len(new_images) >= 2 and pending_before is None:
+            date_str = datetime.now().strftime('%Y-%m-%d')
+            downloaded = []
+            for file_id, filename, dl_url in new_images[:2]:
+                prefix    = 'before' if not downloaded else 'after'
+                safe_name = filename.replace(' ', '_')
+                dest      = PHOTOS_DIR / f'{prefix}_{date_str}_{safe_name}'
+                try:
+                    download_file(dl_url, dest)
+                    seen.add(file_id)
+                    new_photos.append(dest)
+                    downloaded.append(dest)
+                    print(f'Downloaded ({prefix}): {dest.name}')
+                except Exception as e:
+                    print(f'Failed to download {filename}: {e}')
+            if len(downloaded) == 2:
+                before_rel = str(downloaded[0].relative_to(BASE_DIR))
+                after_rel  = str(downloaded[1].relative_to(BASE_DIR))
+                pair_id    = record_pair(before_rel, after_rel, msg_text)
+                new_pairs.append((before_rel, after_rel, pair_id))
+                print(f'Pair complete (same message): {pair_id} | description: "{msg_text[:60]}"')
+            continue
+
+        # Otherwise process one at a time (before from one message, after from next)
+        for file_id, filename, dl_url in new_images:
             date_str  = datetime.now().strftime('%Y-%m-%d')
             safe_name = filename.replace(' ', '_')
             prefix    = 'before' if pending_before is None else 'after'
             dest      = PHOTOS_DIR / f'{prefix}_{date_str}_{safe_name}'
-
-            dl_url = f.get('url_private_download') or f.get('url_private', '')
-            if not dl_url:
-                continue
 
             try:
                 download_file(dl_url, dest)
@@ -185,7 +217,6 @@ def run():
                 else:
                     after_rel   = str(dest.relative_to(BASE_DIR))
                     before_rel  = pending_before['path']
-                    # Use description from either message; prefer the after message if it has one
                     description = msg_text or pending_before.get('description', '')
                     pair_id     = record_pair(before_rel, after_rel, description)
                     new_pairs.append((before_rel, after_rel, pair_id))
