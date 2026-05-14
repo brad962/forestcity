@@ -316,7 +316,7 @@ function renderWorkers(){
     const files = outputData[w.key]||[];
     const ring = st==='working'?'ring-working':st==='done'?'ring-done':'ring-ready';
     return `
-<div class="worker-card ${st}" onclick="">
+<div class="worker-card ${st}" onclick="window.location='/workers.html#ws-${w.key}'" style="cursor:pointer" title="View ${w.name}'s full activity →">
   <div class="worker-top">
     <div class="avatar-wrap">
       <div class="avatar" style="background:${w.dc.bg};color:${w.dc.fg}">${ini(w.name)}</div>

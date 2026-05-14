@@ -161,8 +161,11 @@ tbody td{padding:11px 16px;font-size:13px;color:var(--muted);vertical-align:midd
   </div>
   <nav class="nav-links">
     <a href="/dashboard.html" class="nav-link">Dashboard</a>
-    <a href="/contacts.html" class="nav-link active">Contacts</a>
-    <a href="/connect.html" class="nav-link">Connect</a>
+    <a href="/workers.html"   class="nav-link">Workers</a>
+    <a href="/contacts.html"  class="nav-link active">Contacts</a>
+    <a href="/pipeline.html"  class="nav-link">Pipeline</a>
+    <a href="/call_list.html" class="nav-link">Call List</a>
+    <a href="/connect.html"   class="nav-link">Connect</a>
   </nav>
   <div class="header-right">
     <div class="live-pill"><div class="live-dot"></div>Instantly Live</div>
@@ -461,6 +464,13 @@ function openDrawer(idx) {
         <div class="metric-box"><div class="metric-num">${c.email_reply_count||0}</div><div class="metric-label">Replies</div></div>
         <div class="metric-box"><div class="metric-num">${c.email_click_count||0}</div><div class="metric-label">Clicks</div></div>
         <div class="metric-box"><div class="metric-num">${c.email_bounced_count||0}</div><div class="metric-label">Bounces</div></div>
+      </div>
+    </div>
+    <div class="drawer-section">
+      <div class="drawer-section-title">Quick Links</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <a href="/pipeline.html" style="flex:1;min-width:120px;padding:9px 12px;border-radius:8px;border:1px solid var(--border2);background:var(--surface2);color:var(--muted);font-size:12px;font-weight:600;text-decoration:none;text-align:center;transition:all .15s" onmouseover="this.style.borderColor='var(--blue)';this.style.color='var(--blue)'" onmouseout="this.style.borderColor='';this.style.color=''">📊 View in Pipeline</a>
+        <a href="/call_list.html" style="flex:1;min-width:120px;padding:9px 12px;border-radius:8px;border:1px solid var(--border2);background:var(--surface2);color:var(--muted);font-size:12px;font-weight:600;text-decoration:none;text-align:center;transition:all .15s" onmouseover="this.style.borderColor='var(--green)';this.style.color='var(--green)'" onmouseout="this.style.borderColor='';this.style.color=''">📞 View in Call List</a>
       </div>
     </div>
   `;
