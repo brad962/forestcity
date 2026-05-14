@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Workers — Forest City AI Office</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#020617;
+  --surface:#0F172A;
+  --surface2:#1E293B;
+  --border:#1E293B;
+  --border2:#334155;
+  --text:#F8FAFC;
+  --muted:#94A3B8;
+  --muted2:#64748B;
+  --green:#22C55E;
+  --amber:#f0c040;
+  --red:#EF4444;
+  --orange:#F97316;
+  --blue:#3B82F6;
+}
+body{font-family:'Open Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;font-size:14px;line-height:1.6}
+
+/* HEADER */
+.header{background:rgba(15,23,42,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 28px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.logo{font-family:'Poppins',sans-serif;font-size:16px;font-weight:700;letter-spacing:-.3px;display:flex;align-items:center;gap:8px}
+.logo-icon{width:28px;height:28px;background:linear-gradient(135deg,#1a2744,#243560);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:13px;border:1px solid #2d3f6e}
+.logo span{color:var(--amber)}
+.header-right{display:flex;align-items:center;gap:12px}
+.live-pill{display:flex;align-items:center;gap:5px;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.25);padding:4px 10px;border-radius:20px;font-size:11px;color:var(--green);font-weight:600}
+.live-dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(34,197,94,.4)}50%{opacity:.8;box-shadow:0 0 0 4px rgba(34,197,94,0)}}
+.btn{background:var(--surface2);border:1px solid var(--border2);color:var(--muted);font-size:12px;padding:6px 14px;border-radius:7px;cursor:pointer;transition:all .2s;font-family:'Open Sans',sans-serif}
+.btn:hover{background:var(--border2);color:var(--text);border-color:var(--muted2)}
+.nav-link{font-size:12px;font-weight:600;padding:5px 12px;border-radius:7px;cursor:pointer;text-decoration:none;color:var(--muted);border:1px solid transparent;transition:all .15s;font-family:'Poppins',sans-serif}
+.nav-link:hover{color:var(--text);background:#1E293B;border-color:#334155}
+.nav-link.active{color:var(--amber);background:rgba(240,192,64,.08);border-color:rgba(240,192,64,.2)}
+
+/* LAYOUT */
+.main{padding:20px 28px;max-width:1400px;margin:0 auto}
+
+/* STATS ROW */
+.stats-row{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:24px}
+.stat{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px;position:relative;overflow:hidden}
+.stat::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--accent,var(--border2))}
+.stat-label{font-size:11px;color:var(--muted2);text-transform:uppercase;letter-spacing:.06em;font-weight:600;margin-bottom:6px}
+.stat-val{font-family:'Poppins',sans-serif;font-size:26px;font-weight:700;line-height:1}
+.stat-sub{font-size:11px;color:var(--muted2);margin-top:4px}
+
+/* FILTER BAR */
+.filter-bar{display:flex;align-items:center;gap:8px;margin-bottom:20px;flex-wrap:wrap}
+.filter-btn{font-size:11px;font-weight:600;padding:5px 12px;border-radius:6px;cursor:pointer;border:1px solid var(--border2);background:transparent;color:var(--muted);transition:all .15s;font-family:'Poppins',sans-serif}
+.filter-btn:hover{border-color:var(--muted2);color:var(--text)}
+.filter-btn.active{background:rgba(240,192,64,.1);border-color:rgba(240,192,64,.3);color:var(--amber)}
+.filter-sep{width:1px;height:20px;background:var(--border2);margin:0 4px}
+.search-wrap{flex:1;max-width:280px;position:relative}
+.search-inp{width:100%;background:var(--surface);border:1px solid var(--border2);color:var(--text);font-size:12px;padding:6px 10px 6px 30px;border-radius:7px;outline:none;font-family:'Open Sans',sans-serif;transition:border-color .15s}
+.search-inp:focus{border-color:var(--blue)}
+.search-inp::placeholder{color:var(--muted2)}
+.search-icon{position:absolute;left:9px;top:50%;transform:translateY(-50%);color:var(--muted2);font-size:13px;pointer-events:none}
+
+/* JUMP NAV */
+.jump-nav{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:22px}
+.jump-btn{display:flex;align-items:center;gap:6px;padding:5px 10px;border-radius:8px;cursor:pointer;border:1px solid var(--border);background:var(--surface);transition:all .15s;text-decoration:none}
+.jump-btn:hover{border-color:var(--border2);transform:translateY(-1px)}
+.jump-av{width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700;font-family:'Poppins',sans-serif}
+.jump-name{font-size:11px;font-weight:600;color:var(--muted);font-family:'Poppins',sans-serif}
+.jump-count{font-size:10px;color:var(--muted2)}
+
+/* WORKER SECTION */
+.worker-section{margin-bottom:16px;border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:border-color .2s}
+.worker-section:hover{border-color:var(--border2)}
+.worker-section.blocked{border-color:rgba(239,68,68,.2)}
+.worker-section.working{border-color:rgba(249,115,22,.25)}
+
+.ws-header{display:flex;align-items:center;gap:14px;padding:16px 20px;background:var(--surface);cursor:pointer;user-select:none}
+.ws-header:hover{background:rgba(255,255,255,.02)}
+.ws-avatar-wrap{position:relative;flex-shrink:0}
+.ws-avatar{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;font-family:'Poppins',sans-serif}
+.ws-ring{position:absolute;inset:-2px;border-radius:50%;border:2px solid transparent}
+.ring-idle{border-color:var(--border2)}
+.ring-working{border-color:var(--orange);animation:spin-ring 3s linear infinite}
+.ring-done{border-color:var(--green)}
+.ring-blocked{border-color:var(--red)}
+@keyframes spin-ring{to{transform:rotate(360deg)}}
+
+.ws-info{flex:1;min-width:0}
+.ws-name{font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:var(--text)}
+.ws-role{font-size:12px;color:var(--muted2);margin-top:1px}
+.ws-meta-row{display:flex;align-items:center;gap:8px;margin-top:4px;flex-wrap:wrap}
+
+.dept-badge{font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px}
+.status-badge{font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;display:flex;align-items:center;gap:4px}
+.sb-idle{background:rgba(100,116,139,.1);color:var(--muted2);border:1px solid rgba(100,116,139,.2)}
+.sb-done{background:rgba(34,197,94,.1);color:var(--green);border:1px solid rgba(34,197,94,.2)}
+.sb-working{background:rgba(249,115,22,.1);color:var(--orange);border:1px solid rgba(249,115,22,.2)}
+.sb-blocked{background:rgba(239,68,68,.1);color:var(--red);border:1px solid rgba(239,68,68,.2)}
+.sb-dot{width:5px;height:5px;border-radius:50%;background:currentColor}
+
+.ws-stats{display:flex;gap:16px;align-items:center;flex-shrink:0}
+.ws-stat{text-align:center}
+.ws-stat-val{font-family:'Poppins',sans-serif;font-size:18px;font-weight:700;color:var(--text);line-height:1}
+.ws-stat-lbl{font-size:10px;color:var(--muted2);margin-top:1px}
+.ws-toggle{color:var(--muted2);font-size:16px;width:24px;text-align:center;flex-shrink:0;transition:transform .2s}
+.ws-toggle.open{transform:rotate(180deg)}
+
+/* WORKER BODY */
+.ws-body{display:none;border-top:1px solid var(--border)}
+.ws-body.open{display:block}
+
+.ws-cols{display:grid;grid-template-columns:1fr 320px;gap:0}
+
+/* Timeline */
+.ws-timeline{padding:16px 20px;border-right:1px solid var(--border)}
+.ws-col-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--muted2);margin-bottom:12px;display:flex;align-items:center;justify-content:space-between}
+.timeline{display:flex;flex-direction:column;gap:0}
+.tl-item{display:flex;gap:12px;padding-bottom:14px;position:relative}
+.tl-item:last-child{padding-bottom:0}
+.tl-item:last-child .tl-line{display:none}
+.tl-left{display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:20px}
+.tl-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;margin-top:4px;border:2px solid var(--bg)}
+.tl-dot-done{background:var(--green)}
+.tl-dot-blocked{background:var(--red)}
+.tl-dot-work{background:var(--orange)}
+.tl-line{width:2px;flex:1;background:var(--border2);margin-top:3px;min-height:8px}
+.tl-content{flex:1;min-width:0}
+.tl-task{font-size:12px;color:var(--text);line-height:1.5}
+.tl-file{font-size:11px;color:#60A5FA;cursor:pointer;margin-top:3px;display:inline-block}
+.tl-file:hover{text-decoration:underline}
+.tl-bottom{display:flex;align-items:center;gap:8px;margin-top:4px}
+.tl-time{font-size:10px;color:var(--muted2)}
+.tl-chip{font-size:10px;font-weight:700;padding:1px 6px;border-radius:3px}
+.chip-done{background:rgba(34,197,94,.1);color:var(--green);border:1px solid rgba(34,197,94,.2)}
+.chip-blocked{background:rgba(239,68,68,.1);color:var(--red);border:1px solid rgba(239,68,68,.2)}
+.chip-work{background:rgba(249,115,22,.1);color:var(--orange);border:1px solid rgba(249,115,22,.2)}
+.tl-empty{font-size:12px;color:var(--muted2);font-style:italic;padding:8px 0}
+
+/* Sidebar: schedule + outputs */
+.ws-sidebar{padding:16px 16px}
+.sched-box{background:rgba(240,192,64,.04);border:1px solid rgba(240,192,64,.12);border-radius:8px;padding:10px 12px;margin-bottom:14px}
+.sched-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--amber);margin-bottom:6px}
+.sched-row{display:flex;align-items:center;gap:8px;margin-bottom:4px}
+.sched-row:last-child{margin-bottom:0}
+.sched-icon{font-size:11px;width:14px;text-align:center;flex-shrink:0}
+.sched-text{font-size:11px;color:var(--muted);line-height:1.4}
+.sched-next{font-size:10px;color:var(--muted2);margin-top:2px;padding-left:22px}
+
+.outputs-section{margin-top:0}
+.output-grid{display:flex;flex-direction:column;gap:4px;max-height:400px;overflow-y:auto}
+.output-grid::-webkit-scrollbar{width:3px}
+.output-grid::-webkit-scrollbar-thumb{background:var(--border2);border-radius:4px}
+.of-item{display:flex;align-items:center;gap:8px;padding:6px 8px;border-radius:6px;cursor:pointer;border:1px solid transparent;transition:all .15s}
+.of-item:hover{background:rgba(59,130,246,.07);border-color:rgba(59,130,246,.2)}
+.of-icon{font-size:13px;flex-shrink:0;width:18px;text-align:center}
+.of-name{font-size:11px;color:var(--muted);flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.of-item:hover .of-name{color:#60A5FA}
+.of-date{font-size:10px;color:var(--muted2);flex-shrink:0}
+.skill-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
+.skill-tag{font-size:10px;padding:2px 7px;border-radius:4px;background:rgba(255,255,255,.04);color:var(--muted);border:1px solid var(--border2)}
+
+/* DRAWER */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:200;opacity:0;pointer-events:none;transition:opacity .2s;backdrop-filter:blur(4px)}
+.overlay.open{opacity:1;pointer-events:all}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:620px;max-width:94vw;background:var(--surface);z-index:201;transform:translateX(100%);transition:transform .25s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;border-left:1px solid var(--border2)}
+.drawer.open{transform:translateX(0)}
+.drawer-hd{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;justify-content:space-between;flex-shrink:0}
+.drawer-title{font-family:'Poppins',sans-serif;font-size:14px;font-weight:600;color:var(--text)}
+.drawer-sub{font-size:11px;color:var(--muted2);margin-top:2px}
+.drawer-close{background:var(--surface2);border:1px solid var(--border2);color:var(--muted);font-size:16px;cursor:pointer;padding:3px 8px;border-radius:6px;line-height:1;transition:all .15s}
+.drawer-close:hover{background:var(--border2);color:var(--text)}
+.drawer-body{padding:20px;overflow-y:auto;flex:1}
+.drawer-body pre{font-size:12px;font-family:'SF Mono','Fira Code',monospace;white-space:pre-wrap;word-break:break-word;line-height:1.75;color:var(--text);background:var(--bg);padding:16px;border-radius:8px;border:1px solid var(--border2)}
+.drawer-img{max-width:100%;border-radius:8px;border:1px solid var(--border2)}
+
+/* RESPONSIVE */
+@media(max-width:900px){.stats-row{grid-template-columns:repeat(3,1fr)}.ws-cols{grid-template-columns:1fr}.ws-sidebar{border-top:1px solid var(--border)}.ws-timeline{border-right:none}}
+@media(max-width:600px){.stats-row{grid-template-columns:repeat(2,1fr)}.ws-stats{display:none}}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo">
+    <div class="logo-icon">FC</div>
+    Forest City <span>AI&nbsp;Office</span>
+  </div>
+  <nav style="display:flex;gap:6px">
+    <a href="/dashboard.html" class="nav-link">Dashboard</a>
+    <a href="/workers.html"   class="nav-link active">Workers</a>
+    <a href="/contacts.html"  class="nav-link">Contacts</a>
+    <a href="/pipeline.html"  class="nav-link">Pipeline</a>
+    <a href="/call_list.html" class="nav-link">Call List</a>
+    <a href="/connect.html"   class="nav-link">Connect</a>
+  </nav>
+  <div class="header-right">
+    <span style="font-size:11px;color:var(--muted2)" id="last-upd">—</span>
+    <button class="btn" onclick="refresh()">↻ Refresh</button>
+    <div class="live-pill"><div class="live-dot" id="live-dot"></div><span id="live-lbl">Connecting</span></div>
+  </div>
+</div>
+
+<div class="main">
+
+  <div class="stats-row">
+    <div class="stat" style="--accent:#f0c040">
+      <div class="stat-label">Workers</div>
+      <div class="stat-val">8</div>
+      <div class="stat-sub">All departments active</div>
+    </div>
+    <div class="stat" style="--accent:#22C55E">
+      <div class="stat-label">Tasks Done</div>
+      <div class="stat-val" id="s-tasks">—</div>
+      <div class="stat-sub">Logged completions</div>
+    </div>
+    <div class="stat" style="--accent:#3B82F6">
+      <div class="stat-label">Output Files</div>
+      <div class="stat-val" id="s-files">—</div>
+      <div class="stat-sub">Across all workers</div>
+    </div>
+    <div class="stat" style="--accent:#F97316">
+      <div class="stat-label">This Week</div>
+      <div class="stat-val" id="s-week">—</div>
+      <div class="stat-sub">Tasks since Monday</div>
+    </div>
+    <div class="stat" style="--accent:#A78BFA">
+      <div class="stat-label">Last Active</div>
+      <div class="stat-val" style="font-size:13px;padding-top:6px" id="s-last">—</div>
+      <div class="stat-sub" id="s-last-who">—</div>
+    </div>
+  </div>
+
+  <!-- Jump nav -->
+  <div class="jump-nav" id="jump-nav"></div>
+
+  <!-- Filter bar -->
+  <div class="filter-bar">
+    <button class="filter-btn active" onclick="setFilter('all',this)">All Workers</button>
+    <button class="filter-btn" onclick="setFilter('revenue',this)">Revenue</button>
+    <button class="filter-btn" onclick="setFilter('content',this)">Content</button>
+    <button class="filter-btn" onclick="setFilter('intel',this)">Intel</button>
+    <button class="filter-btn" onclick="setFilter('growth',this)">Growth</button>
+    <div class="filter-sep"></div>
+    <div class="search-wrap">
+      <span class="search-icon">⌕</span>
+      <input class="search-inp" id="search-inp" placeholder="Search tasks, files…" oninput="applySearch()">
+    </div>
+  </div>
+
+  <!-- Worker sections -->
+  <div id="workers-list"></div>
+
+</div>
+
+<!-- Drawer -->
+<div class="overlay" id="overlay" onclick="closeDrawer()"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-hd">
+    <div>
+      <div class="drawer-title" id="drawer-title">File</div>
+      <div class="drawer-sub" id="drawer-sub"></div>
+    </div>
+    <button class="drawer-close" onclick="closeDrawer()">✕</button>
+  </div>
+  <div class="drawer-body" id="drawer-body"></div>
+</div>
+
+<script>
+const WORKERS = [
+  {key:'danny',  name:'Danny Malone',   role:'Outbound Sales Rep',          dept:'Revenue', deptKey:'revenue', dc:{bg:'#1a3356',fg:'#60A5FA'},
+   skills:['cold-email','email-sequence','sales-enablement'],
+   schedule:[{label:'Weekly lead pull',cron:'Every Monday 8am',next:'Mon May 18'}]},
+  {key:'carla',  name:'Carla Reyes',    role:'Referral Partner Manager',    dept:'Revenue', deptKey:'revenue', dc:{bg:'#0f3028',fg:'#4ADE80'},
+   skills:['referral-program','cold-email','sales-enablement'],
+   schedule:[{label:'Weekly lead pull',cron:'Every Monday 8am',next:'Mon May 18'}]},
+  {key:'marcus', name:'Marcus Webb',    role:'Market Intelligence Analyst', dept:'Intel',   deptKey:'intel',   dc:{bg:'#3b2700',fg:'#FCD34D'},
+   skills:['customer-research','competitor-profiling','marketing-psychology'],
+   schedule:[{label:'Monthly intel update',cron:'1st Monday 9am',next:'Mon Jun 1'}]},
+  {key:'nina',   name:'Nina Kowalski',  role:'RevOps Manager',              dept:'Intel',   deptKey:'intel',   dc:{bg:'#2a1f4a',fg:'#A78BFA'},
+   skills:['revops','product-marketing-context'],
+   schedule:[{label:'Daily hot leads',cron:'Mon–Fri 9am',next:'Thu May 14'},{label:'Weekly pipeline report',cron:'Every Monday 9:30am',next:'Mon May 18'}]},
+  {key:'tommy',  name:'Tommy Greer',    role:'Content & Copy Writer',       dept:'Content', deptKey:'content', dc:{bg:'#3b1a12',fg:'#FB923C'},
+   skills:['copywriting','marketing-ideas','marketing-psychology'],
+   schedule:[{label:'Monthly copy refresh',cron:'1st Monday 10am',next:'Mon Jun 1'}]},
+  {key:'jasmine',name:'Jasmine Burke',  role:'Social Media Manager',        dept:'Content', deptKey:'content', dc:{bg:'#0f2d1a',fg:'#34D399'},
+   skills:['social-content','ad-creative','copywriting'],
+   schedule:[{label:'Before/after flyer',cron:'Every hour (photo watcher)',next:'Top of hour'},{label:'Weekly Facebook posts',cron:'Every Friday 9am',next:'Fri May 15'}]},
+  {key:'rick',   name:'Rick Santoro',   role:'Paid Ads Specialist',         dept:'Content', deptKey:'content', dc:{bg:'#0a2828',fg:'#22D3EE'},
+   skills:['ad-creative','marketing-psychology','copywriting'],
+   schedule:[{label:'Monthly ad refresh',cron:'1st Monday 10:30am',next:'Mon Jun 1'}]},
+  {key:'donna',  name:'Donna Park',     role:'Growth & Launch Strategist',  dept:'Growth',  deptKey:'growth',  dc:{bg:'#3b0f2a',fg:'#F472B6'},
+   skills:['launch-strategy','lead-magnets','marketing-ideas'],
+   schedule:[{label:'Monthly strategy review',cron:'1st Monday 11am',next:'Mon Jun 1'}]},
+];
+
+let logData = [], outputData = {}, activeFilter = 'all', searchTerm = '';
+
+const ini = n => n.split(' ').map(x=>x[0]).join('');
+
+function fileIcon(name) {
+  if (/\.(jpg|jpeg|png|gif|webp)$/i.test(name)) return '🖼';
+  if (/\.md$/i.test(name)) return '📄';
+  if (/\.pdf$/i.test(name)) return '📑';
+  if (/\.csv$/i.test(name)) return '📊';
+  if (/\.json$/i.test(name)) return '{}';
+  return '📎';
+}
+
+function fileDate(name) {
+  const m = name.match(/(\d{4}-\d{2}-\d{2})/);
+  return m ? m[1] : '';
+}
+
+function workerLogs(key) {
+  return logData.filter(e => !e.raw && (e.worker||'').toLowerCase() === key);
+}
+
+function workerStatus(key) {
+  const ents = workerLogs(key);
+  if (!ents.length) return 'idle';
+  const last = ents[ents.length - 1];
+  const s = (last.status||'').toLowerCase();
+  if (s.includes('block') || s.includes('fail')) return 'blocked';
+  if (s.includes('progress') || s.includes('work') || s.includes('started')) return 'working';
+  return 'done';
+}
+
+function chipClass(status) {
+  const s = (status||'').toLowerCase();
+  if (s.includes('done') || s.includes('complete')) return 'chip-done';
+  if (s.includes('block') || s.includes('fail')) return 'chip-blocked';
+  return 'chip-work';
+}
+
+function ringClass(st) {
+  if (st === 'blocked') return 'ring-blocked';
+  if (st === 'working') return 'ring-working';
+  if (st === 'done') return 'ring-done';
+  return 'ring-idle';
+}
+
+function statusBadge(st) {
+  if (st === 'blocked') return `<span class="status-badge sb-blocked"><span class="sb-dot"></span>Blocked</span>`;
+  if (st === 'working')  return `<span class="status-badge sb-working"><span class="sb-dot"></span>Working</span>`;
+  if (st === 'done')     return `<span class="status-badge sb-done"><span class="sb-dot"></span>Active</span>`;
+  return `<span class="status-badge sb-idle"><span class="sb-dot"></span>Idle</span>`;
+}
+
+function esc(s){ return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;') }
+
+function renderTimeline(key) {
+  const ents = workerLogs(key);
+  if (!ents.length) return `<div class="tl-empty">No activity logged yet.</div>`;
+
+  return `<div class="timeline">${[...ents].reverse().map(e => {
+    const s = (e.status||'').toLowerCase();
+    const isBlocked = s.includes('block') || s.includes('fail');
+    const dotClass  = isBlocked ? 'tl-dot-blocked' : s.includes('done') || s.includes('complete') ? 'tl-dot-done' : 'tl-dot-work';
+    const hasFile   = e.output_file && e.output_file !== '—' && !e.output_file.includes(' ');
+    const isRaw     = !!e.raw;
+    const taskText  = isRaw ? esc(e.raw) : esc(e.task||'');
+    return `<div class="tl-item">
+      <div class="tl-left">
+        <div class="tl-dot ${dotClass}"></div>
+        <div class="tl-line"></div>
+      </div>
+      <div class="tl-content">
+        <div class="tl-task">${taskText}</div>
+        ${hasFile ? `<span class="tl-file" onclick="viewFile('${key}','${e.output_file}')">${e.output_file}</span>` : ''}
+        <div class="tl-bottom">
+          ${e.status ? `<span class="tl-chip ${chipClass(e.status)}">${esc(e.status)}</span>` : ''}
+          ${e.timestamp ? `<span class="tl-time">${esc(e.timestamp)}</span>` : ''}
+        </div>
+      </div>
+    </div>`;
+  }).join('')}</div>`;
+}
+
+function renderOutputFiles(key) {
+  const files = (outputData[key] || []).filter(f => !f.startsWith('test_') && !f.startsWith('before_after_v'));
+  if (!files.length) return `<div class="tl-empty" style="padding:4px 0">No output files yet.</div>`;
+  return files.map(f => `
+    <div class="of-item" onclick="viewFile('${key}','${f}')">
+      <div class="of-icon">${fileIcon(f)}</div>
+      <div class="of-name">${esc(f)}</div>
+      <div class="of-date">${fileDate(f)}</div>
+    </div>
+  `).join('');
+}
+
+function renderSchedule(w) {
+  return w.schedule.map(s => `
+    <div class="sched-row">
+      <span class="sched-icon">↻</span>
+      <div>
+        <div class="sched-text">${s.label}</div>
+        <div class="sched-next">${s.cron} · Next: <strong style="color:var(--amber)">${s.next}</strong></div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderWorkers() {
+  const list = document.getElementById('workers-list');
+  const filtered = WORKERS.filter(w => {
+    if (activeFilter !== 'all' && w.deptKey !== activeFilter) return false;
+    if (searchTerm) {
+      const logs = workerLogs(w.key).map(e=>(e.task||e.raw||'').toLowerCase()).join(' ');
+      const files = (outputData[w.key]||[]).join(' ').toLowerCase();
+      const haystack = (w.name + ' ' + w.role + ' ' + logs + ' ' + files).toLowerCase();
+      if (!haystack.includes(searchTerm)) return false;
+    }
+    return true;
+  });
+
+  list.innerHTML = filtered.map(w => {
+    const ents   = workerLogs(w.key);
+    const files  = (outputData[w.key]||[]).filter(f => !f.startsWith('test_') && !f.startsWith('before_after_v'));
+    const done   = ents.filter(e => (e.status||'').toLowerCase().includes('done') || (e.status||'').toLowerCase().includes('complete')).length;
+    const st     = workerStatus(w.key);
+
+    return `
+<div class="worker-section ${st}" id="ws-${w.key}">
+  <div class="ws-header" onclick="toggleSection('${w.key}')">
+    <div class="ws-avatar-wrap">
+      <div class="ws-avatar" style="background:${w.dc.bg};color:${w.dc.fg}">${ini(w.name)}</div>
+      <div class="ws-ring ${ringClass(st)}"></div>
+    </div>
+    <div class="ws-info">
+      <div class="ws-name">${w.name}</div>
+      <div class="ws-role">${w.role}</div>
+      <div class="ws-meta-row">
+        <span class="dept-badge" style="background:${w.dc.bg};color:${w.dc.fg}">${w.dept}</span>
+        ${statusBadge(st)}
+        ${w.skills.map(s=>`<span class="skill-tag">${s}</span>`).join('')}
+      </div>
+    </div>
+    <div class="ws-stats">
+      <div class="ws-stat">
+        <div class="ws-stat-val">${done}</div>
+        <div class="ws-stat-lbl">Tasks done</div>
+      </div>
+      <div class="ws-stat">
+        <div class="ws-stat-val">${files.length}</div>
+        <div class="ws-stat-lbl">Output files</div>
+      </div>
+    </div>
+    <div class="ws-toggle" id="toggle-${w.key}">⌄</div>
+  </div>
+  <div class="ws-body open" id="body-${w.key}">
+    <div class="ws-cols">
+      <div class="ws-timeline">
+        <div class="ws-col-title">
+          <span>Activity History</span>
+          <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--muted2)">${ents.length} entr${ents.length===1?'y':'ies'}</span>
+        </div>
+        ${renderTimeline(w.key)}
+      </div>
+      <div class="ws-sidebar">
+        <div class="ws-col-title" style="margin-bottom:8px">Schedule</div>
+        <div class="sched-box">
+          <div class="sched-label">Automated Runs</div>
+          ${renderSchedule(w)}
+        </div>
+        <div class="ws-col-title" style="margin-bottom:8px">Output Files <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--muted2)">${files.length} file${files.length===1?'':'s'}</span></div>
+        <div class="output-grid">${renderOutputFiles(w.key)}</div>
+      </div>
+    </div>
+  </div>
+</div>`;
+  }).join('');
+
+  // Toggle icons for already-open sections
+  WORKERS.forEach(w => {
+    const tog = document.getElementById(`toggle-${w.key}`);
+    const body = document.getElementById(`body-${w.key}`);
+    if (tog && body && body.classList.contains('open')) tog.classList.add('open');
+  });
+}
+
+function renderJumpNav() {
+  const nav = document.getElementById('jump-nav');
+  nav.innerHTML = WORKERS.map(w => {
+    const files  = (outputData[w.key]||[]).length;
+    const done   = workerLogs(w.key).filter(e=>(e.status||'').toLowerCase().includes('done')).length;
+    return `<a class="jump-btn" href="#ws-${w.key}" onclick="expandSection('${w.key}')">
+      <div class="jump-av" style="background:${w.dc.bg};color:${w.dc.fg}">${ini(w.name)}</div>
+      <span class="jump-name">${w.name.split(' ')[0]}</span>
+      <span class="jump-count">${done} tasks · ${files} files</span>
+    </a>`;
+  }).join('');
+}
+
+function renderStats() {
+  const allDone  = logData.filter(e=>!e.raw && ((e.status||'').toLowerCase().includes('done') || (e.status||'').toLowerCase().includes('complete'))).length;
+  const allFiles = Object.values(outputData).reduce((a,b)=>a+b.length,0);
+  const monday   = new Date(); monday.setDate(monday.getDate() - monday.getDay() + 1); monday.setHours(0,0,0,0);
+  const thisWeek = logData.filter(e => {
+    if (!e.timestamp) return false;
+    try { return new Date(e.timestamp) >= monday; } catch { return false; }
+  }).length;
+  const lastEntry = [...logData].filter(e=>!e.raw&&e.timestamp).pop();
+
+  document.getElementById('s-tasks').textContent  = allDone;
+  document.getElementById('s-files').textContent  = allFiles;
+  document.getElementById('s-week').textContent   = thisWeek;
+  if (lastEntry) {
+    document.getElementById('s-last').textContent     = (lastEntry.timestamp||'').split(' ')[0];
+    const w = WORKERS.find(x=>x.key===lastEntry.worker);
+    document.getElementById('s-last-who').textContent = w ? w.name : lastEntry.worker||'';
+  }
+}
+
+function toggleSection(key) {
+  const body = document.getElementById(`body-${key}`);
+  const tog  = document.getElementById(`toggle-${key}`);
+  body.classList.toggle('open');
+  tog.classList.toggle('open');
+}
+
+function expandSection(key) {
+  const body = document.getElementById(`body-${key}`);
+  const tog  = document.getElementById(`toggle-${key}`);
+  if (body) { body.classList.add('open'); tog.classList.add('open'); }
+}
+
+function setFilter(f, btn) {
+  activeFilter = f;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderWorkers();
+}
+
+function applySearch() {
+  searchTerm = document.getElementById('search-inp').value.trim().toLowerCase();
+  renderWorkers();
+}
+
+async function viewFile(wkey, fn) {
+  document.getElementById('drawer-title').textContent = fn;
+  document.getElementById('drawer-sub').textContent   = wkey + ' · output file';
+  document.getElementById('drawer-body').innerHTML    = '<div style="color:var(--muted2);padding:8px">Loading…</div>';
+  openDrawer();
+  try {
+    const r = await fetch(`/api/file?worker=${wkey}&file=${encodeURIComponent(fn)}`);
+    const d = await r.json();
+    if (d.error) {
+      document.getElementById('drawer-body').innerHTML = `<div style="color:var(--red)">${d.error}</div>`;
+      return;
+    }
+    if (/\.(jpg|jpeg|png|gif|webp)$/i.test(fn)) {
+      document.getElementById('drawer-body').innerHTML = `<img class="drawer-img" src="/outputs/${wkey}/${fn}" alt="${esc(fn)}">`;
+    } else {
+      document.getElementById('drawer-body').innerHTML = `<pre>${esc(d.content)}</pre>`;
+    }
+  } catch(e) {
+    document.getElementById('drawer-body').innerHTML = '<div style="color:var(--red)">Could not load file.</div>';
+  }
+}
+
+function openDrawer()  { document.getElementById('drawer').classList.add('open');  document.getElementById('overlay').classList.add('open');  }
+function closeDrawer() { document.getElementById('drawer').classList.remove('open'); document.getElementById('overlay').classList.remove('open'); }
+
+function setLive(ok) {
+  document.getElementById('live-dot').style.background = ok ? 'var(--green)' : 'var(--red)';
+  document.getElementById('live-lbl').textContent      = ok ? 'Live' : 'Offline';
+}
+
+async function refresh() {
+  try {
+    const [log, out] = await Promise.all([
+      fetch('/api/log').then(r=>r.json()),
+      fetch('/api/outputs').then(r=>r.json()),
+    ]);
+    logData    = log;
+    outputData = out;
+    setLive(true);
+    renderStats();
+    renderWorkers();
+    renderJumpNav();
+    document.getElementById('last-upd').textContent = 'Updated ' + new Date().toLocaleTimeString();
+  } catch(e) {
+    setLive(false);
+  }
+}
+
+// Initial render with no data, then pull live
+renderWorkers();
+renderJumpNav();
+refresh();
+setInterval(refresh, 20000);
+</script>
+</body>
+</html>
