@@ -1,51 +1,51 @@
-🚨 *URGENT — Vera | Contractor Follow-Up (Run 7 — Day 5 Still Waiting)*
->Bulletproof Lawncare (216-307-4344) and Damrons Landscaping (440-494-0422) said "very interested" on May 13. Still no text sent.
->Templates are in: `outputs/vera/sms_templates_contractors_2026-05-18.md`
->Two texts. Five minutes. Peak season revenue. Please send today.
----
-🔧 *Vera — Auto-Upgrade | integrations/mixmax.py*
->Changed: Removed hardcoded MIXMAX_TOKEN fallback from source code. Was: `os.environ.get('MIXMAX_TOKEN', '3646d2be-c1be-44b7-b3ef-e7ea047cad83')`. Now: `os.environ.get('MIXMAX_TOKEN', '')`.
->Why: The live Mixmax API token was committed to GitHub in plaintext. Even though it's also in .env, the hardcoded fallback means it's exposed in the git history. Credentials should only live in .env (gitignored).
->File: integrations/mixmax.py
----
-🔧 *Vera — Auto-Upgrade | workers/jasmine_flyer.py*
->Changed: `write_facebook_post()` now picks seasonal hooks and CTAs based on the month. May/June = algae + booking urgency angle. Summer = pre-cookout. Fall = pre-winter. Winter = evergreen.
->Why: Same generic "heading into [month]" copy was going out year-round on every auto-generated post. Seasonal relevance = higher engagement.
->File: workers/jasmine_flyer.py
----
-🔧 *Vera — Auto-Upgrade | CLAUDE.md*
->Changed: Added "Local Scheduling" section with exact crontab commands for every worker script that needs to run locally (lead_pipeline, nina_report daily/weekly, workiz_report, vera_relay).
->Why: API-dependent workers can't run from cloud — Bradley needs these commands to set up local automation. Run `crontab -e` on your Mac and paste them in.
->File: CLAUDE.md
----
-📄 *Vera — New Deliverables | Run 7 (5 Assets Ready)*
+🚨 *Vera — URGENT | Hot Contractor Follow-Up (Run 8 — Day 5)*
+>Bulletproof Lawncare (216-307-4344) and Damrons Landscaping (440-494-0422) said "very interested" on May 13. It has been 5 days. Still no text sent.
 >
->• *Tommy — Homepage headline refresh*: 3 seasonal headline options (urgency/scarcity, pain/outcome, local trust) + services page subheads for peak season. → `outputs/tommy/homepage_headlines_peak_season_2026-05-18.md`
+>New this run: Full conversation decision tree written — every possible reply scripted out. You never have to think about what to say.
+>→ `outputs/vera/contractor_conversation_tree_2026-05-18.md`
 >
->• *Tommy — One-pager leave-behind*: Print-ready sales leave-behind (packages, why Forest City, social proof, CTA). Hand this after every estimate. → `outputs/tommy/one_pager_leave_behind_2026-05-18.md`
+>Opening text (send now): *"Hey, it's Bradley from Forest City Power Washing — following up on the referral partnership. Still open to that? Happy to jump on a quick call this week."*
 >
->• *Danny — LinkedIn DM Protocol*: Full decision tree for working the 13 hot leads on LinkedIn. 4-step flow: connect → open question → 3 response branches → booking ask. → `outputs/danny/linkedin_hot_lead_dm_protocol_2026-05-18.md`
->
->• *Donna — Summit County expansion plan*: 60-day playbook for Akron/Fairlawn/Stow. Danny is targeting Summit County this week. Target segments, neighborhoods, Facebook groups, success metrics. → `outputs/donna/county_expansion_summit_2026-05-18.md`
->
->• *Marcus — Seasonal VOC bulletin*: 6 customer trigger patterns active right now in NE Ohio (algae shock, company-coming urgency, neighbor effect, procrastination, roof fear, listing deadline). Competitor gap summary. For Tommy/Jasmine/Rick to use immediately. → `outputs/marcus/voc_seasonal_bulletin_may_2026.md`
+>Two texts. Five minutes. These are the warmest leads in the office.
 ---
-💡 *Vera — Proposal | Sequence Rewrite (Run 7 — Still Waiting)*
->Idea: Replace touch 1 body copy in all 3 Mixmax sequences with rewrites in `outputs/vera/sequence_rewrites_proposal_2026-05-18.md`
->Why: 45 enrolled. 42% open rate. 0% reply rate. The subject lines are working — the body isn't converting. 13 contacts opened 2+ times and never replied.
->Impact: Even 3% reply rate = 1–2 warm conversations from the existing list. Zero cost, zero new contacts needed.
->Action: Reply YES → I'll give you step-by-step copy/paste instructions for Mixmax.
+🔧 *Vera — Auto-Upgrade | workers/workiz_report.py*
+>Changed: Removed hardcoded Workiz API token and secret fallback values from source code. Was: `os.environ.get('WORKIZ_API_TOKEN', 'api_rays65...')`. Now: `os.environ.get('WORKIZ_API_TOKEN', '')`.
+>Why: Both Workiz credentials were committed to GitHub in plaintext as fallback values — same security exposure as the MIXMAX_TOKEN we fixed in run 7. Credentials should only live in .env (gitignored).
+>File: workers/workiz_report.py
 ---
-💡 *Vera — Proposal | Set Up Local Cron Jobs (5 minutes)*
->Idea: Run `crontab -e` on your Mac and paste the cron schedule from CLAUDE.md.
->Why: Danny + Carla lead pulls, Nina reports, and Workiz reports all require local execution (APIs are blocked in cloud). Right now none of them are running on schedule. The leads are sitting idle.
->Impact: Weekly automated lead pulls to Mixmax, daily hot leads reports, Workiz job data.
->Action: Open CLAUDE.md → find "Local Scheduling" section → copy/paste into `crontab -e`. Takes 5 minutes.
+🔧 *Vera — Auto-Upgrade | workers/lead_pipeline.py + agents/danny.md*
+>Changed: Danny's Apollo search now passes `q_organization_keyword_tags` with 8 property management company keywords (property management, hoa management, association management, community management, etc.).
+>Why: Danny was searching by contact title only. This missed decision-makers at HOA management companies where the contact is "owner" or "VP operations" but the company clearly manages properties. Org-level filtering gets better quality hits from the same API call.
+>Files: workers/lead_pipeline.py, agents/danny.md
 ---
-✅ *Vera — Scan Complete 2026-05-18 (Run 7)*
->4 auto-upgrades shipped | 5 new content assets ready | 2 proposals awaiting YES | 17 issues resolved | 13 open
+📄 *Vera — New Deliverables | Run 8 (4 Assets Ready)*
+
+>• *Tommy — Google Review Request Sequence*: 3-touch post-job sequence (same-day text + 3-day email + 7-day text for $500+ jobs). Every completed job = potential 5-star review. GBP ranking improves directly with review volume. Ready to use immediately. → `outputs/tommy/review_request_sequence_2026-05-18.md`
+>
+>• *Marcus — Google Business Profile Optimization Guide*: Complete playbook for the free lead channel we're ignoring. Profile completeness, 2-3 photos/week, weekly Google Posts, review response templates with keyword embedding, Q&A seeding. Competitors have < 10 photos. 20+ reviews puts Forest City in the Google 3-pack. → `outputs/marcus/gbp_optimization_guide_2026-05-18.md`
+>
+>• *Donna — Annual Plan Early Conversion Campaign Brief*: Build the assets now (May-June), launch in August. 2-visit Annual Plan — spring + pre-winter. 15% conversion from 2026 peak customers = $4,000+ in guaranteed recurring revenue. Includes full channel mix, copy brief for Tommy, ad brief for Rick, and success metrics. → `outputs/donna/annual_plan_campaign_brief_2026-05-18.md`
+>
+>• *Vera — Contractor Conversation Tree*: Full scripted follow-through for Bulletproof Lawncare and Damrons Landscaping. Every reply branch covered: yes, yes-but-later, "what's the commission?", "I don't do referrals," no reply, decline. Call script included. → `outputs/vera/contractor_conversation_tree_2026-05-18.md`
+---
+💡 *Vera — New Proposal | Google Business Profile (Free, Immediate)*
+>Idea: Activate Google Business Profile as a lead channel — weekly posts, 2-3 photos from every job, review responses, Q&A seeding.
+>Why: It's peak search season. Homeowners are Googling "power washing Cleveland" right now. Forest City's GBP is dormant. Competitors have < 10 photos and < 50% review response rates — we can own this for free.
+>Impact: 20+ reviews + weekly posts = Google 3-pack eligibility = organic homeowner leads without ad spend.
+>Action needed: Bradley opens business.google.com and completes the 30-minute profile completeness checklist from `outputs/marcus/gbp_optimization_guide_2026-05-18.md`. No approval needed from me — just do it.
+---
+💡 *Vera — Proposal | Annual Plan Email Sequence (Tommy writes now, launches August)*
+>Idea: Tommy writes the 3-touch Annual Plan email sequence + post-job text script now, while we're in peak season.
+>Why: August is when to launch the annual conversion push. If the copy isn't written by then, Bradley will be too busy in the field to think about it. Takes 1–2 hours for Tommy now. Pays off in recurring revenue for 3+ years.
+>Impact: Even 10 customers on Annual Plan = $4,000+ guaranteed recurring revenue per year.
+>Action: Reply YES → Tommy starts the sequence this week. Also need: Bradley confirms Annual Plan pricing (what's the fall discount?).
+---
+✅ *Vera — Scan Complete 2026-05-18 (Run 8)*
+>2 auto-upgrades shipped | 4 new deliverables | 2 new proposals | 19 issues resolved | 15 open
+>
+>All 6 key ghost-fix markers verified — no code regressions.
 >
 >Top 3 actions right now:
->1. 📱 TEXT Bulletproof Lawncare + Damrons Landscaping — templates ready, 5 minutes, real money.
->2. ⚙️ Set up cron jobs (5 minutes) — lead pulls and Nina reports need local scheduling or they never run.
->3. 💬 Work the 13 LinkedIn hot leads using the new DM protocol — 3 connects per day, decision tree is written.
+>1. 📱 TEXT Bulletproof Lawncare + Damrons Landscaping — conversation tree is fully scripted, no thinking required.
+>2. 🌐 Set up Google Business Profile — 30 minutes, free, immediate impact on peak-season homeowner leads.
+>3. ⚙️ Set up local cron jobs — paste from CLAUDE.md into `crontab -e` to get lead pulls + Nina reports running automatically.

@@ -30,8 +30,8 @@ if _env_file.exists():
             _k, _v = _line.split('=', 1)
             os.environ.setdefault(_k.strip(), _v.strip())
 
-WORKIZ_TOKEN = os.environ.get('WORKIZ_API_TOKEN', 'api_rays65iotbi9jpu28uden04mmv3n9rzu')
-WORKIZ_SECRET = os.environ.get('WORKIZ_API_SECRET', 'sec_252658762260613604129161295')
+WORKIZ_TOKEN = os.environ.get('WORKIZ_API_TOKEN', '')
+WORKIZ_SECRET = os.environ.get('WORKIZ_API_SECRET', '')
 
 BASE_URL = f"https://api.workiz.com/api/v1/{WORKIZ_TOKEN}"
 JOB_TYPE_FILTER = "Power Washing"

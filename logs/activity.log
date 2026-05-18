@@ -176,3 +176,13 @@
 [2026-05-18 23:59] Marcus | Seasonal VOC bulletin — 6 customer triggers active May-June NE Ohio + PM triggers + competitor gap summary | outputs/marcus/voc_seasonal_bulletin_may_2026.md | Done
 [2026-05-18 23:59] Vera | Updated open_issues.md — 2 new RESOLVED (MIXMAX_TOKEN hardcode, Jasmine seasonal posts), 1 new OPEN (Marcus fresh web intel), all run-7 fixes verified | outputs/vera/open_issues.md | Done
 [2026-05-18 23:59] Vera | Wrote pending_slack_messages.md — 3 auto-upgrade notices, 5-asset deliverable roundup, 2 proposals, 1 urgent contractor escalation, 1 scan summary | outputs/vera/pending_slack_messages.md | Done
+[2026-05-18 23:16] Vera | Auto-upgrade: workiz_report.py — removed hardcoded WORKIZ_TOKEN and WORKIZ_SECRET fallback values (live credentials were committed to GitHub) | workers/workiz_report.py | Done
+[2026-05-18 23:16] Vera | Auto-upgrade: lead_pipeline.py — added DANNY_ORG_KEYWORDS list (8 PM company tags); run_danny() now passes to Apollo q_organization_keyword_tags — catches HOA firms where contact title isn't "property manager" | workers/lead_pipeline.py | Done
+[2026-05-18 23:16] Vera | Auto-upgrade: agents/danny.md — documented org keyword filtering in Apollo search section | agents/danny.md | Done
+[2026-05-18 23:16] Vera | Ghost fix verification (run 8): all 6 previous key fixes + 2 new run-8 fixes confirmed present in code — no regressions | multiple files | Done
+[2026-05-18 23:16] Tommy | Review request sequence — 3-touch post-job (same-day text, 3-day email, 7-day text for 00+ jobs) | outputs/tommy/review_request_sequence_2026-05-18.md | Done
+[2026-05-18 23:16] Marcus | GBP optimization guide — profile completeness, weekly posts, photo cadence, review responses, Q&A seeding, competitor gap | outputs/marcus/gbp_optimization_guide_2026-05-18.md | Done
+[2026-05-18 23:16] Donna | Annual Plan early conversion campaign brief — May-June build, August launch, full channel mix and copy brief | outputs/donna/annual_plan_campaign_brief_2026-05-18.md | Done
+[2026-05-18 23:16] Vera | Contractor conversation tree — full scripted follow-through for Bulletproof Lawncare + Damrons Landscaping, every reply branch covered | outputs/vera/contractor_conversation_tree_2026-05-18.md | Done
+[2026-05-18 23:16] Vera | Updated open_issues.md — 2 new RESOLVED (Workiz credentials, Danny org keywords), 2 new OPEN (GBP unmanaged, no review requests), all run-8 fixes verified | outputs/vera/open_issues.md | Done
+[2026-05-18 23:16] Vera | Wrote pending_slack_messages.md — 2 auto-upgrades, 4 deliverable roundup, 2 proposals, 1 urgent contractor escalation, 1 scan summary | outputs/vera/pending_slack_messages.md | Done

@@ -79,6 +79,15 @@ DANNY_TITLES = [
     'residential manager', 'property director',
 ]
 
+# Org-level keywords passed to Apollo q_organization_keyword_tags.
+# Catches companies where the decision-maker's title isn't explicitly "property manager"
+# but the company clearly operates in that space (e.g. "owner" at an HOA management firm).
+DANNY_ORG_KEYWORDS = [
+    'property management', 'association management', 'hoa management',
+    'community management', 'apartment management', 'condo management',
+    'real estate management', 'facilities management',
+]
+
 CARLA_SEARCHES = [
     {'type': 'contractors', 'titles': ['owner', 'president', 'founder'],
      'keywords': ['siding', 'exterior contractor', 'roofing', 'gutters', 'painting',
@@ -224,7 +233,7 @@ def run_danny():
     search = DANNY_SEARCHES[week_num % len(DANNY_SEARCHES)]
     print(f'  County batch: {search["label"]}')
 
-    people = apollo_search(DANNY_TITLES, search['counties'], per_page=25)
+    people = apollo_search(DANNY_TITLES, search['counties'], per_page=25, keywords=DANNY_ORG_KEYWORDS)
     print(f'  Found {len(people)} people from Apollo')
 
     new_leads = []

@@ -26,10 +26,13 @@ Example payload for property managers in Cuyahoga County:
 ```json
 {
   "person_titles": ["property manager", "facility manager", "building manager"],
+  "q_organization_keyword_tags": ["property management", "hoa management", "association management", "community management"],
   "person_locations": ["Cleveland, Ohio", "Cuyahoga County, Ohio"],
-  "per_page": 50
+  "per_page": 25
 }
 ```
+
+**Always pass `q_organization_keyword_tags`** — this catches decision-makers at property management companies where the contact's title isn't "property manager" (e.g., owner or VP at a 10-property HOA management firm).
 
 Target titles:
 - Property Manager, Property Management Director, Property Director
