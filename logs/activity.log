@@ -166,3 +166,13 @@
 [2026-05-18 23:00] Jasmine | June content calendar — 4 weeks Facebook + LinkedIn, peak season hooks, VOC-informed copy | outputs/jasmine/content_calendar_june_2026-05-18.md | Done
 [2026-05-18 23:00] Vera | Updated open_issues.md — 3 new RESOLVED (workiz sentinel, cache JSON parse, server stale detection), all run-5 fixes verified, 14 open issues tracked | outputs/vera/open_issues.md | Done
 [2026-05-18 23:00] Vera | Wrote pending_slack_messages.md — 3 auto-upgrades, 4 deliverable notices, 2 proposals, 1 scan summary | outputs/vera/pending_slack_messages.md | Done
+[2026-05-18 23:59] Vera | Auto-upgrade: integrations/mixmax.py — removed hardcoded MIXMAX_TOKEN fallback (live token was committed to GitHub plaintext) | integrations/mixmax.py | Done
+[2026-05-18 23:59] Vera | Auto-upgrade: workers/jasmine_flyer.py — write_facebook_post() now selects seasonal hook+CTA by month (May-June algae urgency, summer pre-cookout, fall pre-winter, winter evergreen) | workers/jasmine_flyer.py | Done
+[2026-05-18 23:59] Vera | Auto-upgrade: CLAUDE.md — added Local Scheduling section with exact crontab commands for all API-dependent workers | CLAUDE.md | Done
+[2026-05-18 23:59] Tommy | Peak season homepage headline refresh — 3 options (urgency, pain/outcome, local trust) + services page subheads + revised CTA | outputs/tommy/homepage_headlines_peak_season_2026-05-18.md | Done
+[2026-05-18 23:59] Tommy | One-pager leave-behind — print-ready sales asset (packages, why us, social proof, CTA) | outputs/tommy/one_pager_leave_behind_2026-05-18.md | Done
+[2026-05-18 23:59] Danny | LinkedIn hot lead DM protocol — 4-step decision tree for 13 hot leads (connect → open question → 3 branches → booking ask) | outputs/danny/linkedin_hot_lead_dm_protocol_2026-05-18.md | Done
+[2026-05-18 23:59] Donna | Summit County 60-day expansion plan — Akron/Fairlawn/Stow targeting, neighborhoods, Facebook groups, success metrics | outputs/donna/county_expansion_summit_2026-05-18.md | Done
+[2026-05-18 23:59] Marcus | Seasonal VOC bulletin — 6 customer triggers active May-June NE Ohio + PM triggers + competitor gap summary | outputs/marcus/voc_seasonal_bulletin_may_2026.md | Done
+[2026-05-18 23:59] Vera | Updated open_issues.md — 2 new RESOLVED (MIXMAX_TOKEN hardcode, Jasmine seasonal posts), 1 new OPEN (Marcus fresh web intel), all run-7 fixes verified | outputs/vera/open_issues.md | Done
+[2026-05-18 23:59] Vera | Wrote pending_slack_messages.md — 3 auto-upgrade notices, 5-asset deliverable roundup, 2 proposals, 1 urgent contractor escalation, 1 scan summary | outputs/vera/pending_slack_messages.md | Done

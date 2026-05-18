@@ -105,3 +105,28 @@ When Bradley types "status" or "what is everyone working on", read `/logs/activi
 - What each worker completed (last 7 days)
 - What's currently in progress
 - What's queued or overdue
+
+## Local Scheduling (Cron Jobs)
+
+All API-dependent workers must run **locally** — Apollo, Workiz, Mixmax, and Slack are blocked in the cloud execution environment.
+
+Add these to your local crontab (`crontab -e`) on your Mac:
+
+```
+# Lead Pipeline — Danny + Carla — every Monday at 7am
+0 7 * * 1 cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both >> logs/cron.log 2>&1
+
+# Nina Daily Hot Leads — weekdays at 8am
+0 8 * * 1-5 cd /Users/bradleyneal/forestcity && python3 workers/nina_report.py daily >> logs/cron.log 2>&1
+
+# Nina Weekly Pipeline Report — every Monday at 8:30am
+30 8 * * 1 cd /Users/bradleyneal/forestcity && python3 workers/nina_report.py weekly >> logs/cron.log 2>&1
+
+# Workiz Daily Report — weekdays at 9am
+0 9 * * 1-5 cd /Users/bradleyneal/forestcity && python3 workers/workiz_report.py daily >> logs/cron.log 2>&1
+
+# Vera Relay (Slack message delivery) — every 5 minutes
+*/5 * * * * cd /Users/bradleyneal/forestcity && python3 workers/vera_relay.py >> logs/cron.log 2>&1
+```
+
+To check if cron is running: `cat logs/cron.log | tail -50`

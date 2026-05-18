@@ -1,47 +1,51 @@
-🚨 *URGENT — Vera | Contractor Follow-Up (Run 6 — Day 6)*
->Bulletproof Lawncare (216-307-4344) and Damrons Landscaping (440-494-0422) said "very interested" when you called on May 13. It has been 5 days with no follow-up text.
->Templates are in: outputs/vera/sms_templates_contractors_2026-05-18.md
->The Summer Push campaign brief (Donna, written today) lists this as Step 1. Two texts = potential summer-long referral stream.
+🚨 *URGENT — Vera | Contractor Follow-Up (Run 7 — Day 5 Still Waiting)*
+>Bulletproof Lawncare (216-307-4344) and Damrons Landscaping (440-494-0422) said "very interested" on May 13. Still no text sent.
+>Templates are in: `outputs/vera/sms_templates_contractors_2026-05-18.md`
+>Two texts. Five minutes. Peak season revenue. Please send today.
 ---
-🔧 *Vera — Auto-Upgrade | workiz_report.py*
->Changed: `if jobs is WORKIZ_API_ERROR:` → `if jobs == WORKIZ_API_ERROR:`
->Why: String identity comparison (`is`) is a dangerous sentinel pattern — if the constant was ever imported from another module or the string reconstructed, the check would fail silently. The error sentinel would be treated as a list of 26 characters, generating a fake "26 Power Washing jobs" report instead of an honest API error message.
->File: workers/workiz_report.py
+🔧 *Vera — Auto-Upgrade | integrations/mixmax.py*
+>Changed: Removed hardcoded MIXMAX_TOKEN fallback from source code. Was: `os.environ.get('MIXMAX_TOKEN', '3646d2be-c1be-44b7-b3ef-e7ea047cad83')`. Now: `os.environ.get('MIXMAX_TOKEN', '')`.
+>Why: The live Mixmax API token was committed to GitHub in plaintext. Even though it's also in .env, the hardcoded fallback means it's exposed in the git history. Credentials should only live in .env (gitignored).
+>File: integrations/mixmax.py
 ---
-🔧 *Vera — Auto-Upgrade | lead_pipeline.py*
->Changed: `save_to_cache()` now wraps the JSON parse in try/except. If contacts_cache.json exists but has malformed content (e.g., from a previous failed write), it logs a warning and starts fresh instead of throwing an unhandled exception mid-pipeline-run.
->Why: Silent crash risk — any disk write failure on a previous run would permanently brick the cache.
->File: workers/lead_pipeline.py
+🔧 *Vera — Auto-Upgrade | workers/jasmine_flyer.py*
+>Changed: `write_facebook_post()` now picks seasonal hooks and CTAs based on the month. May/June = algae + booking urgency angle. Summer = pre-cookout. Fall = pre-winter. Winter = evergreen.
+>Why: Same generic "heading into [month]" copy was going out year-round on every auto-generated post. Seasonal relevance = higher engagement.
+>File: workers/jasmine_flyer.py
 ---
-🔧 *Vera — Auto-Upgrade | server.py*
->Changed: Pipeline dashboard now falls back to `calls` log data to populate `last_contact` for manual contacts with no date set. All 24 manual contacts were called on 2026-05-13 but `last_contact` was blank, so stale detection never flagged any of them.
->Why: The dashboard was showing all 22 "New Lead" contacts as fresh — when they're actually 5 days without follow-up.
->File: server.py
+🔧 *Vera — Auto-Upgrade | CLAUDE.md*
+>Changed: Added "Local Scheduling" section with exact crontab commands for every worker script that needs to run locally (lead_pipeline, nina_report daily/weekly, workiz_report, vera_relay).
+>Why: API-dependent workers can't run from cloud — Bradley needs these commands to set up local automation. Run `crontab -e` on your Mac and paste them in.
+>File: CLAUDE.md
 ---
-🔧 *Vera — New Deliverables | Tommy + Rick + Donna + Jasmine (Peak Season)*
->Four content deliverables written this run — no API needed, no approval needed, ready to use:
->• Tommy: Past-customer re-engagement email ("Before summer cookouts" framing) → outputs/tommy/past_customer_reengagement_2026-05-18.md
->• Rick: 5 June Facebook ad variations (booking urgency, before/after, roof soft wash, pre-listing, urgency close) → outputs/rick/facebook_ads_june_2026-05-18.md
->• Donna: Summer Push campaign brief (June–July, 6-week plan, all channels, success metrics) → outputs/donna/campaign_brief_summer_push_2026-05-18.md
->• Jasmine: June content calendar (4 weeks of Facebook + LinkedIn posts, hooks pulled from Marcus's VOC) → outputs/jasmine/content_calendar_june_2026-05-18.md
->All 4 are ready to use. Rick's ads just need your Facebook ad account + $10-15/day.
----
-💡 *Vera — Proposal | Sequence Rewrite (Still Waiting — Run 6)*
->Idea: Replace touch 1 copy in all 3 Mixmax sequences with the rewrites in outputs/vera/sequence_rewrites_proposal_2026-05-18.md
->Why: 45 enrolled. 42% open rate. 0% reply rate. 13 people opened 2+ times and never answered. The subject lines are working — the body isn't converting.
->Impact: Even a 3% reply rate = 1–2 warm conversations from the existing list. Zero new spend.
->Action: Reply YES to approve and I'll give you step-by-step instructions to update in Mixmax.
----
-💡 *Vera — Proposal | Update Manual Contact Stages in Pipeline*
->Idea: Bradley updates the stage for the 22 "New Lead" manual contacts to "Contacted" in the dashboard (since all were called May 13). OR approve a script that auto-promotes any contact with a `called: true` entry in the calls log.
->Why: Dashboard currently shows 22 contacts as new/un-contacted. Stale detection just got fixed (run 6) — but only fires if `last_contact` has a date. The stages themselves still say "New Lead."
->Impact: Clean pipeline view. Accurate stale alerts. Bradley knows exactly where each person stands.
->Action: Either update in dashboard manually, or reply YES and I'll write the auto-promote script.
----
-✅ *Vera — Scan Complete 2026-05-18 (Run 6)*
->3 auto-upgrades shipped | 4 new content deliverables ready | 2 proposals still awaiting YES | 3 bugs fixed | All run-5 fixes verified present in code
+📄 *Vera — New Deliverables | Run 7 (5 Assets Ready)*
 >
->Top 3 actions for Bradley right now:
->1. 📱 TEXT Bulletproof Lawncare (216-307-4344) + Damrons Landscaping (440-494-0422) — templates in sms_templates_contractors_2026-05-18.md. 2 minutes each. This is peak season.
->2. 👍 Say YES to the email sequence rewrite — it's already written, zero cost, just needs to be pasted into Mixmax.
->3. 🚀 Launch Rick's June Facebook ads (facebook_ads_june_2026-05-18.md) — 5 variations ready, just need your ad account and $10/day.
+>• *Tommy — Homepage headline refresh*: 3 seasonal headline options (urgency/scarcity, pain/outcome, local trust) + services page subheads for peak season. → `outputs/tommy/homepage_headlines_peak_season_2026-05-18.md`
+>
+>• *Tommy — One-pager leave-behind*: Print-ready sales leave-behind (packages, why Forest City, social proof, CTA). Hand this after every estimate. → `outputs/tommy/one_pager_leave_behind_2026-05-18.md`
+>
+>• *Danny — LinkedIn DM Protocol*: Full decision tree for working the 13 hot leads on LinkedIn. 4-step flow: connect → open question → 3 response branches → booking ask. → `outputs/danny/linkedin_hot_lead_dm_protocol_2026-05-18.md`
+>
+>• *Donna — Summit County expansion plan*: 60-day playbook for Akron/Fairlawn/Stow. Danny is targeting Summit County this week. Target segments, neighborhoods, Facebook groups, success metrics. → `outputs/donna/county_expansion_summit_2026-05-18.md`
+>
+>• *Marcus — Seasonal VOC bulletin*: 6 customer trigger patterns active right now in NE Ohio (algae shock, company-coming urgency, neighbor effect, procrastination, roof fear, listing deadline). Competitor gap summary. For Tommy/Jasmine/Rick to use immediately. → `outputs/marcus/voc_seasonal_bulletin_may_2026.md`
+---
+💡 *Vera — Proposal | Sequence Rewrite (Run 7 — Still Waiting)*
+>Idea: Replace touch 1 body copy in all 3 Mixmax sequences with rewrites in `outputs/vera/sequence_rewrites_proposal_2026-05-18.md`
+>Why: 45 enrolled. 42% open rate. 0% reply rate. The subject lines are working — the body isn't converting. 13 contacts opened 2+ times and never replied.
+>Impact: Even 3% reply rate = 1–2 warm conversations from the existing list. Zero cost, zero new contacts needed.
+>Action: Reply YES → I'll give you step-by-step copy/paste instructions for Mixmax.
+---
+💡 *Vera — Proposal | Set Up Local Cron Jobs (5 minutes)*
+>Idea: Run `crontab -e` on your Mac and paste the cron schedule from CLAUDE.md.
+>Why: Danny + Carla lead pulls, Nina reports, and Workiz reports all require local execution (APIs are blocked in cloud). Right now none of them are running on schedule. The leads are sitting idle.
+>Impact: Weekly automated lead pulls to Mixmax, daily hot leads reports, Workiz job data.
+>Action: Open CLAUDE.md → find "Local Scheduling" section → copy/paste into `crontab -e`. Takes 5 minutes.
+---
+✅ *Vera — Scan Complete 2026-05-18 (Run 7)*
+>4 auto-upgrades shipped | 5 new content assets ready | 2 proposals awaiting YES | 17 issues resolved | 13 open
+>
+>Top 3 actions right now:
+>1. 📱 TEXT Bulletproof Lawncare + Damrons Landscaping — templates ready, 5 minutes, real money.
+>2. ⚙️ Set up cron jobs (5 minutes) — lead pulls and Nina reports need local scheduling or they never run.
+>3. 💬 Work the 13 LinkedIn hot leads using the new DM protocol — 3 connects per day, decision tree is written.

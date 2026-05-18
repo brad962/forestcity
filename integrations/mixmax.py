@@ -22,7 +22,7 @@ def _load_env():
 
 _load_env()
 
-MIXMAX_TOKEN = os.environ.get('MIXMAX_TOKEN', '3646d2be-c1be-44b7-b3ef-e7ea047cad83')
+MIXMAX_TOKEN = os.environ.get('MIXMAX_TOKEN', '')
 BASE_URL = 'https://api.mixmax.com/v1'
 
 # Sequence IDs (created 2026-05-12)

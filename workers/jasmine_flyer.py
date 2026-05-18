@@ -144,19 +144,33 @@ def write_facebook_post(description: str, date: str) -> str:
     """
     Generate a Facebook post from a job description using Jasmine's voice.
     Format: scroll-stopping hook → job details → soft CTA → hashtags
+    Varies hook and CTA by month for seasonal relevance.
     """
-    month = datetime.strptime(date, "%Y-%m-%d").strftime("%B")
+    dt    = datetime.strptime(date, "%Y-%m-%d")
+    month = dt.strftime("%B")
+    mo    = dt.month
     desc  = description.strip()
 
-    post = f"""Look at this transformation 👀
+    if mo in (3, 4, 5):
+        hook = "The algae doesn't care that it's spring. Your neighbors do."
+        cta  = f"We're booking into {month} now — DM us or comment QUOTE to get on the schedule before the summer rush."
+    elif mo in (6, 7, 8):
+        hook = "Before the cookout. Before the guests. Before the photos."
+        cta  = "Summer is half over before you know it — DM us or comment QUOTE and we'll squeeze you in."
+    elif mo in (9, 10):
+        hook = "One job before winter and your house is protected all season."
+        cta  = "Fall slots go fast — DM us or comment QUOTE to lock in your date."
+    else:
+        hook = "Clean house. Less stress. One afternoon."
+        cta  = "DM us or comment QUOTE to get on the schedule."
+
+    post = f"""{hook}
 
 {desc}
 
-This is exactly why we do what we do. One visit and it looks like a completely different property.
+One visit and it looks like a completely different property. We serve the greater Cleveland area and we're booking now.
 
-If your home, driveway, or roof is looking rough heading into {month} — give us a call. We serve the greater Cleveland area and we're booking now.
-
-📞 DM us or comment below to get on the schedule.
+📞 {cta}
 
 #ClevelandOhio #NortheastOhio #PowerWashing #CurbAppeal #ForestCityPowerWashing"""
 
