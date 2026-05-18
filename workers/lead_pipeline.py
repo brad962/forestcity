@@ -346,6 +346,92 @@ def run_carla():
     return all_new
 
 
+def get_mixmax_enrolled_emails():
+    """Pull the set of emails currently confirmed in all 3 Mixmax sequences."""
+    seq_ids = [
+        '6a048cfc110bc620ca0f1aee',  # Property Managers
+        '6a048cfba81429e5dfe55010',  # Realtors
+        '6a048cfd624a5989a68ba16c',  # Contractors
+    ]
+    enrolled = set()
+    for seq_id in seq_ids:
+        url = f'https://api.mixmax.com/v1/sequences/{seq_id}/recipients?apiToken={MIXMAX_TOKEN}&limit=200'
+        try:
+            with urllib.request.urlopen(url, timeout=10) as resp:
+                data = json.loads(resp.read())
+            recs = data if isinstance(data, list) else data.get('results', [])
+            for r in recs:
+                email = (r.get('to') or {}).get('email', '') or r.get('email', '')
+                if email:
+                    enrolled.add(email.lower())
+        except Exception:
+            pass
+    return enrolled
+
+
+def verify_and_repair_enrollment():
+    """
+    After every pipeline run: cross-check the contacts cache against live
+    Mixmax data and re-enroll anyone who slipped through the cracks.
+    Runs automatically at the end of every lead pull.
+    """
+    print('\n🔍 Verifying Mixmax enrollment...')
+
+    if not CACHE_FILE.exists():
+        print('  No cache file — skipping.')
+        return
+
+    confirmed = get_mixmax_enrolled_emails()
+    print(f'  Confirmed in Mixmax: {len(confirmed)}')
+
+    cache = json.loads(CACHE_FILE.read_text())
+    contacts = cache.get('contacts', [])
+
+    # Find contacts with an email that aren't in Mixmax yet
+    missing = [
+        c for c in contacts
+        if c.get('email') and c['email'].lower() not in confirmed
+    ]
+    print(f'  Missing from Mixmax: {len(missing)}')
+
+    if not missing:
+        print('  ✅ All contacts confirmed in Mixmax.')
+        log('pipeline', 'Enrollment verification — all contacts confirmed', 'contacts_cache.json')
+        return
+
+    # Re-enroll missing contacts
+    sys.path.insert(0, str(BASE_DIR))
+    from integrations.mixmax import enroll_lead
+
+    repaired = 0
+    failed = 0
+    for c in missing:
+        result = enroll_lead(c)
+        if result.get('status') == 'enrolled':
+            c['mixmax_enrolled'] = True
+            c['mixmax_sequence'] = result.get('sequence', '')
+            repaired += 1
+            print(f'  ↻ Re-enrolled: {c["first_name"]} {c["last_name"]} ({c["email"]})')
+        else:
+            failed += 1
+            c['mixmax_enrolled'] = False  # mark accurately in cache
+        time.sleep(0.3)
+
+    # Save corrected cache
+    CACHE_FILE.write_text(json.dumps(cache, indent=2))
+
+    summary = f'Enrollment repair — {repaired} re-enrolled, {failed} failed (no email or rejected)'
+    log('pipeline', summary, 'contacts_cache.json')
+    print(f'\n  ✅ {repaired} re-enrolled | {failed} could not be enrolled')
+
+    if repaired > 0:
+        notify_slack(
+            f'🔧 *Pipeline — Enrollment Repair*\n'
+            f'>{repaired} contacts re-enrolled in Mixmax after verification check.\n'
+            f'>{failed} contacts could not be enrolled (no email or rejected by Mixmax).'
+        )
+
+
 if __name__ == '__main__':
     mode = sys.argv[1] if len(sys.argv) > 1 else 'both'
     print(f'\n=== Forest City Lead Pipeline — {datetime.now().strftime("%Y-%m-%d %H:%M")} ===')
@@ -354,5 +440,8 @@ if __name__ == '__main__':
         run_danny()
     if mode in ('carla', 'both'):
         run_carla()
+
+    # Always verify enrollment after pulling leads — catches any silent failures
+    verify_and_repair_enrollment()
 
     print('\n✅ Lead pipeline complete.')
