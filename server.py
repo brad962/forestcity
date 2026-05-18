@@ -331,9 +331,14 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                     continue
 
             # Include manually imported contacts from pipeline_data.json
+            calls_data = pipeline.get('calls', {})
             for mc in pipeline.get('manual_contacts', []):
                 stage       = mc.get('stage', 'New Lead')
                 last_contact = mc.get('last_contact', '')
+                # Fall back to calls log for last_contact so stale detection works
+                if not last_contact:
+                    call_entry = calls_data.get(mc.get('id', ''), {})
+                    last_contact = call_entry.get('called_at', '')
                 stale = False
                 if last_contact:
                     try:

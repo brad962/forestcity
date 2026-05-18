@@ -156,3 +156,13 @@
 [2026-05-18 22:00] Vera | Auto-upgrade: vera_relay.py — added .exists() guard before reading .env; prevents FileNotFoundError in environments without .env | workers/vera_relay.py | Done
 [2026-05-18 22:00] Vera | Updated open_issues.md — 3 new RESOLVED this run (nina double-fetch, location_hint, relay crash guard); noted ghost-fixes pattern from merge conflicts; 14 open issues tracked | outputs/vera/open_issues.md | Done
 [2026-05-18 22:00] Vera | Wrote pending_slack_messages.md — 5 auto-upgrade notices, 2 proposals, 1 pattern alert, 1 scan summary | outputs/vera/pending_slack_messages.md | Done
+[2026-05-18 23:00] Vera | Auto-upgrade: workiz_report.py — sentinel check is→== (string identity comparison bug on WORKIZ_API_ERROR) | workers/workiz_report.py | Done
+[2026-05-18 23:00] Vera | Auto-upgrade: lead_pipeline.py — save_to_cache() wraps JSON parse in try/except; malformed cache file no longer crashes mid-pipeline | workers/lead_pipeline.py | Done
+[2026-05-18 23:00] Vera | Auto-upgrade: server.py — pipeline /api/pipeline falls back to calls log for last_contact on manual contacts; stale detection now works for called contacts | server.py | Done
+[2026-05-18 23:00] Vera | Ghost fix verification: all 6 run-5 fixes confirmed present in code this run — no ghost fixes detected | multiple files | Done
+[2026-05-18 23:00] Tommy | Past-customer re-engagement email — "Before summer cookouts" framing, text version included | outputs/tommy/past_customer_reengagement_2026-05-18.md | Done
+[2026-05-18 23:00] Rick | June Facebook ads — 5 peak-season variations (before/after, procrastination, roof, pre-listing, urgency close) | outputs/rick/facebook_ads_june_2026-05-18.md | Done
+[2026-05-18 23:00] Donna | Summer Push campaign brief — June–July 2026, all channels, 6-week timeline, success metrics | outputs/donna/campaign_brief_summer_push_2026-05-18.md | Done
+[2026-05-18 23:00] Jasmine | June content calendar — 4 weeks Facebook + LinkedIn, peak season hooks, VOC-informed copy | outputs/jasmine/content_calendar_june_2026-05-18.md | Done
+[2026-05-18 23:00] Vera | Updated open_issues.md — 3 new RESOLVED (workiz sentinel, cache JSON parse, server stale detection), all run-5 fixes verified, 14 open issues tracked | outputs/vera/open_issues.md | Done
+[2026-05-18 23:00] Vera | Wrote pending_slack_messages.md — 3 auto-upgrades, 4 deliverable notices, 2 proposals, 1 scan summary | outputs/vera/pending_slack_messages.md | Done

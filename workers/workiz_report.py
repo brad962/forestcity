@@ -83,7 +83,7 @@ def generate_report(mode='daily'):
     today = datetime.date.today()
     jobs = fetch_all_jobs()
 
-    if jobs is WORKIZ_API_ERROR:
+    if jobs == WORKIZ_API_ERROR:
         return {
             'report': f"# Workiz — Power Washing Jobs\n**Date:** {today}\n\n⚠️ **Workiz API unavailable** — could not connect (403 or network error). This typically happens in the cloud execution environment where Workiz is not on the allowlist. Run locally to get job data.\n",
             'jobs': [],

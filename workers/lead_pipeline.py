@@ -194,7 +194,14 @@ def save_to_cache(new_contacts):
     """Append new contacts to the cache file."""
     if not new_contacts:
         return
-    cache = json.loads(CACHE_FILE.read_text()) if CACHE_FILE.exists() else {'contacts': []}
+    if CACHE_FILE.exists():
+        try:
+            cache = json.loads(CACHE_FILE.read_text())
+        except (json.JSONDecodeError, Exception):
+            print('  ⚠️ contacts_cache.json was malformed — starting fresh.')
+            cache = {'contacts': []}
+    else:
+        cache = {'contacts': []}
     cache['contacts'].extend(new_contacts)
     cache['updated'] = time.time()
     CACHE_FILE.write_text(json.dumps(cache, indent=2))
