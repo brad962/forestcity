@@ -1,19 +1,19 @@
-# Facebook Posts — Week of May 18, 2026
-*Jasmine Burke | Forest City Power Washing*
+# Facebook Posts — Week of May 25, 2026
+*Jasmine Burke | Forest City Power Washing | Written 2026-05-18*
 
 ---
 
 ## Post 1 — Before/After
 
-We pulled up to this house in Strongsville and honestly… we couldn't believe it had been let go this long.
+We pulled up to this Medina County house and could barely see the original siding color underneath all the green.
 
-Green siding. Black streaks crawling up the roof. A driveway that hadn't seen a pressure washer since who knows when. The homeowner told us they'd been meaning to get it done for years. We hear that a lot.
+A full year of Lake Erie humidity will do that. Algae on the siding, black streaks running down the roof, a driveway stained with a whole winter's worth of road salt. The homeowner said, "I didn't even realize how dirty it was until after you cleaned it." That's almost word-for-word what we hear on every single job.
 
-Two hours later — and we're not exaggerating — it looked like a brand new house. "I didn't even realize how dirty it was until after you cleaned it." That's a real quote from the customer, standing in their driveway with their jaw dropped.
+Three hours later, same house — looked like they just built it. Swipe to see the difference for yourself.
 
-This is why we do this. If your home is overdue, DM us or call for a free quote. Spring is filling up fast.
+If your home is sitting somewhere between those two photos, DM us or call for a free quote. Spring schedule is filling up fast.
 
-📸 *(No photo on file — drop your before/after job shots in #fc-requests and we'll feature them!)*
+📸 Photos: before_2026-05-13_IMG_7898.jpg / after_2026-05-13_IMG_7906.jpg
 
 #ClevelandOhio #NortheastOhio #PowerWashing #CurbAppeal #ForestCity
 
@@ -21,13 +21,13 @@ This is why we do this. If your home is overdue, DM us or call for a free quote.
 
 ## Post 2 — Educational
 
-The black streaks on your roof? That's not dirt. It's a living bacteria — and it's slowly eating your shingles.
+Thinking about renting a pressure washer and doing the roof yourself? Please read this first.
 
-It's called Gloeocapsa magma, and it thrives in humid climates. Northeast Ohio, sitting right next to Lake Erie, is basically a perfect breeding ground for it. Left alone, it shortens the life of your roof and eventually leads to shingle damage — which means warranty issues and repair bills.
+Pressure washing a roof strips the granules off your asphalt shingles — those tiny particles that protect the shingle from UV damage and water. Once they're gone, your shingle life drops fast. Worse, most shingle warranties are voided the second you put high-pressure water on them. We've had customers call us after making this mistake and it's a hard conversation to have.
 
-Here's the thing people get wrong: you cannot pressure wash a roof. High pressure strips the granules off asphalt shingles, voids most manufacturer warranties, and just knocks the bacteria around without killing it. Soft washing is the only method that actually works — low pressure, biodegradable solution, kills it at the root.
+Soft washing is the only safe method for roofs. Low-pressure water plus a biodegradable cleaning solution that actually kills the bacteria (Gloeocapsa magma — the stuff causing those black streaks) instead of just blasting it sideways. The results last longer too.
 
-We've seen homeowners make this mistake with rental equipment and pay for it later. Don't be that homeowner. DM us if you're seeing streaks and we'll tell you exactly what you're dealing with — no obligation.
+"Didn't know soft wash was even a thing" — that's something we hear constantly. Now you know. DM us any time if you have questions about what method is right for your home.
 
 #ClevelandOhio #NortheastOhio #RoofCleaning #SoftWash #ForestCity
 
@@ -35,13 +35,13 @@ We've seen homeowners make this mistake with rental equipment and pay for it lat
 
 ## Post 3 — Social Proof
 
-"The roof hasn't looked this clean since we moved in."
+"Worth every penny. Don't know why I waited so long."
 
-That's what a customer in Westlake told us after we finished a full soft wash earlier this month. We get some version of that line on almost every roof job — and honestly, it never gets old.
+We get some version of that line after almost every job. And we get it — it's easy to put this stuff off. It's not urgent in the way a leaky roof is urgent. But once the algae and mold get established, they spread faster than you'd think in this climate.
 
-People put off roof cleaning because they're not sure it's worth the cost, or they're worried it'll damage the shingles. But once they see the before and after — the algae gone, the color back, the whole house looking ten years younger — the response is almost always the same: "Worth every penny. Don't know why I waited so long."
+A customer in Westlake called us after her neighbor had it done and she couldn't stop staring at the difference between their two houses. She booked the Curb Appeal package — full house wash, driveway, plus her deck. Two hours on-site, crew was in and out, and she texted us afterward: "Our house has never been this clean."
 
-We serve all of Cuyahoga, Lake, Lorain, Geauga, Medina, Summit, and Portage counties. If your roof is overdue, let's talk. Drop a comment, send a DM, or grab a free quote at the link in our bio.
+That's the job. That's what we show up to do every single day. We're serving all 7 counties — Cuyahoga, Lake, Lorain, Geauga, Medina, Summit, and Portage. Drop a comment, send a DM, or grab a free quote at the link in our bio.
 
 #ClevelandOhio #NortheastOhio #PowerWashing #SoftWash #ForestCity
 
@@ -49,13 +49,13 @@ We serve all of Cuyahoga, Lake, Lorain, Geauga, Medina, Summit, and Portage coun
 
 ## Post 4 — Seasonal/Local
 
-May in Northeast Ohio means one thing for your exterior: the algae is back.
+Late May in Northeast Ohio and the algae is already winning.
 
-Every spring, the lake humidity kicks into gear and the mold, mildew, and algae that's been quietly building up all winter starts showing up on siding, roofs, and driveways. It's not a if — it's a when. We get the same calls every April and May from homeowners who suddenly can't ignore it anymore.
+Here's why: Lake Erie humidity doesn't take a break. By the time you notice the green creeping up your siding or the black streaks on the roof, it's been growing for months. And once summer gets here and the heat locks it in, it's harder to remove and more likely to have already caused some damage.
 
-The good news: this is exactly what we're here for. A full exterior clean takes a few hours and the difference is dramatic. Whether your siding is looking green, your driveway is stained from a winter of road salt, or the roof streaks are finally driving you crazy — spring is the right time to knock it out before the summer sun bakes it in further.
+Right now is the sweet spot — warm enough to clean, early enough to catch it before it gets worse. We're seeing driveways wrecked from a rough winter of road salt, siding that went green over the cold months, and roofs that are past due by a couple years. The calls are steady and the schedule is moving.
 
-Serving Greater Cleveland and all 7 surrounding counties. Book now before our spring schedule fills up — it goes faster than you'd think.
+If you've been on the fence, this is your window. One visit, a few hours, and the difference is dramatic. Book before June and you'll thank yourself all summer. Link in bio or DM us directly.
 
 #ClevelandOhio #NortheastOhio #SpringCleaning #PowerWashing #ForestCity
 
@@ -63,15 +63,17 @@ Serving Greater Cleveland and all 7 surrounding counties. Book now before our sp
 
 ## Post 5 — Personality / Behind the Scenes
 
-Bradley was on a job in Medina County before 7am this morning. That's just how spring goes around here.
+Bradley was loading the truck before 6:30 this morning. That's peak spring right there.
 
-From April through June this crew barely slows down — driveways, rooftops, decks, full house washes. Every job is a little different. Some houses haven't been touched in five years. Some customers are prepping to list. Some just finally noticed the black streaks and decided today was the day.
+From now through July this is what the schedule looks like — back-to-back jobs across 7 counties, different house every few hours, every customer with a slightly different situation. Some are getting it done before they list. Some finally hit their limit with the roof streaks. Some just want the driveway looking clean before a graduation party. Every single one of them is glad they called.
 
-What doesn't change is the standard. Every job gets done right, every crew member is on time, every customer gets a straight quote with no surprises. That's the whole thing — it's not complicated, it's just not that common anymore.
+The thing that never changes: we show up when we say, we quote straight, and we don't cut corners on the chemistry. Soft wash on the surfaces that need it, pressure on the ones that don't — that's not complicated, but apparently it's not as common as it should be.
 
-If you've been putting it off, consider this your nudge. DM us, call, or grab a quote online. We'll get you on the schedule.
+We're Forest City Power Washing — Cleveland-based, Lake Erie weather is basically our specialty. DM us or grab a quote online.
 
 #ClevelandOhio #NortheastOhio #PowerWashing #SmallBusiness #ForestCity
 
 ---
-*Written by Jasmine Burke | Forest City Power Washing | 2026-05-13*
+
+*Written by Jasmine Burke | Forest City Power Washing | 2026-05-18*
+*Photos on file: before_2026-05-13_IMG_7898.jpg, after_2026-05-13_IMG_7906.jpg, 2026-05-13_IMG_1542.jpg, 2026-05-13_IMG_1546.jpg*

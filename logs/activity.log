@@ -32,3 +32,4 @@
 [2026-05-14 19:04:52] Jasmine: Facebook post written ✓
 [2026-05-14 19:04:52] Jasmine: ERROR processing pair_20260513_224507: Expecting value: line 1 column 1 (char 0)
 [2026-05-14 19:05:00] Jasmine: Flyer built and pushed to GitHub for pair_20260513_224507. Slack post skipped — api.slack.com not in environment network allowlist. Marked processed.
+[2026-05-18 12:32] Jasmine | Weekly Facebook posts - 5 posts written | facebook_posts_week_2026-05-18.md | Done
