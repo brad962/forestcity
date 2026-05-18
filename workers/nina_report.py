@@ -110,6 +110,7 @@ def analyze_recipients(recipients, seq_name):
                 'opens':   r_opens,
                 'replied': r_replies > 0,
                 'stage':   r.get('lastStageSentOrdinal', 1),
+                'linkedin': '',
             })
 
     return {
@@ -123,12 +124,29 @@ def analyze_recipients(recipients, seq_name):
     }
 
 
+def _load_linkedin_map():
+    """Build email → linkedin_url map from contacts cache (best-effort)."""
+    cache_file = BASE_DIR / 'contacts_cache.json'
+    if not cache_file.exists():
+        return {}
+    try:
+        data = json.loads(cache_file.read_text())
+        return {
+            c['email'].lower(): c.get('linkedin_url', '')
+            for c in data.get('contacts', [])
+            if c.get('email') and c.get('linkedin_url')
+        }
+    except Exception:
+        return {}
+
+
 def run_daily():
     print('\n📊 Nina — Daily Hot Leads Report')
     OUTPUTS.mkdir(exist_ok=True)
     date_str = datetime.now().strftime('%Y-%m-%d')
     all_hot  = []
     all_replied = []
+    linkedin_map = _load_linkedin_map()
 
     for seq_id, meta in SEQUENCES.items():
         recipients = fetch_recipients(seq_id)
@@ -136,6 +154,10 @@ def run_daily():
         all_hot.extend([(meta['name'], l) for l in stats['hot_leads']])
         all_replied.extend([(meta['name'], r) for r in stats['replied_contacts']])
         print(f'  {meta["name"]}: {stats["total"]} enrolled | {stats["open_rate"]} opens | {stats["reply_rate"]} replies')
+
+    # Inject LinkedIn URLs from contacts cache
+    for _, lead in all_hot:
+        lead['linkedin'] = linkedin_map.get(lead['email'].lower(), '')
 
     lines = [
         f'# Daily Hot Leads Report',
@@ -161,12 +183,13 @@ def run_daily():
             '## ⚡ HOT LEADS — High Engagement',
             '*2+ opens or clicked a link. Connect on LinkedIn now.*',
             '',
-            '| Name | Email | Sequence | Opens | Replied |',
-            '|------|-------|----------|-------|---------|',
+            '| Name | Email | Sequence | Opens | Replied | LinkedIn |',
+            '|------|-------|----------|-------|---------|---------|',
         ]
         for seq_name, l in all_hot:
             replied_str = '✅ Yes' if l['replied'] else 'No'
-            lines.append(f'| {l["name"]} | {l["email"]} | {seq_name} | {l["opens"]} | {replied_str} |')
+            li = f'[Connect]({l["linkedin"]})' if l.get('linkedin') else '—'
+            lines.append(f'| {l["name"]} | {l["email"]} | {seq_name} | {l["opens"]} | {replied_str} | {li} |')
         lines.append('')
     else:
         lines += ['## No hot leads yet', '*Check back once emails start sending.*', '']
