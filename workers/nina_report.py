@@ -7,10 +7,13 @@ Usage: python3 workers/nina_report.py [daily|weekly]
 
 import json
 import os
-import urllib.request
 import sys
+import urllib.request
 from datetime import datetime
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent.parent))
+from utils.report_card import send_report_card
 
 BASE_DIR  = Path(__file__).parent.parent.resolve()
 OUTPUTS   = BASE_DIR / 'outputs' / 'nina'
@@ -204,7 +207,26 @@ def run_daily():
     log(f'Daily hot leads report — {len(all_replied)} replied, {len(all_hot)} hot', out_file)
     print(f'  → {len(all_replied)} replied, {len(all_hot)} hot leads. Saved to {out_file}')
     git_push(f'Nina: daily hot leads {date_str}')
-    notify_slack(f'🔥 *Nina — Daily Hot Leads* | {datetime.now().strftime("%b %d")}\n>{len(all_replied)} replied · {len(all_hot)} hot openers')
+    status = 'ACTION NEEDED' if all_replied else ('DONE' if not all_hot else 'ACTION NEEDED')
+    summary = []
+    if all_replied:
+        summary.append(f'{len(all_replied)} contacts replied — follow up TODAY')
+    if all_hot:
+        summary.append(f'{len(all_hot)} hot leads (2+ opens) — connect on LinkedIn')
+    for seq_id, meta in SEQUENCES.items():
+        recipients = fetch_recipients(seq_id)
+        stats = analyze_recipients(recipients, meta['name'])
+        summary.append(f'{meta["name"]}: {stats["total"]} enrolled, {stats["open_rate"]} opens')
+    send_report_card(
+        worker_name='nina',
+        title='Daily Hot Leads Report',
+        metrics=[
+            ('Replied', len(all_replied)),
+            ('Hot Leads', len(all_hot)),
+        ],
+        summary_lines=summary or ['No hot leads yet — check back tomorrow'],
+        status=status,
+    )
     return all_hot, all_replied
 
 
@@ -282,7 +304,24 @@ def run_weekly():
     log(f'Weekly pipeline report — {total_enrolled} enrolled, {total_replied} replied, {total_hot} hot leads', out_file)
     print(f'  → Report saved to {out_file}')
     git_push(f'Nina: weekly pipeline report {date_str}')
-    notify_slack(f'📊 *Nina — Weekly Pipeline Report* | Week of {datetime.now().strftime("%b %d")}\n>{total_enrolled} enrolled · {total_opens} opens · {total_replied} replied · {total_hot} hot leads')
+    open_rate_pct = round(total_opens / total_enrolled * 100) if total_enrolled else 0
+    reply_rate_pct = round(total_replied / total_enrolled * 100) if total_enrolled else 0
+    seq_lines = [f'{s["sequence"]}: {s["total"]} enrolled | {s["open_rate"]} opens | {s["reply_rate"]} replies' for s in all_stats]
+    send_report_card(
+        worker_name='nina',
+        title='Weekly Pipeline Report',
+        metrics=[
+            ('Enrolled', total_enrolled),
+            ('Opens', total_opens),
+            ('Hot Leads', total_hot),
+            ('Replies', total_replied),
+        ],
+        summary_lines=seq_lines + [
+            f'Overall open rate: {open_rate_pct}%',
+            f'Overall reply rate: {reply_rate_pct}%',
+        ],
+        status='ACTION NEEDED' if total_replied > 0 else 'DONE',
+    )
 
 
 if __name__ == '__main__':
