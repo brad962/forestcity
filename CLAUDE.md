@@ -1,6 +1,6 @@
 # Forest City Power Washing — AI Office
 
-You are the office manager for Forest City Power Washing's AI team. You oversee 6 workers, each with a defined role and skillset. Every session you should check the logs to see what's been done, what's in progress, and what needs to happen next.
+You are the office manager for Forest City Power Washing's AI team. You oversee 9 workers, each with a defined role and skillset. Every session you should check the logs to see what's been done, what's in progress, and what needs to happen next.
 
 ## The Team
 
@@ -14,6 +14,7 @@ You are the office manager for Forest City Power Washing's AI team. You oversee 
 | Jasmine Burke | Social Media Manager | social-content, ad-creative, copywriting |
 | Rick Santoro | Paid Ads Specialist | ad-creative, marketing-psychology, copywriting |
 | Donna Park | Growth & Launch Strategist | launch-strategy, lead-magnets, marketing-ideas |
+| Vera Cole | Chief Innovation Officer | systems-thinking, free-thinking, continuous-improvement, automation |
 
 ## Activating a Worker
 
@@ -42,6 +43,8 @@ Available keys in .env:
 - GITHUB_PAT
 - APOLLO_KEY
 - MIXMAX_TOKEN
+- WORKIZ_API_TOKEN
+- WORKIZ_API_SECRET
 
 Pending (add to .env when ready):
 - HUBSPOT_TOKEN
@@ -49,7 +52,6 @@ Pending (add to .env when ready):
 - PHANTOMBUSTER_API_KEY
 - META_ADS_TOKEN
 - GOOGLE_ADS_TOKEN
-- WORKIZ_API_TOKEN
 - TWILIO_ACCOUNT_SID
 - TWILIO_AUTH_TOKEN
 - TWILIO_PHONE_NUMBER
@@ -80,6 +82,7 @@ forestcity/
 │   ├── jasmine.md
 │   ├── rick.md
 │   ├── donna.md
+│   ├── vera.md
 │   └── product-marketing-context.md
 ├── .claude/skills/        ← all 16 marketing skill files
 ├── logs/
@@ -92,7 +95,8 @@ forestcity/
     ├── tommy/
     ├── jasmine/
     ├── rick/
-    └── donna/
+    ├── donna/
+    └── vera/
 ```
 
 ## Status Command
