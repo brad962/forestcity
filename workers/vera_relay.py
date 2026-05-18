@@ -18,11 +18,13 @@ STATE_FILE = BASE_DIR / 'outputs' / 'vera' / 'relay_last_commit.txt'
 LOG_FILE = BASE_DIR / 'logs' / 'activity.log'
 
 # Load env
-for line in (BASE_DIR / '.env').read_text().splitlines():
-    line = line.strip()
-    if line and not line.startswith('#') and '=' in line:
-        k, v = line.split('=', 1)
-        os.environ.setdefault(k.strip(), v.strip())
+_env = BASE_DIR / '.env'
+if _env.exists():
+    for line in _env.read_text().splitlines():
+        line = line.strip()
+        if line and not line.startswith('#') and '=' in line:
+            k, v = line.split('=', 1)
+            os.environ.setdefault(k.strip(), v.strip())
 
 SLACK_WEBHOOK = os.environ.get('SLACK_WEBHOOK_OFFICE', '')
 

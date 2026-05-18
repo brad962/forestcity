@@ -151,9 +151,11 @@ def run_daily():
     all_replied = []
     linkedin_map = _load_linkedin_map()
 
+    seq_stats_cache = {}
     for seq_id, meta in SEQUENCES.items():
         recipients = fetch_recipients(seq_id)
         stats = analyze_recipients(recipients, meta['name'])
+        seq_stats_cache[seq_id] = stats
         all_hot.extend([(meta['name'], l) for l in stats['hot_leads']])
         all_replied.extend([(meta['name'], r) for r in stats['replied_contacts']])
         print(f'  {meta["name"]}: {stats["total"]} enrolled | {stats["open_rate"]} opens | {stats["reply_rate"]} replies')
@@ -214,8 +216,7 @@ def run_daily():
     if all_hot:
         summary.append(f'{len(all_hot)} hot leads (2+ opens) — connect on LinkedIn')
     for seq_id, meta in SEQUENCES.items():
-        recipients = fetch_recipients(seq_id)
-        stats = analyze_recipients(recipients, meta['name'])
+        stats = seq_stats_cache[seq_id]
         summary.append(f'{meta["name"]}: {stats["total"]} enrolled, {stats["open_rate"]} opens')
     send_report_card(
         worker_name='nina',

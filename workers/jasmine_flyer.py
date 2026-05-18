@@ -148,14 +148,6 @@ def write_facebook_post(description: str, date: str) -> str:
     month = datetime.strptime(date, "%Y-%m-%d").strftime("%B")
     desc  = description.strip()
 
-    # Pull location if mentioned (simple heuristic)
-    location_hint = ""
-    location_words = ["in ", "at ", "near ", "off ", "on "]
-    for word in location_words:
-        if word in desc.lower():
-            location_hint = desc
-            break
-
     post = f"""Look at this transformation 👀
 
 {desc}

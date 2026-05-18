@@ -110,12 +110,15 @@ def log(worker, task, output_file, status='Done'):
     print(f'  → Logged: {line.strip()}')
 
 
-def apollo_search(titles, locations, per_page=25):
-    payload = json.dumps({
+def apollo_search(titles, locations, per_page=25, keywords=None):
+    body = {
         'person_titles': titles,
         'person_locations': locations,
         'per_page': per_page,
-    })
+    }
+    if keywords:
+        body['q_organization_keyword_tags'] = keywords
+    payload = json.dumps(body)
     try:
         result = subprocess.run(
             ['curl', '-s', '-X', 'POST',
@@ -330,7 +333,7 @@ def run_carla():
 
     all_new = []
     for search in CARLA_SEARCHES:
-        people = apollo_search(search['titles'], locations, per_page=15)
+        people = apollo_search(search['titles'], locations, per_page=15, keywords=search.get('keywords'))
         print(f'  {search["label"]}: Found {len(people)} people')
 
         for p in people:
@@ -421,13 +424,17 @@ def run_carla():
 
 
 def get_mixmax_enrolled_emails():
-    """Pull the set of emails currently confirmed in all 3 Mixmax sequences."""
+    """Pull the set of emails currently confirmed in all 3 Mixmax sequences.
+    Returns None if ALL sequences fail to respond — caller should skip repair
+    to avoid mass re-enrollment when the API is temporarily unavailable.
+    """
     seq_ids = [
         '6a048cfc110bc620ca0f1aee',  # Property Managers
         '6a048cfba81429e5dfe55010',  # Realtors
         '6a048cfd624a5989a68ba16c',  # Contractors
     ]
     enrolled = set()
+    success_count = 0
     for seq_id in seq_ids:
         url = f'https://api.mixmax.com/v1/sequences/{seq_id}/recipients?apiToken={MIXMAX_TOKEN}&limit=200'
         try:
@@ -438,8 +445,11 @@ def get_mixmax_enrolled_emails():
                 email = (r.get('to') or {}).get('email', '') or r.get('email', '')
                 if email:
                     enrolled.add(email.lower())
+            success_count += 1
         except Exception:
             pass
+    if success_count == 0:
+        return None  # All calls failed — prevent mass re-enrollment
     return enrolled
 
 
@@ -456,6 +466,10 @@ def verify_and_repair_enrollment():
         return
 
     confirmed = get_mixmax_enrolled_emails()
+    if confirmed is None:
+        print('  ⚠️ Mixmax API unavailable — skipping repair to prevent mass re-enrollment.')
+        log('pipeline', 'Enrollment verification skipped — Mixmax API unavailable (all sequences 403/timeout)', 'contacts_cache.json')
+        return
     print(f'  Confirmed in Mixmax: {len(confirmed)}')
 
     cache = json.loads(CACHE_FILE.read_text())

@@ -149,3 +149,10 @@
 [2026-05-18 21:00] Vera | New deliverable: sequence rewrite drafts for all 3 Mixmax sequences — under 100 words + yes/no close + break-up email touch 4 | outputs/vera/sequence_rewrites_proposal_2026-05-18.md | Done
 [2026-05-18 21:00] Vera | Updated open_issues.md — 9 resolved issues archived, 11 open tracked, 2 new issues added (cloud API block pattern, Danny lead pull not logging) | outputs/vera/open_issues.md | Done
 [2026-05-18 21:00] Vera | Wrote pending_slack_messages.md — 8 messages: 3 auto-upgrade notices, 2 proposals, 2 troubleshooting updates, 1 scan-complete summary | outputs/vera/pending_slack_messages.md | Done
+[2026-05-18 22:00] Vera | Auto-upgrade: lead_pipeline.py — apollo_search() keywords param restored + run_carla() passes industry keywords (was lost in d3a6337 merge conflict) | workers/lead_pipeline.py | Done
+[2026-05-18 22:00] Vera | Auto-upgrade: lead_pipeline.py — get_mixmax_enrolled_emails() returns None on all-API-failure; verify_and_repair_enrollment() skips on None (was lost in d3a6337 merge conflict, reapplied) | workers/lead_pipeline.py | Done
+[2026-05-18 22:00] Vera | Auto-upgrade: nina_report.py — eliminated double fetch_recipients() call in run_daily() via seq_stats_cache; saves 3 API calls per daily run | workers/nina_report.py | Done
+[2026-05-18 22:00] Vera | Auto-upgrade: jasmine_flyer.py — removed dead location_hint variable in write_facebook_post() | workers/jasmine_flyer.py | Done
+[2026-05-18 22:00] Vera | Auto-upgrade: vera_relay.py — added .exists() guard before reading .env; prevents FileNotFoundError in environments without .env | workers/vera_relay.py | Done
+[2026-05-18 22:00] Vera | Updated open_issues.md — 3 new RESOLVED this run (nina double-fetch, location_hint, relay crash guard); noted ghost-fixes pattern from merge conflicts; 14 open issues tracked | outputs/vera/open_issues.md | Done
+[2026-05-18 22:00] Vera | Wrote pending_slack_messages.md — 5 auto-upgrade notices, 2 proposals, 1 pattern alert, 1 scan summary | outputs/vera/pending_slack_messages.md | Done
