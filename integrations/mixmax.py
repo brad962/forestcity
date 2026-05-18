@@ -5,11 +5,24 @@ Enrolls Apollo leads into the correct Mixmax sequence based on lead type.
 """
 
 import json
+import os
 import urllib.request
 import urllib.error
 from pathlib import Path
 
-MIXMAX_TOKEN = '3646d2be-c1be-44b7-b3ef-e7ea047cad83'
+# Load .env so MIXMAX_TOKEN can be overridden without touching this file
+def _load_env():
+    env_file = Path(__file__).parent.parent / '.env'
+    if env_file.exists():
+        for line in env_file.read_text().splitlines():
+            line = line.strip()
+            if line and not line.startswith('#') and '=' in line:
+                k, v = line.split('=', 1)
+                os.environ.setdefault(k.strip(), v.strip())
+
+_load_env()
+
+MIXMAX_TOKEN = os.environ.get('MIXMAX_TOKEN', '3646d2be-c1be-44b7-b3ef-e7ea047cad83')
 BASE_URL = 'https://api.mixmax.com/v1'
 
 # Sequence IDs (created 2026-05-12)
@@ -36,6 +49,9 @@ PROPERTY_MANAGER_TITLES = [
     'property manager', 'facility manager', 'community manager',
     'hoa manager', 'building manager', 'property management',
     'asset manager', 'portfolio manager', 'leasing manager',
+    'apartment manager', 'condo manager', 'property supervisor',
+    'building supervisor', 'residential manager', 'facilities director',
+    'building superintendent', 'property director',
 ]
 
 REALTOR_TITLES = [
@@ -46,6 +62,9 @@ REALTOR_TITLES = [
 CONTRACTOR_TITLES = [
     'contractor', 'siding', 'painter', 'painting', 'roofer', 'roofing',
     'gutter', 'landscap', 'remodel', 'construction', 'handyman',
+    'window clean', 'concrete', 'deck build', 'deck contractor',
+    'fence contractor', 'fence install', 'exterior clean', 'pressure wash',
+    'driveway seal', 'power wash', 'janitorial', 'property maintenance',
 ]
 
 
@@ -206,7 +225,7 @@ def get_sequence_recipients(sequence_type: str) -> list:
     if sequence_type not in SEQUENCES:
         return []
     seq_id = SEQUENCES[sequence_type]['id']
-    url = f"{BASE_URL}/sequences/{seq_id}/recipients?apiToken={MIXMAX_TOKEN}&limit=100"
+    url = f"{BASE_URL}/sequences/{seq_id}/recipients?apiToken={MIXMAX_TOKEN}&limit=200"
     try:
         with urllib.request.urlopen(url, timeout=10) as resp:
             return json.loads(resp.read())

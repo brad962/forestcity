@@ -71,6 +71,9 @@ DANNY_TITLES = [
     'property manager', 'facility manager', 'community manager',
     'hoa manager', 'building manager', 'property management director',
     'asset manager', 'leasing manager',
+    'facilities director', 'building superintendent',
+    'apartment manager', 'condo manager', 'property supervisor',
+    'residential manager', 'property director',
 ]
 
 CARLA_SEARCHES = [
@@ -80,6 +83,16 @@ CARLA_SEARCHES = [
     {'type': 'realtors', 'titles': ['realtor', 'real estate agent', 'listing agent'],
      'keywords': [],
      'label': 'Realtors'},
+]
+
+# Rotating county batches for Carla — mirrors Danny's county rotation
+CARLA_COUNTY_ROTATION = [
+    ['Cuyahoga County, Ohio', 'Cleveland, Ohio'],
+    ['Lake County, Ohio', 'Mentor, Ohio', 'Willoughby, Ohio'],
+    ['Lorain County, Ohio', 'Elyria, Ohio', 'Avon, Ohio'],
+    ['Summit County, Ohio', 'Akron, Ohio'],
+    ['Medina County, Ohio', 'Medina, Ohio', 'Brunswick, Ohio'],
+    ['Geauga County, Ohio', 'Portage County, Ohio'],
 ]
 
 
@@ -265,10 +278,13 @@ def run_carla():
     print('\n🟣 Carla — Referral Partner Lead Pull')
     existing = load_existing_emails()
 
+    week_num  = datetime.now().isocalendar()[1]
+    locations = CARLA_COUNTY_ROTATION[week_num % len(CARLA_COUNTY_ROTATION)]
+    print(f'  County batch: {locations[0]}')
+
     all_new = []
     for search in CARLA_SEARCHES:
-        locations = ['Cleveland, Ohio', 'Northeast Ohio', 'Cuyahoga County, Ohio']
-        people    = apollo_search(search['titles'], locations, per_page=15)
+        people = apollo_search(search['titles'], locations, per_page=15)
         print(f'  {search["label"]}: Found {len(people)} people')
 
         for p in people:

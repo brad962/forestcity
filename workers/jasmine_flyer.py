@@ -220,6 +220,12 @@ def process_pending_pairs():
         output_file     = OUTPUTS_DIR / output_filename
         github_path     = f"outputs/jasmine/{output_filename}"
 
+        # Always mark as processed to prevent infinite retry loops on persistent errors.
+        # Use pair["success"] to distinguish clean runs from failed ones.
+        pair["processed"] = True
+        pair["output"]    = str(output_file.relative_to(BASE_DIR))
+        updated = True
+
         try:
             build_flyer(str(before_path), str(after_path), str(output_file))
             log(f"Flyer built → {output_file}")
@@ -234,12 +240,11 @@ def process_pending_pairs():
 
             post_to_slack(raw_url, f"Before & After — Forest City Power Washing | {date}", facebook_post)
             log("Posted to #fc-ai-office ✓")
-
-            pair["processed"] = True
-            pair["output"]    = str(output_file.relative_to(BASE_DIR))
-            updated = True
+            pair["success"] = True
 
         except Exception as e:
+            pair["success"] = False
+            pair["error"]   = str(e)
             log(f"ERROR processing {pair_id}: {e}")
 
     if updated:

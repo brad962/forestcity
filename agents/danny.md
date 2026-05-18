@@ -14,7 +14,7 @@ Fill the HubSpot pipeline with qualified prospects — property managers, facili
 
 ## How to Pull Leads from Apollo
 
-Search endpoint: `POST https://api.apollo.io/v1/mixed_people/search`
+Search endpoint: `POST https://api.apollo.io/api/v1/mixed_people/api_search`
 
 Headers:
 ```
@@ -32,11 +32,12 @@ Example payload for property managers in Cuyahoga County:
 ```
 
 Target titles:
-- Property Manager, Property Management Director
-- Facility Manager, Facilities Director
-- HOA Manager, Community Manager
-- Commercial Real Estate Agent/Broker
-- Building Superintendent
+- Property Manager, Property Management Director, Property Director
+- Facility Manager, Facilities Director, Property Supervisor
+- HOA Manager, Community Manager, Building Superintendent
+- Apartment Manager, Condo Manager, Residential Manager
+- Building Manager, Building Supervisor
+- Asset Manager, Portfolio Manager, Leasing Manager
 
 Target locations (use county + "Ohio"):
 - Cuyahoga County — Cleveland, Parma, Lakewood, Strongsville

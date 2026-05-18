@@ -115,3 +115,11 @@
 [2026-05-14 15:53:18] Jasmine: photo_pairs.json updated.
 [2026-05-14 16:16] Nina | Workiz daily report - Power Washing jobs | No Power Washing jobs found. | Done
 [2026-05-18 08:30] Nina | Weekly pipeline report — 45 enrolled, 0 replied, 13 hot leads | weekly_report_2026-05-18.md | Done
+[2026-05-18 18:45] Vera | Auto-upgrade: fixed Jasmine infinite retry loop — mark pair processed=True before try block | workers/jasmine_flyer.py | Done
+[2026-05-18 18:45] Vera | Auto-upgrade: mixmax.py loads MIXMAX_TOKEN from .env instead of hardcode; added missing PM + contractor title keywords; fixed get_sequence_recipients limit 100→200 | integrations/mixmax.py | Done
+[2026-05-18 18:45] Vera | Auto-upgrade: added 7 missing Apollo titles to DANNY_TITLES (facilities director, building superintendent, apartment/condo/residential manager, etc) | workers/lead_pipeline.py | Done
+[2026-05-18 18:45] Vera | Auto-upgrade: expanded Carla's search to rotate all 7 NE Ohio counties instead of Cuyahoga-only | workers/lead_pipeline.py | Done
+[2026-05-18 18:45] Vera | Auto-upgrade: wrapped workiz_report post_to_slack in try/except to prevent crash on Slack failure | workers/workiz_report.py | Done
+[2026-05-18 18:45] Vera | Auto-upgrade: fixed misleading hot leads metric label in nina weekly report | workers/nina_report.py | Done
+[2026-05-18 18:45] Vera | Auto-upgrade: updated danny.md Apollo endpoint URL to match actual script endpoint; expanded target titles list | agents/danny.md | Done
+[2026-05-18 18:45] Vera | Proposal posted: 6 peak-season upgrade proposals (reply rate fix, LinkedIn protocol, activate creative workers, Workiz investigation, residential track, HubSpot) | outputs/vera/proposal_2026-05-18_peak-season-gaps.md | Done

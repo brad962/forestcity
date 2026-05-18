@@ -210,7 +210,7 @@ def run_weekly():
         f'| Total enrolled across sequences | {total_enrolled} |',
         f'| Contacts with opens | {total_opens} |',
         f'| Contacts who replied | {total_replied} |',
-        f'| Hot leads (2+ opens) | {total_hot} |',
+        f'| Hot leads (2+ opens or replied) | {total_hot} |',
         f'| Overall open rate | {round(total_opens/total_enrolled*100) if total_enrolled else 0}% |',
         f'| Overall reply rate | {round(total_replied/total_enrolled*100) if total_enrolled else 0}% |',
         '',

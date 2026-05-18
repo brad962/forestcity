@@ -177,9 +177,12 @@ def post_to_slack(report_text, summary, mode='daily'):
         return
     msg = f"*Nina Kowalski — Workiz Power Washing {mode.title()} Report*\n\n{report_text[:3500]}"
     payload = json.dumps({'text': msg}).encode()
-    req = urllib.request.Request(SLACK_WEBHOOK, payload, {'Content-Type': 'application/json'})
-    urllib.request.urlopen(req)
-    print("Posted to Slack")
+    try:
+        req = urllib.request.Request(SLACK_WEBHOOK, payload, {'Content-Type': 'application/json'})
+        urllib.request.urlopen(req, timeout=10)
+        print("Posted to Slack")
+    except Exception as e:
+        print(f"Slack post failed: {e}")
 
 
 if __name__ == '__main__':
