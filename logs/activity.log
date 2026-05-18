@@ -132,3 +132,4 @@
 [2026-05-18 19:30] Vera | Auto-upgrade: nina_report.py — fetch_recipients now handles both list and dict API responses defensively | workers/nina_report.py | Done
 [2026-05-18 19:30] Vera | Auto-upgrade: CLAUDE.md — flagged INSTANTLY_API_KEY as needed in .env | CLAUDE.md | Done
 [2026-05-18 19:30] Vera | Created open_issues.md — 7 open issues documented with attempts and next steps | outputs/vera/open_issues.md | Done
+[2026-05-18 19:30] Vera | Slack blocked by network policy — messages saved to pending_slack_messages_2026-05-18.md | outputs/vera/pending_slack_messages_2026-05-18.md | Done

@@ -93,3 +93,15 @@
 ---
 
 *Last updated: 2026-05-18 by Vera Cole*
+
+---
+
+## OPEN — Slack Webhook Blocked in Remote Cloud Environment
+
+- First seen: 2026-05-18
+- Description: hooks.slack.com is not in the network allowlist for this remote execution environment. Vera cannot post alerts, auto-upgrade notifications, or proposals to Slack from here. Same restriction blocks api.mixmax.com.
+- Impact: Bradley does not receive automated notifications from cloud-triggered Vera runs. Auto-upgrades are still committed to GitHub but are invisible to Bradley in real time.
+- Attempts:
+  - 2026-05-18: Confirmed blocked. GitHub push works (code changes are live). Slack is blocked.
+- Workaround: All messages saved to outputs/vera/pending_slack_messages.md. Bradley can review them there or trigger a local run that can reach Slack.
+
