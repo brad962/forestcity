@@ -23,6 +23,19 @@ LOGS_DIR   = BASE_DIR / "logs"
 PHOTO_PAIRS_FILE = LOGS_DIR / "photo_pairs.json"
 ACTIVITY_LOG     = LOGS_DIR / "activity.log"
 
+
+def _load_env():
+    env_file = BASE_DIR / '.env'
+    if env_file.exists():
+        for line in env_file.read_text().splitlines():
+            line = line.strip()
+            if line and not line.startswith('#') and '=' in line:
+                k, v = line.split('=', 1)
+                os.environ.setdefault(k.strip(), v.strip())
+
+
+_load_env()
+
 SLACK_TOKEN   = os.environ.get("SLACK_TOKEN", "")
 SLACK_CHANNEL = "C0B37D5UJLB"   # fc-ai-office
 GITHUB_PAT    = os.environ.get("GITHUB_PAT", "")
@@ -253,8 +266,4 @@ def process_pending_pairs():
 
 
 if __name__ == "__main__":
-    from dotenv import load_dotenv
-    load_dotenv(BASE_DIR / ".env")
-    SLACK_TOKEN = os.environ.get("SLACK_TOKEN", "")
-    GITHUB_PAT  = os.environ.get("GITHUB_PAT", "")
     process_pending_pairs()

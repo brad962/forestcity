@@ -261,11 +261,16 @@ def run_weekly():
     if not any(s['replied_contacts'] for s in all_stats):
         lines += ['*No replies yet. Emails are scheduled — check back next week.*', '']
 
+    reply_item = (
+        f'- [ ] Review {total_replied} {"reply" if total_replied == 1 else "replies"} and respond personally'
+        if total_replied > 0
+        else '- [ ] No replies yet — sequence is sending, check open rates'
+    )
     lines += [
         '## Action Items for Bradley',
         '',
-        f'- [ ] Review {total_replied} replies and respond personally',
-        f'- [ ] Connect on LinkedIn with {total_hot} hot leads via the Connect page',
+        reply_item,
+        f'- [ ] Connect on LinkedIn with {total_hot} hot leads (links in the daily hot leads report)',
         f'- [ ] Check Danny\'s new leads this week and confirm enrollment',
         '',
         '---',

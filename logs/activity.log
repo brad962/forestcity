@@ -136,3 +136,12 @@
 [2026-05-18 20:15] Vera | Auto-upgrade: get_mixmax_enrolled_emails returns None on all API failures — verify_and_repair_enrollment now skips instead of mass re-enrolling on 403 | workers/lead_pipeline.py | Done
 [2026-05-18 20:15] Vera | Auto-upgrade: added LinkedIn URL column to Nina daily hot leads report — cross-references contacts cache | workers/nina_report.py | Done
 [2026-05-18 20:15] Vera | Updated open_issues.md — comprehensive merge of both runs, 13 issues tracked (6 resolved, 7 open including urgent hot contractor follow-up) | outputs/vera/open_issues.md | Done
+[2026-05-18 21:00] Vera | Auto-upgrade: nina_report.py — fix action items (0-reply wording + LinkedIn 'Connect page' ref) | workers/nina_report.py | Done
+[2026-05-18 21:00] Vera | Auto-upgrade: jasmine_flyer.py — move .env loading to module level via _load_env(); remove duplicate load_dotenv from __main__ | workers/jasmine_flyer.py | Done
+[2026-05-18 21:00] Vera | Auto-upgrade: workiz_report.py — fetch_all_jobs returns WORKIZ_API_ERROR sentinel on exception; report distinguishes API failure from 0-job result | workers/workiz_report.py | Done
+[2026-05-18 21:00] Vera | Auto-upgrade: filled facebook_posts_week_2026-05-18.md (was empty) with 5 peak-season posts; created linkedin_posts_2026-05-18.md with 2 commercial posts | outputs/jasmine/ | Done
+[2026-05-18 21:00] Vera | New deliverable: LinkedIn connect message template for 13 hot leads — all 3 variants, ready to use | outputs/vera/linkedin_connect_template_2026-05-18.md | Done
+[2026-05-18 21:00] Vera | New deliverable: SMS templates for 21 manual contractor leads — contact list + template by type | outputs/vera/sms_templates_contractors_2026-05-18.md | Done
+[2026-05-18 21:00] Vera | New deliverable: sequence rewrite drafts for all 3 Mixmax sequences — under 100 words + yes/no close + break-up email touch 4 | outputs/vera/sequence_rewrites_proposal_2026-05-18.md | Done
+[2026-05-18 21:00] Vera | Updated open_issues.md — 9 resolved issues archived, 11 open tracked, 2 new issues added (cloud API block pattern, Danny lead pull not logging) | outputs/vera/open_issues.md | Done
+[2026-05-18 21:00] Vera | Wrote pending_slack_messages.md — 8 messages: 3 auto-upgrade notices, 2 proposals, 2 troubleshooting updates, 1 scan-complete summary | outputs/vera/pending_slack_messages.md | Done

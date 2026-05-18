@@ -37,8 +37,13 @@ def _is_power_washing_job(job_type: str) -> bool:
     return job_type.strip().lower() in JOB_TYPE_VARIANTS
 
 
+WORKIZ_API_ERROR = "__API_ERROR__"
+
+
 def fetch_all_jobs():
-    """Pull all jobs from Workiz, filter to Power Washing only."""
+    """Pull all jobs from Workiz, filter to Power Washing only.
+    Returns list of matching jobs, or the sentinel WORKIZ_API_ERROR string on failure.
+    """
     url = f"{BASE_URL}/job/all/"
     headers = {"Authorization": WORKIZ_SECRET}
     try:
@@ -52,7 +57,7 @@ def fetch_all_jobs():
                 data = json.loads(r.read())
     except Exception as e:
         print(f"Workiz API error: {e}")
-        return []
+        return WORKIZ_API_ERROR
 
     all_jobs = data.get('data', [])
     pw_jobs = [j for j in all_jobs if _is_power_washing_job(j.get('JobType', ''))]
@@ -67,6 +72,13 @@ def generate_report(mode='daily'):
     """Generate daily or weekly Power Washing job report."""
     today = datetime.date.today()
     jobs = fetch_all_jobs()
+
+    if jobs is WORKIZ_API_ERROR:
+        return {
+            'report': f"# Workiz — Power Washing Jobs\n**Date:** {today}\n\n⚠️ **Workiz API unavailable** — could not connect (403 or network error). This typically happens in the cloud execution environment where Workiz is not on the allowlist. Run locally to get job data.\n",
+            'jobs': [],
+            'summary': 'Workiz API unavailable — run locally.',
+        }
 
     if not jobs:
         return {
