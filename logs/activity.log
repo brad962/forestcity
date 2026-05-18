@@ -129,10 +129,10 @@
 [2026-05-18 19:30] Vera | Auto-upgrade: server.py — removed hardcoded INSTANTLY_KEY and MIXMAX_TOKEN; now load from .env via os.environ | server.py | Done
 [2026-05-18 19:30] Vera | Auto-upgrade: agents/carla.md — added window cleaning companies and chimney sweeps as target referral partner types | agents/carla.md | Done
 [2026-05-18 19:30] Vera | Auto-upgrade: agents/jasmine.md — activated LinkedIn NOW for peak season commercial content (was "eventually") | agents/jasmine.md | Done
-[2026-05-18 19:30] Vera | Auto-upgrade: nina_report.py — fetch_recipients handles both list and dict API responses | workers/nina_report.py | Done
+[2026-05-18 19:30] Vera | Auto-upgrade: nina_report.py — fetch_recipients now handles both list and dict API responses defensively | workers/nina_report.py | Done
 [2026-05-18 19:30] Vera | Auto-upgrade: CLAUDE.md — flagged INSTANTLY_API_KEY as needed in .env | CLAUDE.md | Done
-[2026-05-18 19:30] Vera | Created open_issues.md + pending_slack_messages_2026-05-18.md | outputs/vera/ | Done
-[2026-05-18 20:15] Vera | Merge-resolved all conflicts from concurrent run: merged keyword support + error handling in apollo_search, took upstream workiz variants, upstream fetch_recipients with logging, merged open_issues.md | multiple files | Done
-[2026-05-18 20:15] Vera | Auto-upgrade: get_mixmax_enrolled_emails returns None on all API failures — verify_and_repair_enrollment now skips instead of mass re-enrolling on 403 | workers/lead_pipeline.py | Done
-[2026-05-18 20:15] Vera | Auto-upgrade: added LinkedIn URL column to Nina daily hot leads report — cross-references contacts cache | workers/nina_report.py | Done
-[2026-05-18 20:15] Vera | Updated open_issues.md — comprehensive merge of both runs, 13 issues tracked (6 resolved, 7 open including urgent hot contractor follow-up) | outputs/vera/open_issues.md | Done
+[2026-05-18 19:30] Vera | Created open_issues.md — 7 open issues documented with attempts and next steps | outputs/vera/open_issues.md | Done
+[2026-05-18 19:30] Vera | Slack blocked by network policy — messages saved to pending_slack_messages_2026-05-18.md | outputs/vera/pending_slack_messages_2026-05-18.md | Done
+[2026-05-18 14:59] Vera Relay | Posted Vera commit summary: Vera: open_issues tracker + pending Slack messages (network-blocked) + log update
+[2026-05-18 15:04] Vera Relay | Posted Vera commit summary: Vera: run 3 — pending Slack messages added for relay pickup
+[2026-05-18 15:10] Nina | Weekly pipeline report — 0 enrolled, 0 replied, 0 hot leads | weekly_report_2026-05-18.md | Done

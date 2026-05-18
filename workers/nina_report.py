@@ -7,10 +7,13 @@ Usage: python3 workers/nina_report.py [daily|weekly]
 
 import json
 import os
-import urllib.request
 import sys
+import urllib.request
 from datetime import datetime
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent.parent))
+from utils.report_card import send_report_card
 
 BASE_DIR  = Path(__file__).parent.parent.resolve()
 OUTPUTS   = BASE_DIR / 'outputs' / 'nina'
@@ -110,7 +113,6 @@ def analyze_recipients(recipients, seq_name):
                 'opens':   r_opens,
                 'replied': r_replies > 0,
                 'stage':   r.get('lastStageSentOrdinal', 1),
-                'linkedin': '',
             })
 
     return {
@@ -124,29 +126,12 @@ def analyze_recipients(recipients, seq_name):
     }
 
 
-def _load_linkedin_map():
-    """Build email → linkedin_url map from contacts cache (best-effort)."""
-    cache_file = BASE_DIR / 'contacts_cache.json'
-    if not cache_file.exists():
-        return {}
-    try:
-        data = json.loads(cache_file.read_text())
-        return {
-            c['email'].lower(): c.get('linkedin_url', '')
-            for c in data.get('contacts', [])
-            if c.get('email') and c.get('linkedin_url')
-        }
-    except Exception:
-        return {}
-
-
 def run_daily():
     print('\n📊 Nina — Daily Hot Leads Report')
     OUTPUTS.mkdir(exist_ok=True)
     date_str = datetime.now().strftime('%Y-%m-%d')
     all_hot  = []
     all_replied = []
-    linkedin_map = _load_linkedin_map()
 
     for seq_id, meta in SEQUENCES.items():
         recipients = fetch_recipients(seq_id)
@@ -154,10 +139,6 @@ def run_daily():
         all_hot.extend([(meta['name'], l) for l in stats['hot_leads']])
         all_replied.extend([(meta['name'], r) for r in stats['replied_contacts']])
         print(f'  {meta["name"]}: {stats["total"]} enrolled | {stats["open_rate"]} opens | {stats["reply_rate"]} replies')
-
-    # Inject LinkedIn URLs from contacts cache
-    for _, lead in all_hot:
-        lead['linkedin'] = linkedin_map.get(lead['email'].lower(), '')
 
     lines = [
         f'# Daily Hot Leads Report',
@@ -183,13 +164,12 @@ def run_daily():
             '## ⚡ HOT LEADS — High Engagement',
             '*2+ opens or clicked a link. Connect on LinkedIn now.*',
             '',
-            '| Name | Email | Sequence | Opens | Replied | LinkedIn |',
-            '|------|-------|----------|-------|---------|---------|',
+            '| Name | Email | Sequence | Opens | Replied |',
+            '|------|-------|----------|-------|---------|',
         ]
         for seq_name, l in all_hot:
             replied_str = '✅ Yes' if l['replied'] else 'No'
-            li = f'[Connect]({l["linkedin"]})' if l.get('linkedin') else '—'
-            lines.append(f'| {l["name"]} | {l["email"]} | {seq_name} | {l["opens"]} | {replied_str} | {li} |')
+            lines.append(f'| {l["name"]} | {l["email"]} | {seq_name} | {l["opens"]} | {replied_str} |')
         lines.append('')
     else:
         lines += ['## No hot leads yet', '*Check back once emails start sending.*', '']
@@ -204,7 +184,26 @@ def run_daily():
     log(f'Daily hot leads report — {len(all_replied)} replied, {len(all_hot)} hot', out_file)
     print(f'  → {len(all_replied)} replied, {len(all_hot)} hot leads. Saved to {out_file}')
     git_push(f'Nina: daily hot leads {date_str}')
-    notify_slack(f'🔥 *Nina — Daily Hot Leads* | {datetime.now().strftime("%b %d")}\n>{len(all_replied)} replied · {len(all_hot)} hot openers')
+    status = 'ACTION NEEDED' if all_replied else ('DONE' if not all_hot else 'ACTION NEEDED')
+    summary = []
+    if all_replied:
+        summary.append(f'{len(all_replied)} contacts replied — follow up TODAY')
+    if all_hot:
+        summary.append(f'{len(all_hot)} hot leads (2+ opens) — connect on LinkedIn')
+    for seq_id, meta in SEQUENCES.items():
+        recipients = fetch_recipients(seq_id)
+        stats = analyze_recipients(recipients, meta['name'])
+        summary.append(f'{meta["name"]}: {stats["total"]} enrolled, {stats["open_rate"]} opens')
+    send_report_card(
+        worker_name='nina',
+        title='Daily Hot Leads Report',
+        metrics=[
+            ('Replied', len(all_replied)),
+            ('Hot Leads', len(all_hot)),
+        ],
+        summary_lines=summary or ['No hot leads yet — check back tomorrow'],
+        status=status,
+    )
     return all_hot, all_replied
 
 
@@ -277,7 +276,24 @@ def run_weekly():
     log(f'Weekly pipeline report — {total_enrolled} enrolled, {total_replied} replied, {total_hot} hot leads', out_file)
     print(f'  → Report saved to {out_file}')
     git_push(f'Nina: weekly pipeline report {date_str}')
-    notify_slack(f'📊 *Nina — Weekly Pipeline Report* | Week of {datetime.now().strftime("%b %d")}\n>{total_enrolled} enrolled · {total_opens} opens · {total_replied} replied · {total_hot} hot leads')
+    open_rate_pct = round(total_opens / total_enrolled * 100) if total_enrolled else 0
+    reply_rate_pct = round(total_replied / total_enrolled * 100) if total_enrolled else 0
+    seq_lines = [f'{s["sequence"]}: {s["total"]} enrolled | {s["open_rate"]} opens | {s["reply_rate"]} replies' for s in all_stats]
+    send_report_card(
+        worker_name='nina',
+        title='Weekly Pipeline Report',
+        metrics=[
+            ('Enrolled', total_enrolled),
+            ('Opens', total_opens),
+            ('Hot Leads', total_hot),
+            ('Replies', total_replied),
+        ],
+        summary_lines=seq_lines + [
+            f'Overall open rate: {open_rate_pct}%',
+            f'Overall reply rate: {reply_rate_pct}%',
+        ],
+        status='ACTION NEEDED' if total_replied > 0 else 'DONE',
+    )
 
 
 if __name__ == '__main__':
