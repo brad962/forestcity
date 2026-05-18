@@ -26,10 +26,7 @@
       "date": "2026-05-13",
       "description": "siding softwash in westlake ohio.",
       "processed": true,
-      "processed_at": "2026-05-14",
-      "output": "outputs/jasmine/before_after_2026-05-13.jpg",
-      "github_url": "https://raw.githubusercontent.com/brad962/forestcity/main/outputs/jasmine/before_after_2026-05-13.jpg",
-      "slack_note": "Flyer built and pushed to GitHub. Slack post skipped — api.slack.com not in environment allowlist."
+      "output": "outputs/jasmine/before_after_2026-05-13.jpg"
     }
   ]
 }

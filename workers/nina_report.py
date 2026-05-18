@@ -177,8 +177,7 @@ def run_daily():
     log(f'Daily hot leads report — {len(all_replied)} replied, {len(all_hot)} hot', out_file)
     print(f'  → {len(all_replied)} replied, {len(all_hot)} hot leads. Saved to {out_file}')
     git_push(f'Nina: daily hot leads {date_str}')
-    url = f'{GITHUB_BASE}/outputs/nina/{out_file}'
-    notify_slack(f'🔥 *Nina — Daily Hot Leads* | {datetime.now().strftime("%b %d")}\n>{len(all_replied)} replied · {len(all_hot)} hot openers\n<{url}|View report>')
+    notify_slack(f'🔥 *Nina — Daily Hot Leads* | {datetime.now().strftime("%b %d")}\n>{len(all_replied)} replied · {len(all_hot)} hot openers')
     return all_hot, all_replied
 
 
@@ -251,8 +250,7 @@ def run_weekly():
     log(f'Weekly pipeline report — {total_enrolled} enrolled, {total_replied} replied, {total_hot} hot leads', out_file)
     print(f'  → Report saved to {out_file}')
     git_push(f'Nina: weekly pipeline report {date_str}')
-    url = f'{GITHUB_BASE}/outputs/nina/{out_file}'
-    notify_slack(f'📊 *Nina — Weekly Pipeline Report* | Week of {datetime.now().strftime("%b %d")}\n>{total_enrolled} enrolled · {total_opens} opens · {total_replied} replied · {total_hot} hot leads\n<{url}|View report>')
+    notify_slack(f'📊 *Nina — Weekly Pipeline Report* | Week of {datetime.now().strftime("%b %d")}\n>{total_enrolled} enrolled · {total_opens} opens · {total_replied} replied · {total_hot} hot leads')
 
 
 if __name__ == '__main__':

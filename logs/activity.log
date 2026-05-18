@@ -25,16 +25,93 @@
 [2026-05-13 16:05] Jasmine | Before/after Canva flyer created (design DAHJkECcks8) — Slack upload blocked (host_not_allowed); flyer ready in Canva | pair_20260513_000000 | Done
 [2026-05-13 18:12] Jasmine | Before/after Canva flyer created and posted to Slack | pair_20260513_134457 | Done
 [2026-05-13 22:45] Office | Slack photo watcher | 2 photo(s) saved — 1 pair(s) ready for Jasmine | Done
-[2026-05-14 08:00] Office | Daily morning briefing | morning_2026-05-14.md | Done
-[2026-05-14 19:04:49] Jasmine: Processing pair pair_20260513_224507...
-[2026-05-14 19:04:50] Jasmine: Flyer built → /tmp/forestcity/outputs/jasmine/before_after_2026-05-13.jpg
-[2026-05-14 19:04:52] Jasmine: Pushed to GitHub → https://raw.githubusercontent.com/brad962/forestcity/main/outputs/jasmine/before_after_2026-05-13.jpg?v=1778785492
-[2026-05-14 19:04:52] Jasmine: Facebook post written ✓
-[2026-05-14 19:04:52] Jasmine: ERROR processing pair_20260513_224507: Expecting value: line 1 column 1 (char 0)
-[2026-05-14 19:05:00] Jasmine: Flyer built and pushed to GitHub for pair_20260513_224507. Slack post skipped — api.slack.com not in environment network allowlist. Marked processed.
-[2026-05-18 12:32] Jasmine | Weekly Facebook posts - 5 posts written | facebook_posts_week_2026-05-18.md | Done
-[2026-05-18 08:00] Office | Daily morning briefing | morning_2026-05-18.md | Done
-[2026-05-18 09:30] Marcus | Weekly intelligence update - VOC + competitor report refreshed | voc_library_2026-05-18.md | Done
-[2026-05-18 09:31] Marcus | Weekly intelligence update - VOC + competitor report refreshed | competitor_report_2026-05-18.md | Done
-[2026-05-18 12:35] Rick | Weekly ad refresh - 5 Facebook ads + 10 RSA headlines | ad_refresh_2026-05-18.md | Done
-[2026-05-18 12:45] Tommy | Weekly copy refresh - house washing page written | service_page_house-washing_2026-05-18.md | Done
+[2026-05-13 22:49:49] Jasmine: Processing pair pair_20260513_224507...
+[2026-05-13 22:49:50] Jasmine: Flyer built → /Users/bradleyneal/forestcity/outputs/jasmine/before_after_2026-05-13.jpg
+[2026-05-13 22:49:54] Jasmine: Pushed to GitHub → https://raw.githubusercontent.com/brad962/forestcity/main/outputs/jasmine/before_after_2026-05-13.jpg?v=1778726994
+[2026-05-13 22:49:54] Jasmine: Facebook post written ✓
+[2026-05-13 22:49:54] Jasmine: ERROR processing pair_20260513_224507: Slack post failed: not_in_channel
+[2026-05-13 22:54:55] Jasmine: Processing pair pair_20260513_224507...
+[2026-05-13 22:54:55] Jasmine: Flyer built → /Users/bradleyneal/forestcity/outputs/jasmine/before_after_2026-05-13.jpg
+[2026-05-13 22:54:59] Jasmine: Pushed to GitHub → https://raw.githubusercontent.com/brad962/forestcity/main/outputs/jasmine/before_after_2026-05-13.jpg?v=1778727299
+[2026-05-13 22:54:59] Jasmine: Facebook post written ✓
+[2026-05-13 22:55:00] Jasmine: ERROR processing pair_20260513_224507: Slack post failed: not_in_channel
+[2026-05-13 23:00:01] Jasmine: Processing pair pair_20260513_224507...
+[2026-05-13 23:00:01] Jasmine: Flyer built → /Users/bradleyneal/forestcity/outputs/jasmine/before_after_2026-05-13.jpg
+[2026-05-13 23:00:04] Jasmine: Pushed to GitHub → https://raw.githubusercontent.com/brad962/forestcity/main/outputs/jasmine/before_after_2026-05-13.jpg?v=1778727604
+[2026-05-13 23:00:04] Jasmine: Facebook post written ✓
+[2026-05-13 23:00:04] Jasmine: ERROR processing pair_20260513_224507: Slack post failed: not_in_channel
+[2026-05-13 23:05:05] Jasmine: Processing pair pair_20260513_224507...
+[2026-05-13 23:05:05] Jasmine: Flyer built → /Users/bradleyneal/forestcity/outputs/jasmine/before_after_2026-05-13.jpg
+[2026-05-13 23:05:09] Jasmine: Pushed to GitHub → https://raw.githubusercontent.com/brad962/forestcity/main/outputs/jasmine/before_after_2026-05-13.jpg?v=1778727909
+[2026-05-13 23:05:09] Jasmine: Facebook post written ✓
+[2026-05-13 23:05:09] Jasmine: ERROR processing pair_20260513_224507: Slack post failed: not_in_channel
+[2026-05-13 23:10:09] Jasmine: Processing pair pair_20260513_224507...
+[2026-05-13 23:10:10] Jasmine: Flyer built → /Users/bradleyneal/forestcity/outputs/jasmine/before_after_2026-05-13.jpg
+[2026-05-13 23:10:13] Jasmine: Pushed to GitHub → https://raw.githubusercontent.com/brad962/forestcity/main/outputs/jasmine/before_after_2026-05-13.jpg?v=1778728213
+[2026-05-13 23:10:13] Jasmine: Facebook post written ✓
+[2026-05-13 23:10:13] Jasmine: ERROR processing pair_20260513_224507: Slack post failed: not_in_channel
+[2026-05-13 23:16:48] Jasmine: Processing pair pair_20260513_224507...
+[2026-05-13 23:16:48] Jasmine: Flyer built → /Users/bradleyneal/forestcity/outputs/jasmine/before_after_2026-05-13.jpg
+[2026-05-13 23:16:50] Jasmine: Pushed to GitHub → https://raw.githubusercontent.com/brad962/forestcity/main/outputs/jasmine/before_after_2026-05-13.jpg?v=1778728610
+[2026-05-13 23:16:50] Jasmine: Facebook post written ✓
+[2026-05-13 23:16:51] Jasmine: ERROR processing pair_20260513_224507: Slack post failed: not_in_channel
+[2026-05-13 23:22:43] Jasmine: Processing pair pair_20260513_224507...
+[2026-05-13 23:22:43] Jasmine: Flyer built → /Users/bradleyneal/forestcity/outputs/jasmine/before_after_2026-05-13.jpg
+[2026-05-13 23:22:46] Jasmine: Pushed to GitHub → https://raw.githubusercontent.com/brad962/forestcity/main/outputs/jasmine/before_after_2026-05-13.jpg?v=1778728966
+[2026-05-13 23:22:46] Jasmine: Facebook post written ✓
+[2026-05-13 23:22:46] Jasmine: ERROR processing pair_20260513_224507: Slack post failed: not_in_channel
+[2026-05-13 23:29:58] Jasmine: Processing pair pair_20260513_224507...
+[2026-05-13 23:29:59] Jasmine: Flyer built → /Users/bradleyneal/forestcity/outputs/jasmine/before_after_2026-05-13.jpg
+[2026-05-13 23:30:02] Jasmine: Pushed to GitHub → https://raw.githubusercontent.com/brad962/forestcity/main/outputs/jasmine/before_after_2026-05-13.jpg?v=1778729402
+[2026-05-13 23:30:02] Jasmine: Facebook post written ✓
+[2026-05-13 23:30:03] Jasmine: ERROR processing pair_20260513_224507: Slack post failed: not_in_channel
+[2026-05-13 23:36:51] Jasmine: Processing pair pair_20260513_224507...
+[2026-05-13 23:36:52] Jasmine: Flyer built → /Users/bradleyneal/forestcity/outputs/jasmine/before_after_2026-05-13.jpg
+[2026-05-13 23:36:56] Jasmine: Pushed to GitHub → https://raw.githubusercontent.com/brad962/forestcity/main/outputs/jasmine/before_after_2026-05-13.jpg?v=1778729816
+[2026-05-13 23:36:56] Jasmine: Facebook post written ✓
+[2026-05-13 23:36:56] Jasmine: ERROR processing pair_20260513_224507: Slack post failed: not_in_channel
+[2026-05-13 23:44:20] Jasmine: Processing pair pair_20260513_224507...
+[2026-05-13 23:44:20] Jasmine: Flyer built → /Users/bradleyneal/forestcity/outputs/jasmine/before_after_2026-05-13.jpg
+[2026-05-13 23:44:25] Jasmine: Pushed to GitHub → https://raw.githubusercontent.com/brad962/forestcity/main/outputs/jasmine/before_after_2026-05-13.jpg?v=1778730265
+[2026-05-13 23:44:25] Jasmine: Facebook post written ✓
+[2026-05-13 23:44:25] Jasmine: ERROR processing pair_20260513_224507: Slack post failed: not_in_channel
+[2026-05-13 23:56:24] Jasmine: Processing pair pair_20260513_224507...
+[2026-05-13 23:56:24] Jasmine: Flyer built → /Users/bradleyneal/forestcity/outputs/jasmine/before_after_2026-05-13.jpg
+[2026-05-13 23:56:30] Jasmine: Pushed to GitHub → https://raw.githubusercontent.com/brad962/forestcity/main/outputs/jasmine/before_after_2026-05-13.jpg?v=1778730990
+[2026-05-13 23:56:30] Jasmine: Facebook post written ✓
+[2026-05-13 23:56:30] Jasmine: ERROR processing pair_20260513_224507: Slack post failed: not_in_channel
+[2026-05-14 00:01:31] Jasmine: Processing pair pair_20260513_224507...
+[2026-05-14 00:01:31] Jasmine: Flyer built → /Users/bradleyneal/forestcity/outputs/jasmine/before_after_2026-05-13.jpg
+[2026-05-14 00:01:35] Jasmine: Pushed to GitHub → https://raw.githubusercontent.com/brad962/forestcity/main/outputs/jasmine/before_after_2026-05-13.jpg?v=1778731295
+[2026-05-14 00:01:35] Jasmine: Facebook post written ✓
+[2026-05-14 00:01:35] Jasmine: ERROR processing pair_20260513_224507: Slack post failed: not_in_channel
+[2026-05-14 00:08:04] Jasmine: Processing pair pair_20260513_224507...
+[2026-05-14 00:08:04] Jasmine: Flyer built → /Users/bradleyneal/forestcity/outputs/jasmine/before_after_2026-05-13.jpg
+[2026-05-14 00:08:07] Jasmine: Pushed to GitHub → https://raw.githubusercontent.com/brad962/forestcity/main/outputs/jasmine/before_after_2026-05-13.jpg?v=1778731687
+[2026-05-14 00:08:07] Jasmine: Facebook post written ✓
+[2026-05-14 00:08:07] Jasmine: ERROR processing pair_20260513_224507: Slack post failed: not_in_channel
+[2026-05-14 00:17:28] Jasmine: Processing pair pair_20260513_224507...
+[2026-05-14 00:17:28] Jasmine: Flyer built → /Users/bradleyneal/forestcity/outputs/jasmine/before_after_2026-05-13.jpg
+[2026-05-14 00:17:32] Jasmine: Pushed to GitHub → https://raw.githubusercontent.com/brad962/forestcity/main/outputs/jasmine/before_after_2026-05-13.jpg?v=1778732252
+[2026-05-14 00:17:32] Jasmine: Facebook post written ✓
+[2026-05-14 00:17:32] Jasmine: ERROR processing pair_20260513_224507: Slack post failed: not_in_channel
+[2026-05-14 00:22:33] Jasmine: Processing pair pair_20260513_224507...
+[2026-05-14 00:22:33] Jasmine: Flyer built → /Users/bradleyneal/forestcity/outputs/jasmine/before_after_2026-05-13.jpg
+[2026-05-14 00:22:36] Jasmine: Pushed to GitHub → https://raw.githubusercontent.com/brad962/forestcity/main/outputs/jasmine/before_after_2026-05-13.jpg?v=1778732556
+[2026-05-14 00:22:36] Jasmine: Facebook post written ✓
+[2026-05-14 00:22:36] Jasmine: ERROR processing pair_20260513_224507: Slack post failed: not_in_channel
+[2026-05-14 04:22:59] Jasmine: Processing pair pair_20260513_224507...
+[2026-05-14 04:23:00] Jasmine: Flyer built → /Users/bradleyneal/forestcity/outputs/jasmine/before_after_2026-05-13.jpg
+[2026-05-14 04:23:02] Jasmine: Pushed to GitHub → https://raw.githubusercontent.com/brad962/forestcity/main/outputs/jasmine/before_after_2026-05-13.jpg?v=1778746982
+[2026-05-14 04:23:02] Jasmine: Facebook post written ✓
+[2026-05-14 04:23:02] Jasmine: ERROR processing pair_20260513_224507: Slack post failed: not_in_channel
+[2026-05-14 11:41:40] Jasmine: Processing pair pair_20260513_224507...
+[2026-05-14 11:41:41] Jasmine: Flyer built → /Users/bradleyneal/forestcity/outputs/jasmine/before_after_2026-05-13.jpg
+[2026-05-14 15:53:15] Jasmine: Processing pair pair_20260513_224507...
+[2026-05-14 15:53:16] Jasmine: Flyer built → /Users/bradleyneal/forestcity/outputs/jasmine/before_after_2026-05-13.jpg
+[2026-05-14 15:53:18] Jasmine: Pushed to GitHub → https://raw.githubusercontent.com/brad962/forestcity/main/outputs/jasmine/before_after_2026-05-13.jpg?v=1778788398
+[2026-05-14 15:53:18] Jasmine: Facebook post written ✓
+[2026-05-14 15:53:18] Jasmine: Posted to #fc-ai-office ✓
+[2026-05-14 15:53:18] Jasmine: photo_pairs.json updated.
+[2026-05-14 16:16] Nina | Workiz daily report - Power Washing jobs | No Power Washing jobs found. | Done
+[2026-05-18 08:30] Nina | Weekly pipeline report — 45 enrolled, 0 replied, 13 hot leads | weekly_report_2026-05-18.md | Done
