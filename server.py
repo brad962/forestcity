@@ -22,7 +22,20 @@ CONTACTS_F    = BASE_DIR / 'contacts_cache.json'
 PIPELINE_F    = BASE_DIR / 'pipeline_data.json'
 PORT          = 3737
 
-MIXMAX_TOKEN  = '3646d2be-c1be-44b7-b3ef-e7ea047cad83'
+
+def _load_env():
+    env_file = BASE_DIR / '.env'
+    if env_file.exists():
+        for line in env_file.read_text().splitlines():
+            line = line.strip()
+            if line and not line.startswith('#') and '=' in line:
+                k, v = line.split('=', 1)
+                os.environ.setdefault(k.strip(), v.strip())
+
+
+_load_env()
+
+MIXMAX_TOKEN  = os.environ.get('MIXMAX_TOKEN', '')
 MIXMAX_SEQS   = [
     '6a048cfc110bc620ca0f1aee',  # Property Managers
     '6a048cfba81429e5dfe55010',  # Realtors
@@ -34,7 +47,7 @@ SEQ_LABELS    = {
     '6a048cfd624a5989a68ba16c': {'name': 'Contractors',       'type': 'contractor'},
 }
 
-INSTANTLY_KEY = 'MzkwMTFkNWMtYTdlMS00MDhmLWJkNGUtMzI5NzNkMWI2MmJiOlpqRkNTWmpqYXhwcQ=='
+INSTANTLY_KEY = os.environ.get('INSTANTLY_API_KEY', '')
 INSTANTLY_CAMPAIGNS = {
     'a1c08c3d-43c6-4a0f-b253-e3f14e66f3bc': {'name': 'Property Managers — Cuyahoga County', 'worker': 'danny'},
     '626cd15d-4d89-4c29-a609-436e69fbb404': {'name': 'Referral Partners — Contractors NE Ohio', 'worker': 'carla'},
@@ -173,7 +186,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 self._json({'error': 'missing seq param'}, 400)
                 return
             try:
-                url = f'https://api.mixmax.com/v1/sequences/{seq_id}/recipients?apiToken=3646d2be-c1be-44b7-b3ef-e7ea047cad83&limit=200'
+                url = f'https://api.mixmax.com/v1/sequences/{seq_id}/recipients?apiToken={MIXMAX_TOKEN}&limit=200'
                 with urllib.request.urlopen(url, timeout=10) as resp:
                     data = json.loads(resp.read())
                 self._json({'recipients': data if isinstance(data, list) else []})

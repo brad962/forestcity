@@ -25,22 +25,41 @@ SLACK_WEBHOOK = os.environ.get('SLACK_WEBHOOK_OFFICE', '')
 
 BASE_URL = f"https://api.workiz.com/api/v1/{WORKIZ_TOKEN}"
 JOB_TYPE_FILTER = "Power Washing"
+# Accept common casing/naming variations from Workiz
+JOB_TYPE_VARIANTS = {
+    'power washing', 'power wash', 'powerwashing', 'powerwash',
+    'pressure washing', 'pressure wash', 'pressurewashing',
+    'exterior cleaning', 'house washing', 'soft wash', 'softwash',
+}
+
+
+def _is_power_washing_job(job_type: str) -> bool:
+    return job_type.strip().lower() in JOB_TYPE_VARIANTS
 
 
 def fetch_all_jobs():
     """Pull all jobs from Workiz, filter to Power Washing only."""
     url = f"{BASE_URL}/job/all/"
     headers = {"Authorization": WORKIZ_SECRET}
-    if HAS_REQUESTS:
-        resp = _requests.get(url, headers=headers)
-        data = resp.json()
-    else:
-        req = urllib.request.Request(url, headers=headers)
-        with urllib.request.urlopen(req) as r:
-            data = json.loads(r.read())
+    try:
+        if HAS_REQUESTS:
+            resp = _requests.get(url, headers=headers, timeout=15)
+            resp.raise_for_status()
+            data = resp.json()
+        else:
+            req = urllib.request.Request(url, headers=headers)
+            with urllib.request.urlopen(req, timeout=15) as r:
+                data = json.loads(r.read())
+    except Exception as e:
+        print(f"Workiz API error: {e}")
+        return []
 
     all_jobs = data.get('data', [])
-    pw_jobs = [j for j in all_jobs if j.get('JobType', '').strip() == JOB_TYPE_FILTER]
+    pw_jobs = [j for j in all_jobs if _is_power_washing_job(j.get('JobType', ''))]
+    print(f"  Workiz: {len(all_jobs)} total jobs, {len(pw_jobs)} power washing jobs")
+    if all_jobs and not pw_jobs:
+        types_seen = {j.get('JobType', '') for j in all_jobs[:20]}
+        print(f"  JobType values seen (first 20 jobs): {types_seen}")
     return pw_jobs
 
 

@@ -10,10 +10,12 @@ Build a referral network of 100+ active partners across Northeast Ohio who send 
 1. **Siding contractors** — see dirty siding, natural handoff
 2. **Gutter companies** — cleaning gutters, see the algae stains
 3. **Painters** — pressure washing is often a pre-paint step
-4. **Landscapers** — in the yard, see the house
+4. **Landscapers** — in the yard every week, see the house better than anyone
 5. **Realtors** — listing a house, need it to look good fast
-6. **Roofers** — on the roof, see the stains
-7. **HOA management companies** — manage multiple properties at once
+6. **Roofers** — on the roof, see the stains and moss up close
+7. **HOA management companies** — manage multiple properties at once, one deal = many jobs
+8. **Window cleaning companies** — they're on every exterior surface, see the grime everywhere
+9. **Chimney sweeps** — exterior service call, see the full house condition
 
 ## Tools You Use
 - **Apollo.io API key:** aKRZyBffyV7ScWVCuTXBjA

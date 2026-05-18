@@ -78,9 +78,11 @@ DANNY_TITLES = [
 
 CARLA_SEARCHES = [
     {'type': 'contractors', 'titles': ['owner', 'president', 'founder'],
-     'keywords': ['siding', 'exterior contractor', 'roofing', 'gutters', 'painting'],
+     'keywords': ['siding', 'exterior contractor', 'roofing', 'gutters', 'painting',
+                  'landscaping', 'lawn care', 'window washing', 'chimney', 'concrete'],
      'label': 'Contractors'},
-    {'type': 'realtors', 'titles': ['realtor', 'real estate agent', 'listing agent'],
+    {'type': 'realtors', 'titles': ['realtor', 'real estate agent', 'listing agent',
+                                     'real estate broker', 'buyers agent'],
      'keywords': [],
      'label': 'Realtors'},
 ]
@@ -111,16 +113,26 @@ def apollo_search(titles, locations, per_page=25):
         'person_locations': locations,
         'per_page': per_page,
     })
-    result = subprocess.run(
-        ['curl', '-s', '-X', 'POST',
-         'https://api.apollo.io/api/v1/mixed_people/api_search',
-         '-H', 'Content-Type: application/json',
-         '-H', f'X-Api-Key: {APOLLO_KEY}',
-         '-d', payload],
-        capture_output=True, text=True, timeout=15
-    )
-    data = json.loads(result.stdout)
-    return data.get('people', [])
+    try:
+        result = subprocess.run(
+            ['curl', '-s', '-X', 'POST',
+             'https://api.apollo.io/api/v1/mixed_people/api_search',
+             '-H', 'Content-Type: application/json',
+             '-H', f'X-Api-Key: {APOLLO_KEY}',
+             '-d', payload],
+            capture_output=True, text=True, timeout=15
+        )
+        data = json.loads(result.stdout)
+        if 'error' in data:
+            print(f'  Apollo search error: {data["error"]}')
+            return []
+        return data.get('people', [])
+    except json.JSONDecodeError as e:
+        print(f'  Apollo search JSON parse error: {e} | Response: {result.stdout[:200]}')
+        return []
+    except Exception as e:
+        print(f'  Apollo search failed: {e}')
+        return []
 
 
 def apollo_reveal(person_id, first_name, last_name, org_name):
@@ -131,27 +143,37 @@ def apollo_reveal(person_id, first_name, last_name, org_name):
         'organization_name': org_name,
         'reveal_personal_emails': False,
     })
-    result = subprocess.run(
-        ['curl', '-s', '-X', 'POST',
-         'https://api.apollo.io/api/v1/people/match',
-         '-H', 'Content-Type: application/json',
-         '-H', f'X-Api-Key: {APOLLO_KEY}',
-         '-d', payload],
-        capture_output=True, text=True, timeout=10
-    )
-    data = json.loads(result.stdout)
-    return data.get('person', {})
+    try:
+        result = subprocess.run(
+            ['curl', '-s', '-X', 'POST',
+             'https://api.apollo.io/api/v1/people/match',
+             '-H', 'Content-Type: application/json',
+             '-H', f'X-Api-Key: {APOLLO_KEY}',
+             '-d', payload],
+            capture_output=True, text=True, timeout=10
+        )
+        data = json.loads(result.stdout)
+        return data.get('person', {})
+    except json.JSONDecodeError as e:
+        print(f'  Apollo reveal JSON parse error: {e}')
+        return {}
+    except Exception as e:
+        print(f'  Apollo reveal failed: {e}')
+        return {}
 
 
 def get_org_phone(org_id):
-    result = subprocess.run(
-        ['curl', '-s',
-         f'https://api.apollo.io/api/v1/organizations/{org_id}',
-         '-H', f'X-Api-Key: {APOLLO_KEY}'],
-        capture_output=True, text=True, timeout=10
-    )
-    data = json.loads(result.stdout)
-    return data.get('organization', {}).get('phone', '')
+    try:
+        result = subprocess.run(
+            ['curl', '-s',
+             f'https://api.apollo.io/api/v1/organizations/{org_id}',
+             '-H', f'X-Api-Key: {APOLLO_KEY}'],
+            capture_output=True, text=True, timeout=10
+        )
+        data = json.loads(result.stdout)
+        return data.get('organization', {}).get('phone', '')
+    except Exception:
+        return ''
 
 
 def load_existing_emails():

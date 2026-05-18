@@ -73,8 +73,12 @@ def fetch_recipients(seq_id):
     try:
         with urllib.request.urlopen(url, timeout=10) as resp:
             data = json.loads(resp.read())
-            return data if isinstance(data, list) else []
-    except Exception:
+        if isinstance(data, list):
+            return data
+        # Mixmax may return {"results": [...]} or {"recipients": [...]}
+        return data.get('results', data.get('recipients', []))
+    except Exception as e:
+        print(f'  fetch_recipients error for {seq_id}: {e}')
         return []
 
 

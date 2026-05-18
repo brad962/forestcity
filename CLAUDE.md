@@ -48,7 +48,7 @@ Available keys in .env:
 
 Pending (add to .env when ready):
 - HUBSPOT_TOKEN
-- INSTANTLY_API_KEY
+- INSTANTLY_API_KEY  ← NEEDED: server.py uses this for dashboard contact sync (moved out of code)
 - PHANTOMBUSTER_API_KEY
 - META_ADS_TOKEN
 - GOOGLE_ADS_TOKEN

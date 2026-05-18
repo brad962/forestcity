@@ -123,3 +123,12 @@
 [2026-05-18 18:45] Vera | Auto-upgrade: fixed misleading hot leads metric label in nina weekly report | workers/nina_report.py | Done
 [2026-05-18 18:45] Vera | Auto-upgrade: updated danny.md Apollo endpoint URL to match actual script endpoint; expanded target titles list | agents/danny.md | Done
 [2026-05-18 18:45] Vera | Proposal posted: 6 peak-season upgrade proposals (reply rate fix, LinkedIn protocol, activate creative workers, Workiz investigation, residential track, HubSpot) | outputs/vera/proposal_2026-05-18_peak-season-gaps.md | Done
+[2026-05-18 19:30] Vera | Auto-upgrade: workiz_report.py — case-insensitive job type matching + 10 variants + diagnostic logging | workers/workiz_report.py | Done
+[2026-05-18 19:30] Vera | Auto-upgrade: lead_pipeline.py — try/except around all apollo_search, apollo_reveal, get_org_phone JSON parse calls | workers/lead_pipeline.py | Done
+[2026-05-18 19:30] Vera | Auto-upgrade: lead_pipeline.py — expanded Carla contractor keywords (landscaping, lawn care, window washing, chimney, concrete) + added buyers agent to realtors | workers/lead_pipeline.py | Done
+[2026-05-18 19:30] Vera | Auto-upgrade: server.py — removed hardcoded INSTANTLY_KEY and MIXMAX_TOKEN; now load from .env via os.environ | server.py | Done
+[2026-05-18 19:30] Vera | Auto-upgrade: agents/carla.md — added window cleaning companies and chimney sweeps as target referral partner types | agents/carla.md | Done
+[2026-05-18 19:30] Vera | Auto-upgrade: agents/jasmine.md — activated LinkedIn NOW for peak season commercial content (was "eventually") | agents/jasmine.md | Done
+[2026-05-18 19:30] Vera | Auto-upgrade: nina_report.py — fetch_recipients now handles both list and dict API responses defensively | workers/nina_report.py | Done
+[2026-05-18 19:30] Vera | Auto-upgrade: CLAUDE.md — flagged INSTANTLY_API_KEY as needed in .env | CLAUDE.md | Done
+[2026-05-18 19:30] Vera | Created open_issues.md — 7 open issues documented with attempts and next steps | outputs/vera/open_issues.md | Done
