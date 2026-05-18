@@ -142,16 +142,23 @@ def enroll_lead(lead: dict) -> dict:
             data = json.loads(resp.read())
 
         recipients = data.get('recipients', [])
-        if recipients:
-            r = recipients[0]
-            if r.get('status') == 'error':
-                return {
-                    'status': 'error',
-                    'email': email,
-                    'lead_type': lead_type,
-                    'sequence': sequence['name'],
-                    'errors': r.get('errors', []),
-                }
+        if not recipients:
+            return {
+                'status': 'error',
+                'email': email,
+                'lead_type': lead_type,
+                'sequence': sequence['name'],
+                'errors': ['Empty recipients response — contact rejected by Mixmax'],
+            }
+        r = recipients[0]
+        if r.get('status') == 'error':
+            return {
+                'status': 'error',
+                'email': email,
+                'lead_type': lead_type,
+                'sequence': sequence['name'],
+                'errors': r.get('errors', []),
+            }
         return {
             'status': 'enrolled',
             'email': email,
