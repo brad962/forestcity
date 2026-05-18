@@ -19,6 +19,9 @@ OUTPUTS    = BASE_DIR / 'outputs'
 LOG_FILE   = BASE_DIR / 'logs' / 'activity.log'
 CACHE_FILE = BASE_DIR / 'contacts_cache.json'
 
+sys.path.insert(0, str(BASE_DIR))
+from utils.report_card import send_report_card
+
 
 def _load_env():
     env_file = BASE_DIR / '.env'
@@ -287,11 +290,32 @@ def run_danny():
         out_path.write_text('\n'.join(lines))
         log('danny', f'Apollo pull — {len(new_leads)} new property managers in {search["label"]}, {enrolled} enrolled in Mixmax', out_file)
         git_push('danny', f'Danny: lead pull {search["label"]} {date_str}')
-        url = f'{GITHUB_BASE}/outputs/danny/{out_file}'
-        notify_slack(f'🔵 *Danny — Lead Pull Complete* | {datetime.now().strftime("%b %d")}\n>{len(new_leads)} new property managers in {search["label"]} · {enrolled} enrolled in Mixmax\n<{url}|View leads>')
+        send_report_card(
+            worker_name='danny',
+            title='Lead Pull Complete',
+            metrics=[
+                ('New Leads', len(new_leads)),
+                ('Enrolled', enrolled),
+            ],
+            summary_lines=[
+                f'{len(new_leads)} property managers pulled — {search["label"]} county',
+                f'{enrolled} enrolled in Mixmax sequence',
+                f'View: {GITHUB_BASE}/outputs/danny/{out_file}',
+            ],
+            status='DONE',
+        )
     else:
         log('danny', f'Apollo pull — {search["label"]} — no new leads found (all duplicates)', 'none', 'Done')
-        notify_slack(f'🔵 *Danny — Lead Pull* | {datetime.now().strftime("%b %d")}\n>No new leads in {search["label"]} this week — all duplicates.')
+        send_report_card(
+            worker_name='danny',
+            title='Lead Pull — No New Leads',
+            metrics=[
+                ('New Leads', 0),
+                ('Enrolled', 0),
+            ],
+            summary_lines=[f'No new leads in {search["label"]} this week — all duplicates.'],
+            status='DONE',
+        )
 
     return new_leads
 
@@ -378,8 +402,20 @@ def run_carla():
         out_path.write_text('\n'.join(lines))
         log('carla', f'Apollo pull — {len(all_new)} new referral partners, {enrolled} enrolled in Mixmax', out_file)
         git_push('carla', f'Carla: lead pull {date_str}')
-        url = f'{GITHUB_BASE}/outputs/carla/{out_file}'
-        notify_slack(f'🟣 *Carla — Lead Pull Complete* | {datetime.now().strftime("%b %d")}\n>{len(all_new)} new referral partners · {enrolled} enrolled in Mixmax\n<{url}|View leads>')
+        send_report_card(
+            worker_name='carla',
+            title='Lead Pull Complete',
+            metrics=[
+                ('New Leads', len(all_new)),
+                ('Enrolled', enrolled),
+            ],
+            summary_lines=[
+                f'{len(all_new)} referral partners pulled',
+                f'{enrolled} enrolled in Mixmax sequences',
+                f'View: {GITHUB_BASE}/outputs/carla/{out_file}',
+            ],
+            status='DONE',
+        )
 
     return all_new
 
