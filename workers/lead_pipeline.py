@@ -376,7 +376,7 @@ def run_carla():
             if not email or email.lower() in existing:
                 continue
 
-            org_id = revealed.get('organization_id', '')
+            org_id = revealed.get('organization_id', '') or p.get('organization', {}).get('id', '')
             phone  = get_org_phone(org_id) if org_id else ''
 
             lead_type = 'realtor' if search['type'] == 'realtors' else 'contractor'
