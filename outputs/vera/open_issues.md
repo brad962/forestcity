@@ -423,5 +423,49 @@
 
 ---
 
-*Last updated: 2026-05-19 by Vera Cole (run 17)*
-*Key metrics: 42 RESOLVED | 12 OPEN | 3 auto-upgrades this run | 1 deliverable (June Booking Blitz brief)*
+---
+
+## RESOLVED — run_pending_sequences() discards mixmax_enrolled marks on cache write
+- Resolved: 2026-05-19 (run 18)
+- Fix: Lines 636-640 in lead_pipeline.py were doing `orig = json.loads(CACHE_FILE.read_text()); CACHE_FILE.write_text(json.dumps(orig, indent=2))` — fresh re-read discarded all `c['mixmax_enrolled'] = True` updates made to the in-memory `cache` dict. Contacts would be re-attempted for enrollment every pipeline run forever. Fixed to `CACHE_FILE.write_text(json.dumps(cache, indent=2))` using the in-memory dict directly.
+- File: `workers/lead_pipeline.py`
+
+---
+
+## RESOLVED — detect_lead_type() ignores GAS_STATION_KEYWORDS and FLEET_KEYWORDS
+- Resolved: 2026-05-19 (run 18)
+- Fix: `GAS_STATION_KEYWORDS` and `FLEET_KEYWORDS` were defined in mixmax.py but never called in `detect_lead_type()`. Gas station or fleet leads without an explicit `_lead_type` field would silently fall through to `property_manager` sequence. Added gas_station and fleet_washing checks between the contractor block and the worker-fallback block. The explicit `_lead_type` check at the top still takes priority — this is safety coverage for edge cases.
+- File: `integrations/mixmax.py`
+
+---
+
+## OPEN — 0% reply rate (Touch 3 fires May 22 — 3 days)
+- Updated: 2026-05-19 (run 18) — CRITICAL WINDOW
+- Run 18 angle: Diagnostic written. `outputs/vera/reply_rate_diagnostic_2026-05-19.md`
+  - Hypothesis 1 (most likely): Reply-To address in Mixmax points to wrong inbox — replies arriving unread
+  - Hypothesis 2: Variable substitution failing — email renders `{{firstName}}` literally
+  - Hypothesis 3: Open tracking inflation — opens counted via preview pane, not real engagement
+  - Hypothesis 4: Contacts unsubscribed (visible in Mixmax as "Unsubscribed" status, not "Replied")
+  - Hypothesis 5: Two-part CTA in Touch 1 — too much friction
+- Immediate action: Bradley logs into Mixmax TODAY, checks Reply-To setting and sends test email to himself (10 minutes total)
+- Deadline: Before Touch 3 sends on May 22 — if issues found, they can be fixed before last email goes out
+
+---
+
+## OPEN — 39 Manual Contacts Sitting Untouched (New Lead stage)
+- Updated: 2026-05-19 (run 18)
+- Memorial Day is 5 days out. Tier 1 texts must go TODAY/TOMORROW.
+- All templates ready. All numbers in pipeline_data.json and priority_outreach_list_2026-05-19.md.
+- Run 18 no change — execution is 100% in Bradley's hands.
+
+---
+
+## OPEN — Gas station contacts not enrolled in Mixmax
+- Updated: 2026-05-19 (run 18)
+- run_pending_sequences() cache-write bug now FIXED — enrollment marks will persist correctly once sequence goes live
+- Still blocked on: Bradley creates Mixmax sequence + pastes ID into integrations/mixmax.py line 54
+
+---
+
+*Last updated: 2026-05-19 by Vera Cole (run 18)*
+*Key metrics: 44 RESOLVED | 12 OPEN | 2 auto-upgrades this run | 1 deliverable (reply rate diagnostic)*

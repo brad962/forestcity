@@ -162,3 +162,8 @@
 [2026-05-19 19:45] Vera | Deliverable: June Booking Blitz campaign brief — 30-day execution plan, 4 phases, all assets mapped and status-checked | outputs/donna/campaign_brief_june_booking_blitz_2026-05-19.md | Done
 [2026-05-19 19:45] Vera | Updated open_issues.md — run 17: 2 new RESOLVED (PIPELINE_F, server.py seqs), 12 OPEN, key escalations updated | outputs/vera/open_issues.md | Done
 [2026-05-19 19:45] Vera | Proposals posted: gas station sequence, sequence rewrite approval; Memorial Day final countdown | outputs/vera/pending_slack_messages.md | Done
+[2026-05-19 20:30] Vera | Auto-upgrade: detect_lead_type() now routes gas_station + fleet_washing — GAS_STATION_KEYWORDS and FLEET_KEYWORDS were defined but never called | integrations/mixmax.py | Done
+[2026-05-19 20:30] Vera | Auto-upgrade: run_pending_sequences() cache write — was re-reading file from disk and discarding in-memory mixmax_enrolled=True marks; fixed to write in-memory cache dict directly | workers/lead_pipeline.py | Done
+[2026-05-19 20:30] Vera | Deliverable: Reply rate diagnostic — 5 hypotheses + specific Mixmax test steps for Bradley; Touch 3 fires May 22 | outputs/vera/reply_rate_diagnostic_2026-05-19.md | Done
+[2026-05-19 20:30] Vera | Updated open_issues.md — run 18: 2 new RESOLVED, open issues escalated, Memorial Day countdown updated | outputs/vera/open_issues.md | Done
+[2026-05-19 20:30] Vera | Proposals posted: Mixmax Reply-To diagnostic urgent, sequence rewrite approval, gas station sequence | outputs/vera/pending_slack_messages.md | Done

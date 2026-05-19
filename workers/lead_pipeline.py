@@ -633,11 +633,11 @@ def run_pending_sequences():
             print(f'  ⚠️  {c.get("email")} — {result.get("reason", result.get("errors",""))}')
         time.sleep(0.3)
 
-    # Persist changes
-    if CACHE_FILE.exists():
+    # Persist changes — write the in-memory cache (which has mixmax_enrolled=True updates)
+    # NOT a fresh re-read, which would silently discard the enrollment marks
+    if CACHE_FILE.exists() and cache.get('contacts'):
         try:
-            orig = json.loads(CACHE_FILE.read_text())
-            CACHE_FILE.write_text(json.dumps(orig, indent=2))
+            CACHE_FILE.write_text(json.dumps(cache, indent=2))
         except Exception:
             pass
     if pipeline_dirty and pipeline_data:

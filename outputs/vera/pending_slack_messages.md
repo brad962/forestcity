@@ -1,83 +1,76 @@
 🔧 *Vera — Auto-Upgrade*
->Changed: `PIPELINE_F` constant added to `workers/lead_pipeline.py`
->Why: Critical NameError — `run_pending_sequences()` used this variable on lines 592–643 but it was never defined, crashing every pipeline run and silently blocking all gas station / fleet auto-enrollment.
+>Changed: `detect_lead_type()` in `integrations/mixmax.py` now checks `GAS_STATION_KEYWORDS` and `FLEET_KEYWORDS`
+>Why: Both keyword lists were defined but never called — gas station or fleet leads without an explicit `_lead_type` would silently route to the PM sequence. Now correctly detected and routed to their own sequences.
+>File: `integrations/mixmax.py`
+
+---
+
+🔧 *Vera — Auto-Upgrade*
+>Changed: `run_pending_sequences()` cache write in `workers/lead_pipeline.py` — fixed silent data loss bug
+>Why: After enrolling pending contacts, the function was re-reading the cache file from disk and writing it back unchanged — discarding all `mixmax_enrolled = True` marks set in memory. Same contacts would be re-attempted every pipeline run forever. Now writes the in-memory `cache` dict directly.
 >File: `workers/lead_pipeline.py`
 
 ---
 
-🔧 *Vera — Auto-Upgrade*
->Changed: `server.py` MIXMAX_SEQS and SEQ_LABELS now built dynamically from `integrations/mixmax.py` via `_build_seq_config()`
->Why: Was hardcoded to 3 sequences. When Bradley adds the gas station or fleet Mixmax ID, the dashboard will now auto-show those contacts without any second file to update. Fallback to hardcoded IDs keeps the dashboard working if the import fails.
->File: `server.py`
+🚨 *Vera — URGENT: Touch 3 fires May 22 — check Mixmax NOW*
+>Your PM sequence Touch 3 sends in 3 days. 42% open rate. 0 replies. Before the last email goes out, spend 10 minutes diagnosing WHY.
+>
+>**Step 1:** Mixmax → PM Sequence → Settings → check Reply-To address. If it's NOT your email — replies are sitting somewhere you're not looking. Fix it today.
+>
+>**Step 2:** Send a test enrollment to yourself. Read it as a recipient. Does `{{firstName}}` render as your name or as literal text?
+>
+>**Step 3:** Mixmax → Recipients → filter by status → how many are "Unsubscribed"?
+>
+>Full diagnostic: `outputs/vera/reply_rate_diagnostic_2026-05-19.md`
+>
+>If Reply-To is wrong: replies already came in — you just can't see them. Fix the address and check the Mixmax-side inbox.
 
 ---
 
-🔧 *Vera — Auto-Upgrade*
->Changed: `agents/danny.md` — added Gas Stations and Fleet Vehicle Washing as active secondary segments
->Why: Danny pulled 18 gas station contacts on 5/19 but the agent file still described him as PM-only. Added segment descriptions, current status, and enrollment instructions so the context is accurate next time Danny is activated.
->File: `agents/danny.md`
+🚨 *Vera — MEMORIAL DAY IS 5 DAYS OUT — Execute Today*
+>Assets are built. Zero writing needed. This is an action list.
+>
+>*TODAY (May 19):*
+>• Text Bulletproof Lawncare (216-307-4344) — Day-9 template ready in `outputs/vera/contractor_day9_texts_2026-05-19.md`
+>• Text Damrons Landscaping (440-494-0422) — same file
+>• Post Facebook post #1 — `outputs/jasmine/memorial_day_posts_2026-05-19.md`
+>• Text 3 past customers — `outputs/tommy/past_customer_reengagement_2026-05-18.md`
+>
+>*Wednesday May 21:*
+>• Upload 1 job photo to Google Business Profile (15 min)
+>• Text remaining Tier 1 contractor leads
+>
+>*Friday May 23 (last push):*
+>• Post urgency Facebook post + LinkedIn post
+>• Send bridge email to top 3 hot leads from your Gmail (NOT Mixmax)
 
 ---
 
-📋 *Vera — New Deliverable*
->Created: June Booking Blitz Campaign Brief — full 30-day execution plan for June 2026
->File: `outputs/donna/campaign_brief_june_booking_blitz_2026-05-19.md`
->Summary:
->• Phase 1 (June 1–7): Activate the existing pipeline — 5 contractor texts, 3 bridge emails, gas station enrollment, Danny cron
->• Phase 2 (June 8–14): Commercial lead flow — weekly PM pull resumes, LinkedIn outreach to hot leads
->• Phase 3 (June 15–21): Residential push — Facebook ads on, Nextdoor posts, GBP photos, review requests
->• Phase 4 (June 22–30): Double down on what's working
->
->⚠️ Key finding: Every asset needed for June is already written. Zero bottleneck except execution.
+💡 *Vera — Proposal: Approve Sequence Rewrite Before Touch 3*
+>Idea: Approve Tommy's PM sequence rewrite and upload new copy to Mixmax before May 22
+>Why: 0% reply rate means the current body copy isn't converting. Touch 3 is the last email — it's also the last chance to present a specific offer. Tommy's rewrite has a harder CTA and includes the "free property walk" offer as a concrete ask.
+>Impact: Even getting 1 reply from Touch 3 = potential $500–$1,500 job
+>Action: Reply YES and Tommy will finalize 3-touch copy for Mixmax upload. Done same day.
 
 ---
 
-🚨 *Vera — MEMORIAL DAY FINAL COUNTDOWN — 7 Days*
->May 26 is 7 days away. This is the single highest-urgency window of the year. Here's what's ready RIGHT NOW — no writing needed, just send:
->
->*TEXT THESE 5 CONTRACTORS TODAY:*
->1. Land Pro Management — Anthony — 440-320-2779
->2. GTP Landscaping — Dontez — 440-396-0814
->3. Twin Improvements (number in pipeline_data.json)
->4. Reliable Roofing (number in pipeline_data.json)
->5. Pagels Construction (number in pipeline_data.json)
->→ Templates: `outputs/vera/sms_templates_contractors_2026-05-18.md`
->
->*ALSO THIS WEEK:*
->• Post 1 Facebook post (ready: `outputs/jasmine/` — Memorial Day posts batch)
->• Upload 1 photo to Google Business Profile (any clean job photo)
->• Text past customers: `outputs/tommy/past_customer_reengagement_2026-05-18.md`
->
->The window closes Sunday May 25. After that, the urgency is gone.
-
----
-
-💡 *Vera — Upgrade Proposal*
->Idea: Create the "Gas Station & C-Store Outreach" Mixmax sequence — 18 verified contacts are staged and waiting
->Why: PIPELINE_F NameError is now fixed. `run_pending_sequences()` will actually work. The 18 gas station contacts are tagged with `_lead_type: gas_station` in `pipeline_data.json`. The sequence copy is written in `outputs/danny/sequence_gas_stations_2026-05-19.md`. All that's blocking enrollment is the Mixmax sequence ID.
->Impact: 18 commercial leads go live immediately on next pipeline run
->Action: Create sequence in Mixmax UI → copy the ID → paste into `integrations/mixmax.py` line 54 where it says `'id': 'PENDING'` → run `python3 workers/lead_pipeline.py` locally
+💡 *Vera — Proposal: Gas Station Mixmax Sequence*
+>18 contacts staged and waiting. run_pending_sequences() bug now fixed. As soon as the ID goes live, they auto-enroll.
+>Action: Mixmax UI → New Sequence → name it "Forest City Power Washing — Gas Station & C-Store Outreach" → copy sequence from `outputs/danny/sequence_gas_stations_2026-05-19.md` → paste the sequence ID into `integrations/mixmax.py` line 54 where it says `'id': 'PENDING'` → run `python3 workers/lead_pipeline.py` locally.
 >Reply YES to approve.
 
 ---
 
-💡 *Vera — Upgrade Proposal*
->Idea: Approve Tommy's PM sequence rewrite — current copy has 42% opens but 0 replies
->Why: 45 enrolled, 0 replies means people are reading but not acting. Something in the body copy is failing. Tommy wrote a new 3-touch draft — better subject lines, harder CTAs, specific NE Ohio references.
->Impact: Even a 5% reply rate on 45 enrolled = 2–3 responses — could be worth $1,500–$3,000 in booked jobs
->File: `outputs/tommy/` — look for sequence rewrite files
->Reply YES to approve and Tommy will finalize the copy for upload to Mixmax.
-
----
-
-✅ *Vera — Scan Complete 2026-05-19 (Run 17)*
->3 auto-upgrades shipped | 1 deliverable | 2 proposals | 42 RESOLVED | 12 OPEN
+✅ *Vera — Scan Complete 2026-05-19 (Run 18)*
+>2 auto-upgrades shipped | 2 proposals | 44 RESOLVED | 12 OPEN
 >
->🔑 Key fix this run: PIPELINE_F NameError — was silently crashing every pipeline run and blocking all gas station auto-enrollment. Now fixed.
+>🔑 Key fixes this run:
+>• Silent bug: run_pending_sequences() was discarding enrollment marks on every run — fixed
+>• Logic gap: GAS_STATION_KEYWORDS and FLEET_KEYWORDS were defined but never used in routing — fixed
 >
->📋 New deliverable: June Booking Blitz brief — full 30-day commercial + residential plan. Every asset is already built. Execution is the only gap.
+>📋 New deliverable: Reply rate diagnostic with 5 hypotheses + specific test steps for Bradley
 >
 >⚠️ Top 3 actions for Bradley RIGHT NOW:
->1. TEXT 5 contractors today (Memorial Day 7 days out — numbers + templates ready)
->2. Run `python3 workers/lead_pipeline.py both` locally — 7 days overdue
->3. Create gas station Mixmax sequence (18 leads ready to enroll instantly)
+>1. Check Mixmax Reply-To setting TODAY (Touch 3 fires May 22 — replies may be in wrong inbox)
+>2. Execute Memorial Day texts today (5 days left — templates all ready)
+>3. Create gas station Mixmax sequence (18 leads waiting — infrastructure now fully fixed)

@@ -122,6 +122,12 @@ def detect_lead_type(lead: dict) -> str:
     for kw in CONTRACTOR_TITLES:
         if kw in combined:
             return 'contractor'
+    for kw in GAS_STATION_KEYWORDS:
+        if kw in combined:
+            return 'gas_station'
+    for kw in FLEET_KEYWORDS:
+        if kw in combined:
+            return 'fleet_washing'
 
     # Default to property manager for Danny's campaign, contractor for Carla's
     worker = lead.get('_worker', '')
