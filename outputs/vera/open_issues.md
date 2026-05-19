@@ -138,47 +138,54 @@
 
 ## RESOLVED — server.py APOLLO_KEY hardcoded in /api/apollo/linkedin endpoint
 - Resolved: 2026-05-19 (run 9)
-- Fix: Added `APOLLO_KEY = os.environ.get('APOLLO_KEY', '')` at module level. Replaced hardcoded string `'aKRZyBffyV7ScWVCuTXBjA'` in subprocess call with `f'X-Api-Key: {APOLLO_KEY}'`.
+- Fix: Added `APOLLO_KEY = os.environ.get('APOLLO_KEY', '')` at module level. Replaced hardcoded string.
 - File: `server.py`
 
 ---
 
 ## RESOLVED — report_card.py Mac-only font paths fail silently in Linux/cloud
 - Resolved: 2026-05-19 (run 9)
-- Fix: Added `_find_font()` helper that checks Mac path first, then Liberation Sans and DejaVu Linux paths. Report cards now render with proper fonts in cloud CI and local Linux environments.
+- Fix: Added `_find_font()` helper that checks Mac path first, then Liberation Sans and DejaVu Linux paths.
 - File: `utils/report_card.py`
 
 ---
 
 ## RESOLVED — danny.md agent file references dead tools (Instantly.ai, HubSpot) as active
 - Resolved: 2026-05-19 (run 9)
-- Fix: Updated Tools section to mark Mixmax as active enrollment tool, HubSpot as "pending", Instantly.ai as "not active". Updated Apollo base URL to the correct `api/v1/mixed_people/api_search` endpoint.
+- Fix: Updated Tools section to mark Mixmax as active, Instantly.ai as inactive, HubSpot pending.
 - File: `agents/danny.md`
 
 ---
 
-## OPEN — 🚨 HOT CONTRACTORS WAITING FOR TEXT (DAY 6 — CRITICAL)
-- First seen: 2026-05-18
-- Description: pipeline_data.json confirms 2 contractors in "Replied" stage:
+## RESOLVED — server.py PUT /api/pipeline cannot update manual contacts (no email key)
+- Resolved: 2026-05-19 (run 10)
+- Fix: Extended PUT handler to accept `contact_id` field. If present, looks up manual contact in `manual_contacts[]` by ID and updates in-place. If only `email` present, uses legacy email-keyed path. If neither, returns 400.
+- File: `server.py`
+
+---
+
+## OPEN — 🚨 HOT CONTRACTORS WAITING FOR TEXT (DAY 7 — CRITICAL)
+- First seen: 2026-05-13
+- Description: 2 contractors in "Replied" stage:
   - **Bulletproof Lawncare** | 216-307-4344 — notes: "Very interested — send text"
   - **Damrons Landscaping** | 440-494-0422 — notes: "Very interested — send text"
-  Both were called 2026-05-13. Neither has received a follow-up text. It has been **6 days**.
-  After 6 days, "very interested" cools fast. Every day increases drop-off risk.
+  Both were called 2026-05-13. Today is 2026-05-19 — **7 days without a text**. At 7 days, warm interest transitions to cold. Every additional day increases drop-off significantly.
 - Attempts:
-  - 2026-05-18 (runs 1–8): Flagged via high-priority Slack alert each run.
-  - 2026-05-18 (run 8): Full conversation decision tree written — ready to use.
-  - 2026-05-19 (run 9): Re-escalating. Confirmed via pipeline_data.json parse.
+  - 2026-05-18 (runs 1–9): Flagged via high-priority Slack alerts every run.
+  - 2026-05-19 (run 10): Day-7 specific text scripts written: `outputs/vera/contractor_day7_texts_2026-05-19.md`
+  - 2026-05-19 (run 10): Memorial Day sprint plan includes these as Day 1 priority: `outputs/donna/memorial_day_sprint_2026-05-19.md`
 - Resolution criteria: Bradley texts both TODAY and logs response in pipeline_data.json.
 
 ---
 
 ## OPEN — 22 Manual Contacts Need Stage Updates + Texts
-- First seen: 2026-05-18 (updated run 9)
-- Description: 24 manual contacts total. 21 in "New Lead", notes say "Send text" on most. 1 in "Contacted". All have `last_contact: ""` — stale detection cannot fire.
+- First seen: 2026-05-18 (updated run 10)
+- Description: 24 manual contacts total. 21 in "New Lead", 1 in "Contacted", 2 in "Replied". Notes say "Send text" on most.
 - Attempts:
-  - 2026-05-18 (runs 6–8): SMS templates ready (`outputs/vera/sms_templates_contractors_2026-05-18.md`).
-  - 2026-05-19 (run 9): Still open. Confirmed via pipeline_data parse.
-- Resolution criteria: Bradley texts leads using the SMS templates + updates `last_contact` dates in pipeline_data.json.
+  - 2026-05-18 (runs 6–10): SMS templates ready (`outputs/vera/sms_templates_contractors_2026-05-18.md`).
+  - 2026-05-19 (run 10): Memorial Day sprint plan prioritizes texting all contacts this week.
+  - 2026-05-19 (run 10): server.py fix deployed — Bradley can now update stages from dashboard using contact_id.
+- Resolution criteria: Bradley texts leads + updates stages in pipeline_data.json.
 
 ---
 
@@ -217,9 +224,10 @@
 - First seen: 2026-05-18
 - Description: 45 enrolled, 42% open rate, 0 replies. Opens work, body copy doesn't convert.
 - Attempts:
-  - 2026-05-18 (runs 1–8): Full rewrite drafts ready — `outputs/vera/sequence_rewrites_proposal_2026-05-18.md`. Awaiting YES.
-  - 2026-05-19 (run 9): Still open. Each day without a reply is wasted send volume.
-- Next steps: Bradley says YES → copy goes live in Mixmax sequences.
+  - 2026-05-18 (runs 1–9): Full rewrite drafts ready — `outputs/vera/sequence_rewrites_proposal_2026-05-18.md`. Awaiting YES.
+  - 2026-05-19 (run 10): Manual bridge email written for top 13 hot leads as parallel track: `outputs/tommy/hot_lead_bridge_email_2026-05-19.md`. Doesn't require sequence change.
+  - Bridge email can be sent TODAY without approval — no platform changes needed.
+- Next steps: Bradley sends bridge emails to top 3 hot leads today. Say YES to sequence rewrite.
 
 ---
 
@@ -227,27 +235,27 @@
 - First seen: 2026-05-18
 - Description: 13 contacts with 2+ opens, no replies, no LinkedIn outreach. LinkedIn DM protocol ready.
 - Attempts:
-  - 2026-05-18 (runs 1–8): Protocol written (`outputs/danny/linkedin_hot_lead_dm_protocol_2026-05-18.md`). 3 connects/day.
-  - 2026-05-19 (run 9): Still open. Bradley needs to open LinkedIn and send 3 connects today.
-- Resolution criteria: Bradley sends first 3 LinkedIn connects using the DM protocol.
+  - 2026-05-18 (runs 1–9): Protocol written (`outputs/danny/linkedin_hot_lead_dm_protocol_2026-05-18.md`). 3 connects/day.
+  - 2026-05-19 (run 10): Bridge email written as faster alternative for today.
+- Resolution criteria: Bradley sends first 3 LinkedIn connects OR 3 bridge emails using the protocol/template.
 
 ---
 
 ## OPEN — Marcus fresh web intel needed (competitor + VOC)
 - First seen: 2026-05-18
-- Description: Marcus's VOC library and competitor profiles are now 7 days old. Peak season — competitor moves happen weekly.
+- Description: Live competitor pricing + GBP status needs web search (cloud-blocked).
 - Attempts:
   - 2026-05-18 (run 7): VOC seasonal bulletin from existing research.
-  - 2026-05-18 (run 8): GBP optimization guide written.
-  - 2026-05-19 (run 9): Now 7 days old. Fresh competitor pricing intel still needed.
-- Next steps: Bradley runs Marcus locally with web search for a fresh competitor scrape.
+  - 2026-05-19 (run 9): GBP optimization guide written.
+  - 2026-05-19 (run 10): Synthesized intel update written from patterns: `outputs/marcus/competitor_intel_may19_2026.md`. Live web data still needed.
+- Next steps: Bradley runs Marcus locally with web search enabled.
 
 ---
 
 ## OPEN — HubSpot not connected (CRM blind)
 - First seen: 2026-05-12
 - Description: HUBSPOT_TOKEN listed as "pending." Nina's CRM architecture is built and idle.
-- Attempts: 2026-05-12 through 2026-05-19: Escalating each run. Still open.
+- Attempts: 2026-05-12 through 2026-05-19 (runs 1–10): Escalating each run. Still open.
 - Resolution criteria: HUBSPOT_TOKEN added to .env. Nina confirms CRM live.
 
 ---
@@ -256,9 +264,10 @@
 - First seen: 2026-05-18
 - Description: Entire pipeline is B2B. Zero homeowner outreach. Peak season = highest-volume segment.
 - Attempts:
-  - 2026-05-18 (runs 6–8): Facebook ads written (Rick), re-engagement email (Tommy), one-pager (Tommy), GBP guide (Marcus), review request sequence (Tommy).
-  - 2026-05-19 (run 9): Still no homeowner channel live. Peak is now. Every week without this is lost revenue.
-- Resolution criteria: Facebook ads running OR Bradley posting in Nextdoor groups OR GBP posting active.
+  - 2026-05-18 (runs 6–9): Facebook ads written (Rick), re-engagement email (Tommy), one-pager (Tommy), GBP guide (Marcus), review request sequence (Tommy).
+  - 2026-05-19 (run 10): Memorial Day sprint plan outlines 5-channel residential push: `outputs/donna/memorial_day_sprint_2026-05-19.md`
+  - Nextdoor post written in sprint plan — 10 minutes, zero cost.
+- Resolution criteria: One action taken: Facebook post published, Nextdoor post live, OR GBP photo posted.
 
 ---
 
@@ -272,19 +281,19 @@
 
 ## OPEN — Danny/Carla lead pulls not logged (pipeline not growing)
 - First seen: 2026-05-18
-- Description: No Danny or Carla lead pull logged in activity.log since May 13. One week gap.
-- Attempts: 2026-05-18–19: Cron job schedule in CLAUDE.md. Still not confirmed running.
-- Next steps: Bradley confirms `python3 workers/lead_pipeline.py both` is scheduled locally.
+- Description: No Danny or Carla lead pull logged in activity.log since May 13. One week gap. `contacts_cache.json` confirmed missing from cloud clone (local-only file, not committed to git).
+- Attempts: 2026-05-18–19 (runs 1–10): Cron job schedule in CLAUDE.md. Still not confirmed running.
+- Next steps: Bradley confirms `python3 workers/lead_pipeline.py both` is scheduled locally. Week of May 19 is Geauga+Portage rotation for Danny.
 
 ---
 
 ## OPEN — Google Business Profile not managed (zero-cost lead channel ignored)
 - First seen: 2026-05-18 (run 8)
-- Description: No GBP posts, photos, or review responses. Full optimization guide written.
+- Description: No GBP posts, photos, or review responses. Full optimization guide written. Peak Google search volume is NOW.
 - Attempts:
   - 2026-05-18 (run 8): GBP guide — `outputs/marcus/gbp_optimization_guide_2026-05-18.md`.
-  - 2026-05-19 (run 9): Still untouched. Peak Google search volume is NOW.
-- Resolution criteria: Bradley completes GBP checklist + starts 1 post/week, 2-3 photos/week.
+  - 2026-05-19 (runs 9–10): Escalating. Before/after from Westlake May 13 job is ready to upload today.
+- Resolution criteria: Bradley posts 1 photo to GBP today. 10 minutes.
 
 ---
 
@@ -293,16 +302,16 @@
 - Description: No post-job review request sequence. Every completed job is a missed review opportunity.
 - Attempts:
   - 2026-05-18 (run 8): 3-touch sequence written — `outputs/tommy/review_request_sequence_2026-05-18.md`.
-  - 2026-05-19 (run 9): Still open.
+  - 2026-05-19 (runs 9–10): Still open.
 - Resolution criteria: Bradley sends review request text after each completed job.
 
 ---
 
 ## OPEN — Ghost fixes pattern: fixes lost in merge conflicts
 - First seen: 2026-05-18 (run 5)
-- Status: Monitored each run. No ghost fixes detected in runs 8 or 9. Pattern documented.
+- Status: Monitored each run. No ghost fixes detected in runs 8, 9, or 10. Pattern documented. Watch for it.
 
 ---
 
-*Last updated: 2026-05-19 by Vera Cole (run 9)*
-*Key metrics: 22 RESOLVED | 14 OPEN | 3 new auto-upgrades shipped this run*
+*Last updated: 2026-05-19 by Vera Cole (run 10)*
+*Key metrics: 23 RESOLVED | 14 OPEN | 4 new deliverables shipped | 1 auto-upgrade shipped*

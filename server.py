@@ -440,21 +440,40 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 self._json({'error': str(e)}, 500)
 
         elif self.path == '/api/pipeline':
-            # Save stage/notes update for a contact
+            # Save stage/notes update for a contact (email-keyed for Mixmax leads,
+            # contact_id-keyed for manual contacts that have no email)
             try:
-                data  = json.loads(body)
-                email = data.get('email', '').lower()
-                if not email:
-                    self._json({'error': 'missing email'}, 400)
-                    return
-                pipeline = json.loads(PIPELINE_F.read_text()) if PIPELINE_F.exists() else {}
-                if email not in pipeline:
-                    pipeline[email] = {}
-                for field in ('stage', 'notes', 'last_contact', 'next_followup', 'est_value', 'company'):
-                    if field in data:
-                        pipeline[email][field] = data[field]
-                PIPELINE_F.write_text(json.dumps(pipeline, indent=2))
-                self._json({'ok': True, 'email': email})
+                data       = json.loads(body)
+                email      = data.get('email', '').lower()
+                contact_id = data.get('contact_id', '').strip()
+                pipeline   = json.loads(PIPELINE_F.read_text()) if PIPELINE_F.exists() else {}
+
+                if contact_id:
+                    # Update manual contact in-place by ID
+                    updated = False
+                    for mc in pipeline.get('manual_contacts', []):
+                        if mc.get('id') == contact_id:
+                            for field in ('stage', 'notes', 'last_contact', 'next_followup', 'est_value'):
+                                if field in data:
+                                    mc[field] = data[field]
+                            updated = True
+                            break
+                    if not updated:
+                        self._json({'error': f'contact_id {contact_id!r} not found'}, 404)
+                        return
+                    PIPELINE_F.write_text(json.dumps(pipeline, indent=2))
+                    self._json({'ok': True, 'contact_id': contact_id})
+                elif email:
+                    # Email-keyed update for Mixmax-enrolled contacts
+                    if email not in pipeline:
+                        pipeline[email] = {}
+                    for field in ('stage', 'notes', 'last_contact', 'next_followup', 'est_value', 'company'):
+                        if field in data:
+                            pipeline[email][field] = data[field]
+                    PIPELINE_F.write_text(json.dumps(pipeline, indent=2))
+                    self._json({'ok': True, 'email': email})
+                else:
+                    self._json({'error': 'missing email or contact_id'}, 400)
             except Exception as e:
                 self._json({'error': str(e)}, 500)
 

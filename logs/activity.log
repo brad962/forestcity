@@ -191,3 +191,11 @@
 [2026-05-19 09:00] Vera | Auto-upgrade: agents/danny.md — corrected Tools section: Mixmax marked active, Instantly.ai marked inactive, HubSpot pending, Apollo URL corrected to actual endpoint | agents/danny.md | Done
 [2026-05-19 09:00] Vera | Updated open_issues.md — 3 new RESOLVED (server.py Apollo key, report_card.py fonts, danny.md tool refs), all prior fixes verified, 14 open issues tracked | outputs/vera/open_issues.md | Done
 [2026-05-19 09:00] Vera | Wrote pending_slack_messages.md — 3 auto-upgrade notices, urgent contractor escalation (Day 6), 2 new proposals, pending approvals reminder, scan summary | outputs/vera/pending_slack_messages.md | Done
+[2026-05-19 10:00] Vera | Auto-upgrade: server.py — PUT /api/pipeline now accepts contact_id for manual contact stage updates; manual contacts in manual_contacts[] can now be updated from dashboard without email | server.py | Done
+[2026-05-19 10:00] Vera | New deliverable: Week of May 19 Facebook posts (5) + LinkedIn posts (2), Memorial Day urgency hooks | outputs/jasmine/facebook_posts_week_2026-05-19.md | Done
+[2026-05-19 10:00] Tommy | Bridge email for 13 hot leads (2+ opens, no reply) — manual 1:1 send from Bradley's Gmail, 30-40% reply rate expected vs sequence | outputs/tommy/hot_lead_bridge_email_2026-05-19.md | Done
+[2026-05-19 10:00] Donna | Memorial Day sprint plan — 7-day, 5-channel, 5-job goal, May 19-26 | outputs/donna/memorial_day_sprint_2026-05-19.md | Done
+[2026-05-19 10:00] Marcus | Competitor + market intel update — seasonal patterns, VOC triggers, what to watch this week | outputs/marcus/competitor_intel_may19_2026.md | Done
+[2026-05-19 10:00] Vera | Day-7 contractor texts written — specific scripts for Bulletproof Lawncare and Damrons Landscaping | outputs/vera/contractor_day7_texts_2026-05-19.md | Done
+[2026-05-19 10:00] Vera | Updated open_issues.md — 1 new RESOLVED (server.py manual contact update), 14 open issues tracked, run 10 complete | outputs/vera/open_issues.md | Done
+[2026-05-19 10:00] Vera | Wrote pending_slack_messages.md — 1 auto-upgrade, 1 urgent contractor alert, 4 deliverable notices, 2 proposals, 1 pending reminder, 1 scan summary | outputs/vera/pending_slack_messages.md | Done
