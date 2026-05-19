@@ -70,6 +70,11 @@ CONTRACTOR_TITLES = [
 
 def detect_lead_type(lead: dict) -> str:
     """Detect lead type from title/company. Returns 'property_manager', 'realtor', or 'contractor'."""
+    # Honor explicit intent from pipeline (e.g. Carla's realtor leads with non-standard titles)
+    explicit = lead.get('_lead_type', '')
+    if explicit in SEQUENCES:
+        return explicit
+
     title = (lead.get('title') or lead.get('personalization') or '').lower()
     company = (lead.get('company_name') or lead.get('organization') or '').lower()
     combined = f"{title} {company}"

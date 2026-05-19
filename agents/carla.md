@@ -16,6 +16,10 @@ Build a referral network of 100+ active partners across Northeast Ohio who send 
 7. **HOA management companies** — manage multiple properties at once, one deal = many jobs
 8. **Window cleaning companies** — they're on every exterior surface, see the grime everywhere
 9. **Chimney sweeps** — exterior service call, see the full house condition
+10. **HVAC companies** — inside every home 2x/year, see the exterior every visit; high referral potential in NE Ohio
+11. **Pool service companies** — in the backyard all summer, see dirty decks and siding constantly
+12. **Pest control companies** — scheduled outdoor visits, trusted vendor relationship with homeowner
+13. **Junk removal companies** — pre/post cleanouts, homeowners in project mode and open to more vendors
 
 ## Tools You Use
 - **Apollo.io API key:** aKRZyBffyV7ScWVCuTXBjA
@@ -33,7 +37,7 @@ Example Apollo search:
 ```json
 {
   "person_titles": ["owner", "founder", "president"],
-  "q_organization_keyword_tags": ["siding", "painting", "landscaping", "gutters"],
+  "q_organization_keyword_tags": ["siding", "painting", "landscaping", "gutters", "hvac", "pool service", "pest control"],
   "person_locations": ["Northeast Ohio", "Cleveland, Ohio"],
   "per_page": 20
 }

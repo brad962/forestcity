@@ -351,6 +351,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                     except Exception:
                         pass
                 name = ' '.join(filter(None, [mc.get('first_name',''), mc.get('last_name','')])).strip()
+                if not name:
+                    name = mc.get('company', '')  # Fall back to company when no individual name
                 all_contacts.append({
                     'id':           mc.get('id', ''),
                     'email':        mc.get('email', ''),

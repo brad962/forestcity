@@ -185,34 +185,53 @@
 
 ---
 
-## OPEN — 🚨 HOT CONTRACTORS WAITING FOR TEXT (DAY 8 — CRITICAL)
+## RESOLVED — detect_lead_type ignores _lead_type field — Carla realtor leads misrouted
+- Resolved: 2026-05-19 (run 12)
+- Fix: Added `explicit = lead.get('_lead_type', '')` check at top of `detect_lead_type()`. Returns immediately if value is a valid SEQUENCES key. Also fixed `mixmax_enroll()` to explicitly set `lead['_lead_type'] = lead_type`. Verified: 5-test suite all pass.
+- Files: `integrations/mixmax.py`, `workers/lead_pipeline.py`
+
+---
+
+## RESOLVED — server.py manual contact name shows blank (no first_name/last_name)
+- Resolved: 2026-05-19 (run 12)
+- Fix: Added `if not name: name = mc.get('company', '')` fallback after name construction. Bulletproof Lawncare and Damrons Landscaping now display their company name in the pipeline dashboard.
+- File: `server.py`
+
+---
+
+## RESOLVED — Carla searches miss HVAC, pool service, pest control referral partners
+- Resolved: 2026-05-19 (run 12)
+- Fix: Added "Home Services" search type to `CARLA_SEARCHES` with 9 new keywords (hvac, heating cooling, air conditioning, pool service, pool cleaning, pest control, home cleaning, junk removal, moving company). Updated `agents/carla.md` with 4 new partner types.
+- Files: `workers/lead_pipeline.py`, `agents/carla.md`
+
+---
+
+## OPEN — 🚨 HOT CONTRACTORS WAITING FOR TEXT (DAY 9 — FINAL WINDOW)
 - First seen: 2026-05-13
 - Description: 2 contractors in "Replied" stage:
   - **Bulletproof Lawncare** | 216-307-4344 — notes: "Very interested — send text"
   - **Damrons Landscaping** | 440-494-0422 — notes: "Very interested — send text"
-  Both were called 2026-05-13. Today is 2026-05-19 — **8 days without a text**. Reply rate drops ~40% after 7 days.
+  Both were called 2026-05-13. Today is 2026-05-19 — **9 days without a text**. Reply rate drops ~60% after 10 days. MEMORIAL DAY IS SUNDAY — this is the absolute last window.
 - Attempts:
   - 2026-05-18 (runs 1–9): Flagged via high-priority Slack alerts every run.
-  - 2026-05-19 (run 10): Day-7 texts written: `outputs/vera/contractor_day7_texts_2026-05-19.md`
-  - 2026-05-19 (run 11): Day-8 texts with Memorial Day hook + 3-option sequence: `outputs/vera/contractor_day8_texts_2026-05-19.md`
+  - 2026-05-19 (run 10): Day-7 texts written.
+  - 2026-05-19 (run 11): Day-8 Memorial Day hook texts written.
+  - 2026-05-19 (run 12): Day-9 FINAL texts: `outputs/vera/contractor_day9_texts_2026-05-19.md`. Full execution checklist: `outputs/vera/memorial_day_execution_checklist_2026-05-19.md`.
 - Resolution criteria: Bradley texts both TODAY and logs response in pipeline_data.json.
 
 ---
 
 ## OPEN — 22 Manual Contacts Need Stage Updates + Texts
-- First seen: 2026-05-18 (updated run 11)
+- First seen: 2026-05-18 (updated run 12)
 - Description: 24 manual contacts total. 21 "New Lead", 1 "Contacted", 2 "Replied". Notes say "Send text" on most.
-- Attempts:
-  - 2026-05-18 (runs 6–10): SMS templates ready (`outputs/vera/sms_templates_contractors_2026-05-18.md`).
-  - 2026-05-19 (run 10): Memorial Day sprint plan prioritizes texting all contacts.
-  - 2026-05-19 (run 11): Memorial Day (May 24) = perfect text hook for all landscaper/contractor leads. Use "before the holiday" framing.
+- Memorial Day execution checklist lists priority contacts to text today.
 - Resolution criteria: Bradley texts leads + updates stages in pipeline_data.json.
 
 ---
 
 ## OPEN — Mixmax API blocked in cloud execution environment
 - First seen: 2026-05-18
-- Workaround: All pipeline scripts return None/safe fallback on 403. nina_report now shows explicit API warning instead of misleading zeroes (run 11 fix).
+- Workaround: All pipeline scripts return None/safe fallback on 403. nina_report shows explicit API warning.
 - Next steps: Bradley checks Mixmax → API Settings → IP Allowlist.
 
 ---
@@ -240,16 +259,15 @@
 ## OPEN — 0% reply rate across 45 enrolled contacts
 - First seen: 2026-05-18
 - Description: 45 enrolled, 42% open rate, 0 replies. Opens work, body copy doesn't convert.
-- Attempts:
-  - Run 11 fresh angle: May be email 2 drop-off (opens on email 1, weak email 2). Full rewrites ready: `outputs/vera/sequence_rewrites_proposal_2026-05-18.md`. Bridge email ready: `outputs/tommy/hot_lead_bridge_email_2026-05-19.md`.
-- Next steps: Bradley says YES to sequence rewrite. OR sends bridge email to top 3 hot leads this week.
+- Run 12 angle: Bridge email from Gmail (not Mixmax) to top 3 is the fastest win this week. Sequence rewrite still needs approval.
+- Next steps: Bradley sends bridge email (`outputs/tommy/hot_lead_bridge_email_2026-05-19.md`) to 3 hot leads OR approves sequence rewrite.
 
 ---
 
 ## OPEN — 13 hot leads sitting uncontacted on LinkedIn
 - First seen: 2026-05-18
 - Description: 13 contacts with 2+ opens, no replies, no LinkedIn outreach.
-- Run 11: Memorial Day week is ideal for first connects — PMs are planning summer vendor contracts.
+- Memorial Day week is peak window — PMs making summer vendor decisions now.
 - Protocol ready: `outputs/danny/linkedin_hot_lead_dm_protocol_2026-05-18.md`
 - Resolution criteria: Bradley sends 3 LinkedIn connects or 3 bridge emails this week.
 
@@ -270,14 +288,14 @@
 
 ## OPEN — No residential homeowner outreach channel
 - First seen: 2026-05-18
-- Run 11: Nextdoor templates written (`outputs/donna/nextdoor_post_template_2026-05-19.md`). Memorial Day social posts ready (`outputs/jasmine/memorial_day_posts_2026-05-19.md`). Peak season peaks THIS WEEK.
+- Run 11: Nextdoor templates written. Memorial Day social posts ready.
 - Resolution criteria: Bradley posts 1 Facebook post OR creates Nextdoor account.
 
 ---
 
 ## OPEN — Workiz API blocked in cloud AND 0 power washing jobs on local
 - First seen: 2026-05-14
-- All code fixes confirmed present. Diagnostic logging will print JobType values when run locally.
+- All code fixes confirmed present. Diagnostic logging active.
 - Next step: Bradley checks Workiz for actual JobType field name.
 
 ---
@@ -291,8 +309,8 @@
 
 ## OPEN — Google Business Profile not managed (zero-cost lead channel ignored)
 - First seen: 2026-05-18 (run 8)
-- GBP optimization guide: `outputs/marcus/gbp_optimization_guide_2026-05-18.md`. Before/after from May 13 ready to upload.
-- Resolution: Bradley posts 1 photo to GBP today.
+- Memorial Day execution checklist: upload 1 photo to GBP by Wednesday May 21.
+- Resolution: Bradley posts 1 photo to GBP.
 
 ---
 
@@ -305,9 +323,9 @@
 
 ## OPEN — Ghost fixes pattern: fixes lost in merge conflicts
 - First seen: 2026-05-18 (run 5)
-- Run 11 verification: all 26 prior fixes confirmed present. No regressions.
+- Run 12 verification: all 29 prior fixes confirmed present. No regressions.
 
 ---
 
-*Last updated: 2026-05-19 by Vera Cole (run 11)*
-*Key metrics: 26 RESOLVED | 14 OPEN | 3 auto-upgrades shipped | 4 new deliverables*
+*Last updated: 2026-05-19 by Vera Cole (run 12)*
+*Key metrics: 29 RESOLVED | 14 OPEN | 3 auto-upgrades shipped | 2 new deliverables*

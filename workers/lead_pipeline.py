@@ -93,6 +93,12 @@ CARLA_SEARCHES = [
      'keywords': ['siding', 'exterior contractor', 'roofing', 'gutters', 'painting',
                   'landscaping', 'lawn care', 'window washing', 'chimney', 'concrete'],
      'label': 'Contractors'},
+    # Home-services companies that visit properties weekly — high-value referral sources
+    {'type': 'contractors', 'titles': ['owner', 'president', 'founder', 'operator'],
+     'keywords': ['hvac', 'heating cooling', 'air conditioning', 'pool service',
+                  'pool cleaning', 'pest control', 'home cleaning', 'junk removal',
+                  'moving company'],
+     'label': 'Home Services'},
     {'type': 'realtors', 'titles': ['realtor', 'real estate agent', 'listing agent',
                                      'real estate broker', 'buyers agent'],
      'keywords': [],
@@ -225,6 +231,7 @@ def mixmax_enroll(lead, lead_type):
     sys.path.insert(0, str(BASE_DIR))
     from integrations.mixmax import enroll_lead
     lead['_worker'] = 'danny' if lead_type == 'property_manager' else 'carla'
+    lead['_lead_type'] = lead_type  # Ensure detect_lead_type honors pipeline intent
     return enroll_lead(lead)
 
 
