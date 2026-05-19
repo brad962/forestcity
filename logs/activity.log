@@ -156,3 +156,9 @@
 [2026-05-19 18:15] Vera | Auto-upgrade: pipeline_data.json — 18 gas station contacts tagged with _lead_type: gas_station for auto-enrollment | pipeline_data.json | Done
 [2026-05-19 18:15] Vera | Updated open_issues.md — run 16: 3 new RESOLVED, 2 OPEN issues updated, Memorial Day countdown added | outputs/vera/open_issues.md | Done
 [2026-05-19 18:15] Vera | Proposals posted: gas station sequence, past customer blast, bridge email to hot leads | outputs/vera/pending_slack_messages.md | Done
+[2026-05-19 19:45] Vera | Auto-upgrade: PIPELINE_F constant added to lead_pipeline.py — fixes NameError crash in run_pending_sequences() | workers/lead_pipeline.py | Done
+[2026-05-19 19:45] Vera | Auto-upgrade: server.py MIXMAX_SEQS+SEQ_LABELS now dynamic via _build_seq_config() — new sequences auto-appear on dashboard when IDs go live | server.py | Done
+[2026-05-19 19:45] Vera | Auto-upgrade: danny.md — added Gas Stations and Fleet Vehicle Washing as active secondary target segments | agents/danny.md | Done
+[2026-05-19 19:45] Vera | Deliverable: June Booking Blitz campaign brief — 30-day execution plan, 4 phases, all assets mapped and status-checked | outputs/donna/campaign_brief_june_booking_blitz_2026-05-19.md | Done
+[2026-05-19 19:45] Vera | Updated open_issues.md — run 17: 2 new RESOLVED (PIPELINE_F, server.py seqs), 12 OPEN, key escalations updated | outputs/vera/open_issues.md | Done
+[2026-05-19 19:45] Vera | Proposals posted: gas station sequence, sequence rewrite approval; Memorial Day final countdown | outputs/vera/pending_slack_messages.md | Done

@@ -37,16 +37,45 @@ _load_env()
 
 MIXMAX_TOKEN  = os.environ.get('MIXMAX_TOKEN', '')
 APOLLO_KEY    = os.environ.get('APOLLO_KEY', '')
-MIXMAX_SEQS   = [
-    '6a048cfc110bc620ca0f1aee',  # Property Managers
-    '6a048cfba81429e5dfe55010',  # Realtors
-    '6a048cfd624a5989a68ba16c',  # Contractors
-]
-SEQ_LABELS    = {
-    '6a048cfc110bc620ca0f1aee': {'name': 'Property Managers', 'type': 'property_manager'},
-    '6a048cfba81429e5dfe55010': {'name': 'Realtors',          'type': 'realtor'},
-    '6a048cfd624a5989a68ba16c': {'name': 'Contractors',       'type': 'contractor'},
+
+_SEQ_DISPLAY = {
+    'property_manager': 'Property Managers',
+    'realtor':          'Realtors',
+    'contractor':       'Contractors',
+    'gas_station':      'Gas Stations',
+    'fleet_washing':    'Fleet Washing',
 }
+
+def _build_seq_config():
+    """Build MIXMAX_SEQS and SEQ_LABELS from integrations/mixmax.py.
+    Falls back to hardcoded values if import fails, so the dashboard always works.
+    """
+    try:
+        from integrations.mixmax import SEQUENCES
+        seqs = []
+        labels = {}
+        for seq_type, meta in SEQUENCES.items():
+            sid = meta.get('id', '')
+            if sid and sid != 'PENDING':
+                seqs.append(sid)
+                labels[sid] = {
+                    'name': _SEQ_DISPLAY.get(seq_type, seq_type.replace('_', ' ').title()),
+                    'type': seq_type,
+                }
+        if seqs:
+            return seqs, labels
+    except Exception:
+        pass
+    # Fallback — hardcoded IDs for the 3 live sequences
+    seqs = ['6a048cfc110bc620ca0f1aee', '6a048cfba81429e5dfe55010', '6a048cfd624a5989a68ba16c']
+    labels = {
+        '6a048cfc110bc620ca0f1aee': {'name': 'Property Managers', 'type': 'property_manager'},
+        '6a048cfba81429e5dfe55010': {'name': 'Realtors',          'type': 'realtor'},
+        '6a048cfd624a5989a68ba16c': {'name': 'Contractors',       'type': 'contractor'},
+    }
+    return seqs, labels
+
+MIXMAX_SEQS, SEQ_LABELS = _build_seq_config()
 
 INSTANTLY_KEY = os.environ.get('INSTANTLY_API_KEY', '')
 INSTANTLY_CAMPAIGNS = {

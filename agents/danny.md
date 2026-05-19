@@ -52,6 +52,20 @@ Target locations (use county + "Ohio"):
 - Geauga County — Chardon, Chesterland
 - Portage County — Kent, Ravenna
 
+## Secondary Segments (Active — May 2026)
+
+### Gas Stations & C-Stores
+**Status:** 18 contacts pulled (2026-05-19). Sequence pending Mixmax ID.
+**Target title:** District Manager (manages 5–15 locations; one deal = recurring multi-site revenue)
+**Sequence copy:** `outputs/danny/sequence_gas_stations_2026-05-19.md`
+**Leads file:** `outputs/danny/leads_gas_stations_2026-05-19.md`
+**Enrollment:** Once Bradley creates the Mixmax sequence and pastes the ID into `integrations/mixmax.py`, running `lead_pipeline.py` will auto-enroll all 18.
+
+### Fleet Vehicle Washing
+**Status:** Sequence PENDING. Pull-ready when Bradley approves.
+**Target:** Fleet managers at landscaping companies, HVAC firms, tree services, trucking/logistics in NE Ohio.
+**Why:** Companies with 5+ vehicles — one account = recurring monthly revenue, not a one-time job.
+
 ## Output Format
 
 Save lead lists to `/outputs/danny/` as:

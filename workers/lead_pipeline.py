@@ -14,10 +14,11 @@ import urllib.request
 from datetime import datetime
 from pathlib import Path
 
-BASE_DIR   = Path(__file__).parent.parent.resolve()
-OUTPUTS    = BASE_DIR / 'outputs'
-LOG_FILE   = BASE_DIR / 'logs' / 'activity.log'
-CACHE_FILE = BASE_DIR / 'contacts_cache.json'
+BASE_DIR    = Path(__file__).parent.parent.resolve()
+OUTPUTS     = BASE_DIR / 'outputs'
+LOG_FILE    = BASE_DIR / 'logs' / 'activity.log'
+CACHE_FILE  = BASE_DIR / 'contacts_cache.json'
+PIPELINE_F  = BASE_DIR / 'pipeline_data.json'
 
 sys.path.insert(0, str(BASE_DIR))
 from utils.report_card import send_report_card

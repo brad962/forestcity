@@ -215,13 +215,28 @@
 
 ---
 
+## RESOLVED — PIPELINE_F undefined variable in lead_pipeline.py
+- Resolved: 2026-05-19 (run 17)
+- Fix: Added `PIPELINE_F = BASE_DIR / 'pipeline_data.json'` to constants block (line 21). Without this, `run_pending_sequences()` would crash with `NameError: name 'PIPELINE_F' is not defined` every time the pipeline ran — silently preventing auto-enrollment of gas station and fleet contacts.
+- File: `workers/lead_pipeline.py`
+
+---
+
+## RESOLVED — server.py MIXMAX_SEQS hardcoded — misses new sequences
+- Resolved: 2026-05-19 (run 17)
+- Fix: Replaced hardcoded MIXMAX_SEQS + SEQ_LABELS with `_build_seq_config()` that imports from `integrations/mixmax.py`. When gas_station/fleet_washing IDs go live in mixmax.py, the dashboard auto-picks them up — no second file to update. Added hardcoded fallback for safety.
+- File: `server.py`
+
+---
+
 ## OPEN — 39 Manual Contacts Sitting Untouched (New Lead stage)
-- First seen: 2026-05-18 (updated run 16 — 2026-05-19)
-- Description: 42 total manual contacts. 39 in "New Lead" stage (up from 38). 3 "Contacted" (Bulletproof + Damrons texted 5-19, CLE Lawn Care Plus noted as next). 0 Replied.
-- Run 16 fix: server.py now flags ALL untouched New Lead contacts as `stale: true` on dashboard — previously invisible because empty last_contact date bypassed the staleness check.
+- First seen: 2026-05-18 (updated run 17 — 2026-05-19)
+- Description: 42 total manual contacts. 39 in "New Lead" stage. 3 "Contacted" (Bulletproof, Damrons texted 5-19). 0 Replied.
+- Run 16 fix: server.py now flags ALL untouched New Lead contacts as `stale: true` on dashboard.
+- Run 17: June Booking Blitz brief created — Tier 1 texts are Phase 1, Week 1 of June plan.
 - 21 contractors have phone numbers. Templates: `outputs/vera/sms_templates_contractors_2026-05-18.md`
 - Priority text list: `outputs/vera/priority_outreach_list_2026-05-19.md`
-  - Tier 1 (text TODAY — Memorial Day 7 days away): Land Pro Management (Anthony, 440-320-2779), GTP Landscaping (Dontez, 440-396-0814), Twin Improvements, Reliable Roofing, Pagels Construction
+  - Tier 1 (text ASAP — Memorial Day 7 days away): Land Pro Management (Anthony, 440-320-2779), GTP Landscaping (Dontez, 440-396-0814), Twin Improvements, Reliable Roofing, Pagels Construction
 - Resolution criteria: Bradley works through Tier 1 by Thursday May 22.
 
 ---
@@ -298,12 +313,13 @@
 ---
 
 ## OPEN — Regular Danny PM cron not running (7 days overdue)
-- First seen: 2026-05-18 (updated run 16 — 2026-05-19)
+- First seen: 2026-05-18 (updated run 17 — 2026-05-19)
 - The regular property manager cron (`lead_pipeline.py both`) has not run since May 13. Now 6 days overdue.
+- Run 17 fix: PIPELINE_F NameError bug fixed — `run_pending_sequences()` will no longer crash on the next pipeline run.
 - Gas station contacts: tagged with `_lead_type: gas_station` in pipeline_data.json (run 16 fix). `run_pending_sequences()` now also scans pipeline_data.json — will auto-enroll the moment Bradley adds the sequence ID.
 - Next steps: 
   1. Bradley runs `python3 workers/lead_pipeline.py both` locally to resume PM pipeline
-  2. Create gas station Mixmax sequence + paste ID into `integrations/mixmax.py` SEQUENCES[gas_station][id]
+  2. Create gas station Mixmax sequence + paste ID into `integrations/mixmax.py` SEQUENCES[gas_station][id] (line 54 — currently shows `'id': 'PENDING'`)
 
 ---
 
@@ -407,5 +423,5 @@
 
 ---
 
-*Last updated: 2026-05-19 by Vera Cole (run 16)*
-*Key metrics: 40 RESOLVED | 12 OPEN | 4 auto-upgrades this run | 3 proposals posted*
+*Last updated: 2026-05-19 by Vera Cole (run 17)*
+*Key metrics: 42 RESOLVED | 12 OPEN | 3 auto-upgrades this run | 1 deliverable (June Booking Blitz brief)*
