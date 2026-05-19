@@ -206,26 +206,23 @@
 
 ---
 
-## OPEN — 🚨 HOT CONTRACTORS WAITING FOR TEXT (DAY 9 — FINAL WINDOW)
-- First seen: 2026-05-13
-- Description: 2 contractors in "Replied" stage:
-  - **Bulletproof Lawncare** | 216-307-4344 — notes: "Very interested — send text"
-  - **Damrons Landscaping** | 440-494-0422 — notes: "Very interested — send text"
-  Both were called 2026-05-13. Today is 2026-05-19 — **9 days without a text**. Reply rate drops ~60% after 10 days. MEMORIAL DAY IS SUNDAY — this is the absolute last window.
-- Attempts:
-  - 2026-05-18 (runs 1–9): Flagged via high-priority Slack alerts every run.
-  - 2026-05-19 (run 10): Day-7 texts written.
-  - 2026-05-19 (run 11): Day-8 Memorial Day hook texts written.
-  - 2026-05-19 (run 12): Day-9 FINAL texts: `outputs/vera/contractor_day9_texts_2026-05-19.md`. Full execution checklist: `outputs/vera/memorial_day_execution_checklist_2026-05-19.md`.
-- Resolution criteria: Bradley texts both TODAY and logs response in pipeline_data.json.
+## RESOLVED — 🚨 HOT CONTRACTORS WAITING FOR TEXT
+- Resolved: 2026-05-19 (run 15)
+- Fix: Bradley texted both contacts on 2026-05-19. pipeline_data.json confirms:
+  - Bulletproof Lawncare → stage: "Contacted", last_contact: "2026-05-19", notes: "Texted referral partnership follow-up — awaiting reply"
+  - Damrons Landscaping → stage: "Contacted", last_contact: "2026-05-19", notes: "Texted referral partnership follow-up — awaiting reply"
+- Next: Watch for replies. If they reply → move to "Replied" stage, schedule estimate call.
 
 ---
 
-## OPEN — 22 Manual Contacts Need Stage Updates + Texts
-- First seen: 2026-05-18 (updated run 12)
-- Description: 24 manual contacts total. 21 "New Lead", 1 "Contacted", 2 "Replied". Notes say "Send text" on most.
-- Memorial Day execution checklist lists priority contacts to text today.
-- Resolution criteria: Bradley texts leads + updates stages in pipeline_data.json.
+## OPEN — 38 Manual Contacts Sitting Untouched (New Lead stage)
+- First seen: 2026-05-18 (updated run 15)
+- Description: 42 total manual contacts. 38 in "New Lead" stage with no outreach logged. 2 "Contacted" (Bulletproof + Damrons — texted today). Pipeline has expanded significantly: 18 gas station companies added today by Danny.
+- Priority text list ready: `outputs/vera/priority_outreach_list_2026-05-19.md`
+  - Tier 1 (text today): CLE Lawn Care Plus (warm reactivation), Land Pro Management, GTP Landscaping, Twin Improvements, Reliable Roofing, Pagels Construction
+  - Tier 2 (text this week): 10 landscapers
+  - Tier 3 (next week): 6 construction contractors
+- Resolution criteria: Bradley works through Tier 1 by Thursday May 22.
 
 ---
 
@@ -300,10 +297,13 @@
 
 ---
 
-## OPEN — Danny/Carla lead pulls not logged (pipeline not growing)
-- First seen: 2026-05-18
-- No lead pull in activity.log since May 13. One-week gap.
-- Next steps: Bradley confirms `python3 workers/lead_pipeline.py both` is running locally via cron.
+## OPEN — Regular Danny PM cron not running (gas stations pulled manually)
+- First seen: 2026-05-18 (updated run 15)
+- Danny manually pulled gas station leads today (23 contacts, 18 emails). But the regular property manager cron (`lead_pipeline.py both`) has not run since May 13. The weekly PM pull is 6 days overdue.
+- Gas station contacts added to pipeline_data.json ✓ but NOT enrolled in Mixmax — no sequence exists yet for this commercial segment.
+- Next steps: 
+  1. Bradley runs `python3 workers/lead_pipeline.py both` locally to resume PM pipeline
+  2. Create gas station Mixmax sequence (see proposal in Slack)
 
 ---
 
@@ -321,10 +321,28 @@
 
 ---
 
-## OPEN — Ghost fixes pattern: fixes lost in merge conflicts
-- First seen: 2026-05-18 (run 5)
-- Run 12 verification: all 29 prior fixes confirmed present. No regressions.
+## RESOLVED — Ghost fixes pattern: fixes lost in merge conflicts
+- Resolved: 2026-05-19 (run 15)
+- Run 12 verification: all 29 prior fixes confirmed present.
 - Run 13 verification: all 32 prior+new fixes confirmed present.
+- Run 15 verification: all fixes confirmed present. No regressions detected.
+- Git discipline established: individual file additions (not `git add -A`), descriptive commit messages.
+
+---
+
+## RESOLVED — server.py /api/mixmax/recipients drops dict API response
+- Resolved: 2026-05-19 (run 15)
+- Fix: Line 193 now normalizes both list and dict responses: `data if isinstance(data, list) else data.get('results', data.get('recipients', []))`. Matches pattern already used in nina_report.py and lead_pipeline.py.
+- File: `server.py`
+
+---
+
+## OPEN — Gas station contacts not enrolled in Mixmax (18 emails sitting idle)
+- First seen: 2026-05-19 (run 15)
+- Description: Danny pulled 23 gas station/c-store contacts today. 18 have verified emails. All added to pipeline_data.json with notes "email sequence pending." BUT no Mixmax sequence exists for this commercial segment yet. The contractor sequence is not the right fit — these are multi-location commercial operators, not referral partners.
+- What's ready: Sequence copy written (`outputs/danny/sequence_gas_stations_2026-05-19.md`). Individual contact details in `outputs/danny/leads_gas_stations_2026-05-19.md`.
+- Next steps: Bradley creates new Mixmax sequence "Forest City — Gas Station & C-Store Outreach" → paste sequence ID into mixmax.py SEQUENCES dict → Vera adds enrollment logic to lead_pipeline.py in next run.
+- Resolution criteria: Sequence ID in SEQUENCES dict + contacts enrolled.
 
 ---
 
@@ -363,5 +381,5 @@
 
 ---
 
-*Last updated: 2026-05-19 by Vera Cole (run 14)*
-*Key metrics: 34 RESOLVED | 14 OPEN | 2 auto-upgrades shipped | 3 new deliverables*
+*Last updated: 2026-05-19 by Vera Cole (run 15)*
+*Key metrics: 37 RESOLVED | 12 OPEN | 2 auto-upgrades this run | 1 new deliverable (priority_outreach_list)*

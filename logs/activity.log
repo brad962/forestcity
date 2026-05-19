@@ -146,3 +146,7 @@
 [2026-05-19 08:29] Vera Relay | Posted Vera commit summary: Vera: run 13 — 3 auto-upgrades, 3 new deliverables
 [2026-05-19 11:20] Danny | Apollo pull — gas station / c-store fleet leads, 23 contacts, 18 emails found | leads_gas_stations_2026-05-19.md | Done
 [2026-05-19 11:42] Danny | Gas station sequence written + 18 contacts added to pipeline | sequence_gas_stations_2026-05-19.md | Done
+[2026-05-19 17:14] Vera | Auto-upgrade: server.py /api/mixmax/recipients now handles dict response (results/recipients key) | server.py | Done
+[2026-05-19 17:14] Vera | Auto-upgrade: open_issues.md — HOT CONTRACTORS marked RESOLVED (both texted 2026-05-19), 22 manual contacts updated to 38, gas station enrollment issue added | outputs/vera/open_issues.md | Done
+[2026-05-19 17:14] Vera | Deliverable: priority_outreach_list_2026-05-19.md — 38 untouched New Lead contacts ranked by priority with ready-to-send texts | outputs/vera/priority_outreach_list_2026-05-19.md | Done
+[2026-05-19 17:14] Vera | Proposals: gas station Mixmax sequence, June booking blitz, contacts dashboard Mixmax sync | outputs/vera/pending_slack_messages.md | Done

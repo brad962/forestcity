@@ -190,7 +190,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 url = f'https://api.mixmax.com/v1/sequences/{seq_id}/recipients?apiToken={MIXMAX_TOKEN}&limit=200'
                 with urllib.request.urlopen(url, timeout=10) as resp:
                     data = json.loads(resp.read())
-                self._json({'recipients': data if isinstance(data, list) else []})
+                recips = data if isinstance(data, list) else data.get('results', data.get('recipients', []))
+                self._json({'recipients': recips})
             except Exception as e:
                 self._json({'error': str(e)}, 500)
 
