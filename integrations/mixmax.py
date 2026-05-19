@@ -42,6 +42,20 @@ SEQUENCES = {
         'name': 'Forest City Power Washing – $50 Referral Partner Sequence',
         'variables': ['recipientFirstName', 'recipientCompany', 'Phone'],
     },
+    # PENDING — create in Mixmax UI then paste ID here
+    # Name: Forest City Power Washing — Fleet Washing Outreach
+    'fleet_washing': {
+        'id': 'PENDING',
+        'name': 'Forest City Power Washing — Fleet Washing Outreach',
+        'variables': ['firstName', 'company', 'fleetType', 'Phone'],
+    },
+    # PENDING — create in Mixmax UI then paste ID here
+    # Name: Forest City Power Washing — Gas Station & C-Store Outreach
+    'gas_station': {
+        'id': 'PENDING',
+        'name': 'Forest City Power Washing — Gas Station & C-Store Outreach',
+        'variables': ['firstName', 'company', 'Phone'],
+    },
 }
 
 # Keywords for lead type detection
@@ -72,9 +86,25 @@ CONTRACTOR_TITLES = [
 ]
 
 
+GAS_STATION_KEYWORDS = [
+    'gas station', 'convenience store', 'c-store', 'fuel station',
+    'petroleum', 'speedway', 'circle k', 'sheetz', 'certifiedoil',
+    'truenorth', 'open pantry', 'sunoco', 'marathon', "love's",
+    'ferrellgas', '7-eleven', 'bellstore', 'campbell oil',
+    'district manager',  # most DMs in this pull are gas station DMs
+]
+
+FLEET_KEYWORDS = [
+    'fleet', 'tree service', 'tree care', 'arborist', 'trucking',
+    'logistics', 'delivery', 'landscaping fleet', 'hvac fleet',
+    'fleet manager', 'fleet supervisor', 'transportation manager',
+    'equipment manager', 'operations manager',
+]
+
+
 def detect_lead_type(lead: dict) -> str:
-    """Detect lead type from title/company. Returns 'property_manager', 'realtor', or 'contractor'."""
-    # Honor explicit intent from pipeline (e.g. Carla's realtor leads with non-standard titles)
+    """Detect lead type from title/company. Returns sequence key from SEQUENCES."""
+    # Honor explicit intent from pipeline
     explicit = lead.get('_lead_type', '')
     if explicit in SEQUENCES:
         return explicit
@@ -100,6 +130,12 @@ def detect_lead_type(lead: dict) -> str:
     if worker == 'carla':
         return 'contractor'
     return 'property_manager'
+
+
+def _sequence_is_live(lead_type: str) -> bool:
+    """Returns True only if the sequence has a real Mixmax ID (not PENDING)."""
+    seq = SEQUENCES.get(lead_type, {})
+    return bool(seq.get('id')) and seq['id'] != 'PENDING'
 
 
 def build_variables(lead: dict, lead_type: str) -> dict:
@@ -134,6 +170,19 @@ def build_variables(lead: dict, lead_type: str) -> dict:
             'recipientCompany': company,
             'Phone': phone_display,
         }
+    elif lead_type == 'fleet_washing':
+        return {
+            'firstName': first_name,
+            'company': company,
+            'fleetType': lead.get('fleet_type', 'vehicles'),
+            'Phone': phone_display,
+        }
+    elif lead_type == 'gas_station':
+        return {
+            'firstName': first_name,
+            'company': company,
+            'Phone': phone_display,
+        }
     return {}
 
 
@@ -147,6 +196,11 @@ def enroll_lead(lead: dict) -> dict:
         return {'status': 'skipped', 'reason': 'no email'}
 
     lead_type = detect_lead_type(lead)
+
+    # Skip sequences that haven't been created in Mixmax yet
+    if not _sequence_is_live(lead_type):
+        return {'status': 'skipped', 'reason': f'{lead_type} sequence not yet live — add Mixmax ID to integrations/mixmax.py'}
+
     sequence = SEQUENCES[lead_type]
     variables = build_variables(lead, lead_type)
 

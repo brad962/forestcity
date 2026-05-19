@@ -562,6 +562,56 @@ def verify_and_repair_enrollment():
         )
 
 
+def run_pending_sequences():
+    """
+    Enroll contacts from contacts_cache.json that have a live sequence
+    but haven't been enrolled yet (mixmax_enrolled = False).
+    Runs automatically — as soon as a PENDING sequence ID is added to
+    integrations/mixmax.py, these contacts go into the sequence on the next run.
+    """
+    from integrations.mixmax import enroll_lead, _sequence_is_live
+
+    if not CACHE_FILE.exists():
+        return
+
+    cache = json.loads(CACHE_FILE.read_text())
+    pending = [
+        c for c in cache['contacts']
+        if not c.get('mixmax_enrolled')
+        and c.get('email')
+        and c.get('_lead_type')
+        and _sequence_is_live(c.get('_lead_type', ''))
+    ]
+
+    if not pending:
+        return
+
+    print(f'\n⏳ Enrolling {len(pending)} pending contacts now that sequences are live...')
+    enrolled = 0
+    for c in pending:
+        result = enroll_lead(c)
+        if result.get('status') == 'enrolled':
+            c['mixmax_enrolled'] = True
+            c['mixmax_sequence'] = result.get('sequence', '')
+            enrolled += 1
+            print(f'  ✅ {c["first_name"]} {c["last_name"]} → {result["sequence"]}')
+        else:
+            print(f'  ⚠️  {c.get("email")} — {result.get("reason", result.get("errors",""))}')
+        time.sleep(0.3)
+
+    CACHE_FILE.write_text(json.dumps(cache, indent=2))
+    log('pipeline', f'Pending sequence enrollment — {enrolled}/{len(pending)} enrolled', 'contacts_cache.json')
+
+    if enrolled:
+        send_report_card(
+            worker_name='danny',
+            title='Pending Contacts Enrolled',
+            metrics=[('Enrolled', enrolled), ('Total Pending', len(pending))],
+            summary_lines=[f'{enrolled} contacts moved from pending into live sequences'],
+            status='DONE',
+        )
+
+
 if __name__ == '__main__':
     mode = sys.argv[1] if len(sys.argv) > 1 else 'both'
     print(f'\n=== Forest City Lead Pipeline — {datetime.now().strftime("%Y-%m-%d %H:%M")} ===')
@@ -570,6 +620,9 @@ if __name__ == '__main__':
         run_danny()
     if mode in ('carla', 'both'):
         run_carla()
+
+    # Enroll any contacts waiting on sequences that just went live
+    run_pending_sequences()
 
     # Always verify enrollment after pulling leads — catches any silent failures
     verify_and_repair_enrollment()
