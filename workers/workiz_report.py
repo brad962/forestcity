@@ -214,6 +214,21 @@ def log_activity(summary, mode='daily'):
 
 def post_to_slack(report_text, summary, mode='daily', jobs=None):
     jobs = jobs or []
+
+    # API blocked — show clear warning instead of misleading $0/$0 metrics
+    if not jobs and 'unavailable' in summary.lower():
+        send_report_card(
+            worker_name='nina',
+            title=f'Workiz {mode.title()} Report',
+            metrics=[('Jobs', 0), ('Revenue', 0), ('Outstanding', 0)],
+            summary_lines=[
+                '⚠️ Workiz API unavailable in cloud environment.',
+                'Run locally: python3 workers/workiz_report.py daily',
+            ],
+            status='IN PROGRESS',
+        )
+        return
+
     total_revenue = sum(j.get('JobTotalPrice', 0) for j in jobs)
     total_due = sum(j.get('JobAmountDue', 0) for j in jobs)
 
