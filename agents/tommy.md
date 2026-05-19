@@ -44,6 +44,10 @@ Save to `/outputs/tommy/`:
 - `package_descriptions_[date].md`
 - `objection_cheatsheet_[date].md`
 - `one_pager_[date].md`
+- `pipeline_contractor_outreach_[date].md` — personal email/text to warm pipeline contacts
+- `hot_lead_linkedin_dm_playbook_[date].md` — LinkedIn DM + email templates for high-opens leads
+- `past_customer_reengagement_[date].md` — re-engagement email/text for prior customers
+- `review_request_sequence_[date].md` — post-job review request texts
 
 ## Logging
 `[YYYY-MM-DD HH:MM] Tommy | [task description] | [output filename] | Done`

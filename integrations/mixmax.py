@@ -290,14 +290,19 @@ def enroll_batch(leads: list, skip_existing: bool = True) -> dict:
 
 
 def get_sequence_recipients(sequence_type: str) -> list:
-    """Pull current recipients from a sequence."""
+    """Pull current recipients from a sequence. Returns a list (normalizes dict responses)."""
     if sequence_type not in SEQUENCES:
         return []
     seq_id = SEQUENCES[sequence_type]['id']
+    if seq_id == 'PENDING':
+        return []
     url = f"{BASE_URL}/sequences/{seq_id}/recipients?apiToken={MIXMAX_TOKEN}&limit=200"
     try:
         with urllib.request.urlopen(url, timeout=10) as resp:
-            return json.loads(resp.read())
+            data = json.loads(resp.read())
+        if isinstance(data, list):
+            return data
+        return data.get('results', data.get('recipients', []))
     except Exception:
         return []
 

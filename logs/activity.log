@@ -176,3 +176,12 @@
 [2026-05-19 21:12] Vera | Deliverable: pipeline_contractor_outreach_2026-05-19.md — personal email template for 21 warm pipeline contractors, trade-specific personalization | outputs/tommy/pipeline_contractor_outreach_2026-05-19.md | Done
 [2026-05-19 21:12] Vera | Updated open_issues.md — run 19: 3 new RESOLVED, 12 OPEN updated with new status and escalations | outputs/vera/open_issues.md | Done
 [2026-05-19 21:12] Vera | Proposals posted: HOA portfolio sequence, sequence rewrite approval, gas station sequence | outputs/vera/pending_slack_messages.md | Done
+[2026-05-19 22:10] Vera | Auto-upgrade: server.py sync_contacts() rewritten to MERGE instead of overwrite — Apollo contacts preserved; get_contacts() hardened with try/except; /api/pipeline and /api/calls GET crash fixed | server.py | Done
+[2026-05-19 22:10] Vera | Auto-upgrade: integrations/mixmax.py get_sequence_recipients() now normalizes dict vs list response + PENDING guard | integrations/mixmax.py | Done
+[2026-05-19 22:10] Vera | Auto-upgrade: agents/donna.md Memorial Day Sprint marked ACTIVE NOW; June Booking Blitz added with file references | agents/donna.md | Done
+[2026-05-19 22:10] Vera | Auto-upgrade: agents/tommy.md 4 deliverable formats added (pipeline outreach, LinkedIn DM, past customer, review request) | agents/tommy.md | Done
+[2026-05-19 22:10] Vera | Deliverable: LinkedIn DM playbook for 13 hot leads — 3-step sequence, PM/realtor/contractor templates | outputs/tommy/hot_lead_linkedin_dm_playbook_2026-05-19.md | Done
+[2026-05-19 22:10] Vera | Deliverable: Facebook posts June week 1 (June 2–6) — 5 posts, post-Memorial Day momentum, commercial PM push, before/after, deck season | outputs/jasmine/facebook_posts_june_week1_2026-06-02.md | Done
+[2026-05-19 22:10] Vera | Deliverable: Google Ads June 2026 — 2 campaigns, all copy written, extensions, setup checklist | outputs/rick/google_ads_june_2026-05-19.md | Done
+[2026-05-19 22:10] Vera | Updated open_issues.md — run 20: 4 new RESOLVED, 1 new OPEN (Google Ads gap), 13 open issues total | outputs/vera/open_issues.md | Done
+[2026-05-19 22:10] Vera | Proposals + escalations written to pending_slack_messages.md for GitHub Action relay | outputs/vera/pending_slack_messages.md | Done

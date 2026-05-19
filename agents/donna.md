@@ -32,8 +32,9 @@ When Forest City is ready to push hard into a new county, produce a 60-day launc
 
 ### Seasonal Campaign Plans
 - **Spring Blitz (Feb–March):** Pre-season booking campaign
-- **Memorial Day Sprint (May 24–26):** 🚨 HIGHEST-URGENCY window. Homeowners are outside, hosting, looking at their house. "Before the guests arrive" angle. 5-channel push: Facebook post, Nextdoor post, past customer text, GBP photo, and text blast to all uncontacted contractor referral leads.
-- **Summer Push (June):** Commercial properties, property managers
+- **Memorial Day Sprint (May 19–26, 2026):** 🚨 ACTIVE NOW. See `outputs/donna/memorial_day_sprint_2026-05-19.md` for full execution plan. Assets ready: Jasmine posts written, Rick ads written, Tommy DM templates ready. Bradley executes text blasts and LinkedIn outreach. Touch 3 fires May 22 — reply rate fix urgent.
+- **June Booking Blitz (June 2026):** 30-day commercial push. Brief: `outputs/donna/campaign_brief_june_booking_blitz_2026-05-19.md`. Phase 1: contractor text blast. Phase 2: Google Ads launch. Phase 3: past customer re-engagement.
+- **Summer Push (June–Aug):** Commercial properties, property managers — Danny runs weekly Apollo pulls.
 - **Fall Rush (Sept):** Pre-winter urgency campaign
 - **Annual Plan Promo (Oct–Nov):** Lock in 2-visit customers
 

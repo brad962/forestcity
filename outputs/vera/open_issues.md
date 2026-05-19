@@ -461,44 +461,73 @@
 
 ---
 
-## OPEN — 0% reply rate (Touch 3 fires May 22 — NOW 3 DAYS)
-- Updated: 2026-05-19 (run 19) — CRITICAL
-- Run 19 fix: Empty firstName bug in build_variables() now fixed — future sequences won't have "Hi ," openers. This may have affected some current enrolled contacts.
-- Run 18 angle: Diagnostic written. `outputs/vera/reply_rate_diagnostic_2026-05-19.md`
-  - Hypothesis 1 (most likely): Reply-To address in Mixmax points to wrong inbox
-  - Hypothesis 2: Variable substitution failing (now partially fixed — future sends clean)
-  - Hypothesis 3: Open tracking inflation (preview pane triggering pixels)
-  - Hypothesis 4: Contacts unsubscribed instead of replying
-  - Hypothesis 5: Two-part CTA in Touch 1 — too much friction
-- Bradley action needed: Log into Mixmax, check Reply-To setting, send test email to self (10 min). BEFORE May 22.
-- New: Tommy's personal contractor email template available for parallel outreach: `outputs/tommy/pipeline_contractor_outreach_2026-05-19.md`
+## RESOLVED — server.py sync_contacts() overwrites Apollo contacts with Instantly data
+- Resolved: 2026-05-19 (run 20)
+- Fix: Rewrote sync_contacts() to MERGE instead of overwrite. Apollo-pulled contacts are preserved. Instantly leads appended only if email not already in cache.
+- This was a ticking time bomb — the moment INSTANTLY_API_KEY was added to .env, /api/contacts/sync would have wiped the entire contacts_cache.json.
+- File: `server.py`
 
 ---
 
-## OPEN — 39 Manual Contacts Sitting Untouched (New Lead stage)
-- Updated: 2026-05-19 (run 19) — MEMORIAL DAY IN 6 DAYS
-- 40 contacts never reached out to. 23 have phone numbers. 21 have both phone + contact info.
-- All assets ready. Bradley executes.
-- NEW this run: Personal email template added for contractors with email only: `outputs/tommy/pipeline_contractor_outreach_2026-05-19.md`
-- Next run check: Has count dropped from 39? Bradley should have texted 5 Tier 1 contacts by May 20.
+## RESOLVED — server.py get_contacts() crashes on malformed JSON
+- Resolved: 2026-05-19 (run 20)
+- Fix: Added try/except around json.loads() in get_contacts(). Returns empty cache on parse failure instead of crashing all dashboard API endpoints.
+- File: `server.py`
+
+---
+
+## RESOLVED — server.py /api/pipeline and /api/calls GET crash on malformed pipeline_data.json
+- Resolved: 2026-05-19 (run 20)
+- Fix: Added try/except around PIPELINE_F.read_text() parse in both GET handlers. Both fall back to empty dict on error.
+- File: `server.py`
+
+---
+
+## RESOLVED — mixmax.py get_sequence_recipients() returns raw dict instead of list
+- Resolved: 2026-05-19 (run 20)
+- Fix: Normalized response — checks isinstance(data, list), falls back to data.get('results', data.get('recipients', [])). Added PENDING guard. Matches pattern used everywhere else.
+- File: `integrations/mixmax.py`
+
+---
+
+## OPEN — 0% reply rate (Touch 3 fires May 22 — NOW 3 DAYS) 🚨
+- Updated: 2026-05-19 (run 20) — CRITICAL ESCALATION
+- Run 20 angle: New LinkedIn DM playbook written. Bradley can warm the 13 hot leads on LinkedIn TODAY before Touch 3 fires. File: `outputs/tommy/hot_lead_linkedin_dm_playbook_2026-05-19.md`
+- Run 19 fix: Empty firstName → "Hi ," bug fixed. Future sends clean.
+- Run 18 diagnostic: `outputs/vera/reply_rate_diagnostic_2026-05-19.md`
+  - Hypothesis 1 (most likely): Reply-To address in Mixmax points to wrong inbox
+  - Hypothesis 2: Variable substitution failing — partially fixed for future sends
+  - Hypothesis 3: Open tracking inflation
+  - Hypothesis 4: Contacts unsubscribed silently
+  - Hypothesis 5: Two-part CTA in Touch 1 — too much friction
+- IMMEDIATE action: Bradley logs into Mixmax → open PM sequence → Settings → verify Reply-To is his real inbox. 10 minutes. DO THIS TODAY.
+- Parallel: Send LinkedIn connections to 5–10 hot leads using `outputs/tommy/hot_lead_linkedin_dm_playbook_2026-05-19.md`
+
+---
+
+## OPEN — 40 Manual Contacts Sitting Untouched (New Lead stage) — NO PROGRESS
+- Updated: 2026-05-19 (run 20) — COUNT UNCHANGED FROM RUN 19
+- Run 20: Still 40 untouched (pipeline_data.json verified). 3 contacted (Bulletproof, Damrons + 1). 0 replied.
+- Memorial Day is in 5 days (May 24). Bradley was to text 5 Tier 1 contacts by May 20 — 1 day left.
+- Tier 1 (text TODAY): Land Pro Management (Anthony, 440-320-2779), GTP Landscaping (Dontez, 440-396-0814), Twin Improvements, Reliable Roofing, Pagels Construction
+- All text templates ready: `outputs/vera/sms_templates_contractors_2026-05-18.md`
+- Escalation note: Every day without outreach in Memorial Day week is leaving bookings on the table.
 
 ---
 
 ## OPEN — Gas station contacts not enrolled in Mixmax
-- Updated: 2026-05-19 (run 19)
-- All infrastructure fixed (run 16-18). Enrollment marks persist correctly (run 18 fix).
-- Still blocked on: Bradley creates Mixmax sequence → pastes ID into `integrations/mixmax.py` line 54
-- New this run: get_mixmax_enrolled_emails() now dynamic — gas station contacts will be verified after enrollment.
-- Resolution: Bradley action only.
+- Updated: 2026-05-19 (run 20) — SAME STATUS
+- All infrastructure ready (run 16–18). Enrollment marks persist (run 18). Dynamic enrollment (run 19).
+- Only blocker: Bradley creates Mixmax sequence → pastes ID into `integrations/mixmax.py` line 54.
+- 18 emails sitting idle. Gas station accounts = recurring multi-site revenue.
 
 ---
 
 ## OPEN — Instantly.ai campaigns running parallel to Mixmax (duplicate sequence risk)
-- Updated: 2026-05-19 (run 19) — escalating
-- Run 19 fix: Added ⚠️ warning comment to server.py INSTANTLY_CAMPAIGNS block.
-- server.py has active Instantly.ai campaign IDs for Property Managers AND Referral Partners — same segments as live Mixmax sequences.
-- If INSTANTLY_API_KEY is set and both platforms are active: contacts receive duplicate emails from two platforms → deliverability damage.
-- Bradley action needed: Confirm which platform is live per segment. Pause the other.
+- Updated: 2026-05-19 (run 20)
+- Run 20 fix: sync_contacts() data loss bug fixed — no longer overwrites Apollo cache on sync.
+- Still open: Bradley hasn't confirmed which platform is live per segment.
+- If INSTANTLY_API_KEY is ever added to .env: confirm Instantly campaigns are paused first.
 - Resolution criteria: Bradley replies which platform is active for each segment.
 
 ---
@@ -524,11 +553,10 @@
 ---
 
 ## OPEN — 13 hot leads sitting uncontacted on LinkedIn
-- First seen: 2026-05-18
-- Memorial Day week is peak window — PMs making summer vendor decisions now.
-- Protocol ready: `outputs/danny/linkedin_hot_lead_dm_protocol_2026-05-18.md`
-- Tommy's bridge email ready: `outputs/tommy/hot_lead_bridge_email_2026-05-19.md`
-- Resolution criteria: Bradley sends 3 LinkedIn connects or 3 bridge emails this week.
+- Updated: 2026-05-19 (run 20)
+- Run 20: New LinkedIn DM playbook written — complete templates for PM, realtor, and contractor contacts. File: `outputs/tommy/hot_lead_linkedin_dm_playbook_2026-05-19.md`
+- This is the fastest path to a reply before Touch 3 fires. 5 minutes per connection request.
+- Resolution criteria: Bradley sends 3+ LinkedIn connects today or tomorrow (May 20).
 
 ---
 
@@ -547,8 +575,8 @@
 
 ## OPEN — No residential homeowner outreach channel
 - First seen: 2026-05-18
-- Run 11: Nextdoor templates written. Memorial Day social posts ready.
-- Resolution criteria: Bradley posts 1 Facebook post OR creates Nextdoor account.
+- Memorial Day social posts written. Facebook posts week May 19 + Memorial Day posts ready.
+- Resolution criteria: Bradley posts 1 Facebook post this week.
 
 ---
 
@@ -560,17 +588,27 @@
 ---
 
 ## OPEN — Regular Danny PM cron not running (7 days overdue)
-- Updated: 2026-05-19 (run 19)
-- Pipeline has not run since May 13. Now 6 days overdue.
-- All PIPELINE_F crash bugs fixed (run 17). get_mixmax_enrolled_emails() now dynamic (run 19 fix).
-- Next steps: Bradley runs `python3 workers/lead_pipeline.py both` locally to resume PM pipeline.
+- Updated: 2026-05-19 (run 20) — 7 DAYS OVERDUE
+- Pipeline has not run since May 13. All PIPELINE_F bugs fixed. All enrollment logic correct.
+- Urgent: Missing a full week of fresh PM contacts during peak season.
+- Next steps: Bradley runs `python3 workers/lead_pipeline.py both` locally — TODAY.
 
 ---
 
 ## OPEN — Google Business Profile not managed (zero-cost lead channel ignored)
 - First seen: 2026-05-18
-- Memorial Day execution checklist: upload 1 photo to GBP by Wednesday May 21.
+- Memorial Day window: upload 1 photo to GBP by Wednesday May 21.
 - Resolution: Bradley posts 1 photo to GBP.
+
+---
+
+## OPEN — No Google Ads running (invisible for "power washing near me")
+- First seen: 2026-05-19 (run 20) — NEW
+- Description: Forest City has zero Google Ads presence during peak season. Anyone searching "power washing cleveland" or "pressure washing near me" cannot find us in paid results.
+- Industry benchmark: $15/day in Google Search Ads generates 20–30 quote requests/month for home services in NE Ohio markets.
+- Ready to launch: `outputs/rick/google_ads_june_2026-05-19.md` — full ad copy, 2 campaigns, all extensions written.
+- Blockers: (1) Google Ads account needed, (2) GOOGLE_ADS_TOKEN added to .env
+- Resolution criteria: Bradley creates Google Ads account and launches Campaign 1.
 
 ---
 
@@ -581,5 +619,5 @@
 
 ---
 
-*Last updated: 2026-05-19 by Vera Cole (run 19)*
-*Key metrics: 47 RESOLVED | 12 OPEN | 6 auto-upgrades this run | 1 deliverable (pipeline contractor outreach email)*
+*Last updated: 2026-05-19 by Vera Cole (run 20)*
+*Key metrics: 51 RESOLVED | 13 OPEN | 4 auto-upgrades this run | 3 deliverables*

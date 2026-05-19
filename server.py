@@ -137,14 +137,22 @@ def save_queue(data):
 
 def get_contacts():
     if CONTACTS_F.exists():
-        return json.loads(CONTACTS_F.read_text())
+        try:
+            return json.loads(CONTACTS_F.read_text())
+        except (json.JSONDecodeError, Exception):
+            return {'contacts': [], 'updated': 0}
     return {'contacts': [], 'updated': 0}
 
 
 def sync_contacts():
-    """Pull latest leads from Instantly and cache locally."""
+    """Pull latest leads from Instantly and MERGE into the existing cache.
+    Does NOT overwrite — Apollo-pulled contacts are preserved.
+    Instantly leads are appended only if their email isn't already in the cache.
+    """
     import time
-    all_contacts = []
+    existing = get_contacts()
+    existing_emails = {c.get('email', '').lower() for c in existing.get('contacts', []) if c.get('email')}
+    new_instantly = []
     for cid, meta in INSTANTLY_CAMPAIGNS.items():
         try:
             payload = json.dumps({'campaign_id': cid, 'limit': 100}).encode()
@@ -161,11 +169,16 @@ def sync_contacts():
                 item['_campaign_id'] = cid
                 item['_campaign_name'] = meta['name']
                 item['_worker'] = meta['worker']
-            all_contacts.extend(items)
+                em = item.get('email', '').lower()
+                if em and em not in existing_emails:
+                    new_instantly.append(item)
+                    existing_emails.add(em)
         except Exception:
             pass
-    if all_contacts:
-        CONTACTS_F.write_text(json.dumps({'contacts': all_contacts, 'updated': time.time()}, indent=2))
+    if new_instantly:
+        existing['contacts'].extend(new_instantly)
+        existing['updated'] = time.time()
+        CONTACTS_F.write_text(json.dumps(existing, indent=2))
 
 
 class Handler(http.server.SimpleHTTPRequestHandler):
@@ -297,7 +310,10 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         elif p.path == '/api/pipeline':
             # Return merged pipeline: Mixmax recipients + local stage overrides
             import time as _time
-            pipeline = json.loads(PIPELINE_F.read_text()) if PIPELINE_F.exists() else {}
+            try:
+                pipeline = json.loads(PIPELINE_F.read_text()) if PIPELINE_F.exists() else {}
+            except (json.JSONDecodeError, Exception):
+                pipeline = {}
 
             # Build phone + company lookup from contacts cache (email → {phone, company_name})
             cache_lookup = {}
@@ -414,7 +430,10 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self._json({'contacts': all_contacts, 'total': len(all_contacts)})
 
         elif p.path == '/api/calls':
-            pipeline = json.loads(PIPELINE_F.read_text()) if PIPELINE_F.exists() else {}
+            try:
+                pipeline = json.loads(PIPELINE_F.read_text()) if PIPELINE_F.exists() else {}
+            except (json.JSONDecodeError, Exception):
+                pipeline = {}
             self._json(pipeline.get('calls', {}))
 
         elif p.path.startswith('/api/instantly/'):
