@@ -152,8 +152,11 @@ def run_daily():
     linkedin_map = _load_linkedin_map()
 
     seq_stats_cache = {}
+    api_responses_received = 0
     for seq_id, meta in SEQUENCES.items():
         recipients = fetch_recipients(seq_id)
+        if recipients:
+            api_responses_received += 1
         stats = analyze_recipients(recipients, meta['name'])
         seq_stats_cache[seq_id] = stats
         all_hot.extend([(meta['name'], l) for l in stats['hot_leads']])
@@ -164,12 +167,22 @@ def run_daily():
     for _, lead in all_hot:
         lead['linkedin'] = linkedin_map.get(lead['email'].lower(), '')
 
+    api_blocked = (api_responses_received == 0)
+
     lines = [
         f'# Daily Hot Leads Report',
         f'### {datetime.now().strftime("%A, %B %d %Y")}',
         f'*Nina Kowalski | RevOps Manager*',
         '',
     ]
+
+    if api_blocked:
+        lines += [
+            '> ⚠️ **Mixmax API unavailable** — all sequences returned 0 recipients.',
+            '> This happens when running in the cloud environment (Mixmax is network-blocked).',
+            '> Run `python3 workers/nina_report.py daily` locally for accurate data.',
+            '',
+        ]
 
     if all_replied:
         lines += [
@@ -237,8 +250,11 @@ def run_weekly():
     date_str = datetime.now().strftime('%Y-%m-%d')
     all_stats = []
 
+    api_responses_received = 0
     for seq_id, meta in SEQUENCES.items():
         recipients = fetch_recipients(seq_id)
+        if recipients:
+            api_responses_received += 1
         stats = analyze_recipients(recipients, meta['name'])
         all_stats.append(stats)
         print(f'  {meta["name"]}: {stats["total"]} | opens={stats["open_rate"]} | replies={stats["reply_rate"]}')
@@ -247,12 +263,20 @@ def run_weekly():
     total_opens    = sum(s['opens'] for s in all_stats)
     total_replied  = sum(len(s['replied_contacts']) for s in all_stats)
     total_hot      = sum(len(s['hot_leads']) for s in all_stats)
+    api_blocked    = (api_responses_received == 0)
+
+    api_warning = [
+        '> ⚠️ **Mixmax API unavailable** — all sequences returned 0 recipients.',
+        '> Run locally for accurate data: `python3 workers/nina_report.py weekly`',
+        '',
+    ] if api_blocked else []
 
     lines = [
         f'# Weekly Pipeline Report',
         f'### Week of {datetime.now().strftime("%B %d, %Y")}',
         f'*Nina Kowalski | RevOps Manager*',
         '',
+    ] + api_warning + [
         '## Summary',
         '',
         f'| Metric | Value |',

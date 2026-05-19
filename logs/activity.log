@@ -199,3 +199,14 @@
 [2026-05-19 10:00] Vera | Day-7 contractor texts written — specific scripts for Bulletproof Lawncare and Damrons Landscaping | outputs/vera/contractor_day7_texts_2026-05-19.md | Done
 [2026-05-19 10:00] Vera | Updated open_issues.md — 1 new RESOLVED (server.py manual contact update), 14 open issues tracked, run 10 complete | outputs/vera/open_issues.md | Done
 [2026-05-19 10:00] Vera | Wrote pending_slack_messages.md — 1 auto-upgrade, 1 urgent contractor alert, 4 deliverable notices, 2 proposals, 1 pending reminder, 1 scan summary | outputs/vera/pending_slack_messages.md | Done
+[2026-05-19 11:00] Vera | Auto-upgrade: lead_pipeline.py — load_existing_emails() now wraps JSON parse in try/except; malformed cache no longer crashes pipeline run | workers/lead_pipeline.py | Done
+[2026-05-19 11:00] Vera | Auto-upgrade: lead_pipeline.py — verify_and_repair_enrollment() wraps cache JSON parse in try/except; fails safely on malformed file | workers/lead_pipeline.py | Done
+[2026-05-19 11:00] Vera | Auto-upgrade: nina_report.py — added api_responses_received counter in run_daily() and run_weekly(); shows ⚠️ API unavailable warning instead of misleading 0-enrolled output when Mixmax is blocked | workers/nina_report.py | Done
+[2026-05-19 11:00] Vera | Auto-upgrade: agents/donna.md — added Memorial Day Sprint (May 24-26) section to Seasonal Campaign Plans | agents/donna.md | Done
+[2026-05-19 11:00] Vera | Ghost fix verification (run 11): all 26 prior fixes confirmed present — no regressions detected | multiple files | Done
+[2026-05-19 11:00] Vera | New deliverable: Day-8 contractor texts with Memorial Day hook + 3-option send sequence for Bulletproof Lawncare and Damrons Landscaping | outputs/vera/contractor_day8_texts_2026-05-19.md | Done
+[2026-05-19 11:00] Jasmine | Memorial Day weekend social posts — 3 Facebook + 2 LinkedIn (May 22-26), seasonal hooks | outputs/jasmine/memorial_day_posts_2026-05-19.md | Done
+[2026-05-19 11:00] Rick | Google Ads peak season refresh — 4 campaigns (house wash, roof, driveway, commercial), full keyword list, bidding notes | outputs/rick/google_ads_peak_season_2026-05-19.md | Done
+[2026-05-19 11:00] Donna | Nextdoor post templates + setup guide — zero-cost residential channel, 10-min setup, 3 post templates | outputs/donna/nextdoor_post_template_2026-05-19.md | Done
+[2026-05-19 11:00] Vera | Updated open_issues.md — 3 new RESOLVED (load_emails JSON, repair JSON, nina API warning), 26 total resolved, 14 open | outputs/vera/open_issues.md | Done
+[2026-05-19 11:00] Vera | Wrote pending_slack_messages.md — 4 auto-upgrade notices, 1 contractor urgent alert, 1 deliverable roundup, 2 proposals, 1 pending action items, 1 scan summary | outputs/vera/pending_slack_messages.md | Done

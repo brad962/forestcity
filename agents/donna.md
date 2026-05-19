@@ -32,6 +32,7 @@ When Forest City is ready to push hard into a new county, produce a 60-day launc
 
 ### Seasonal Campaign Plans
 - **Spring Blitz (Feb–March):** Pre-season booking campaign
+- **Memorial Day Sprint (May 24–26):** 🚨 HIGHEST-URGENCY window. Homeowners are outside, hosting, looking at their house. "Before the guests arrive" angle. 5-channel push: Facebook post, Nextdoor post, past customer text, GBP photo, and text blast to all uncontacted contractor referral leads.
 - **Summer Push (June):** Commercial properties, property managers
 - **Fall Rush (Sept):** Pre-winter urgency campaign
 - **Annual Plan Promo (Oct–Nov):** Lock in 2-visit customers

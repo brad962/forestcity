@@ -195,7 +195,11 @@ def load_existing_emails():
     """Load all emails already in the contacts cache to avoid duplicates."""
     if not CACHE_FILE.exists():
         return set()
-    cache = json.loads(CACHE_FILE.read_text())
+    try:
+        cache = json.loads(CACHE_FILE.read_text())
+    except (json.JSONDecodeError, Exception):
+        print('  ⚠️ contacts_cache.json malformed — treating as empty (no duplicates skipped).')
+        return set()
     return {c.get('email', '').lower() for c in cache.get('contacts', []) if c.get('email')}
 
 
@@ -488,7 +492,11 @@ def verify_and_repair_enrollment():
         return
     print(f'  Confirmed in Mixmax: {len(confirmed)}')
 
-    cache = json.loads(CACHE_FILE.read_text())
+    try:
+        cache = json.loads(CACHE_FILE.read_text())
+    except (json.JSONDecodeError, Exception):
+        print('  ⚠️ contacts_cache.json malformed — skipping repair.')
+        return
     contacts = cache.get('contacts', [])
 
     # Find contacts with an email that aren't in Mixmax yet
