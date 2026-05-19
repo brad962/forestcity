@@ -228,3 +228,11 @@
 [2026-05-19 13:00] Rick | Memorial Day ads — 5 Facebook ad variations + 2 Google ad variations for May 21–27 surge, budget recommendations | outputs/rick/memorial_day_ads_2026-05-19.md | Done
 [2026-05-19 13:00] Vera | Updated open_issues.md — 3 new RESOLVED (CONTRACTOR_TITLES, Carla zero-lead log, DANNY_ORG_KEYWORDS commercial RE); 32 total resolved, 14 open | outputs/vera/open_issues.md | Done
 [2026-05-19 13:00] Vera | Wrote pending_slack_messages.md — 3 auto-upgrade notices, 1 deliverable roundup, 1 urgent contractor alert, 1 pending approvals reminder, 1 scan summary | outputs/vera/pending_slack_messages.md | Done
+[2026-05-19 14:00] Vera | Auto-upgrade: lead_pipeline.py — run_carla() now uses org phone fallback (matches Danny's pattern); Carla no longer misses org phones when reveal doesn't echo organization_id | workers/lead_pipeline.py | Done
+[2026-05-19 14:00] Vera | Auto-upgrade: workiz_report.py — post_to_slack() early-return when API blocked; shows "⚠️ Workiz API unavailable" card (IN PROGRESS) instead of misleading $0/$0 metrics | workers/workiz_report.py | Done
+[2026-05-19 14:00] Vera | Ghost fix verification (run 14): all 34 prior+new fixes confirmed present — no regressions | multiple files | Done
+[2026-05-19 14:00] Tommy | Inbound lead first-response protocol — 4 inbound types, exact scripts, 5-minute rule, estimate call flow | outputs/tommy/inbound_response_protocol_2026-05-19.md | Done
+[2026-05-19 14:00] Tommy | Soft wash vs pressure wash explainer — 30-sec in-person pitch + website FAQ copy + ad one-liner | outputs/tommy/soft_wash_explainer_2026-05-19.md | Done
+[2026-05-19 14:00] Donna | Neighborhood canvass strategy — door knock script, leave-behind card, FB post, timing guide, neighborhood tier matrix | outputs/donna/neighborhood_canvass_strategy_2026-05-19.md | Done
+[2026-05-19 14:00] Vera | Updated open_issues.md — 2 new RESOLVED (carla phone fallback, workiz $0 card); 34 total resolved, 14 open | outputs/vera/open_issues.md | Done
+[2026-05-19 14:00] Vera | Wrote pending_slack_messages.md — 2 auto-upgrades, 1 deliverable roundup, 1 urgent contractor alert, 1 pending action items, 1 scan summary | outputs/vera/pending_slack_messages.md | Done
