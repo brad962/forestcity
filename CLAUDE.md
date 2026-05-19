@@ -58,9 +58,14 @@ Pending (add to .env when ready):
 
 ## Mixmax Sequence IDs
 
+> ⚠️ **Authoritative source:** `integrations/mixmax.py` — the SEQUENCES dict is what all workers read.
+> The table below is for human reference only. Always update `integrations/mixmax.py` first.
+
 - Property Manager Outreach: 6a048cfc110bc620ca0f1aee
 - Realtor Outreach: 6a048cfba81429e5dfe55010
 - Contractor Outreach: 6a048cfd624a5989a68ba16c
+- Gas Station & C-Store: PENDING (create in Mixmax UI → paste ID into integrations/mixmax.py line 54)
+- Fleet Washing: PENDING (create in Mixmax UI → paste ID into integrations/mixmax.py line 48)
 
 ## Daily Rhythm
 

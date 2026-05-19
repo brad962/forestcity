@@ -146,7 +146,7 @@ def _sequence_is_live(lead_type: str) -> bool:
 
 def build_variables(lead: dict, lead_type: str) -> dict:
     """Build the variable map for a given lead and sequence type."""
-    first_name = lead.get('first_name', '')
+    first_name = lead.get('first_name', '') or 'there'  # prevents "Hi ," if Apollo returns blank
     last_name = lead.get('last_name', '')
     company = lead.get('company_name') or lead.get('organization') or ''
     phone = lead.get('phone', '')

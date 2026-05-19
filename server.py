@@ -78,6 +78,12 @@ def _build_seq_config():
 MIXMAX_SEQS, SEQ_LABELS = _build_seq_config()
 
 INSTANTLY_KEY = os.environ.get('INSTANTLY_API_KEY', '')
+# ⚠️ OVERLAP RISK: These Instantly campaigns target the SAME segments as live Mixmax sequences.
+# Property Managers → Mixmax seq 6a048cfc110bc620ca0f1aee is ACTIVE.
+# Referral Partners → Mixmax seq 6a048cfd624a5989a68ba16c is ACTIVE.
+# If INSTANTLY_API_KEY is set and Instantly campaigns are also active, contacts receive DUPLICATE
+# sequences from two platforms simultaneously — deliverability and trust damage.
+# Confirm with Bradley: only ONE platform should be active per segment.
 INSTANTLY_CAMPAIGNS = {
     'a1c08c3d-43c6-4a0f-b253-e3f14e66f3bc': {'name': 'Property Managers — Cuyahoga County', 'worker': 'danny'},
     '626cd15d-4d89-4c29-a609-436e69fbb404': {'name': 'Referral Partners — Contractors NE Ohio', 'worker': 'carla'},

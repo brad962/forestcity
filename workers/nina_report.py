@@ -342,12 +342,39 @@ def run_weekly():
     if not any(s['replied_contacts'] for s in all_stats):
         lines += ['*No replies yet. Emails are scheduled — check back next week.*', '']
 
+    # --- Manual Pipeline Health (pipeline_data.json) ---
+    manual_health_lines = []
+    try:
+        pipeline_f = BASE_DIR / 'pipeline_data.json'
+        if pipeline_f.exists():
+            pd_data = json.loads(pipeline_f.read_text())
+            manual = pd_data.get('manual_contacts', [])
+            untouched = [c for c in manual if not c.get('last_contact') and c.get('stage') not in ('Closed Won', 'Closed Lost')]
+            contacted = [c for c in manual if c.get('stage') == 'Contacted']
+            replied_m = [c for c in manual if c.get('stage') == 'Replied']
+            manual_health_lines = [
+                '## Manual Pipeline Health (Non-Mixmax Contacts)',
+                '',
+                f'| Metric | Count |',
+                f'|--------|-------|',
+                f'| Total manual contacts | {len(manual)} |',
+                f'| Never reached out to (stale) | {len(untouched)} |',
+                f'| Contacted | {len(contacted)} |',
+                f'| Replied | {len(replied_m)} |',
+                '',
+            ]
+            if untouched:
+                manual_health_lines.append(f'⚠️ **{len(untouched)} contacts have never been reached out to.** Work through the priority list this week.')
+                manual_health_lines.append('')
+    except Exception:
+        pass
+
     reply_item = (
         f'- [ ] Review {total_replied} {"reply" if total_replied == 1 else "replies"} and respond personally'
         if total_replied > 0
         else '- [ ] No replies yet — sequence is sending, check open rates'
     )
-    lines += [
+    lines += manual_health_lines + [
         '## Action Items for Bradley',
         '',
         reply_item,

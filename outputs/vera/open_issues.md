@@ -439,33 +439,147 @@
 
 ---
 
-## OPEN — 0% reply rate (Touch 3 fires May 22 — 3 days)
-- Updated: 2026-05-19 (run 18) — CRITICAL WINDOW
+## RESOLVED — build_variables() empty firstName renders "Hi ,"
+- Resolved: 2026-05-19 (run 19)
+- Fix: `first_name = lead.get('first_name', '') or 'there'` in `build_variables()`. If Apollo returns a contact with blank first_name, the email no longer opens with "Hi ," — uses "Hi there," instead.
+- Why this matters: Empty firstName → "Hi ," is immediately flagged as spam/bulk by recipients. Potential contributor to 0% reply rate for contacts where Apollo returned incomplete data.
+- File: `integrations/mixmax.py`
+
+---
+
+## RESOLVED — get_mixmax_enrolled_emails() misses new sequences when added
+- Resolved: 2026-05-19 (run 19)
+- Fix: Replaced hardcoded 3-sequence list with dynamic read from `integrations/mixmax.SEQUENCES`. Gas station and fleet sequences now automatically included in enrollment verification once their IDs go live. Hardcoded fallback kept for safety.
+- File: `workers/lead_pipeline.py`
+
+---
+
+## RESOLVED — nina_report.py run_weekly() blind to manual pipeline contacts
+- Resolved: 2026-05-19 (run 19)
+- Fix: Added "Manual Pipeline Health" section to weekly report that reads `pipeline_data.json`. Shows: total manual contacts, never reached out to (stale), contacted, replied. ⚠️ warning fires when untouched contacts exist.
+- File: `workers/nina_report.py`
+
+---
+
+## OPEN — 0% reply rate (Touch 3 fires May 22 — NOW 3 DAYS)
+- Updated: 2026-05-19 (run 19) — CRITICAL
+- Run 19 fix: Empty firstName bug in build_variables() now fixed — future sequences won't have "Hi ," openers. This may have affected some current enrolled contacts.
 - Run 18 angle: Diagnostic written. `outputs/vera/reply_rate_diagnostic_2026-05-19.md`
-  - Hypothesis 1 (most likely): Reply-To address in Mixmax points to wrong inbox — replies arriving unread
-  - Hypothesis 2: Variable substitution failing — email renders `{{firstName}}` literally
-  - Hypothesis 3: Open tracking inflation — opens counted via preview pane, not real engagement
-  - Hypothesis 4: Contacts unsubscribed (visible in Mixmax as "Unsubscribed" status, not "Replied")
+  - Hypothesis 1 (most likely): Reply-To address in Mixmax points to wrong inbox
+  - Hypothesis 2: Variable substitution failing (now partially fixed — future sends clean)
+  - Hypothesis 3: Open tracking inflation (preview pane triggering pixels)
+  - Hypothesis 4: Contacts unsubscribed instead of replying
   - Hypothesis 5: Two-part CTA in Touch 1 — too much friction
-- Immediate action: Bradley logs into Mixmax TODAY, checks Reply-To setting and sends test email to himself (10 minutes total)
-- Deadline: Before Touch 3 sends on May 22 — if issues found, they can be fixed before last email goes out
+- Bradley action needed: Log into Mixmax, check Reply-To setting, send test email to self (10 min). BEFORE May 22.
+- New: Tommy's personal contractor email template available for parallel outreach: `outputs/tommy/pipeline_contractor_outreach_2026-05-19.md`
 
 ---
 
 ## OPEN — 39 Manual Contacts Sitting Untouched (New Lead stage)
-- Updated: 2026-05-19 (run 18)
-- Memorial Day is 5 days out. Tier 1 texts must go TODAY/TOMORROW.
-- All templates ready. All numbers in pipeline_data.json and priority_outreach_list_2026-05-19.md.
-- Run 18 no change — execution is 100% in Bradley's hands.
+- Updated: 2026-05-19 (run 19) — MEMORIAL DAY IN 6 DAYS
+- 40 contacts never reached out to. 23 have phone numbers. 21 have both phone + contact info.
+- All assets ready. Bradley executes.
+- NEW this run: Personal email template added for contractors with email only: `outputs/tommy/pipeline_contractor_outreach_2026-05-19.md`
+- Next run check: Has count dropped from 39? Bradley should have texted 5 Tier 1 contacts by May 20.
 
 ---
 
 ## OPEN — Gas station contacts not enrolled in Mixmax
-- Updated: 2026-05-19 (run 18)
-- run_pending_sequences() cache-write bug now FIXED — enrollment marks will persist correctly once sequence goes live
-- Still blocked on: Bradley creates Mixmax sequence + pastes ID into integrations/mixmax.py line 54
+- Updated: 2026-05-19 (run 19)
+- All infrastructure fixed (run 16-18). Enrollment marks persist correctly (run 18 fix).
+- Still blocked on: Bradley creates Mixmax sequence → pastes ID into `integrations/mixmax.py` line 54
+- New this run: get_mixmax_enrolled_emails() now dynamic — gas station contacts will be verified after enrollment.
+- Resolution: Bradley action only.
 
 ---
 
-*Last updated: 2026-05-19 by Vera Cole (run 18)*
-*Key metrics: 44 RESOLVED | 12 OPEN | 2 auto-upgrades this run | 1 deliverable (reply rate diagnostic)*
+## OPEN — Instantly.ai campaigns running parallel to Mixmax (duplicate sequence risk)
+- Updated: 2026-05-19 (run 19) — escalating
+- Run 19 fix: Added ⚠️ warning comment to server.py INSTANTLY_CAMPAIGNS block.
+- server.py has active Instantly.ai campaign IDs for Property Managers AND Referral Partners — same segments as live Mixmax sequences.
+- If INSTANTLY_API_KEY is set and both platforms are active: contacts receive duplicate emails from two platforms → deliverability damage.
+- Bradley action needed: Confirm which platform is live per segment. Pause the other.
+- Resolution criteria: Bradley replies which platform is active for each segment.
+
+---
+
+## OPEN — Mixmax API blocked in cloud execution environment
+- First seen: 2026-05-18
+- Workaround: All pipeline scripts return None/safe fallback on 403. nina_report shows explicit API warning.
+- Next steps: Bradley checks Mixmax → API Settings → IP Allowlist.
+
+---
+
+## OPEN — All external APIs blocked from cloud (Apollo, Workiz, Mixmax)
+- First seen: 2026-05-18
+- Workaround: Cron job schedule documented in CLAUDE.md.
+- Next steps: Bradley runs `crontab -e` and pastes cron jobs.
+
+---
+
+## OPEN — Slack Webhook blocked in cloud execution environment
+- First seen: 2026-05-18
+- Workaround: Messages written to `outputs/vera/pending_slack_messages.md`. GitHub Action posts to Slack on push.
+
+---
+
+## OPEN — 13 hot leads sitting uncontacted on LinkedIn
+- First seen: 2026-05-18
+- Memorial Day week is peak window — PMs making summer vendor decisions now.
+- Protocol ready: `outputs/danny/linkedin_hot_lead_dm_protocol_2026-05-18.md`
+- Tommy's bridge email ready: `outputs/tommy/hot_lead_bridge_email_2026-05-19.md`
+- Resolution criteria: Bradley sends 3 LinkedIn connects or 3 bridge emails this week.
+
+---
+
+## OPEN — Marcus fresh web intel needed (competitor + VOC)
+- First seen: 2026-05-18
+- Web search blocked in cloud. All prior intel from patterns/research.
+- Next steps: Bradley runs Marcus locally.
+
+---
+
+## OPEN — HubSpot not connected (CRM blind)
+- First seen: 2026-05-12
+- Escalating every run. Resolution: HUBSPOT_TOKEN added to .env.
+
+---
+
+## OPEN — No residential homeowner outreach channel
+- First seen: 2026-05-18
+- Run 11: Nextdoor templates written. Memorial Day social posts ready.
+- Resolution criteria: Bradley posts 1 Facebook post OR creates Nextdoor account.
+
+---
+
+## OPEN — Workiz API blocked in cloud AND 0 power washing jobs on local
+- First seen: 2026-05-14
+- All code fixes confirmed present. Diagnostic logging active.
+- Next step: Bradley checks Workiz for actual JobType field name.
+
+---
+
+## OPEN — Regular Danny PM cron not running (7 days overdue)
+- Updated: 2026-05-19 (run 19)
+- Pipeline has not run since May 13. Now 6 days overdue.
+- All PIPELINE_F crash bugs fixed (run 17). get_mixmax_enrolled_emails() now dynamic (run 19 fix).
+- Next steps: Bradley runs `python3 workers/lead_pipeline.py both` locally to resume PM pipeline.
+
+---
+
+## OPEN — Google Business Profile not managed (zero-cost lead channel ignored)
+- First seen: 2026-05-18
+- Memorial Day execution checklist: upload 1 photo to GBP by Wednesday May 21.
+- Resolution: Bradley posts 1 photo to GBP.
+
+---
+
+## OPEN — No review request automation
+- First seen: 2026-05-18 (run 8)
+- 3-touch sequence written: `outputs/tommy/review_request_sequence_2026-05-18.md`.
+- Resolution: Bradley sends review request text after each completed job.
+
+---
+
+*Last updated: 2026-05-19 by Vera Cole (run 19)*
+*Key metrics: 47 RESOLVED | 12 OPEN | 6 auto-upgrades this run | 1 deliverable (pipeline contractor outreach email)*

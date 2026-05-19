@@ -463,15 +463,24 @@ def run_carla():
 
 
 def get_mixmax_enrolled_emails():
-    """Pull the set of emails currently confirmed in all 3 Mixmax sequences.
+    """Pull the set of emails currently confirmed in all live Mixmax sequences.
     Returns None if ALL sequences fail to respond — caller should skip repair
     to avoid mass re-enrollment when the API is temporarily unavailable.
+    Reads sequence IDs dynamically from integrations/mixmax.py so gas_station
+    and fleet sequences are checked automatically once their IDs go live.
     """
-    seq_ids = [
-        '6a048cfc110bc620ca0f1aee',  # Property Managers
-        '6a048cfba81429e5dfe55010',  # Realtors
-        '6a048cfd624a5989a68ba16c',  # Contractors
-    ]
+    try:
+        from integrations.mixmax import SEQUENCES, _sequence_is_live
+        seq_ids = [meta['id'] for seq_type, meta in SEQUENCES.items() if _sequence_is_live(seq_type)]
+    except Exception:
+        seq_ids = []
+    # Fallback to hardcoded IDs in case import fails
+    if not seq_ids:
+        seq_ids = [
+            '6a048cfc110bc620ca0f1aee',  # Property Managers
+            '6a048cfba81429e5dfe55010',  # Realtors
+            '6a048cfd624a5989a68ba16c',  # Contractors
+        ]
     enrolled = set()
     success_count = 0
     for seq_id in seq_ids:

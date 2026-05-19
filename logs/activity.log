@@ -167,3 +167,12 @@
 [2026-05-19 20:30] Vera | Deliverable: Reply rate diagnostic — 5 hypotheses + specific Mixmax test steps for Bradley; Touch 3 fires May 22 | outputs/vera/reply_rate_diagnostic_2026-05-19.md | Done
 [2026-05-19 20:30] Vera | Updated open_issues.md — run 18: 2 new RESOLVED, open issues escalated, Memorial Day countdown updated | outputs/vera/open_issues.md | Done
 [2026-05-19 20:30] Vera | Proposals posted: Mixmax Reply-To diagnostic urgent, sequence rewrite approval, gas station sequence | outputs/vera/pending_slack_messages.md | Done
+[2026-05-19 21:12] Vera | Auto-upgrade: build_variables() empty firstName fallback — prevents "Hi ," opener on Mixmax sequences | integrations/mixmax.py | Done
+[2026-05-19 21:12] Vera | Auto-upgrade: get_mixmax_enrolled_emails() now reads sequence IDs dynamically from mixmax.SEQUENCES — includes gas_station/fleet when live | workers/lead_pipeline.py | Done
+[2026-05-19 21:12] Vera | Auto-upgrade: nina_report.py run_weekly() — added Manual Pipeline Health section from pipeline_data.json | workers/nina_report.py | Done
+[2026-05-19 21:12] Vera | Auto-upgrade: agents/danny.md — fixed stale "HubSpot pipeline" mission statement to "prospect pipeline" | agents/danny.md | Done
+[2026-05-19 21:12] Vera | Auto-upgrade: CLAUDE.md — marked mixmax.py as authoritative source for sequence IDs; added PENDING entries for gas_station and fleet | CLAUDE.md | Done
+[2026-05-19 21:12] Vera | Auto-upgrade: server.py — added ⚠️ warning comment to INSTANTLY_CAMPAIGNS about Mixmax overlap risk | server.py | Done
+[2026-05-19 21:12] Vera | Deliverable: pipeline_contractor_outreach_2026-05-19.md — personal email template for 21 warm pipeline contractors, trade-specific personalization | outputs/tommy/pipeline_contractor_outreach_2026-05-19.md | Done
+[2026-05-19 21:12] Vera | Updated open_issues.md — run 19: 3 new RESOLVED, 12 OPEN updated with new status and escalations | outputs/vera/open_issues.md | Done
+[2026-05-19 21:12] Vera | Proposals posted: HOA portfolio sequence, sequence rewrite approval, gas station sequence | outputs/vera/pending_slack_messages.md | Done
