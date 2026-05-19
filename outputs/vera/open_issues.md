@@ -349,5 +349,19 @@
 
 ---
 
-*Last updated: 2026-05-19 by Vera Cole (run 13)*
-*Key metrics: 32 RESOLVED | 14 OPEN | 3 auto-upgrades shipped | 3 new deliverables*
+## RESOLVED — run_carla() missing org phone fallback
+- Resolved: 2026-05-19 (run 14)
+- Fix: `org_id = revealed.get('organization_id', '') or p.get('organization', {}).get('id', '')` — matches Danny's existing fallback. Carla was silently missing org phones when reveal didn't return organization_id.
+- File: `workers/lead_pipeline.py`
+
+---
+
+## RESOLVED — workiz_report.py post_to_slack shows $0/$0 on API block
+- Resolved: 2026-05-19 (run 14)
+- Fix: Added early-return branch in `post_to_slack()` when `not jobs and 'unavailable' in summary`. Shows clear "⚠️ Workiz API unavailable" card with IN PROGRESS status instead of misleading $0 total / $0 outstanding metrics.
+- File: `workers/workiz_report.py`
+
+---
+
+*Last updated: 2026-05-19 by Vera Cole (run 14)*
+*Key metrics: 34 RESOLVED | 14 OPEN | 2 auto-upgrades shipped | 3 new deliverables*
