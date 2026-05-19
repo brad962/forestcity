@@ -318,7 +318,10 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             # Build phone + company lookup from contacts cache (email → {phone, company_name})
             cache_lookup = {}
             if CONTACTS_F.exists():
-                cache_data = json.loads(CONTACTS_F.read_text())
+                try:
+                    cache_data = json.loads(CONTACTS_F.read_text())
+                except (json.JSONDecodeError, Exception):
+                    cache_data = {'contacts': []}
                 for cc in cache_data.get('contacts', []):
                     em = (cc.get('email') or '').lower()
                     if em:

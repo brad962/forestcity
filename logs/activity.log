@@ -185,3 +185,9 @@
 [2026-05-19 22:10] Vera | Deliverable: Google Ads June 2026 — 2 campaigns, all copy written, extensions, setup checklist | outputs/rick/google_ads_june_2026-05-19.md | Done
 [2026-05-19 22:10] Vera | Updated open_issues.md — run 20: 4 new RESOLVED, 1 new OPEN (Google Ads gap), 13 open issues total | outputs/vera/open_issues.md | Done
 [2026-05-19 22:10] Vera | Proposals + escalations written to pending_slack_messages.md for GitHub Action relay | outputs/vera/pending_slack_messages.md | Done
+[2026-05-19 23:12] Vera | Auto-upgrade: server.py /api/pipeline GET — cache_lookup now wrapped in try/except, prevents crash on malformed contacts_cache.json | server.py | Done
+[2026-05-19 23:12] Vera | Auto-upgrade: agents/nina.md — mission updated from HubSpot-first to Mixmax+Workiz+manual pipeline reality | agents/nina.md | Done
+[2026-05-19 23:12] Vera | Auto-upgrade: memorial_day_execution_checklist — fixed day labels (May 21=Thu, May 23=Sat), added Wed May 20 bridge email section before Touch 3 fires | outputs/vera/memorial_day_execution_checklist_2026-05-19.md | Done
+[2026-05-19 23:12] Vera | Deliverable: PM sequence Touch 1+2 rewrite proposal — 62-word body, single CTA, lake humidity angle, Re: subject on Touch 2 | outputs/danny/pm_sequence_touch1_rewrite_2026-05-19.md | Done
+[2026-05-19 23:12] Vera | Updated open_issues.md — run 21: 3 new RESOLVED, 13 OPEN updated with escalations and current status | outputs/vera/open_issues.md | Done
+[2026-05-19 23:12] Vera | Proposals + escalations written to pending_slack_messages.md for GitHub Action relay | outputs/vera/pending_slack_messages.md | Done

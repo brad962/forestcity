@@ -1,61 +1,53 @@
 🔧 *Vera — Auto-Upgrade*
->Changed: server.py `sync_contacts()` — rewrote to MERGE Instantly leads into existing cache instead of overwriting. Also fixed `get_contacts()` to handle malformed JSON without crashing all dashboard endpoints. Fixed `/api/pipeline` and `/api/calls` GET crash on bad pipeline_data.json.
->Why: sync_contacts() was a data loss time bomb — the moment INSTANTLY_API_KEY landed in .env, one dashboard click would have wiped all Apollo contacts. Also hardened 3 crash points that would take down the entire dashboard.
+>Changed: `server.py` — `/api/pipeline` GET no longer crashes when `contacts_cache.json` is malformed. Added try/except around cache_lookup build block.
+>Why: Without the guard, any JSON parse error on the contacts file would crash the entire pipeline dashboard view — blank pipeline with no error message.
 >File: `server.py`
 ---
 🔧 *Vera — Auto-Upgrade*
->Changed: `integrations/mixmax.py` — `get_sequence_recipients()` now normalizes dict vs list response (was returning raw JSON). Added PENDING guard.
->Why: Latent bug — would crash any caller expecting a list when Mixmax returns a dict response.
->File: `integrations/mixmax.py`
+>Changed: `agents/nina.md` — mission statement updated from "Build HubSpot CRM" to reflect what Nina actually does: Mixmax pipeline health, Workiz job revenue, manual pipeline tracking.
+>Why: HubSpot hasn't been connected in 3 weeks. Nina's file said the wrong thing. Future Claude sessions now know what Nina's job actually is.
+>File: `agents/nina.md`
 ---
 🔧 *Vera — Auto-Upgrade*
->Changed: `agents/donna.md` — updated Memorial Day Sprint to ACTIVE NOW (May 19–26). Added June Booking Blitz with file references.
->Why: The sprint is live this week. Donna's file reflected it as future planning — now updated to reflect active execution mode.
->File: `agents/donna.md`
----
-🔧 *Vera — Auto-Upgrade*
->Changed: `agents/tommy.md` — added 4 deliverable format types (pipeline outreach, LinkedIn DM playbook, past customer reengagement, review request).
->Why: Tommy's been producing these but they weren't documented in his agent file. Missing formats = other agents don't know these deliverables exist.
->File: `agents/tommy.md`
+>Changed: `outputs/vera/memorial_day_execution_checklist_2026-05-19.md` — fixed wrong day labels. Added Wednesday May 20 section with bridge email + LinkedIn outreach steps BEFORE Touch 3 fires Friday May 22.
+>Why: Bridge email was listed under "Friday May 23" — AFTER Touch 3 fires on May 22. Now correctly scheduled May 20. Touch 3 + personal bridge email on same contact = 2x reply chance.
+>File: `outputs/vera/memorial_day_execution_checklist_2026-05-19.md`
 ---
 📋 *Vera — New Deliverable*
->File: `outputs/tommy/hot_lead_linkedin_dm_playbook_2026-05-19.md`
->What: 3-step LinkedIn DM playbook for the 13 hot leads (2+ opens, 0 replies). Copy-paste templates for PMs, realtors, and contractors. Timed to warm contacts BEFORE Touch 3 fires May 22.
->How: Open each hot lead's LinkedIn → send connection request note → DM within 24h if accepted. 5 min/contact. Do today.
+>File: `outputs/danny/pm_sequence_touch1_rewrite_2026-05-19.md`
+>What: Revised Touch 1 (62 words, lake humidity angle, single CTA) and Touch 2 ("Re:" subject, 40 words, booking urgency) for the PM sequence.
+>Action needed: (1) First check Mixmax Reply-To — if it's wrong, fix that before touching copy. (2) Reply YES to approve the rewrite and I'll update the sequence notes. Changes apply to NEW enrollees only — existing 45 contacts get Touch 3 as-is on Friday.
 ---
-📋 *Vera — New Deliverable*
->File: `outputs/jasmine/facebook_posts_june_week1_2026-06-02.md`
->What: 5 Facebook posts for June 2–6. Post-Memorial Day momentum angle, commercial PM push, Strongsville before/after, referral share, deck season. Ready to schedule.
+🚨 *Vera — URGENT TODAY (Wednesday May 20)*
+>Touch 3 fires Friday May 22 — 2 days away.
+>
+>*Do these today — 30 minutes total:*
+>• Send bridge emails to 3 hottest Mixmax contacts (2+ opens) → `outputs/tommy/hot_lead_bridge_email_2026-05-19.md`
+>• Send LinkedIn connects to 5 hot leads → `outputs/tommy/hot_lead_linkedin_dm_playbook_2026-05-19.md`
+>
+>These land BEFORE Touch 3. A personal email + automated step on the same contact = the combo that breaks reply silence.
+>
+>Also: Text 5 Tier 1 contractors TODAY — Anthony/Land Pro (440-320-2779), Dontez/GTP (440-396-0814), Twin Improvements, Reliable Roofing, Pagels Construction.
 ---
-📋 *Vera — New Deliverable*
->File: `outputs/rick/google_ads_june_2026-05-19.md`
->What: Complete Google Ads for June. 2 campaigns, all ad copy written, all extensions. $15/day = 20–30 quote requests/month in NE Ohio. Forest City is currently invisible on "power washing near me."
->Action: Create Google Ads account to launch.
----
-🚨 *Vera — URGENT: Touch 3 fires May 22 — Check Reply-To NOW*
->42% open rate. 0% reply rate. Most likely cause: Mixmax Reply-To pointing to wrong inbox.
->10-minute fix: Mixmax → PM Sequence → Settings → confirm Reply-To = your real inbox.
->Also: Send LinkedIn connects to 5 hot leads TODAY → `outputs/tommy/hot_lead_linkedin_dm_playbook_2026-05-19.md`
----
-🚨 *Vera — URGENT: 40 Contacts Untouched — Memorial Day in 5 Days*
->Count unchanged from last run. Text these TODAY:
->• Land Pro Management — Anthony — 440-320-2779
->• GTP Landscaping — Dontez — 440-396-0814
->• + Twin Improvements, Reliable Roofing, Pagels Construction
->Templates: `outputs/vera/sms_templates_contractors_2026-05-18.md`
+🚨 *Vera — URGENT: Run the Lead Pipeline (6 days overdue)*
+>Last run: May 13. 6 days of missed PM contacts during peak season.
+>Run this NOW from your Mac: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both`
+>Takes 5 minutes. Pulls ~15-25 new Summit County property managers. Auto-enrolls them in Mixmax.
+>This is the lifeblood of the outbound machine — if it doesn't run, the pipeline runs dry by July.
 ---
 💡 *Vera — Upgrade Proposal*
->Idea: Launch Google Search Ads — $15/day for June
->Why: Forest City is invisible on "power washing near me" during peak season. All ad copy ready: `outputs/rick/google_ads_june_2026-05-19.md`
->Impact: Industry benchmark = 20–30 quote requests/month → at minimum 3 booked jobs → 3x return on $300/month.
->Action needed: Create Google Ads account at ads.google.com. Reply YES to approve.
+>Idea: Approve the PM sequence Touch 1 & Touch 2 rewrite
+>Why: 42% open rate, 0% replies. New version is 62 words (vs current 150+), single CTA, "Re:" subject on Touch 2, NE Ohio lake humidity angle. These are the changes industry data says break 0% reply rate.
+>Impact: Even 2% reply rate on 45 contacts = 1 new PM this week. Compounded over 100 contacts = real summer revenue.
+>File: `outputs/danny/pm_sequence_touch1_rewrite_2026-05-19.md`
+>Action: Reply YES to approve.
 ---
 💡 *Vera — Upgrade Proposal*
->Idea: Create Mixmax Gas Station sequence now
->Why: 18 contacts tagged and ready. Auto-enrolls the moment the ID is live. No extra work after that.
->Impact: Each gas station district manager controls 5–15 locations = potential recurring multi-site revenue.
->Action: Mixmax → New Sequence → use copy from `outputs/danny/sequence_gas_stations_2026-05-19.md` → paste ID into `integrations/mixmax.py` line 54. Reply YES + paste ID.
+>Idea: Create Mixmax Gas Station & C-Store sequence — 18 contacts waiting since May 19
+>Why: All infrastructure ready. 18 gas station contacts tagged _lead_type: gas_station. Auto-enroll fires the moment the ID goes live.
+>Sequence copy: `outputs/danny/sequence_gas_stations_2026-05-19.md`
+>Action: Mixmax → New Sequence → paste copy → get ID → paste into `integrations/mixmax.py` line 54. Reply YES + paste the ID.
 ---
-✅ *Vera — Scan Complete 2026-05-19 (Run 20)*
->4 auto-upgrades shipped | 3 deliverables produced | 13 open issues tracked
->CRITICAL TODAY: (1) Check Mixmax Reply-To (10 min) (2) Text 5 Tier 1 contractors (30 min) (3) LinkedIn connects to hot leads (15 min). ~1 hour total. Peak season — this hour matters.
+✅ *Vera — Scan Complete 2026-05-19 (Run 21)*
+>3 auto-upgrades shipped | 1 new deliverable (sequence rewrite) | 2 proposals pending | 13 open issues tracked
+>CRITICAL THIS MORNING: (1) Check Mixmax Reply-To — 10 min (2) Bridge emails to hot leads before Touch 3 fires Friday — 15 min (3) Text 5 Tier 1 contractors — 15 min (4) Run lead pipeline locally — 5 min. Total: 45 minutes. Peak season doesn't wait.

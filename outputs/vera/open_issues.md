@@ -502,16 +502,17 @@
   - Hypothesis 5: Two-part CTA in Touch 1 — too much friction
 - IMMEDIATE action: Bradley logs into Mixmax → open PM sequence → Settings → verify Reply-To is his real inbox. 10 minutes. DO THIS TODAY.
 - Parallel: Send LinkedIn connections to 5–10 hot leads using `outputs/tommy/hot_lead_linkedin_dm_playbook_2026-05-19.md`
+- 2026-05-19 (run 21): Touch 1 & Touch 2 rewrite written → `outputs/danny/pm_sequence_touch1_rewrite_2026-05-19.md`. 62-word body, "Re:" subject on Touch 2, single CTA, lake humidity angle. Requires Bradley approval before Mixmax update. Touch 3 fires May 22 as-is — watch reply data after it fires. If still 0 replies → approve rewrite for round 2.
 
 ---
 
 ## OPEN — 40 Manual Contacts Sitting Untouched (New Lead stage) — NO PROGRESS
-- Updated: 2026-05-19 (run 20) — COUNT UNCHANGED FROM RUN 19
-- Run 20: Still 40 untouched (pipeline_data.json verified). 3 contacted (Bulletproof, Damrons + 1). 0 replied.
-- Memorial Day is in 5 days (May 24). Bradley was to text 5 Tier 1 contacts by May 20 — 1 day left.
-- Tier 1 (text TODAY): Land Pro Management (Anthony, 440-320-2779), GTP Landscaping (Dontez, 440-396-0814), Twin Improvements, Reliable Roofing, Pagels Construction
-- All text templates ready: `outputs/vera/sms_templates_contractors_2026-05-18.md`
-- Escalation note: Every day without outreach in Memorial Day week is leaving bookings on the table.
+- Updated: 2026-05-19 (run 21) — 40 UNTOUCHED. MEMORIAL DAY IS MONDAY MAY 25.
+- Run 21: Still 40 untouched. Wednesday May 20 is the last viable full day to text. After that, contractors start going into weekend mode.
+- WEDNESDAY May 20 — text 5 more Tier 1 contacts: Anthony/Land Pro (440-320-2779), Dontez/GTP (440-396-0814), Twin Improvements, Reliable Roofing, Pagels Construction
+- THURSDAY May 21 — text the next 10 from the priority list
+- Templates: `outputs/vera/sms_templates_contractors_2026-05-18.md`
+- Execution checklist updated: `outputs/vera/memorial_day_execution_checklist_2026-05-19.md`
 
 ---
 
@@ -588,10 +589,11 @@
 ---
 
 ## OPEN — Regular Danny PM cron not running (7 days overdue)
-- Updated: 2026-05-19 (run 20) — 7 DAYS OVERDUE
-- Pipeline has not run since May 13. All PIPELINE_F bugs fixed. All enrollment logic correct.
-- Urgent: Missing a full week of fresh PM contacts during peak season.
-- Next steps: Bradley runs `python3 workers/lead_pipeline.py both` locally — TODAY.
+- Updated: 2026-05-19 (run 21) — 6 DAYS OVERDUE. TODAY IS THE LAST DAY BEFORE MEMORIAL DAY WEEK IS LOST.
+- Pipeline has not run since May 13. All PIPELINE_F, cache, and enrollment bugs confirmed fixed.
+- Missed 6 days of new PM contacts during peak season. Week 21 county batch (Summit County) never ran.
+- Run NOW: `python3 workers/lead_pipeline.py both` from /Users/bradleyneal/forestcity
+- This takes 5 minutes. Pulls ~15-25 new property managers. Enrolls them in the PM sequence automatically.
 
 ---
 
@@ -619,5 +621,26 @@
 
 ---
 
-*Last updated: 2026-05-19 by Vera Cole (run 20)*
-*Key metrics: 51 RESOLVED | 13 OPEN | 4 auto-upgrades this run | 3 deliverables*
+## RESOLVED — server.py /api/pipeline GET crashes on malformed contacts_cache.json
+- Resolved: 2026-05-19 (run 21)
+- Fix: Added try/except around `json.loads(CONTACTS_F.read_text())` in the cache_lookup build block inside the `/api/pipeline` GET handler. On malformed JSON, falls back to empty dict — pipeline dashboard still loads with Mixmax contacts, just no phone/company lookup from cache.
+- File: `server.py`
+
+---
+
+## RESOLVED — memorial_day_execution_checklist had wrong day-of-week labels + missing Wed May 20
+- Resolved: 2026-05-19 (run 21)
+- Fix: "WEDNESDAY May 21" → "THURSDAY May 21". "FRIDAY May 23" → "SATURDAY May 23". Added "WEDNESDAY May 20" section with bridge email step (moved from after Touch 3 fires to before). Touch 3 fires May 22 — bridge emails now correctly scheduled May 20, not May 23.
+- File: `outputs/vera/memorial_day_execution_checklist_2026-05-19.md`
+
+---
+
+## RESOLVED — agents/nina.md mission statement said "Build HubSpot CRM" (not connected for 3 weeks)
+- Resolved: 2026-05-19 (run 21)
+- Fix: Replaced HubSpot-first mission with accurate 3-part mission: (1) Mixmax pipeline health, (2) Workiz job revenue, (3) Manual pipeline tracking. HubSpot preserved as pending integration goal.
+- File: `agents/nina.md`
+
+---
+
+*Last updated: 2026-05-19 by Vera Cole (run 21)*
+*Key metrics: 54 RESOLVED | 13 OPEN | 3 auto-upgrades this run | 1 deliverable (sequence rewrite proposal)*
