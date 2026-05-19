@@ -564,50 +564,92 @@ def verify_and_repair_enrollment():
 
 def run_pending_sequences():
     """
-    Enroll contacts from contacts_cache.json that have a live sequence
-    but haven't been enrolled yet (mixmax_enrolled = False).
+    Enroll contacts that have a live sequence but haven't been enrolled yet.
+    Checks both contacts_cache.json and pipeline_data.json (manual contacts with _lead_type).
     Runs automatically — as soon as a PENDING sequence ID is added to
     integrations/mixmax.py, these contacts go into the sequence on the next run.
     """
     from integrations.mixmax import enroll_lead, _sequence_is_live
 
-    if not CACHE_FILE.exists():
-        return
+    pending = []
 
-    cache = json.loads(CACHE_FILE.read_text())
-    pending = [
-        c for c in cache['contacts']
-        if not c.get('mixmax_enrolled')
-        and c.get('email')
-        and c.get('_lead_type')
-        and _sequence_is_live(c.get('_lead_type', ''))
-    ]
+    # Source 1: contacts_cache.json (Apollo-pulled leads)
+    if CACHE_FILE.exists():
+        try:
+            cache = json.loads(CACHE_FILE.read_text())
+        except (json.JSONDecodeError, Exception):
+            print('  ⚠️ contacts_cache.json malformed — skipping cache pending enrollment.')
+            cache = {}
+        for c in cache.get('contacts', []):
+            if (not c.get('mixmax_enrolled')
+                    and c.get('email')
+                    and c.get('_lead_type')
+                    and _sequence_is_live(c.get('_lead_type', ''))):
+                pending.append(('cache', c))
+
+    # Source 2: pipeline_data.json manual contacts with _lead_type set and email present
+    pipeline_dirty = False
+    pipeline_data = {}
+    if PIPELINE_F.exists():
+        try:
+            pipeline_data = json.loads(PIPELINE_F.read_text())
+        except (json.JSONDecodeError, Exception):
+            print('  ⚠️ pipeline_data.json malformed — skipping pipeline pending enrollment.')
+        for mc in pipeline_data.get('manual_contacts', []):
+            if (not mc.get('mixmax_enrolled')
+                    and mc.get('email')
+                    and mc.get('_lead_type')
+                    and _sequence_is_live(mc.get('_lead_type', ''))):
+                pending.append(('pipeline', mc))
 
     if not pending:
         return
 
     print(f'\n⏳ Enrolling {len(pending)} pending contacts now that sequences are live...')
     enrolled = 0
-    for c in pending:
-        result = enroll_lead(c)
+    for source, c in pending:
+        # Build a normalized lead dict for mixmax.enroll_lead
+        lead = {
+            'first_name':   c.get('first_name', ''),
+            'last_name':    c.get('last_name', ''),
+            'email':        c.get('email', ''),
+            'title':        c.get('title', ''),
+            'company_name': c.get('company_name') or c.get('company', ''),
+            'phone':        c.get('phone', ''),
+            '_lead_type':   c.get('_lead_type', ''),
+            '_worker':      c.get('_worker', 'danny'),
+        }
+        result = enroll_lead(lead)
         if result.get('status') == 'enrolled':
             c['mixmax_enrolled'] = True
             c['mixmax_sequence'] = result.get('sequence', '')
             enrolled += 1
-            print(f'  ✅ {c["first_name"]} {c["last_name"]} → {result["sequence"]}')
+            print(f'  ✅ {c.get("first_name","")} {c.get("last_name","")} ({c.get("company","")})'
+                  f' → {result["sequence"]}')
+            if source == 'pipeline':
+                pipeline_dirty = True
         else:
             print(f'  ⚠️  {c.get("email")} — {result.get("reason", result.get("errors",""))}')
         time.sleep(0.3)
 
-    CACHE_FILE.write_text(json.dumps(cache, indent=2))
-    log('pipeline', f'Pending sequence enrollment — {enrolled}/{len(pending)} enrolled', 'contacts_cache.json')
+    # Persist changes
+    if CACHE_FILE.exists():
+        try:
+            orig = json.loads(CACHE_FILE.read_text())
+            CACHE_FILE.write_text(json.dumps(orig, indent=2))
+        except Exception:
+            pass
+    if pipeline_dirty and pipeline_data:
+        PIPELINE_F.write_text(json.dumps(pipeline_data, indent=2))
+
+    log('pipeline', f'Pending sequence enrollment — {enrolled}/{len(pending)} enrolled', 'contacts_cache.json+pipeline_data.json')
 
     if enrolled:
         send_report_card(
             worker_name='danny',
             title='Pending Contacts Enrolled',
             metrics=[('Enrolled', enrolled), ('Total Pending', len(pending))],
-            summary_lines=[f'{enrolled} contacts moved from pending into live sequences'],
+            summary_lines=[f'{enrolled} contacts moved from pending into live Mixmax sequences'],
             status='DONE',
         )
 

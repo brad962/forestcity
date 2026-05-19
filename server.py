@@ -351,6 +351,9 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                         stale = days >= thresholds.get(stage, 5)
                     except Exception:
                         pass
+                elif stage not in ('Closed Won', 'Closed Lost'):
+                    # Never contacted at all — always stale (needs outreach)
+                    stale = True
                 name = ' '.join(filter(None, [mc.get('first_name',''), mc.get('last_name','')])).strip()
                 if not name:
                     name = mc.get('company', '')  # Fall back to company when no individual name

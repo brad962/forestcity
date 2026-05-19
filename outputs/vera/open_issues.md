@@ -215,13 +215,13 @@
 
 ---
 
-## OPEN — 38 Manual Contacts Sitting Untouched (New Lead stage)
-- First seen: 2026-05-18 (updated run 15)
-- Description: 42 total manual contacts. 38 in "New Lead" stage with no outreach logged. 2 "Contacted" (Bulletproof + Damrons — texted today). Pipeline has expanded significantly: 18 gas station companies added today by Danny.
-- Priority text list ready: `outputs/vera/priority_outreach_list_2026-05-19.md`
-  - Tier 1 (text today): CLE Lawn Care Plus (warm reactivation), Land Pro Management, GTP Landscaping, Twin Improvements, Reliable Roofing, Pagels Construction
-  - Tier 2 (text this week): 10 landscapers
-  - Tier 3 (next week): 6 construction contractors
+## OPEN — 39 Manual Contacts Sitting Untouched (New Lead stage)
+- First seen: 2026-05-18 (updated run 16 — 2026-05-19)
+- Description: 42 total manual contacts. 39 in "New Lead" stage (up from 38). 3 "Contacted" (Bulletproof + Damrons texted 5-19, CLE Lawn Care Plus noted as next). 0 Replied.
+- Run 16 fix: server.py now flags ALL untouched New Lead contacts as `stale: true` on dashboard — previously invisible because empty last_contact date bypassed the staleness check.
+- 21 contractors have phone numbers. Templates: `outputs/vera/sms_templates_contractors_2026-05-18.md`
+- Priority text list: `outputs/vera/priority_outreach_list_2026-05-19.md`
+  - Tier 1 (text TODAY — Memorial Day 7 days away): Land Pro Management (Anthony, 440-320-2779), GTP Landscaping (Dontez, 440-396-0814), Twin Improvements, Reliable Roofing, Pagels Construction
 - Resolution criteria: Bradley works through Tier 1 by Thursday May 22.
 
 ---
@@ -297,13 +297,13 @@
 
 ---
 
-## OPEN — Regular Danny PM cron not running (gas stations pulled manually)
-- First seen: 2026-05-18 (updated run 15)
-- Danny manually pulled gas station leads today (23 contacts, 18 emails). But the regular property manager cron (`lead_pipeline.py both`) has not run since May 13. The weekly PM pull is 6 days overdue.
-- Gas station contacts added to pipeline_data.json ✓ but NOT enrolled in Mixmax — no sequence exists yet for this commercial segment.
+## OPEN — Regular Danny PM cron not running (7 days overdue)
+- First seen: 2026-05-18 (updated run 16 — 2026-05-19)
+- The regular property manager cron (`lead_pipeline.py both`) has not run since May 13. Now 6 days overdue.
+- Gas station contacts: tagged with `_lead_type: gas_station` in pipeline_data.json (run 16 fix). `run_pending_sequences()` now also scans pipeline_data.json — will auto-enroll the moment Bradley adds the sequence ID.
 - Next steps: 
   1. Bradley runs `python3 workers/lead_pipeline.py both` locally to resume PM pipeline
-  2. Create gas station Mixmax sequence (see proposal in Slack)
+  2. Create gas station Mixmax sequence + paste ID into `integrations/mixmax.py` SEQUENCES[gas_station][id]
 
 ---
 
@@ -338,11 +338,14 @@
 ---
 
 ## OPEN — Gas station contacts not enrolled in Mixmax (18 emails sitting idle)
-- First seen: 2026-05-19 (run 15)
-- Description: Danny pulled 23 gas station/c-store contacts today. 18 have verified emails. All added to pipeline_data.json with notes "email sequence pending." BUT no Mixmax sequence exists for this commercial segment yet. The contractor sequence is not the right fit — these are multi-location commercial operators, not referral partners.
-- What's ready: Sequence copy written (`outputs/danny/sequence_gas_stations_2026-05-19.md`). Individual contact details in `outputs/danny/leads_gas_stations_2026-05-19.md`.
-- Next steps: Bradley creates new Mixmax sequence "Forest City — Gas Station & C-Store Outreach" → paste sequence ID into mixmax.py SEQUENCES dict → Vera adds enrollment logic to lead_pipeline.py in next run.
-- Resolution criteria: Sequence ID in SEQUENCES dict + contacts enrolled.
+- First seen: 2026-05-19 (run 15 | updated run 16)
+- Run 16 fixes applied:
+  1. All 18 gas station contacts tagged with `_lead_type: "gas_station"` in pipeline_data.json
+  2. `run_pending_sequences()` now scans pipeline_data.json in addition to contacts_cache.json
+  3. `nina_report.py` SEQUENCES now auto-includes gas_station when ID goes live
+- What's ready: Sequence copy: `outputs/danny/sequence_gas_stations_2026-05-19.md`. Contact list: `outputs/danny/leads_gas_stations_2026-05-19.md`.
+- **Only thing blocking enrollment**: Bradley needs to create the sequence in Mixmax UI and paste the ID into `integrations/mixmax.py` at line 54: `'id': 'PENDING'` → real ID.
+- Resolution criteria: Real Mixmax sequence ID in place. Next pipeline run will auto-enroll all 18.
 
 ---
 
@@ -381,5 +384,28 @@
 
 ---
 
-*Last updated: 2026-05-19 by Vera Cole (run 15)*
-*Key metrics: 37 RESOLVED | 12 OPEN | 2 auto-upgrades this run | 1 new deliverable (priority_outreach_list)*
+---
+
+## RESOLVED — run_pending_sequences() crashes on malformed cache + misses pipeline_data contacts
+- Resolved: 2026-05-19 (run 16)
+- Fix: Added try/except around JSON parse; changed `cache['contacts']` to `cache.get('contacts', [])`. Added second scan loop for pipeline_data.json manual_contacts with `_lead_type` set. Gas station contacts now properly queued for auto-enrollment.
+- File: `workers/lead_pipeline.py`
+
+---
+
+## RESOLVED — Dashboard doesn't flag untouched New Lead contacts as stale
+- Resolved: 2026-05-19 (run 16)
+- Fix: Added `elif stage not in ('Closed Won', 'Closed Lost'): stale = True` branch after the `if last_contact:` block. Contacts with no last_contact date (never reached) now correctly show as stale on the dashboard.
+- File: `server.py`
+
+---
+
+## RESOLVED — nina_report.py SEQUENCES hardcoded — misses new sequences when IDs added
+- Resolved: 2026-05-19 (run 16)
+- Fix: Replaced hardcoded dict with `_build_sequences()` function that imports from `integrations/mixmax.py`. FALLBACK_SEQUENCES added for safety. Gas_station and fleet_washing sequences auto-appear in Nina's weekly report once IDs go live.
+- File: `workers/nina_report.py`
+
+---
+
+*Last updated: 2026-05-19 by Vera Cole (run 16)*
+*Key metrics: 40 RESOLVED | 12 OPEN | 4 auto-upgrades this run | 3 proposals posted*

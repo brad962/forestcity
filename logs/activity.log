@@ -150,3 +150,9 @@
 [2026-05-19 17:14] Vera | Auto-upgrade: open_issues.md — HOT CONTRACTORS marked RESOLVED (both texted 2026-05-19), 22 manual contacts updated to 38, gas station enrollment issue added | outputs/vera/open_issues.md | Done
 [2026-05-19 17:14] Vera | Deliverable: priority_outreach_list_2026-05-19.md — 38 untouched New Lead contacts ranked by priority with ready-to-send texts | outputs/vera/priority_outreach_list_2026-05-19.md | Done
 [2026-05-19 17:14] Vera | Proposals: gas station Mixmax sequence, June booking blitz, contacts dashboard Mixmax sync | outputs/vera/pending_slack_messages.md | Done
+[2026-05-19 18:15] Vera | Auto-upgrade: run_pending_sequences() — JSON error handling + scans pipeline_data.json for manual contacts with _lead_type | workers/lead_pipeline.py | Done
+[2026-05-19 18:15] Vera | Auto-upgrade: server.py stale detection — untouched New Lead contacts (no last_contact) now show stale=true on dashboard | server.py | Done
+[2026-05-19 18:15] Vera | Auto-upgrade: nina_report.py SEQUENCES now built dynamically from mixmax.py — gas_station/fleet auto-appear when IDs go live | workers/nina_report.py | Done
+[2026-05-19 18:15] Vera | Auto-upgrade: pipeline_data.json — 18 gas station contacts tagged with _lead_type: gas_station for auto-enrollment | pipeline_data.json | Done
+[2026-05-19 18:15] Vera | Updated open_issues.md — run 16: 3 new RESOLVED, 2 OPEN issues updated, Memorial Day countdown added | outputs/vera/open_issues.md | Done
+[2026-05-19 18:15] Vera | Proposals posted: gas station sequence, past customer blast, bridge email to hot leads | outputs/vera/pending_slack_messages.md | Done

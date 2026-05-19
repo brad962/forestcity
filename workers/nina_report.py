@@ -56,11 +56,45 @@ def git_push(commit_msg):
         subprocess.run(['git', '-C', str(BASE_DIR), 'push', 'origin', 'main'], capture_output=True, timeout=15)
     except Exception:
         pass
-SEQUENCES = {
+_DISPLAY_NAMES = {
+    'property_manager': 'Property Managers',
+    'realtor':          'Realtors',
+    'contractor':       'Contractors',
+    'gas_station':      'Gas Stations',
+    'fleet_washing':    'Fleet Washing',
+}
+_WORKER_MAP = {
+    'property_manager': 'Danny',
+    'realtor':          'Carla',
+    'contractor':       'Carla',
+    'gas_station':      'Danny',
+    'fleet_washing':    'Danny',
+}
+_FALLBACK_SEQUENCES = {
     '6a048cfc110bc620ca0f1aee': {'name': 'Property Managers', 'worker': 'Danny'},
     '6a048cfba81429e5dfe55010': {'name': 'Realtors',          'worker': 'Carla'},
     '6a048cfd624a5989a68ba16c': {'name': 'Contractors',       'worker': 'Carla'},
 }
+
+
+def _build_sequences():
+    """Build sequence map from mixmax.py — single source of truth for active IDs."""
+    try:
+        from integrations.mixmax import SEQUENCES as MX_SEQS
+        mapping = {}
+        for seq_type, meta in MX_SEQS.items():
+            sid = meta.get('id', '')
+            if sid and sid != 'PENDING':
+                mapping[sid] = {
+                    'name':   _DISPLAY_NAMES.get(seq_type, seq_type.replace('_', ' ').title()),
+                    'worker': _WORKER_MAP.get(seq_type, 'Danny'),
+                }
+        return mapping if mapping else _FALLBACK_SEQUENCES
+    except Exception:
+        return _FALLBACK_SEQUENCES
+
+
+SEQUENCES = _build_sequences()
 
 
 def log(task, output_file, status='Done'):
