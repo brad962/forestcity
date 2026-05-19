@@ -65,6 +65,10 @@ CONTRACTOR_TITLES = [
     'window clean', 'concrete', 'deck build', 'deck contractor',
     'fence contractor', 'fence install', 'exterior clean', 'pressure wash',
     'driveway seal', 'power wash', 'janitorial', 'property maintenance',
+    # Home-services referral partners added 2026-05-19 (Carla's new search categories)
+    'chimney', 'hvac', 'heating', 'cooling', 'air condition', 'pool service',
+    'pool clean', 'pest control', 'exterminator', 'junk removal', 'home clean',
+    'maid', 'moving company', 'mover',
 ]
 
 

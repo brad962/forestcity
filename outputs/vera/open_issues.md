@@ -324,8 +324,30 @@
 ## OPEN — Ghost fixes pattern: fixes lost in merge conflicts
 - First seen: 2026-05-18 (run 5)
 - Run 12 verification: all 29 prior fixes confirmed present. No regressions.
+- Run 13 verification: all 32 prior+new fixes confirmed present.
 
 ---
 
-*Last updated: 2026-05-19 by Vera Cole (run 12)*
-*Key metrics: 29 RESOLVED | 14 OPEN | 3 auto-upgrades shipped | 2 new deliverables*
+## RESOLVED — CONTRACTOR_TITLES missing home-services keywords
+- Resolved: 2026-05-19 (run 13)
+- Fix: Added chimney, hvac, heating, cooling, air condition, pool service, pool clean, pest control, exterminator, junk removal, home clean, maid, moving company to CONTRACTOR_TITLES. Carla's new search categories now route to contractor sequence correctly.
+- File: `integrations/mixmax.py`
+
+---
+
+## RESOLVED — run_carla() zero-lead run produces no log/report-card
+- Resolved: 2026-05-19 (run 13)
+- Fix: Added `else` block matching Danny's zero-lead fallback. Logs `all leads were duplicates` and sends report_card so the run is visible in Slack.
+- File: `workers/lead_pipeline.py`
+
+---
+
+## RESOLVED — DANNY_ORG_KEYWORDS missing commercial real estate segment
+- Resolved: 2026-05-19 (run 13)
+- Fix: Added 'commercial real estate' and 'commercial property management' to DANNY_ORG_KEYWORDS. Office/retail/warehouse buildings with facility managers were invisible to Apollo org-level filtering.
+- File: `workers/lead_pipeline.py`
+
+---
+
+*Last updated: 2026-05-19 by Vera Cole (run 13)*
+*Key metrics: 32 RESOLVED | 14 OPEN | 3 auto-upgrades shipped | 3 new deliverables*

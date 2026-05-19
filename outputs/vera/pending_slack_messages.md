@@ -1,64 +1,52 @@
 🔧 *Vera — Auto-Upgrade*
->Changed: `integrations/mixmax.py` + `workers/lead_pipeline.py` — fixed sequence misrouting bug for Carla's realtor leads
->Why: `detect_lead_type()` ignored the `_lead_type` field set by the pipeline, so realtors with non-standard titles (e.g. "Sales Associate") were falling through to the contractor sequence. Now honors explicit intent first. Verified with 5-test suite.
->Files: `integrations/mixmax.py`, `workers/lead_pipeline.py`
+>Changed: Added 13 home-services keywords to CONTRACTOR_TITLES (chimney, hvac, pool service, pest control, junk removal, etc.)
+>Why: Carla's new Home Services search category was pulling these leads but they'd misroute to property_manager sequence because their titles weren't in the classifier.
+>File: `integrations/mixmax.py`
 ---
 🔧 *Vera — Auto-Upgrade*
->Changed: `server.py` — manual contact name now falls back to company name when no individual name is recorded
->Why: Bulletproof Lawncare and Damrons Landscaping were showing as blank names in the pipeline dashboard — confusing. Now they display their company name.
->File: `server.py`
+>Changed: run_carla() now logs + sends report_card when zero new leads found (all duplicates)
+>Why: When Carla found no new contacts, the run was completely invisible — no log entry, no Slack notification. Now matches Danny's behavior.
+>File: `workers/lead_pipeline.py`
 ---
 🔧 *Vera — Auto-Upgrade*
->Changed: `workers/lead_pipeline.py` + `agents/carla.md` — added HVAC, pool service, pest control, junk removal as Carla referral partner search targets
->Why: These are 4 high-value adjacent service categories that visit NE Ohio homes weekly and have natural referral conversations with homeowners — but we weren't pulling them from Apollo at all.
->Files: `workers/lead_pipeline.py`, `agents/carla.md`
+>Changed: Added 'commercial real estate' and 'commercial property management' to DANNY_ORG_KEYWORDS
+>Why: Office buildings, retail plazas, and warehouse complexes have facility managers who need exterior cleaning — they were invisible to Apollo's org-level filter because "commercial real estate" wasn't in the tag list.
+>File: `workers/lead_pipeline.py`
 ---
-🚨 *Vera — URGENT: Day 9 — Text Bulletproof Lawncare + Damrons NOW*
->Both contractors said "very interested" when called 9 days ago (May 13). Neither has been texted.
->Reply rate drops ~60% after Day 10. Memorial Day is Sunday — this is the FINAL window.
+📋 *Vera — New Deliverables (Run 13)*
 >
->📱 Bulletproof Lawncare — 216-307-4344:
->"Hey, this is Bradley from Forest City Power Washing. We spoke last week — you mentioned partnering on referrals. Memorial Day weekend is our busiest push. $50 per closed job either way. Worth a 5-min call?"
+>**Tommy: Objection Handling Cheat Sheet** — `outputs/tommy/objection_cheatsheet_2026-05-19.md`
+>5 real objections with word-for-word responses + text versions + quick reference card.
+>Objections covered: too expensive, do it myself, wait until later, didn't last before, need to ask partner.
+>Bradley: print this and keep it in the truck.
 >
->📱 Damrons Landscaping — 440-494-0422:
->"Hey, Bradley here from Forest City Power Washing. We talked last week — you were interested in teaming up on referrals. Memorial Day is this Sunday. $50 cash for every job you send our way. Can we nail down the details this week?"
+>**Tommy: Estimate Follow-Up Template** — `outputs/tommy/estimate_followup_template_2026-05-19.md`
+>3-touch post-quote sequence (same day / day 3 / day 7 break-up). Email + text versions. B2B PM version included.
 >
->Full scripts + follow-ups: `outputs/vera/contractor_day9_texts_2026-05-19.md`
->Full sprint plan: `outputs/vera/memorial_day_execution_checklist_2026-05-19.md`
+>**Rick: Memorial Day Ads** — `outputs/rick/memorial_day_ads_2026-05-19.md`
+>5 Facebook ad variations + 2 Google ad variations for May 21–27 surge. Budget recommendations included.
 ---
-📋 *Vera — Memorial Day Sprint Execution Checklist*
->Everything is built. You just need to execute. Here's what to do in the next 5 days:
+🚨 *Vera — URGENT: Contractors Still Waiting (Day 9)*
+>**Bulletproof Lawncare | 216-307-4344** — "Very interested — send text"
+>**Damrons Landscaping | 440-494-0422** — "Very interested — send text"
 >
->TODAY (May 19, 45 min):
->1. Text Bulletproof Lawncare (216-307-4344) — script above
->2. Text Damrons Landscaping (440-494-0422) — script above
->3. Post Facebook post #1 from `outputs/jasmine/memorial_day_posts_2026-05-19.md`
->4. Text past customers — template: `outputs/tommy/past_customer_reengagement_2026-05-18.md`
->5. Text top 5 contractor leads — list in `outputs/vera/memorial_day_execution_checklist_2026-05-19.md`
+>Day-9 final texts: `outputs/vera/contractor_day9_texts_2026-05-19.md`
+>Memorial Day execution checklist: `outputs/vera/memorial_day_execution_checklist_2026-05-19.md`
 >
->WEDNESDAY (May 21): Upload 1 GBP photo, post Facebook #2, text remaining leads
->FRIDAY (May 23): Post urgency Facebook + LinkedIn, send bridge email to 3 hot leads
->WEEKEND: Memorial Day post, reply to anyone who texted back
->
->Goal: 2 estimate requests by Sunday. All assets ready. 2 hours total across 5 days.
+>Bradley: These 2 leads said they're interested. Today is the last window before reply rate drops below recovery. 5 minutes, 2 texts.
 ---
-💡 *Vera — Proposal: Approve Sequence Rewrite*
->Idea: Rewrite all 3 Mixmax email sequences (Property Manager, Realtor, Contractor)
->Why: 45 contacts enrolled, 42% open rate, 0 replies in 7 days. Emails are being opened — the body copy isn't converting. Full rewrites ready with shorter copy, yes/no close, and break-up email as touch 4.
->Impact: Even moving from 0% to 5% reply rate = 2-3 hot conversations per week from existing enrolled leads — with no new work.
->Files ready: `outputs/vera/sequence_rewrites_proposal_2026-05-18.md`
->Reply YES to approve and I'll update the Mixmax sequences immediately.
----
-💡 *Vera — Proposal: Send Bridge Email to 3 Hot Leads This Week*
->Idea: Bradley manually sends the bridge email to the 3 hottest open-but-no-reply leads from his Gmail
->Why: Faster than waiting for sequence rewrite approval. Personal 1:1 email from a real inbox gets ~30-40% reply rate vs. 0% from the sequence right now. Best done Memorial Day week when PMs are making summer vendor plans.
->Template: `outputs/tommy/hot_lead_bridge_email_2026-05-19.md` — edit name and hit send.
->Reply YES and I'll pull the top 3 contact names from the hot leads report.
----
-✅ *Vera — Scan Complete 2026-05-19 (Run 12)*
->3 auto-upgrades shipped | 2 proposals | 14 open issues
+📌 *Vera — Pending Approvals (still waiting)*
 >
->Upgrades: Mixmax sequence misrouting bug fixed | Dashboard blank names fixed | Carla now pulls HVAC/pool/pest leads
->New deliverables: Day-9 contractor texts | Memorial Day execution checklist
+>1. **Sequence rewrite** — 4-touch email copy, under 100 words each. Approve → I update Mixmax. File: `outputs/vera/sequence_rewrites_proposal_2026-05-18.md`
+>2. **Bridge email** — send 1:1 from Gmail to 13 hot leads (2+ opens, no reply). File: `outputs/tommy/hot_lead_bridge_email_2026-05-19.md`
+>3. **Memorial Day ads** — 5 Facebook variations, boost $30–40/day May 21–27. File: `outputs/rick/memorial_day_ads_2026-05-19.md`
+>4. **LinkedIn outreach** — connect with 3–5 hot leads. Protocol: `outputs/danny/linkedin_hot_lead_dm_protocol_2026-05-18.md`
 >
->🚨 Top action: Text Bulletproof Lawncare + Damrons TODAY. Day 9. Memorial Day is Sunday. This is the last window.
+>Any 1 of these = progress this week.
+---
+✅ *Vera — Scan Complete 2026-05-19 (Run 13)*
+>3 auto-upgrades shipped | 3 new deliverables | 32 total resolved issues | 14 open
+>
+>Biggest gap: 22 manual contractors at "New Lead" with no texts sent. SMS templates ready. Memorial Day window closes Friday May 23.
+>
+>Next: Bradley texts 2 hot contractors + activates 1 pending proposal.

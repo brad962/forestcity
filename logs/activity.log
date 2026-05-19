@@ -219,3 +219,12 @@
 [2026-05-19 12:00] Vera | New deliverable: Memorial Day Sprint Execution Checklist — 5-day, 2-hour plan covering all 11 actions to generate 2 estimate requests by May 26 | outputs/vera/memorial_day_execution_checklist_2026-05-19.md | Done
 [2026-05-19 12:00] Vera | Updated open_issues.md — 3 new RESOLVED (detect_lead_type bug, blank names, Carla HVAC gap), 29 total resolved, 14 open | outputs/vera/open_issues.md | Done
 [2026-05-19 12:00] Vera | Wrote pending_slack_messages.md — 3 auto-upgrade notices, 1 urgent contractor alert, 1 sprint checklist, 2 proposals, 1 scan summary | outputs/vera/pending_slack_messages.md | Done
+[2026-05-19 13:00] Vera | Auto-upgrade: integrations/mixmax.py — added 13 home-services keywords to CONTRACTOR_TITLES (chimney, hvac, pool service, pest control, junk removal, etc.); Carla's new search categories now route correctly | integrations/mixmax.py | Done
+[2026-05-19 13:00] Vera | Auto-upgrade: workers/lead_pipeline.py — run_carla() now logs + sends report_card on zero-lead run (matching Danny's existing behavior); silent runs now visible | workers/lead_pipeline.py | Done
+[2026-05-19 13:00] Vera | Auto-upgrade: workers/lead_pipeline.py — added 'commercial real estate' + 'commercial property management' to DANNY_ORG_KEYWORDS; office/retail/warehouse facility managers now included in Apollo org-tag filter | workers/lead_pipeline.py | Done
+[2026-05-19 13:00] Vera | Ghost fix verification (run 13): all 32 prior+new fixes confirmed present — no regressions | multiple files | Done
+[2026-05-19 13:00] Tommy | Objection handling cheat sheet — 5 objections, word-for-word responses + text versions + quick reference card | outputs/tommy/objection_cheatsheet_2026-05-19.md | Done
+[2026-05-19 13:00] Tommy | Estimate follow-up template — 3-touch post-quote sequence (email + text), B2B property manager version | outputs/tommy/estimate_followup_template_2026-05-19.md | Done
+[2026-05-19 13:00] Rick | Memorial Day ads — 5 Facebook ad variations + 2 Google ad variations for May 21–27 surge, budget recommendations | outputs/rick/memorial_day_ads_2026-05-19.md | Done
+[2026-05-19 13:00] Vera | Updated open_issues.md — 3 new RESOLVED (CONTRACTOR_TITLES, Carla zero-lead log, DANNY_ORG_KEYWORDS commercial RE); 32 total resolved, 14 open | outputs/vera/open_issues.md | Done
+[2026-05-19 13:00] Vera | Wrote pending_slack_messages.md — 3 auto-upgrade notices, 1 deliverable roundup, 1 urgent contractor alert, 1 pending approvals reminder, 1 scan summary | outputs/vera/pending_slack_messages.md | Done

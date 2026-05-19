@@ -86,6 +86,8 @@ DANNY_ORG_KEYWORDS = [
     'property management', 'association management', 'hoa management',
     'community management', 'apartment management', 'condo management',
     'real estate management', 'facilities management',
+    # Commercial RE segment — office/retail/warehouse buildings with facility managers
+    'commercial real estate', 'commercial property management',
 ]
 
 CARLA_SEARCHES = [
@@ -444,6 +446,15 @@ def run_carla():
                 f'{enrolled} enrolled in Mixmax sequences',
                 f'View: {GITHUB_BASE}/outputs/carla/{out_file}',
             ],
+            status='DONE',
+        )
+    else:
+        log('carla', f'Apollo pull — all leads were duplicates, no new referral partners this run', 'none', 'Done')
+        send_report_card(
+            worker_name='carla',
+            title='Lead Pull — No New Leads',
+            metrics=[('New Leads', 0), ('Enrolled', 0)],
+            summary_lines=['No new referral partners found this run — all duplicates.'],
             status='DONE',
         )
 
