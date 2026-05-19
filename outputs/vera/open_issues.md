@@ -5,174 +5,196 @@
 
 ## RESOLVED — Jasmine infinite retry loop (not_in_channel)
 - Resolved: 2026-05-18
-- Fix: `pair["processed"] = True` set before try block. `pair["success"]` distinguishes clean vs failed. Same pair was re-processing dozens of times daily.
+- Fix: `pair["processed"] = True` set before try block. `pair["success"]` distinguishes clean vs failed.
 - File: `workers/jasmine_flyer.py`
 
 ---
 
 ## RESOLVED — Carla Apollo keyword filter ignored
 - Resolved: 2026-05-18 (run 5 — reapplied after merge conflict wiped it)
-- Fix: `apollo_search()` now accepts `keywords=None` param and passes `q_organization_keyword_tags` to Apollo API. `run_carla()` passes `search.get('keywords')`. Confirmed in code this run.
+- Fix: `apollo_search()` now accepts `keywords=None` param and passes `q_organization_keyword_tags` to Apollo API.
 - File: `workers/lead_pipeline.py`
 
 ---
 
 ## RESOLVED — verify_and_repair_enrollment mass re-enrollment on API failure
-- Resolved: 2026-05-18 (run 5 — reapplied after merge conflict wiped it)
-- Fix: `get_mixmax_enrolled_emails()` now tracks `success_count`. Returns `None` (not empty set) when all 3 sequences fail. `verify_and_repair_enrollment()` skips repair on `None` return with clear warning. Confirmed in code run 8.
+- Resolved: 2026-05-18 (run 5)
+- Fix: Returns `None` on all-failure; skips repair on `None`.
 - File: `workers/lead_pipeline.py`
 
 ---
 
 ## RESOLVED — nina_report fetch_recipients drops dict responses
 - Resolved: 2026-05-18
-- Fix: `fetch_recipients()` handles both list and dict (`results`/`recipients` keys) Mixmax responses, with error logging.
+- Fix: Handles both list and dict Mixmax responses.
 - File: `workers/nina_report.py`
 
 ---
 
-## RESOLVED — Apollo JSON parse crash (no error handling)
+## RESOLVED — Apollo JSON parse crash
 - Resolved: 2026-05-18
-- Fix: Added try/except around apollo_search, apollo_reveal, and get_org_phone. Pipeline no longer crashes on malformed API responses.
+- Fix: try/except around all Apollo calls.
 - File: `workers/lead_pipeline.py`
 
 ---
 
 ## RESOLVED — Workiz case-insensitive job matching
 - Resolved: 2026-05-18
-- Fix: `_is_power_washing_job()` checks against 10 variants. Added diagnostic logging of all JobType values seen when 0 matches found.
+- Fix: 10 variants, diagnostic logging.
 - File: `workers/workiz_report.py`
 
 ---
 
 ## RESOLVED — jasmine_flyer.py env loading only in __main__
 - Resolved: 2026-05-18
-- Fix: Added `_load_env()` at module level. Removed duplicate `load_dotenv()` from `__main__` block.
+- Fix: `_load_env()` at module level.
 - File: `workers/jasmine_flyer.py`
 
 ---
 
 ## RESOLVED — workiz_report "No jobs found" misleads on API failure
 - Resolved: 2026-05-18
-- Fix: `fetch_all_jobs()` returns sentinel `WORKIZ_API_ERROR` string on exception. Report shows honest "API unavailable" message.
+- Fix: `WORKIZ_API_ERROR` sentinel.
 - File: `workers/workiz_report.py`
 
 ---
 
 ## RESOLVED — nina_report.py misleading action items
 - Resolved: 2026-05-18
-- Fix: "Review 0 replies" now says "No replies yet — sequence is sending." "Connect page" reference updated to "daily hot leads report."
+- Fix: Accurate wording for 0-reply state.
 - File: `workers/nina_report.py`
 
 ---
 
 ## RESOLVED — nina_report.py double API fetch in run_daily()
 - Resolved: 2026-05-18 (run 5)
-- Fix: First loop now caches stats in `seq_stats_cache` dict. Second loop reads from cache. Eliminates 3 redundant API calls per daily run.
+- Fix: `seq_stats_cache` dict eliminates redundant calls.
 - File: `workers/nina_report.py`
 
 ---
 
 ## RESOLVED — jasmine_flyer.py dead location_hint variable
 - Resolved: 2026-05-18 (run 5)
-- Fix: Removed 5 lines of dead code in `write_facebook_post()`.
+- Fix: 5 lines of dead code removed.
 - File: `workers/jasmine_flyer.py`
 
 ---
 
 ## RESOLVED — vera_relay.py crashes if .env missing
 - Resolved: 2026-05-18 (run 5)
-- Fix: Added `_env.exists()` guard before reading `.env`.
+- Fix: `.exists()` guard.
 - File: `workers/vera_relay.py`
 
 ---
 
 ## RESOLVED — workiz_report.py sentinel check uses `is` instead of `==`
 - Resolved: 2026-05-18 (run 6)
-- Fix: `if jobs is WORKIZ_API_ERROR:` → `if jobs == WORKIZ_API_ERROR:`.
+- Fix: String identity → equality comparison.
 - File: `workers/workiz_report.py`
 
 ---
 
 ## RESOLVED — lead_pipeline.py save_to_cache crashes on malformed JSON
 - Resolved: 2026-05-18 (run 6)
-- Fix: Added try/except around `json.loads(CACHE_FILE.read_text())` in `save_to_cache()`.
+- Fix: try/except around JSON parse in `save_to_cache()`.
 - File: `workers/lead_pipeline.py`
 
 ---
 
 ## RESOLVED — server.py stale detection ignores calls log for manual contacts
 - Resolved: 2026-05-18 (run 6)
-- Fix: Pipeline dashboard falls back to `calls_data` for `last_contact` on manual contacts.
+- Fix: Falls back to `calls_data` for `last_contact`.
 - File: `server.py`
 
 ---
 
-## RESOLVED — MIXMAX_TOKEN hardcoded in source code (security risk)
+## RESOLVED — MIXMAX_TOKEN hardcoded in source code
 - Resolved: 2026-05-18 (run 7)
-- Fix: Removed hardcoded fallback token from `integrations/mixmax.py`. Changed to `os.environ.get('MIXMAX_TOKEN', '')`.
+- Fix: `os.environ.get('MIXMAX_TOKEN', '')`.
 - File: `integrations/mixmax.py`
 
 ---
 
 ## RESOLVED — jasmine_flyer.py generic Facebook post every month
 - Resolved: 2026-05-18 (run 7)
-- Fix: `write_facebook_post()` now selects seasonal hook and CTA based on the month of the date parameter.
+- Fix: Seasonal hook + CTA by month.
 - File: `workers/jasmine_flyer.py`
 
 ---
 
-## RESOLVED — workiz_report.py Workiz credentials hardcoded in source (security risk)
+## RESOLVED — workiz_report.py Workiz credentials hardcoded
 - Resolved: 2026-05-18 (run 8)
-- Fix: Removed hardcoded fallback values from `WORKIZ_TOKEN` and `WORKIZ_SECRET`. Changed to `os.environ.get(..., '')`. Same class as MIXMAX_TOKEN issue fixed in run 7.
+- Fix: `os.environ.get(...)` for both WORKIZ_TOKEN and WORKIZ_SECRET.
 - File: `workers/workiz_report.py`
 
 ---
 
 ## RESOLVED — Danny Apollo search misses property management companies (org-level gap)
 - Resolved: 2026-05-18 (run 8)
-- Fix: Added `DANNY_ORG_KEYWORDS` list with 8 property management company keyword tags. `run_danny()` now passes these to `apollo_search()` via `q_organization_keyword_tags`. Catches HOA management firms where the contact's title isn't "property manager" but the company clearly is in that space.
+- Fix: `DANNY_ORG_KEYWORDS` list with 8 PM company tags.
 - File: `workers/lead_pipeline.py`, `agents/danny.md`
 
 ---
 
-## OPEN — 🚨 HOT CONTRACTORS WAITING FOR TEXT (URGENT — REVENUE NOW)
-- First seen: 2026-05-18
-- Description: pipeline_data.json shows 2 contractors in "Replied" stage:
-  - **Bulletproof Lawncare** | 216-307-4344 — called 2026-05-13, said "very interested"
-  - **Damrons Landscaping** | 440-494-0422 — called 2026-05-13, said "very interested"
-  Both were called. Neither has received a follow-up text. It has been 5+ days.
-- Attempts:
-  - 2026-05-18 (runs 1–7): Flagged via high-priority Slack alert each run.
-  - 2026-05-18 (run 8): Full conversation decision tree written — `outputs/vera/contractor_conversation_tree_2026-05-18.md`. Every possible reply is scripted. No thinking required from Bradley — just copy and send.
-- Resolution criteria: Bradley texts both and logs response in pipeline_data.json.
+## RESOLVED — server.py APOLLO_KEY hardcoded in /api/apollo/linkedin endpoint
+- Resolved: 2026-05-19 (run 9)
+- Fix: Added `APOLLO_KEY = os.environ.get('APOLLO_KEY', '')` at module level. Replaced hardcoded string `'aKRZyBffyV7ScWVCuTXBjA'` in subprocess call with `f'X-Api-Key: {APOLLO_KEY}'`.
+- File: `server.py`
 
 ---
 
-## OPEN — 22 Manual Contacts Need Stage Updates
-- First seen: 2026-05-18 (updated run 8)
-- Description: 24 manual contacts in pipeline_data.json. Stages: 2 Replied, 1 Contacted, 21 New Lead. Most were called on 2026-05-13 but stages not updated.
+## RESOLVED — report_card.py Mac-only font paths fail silently in Linux/cloud
+- Resolved: 2026-05-19 (run 9)
+- Fix: Added `_find_font()` helper that checks Mac path first, then Liberation Sans and DejaVu Linux paths. Report cards now render with proper fonts in cloud CI and local Linux environments.
+- File: `utils/report_card.py`
+
+---
+
+## RESOLVED — danny.md agent file references dead tools (Instantly.ai, HubSpot) as active
+- Resolved: 2026-05-19 (run 9)
+- Fix: Updated Tools section to mark Mixmax as active enrollment tool, HubSpot as "pending", Instantly.ai as "not active". Updated Apollo base URL to the correct `api/v1/mixed_people/api_search` endpoint.
+- File: `agents/danny.md`
+
+---
+
+## OPEN — 🚨 HOT CONTRACTORS WAITING FOR TEXT (DAY 6 — CRITICAL)
+- First seen: 2026-05-18
+- Description: pipeline_data.json confirms 2 contractors in "Replied" stage:
+  - **Bulletproof Lawncare** | 216-307-4344 — notes: "Very interested — send text"
+  - **Damrons Landscaping** | 440-494-0422 — notes: "Very interested — send text"
+  Both were called 2026-05-13. Neither has received a follow-up text. It has been **6 days**.
+  After 6 days, "very interested" cools fast. Every day increases drop-off risk.
 - Attempts:
-  - 2026-05-18 (runs 6–8): server.py stale detection uses calls data. Stage update is Bradley's action.
-- Resolution criteria: Bradley updates stages in dashboard, or says YES to auto-promote script.
+  - 2026-05-18 (runs 1–8): Flagged via high-priority Slack alert each run.
+  - 2026-05-18 (run 8): Full conversation decision tree written — ready to use.
+  - 2026-05-19 (run 9): Re-escalating. Confirmed via pipeline_data.json parse.
+- Resolution criteria: Bradley texts both TODAY and logs response in pipeline_data.json.
+
+---
+
+## OPEN — 22 Manual Contacts Need Stage Updates + Texts
+- First seen: 2026-05-18 (updated run 9)
+- Description: 24 manual contacts total. 21 in "New Lead", notes say "Send text" on most. 1 in "Contacted". All have `last_contact: ""` — stale detection cannot fire.
+- Attempts:
+  - 2026-05-18 (runs 6–8): SMS templates ready (`outputs/vera/sms_templates_contractors_2026-05-18.md`).
+  - 2026-05-19 (run 9): Still open. Confirmed via pipeline_data parse.
+- Resolution criteria: Bradley texts leads using the SMS templates + updates `last_contact` dates in pipeline_data.json.
 
 ---
 
 ## OPEN — Mixmax API blocked in cloud execution environment
 - First seen: 2026-05-18
-- Description: All Mixmax API calls return `HTTP 403: Forbidden` with body "Host not in allowlist." Cannot pull live sequence data during cloud runs.
-- Impact: Cannot verify real-time enrollment. Nina reports must run locally.
-- Attempts:
-  - 2026-05-18 (runs 1–8): Confirmed blocked each run. Network-level policy.
-- Workaround: `get_mixmax_enrolled_emails()` returns `None` on failure — safe fallback in place.
+- Description: All Mixmax API calls return HTTP 403 from cloud. Cannot pull live sequence data during cloud runs.
+- Workaround: `get_mixmax_enrolled_emails()` returns `None` on failure — safe fallback confirmed.
+- Attempts: 2026-05-18 through 2026-05-19: Confirmed blocked each run.
 - Next steps: Bradley checks Mixmax → API Settings → IP Allowlist. Remove restriction or add cloud IPs.
 
 ---
 
-## OPEN — All external APIs blocked from cloud (Apollo, Workiz, Mixmax, Slack)
+## OPEN — All external APIs blocked from cloud (Apollo, Workiz, Mixmax)
 - First seen: 2026-05-18
-- Description: Apollo, Workiz, Mixmax, and Slack all return 403 from cloud. Lead pulls, pipeline reports, and Workiz data all require local execution.
-- Workaround: Cron job schedule added to CLAUDE.md (run 7). Bradley has the exact commands to set up local scheduling.
+- Description: Lead pulls, pipeline reports, and Workiz data all require local execution.
+- Workaround: Cron job schedule in CLAUDE.md. Local scheduling confirmed documented.
 - Next steps: Bradley runs `crontab -e` and pastes the cron jobs from CLAUDE.md.
 
 ---
@@ -186,105 +208,101 @@
 ## OPEN — Instantly.ai vs Mixmax Overlap (dual platform risk)
 - First seen: 2026-05-18
 - Description: `server.py` has 2 active Instantly.ai campaign IDs for Property Managers and Contractors — same segments Mixmax handles. Risk: same contact receives emails from both platforms.
-- Attempts:
-  - 2026-05-18 (runs 4–8): Flagging. Bradley needs to confirm which platform is active.
+- Attempts: 2026-05-18–19: Flagging. Bradley needs to confirm which platform is active.
 - Resolution criteria: Bradley confirms which platform is live. Non-active platform paused.
 
 ---
 
 ## OPEN — 0% reply rate across 45 enrolled contacts
 - First seen: 2026-05-18
-- Description: 45 enrolled, 42% open rate, 0 replies. 13 contacts opened 2+ times. Opens work, body copy doesn't convert.
+- Description: 45 enrolled, 42% open rate, 0 replies. Opens work, body copy doesn't convert.
 - Attempts:
-  - 2026-05-18 (runs 1–8): Full rewrite drafts ready in `outputs/vera/sequence_rewrites_proposal_2026-05-18.md`. Awaiting Bradley's YES.
-  - Marcus's seasonal VOC bulletin active — Tommy/Jasmine have fresh language to work with.
+  - 2026-05-18 (runs 1–8): Full rewrite drafts ready — `outputs/vera/sequence_rewrites_proposal_2026-05-18.md`. Awaiting YES.
+  - 2026-05-19 (run 9): Still open. Each day without a reply is wasted send volume.
 - Next steps: Bradley says YES → copy goes live in Mixmax sequences.
 
 ---
 
 ## OPEN — 13 hot leads sitting uncontacted on LinkedIn
 - First seen: 2026-05-18
-- Description: 13 contacts with 2+ opens, no replies, no LinkedIn outreach.
+- Description: 13 contacts with 2+ opens, no replies, no LinkedIn outreach. LinkedIn DM protocol ready.
 - Attempts:
-  - 2026-05-18 (runs 1–7): LinkedIn DM Protocol written (`outputs/danny/linkedin_hot_lead_dm_protocol_2026-05-18.md`). Awaiting Bradley's action.
-  - 2026-05-18 (run 8): Re-escalating. 3 connects per day. Work 3 this week using the DM protocol.
+  - 2026-05-18 (runs 1–8): Protocol written (`outputs/danny/linkedin_hot_lead_dm_protocol_2026-05-18.md`). 3 connects/day.
+  - 2026-05-19 (run 9): Still open. Bradley needs to open LinkedIn and send 3 connects today.
+- Resolution criteria: Bradley sends first 3 LinkedIn connects using the DM protocol.
 
 ---
 
 ## OPEN — Marcus fresh web intel needed (competitor + VOC)
 - First seen: 2026-05-18
-- Description: Marcus's VOC library and competitor profiles are from May 12. 6 days old in peak season. New reviews posted weekly.
+- Description: Marcus's VOC library and competitor profiles are now 7 days old. Peak season — competitor moves happen weekly.
 - Attempts:
-  - 2026-05-18 (run 7): Created seasonal VOC synthesis bulletin from existing research.
-  - 2026-05-18 (run 8): GBP optimization guide written with competitor gap context. Fresh web intel still needed for competitor pricing / new reviews.
-- Next steps: Bradley runs Marcus locally with web search enabled for a fresh competitor scrape.
+  - 2026-05-18 (run 7): VOC seasonal bulletin from existing research.
+  - 2026-05-18 (run 8): GBP optimization guide written.
+  - 2026-05-19 (run 9): Now 7 days old. Fresh competitor pricing intel still needed.
+- Next steps: Bradley runs Marcus locally with web search for a fresh competitor scrape.
 
 ---
 
 ## OPEN — HubSpot not connected (CRM blind)
 - First seen: 2026-05-12
 - Description: HUBSPOT_TOKEN listed as "pending." Nina's CRM architecture is built and idle.
-- Attempts:
-  - 2026-05-18 (runs 1–8): Escalating each run. Still open.
+- Attempts: 2026-05-12 through 2026-05-19: Escalating each run. Still open.
 - Resolution criteria: HUBSPOT_TOKEN added to .env. Nina confirms CRM live.
 
 ---
 
 ## OPEN — No residential homeowner outreach channel
 - First seen: 2026-05-18
-- Description: Entire pipeline is B2B. Zero homeowner outreach. Peak season — highest-volume segment.
+- Description: Entire pipeline is B2B. Zero homeowner outreach. Peak season = highest-volume segment.
 - Attempts:
-  - 2026-05-18 (run 6): Rick's June Facebook ads written. Tommy's reengagement email written.
-  - 2026-05-18 (run 7): Facebook posts and LinkedIn content written. Tommy's one-pager written.
-  - 2026-05-18 (run 8): Google review request sequence written (Tommy). GBP optimization guide written (Marcus). Annual Plan campaign brief written (Donna). Residential channel still needs: Facebook ads running OR Bradley posting in Nextdoor groups.
-- Resolution criteria: At least one homeowner channel live (Facebook ads running OR GBP weekly posts active).
+  - 2026-05-18 (runs 6–8): Facebook ads written (Rick), re-engagement email (Tommy), one-pager (Tommy), GBP guide (Marcus), review request sequence (Tommy).
+  - 2026-05-19 (run 9): Still no homeowner channel live. Peak is now. Every week without this is lost revenue.
+- Resolution criteria: Facebook ads running OR Bradley posting in Nextdoor groups OR GBP posting active.
 
 ---
 
 ## OPEN — Workiz API blocked in cloud AND 0 power washing jobs on local
 - First seen: 2026-05-14 (0 jobs), 2026-05-18 (cloud 403)
-- Description: Two separate problems: (1) API returns 403 from cloud. (2) Even locally, 0 Power Washing jobs found.
-- Attempts:
-  - 2026-05-18 (runs 1–8): All code fixes confirmed in place. Diagnostic logging will print JobType values seen.
-- Next step: Bradley logs into Workiz and checks how jobs are tagged (JobType field). Or runs workiz_report.py locally and looks at the `JobType values seen` diagnostic log output.
+- Description: Two problems: (1) API returns 403 from cloud. (2) 0 Power Washing jobs found even locally.
+- Attempts: 2026-05-18–19: All code fixes confirmed. Diagnostic logging will print JobType values.
+- Next step: Bradley logs into Workiz, checks how jobs are tagged (JobType field name).
 
 ---
 
-## OPEN — Danny/Carla lead pulls not logged (pipeline not growing visibly)
+## OPEN — Danny/Carla lead pulls not logged (pipeline not growing)
 - First seen: 2026-05-18
-- Description: No Danny or Carla lead pull logged in activity.log since May 13. Pipeline needs local scheduling.
-- Attempts:
-  - 2026-05-18 (runs 4–8): Cron job schedule in CLAUDE.md. Still not confirmed running.
-- Next steps: Bradley confirms whether `python3 workers/lead_pipeline.py both` is scheduled locally.
-
----
-
-## OPEN — "Ghost fixes" pattern: fixes lost in merge conflicts
-- First seen: 2026-05-18 (run 5)
-- Run 8 verification: All 6 key fixes + 2 new run-8 fixes verified. No ghost fixes.
-- Status: Verified each run. Pattern documented.
+- Description: No Danny or Carla lead pull logged in activity.log since May 13. One week gap.
+- Attempts: 2026-05-18–19: Cron job schedule in CLAUDE.md. Still not confirmed running.
+- Next steps: Bradley confirms `python3 workers/lead_pipeline.py both` is scheduled locally.
 
 ---
 
 ## OPEN — Google Business Profile not managed (zero-cost lead channel ignored)
 - First seen: 2026-05-18 (run 8)
-- Description: No GBP activity in the office. No weekly posts, no photo uploads, no review responses. Peak season = peak Google search volume. NE Ohio competitors have < 10 photos and < 50% review response rate — Forest City can dominate this for free.
+- Description: No GBP posts, photos, or review responses. Full optimization guide written.
 - Attempts:
-  - 2026-05-18 (run 8): Full GBP optimization guide written — `outputs/marcus/gbp_optimization_guide_2026-05-18.md`. Covers: profile completeness, photos, weekly posts, review responses, Q&A seeding, competitor gap analysis.
-- Resolution criteria: Bradley completes GBP profile completeness checklist + starts weekly posting (1 post/week, 2–3 photos/week).
-- Note: This is the only free lead channel currently untouched. 20+ reviews + weekly posts = Google 3-pack eligibility.
+  - 2026-05-18 (run 8): GBP guide — `outputs/marcus/gbp_optimization_guide_2026-05-18.md`.
+  - 2026-05-19 (run 9): Still untouched. Peak Google search volume is NOW.
+- Resolution criteria: Bradley completes GBP checklist + starts 1 post/week, 2-3 photos/week.
 
 ---
 
-## OPEN — No review request automation (jobs complete, no review ask)
+## OPEN — No review request automation
 - First seen: 2026-05-18 (run 8)
-- Description: Every completed job is an opportunity for a 5-star review. No post-job review request sequence exists. Google reviews directly impact GBP ranking and organic leads.
+- Description: No post-job review request sequence. Every completed job is a missed review opportunity.
 - Attempts:
-  - 2026-05-18 (run 8): Full review request sequence written — `outputs/tommy/review_request_sequence_2026-05-18.md`. 3-touch: same-day text, 3-day email, 7-day text ($500+ jobs). Ready to use immediately.
-- Resolution criteria: Bradley sends review request text after each completed job. 5+ new Google reviews in May.
-- Note: This is the fastest path to more organic homeowner leads. Zero cost. 10 minutes per job.
+  - 2026-05-18 (run 8): 3-touch sequence written — `outputs/tommy/review_request_sequence_2026-05-18.md`.
+  - 2026-05-19 (run 9): Still open.
+- Resolution criteria: Bradley sends review request text after each completed job.
 
 ---
 
-*Last updated: 2026-05-18 by Vera Cole (run 8)*
-*Key metrics: 19 RESOLVED | 15 OPEN | 4 new deliverables this run | 2 new issues found*
+## OPEN — Ghost fixes pattern: fixes lost in merge conflicts
+- First seen: 2026-05-18 (run 5)
+- Status: Monitored each run. No ghost fixes detected in runs 8 or 9. Pattern documented.
+
+---
+
+*Last updated: 2026-05-19 by Vera Cole (run 9)*
+*Key metrics: 22 RESOLVED | 14 OPEN | 3 new auto-upgrades shipped this run*

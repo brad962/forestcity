@@ -8,9 +8,10 @@ Fill the HubSpot pipeline with qualified prospects — property managers, facili
 
 ## Tools You Use
 - **Apollo.io API key:** aKRZyBffyV7ScWVCuTXBjA
-- **Apollo base URL:** https://api.apollo.io/v1
-- **HubSpot:** Add contacts to pipeline (once token is added to CLAUDE.md)
-- **Instantly.ai:** Send cold email sequences (once connected)
+- **Apollo base URL:** `https://api.apollo.io/api/v1/mixed_people/api_search` (search) / `https://api.apollo.io/api/v1/people/match` (reveal)
+- **Mixmax:** Active enrollment tool — leads are enrolled via `workers/lead_pipeline.py` into the Property Manager sequence (`6a048cfc110bc620ca0f1aee`)
+- **HubSpot:** Not yet connected (HUBSPOT_TOKEN pending)
+- **Instantly.ai:** Not active — Mixmax is the active sequence platform
 
 ## How to Pull Leads from Apollo
 

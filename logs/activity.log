@@ -186,3 +186,8 @@
 [2026-05-18 23:16] Vera | Contractor conversation tree — full scripted follow-through for Bulletproof Lawncare + Damrons Landscaping, every reply branch covered | outputs/vera/contractor_conversation_tree_2026-05-18.md | Done
 [2026-05-18 23:16] Vera | Updated open_issues.md — 2 new RESOLVED (Workiz credentials, Danny org keywords), 2 new OPEN (GBP unmanaged, no review requests), all run-8 fixes verified | outputs/vera/open_issues.md | Done
 [2026-05-18 23:16] Vera | Wrote pending_slack_messages.md — 2 auto-upgrades, 4 deliverable roundup, 2 proposals, 1 urgent contractor escalation, 1 scan summary | outputs/vera/pending_slack_messages.md | Done
+[2026-05-19 09:00] Vera | Auto-upgrade: server.py — removed hardcoded APOLLO_KEY from /api/apollo/linkedin subprocess call; added APOLLO_KEY = os.environ.get('APOLLO_KEY','') at module level | server.py | Done
+[2026-05-19 09:00] Vera | Auto-upgrade: utils/report_card.py — added _find_font() helper with Linux Liberation Sans + DejaVu fallbacks; report cards now render with proper fonts in cloud/Linux environments | utils/report_card.py | Done
+[2026-05-19 09:00] Vera | Auto-upgrade: agents/danny.md — corrected Tools section: Mixmax marked active, Instantly.ai marked inactive, HubSpot pending, Apollo URL corrected to actual endpoint | agents/danny.md | Done
+[2026-05-19 09:00] Vera | Updated open_issues.md — 3 new RESOLVED (server.py Apollo key, report_card.py fonts, danny.md tool refs), all prior fixes verified, 14 open issues tracked | outputs/vera/open_issues.md | Done
+[2026-05-19 09:00] Vera | Wrote pending_slack_messages.md — 3 auto-upgrade notices, urgent contractor escalation (Day 6), 2 new proposals, pending approvals reminder, scan summary | outputs/vera/pending_slack_messages.md | Done

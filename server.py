@@ -36,6 +36,7 @@ def _load_env():
 _load_env()
 
 MIXMAX_TOKEN  = os.environ.get('MIXMAX_TOKEN', '')
+APOLLO_KEY    = os.environ.get('APOLLO_KEY', '')
 MIXMAX_SEQS   = [
     '6a048cfc110bc620ca0f1aee',  # Property Managers
     '6a048cfba81429e5dfe55010',  # Realtors
@@ -213,7 +214,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                     ['curl', '-s', '-X', 'POST',
                      'https://api.apollo.io/api/v1/people/match',
                      '-H', 'Content-Type: application/json',
-                     '-H', 'X-Api-Key: aKRZyBffyV7ScWVCuTXBjA',
+                     '-H', f'X-Api-Key: {APOLLO_KEY}',
                      '-d', payload],
                     capture_output=True, text=True, timeout=10
                 )

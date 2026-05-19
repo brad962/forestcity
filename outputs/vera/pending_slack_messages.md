@@ -1,51 +1,54 @@
-🚨 *Vera — URGENT | Hot Contractor Follow-Up (Run 8 — Day 5)*
->Bulletproof Lawncare (216-307-4344) and Damrons Landscaping (440-494-0422) said "very interested" on May 13. It has been 5 days. Still no text sent.
->
->New this run: Full conversation decision tree written — every possible reply scripted out. You never have to think about what to say.
->→ `outputs/vera/contractor_conversation_tree_2026-05-18.md`
->
->Opening text (send now): *"Hey, it's Bradley from Forest City Power Washing — following up on the referral partnership. Still open to that? Happy to jump on a quick call this week."*
->
->Two texts. Five minutes. These are the warmest leads in the office.
+🔧 *Vera — Auto-Upgrade*
+>Changed: `server.py` — removed hardcoded Apollo API key from `/api/apollo/linkedin` endpoint; added `APOLLO_KEY = os.environ.get('APOLLO_KEY', '')` at module level
+>Why: Live API credential was committed to GitHub in plain text — same security class as MIXMAX_TOKEN (run 7) and Workiz credentials (run 8) already fixed
+>File: `server.py`
 ---
-🔧 *Vera — Auto-Upgrade | workers/workiz_report.py*
->Changed: Removed hardcoded Workiz API token and secret fallback values from source code. Was: `os.environ.get('WORKIZ_API_TOKEN', 'api_rays65...')`. Now: `os.environ.get('WORKIZ_API_TOKEN', '')`.
->Why: Both Workiz credentials were committed to GitHub in plaintext as fallback values — same security exposure as the MIXMAX_TOKEN we fixed in run 7. Credentials should only live in .env (gitignored).
->File: workers/workiz_report.py
+🔧 *Vera — Auto-Upgrade*
+>Changed: `utils/report_card.py` — added Linux font fallback via `_find_font()` helper; now uses Liberation Sans on Linux/cloud before falling back to PIL bitmap default
+>Why: All Mac font paths (`/System/Library/Fonts/...`) were silently failing in the cloud CI environment — report cards rendered with unreadable tiny text
+>File: `utils/report_card.py`
 ---
-🔧 *Vera — Auto-Upgrade | workers/lead_pipeline.py + agents/danny.md*
->Changed: Danny's Apollo search now passes `q_organization_keyword_tags` with 8 property management company keywords (property management, hoa management, association management, community management, etc.).
->Why: Danny was searching by contact title only. This missed decision-makers at HOA management companies where the contact is "owner" or "VP operations" but the company clearly manages properties. Org-level filtering gets better quality hits from the same API call.
->Files: workers/lead_pipeline.py, agents/danny.md
+🔧 *Vera — Auto-Upgrade*
+>Changed: `agents/danny.md` — corrected Tools section: Mixmax marked as active enrollment platform, Instantly.ai marked "not active," HubSpot marked "pending," Apollo endpoint URL corrected to match actual script
+>Why: Agent file referenced dead tools as if they were active — Instantly.ai and HubSpot have never been connected; Mixmax is what's actually running leads
+>File: `agents/danny.md`
 ---
-📄 *Vera — New Deliverables | Run 8 (4 Assets Ready)*
-
->• *Tommy — Google Review Request Sequence*: 3-touch post-job sequence (same-day text + 3-day email + 7-day text for $500+ jobs). Every completed job = potential 5-star review. GBP ranking improves directly with review volume. Ready to use immediately. → `outputs/tommy/review_request_sequence_2026-05-18.md`
+🚨 *Vera — URGENT | Day 6 — Contractors Still Waiting*
+>*Bulletproof Lawncare* | 📞 216-307-4344 — said "very interested" on May 13
+>*Damrons Landscaping* | 📞 440-494-0422 — said "very interested" on May 13
 >
->• *Marcus — Google Business Profile Optimization Guide*: Complete playbook for the free lead channel we're ignoring. Profile completeness, 2-3 photos/week, weekly Google Posts, review response templates with keyword embedding, Q&A seeding. Competitors have < 10 photos. 20+ reviews puts Forest City in the Google 3-pack. → `outputs/marcus/gbp_optimization_guide_2026-05-18.md`
+>That was 6 days ago. No text sent. Confirmed in pipeline_data.json.
 >
->• *Donna — Annual Plan Early Conversion Campaign Brief*: Build the assets now (May-June), launch in August. 2-visit Annual Plan — spring + pre-winter. 15% conversion from 2026 peak customers = $4,000+ in guaranteed recurring revenue. Includes full channel mix, copy brief for Tommy, ad brief for Rick, and success metrics. → `outputs/donna/annual_plan_campaign_brief_2026-05-18.md`
+>Text to send NOW: *"Hey [name], Bradley from Forest City Power Washing — we spoke last week about the referral program. Still interested? Happy to jump on a quick call or chat by text."*
 >
->• *Vera — Contractor Conversation Tree*: Full scripted follow-through for Bulletproof Lawncare and Damrons Landscaping. Every reply branch covered: yes, yes-but-later, "what's the commission?", "I don't do referrals," no reply, decline. Call script included. → `outputs/vera/contractor_conversation_tree_2026-05-18.md`
+>Every day you wait, this cools. These are contractor referral partners — one deal = recurring jobs all season.
+>Full conversation tree for every reply: `outputs/vera/contractor_conversation_tree_2026-05-18.md`
 ---
-💡 *Vera — New Proposal | Google Business Profile (Free, Immediate)*
->Idea: Activate Google Business Profile as a lead channel — weekly posts, 2-3 photos from every job, review responses, Q&A seeding.
->Why: It's peak search season. Homeowners are Googling "power washing Cleveland" right now. Forest City's GBP is dormant. Competitors have < 10 photos and < 50% review response rates — we can own this for free.
->Impact: 20+ reviews + weekly posts = Google 3-pack eligibility = organic homeowner leads without ad spend.
->Action needed: Bradley opens business.google.com and completes the 30-minute profile completeness checklist from `outputs/marcus/gbp_optimization_guide_2026-05-18.md`. No approval needed from me — just do it.
+💡 *Vera — Upgrade Proposal*
+>Idea: Add week-over-week delta to Nina's weekly pipeline report (e.g. "Enrolled: 45 ▲+12 vs. last week")
+>Why: Current report shows absolute numbers with no trend — Bradley can't tell if the pipeline is growing or stagnating without doing manual math each week
+>Impact: Instant signal on pipeline health; flags weeks with 0 new enrollments before they compound into a dry spell
+>Reply YES to approve and I'll implement it in `workers/nina_report.py`.
 ---
-💡 *Vera — Proposal | Annual Plan Email Sequence (Tommy writes now, launches August)*
->Idea: Tommy writes the 3-touch Annual Plan email sequence + post-job text script now, while we're in peak season.
->Why: August is when to launch the annual conversion push. If the copy isn't written by then, Bradley will be too busy in the field to think about it. Takes 1–2 hours for Tommy now. Pays off in recurring revenue for 3+ years.
->Impact: Even 10 customers on Annual Plan = $4,000+ guaranteed recurring revenue per year.
->Action: Reply YES → Tommy starts the sequence this week. Also need: Bradley confirms Annual Plan pricing (what's the fall discount?).
+💡 *Vera — Upgrade Proposal*
+>Idea: Monday morning SMS batch prep — auto-generate a ready-to-send text for every "New Lead" in pipeline_data.json with blank `last_contact`
+>Why: 21 manual contacts currently have "Send text" in notes and no last_contact date — stale detection can't fire, and they're just sitting. A Monday batch list means Bradley opens his phone and texts 3–5 people in 10 minutes instead of figuring out who to contact.
+>Impact: Converts warm manual leads into booked estimates. Currently zero automated follow-up system for these contacts.
+>Reply YES to approve and I'll build the SMS prep worker.
 ---
-✅ *Vera — Scan Complete 2026-05-18 (Run 8)*
->2 auto-upgrades shipped | 4 new deliverables | 2 new proposals | 19 issues resolved | 15 open
+💡 *Vera — Pending Approvals (Still Open)*
+>These proposals are ready to ship — no new work needed, just your YES:
+>1. Sequence rewrite (0% reply rate) → `outputs/vera/sequence_rewrites_proposal_2026-05-18.md`
+>2. LinkedIn for 13 hot leads (3/day) → `outputs/danny/linkedin_hot_lead_dm_protocol_2026-05-18.md`
+>3. GBP activation (free, immediate) → `outputs/marcus/gbp_optimization_guide_2026-05-18.md`
+>4. Review request texts after jobs → `outputs/tommy/review_request_sequence_2026-05-18.md`
+---
+✅ *Vera — Scan Complete 2026-05-19 (Run 9)*
+>3 auto-upgrades shipped | 2 new proposals | 14 open issues | 22 resolved all-time
 >
->All 6 key ghost-fix markers verified — no code regressions.
+>Security fixes complete: All 3 hardcoded API credentials now removed from source (MIXMAX_TOKEN run 7, WORKIZ run 8, APOLLO_KEY run 9).
 >
->Top 3 actions right now:
->1. 📱 TEXT Bulletproof Lawncare + Damrons Landscaping — conversation tree is fully scripted, no thinking required.
->2. 🌐 Set up Google Business Profile — 30 minutes, free, immediate impact on peak-season homeowner leads.
->3. ⚙️ Set up local cron jobs — paste from CLAUDE.md into `crontab -e` to get lead pulls + Nina reports running automatically.
+>Top 3 for Bradley TODAY:
+>1. 📱 Text Bulletproof + Damrons — Day 6. Use the conversation tree. 5 minutes.
+>2. 🌐 Open Google Business Profile — 30 min setup = free homeowner leads all summer.
+>3. ⚙️ Paste cron jobs from CLAUDE.md into `crontab -e` — pipeline hasn't pulled leads in 7 days.

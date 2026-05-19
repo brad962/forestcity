@@ -13,10 +13,37 @@ from datetime import datetime
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 
-# Font paths
-FONT_BOLD   = '/System/Library/Fonts/Supplemental/Arial Bold.ttf'
-FONT_REG    = '/System/Library/Fonts/Supplemental/Arial.ttf'
-FONT_NARROW = '/System/Library/Fonts/Supplemental/Arial Narrow.ttf'
+# Font paths — Mac first, Linux (Liberation Sans) as fallback
+def _find_font(mac_path, linux_paths):
+    import os as _os
+    if _os.path.exists(mac_path):
+        return mac_path
+    for p in linux_paths:
+        if _os.path.exists(p):
+            return p
+    return mac_path  # will fail gracefully via font() try/except
+
+FONT_BOLD = _find_font(
+    '/System/Library/Fonts/Supplemental/Arial Bold.ttf',
+    [
+        '/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf',
+        '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf',
+    ],
+)
+FONT_REG = _find_font(
+    '/System/Library/Fonts/Supplemental/Arial.ttf',
+    [
+        '/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf',
+        '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf',
+    ],
+)
+FONT_NARROW = _find_font(
+    '/System/Library/Fonts/Supplemental/Arial Narrow.ttf',
+    [
+        '/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf',
+        '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf',
+    ],
+)
 
 # Worker color themes
 WORKER_THEMES = {
