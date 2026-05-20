@@ -78,6 +78,8 @@ DANNY_TITLES = [
     'facilities director', 'building superintendent',
     'apartment manager', 'condo manager', 'property supervisor',
     'residential manager', 'property director',
+    # Multi-site decision-makers at larger management firms
+    'regional manager', 'operations director', 'general manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -616,7 +618,7 @@ def run_pending_sequences():
                     and _sequence_is_live(c.get('_lead_type', ''))):
                 pending.append(('cache', c))
 
-    # Source 2: pipeline_data.json manual contacts with _lead_type set and email present
+    # Source 2: pipeline_data.json manual contacts with _lead_type (or lead_type) set and email present
     pipeline_dirty = False
     pipeline_data = {}
     if PIPELINE_F.exists():
@@ -625,10 +627,12 @@ def run_pending_sequences():
         except (json.JSONDecodeError, Exception):
             print('  ⚠️ pipeline_data.json malformed — skipping pipeline pending enrollment.')
         for mc in pipeline_data.get('manual_contacts', []):
+            # Check both _lead_type (Apollo-imported) and lead_type (manually imported) fields
+            lt_field = mc.get('_lead_type') or mc.get('lead_type', '')
             if (not mc.get('mixmax_enrolled')
                     and mc.get('email')
-                    and mc.get('_lead_type')
-                    and _sequence_is_live(mc.get('_lead_type', ''))):
+                    and lt_field
+                    and _sequence_is_live(lt_field)):
                 pending.append(('pipeline', mc))
 
     if not pending:
@@ -637,6 +641,8 @@ def run_pending_sequences():
     print(f'\n⏳ Enrolling {len(pending)} pending contacts now that sequences are live...')
     enrolled = 0
     for source, c in pending:
+        # Resolve lead type — honor both _lead_type (Apollo) and lead_type (manual imports)
+        resolved_lead_type = c.get('_lead_type') or c.get('lead_type', '')
         # Build a normalized lead dict for mixmax.enroll_lead
         lead = {
             'first_name':   c.get('first_name', ''),
@@ -645,7 +651,7 @@ def run_pending_sequences():
             'title':        c.get('title', ''),
             'company_name': c.get('company_name') or c.get('company', ''),
             'phone':        c.get('phone', ''),
-            '_lead_type':   c.get('_lead_type', ''),
+            '_lead_type':   resolved_lead_type,
             '_worker':      c.get('_worker', 'danny'),
         }
         result = enroll_lead(lead)

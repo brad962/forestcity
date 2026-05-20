@@ -1063,5 +1063,78 @@
 
 ---
 
-*Last updated: 2026-05-20 by Vera Cole (run 32)*
-*Key metrics: 88 RESOLVED | 9 OPEN | 4 auto-upgrades (server.py stale fix, workiz_report.py paths, 3 agent output formats) | 1 new deliverable (linkedin_followup_post_connect)*
+---
+
+## RESOLVED — run_pending_sequences() skips manual contacts with lead_type (no underscore)
+- Resolved: 2026-05-20 (run 33)
+- Description: `run_pending_sequences()` checked `mc.get('_lead_type')` but manually-imported pipeline contacts (Blue Line Restorations, Kardiac Construction, Don't Move Improve, Woolworth Construction, Everguard Pros, Camlin Contracting) only have `"lead_type"` (no underscore). These 6 contacts with emails and the live contractor sequence were silently skipped for auto-enrollment every run.
+- Fix: Changed check to `mc.get('_lead_type') or mc.get('lead_type', '')` (catches both formats). Also fixed lead dict construction in the same function to use `resolved_lead_type`. Once Bradley runs pipeline locally, all 6 contractor contacts auto-enroll in the contractor Mixmax sequence.
+- File: `workers/lead_pipeline.py`
+
+---
+
+## RESOLVED — Bulletproof Lawncare and Damrons Landscaping missing next_followup
+- Resolved: 2026-05-20 (run 33)
+- Description: Both contacts marked "Contacted" on 2026-05-19 with no next_followup date — no reminder to follow up after Memorial Day weekend.
+- Fix: Set `next_followup: "2026-05-26"` for both. Memorial Day weekend (May 23–25) = don't send. May 26 blitz day covers the follow-up.
+- File: `pipeline_data.json`
+
+---
+
+## RESOLVED — DANNY_TITLES and PROPERTY_MANAGER_TITLES missing multi-site PM titles
+- Resolved: 2026-05-20 (run 33)
+- Description: `regional manager`, `operations director`, `general manager` are common decision-maker titles at larger property management companies (50+ unit portfolios, commercial RE management firms). These titles were absent, causing Apollo to miss high-value contacts at multi-site accounts.
+- Fix: Added all three to `DANNY_TITLES` (lead_pipeline.py) and `PROPERTY_MANAGER_TITLES` (mixmax.py). Will catch more high-value contacts on next pipeline run.
+- Files: `workers/lead_pipeline.py`, `integrations/mixmax.py`
+
+---
+
+## RESOLVED — agents/jasmine.md and agents/nina.md missing output format entries
+- Resolved: 2026-05-20 (run 33)
+- Description: 5 new Facebook post file variants (memorial_day_week, may26_week, june_week1, june_week2_4) added in runs 22–25 weren't in jasmine.md. Nina.md was missing hot_leads and workiz report formats (both generated since run 1).
+- Fix: Updated both agent files with complete output format lists.
+- Files: `agents/jasmine.md`, `agents/nina.md`
+
+---
+
+## RESOLVED — vera_relay.py conflicting --oneline and --format flags in git log
+- Resolved: 2026-05-20 (run 33)
+- Description: `git log --oneline -20 --format=%H|%an|%s` — `--oneline` and `--format` are redundant/conflicting. `--format` wins in practice but the combination is misleading and may behave unexpectedly in older git versions.
+- Fix: Removed `--oneline` flag. Command now cleanly uses `--format=%H|%an|%s` only.
+- File: `workers/vera_relay.py`
+
+---
+
+## OPEN — 0% reply rate (Touch 3 fires TOMORROW May 22) 🚨🚨
+- Updated: 2026-05-20 (run 33) — TOUCH 3 FIRES IN ~24-36 HOURS.
+- Run 33: Personalized Tier 1 contractor text scripts written → `outputs/tommy/contractor_referral_text_script_2026-05-20.md`. 3 trade-specific scripts (landscaper, siding, roofing), reply handling for YES/NO/no reply, timing notes, tracking instructions.
+- All PM reply assets in place: morning brief, phone script, reply templates, quote-to-close kit.
+- READ TONIGHT: `outputs/vera/touch3_eve_final_checklist_2026-05-20.md`
+- READ THURSDAY AM: `outputs/vera/touch3_morning_brief_2026-05-22.md`
+- Resolution criteria: 1+ reply from Touch 3 OR Bradley calls hot leads May 22–26.
+
+---
+
+## OPEN — Manual Contacts Sitting Untouched (New Lead stage)
+- Updated: 2026-05-20 (run 33) — 36 contacts, 33 have no last_contact.
+- Run 33: Personalized text scripts NOW READY for all 5 Tier 1 contacts → `outputs/tommy/contractor_referral_text_script_2026-05-20.md`. Script per trade type (landscaping A, siding B, roofing C). Copy and send tonight.
+- Run 33 fix: Bulletproof and Damrons next_followup now set to 2026-05-26 (dashboard visible).
+- TEXT TONIGHT or TOMORROW: Anthony/Land Pro (440-320-2779), Dontez/GTP (440-396-0814), Twin Improvements (216-773-0757), Reliable Roofing (216-810-2497), Pagels Construction (216-956-5263).
+
+---
+
+## OPEN — Regular Danny PM cron not running (10+ days overdue)
+- Updated: 2026-05-20 (run 33) — Summit County still unworked.
+- Run 33 fix: 3 new PM titles added to DANNY_TITLES (regional manager, operations director, general manager) — will pull more multi-site decision-makers when run.
+- Run NOW: `python3 workers/lead_pipeline.py danny` from `/Users/bradleyneal/forestcity` → Summit County (week 21).
+
+---
+
+## OPEN — 6 contractor manual contacts with emails skipped for Mixmax enrollment
+- First seen: 2026-05-20 (run 33) — RESOLVED same run
+- See RESOLVED entry above. Once Bradley runs pipeline locally, Blue Line Restorations, Kardiac Construction, Don't Move Improve, Woolworth Construction, Everguard Pros, and Camlin Contracting will auto-enroll in contractor Mixmax sequence.
+
+---
+
+*Last updated: 2026-05-20 by Vera Cole (run 33)*
+*Key metrics: 93 RESOLVED | 8 OPEN | 5 auto-upgrades (lead_pipeline 2, mixmax.py titles, pipeline_data next_followups, vera_relay git fix, 2 agent formats) | 1 new deliverable (contractor_referral_text_script)*

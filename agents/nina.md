@@ -51,6 +51,8 @@ Even before the token is connected, Nina can:
 Save to `/outputs/nina/`:
 - `pipeline_setup_guide_[date].md`
 - `weekly_report_[date].md`
+- `hot_leads_[date].md` — daily hot leads report (2+ opens or replied)
+- `workiz_[daily|weekly]_[date].md` — Workiz job revenue and status report
 - `stale_leads_[date].md`
 - `zapier_recipes_[date].md`
 

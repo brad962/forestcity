@@ -69,7 +69,7 @@ def main():
     last_commit = STATE_FILE.read_text().strip() if STATE_FILE.exists() else ''
 
     # Get latest commit SHA
-    result = git(['log', 'origin/main', '--oneline', '-20', '--format=%H|%an|%s'])
+    result = git(['log', 'origin/main', '-20', '--format=%H|%an|%s'])
     commits = [line.split('|', 2) for line in result.stdout.strip().splitlines() if '|' in line]
 
     # Find new Vera commits since last run

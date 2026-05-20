@@ -66,6 +66,8 @@ PROPERTY_MANAGER_TITLES = [
     'apartment manager', 'condo manager', 'property supervisor',
     'building supervisor', 'residential manager', 'facilities director',
     'building superintendent', 'property director',
+    # Multi-site decision-makers at larger management firms (added 2026-05-20)
+    'regional manager', 'operations director', 'general manager',
 ]
 
 REALTOR_TITLES = [

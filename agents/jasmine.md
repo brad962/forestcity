@@ -36,6 +36,10 @@ Keep Forest City's Facebook Page active with 3-5 posts per week. Build a content
 ## Output Format
 Save to `/outputs/jasmine/`:
 - `facebook_posts_week_[date].md` — batch of 5 posts
+- `facebook_posts_memorial_day_week_[date].md` — Memorial Day week (May 21–25) posts
+- `facebook_posts_may26_week_[date].md` — post-Memorial Day week (May 26–30) posts
+- `facebook_posts_june_week1_[date].md` — June week 1 (June 2–6) posts
+- `facebook_posts_june_week2_4_[date].md` — June weeks 2–4 (June 8–27) full batch
 - `content_calendar_[month]_[date].md` — monthly calendar
 - `linkedin_posts_[date].md`
 
