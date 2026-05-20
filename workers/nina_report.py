@@ -393,6 +393,15 @@ def run_weekly():
     open_rate_pct = round(total_opens / total_enrolled * 100) if total_enrolled else 0
     reply_rate_pct = round(total_replied / total_enrolled * 100) if total_enrolled else 0
     seq_lines = [f'{s["sequence"]}: {s["total"]} enrolled | {s["open_rate"]} opens | {s["reply_rate"]} replies' for s in all_stats]
+    if api_blocked:
+        report_status = 'IN PROGRESS'
+        report_summary = ['⚠️ Mixmax API unavailable in cloud — run locally for accurate data.']
+    elif total_replied > 0:
+        report_status = 'ACTION NEEDED'
+        report_summary = seq_lines + [f'Overall open rate: {open_rate_pct}%', f'Overall reply rate: {reply_rate_pct}%']
+    else:
+        report_status = 'DONE'
+        report_summary = seq_lines + [f'Overall open rate: {open_rate_pct}%', f'Overall reply rate: {reply_rate_pct}%']
     send_report_card(
         worker_name='nina',
         title='Weekly Pipeline Report',
@@ -402,11 +411,8 @@ def run_weekly():
             ('Hot Leads', total_hot),
             ('Replies', total_replied),
         ],
-        summary_lines=seq_lines + [
-            f'Overall open rate: {open_rate_pct}%',
-            f'Overall reply rate: {reply_rate_pct}%',
-        ],
-        status='ACTION NEEDED' if total_replied > 0 else 'DONE',
+        summary_lines=report_summary,
+        status=report_status,
     )
 
 

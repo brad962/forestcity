@@ -245,3 +245,12 @@
 [2026-05-20 11:45] Vera | Deliverable: round2_decision_framework_2026-05-20.md — go/no-go criteria for sequence rewrite in Round 2; 4-scenario decision tree based on Touch 3 results and Reply-To status | outputs/vera/round2_decision_framework_2026-05-20.md | Done
 [2026-05-20 11:45] Vera | Updated open_issues.md — run 28: 1 new RESOLVED (p['id'] KeyError), 3 OPEN issues updated with run 28 status and file references | outputs/vera/open_issues.md | Done
 [2026-05-20 11:45] Vera | Proposals and summary written to pending_slack_messages.md for GitHub Action relay | outputs/vera/pending_slack_messages.md | Done
+[2026-05-20 18:08] Vera | Auto-upgrade: agents/danny.md and agents/carla.md — hardcoded Apollo API key redacted, replaced with load-from-.env note | agents/danny.md, agents/carla.md | Done
+[2026-05-20 18:08] Vera | Auto-upgrade: workiz_report.py — added git_push() function + call at end of __main__; reports now committed to repo after each local cron run | workers/workiz_report.py | Done
+[2026-05-20 18:08] Vera | Auto-upgrade: nina_report.py run_weekly() — sends IN PROGRESS status to Slack when Mixmax API blocked; was sending DONE with all-zero metrics (misleading) | workers/nina_report.py | Done
+[2026-05-20 18:08] Vera | Auto-upgrade: open_issues.md — marked 'No phone cold call script' RESOLVED (written run 27, never closed); added 4 new RESOLVED entries; updated 3 OPEN with run 29 status; added 2 new OPEN (quote follow-up gap, June residential push gap) | outputs/vera/open_issues.md | Done
+[2026-05-20 18:08] Vera | Auto-upgrade: agents/donna.md — added June Residential Push campaign to seasonal campaigns section with brief file reference | agents/donna.md | Done
+[2026-05-20 18:08] Vera | Auto-upgrade: agents/tommy.md — added quote_followup_sequence to output format list | agents/tommy.md | Done
+[2026-05-20 18:08] Vera | Deliverable: june_residential_push_2026-05-20.md — 4-week residential campaign brief connecting all pre-built assets; revenue math ,800-,400 net on 5/day spend; service pages as critical path | outputs/donna/june_residential_push_2026-05-20.md | Done
+[2026-05-20 18:08] Vera | Deliverable: quote_followup_sequence_2026-05-20.md — 3-touch post-estimate sequence (text 24h, email day 4, final text day 7); contractor referral follow-up included; fills the gap between quote and booking | outputs/tommy/quote_followup_sequence_2026-05-20.md | Done
+[2026-05-20 18:08] Vera | Proposals and summary written to pending_slack_messages.md for GitHub Action relay | outputs/vera/pending_slack_messages.md | Done

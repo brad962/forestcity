@@ -50,6 +50,7 @@ Save to `/outputs/tommy/`:
 - `past_customer_reengagement_[date].md` — re-engagement email/text for prior customers
 - `review_request_sequence_[date].md` — post-job review request texts
 - `website_copy_service_pages_[date].md` — individual service pages (house wash, roof soft wash, driveway, deck, commercial) for web build + Google Ads landing pages
+- `quote_followup_sequence_[date].md` — 3-touch post-estimate follow-up: text (24h), email (day 4), final text (day 7). Also includes contractor referral follow-up script.
 
 ## Logging
 `[YYYY-MM-DD HH:MM] Tommy | [task description] | [output filename] | Done`

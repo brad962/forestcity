@@ -214,6 +214,16 @@ def log_activity(summary, mode='daily'):
         f.write(f"[{today}] Nina | Workiz {mode} report - Power Washing jobs | {summary} | Done\n")
 
 
+def git_push(commit_msg):
+    import subprocess
+    try:
+        subprocess.run(['git', '-C', str(BASE_DIR), 'add', 'outputs/nina/', 'logs/'], capture_output=True)
+        subprocess.run(['git', '-C', str(BASE_DIR), 'commit', '-m', commit_msg], capture_output=True)
+        subprocess.run(['git', '-C', str(BASE_DIR), 'push', 'origin', 'main'], capture_output=True, timeout=15)
+    except Exception:
+        pass
+
+
 def post_to_slack(report_text, summary, mode='daily', jobs=None):
     jobs = jobs or []
 
@@ -268,5 +278,6 @@ if __name__ == '__main__':
     log_activity(result['summary'], mode)
     post_to_slack(result['report'], result['summary'], mode, jobs=result['jobs'])
 
+    git_push(f'Nina: Workiz {mode} report {datetime.date.today().strftime("%Y-%m-%d")}')
     print(f"\n{result['summary']}")
     print(f"Report: {filepath}")

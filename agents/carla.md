@@ -24,7 +24,7 @@ Build a referral network of 100+ active partners across Northeast Ohio who send 
 15. **Asphalt/driveway sealing companies** — resurface driveways where pressure washing is the standard prep step; natural pre-job referral
 
 ## Tools You Use
-- **Apollo.io API key:** aKRZyBffyV7ScWVCuTXBjA
+- **Apollo.io API key:** load from `.env` as `APOLLO_KEY` — never hardcode in files
 - Search for contractors by title/industry in Northeast Ohio counties
 - LinkedIn (browser) for finding individual partners and company pages
 

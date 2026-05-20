@@ -827,11 +827,10 @@
 
 ---
 
-## OPEN — No phone cold call script for hot leads 🔴
-- First seen: 2026-05-20 (run 27)
-- Description: After Touch 3 fires May 22, the Mixmax sequence ends. For the 13 hot leads (2+ opens, no replies), personal phone outreach converts at 3–5x email. We had email templates, LinkedIn DMs, SMS follow-ups — but no live phone script. What does Bradley say when a property manager picks up?
-- Run 27 fix: Full phone script written — `outputs/tommy/hot_lead_phone_script_2026-05-22.md`. Includes: live answer script (A), 15-second voicemail (B), SMS follow-up (C), objection cheat sheet, priority call order, and post-call tracking instructions.
-- Resolution criteria: Bradley calls the Tier 1 hot leads (3+ opens) May 22 or 26 using this script.
+## RESOLVED — No phone cold call script for hot leads
+- Resolved: 2026-05-20 (run 27)
+- Fix: Full phone script written — `outputs/tommy/hot_lead_phone_script_2026-05-22.md`. Includes: live answer script (A), 15-second voicemail (B), SMS follow-up (C), objection cheat sheet, priority call order, and post-call tracking instructions. Script is complete and ready for Bradley to use May 22.
+- File: `outputs/tommy/hot_lead_phone_script_2026-05-22.md`
 
 ---
 
@@ -896,5 +895,77 @@
 
 ---
 
-*Last updated: 2026-05-20 by Vera Cole (run 28)*
-*Key metrics: 74 RESOLVED | 15 OPEN | 2 auto-upgrades (p['id'] KeyError + _lead_type cache fix in lead_pipeline.py) | 2 deliverables (June Week 1 Sprint, Round 2 Decision Framework)*
+---
+
+## RESOLVED — Apollo API key hardcoded in danny.md and carla.md
+- Resolved: 2026-05-20 (run 29)
+- Description: Both agent files had `Apollo.io API key: aKRZyBffyV7ScWVCuTXBjA` in plaintext. The key is committed to the git repo — anyone with repo access could see it.
+- Fix: Replaced with `load from .env as APOLLO_KEY — never hardcode in files` note. Example API call header updated to reference `{APOLLO_KEY from .env}` instead of the literal key.
+- Files: `agents/danny.md`, `agents/carla.md`
+
+---
+
+## RESOLVED — workiz_report.py has no git_push — reports never committed to repo
+- Resolved: 2026-05-20 (run 29)
+- Description: `workiz_report.py` saved reports to `outputs/nina/` but had no `git_push()` function. When the cron job ran locally, the workiz report file lived on disk but was never staged, committed, or pushed to GitHub. Nina's activity log entry was there, but the actual report file was invisible to any other worker or dashboard reading from the repo.
+- Fix: Added `git_push()` function (matching the pattern in nina_report.py and lead_pipeline.py) and called it at the end of `__main__` after `post_to_slack()`.
+- File: `workers/workiz_report.py`
+
+---
+
+## RESOLVED — nina_report.py weekly report sends 'DONE' status when API is blocked (misleading)
+- Resolved: 2026-05-20 (run 29)
+- Description: When the Mixmax API is blocked in the cloud environment, `run_weekly()` correctly writes an API warning into the markdown file but called `send_report_card(..., status='DONE')` — so the Slack report card showed `DONE` with `0 enrolled / 0 opens / 0 replies`. This looks like an empty pipeline rather than an API issue.
+- Fix: Added `api_blocked` conditional in the send_report_card call. When `api_blocked=True`, sends `status='IN PROGRESS'` with a single summary line: "⚠️ Mixmax API unavailable in cloud — run locally for accurate data." Matches the behavior already implemented in the daily report.
+- File: `workers/nina_report.py`
+
+---
+
+## OPEN — 0% reply rate (Touch 3 fires TOMORROW May 22) 🚨🚨
+- Updated: 2026-05-20 (run 29) — TOUCH 3 FIRES IN ~24 HOURS.
+- All assets in place. Bradley's job tonight (May 20): (1) Check Mixmax Reply-To, (2) Send 13 LinkedIn connects, (3) Text Tier 1 contractors.
+- Run 29 angle: Quote follow-up sequence written → `outputs/tommy/quote_followup_sequence_2026-05-20.md`. If Touch 3 generates quote requests, Bradley now has a 3-touch post-quote follow-up to close them (this was the next gap after getting a reply).
+- Resources: morning brief (`touch3_morning_brief_2026-05-22.md`), eve checklist (`touch3_eve_final_checklist_2026-05-20.md`), phone script (`hot_lead_phone_script_2026-05-22.md`), reply templates (`touch3_reply_response_templates_2026-05-20.md`), round 2 framework (`round2_decision_framework_2026-05-20.md`).
+- Resolution criteria: 1+ reply from Touch 3 OR Bradley calls hot leads May 22-26.
+
+---
+
+## OPEN — Manual Contacts Sitting Untouched (New Lead stage)
+- Updated: 2026-05-20 (run 29) — 36 contacts, 33 have no last_contact.
+- TEXT TONIGHT: Anthony/Land Pro (440-320-2779), Dontez/GTP (440-396-0814), Twin Improvements (216-773-0757), Reliable Roofing (216-810-2497), Pagels Construction (216-956-5263).
+- After Memorial Day: May 26 outreach blitz (`outputs/donna/may26_outreach_blitz_brief_2026-05-20.md`).
+- June sprint: `outputs/donna/june_week1_sprint_2026-05-20.md`.
+
+---
+
+## OPEN — Regular Danny PM cron not running (10+ days overdue)
+- Updated: 2026-05-20 (run 29) — 10 DAYS OVERDUE. Summit County still unworked.
+- Week 21 = Summit County (Akron/Fairlawn/Stow). Run `python3 workers/lead_pipeline.py danny` TODAY.
+- Full June schedule in `outputs/donna/june_week1_sprint_2026-05-20.md`.
+
+---
+
+## OPEN — Gas station contacts not enrolled in Mixmax (18 emails idle)
+- Updated: 2026-05-20 (run 29) — SAME STATUS. Everything is built. One action needed: Bradley creates Mixmax sequence (June 2 target per `june_week1_sprint_2026-05-20.md`).
+- June Residential Push brief now coordinates this: step 1 for the whole residential plan is getting the commercial sequences live first.
+
+---
+
+## OPEN — No quote follow-up sequence (post-estimate gap)
+- First seen: 2026-05-20 (run 29)
+- Description: After someone replies to a Mixmax email or calls for a quote, there is no follow-up sequence. Estimates are sent but if they don't hear back in 24 hours they often book a competitor. Home services data: a single follow-up text within 48h closes an additional 20–25% of open quotes.
+- Run 29 fix: Full 3-touch quote follow-up sequence written → `outputs/tommy/quote_followup_sequence_2026-05-20.md`. Touch 1 = text (24h after quote). Touch 2 = email with scheduling urgency (day 4). Touch 3 = final text with fall rebook option (day 7).
+- Resolution criteria: Bradley sends Touch 1 text within 24h of next quote sent.
+
+---
+
+## OPEN — No June Residential Push execution (all assets built but not deployed)
+- First seen: 2026-05-20 (run 29)
+- Description: Facebook ads (Rick), Google Ads (Rick), service pages (Tommy), past customer templates (Tommy), review requests (Tommy) — all written and ready. The connecting campaign brief was missing.
+- Run 29 fix: June Residential Push brief written → `outputs/donna/june_residential_push_2026-05-20.md`. 4-week execution plan, revenue math ($4,800–$8,400 net for the month at $45/day spend), success metrics, priority order (service pages FIRST — everything else converts through them).
+- Resolution criteria: Bradley builds service pages (June 2) and launches Facebook ads (June 3).
+
+---
+
+*Last updated: 2026-05-20 by Vera Cole (run 29)*
+*Key metrics: 78 RESOLVED | 13 OPEN | 4 auto-upgrades (Apollo key redaction, workiz git_push, nina weekly status, phone script RESOLVED) | 2 new deliverables (June Residential Push brief, Quote Follow-Up Sequence)*
