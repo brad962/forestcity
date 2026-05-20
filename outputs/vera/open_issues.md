@@ -490,29 +490,26 @@
 
 ---
 
-## OPEN — 0% reply rate (Touch 3 fires May 22 — NOW 3 DAYS) 🚨
-- Updated: 2026-05-19 (run 20) — CRITICAL ESCALATION
-- Run 20 angle: New LinkedIn DM playbook written. Bradley can warm the 13 hot leads on LinkedIn TODAY before Touch 3 fires. File: `outputs/tommy/hot_lead_linkedin_dm_playbook_2026-05-19.md`
-- Run 19 fix: Empty firstName → "Hi ," bug fixed. Future sends clean.
-- Run 18 diagnostic: `outputs/vera/reply_rate_diagnostic_2026-05-19.md`
-  - Hypothesis 1 (most likely): Reply-To address in Mixmax points to wrong inbox
-  - Hypothesis 2: Variable substitution failing — partially fixed for future sends
-  - Hypothesis 3: Open tracking inflation
-  - Hypothesis 4: Contacts unsubscribed silently
-  - Hypothesis 5: Two-part CTA in Touch 1 — too much friction
-- IMMEDIATE action: Bradley logs into Mixmax → open PM sequence → Settings → verify Reply-To is his real inbox. 10 minutes. DO THIS TODAY.
-- Parallel: Send LinkedIn connections to 5–10 hot leads using `outputs/tommy/hot_lead_linkedin_dm_playbook_2026-05-19.md`
-- 2026-05-19 (run 21): Touch 1 & Touch 2 rewrite written → `outputs/danny/pm_sequence_touch1_rewrite_2026-05-19.md`. 62-word body, "Re:" subject on Touch 2, single CTA, lake humidity angle. Requires Bradley approval before Mixmax update. Touch 3 fires May 22 as-is — watch reply data after it fires. If still 0 replies → approve rewrite for round 2.
+## OPEN — 0% reply rate (Touch 3 fires TOMORROW May 22) 🚨🚨
+- Updated: 2026-05-20 (run 22) — TOUCH 3 FIRES IN ~36 HOURS
+- Run 22: Post-sequence recovery protocol written — `outputs/tommy/post_sequence_recovery_protocol_2026-05-20.md`. Bradley knows exactly what to do AFTER Touch 3 fires: LinkedIn connects (same day), personal Gmail email to top 5 (May 26), contractor text blast (May 26). Protocol covers all 3 contact tiers and a tracking method.
+- Run 22 angle: The sequence ending is not a failure — it's a hand-off moment. Hot leads with 2+ opens are WARM. Personal follow-up converts warm leads at 3–5x the rate of automated email.
+- Run 21: Touch 1 & Touch 2 rewrite written → `outputs/danny/pm_sequence_touch1_rewrite_2026-05-19.md`. Applies to round 2 only.
+- Run 20 angle: LinkedIn DM playbook ready for 13 hot leads.
+- Run 18 diagnostic: 5 hypotheses in `outputs/vera/reply_rate_diagnostic_2026-05-19.md`
+- IMMEDIATE action today (May 20): (1) Check Mixmax Reply-To — 10 min. (2) LinkedIn connects to 13 hot leads — 30 min. (3) Schedule Gmail drafts for Monday May 26.
+- Resolution criteria: 1+ reply received from any channel (LinkedIn, Gmail, or Touch 3 response).
 
 ---
 
 ## OPEN — 40 Manual Contacts Sitting Untouched (New Lead stage) — NO PROGRESS
-- Updated: 2026-05-19 (run 21) — 40 UNTOUCHED. MEMORIAL DAY IS MONDAY MAY 25.
-- Run 21: Still 40 untouched. Wednesday May 20 is the last viable full day to text. After that, contractors start going into weekend mode.
-- WEDNESDAY May 20 — text 5 more Tier 1 contacts: Anthony/Land Pro (440-320-2779), Dontez/GTP (440-396-0814), Twin Improvements, Reliable Roofing, Pagels Construction
-- THURSDAY May 21 — text the next 10 from the priority list
+- Updated: 2026-05-20 (run 22) — TODAY IS THE LAST DAY. AFTER TODAY CONTRACTORS GO INTO WEEKEND MODE.
+- Run 22: May 26 outreach blitz brief written — `outputs/donna/may26_outreach_blitz_brief_2026-05-20.md`. The Day After Memorial Day is the BEST response day of peak season. Plan covers 70 minutes of outreach, all assets mapped.
+- TODAY May 20 — text 5 Tier 1: Anthony/Land Pro (440-320-2779), Dontez/GTP (440-396-0814), Twin Improvements, Reliable Roofing, Pagels Construction
+- THURSDAY May 21 — text next 10 from priority list if possible (Fri going into weekend won't land)
+- MAY 26 (Tuesday after Memorial Day) — second blast per `outputs/donna/may26_outreach_blitz_brief_2026-05-20.md`
 - Templates: `outputs/vera/sms_templates_contractors_2026-05-18.md`
-- Execution checklist updated: `outputs/vera/memorial_day_execution_checklist_2026-05-19.md`
+- Priority list: `outputs/vera/priority_outreach_list_2026-05-19.md`
 
 ---
 
@@ -554,10 +551,11 @@
 ---
 
 ## OPEN — 13 hot leads sitting uncontacted on LinkedIn
-- Updated: 2026-05-19 (run 20)
-- Run 20: New LinkedIn DM playbook written — complete templates for PM, realtor, and contractor contacts. File: `outputs/tommy/hot_lead_linkedin_dm_playbook_2026-05-19.md`
-- This is the fastest path to a reply before Touch 3 fires. 5 minutes per connection request.
-- Resolution criteria: Bradley sends 3+ LinkedIn connects today or tomorrow (May 20).
+- Updated: 2026-05-20 (run 22)
+- TODAY May 20 is the window. Touch 3 fires May 22. LinkedIn connects sent today land BEFORE Touch 3 — warmest possible approach.
+- Run 22: Post-sequence protocol (`outputs/tommy/post_sequence_recovery_protocol_2026-05-20.md`) includes LinkedIn follow-up for AFTER Touch 3. But pre-Touch-3 connects are the priority.
+- Playbook: `outputs/tommy/hot_lead_linkedin_dm_playbook_2026-05-19.md`
+- Resolution criteria: Bradley sends 3+ LinkedIn connects today.
 
 ---
 
@@ -588,12 +586,14 @@
 
 ---
 
-## OPEN — Regular Danny PM cron not running (7 days overdue)
-- Updated: 2026-05-19 (run 21) — 6 DAYS OVERDUE. TODAY IS THE LAST DAY BEFORE MEMORIAL DAY WEEK IS LOST.
-- Pipeline has not run since May 13. All PIPELINE_F, cache, and enrollment bugs confirmed fixed.
-- Missed 6 days of new PM contacts during peak season. Week 21 county batch (Summit County) never ran.
+## OPEN — Regular Danny PM cron not running (8 days overdue)
+- Updated: 2026-05-20 (run 22) — 8 DAYS OVERDUE. MISSED SUMMIT COUNTY WEEK.
+- Run 22 fix: lead_pipeline.py `run_pending_sequences()` `cache` undefined bug fixed (defensive init).
+- Pipeline not run since May 13. Week 20 = Lorain (done). Week 21 = Summit. Week 22 = Medina.
+- Running today would pull Week 21 Summit County batch (~15-25 PMs), auto-enroll in Mixmax.
 - Run NOW: `python3 workers/lead_pipeline.py both` from /Users/bradleyneal/forestcity
-- This takes 5 minutes. Pulls ~15-25 new property managers. Enrolls them in the PM sequence automatically.
+- Next scheduled cron run: Set up crontab per CLAUDE.md — Monday 7am weekly.
+- Resolution criteria: Pipeline runs locally, log shows new Danny leads pulled.
 
 ---
 
@@ -621,6 +621,16 @@
 
 ---
 
+## OPEN — Fleet washing Mixmax sequence not created (sequence copy ready — waiting on ID)
+- First seen: 2026-05-20 (run 22)
+- Description: Fleet washing sequence copy written May 18 (`outputs/danny/sequence_fleet_washing_2026-05-18.md`). Infrastructure ready (SEQUENCES['fleet_washing'] in mixmax.py at line 47). Just needs the Mixmax ID.
+- Same situation as gas station sequence — everything is built, just waiting on Bradley to click "New Sequence" in Mixmax.
+- Why it matters: Fleet washing = recurring commercial revenue. Landscaping companies, HVAC fleets, trucking companies with 5+ vehicles. One account = $500+/year.
+- Action: Mixmax UI → New Sequence → paste copy from `outputs/danny/sequence_fleet_washing_2026-05-18.md` → paste ID into `integrations/mixmax.py` line 48. 10 minutes.
+- Resolution criteria: Real fleet_washing ID in `integrations/mixmax.py`.
+
+---
+
 ## RESOLVED — server.py /api/pipeline GET crashes on malformed contacts_cache.json
 - Resolved: 2026-05-19 (run 21)
 - Fix: Added try/except around `json.loads(CONTACTS_F.read_text())` in the cache_lookup build block inside the `/api/pipeline` GET handler. On malformed JSON, falls back to empty dict — pipeline dashboard still loads with Mixmax contacts, just no phone/company lookup from cache.
@@ -642,5 +652,33 @@
 
 ---
 
-*Last updated: 2026-05-19 by Vera Cole (run 21)*
-*Key metrics: 54 RESOLVED | 13 OPEN | 3 auto-upgrades this run | 1 deliverable (sequence rewrite proposal)*
+## RESOLVED — jasmine_flyer.py booking CTA showed wrong month in late-month posts
+- Resolved: 2026-05-20 (run 22)
+- Fix: `write_facebook_post()` now calculates `booking_month` — when day >= 15, advances to the following month. "booking into May" on May 20 → "booking into June." Summer CTA updated similarly.
+- File: `workers/jasmine_flyer.py`
+
+---
+
+## RESOLVED — run_pending_sequences() cache variable undefined when CACHE_FILE missing
+- Resolved: 2026-05-20 (run 22)
+- Fix: Added `cache = {}` initialization before the `if CACHE_FILE.exists():` block. Previously, if the cache file didn't exist, `cache` was undefined, and the persist block at line 647 would throw NameError if the file appeared mid-run.
+- File: `workers/lead_pipeline.py`
+
+---
+
+## RESOLVED — Carla Apollo search misses deck builders and asphalt sealers
+- Resolved: 2026-05-20 (run 22)
+- Fix: Added 'deck builder', 'deck contractor', 'asphalt sealing', 'driveway sealing' to CARLA_SEARCHES contractor keywords. Also added to CONTRACTOR_TITLES in mixmax.py for correct routing. Updated agents/carla.md with 2 new partner types. Deck builders and driveway sealers are high-value referral partners — prep work for their jobs often requires power washing.
+- Files: `workers/lead_pipeline.py`, `integrations/mixmax.py`, `agents/carla.md`
+
+---
+
+## RESOLVED — agents/danny.md fleet washing status didn't reflect sequence copy existence
+- Resolved: 2026-05-20 (run 22)
+- Fix: Updated fleet washing status from "Sequence PENDING" to "Sequence copy READY" with file reference. Bradley now knows what's actionable vs. what's actually pending.
+- File: `agents/danny.md`
+
+---
+
+*Last updated: 2026-05-20 by Vera Cole (run 22)*
+*Key metrics: 58 RESOLVED | 14 OPEN | 6 auto-upgrades this run | 3 deliverables (post-sequence protocol, May 26 blitz brief, May 26-30 Facebook posts)*

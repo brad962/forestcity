@@ -94,7 +94,8 @@ DANNY_ORG_KEYWORDS = [
 CARLA_SEARCHES = [
     {'type': 'contractors', 'titles': ['owner', 'president', 'founder'],
      'keywords': ['siding', 'exterior contractor', 'roofing', 'gutters', 'painting',
-                  'landscaping', 'lawn care', 'window washing', 'chimney', 'concrete'],
+                  'landscaping', 'lawn care', 'window washing', 'chimney', 'concrete',
+                  'deck builder', 'deck contractor', 'asphalt sealing', 'driveway sealing'],
      'label': 'Contractors'},
     # Home-services companies that visit properties weekly — high-value referral sources
     {'type': 'contractors', 'titles': ['owner', 'president', 'founder', 'operator'],
@@ -582,6 +583,7 @@ def run_pending_sequences():
     from integrations.mixmax import enroll_lead, _sequence_is_live
 
     pending = []
+    cache = {}  # initialized here so the persist block below never hits NameError
 
     # Source 1: contacts_cache.json (Apollo-pulled leads)
     if CACHE_FILE.exists():

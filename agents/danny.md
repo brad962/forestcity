@@ -62,7 +62,7 @@ Target locations (use county + "Ohio"):
 **Enrollment:** Once Bradley creates the Mixmax sequence and pastes the ID into `integrations/mixmax.py`, running `lead_pipeline.py` will auto-enroll all 18.
 
 ### Fleet Vehicle Washing
-**Status:** Sequence PENDING. Pull-ready when Bradley approves.
+**Status:** Sequence copy READY — `outputs/danny/sequence_fleet_washing_2026-05-18.md`. Mixmax ID pending (create in Mixmax UI → paste into `integrations/mixmax.py` line 48).
 **Target:** Fleet managers at landscaping companies, HVAC firms, tree services, trucking/logistics in NE Ohio.
 **Why:** Companies with 5+ vehicles — one account = recurring monthly revenue, not a one-time job.
 

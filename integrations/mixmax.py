@@ -83,6 +83,8 @@ CONTRACTOR_TITLES = [
     'chimney', 'hvac', 'heating', 'cooling', 'air condition', 'pool service',
     'pool clean', 'pest control', 'exterminator', 'junk removal', 'home clean',
     'maid', 'moving company', 'mover',
+    # Deck and driveway trades — customer often books power washing same visit (added 2026-05-20)
+    'deck builder', 'deck contractor', 'asphalt seal', 'driveway seal', 'concrete seal',
 ]
 
 

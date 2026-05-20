@@ -149,14 +149,23 @@ def write_facebook_post(description: str, date: str) -> str:
     dt    = datetime.strptime(date, "%Y-%m-%d")
     month = dt.strftime("%B")
     mo    = dt.month
+    day   = dt.day
     desc  = description.strip()
+
+    # When past mid-month, say "booking into NEXT month" — "booking into May" on May 20 is wrong
+    if day >= 15:
+        next_mo = mo % 12 + 1
+        next_yr = dt.year + (1 if next_mo == 1 else 0)
+        booking_month = dt.replace(year=next_yr, month=next_mo, day=1).strftime("%B")
+    else:
+        booking_month = month
 
     if mo in (3, 4, 5):
         hook = "The algae doesn't care that it's spring. Your neighbors do."
-        cta  = f"We're booking into {month} now — DM us or comment QUOTE to get on the schedule before the summer rush."
+        cta  = f"We're booking into {booking_month} now — DM us or comment QUOTE to get on the schedule before the summer rush."
     elif mo in (6, 7, 8):
         hook = "Before the cookout. Before the guests. Before the photos."
-        cta  = "Summer is half over before you know it — DM us or comment QUOTE and we'll squeeze you in."
+        cta  = f"Summer slots are filling fast — DM us or comment QUOTE and we'll get you on the {booking_month} schedule."
     elif mo in (9, 10):
         hook = "One job before winter and your house is protected all season."
         cta  = "Fall slots go fast — DM us or comment QUOTE to lock in your date."
