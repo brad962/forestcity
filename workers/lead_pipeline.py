@@ -234,7 +234,7 @@ def mixmax_enroll(lead, lead_type):
     """Enroll a single lead in the correct Mixmax sequence."""
     sys.path.insert(0, str(BASE_DIR))
     from integrations.mixmax import enroll_lead
-    lead['_worker'] = 'danny' if lead_type == 'property_manager' else 'carla'
+    lead['_worker'] = 'carla' if lead_type in ('contractor', 'realtor') else 'danny'
     lead['_lead_type'] = lead_type  # Ensure detect_lead_type honors pipeline intent
     return enroll_lead(lead)
 

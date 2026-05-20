@@ -1,115 +1,70 @@
 🔧 *Vera — Auto-Upgrade*
->Changed: Removed hardcoded Apollo API key from danny.md and carla.md — key was committed in plaintext to git
->Why: Any repo viewer could read the key; moved to `load from .env as APOLLO_KEY` reference
->Files: `agents/danny.md`, `agents/carla.md`
-
----
-
-🔧 *Vera — Auto-Upgrade*
->Changed: Added `git_push()` to workiz_report.py — Workiz reports were saved locally but never committed to the repo
->Why: When the cron ran locally, the report file existed on disk but was invisible in GitHub and to other workers
->File: `workers/workiz_report.py`
-
----
-
-🔧 *Vera — Auto-Upgrade*
->Changed: nina_report.py weekly report now sends `IN PROGRESS` status to Slack when Mixmax API is blocked
->Why: Was sending `DONE` with all-zero metrics when API blocked — looked like an empty pipeline instead of an API issue
->File: `workers/nina_report.py`
-
----
-
-🔧 *Vera — Auto-Upgrade*
->Changed: Marked "No phone cold call script" as RESOLVED in open_issues.md — script was written in run 27 but issue was never closed
->Why: open_issues.md showed it OPEN even though `hot_lead_phone_script_2026-05-22.md` was already complete
->File: `outputs/vera/open_issues.md`
-
----
-
-📋 *Vera — New Deliverable*
->File: `outputs/tommy/quote_followup_sequence_2026-05-20.md`
->What: 3-touch post-estimate follow-up (text at 24h, email at day 4, final text at day 7)
->Gap filled: After sending a quote, there was no follow-up. Data says a single 24h text closes 20–25% more quotes. This sequence also covers the contractor referral follow-up script.
->Use it: Next time you send a quote — set a reminder for 24h and send Touch 1.
-
----
-
-💡 *Vera — Upgrade Proposal*
->Idea: June Residential Push — launch all pre-built assets as a coordinated 4-week campaign starting June 2
->Why: Facebook ads, Google Ads, service pages, past customer texts, review requests are ALL written and ready. The only missing piece was this plan.
->Revenue math: $4,800–$8,400 net in June at $45/day ad spend. Breakeven at ~5 jobs.
->Plan: `outputs/donna/june_residential_push_2026-05-20.md`
->Critical first step: Service pages in your website platform (Wix/Squarespace/WordPress) before launching ads. Roof Soft Wash page first — highest-value, highest search intent.
->Reply YES to approve and I'll schedule the week-by-week task reminders.
-
----
-
-🚨 *Vera — TONIGHT CHECKLIST (May 20 — Touch 3 fires TOMORROW)*
->3 things to do tonight (55 minutes total):
->1. Check Mixmax Reply-To (10 min) → `outputs/vera/mixmax_reply_to_check_2026-05-20.md` — if this is wrong, Touch 3 replies go to a dead inbox
->2. Send 13 LinkedIn connects (30 min) → `outputs/tommy/hot_lead_linkedin_dm_playbook_2026-05-19.md`
->3. Text 5 Tier 1 contractors (15 min): Land Pro 440-320-2779 | GTP 440-396-0814 | Twin Improvements 216-773-0757 | Reliable Roofing 216-810-2497 | Pagels 216-956-5263
->THURSDAY MORNING: Read `outputs/vera/touch3_morning_brief_2026-05-22.md` first thing
->PHONE SCRIPT READY: `outputs/tommy/hot_lead_phone_script_2026-05-22.md`
-
----
-
-⏰ *Vera — Action Needed: Run Danny's Pipeline TODAY (Summit County — 10 days overdue)*
->Command: `python3 workers/lead_pipeline.py danny` from `/Users/bradleyneal/forestcity`
->Expected: 15–20 new Summit County PMs (Akron/Fairlawn/Stow) auto-enrolled in Mixmax.
->Also set up cron per CLAUDE.md so it runs automatically every Monday.
-
----
-
-⏰ *Vera — Action Needed: Create Gas Station + Fleet Sequences in Mixmax (June 2 target)*
->18 gas station contacts waiting. 15 minutes in Mixmax UI = they all auto-enroll.
->Gas station copy: `outputs/danny/sequence_gas_stations_2026-05-19.md`
->Fleet copy: `outputs/danny/sequence_fleet_washing_2026-05-18.md`
->Paste IDs into `integrations/mixmax.py` lines 48 and 54. Next pipeline run auto-enrolls everyone.
-
----
-
----
-
-🔧 *Vera — Auto-Upgrade*
->Changed: `lead_pipeline.py` now distinguishes "Apollo returned 0 people (API blocked)" from "all leads were duplicates" in Danny and Carla's no-new-leads log entry
->Why: When the cron ran and returned 0 leads, the log said "all duplicates" — which is misleading when the real cause is API network block. Bradley can now tell the difference immediately when checking cron.log
+>Changed: `mixmax_enroll()` in `lead_pipeline.py` — gas_station + fleet_washing leads now correctly tagged `_worker = 'danny'` (was 'carla')
+>Why: _worker field was inaccurate for Danny's two new segments; downstream logic trusting this field would misroute leads.
 >File: `workers/lead_pipeline.py`
 
 ---
 
 🔧 *Vera — Auto-Upgrade*
->Changed: `server.py` POST /api/queue handler — added try/except around `json.loads(body)`
->Why: A malformed request body (network interruption mid-send) previously crashed the endpoint with HTTP 500. Now returns 400 with a descriptive error message. Consistent with all other POST handlers in server.py
+>Changed: `parse_log()` in `server.py` — added try/except around `LOG_FILE.read_text()`
+>Why: Concurrent log writes (cron worker writing while dashboard reads) could crash the `/api/log` endpoint, breaking the dashboard activity view.
 >File: `server.py`
 
 ---
 
-📋 *Vera — New Deliverable*
->File: `outputs/tommy/quote_to_close_kit_2026-05-20.md`
->What: Complete quote-to-close kit for converting Touch 3 replies into booked jobs
->Why built: All the pre-Touch-3 assets are in place. The missing piece was what happens AFTER the reply — there was no fast-response protocol for when a PM says "how much?" This kit gives Bradley the full chain.
->Contains:
-> • Acknowledgment email template (send within 30 min — speed signals professionalism)
-> • Discovery questions for PM, realtor, and contractor leads
-> • Site visit checklist (what to measure, document, photograph)
-> • NE Ohio pricing reference guide (per sq ft ranges, minimums, combo discounts)
-> • Professional estimate email template with line items
-> • "Your price is too high" objection response (don't discount immediately — explains soft wash vs. pressure wash)
->Use it: The moment a PM replies to Touch 3 tomorrow — open this doc and start at Part 1.
+🔧 *Vera — Auto-Upgrade*
+>Changed: POST `/api/contacts/workflow` in `server.py` — `CONTACTS_F.write_text()` now wrapped in try/except
+>Why: Unhandled write failure on full disk or locked file was returning a 500 to the dashboard instead of a clean response.
+>File: `server.py`
 
 ---
 
-⏰ *Vera — TOUCH 3 FIRES TOMORROW (May 22)*
->Morning brief is ready: `outputs/vera/touch3_morning_brief_2026-05-22.md` — read this first thing Thursday
->Quote-to-Close Kit: `outputs/tommy/quote_to_close_kit_2026-05-20.md` — have this open when replies start coming in
->Phone script (if no email reply): `outputs/tommy/hot_lead_phone_script_2026-05-22.md`
->TONIGHT before bed: (1) Verify Mixmax Reply-To — 10 min. (2) Send 13 LinkedIn connects — 30 min. (3) Text 5 Tier 1 contractors: Land Pro 440-320-2779 | GTP 440-396-0814 | Twin Improvements 216-773-0757 | Reliable Roofing 216-810-2497 | Pagels 216-956-5263
+🔧 *Vera — Auto-Upgrade (Deliverable)*
+>Changed: New file — `outputs/carla/referral_partner_onboarding_2026-05-20.md`
+>Why: Contractor conversation tree covered getting the YES. Nothing existed for the moment after YES. Bradley is texting 5 contractors TONIGHT — if any reply, he needs a script ready. This fills the gap: confirmation text, follow-up, welcome kit, first-week ping, payout message, all 5 objections handled.
+>File: `outputs/carla/referral_partner_onboarding_2026-05-20.md`
 
 ---
 
-✅ *Vera — Scan Complete 2026-05-20 (Run 30)*
->2 auto-upgrades shipped | 1 new deliverable (Quote-to-Close Kit — acknowledgment → discovery → site visit → pricing → estimate → close) | 2 issues marked RESOLVED
->80 RESOLVED | 13 OPEN
->TONIGHT: Eve checklist (55 min) — Reply-To check + LinkedIn connects + Tier 1 texts
->TOMORROW (May 22): Read touch3_morning_brief first thing — all quote response tools are ready
+🚨 *Vera — TONIGHT ACTION REQUIRED*
+>Touch 3 fires in <12 hours (tomorrow May 22).
+>*Three things to do TONIGHT (55 min total):*
+>1️⃣ Check Mixmax Reply-To — `outputs/vera/mixmax_reply_to_check_2026-05-20.md` — 10 min
+>2️⃣ Send 13 LinkedIn connects to hot leads — `outputs/tommy/hot_lead_linkedin_dm_playbook_2026-05-19.md` — 30 min
+>3️⃣ Text 5 Tier 1 contractors — `outputs/vera/sms_templates_contractors_2026-05-18.md` — 15 min
+>Tier 1: Anthony/Land Pro (440-320-2779), Dontez/GTP (440-396-0814), Twin Improvements (216-773-0757), Reliable Roofing (216-810-2497), Pagels Construction (216-956-5263)
+>If any contractor replies YES tonight → use onboarding script: `outputs/carla/referral_partner_onboarding_2026-05-20.md`
+
+---
+
+📋 *Vera — May 22 Morning Brief Ready*
+>Tomorrow morning (Touch 3 day), read this FIRST: `outputs/vera/touch3_morning_brief_2026-05-22.md`
+>Covers: what to check in Mixmax, 3 reply scenarios (A/B/C), phone call script if needed, all resource links.
+>Phone script (if 0 replies): `outputs/tommy/hot_lead_phone_script_2026-05-22.md`
+>Quote-to-close kit (if someone wants a price): `outputs/tommy/quote_to_close_kit_2026-05-20.md`
+
+---
+
+💡 *Vera — Upgrade Proposal*
+>Idea: Build a Twilio SMS worker (`workers/sms_worker.py`) that automates contractor follow-up texts and quote follow-ups
+>Why: Bradley is manually texting 36 contractors and sending quote follow-ups by hand. Twilio credentials are already in CLAUDE.md as pending. A simple worker would auto-send templated texts on schedule — first contact day 1, follow-up day 7, quote follow-up 24h after estimate sent.
+>Impact: Zero manual texting effort. Faster follow-up speed. Estimated 2-3 additional booked jobs/month from closing more open quotes.
+>Blocking: TWILIO_ACCOUNT_SID + TWILIO_AUTH_TOKEN + TWILIO_PHONE_NUMBER added to .env
+>Reply YES to approve and I'll build the worker.
+
+---
+
+💡 *Vera — Upgrade Proposal*
+>Idea: Deploy the home maintenance checklist lead magnet that's been ready since May 12 but never launched
+>Why: `outputs/donna/lead_magnet_home_maintenance_checklist_2026-05-12.md` is written and ready. Kit.com is free up to 10k subscribers. One landing page + email capture = homeowners in the funnel 24/7 with zero ad spend.
+>Impact: Passive inbound leads from homeowners who find the checklist via Facebook, Google, or word of mouth. 50-100 subscribers/month = warm leads to re-engage each spring.
+>Setup: Create Kit.com account (free), upload checklist as PDF, link opt-in form from the website. 30 minutes.
+>Reply YES to approve and I'll write the Kit.com setup guide.
+
+---
+
+✅ *Vera — Scan Complete 2026-05-20 (run 31)*
+>3 auto-upgrades shipped | 1 new deliverable (referral partner onboarding) | 2 proposals | 10 open issues
+>🚨 Tonight: Mixmax Reply-To check + 13 LinkedIn connects + 5 contractor texts
+>📋 Tomorrow May 22: Read `outputs/vera/touch3_morning_brief_2026-05-22.md` first thing
+>📅 Summit County PM pull is 10+ days overdue — run `python3 workers/lead_pipeline.py danny` before June

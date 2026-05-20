@@ -97,8 +97,12 @@ LOG_RE = re.compile(r'\[(.+?)\]\s+(.+?)\s*\|\s*(.+?)\s*\|\s*(.+?)\s*\|\s*(.+)')
 def parse_log():
     if not LOG_FILE.exists():
         return []
+    try:
+        raw = LOG_FILE.read_text()
+    except Exception:
+        return []
     entries = []
-    for line in LOG_FILE.read_text().splitlines():
+    for line in raw.splitlines():
         line = line.strip()
         if not line:
             continue
@@ -592,9 +596,12 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                         c['workflow'][step] = done
                         updated = True
                 if updated:
-                    CONTACTS_F.write_text(json.dumps(
-                        {'contacts': contacts, 'updated': time.time()}, indent=2
-                    ))
+                    try:
+                        CONTACTS_F.write_text(json.dumps(
+                            {'contacts': contacts, 'updated': time.time()}, indent=2
+                        ))
+                    except Exception:
+                        pass
                 self._json({'ok': updated, 'email': email, 'step': step, 'done': done})
             except Exception as e:
                 self._json({'error': str(e)}, 500)

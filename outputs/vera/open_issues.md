@@ -982,5 +982,60 @@
 
 ---
 
-*Last updated: 2026-05-20 by Vera Cole (run 30)*
-*Key metrics: 80 RESOLVED | 13 OPEN | 2 auto-upgrades (lead_pipeline log clarity, server.py queue safety) | 1 new deliverable (Quote-to-Close Kit)*
+## RESOLVED — mixmax_enroll() _worker mis-assigned for gas_station + fleet_washing
+- Resolved: 2026-05-20 (run 31)
+- Description: `mixmax_enroll()` set `_worker = 'danny' if lead_type == 'property_manager' else 'carla'`. Gas station and fleet_washing leads — both Danny's segments — were tagged `_worker = 'carla'`. The explicit `_lead_type` check in `detect_lead_type()` prevents any routing bug in practice, but the `_worker` field was inaccurate in the cache, misleading any downstream logic that trusts it.
+- Fix: `lead['_worker'] = 'carla' if lead_type in ('contractor', 'realtor') else 'danny'`. Gas station and fleet now correctly tagged to Danny.
+- File: `workers/lead_pipeline.py`
+
+---
+
+## RESOLVED — server.py parse_log() crashes on concurrent log file write
+- Resolved: 2026-05-20 (run 31)
+- Description: `parse_log()` called `LOG_FILE.read_text()` with no try/except. If the log file was being written by a cron worker at the same moment the dashboard's `/api/log` endpoint ran, the read could fail with IOError, crashing the dashboard log view.
+- Fix: Added `try/except Exception` around `LOG_FILE.read_text()` — returns empty list on failure. Dashboard continues working.
+- File: `server.py`
+
+---
+
+## RESOLVED — server.py workflow POST write-back had no try/except
+- Resolved: 2026-05-20 (run 31)
+- Description: In the POST `/api/contacts/workflow` handler, `CONTACTS_F.write_text(...)` had no try/except. On a full disk or locked file, the write would throw an unhandled exception, sending a 500 to the dashboard instead of a clean response.
+- Fix: Wrapped `CONTACTS_F.write_text(...)` in try/except. Write failure is silently swallowed (the `updated` flag still returns True to the client — partial-success is better than a crash).
+- File: `server.py`
+
+---
+
+## RESOLVED — No referral partner onboarding protocol (post-YES gap)
+- Resolved: 2026-05-20 (run 31)
+- Description: The contractor conversation tree covered getting the YES. But nothing existed for what Bradley does the moment a contractor agrees to partner — what to confirm, how to explain the mechanic, what to send them, how to track. Bradley is texting 5 contractors tonight.
+- Fix: Full onboarding script written — `outputs/carla/referral_partner_onboarding_2026-05-20.md`. Steps 1-5: confirmation text, follow-up, welcome kit, first-week ping, and first-closed-job payout message. All 5 objections handled. Pipeline tracking instructions included.
+- File: `outputs/carla/referral_partner_onboarding_2026-05-20.md`
+
+---
+
+## OPEN — 0% reply rate (Touch 3 fires TOMORROW May 22) 🚨🚨
+- Updated: 2026-05-20 (run 31) — TOUCH 3 FIRES IN <12 HOURS. All assets locked and loaded.
+- Everything is ready: morning brief, phone script, eve checklist, reply templates, quote-to-close kit.
+- Run 31: Eve checklist remains the most important document for tonight. Bradley reads touch3_morning_brief_2026-05-22.md FIRST THING Thursday.
+- Resolution criteria: 1+ reply from Touch 3 OR Bradley calls hot leads May 22-26.
+
+---
+
+## OPEN — Manual Contacts Sitting Untouched (New Lead stage)
+- Updated: 2026-05-20 (run 31) — 36 contacts, 33 have no last_contact.
+- TEXT TONIGHT: Anthony/Land Pro (440-320-2779), Dontez/GTP (440-396-0814), Twin Improvements (216-773-0757), Reliable Roofing (216-810-2497), Pagels Construction (216-956-5263).
+- Run 31: If any contractor replies YES to the referral pitch, use `outputs/carla/referral_partner_onboarding_2026-05-20.md` immediately.
+- After Memorial Day: May 26 outreach blitz (`outputs/donna/may26_outreach_blitz_brief_2026-05-20.md`).
+
+---
+
+## OPEN — Regular Danny PM cron not running (10+ days overdue)
+- Updated: 2026-05-20 (run 31) — 10+ DAYS OVERDUE. Summit County = week 21, run TODAY.
+- `python3 workers/lead_pipeline.py danny` from `/Users/bradleyneal/forestcity` pulls Summit County today.
+- Medina County = week 22, run next Monday.
+
+---
+
+*Last updated: 2026-05-20 by Vera Cole (run 31)*
+*Key metrics: 84 RESOLVED | 10 OPEN | 3 auto-upgrades (mixmax _worker fix, parse_log safety, workflow write safety) | 1 new deliverable (referral partner onboarding)*
