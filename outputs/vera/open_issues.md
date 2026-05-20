@@ -922,16 +922,16 @@
 ---
 
 ## OPEN — 0% reply rate (Touch 3 fires TOMORROW May 22) 🚨🚨
-- Updated: 2026-05-20 (run 29) — TOUCH 3 FIRES IN ~24 HOURS.
-- All assets in place. Bradley's job tonight (May 20): (1) Check Mixmax Reply-To, (2) Send 13 LinkedIn connects, (3) Text Tier 1 contractors.
-- Run 29 angle: Quote follow-up sequence written → `outputs/tommy/quote_followup_sequence_2026-05-20.md`. If Touch 3 generates quote requests, Bradley now has a 3-touch post-quote follow-up to close them (this was the next gap after getting a reply).
+- Updated: 2026-05-20 (run 30) — TOUCH 3 FIRES IN ~12-24 HOURS. All assets locked and loaded.
+- Run 30: Quote-to-Close Kit written → `outputs/tommy/quote_to_close_kit_2026-05-20.md`. This fills the last gap in the pipeline: when a PM replies asking "how much?", Bradley now has the full chain — acknowledgment email (30-min target), discovery questions, site visit checklist, NE Ohio pricing reference, estimate email template, and "price is too high" objection handling.
+- Run 29 angle: Quote follow-up sequence → `outputs/tommy/quote_followup_sequence_2026-05-20.md`.
 - Resources: morning brief (`touch3_morning_brief_2026-05-22.md`), eve checklist (`touch3_eve_final_checklist_2026-05-20.md`), phone script (`hot_lead_phone_script_2026-05-22.md`), reply templates (`touch3_reply_response_templates_2026-05-20.md`), round 2 framework (`round2_decision_framework_2026-05-20.md`).
 - Resolution criteria: 1+ reply from Touch 3 OR Bradley calls hot leads May 22-26.
 
 ---
 
 ## OPEN — Manual Contacts Sitting Untouched (New Lead stage)
-- Updated: 2026-05-20 (run 29) — 36 contacts, 33 have no last_contact.
+- Updated: 2026-05-20 (run 30) — 36 contacts, 33 have no last_contact.
 - TEXT TONIGHT: Anthony/Land Pro (440-320-2779), Dontez/GTP (440-396-0814), Twin Improvements (216-773-0757), Reliable Roofing (216-810-2497), Pagels Construction (216-956-5263).
 - After Memorial Day: May 26 outreach blitz (`outputs/donna/may26_outreach_blitz_brief_2026-05-20.md`).
 - June sprint: `outputs/donna/june_week1_sprint_2026-05-20.md`.
@@ -939,14 +939,15 @@
 ---
 
 ## OPEN — Regular Danny PM cron not running (10+ days overdue)
-- Updated: 2026-05-20 (run 29) — 10 DAYS OVERDUE. Summit County still unworked.
+- Updated: 2026-05-20 (run 30) — 10+ DAYS OVERDUE. Summit County still unworked.
 - Week 21 = Summit County (Akron/Fairlawn/Stow). Run `python3 workers/lead_pipeline.py danny` TODAY.
-- Full June schedule in `outputs/donna/june_week1_sprint_2026-05-20.md`.
+- Run 30 fix: lead_pipeline.py log now correctly reports "Apollo returned 0 people" vs "all duplicates" — Bradley will see clearly if the API is blocked vs. if leads are exhausted in a county.
+- Full June schedule: `outputs/donna/june_week1_sprint_2026-05-20.md`.
 
 ---
 
 ## OPEN — Gas station contacts not enrolled in Mixmax (18 emails idle)
-- Updated: 2026-05-20 (run 29) — SAME STATUS. Everything is built. One action needed: Bradley creates Mixmax sequence (June 2 target per `june_week1_sprint_2026-05-20.md`).
+- Updated: 2026-05-20 (run 30) — SAME STATUS. Everything is built. One action needed: Bradley creates Mixmax sequence (June 2 target per `june_week1_sprint_2026-05-20.md`).
 - June Residential Push brief now coordinates this: step 1 for the whole residential plan is getting the commercial sequences live first.
 
 ---
@@ -967,5 +968,19 @@
 
 ---
 
-*Last updated: 2026-05-20 by Vera Cole (run 29)*
-*Key metrics: 78 RESOLVED | 13 OPEN | 4 auto-upgrades (Apollo key redaction, workiz git_push, nina weekly status, phone script RESOLVED) | 2 new deliverables (June Residential Push brief, Quote Follow-Up Sequence)*
+## RESOLVED — lead_pipeline.py log said "all duplicates" even when Apollo returned 0 people
+- Resolved: 2026-05-20 (run 30)
+- Fix: Both `run_danny()` and `run_carla()` now distinguish "Apollo returned 0 people (API blocked or rate limited)" vs "all N leads were duplicates." When Bradley checks the cron log and sees the pipeline ran with 0 new leads, he'll know immediately whether it's an API issue or a saturated county.
+- Files: `workers/lead_pipeline.py`
+
+---
+
+## RESOLVED — server.py POST /api/queue crashes on malformed JSON body
+- Resolved: 2026-05-20 (run 30)
+- Fix: Wrapped `json.loads(body)` in try/except in the POST /api/queue handler. If the queue update request body is malformed (network interruption mid-send), returns HTTP 400 with clear error instead of crashing with 500.
+- File: `server.py`
+
+---
+
+*Last updated: 2026-05-20 by Vera Cole (run 30)*
+*Key metrics: 80 RESOLVED | 13 OPEN | 2 auto-upgrades (lead_pipeline log clarity, server.py queue safety) | 1 new deliverable (Quote-to-Close Kit)*

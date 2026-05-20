@@ -51,6 +51,7 @@ Save to `/outputs/tommy/`:
 - `review_request_sequence_[date].md` — post-job review request texts
 - `website_copy_service_pages_[date].md` — individual service pages (house wash, roof soft wash, driveway, deck, commercial) for web build + Google Ads landing pages
 - `quote_followup_sequence_[date].md` — 3-touch post-estimate follow-up: text (24h), email (day 4), final text (day 7). Also includes contractor referral follow-up script.
+- `quote_to_close_kit_[date].md` — Full quote conversion kit: reply acknowledgment email (30-min target), discovery questions, site visit checklist, NE Ohio pricing reference guide, estimate email template, "price is too high" objection handling.
 
 ## Logging
 `[YYYY-MM-DD HH:MM] Tommy | [task description] | [output filename] | Done`

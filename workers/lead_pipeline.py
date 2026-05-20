@@ -343,7 +343,11 @@ def run_danny():
             status='DONE',
         )
     else:
-        log('danny', f'Apollo pull — {search["label"]} — no new leads found (all duplicates)', 'none', 'Done')
+        if not people:
+            reason = f'Apollo returned 0 people — API may be blocked or rate limited ({search["label"]})'
+        else:
+            reason = f'all {len(people)} leads from Apollo were duplicates ({search["label"]})'
+        log('danny', f'Apollo pull — {reason}', 'none', 'Done')
         send_report_card(
             worker_name='danny',
             title='Lead Pull — No New Leads',
@@ -351,7 +355,7 @@ def run_danny():
                 ('New Leads', 0),
                 ('Enrolled', 0),
             ],
-            summary_lines=[f'No new leads in {search["label"]} this week — all duplicates.'],
+            summary_lines=[reason],
             status='DONE',
         )
 
@@ -367,8 +371,10 @@ def run_carla():
     print(f'  County batch: {locations[0]}')
 
     all_new = []
+    all_people_count = 0
     for search in CARLA_SEARCHES:
         people = apollo_search(search['titles'], locations, per_page=15, keywords=search.get('keywords'))
+        all_people_count += len(people)
         print(f'  {search["label"]}: Found {len(people)} people')
 
         for p in people:
@@ -458,12 +464,16 @@ def run_carla():
             status='DONE',
         )
     else:
-        log('carla', f'Apollo pull — all leads were duplicates, no new referral partners this run', 'none', 'Done')
+        if all_people_count == 0:
+            reason = 'Apollo returned 0 people — API may be blocked or rate limited'
+        else:
+            reason = f'all {all_people_count} leads from Apollo were duplicates'
+        log('carla', f'Apollo pull — {reason}', 'none', 'Done')
         send_report_card(
             worker_name='carla',
             title='Lead Pull — No New Leads',
             metrics=[('New Leads', 0), ('Enrolled', 0)],
-            summary_lines=['No new referral partners found this run — all duplicates.'],
+            summary_lines=[reason],
             status='DONE',
         )
 

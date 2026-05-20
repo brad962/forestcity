@@ -69,8 +69,47 @@
 
 ---
 
-✅ *Vera — Scan Complete 2026-05-20 (Run 29)*
->4 auto-upgrades shipped | 2 new deliverables (June Residential Push brief, Quote Follow-Up Sequence) | 1 issue marked RESOLVED
->78 RESOLVED | 13 OPEN
->TODAY: Tonight's checklist + run Danny pipeline locally
->THURSDAY: Read touch3_morning_brief first thing
+---
+
+🔧 *Vera — Auto-Upgrade*
+>Changed: `lead_pipeline.py` now distinguishes "Apollo returned 0 people (API blocked)" from "all leads were duplicates" in Danny and Carla's no-new-leads log entry
+>Why: When the cron ran and returned 0 leads, the log said "all duplicates" — which is misleading when the real cause is API network block. Bradley can now tell the difference immediately when checking cron.log
+>File: `workers/lead_pipeline.py`
+
+---
+
+🔧 *Vera — Auto-Upgrade*
+>Changed: `server.py` POST /api/queue handler — added try/except around `json.loads(body)`
+>Why: A malformed request body (network interruption mid-send) previously crashed the endpoint with HTTP 500. Now returns 400 with a descriptive error message. Consistent with all other POST handlers in server.py
+>File: `server.py`
+
+---
+
+📋 *Vera — New Deliverable*
+>File: `outputs/tommy/quote_to_close_kit_2026-05-20.md`
+>What: Complete quote-to-close kit for converting Touch 3 replies into booked jobs
+>Why built: All the pre-Touch-3 assets are in place. The missing piece was what happens AFTER the reply — there was no fast-response protocol for when a PM says "how much?" This kit gives Bradley the full chain.
+>Contains:
+> • Acknowledgment email template (send within 30 min — speed signals professionalism)
+> • Discovery questions for PM, realtor, and contractor leads
+> • Site visit checklist (what to measure, document, photograph)
+> • NE Ohio pricing reference guide (per sq ft ranges, minimums, combo discounts)
+> • Professional estimate email template with line items
+> • "Your price is too high" objection response (don't discount immediately — explains soft wash vs. pressure wash)
+>Use it: The moment a PM replies to Touch 3 tomorrow — open this doc and start at Part 1.
+
+---
+
+⏰ *Vera — TOUCH 3 FIRES TOMORROW (May 22)*
+>Morning brief is ready: `outputs/vera/touch3_morning_brief_2026-05-22.md` — read this first thing Thursday
+>Quote-to-Close Kit: `outputs/tommy/quote_to_close_kit_2026-05-20.md` — have this open when replies start coming in
+>Phone script (if no email reply): `outputs/tommy/hot_lead_phone_script_2026-05-22.md`
+>TONIGHT before bed: (1) Verify Mixmax Reply-To — 10 min. (2) Send 13 LinkedIn connects — 30 min. (3) Text 5 Tier 1 contractors: Land Pro 440-320-2779 | GTP 440-396-0814 | Twin Improvements 216-773-0757 | Reliable Roofing 216-810-2497 | Pagels 216-956-5263
+
+---
+
+✅ *Vera — Scan Complete 2026-05-20 (Run 30)*
+>2 auto-upgrades shipped | 1 new deliverable (Quote-to-Close Kit — acknowledgment → discovery → site visit → pricing → estimate → close) | 2 issues marked RESOLVED
+>80 RESOLVED | 13 OPEN
+>TONIGHT: Eve checklist (55 min) — Reply-To check + LinkedIn connects + Tier 1 texts
+>TOMORROW (May 22): Read touch3_morning_brief first thing — all quote response tools are ready

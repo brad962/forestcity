@@ -480,8 +480,11 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         body   = self.rfile.read(length)
 
         if self.path == '/api/queue':
-            save_queue(json.loads(body))
-            self._json({'ok': True})
+            try:
+                save_queue(json.loads(body))
+                self._json({'ok': True})
+            except (json.JSONDecodeError, Exception) as e:
+                self._json({'error': f'Invalid JSON: {e}'}, 400)
 
         elif self.path == '/api/mixmax/enroll':
             # Enroll a single lead: POST { email, first_name, last_name, company_name, title, phone, _worker }
