@@ -53,6 +53,10 @@ Save to `/outputs/tommy/`:
 - `quote_followup_sequence_[date].md` — 3-touch post-estimate follow-up: text (24h), email (day 4), final text (day 7). Also includes contractor referral follow-up script.
 - `quote_to_close_kit_[date].md` — Full quote conversion kit: reply acknowledgment email (30-min target), discovery questions, site visit checklist, NE Ohio pricing reference guide, estimate email template, "price is too high" objection handling.
 - `linkedin_followup_post_connect_[date].md` — 3 message versions for AFTER a LinkedIn connect is accepted (A: direct PM, B: warm HOA, C: referral/realtor). Includes response playbook for all reply scenarios and a day-of timing guide.
+- `touch3_reply_response_templates_[date].md` — 6 copy-paste reply scenarios for when Touch 3 generates responses: interested, wants quote, soft no, wrong person, already has vendor, contractor/referral confusion.
+- `hot_lead_bridge_email_[date].md` — personal Gmail bridge email for top 5 hot leads (2+ opens). Sent from Bradley's real email after the automated sequence ends.
+- `inbound_response_protocol_[date].md` — how to respond to inbound inquiries (calls, website form, Facebook DM). Scripts for each channel + timing guide.
+- `contractor_referral_text_script_[date].md` — personalized text scripts per trade type (landscaper, siding, roofing) for Tier 1 contractor outreach. YES/NO/no-reply handling included.
 
 ## Logging
 `[YYYY-MM-DD HH:MM] Tommy | [task description] | [output filename] | Done`

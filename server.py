@@ -125,7 +125,13 @@ def get_outputs():
     result = {}
     for w in WORKERS:
         d = OUTPUTS / w
-        result[w] = sorted([f.name for f in d.iterdir() if f.is_file()], reverse=True) if d.exists() else []
+        if not d.exists():
+            result[w] = []
+            continue
+        try:
+            result[w] = sorted([f.name for f in d.iterdir() if f.is_file()], reverse=True)
+        except Exception:
+            result[w] = []
     return result
 
 

@@ -1136,5 +1136,191 @@
 
 ---
 
-*Last updated: 2026-05-20 by Vera Cole (run 33)*
-*Key metrics: 93 RESOLVED | 8 OPEN | 5 auto-upgrades (lead_pipeline 2, mixmax.py titles, pipeline_data next_followups, vera_relay git fix, 2 agent formats) | 1 new deliverable (contractor_referral_text_script)*
+---
+
+## OPEN — GitHub Actions workflow missing — ALL cloud Slack messages silently dropped 🚨
+- First seen: 2026-05-20 (run 34) — NEW CRITICAL FINDING
+- Description: `.github/workflows/` directory has never existed. Every Vera push of `pending_slack_messages.md` (34 runs, hundreds of messages) has been silently dropped. Zero cloud Slack messages have ever been delivered via the GitHub Action.
+- Run 34 fix: Workflow file written → `outputs/vera/github_action_vera_slack_relay.yaml`. Cannot be pushed automatically because the current PAT (`ghp_lrUhBq7...`) is missing the `workflow` scope.
+- **Bradley action required (5 min):**
+  1. Add the workflow: `mkdir -p .github/workflows && cp outputs/vera/github_action_vera_slack_relay.yaml .github/workflows/vera-slack-relay.yaml` then push with a PAT that has `workflow` scope (Settings → Developer settings → Personal access tokens → Edit → check `workflow`)
+  2. Add GitHub secret: repo Settings → Secrets → New repository secret → Name: `SLACK_WEBHOOK_OFFICE` → Value: Slack webhook URL from `.env`
+- Resolution criteria: First successful GitHub Actions run with green checkmark in repo Actions tab.
+
+---
+
+## RESOLVED — agents/tommy.md missing 4 output format entries
+- Resolved: 2026-05-20 (run 34)
+- Fix: Added `touch3_reply_response_templates`, `hot_lead_bridge_email`, `inbound_response_protocol`, `contractor_referral_text_script` to tommy.md output format section. All 4 files have been written and live in `outputs/tommy/` but were invisible to future agent runs.
+- File: `agents/tommy.md`
+
+---
+
+## RESOLVED — server.py get_outputs() crashes on directory permission error
+- Resolved: 2026-05-20 (run 34)
+- Fix: `d.iterdir()` wrapped in try/except — returns empty list on `PermissionError` or `OSError`. Dashboard no longer crashes if a worker's output directory is unreadable.
+- File: `server.py`
+
+---
+
+## OPEN — 0% reply rate (Touch 3 fires TOMORROW May 22) 🚨🚨
+- Updated: 2026-05-20 (run 34) — TOUCH 3 FIRES IN ~48 HOURS.
+- All assets locked and loaded. No new prep needed. Execute tonight:
+  - READ TONIGHT: `outputs/vera/touch3_eve_final_checklist_2026-05-20.md` — 55-min plan: Reply-To check, 13 LinkedIn connects, Tier 1 texts
+  - READ THURSDAY AM: `outputs/vera/touch3_morning_brief_2026-05-22.md`
+  - Resources: reply templates, phone script, quote-to-close kit, round 2 framework — all in outputs/tommy/ and outputs/vera/
+- Resolution criteria: 1+ reply from Touch 3 OR Bradley calls hot leads May 22-26.
+
+---
+
+## OPEN — Manual Contacts Sitting Untouched (New Lead stage)
+- Updated: 2026-05-20 (run 34) — 36 contacts confirmed; 33 have no last_contact.
+- ALL lead_type fields confirmed populated (24 contractor, 12 gas_station). No data gaps.
+- Run 34 verification: pipeline_data.json clean — dedup confirmed, CLE Lawn Care Plus fixed, Bulletproof/Damrons next_followup = 2026-05-26.
+- TEXT TONIGHT: Anthony/Land Pro (440-320-2779), Dontez/GTP (440-396-0814), Twin Improvements (216-773-0757), Reliable Roofing (216-810-2497), Pagels Construction (216-956-5263).
+- Templates: `outputs/tommy/contractor_referral_text_script_2026-05-20.md` (trade-specific scripts, ready to copy/paste)
+
+---
+
+## OPEN — Regular Danny PM cron not running (10+ days overdue)
+- Updated: 2026-05-20 (run 34) — Summit County still unworked. 10+ days overdue.
+- TODAY: Run `python3 workers/lead_pipeline.py danny` from `/Users/bradleyneal/forestcity` → Summit County pull (week 21).
+- June schedule: `outputs/donna/june_week1_sprint_2026-05-20.md`
+
+---
+
+## OPEN — Gas station & fleet contacts not enrolled in Mixmax
+- Updated: 2026-05-20 (run 34)
+- Run 34: Step-by-step Mixmax setup guide written → `outputs/vera/mixmax_sequence_setup_guide_2026-05-20.md`. 20-minute walkthrough to create both sequences in Mixmax UI and paste IDs. No more vague "create in Mixmax UI" — exact steps, UI navigation, ID paste locations.
+- 18 gas station contacts (email) + 6 contractor manual contacts (email) = 24 contacts ready for auto-enrollment on next local pipeline run.
+- Resolution criteria: Bradley runs the 20-min setup guide on June 2.
+
+---
+
+## OPEN — Slack webhook not confirmed as GitHub Actions secret
+- First seen: 2026-05-20 (run 34) — NEW
+- Description: GitHub Actions workflow now exists (`vera-slack-relay.yaml`) but it requires `SLACK_WEBHOOK_OFFICE` as a GitHub repository secret. Until Bradley adds this, the workflow will fail with "SLACK_WEBHOOK_OFFICE secret not configured."
+- Fix needed: GitHub repo → Settings → Secrets and variables → Actions → New repository secret → Name: SLACK_WEBHOOK_OFFICE → Value: paste the Slack webhook URL from your local `.env` file.
+- Resolution criteria: Bradley adds the secret. Next Vera push to pending_slack_messages.md will confirm it works (check GitHub Actions tab for green checkmark).
+
+---
+
+## OPEN — Mixmax API blocked in cloud execution environment
+- First seen: 2026-05-18
+- Workaround: All pipeline scripts return None/safe fallback on 403. nina_report shows explicit API warning.
+- Next steps: Bradley checks Mixmax → API Settings → IP Allowlist.
+
+---
+
+## OPEN — All external APIs blocked from cloud (Apollo, Workiz, Mixmax)
+- First seen: 2026-05-18
+- Workaround: Cron job schedule documented in CLAUDE.md.
+- Next steps: Bradley runs `crontab -e` and pastes cron jobs.
+
+---
+
+## OPEN — Instantly.ai campaigns running parallel to Mixmax (duplicate sequence risk)
+- First seen: 2026-05-18
+- If INSTANTLY_API_KEY is ever added to .env: confirm Instantly campaigns are paused first.
+- Resolution criteria: Bradley replies which platform is active for each segment.
+
+---
+
+## OPEN — Marcus fresh web intel needed (competitor + VOC)
+- First seen: 2026-05-18
+- Web search blocked in cloud. All prior intel from patterns/research.
+- Next steps: Bradley runs Marcus locally.
+
+---
+
+## OPEN — HubSpot not connected (CRM blind)
+- First seen: 2026-05-12
+- Escalating every run. Resolution: HUBSPOT_TOKEN added to .env.
+
+---
+
+## OPEN — No residential homeowner outreach channel
+- First seen: 2026-05-18
+- Memorial Day social posts written. Facebook posts week May 19 + Memorial Day posts ready.
+- Resolution criteria: Bradley posts 1 Facebook post this week.
+
+---
+
+## OPEN — Workiz API blocked in cloud AND 0 power washing jobs on local
+- First seen: 2026-05-14
+- All code fixes confirmed present. Diagnostic logging active.
+- Next step: Bradley checks Workiz for actual JobType field name.
+
+---
+
+## OPEN — Google Business Profile not managed (zero-cost lead channel ignored)
+- First seen: 2026-05-18
+- Memorial Day window: upload 1 photo to GBP by Wednesday May 21.
+- Templates: `outputs/tommy/google_business_profile_post_templates_2026-05-20.md`
+- Resolution: Bradley posts 1 photo to GBP.
+
+---
+
+## OPEN — No review request automation
+- First seen: 2026-05-18
+- 3-touch sequence written: `outputs/tommy/review_request_sequence_2026-05-18.md`.
+- Resolution: Bradley sends review request text after each completed job.
+
+---
+
+## OPEN — No Google Ads running (invisible for "power washing near me")
+- First seen: 2026-05-19
+- Ad copy ready: `outputs/rick/google_ads_june_2026-05-19.md`.
+- Blockers: (1) Google Ads account needed, (2) GOOGLE_ADS_TOKEN added to .env.
+- Resolution criteria: Bradley creates Google Ads account and launches Campaign 1.
+
+---
+
+## OPEN — No Facebook ads running (peak season with no paid traffic)
+- First seen: 2026-05-20
+- Ad copy ready: `outputs/rick/facebook_ads_peak_season_2026-05-20.md`. Budget: $30/day to start.
+- Resolution criteria: Bradley sets up ads in Facebook Ads Manager.
+
+---
+
+## OPEN — No website service pages (needed as Google Ads landing pages)
+- First seen: 2026-05-20
+- Service page copy written: `outputs/tommy/website_copy_service_pages_2026-05-20.md` (5 pages).
+- Roof Soft Wash page should be first — highest search intent.
+- Resolution criteria: Bradley builds service pages in web platform (Squarespace/Wix/WordPress).
+
+---
+
+## OPEN — No past customer re-engagement blast this season
+- First seen: 2026-05-20
+- Re-engagement templates: `outputs/tommy/past_customer_reengagement_2026-05-18.md`.
+- Blocking factor: Need customer list from Workiz (run locally).
+- Resolution criteria: Bradley pulls completed jobs from Workiz and texts past customers.
+
+---
+
+## OPEN — No quote follow-up sequence (post-estimate gap)
+- First seen: 2026-05-20
+- 3-touch sequence written: `outputs/tommy/quote_followup_sequence_2026-05-20.md`.
+- Resolution criteria: Bradley sends Touch 1 text within 24h of next quote sent.
+
+---
+
+## OPEN — June Residential Push (all assets built but not deployed)
+- First seen: 2026-05-20
+- Campaign brief: `outputs/donna/june_residential_push_2026-05-20.md`. 4-week plan with revenue math.
+- Critical path: service pages first (June 2), then Facebook ads (June 3).
+- Resolution criteria: Bradley builds service pages June 2 and launches Facebook ads June 3.
+
+---
+
+## OPEN — Fleet washing Mixmax sequence not created
+- First seen: 2026-05-20
+- Sequence copy: `outputs/danny/sequence_fleet_washing_2026-05-18.md`. Infrastructure ready.
+- Run 34: Step-by-step creation guide → `outputs/vera/mixmax_sequence_setup_guide_2026-05-20.md`.
+- Resolution criteria: Real fleet_washing ID in `integrations/mixmax.py`.
+
+---
+
+*Last updated: 2026-05-20 by Vera Cole (run 34)*
+*Key metrics: 95 RESOLVED | 12 OPEN | Run 34 auto-upgrades: tommy.md 4 formats added, server.py get_outputs() hardened | 1 new deliverable: mixmax_sequence_setup_guide | 1 critical finding: GitHub Actions workflow missing (34 runs of silent Slack drops)*
