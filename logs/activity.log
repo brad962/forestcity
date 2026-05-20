@@ -225,3 +225,9 @@
 [2026-05-20 03:13] Vera | Deliverable: facebook_posts_memorial_day_week_2026-05-20.md — 5 Facebook posts + 1 LinkedIn for May 21-25 (gap week — no content had been written for this window) | outputs/jasmine/facebook_posts_memorial_day_week_2026-05-20.md | Done
 [2026-05-20 03:13] Vera | Updated open_issues.md — run 25: 3 new RESOLVED, 15 OPEN updated with run 25 escalations | outputs/vera/open_issues.md | Done
 [2026-05-20 03:13] Vera | Proposals + escalations written to pending_slack_messages.md for GitHub Action relay | outputs/vera/pending_slack_messages.md | Done
+[2026-05-20 10:15] Vera | Auto-upgrade: server.py — removed dead `import time as _time` from /api/pipeline GET handler (unused variable, leftover from earlier iteration) | server.py | Done
+[2026-05-20 10:15] Vera | Auto-upgrade: lead_pipeline.py — added pipeline_data.json git commit at end of __main__ block; enrollment marks from run_pending_sequences() now committed to repo on local runs | workers/lead_pipeline.py | Done
+[2026-05-20 10:15] Vera | Auto-upgrade: agents/donna.md — Memorial Day Sprint section now links to touch3 reply templates, post-sequence recovery protocol, and May 22 morning brief | agents/donna.md | Done
+[2026-05-20 10:15] Vera | Deliverable: touch3_morning_brief_2026-05-22.md — single-page action guide for the morning Touch 3 fires: check Mixmax, 3 reply scenarios, contractor text blast, weekly calendar, all resource links | outputs/vera/touch3_morning_brief_2026-05-22.md | Done
+[2026-05-20 10:15] Vera | Updated open_issues.md — run 26: 3 new RESOLVED, 15 OPEN updated with run 26 status; morning brief escalation added to reply rate issue | outputs/vera/open_issues.md | Done
+[2026-05-20 10:15] Vera | Proposals + escalations written to pending_slack_messages.md for GitHub Action relay | outputs/vera/pending_slack_messages.md | Done

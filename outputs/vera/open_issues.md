@@ -500,7 +500,9 @@
 ---
 
 ## OPEN — 0% reply rate (Touch 3 fires TOMORROW May 22) 🚨🚨
-- Updated: 2026-05-20 (run 22) — TOUCH 3 FIRES IN ~36 HOURS
+- Updated: 2026-05-20 (run 26) — TOUCH 3 FIRES IN ~48 HOURS. Morning brief written.
+- Run 26: May 22 morning brief written → `outputs/vera/touch3_morning_brief_2026-05-22.md`. Bradley reads this the morning Touch 3 fires. Covers: what to check first (Mixmax), reply response scenarios (A/B/C), contractor text blast, weekly action calendar, and all resource links in one place.
+- Run 25: Eve checklist written → `outputs/vera/touch3_eve_final_checklist_2026-05-20.md` — 55-min game plan for tonight (May 20): Reply-To check, 13 LinkedIn connects, Tier 1 texts.
 - Run 22: Post-sequence recovery protocol written — `outputs/tommy/post_sequence_recovery_protocol_2026-05-20.md`. Bradley knows exactly what to do AFTER Touch 3 fires: LinkedIn connects (same day), personal Gmail email to top 5 (May 26), contractor text blast (May 26). Protocol covers all 3 contact tiers and a tracking method.
 - Run 22 angle: The sequence ending is not a failure — it's a hand-off moment. Hot leads with 2+ opens are WARM. Personal follow-up converts warm leads at 3–5x the rate of automated email.
 - Run 21: Touch 1 & Touch 2 rewrite written → `outputs/danny/pm_sequence_touch1_rewrite_2026-05-19.md`. Applies to round 2 only.
@@ -512,7 +514,8 @@
 ---
 
 ## OPEN — Manual Contacts Sitting Untouched (New Lead stage)
-- Updated: 2026-05-20 (run 25) — 36 total contacts. 33 New Lead, 3 Contacted. 34 have no last_contact.
+- Updated: 2026-05-20 (run 26) — 36 total contacts. 33 New Lead, 3 Contacted. 34 have no last_contact.
+- Run 26 verified: 36 contacts confirmed. Land Pro and GTP are the first two in the list — Tier 1 text blast overdue.
 - Run 25: 24 pipeline contacts have no `_lead_type` — these are contractor/landscaper manual contacts not intended for Mixmax (text-based follow-up only). This is by design.
 - **TODAY May 20** — text 5 Tier 1: Anthony/Land Pro (440-320-2779), Dontez/GTP (440-396-0814), Twin Improvements (216-773-0757), Reliable Roofing (216-810-2497), Pagels Construction (216-956-5263)
 - WEDNESDAY May 21 — text next 10 from priority list (Fri going into holiday weekend won't land)
@@ -596,8 +599,9 @@
 
 ---
 
-## OPEN — Regular Danny PM cron not running (9 days overdue)
-- Updated: 2026-05-20 (run 25) — 9 DAYS OVERDUE. Summit County missed. Now on Week 22 (Medina).
+## OPEN — Regular Danny PM cron not running (9+ days overdue)
+- Updated: 2026-05-20 (run 26) — 9+ DAYS OVERDUE. Summit County missed. Now on Week 22 (Medina).
+- Run 26 fix: lead_pipeline.py now commits pipeline_data.json after run_pending_sequences() — enrollment marks will be committed to the repo when Bradley runs locally. Previous gap: marks were written to disk but not staged to git.
 - Run 22 fix: lead_pipeline.py `run_pending_sequences()` `cache` undefined bug fixed.
 - Pipeline not run since May 13. Week 20 = Lorain (done). Week 21 = Summit (missed). Week 22 = Medina (today).
 - Running today (week 22 = Medina County) would pull ~15-20 PMs from Medina/Brunswick/Wadsworth.
@@ -767,5 +771,29 @@
 
 ---
 
-*Last updated: 2026-05-20 by Vera Cole (run 25)*
-*Key metrics: 64 RESOLVED | 15 OPEN | 3 auto-upgrades (server pipeline dict fix, relay cap fix, rick.md update) | 2 deliverables (touch3 eve checklist, memorial day week posts)*
+## RESOLVED — server.py dead `import time as _time` in /api/pipeline GET handler
+- Resolved: 2026-05-20 (run 26)
+- Description: `import time as _time` was present at the top of the `/api/pipeline` GET handler but `_time` was never referenced anywhere in the block. Dead import left from an earlier iteration.
+- Fix: Removed the unused import. No functional change — purely cleanup.
+- File: `server.py`
+
+---
+
+## RESOLVED — lead_pipeline.py pipeline_data.json not committed after run_pending_sequences()
+- Resolved: 2026-05-20 (run 26)
+- Description: `run_pending_sequences()` writes `mixmax_enrolled: True` marks to `pipeline_data.json` (for gas station contacts once their sequence goes live). But the `git_push()` calls in `run_danny()` and `run_carla()` only staged `outputs/{worker}/` and `logs/`. `pipeline_data.json` changes were never committed — on a fresh clone, the enrollment marks would be missing.
+- Fix: Added a git add/commit/push block at the end of `__main__` that stages `pipeline_data.json` after `run_pending_sequences()` runs. Enrollment marks now persist in the repo after each local pipeline run.
+- File: `workers/lead_pipeline.py`
+
+---
+
+## RESOLVED — agents/donna.md missing post-sequence recovery protocol references
+- Resolved: 2026-05-20 (run 26)
+- Description: donna.md Memorial Day Sprint section referenced the execution plan and said "Touch 3 fires May 22 — reply rate fix urgent" but didn't link to the reply templates, post-sequence recovery protocol, or May 22 morning brief written in runs 22-26.
+- Fix: Updated Memorial Day Sprint entry to reference `touch3_reply_response_templates_2026-05-20.md`, `post_sequence_recovery_protocol_2026-05-20.md`, and `touch3_morning_brief_2026-05-22.md`.
+- File: `agents/donna.md`
+
+---
+
+*Last updated: 2026-05-20 by Vera Cole (run 26)*
+*Key metrics: 67 RESOLVED | 15 OPEN | 3 auto-upgrades (server dead import, pipeline_data git commit fix, donna.md links) | 1 deliverable (touch3 morning brief for May 22)*

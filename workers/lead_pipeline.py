@@ -681,4 +681,15 @@ if __name__ == '__main__':
     # Always verify enrollment after pulling leads — catches any silent failures
     verify_and_repair_enrollment()
 
+    # Commit pipeline_data.json if it changed (enrollment marks from run_pending_sequences)
+    try:
+        subprocess.run(['git', '-C', str(BASE_DIR), 'add', 'pipeline_data.json'], capture_output=True)
+        subprocess.run(['git', '-C', str(BASE_DIR), 'commit', '-m',
+                        f'Pipeline: update pipeline_data.json enrollment marks {datetime.now().strftime("%Y-%m-%d")}'],
+                       capture_output=True)
+        subprocess.run(['git', '-C', str(BASE_DIR), 'push', 'origin', 'main'],
+                       capture_output=True, timeout=15)
+    except Exception:
+        pass
+
     print('\n✅ Lead pipeline complete.')

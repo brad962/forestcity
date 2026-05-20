@@ -309,7 +309,6 @@ class Handler(http.server.SimpleHTTPRequestHandler):
 
         elif p.path == '/api/pipeline':
             # Return merged pipeline: Mixmax recipients + local stage overrides
-            import time as _time
             try:
                 pipeline = json.loads(PIPELINE_F.read_text()) if PIPELINE_F.exists() else {}
             except (json.JSONDecodeError, Exception):
