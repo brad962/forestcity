@@ -1,65 +1,91 @@
 🔧 *Vera — Auto-Upgrade*
->Changed: `workers/jasmine_flyer.py` — Facebook post CTA now shows correct booking month in late-month posts.
->Why: On May 20, the CTA said "booking into May now" — May is nearly full. It now says "booking into June now" when posting on or after the 15th. Also fixed summer and fall CTA wording for same issue.
+>Changed: `workers/workiz_report.py` — null-safety fix in `_is_power_washing_job()`
+>Why: If Workiz returns `"JobType": null` in JSON, `None.strip()` crashes the reporter. Added guard: `if not job_type: return False`.
+>File: `workers/workiz_report.py`
+---
+🔧 *Vera — Auto-Upgrade*
+>Changed: `workers/jasmine_flyer.py` — wrapped `datetime.strptime` in try/except
+>Why: Malformed date string in `photo_pairs.json` would crash `write_facebook_post()` and fail the whole flyer run. Now falls back to today's date on parse error.
 >File: `workers/jasmine_flyer.py`
 ---
 🔧 *Vera — Auto-Upgrade*
->Changed: `workers/lead_pipeline.py` — initialized `cache = {}` before `if CACHE_FILE.exists():` block in `run_pending_sequences()`.
->Why: If contacts_cache.json didn't exist, `cache` was undefined. The persist block later in the function could have thrown NameError if the file appeared mid-run. Now safe.
->File: `workers/lead_pipeline.py`
+>Changed: `agents/rick.md` — added Ready Assets section pointing to June Google Ads file
+>Why: Rick's Google Ads copy has been written and ready since May 19 (`outputs/rick/google_ads_june_2026-05-19.md`). The agent file didn't reference it, so future Claude sessions wouldn't know to use it.
+>File: `agents/rick.md`
 ---
 🔧 *Vera — Auto-Upgrade*
->Changed: `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/carla.md` — added deck builders and asphalt/driveway sealers to Carla's Apollo search and CONTRACTOR_TITLES routing.
->Why: Deck builders and driveway sealers are high-value referral partners — their customers need power washing as a prep step. These were invisible to our Apollo searches until now.
->Files: `workers/lead_pipeline.py`, `integrations/mixmax.py`, `agents/carla.md`
----
-🔧 *Vera — Auto-Upgrade*
->Changed: `agents/danny.md` + `agents/carla.md` — updated fleet washing status and added 2 new partner types.
->Why: Fleet sequence copy has been ready since May 18. Danny's file still said "PENDING" for fleet washing. Also added deck builders and driveway sealers to Carla's partner list so future Claude sessions know these are active targets.
->Files: `agents/danny.md`, `agents/carla.md`
+>Changed: `agents/marcus.md` — added peak season priority note + cloud limitation note
+>Why: Marcus needs to know it's peak season, what to prioritize (competitor summer pricing, fresh VOC), and that web search only works in local sessions. Prevents wasted cloud runs.
+>File: `agents/marcus.md`
 ---
 📋 *Vera — New Deliverable*
->File: `outputs/tommy/post_sequence_recovery_protocol_2026-05-20.md`
->What: The full playbook for what Bradley does AFTER Touch 3 fires tomorrow (May 22). 3 contact tiers (hot/warm/cold), specific messages for LinkedIn + Gmail + text, weekly calendar May 22-28, tracking method.
->Key move: Personal Gmail email to top 5 hot leads on Monday May 26 (Day After Memorial Day) — that's the window with the best response rate of peak season.
->Action: Read this tonight, send LinkedIn connects tomorrow during/after Touch 3 fires.
+>File: `outputs/vera/peak_season_daily_sprint_may20_26.md`
+>What: Day-by-day action calendar for Bradley, May 20–26. Every task mapped to an existing file. Estimated times. May 20 (today) = LinkedIn connects + Tier 1 contractor texts. May 26 = 70-minute outreach blitz.
+>Action: Open this now. The May 20 tasks take 60 minutes and should happen today before Touch 3 fires tomorrow.
 ---
 📋 *Vera — New Deliverable*
->File: `outputs/donna/may26_outreach_blitz_brief_2026-05-20.md`
->What: Campaign brief for Tuesday May 26 — "The Day After Memorial Day." Explains why May 26 is the single highest-response day of peak season (4-day inbox silence = your message stands out). 70 minutes of structured outreach across Gmail, text, LinkedIn, Facebook, and GBP.
->Action: Read this Sunday night. Set up Gmail drafts for Monday morning. Takes 70 minutes Tuesday and could generate 2-3 estimate calls.
+>File: `outputs/tommy/google_business_profile_post_templates_2026-05-20.md`
+>What: 4 GBP post templates Bradley can post weekly during peak season. Job spotlight, algae education, social proof, property manager pitch. Each one takes 3 minutes to post.
+>Why: GBP posts directly improve local search ranking for "power washing near me." Zero cost. Currently unused.
+>Action: Copy Template 1, add a recent job photo, post to Google Business Profile today.
 ---
 📋 *Vera — New Deliverable*
->File: `outputs/jasmine/facebook_posts_may26_week_2026-05-20.md`
->What: 5 Facebook posts + 1 LinkedIn post for May 26-30. Memorial Day recap Tuesday, algae education Wednesday, 5-star review Thursday, PM commercial pitch Friday, summer booking Saturday. All ready to copy-paste.
->Action: Schedule these posts now (use Meta Business Suite scheduler). Takes 15 minutes.
+>File: `outputs/danny/gas_station_manual_email_blast_2026-05-20.md`
+>What: 3 email templates (district managers, facilities managers, station owners) + prioritized send order for the 18 gas station contacts sitting idle since May 19.
+>Why: Mixmax sequence still PENDING. These contacts are getting cold. Memorial Day is the perfect trigger — stations think about canopy washing before their busiest weekend.
+>Action: Send Tier 1 emails today (30 min). Or create the Mixmax sequence and paste the ID — system auto-enrolls all 18.
 ---
-🚨 *Vera — TOUCH 3 FIRES TOMORROW (May 22)*
->Touch 3 sends to all 45 Mixmax contacts tomorrow. Before it fires — do these TODAY:
+📋 *Vera — New Deliverable*
+>File: `outputs/rick/facebook_ads_peak_season_2026-05-20.md`
+>What: Full Facebook ad campaign — 3-campaign structure, 7 ad variations. Awareness, lead gen, retargeting. Setup checklist included.
+>Why: Google Ads copy is ready but Facebook ads haven't been set up. Facebook is the #1 residential home services channel in NE Ohio.
+>Action: Set up in Facebook Ads Manager. Start at $30/day. Memorial Day week is the best time to launch.
+---
+🚨 *Vera — CRITICAL: Touch 3 fires TOMORROW (May 21)*
+>45 contacts get their final email tomorrow. Here's what to do TODAY (60 min total):
 >
->**30 minutes:**
->• Send LinkedIn connects to 13 hot leads (2+ opens) → `outputs/tommy/hot_lead_linkedin_dm_playbook_2026-05-19.md`
->• Text 5 Tier 1 contractors: Anthony/Land Pro (440-320-2779), Dontez/GTP (440-396-0814), Twin Improvements, Reliable Roofing, Pagels Construction
+>*LinkedIn connects — 30 min:*
+>→ `outputs/tommy/hot_lead_linkedin_dm_playbook_2026-05-19.md`
+>Send connection requests to 13 hot leads (2+ opens). Include the short note from the playbook.
 >
->**AFTER Touch 3 fires:**
->• Read `outputs/tommy/post_sequence_recovery_protocol_2026-05-20.md`
->• Schedule Gmail drafts for top 5 hot leads → send Monday May 26
+>*Tier 1 contractor texts — 15 min:*
+>• Anthony, Land Pro Management: 440-320-2779
+>• Dontez, GTP Landscaping: 440-396-0814
+>• Chris, Twin Improvements | Venus, Reliable Roofing | Logan, Pagels Construction
+>
+>*Write Gmail drafts for May 26 — 15 min:*
+>→ `outputs/tommy/hot_lead_bridge_email_2026-05-19.md`
+>5 personalized drafts to top hot leads. Save as drafts. Send Monday May 26.
+>
+>Full day-by-day plan: `outputs/vera/peak_season_daily_sprint_may20_26.md`
 ---
 💡 *Vera — Upgrade Proposal*
->Idea: Create Fleet Washing Mixmax sequence — copy is ready, just needs the ID.
->Why: `outputs/danny/sequence_fleet_washing_2026-05-18.md` has the complete sequence copy. Infrastructure is wired (mixmax.py line 47). The moment the ID goes live, the pipeline auto-enrolls fleet leads on every run.
->Fleet washing = recurring commercial revenue. Landscaping companies, HVAC fleets, trucking companies. One account = $500+/year.
->Action: Mixmax → New Sequence → paste copy → get ID → paste into `integrations/mixmax.py` line 48. ~10 minutes. Reply YES + paste the ID.
+>Idea: Create Fleet Washing Mixmax sequence — copy ready, just needs 10 minutes.
+>Why: `outputs/danny/sequence_fleet_washing_2026-05-18.md` has the full 3-touch sequence copy. Infrastructure wired (mixmax.py line 47-51). The moment the ID goes live, the pipeline auto-enrolls fleet leads.
+>Impact: Fleet washing = recurring commercial revenue. One landscaping company account = $500+/year.
+>Action: Mixmax → New Sequence → paste copy → get ID → paste into `integrations/mixmax.py` line 48. Reply YES + paste the ID.
 ---
 💡 *Vera — Upgrade Proposal*
->Idea: Approve the PM sequence Touch 1 & Touch 2 rewrite for Round 2 enrollees.
->Why: 42% open rate, 0% replies. Rewrite: 62 words, single CTA, "Re:" subject on Touch 2, NE Ohio lake humidity angle. Only applies to NEW contacts enrolled after you approve — the current 45 contacts get Touch 3 as-is.
+>Idea: Approve PM sequence Touch 1 & 2 rewrite — 0% reply rate demands action.
+>Why: 42% open rate, 0 replies. Opens prove delivery works. Body copy doesn't convert. Rewrite: 62-word body, single CTA, "Re:" subject on Touch 2, NE Ohio lake humidity angle.
+>Impact: Applies to NEW contacts enrolled after approval. Current 45 get Touch 3 as-is.
 >File: `outputs/danny/pm_sequence_touch1_rewrite_2026-05-19.md`
->Action: Reply YES to approve. I update the Mixmax sequence notes, you update the email body in Mixmax UI.
+>Action: Reply YES. I update sequence notes. You update email body in Mixmax UI.
 ---
-✅ *Vera — Scan Complete 2026-05-20 (Run 22)*
->6 auto-upgrades shipped | 3 deliverables produced | 2 proposals pending | 14 open issues (1 new: fleet sequence)
+💡 *Vera — Upgrade Proposal*
+>Idea: Past customer text blast — highest ROI activity this season.
+>Why: Past customers convert at 3-5x cold leads. It's Memorial Day week. One hour of texting = multiple bookings.
+>Templates: `outputs/tommy/past_customer_reengagement_2026-05-18.md`
+>What's needed: Run `python3 workers/workiz_report.py daily` locally to get completed jobs list.
+>Action: Run Workiz report locally → text past customers → book June slots.
+---
+✅ *Vera — Scan Complete 2026-05-20 (Run 23)*
+>4 auto-upgrades shipped | 4 deliverables produced | 3 proposals | 14 open issues (2 new, 4 escalated)
 >
->CRITICAL TODAY: Touch 3 fires TOMORROW. (1) LinkedIn connects to 13 hot leads — 30 min. (2) Text 5 Tier 1 contractors — 15 min. (3) Read post-sequence protocol tonight. (4) Run lead pipeline locally — 5 min.
+>CRITICAL TODAY (before Touch 3 fires tomorrow):
+>① LinkedIn connects to 13 hot leads — 30 min
+>② Text 5 Tier 1 contractors — 15 min (numbers above)
+>③ Write 5 Gmail drafts for May 26 — 15 min
+>④ Post GBP photo — 5 min
 >
->AFTER MEMORIAL DAY: May 26 is the money day. Brief is ready at `outputs/donna/may26_outreach_blitz_brief_2026-05-20.md`. 70 minutes of outreach, all assets mapped.
+>MONEY DAY = May 26. Full brief: `outputs/donna/may26_outreach_blitz_brief_2026-05-20.md`

@@ -48,6 +48,10 @@ Short, direct, lead with location:
 - Headline 2: Free Quotes · 7 Counties
 - Headline 3: House + Roof + Driveway
 
+## Ready Assets (May 2026)
+- **Google Ads June 2026:** `outputs/rick/google_ads_june_2026-05-19.md` — 2 campaigns (Power Washing + Roof Soft Wash), all headlines + descriptions + extensions written. Bradley sets these up in Google Ads UI.
+- **Facebook Ads:** Pending — write peak season creative targeting Cuyahoga/Lake/Lorain homeowners.
+
 ## Output Format
 Save to `/outputs/rick/`:
 - `facebook_ads_[campaign]_[date].md` — 5-10 ad variations per batch

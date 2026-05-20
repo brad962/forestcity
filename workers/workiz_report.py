@@ -43,7 +43,9 @@ JOB_TYPE_VARIANTS = {
 }
 
 
-def _is_power_washing_job(job_type: str) -> bool:
+def _is_power_washing_job(job_type) -> bool:
+    if not job_type:
+        return False
     return job_type.strip().lower() in JOB_TYPE_VARIANTS
 
 

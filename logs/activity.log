@@ -200,3 +200,12 @@
 [2026-05-20 07:45] Vera | Deliverable: facebook_posts_may26_week_2026-05-20.md — 5 Facebook posts + 1 LinkedIn for May 26-30; Memorial Day recap, algae education, social proof, PM pitch, booking push | outputs/jasmine/facebook_posts_may26_week_2026-05-20.md | Done
 [2026-05-20 07:45] Vera | Updated open_issues.md — run 22: 4 new RESOLVED, 1 new OPEN (fleet sequence), 12 existing OPEN updated with escalations | outputs/vera/open_issues.md | Done
 [2026-05-20 07:45] Vera | Proposals + escalations written to pending_slack_messages.md for GitHub Action relay | outputs/vera/pending_slack_messages.md | Done
+[2026-05-20 08:45] Vera | Auto-upgrade: workiz_report.py _is_power_washing_job null-safety — prevents crash on Workiz "JobType": null response | workers/workiz_report.py | Done
+[2026-05-20 08:45] Vera | Auto-upgrade: jasmine_flyer.py write_facebook_post date parse wrapped in try/except — malformed date no longer crashes the flyer pipeline | workers/jasmine_flyer.py | Done
+[2026-05-20 08:45] Vera | Auto-upgrade: agents/rick.md — added Ready Assets section referencing June Google Ads file; agents/marcus.md — added peak season priority + cloud limitation notes | agents/rick.md, agents/marcus.md | Done
+[2026-05-20 08:45] Vera | Deliverable: peak_season_daily_sprint_may20_26.md — day-by-day action calendar for Bradley May 20-26 with estimated times and file references | outputs/vera/peak_season_daily_sprint_may20_26.md | Done
+[2026-05-20 08:45] Vera | Deliverable: google_business_profile_post_templates_2026-05-20.md — 4 GBP post templates, weekly rotation, posting checklist | outputs/tommy/google_business_profile_post_templates_2026-05-20.md | Done
+[2026-05-20 08:45] Vera | Deliverable: gas_station_manual_email_blast_2026-05-20.md — 3 email templates for 18 idle gas station contacts; bypasses PENDING Mixmax sequence | outputs/danny/gas_station_manual_email_blast_2026-05-20.md | Done
+[2026-05-20 08:45] Vera | Deliverable: facebook_ads_peak_season_2026-05-20.md — 3-campaign structure, 7 ad variations, setup checklist for peak season Facebook push | outputs/rick/facebook_ads_peak_season_2026-05-20.md | Done
+[2026-05-20 08:45] Vera | Updated open_issues.md — run 23: 2 new RESOLVED (workiz null crash, jasmine date parse), 2 new OPEN (no Facebook ads, no past customer blast), 4 OPEN issues escalated | outputs/vera/open_issues.md | Done
+[2026-05-20 08:45] Vera | Proposals + escalations written to pending_slack_messages.md for GitHub Action relay | outputs/vera/pending_slack_messages.md | Done

@@ -230,14 +230,13 @@
 ---
 
 ## OPEN — 39 Manual Contacts Sitting Untouched (New Lead stage)
-- First seen: 2026-05-18 (updated run 17 — 2026-05-19)
-- Description: 42 total manual contacts. 39 in "New Lead" stage. 3 "Contacted" (Bulletproof, Damrons texted 5-19). 0 Replied.
-- Run 16 fix: server.py now flags ALL untouched New Lead contacts as `stale: true` on dashboard.
-- Run 17: June Booking Blitz brief created — Tier 1 texts are Phase 1, Week 1 of June plan.
-- 21 contractors have phone numbers. Templates: `outputs/vera/sms_templates_contractors_2026-05-18.md`
-- Priority text list: `outputs/vera/priority_outreach_list_2026-05-19.md`
-  - Tier 1 (text ASAP — Memorial Day 7 days away): Land Pro Management (Anthony, 440-320-2779), GTP Landscaping (Dontez, 440-396-0814), Twin Improvements, Reliable Roofing, Pagels Construction
-- Resolution criteria: Bradley works through Tier 1 by Thursday May 22.
+- First seen: 2026-05-18 (updated run 23 — 2026-05-20)
+- Description: 42 total contacts confirmed in pipeline_data.json. 39 New Lead, 3 Contacted. 0 Replied.
+- Run 16 fix: server.py flags all untouched contacts as stale on dashboard.
+- Run 17: June Booking Blitz brief created.
+- Run 23: Full day-by-day action plan written — `outputs/vera/peak_season_daily_sprint_may20_26.md`. Ready-to-send texts included for Tier 1 today (May 20). Touch 3 fires tomorrow.
+- Tier 1 (TEXT TODAY): Anthony/Land Pro (440-320-2779), Dontez/GTP (440-396-0814), Twin Improvements, Reliable Roofing, Pagels Construction
+- Resolution criteria: Bradley sends Tier 1 texts today (May 20).
 
 ---
 
@@ -269,10 +268,12 @@
 ---
 
 ## OPEN — 0% reply rate across 45 enrolled contacts
-- First seen: 2026-05-18
-- Description: 45 enrolled, 42% open rate, 0 replies. Opens work, body copy doesn't convert.
-- Run 12 angle: Bridge email from Gmail (not Mixmax) to top 3 is the fastest win this week. Sequence rewrite still needs approval.
-- Next steps: Bradley sends bridge email (`outputs/tommy/hot_lead_bridge_email_2026-05-19.md`) to 3 hot leads OR approves sequence rewrite.
+- First seen: 2026-05-18 (updated run 23 — 2026-05-20)
+- Description: 45 enrolled, 42% open rate, 0 replies. Touch 3 fires TOMORROW (May 21).
+- After Touch 3, this sequence is complete for existing contacts. The reply window is NOW (if anyone replies after Touch 3, that's the sequence working).
+- Run 23 action: Bradley sends personal Gmail bridge emails to top 5 hot leads on May 26 (Day After Memorial Day). Drafts should be written today/tomorrow. File: `outputs/tommy/hot_lead_bridge_email_2026-05-19.md`.
+- Sequence rewrite proposal still pending approval — applies to NEW contacts enrolled in Round 2.
+- Resolution criteria: 1+ reply from existing contacts OR Bradley approves sequence rewrite for Round 2.
 
 ---
 
@@ -313,13 +314,14 @@
 ---
 
 ## OPEN — Regular Danny PM cron not running (7 days overdue)
-- First seen: 2026-05-18 (updated run 17 — 2026-05-19)
-- The regular property manager cron (`lead_pipeline.py both`) has not run since May 13. Now 6 days overdue.
-- Run 17 fix: PIPELINE_F NameError bug fixed — `run_pending_sequences()` will no longer crash on the next pipeline run.
-- Gas station contacts: tagged with `_lead_type: gas_station` in pipeline_data.json (run 16 fix). `run_pending_sequences()` now also scans pipeline_data.json — will auto-enroll the moment Bradley adds the sequence ID.
+- First seen: 2026-05-18 (updated run 23 — 2026-05-20)
+- The regular property manager cron has not run since May 13. Now 7 days overdue.
+- All code bugs that would have caused crashes on the next run are now fixed.
+- Run 23: Gas station manual email blast written (`outputs/danny/gas_station_manual_email_blast_2026-05-20.md`) — Bradley can email the 18 contacts directly from Gmail while Mixmax sequence is pending.
 - Next steps: 
-  1. Bradley runs `python3 workers/lead_pipeline.py both` locally to resume PM pipeline
-  2. Create gas station Mixmax sequence + paste ID into `integrations/mixmax.py` SEQUENCES[gas_station][id] (line 54 — currently shows `'id': 'PENDING'`)
+  1. Bradley runs `python3 workers/lead_pipeline.py both` locally TODAY
+  2. Create gas station Mixmax sequence in Mixmax UI → paste ID into `integrations/mixmax.py` line 54
+  3. Create fleet washing Mixmax sequence → paste ID into line 48
 
 ---
 
@@ -354,14 +356,15 @@
 ---
 
 ## OPEN — Gas station contacts not enrolled in Mixmax (18 emails sitting idle)
-- First seen: 2026-05-19 (run 15 | updated run 16)
-- Run 16 fixes applied:
-  1. All 18 gas station contacts tagged with `_lead_type: "gas_station"` in pipeline_data.json
-  2. `run_pending_sequences()` now scans pipeline_data.json in addition to contacts_cache.json
-  3. `nina_report.py` SEQUENCES now auto-includes gas_station when ID goes live
-- What's ready: Sequence copy: `outputs/danny/sequence_gas_stations_2026-05-19.md`. Contact list: `outputs/danny/leads_gas_stations_2026-05-19.md`.
-- **Only thing blocking enrollment**: Bradley needs to create the sequence in Mixmax UI and paste the ID into `integrations/mixmax.py` at line 54: `'id': 'PENDING'` → real ID.
-- Resolution criteria: Real Mixmax sequence ID in place. Next pipeline run will auto-enroll all 18.
+- First seen: 2026-05-19 (updated run 23 — 2026-05-20)
+- All infrastructure is wired. Only Bradley can unblock this.
+- Run 23 workaround: `outputs/danny/gas_station_manual_email_blast_2026-05-20.md` — 3 email templates + priority send order so Bradley can email the 18 contacts directly from Gmail TODAY while waiting on Mixmax.
+- **Actions needed:**
+  1. Send manual emails today using `outputs/danny/gas_station_manual_email_blast_2026-05-20.md` (30 min)
+  2. Create gas station sequence in Mixmax UI (use copy from `outputs/danny/sequence_gas_stations_2026-05-19.md`)
+  3. Paste the new sequence ID into `integrations/mixmax.py` line 54: replace `'PENDING'`
+  4. Run `python3 workers/lead_pipeline.py both` — all 18 auto-enroll
+- Resolution criteria: Mixmax sequence ID in place OR manual emails sent.
 
 ---
 
@@ -680,5 +683,38 @@
 
 ---
 
-*Last updated: 2026-05-20 by Vera Cole (run 22)*
-*Key metrics: 58 RESOLVED | 14 OPEN | 6 auto-upgrades this run | 3 deliverables (post-sequence protocol, May 26 blitz brief, May 26-30 Facebook posts)*
+## RESOLVED — workiz_report.py crashes on null JobType from Workiz
+- Resolved: 2026-05-20 (run 23)
+- Description: `_is_power_washing_job(job_type)` called `.strip()` on `job_type` directly. If Workiz returns `"JobType": null` in JSON, `dict.get('JobType', '')` returns `None` (the default only applies when the key is absent, not null). This crashes with `AttributeError: 'NoneType' object has no attribute 'strip'`.
+- Fix: Added null guard: `if not job_type: return False`. Type annotation also corrected from `str` to untyped.
+- File: `workers/workiz_report.py`
+
+---
+
+## RESOLVED — jasmine_flyer.py crashes on invalid date format in write_facebook_post
+- Resolved: 2026-05-20 (run 23)
+- Description: `datetime.strptime(date, "%Y-%m-%d")` raises `ValueError` if `date` is malformed (e.g., from user input or an edge case in `photo_pairs.json`). Crash propagates up and marks the pair as failed.
+- Fix: Wrapped in `try/except ValueError` — falls back to `datetime.now()` on bad date format.
+- File: `workers/jasmine_flyer.py`
+
+---
+
+## OPEN — No Facebook ads running (peak season with no paid traffic)
+- First seen: 2026-05-20 (run 23)
+- Description: Google Ads copy is ready (`outputs/rick/google_ads_june_2026-05-19.md`) but Facebook ads have not been written or set up. Facebook is the highest-ROI residential ad channel for home services — before/after creative + homeowner targeting.
+- Run 23 fix: Full Facebook ad campaign written — `outputs/rick/facebook_ads_peak_season_2026-05-20.md`. 3-campaign structure, 7 ad variations, setup checklist.
+- Resolution criteria: Bradley sets up the ads in Facebook Ads Manager. Budget: $30/day to start.
+
+---
+
+## OPEN — No past customer re-engagement blast this season
+- First seen: 2026-05-20 (run 23)
+- Description: It's peak season. Past customers convert at 3–5x the rate of cold leads. Forest City has completed jobs in Workiz, but no re-engagement SMS or email blast has gone out to past customers this spring. Memorial Day is the perfect trigger ("it's been a year — want to book again?").
+- Re-engagement templates: `outputs/tommy/past_customer_reengagement_2026-05-18.md`
+- Blocking factor: Need customer list from Workiz (API blocked in cloud). Run `python3 workers/workiz_report.py daily` locally to pull the completed jobs list, then text each customer using the template.
+- Resolution criteria: Bradley pulls completed jobs from Workiz and texts past customers using the template.
+
+---
+
+*Last updated: 2026-05-20 by Vera Cole (run 23)*
+*Key metrics: 60 RESOLVED | 14 OPEN | 4 auto-upgrades this run | 4 deliverables (daily sprint calendar, GBP templates, gas station manual blast, Facebook ads)*

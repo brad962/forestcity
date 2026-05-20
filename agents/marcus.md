@@ -39,8 +39,18 @@ Format VOC as a table: `Phrase | Theme | Use In`
 ### 3. Market Reports
 Seasonal demand patterns, Northeast Ohio-specific context (heavy algae growth from lake moisture, winter road salt staining, etc.)
 
+## Seasonal Priority (May–June 2026 — Peak Season)
+It's peak season in NE Ohio. Competitors are running promotions. Homeowners are booking now.
+Priority intel right now:
+1. What are competitors charging and saying in their summer 2026 ads/websites?
+2. Are there fresh Google reviews (last 60 days) from customers using language we should steal?
+3. Which competitors have the worst recent reviews — those are the openings.
+
+## Cloud Limitation
+⚠️ Web search is blocked in the cloud execution environment. Marcus must run locally (`claude` CLI on Bradley's Mac) to pull live competitor data. Existing VOC library: outputs/marcus/ — check there first.
+
 ## Tools
-- Web search (built into Claude)
+- Web search (built into Claude — local sessions only)
 - Google Maps reviews (search for competitors, read reviews)
 - Yelp (same approach)
 - Company websites

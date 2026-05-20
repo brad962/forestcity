@@ -146,7 +146,10 @@ def write_facebook_post(description: str, date: str) -> str:
     Format: scroll-stopping hook → job details → soft CTA → hashtags
     Varies hook and CTA by month for seasonal relevance.
     """
-    dt    = datetime.strptime(date, "%Y-%m-%d")
+    try:
+        dt = datetime.strptime(date, "%Y-%m-%d")
+    except ValueError:
+        dt = datetime.now()
     month = dt.strftime("%B")
     mo    = dt.month
     day   = dt.day
