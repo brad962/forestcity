@@ -335,7 +335,9 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 try:
                     url = f'https://api.mixmax.com/v1/sequences/{seq_id}/recipients?apiToken={MIXMAX_TOKEN}&limit=200'
                     with urllib.request.urlopen(url, timeout=10) as resp:
-                        recipients = json.loads(resp.read())
+                        _raw = json.loads(resp.read())
+                    # Normalize — Mixmax may return list or {"results": [...]} dict
+                    recipients = _raw if isinstance(_raw, list) else _raw.get('results', _raw.get('recipients', []))
                     if not isinstance(recipients, list):
                         continue
                     for r in recipients:

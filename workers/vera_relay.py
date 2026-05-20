@@ -92,7 +92,7 @@ def main():
         if content and len(content) > 10:
             messages = [m.strip() for m in content.split('---') if m.strip() and len(m.strip()) > 10]
             posted = 0
-            for msg in messages[:10]:
+            for msg in messages[:50]:
                 if post_slack(msg[:3000]):
                     posted += 1
             print(f'Posted {posted}/{len(messages)} messages to Slack')

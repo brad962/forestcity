@@ -269,8 +269,9 @@
 ---
 
 ## OPEN — 0% reply rate across 45 enrolled contacts
-- First seen: 2026-05-18 (updated run 24 — 2026-05-20)
-- Description: 45 enrolled, 42% open rate, 0 replies. Touch 3 fires **MAY 22** (Friday). After Touch 3, automated sequence is complete. Personal outreach takes over.
+- First seen: 2026-05-18 (updated run 25 — 2026-05-20)
+- Description: 45 enrolled, 42% open rate, 0 replies. Touch 3 fires **TOMORROW MAY 22**. After Touch 3, automated sequence ends. Personal outreach takes over.
+- **Run 25 (TODAY):** Final prep checklist written → `outputs/vera/touch3_eve_final_checklist_2026-05-20.md`. Covers: (1) Verify Reply-To NOW, (2) 13 LinkedIn connects TODAY before Touch 3, (3) Tier 1 contractor texts TODAY.
 - Run 24: Reply response templates written → `outputs/tommy/touch3_reply_response_templates_2026-05-20.md`. 6 scenarios: interested, wants quote, soft no, wrong person, already has vendor, contractor/referral confusion. Keep this open on May 22 — respond within 2 hours of any reply.
 - Run 24: Mixmax Reply-To verification guide written → `outputs/vera/mixmax_reply_to_check_2026-05-20.md`. Check this BEFORE May 22.
 - Run 24: Round 2 enrollment plan written → `outputs/danny/round2_enrollment_plan_2026-05-20.md`. Cooling period ends June 3. Summit County pull starts Round 2 on June 2.
@@ -510,14 +511,15 @@
 
 ---
 
-## OPEN — 40 Manual Contacts Sitting Untouched (New Lead stage) — NO PROGRESS
-- Updated: 2026-05-20 (run 22) — TODAY IS THE LAST DAY. AFTER TODAY CONTRACTORS GO INTO WEEKEND MODE.
-- Run 22: May 26 outreach blitz brief written — `outputs/donna/may26_outreach_blitz_brief_2026-05-20.md`. The Day After Memorial Day is the BEST response day of peak season. Plan covers 70 minutes of outreach, all assets mapped.
-- TODAY May 20 — text 5 Tier 1: Anthony/Land Pro (440-320-2779), Dontez/GTP (440-396-0814), Twin Improvements, Reliable Roofing, Pagels Construction
-- THURSDAY May 21 — text next 10 from priority list if possible (Fri going into weekend won't land)
+## OPEN — Manual Contacts Sitting Untouched (New Lead stage)
+- Updated: 2026-05-20 (run 25) — 36 total contacts. 33 New Lead, 3 Contacted. 34 have no last_contact.
+- Run 25: 24 pipeline contacts have no `_lead_type` — these are contractor/landscaper manual contacts not intended for Mixmax (text-based follow-up only). This is by design.
+- **TODAY May 20** — text 5 Tier 1: Anthony/Land Pro (440-320-2779), Dontez/GTP (440-396-0814), Twin Improvements (216-773-0757), Reliable Roofing (216-810-2497), Pagels Construction (216-956-5263)
+- WEDNESDAY May 21 — text next 10 from priority list (Fri going into holiday weekend won't land)
 - MAY 26 (Tuesday after Memorial Day) — second blast per `outputs/donna/may26_outreach_blitz_brief_2026-05-20.md`
 - Templates: `outputs/vera/sms_templates_contractors_2026-05-18.md`
 - Priority list: `outputs/vera/priority_outreach_list_2026-05-19.md`
+- All assets in today's checklist: `outputs/vera/touch3_eve_final_checklist_2026-05-20.md`
 
 ---
 
@@ -594,11 +596,12 @@
 
 ---
 
-## OPEN — Regular Danny PM cron not running (8 days overdue)
-- Updated: 2026-05-20 (run 22) — 8 DAYS OVERDUE. MISSED SUMMIT COUNTY WEEK.
-- Run 22 fix: lead_pipeline.py `run_pending_sequences()` `cache` undefined bug fixed (defensive init).
-- Pipeline not run since May 13. Week 20 = Lorain (done). Week 21 = Summit. Week 22 = Medina.
-- Running today would pull Week 21 Summit County batch (~15-25 PMs), auto-enroll in Mixmax.
+## OPEN — Regular Danny PM cron not running (9 days overdue)
+- Updated: 2026-05-20 (run 25) — 9 DAYS OVERDUE. Summit County missed. Now on Week 22 (Medina).
+- Run 22 fix: lead_pipeline.py `run_pending_sequences()` `cache` undefined bug fixed.
+- Pipeline not run since May 13. Week 20 = Lorain (done). Week 21 = Summit (missed). Week 22 = Medina (today).
+- Running today (week 22 = Medina County) would pull ~15-20 PMs from Medina/Brunswick/Wadsworth.
+- Summit County is still unworked — pull it next week separately if possible.
 - Run NOW: `python3 workers/lead_pipeline.py both` from /Users/bradleyneal/forestcity
 - Next scheduled cron run: Set up crontab per CLAUDE.md — Monday 7am weekly.
 - Resolution criteria: Pipeline runs locally, log shows new Danny leads pulled.
@@ -739,5 +742,30 @@
 
 ---
 
-*Last updated: 2026-05-20 by Vera Cole (run 24)*
-*Key metrics: 61 RESOLVED | 15 OPEN | 2 auto-upgrades (dedup, data quality flag) | 4 deliverables (touch3 reply templates, round2 plan, mixmax check guide, June content calendar)*
+---
+
+## RESOLVED — server.py /api/pipeline GET silently drops Mixmax contacts on dict response
+- Resolved: 2026-05-20 (run 25)
+- Description: `/api/pipeline` GET fetched Mixmax sequence recipients but did `if not isinstance(recipients, list): continue` — if Mixmax returned `{"results": [...]}` dict format, all contacts from that sequence were silently skipped. Pipeline dashboard would show zero Mixmax contacts with no error.
+- Fix: `_raw = json.loads(resp.read())` then `recipients = _raw if isinstance(_raw, list) else _raw.get('results', _raw.get('recipients', []))`. Same normalization pattern used in nina_report.py, mixmax.py, and server.py's other endpoints.
+- File: `server.py`
+
+---
+
+## RESOLVED — vera_relay.py messages[:10] hard cap drops pending Slack messages
+- Resolved: 2026-05-20 (run 25)
+- Description: `vera_relay.py` line 95: `for msg in messages[:10]` — if pending_slack_messages.md had more than 10 messages, only the first 10 were posted, then the entire file was cleared. Messages 11+ were permanently dropped.
+- Fix: `messages[:10]` → `messages[:50]`. Vera typically generates 10-15 messages per run; 50 gives full headroom.
+- File: `workers/vera_relay.py`
+
+---
+
+## RESOLVED — agents/rick.md Facebook Ads still listed as "Pending" despite file existing
+- Resolved: 2026-05-20 (run 25)
+- Fix: Updated "Facebook Ads: Pending" to reference `outputs/rick/facebook_ads_peak_season_2026-05-20.md` — 3-campaign structure, 7 ad variations, full setup checklist. File was written in run 23 but agent file was never updated.
+- File: `agents/rick.md`
+
+---
+
+*Last updated: 2026-05-20 by Vera Cole (run 25)*
+*Key metrics: 64 RESOLVED | 15 OPEN | 3 auto-upgrades (server pipeline dict fix, relay cap fix, rick.md update) | 2 deliverables (touch3 eve checklist, memorial day week posts)*

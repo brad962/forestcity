@@ -218,3 +218,10 @@
 [2026-05-20 02:15] Vera | Deliverable: mixmax_reply_to_check_2026-05-20.md — 3-min step-by-step guide to verify Reply-To address before Touch 3 fires | outputs/vera/mixmax_reply_to_check_2026-05-20.md | Done
 [2026-05-20 02:15] Vera | Deliverable: facebook_posts_june_week2_4_2026-05-20.md — 9 Facebook + 3 LinkedIn posts for June 8-27; full peak season content calendar now covered through month-end | outputs/jasmine/facebook_posts_june_week2_4_2026-05-20.md | Done
 [2026-05-20 02:15] Vera | Proposals + escalations written to pending_slack_messages.md for GitHub Action relay | outputs/vera/pending_slack_messages.md | Done
+[2026-05-20 03:13] Vera | Auto-upgrade: server.py /api/pipeline GET — normalize Mixmax dict response (results/recipients) to list; was silently dropping all contacts when API returned dict format | server.py | Done
+[2026-05-20 03:13] Vera | Auto-upgrade: vera_relay.py messages[:10] → messages[:50] — prevents message loss when pending file has >10 items | workers/vera_relay.py | Done
+[2026-05-20 03:13] Vera | Auto-upgrade: agents/rick.md — Facebook Ads updated from "Pending" to reference outputs/rick/facebook_ads_peak_season_2026-05-20.md (written run 23, agent file never updated) | agents/rick.md | Done
+[2026-05-20 03:13] Vera | Deliverable: touch3_eve_final_checklist_2026-05-20.md — 55-minute game plan for Bradley: Reply-To check, 13 LinkedIn connects, Tier 1 contractor texts before Touch 3 fires tomorrow | outputs/vera/touch3_eve_final_checklist_2026-05-20.md | Done
+[2026-05-20 03:13] Vera | Deliverable: facebook_posts_memorial_day_week_2026-05-20.md — 5 Facebook posts + 1 LinkedIn for May 21-25 (gap week — no content had been written for this window) | outputs/jasmine/facebook_posts_memorial_day_week_2026-05-20.md | Done
+[2026-05-20 03:13] Vera | Updated open_issues.md — run 25: 3 new RESOLVED, 15 OPEN updated with run 25 escalations | outputs/vera/open_issues.md | Done
+[2026-05-20 03:13] Vera | Proposals + escalations written to pending_slack_messages.md for GitHub Action relay | outputs/vera/pending_slack_messages.md | Done
