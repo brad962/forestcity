@@ -259,7 +259,10 @@ def run_danny():
         org_name = org.get('name', '')
 
         # Reveal to get email + linkedin
-        revealed = apollo_reveal(p['id'], first, last, org_name)
+        person_id = p.get('id', '')
+        if not person_id:
+            continue  # Malformed Apollo response — skip rather than KeyError crash
+        revealed = apollo_reveal(person_id, first, last, org_name)
         email = revealed.get('email', '')
         if not email or email.lower() in existing:
             continue
@@ -278,6 +281,7 @@ def run_danny():
             'state':        revealed.get('state', 'OH'),
             'linkedin_url': revealed.get('linkedin_url', ''),
             '_worker':      'danny',
+            '_lead_type':   'property_manager',
             '_source':      f'Apollo — {search["label"]} — {datetime.now().strftime("%Y-%m-%d")}',
         }
         new_leads.append(lead)
@@ -373,7 +377,10 @@ def run_carla():
             org      = p.get('organization', {})
             org_name = org.get('name', '')
 
-            revealed = apollo_reveal(p['id'], first, last, org_name)
+            person_id = p.get('id', '')
+            if not person_id:
+                continue  # Malformed Apollo response — skip rather than KeyError crash
+            revealed = apollo_reveal(person_id, first, last, org_name)
             email    = revealed.get('email', '')
             if not email or email.lower() in existing:
                 continue

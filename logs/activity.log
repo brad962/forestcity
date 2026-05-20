@@ -240,3 +240,8 @@
 [2026-05-20 05:11] Vera | Deliverable: website_copy_service_pages_2026-05-20.md — 5 service pages (house wash, roof soft wash, driveway, deck/fence, commercial) ready for web build + Google Ads landing pages | outputs/tommy/website_copy_service_pages_2026-05-20.md | Done
 [2026-05-20 05:11] Vera | Updated open_issues.md — run 27: 5 new RESOLVED, 2 new OPEN (service pages, phone script), 13 OPEN escalated with run 27 status | outputs/vera/open_issues.md | Done
 [2026-05-20 05:11] Vera | Proposals + escalations written to pending_slack_messages.md for GitHub Action relay | outputs/vera/pending_slack_messages.md | Done
+[2026-05-20 11:45] Vera | Auto-upgrade: lead_pipeline.py run_danny() and run_carla() — p['id'] KeyError crash fix + _lead_type:property_manager added to lead dict construction | workers/lead_pipeline.py | Done
+[2026-05-20 11:45] Vera | Deliverable: june_week1_sprint_2026-05-20.md — day-by-day June 2-6 action calendar with revenue math; Summit County pull + Mixmax sequence creation + Round 2 enrollment + LinkedIn + contractor texts | outputs/donna/june_week1_sprint_2026-05-20.md | Done
+[2026-05-20 11:45] Vera | Deliverable: round2_decision_framework_2026-05-20.md — go/no-go criteria for sequence rewrite in Round 2; 4-scenario decision tree based on Touch 3 results and Reply-To status | outputs/vera/round2_decision_framework_2026-05-20.md | Done
+[2026-05-20 11:45] Vera | Updated open_issues.md — run 28: 1 new RESOLVED (p['id'] KeyError), 3 OPEN issues updated with run 28 status and file references | outputs/vera/open_issues.md | Done
+[2026-05-20 11:45] Vera | Proposals and summary written to pending_slack_messages.md for GitHub Action relay | outputs/vera/pending_slack_messages.md | Done

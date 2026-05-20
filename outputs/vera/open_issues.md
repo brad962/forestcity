@@ -852,5 +852,49 @@
 
 ---
 
-*Last updated: 2026-05-20 by Vera Cole (run 27)*
-*Key metrics: 73 RESOLVED | 15 OPEN | 5 auto-upgrades (jasmine JSON parse, server.py x3 JSON parse, pipeline_data CLE fix) | 2 deliverables (phone script, service page copy)*
+---
+
+## RESOLVED — lead_pipeline.py p['id'] KeyError crash risk
+- Resolved: 2026-05-20 (run 28)
+- Description: `run_danny()` and `run_carla()` both used `p['id']` direct key access on Apollo person objects. If Apollo ever returns a malformed person object without an `id` key (e.g., rate-limit stub response), the entire pipeline run would crash with `KeyError: 'id'` — all remaining leads skipped, no output saved, no log entry.
+- Fix: `p.get('id', '')` with `if not person_id: continue` guard in both functions. Malformed persons are silently skipped. Also added explicit `_lead_type: 'property_manager'` to Danny's lead dict construction so it's in the cache even if mixmax_enroll() fails before setting it.
+- File: `workers/lead_pipeline.py`
+
+---
+
+## OPEN — 0% reply rate (Touch 3 fires TONIGHT / TOMORROW May 22) 🚨🚨
+- Updated: 2026-05-20 (run 28) — TOUCH 3 FIRES IN ~12-24 HOURS.
+- Run 28: Round 2 Decision Framework written → `outputs/vera/round2_decision_framework_2026-05-20.md`. Go/no-go criteria for whether to use the rewritten sequence copy in Round 2. Decision tree: Scenario A (replies received), B (0 replies + correct Reply-To), C (0 replies + Reply-To was wrong), D (uncertain).
+- **KEY INSIGHT:** Don't change copy AND Reply-To simultaneously. Fix Reply-To first. Only switch to rewrite if Reply-To was confirmed correct AND still 0 replies.
+- All other resources in place: morning brief, phone script, eve checklist, reply templates.
+- Resolution criteria: 1+ reply from Touch 3 OR Bradley calls hot leads May 22-26 using phone script.
+
+---
+
+## OPEN — Manual Contacts Sitting Untouched (New Lead stage)
+- Updated: 2026-05-20 (run 28) — 36 total contacts, 33 have no last_contact.
+- TEXT TONIGHT before Touch 3: Anthony/Land Pro (440-320-2779), Dontez/GTP (440-396-0814), Twin Improvements (216-773-0757), Reliable Roofing (216-810-2497), Pagels Construction (216-956-5263).
+- After Memorial Day: Run May 26 outreach blitz (`outputs/donna/may26_outreach_blitz_brief_2026-05-20.md`).
+- June 6: Final contractor text follow-up included in `outputs/donna/june_week1_sprint_2026-05-20.md`.
+- Templates: `outputs/vera/sms_templates_contractors_2026-05-18.md`
+
+---
+
+## OPEN — Regular Danny PM cron not running (10+ days overdue)
+- Updated: 2026-05-20 (run 28) — 10 DAYS OVERDUE. Summit County still unworked.
+- Today (week 21) = Summit County if pipeline run today. Medina = week 22 (next Monday).
+- Run 28: June Week 1 Sprint written → `outputs/donna/june_week1_sprint_2026-05-20.md`. Includes specific Summit + Medina pull instructions with commands for June 2-3.
+- IMMEDIATE: Run `python3 workers/lead_pipeline.py danny` TODAY — pulls Summit County (week 21). Each day delayed = another day without NE Ohio's 2nd largest PM market in the pipeline.
+- Resolution criteria: Pipeline runs locally, Summit County leads pulled and enrolled.
+
+---
+
+## OPEN — Gas station contacts not enrolled in Mixmax
+- Updated: 2026-05-20 (run 28) — SAME STATUS. Step-by-step instructions in June Week 1 Sprint.
+- June 2 is the target: Mixmax UI → New Sequence → paste gas station copy → paste ID → 18 auto-enroll.
+- File: `outputs/donna/june_week1_sprint_2026-05-20.md` (Monday June 2 steps).
+
+---
+
+*Last updated: 2026-05-20 by Vera Cole (run 28)*
+*Key metrics: 74 RESOLVED | 15 OPEN | 2 auto-upgrades (p['id'] KeyError + _lead_type cache fix in lead_pipeline.py) | 2 deliverables (June Week 1 Sprint, Round 2 Decision Framework)*
