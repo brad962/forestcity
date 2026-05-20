@@ -229,14 +229,15 @@
 
 ---
 
-## OPEN — 39 Manual Contacts Sitting Untouched (New Lead stage)
-- First seen: 2026-05-18 (updated run 23 — 2026-05-20)
-- Description: 42 total contacts confirmed in pipeline_data.json. 39 New Lead, 3 Contacted. 0 Replied.
+## OPEN — Manual Contacts Sitting Untouched (New Lead stage)
+- First seen: 2026-05-18 (updated run 24 — 2026-05-20)
+- Description: 36 total contacts after dedup (was 42 — 6 duplicate gas station entries removed this run). 33 New Lead, 3 Contacted (one "Contacted" = CLE Lawn Care Plus has no last_contact date — see separate issue). 0 Replied.
 - Run 16 fix: server.py flags all untouched contacts as stale on dashboard.
 - Run 17: June Booking Blitz brief created.
-- Run 23: Full day-by-day action plan written — `outputs/vera/peak_season_daily_sprint_may20_26.md`. Ready-to-send texts included for Tier 1 today (May 20). Touch 3 fires tomorrow.
-- Tier 1 (TEXT TODAY): Anthony/Land Pro (440-320-2779), Dontez/GTP (440-396-0814), Twin Improvements, Reliable Roofing, Pagels Construction
-- Resolution criteria: Bradley sends Tier 1 texts today (May 20).
+- Run 23: Full day-by-day action plan written — `outputs/vera/peak_season_daily_sprint_may20_26.md`.
+- Run 24: Deduplication fix applied — 6 duplicate gas station chains removed from pipeline_data.json.
+- Tier 1 (TEXT TODAY or TOMORROW — last window before Memorial Day weekend): Anthony/Land Pro (440-320-2779), Dontez/GTP (440-396-0814), Twin Improvements (216-773-0757), Reliable Roofing (216-810-2497), Pagels Construction (216-956-5263)
+- Resolution criteria: Bradley sends Tier 1 texts May 20 or 21 (before Memorial Day weekend).
 
 ---
 
@@ -268,11 +269,13 @@
 ---
 
 ## OPEN — 0% reply rate across 45 enrolled contacts
-- First seen: 2026-05-18 (updated run 23 — 2026-05-20)
-- Description: 45 enrolled, 42% open rate, 0 replies. Touch 3 fires TOMORROW (May 21).
-- After Touch 3, this sequence is complete for existing contacts. The reply window is NOW (if anyone replies after Touch 3, that's the sequence working).
-- Run 23 action: Bradley sends personal Gmail bridge emails to top 5 hot leads on May 26 (Day After Memorial Day). Drafts should be written today/tomorrow. File: `outputs/tommy/hot_lead_bridge_email_2026-05-19.md`.
-- Sequence rewrite proposal still pending approval — applies to NEW contacts enrolled in Round 2.
+- First seen: 2026-05-18 (updated run 24 — 2026-05-20)
+- Description: 45 enrolled, 42% open rate, 0 replies. Touch 3 fires **MAY 22** (Friday). After Touch 3, automated sequence is complete. Personal outreach takes over.
+- Run 24: Reply response templates written → `outputs/tommy/touch3_reply_response_templates_2026-05-20.md`. 6 scenarios: interested, wants quote, soft no, wrong person, already has vendor, contractor/referral confusion. Keep this open on May 22 — respond within 2 hours of any reply.
+- Run 24: Mixmax Reply-To verification guide written → `outputs/vera/mixmax_reply_to_check_2026-05-20.md`. Check this BEFORE May 22.
+- Run 24: Round 2 enrollment plan written → `outputs/danny/round2_enrollment_plan_2026-05-20.md`. Cooling period ends June 3. Summit County pull starts Round 2 on June 2.
+- Run 23 action: Bradley sends Gmail bridge emails to top 5 hot leads on May 26. File: `outputs/tommy/hot_lead_bridge_email_2026-05-19.md`.
+- Sequence rewrite pending approval — applies to NEW contacts enrolled after June 4. File: `outputs/danny/pm_sequence_touch1_rewrite_2026-05-19.md`.
 - Resolution criteria: 1+ reply from existing contacts OR Bradley approves sequence rewrite for Round 2.
 
 ---
@@ -313,15 +316,17 @@
 
 ---
 
-## OPEN — Regular Danny PM cron not running (7 days overdue)
-- First seen: 2026-05-18 (updated run 23 — 2026-05-20)
-- The regular property manager cron has not run since May 13. Now 7 days overdue.
-- All code bugs that would have caused crashes on the next run are now fixed.
-- Run 23: Gas station manual email blast written (`outputs/danny/gas_station_manual_email_blast_2026-05-20.md`) — Bradley can email the 18 contacts directly from Gmail while Mixmax sequence is pending.
-- Next steps: 
-  1. Bradley runs `python3 workers/lead_pipeline.py both` locally TODAY
+## OPEN — Regular Danny PM cron not running (9 days overdue) 🔴
+- First seen: 2026-05-18 (updated run 24 — 2026-05-20)
+- The regular property manager cron has not run since May 13. NOW 9 DAYS OVERDUE.
+- Missed: Summit County (Akron/Fairlawn/Stow — major HOA and commercial RE cluster). Medina and Geauga/Portage also unstarted.
+- Run 24: Round 2 enrollment plan written with complete county schedule — `outputs/danny/round2_enrollment_plan_2026-05-20.md`. Recommends Summit County pull TODAY.
+- Run 23: Gas station manual email blast written (`outputs/danny/gas_station_manual_email_blast_2026-05-20.md`).
+- Next steps (Bradley — TODAY):
+  1. Run `python3 workers/lead_pipeline.py danny` locally — Summit County batch
   2. Create gas station Mixmax sequence in Mixmax UI → paste ID into `integrations/mixmax.py` line 54
   3. Create fleet washing Mixmax sequence → paste ID into line 48
+  4. Run `python3 workers/lead_pipeline.py carla` for Summit County referral partners
 
 ---
 
@@ -716,5 +721,23 @@
 
 ---
 
-*Last updated: 2026-05-20 by Vera Cole (run 23)*
-*Key metrics: 60 RESOLVED | 14 OPEN | 4 auto-upgrades this run | 4 deliverables (daily sprint calendar, GBP templates, gas station manual blast, Facebook ads)*
+---
+
+## RESOLVED — pipeline_data.json duplicate gas station entries
+- Resolved: 2026-05-20 (run 24)
+- Description: 6 gas station chain companies appeared twice in pipeline_data.json (Speedway, truenorth, 7-Eleven, SUNOCO, Circle K, Sheetz). Caused misleading total contact count (42 instead of 36). truenorth had identical phone number confirming true duplicates.
+- Fix: Python deduplication script — matched on company name + phone, removed the duplicate entry for each. Pipeline now correctly shows 36 contacts.
+- File: `pipeline_data.json`
+
+---
+
+## OPEN — CLE Lawn Care Plus marked "Contacted" but no last_contact date
+- First seen: 2026-05-20 (run 24)
+- Description: CLE Lawn Care Plus (216-402-1924) has stage="Contacted" but last_contact is empty string. The server.py stale detection correctly identifies this as stale (falls through to the "never contacted" branch), but the stage mismatch is a data quality issue — either the contact was never actually reached (stage should be "New Lead") or it was contacted but the date wasn't recorded.
+- Resolution: Bradley either (a) updates last_contact to the actual contact date in the dashboard, or (b) changes stage back to "New Lead" if they haven't actually been reached.
+- File: `pipeline_data.json`
+
+---
+
+*Last updated: 2026-05-20 by Vera Cole (run 24)*
+*Key metrics: 61 RESOLVED | 15 OPEN | 2 auto-upgrades (dedup, data quality flag) | 4 deliverables (touch3 reply templates, round2 plan, mixmax check guide, June content calendar)*

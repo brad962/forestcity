@@ -209,3 +209,12 @@
 [2026-05-20 08:45] Vera | Deliverable: facebook_ads_peak_season_2026-05-20.md — 3-campaign structure, 7 ad variations, setup checklist for peak season Facebook push | outputs/rick/facebook_ads_peak_season_2026-05-20.md | Done
 [2026-05-20 08:45] Vera | Updated open_issues.md — run 23: 2 new RESOLVED (workiz null crash, jasmine date parse), 2 new OPEN (no Facebook ads, no past customer blast), 4 OPEN issues escalated | outputs/vera/open_issues.md | Done
 [2026-05-20 08:45] Vera | Proposals + escalations written to pending_slack_messages.md for GitHub Action relay | outputs/vera/pending_slack_messages.md | Done
+[2026-05-20 02:15] Vera | Auto-upgrade: pipeline_data.json — removed 6 duplicate gas station contacts (Speedway, truenorth, 7-Eleven, SUNOCO, Circle K, Sheetz) — pipeline now 36 contacts | pipeline_data.json | Done
+[2026-05-20 02:15] Vera | Auto-upgrade: open_issues.md — updated manual contacts count to 36 post-dedup; corrected Touch 3 date to May 22; escalated Danny cron to 9 days overdue; added round2+reply templates references | outputs/vera/open_issues.md | Done
+[2026-05-20 02:15] Vera | New RESOLVED: pipeline_data.json duplicate gas station entries — 6 dupes removed | outputs/vera/open_issues.md | Done
+[2026-05-20 02:15] Vera | New OPEN: CLE Lawn Care Plus stage=Contacted but no last_contact date — data quality issue flagged | outputs/vera/open_issues.md | Done
+[2026-05-20 02:15] Vera | Deliverable: touch3_reply_response_templates_2026-05-20.md — 6 copy-paste scenarios for when Touch 3 replies come in May 22-26 | outputs/tommy/touch3_reply_response_templates_2026-05-20.md | Done
+[2026-05-20 02:15] Vera | Deliverable: round2_enrollment_plan_2026-05-20.md — county schedule, cooling period, rewrite approval path, gas station+fleet unlock steps | outputs/danny/round2_enrollment_plan_2026-05-20.md | Done
+[2026-05-20 02:15] Vera | Deliverable: mixmax_reply_to_check_2026-05-20.md — 3-min step-by-step guide to verify Reply-To address before Touch 3 fires | outputs/vera/mixmax_reply_to_check_2026-05-20.md | Done
+[2026-05-20 02:15] Vera | Deliverable: facebook_posts_june_week2_4_2026-05-20.md — 9 Facebook + 3 LinkedIn posts for June 8-27; full peak season content calendar now covered through month-end | outputs/jasmine/facebook_posts_june_week2_4_2026-05-20.md | Done
+[2026-05-20 02:15] Vera | Proposals + escalations written to pending_slack_messages.md for GitHub Action relay | outputs/vera/pending_slack_messages.md | Done
