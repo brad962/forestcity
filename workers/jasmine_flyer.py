@@ -227,7 +227,11 @@ def process_pending_pairs():
         log("No photo_pairs.json found — nothing to process.")
         return
 
-    data    = json.loads(PHOTO_PAIRS_FILE.read_text())
+    try:
+        data = json.loads(PHOTO_PAIRS_FILE.read_text())
+    except (json.JSONDecodeError, Exception) as e:
+        log(f"ERROR reading photo_pairs.json: {e} — skipping.")
+        return
     pairs   = data.get("pairs", [])
     updated = False
 

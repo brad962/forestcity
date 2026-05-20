@@ -738,10 +738,10 @@
 
 ---
 
-## OPEN — CLE Lawn Care Plus marked "Contacted" but no last_contact date
-- First seen: 2026-05-20 (run 24)
-- Description: CLE Lawn Care Plus (216-402-1924) has stage="Contacted" but last_contact is empty string. The server.py stale detection correctly identifies this as stale (falls through to the "never contacted" branch), but the stage mismatch is a data quality issue — either the contact was never actually reached (stage should be "New Lead") or it was contacted but the date wasn't recorded.
-- Resolution: Bradley either (a) updates last_contact to the actual contact date in the dashboard, or (b) changes stage back to "New Lead" if they haven't actually been reached.
+## RESOLVED — CLE Lawn Care Plus marked "Contacted" but no last_contact date
+- Resolved: 2026-05-20 (run 27)
+- Fix: Set `last_contact: "2026-05-13"` in pipeline_data.json to match the calls log entry (called_at: 2026-05-13). Also added `next_followup: "2026-05-26"` — this contact is overdue for follow-up and May 26 is the target blitz day.
+- Notes say "Left off here — follow up" confirming it was contacted. Data now consistent with calls log.
 - File: `pipeline_data.json`
 
 ---
@@ -795,5 +795,62 @@
 
 ---
 
-*Last updated: 2026-05-20 by Vera Cole (run 26)*
-*Key metrics: 67 RESOLVED | 15 OPEN | 3 auto-upgrades (server dead import, pipeline_data git commit fix, donna.md links) | 1 deliverable (touch3 morning brief for May 22)*
+## RESOLVED — jasmine_flyer.py process_pending_pairs() crashes on malformed photo_pairs.json
+- Resolved: 2026-05-20 (run 27)
+- Description: `json.loads(PHOTO_PAIRS_FILE.read_text())` in `process_pending_pairs()` had no try/except. If `photo_pairs.json` was malformed (e.g. partial write from a previous crash), the entire function crashed with JSONDecodeError — no flyers processed, no log entry, silent failure from cron's perspective.
+- Fix: Wrapped in try/except (json.JSONDecodeError, Exception). On parse failure, logs the error and returns early. Consistent with pattern in jasmine_flyer.py's other error handling.
+- File: `workers/jasmine_flyer.py`
+
+---
+
+## RESOLVED — server.py get_queue() crashes on malformed queue.json
+- Resolved: 2026-05-20 (run 27)
+- Description: `get_queue()` called `json.loads(QUEUE_F.read_text())` with no try/except. If `queue.json` was malformed, the `/api/queue` GET endpoint would crash the dashboard. Also affected every other endpoint that calls `get_queue()`.
+- Fix: Added try/except — returns empty list `[]` on parse failure. Dashboard continues working normally.
+- File: `server.py`
+
+---
+
+## RESOLVED — server.py POST /api/pipeline and /api/calls crash on malformed pipeline_data.json
+- Resolved: 2026-05-20 (run 27)
+- Description: Both POST handlers called `json.loads(PIPELINE_F.read_text())` inline with no try/except. If `pipeline_data.json` was malformed (power loss mid-write, concurrent write), the POST to update a contact's stage or log a call would crash with 500 instead of handling gracefully.
+- Fix: Added inner try/except around the JSON parse in both handlers. Falls back to empty dict `{}` on parse failure — update proceeds, existing data not lost (will write back with the new record only).
+- File: `server.py`
+
+---
+
+## OPEN — No website service pages (needed as Google Ads landing pages) 🔴
+- First seen: 2026-05-20 (run 27)
+- Description: Tommy has homepage headlines (2026-05-12) and a homepage copy file (2026-05-12) but no individual service pages. Google Ads can't convert without a strong landing page — "Get a free quote" ads need to land on a service-specific page, not a generic homepage.
+- Run 27 fix: Full service page copy written for all 5 services — `outputs/tommy/website_copy_service_pages_2026-05-20.md`. House Washing, Roof Soft Wash, Driveway, Deck/Fence, Commercial. Each page includes H1, body, pricing signals, FAQ (roof), and meta description.
+- Resolution criteria: Bradley builds the service pages in their web platform (Squarespace/Wix/WordPress). Roof Soft Wash page should be first — highest search intent.
+
+---
+
+## OPEN — No phone cold call script for hot leads 🔴
+- First seen: 2026-05-20 (run 27)
+- Description: After Touch 3 fires May 22, the Mixmax sequence ends. For the 13 hot leads (2+ opens, no replies), personal phone outreach converts at 3–5x email. We had email templates, LinkedIn DMs, SMS follow-ups — but no live phone script. What does Bradley say when a property manager picks up?
+- Run 27 fix: Full phone script written — `outputs/tommy/hot_lead_phone_script_2026-05-22.md`. Includes: live answer script (A), 15-second voicemail (B), SMS follow-up (C), objection cheat sheet, priority call order, and post-call tracking instructions.
+- Resolution criteria: Bradley calls the Tier 1 hot leads (3+ opens) May 22 or 26 using this script.
+
+---
+
+## OPEN — 0% reply rate (Touch 3 fires TOMORROW May 22) 🚨🚨
+- Updated: 2026-05-20 (run 27) — TOUCH 3 FIRES IN ~36 HOURS.
+- Run 27: Phone script written → `outputs/tommy/hot_lead_phone_script_2026-05-22.md`. If email gets 0 replies, Bradley calls the 13 hot leads starting May 22. Script covers live answer, voicemail, SMS follow-up, and all 5 common objections.
+- Run 26: May 22 morning brief → `outputs/vera/touch3_morning_brief_2026-05-22.md`. READ THIS FIRST THING THURSDAY MORNING.
+- Run 25: Eve checklist → `outputs/vera/touch3_eve_final_checklist_2026-05-20.md` — 55-min game plan for TONIGHT (May 20). Reply-To check, 13 LinkedIn connects, Tier 1 texts. DO TONIGHT.
+- Resolution criteria: 1+ reply from Touch 3 OR Bradley starts phone calls to hot leads May 22.
+
+---
+
+## OPEN — Manual Contacts Sitting Untouched (New Lead stage)
+- Updated: 2026-05-20 (run 27)
+- Run 27: CLE Lawn Care Plus data fixed — last_contact now 2026-05-13, next_followup 2026-05-26. 36 total contacts confirmed.
+- All 24 no-email contractors still need texts. Tier 1 TODAY: Anthony/Land Pro (440-320-2779), Dontez/GTP (440-396-0814), Twin Improvements (216-773-0757), Reliable Roofing (216-810-2497), Pagels Construction (216-956-5263).
+- Templates: `outputs/vera/sms_templates_contractors_2026-05-18.md`
+
+---
+
+*Last updated: 2026-05-20 by Vera Cole (run 27)*
+*Key metrics: 73 RESOLVED | 15 OPEN | 5 auto-upgrades (jasmine JSON parse, server.py x3 JSON parse, pipeline_data CLE fix) | 2 deliverables (phone script, service page copy)*

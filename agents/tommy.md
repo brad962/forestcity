@@ -46,8 +46,10 @@ Save to `/outputs/tommy/`:
 - `one_pager_[date].md`
 - `pipeline_contractor_outreach_[date].md` — personal email/text to warm pipeline contacts
 - `hot_lead_linkedin_dm_playbook_[date].md` — LinkedIn DM + email templates for high-opens leads
+- `hot_lead_phone_script_[date].md` — live call script + voicemail + SMS for post-sequence hot leads
 - `past_customer_reengagement_[date].md` — re-engagement email/text for prior customers
 - `review_request_sequence_[date].md` — post-job review request texts
+- `website_copy_service_pages_[date].md` — individual service pages (house wash, roof soft wash, driveway, deck, commercial) for web build + Google Ads landing pages
 
 ## Logging
 `[YYYY-MM-DD HH:MM] Tommy | [task description] | [output filename] | Done`

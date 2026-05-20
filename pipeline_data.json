@@ -160,8 +160,8 @@
       "lead_type": "contractor",
       "stage": "Contacted",
       "notes": "Left off here \u2014 follow up",
-      "last_contact": "",
-      "next_followup": "",
+      "last_contact": "2026-05-13",
+      "next_followup": "2026-05-26",
       "est_value": "",
       "source": "manual"
     },

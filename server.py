@@ -127,7 +127,10 @@ def get_outputs():
 
 def get_queue():
     if QUEUE_F.exists():
-        return json.loads(QUEUE_F.read_text())
+        try:
+            return json.loads(QUEUE_F.read_text())
+        except (json.JSONDecodeError, Exception):
+            return []
     return []
 
 
@@ -510,7 +513,10 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 data       = json.loads(body)
                 email      = data.get('email', '').lower()
                 contact_id = data.get('contact_id', '').strip()
-                pipeline   = json.loads(PIPELINE_F.read_text()) if PIPELINE_F.exists() else {}
+                try:
+                    pipeline = json.loads(PIPELINE_F.read_text()) if PIPELINE_F.exists() else {}
+                except (json.JSONDecodeError, Exception):
+                    pipeline = {}
 
                 if contact_id:
                     # Update manual contact in-place by ID
@@ -549,7 +555,10 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 if not key:
                     self._json({'error': 'missing key'}, 400)
                     return
-                pipeline = json.loads(PIPELINE_F.read_text()) if PIPELINE_F.exists() else {}
+                try:
+                    pipeline = json.loads(PIPELINE_F.read_text()) if PIPELINE_F.exists() else {}
+                except (json.JSONDecodeError, Exception):
+                    pipeline = {}
                 if 'calls' not in pipeline:
                     pipeline['calls'] = {}
                 pipeline['calls'][key] = {

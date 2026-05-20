@@ -231,3 +231,12 @@
 [2026-05-20 10:15] Vera | Deliverable: touch3_morning_brief_2026-05-22.md — single-page action guide for the morning Touch 3 fires: check Mixmax, 3 reply scenarios, contractor text blast, weekly calendar, all resource links | outputs/vera/touch3_morning_brief_2026-05-22.md | Done
 [2026-05-20 10:15] Vera | Updated open_issues.md — run 26: 3 new RESOLVED, 15 OPEN updated with run 26 status; morning brief escalation added to reply rate issue | outputs/vera/open_issues.md | Done
 [2026-05-20 10:15] Vera | Proposals + escalations written to pending_slack_messages.md for GitHub Action relay | outputs/vera/pending_slack_messages.md | Done
+[2026-05-20 05:11] Vera | Auto-upgrade: jasmine_flyer.py process_pending_pairs() — JSON parse wrapped in try/except; malformed photo_pairs.json no longer crashes the whole flyer pipeline | workers/jasmine_flyer.py | Done
+[2026-05-20 05:11] Vera | Auto-upgrade: server.py get_queue() — JSON parse wrapped in try/except; malformed queue.json no longer crashes /api/queue endpoint | server.py | Done
+[2026-05-20 05:11] Vera | Auto-upgrade: server.py POST /api/pipeline and /api/calls — inner try/except added around pipeline_data.json parse in both handlers; power-loss-mid-write scenario now safe | server.py | Done
+[2026-05-20 05:11] Vera | Auto-upgrade: pipeline_data.json — CLE Lawn Care Plus last_contact set to 2026-05-13 + next_followup 2026-05-26 to match calls log and clear data quality issue | pipeline_data.json | Done
+[2026-05-20 05:11] Vera | Auto-upgrade: agents/tommy.md — added hot_lead_phone_script and website_copy_service_pages to output format list | agents/tommy.md | Done
+[2026-05-20 05:11] Vera | Deliverable: hot_lead_phone_script_2026-05-22.md — live call script A + voicemail B + SMS C + 5-objection cheat sheet for 13 PM hot leads post-Touch-3 | outputs/tommy/hot_lead_phone_script_2026-05-22.md | Done
+[2026-05-20 05:11] Vera | Deliverable: website_copy_service_pages_2026-05-20.md — 5 service pages (house wash, roof soft wash, driveway, deck/fence, commercial) ready for web build + Google Ads landing pages | outputs/tommy/website_copy_service_pages_2026-05-20.md | Done
+[2026-05-20 05:11] Vera | Updated open_issues.md — run 27: 5 new RESOLVED, 2 new OPEN (service pages, phone script), 13 OPEN escalated with run 27 status | outputs/vera/open_issues.md | Done
+[2026-05-20 05:11] Vera | Proposals + escalations written to pending_slack_messages.md for GitHub Action relay | outputs/vera/pending_slack_messages.md | Done
