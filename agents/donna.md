@@ -54,6 +54,10 @@ Save to `/outputs/donna/`:
 - `county_expansion_[county]_[date].md`
 - `campaign_brief_[campaign]_[date].md`
 - `nurture_sequence_[lead-magnet]_[date].md`
+- `daily_sprint_[date].md` — day-by-day action calendar for Bradley with time estimates
+- `outreach_blitz_brief_[date].md` — single-day blitz plan (e.g. may26, first day after holiday)
+- `june_week1_sprint_[date].md` — week 1 June sprint: Summit County pull, Mixmax sequences, Round 2 enrollment, contractor texts
+- `june_residential_push_[date].md` — 4-week residential campaign brief connecting all pre-built assets
 
 ## Logging
 `[YYYY-MM-DD HH:MM] Donna | [task description] | [output filename] | Done`

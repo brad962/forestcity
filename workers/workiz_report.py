@@ -197,7 +197,7 @@ def generate_report(mode='daily'):
 
 def save_report(report_text, mode='daily'):
     today = datetime.date.today().strftime('%Y-%m-%d')
-    out_dir = os.path.join(os.path.dirname(__file__), '..', 'outputs', 'nina')
+    out_dir = str(BASE_DIR / 'outputs' / 'nina')
     os.makedirs(out_dir, exist_ok=True)
     filename = f"workiz_{mode}_{today}.md"
     filepath = os.path.join(out_dir, filename)
@@ -209,7 +209,7 @@ def save_report(report_text, mode='daily'):
 
 def log_activity(summary, mode='daily'):
     today = datetime.datetime.now().strftime('%Y-%m-%d %H:%M')
-    log_path = os.path.join(os.path.dirname(__file__), '..', 'logs', 'activity.log')
+    log_path = str(BASE_DIR / 'logs' / 'activity.log')
     with open(log_path, 'a') as f:
         f.write(f"[{today}] Nina | Workiz {mode} report - Power Washing jobs | {summary} | Done\n")
 

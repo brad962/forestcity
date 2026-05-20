@@ -374,6 +374,9 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                                 stale = days >= thresholds.get(stage, 5)
                             except Exception:
                                 pass
+                        elif stage not in ('Closed Won', 'Closed Lost'):
+                            # Never contacted at all — always stale (needs outreach)
+                            stale = True
                         all_contacts.append({
                             'email':        email,
                             'phone':        cached.get('phone', ''),

@@ -56,6 +56,7 @@ Keep it simple and mutual:
 Save to `/outputs/carla/`:
 - `partners_[type]_[county]_[date].md` — contact list
 - `outreach_[partner-type]_[date].md` — email/LinkedIn message copy
+- `referral_partner_onboarding_[date].md` — step-by-step post-YES onboarding: confirmation text, follow-up, welcome kit, first-week ping, payout message, 5 objections handled
 
 ## Logging
 `[YYYY-MM-DD HH:MM] Carla | [task description] | [output filename] | Done`

@@ -1008,16 +1008,42 @@
 
 ## RESOLVED — No referral partner onboarding protocol (post-YES gap)
 - Resolved: 2026-05-20 (run 31)
-- Description: The contractor conversation tree covered getting the YES. But nothing existed for what Bradley does the moment a contractor agrees to partner — what to confirm, how to explain the mechanic, what to send them, how to track. Bradley is texting 5 contractors tonight.
-- Fix: Full onboarding script written — `outputs/carla/referral_partner_onboarding_2026-05-20.md`. Steps 1-5: confirmation text, follow-up, welcome kit, first-week ping, and first-closed-job payout message. All 5 objections handled. Pipeline tracking instructions included.
+- Fix: Full onboarding script — `outputs/carla/referral_partner_onboarding_2026-05-20.md`. Steps 1-5. 5 objections handled. Pipeline tracking included.
 - File: `outputs/carla/referral_partner_onboarding_2026-05-20.md`
 
 ---
 
+## RESOLVED — server.py Mixmax contacts never marked stale when no last_contact
+- Resolved: 2026-05-20 (run 32)
+- Description: The stale detection for Mixmax-enrolled contacts only applied when `last_contact` was set. Contacts with `stage='New Lead'` and no `last_contact` (never reached) were `stale=False` on the dashboard. This was inconsistent with manual contacts, which correctly set `stale=True` for never-contacted records.
+- Fix: Added `elif stage not in ('Closed Won', 'Closed Lost'): stale = True` after the `if last_contact:` block in the Mixmax recipient loop. Mirrors the already-correct manual contact behavior.
+- File: `server.py`
+
+---
+
+## RESOLVED — workiz_report.py save_report() and log_activity() use fragile path construction
+- Resolved: 2026-05-20 (run 32)
+- Description: Both functions used `os.path.join(os.path.dirname(__file__), '..', ...)` to build paths. This resolves correctly when run from the workers/ directory but is less robust than using the already-defined `BASE_DIR` constant.
+- Fix: Replaced with `str(BASE_DIR / 'outputs' / 'nina')` and `str(BASE_DIR / 'logs' / 'activity.log')`.
+- File: `workers/workiz_report.py`
+
+---
+
+## RESOLVED — agents/donna.md, agents/carla.md, agents/tommy.md missing output format entries
+- Resolved: 2026-05-20 (run 32)
+- Description: 5 new file types created across runs 22-31 weren't documented in agent output format sections. Makes it harder for future runs or Bradley to know what's expected.
+- Fix: Added to donna.md: daily_sprint, outreach_blitz_brief, june_week1_sprint, june_residential_push. Added to carla.md: referral_partner_onboarding. Added to tommy.md: linkedin_followup_post_connect.
+- Files: `agents/donna.md`, `agents/carla.md`, `agents/tommy.md`
+
+---
+
 ## OPEN — 0% reply rate (Touch 3 fires TOMORROW May 22) 🚨🚨
-- Updated: 2026-05-20 (run 31) — TOUCH 3 FIRES IN <12 HOURS. All assets locked and loaded.
-- Everything is ready: morning brief, phone script, eve checklist, reply templates, quote-to-close kit.
-- Run 31: Eve checklist remains the most important document for tonight. Bradley reads touch3_morning_brief_2026-05-22.md FIRST THING Thursday.
+- Updated: 2026-05-20 (run 32) — TOUCH 3 FIRES IN <12 HOURS. All assets locked and loaded.
+- Run 32: LinkedIn follow-up post-connect templates → `outputs/tommy/linkedin_followup_post_connect_2026-05-20.md`. 3 versions (PM/HOA/realtor), response playbook for all scenarios, day-of timing guide. Gap between "connect accepted" and "reply" is now covered.
+- Run 32: server.py stale detection fixed — Mixmax contacts never contacted are now correctly flagged stale on dashboard (was missing the fallback that manual contacts already had).
+- Run 31: All other assets in place: morning brief, phone script, eve checklist, reply templates, quote-to-close kit.
+- READ TONIGHT: `outputs/vera/touch3_eve_final_checklist_2026-05-20.md`
+- READ THURSDAY AM: `outputs/vera/touch3_morning_brief_2026-05-22.md`
 - Resolution criteria: 1+ reply from Touch 3 OR Bradley calls hot leads May 22-26.
 
 ---
@@ -1037,5 +1063,5 @@
 
 ---
 
-*Last updated: 2026-05-20 by Vera Cole (run 31)*
-*Key metrics: 84 RESOLVED | 10 OPEN | 3 auto-upgrades (mixmax _worker fix, parse_log safety, workflow write safety) | 1 new deliverable (referral partner onboarding)*
+*Last updated: 2026-05-20 by Vera Cole (run 32)*
+*Key metrics: 88 RESOLVED | 9 OPEN | 4 auto-upgrades (server.py stale fix, workiz_report.py paths, 3 agent output formats) | 1 new deliverable (linkedin_followup_post_connect)*
