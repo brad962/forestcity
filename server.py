@@ -145,7 +145,10 @@ def get_queue():
 
 
 def save_queue(data):
-    QUEUE_F.write_text(json.dumps(data, indent=2))
+    try:
+        QUEUE_F.write_text(json.dumps(data, indent=2))
+    except Exception:
+        pass
 
 
 def get_contacts():

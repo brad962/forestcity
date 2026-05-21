@@ -95,7 +95,8 @@ GAS_STATION_KEYWORDS = [
     'petroleum', 'speedway', 'circle k', 'sheetz', 'certifiedoil',
     'truenorth', 'open pantry', 'sunoco', 'marathon', "love's",
     'ferrellgas', '7-eleven', 'bellstore', 'campbell oil',
-    'district manager',  # most DMs in this pull are gas station DMs
+    # NOTE: 'district manager' removed — too generic; non-gas-station DMs would mismatch.
+    # Company name keywords (speedway, circle k, etc.) are sufficient for routing.
 ]
 
 FLEET_KEYWORDS = [

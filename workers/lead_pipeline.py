@@ -548,10 +548,28 @@ def verify_and_repair_enrollment():
     contacts = cache.get('contacts', [])
 
     # Find contacts with an email that aren't in Mixmax yet
-    missing = [
-        c for c in contacts
-        if c.get('email') and c['email'].lower() not in confirmed
-    ]
+    # Skip contacts whose sequence is PENDING — they can't be enrolled yet
+    try:
+        from integrations.mixmax import _sequence_is_live as _sil
+        missing = [
+            c for c in contacts
+            if c.get('email')
+            and c['email'].lower() not in confirmed
+            and _sil(c.get('_lead_type', ''))
+        ]
+        pending_skip = [
+            c for c in contacts
+            if c.get('email')
+            and c['email'].lower() not in confirmed
+            and not _sil(c.get('_lead_type', ''))
+        ]
+        if pending_skip:
+            print(f'  Skipping {len(pending_skip)} contacts with PENDING sequences (gas_station/fleet_washing)')
+    except Exception:
+        missing = [
+            c for c in contacts
+            if c.get('email') and c['email'].lower() not in confirmed
+        ]
     print(f'  Missing from Mixmax: {len(missing)}')
 
     if not missing:

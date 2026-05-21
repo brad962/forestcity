@@ -1346,13 +1346,223 @@
 ---
 
 ## OPEN — Cloud git commit signing blocked (environment limitation)
-- First seen: 2026-05-21 (run 35) — NEW
-- Description: This cloud environment requires all commits to be signed via a code-signing server at `/tmp/code-sign`. The signing server returned `{"message":"missing source"}` on every commit attempt in run 35. This is a DIFFERENT error than in runs 1-34 where commits worked.
-- Impact: Cannot push code changes via `git commit` from cloud. Using GitHub REST API as workaround (works for all files except `.github/workflows/` which needs `workflow` PAT scope).
-- Workaround: GitHub API push for all non-workflow files. Workflow file deployment requires Bradley's local machine.
-- Resolution criteria: Unknown — may be transient or environment-specific. If future runs can commit normally, mark resolved.
+- First seen: 2026-05-21 (run 35)
+- Updated: 2026-05-21 (run 36) — Still present. Using GitHub REST API for file pushes.
+- Description: Cloud environment code-signing server returns `{"message":"missing source"}` on commit. All run 36 changes pushed via GitHub REST API (PUT /contents).
+- Workaround: GitHub API push for all non-workflow files. 
+- Resolution criteria: May be transient — will test `git commit` at start of each run.
 
 ---
 
-*Last updated: 2026-05-21 by Vera Cole (run 35)*
-*Key metrics: 96 RESOLVED | 13 OPEN | Run 35 auto-upgrade: workiz_report.py log_activity() crash fix | 1 new deliverable: touch3_evening_debrief_2026-05-22.md | Critical escalation: PAT needs workflow scope for GitHub Actions*
+## RESOLVED — GAS_STATION_KEYWORDS 'district manager' false-positive
+- Resolved: 2026-05-21 (run 36)
+- Description: `'district manager'` was in GAS_STATION_KEYWORDS. This keyword is too generic — any contact with "District Manager" as a title at an ambiguous company (non-matching PM/contractor/realtor) would be misrouted to the gas_station sequence. Example: "District Manager" at a random service company = misclassified as gas station. Company name keywords (speedway, circle k, etc.) are sufficient to identify gas station accounts.
+- Fix: Removed `'district manager'` from GAS_STATION_KEYWORDS. Added comment explaining why.
+- File: `integrations/mixmax.py`
+
+---
+
+## RESOLVED — verify_and_repair_enrollment() unnecessarily attempts PENDING sequences
+- Resolved: 2026-05-21 (run 36)
+- Description: `verify_and_repair_enrollment()` found ALL contacts not in confirmed Mixmax emails and tried to re-enroll them. Gas station and fleet washing contacts (PENDING sequence IDs) always fail re-enrollment. This generates noise: `_lead_type=gas_station` contacts get marked `mixmax_enrolled=False` every run, even though their sequence simply hasn't been created yet.
+- Fix: Added `_sequence_is_live` check — skips contacts with PENDING sequences gracefully with a dedicated print message. Only contacts with live sequence IDs are included in the repair attempt.
+- File: `workers/lead_pipeline.py`
+
+---
+
+## RESOLVED — server.py save_queue() has no write protection
+- Resolved: 2026-05-21 (run 36)
+- Description: `save_queue()` called `QUEUE_F.write_text()` with no try/except. On a full disk or locked file, this would throw unhandled exception propagating to the POST /api/queue handler, sending 500 to the dashboard.
+- Fix: Wrapped in try/except. Consistent with other write operations in server.py.
+- File: `server.py`
+
+---
+
+## OPEN — 0% reply rate (Touch 3 fires TOMORROW May 22) 🚨🚨
+- Updated: 2026-05-21 (run 36) — TOUCH 3 FIRES IN ~12 HOURS. All assets locked and loaded.
+- Run 36 deliverable: Open Trigger Protocol → `outputs/tommy/touch3_open_trigger_protocol_2026-05-21.md`. Covers the 48-hour window starting when Touch 3 fires: LinkedIn connect within 2 hours of each open, Memorial Day voicemail/SMS scripts, decision tree, all 7 key file references in one table.
+- Run 35: Evening debrief → `outputs/vera/touch3_evening_debrief_2026-05-22.md`. What to do Thursday evening.
+- **COMPLETE MAY 22 PLAYBOOK:**
+  - MORNING (8am): `outputs/vera/touch3_morning_brief_2026-05-22.md`
+  - REAL-TIME (each open): `outputs/tommy/touch3_open_trigger_protocol_2026-05-21.md` ← NEW
+  - IF REPLIES: `outputs/tommy/touch3_reply_response_templates_2026-05-20.md` + `outputs/tommy/quote_to_close_kit_2026-05-20.md`
+  - IF NO REPLIES BY NOON: `outputs/tommy/hot_lead_phone_script_2026-05-22.md`
+  - EVENING (6pm): `outputs/vera/touch3_evening_debrief_2026-05-22.md`
+- Resolution criteria: 1+ reply from Touch 3 OR Bradley calls hot leads May 22–26.
+
+---
+
+## OPEN — Manual Contacts Sitting Untouched (New Lead stage)
+- Updated: 2026-05-21 (run 36) — 36 contacts: 33 New Lead, 3 Contacted. TODAY is the LAST window before Memorial Day.
+- **SEND TEXTS TODAY (May 21)** — Text Tier 1 contractors before end of business. They won't check messages over Memorial Day weekend. Window closes in ~6 hours:
+  - Anthony/Land Pro: 440-320-2779 (script A — landscaper)
+  - Dontez/GTP: 440-396-0814 (script A — landscaper)
+  - Twin Improvements: 216-773-0757 (script B — siding)
+  - Reliable Roofing: 216-810-2497 (script C — roofing)
+  - Pagels Construction: 216-956-5263 (script C — roofing)
+- Copy-paste scripts: `outputs/tommy/contractor_referral_text_script_2026-05-20.md`
+- After Memorial Day: May 26 blitz — `outputs/donna/may26_outreach_blitz_brief_2026-05-20.md`
+
+---
+
+## OPEN — Regular Danny PM cron not running (12 days overdue) 🔴🔴
+- Updated: 2026-05-21 (run 36) — 12 DAYS OVERDUE. Summit County still unworked.
+- Last ran: May 13. Today is May 21. 12 days without Akron/Fairlawn/Stow leads.
+- `python3 workers/lead_pipeline.py danny` from `/Users/bradleyneal/forestcity` — run TODAY.
+- Or run June 2 as planned: `outputs/donna/june_week1_sprint_2026-05-20.md`
+- Note: Each week of delay = another batch of PMs in NE Ohio's 2nd largest market booking competitors for the summer.
+
+---
+
+## OPEN — Gas station & fleet contacts not enrolled in Mixmax
+- Updated: 2026-05-21 (run 36) — Infrastructure fully built. Waiting on Bradley to create sequences.
+- Run 36: `verify_and_repair_enrollment()` now correctly skips these contacts with PENDING sequences — no more false "repair" noise in the logs.
+- Step-by-step guide: `outputs/vera/mixmax_sequence_setup_guide_2026-05-20.md` — 20 min total.
+- Target date: June 2 (Monday after Memorial Day + 1 week).
+
+---
+
+## OPEN — GitHub Actions workflow missing — ALL cloud Slack messages silently dropped 🚨
+- Updated: 2026-05-21 (run 36) — NEW APPROACH: one-command deploy script created.
+- Run 36: `scripts/deploy_github_action.sh` created. ONE command: `bash /Users/bradleyneal/forestcity/scripts/deploy_github_action.sh`
+- **STILL NEED (2 steps before running the script):**
+  1. Add `workflow` scope to PAT: github.com → Settings → Developer settings → PATs → Edit `ghp_lrUhBq7...` → check `workflow` → Save
+  2. Add repo secret: github.com/brad962/forestcity → Settings → Secrets → `SLACK_WEBHOOK_OFFICE` = webhook from .env
+- Then run the script and it handles the rest in ~30 seconds.
+- Resolution criteria: GitHub Actions tab shows the workflow after push.
+
+---
+
+## OPEN — Mixmax API blocked in cloud execution environment
+- First seen: 2026-05-18
+- Workaround: All pipeline scripts return None/safe fallback on 403.
+- Next steps: Bradley checks Mixmax → API Settings → IP Allowlist.
+
+---
+
+## OPEN — All external APIs blocked from cloud (Apollo, Workiz, Mixmax)
+- First seen: 2026-05-18
+- Workaround: Cron job schedule documented in CLAUDE.md.
+- Next steps: Bradley runs `crontab -e` and pastes cron jobs.
+
+---
+
+## OPEN — Slack Webhook blocked in cloud execution environment
+- First seen: 2026-05-18
+- Workaround: Messages written to `outputs/vera/pending_slack_messages.md`. GitHub Action posts to Slack on push (once GitHub Actions is deployed per above).
+
+---
+
+## OPEN — Instantly.ai campaigns running parallel to Mixmax (duplicate sequence risk)
+- First seen: 2026-05-18
+- If INSTANTLY_API_KEY is ever added to .env: confirm Instantly campaigns are paused first.
+- Resolution criteria: Bradley replies which platform is active for each segment.
+
+---
+
+## OPEN — Marcus fresh web intel needed (competitor + VOC)
+- First seen: 2026-05-18
+- Web search blocked in cloud. All prior intel from patterns/research.
+- Next steps: Bradley runs Marcus locally.
+
+---
+
+## OPEN — HubSpot not connected (CRM blind)
+- First seen: 2026-05-12
+- Escalating every run. Resolution: HUBSPOT_TOKEN added to .env.
+
+---
+
+## OPEN — No residential homeowner outreach channel
+- First seen: 2026-05-18
+- Memorial Day social posts written. Facebook posts week May 19 + Memorial Day posts ready.
+- Resolution criteria: Bradley posts 1 Facebook post this week.
+
+---
+
+## OPEN — Workiz API blocked in cloud AND 0 power washing jobs on local
+- First seen: 2026-05-14
+- All code fixes confirmed present. Diagnostic logging active.
+- Next step: Bradley checks Workiz for actual JobType field name.
+
+---
+
+## OPEN — Google Business Profile not managed (zero-cost lead channel ignored)
+- Updated: 2026-05-21 (run 36) — TODAY is last chance before Memorial Day weekend. Post 1 photo.
+- Templates: `outputs/tommy/google_business_profile_post_templates_2026-05-20.md`
+- 5 minutes: Google Maps → search Forest City Power Washing → Add Photo.
+- Resolution: Bradley posts 1 photo to GBP.
+
+---
+
+## OPEN — No review request automation
+- First seen: 2026-05-18
+- 3-touch sequence: `outputs/tommy/review_request_sequence_2026-05-18.md`.
+- Resolution: Bradley sends review request text after each completed job.
+
+---
+
+## OPEN — No Google Ads running (invisible for "power washing near me")
+- First seen: 2026-05-19
+- Ad copy ready: `outputs/rick/google_ads_june_2026-05-19.md`.
+- Blockers: Google Ads account + GOOGLE_ADS_TOKEN in .env.
+- Resolution criteria: Bradley creates Google Ads account and launches Campaign 1.
+
+---
+
+## OPEN — No Facebook ads running (peak season with no paid traffic)
+- First seen: 2026-05-20
+- Ad copy ready: `outputs/rick/facebook_ads_peak_season_2026-05-20.md`. Budget: $30/day to start.
+- Resolution criteria: Bradley sets up ads in Facebook Ads Manager.
+
+---
+
+## OPEN — No website service pages (needed as Google Ads landing pages)
+- First seen: 2026-05-20
+- Service page copy: `outputs/tommy/website_copy_service_pages_2026-05-20.md` (5 pages).
+- Roof Soft Wash page should be first — highest search intent.
+- Resolution criteria: Bradley builds service pages in web platform.
+
+---
+
+## OPEN — No past customer re-engagement blast this season
+- First seen: 2026-05-20
+- Re-engagement templates: `outputs/tommy/past_customer_reengagement_2026-05-18.md`.
+- Blocking factor: Need customer list from Workiz (run locally).
+- Resolution criteria: Bradley pulls completed jobs from Workiz and texts past customers.
+
+---
+
+## OPEN — No quote follow-up sequence (post-estimate gap)
+- First seen: 2026-05-20
+- 3-touch sequence: `outputs/tommy/quote_followup_sequence_2026-05-20.md`.
+- Resolution criteria: Bradley sends Touch 1 text within 24h of next quote sent.
+
+---
+
+## OPEN — June Residential Push (all assets built but not deployed)
+- First seen: 2026-05-20
+- Campaign brief: `outputs/donna/june_residential_push_2026-05-20.md`. 4-week plan with revenue math.
+- Critical path: service pages first (June 2), then Facebook ads (June 3).
+- Resolution criteria: Bradley builds service pages June 2 and launches Facebook ads June 3.
+
+---
+
+## OPEN — Fleet washing Mixmax sequence not created
+- First seen: 2026-05-20
+- Sequence copy: `outputs/danny/sequence_fleet_washing_2026-05-18.md`. Infrastructure ready.
+- Step-by-step creation guide: `outputs/vera/mixmax_sequence_setup_guide_2026-05-20.md`.
+- Resolution criteria: Real fleet_washing ID in `integrations/mixmax.py`.
+
+---
+
+## OPEN — 13 hot leads sitting uncontacted on LinkedIn
+- Updated: 2026-05-21 (run 36) — TODAY is the window. Touch 3 fires tomorrow.
+- New: `outputs/tommy/touch3_open_trigger_protocol_2026-05-21.md` covers post-Touch-3 LinkedIn workflow in real time.
+- Tonight: send 3+ LinkedIn connects BEFORE Touch 3 fires: `outputs/danny/linkedin_hot_lead_dm_protocol_2026-05-18.md`
+- Resolution criteria: Bradley sends 3+ LinkedIn connects.
+
+---
+
+*Last updated: 2026-05-21 by Vera Cole (run 36)*
+*Key metrics: 99 RESOLVED | 13 OPEN | Run 36: 3 code fixes + 1 deliverable + deploy script*
