@@ -71,6 +71,8 @@ PROPERTY_MANAGER_TITLES = [
     # Multifamily segment — apartment complexes (added 2026-05-21)
     'multifamily manager', 'multifamily director', 'multifamily asset manager',
     'multifamily regional', 'apartment complex manager',
+    # CAI-certified HOA titles and plural facilities form (added 2026-05-21 run 45)
+    'community association manager', 'hoa director', 'facilities manager',
 ]
 
 REALTOR_TITLES = [
@@ -124,12 +126,15 @@ def detect_lead_type(lead: dict) -> str:
     company = (lead.get('company_name') or lead.get('organization') or '').lower()
     combined = f"{title} {company}"
 
-    for kw in REALTOR_TITLES:
-        if kw in combined:
-            return 'realtor'
+    # Check PM titles first — they are more specific than realtor keywords.
+    # 'real estate' in REALTOR_TITLES is a substring that would falsely match
+    # any PM title-holder working at "XYZ Real Estate Management".
     for kw in PROPERTY_MANAGER_TITLES:
         if kw in combined:
             return 'property_manager'
+    for kw in REALTOR_TITLES:
+        if kw in combined:
+            return 'realtor'
     for kw in CONTRACTOR_TITLES:
         if kw in combined:
             return 'contractor'

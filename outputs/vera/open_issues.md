@@ -482,3 +482,144 @@
 - Total OPEN: 16 (added: Marcus silent)
 - Auto-upgrades shipped: 5 (report_card.py PIL fix, DANNY_ORG_KEYWORDS multifamily, DANNY_TITLES multifamily, mixmax.py multifamily PM titles, Apollo 429 detection, danny.md county calendar)
 - Deliverables written: 2 (touch3_outcome_tracker, competitive_intel_brief)
+
+---
+
+## RESOLVED — detect_lead_type routing bug (PM at real estate company → realtor)
+- Resolved: 2026-05-21 (run 45)
+- Description: REALTOR_TITLES was checked before PROPERTY_MANAGER_TITLES. 'real estate' substring in REALTOR_TITLES matched PM contacts at companies like "Howard Hanna Real Estate" or "ABC Real Estate Management" — routing them to the realtor sequence instead of PM sequence.
+- Fix: Swapped check order in detect_lead_type() — PROPERTY_MANAGER_TITLES checked first. All 9 routing tests pass. PM titles are specific enough that no real realtor would be misrouted.
+
+---
+
+## RESOLVED — contacts_cache.json not committed in final pipeline git push
+- Resolved: 2026-05-21 (run 45)
+- Description: The final git add in lead_pipeline.py __main__ only staged pipeline_data.json. Enrollment marks written to contacts_cache.json by verify_and_repair_enrollment() and run_pending_sequences() were never pushed to GitHub.
+- Fix: Added 'contacts_cache.json' to the git add command alongside pipeline_data.json.
+
+---
+
+## OPEN — Manual Contacts Sitting Untouched (New Lead stage)
+- First seen: 2026-05-18
+- Description: 33 contacts in New Lead stage. Tier 1 contractors — tonight is the last window before Memorial Day weekend.
+- Tier 1 TEXT TONIGHT: Anthony/Land Pro (440-320-2779), Dontez/GTP (440-396-0814), Chris/Twin Improvements (216-773-0757), Venus/Reliable Roofing (216-810-2497), Logan/Pagels (216-956-5263)
+- Run 45: Touch 3 fires tomorrow (May 22). May 26 is the backup blitz day. All playbooks in place.
+- Resolution criteria: Bradley texts Tier 1 list or May 26 blitz.
+
+---
+
+## OPEN — Mixmax API blocked in cloud execution environment
+- First seen: 2026-05-18
+- Workaround: All pipeline scripts return None/safe fallback on 403.
+- Run 45: Still blocked. Run locally for live data.
+
+---
+
+## OPEN — All external APIs blocked from cloud (Apollo, Workiz, Mixmax)
+- First seen: 2026-05-18
+- Workaround: scripts/crontab_setup.txt created — paste into crontab -e on Mac.
+- Run 45: CRITICAL — Danny cron still not running. Round 2 enrollment June 4.
+
+---
+
+## OPEN — Slack Webhook blocked in cloud execution environment
+- First seen: 2026-05-18
+- Workaround: Messages written to pending_slack_messages.md. GitHub Action + vera_relay.py on local cron.
+
+---
+
+## OPEN — GitHub Actions PAT missing workflow scope
+- First seen: 2026-05-20 (run 34)
+- Description: vera-slack-relay.yaml exists at .github/workflows/. PAT needs 'workflow' scope to push it.
+- Run 45: Action: Settings → Developer settings → Personal access tokens → Edit ghp_lrUhBq7... → check 'workflow' → Save → run scripts/deploy_github_action.sh
+
+---
+
+## OPEN — Instantly.ai vs Mixmax Overlap (duplicate sequence risk)
+- First seen: 2026-05-18
+- Run 45: Still unresolved. Action: Log into Instantly.ai and pause all campaigns.
+
+---
+
+## OPEN — 0% reply rate across enrolled contacts
+- First seen: 2026-05-18
+- Description: ~45 contacts enrolled, 0 replies. Touch 3 fires May 22 (tomorrow).
+- Run 45: round2_pm_sequence_rewrite_2026-05-21.md written — 3 Email 1 alternatives (social proof, fear/urgency, direct question) ready if 0 replies by May 25. Decision gate: May 25.
+- Resolution criteria: Replies confirmed OR Round 2 launched with rewritten sequence by May 25.
+
+---
+
+## OPEN — Hot leads uncontacted on LinkedIn (Touch 3 active)
+- First seen: 2026-05-18
+- Run 45: Touch 3 fires tomorrow. LinkedIn connect protocol is outputs/tommy/touch3_open_trigger_protocol_2026-05-21.md.
+- Resolution criteria: Bradley connects on LinkedIn with 2+ open contacts May 22-23.
+
+---
+
+## OPEN — HubSpot not connected (CRM blind)
+- First seen: 2026-05-18
+- Not urgent until post-peak season (July+).
+
+---
+
+## OPEN — No residential homeowner outreach channel active
+- First seen: 2026-05-18
+- Run 45: All assets ready. Past customer blast May 26 + Facebook ads + service pages needed.
+
+---
+
+## OPEN — Workiz API blocked in cloud AND 0 power washing jobs on local
+- First seen: 2026-05-18
+- Run 45: Still open. Bradley must run locally and check log for JobType values.
+
+---
+
+## OPEN — Regular Danny PM cron not running (9+ days overdue) 🔴
+- First seen: 2026-05-20 (run 28)
+- Run 45: 10+ days since last pull. scripts/crontab_setup.txt is ready to paste.
+- CRITICAL PATH: Round 2 enrollment June 4. Danny needs Summit + Medina leads BEFORE June 4.
+
+---
+
+## OPEN — Google Business Profile not managed
+- First seen: 2026-05-20 (run 30)
+- Run 45: gbp_weekly_routine_2026-05-21.md exists. Action: post first photo by May 26.
+
+---
+
+## OPEN — No review request automation
+- First seen: 2026-05-20 (run 30)
+- Run 45: Manual template exists. Automation is post-peak (July+).
+
+---
+
+## OPEN — Gas station contacts not enrolled in Mixmax (18 emails idle)
+- First seen: 2026-05-20 (run 31)
+- Run 45: Still open. Action: create Mixmax sequence → paste ID into integrations/mixmax.py.
+
+---
+
+## OPEN — No Google Ads running
+- First seen: 2026-05-21 (run 36)
+- Run 45: Copy ready (outputs/rick/google_ads_june_2026-05-19.md). Not launched.
+
+---
+
+## OPEN — Past customer reengagement not launched
+- First seen: 2026-05-20 (run 29)
+- Run 45: Launch guide exists (outputs/donna/past_customer_reengagement_launch_2026-05-21.md). Target: May 26.
+
+---
+
+## OPEN — Marcus silent — no live competitor/VOC intel since May 19
+- First seen: 2026-05-21 (run 44)
+- Run 45: Still open. Web search blocked in cloud. Existing intel brief written.
+- Resolution criteria: Bradley runs Marcus locally for live Google review mining.
+
+---
+
+## RUN METRICS — Run 45 | 2026-05-21
+- Total RESOLVED: 45 (added: detect_lead_type routing bug, contacts_cache.json commit gap)
+- Total OPEN: 15 (net: resolved 2 new, no new opens)
+- Auto-upgrades shipped: 4 (detect_lead_type order fix, 3 PM titles added to mixmax.py+lead_pipeline.py, contacts_cache.json commit, nina_report.py API-blocked action item)
+- Deliverables written: 1 (round2_pm_sequence_rewrite_2026-05-21.md)

@@ -397,7 +397,9 @@ def run_weekly():
         '## Action Items for Bradley',
         '',
         reply_item,
-        f'- [ ] Connect on LinkedIn with {total_hot} hot leads (links in the daily hot leads report)',
+        ('- [ ] Run `python3 workers/nina_report.py daily` locally to see hot leads, then connect on LinkedIn'
+         if api_blocked
+         else f'- [ ] Connect on LinkedIn with {total_hot} hot leads (links in the daily hot leads report)'),
         f'- [ ] Check Danny\'s new leads this week and confirm enrollment',
         '',
         '---',

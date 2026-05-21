@@ -83,6 +83,8 @@ DANNY_TITLES = [
     # Multifamily-specific titles (added 2026-05-21 — large apt complex segment)
     'multifamily manager', 'multifamily director', 'multifamily asset manager',
     'multifamily regional manager', 'apartment complex manager',
+    # CAI-certified HOA titles and plural facilities form (added 2026-05-21 run 45)
+    'community association manager', 'hoa director', 'facilities manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -733,9 +735,10 @@ if __name__ == '__main__':
     # Always verify enrollment after pulling leads — catches any silent failures
     verify_and_repair_enrollment()
 
-    # Commit pipeline_data.json if it changed (enrollment marks from run_pending_sequences)
+    # Commit pipeline_data.json and contacts_cache.json if changed
+    # (enrollment marks from run_pending_sequences + verify_and_repair_enrollment)
     try:
-        subprocess.run(['git', '-C', str(BASE_DIR), 'add', 'pipeline_data.json'], capture_output=True)
+        subprocess.run(['git', '-C', str(BASE_DIR), 'add', 'pipeline_data.json', 'contacts_cache.json'], capture_output=True)
         subprocess.run(['git', '-C', str(BASE_DIR), 'commit', '-m',
                         f'Pipeline: update pipeline_data.json enrollment marks {datetime.now().strftime("%Y-%m-%d")}'],
                        capture_output=True)
