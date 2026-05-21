@@ -1897,47 +1897,79 @@
 
 ---
 
+## RESOLVED — workiz_report.py per-job price display crashes on string values (run 40 fix was partial)
+- Resolved: 2026-05-21 (run 41)
+- Description: Run 40 fixed `total_revenue` and `total_due` sums in `generate_report()`, but missed 3 per-job price variables (upcoming loop line 157, recent completions line 177, all-jobs table line 188) and both sums in `post_to_slack()` (lines 248-249). All 5 still used raw `j.get('JobTotalPrice', 0)` without `float()` cast — crash risk when Workiz returns string prices.
+- Fix: Applied `float(j.get('JobTotalPrice', 0) or 0)` to all 5 remaining locations. Full coverage now.
+- File: `workers/workiz_report.py`
+
+---
+
+## RESOLVED — jasmine_flyer.py log() crashes on fresh clone (no logs/ dir)
+- Resolved: 2026-05-21 (run 41)
+- Description: `log()` called `open(ACTIVITY_LOG, "a")` with no `LOGS_DIR.mkdir(exist_ok=True)` guard. On a fresh clone where `logs/` directory doesn't exist, EVERY call to `log()` (at the start of `process_pending_pairs()`) would crash with `FileNotFoundError`. Complete silent failure — no flyers processed, nothing logged. Other workers (vera_relay.py, lead_pipeline.py) all have mkdir guards; jasmine was the only one missing it.
+- Fix: Added `LOGS_DIR.mkdir(exist_ok=True)` before `open(ACTIVITY_LOG, "a")` in `log()`. Consistent with `vera_relay.py` and `lead_pipeline.py` patterns.
+- File: `workers/jasmine_flyer.py`
+
+---
+
 ## OPEN — 0% reply rate (Touch 3 fires TOMORROW May 22) 🚨🚨
-- Updated: 2026-05-21 (run 40) — TOUCH 3 FIRES TOMORROW. TONIGHT IS THE LAST PREP WINDOW.
-- Run 40: Last Night Checklist written → `outputs/vera/touch3_last_night_checklist_2026-05-21.md`. 4 items: (1) Verify Reply-To NOW, (2) Enable open notifications, (3) Text Tier 1 contractors, (4) Run Summit County pipeline. All 7 playbook resources remain in place.
+- Updated: 2026-05-21 (run 41) — TOUCH 3 FIRES TOMORROW. ALL ASSETS LOCKED. TONIGHT IS THE WINDOW.
+- Run 41: No new assets needed — all 7 playbook resources are in place. Tonight checklist covers everything: `outputs/vera/touch3_last_night_checklist_2026-05-21.md`.
+- **THE COMPLETE MAY 22 PLAYBOOK:**
+  - TONIGHT (5 min): verify Reply-To → `outputs/vera/mixmax_reply_to_check_2026-05-20.md`
+  - TONIGHT (5 min): open notifications → `outputs/vera/mixmax_open_notifications_setup_2026-05-21.md`
+  - TONIGHT (15 min): text 5 contractors → `outputs/tommy/contractor_referral_text_script_2026-05-20.md`
+  - MORNING (8am): `outputs/vera/touch3_morning_brief_2026-05-22.md`
+  - REAL-TIME (each open): `outputs/tommy/touch3_open_trigger_protocol_2026-05-21.md`
+  - IF REPLIES: `outputs/tommy/touch3_reply_response_templates_2026-05-20.md` + `outputs/tommy/quote_to_close_kit_2026-05-20.md`
+  - NO REPLIES BY NOON: `outputs/tommy/hot_lead_phone_script_2026-05-22.md`
+  - EVENING (6pm): `outputs/vera/touch3_evening_debrief_2026-05-22.md`
+  - MAY 23–26: `outputs/tommy/memorial_day_monitoring_2026-05-21.md`
+  - MONDAY MAY 26: `outputs/donna/may26_cron_restart_brief.md`
 - Resolution criteria: 1+ reply from Touch 3 OR Bradley calls hot leads May 22–26.
 
 ---
 
 ## OPEN — Manual Contacts Sitting Untouched (New Lead stage)
-- Updated: 2026-05-21 (run 40) — 36 contacts: 33 New Lead, 3 Contacted. TONIGHT is the last window.
+- Updated: 2026-05-21 (run 41) — 36 contacts: 33 New Lead, 3 Contacted. TONIGHT is the last business window before Memorial Day.
 - Send texts TONIGHT (May 21) — use scripts from `outputs/tommy/contractor_referral_text_script_2026-05-20.md`:
-  - Anthony/Land Pro: 440-320-2779 (script A)
-  - Dontez/GTP: 440-396-0814 (script A)
-  - Twin Improvements: 216-773-0757 (script B)
-  - Reliable Roofing: 216-810-2497 (script C)
-  - Pagels Construction: 216-956-5263 (script C)
-- If missed tonight: May 26 morning window — `outputs/donna/may26_cron_restart_brief.md`
+  - Anthony/Land Pro: 440-320-2779 (script A — landscaper)
+  - Dontez/GTP: 440-396-0814 (script A — landscaper)
+  - Twin Improvements: 216-773-0757 (script B — siding)
+  - Reliable Roofing: 216-810-2497 (script C — roofing)
+  - Pagels Construction: 216-956-5263 (script C — roofing)
+- Next window if missed tonight: May 26 morning — `outputs/donna/may26_cron_restart_brief.md` Step 2.
+- After Memorial Day: Full May 26 blitz — `outputs/donna/may26_outreach_blitz_brief_2026-05-20.md`.
 
 ---
 
 ## OPEN — Regular Danny PM cron not running (13 days overdue) 🔴🔴
-- Updated: 2026-05-21 (run 40) — 13 DAYS OVERDUE. Summit County = week 21. TODAY is the last day to pull it in this rotation cycle. After midnight → week 22 → Medina.
-- Run 40: June Apollo Pull Schedule written → `outputs/donna/june_apollo_pull_schedule_2026-05-21.md`. Full schedule May 21–July 4 with exact ISO weeks, counties, expected lead counts, and commands. Summit County miss explained with Option A (run today) and Option B (workaround for May 26).
-- IMMEDIATE (before midnight): `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py danny`
-- May 26 fallback: `outputs/donna/may26_cron_restart_brief.md` Step 3.
+- Updated: 2026-05-21 (run 41) — 13 DAYS OVERDUE. After midnight tonight the rotation rolls to week 22 (Medina). Summit County opportunity closes tonight.
+- **LAST CHANCE TONIGHT:** `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py danny`
+- If missed tonight: May 26 recovery per `outputs/donna/may26_cron_restart_brief.md` Step 3. Summit becomes option B in the June pull schedule.
+- Full June recovery schedule: `outputs/donna/june_apollo_pull_schedule_2026-05-21.md`.
 
 ---
 
 ## OPEN — Gas station & fleet contacts not enrolled in Mixmax
-- Updated: 2026-05-21 (run 40) — Infrastructure fully built. Run 40: June Apollo Pull Schedule documents June 2 as the target date for Mixmax sequence creation + pipeline run. `outputs/donna/june_apollo_pull_schedule_2026-05-21.md` has exact steps.
+- Updated: 2026-05-21 (run 41) — Same status. All infrastructure ready. Target date June 2.
+- Step-by-step guide: `outputs/vera/mixmax_sequence_setup_guide_2026-05-20.md` (20 min).
+- June 2 slot in: `outputs/donna/june_week1_sprint_2026-05-20.md`.
 
 ---
 
 ## OPEN — Google Business Profile not managed (zero-cost lead channel ignored)
-- Updated: 2026-05-21 (run 40) — TONIGHT OR FIRST THING TOMORROW MORNING. Last window before Memorial Day weekend (homeowners search over the holiday). 5 minutes: Google Maps → Forest City Power Washing → Add Photo. Captions: `outputs/vera/gbp_post_may21_2026.md`.
+- Updated: 2026-05-21 (run 41) — TONIGHT OR TOMORROW MORNING (before Memorial Day traffic). 5 minutes: Google Maps → Forest City Power Washing → Add Photo. Captions: `outputs/vera/gbp_post_may21_2026.md`.
+- Next window if missed: May 26 (Memorial Day weekend still gets homeowner searches).
 
 ---
 
 ## OPEN — GitHub Actions workflow missing — ALL cloud Slack messages silently dropped 🚨
-- Updated: 2026-05-21 (run 40) — Status unchanged. `vera_relay.py` cron on Bradley's Mac is the active path. Deploy script ready: `scripts/deploy_github_action.sh`. PAT needs `workflow` scope first.
+- Updated: 2026-05-21 (run 41) — Status unchanged. `vera_relay.py` cron on Bradley's Mac is the active Slack path. Deploy script: `scripts/deploy_github_action.sh`. PAT needs `workflow` scope.
+- Resolution criteria: Bradley adds workflow scope to PAT + adds SLACK_WEBHOOK_OFFICE repo secret + runs deploy script.
 
 ---
 
-*Last updated: 2026-05-21 by Vera Cole (run 40)*
-*Key metrics: 108 RESOLVED | 17 OPEN | Run 40: 3 code fixes (FLEET_KEYWORDS false-positive, server.py path traversal, workiz price float cast) + 2 deliverables (June Apollo Pull Schedule, Touch 3 Last Night Checklist)*
+*Last updated: 2026-05-21 by Vera Cole (run 41)*
+*Key metrics: 110 RESOLVED | 17 OPEN | Run 41: 2 code fixes (workiz price float cast — 5 remaining sites, jasmine log mkdir guard). Touch 3 fires tomorrow — all 9 playbook resources in place.*

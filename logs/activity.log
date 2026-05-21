@@ -323,3 +323,7 @@
 [2026-05-21 12:30] Vera | Deliverable: touch3_last_night_checklist_2026-05-21.md — 4-item tonight checklist before Touch 3 fires tomorrow: Reply-To verify, open notifications, 5 Tier 1 contractor texts, Summit County pipeline run; links all 7 May 22 playbook resources | outputs/vera/touch3_last_night_checklist_2026-05-21.md | Done
 [2026-05-21 12:30] Vera | Updated open_issues.md — run 40: 3 new RESOLVED, all open issues updated with run 40 status; metrics 108 RESOLVED | 17 OPEN | outputs/vera/open_issues.md | Done
 [2026-05-21 12:30] Vera | Proposals + escalations written to pending_slack_messages.md for vera_relay.py | outputs/vera/pending_slack_messages.md | Done
+[2026-05-21 18:09] Vera | Auto-upgrade: workiz_report.py — completed float() cast for all 5 remaining price locations (per-job display variables + post_to_slack sums); run 40 fix was partial | workers/workiz_report.py | Done
+[2026-05-21 18:09] Vera | Auto-upgrade: jasmine_flyer.py log() — added LOGS_DIR.mkdir(exist_ok=True) guard; fresh-clone FileNotFoundError now safe | workers/jasmine_flyer.py | Done
+[2026-05-21 18:09] Vera | Updated open_issues.md — run 41: 2 new RESOLVED, all OPEN issues updated with run 41 status; metrics 110 RESOLVED | 17 OPEN | outputs/vera/open_issues.md | Done
+[2026-05-21 18:09] Vera | Proposals + summary written to pending_slack_messages.md — Mixmax send-time optimization proposal, Touch 3 TONIGHT action alert, run 41 summary | outputs/vera/pending_slack_messages.md | Done

@@ -154,8 +154,8 @@ def generate_report(mode='daily'):
         for days_out, j in upcoming:
             name = f"{j.get('FirstName','')} {j.get('LastName','')}".strip() or j.get('Company', 'Unknown')
             addr = j.get('LocationKey', j.get('Address', ''))
-            price = j.get('JobTotalPrice', 0)
-            due = j.get('JobAmountDue', 0)
+            price = float(j.get('JobTotalPrice', 0) or 0)
+            due = float(j.get('JobAmountDue', 0) or 0)
             dt = j.get('JobDateTime', '')[:10]
             tag_str = ', '.join(j.get('Tags', [])) if j.get('Tags') else ''
             lines.append(f"**{dt}** (+{days_out}d) — {name}")
@@ -174,7 +174,7 @@ def generate_report(mode='daily'):
         lines += ["", f"## Completed This Week", ""]
         for j in recent:
             name = f"{j.get('FirstName','')} {j.get('LastName','')}".strip() or j.get('Company', 'Unknown')
-            price = j.get('JobTotalPrice', 0)
+            price = float(j.get('JobTotalPrice', 0) or 0)
             lines.append(f"- {name} — ${price:,.2f} ({j.get('Status')})")
 
     # All jobs table
@@ -185,7 +185,7 @@ def generate_report(mode='daily'):
         name = f"{j.get('FirstName','')} {j.get('LastName','')}".strip() or j.get('Company', 'N/A')
         addr = j.get('City', '') + ', ' + j.get('State', '')
         dt = j.get('JobDateTime', '')[:10]
-        price = j.get('JobTotalPrice', 0)
+        price = float(j.get('JobTotalPrice', 0) or 0)
         status = j.get('Status', '')
         lines.append(f"| {dt} | {name} | {addr} | ${price:,.2f} | {status} |")
 
@@ -245,8 +245,8 @@ def post_to_slack(report_text, summary, mode='daily', jobs=None):
         )
         return
 
-    total_revenue = sum(j.get('JobTotalPrice', 0) for j in jobs)
-    total_due = sum(j.get('JobAmountDue', 0) for j in jobs)
+    total_revenue = sum(float(j.get('JobTotalPrice', 0) or 0) for j in jobs)
+    total_due = sum(float(j.get('JobAmountDue', 0) or 0) for j in jobs)
 
     # Status breakdown for summary lines
     status_counts = {}

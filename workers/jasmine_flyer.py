@@ -53,6 +53,7 @@ def log(msg):
     ts   = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     line = f"[{ts}] Jasmine: {msg}"
     print(line)
+    LOGS_DIR.mkdir(exist_ok=True)
     with open(ACTIVITY_LOG, "a") as f:
         f.write(line + "\n")
 
