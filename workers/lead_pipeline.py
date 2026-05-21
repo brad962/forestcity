@@ -74,8 +74,8 @@ DANNY_SEARCHES = [
 DANNY_TITLES = [
     'property manager', 'facility manager', 'community manager',
     'hoa manager', 'building manager', 'property management director',
-    'asset manager', 'leasing manager',
-    'facilities director', 'building superintendent',
+    'asset manager', 'portfolio manager', 'leasing manager',
+    'facilities director', 'building superintendent', 'building supervisor',
     'apartment manager', 'condo manager', 'property supervisor',
     'residential manager', 'property director',
     # Multi-site decision-makers at larger management firms

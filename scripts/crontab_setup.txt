@@ -1,0 +1,27 @@
+# Forest City Power Washing — Crontab Setup
+# How to install: run `crontab -e` in your terminal, paste ALL lines below, save.
+# Check it's running: tail -50 /Users/bradleyneal/forestcity/logs/cron.log
+# Full cron log path: /Users/bradleyneal/forestcity/logs/cron.log
+#
+# ─── CRITICAL: these have been down since May 12 ──────────────────────────────
+# Danny's lead pull must run or Round 2 enrollment (June 4) has no new leads.
+# ──────────────────────────────────────────────────────────────────────────────
+
+# Danny — pull property manager leads (rotating counties, weekly Monday 7am)
+0 7 * * 1 cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both >> logs/cron.log 2>&1
+
+# Nina — daily hot leads report (Mon-Fri 8am — flags replied contacts)
+0 8 * * 1-5 cd /Users/bradleyneal/forestcity && python3 workers/nina_report.py daily >> logs/cron.log 2>&1
+
+# Nina — weekly pipeline summary (Monday 8:30am)
+30 8 * * 1 cd /Users/bradleyneal/forestcity && python3 workers/nina_report.py weekly >> logs/cron.log 2>&1
+
+# Nina — Workiz job revenue report (Mon-Fri 9am)
+0 9 * * 1-5 cd /Users/bradleyneal/forestcity && python3 workers/workiz_report.py daily >> logs/cron.log 2>&1
+
+# Vera Relay — checks for new Vera commits and posts pending Slack messages (every 5 min)
+*/5 * * * * cd /Users/bradleyneal/forestcity && python3 workers/vera_relay.py >> logs/cron.log 2>&1
+
+# Jasmine — before/after photo pipeline (every 5 min — picks up new photos from Slack)
+# Requires: PIL (pip3 install Pillow), requests (pip3 install requests)
+*/5 * * * * cd /Users/bradleyneal/forestcity && bash workers/run_jasmine_pipeline.sh >> logs/cron.log 2>&1
