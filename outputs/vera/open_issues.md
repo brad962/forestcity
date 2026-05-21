@@ -325,8 +325,160 @@
 
 ---
 
-## RUN METRICS — Run 43 | 2026-05-21
-- Total RESOLVED: 42
-- Total OPEN: 15
-- Auto-upgrades shipped: 3 (DANNY_TITLES, crontab_setup.txt, open_issues consolidation)
-- Deliverables written: 3 (linkedin_posts_june, past_customer_reengagement_launch, gbp_weekly_routine)
+## RESOLVED — report_card.py PIL import crash (silent blocker — all workers broken in cloud)
+- Resolved: 2026-05-21 (run 44)
+- Fix: Wrapped `from PIL import ...` in try/except, set `_PIL_AVAILABLE` flag. `send_report_card()` falls back to a text-only Slack message when Pillow not installed. Added `_send_text_report_card()` fallback. All workers now import cleanly in cloud environment (confirmed: `python3 -c "from utils.report_card import send_report_card"` passes).
+
+---
+
+## OPEN — Manual Contacts Sitting Untouched (New Lead stage)
+- First seen: 2026-05-18
+- Description: 33 contacts in New Lead stage. 0 last_contact dates. Tier 1 contractors — tonight is the last window before Memorial Day weekend.
+- Tier 1 TEXT TONIGHT: Anthony/Land Pro (440-320-2779), Dontez/GTP (440-396-0814), Chris/Twin Improvements (216-773-0757), Venus/Reliable Roofing (216-810-2497), Logan/Pagels (216-956-5263)
+- Run 43: Past customer reengagement launch guide written (donna/past_customer_reengagement_launch_2026-05-21.md). May 26 is the backup if tonight doesn't happen.
+- Run 44: touch3_outcome_tracker_2026-05-22.md created — Bradley fills this in May 22-26 as replies come in.
+- Resolution criteria: Bradley texts Tier 1 list tonight or May 26 (Memorial Day Blitz Day).
+
+---
+
+## OPEN — Mixmax API blocked in cloud execution environment
+- First seen: 2026-05-18
+- Workaround: All pipeline scripts return None/safe fallback on 403. nina_report shows explicit API warning.
+- Next steps: Bradley checks Mixmax → API Settings → IP Allowlist.
+
+---
+
+## OPEN — All external APIs blocked from cloud (Apollo, Workiz, Mixmax)
+- First seen: 2026-05-18
+- Workaround: Cron job schedule documented. scripts/crontab_setup.txt created run 43 — paste into `crontab -e` on Mac.
+- CRITICAL: Danny has not pulled leads since May 12 (9 days). Round 2 enrollment targets June 4. Cron must be running by May 26.
+- Run 44: County rotation calendar added to agents/danny.md — Bradley can see exactly which county Danny will pull each week through July.
+
+---
+
+## OPEN — Slack Webhook blocked in cloud execution environment
+- First seen: 2026-05-18
+- Workaround: Messages written to pending_slack_messages.md. GitHub Action posts on push.
+- Run 43: vera_relay.py is the local alternative — runs on crontab every 5 min and posts pending messages.
+
+---
+
+## OPEN — GitHub Actions PAT missing workflow scope
+- First seen: 2026-05-20 (run 34)
+- Description: vera-slack-relay.yaml written to .github/workflows/. Cloud push blocked — PAT needs 'workflow' scope.
+- Run 43: deploy_github_action.sh in scripts/ — run AFTER adding PAT workflow scope.
+- Action: Settings → Developer settings → Personal access tokens → Edit ghp_lrUhBq7... → check 'workflow' → Save → run scripts/deploy_github_action.sh
+
+---
+
+## OPEN — Instantly.ai vs Mixmax Overlap (duplicate sequence risk)
+- First seen: 2026-05-18
+- Description: server.py has active Instantly.ai campaign IDs. Risk of duplicate emails to same contacts.
+- Run 43: Still unresolved.
+- Action: Log into Instantly.ai and pause/disable all campaigns. Mixmax is the sole active platform.
+
+---
+
+## OPEN — 0% reply rate across enrolled contacts
+- First seen: 2026-05-18
+- Description: ~45 contacts enrolled, 0 replies. Touch 3 fires May 22.
+- Run 44: touch3_outcome_tracker_2026-05-22.md created — single tracker for all results May 22-26 including Round 2 decision gate.
+- Resolution criteria: Replies confirmed OR Round 2 sequence rewrite initiated by May 25.
+
+---
+
+## OPEN — Hot leads uncontacted on LinkedIn (Touch 3 active)
+- First seen: 2026-05-18
+- Description: Contacts with 2+ opens haven't been connected with on LinkedIn.
+- Run 43: linkedin_posts_june_2026-05-21.md written — 10 posts for peak season. Bradley has fresh content to post while connecting.
+- Resolution criteria: Bradley runs touch3_open_trigger_protocol May 22–23 per outputs/tommy/touch3_open_trigger_protocol_2026-05-21.md.
+
+---
+
+## OPEN — HubSpot not connected (CRM blind)
+- First seen: 2026-05-18
+- Workaround: Nina weekly report includes overdue/due-soon follow-up section with names + phone numbers.
+- Resolution criteria: HUBSPOT_TOKEN added to .env. Not urgent until post-peak season (July+).
+
+---
+
+## OPEN — No residential homeowner outreach channel active
+- First seen: 2026-05-18
+- Description: Facebook ads not running. June Residential Push brief written. Service pages written. Rick's ad copy written.
+- Run 43: Past Customer Reengagement Launch Guide written — fastest path to residential revenue this week (20 min, zero cost).
+- Resolution criteria: (1) Service pages live on website, (2) Facebook ads launched, (3) Past customer blast sent May 26.
+
+---
+
+## OPEN — Workiz API blocked in cloud AND 0 power washing jobs on local
+- First seen: 2026-05-18
+- Workaround: Diagnostic logging added — locally run shows all JobType values found.
+- Run 44: Still open. Bradley must run locally and check logs for JobType values from Workiz.
+- Resolution criteria: Bradley runs `python3 workers/workiz_report.py daily` locally, finds the JobType string Workiz uses, adds it to JOB_TYPE_VARIANTS.
+
+---
+
+## OPEN — Regular Danny PM cron not running (9+ days overdue) 🔴
+- First seen: 2026-05-20 (run 28)
+- Description: Last pull May 12. Apollo blocked in cloud. Cron not set up locally.
+- Run 44: County rotation calendar in agents/danny.md now shows Memorial Day risk — May 25 cron may not run if Mac is off. Manual run instruction added.
+- CRITICAL PATH: Round 2 enrollment June 4. Danny needs Summit + Medina leads in cache BEFORE June 4.
+- Resolution criteria: crontab running; Danny pull confirmed in logs/cron.log by May 26.
+
+---
+
+## OPEN — Google Business Profile not managed
+- First seen: 2026-05-20 (run 30)
+- Description: GBP posts drive local search ranking. Free. High ROI for residential inbound.
+- Run 43: Full weekly routine written (outputs/vera/gbp_weekly_routine_2026-05-21.md). 30 min/week protocol with 4 post templates.
+- Resolution criteria: Bradley posts first GBP photo + caption by May 26 at business.google.com.
+
+---
+
+## OPEN — No review request automation
+- First seen: 2026-05-20 (run 30)
+- Description: Template exists (outputs/tommy/review_request_sequence_2026-05-18.md). No automation.
+- Workaround: Manual send after each job using the template.
+- Resolution criteria: Twilio credentials added + automated trigger post job completion. Post-peak season (July+).
+
+---
+
+## OPEN — Gas station contacts not enrolled in Mixmax (18 emails idle)
+- First seen: 2026-05-20 (run 31)
+- Description: 18 gas station DMs in pipeline_data.json. Sequence ID = PENDING.
+- Setup guide: outputs/vera/mixmax_sequence_setup_guide_2026-05-20.md
+- Run 44: Still open.
+- Action: Bradley creates Mixmax sequence → pastes ID into integrations/mixmax.py SEQUENCES['gas_station']['id'] → runs lead_pipeline.py to auto-enroll all 18.
+
+---
+
+## OPEN — No Google Ads running
+- First seen: 2026-05-21 (run 36)
+- Description: Rick's copy ready (outputs/rick/google_ads_june_2026-05-19.md). Not launched.
+- Run 44: Still open.
+- Resolution criteria: Google Ads account created + campaigns live. Budget: $15–25/day.
+
+---
+
+## OPEN — Past customer reengagement not launched
+- First seen: 2026-05-20 (run 29)
+- Description: Tommy's template sitting unused. Highest-ROI action for residential revenue.
+- Run 44: May 26 launch guide exists. Touch 3 outcome tracker created for same-day tracking.
+- Revenue potential: $1,400–$4,000 from 20–30 contacts at 20–35% conversion.
+- Resolution criteria: Bradley sends reengagement texts May 26 using the launch guide.
+
+---
+
+## OPEN — Marcus silent — no competitor/VOC intel since May 19
+- First seen: 2026-05-21 (run 44)
+- Description: Marcus's most recent output is voc_seasonal_bulletin_may_2026.md. No competitor profiles or live review mining since May 19. Web search blocked in cloud.
+- Run 44: competitive_intel_brief_2026-05-21.md written from known market data. Covers bucket analysis, VOC phrases, NE Ohio seasonal patterns.
+- Resolution criteria: Bradley runs Marcus locally with web search enabled to pull live competitor Google reviews (last 60 days) and Facebook Ad Library data.
+
+---
+
+## RUN METRICS — Run 44 | 2026-05-21
+- Total RESOLVED: 43 (added: report_card.py PIL crash)
+- Total OPEN: 16 (added: Marcus silent)
+- Auto-upgrades shipped: 5 (report_card.py PIL fix, DANNY_ORG_KEYWORDS multifamily, DANNY_TITLES multifamily, mixmax.py multifamily PM titles, Apollo 429 detection, danny.md county calendar)
+- Deliverables written: 2 (touch3_outcome_tracker, competitive_intel_brief)

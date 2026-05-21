@@ -11,7 +11,11 @@ import urllib.request
 import urllib.parse
 from datetime import datetime
 from pathlib import Path
-from PIL import Image, ImageDraw, ImageFont
+try:
+    from PIL import Image, ImageDraw, ImageFont
+    _PIL_AVAILABLE = True
+except ImportError:
+    _PIL_AVAILABLE = False
 
 # Font paths — Mac first, Linux (Liberation Sans) as fallback
 def _find_font(mac_path, linux_paths):
@@ -64,6 +68,8 @@ W, H = 900, 520
 
 
 def font(path, size):
+    if not _PIL_AVAILABLE:
+        return None
     try:
         return ImageFont.truetype(path, size)
     except Exception:
@@ -289,6 +295,28 @@ def post_image_to_slack(
         return False
 
 
+def _send_text_report_card(
+    worker_name: str,
+    title: str,
+    metrics: list,
+    summary_lines: list,
+    status: str,
+    webhook: str,
+) -> bool:
+    """Text-only fallback for send_report_card when Pillow is not installed."""
+    metric_str = ' | '.join(f'{lbl}: {val}' for lbl, val in metrics[:4])
+    bullet_str = '\n'.join(f'>{line}' for line in summary_lines[:6])
+    msg = f'*{worker_name.upper()} — {title}* [{status}]\n{metric_str}\n{bullet_str}'
+    try:
+        payload = json.dumps({'text': msg}).encode()
+        req = urllib.request.Request(webhook, payload, {'Content-Type': 'application/json'})
+        urllib.request.urlopen(req, timeout=10)
+        return True
+    except Exception as e:
+        print(f'Text report card Slack post failed: {e}')
+        return False
+
+
 def send_report_card(
     worker_name: str,
     title: str,
@@ -299,6 +327,7 @@ def send_report_card(
 ) -> bool:
     """
     Generate a report card image, push to GitHub, and post to Slack.
+    Falls back to a text-only Slack message when Pillow is not installed.
     Loads all credentials from .env automatically.
     """
     # Load env
@@ -314,8 +343,13 @@ def send_report_card(
     github_pat = os.environ.get('GITHUB_PAT', '')
 
     if not webhook or not github_pat:
-        print('Missing SLACK_WEBHOOK_OFFICE or GITHUB_PAT')
+        print('Missing SLACK_WEBHOOK_OFFICE or GITHUB_PAT — report card skipped')
         return False
+
+    # Fallback: Pillow not installed — send plain text to Slack instead of image
+    if not _PIL_AVAILABLE:
+        print(f'Pillow not installed — sending text report card for {worker_name}')
+        return _send_text_report_card(worker_name, title, metrics, summary_lines, status, webhook)
 
     # Ensure output dir exists locally too
     out_dir = Path(__file__).parent.parent / 'outputs' / worker_name / 'reports'

@@ -80,6 +80,9 @@ DANNY_TITLES = [
     'residential manager', 'property director',
     # Multi-site decision-makers at larger management firms
     'regional manager', 'operations director', 'general manager',
+    # Multifamily-specific titles (added 2026-05-21 — large apt complex segment)
+    'multifamily manager', 'multifamily director', 'multifamily asset manager',
+    'multifamily regional manager', 'apartment complex manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -91,6 +94,9 @@ DANNY_ORG_KEYWORDS = [
     'real estate management', 'facilities management',
     # Commercial RE segment — office/retail/warehouse buildings with facility managers
     'commercial real estate', 'commercial property management',
+    # Multifamily segment — apartment complexes, large multi-unit residential (added 2026-05-21)
+    'multifamily', 'multi-family', 'multifamily housing', 'apartment complex',
+    'residential portfolio',
 ]
 
 CARLA_SEARCHES = [
@@ -152,7 +158,11 @@ def apollo_search(titles, locations, per_page=25, keywords=None):
         )
         data = json.loads(result.stdout)
         if 'error' in data:
-            print(f'  Apollo search error: {data["error"]}')
+            err = data['error']
+            if 'rate' in str(err).lower() or '429' in str(err):
+                print(f'  Apollo search rate-limited (429) — will retry next run: {err}')
+            else:
+                print(f'  Apollo search error: {err}')
             return []
         return data.get('people', [])
     except json.JSONDecodeError as e:

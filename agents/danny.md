@@ -66,6 +66,21 @@ Target locations (use county + "Ohio"):
 **Target:** Fleet managers at landscaping companies, HVAC firms, tree services, trucking/logistics in NE Ohio.
 **Why:** Companies with 5+ vehicles — one account = recurring monthly revenue, not a one-time job.
 
+## County Rotation Calendar (2026)
+Danny rotates counties by ISO week number (`week % 6`). Cron runs every Monday 7am.
+
+| ISO Week | Monday Date | County Batch |
+|----------|-------------|--------------|
+| Week 21  | May 25 (Memorial Day — Mac may be off) | Summit County + Akron |
+| Week 22  | June 1 | Medina County |
+| Week 23  | June 8 | Geauga + Portage |
+| Week 24  | June 15 | Cuyahoga |
+| Week 25  | June 22 | Lake County |
+| Week 26  | June 29 | Lorain County |
+| Week 27  | July 6 | Summit County (repeats) |
+
+> ⚠️ **Round 2 enrollment June 4**: Danny must pull Summit County BEFORE June 4. If the May 25 cron misses (Memorial Day), run manually: `python3 workers/lead_pipeline.py danny` from the forestcity folder on your Mac.
+
 ## Output Format
 
 Save lead lists to `/outputs/danny/` as:

@@ -68,6 +68,9 @@ PROPERTY_MANAGER_TITLES = [
     'building superintendent', 'property director',
     # Multi-site decision-makers at larger management firms (added 2026-05-20)
     'regional manager', 'operations director', 'general manager',
+    # Multifamily segment — apartment complexes (added 2026-05-21)
+    'multifamily manager', 'multifamily director', 'multifamily asset manager',
+    'multifamily regional', 'apartment complex manager',
 ]
 
 REALTOR_TITLES = [

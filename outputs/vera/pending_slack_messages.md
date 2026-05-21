@@ -1,68 +1,52 @@
-🔧 *Vera — Auto-Upgrade | Run 43*
->Changed: `workers/lead_pipeline.py` DANNY_TITLES — added 'portfolio manager' and 'building supervisor'
->Why: Both titles were in mixmax.py detection logic but absent from Apollo search — leads with these titles would be routed correctly but never pulled.
+🔧 *Vera — CRITICAL Auto-Upgrade | Run 44*
+>Changed: `utils/report_card.py` — wrapped PIL import in try/except; added text-only Slack fallback when Pillow not installed
+>Why: Pillow is not installed in the cloud environment. Every worker script (Danny, Nina, Workiz) was failing to import and silently dying. All workers are now confirmed importing cleanly.
+>File: utils/report_card.py
+---
+🔧 *Vera — Auto-Upgrade | Run 44*
+>Changed: `workers/lead_pipeline.py` DANNY_ORG_KEYWORDS — added 'multifamily', 'multi-family', 'multifamily housing', 'apartment complex', 'residential portfolio'
+>Why: Multifamily apartment complexes are a major PM segment in NE Ohio — none of these keywords were in Apollo org search, so all multifamily decision-makers were being missed entirely.
 >File: workers/lead_pipeline.py
 ---
-🔧 *Vera — Auto-Upgrade | Run 43*
->Changed: Created `scripts/crontab_setup.txt` — ready-to-paste crontab with all 6 cron jobs
->Why: Danny cron has been down 9+ days. Round 2 enrollment targets June 4. Need leads pulled before then. `crontab -e` + paste = 2 minutes.
->File: scripts/crontab_setup.txt
+🔧 *Vera — Auto-Upgrade | Run 44*
+>Changed: `workers/lead_pipeline.py` DANNY_TITLES + `integrations/mixmax.py` PROPERTY_MANAGER_TITLES — added 5 multifamily-specific titles
+>Why: Titles like 'multifamily manager', 'multifamily director', 'apartment complex manager' are common in the NE Ohio apartment sector. Danny now pulls them; Mixmax routes them correctly.
+>Files: lead_pipeline.py, integrations/mixmax.py
 ---
-📄 *Vera — Deliverable | Run 43*
->Written: `outputs/jasmine/linkedin_posts_june_2026-05-21.md` — 10 LinkedIn posts, May 27–June 30, property manager audience
->Why: Touch 3 fires tomorrow. Bradley connecting with hot leads on a stale LinkedIn profile is a missed opportunity. Fresh posts = warm first impression when a PM checks his profile.
->Action: Post first one Tuesday May 27. 2x/week through June.
+🔧 *Vera — Auto-Upgrade | Run 44*
+>Changed: `workers/lead_pipeline.py` apollo_search() — added Apollo 429 rate-limit detection
+>Why: Apollo returns a 'rate' error string on 429s. Previously logged as generic error — now clearly flagged as rate-limited with instruction to retry next run.
+>File: workers/lead_pipeline.py
 ---
-📄 *Vera — Deliverable | Run 43*
->Written: `outputs/donna/past_customer_reengagement_launch_2026-05-21.md` — May 26 step-by-step launch guide for past customer text blast
->Why: Tommy's template has been sitting unused. Past customers convert at 3–5x cold outreach. This is the highest-ROI 20 minutes Bradley can spend on May 26.
->Revenue estimate: $1,400–$4,000 from 20–30 contacts.
+🔧 *Vera — Auto-Upgrade | Run 44*
+>Changed: `agents/danny.md` — added County Rotation Calendar table (ISO week → county → date) through July 6
+>Why: Bradley had no way to know which county Danny would pull each Monday without reading the Python code. Now visible in the agent file. Includes Memorial Day warning: if Mac is off May 26, run danny manually before June 4.
+>File: agents/danny.md
 ---
-📄 *Vera — Deliverable | Run 43*
->Written: `outputs/vera/gbp_weekly_routine_2026-05-21.md` — 30-min/week Google Business Profile routine with 4-week post templates
->Why: GBP is unmanaged. Free channel. NE Ohio home services with active GBPs get 3–8 inbound calls/month at zero cost.
->Action: Go to business.google.com → upload one job photo → paste Week 1 template. 10 min. Start May 26.
+📋 *Vera — Deliverable | Run 44*
+>Created: `outputs/vera/touch3_outcome_tracker_2026-05-22.md`
+>What: Fill-in tracker for Touch 3 results May 22–26. Includes reply log table, daily metric grids, and Round 2 decision gate (keep/rewrite/pivot to phone). One file for everything that happens this week.
+>Action: Open it tomorrow morning after checking Mixmax. Fill in the numbers as they come in.
 ---
-🚨 *Vera — TONIGHT ACTION (May 21 — Last Window Before Memorial Day)*
->Touch 3 fires TOMORROW. Text Tier 1 contractors TONIGHT — last chance before the holiday weekend:
->
->📞 Anthony | Land Pro Management | 440-320-2779
->📞 Dontez | GTP Landscaping | 440-396-0814
->📞 Chris | Twin Improvements | 216-773-0757
->📞 Venus | Reliable Roofing | 216-810-2497
->📞 Logan | Pagels Construction | 216-956-5263
->
->Scripts: `outputs/tommy/contractor_referral_text_script_2026-05-20.md`
+📋 *Vera — Deliverable | Run 44*
+>Created: `outputs/marcus/competitive_intel_brief_2026-05-21.md`
+>What: Peak-season competitive intelligence brief covering NE Ohio bucket analysis (solo ops vs. regional chains vs. national franchise), competitor weakness map, Lake Erie seasonal patterns, VOC phrases ranked by conversion, and research gaps to fill when running Marcus locally.
+>Use: Tommy uses the VOC phrases this week. Rick uses the hook lines. Danny uses the commercial pitch angle.
 ---
-📅 *Vera — TOMORROW MORNING (May 22 — Touch 3 Day)*
->Morning brief: `outputs/vera/touch3_morning_brief_2026-05-22.md` — read this first
->Opens → LinkedIn connect within 2h: `outputs/tommy/touch3_open_trigger_protocol_2026-05-21.md`
->Replies → use: `outputs/tommy/touch3_reply_response_templates_2026-05-20.md`
->End of day → debrief: `outputs/vera/touch3_evening_debrief_2026-05-22.md`
->Zero replies → protocol: `outputs/vera/touch3_zero_reply_protocol_2026-05-21.md`
+💡 *Vera — Proposal | Run 44*
+>Idea: Run Marcus locally with web search to pull live competitor Google reviews (last 60 days) and Facebook Ad Library data
+>Why: Marcus's last live competitor data is May 19. Competitors may be running Memorial Day promotions right now. Facebook Ad Library shows exactly what hooks are converting in Cleveland.
+>Impact: Fresher VOC language for Jasmine's posts and Rick's ads — going into the highest-converting week of the year.
+>Action: Run `claude --no-auto-commit "Marcus, profile Eco Pressure Washing and Brothers Exterior Cleaning — check their last 60 Google reviews for complaint themes and check Facebook Ad Library for any power washing ads running in Cleveland ZIP codes right now"` on your Mac.
 ---
-💡 *Vera — Proposal*
->Idea: Past customer reengagement text blast on May 26 (Memorial Day Blitz Day)
->Why: Tommy wrote the template weeks ago. Past customers trust us, reply at 3–5x cold rate, don't need convincing.
->Impact: 3–6 jobs booked from one 20-minute texting session. Revenue estimate: $1,400–$4,000.
->Launch guide: `outputs/donna/past_customer_reengagement_launch_2026-05-21.md`
->Reply YES to approve.
+🔴 *Vera — TONIGHT Alert | Run 44*
+>Touch 3 fires TOMORROW (May 22). The next 12 hours matter.
+>1. Text Tier 1 contractors before bed — Anthony/Land Pro (440-320-2779), Dontez/GTP (440-396-0814), Twin Improvements (216-773-0757)
+>2. Check Mixmax reply-to address is set correctly (outputs/vera/mixmax_reply_to_check_2026-05-20.md)
+>3. Open touch3_morning_brief_2026-05-22.md BEFORE looking at email tomorrow morning
+>All playbooks ready. Tracker created. You're set.
 ---
-💡 *Vera — Proposal*
->Idea: Google Business Profile weekly 30-min posting routine (free leads)
->Why: GBP unmanaged. Free channel that drives Maps search ranking. 3–8 inbound calls/month at $0 cost.
->Impact: Residential inbound without paying for ads — works alongside Facebook campaign.
->Routine: `outputs/vera/gbp_weekly_routine_2026-05-21.md`
->Reply YES to approve.
----
-✅ *Vera — Scan Complete 2026-05-21 (Run 43)*
->3 auto-upgrades shipped | 3 deliverables written | 2 proposals | 15 open issues (down from 17)
->
->CRITICAL PATH — June 4 Round 2:
->Tonight → text Tier 1 contractors (5 contacts)
->May 22 → monitor Touch 3 opens, LinkedIn connects
->May 26 → crontab restart + past customer blast + GBP first post
->June 2 → Danny Summit County lead pull (via cron)
->June 4 → Round 2 enrollment, new PMs into Mixmax
->
->Every script, template, and protocol is written and in the repo. Execution is the only missing piece.
+✅ *Vera — Scan Complete 2026-05-21 | Run 44*
+>5 auto-upgrades shipped | 2 deliverables written | 1 proposal | 16 open issues (1 new: Marcus silent)
+>CRITICAL FIX: report_card.py PIL import was silently crashing all workers in cloud — now resolved.
+>Top priority tonight: Text Tier 1 contractors. Top priority tomorrow: Check Mixmax by 9am, connect on LinkedIn with top 5 openers within 2 hours.
