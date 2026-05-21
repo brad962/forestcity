@@ -1913,10 +1913,26 @@
 
 ---
 
+## RESOLVED — nina_report.py weekly report missing follow-up due dates
+- Resolved: 2026-05-21 (run 42)
+- Description: The weekly report showed total "Contacted" count but never surfaced which contacts have imminent `next_followup` dates, so overdue follow-ups were invisible in the report.
+- Fix: Added "Overdue follow-ups" and "Follow-ups due this week" sections to `run_weekly()` manual pipeline health block. Pulls contacts where `next_followup` is within 7 days or already past. Surfaces company name, due date, and phone number directly in the report.
+- File: `workers/nina_report.py`
+
+---
+
+## RESOLVED — Carla realtor Apollo search missing org-level keywords
+- Resolved: 2026-05-21 (run 42)
+- Description: `CARLA_SEARCHES` realtor entry had `'keywords': []` — empty. Apollo `q_organization_keyword_tags` wasn't filtering to actual real estate brokerages, so any company with a "realtor" title would match regardless of industry. Risk: non-realtor contacts pulled.
+- Fix: Added 10 realtor brokerage keywords: `['real estate', 'realty', 'brokerage', 'keller williams', 'coldwell banker', 'century 21', 're/max', 'howard hanna', 'exp realty', 'compass']`. Now filters to actual NE Ohio real estate firms.
+- File: `workers/lead_pipeline.py`
+
+---
+
 ## OPEN — 0% reply rate (Touch 3 fires TOMORROW May 22) 🚨🚨
-- Updated: 2026-05-21 (run 41) — TOUCH 3 FIRES TOMORROW. ALL ASSETS LOCKED. TONIGHT IS THE WINDOW.
-- Run 41: No new assets needed — all 7 playbook resources are in place. Tonight checklist covers everything: `outputs/vera/touch3_last_night_checklist_2026-05-21.md`.
-- **THE COMPLETE MAY 22 PLAYBOOK:**
+- Updated: 2026-05-21 (run 42) — TOUCH 3 FIRES TOMORROW. NEW: Zero-reply protocol written.
+- Run 42: Written `touch3_zero_reply_protocol_2026-05-21.md` — step-by-step if Touch 3 → 0 replies: Nina report → call top 5 → bridge email → LinkedIn connect → Round 2 pivot by May 25.
+- **THE COMPLETE MAY 22 PLAYBOOK (10 resources):**
   - TONIGHT (5 min): verify Reply-To → `outputs/vera/mixmax_reply_to_check_2026-05-20.md`
   - TONIGHT (5 min): open notifications → `outputs/vera/mixmax_open_notifications_setup_2026-05-21.md`
   - TONIGHT (15 min): text 5 contractors → `outputs/tommy/contractor_referral_text_script_2026-05-20.md`
@@ -1924,52 +1940,55 @@
   - REAL-TIME (each open): `outputs/tommy/touch3_open_trigger_protocol_2026-05-21.md`
   - IF REPLIES: `outputs/tommy/touch3_reply_response_templates_2026-05-20.md` + `outputs/tommy/quote_to_close_kit_2026-05-20.md`
   - NO REPLIES BY NOON: `outputs/tommy/hot_lead_phone_script_2026-05-22.md`
+  - IF 0 REPLIES EVENING: `outputs/vera/touch3_zero_reply_protocol_2026-05-21.md` ← NEW
   - EVENING (6pm): `outputs/vera/touch3_evening_debrief_2026-05-22.md`
   - MAY 23–26: `outputs/tommy/memorial_day_monitoring_2026-05-21.md`
   - MONDAY MAY 26: `outputs/donna/may26_cron_restart_brief.md`
-- Resolution criteria: 1+ reply from Touch 3 OR Bradley calls hot leads May 22–26.
+- Resolution criteria: 1+ reply from Touch 3 OR Bradley completes phone calls May 22–26.
 
 ---
 
 ## OPEN — Manual Contacts Sitting Untouched (New Lead stage)
-- Updated: 2026-05-21 (run 41) — 36 contacts: 33 New Lead, 3 Contacted. TONIGHT is the last business window before Memorial Day.
+- Updated: 2026-05-21 (run 42) — 36 contacts: 33 New Lead, 3 Contacted. TONIGHT is the last business window before Memorial Day. NEW: May 26 follow-up texts written.
 - Send texts TONIGHT (May 21) — use scripts from `outputs/tommy/contractor_referral_text_script_2026-05-20.md`:
   - Anthony/Land Pro: 440-320-2779 (script A — landscaper)
   - Dontez/GTP: 440-396-0814 (script A — landscaper)
   - Twin Improvements: 216-773-0757 (script B — siding)
   - Reliable Roofing: 216-810-2497 (script C — roofing)
   - Pagels Construction: 216-956-5263 (script C — roofing)
-- Next window if missed tonight: May 26 morning — `outputs/donna/may26_cron_restart_brief.md` Step 2.
-- After Memorial Day: Full May 26 blitz — `outputs/donna/may26_outreach_blitz_brief_2026-05-20.md`.
+- MAY 26 FOLLOW-UPS (3 contractors already texted — awaiting reply): `outputs/tommy/contractor_followup_texts_may26_2026-05-21.md` ← NEW
+  - Bulletproof Lawncare: 216-307-4344 (next_followup: 2026-05-26)
+  - Damrons Landscaping: 440-494-0422 (next_followup: 2026-05-26)
+  - CLE Lawn Care Plus: 216-402-1924 (next_followup: 2026-05-26)
 
 ---
 
-## OPEN — Regular Danny PM cron not running (13 days overdue) 🔴🔴
-- Updated: 2026-05-21 (run 41) — 13 DAYS OVERDUE. After midnight tonight the rotation rolls to week 22 (Medina). Summit County opportunity closes tonight.
+## OPEN — Regular Danny PM cron not running (14+ days overdue) 🔴🔴
+- Updated: 2026-05-21 (run 42) — 14 DAYS OVERDUE. After midnight tonight the rotation rolls to week 22 (Medina). Summit County opportunity closes tonight.
 - **LAST CHANCE TONIGHT:** `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py danny`
-- If missed tonight: May 26 recovery per `outputs/donna/may26_cron_restart_brief.md` Step 3. Summit becomes option B in the June pull schedule.
-- Full June recovery schedule: `outputs/donna/june_apollo_pull_schedule_2026-05-21.md`.
+- If missed: May 26 recovery per `outputs/donna/may26_cron_restart_brief.md` Step 3.
+- Round 2 enrollment plan (Summit + Medina, June 4 target): `outputs/donna/round2_enrollment_plan_2026-05-21.md` ← NEW
 
 ---
 
 ## OPEN — Gas station & fleet contacts not enrolled in Mixmax
-- Updated: 2026-05-21 (run 41) — Same status. All infrastructure ready. Target date June 2.
+- Updated: 2026-05-21 (run 42) — Same status. All infrastructure ready. Target June 2.
 - Step-by-step guide: `outputs/vera/mixmax_sequence_setup_guide_2026-05-20.md` (20 min).
-- June 2 slot in: `outputs/donna/june_week1_sprint_2026-05-20.md`.
+- Round 2 enrollment plan includes gas station June 4 parallel track: `outputs/donna/round2_enrollment_plan_2026-05-21.md`.
 
 ---
 
 ## OPEN — Google Business Profile not managed (zero-cost lead channel ignored)
-- Updated: 2026-05-21 (run 41) — TONIGHT OR TOMORROW MORNING (before Memorial Day traffic). 5 minutes: Google Maps → Forest City Power Washing → Add Photo. Captions: `outputs/vera/gbp_post_may21_2026.md`.
+- Updated: 2026-05-21 (run 42) — TONIGHT OR TOMORROW MORNING (before Memorial Day traffic). 5 minutes: Google Maps → Forest City Power Washing → Add Photo. Captions: `outputs/vera/gbp_post_may21_2026.md`.
 - Next window if missed: May 26 (Memorial Day weekend still gets homeowner searches).
 
 ---
 
 ## OPEN — GitHub Actions workflow missing — ALL cloud Slack messages silently dropped 🚨
-- Updated: 2026-05-21 (run 41) — Status unchanged. `vera_relay.py` cron on Bradley's Mac is the active Slack path. Deploy script: `scripts/deploy_github_action.sh`. PAT needs `workflow` scope.
+- Updated: 2026-05-21 (run 42) — Status unchanged. `vera_relay.py` cron on Bradley's Mac is the active Slack path. Deploy script: `scripts/deploy_github_action.sh`. PAT needs `workflow` scope.
 - Resolution criteria: Bradley adds workflow scope to PAT + adds SLACK_WEBHOOK_OFFICE repo secret + runs deploy script.
 
 ---
 
-*Last updated: 2026-05-21 by Vera Cole (run 41)*
-*Key metrics: 110 RESOLVED | 17 OPEN | Run 41: 2 code fixes (workiz price float cast — 5 remaining sites, jasmine log mkdir guard). Touch 3 fires tomorrow — all 9 playbook resources in place.*
+*Last updated: 2026-05-21 by Vera Cole (run 42)*
+*Key metrics: 112 RESOLVED | 15 OPEN | Run 42: 2 code fixes (nina weekly follow-up due section, carla realtor org keywords). 3 deliverables written (round2 plan, contractor followup texts May 26, touch3 zero-reply protocol). Touch 3 fires TOMORROW — 10-resource playbook fully locked.*

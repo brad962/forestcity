@@ -107,7 +107,8 @@ CARLA_SEARCHES = [
      'label': 'Home Services'},
     {'type': 'realtors', 'titles': ['realtor', 'real estate agent', 'listing agent',
                                      'real estate broker', 'buyers agent'],
-     'keywords': [],
+     'keywords': ['real estate', 'realty', 'brokerage', 'keller williams', 'coldwell banker',
+                  'century 21', 're/max', 'howard hanna', 'exp realty', 'compass'],
      'label': 'Realtors'},
 ]
 

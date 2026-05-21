@@ -366,6 +366,25 @@ def run_weekly():
             if untouched:
                 manual_health_lines.append(f'⚠️ **{len(untouched)} contacts have never been reached out to.** Work through the priority list this week.')
                 manual_health_lines.append('')
+
+            # Follow-up due in next 7 days
+            from datetime import timedelta
+            today_str = datetime.now().strftime('%Y-%m-%d')
+            week_end = (datetime.now() + timedelta(days=7)).strftime('%Y-%m-%d')
+            due_soon = [c for c in manual if c.get('next_followup') and today_str <= c['next_followup'] <= week_end]
+            overdue = [c for c in manual if c.get('next_followup') and c['next_followup'] < today_str]
+            if overdue:
+                manual_health_lines.append(f'🔴 **OVERDUE follow-ups ({len(overdue)}) — reach out now:**')
+                for c in overdue:
+                    name = f'{c.get("first_name","")} {c.get("last_name","")}'.strip() or c.get('company', '?')
+                    manual_health_lines.append(f'  - {name} ({c.get("company","")}) | was due {c["next_followup"]} | {c.get("phone","")}')
+                manual_health_lines.append('')
+            if due_soon:
+                manual_health_lines.append(f'📅 **Follow-ups due this week ({len(due_soon)}):**')
+                for c in due_soon:
+                    name = f'{c.get("first_name","")} {c.get("last_name","")}'.strip() or c.get('company', '?')
+                    manual_health_lines.append(f'  - {name} ({c.get("company","")}) | due {c["next_followup"]} | {c.get("phone","")}')
+                manual_health_lines.append('')
     except Exception:
         pass
 
