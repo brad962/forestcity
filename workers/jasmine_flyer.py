@@ -251,7 +251,9 @@ def process_pending_pairs():
 
         log(f"Processing pair {pair_id}...")
 
-        output_filename = f"before_after_{date}.jpg"
+        # Use pair_id suffix to prevent filename collision when multiple pairs share the same date
+        pair_suffix     = pair_id[-8:] if len(pair_id) >= 8 else pair_id
+        output_filename = f"before_after_{date}_{pair_suffix}.jpg"
         output_file     = OUTPUTS_DIR / output_filename
         github_path     = f"outputs/jasmine/{output_filename}"
 

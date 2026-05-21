@@ -1749,5 +1749,59 @@
 
 ---
 
-*Last updated: 2026-05-21 by Vera Cole (run 37)*
-*Key metrics: 103 RESOLVED | 16 OPEN | Run 37: 3 code fixes (slack_photo_watcher safety) + 1 deliverable (Memorial Day monitoring brief)*
+---
+
+## RESOLVED — jasmine_flyer.py output filename collision on same-date photo pairs
+- Resolved: 2026-05-21 (run 38)
+- Description: `output_filename = f"before_after_{date}.jpg"` — if Bradley uploads two before/after pairs on the same day, the second pair silently overwrites the first flyer both on disk and on GitHub (via the SHA update in push_to_github). The first flyer is permanently lost.
+- Fix: Added `pair_suffix = pair_id[-8:]` and changed filename to `before_after_{date}_{pair_suffix}.jpg`. Each pair now gets a unique filename. No backward-compat issue — existing processed pairs won't be re-run.
+- File: `workers/jasmine_flyer.py`
+
+---
+
+## OPEN — No Mixmax open notification on Bradley's phone (can't run open trigger protocol)
+- First seen: 2026-05-21 (run 38)
+- Description: The open trigger protocol (`touch3_open_trigger_protocol_2026-05-21.md`) requires Bradley to connect on LinkedIn within 2 hours of each Touch 3 open. But without phone notifications, he won't know when emails are opened in real time — he'd have to manually check Mixmax all day.
+- Fix: Mixmax open notification setup guide written → `outputs/vera/mixmax_open_notifications_setup_2026-05-21.md`. Two paths: Chrome desktop popup + Gmail mobile filter. 5-minute setup.
+- Resolution criteria: Bradley completes the setup using the guide before Touch 3 fires today.
+
+---
+
+## OPEN — 0% reply rate (Touch 3 fires TODAY May 22) 🚨🚨
+- Updated: 2026-05-21 (run 38) — TOUCH 3 FIRES TODAY.
+- Run 38: Mixmax open notifications setup guide written → `outputs/vera/mixmax_open_notifications_setup_2026-05-21.md`. Bradley needs to set up phone/desktop notifications NOW so he sees every open in real time and can execute the 2-hour LinkedIn connect trigger.
+- **COMPLETE MAY 22 PLAYBOOK (now 7 resources):**
+  - SETUP FIRST (5 min): `outputs/vera/mixmax_open_notifications_setup_2026-05-21.md` ← NEW
+  - MORNING (8am): `outputs/vera/touch3_morning_brief_2026-05-22.md`
+  - REAL-TIME (each open): `outputs/tommy/touch3_open_trigger_protocol_2026-05-21.md`
+  - IF REPLIES: `outputs/tommy/touch3_reply_response_templates_2026-05-20.md` + `outputs/tommy/quote_to_close_kit_2026-05-20.md`
+  - IF NO REPLIES BY NOON: `outputs/tommy/hot_lead_phone_script_2026-05-22.md`
+  - EVENING (6pm): `outputs/vera/touch3_evening_debrief_2026-05-22.md`
+  - MAY 23–26 (weekend + blitz): `outputs/tommy/memorial_day_monitoring_2026-05-21.md`
+- Resolution criteria: 1+ reply from Touch 3 OR Bradley calls hot leads May 22–23.
+
+---
+
+## OPEN — Manual Contacts Sitting Untouched (New Lead stage)
+- Updated: 2026-05-21 (run 38) — 36 contacts: 33 New Lead, 3 Contacted. TODAY is the last weekday before Memorial Day.
+- Tier 1 texts — send TODAY before 5pm (last business window before Memorial Day weekend):
+  - Anthony/Land Pro: 440-320-2779 (script A — landscaper)
+  - Dontez/GTP: 440-396-0814 (script A — landscaper)
+  - Twin Improvements: 216-773-0757 (script B — siding)
+  - Reliable Roofing: 216-810-2497 (script C — roofing)
+  - Pagels Construction: 216-956-5263 (script C — roofing)
+- Scripts: `outputs/tommy/contractor_referral_text_script_2026-05-20.md` (copy/paste ready)
+- After Memorial Day: May 26 blitz — `outputs/donna/may26_outreach_blitz_brief_2026-05-20.md`
+
+---
+
+## OPEN — Regular Danny PM cron not running (12+ days overdue) 🔴🔴
+- Updated: 2026-05-21 (run 38) — 12+ DAYS OVERDUE.
+- Summit County (Akron/Fairlawn/Stow) = week 21 in rotation. ~15–25 PMs sitting untouched.
+- `python3 workers/lead_pipeline.py danny` from `/Users/bradleyneal/forestcity`
+- June recovery: `outputs/donna/june_week1_sprint_2026-05-20.md` — Summit June 2, Medina June 3.
+
+---
+
+*Last updated: 2026-05-21 by Vera Cole (run 38)*
+*Key metrics: 104 RESOLVED | 17 OPEN | Run 38: 1 code fix (jasmine filename collision) + 1 new deliverable (Mixmax notifications setup)*
