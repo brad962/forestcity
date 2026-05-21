@@ -303,3 +303,7 @@
 [2026-05-21 10:30] Vera | Proposals + summary written to pending_slack_messages.md for GitHub Action relay | outputs/vera/pending_slack_messages.md | Done
 [2026-05-21 10:35] Vera | RESOLVED: Cloud git commit signing — git -c gpg.program='' -c commit.gpgsign=false bypasses broken signing server. All future cloud commits use this form. | logs/activity.log | Done
 [2026-05-21 10:35] Vera | Updated open_issues.md — run 36 addendum: git signing workaround confirmed; metrics now 100 RESOLVED | 12 OPEN | outputs/vera/open_issues.md | Done
+[2026-05-21 02:10] Vera | Auto-upgrade: slack_photo_watcher.py load_seen() + load_pairs() + slack_get() — all 3 wrapped in try/except; malformed JSON or Slack API timeout no longer crashes photo pipeline | workers/slack_photo_watcher.py | Done
+[2026-05-21 02:10] Vera | Deliverable: memorial_day_monitoring_2026-05-21.md — May 22 evening through May 26 blitz day monitoring guide; Friday call protocol, weekend passive rules, metrics tracker | outputs/tommy/memorial_day_monitoring_2026-05-21.md | Done
+[2026-05-21 02:10] Vera | Updated open_issues.md — run 37: 3 new RESOLVED (photo watcher safety), 0 new OPEN, 16 OPEN updated with run 37 status; relay_last_commit.txt confirms vera_relay.py has run | outputs/vera/open_issues.md | Done
+[2026-05-21 02:10] Vera | Proposals + summary written to pending_slack_messages.md — Twilio SMS proposal + Touch 3 day playbook alert | outputs/vera/pending_slack_messages.md | Done

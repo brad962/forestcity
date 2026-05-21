@@ -51,7 +51,11 @@ IMAGE_TYPES = {'jpg', 'jpeg', 'png', 'gif', 'webp', 'heic', 'heif'}
 def load_seen():
     if not SEEN_FILE.exists():
         return set(), None
-    data = json.loads(SEEN_FILE.read_text())
+    try:
+        data = json.loads(SEEN_FILE.read_text())
+    except (json.JSONDecodeError, Exception):
+        log('WARNING: seen_photos.json malformed — treating as empty.')
+        return set(), None
     if isinstance(data, list):
         return set(data), None
     return set(data.get('seen', [])), data.get('pending_before')
@@ -70,7 +74,11 @@ def save_seen(seen, pending_before=None):
 def load_pairs():
     if not PAIRS_FILE.exists():
         return {'pairs': []}
-    return json.loads(PAIRS_FILE.read_text())
+    try:
+        return json.loads(PAIRS_FILE.read_text())
+    except (json.JSONDecodeError, Exception):
+        log('WARNING: photo_pairs.json malformed — treating as empty.')
+        return {'pairs': []}
 
 
 def record_pair(before_rel, after_rel, description=''):
@@ -98,8 +106,12 @@ def record_pair(before_rel, after_rel, description=''):
 def slack_get(endpoint, params=''):
     url = f'https://slack.com/api/{endpoint}?{params}'
     req = urllib.request.Request(url, headers={'Authorization': f'Bearer {SLACK_TOKEN}'})
-    with urllib.request.urlopen(req, timeout=10) as resp:
-        return json.loads(resp.read())
+    try:
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            return json.loads(resp.read())
+    except Exception as e:
+        log(f'ERROR: Slack API call failed ({endpoint}): {e}')
+        return {'ok': False, 'error': str(e)}
 
 
 def notify_slack(msg, webhook=None):

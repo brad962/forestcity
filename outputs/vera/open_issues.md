@@ -1556,12 +1556,198 @@
 ---
 
 ## OPEN — 13 hot leads sitting uncontacted on LinkedIn
-- Updated: 2026-05-21 (run 36) — TODAY is the window. Touch 3 fires tomorrow.
-- New: `outputs/tommy/touch3_open_trigger_protocol_2026-05-21.md` covers post-Touch-3 LinkedIn workflow in real time.
-- Tonight: send 3+ LinkedIn connects BEFORE Touch 3 fires: `outputs/danny/linkedin_hot_lead_dm_protocol_2026-05-18.md`
-- Resolution criteria: Bradley sends 3+ LinkedIn connects.
+- Updated: 2026-05-21 (run 37) — TODAY was the window before Touch 3. Memorial Day protocol in place.
+- Run 37: Memorial Day monitoring brief written → `outputs/tommy/memorial_day_monitoring_2026-05-21.md`. Covers May 22 evening through May 26 blitz — LinkedIn follow-up on May 23 morning is the next window.
+- Playbook: `outputs/danny/linkedin_hot_lead_dm_protocol_2026-05-18.md`
+- Resolution criteria: Bradley sends 3+ LinkedIn connects (today May 21 or May 23 morning).
 
 ---
 
-*Last updated: 2026-05-21 by Vera Cole (run 36)*
-*Key metrics: 100 RESOLVED | 12 OPEN | Run 36: 4 code fixes (incl. git signing workaround) + 2 deliverables + deploy script*
+## RESOLVED — slack_photo_watcher.py load_seen() crashes on malformed JSON
+- Resolved: 2026-05-21 (run 37)
+- Description: `load_seen()` called `json.loads(SEEN_FILE.read_text())` with no try/except. If `seen_photos.json` was corrupted (power loss mid-write, concurrent access), the entire photo watcher crashed every 5 minutes — no photos processed, no log entry, no notification. Silent failure for Bradley's most manual workflow.
+- Fix: Wrapped in `try/except (json.JSONDecodeError, Exception)` — returns `(set(), None)` on malformed file. Consistent with pattern in `jasmine_flyer.py` and `server.py`.
+- File: `workers/slack_photo_watcher.py`
+
+---
+
+## RESOLVED — slack_photo_watcher.py load_pairs() crashes on malformed JSON
+- Resolved: 2026-05-21 (run 37)
+- Description: `load_pairs()` called `json.loads(PAIRS_FILE.read_text())` with no try/except. Same risk as `load_seen()` — if `photo_pairs.json` was malformed, `load_pairs()` crashed every call, meaning `record_pair()` would crash before it could save a new pair.
+- Fix: Wrapped in `try/except` — returns `{'pairs': []}` on malformed file.
+- File: `workers/slack_photo_watcher.py`
+
+---
+
+## RESOLVED — slack_photo_watcher.py slack_get() crashes on network failure / bad token
+- Resolved: 2026-05-21 (run 37)
+- Description: `slack_get()` called `urllib.request.urlopen()` with no try/except. If Slack is unreachable or SLACK_TOKEN is invalid, `run()` crashed immediately at the API call. The `run()` function has no outer try/except — so a Slack outage means NO photos are saved (even if the file is downloaded), and no log entry explains why.
+- Fix: Wrapped in `try/except` — returns `{'ok': False, 'error': str(e)}` on failure. The caller's `if not data.get('ok'):` check then exits cleanly with `print(f'Slack API error: ...')`.
+- File: `workers/slack_photo_watcher.py`
+
+---
+
+## OPEN — 0% reply rate (Touch 3 fires TODAY May 22) 🚨🚨
+- Updated: 2026-05-21 (run 37) — TOUCH 3 FIRES TODAY.
+- Run 37: Memorial Day Weekend Monitoring Brief written → `outputs/tommy/memorial_day_monitoring_2026-05-21.md`. Bridges the gap between May 22 evening debrief and May 26 blitz: Friday morning call protocol, weekend passive monitoring, May 26 blitz day order, key metrics to track.
+- **COMPLETE MAY 22 PLAYBOOK (all 5 resources + bridge to weekend):**
+  - MORNING (8am): `outputs/vera/touch3_morning_brief_2026-05-22.md`
+  - REAL-TIME (each open): `outputs/tommy/touch3_open_trigger_protocol_2026-05-21.md`
+  - IF REPLIES: `outputs/tommy/touch3_reply_response_templates_2026-05-20.md` + `outputs/tommy/quote_to_close_kit_2026-05-20.md`
+  - IF NO REPLIES BY NOON: `outputs/tommy/hot_lead_phone_script_2026-05-22.md`
+  - EVENING (6pm): `outputs/vera/touch3_evening_debrief_2026-05-22.md`
+  - MAY 23-26 (weekend + blitz): `outputs/tommy/memorial_day_monitoring_2026-05-21.md` ← NEW
+- Resolution criteria: 1+ reply from Touch 3 OR Bradley calls hot leads May 22–23.
+
+---
+
+## OPEN — Manual Contacts Sitting Untouched (New Lead stage)
+- Updated: 2026-05-21 (run 37) — 36 contacts: 33 New Lead, 3 Contacted.
+- Run 37: If texts sent today (May 21) — update pipeline_data.json after each reply. If not sent yet, May 23 morning is the next window (before noon Friday, people still at desks).
+- Tier 1: Anthony/Land Pro (440-320-2779), Dontez/GTP (440-396-0814), Twin Improvements (216-773-0757), Reliable Roofing (216-810-2497), Pagels Construction (216-956-5263)
+- Scripts: `outputs/tommy/contractor_referral_text_script_2026-05-20.md`
+- After Memorial Day: May 26 blitz — `outputs/donna/may26_outreach_blitz_brief_2026-05-20.md`
+
+---
+
+## OPEN — Regular Danny PM cron not running (12+ days overdue) 🔴🔴
+- Updated: 2026-05-21 (run 37) — 12 DAYS OVERDUE. Summit County still unworked.
+- Last ran: May 13. Week 21 = Summit County (Akron/Fairlawn/Stow).
+- IMMEDIATE: `python3 workers/lead_pipeline.py danny` from `/Users/bradleyneal/forestcity`
+- June recovery schedule: `outputs/donna/june_week1_sprint_2026-05-20.md` — Summit June 2, Medina June 3.
+- Resolution criteria: Pipeline runs locally, Summit County leads pulled and enrolled.
+
+---
+
+## OPEN — Gas station & fleet contacts not enrolled in Mixmax
+- Updated: 2026-05-21 (run 37) — All infrastructure ready. PENDING sequence IDs are the only blocker.
+- Step-by-step guide: `outputs/vera/mixmax_sequence_setup_guide_2026-05-20.md` — 20 min total.
+- Target date: June 2 per `outputs/donna/june_week1_sprint_2026-05-20.md`.
+
+---
+
+## OPEN — GitHub Actions workflow missing — ALL cloud Slack messages silently dropped 🚨
+- Updated: 2026-05-21 (run 37) — NEW INSIGHT: `relay_last_commit.txt` has a SHA, confirming `vera_relay.py` HAS run on Bradley's Mac at least once. If the cron is running per CLAUDE.md (`*/5 * * * *`), the LOCAL relay is posting messages — no GitHub Action needed for the relay to work. GitHub Action is just the cloud-only backup path.
+- Run 36: `scripts/deploy_github_action.sh` — one-command deploy once PAT has `workflow` scope.
+- **If vera_relay.py cron is running:** Messages reach Slack within 5 minutes of each Vera push. This is working.
+- **If cron is NOT running:** Check `logs/cron.log` — if empty, run `crontab -e` and paste from CLAUDE.md.
+- Resolution criteria: GitHub Actions tab shows the workflow (or cron.log confirms vera_relay.py is running every 5 min).
+
+---
+
+## OPEN — Mixmax API blocked in cloud execution environment
+- First seen: 2026-05-18
+- Workaround: All pipeline scripts return None/safe fallback on 403. nina_report shows explicit API warning.
+- Next steps: Bradley checks Mixmax → API Settings → IP Allowlist.
+
+---
+
+## OPEN — All external APIs blocked from cloud (Apollo, Workiz, Mixmax)
+- First seen: 2026-05-18
+- Workaround: Cron job schedule documented in CLAUDE.md.
+- Next steps: Bradley runs `crontab -e` and pastes cron jobs.
+
+---
+
+## OPEN — Slack Webhook blocked in cloud execution environment
+- First seen: 2026-05-18
+- Workaround: Messages written to `outputs/vera/pending_slack_messages.md`. `vera_relay.py` cron posts to Slack within 5 min of each Vera push (confirmed running per relay_last_commit.txt).
+
+---
+
+## OPEN — Instantly.ai campaigns running parallel to Mixmax (duplicate sequence risk)
+- First seen: 2026-05-18
+- Resolution criteria: Bradley confirms which platform is active per segment.
+
+---
+
+## OPEN — Marcus fresh web intel needed (competitor + VOC)
+- First seen: 2026-05-18
+- Web search blocked in cloud. Run Marcus locally.
+
+---
+
+## OPEN — HubSpot not connected (CRM blind)
+- First seen: 2026-05-12
+- Resolution: HUBSPOT_TOKEN added to .env.
+
+---
+
+## OPEN — No residential homeowner outreach channel
+- First seen: 2026-05-18
+- Social posts written. Memorial Day posts ready in `outputs/jasmine/facebook_posts_memorial_day_week_2026-05-20.md`.
+- Resolution: Bradley posts 1 Facebook post this week.
+
+---
+
+## OPEN — Workiz API blocked in cloud AND 0 power washing jobs on local
+- First seen: 2026-05-14
+- Code fixes confirmed. Next step: Bradley checks Workiz for actual JobType field name.
+
+---
+
+## OPEN — Google Business Profile not managed (zero-cost lead channel ignored)
+- Updated: 2026-05-21 (run 37) — TODAY (May 21) is last chance before Memorial Day weekend. 5 min: Google Maps → search Forest City Power Washing → Add Photo. Use any before/after job photo.
+- Next window if missed today: May 26.
+- Templates: `outputs/tommy/google_business_profile_post_templates_2026-05-20.md`
+
+---
+
+## OPEN — No review request automation
+- First seen: 2026-05-18
+- 3-touch sequence: `outputs/tommy/review_request_sequence_2026-05-18.md`.
+- Resolution: Bradley sends review request text after each completed job.
+
+---
+
+## OPEN — No Google Ads running
+- First seen: 2026-05-19
+- Ad copy: `outputs/rick/google_ads_june_2026-05-19.md`. Launch target: June 3.
+- Blockers: Google Ads account + GOOGLE_ADS_TOKEN in .env.
+
+---
+
+## OPEN — No Facebook ads running
+- First seen: 2026-05-20
+- Ad copy: `outputs/rick/facebook_ads_peak_season_2026-05-20.md`. Budget: $30/day. Launch target: June 3.
+- Resolution: Bradley sets up ads in Facebook Ads Manager.
+
+---
+
+## OPEN — No website service pages (needed as Google Ads landing pages)
+- First seen: 2026-05-20
+- Copy written: `outputs/tommy/website_copy_service_pages_2026-05-20.md` (5 pages).
+- Roof Soft Wash page first — highest search intent. Build target: June 2.
+
+---
+
+## OPEN — No past customer re-engagement blast this season
+- First seen: 2026-05-20
+- Templates: `outputs/tommy/past_customer_reengagement_2026-05-18.md`.
+- Blocking: need customer list from Workiz (run locally).
+
+---
+
+## OPEN — No quote follow-up sequence (post-estimate gap)
+- First seen: 2026-05-20
+- 3-touch sequence: `outputs/tommy/quote_followup_sequence_2026-05-20.md`.
+- Resolution: Bradley sends Touch 1 text within 24h of next quote sent.
+
+---
+
+## OPEN — June Residential Push (all assets built but not deployed)
+- First seen: 2026-05-20
+- Campaign brief: `outputs/donna/june_residential_push_2026-05-20.md`. 4-week plan.
+- Critical path: service pages first (June 2), then Facebook ads (June 3).
+
+---
+
+## OPEN — Fleet washing Mixmax sequence not created
+- First seen: 2026-05-20
+- Sequence copy: `outputs/danny/sequence_fleet_washing_2026-05-18.md`. Setup guide: `outputs/vera/mixmax_sequence_setup_guide_2026-05-20.md`.
+- Resolution: Real fleet_washing ID in `integrations/mixmax.py`.
+
+---
+
+*Last updated: 2026-05-21 by Vera Cole (run 37)*
+*Key metrics: 103 RESOLVED | 16 OPEN | Run 37: 3 code fixes (slack_photo_watcher safety) + 1 deliverable (Memorial Day monitoring brief)*

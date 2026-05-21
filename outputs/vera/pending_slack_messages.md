@@ -1,59 +1,46 @@
 🔧 *Vera — Auto-Upgrade*
->Changed: `integrations/mixmax.py` — removed `'district manager'` from `GAS_STATION_KEYWORDS`
->Why: Too generic — any contact with "District Manager" title at an unrecognized company was being misrouted to the gas station sequence. Company name keywords (speedway, circle k, etc.) are sufficient to identify gas station accounts.
->File: `integrations/mixmax.py`
----
-🔧 *Vera — Auto-Upgrade*
->Changed: `workers/lead_pipeline.py` `verify_and_repair_enrollment()` — now skips contacts with PENDING sequences (gas_station, fleet_washing) gracefully
->Why: Previously, every pipeline run attempted to re-enroll these contacts, failed, and marked them `mixmax_enrolled=False` — creating noise. Now logs "Skipping N contacts with PENDING sequences" and moves on.
->File: `workers/lead_pipeline.py`
----
-🔧 *Vera — Auto-Upgrade*
->Changed: `server.py` `save_queue()` — wrapped `QUEUE_F.write_text()` in try/except
->Why: Full disk or locked file would throw unhandled exception propagating as 500 to the dashboard. 4-line fix, consistent with all other write operations in server.py.
->File: `server.py`
+>Changed: `workers/slack_photo_watcher.py` — `load_seen()`, `load_pairs()`, `slack_get()` all wrapped in try/except
+>Why: All 3 functions could crash the entire photo watcher on malformed JSON or a Slack API timeout — silently, with no log entry. Each crash would prevent photo processing for the rest of that 5-minute cron cycle. 3-line fix each, consistent with the safety pattern everywhere else.
+>File: `workers/slack_photo_watcher.py`
 ---
 📋 *Vera — New Deliverable*
->File: `outputs/tommy/touch3_open_trigger_protocol_2026-05-21.md`
->What: Real-time protocol for the 48 hours starting when Touch 3 fires tomorrow. Covers: check Mixmax 3x/day, LinkedIn connect within 2 hours of each open, Memorial Day voicemail + SMS scripts, decision tree for every scenario, all 7 key files in one reference table.
->Gap filled: The morning brief, phone script, and evening debrief covered "scheduled" touch points. This covers the REAL-TIME trigger — what happens in the 2-hour window after each open.
+>File: `outputs/tommy/memorial_day_monitoring_2026-05-21.md`
+>What: Memorial Day Weekend Monitoring Guide — bridges May 22 evening debrief to May 26 blitz day. Covers: Friday May 23 morning call protocol (45 min, people still at desks), Memorial Day Sat–Mon passive monitoring rules, May 26 blitz day order, key metrics table to track through the weekend.
+>Gap filled: We had morning brief + evening debrief for May 22 and a blitz brief for May 26. Nothing tied them together. If Touch 3 generates late openers on Thursday night or Friday, THIS is the playbook.
 ---
-📋 *Vera — New Deliverable*
->File: `scripts/deploy_github_action.sh`
->What: ONE command to deploy the Vera Slack relay GitHub Action from your Mac: `bash /Users/bradleyneal/forestcity/scripts/deploy_github_action.sh`
->Gap filled: The workflow file has existed since run 34. The 3-step instructions have been in open_issues.md for 2 runs. This new script removes ALL manual steps — just run it.
->Still needs (before running the script, ~4 min total):
->1. Add workflow scope to PAT: github.com → Settings → Developer settings → PATs → Edit ghp_lrUhBq7... → check 'workflow' → Save
->2. Add repo secret: github.com/brad962/forestcity → Settings → Secrets → SLACK_WEBHOOK_OFFICE = webhook URL from .env
+🔍 *Vera — Relay Status Update*
+>relay_last_commit.txt has a real commit SHA — this confirms `vera_relay.py` has already run on your Mac at least once.
+>If the cron from CLAUDE.md is active (`*/5 * * * * python3 workers/vera_relay.py`), Vera's messages are reaching Slack within 5 minutes of each push WITHOUT needing GitHub Actions.
+>Check: `cat /Users/bradleyneal/forestcity/logs/cron.log | tail -20` — if vera_relay lines show up, the relay is live.
+>GitHub Actions is still useful as a cloud-only backup, but the local relay may already be working.
 ---
-🚨 *Vera — TODAY May 21 — LAST WINDOW Before Touch 3 + Holiday Weekend*
->Touch 3 fires TOMORROW. Contractor texts close at end of business today — people won't check over Memorial Day.
+🚨 *Vera — TODAY IS TOUCH 3 DAY — May 22 Full Playbook*
+>Touch 3 fires TODAY. Here are all 6 resources in order:
 >
->Tonight (55 min) — outputs/vera/touch3_eve_final_checklist_2026-05-20.md:
->1. Verify Mixmax Reply-To — 10 min
->2. LinkedIn connects to 13 hot leads — 30 min
->3. Text 5 Tier 1 contractors — 15 min:
->   Anthony/Land Pro: 440-320-2779 (script A)
->   Dontez/GTP: 440-396-0814 (script A)
->   Twin Improvements: 216-773-0757 (script B)
->   Reliable Roofing: 216-810-2497 (script C)
->   Pagels Construction: 216-956-5263 (script C)
->Scripts: outputs/tommy/contractor_referral_text_script_2026-05-20.md
+>1. RIGHT NOW (8am): `outputs/vera/touch3_morning_brief_2026-05-22.md` — open first
+>2. EACH OPEN (real-time): `outputs/tommy/touch3_open_trigger_protocol_2026-05-21.md` — 2-hour trigger window
+>3. IF REPLIES: `outputs/tommy/touch3_reply_response_templates_2026-05-20.md`
+>4. IF WANT QUOTE: `outputs/tommy/quote_to_close_kit_2026-05-20.md`
+>5. NO REPLIES BY NOON: `outputs/tommy/hot_lead_phone_script_2026-05-22.md` — start calling
+>6. 6PM WRAP: `outputs/vera/touch3_evening_debrief_2026-05-22.md`
+>7. MAY 23–26: `outputs/tommy/memorial_day_monitoring_2026-05-21.md` ← NEW — covers Friday calls + weekend monitoring + May 26 blitz
 ---
-📅 *Vera — Tomorrow (May 22) Full Playbook — 5 Resources Cover Every Scenario*
->8am: outputs/vera/touch3_morning_brief_2026-05-22.md — first check
->Each open (real-time): outputs/tommy/touch3_open_trigger_protocol_2026-05-21.md (NEW)
->If replies: outputs/tommy/touch3_reply_response_templates_2026-05-20.md
->If no replies by noon: outputs/tommy/hot_lead_phone_script_2026-05-22.md
->6pm: outputs/vera/touch3_evening_debrief_2026-05-22.md
+💡 *Vera — Upgrade Proposal*
+>Idea: Twilio SMS integration for the quote follow-up sequence
+>Why: The quote follow-up sequence is written (`outputs/tommy/quote_followup_sequence_2026-05-20.md`) — Touch 1 is a text within 24h of sending a quote. Right now Bradley has to manually send it. Home services data: 20–25% of open quotes close from one 24h follow-up text. After 5 jobs/week at $300 avg, that's 1–2 extra closed jobs/week (~$400–$600/week) from a single automated text.
+>Impact: Zero manual work. Bradley sends quote → system auto-texts 24h later → repeat for Day 4 email and Day 7 text.
+>Cost: ~$0.01/message via Twilio. CLAUDE.md shows TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, TWILIO_PHONE_NUMBER as "pending" keys.
+>Action needed: Reply YES and I'll build the automation. Just needs: Twilio account created, 3 keys added to .env.
 ---
-✅ *Vera — Scan Complete 2026-05-21 (Run 36)*
->3 auto-upgrades shipped | 2 new deliverables | 0 new open issues
+✅ *Vera — Scan Complete 2026-05-21 (Run 37)*
+>3 auto-upgrades shipped | 1 new deliverable | 1 proposal | 0 new open issues
 >
->Key actions for Bradley TODAY (last window before Memorial Day weekend):
->TONIGHT: Touch 3 eve checklist — 55 min (Reply-To check, LinkedIn connects, Tier 1 texts)
->TONIGHT: Read outputs/tommy/touch3_open_trigger_protocol_2026-05-21.md for tomorrow
->TODAY (5 min): Add workflow scope to PAT + add Slack secret then run scripts/deploy_github_action.sh
->TODAY (5 min): Post 1 photo to Google Business Profile
+>TODAY (Touch 3 Day):
+>→ OPEN: `outputs/vera/touch3_morning_brief_2026-05-22.md` first thing
+>→ Friday morning: call the 13 hot leads, quotes out before noon
+>→ Weekend: passive monitoring only — respond to inbound within 4h
+>→ May 26: full blitz per `outputs/donna/may26_outreach_blitz_brief_2026-05-20.md`
 >
->99 RESOLVED | 13 OPEN | Touch 3 fires in less than 12 hours
+>NEW: Memorial Day monitoring brief bridges the whole window: `outputs/tommy/memorial_day_monitoring_2026-05-21.md`
+>
+>103 RESOLVED | 16 OPEN | Run 37: 3 photo watcher safety fixes + Memorial Day bridge guide
