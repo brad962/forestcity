@@ -79,7 +79,7 @@ Danny rotates counties by ISO week number (`week % 6`). Cron runs every Monday 7
 | Week 26  | June 29 | Lorain County |
 | Week 27  | July 6 | Summit County (repeats) |
 
-> ⚠️ **Round 2 enrollment June 4**: Danny must pull Summit County BEFORE June 4. If the May 25 cron misses (Memorial Day), run manually: `python3 workers/lead_pipeline.py danny` from the forestcity folder on your Mac.
+> ⚠️ **URGENT — Run Summit County NOW (May 21)**: The cron has not run since May 12 (9 days). Week 21 = Summit County. Bradley should run `python3 workers/lead_pipeline.py danny` manually TODAY or May 22 — don't wait for the May 25 Memorial Day cron which may miss if the Mac is off. Round 2 enrollment targets June 4 and requires these leads in cache BEFORE that date.
 
 ## Output Format
 

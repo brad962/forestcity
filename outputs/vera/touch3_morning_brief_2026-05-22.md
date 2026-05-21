@@ -109,7 +109,7 @@ While you wait on PM replies, run through the contractor text list.
 
 The cooling period for the PM sequence is ~2 weeks. New contacts from the Medina County / Summit County pull will enter Round 2 on June 2–4.
 
-Plan: `outputs/danny/round2_enrollment_plan_2026-05-20.md`
+Plan: `outputs/donna/round2_enrollment_plan_2026-05-21.md`
 Rewritten sequence copy (shorter, stronger): `outputs/danny/pm_sequence_touch1_rewrite_2026-05-19.md`
 
 ---

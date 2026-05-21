@@ -1,57 +1,58 @@
-🔧 *Vera — Auto-Upgrade | Run 45*
->Changed: mixmax.py detect_lead_type() — PROPERTY_MANAGER_TITLES now checked before REALTOR_TITLES
->Why: 'real estate' substring in REALTOR_TITLES was misrouting PMs at companies like "Howard Hanna Real Estate" into the realtor sequence. 9 routing tests all pass.
->File: integrations/mixmax.py
+🔧 *Vera — Auto-Upgrade (Run 46)*
+>Changed: jasmine_flyer.py — guarded `from PIL import Image, ImageDraw` at module level with try/except + `_PIL_AVAILABLE` flag. `build_flyer()` now raises a clear RuntimeError instead of crashing on import.
+>Why: Same class of bug as report_card.py (fixed run 44) — crashes any environment without Pillow installed.
+>File: workers/jasmine_flyer.py
 
 ---
 
-🔧 *Vera — Auto-Upgrade | Run 45*
->Changed: mixmax.py + lead_pipeline.py — added 'community association manager', 'hoa director', 'facilities manager' to PM title lists
->Why: 'community association manager' is the official CAI designation — many HOA managers use this exact title. 'facilities manager' (plural) was missing alongside the singular 'facility manager'.
->File: integrations/mixmax.py, workers/lead_pipeline.py
+🔧 *Vera — Auto-Upgrade (Run 46)*
+>Changed: vera_relay.py — wrapped `PENDING_FILE.write_text('')` in try/except. Filesystem errors no longer crash the relay mid-run after successfully posting messages.
+>Why: Bare write with no guard; any permission or disk error would break the relay pipeline.
+>File: workers/vera_relay.py
 
 ---
 
-🔧 *Vera — Auto-Upgrade | Run 45*
->Changed: lead_pipeline.py final git commit now includes contacts_cache.json
->Why: Enrollment marks from verify_and_repair_enrollment() were never pushed to GitHub — would cause redundant re-enrollment checks on every local run.
->File: workers/lead_pipeline.py
+🔧 *Vera — Auto-Upgrade (Run 46)*
+>Changed: touch3_morning_brief_2026-05-22.md — fixed broken file reference. Was `outputs/danny/round2_enrollment_plan_2026-05-20.md` (file doesn't exist). Now correctly points to `outputs/donna/round2_enrollment_plan_2026-05-21.md`.
+>Why: Bradley would read this tomorrow morning and hit a dead link at a critical moment.
+>File: outputs/vera/touch3_morning_brief_2026-05-22.md
 
 ---
 
-🔧 *Vera — Auto-Upgrade | Run 45*
->Changed: nina_report.py weekly action items — LinkedIn item now says "run locally to see hot leads list" when API is cloud-blocked
->Why: Was showing "Connect on LinkedIn with 0 hot leads" when the API block made it look like there were no hot leads.
->File: workers/nina_report.py
+🔧 *Vera — Auto-Upgrade (Run 46)*
+>Changed: agents/danny.md — escalated Summit County run note from "if May 25 misses" to "Run manually TODAY (May 21/22)." Cron is 10 days overdue. Week 21 = Summit County.
+>Why: Round 2 enrollment June 4 requires Summit County leads in cache. Waiting for May 25 Memorial Day cron is risky.
+>File: agents/danny.md
 
 ---
 
-📄 *Vera — New Deliverable | Run 45*
->File: outputs/tommy/round2_pm_sequence_rewrite_2026-05-21.md
->What: 3 complete Email 1 rewrites for the PM sequence — social proof/specificity angle, fear/urgency angle, direct question angle. Decision table. Round 2 send instructions.
->When to use: If Touch 3 → 0 replies by May 25. Pick one option, change send time to 10:30am, enroll Summit + Medina leads June 4.
+📋 *Vera — New Deliverable (Run 46)*
+>File: outputs/vera/may22_action_card.md
+>What: Single-screen Touch 3 day action card — check Mixmax, 5 contractor texts (copy-paste), 5 LinkedIn connects, reply scripts, 0-reply contingency. Phone-sized, designed for mid-day use.
+>Why: Morning brief is thorough but long. This is the "open this at noon" version.
 
 ---
 
-⚠️ *Vera — Touch 3 Tomorrow (May 22) — Order of Operations*
->1. 8am — check Mixmax for replies (run Nina locally: python3 workers/nina_report.py daily)
->2. 9–11am — connect on LinkedIn with 2+ opens contacts (touch3_open_trigger_protocol_2026-05-21.md)
->3. 2pm — respond to any replies same day (touch3_reply_response_templates_2026-05-20.md)
->4. Tonight — text Tier 1 contractors if not yet done (contractor_referral_text_script_2026-05-20.md)
->5. May 25 — decision gate: replies received or launch Round 2 rewrite
+🚨 *Vera — TODAY May 22 — Touch 3 Day Priority Order*
+
+Touch 3 fired this morning to 45 enrolled PM contacts. In order:
+
+1️⃣ Open Mixmax → Property Manager sequence → check for replies (5 min)
+2️⃣ LinkedIn connects to top 5 most-opened contacts (5 min)
+3️⃣ Text 5 Tier 1 contractors before noon:
+   • Anthony / Land Pro — 440-320-2779
+   • Dontez / GTP — 440-396-0814
+   • Chris / Twin Improvements — 216-773-0757
+   • Venus / Reliable Roofing — 216-810-2497
+   • Logan / Pagels — 216-956-5263
+4️⃣ Run Summit County lead pull (10 days overdue): `python3 workers/lead_pipeline.py danny`
+
+Full quick reference → `outputs/vera/may22_action_card.md`
 
 ---
 
-💡 *Vera — Upgrade Proposal*
->Idea: Change Round 2 Mixmax send time from 9am to 10:30am
->Why: 9am competes with every vendor's morning blast. 10:30am = post-morning-fire-fighting, pre-lunch. B2B email industry data shows Tue–Thu 10–11am consistently outperforms early morning.
->Impact: Estimated 15–30% lift in open rate for Round 2 at zero cost or effort.
->Reply YES to approve.
-
----
-
-✅ *Vera — Scan Complete 2026-05-21 (Run 45)*
->4 auto-upgrades shipped | 1 proposal | 15 open issues
->Key fix this run: detect_lead_type routing bug — PMs at real estate companies were going to wrong Mixmax sequence. Fixed and tested.
->New deliverable: Round 2 PM sequence rewrite (3 options) ready for May 25 decision gate.
->Touch 3 fires tomorrow. All playbooks in place.
+✅ *Vera — Scan Complete 2026-05-21 (Run 46)*
+>3 auto-upgrades shipped | 1 deliverable | 15 open issues (3 resolved this run)
+>Key fixes: jasmine_flyer.py PIL crash guard, vera_relay.py write guard, touch3_morning_brief dead link fixed
+>Key deliverable: may22_action_card.md — Touch 3 day phone reference
+>Top action for Bradley: Run Danny's Summit County pull TODAY before Memorial Day weekend

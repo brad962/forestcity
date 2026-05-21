@@ -99,7 +99,10 @@ def main():
             log(f'Relayed {posted} Vera messages to Slack')
 
             # Clear the file after posting
-            PENDING_FILE.write_text('')
+            try:
+                PENDING_FILE.write_text('')
+            except Exception as e:
+                print(f'Warning: could not clear pending file: {e}')
             git(['add', str(PENDING_FILE.relative_to(BASE_DIR))])
             git(['commit', '-m', 'Vera Relay: cleared pending Slack messages after posting'])
             git(['push', 'origin', 'main'])

@@ -14,7 +14,12 @@ import time
 import requests
 from pathlib import Path
 from datetime import datetime
-from PIL import Image, ImageDraw
+
+try:
+    from PIL import Image, ImageDraw
+    _PIL_AVAILABLE = True
+except ImportError:
+    _PIL_AVAILABLE = False
 
 BASE_DIR   = Path(__file__).parent.parent
 ASSETS_DIR = BASE_DIR / "assets"
@@ -58,7 +63,7 @@ def log(msg):
         f.write(line + "\n")
 
 
-def fit_image(img: Image.Image, width: int, height: int) -> Image.Image:
+def fit_image(img: "Image.Image", width: int, height: int) -> "Image.Image":
     """Cover-crop image to exactly width x height."""
     r  = img.width / img.height
     tr = width / height
@@ -79,6 +84,10 @@ def build_flyer(before_path: str, after_path: str, output_path: str) -> str:
       - After photo on the right half
       - Logo centered with a rounded white pill background
     """
+    if not _PIL_AVAILABLE:
+        raise RuntimeError(
+            "Pillow (PIL) is not installed. Run `pip install Pillow` to enable flyer generation."
+        )
     logo_path = ASSETS_DIR / "logo.png"
     if not logo_path.exists():
         raise FileNotFoundError(f"Logo not found at {logo_path}")

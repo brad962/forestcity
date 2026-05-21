@@ -623,3 +623,148 @@
 - Total OPEN: 15 (net: resolved 2 new, no new opens)
 - Auto-upgrades shipped: 4 (detect_lead_type order fix, 3 PM titles added to mixmax.py+lead_pipeline.py, contacts_cache.json commit, nina_report.py API-blocked action item)
 - Deliverables written: 1 (round2_pm_sequence_rewrite_2026-05-21.md)
+
+---
+
+## RESOLVED — jasmine_flyer.py hard PIL import crash (module-level, no guard)
+- Resolved: 2026-05-21 (run 46)
+- Description: `from PIL import Image, ImageDraw` at module level (line 17) with no try/except. Any cloud or fresh-clone environment without Pillow would crash on import — same class of bug as report_card.py (fixed run 44).
+- Fix: Wrapped in try/except, set `_PIL_AVAILABLE` flag. `build_flyer()` raises RuntimeError with install instructions when PIL unavailable. `fit_image` type hints changed to strings for forward-compatibility. Confirmed: `python3 -c "import workers.jasmine_flyer"` passes with `_PIL_AVAILABLE: False`.
+
+---
+
+## RESOLVED — vera_relay.py file-clear not guarded (crash on filesystem error)
+- Resolved: 2026-05-21 (run 46)
+- Description: `PENDING_FILE.write_text('')` at line 102 was called bare after posting messages. Any filesystem error (permissions, disk full) would crash the relay mid-run, leaving posted messages on disk.
+- Fix: Wrapped in try/except with warning print.
+
+---
+
+## RESOLVED — touch3_morning_brief wrong round2 file path
+- Resolved: 2026-05-21 (run 46)
+- Description: Brief referenced `outputs/danny/round2_enrollment_plan_2026-05-20.md` — file is at `outputs/donna/round2_enrollment_plan_2026-05-21.md`.
+- Fix: Path corrected in touch3_morning_brief_2026-05-22.md.
+
+---
+
+## OPEN — Manual Contacts Sitting Untouched (New Lead stage)
+- First seen: 2026-05-18
+- Description: 15 contacts in New Lead stage with no last_contact. Tier 1 contractors — Touch 3 fires TODAY (May 22).
+- Tier 1 TEXT TODAY: Anthony/Land Pro (440-320-2779), Dontez/GTP (440-396-0814), Chris/Twin Improvements (216-773-0757), Venus/Reliable Roofing (216-810-2497), Logan/Pagels (216-956-5263)
+- Run 46: may22_action_card.md created — single-screen phone reference for Bradley today. Also updated danny.md to escalate Summit County run urgency.
+- Resolution criteria: Bradley texts Tier 1 list today or May 26 blitz.
+
+---
+
+## OPEN — Mixmax API blocked in cloud execution environment
+- First seen: 2026-05-18
+- Run 46: Still blocked. Run locally for live data.
+
+---
+
+## OPEN — All external APIs blocked from cloud (Apollo, Workiz, Mixmax)
+- First seen: 2026-05-18
+- Run 46: Danny cron 10 days overdue. danny.md updated: "Run Summit County manually TODAY May 21 or May 22."
+
+---
+
+## OPEN — Slack Webhook blocked in cloud execution environment
+- First seen: 2026-05-18
+- Run 46: Messages written to pending_slack_messages.md. GitHub Action + vera_relay.py on local cron.
+
+---
+
+## OPEN — GitHub Actions PAT missing workflow scope
+- First seen: 2026-05-20 (run 34)
+- Run 46: Action: Settings → Developer settings → Personal access tokens → Edit ghp_lrUhBq7... → check 'workflow' → Save → run scripts/deploy_github_action.sh
+
+---
+
+## OPEN — Instantly.ai vs Mixmax Overlap (duplicate sequence risk)
+- First seen: 2026-05-18
+- Run 46: Still unresolved. Log into Instantly.ai and pause all campaigns.
+
+---
+
+## OPEN — 0% reply rate across enrolled contacts
+- First seen: 2026-05-18
+- Description: ~45 contacts enrolled. Touch 3 fired today (May 22). 72-hour reply window closes May 24.
+- Run 46: may22_action_card.md provides real-time playbook. Decision gate: May 25 — if 0 replies, launch Round 2 with rewritten Email 1 (round2_pm_sequence_rewrite_2026-05-21.md).
+- Resolution criteria: Replies confirmed by May 24 OR Round 2 with rewrite launched May 26.
+
+---
+
+## OPEN — Hot leads uncontacted on LinkedIn (Touch 3 fired today)
+- First seen: 2026-05-18
+- Run 46: Touch 3 fired. LinkedIn connect protocol: outputs/tommy/touch3_open_trigger_protocol_2026-05-21.md. Quick reference: outputs/vera/may22_action_card.md.
+- Resolution criteria: Bradley connects on LinkedIn with top 5 hot leads today (May 22).
+
+---
+
+## OPEN — HubSpot not connected (CRM blind)
+- First seen: 2026-05-18
+- Run 46: Not urgent until post-peak season (July+).
+
+---
+
+## OPEN — No residential homeowner outreach channel active
+- First seen: 2026-05-18
+- Run 46: All assets ready. Past customer blast May 26 + Facebook ads + service pages still needed.
+
+---
+
+## OPEN — Workiz API blocked in cloud AND 0 power washing jobs on local
+- First seen: 2026-05-18
+- Run 46: Still open. Bradley must run locally and check log for JobType values.
+
+---
+
+## OPEN — Regular Danny PM cron not running (10+ days overdue) 🔴
+- First seen: 2026-05-20 (run 28)
+- Run 46: danny.md updated with URGENT note to run manually TODAY (May 21/22) for Summit County — week 21 rotation. Round 2 enrollment June 4 depends on this.
+- CRITICAL PATH: Must complete before June 2.
+
+---
+
+## OPEN — Google Business Profile not managed
+- First seen: 2026-05-20 (run 30)
+- Run 46: gbp_weekly_routine_2026-05-21.md exists. Action: post first photo by May 26.
+
+---
+
+## OPEN — No review request automation
+- First seen: 2026-05-20 (run 30)
+- Run 46: Manual template exists. Automation post-peak (July+).
+
+---
+
+## OPEN — Gas station contacts not enrolled in Mixmax (12+ emails idle)
+- First seen: 2026-05-20 (run 31)
+- Run 46: Still open. 12 gas station contacts in pipeline_data.json with PENDING sequence. Action: create Mixmax sequence → paste ID into integrations/mixmax.py.
+
+---
+
+## OPEN — No Google Ads running
+- First seen: 2026-05-21 (run 36)
+- Run 46: Copy ready (outputs/rick/google_ads_june_2026-05-19.md). Budget: $15-25/day. Not launched.
+
+---
+
+## OPEN — Past customer reengagement not launched
+- First seen: 2026-05-20 (run 29)
+- Run 46: Launch guide exists (outputs/donna/past_customer_reengagement_launch_2026-05-21.md). Revenue potential: $1,400-$4,000. Target: May 26.
+
+---
+
+## OPEN — Marcus silent — no live competitor/VOC intel since May 19
+- First seen: 2026-05-21 (run 44)
+- Run 46: Web search blocked in cloud. competitive_intel_brief_2026-05-21.md is the standing brief.
+- Resolution criteria: Bradley runs Marcus locally with web search for live Google review data.
+
+---
+
+## RUN METRICS — Run 46 | 2026-05-21
+- Total RESOLVED: 48 (added: jasmine_flyer PIL guard, vera_relay write guard, touch3_morning_brief path fix)
+- Total OPEN: 15 (no new opens — 3 resolved, 0 added)
+- Auto-upgrades shipped: 4 (jasmine_flyer PIL guard, vera_relay write guard, touch3_morning_brief path fix, danny.md Summit County urgency)
+- Deliverables written: 1 (may22_action_card.md)
