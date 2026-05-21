@@ -210,8 +210,12 @@ def save_report(report_text, mode='daily'):
 def log_activity(summary, mode='daily'):
     today = datetime.datetime.now().strftime('%Y-%m-%d %H:%M')
     log_path = str(BASE_DIR / 'logs' / 'activity.log')
-    with open(log_path, 'a') as f:
-        f.write(f"[{today}] Nina | Workiz {mode} report - Power Washing jobs | {summary} | Done\n")
+    try:
+        os.makedirs(os.path.dirname(log_path), exist_ok=True)
+        with open(log_path, 'a') as f:
+            f.write(f"[{today}] Nina | Workiz {mode} report - Power Washing jobs | {summary} | Done\n")
+    except Exception:
+        pass
 
 
 def git_push(commit_msg):
