@@ -1803,5 +1803,73 @@
 
 ---
 
-*Last updated: 2026-05-21 by Vera Cole (run 38)*
-*Key metrics: 104 RESOLVED | 17 OPEN | Run 38: 1 code fix (jasmine filename collision) + 1 new deliverable (Mixmax notifications setup)*
+---
+
+## RESOLVED — agents/tommy.md missing touch3_open_trigger_protocol + memorial_day_monitoring output format entries
+- Resolved: 2026-05-21 (run 39)
+- Fix: Added `touch3_open_trigger_protocol_[date].md` and `memorial_day_monitoring_[date].md` to tommy.md output format section. Both files were written in runs 36–37 but never added to the format list. Future Tommy activations will now know these deliverables exist.
+- File: `agents/tommy.md`
+
+---
+
+## OPEN — 0% reply rate (Touch 3 fires TOMORROW May 22) 🚨🚨
+- Updated: 2026-05-21 (run 39) — TOUCH 3 FIRES TOMORROW. All 7 playbook resources are locked and loaded.
+- Run 39: GBP post written → `outputs/vera/gbp_post_may21_2026.md`. Upload a photo to Google Business Profile TODAY before Touch 3 fires — homeowners searching Memorial Day weekend will see an active listing.
+- Run 39: May 26 cron restart brief written → `outputs/donna/may26_cron_restart_brief.md`. Covers the full Monday morning recovery: replies check, Tier 1 texts, Danny pipeline, cron setup, gas station sequence, Bulletproof/Damrons follow-up.
+- **THE 7-RESOURCE MAY 22 PLAYBOOK (all in place):**
+  - SETUP FIRST (5 min): `outputs/vera/mixmax_open_notifications_setup_2026-05-21.md`
+  - MORNING (8am): `outputs/vera/touch3_morning_brief_2026-05-22.md`
+  - REAL-TIME (each open): `outputs/tommy/touch3_open_trigger_protocol_2026-05-21.md`
+  - IF REPLIES: `outputs/tommy/touch3_reply_response_templates_2026-05-20.md` + `outputs/tommy/quote_to_close_kit_2026-05-20.md`
+  - IF NO REPLIES BY NOON: `outputs/tommy/hot_lead_phone_script_2026-05-22.md`
+  - EVENING (6pm): `outputs/vera/touch3_evening_debrief_2026-05-22.md`
+  - MAY 23–26 (weekend + blitz): `outputs/tommy/memorial_day_monitoring_2026-05-21.md`
+- **MONDAY MAY 26:** `outputs/donna/may26_cron_restart_brief.md` covers everything to do first thing Monday.
+- Resolution criteria: 1+ reply from Touch 3 OR Bradley calls hot leads May 22–23.
+
+---
+
+## OPEN — Manual Contacts Sitting Untouched (New Lead stage)
+- Updated: 2026-05-21 (run 39) — 36 contacts: 33 New Lead, 3 Contacted.
+- **TODAY (May 21) is the last business window before Memorial Day** — send Tier 1 texts now:
+  - Anthony/Land Pro: 440-320-2779 (script A — landscaper)
+  - Dontez/GTP: 440-396-0814 (script A — landscaper)
+  - Twin Improvements: 216-773-0757 (script B — siding)
+  - Reliable Roofing: 216-810-2497 (script C — roofing)
+  - Pagels Construction: 216-956-5263 (script C — roofing)
+- Scripts: `outputs/tommy/contractor_referral_text_script_2026-05-20.md`
+- **Next window if missed today:** Monday May 26 morning — `outputs/donna/may26_cron_restart_brief.md` Step 2.
+- After Memorial Day: Full May 26 blitz — `outputs/donna/may26_outreach_blitz_brief_2026-05-20.md`
+
+---
+
+## OPEN — Regular Danny PM cron not running (12+ days overdue) 🔴🔴
+- Updated: 2026-05-21 (run 39) — 12+ DAYS OVERDUE. Summit County (Akron/Fairlawn/Stow) = week 21.
+- Run 39: Monday recovery brief written → `outputs/donna/may26_cron_restart_brief.md`. Steps 3–4 cover pipeline run + cron setup. Run Summit County pipeline first (25 min), then set up crontab to prevent recurrence.
+- **Commands (run May 26 morning):**
+  ```bash
+  cd /Users/bradleyneal/forestcity
+  python3 workers/lead_pipeline.py danny   # Summit County this week
+  crontab -e                               # paste 5 cron jobs from CLAUDE.md
+  ```
+- Resolution criteria: Cron active + Summit County leads pulled and enrolled.
+
+---
+
+## OPEN — Google Business Profile not managed (zero-cost lead channel ignored)
+- Updated: 2026-05-21 (run 39) — TODAY is the last window before Memorial Day weekend.
+- Run 39: GBP post content written → `outputs/vera/gbp_post_may21_2026.md`. Three caption options + photo selection guide. 5 minutes to execute.
+- **Do NOW (5 min):** Google Maps → Forest City Power Washing → Add Photo → upload any job photo.
+- Resolution criteria: Bradley uploads 1 photo to GBP.
+
+---
+
+## OPEN — Gas station & fleet contacts not enrolled in Mixmax
+- Updated: 2026-05-21 (run 39) — Run 39: May 26 brief includes gas station sequence creation as Step 5 (9:00 AM slot). Infrastructure ready. Just needs the Mixmax ID.
+- Step-by-step guide: `outputs/vera/mixmax_sequence_setup_guide_2026-05-20.md`
+- Target date: June 2 (or May 26 if time allows per may26_cron_restart_brief.md).
+
+---
+
+*Last updated: 2026-05-21 by Vera Cole (run 39)*
+*Key metrics: 105 RESOLVED | 17 OPEN | Run 39: 1 code fix (tommy.md format entries) + 2 deliverables (GBP post, May 26 cron restart brief)*

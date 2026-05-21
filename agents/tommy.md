@@ -57,6 +57,8 @@ Save to `/outputs/tommy/`:
 - `hot_lead_bridge_email_[date].md` — personal Gmail bridge email for top 5 hot leads (2+ opens). Sent from Bradley's real email after the automated sequence ends.
 - `inbound_response_protocol_[date].md` — how to respond to inbound inquiries (calls, website form, Facebook DM). Scripts for each channel + timing guide.
 - `contractor_referral_text_script_[date].md` — personalized text scripts per trade type (landscaper, siding, roofing) for Tier 1 contractor outreach. YES/NO/no-reply handling included.
+- `touch3_open_trigger_protocol_[date].md` — real-time 48h protocol for when Touch 3 fires: LinkedIn connect within 2h of each open, Memorial Day voicemail/SMS scripts, decision tree, all 7 file references.
+- `memorial_day_monitoring_[date].md` — May 22 evening through May 26 blitz day monitoring guide: Friday call protocol, weekend passive monitoring rules, May 26 blitz day order, metrics tracker.
 
 ## Logging
 `[YYYY-MM-DD HH:MM] Tommy | [task description] | [output filename] | Done`
