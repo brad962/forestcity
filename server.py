@@ -233,7 +233,12 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             fname  = qs.get('file',   [''])[0]
             if worker in WORKERS and fname:
                 fp = OUTPUTS / worker / fname
-                if fp.exists() and fp.is_file():
+                # Prevent path traversal — resolved path must stay inside outputs/
+                try:
+                    safe = str(fp.resolve()).startswith(str(OUTPUTS.resolve()))
+                except Exception:
+                    safe = False
+                if safe and fp.exists() and fp.is_file():
                     self._json({'content': fp.read_text(), 'filename': fname, 'worker': worker})
                     return
             self._json({'error': 'not found'}, 404)

@@ -105,9 +105,9 @@ def generate_report(mode='daily'):
         s = j.get('Status', 'Unknown')
         status_counts[s] = status_counts.get(s, 0) + 1
 
-    # Revenue
-    total_revenue = sum(j.get('JobTotalPrice', 0) for j in jobs)
-    total_due = sum(j.get('JobAmountDue', 0) for j in jobs)
+    # Revenue — Workiz may return prices as strings; float() normalizes both
+    total_revenue = sum(float(j.get('JobTotalPrice', 0) or 0) for j in jobs)
+    total_due = sum(float(j.get('JobAmountDue', 0) or 0) for j in jobs)
     paid = total_revenue - total_due
 
     # Upcoming jobs (next 30 days)

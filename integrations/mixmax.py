@@ -103,7 +103,10 @@ FLEET_KEYWORDS = [
     'fleet', 'tree service', 'tree care', 'arborist', 'trucking',
     'logistics', 'delivery', 'landscaping fleet', 'hvac fleet',
     'fleet manager', 'fleet supervisor', 'transportation manager',
-    'equipment manager', 'operations manager',
+    'equipment manager',
+    # NOTE: 'operations manager' removed — too generic; nearly every company has one.
+    # Specific fleet/transport titles are sufficient for routing.
+    'fleet operations manager', 'transportation director', 'vehicle fleet',
 ]
 
 
