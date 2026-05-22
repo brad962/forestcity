@@ -1,13 +1,14 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 54 | 2026-05-22 | Auto-fixes shipped: 4 | New deliverables: 2 | Proposals: 1*
+*Run 55 | 2026-05-22 | Auto-fixes shipped: 6 | New deliverables: 2 | Proposals: 2*
 
 ---
 
-## RESOLVED SUMMARY (55 total — details in git history)
+## RESOLVED SUMMARY (58 total — details in git history)
 
 Key resolved issues by category:
 - **Pipeline routing:** PM-before-realtor check order, gas_station/fleet false positives removed, all 5 PM title variants added (multifamily, CAI, condo, association manager)
+- **Run 55 new RESOLVED:** duplicate 'leasing manager' in PROPERTY_MANAGER_TITLES; Danny + Carla sentinel file reliability (write + read); pending-mode for gas station enrollment without Apollo pull; Carla staleness sentinel (read side)
 - **Enrollment safety:** mass re-enrollment guard, PENDING sequence skip, contacts_cache commit gap
 - **Script stability:** report_card.py PIL crash, jasmine_flyer PIL + requests guards, workiz_report float cast, nina_report dict response handling, vera_relay write guard
 - **Dashboard/server:** path traversal fix, concurrent write guard, queue parse safety
@@ -52,7 +53,7 @@ Key resolved issues by category:
 ## OPEN — GitHub Actions PAT missing workflow scope
 - First seen: 2026-05-20 (run 34)
 - Description: vera-slack-relay.yaml and github_action_vera_slack_relay.yaml exist in outputs/vera/ but can't be pushed to .github/workflows/ — PAT needs 'workflow' scope.
-- Run 54: Still blocked. Guide: outputs/vera/pat_scope_upgrade_guide_2026-05-22.md. 3-step fix, 2 minutes. The vera_relay.py lock fix this run means the local relay is more stable while GitHub Action remains undeployed.
+- Run 55: Still blocked. No change this run. Local vera_relay.py with lock file is stable. PAT scope upgrade remains a 2-minute fix.
 - Action: Settings → Developer settings → Personal access tokens → Edit ghp_lrUhBq7... → check 'workflow' → Save
 
 ---
@@ -60,8 +61,7 @@ Key resolved issues by category:
 ## OPEN — Instantly.ai vs Mixmax Overlap (0% reply rate root cause) 🔴
 - First seen: 2026-05-18
 - Description: Two active Instantly.ai campaigns (a1c08c3d = PM Cuyahoga, 626cd15d = Contractor Referral) run against the same contacts as Mixmax sequences → duplicate emails → spam filtering → 0 replies.
-- Run 54: Touch 3 fired TODAY. 72-hour window is live. Instantly.ai MUST be paused before Round 2 enrollment June 4. Pause guide: outputs/vera/instantly_pause_guide_2026-05-22.md — 3 minutes. 
-- Fresh angle: Added an inline comment to integrations/mixmax.py enroll_lead() warning about Instantly.ai overlap risk on future enrollments. This is a code-level reminder that survives future developers touching the file.
+- Run 55: Touch 3 window is live (72 hours through May 25). Fresh angle: nina_report.py daily run now shows an explicit 0-reply/Instantly.ai overlap warning when the API is live, 0 replies, and 10+ contacts enrolled — Bradley sees it EVERY DAY in the daily report until resolved. Evening debrief also highlights this as Priority 1 action tonight.
 - Resolution criteria: Both campaigns paused in Instantly.ai → confirmed by Bradley.
 
 ---
@@ -69,7 +69,7 @@ Key resolved issues by category:
 ## OPEN — 0% reply rate across enrolled contacts
 - First seen: 2026-05-18
 - Description: ~45 contacts enrolled, 0 replies across all 3 email touches.
-- Run 54: Touch 3 fired TODAY (May 22). 72-hour window runs through May 25 (Sunday). check_replies.py now posts Slack for BOTH replies AND hot leads — Bradley gets actionable data even with 0 replies. HOA spring meeting email angles written (outputs/tommy/hoa_spring_meeting_email_2026-05-22.md) — 3 new subject/body variants for Round 2. Decision gate May 25.
+- Run 55: Touch 3 window live. 72-hour window through May 25. nina_report.py now shows explicit Instantly.ai overlap warning when 0 replies + API live + 10+ enrolled. Decision gate May 25. Round 2 variants and A/B subjects ready. Phone protocol for May 23 morning: outputs/tommy/may23_morning_call_protocol_2026-05-22.md.
 - Resolution criteria: At least 1 confirmed reply before May 25 OR Round 2 rewrite + enrollment launched by June 4.
 
 ---
@@ -77,8 +77,8 @@ Key resolved issues by category:
 ## OPEN — Hot leads not contacted on LinkedIn (Touch 3 day)
 - First seen: 2026-05-18
 - Description: ~13 contacts with 2+ opens haven't received personal LinkedIn connects.
-- Run 54: Touch 3 fired today (May 22). Window: connect within 24 hours while "just sent you an email" context is live. Protocol: outputs/tommy/touch3_open_trigger_protocol_2026-05-21.md. Weekend connects still effective — LinkedIn DMs are seen by Monday.
-- Resolution criteria: Bradley connects on LinkedIn with top 5+ contacts TODAY or Saturday May 23.
+- Run 55: Touch 3 window live. LinkedIn context strongest TONIGHT (May 22 evening). Evening debrief (outputs/vera/touch3_evening_debrief_2026-05-22.md) has the LinkedIn connect protocol as Priority 2 for tonight. Weekend connects still effective — LinkedIn DMs are seen Monday.
+- Resolution criteria: Bradley connects on LinkedIn with top 5+ contacts TONIGHT or Saturday May 23.
 
 ---
 
@@ -181,6 +181,14 @@ Key resolved issues by category:
 - Fix: Added _acquire_lock()/_release_lock() with LOCK_FILE + 3-minute stale-lock timeout; concurrent 5-min cron instances now exit cleanly instead of colliding on git operations
 
 ---
+
+## RUN METRICS — Run 55 | 2026-05-22
+- Total RESOLVED: 62 (3 new this run: duplicate leasing_manager removed, Danny+Carla sentinel file write/read, pending mode in lead_pipeline.py)
+- Total OPEN: 17 (0 new closed, 0 new opened)
+- Auto-upgrades shipped: 6 (mixmax.py duplicate leasing_manager, lead_pipeline.py sentinel+pending mode, vera_relay.py sentinel reads for Danny+Carla, nina_report.py Instantly.ai overlap warning, agents/danny.md pending mode docs)
+- Deliverables written: 2 (door_hanger_neighbor_farm_2026-05-22.md, rei_investor_outreach_2026-05-22.md)
+- Proposals: 2 (door hanger neighbor farm, REI investor sub-segment for Carla)
+- Highest priority action: (1) Pause Instantly.ai TONIGHT — 3 min, (2) LinkedIn connects TONIGHT while Touch 3 context is live, (3) May 23 morning: phone calls using may23_morning_call_protocol, (4) May 26: Danny pull + ads launch
 
 ## RUN METRICS — Run 54 | 2026-05-22
 - Total RESOLVED: 59 (4 new this run)

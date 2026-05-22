@@ -64,19 +64,26 @@ def git(cmd):
 
 
 def _check_danny_staleness():
-    """Read activity.log for last Danny pull. Post Slack alert if > 7 days. Once per day."""
-    sentinel = BASE_DIR / 'outputs' / 'vera' / '.danny_alert_sent_date'
+    """Check when Danny last ran. Post Slack alert if > 7 days. Once per day."""
+    alert_sentinel = BASE_DIR / 'outputs' / 'vera' / '.danny_alert_sent_date'
+    pull_sentinel  = BASE_DIR / 'outputs' / 'vera' / '.danny_last_pull_date'
     today_str = datetime.now().strftime('%Y-%m-%d')
 
-    if sentinel.exists() and sentinel.read_text().strip() == today_str:
+    if alert_sentinel.exists() and alert_sentinel.read_text().strip() == today_str:
         return  # Already alerted today
 
     last_pull_dt = None
-    if LOG_FILE.exists():
+    # Use sentinel file first (written by lead_pipeline.py — more reliable than log parsing)
+    if pull_sentinel.exists():
+        try:
+            last_pull_dt = datetime.strptime(pull_sentinel.read_text().strip(), '%Y-%m-%d')
+        except Exception:
+            pass
+    # Fall back to log parsing if sentinel not found
+    if last_pull_dt is None and LOG_FILE.exists():
         try:
             for line in reversed(LOG_FILE.read_text().splitlines()):
                 if 'Danny' in line and 'Apollo pull' in line:
-                    # Line format: [2026-05-12 08:00] Danny | ...
                     date_part = line[1:11]
                     last_pull_dt = datetime.strptime(date_part, '%Y-%m-%d')
                     break
@@ -95,24 +102,32 @@ def _check_danny_staleness():
         f'>Round 2 enrollment June 4 — needs Summit + Medina leads before June 2.'
     )
     if post_slack(msg):
-        sentinel.parent.mkdir(exist_ok=True)
+        alert_sentinel.parent.mkdir(exist_ok=True)
         try:
-            sentinel.write_text(today_str)
+            alert_sentinel.write_text(today_str)
         except Exception:
             pass
         log(f'Danny staleness alert posted — {days_stale} days since last pull')
 
 
 def _check_carla_staleness():
-    """Read activity.log for last Carla pull. Post Slack alert if > 10 days. Once per day."""
-    sentinel = BASE_DIR / 'outputs' / 'vera' / '.carla_alert_sent_date'
+    """Check when Carla last ran. Post Slack alert if > 10 days. Once per day."""
+    alert_sentinel = BASE_DIR / 'outputs' / 'vera' / '.carla_alert_sent_date'
+    pull_sentinel  = BASE_DIR / 'outputs' / 'vera' / '.carla_last_pull_date'
     today_str = datetime.now().strftime('%Y-%m-%d')
 
-    if sentinel.exists() and sentinel.read_text().strip() == today_str:
+    if alert_sentinel.exists() and alert_sentinel.read_text().strip() == today_str:
         return
 
     last_pull_dt = None
-    if LOG_FILE.exists():
+    # Use sentinel file first (written by lead_pipeline.py — more reliable than log parsing)
+    if pull_sentinel.exists():
+        try:
+            last_pull_dt = datetime.strptime(pull_sentinel.read_text().strip(), '%Y-%m-%d')
+        except Exception:
+            pass
+    # Fall back to log parsing if sentinel not found
+    if last_pull_dt is None and LOG_FILE.exists():
         try:
             for line in reversed(LOG_FILE.read_text().splitlines()):
                 if 'Carla' in line and 'Apollo pull' in line:
@@ -134,9 +149,9 @@ def _check_carla_staleness():
         f'>Contractor referral pipeline needs fresh contacts before June Booking Blitz.'
     )
     if post_slack(msg):
-        sentinel.parent.mkdir(exist_ok=True)
+        alert_sentinel.parent.mkdir(exist_ok=True)
         try:
-            sentinel.write_text(today_str)
+            alert_sentinel.write_text(today_str)
         except Exception:
             pass
         log(f'Carla staleness alert posted — {days_stale} days since last pull')

@@ -59,7 +59,11 @@ Target locations (use county + "Ohio"):
 **Target title:** District Manager (manages 5–15 locations; one deal = recurring multi-site revenue)
 **Sequence copy:** `outputs/danny/sequence_gas_stations_2026-05-19.md`
 **Leads file:** `outputs/danny/leads_gas_stations_2026-05-19.md`
-**Enrollment:** Once Bradley creates the Mixmax sequence and pastes the ID into `integrations/mixmax.py`, running `lead_pipeline.py` will auto-enroll all 18.
+**Enrollment:** Once Bradley creates the Mixmax sequence and pastes the ID into `integrations/mixmax.py`, run:
+```bash
+python3 workers/lead_pipeline.py pending
+```
+This enrolls ALL pending contacts (gas stations + fleet) without triggering a fresh Apollo pull — 2-minute task.
 
 ### Fleet Vehicle Washing
 **Status:** Sequence copy READY — `outputs/danny/sequence_fleet_washing_2026-05-18.md`. Mixmax ID pending (create in Mixmax UI → paste into `integrations/mixmax.py` line 48).

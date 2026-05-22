@@ -271,6 +271,26 @@ def mixmax_enroll(lead, lead_type):
     return enroll_lead(lead)
 
 
+def _write_danny_sentinel():
+    """Write today's date to a sentinel file so vera_relay can detect Danny staleness without log-parsing."""
+    try:
+        sentinel = BASE_DIR / 'outputs' / 'vera' / '.danny_last_pull_date'
+        sentinel.parent.mkdir(exist_ok=True)
+        sentinel.write_text(datetime.now().strftime('%Y-%m-%d'))
+    except Exception:
+        pass
+
+
+def _write_carla_sentinel():
+    """Write today's date to a sentinel file so vera_relay can detect Carla staleness without log-parsing."""
+    try:
+        sentinel = BASE_DIR / 'outputs' / 'vera' / '.carla_last_pull_date'
+        sentinel.parent.mkdir(exist_ok=True)
+        sentinel.write_text(datetime.now().strftime('%Y-%m-%d'))
+    except Exception:
+        pass
+
+
 def run_danny():
     print('\n🔵 Danny — Property Manager Lead Pull')
     existing = load_existing_emails()
@@ -359,6 +379,8 @@ def run_danny():
 
         out_path.write_text('\n'.join(lines))
         log('danny', f'Apollo pull — {len(new_leads)} new property managers in {search["label"]}, {enrolled} enrolled in Mixmax', out_file)
+        # Sentinel: vera_relay uses this to detect Danny staleness more reliably than log-parsing
+        _write_danny_sentinel()
         git_push('danny', f'Danny: lead pull {search["label"]} {date_str}')
         send_report_card(
             worker_name='danny',
@@ -379,6 +401,8 @@ def run_danny():
             reason = f'Apollo returned 0 people — API may be blocked or rate limited ({search["label"]})'
         else:
             reason = f'all {len(people)} leads from Apollo were duplicates ({search["label"]})'
+            # Cron IS running but found no new leads — still update sentinel so vera_relay doesn't false-alarm
+            _write_danny_sentinel()
         log('danny', f'Apollo pull — {reason}', 'none', 'Done')
         send_report_card(
             worker_name='danny',
@@ -480,6 +504,7 @@ def run_carla():
 
         out_path.write_text('\n'.join(lines))
         log('carla', f'Apollo pull — {len(all_new)} new referral partners, {enrolled} enrolled in Mixmax', out_file)
+        _write_carla_sentinel()
         git_push('carla', f'Carla: lead pull {date_str}')
         send_report_card(
             worker_name='carla',
@@ -500,6 +525,7 @@ def run_carla():
             reason = 'Apollo returned 0 people — API may be blocked or rate limited'
         else:
             reason = f'all {all_people_count} leads from Apollo were duplicates'
+            _write_carla_sentinel()  # Cron is alive even if no new leads
         log('carla', f'Apollo pull — {reason}', 'none', 'Done')
         send_report_card(
             worker_name='carla',
@@ -746,11 +772,15 @@ if __name__ == '__main__':
     if mode in ('carla', 'both'):
         run_carla()
 
-    # Enroll any contacts waiting on sequences that just went live
+    # 'pending' mode: enroll contacts waiting on sequences that just went live,
+    # without triggering a fresh Apollo pull. Use this once gas_station/fleet
+    # sequence IDs are added to integrations/mixmax.py.
+    # Example: python3 workers/lead_pipeline.py pending
     run_pending_sequences()
 
     # Always verify enrollment after pulling leads — catches any silent failures
-    verify_and_repair_enrollment()
+    if mode != 'pending':
+        verify_and_repair_enrollment()
 
     # Commit pipeline_data.json and contacts_cache.json if changed
     # (enrollment marks from run_pending_sequences + verify_and_repair_enrollment)

@@ -254,6 +254,16 @@ def run_daily():
             '',
         ]
 
+    # Warn when API is live but reply rate is 0 — Instantly.ai overlap is the #1 suspect
+    total_enrolled_check = sum(s['total'] for s in seq_stats_cache.values())
+    if not api_blocked and not all_replied and total_enrolled_check > 10:
+        lines += [
+            '> ⚠️ **0% reply rate** — Primary suspect: Instantly.ai overlap.',
+            '> Two Instantly.ai campaigns (a1c08c3d + 626cd15d) may be hitting the same contacts.',
+            '> Duplicate emails trigger spam filters. Pause guide: `outputs/vera/instantly_pause_guide_2026-05-22.md`',
+            '',
+        ]
+
     if all_replied:
         lines += [
             '## 🔥 REPLIED — Action Required',

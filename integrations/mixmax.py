@@ -79,8 +79,7 @@ PROPERTY_MANAGER_TITLES = [
     'condominium manager',
     # In Danny search titles but was missing from routing — PM firms where director-level title is used
     'property management director',
-    # In DANNY_TITLES but absent from routing — manual imports with these titles route correctly now
-    'leasing manager',
+    # managing partner / principal — small HOA/PM firm owners who list owner-level titles (added 2026-05-22)
     'managing partner',
     'principal',
 ]
