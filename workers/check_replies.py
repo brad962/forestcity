@@ -63,6 +63,22 @@ def _load_sequences():
 SEQUENCES = _load_sequences()
 
 
+def _load_phone_map() -> dict:
+    """Build email → phone from contacts cache."""
+    cache_file = BASE_DIR / 'contacts_cache.json'
+    if not cache_file.exists():
+        return {}
+    try:
+        data = json.loads(cache_file.read_text())
+        return {
+            c['email'].lower(): c.get('phone', '')
+            for c in data.get('contacts', [])
+            if c.get('email') and c.get('phone')
+        }
+    except Exception:
+        return {}
+
+
 def fetch_recipients(seq_id: str) -> list:
     url = f'https://api.mixmax.com/v1/sequences/{seq_id}/recipients?apiToken={MIXMAX_TOKEN}&limit=200'
     try:
@@ -103,6 +119,7 @@ def main():
     all_replies   = []
     all_hot       = []
     api_ok        = False
+    phone_map     = _load_phone_map()
 
     for seq_id, seq_name in SEQUENCES.items():
         recipients = fetch_recipients(seq_id)
@@ -119,20 +136,23 @@ def main():
             opens = (r.get('analytics') or {}).get('events', {}).get('opens', 0)
             name  = r.get('to', {}).get('name', '?')
             email = r.get('to', {}).get('email', '')
+            phone = phone_map.get(email.lower(), '')
 
             if total_replies > 0:
-                replied.append({'name': name, 'email': email, 'opens': opens})
-                all_replies.append({'name': name, 'email': email, 'seq': seq_name})
+                replied.append({'name': name, 'email': email, 'opens': opens, 'phone': phone})
+                all_replies.append({'name': name, 'email': email, 'seq': seq_name, 'phone': phone})
             elif opens >= 2:
-                hot.append({'name': name, 'email': email, 'opens': opens})
-                all_hot.append({'name': name, 'email': email, 'seq': seq_name, 'opens': opens})
+                hot.append({'name': name, 'email': email, 'opens': opens, 'phone': phone})
+                all_hot.append({'name': name, 'email': email, 'seq': seq_name, 'opens': opens, 'phone': phone})
 
         status = '🔥 REPLIED' if replied else ('⚡ Hot' if hot else '—')
         print(f'  {seq_name}: {len(recipients)} enrolled | {len(replied)} replied | {len(hot)} hot | {status}')
         for r in replied:
-            print(f'    ✅ REPLY: {r["name"]} ({r["email"]}) — {r["opens"]} opens')
+            ph_str = f' | 📞 {r["phone"]}' if r.get('phone') else ''
+            print(f'    ✅ REPLY: {r["name"]} ({r["email"]}){ph_str} — {r["opens"]} opens')
         for h in hot:
-            print(f'    ⚡ HOT:   {h["name"]} ({h["email"]}) — {h["opens"]} opens, no reply yet')
+            ph_str = f' | 📞 {h["phone"]}' if h.get('phone') else ''
+            print(f'    ⚡ HOT:   {h["name"]} ({h["email"]}){ph_str} — {h["opens"]} opens, no reply yet')
 
     print('=' * 50)
 
@@ -145,9 +165,13 @@ def main():
     if all_replies:
         print(f'\n🔥 {len(all_replies)} REPL{"Y" if len(all_replies) == 1 else "IES"} — respond NOW')
         for r in all_replies:
-            print(f'   → {r["name"]} | {r["email"]} | {r["seq"]}')
+            ph_str = f' | 📞 {r["phone"]}' if r.get('phone') else ''
+            print(f'   → {r["name"]} | {r["email"]}{ph_str} | {r["seq"]}')
 
-        reply_lines = '\n'.join(f'>• {r["name"]} — {r["email"]} ({r["seq"]})' for r in all_replies)
+        reply_lines = '\n'.join(
+            f'>• {r["name"]} — {r["email"]} | 📞 {r["phone"] or "—"} ({r["seq"]})'
+            for r in all_replies
+        )
         post_slack(
             f'🔥 *Mixmax — New {"Reply" if len(all_replies) == 1 else "Replies"} ({len(all_replies)})*\n'
             f'{reply_lines}\n'

@@ -91,6 +91,9 @@ DANNY_TITLES = [
     'condominium manager',
     # Decision-makers at small HOA/PM firms who list owner/founder titles, not PM titles (added 2026-05-22 run 52)
     'managing partner', 'principal',
+    # Commercial/retail property segment — office buildings, shopping centers (added 2026-05-22 run 56)
+    'leasing director',    # large multifamily/office leasing director — distinct from leasing manager
+    'center manager',      # shopping center manager — common title at retail property groups
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -107,6 +110,9 @@ DANNY_ORG_KEYWORDS = [
     'residential portfolio',
     # Condo/HOA association management (added 2026-05-22)
     'condominium management', 'condo association', 'condominium association',
+    # Commercial/retail property segment (added 2026-05-22 run 56)
+    'shopping center management', 'office building management',
+    'retail property management', 'commercial building management',
 ]
 
 CARLA_SEARCHES = [
@@ -291,14 +297,31 @@ def _write_carla_sentinel():
         pass
 
 
-def run_danny():
+def run_danny(county_override=None):
     print('\n🔵 Danny — Property Manager Lead Pull')
     existing = load_existing_emails()
 
-    # Rotate county based on week number
-    week_num = datetime.now().isocalendar()[1]
-    search = DANNY_SEARCHES[week_num % len(DANNY_SEARCHES)]
-    print(f'  County batch: {search["label"]}')
+    # Rotate county based on week number; --county override forces a specific batch
+    if county_override:
+        # Flexible match: substring of label (case-insensitive) — handles "Summit", "Geauga", "Cuyahoga"
+        search = next(
+            (s for s in DANNY_SEARCHES if county_override.lower() in s['label'].lower()),
+            None
+        )
+        if search:
+            print(f'  County batch: {search["label"]} [MANUAL OVERRIDE]')
+        else:
+            valid = ', '.join(s['label'] for s in DANNY_SEARCHES)
+            print(f'  ⚠️ County "{county_override}" not found. Valid values: {valid}')
+            print(f'  Falling back to rotation.')
+            search = None
+    else:
+        search = None
+
+    if search is None:
+        week_num = datetime.now().isocalendar()[1]
+        search = DANNY_SEARCHES[week_num % len(DANNY_SEARCHES)]
+        print(f'  County batch: {search["label"]} (week {week_num} rotation)')
 
     people = apollo_search(DANNY_TITLES, search['counties'], per_page=25, keywords=DANNY_ORG_KEYWORDS)
     print(f'  Found {len(people)} people from Apollo')
@@ -765,10 +788,15 @@ def run_pending_sequences():
 
 if __name__ == '__main__':
     mode = sys.argv[1] if len(sys.argv) > 1 else 'both'
+    # Optional county override for Danny: python3 workers/lead_pipeline.py danny Summit
+    # Forces a specific county batch regardless of the week rotation.
+    # Valid labels: Cuyahoga, Lake, Lorain, Summit, Medina, Geauga+Portage
+    county_override = sys.argv[2] if len(sys.argv) > 2 and mode == 'danny' else None
+
     print(f'\n=== Forest City Lead Pipeline — {datetime.now().strftime("%Y-%m-%d %H:%M")} ===')
 
     if mode in ('danny', 'both'):
-        run_danny()
+        run_danny(county_override=county_override)
     if mode in ('carla', 'both'):
         run_carla()
 

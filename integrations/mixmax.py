@@ -82,6 +82,9 @@ PROPERTY_MANAGER_TITLES = [
     # managing partner / principal — small HOA/PM firm owners who list owner-level titles (added 2026-05-22)
     'managing partner',
     'principal',
+    # Commercial/retail segment — leasing director and center manager are common at office/retail properties (added 2026-05-22)
+    'leasing director',
+    'center manager',
 ]
 
 REALTOR_TITLES = [
@@ -101,6 +104,8 @@ CONTRACTOR_TITLES = [
     'maid', 'moving company', 'mover',
     # Deck and driveway trades — customer often books power washing same visit (added 2026-05-20)
     'deck builder', 'deck contractor', 'asphalt seal', 'driveway seal', 'concrete seal',
+    # Irrigation/sprinkler companies — in customers' yards constantly, high referral value (added 2026-05-22)
+    'irrigation', 'sprinkler',
 ]
 
 

@@ -1,6 +1,6 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 55 | 2026-05-22 | Auto-fixes shipped: 6 | New deliverables: 2 | Proposals: 2*
+*Run 56 | 2026-05-22 | Auto-fixes shipped: 7 | New deliverables: 2 | Proposals: 1*
 
 ---
 
@@ -9,6 +9,7 @@
 Key resolved issues by category:
 - **Pipeline routing:** PM-before-realtor check order, gas_station/fleet false positives removed, all 5 PM title variants added (multifamily, CAI, condo, association manager)
 - **Run 55 new RESOLVED:** duplicate 'leasing manager' in PROPERTY_MANAGER_TITLES; Danny + Carla sentinel file reliability (write + read); pending-mode for gas station enrollment without Apollo pull; Carla staleness sentinel (read side)
+- **Run 56 new RESOLVED:** irrigation/sprinkler routing gap (CONTRACTOR_TITLES); commercial/retail segment title gap (leasing director, center manager added to PROPERTY_MANAGER_TITLES + DANNY_TITLES); nina_report replied contacts missing Phone column; check_replies.py phone lookup missing; Danny county override CLI flag missing
 - **Enrollment safety:** mass re-enrollment guard, PENDING sequence skip, contacts_cache commit gap
 - **Script stability:** report_card.py PIL crash, jasmine_flyer PIL + requests guards, workiz_report float cast, nina_report dict response handling, vera_relay write guard
 - **Dashboard/server:** path traversal fix, concurrent write guard, queue parse safety
@@ -69,7 +70,7 @@ Key resolved issues by category:
 ## OPEN — 0% reply rate across enrolled contacts
 - First seen: 2026-05-18
 - Description: ~45 contacts enrolled, 0 replies across all 3 email touches.
-- Run 55: Touch 3 window live. 72-hour window through May 25. nina_report.py now shows explicit Instantly.ai overlap warning when 0 replies + API live + 10+ enrolled. Decision gate May 25. Round 2 variants and A/B subjects ready. Phone protocol for May 23 morning: outputs/tommy/may23_morning_call_protocol_2026-05-22.md.
+- Run 56: 72-hour window closes May 25. After May 25, the sequence is spent. If 0 replies by May 26: (1) send personal Gmail bridge emails to top 5 hot leads — `outputs/tommy/hot_lead_bridge_email_may26_2026-05-22.md` (NEW), (2) pause Instantly.ai before Round 2 enrollment, (3) A/B test subjects in Round 2 — `outputs/tommy/email_subject_line_ab_test_2026-05-22.md`.
 - Resolution criteria: At least 1 confirmed reply before May 25 OR Round 2 rewrite + enrollment launched by June 4.
 
 ---
@@ -109,9 +110,9 @@ Key resolved issues by category:
 ## OPEN — Danny PM cron not running (10 days overdue) 🔴 CRITICAL
 - First seen: 2026-05-20 (run 28)
 - Description: Last successful pull: May 12. Apollo blocked in cloud. Cron not set up on Bradley's Mac.
-- Run 54: 10 days since last pull. Next auto-run is June 1 (Memorial Day = no cron May 25). Round 2 enrollment June 4 = only 3 days after June 1. If cron fails again June 1, there's NO time to recover before June 4. Manual run this weekend or May 26 is critical.
-- Fresh angle: Command is in the weekend_lead_gen_checklist as May 26 Priority #5. New escalation: if no Danny pull by May 26, propose shifting Round 2 enrollment to June 9 to allow June 1-8 for lead pull + verification.
-- Resolution criteria: logs/cron.log shows Danny pull entry by May 26.
+- Run 56: NEW CRITICAL ANGLE — Summit County window closes TODAY/WEEKEND. May 22-25 = Week 21 = Summit. May 26 = Week 22 = Medina. If no manual run before Sunday May 25 night, Summit County is gone until July 6 (6 weeks). Added `--county Summit` override to lead_pipeline.py so Bradley can always force Summit: `python3 workers/lead_pipeline.py danny Summit`. Updated agents/danny.md with explicit deadline.
+- Resolution criteria: logs/cron.log or activity.log shows Danny pull entry by May 26. Summit County pull = run before May 26. Medina County pull = May 26 cron or manual.
+- Command to force Summit (works any day): `python3 workers/lead_pipeline.py danny Summit`
 
 ---
 
@@ -181,6 +182,14 @@ Key resolved issues by category:
 - Fix: Added _acquire_lock()/_release_lock() with LOCK_FILE + 3-minute stale-lock timeout; concurrent 5-min cron instances now exit cleanly instead of colliding on git operations
 
 ---
+
+## RUN METRICS — Run 56 | 2026-05-22
+- Total RESOLVED: 67 (5 new this run: irrigation/sprinkler routing gap, commercial segment title gap, nina_report replied phone, check_replies phone, danny county override)
+- Total OPEN: 17 (0 new closed — all require Bradley action)
+- Auto-upgrades shipped: 7 (mixmax.py irrigation+sprinkler+leasing director+center manager; lead_pipeline.py commercial titles+org keywords+county override CLI; nina_report.py replied phone column; check_replies.py phone lookup; danny.md Summit County deadline)
+- Deliverables written: 2 (june_week2_sprint_2026-05-22.md, hot_lead_bridge_email_may26_2026-05-22.md)
+- Proposals: 1 (Google Guaranteed app — file this weekend, not Monday; takes 7-14 days, could be live before June Booking Blitz)
+- Highest priority action: (1) RUN DANNY SUMMIT COUNTY PULL BEFORE SUNDAY NIGHT — `python3 workers/lead_pipeline.py danny Summit` (2) Pause Instantly.ai — a1c08c3d + 626cd15d (3) LinkedIn connects tonight (4) May 26: bridge emails to top 5 hot leads + ads launch
 
 ## RUN METRICS — Run 55 | 2026-05-22
 - Total RESOLVED: 62 (3 new this run: duplicate leasing_manager removed, Danny+Carla sentinel file write/read, pending mode in lead_pipeline.py)
