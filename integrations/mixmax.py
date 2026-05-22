@@ -75,6 +75,8 @@ PROPERTY_MANAGER_TITLES = [
     'community association manager', 'hoa director', 'facilities manager',
     # Standalone CAM variant — some professionals list just "association manager" (added 2026-05-22)
     'association manager',
+    # Full spelling — 'condo manager' substring does NOT match 'condominium manager' (added 2026-05-22)
+    'condominium manager',
 ]
 
 REALTOR_TITLES = [

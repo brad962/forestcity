@@ -824,6 +824,54 @@
 
 ---
 
+## RESOLVED — 'condominium manager' missing from Apollo search and routing
+- Resolved: 2026-05-22 (run 50)
+- Description: DANNY_TITLES + PROPERTY_MANAGER_TITLES both had 'condo manager' but NOT 'condominium manager'. Substring matching means 'condo manager' is NOT found inside 'condominium manager' — gap was real. These contacts would be fetched by Apollo (org keyword match) but silently routed to property_manager default rather than being explicitly caught. Also missing: 'condominium management' + 'condo association' + 'condominium association' from DANNY_ORG_KEYWORDS.
+- Fix: Added 'condominium manager' to integrations/mixmax.py PROPERTY_MANAGER_TITLES + workers/lead_pipeline.py DANNY_TITLES. Added 'condominium management', 'condo association', 'condominium association' to DANNY_ORG_KEYWORDS. All 4 files import clean.
+
+---
+
+## RESOLVED — Carla contractors search missing irrigation/sprinkler keywords
+- Resolved: 2026-05-22 (run 50)
+- Description: Irrigation companies (sprinkler system installers/servicers) were absent from CARLA_SEARCHES contractors keywords. These are high-value referral partners — they open/close irrigation systems in spring and fall, making the same exterior property calls as power washing. One of the best "see the dirty house" touchpoint trades missing from Carla's search.
+- Fix: Added 'irrigation', 'sprinkler system', 'lawn irrigation' to Contractors keywords in CARLA_SEARCHES.
+
+---
+
+## RESOLVED — vera_relay.py no proactive Danny staleness detector
+- Resolved: 2026-05-22 (run 50)
+- Description: vera_relay.py only relayed pending messages on new Vera commits — it never independently checked if Danny's cron was running. Bradley could go weeks without a Danny pull and get no automated alert.
+- Fix: Added _check_danny_staleness() function. Runs every time vera_relay.py executes (via local 5-min cron). Reads activity.log in reverse, finds last "Danny | Apollo pull" entry, computes days since last pull. If >7 days: posts urgent Slack alert directly. Sentinel file prevents repeated daily alerts. Fires independently of new Vera commits.
+
+---
+
+## RESOLVED — nina_report.py hot leads missing phone numbers
+- Resolved: 2026-05-22 (run 50)
+- Description: Daily and weekly hot leads tables showed Name, Email, Sequence, Opens, Replied, LinkedIn — no phone number. When Bradley wants to call a hot lead, he has to manually dig through contacts_cache.json. Phone is already in the cache alongside LinkedIn URL.
+- Fix: Added _load_phone_map() function (mirrors _load_linkedin_map()). Phone injected into all_hot leads alongside LinkedIn URL in run_daily(). Hot leads table now has Phone column. Same fix applied to run_weekly() hot leads table.
+
+---
+
+## RUN METRICS — Run 50 | 2026-05-22
+- Total RESOLVED: 55 (added: condominium manager gap, irrigation gap, vera_relay staleness, nina phone column)
+- Total OPEN: 16 (no new opens; no closures — all waiting on Bradley action)
+- Auto-upgrades shipped: 6
+  1. integrations/mixmax.py — added 'condominium manager' to PROPERTY_MANAGER_TITLES
+  2. workers/lead_pipeline.py — added 'condominium manager' to DANNY_TITLES
+  3. workers/lead_pipeline.py — added 'condominium management', 'condo association', 'condominium association' to DANNY_ORG_KEYWORDS
+  4. workers/lead_pipeline.py CARLA_SEARCHES — added 'irrigation', 'sprinkler system', 'lawn irrigation' to contractors keywords
+  5. workers/vera_relay.py — added _check_danny_staleness() — proactive Slack alert if Danny hasn't pulled in 7+ days, fires independently every run
+  6. workers/nina_report.py — added _load_phone_map() + phone column in daily AND weekly hot leads tables
+- Deliverables written: 2
+  - outputs/tommy/email_subject_line_ab_test_2026-05-22.md — 5 A/B subject line pairs for Round 2 PM sequence; Mixmax setup instructions; success metrics; timeline May 25–June 18
+  - scripts/danny_cron_check.sh — Mac terminal diagnostic: checks crontab, launchd plist, days since last Danny pull, last 10 cron.log lines
+- Open issues new angles:
+  - Danny cron: vera_relay.py now auto-alerts Slack when stale — Bradley will get a ping every day the cron is down
+  - 0% reply rate: A/B subject line test plan written for Round 2 — concrete Mixmax setup instructions + 5 test pairs
+  - Condominium management segment: gap confirmed and fixed — 'condominium manager' not caught by substring, now explicitly added
+
+---
+
 ## RUN METRICS — Run 47 | 2026-05-22
 - Total RESOLVED: 49 (added: jasmine_flyer requests guard)
 - Total OPEN: 15 (0 new opens added, 0 closed this run — all waiting on Bradley action)

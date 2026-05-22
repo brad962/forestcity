@@ -87,6 +87,8 @@ DANNY_TITLES = [
     'community association manager', 'hoa director', 'facilities manager',
     # Standalone CAM variant — added 2026-05-22 to match mixmax.py routing
     'association manager',
+    # Full spelling — 'condo manager' substring does NOT match 'condominium manager' (added 2026-05-22)
+    'condominium manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -101,13 +103,16 @@ DANNY_ORG_KEYWORDS = [
     # Multifamily segment — apartment complexes, large multi-unit residential (added 2026-05-21)
     'multifamily', 'multi-family', 'multifamily housing', 'apartment complex',
     'residential portfolio',
+    # Condo/HOA association management (added 2026-05-22)
+    'condominium management', 'condo association', 'condominium association',
 ]
 
 CARLA_SEARCHES = [
     {'type': 'contractors', 'titles': ['owner', 'president', 'founder'],
      'keywords': ['siding', 'exterior contractor', 'roofing', 'gutters', 'painting',
                   'landscaping', 'lawn care', 'window washing', 'chimney', 'concrete',
-                  'deck builder', 'deck contractor', 'asphalt sealing', 'driveway sealing'],
+                  'deck builder', 'deck contractor', 'asphalt sealing', 'driveway sealing',
+                  'irrigation', 'sprinkler system', 'lawn irrigation'],
      'label': 'Contractors'},
     # Home-services companies that visit properties weekly — high-value referral sources
     {'type': 'contractors', 'titles': ['owner', 'president', 'founder', 'operator'],

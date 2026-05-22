@@ -60,3 +60,53 @@
 >Top 3 Bradley actions RIGHT NOW: (1) LinkedIn connects with 2+ open contacts today, (2) Pause Instantly.ai campaigns (3 min), (3) Launch ads by May 26
 >May 26 playbook: outputs/donna/may26_blitz_action_card.md
 >May 26–30 playbook: outputs/donna/memorial_day_week_full_playbook_2026-05-22.md
+
+---
+
+🔧 *Vera — Auto-Upgrade*
+>Changed: `workers/vera_relay.py` — added `_check_danny_staleness()` function
+>Why: vera_relay.py never proactively alerted on Danny cron being overdue. Now every time vera_relay.py runs locally (every 5 min), it checks activity.log for the last Danny pull. If >7 days old: posts a Slack alert directly. Fires once per day (sentinel prevents spam). Bradley will now get an automatic ping every day Danny's cron is down.
+>File: workers/vera_relay.py
+
+---
+
+🔧 *Vera — Auto-Upgrade*
+>Changed: `workers/nina_report.py` — added `_load_phone_map()` + Phone column to hot leads tables
+>Why: Daily and weekly hot leads reports showed Name, Email, Opens, LinkedIn — but no phone number. When Bradley wants to call a hot lead, he had to manually dig through contacts_cache.json. Phone is now pulled from the cache and shown in both daily and weekly hot leads tables.
+>Files: workers/nina_report.py
+
+---
+
+🔧 *Vera — Auto-Upgrade*
+>Changed: `integrations/mixmax.py` + `workers/lead_pipeline.py` — added 'condominium manager' to routing and search
+>Why: Substring bug — 'condo manager' does NOT match 'condominium manager' (different strings). Contacts with that exact title were falling through to default routing. Also added 'condominium management', 'condo association', 'condominium association' to DANNY_ORG_KEYWORDS — entire condo HOA segment was missing from org-level keyword filter.
+>Files: integrations/mixmax.py, workers/lead_pipeline.py
+
+---
+
+🔧 *Vera — Auto-Upgrade*
+>Changed: `workers/lead_pipeline.py` CARLA_SEARCHES — added 'irrigation', 'sprinkler system', 'lawn irrigation' to contractors keywords
+>Why: Irrigation companies service properties every spring + fall — they're inside the yard when the house is dirty and have a built-in reason to recommend power washing. High-value referral segment that was entirely missing from Carla's Apollo search.
+>File: workers/lead_pipeline.py
+
+---
+
+📋 *Vera — Deliverable*
+>Created: `outputs/tommy/email_subject_line_ab_test_2026-05-22.md`
+>What: 5 A/B subject line pairs for Round 2 PM sequence — each pair tests a different psychological trigger (specificity, social proof, fear, ultra-short, direct question). Mixmax A/B setup instructions included (step-by-step). Success metrics defined: ≥40% open rate, ≥5% reply rate. Timeline May 25 decision → June 4 enrollment → June 11 check.
+>Use: If Touch 3 = 0 replies, deploy Pair A ("Before the tenants complain...") on May 26 for Round 2.
+
+---
+
+📋 *Vera — Deliverable*
+>Created: `scripts/danny_cron_check.sh`
+>What: Mac terminal diagnostic script. Checks: (1) active crontab entries, (2) launchd plist status, (3) days since last Danny pull with overdue flag, (4) last 10 lines of cron.log. Run: `bash scripts/danny_cron_check.sh`. Gives Bradley a one-command health check on the entire pipeline scheduler.
+
+---
+
+✅ *Vera — Scan Complete 2026-05-22 (Run 50)*
+>6 auto-upgrades shipped | 2 deliverables | 16 open issues (4 new RESOLVED, 0 new OPEN)
+>Best fix this run: vera_relay.py now auto-alerts Slack if Danny hasn't run in 7+ days — pipeline staleness detection is now fully automated
+>Phone numbers added to hot leads tables — Bradley now sees who to call AND their number in the same report
+>Subject line A/B test plan ready for Round 2 (use if Touch 3 = 0 replies)
+>Today's priority: Check Mixmax open stats → LinkedIn connects with 2+ open contacts → Pause Instantly.ai (3 min)
