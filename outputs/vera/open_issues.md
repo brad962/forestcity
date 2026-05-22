@@ -647,124 +647,134 @@
 
 ---
 
+## RESOLVED — jasmine_flyer.py unguarded `import requests` at module level
+- Resolved: 2026-05-22 (run 47)
+- Description: `import requests` at line 5 (now line 6) — hard module-level import with no try/except. Same class of bug as PIL (fixed run 46). Any environment without `requests` installed crashes on import.
+- Fix: Wrapped in try/except, `_REQUESTS_AVAILABLE` flag set. `push_to_github()` and `post_to_slack()` raise clear RuntimeError when requests unavailable. Confirmed: `python3 -c "import workers.jasmine_flyer"` passes with `_REQUESTS_AVAILABLE: True | _PIL_AVAILABLE: False`.
+
+---
+
 ## OPEN — Manual Contacts Sitting Untouched (New Lead stage)
 - First seen: 2026-05-18
-- Description: 15 contacts in New Lead stage with no last_contact. Tier 1 contractors — Touch 3 fires TODAY (May 22).
-- Tier 1 TEXT TODAY: Anthony/Land Pro (440-320-2779), Dontez/GTP (440-396-0814), Chris/Twin Improvements (216-773-0757), Venus/Reliable Roofing (216-810-2497), Logan/Pagels (216-956-5263)
-- Run 46: may22_action_card.md created — single-screen phone reference for Bradley today. Also updated danny.md to escalate Summit County run urgency.
-- Resolution criteria: Bradley texts Tier 1 list today or May 26 blitz.
+- Description: 33 contacts in New Lead stage — confirmed from pipeline_data.json (run 47 direct check). Tier 1 list unchanged. 3 contacts (Bulletproof, Damrons, CLE Lawn) in Contacted stage with next_followup = 2026-05-26.
+- Run 47: may26_blitz_action_card.md created — unified Monday morning action card covering all 8 priorities in order, with scripts linked and time estimates.
+- Resolution criteria: Bradley texts Tier 1 list on May 26 using may26_blitz_action_card.md.
 
 ---
 
 ## OPEN — Mixmax API blocked in cloud execution environment
 - First seen: 2026-05-18
-- Run 46: Still blocked. Run locally for live data.
+- Run 47: Still blocked. Run locally for live data. No new cloud fix possible.
 
 ---
 
 ## OPEN — All external APIs blocked from cloud (Apollo, Workiz, Mixmax)
 - First seen: 2026-05-18
-- Run 46: Danny cron 10 days overdue. danny.md updated: "Run Summit County manually TODAY May 21 or May 22."
+- Run 47: Danny cron still not confirmed running. launchd alternative created (scripts/danny_launchd_plist.xml) — more reliable than cron on macOS, queues missed runs if Mac was asleep.
+- CRITICAL: Round 2 enrollment June 4. Danny needs Summit + Medina leads before June 2.
 
 ---
 
 ## OPEN — Slack Webhook blocked in cloud execution environment
 - First seen: 2026-05-18
-- Run 46: Messages written to pending_slack_messages.md. GitHub Action + vera_relay.py on local cron.
+- Run 47: Messages written to pending_slack_messages.md. GitHub Action + vera_relay.py on local cron.
 
 ---
 
 ## OPEN — GitHub Actions PAT missing workflow scope
 - First seen: 2026-05-20 (run 34)
-- Run 46: Action: Settings → Developer settings → Personal access tokens → Edit ghp_lrUhBq7... → check 'workflow' → Save → run scripts/deploy_github_action.sh
+- Run 47: Action: Settings → Developer settings → Personal access tokens → Edit ghp_lrUhBq7... → check 'workflow' → Save → run scripts/deploy_github_action.sh
 
 ---
 
 ## OPEN — Instantly.ai vs Mixmax Overlap (duplicate sequence risk)
 - First seen: 2026-05-18
-- Run 46: Still unresolved. Log into Instantly.ai and pause all campaigns.
+- Run 47: NEW ANGLE — this may be the primary cause of the 0% reply rate. If Instantly was sending duplicate emails, recipients may have marked them spam, depressing deliverability for Mixmax too. email_deliverability_checklist_2026-05-22.md covers this as Step 5.
+- Action: Log into Instantly.ai → pause ALL campaigns TODAY before Round 2.
 
 ---
 
 ## OPEN — 0% reply rate across enrolled contacts
 - First seen: 2026-05-18
-- Description: ~45 contacts enrolled. Touch 3 fired today (May 22). 72-hour reply window closes May 24.
-- Run 46: may22_action_card.md provides real-time playbook. Decision gate: May 25 — if 0 replies, launch Round 2 with rewritten Email 1 (round2_pm_sequence_rewrite_2026-05-21.md).
-- Resolution criteria: Replies confirmed by May 24 OR Round 2 with rewrite launched May 26.
+- Description: ~45 contacts enrolled. Touch 3 fired May 22. 72-hour reply window.
+- Run 47: NEW ANGLE — deliverability hypothesis. email_deliverability_checklist_2026-05-22.md written — step-by-step: check Mixmax stats, verify sequence sending, run mail-tester.com spam score, check SPF/DKIM, check Instantly.ai overlap. Decision tree at end maps finding → action.
+- Resolution criteria: Replies confirmed by May 25 OR Round 2 with rewritten Email 1 launched May 26.
 
 ---
 
-## OPEN — Hot leads uncontacted on LinkedIn (Touch 3 fired today)
+## OPEN — Hot leads uncontacted on LinkedIn (Touch 3 fired May 22)
 - First seen: 2026-05-18
-- Run 46: Touch 3 fired. LinkedIn connect protocol: outputs/tommy/touch3_open_trigger_protocol_2026-05-21.md. Quick reference: outputs/vera/may22_action_card.md.
-- Resolution criteria: Bradley connects on LinkedIn with top 5 hot leads today (May 22).
+- Run 47: Touch 3 fired yesterday. LinkedIn connect window is open NOW through May 23. Protocol: outputs/tommy/touch3_open_trigger_protocol_2026-05-21.md.
+- Resolution criteria: Bradley connects on LinkedIn with top 5 hot leads May 22–23.
 
 ---
 
 ## OPEN — HubSpot not connected (CRM blind)
 - First seen: 2026-05-18
-- Run 46: Not urgent until post-peak season (July+).
+- Run 47: Not urgent until post-peak season (July+).
 
 ---
 
 ## OPEN — No residential homeowner outreach channel active
 - First seen: 2026-05-18
-- Run 46: All assets ready. Past customer blast May 26 + Facebook ads + service pages still needed.
+- Run 47: All assets ready. may26_blitz_action_card.md Step 7 is the past customer blast. Facebook ads + service pages are the June 3–4 priorities.
 
 ---
 
 ## OPEN — Workiz API blocked in cloud AND 0 power washing jobs on local
 - First seen: 2026-05-18
-- Run 46: Still open. Bradley must run locally and check log for JobType values.
+- Run 47: Still open. Bradley must run locally: `python3 workers/workiz_report.py daily` and check logs for JobType values.
 
 ---
 
 ## OPEN — Regular Danny PM cron not running (10+ days overdue) 🔴
 - First seen: 2026-05-20 (run 28)
-- Run 46: danny.md updated with URGENT note to run manually TODAY (May 21/22) for Summit County — week 21 rotation. Round 2 enrollment June 4 depends on this.
-- CRITICAL PATH: Must complete before June 2.
+- Run 47: NEW ANGLE — macOS launchd plist created (scripts/danny_launchd_plist.xml). More reliable than cron: if Mac was asleep at 7am, launchd queues the job and runs it on wake. Install: `cp scripts/danny_launchd_plist.xml ~/Library/LaunchAgents/com.forestcity.danny.plist && launchctl load ~/Library/LaunchAgents/com.forestcity.danny.plist`
+- CRITICAL PATH: Round 2 enrollment June 4. Manual run NOW: `python3 workers/lead_pipeline.py danny`
 
 ---
 
 ## OPEN — Google Business Profile not managed
 - First seen: 2026-05-20 (run 30)
-- Run 46: gbp_weekly_routine_2026-05-21.md exists. Action: post first photo by May 26.
+- Run 47: gbp_weekly_routine_2026-05-21.md + gbp_post_may21_2026.md exist. Step 8 of may26_blitz_action_card.md. Action: post by May 26.
 
 ---
 
 ## OPEN — No review request automation
 - First seen: 2026-05-20 (run 30)
-- Run 46: Manual template exists. Automation post-peak (July+).
+- Run 47: Manual template exists. Post-peak season (July+).
 
 ---
 
-## OPEN — Gas station contacts not enrolled in Mixmax (12+ emails idle)
+## OPEN — Gas station contacts not enrolled in Mixmax (18 emails idle)
 - First seen: 2026-05-20 (run 31)
-- Run 46: Still open. 12 gas station contacts in pipeline_data.json with PENDING sequence. Action: create Mixmax sequence → paste ID into integrations/mixmax.py.
+- Run 47: Still open. Step 6 of may26_blitz_action_card.md with setup guide link. Action: create Mixmax sequence May 26.
 
 ---
 
 ## OPEN — No Google Ads running
 - First seen: 2026-05-21 (run 36)
-- Run 46: Copy ready (outputs/rick/google_ads_june_2026-05-19.md). Budget: $15-25/day. Not launched.
+- Run 47: Copy ready (outputs/rick/google_ads_june_2026-05-19.md). Budget: $15–25/day. June 3 is the target launch date per june_residential_push_2026-05-20.md.
 
 ---
 
 ## OPEN — Past customer reengagement not launched
 - First seen: 2026-05-20 (run 29)
-- Run 46: Launch guide exists (outputs/donna/past_customer_reengagement_launch_2026-05-21.md). Revenue potential: $1,400-$4,000. Target: May 26.
+- Run 47: Step 7 of may26_blitz_action_card.md. Revenue potential: $1,400–$4,000. Target: May 26 morning.
 
 ---
 
 ## OPEN — Marcus silent — no live competitor/VOC intel since May 19
 - First seen: 2026-05-21 (run 44)
-- Run 46: Web search blocked in cloud. competitive_intel_brief_2026-05-21.md is the standing brief.
+- Run 47: Web search blocked in cloud. competitive_intel_brief_2026-05-21.md is the standing brief.
 - Resolution criteria: Bradley runs Marcus locally with web search for live Google review data.
 
 ---
 
-## RUN METRICS — Run 46 | 2026-05-21
-- Total RESOLVED: 48 (added: jasmine_flyer PIL guard, vera_relay write guard, touch3_morning_brief path fix)
-- Total OPEN: 15 (no new opens — 3 resolved, 0 added)
-- Auto-upgrades shipped: 4 (jasmine_flyer PIL guard, vera_relay write guard, touch3_morning_brief path fix, danny.md Summit County urgency)
-- Deliverables written: 1 (may22_action_card.md)
+## RUN METRICS — Run 47 | 2026-05-22
+- Total RESOLVED: 49 (added: jasmine_flyer requests guard)
+- Total OPEN: 15 (0 new opens added, 0 closed this run — all waiting on Bradley action)
+- Auto-upgrades shipped: 1 (jasmine_flyer.py requests import guard)
+- Deliverables written: 3 (may26_blitz_action_card.md, email_deliverability_checklist_2026-05-22.md, danny_launchd_plist.xml)
+- New angle on cron issue: macOS launchd plist (more reliable than cron on macOS)
+- New angle on 0% reply: deliverability checklist — spam test + Instantly.ai overlap hypothesis

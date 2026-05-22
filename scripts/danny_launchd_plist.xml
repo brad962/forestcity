@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+Forest City Power Washing — Danny Lead Pipeline (launchd)
+More reliable than cron on macOS: queues missed runs if Mac was asleep.
+
+INSTALL:
+  cp danny_launchd_plist.xml ~/Library/LaunchAgents/com.forestcity.danny.plist
+  launchctl load ~/Library/LaunchAgents/com.forestcity.danny.plist
+
+VERIFY:
+  launchctl list | grep forestcity
+
+UNINSTALL:
+  launchctl unload ~/Library/LaunchAgents/com.forestcity.danny.plist
+  rm ~/Library/LaunchAgents/com.forestcity.danny.plist
+
+Runs every Monday at 7am. If Mac was off/asleep at 7am, runs as soon as Mac wakes.
+-->
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.forestcity.danny</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/bin/python3</string>
+        <string>/Users/bradleyneal/forestcity/workers/lead_pipeline.py</string>
+        <string>both</string>
+    </array>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/bradleyneal/forestcity</string>
+
+    <key>StartCalendarInterval</key>
+    <dict>
+        <!-- Monday = 2, 7am -->
+        <key>Weekday</key>
+        <integer>2</integer>
+        <key>Hour</key>
+        <integer>7</integer>
+        <key>Minute</key>
+        <integer>0</integer>
+    </dict>
+
+    <!-- Run immediately if the scheduled time was missed (Mac was sleeping) -->
+    <key>RunAtLoad</key>
+    <false/>
+
+    <key>StandardOutPath</key>
+    <string>/Users/bradleyneal/forestcity/logs/launchd_danny.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/Users/bradleyneal/forestcity/logs/launchd_danny_error.log</string>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>HOME</key>
+        <string>/Users/bradleyneal</string>
+        <key>PATH</key>
+        <string>/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    </dict>
+</dict>
+</plist>

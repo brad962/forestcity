@@ -11,9 +11,16 @@ import sys
 import json
 import base64
 import time
-import requests
 from pathlib import Path
 from datetime import datetime
+
+try:
+    import requests as _requests_module
+    _REQUESTS_AVAILABLE = True
+    requests = _requests_module
+except ImportError:
+    _REQUESTS_AVAILABLE = False
+    requests = None  # type: ignore
 
 try:
     from PIL import Image, ImageDraw
@@ -128,6 +135,8 @@ def build_flyer(before_path: str, after_path: str, output_path: str) -> str:
 
 def push_to_github(file_path: str, github_path: str, commit_msg: str) -> str:
     """Push file to GitHub and return the raw URL."""
+    if not _REQUESTS_AVAILABLE:
+        raise RuntimeError("requests is not installed. Run `pip install requests` to enable GitHub upload.")
     with open(file_path, "rb") as f:
         content = base64.b64encode(f.read()).decode()
 
@@ -201,6 +210,8 @@ One visit and it looks like a completely different property. We serve the greate
 
 def post_to_slack(image_url: str, caption: str, facebook_post: str = "") -> bool:
     """Post image block + optional Facebook copy to Slack channel."""
+    if not _REQUESTS_AVAILABLE:
+        raise RuntimeError("requests is not installed. Run `pip install requests` to enable Slack posting.")
     blocks = [
         {"type": "section", "text": {"type": "mrkdwn", "text": f"*{caption}*"}},
         {"type": "image",   "image_url": image_url, "alt_text": "Before and after power washing"},
