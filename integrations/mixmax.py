@@ -73,6 +73,8 @@ PROPERTY_MANAGER_TITLES = [
     'multifamily regional', 'apartment complex manager',
     # CAI-certified HOA titles and plural facilities form (added 2026-05-21 run 45)
     'community association manager', 'hoa director', 'facilities manager',
+    # Standalone CAM variant — some professionals list just "association manager" (added 2026-05-22)
+    'association manager',
 ]
 
 REALTOR_TITLES = [

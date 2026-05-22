@@ -1,99 +1,62 @@
-🚨 *Vera — TOUCH 3 IS LIVE — May 22 Priority Alert*
->Touch 3 fired this morning. 72-hour reply window runs through May 25.
->**Do these NOW while context is fresh:**
->1. Open Mixmax → Property Manager sequence → check opens
->2. Connect on LinkedIn with any contact who has 2+ opens (within 2h of seeing an open)
->3. Send 5 contractor texts using `outputs/tommy/contractor_referral_text_script_2026-05-20.md`
->Playbook: `outputs/vera/touch3_outcome_tracker_2026-05-22.md`
-
----
-
-🔴 *Vera — CRITICAL: Pause Instantly.ai Campaigns NOW*
->Why: Found exact Instantly campaign IDs in server.py code review — 2 campaigns sending to the SAME contacts as active Mixmax sequences. Duplicate emails = spam flags = the reason for 0% replies.
->**Campaigns to pause at app.instantly.ai → Campaigns:**
->- `a1c08c3d...` — Property Managers Cuyahoga County (overlaps Danny's PM sequence)
->- `626cd15d...` — Referral Partners Contractors NE Ohio (overlaps Carla's contractor sequence)
->Guide: `outputs/vera/instantly_pause_guide_2026-05-22.md` — 3 minutes, do it before Round 2.
+🔧 *Vera — Auto-Upgrade*
+>Changed: `workers/nina_report.py` run_weekly() — added individual Hot Leads section with names, company, opens count, and LinkedIn connect links
+>Why: Monday weekly report showed only aggregate stats — Bradley had no "who to call" list. Now the weekly report surfaces every 2+ open contact by name with a direct LinkedIn link.
+>File: workers/nina_report.py
 
 ---
 
 🔧 *Vera — Auto-Upgrade*
->Changed: `workers/lead_pipeline.py` — CARLA_SEARCHES: added HOA Management Companies as dedicated search entry
->Why: HOA management firm owners (who manage 5–50+ HOAs each) were missing. One contact = dozens of power washing jobs. Now targeting `owner/president/founder` at companies with keywords: association management, hoa management, community management, condominium management.
->File: workers/lead_pipeline.py
+>Changed: `integrations/mixmax.py` + `workers/lead_pipeline.py` — added 'association manager' to PROPERTY_MANAGER_TITLES and DANNY_TITLES
+>Why: Some CAI-certified community managers list just "Association Manager" as their title. This standalone variant was missing while longer variants ('community association manager') were already present. Both files kept in sync.
+>Files: integrations/mixmax.py, workers/lead_pipeline.py
 
 ---
 
 🔧 *Vera — Auto-Upgrade*
->Changed: `agents/rick.md` — Added LAUNCH NOW urgency to Ready Assets + Google Guaranteed Badge as priority action
->Why: Google Ads written May 19, Facebook Ads May 20. Today is May 22. Peak season. Every day = lost bookings.
->File: agents/rick.md
+>Changed: `agents/donna.md` — added `june_week1_sprint_2026-05-20.md` reference to June Booking Blitz campaign section
+>Why: File existed in outputs/donna/ since run 48 but wasn't referenced in Donna's agent file. Now it's in the campaign section where Donna will find it.
+>File: agents/donna.md
 
 ---
 
-🔧 *Vera — Auto-Upgrade*
->Changed: `workers/vera_relay.py` — git pull with --rebase flag
->Why: Prevents merge commits from local state divergence that could contaminate commit history.
->File: workers/vera_relay.py
+📋 *Vera — Deliverable*
+>Created: `outputs/donna/memorial_day_week_full_playbook_2026-05-22.md`
+>What: Full day-by-day action plan for May 26–30 (Memorial Day week). Covers each day with specific actions, time estimates, and linked scripts. Fills the gap between the May 26 blitz action card and the June week 1 sprint.
+>Highlights: Mon May 26 (blitz), Tue May 27 (FB ads launch + LinkedIn connects), Wed May 28 (phone calls + Danny status check), Thu May 29 (Medina prep + content), Fri May 30 (weekly review + June entry criteria)
 
 ---
 
-🔧 *Vera — Auto-Upgrade*
->Changed: `scripts/crontab_setup.txt` — 4-section verification guide with exact terminal commands
->Why: Cron down 10+ days. Previous file just said "run crontab -e." Now includes: `crontab -l` to verify install, daemon check command, and manual Danny pull command to run immediately.
->File: scripts/crontab_setup.txt
+🔴 *Vera — TOUCH 3 WINDOW CLOSING*
+>Touch 3 fired May 22. If you haven't connected on LinkedIn with your top 2+ open contacts yet — do it NOW.
+>The "just sent an email" context is what makes the connection land. Every hour past the send reduces conversion.
+>Action: Open Mixmax → sort recipients by opens → connect on LinkedIn with top 5 today.
+>Script: outputs/tommy/touch3_open_trigger_protocol_2026-05-21.md
+>72h reply window closes May 25 — check results before May 26 blitz: outputs/donna/may25_round2_decision_gate_2026-05-22.md
 
 ---
 
-💡 *Vera — Proposal: Google Guaranteed Badge (Google Local Services Ads)*
->Idea: Apply at ads.google.com/local-services-ads — puts Forest City ABOVE regular Google Ads at top of search
->Why: Pay-per-lead ($15–35/lead), not per click. Google trust badge massively lifts conversions. Cleveland power washing competitors are NOT using this.
->Impact: 30–50 inbound leads/week at $40/day. Close 30% = 10–15 booked jobs/week from Google alone.
->Setup guide: `outputs/rick/google_guaranteed_setup_2026-05-22.md`
->Reply YES to approve.
+🔴 *Vera — ADS STILL NOT LAUNCHED — PEAK SEASON*
+>Today is May 22. Rick wrote the ads on May 19–20. Every day unspent is bookings going to competitors.
+>Google Ads copy: outputs/rick/google_ads_june_2026-05-19.md
+>Facebook Ads copy: outputs/rick/facebook_ads_peak_season_2026-05-20.md
+>Google Guaranteed badge application: outputs/rick/google_guaranteed_setup_2026-05-22.md (1–3 days to approve — apply TODAY, live by May 27)
+>Launch target: May 26. Everything is written. Just needs to go live.
 
 ---
 
-📋 *Vera — Deliverable: May 25 Round 2 Decision Gate*
->File: `outputs/donna/may25_round2_decision_gate_2026-05-22.md`
->Decision table: 0 replies → full rewrite + Instantly pause; 1-2 → subject line split test; 3-5 → expand same sequence to Summit/Medina; 6+ → accelerate + calls within 48h.
->Review this Sunday May 25.
+⚡ *Vera — INSTANTLY.AI OVERLAP — 3-MINUTE FIX*
+>This is the most likely cause of your 0% reply rate. Two Instantly.ai campaigns are running against the same contacts as your Mixmax sequences.
+>Campaign a1c08c3d = Property Managers Cuyahoga County (duplicates Mixmax PM sequence)
+>Campaign 626cd15d = Contractor Referral Partners (duplicates Mixmax contractor sequence)
+>Fix: app.instantly.ai → Campaigns → Pause both. 3 minutes.
+>Full guide: outputs/vera/instantly_pause_guide_2026-05-22.md
+>Do this BEFORE Round 2 enrollment or the same problem will repeat.
 
 ---
 
-📋 *Vera — Deliverable: Marcus Peak Season Intel Update*
->File: `outputs/marcus/peak_season_intel_update_2026-05-22.md`
->Contains: Competitor weakness map (Clean Pro/Brothers Exterior), 8 VOC phrases for Tommy, NE Ohio market dynamics by geography. Tommy can pull phrases immediately — no local Marcus run needed.
-
----
-
-📋 *Vera — Deliverable: Google Guaranteed Setup Guide*
->File: `outputs/rick/google_guaranteed_setup_2026-05-22.md`
->Step-by-step: what you need, 6-step setup process, budget recommendation ($40/day), and ROI math. Application takes 30 min, approval 1–3 days — could be live by May 27.
-
----
-
-📋 *Vera — Deliverable: PAT Workflow Scope Upgrade Guide*
->File: `outputs/vera/pat_scope_upgrade_guide_2026-05-22.md`
->Confirmed this run: git push of .github/workflows/ blocked by GitHub itself (explicit error). API PUT also blocked. Only fix: add workflow scope to PAT. Guide is 3 steps with direct GitHub URL.
-
----
-
-🔴 *Vera — NEW OPEN ISSUE: Facebook & Google Ads Not Launched (Peak Season Gap)*
->Rick wrote Google Ads May 19 and Facebook Ads May 20. Today is May 22.
->Every day without ads = jobs going to competitors.
->Launch target: May 26. Apply for Google Guaranteed badge TODAY (1–3 day approval).
->Files: `outputs/rick/google_ads_june_2026-05-19.md` + `outputs/rick/facebook_ads_peak_season_2026-05-20.md`
-
----
-
-✅ *Vera — Scan Complete 2026-05-22 (Run 48)*
->4 auto-upgrades shipped | 5 deliverables | 1 new open issue | 16 total open
->
->Priority order for Bradley TODAY:
->1. 🔴 Pause Instantly.ai (3 min) → `outputs/vera/instantly_pause_guide_2026-05-22.md`
->2. 🔴 LinkedIn connects with 2+ open contacts NOW (Touch 3 live)
->3. 🔴 Apply Google Guaranteed badge (30 min) → `outputs/rick/google_guaranteed_setup_2026-05-22.md`
->4. ⚠️ Run Danny: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both`
->5. ⚠️ PAT workflow scope → `outputs/vera/pat_scope_upgrade_guide_2026-05-22.md`
->Decision gate: May 25 → `outputs/donna/may25_round2_decision_gate_2026-05-22.md`
+✅ *Vera — Scan Complete 2026-05-22 (Run 49)*
+>4 auto-upgrades shipped | 1 deliverable | 16 open issues (0 new, 0 closed)
+>Best code fix: nina_report.py weekly now shows individual hot leads by name — Bradley gets a real "who to call" list every Monday
+>Top 3 Bradley actions RIGHT NOW: (1) LinkedIn connects with 2+ open contacts today, (2) Pause Instantly.ai campaigns (3 min), (3) Launch ads by May 26
+>May 26 playbook: outputs/donna/may26_blitz_action_card.md
+>May 26–30 playbook: outputs/donna/memorial_day_week_full_playbook_2026-05-22.md

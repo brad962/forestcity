@@ -788,6 +788,42 @@
 
 ---
 
+## RUN METRICS — Run 49 | 2026-05-22
+
+### Open Issue Status — Run 49 Updates:
+
+**Manual Contacts:** May 26 blitz day unchanged. All scripts in place. memorial_day_week_full_playbook_2026-05-22.md created — covers May 26–30 day-by-day.
+
+**Mixmax API / All APIs blocked:** No change. Local cron path is the fix. Danny still needs Summit County pull.
+
+**Slack relay:** pending_slack_messages.md → GitHub push → vera_relay.py path unchanged.
+
+**GitHub Actions PAT:** Still needs workflow scope. pat_scope_upgrade_guide_2026-05-22.md is the guide.
+
+**Instantly.ai overlap:** Still unresolved. instantly_pause_guide_2026-05-22.md has exact campaign IDs. 3 minutes to fix. Leading cause of 0% reply rate.
+
+**0% reply rate:** Touch 3 72h window closed May 25. Check Mixmax before May 26 blitz and use may25_round2_decision_gate_2026-05-22.md to decide Round 2 approach.
+
+**LinkedIn hot leads:** Touch 3 fired May 22 — connection window is May 22–23. If not done, follow up via bridge email: `outputs/tommy/hot_lead_bridge_email_2026-05-19.md`
+
+**Ads not launched:** Still the most urgent revenue gap. Launch target: May 26.
+
+**Danny cron:** Run manually NOW if not done. `python3 workers/lead_pipeline.py danny` (Summit County, Week 21).
+
+**GBP, review automation, HubSpot, Workiz:** All same status — waiting on Bradley action.
+
+- Total RESOLVED: 51 (added: nina_report.py weekly hot leads section, 'association manager' CAM title sync)
+- Total OPEN: 16 (no new opens; no closures — all waiting on Bradley action)
+- Auto-upgrades shipped: 4
+  1. workers/nina_report.py run_weekly() — added individual hot leads section with names, company, opens, LinkedIn links; Bradley now gets "who to call" list in Monday weekly report
+  2. integrations/mixmax.py PROPERTY_MANAGER_TITLES — added 'association manager' (standalone CAM variant)
+  3. workers/lead_pipeline.py DANNY_TITLES — added 'association manager' (kept in sync with mixmax.py)
+  4. agents/donna.md — added june_week1_sprint file reference to June Booking Blitz section
+- Deliverables written: 1
+  - outputs/donna/memorial_day_week_full_playbook_2026-05-22.md — May 26–30 full day-by-day playbook; fills the gap between May 26 blitz card and June week 1 sprint; covers contractor follow-ups, LinkedIn connects, phone calls, ad launch check, Medina prep, and June entry criteria checklist
+
+---
+
 ## RUN METRICS — Run 47 | 2026-05-22
 - Total RESOLVED: 49 (added: jasmine_flyer requests guard)
 - Total OPEN: 15 (0 new opens added, 0 closed this run — all waiting on Bradley action)

@@ -85,6 +85,8 @@ DANNY_TITLES = [
     'multifamily regional manager', 'apartment complex manager',
     # CAI-certified HOA titles and plural facilities form (added 2026-05-21 run 45)
     'community association manager', 'hoa director', 'facilities manager',
+    # Standalone CAM variant — added 2026-05-22 to match mixmax.py routing
+    'association manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.

@@ -283,6 +283,7 @@ def run_weekly():
     OUTPUTS.mkdir(exist_ok=True)
     date_str = datetime.now().strftime('%Y-%m-%d')
     all_stats = []
+    linkedin_map = _load_linkedin_map()
 
     api_responses_received = 0
     for seq_id, meta in SEQUENCES.items():
@@ -290,6 +291,8 @@ def run_weekly():
         if recipients:
             api_responses_received += 1
         stats = analyze_recipients(recipients, meta['name'])
+        for lead in stats['hot_leads']:
+            lead['linkedin'] = linkedin_map.get(lead['email'].lower(), '')
         all_stats.append(stats)
         print(f'  {meta["name"]}: {stats["total"]} | opens={stats["open_rate"]} | replies={stats["reply_rate"]}')
 
@@ -341,6 +344,28 @@ def run_weekly():
 
     if not any(s['replied_contacts'] for s in all_stats):
         lines += ['*No replies yet. Emails are scheduled — check back next week.*', '']
+
+    # --- Hot Leads (2+ opens, no reply yet) ---
+    all_hot_unreplied = [
+        (s['sequence'], l)
+        for s in all_stats
+        for l in s['hot_leads']
+        if not l.get('replied')
+    ]
+    if all_hot_unreplied:
+        lines += [
+            '## ⚡ Hot Leads — No Reply Yet',
+            '*2+ opens with no reply. Connect on LinkedIn or call them this week.*',
+            '',
+            '| Name | Email | Sequence | Opens | Stage | LinkedIn |',
+            '|------|-------|----------|-------|-------|---------|',
+        ]
+        for seq_name, l in all_hot_unreplied:
+            li = f'[Connect]({l["linkedin"]})' if l.get('linkedin') else '—'
+            lines.append(f'| {l["name"]} | {l["email"]} | {seq_name} | {l["opens"]} | {l.get("stage", 1)} | {li} |')
+        lines.append('')
+    elif not api_blocked:
+        lines += ['## Hot Leads', '*No contacts with 2+ opens yet — check back next week.*', '']
 
     # --- Manual Pipeline Health (pipeline_data.json) ---
     manual_health_lines = []
