@@ -100,9 +100,49 @@ def _check_danny_staleness():
         log(f'Danny staleness alert posted — {days_stale} days since last pull')
 
 
+def _check_carla_staleness():
+    """Read activity.log for last Carla pull. Post Slack alert if > 10 days. Once per day."""
+    sentinel = BASE_DIR / 'outputs' / 'vera' / '.carla_alert_sent_date'
+    today_str = datetime.now().strftime('%Y-%m-%d')
+
+    if sentinel.exists() and sentinel.read_text().strip() == today_str:
+        return
+
+    last_pull_dt = None
+    if LOG_FILE.exists():
+        try:
+            for line in reversed(LOG_FILE.read_text().splitlines()):
+                if 'Carla' in line and 'Apollo pull' in line:
+                    date_part = line[1:11]
+                    last_pull_dt = datetime.strptime(date_part, '%Y-%m-%d')
+                    break
+        except Exception:
+            pass
+
+    days_stale = (datetime.now() - last_pull_dt).days if last_pull_dt else 99
+    if days_stale < 10:
+        return
+
+    label = last_pull_dt.strftime('%B %d') if last_pull_dt else 'unknown'
+    msg = (
+        f'🟣 *Carla Cron Alert — {days_stale} days since last referral partner pull*\n'
+        f'>Last pull: {label}\n'
+        f'>Run NOW: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py carla`\n'
+        f'>Contractor referral pipeline needs fresh contacts before June Booking Blitz.'
+    )
+    if post_slack(msg):
+        sentinel.parent.mkdir(exist_ok=True)
+        try:
+            sentinel.write_text(today_str)
+        except Exception:
+            pass
+        log(f'Carla staleness alert posted — {days_stale} days since last pull')
+
+
 def main():
-    # Always check Danny cron staleness (runs even if no new Vera commits)
+    # Always check staleness (runs even if no new Vera commits)
     _check_danny_staleness()
+    _check_carla_staleness()
 
     # Pull latest
     git(['fetch', 'origin'])

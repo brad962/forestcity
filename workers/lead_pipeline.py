@@ -89,6 +89,8 @@ DANNY_TITLES = [
     'association manager',
     # Full spelling — 'condo manager' substring does NOT match 'condominium manager' (added 2026-05-22)
     'condominium manager',
+    # Decision-makers at small HOA/PM firms who list owner/founder titles, not PM titles (added 2026-05-22 run 52)
+    'managing partner', 'principal',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.

@@ -49,3 +49,7 @@
 # Jasmine — before/after photo pipeline (every 5 min — picks up new photos from Slack)
 # Requires: PIL (pip3 install Pillow), requests (pip3 install requests)
 */5 * * * * cd /Users/bradleyneal/forestcity && bash workers/run_jasmine_pipeline.sh >> logs/cron.log 2>&1
+
+# check_replies — quick Mixmax reply scan (Mon-Fri 8:45am — posts to Slack if anyone replied)
+# Critical during active sequence windows. 30-second run.
+45 8 * * 1-5 cd /Users/bradleyneal/forestcity && python3 workers/check_replies.py >> logs/cron.log 2>&1

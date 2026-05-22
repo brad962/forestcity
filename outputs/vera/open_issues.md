@@ -1,6 +1,6 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 51 | 2026-05-22 | Consolidated from duplicate-heavy prior version.*
+*Run 52 | 2026-05-22 | Auto-fixes shipped: 4 | New deliverables: 2 | Proposals: 2*
 
 ---
 
@@ -20,23 +20,23 @@ Key resolved issues by category:
 - First seen: 2026-05-18
 - Description: 33 contacts in New Lead stage. 0 last_contact dates. Tier 1 contractors need personal text.
 - Tier 1: Anthony/Land Pro (440-320-2779), Dontez/GTP (440-396-0814), Chris/Twin Improvements (216-773-0757), Venus/Reliable Roofing (216-810-2497), Logan/Pagels (216-956-5263)
-- Run 51: Touch 3 fired today (May 22). May 26 is the definitive blitz day — Tier 1 texts go out then if not already sent. Use contractor_referral_text_script_2026-05-20.md.
+- Run 52: Touch 3 fired May 22. 72-hour window tracked in `outputs/vera/reply_window_tracker_2026-05-22.md`. Tier 1 contractor texts scripted + ready to send TONIGHT. May 26 is blitz day.
 - Resolution criteria: Bradley texts Tier 1 list. Confirmed when pipeline_data.json shows "Contacted" stage for these 5.
 
 ---
 
 ## OPEN — Mixmax API blocked in cloud execution environment
 - First seen: 2026-05-18
-- Workaround: All pipeline scripts return safe fallbacks on 403. nina_report shows explicit API warning.
-- Run 51: Infrastructure constraint — can't fix from cloud. Will always require local run for live data.
+- Workaround: All pipeline scripts return safe fallbacks on 403. nina_report shows explicit API warning. `check_replies.py` (new Run 52) is a fast local alternative to full nina_report.
+- Run 52: Infrastructure constraint — not fixable from cloud. New check_replies.py worker built so Bradley can run a 30-second reply check any time locally.
 - Resolution criteria: Bradley adds cloud IP to Mixmax API allowlist (Mixmax → Settings → API → IP Allowlist).
 
 ---
 
 ## OPEN — All external APIs blocked from cloud (Apollo, Workiz, Mixmax)
 - First seen: 2026-05-18
-- Workaround: scripts/crontab_setup.txt ready to paste into crontab -e. scripts/danny_launchd_plist.xml as Mac alternative. scripts/danny_cron_check.sh for diagnostics.
-- Run 51: Danny cron has been down since May 12 (10 days). Round 2 enrollment June 4 is 13 days away. This is the most time-sensitive action item in the office.
+- Workaround: scripts/crontab_setup.txt ready to paste into crontab -e. scripts/danny_launchd_plist.xml as Mac alternative. scripts/danny_cron_check.sh for diagnostics. check_replies.py added to crontab (8:45am weekdays).
+- Run 52: Danny cron has been down since May 12 (10 days). Round 2 enrollment June 4 = 13 days away. This is the most time-sensitive action item in the office. Manual run command: `python3 workers/lead_pipeline.py both`
 - Resolution criteria: crontab -l shows Danny cron entry AND logs/cron.log confirms pull by May 26.
 
 ---
@@ -44,33 +44,30 @@ Key resolved issues by category:
 ## OPEN — Slack Webhook blocked in cloud execution environment
 - First seen: 2026-05-18
 - Workaround: Messages written to pending_slack_messages.md. GitHub Action fires on every Vera push and posts content to Slack. vera_relay.py on local cron provides 5-min delivery.
-- Run 51: Relay working. This is a permanent constraint, not a fixable bug.
+- Run 52: Relay working. Permanent constraint, not a fixable bug. check_replies.py also posts to Slack on local run.
 
 ---
 
 ## OPEN — GitHub Actions PAT missing workflow scope
 - First seen: 2026-05-20 (run 34)
-- Description: vera-slack-relay.yaml and github_action_vera_slack_relay.yaml exist in outputs/vera/ but can't be pushed to .github/workflows/ — PAT needs 'workflow' scope to create/update workflow files.
-- Run 51: Still blocked at GitHub API level. Guide written: outputs/vera/pat_scope_upgrade_guide_2026-05-22.md.
-- Action: Settings → Developer settings → Personal access tokens → Edit ghp_lrUhBq7... → check 'workflow' → Save → run scripts/deploy_github_action.sh
-- Fresh approach tried: Confirmed blocked via both git push and API PUT (404). Only PAT scope change unblocks this.
+- Description: vera-slack-relay.yaml and github_action_vera_slack_relay.yaml exist in outputs/vera/ but can't be pushed to .github/workflows/ — PAT needs 'workflow' scope.
+- Run 52: Still blocked. Guide written: outputs/vera/pat_scope_upgrade_guide_2026-05-22.md. 3-step fix takes 2 minutes.
+- Action: Settings → Developer settings → Personal access tokens → Edit ghp_lrUhBq7... → check 'workflow' → Save
 
 ---
 
 ## OPEN — Instantly.ai vs Mixmax Overlap (0% reply rate root cause) 🔴
 - First seen: 2026-05-18
-- Description: Two active Instantly.ai campaigns (a1c08c3d = PM Cuyahoga, 626cd15d = Contractor Referral) run against the same contacts as Mixmax sequences → contacts getting duplicate emails → spam filtering → 0 replies.
-- Run 51: Touch 3 fired today. If reply rate stays at 0%, Instantly overlap is the most probable cause. Pause guide is written: outputs/vera/instantly_pause_guide_2026-05-22.md — 3-minute fix.
-- CRITICAL: Must pause before Round 2 enrollment (June 4) or the same problem repeats.
-- Resolution criteria: Both campaigns paused in Instantly.ai → confirmed by Bradley. Then Round 2 tests clean.
+- Description: Two active Instantly.ai campaigns (a1c08c3d = PM Cuyahoga, 626cd15d = Contractor Referral) run against the same contacts as Mixmax sequences → duplicate emails → spam filtering → 0 replies.
+- Run 52: Touch 3 fired May 22. Pause guide: outputs/vera/instantly_pause_guide_2026-05-22.md — 3-minute fix. MUST pause TONIGHT before Reply-To check runs tomorrow. CRITICAL: Must pause before Round 2 enrollment (June 4) or the same problem repeats.
+- Resolution criteria: Both campaigns paused in Instantly.ai → confirmed by Bradley.
 
 ---
 
 ## OPEN — 0% reply rate across enrolled contacts
 - First seen: 2026-05-18
 - Description: ~45 contacts enrolled, 0 replies across all 3 email touches.
-- Run 51: Touch 3 fired TODAY (May 22). 72-hour reply window open until May 25. Round 2 decision gate: outputs/donna/may25_round2_decision_gate_2026-05-22.md. If 0 replies by tonight: start phone calls per outputs/tommy/may23_morning_call_protocol_2026-05-22.md tomorrow 9am.
-- Three levers in priority order: (1) Pause Instantly.ai, (2) check Reply-To address in Mixmax, (3) rewrite sequence copy for Round 2.
+- Run 52: Touch 3 fired TODAY (May 22). 72-hour reply window tracked in reply_window_tracker_2026-05-22.md. New `check_replies.py` makes it easy to monitor daily. Decision gate May 25. Round 2 rewrite ready. Three levers: (1) Pause Instantly.ai TONIGHT, (2) verify Reply-To in Mixmax, (3) rewrite Email 1 for Round 2.
 - Resolution criteria: At least 1 confirmed reply before May 25 OR Round 2 rewrite + enrollment launched by June 4.
 
 ---
@@ -78,7 +75,7 @@ Key resolved issues by category:
 ## OPEN — Hot leads not contacted on LinkedIn (Touch 3 day)
 - First seen: 2026-05-18
 - Description: ~13 contacts with 2+ opens haven't received personal LinkedIn connects.
-- Run 51: Touch 3 fired today — window to connect is NOW (context: "just sent you an email"). Every hour past the send reduces conversion rate. Protocol: outputs/tommy/touch3_open_trigger_protocol_2026-05-21.md.
+- Run 52: Touch 3 fired today — connect NOW while "just sent you an email" context is live. Protocol: outputs/tommy/touch3_open_trigger_protocol_2026-05-21.md. Delay = lower conversion.
 - Resolution criteria: Bradley connects on LinkedIn with top 5+ contacts TODAY.
 
 ---
@@ -86,23 +83,23 @@ Key resolved issues by category:
 ## OPEN — HubSpot not connected (CRM blind)
 - First seen: 2026-05-18
 - Workaround: Nina weekly report has overdue/due-soon sections. pipeline_data.json is the manual CRM.
-- Run 51: Not urgent. Post-peak season priority (July+).
-- Resolution criteria: HUBSPOT_TOKEN added to .env. Estimate setup guide needed from Donna.
+- Run 52: Not urgent. Post-peak season priority (July+).
+- Resolution criteria: HUBSPOT_TOKEN added to .env.
 
 ---
 
 ## OPEN — No residential homeowner outreach channel active
 - First seen: 2026-05-18
-- Description: Facebook ads not running. June Residential Push brief written. Service pages written. Rick's ad copy written.
-- Run 51: May 26 launch window. Ads launch checklist: outputs/vera/may26_ads_launch_checklist_2026-05-22.md (new this run). Past customer blast: outputs/donna/past_customer_reengagement_launch_2026-05-21.md.
-- Resolution criteria: (1) Facebook ads live by May 27, (2) past customer blast sent May 26. Service pages can follow.
+- Description: Facebook ads not running. June Residential Push brief written. All ad copy ready.
+- Run 52: May 26 launch window approaching. Checklist: outputs/vera/may26_ads_launch_checklist_2026-05-22.md. Past customer blast: outputs/donna/past_customer_reengagement_launch_2026-05-21.md. Every day past May 26 is peak-season revenue going to competitors.
+- Resolution criteria: (1) Facebook ads live by May 27, (2) past customer blast sent May 26.
 
 ---
 
 ## OPEN — Workiz API blocked in cloud + 0 power washing jobs showing
 - First seen: 2026-05-18
-- Workaround: API error sentinel prevents misleading $0 reports. Diagnostic logging shows JobType values on local run.
-- Run 51 new fix: Added 12 more JobType variants to JOB_TYPE_VARIANTS (roof washing, deck cleaning, concrete cleaning, commercial washing, etc.) — covers more Workiz naming conventions. If 0 jobs persist after this, JobType mismatch is still the cause.
+- Workaround: API error sentinel prevents misleading $0 reports. JOB_TYPE_VARIANTS expanded to 22 variants (run 51). Diagnostic logging shows JobType values on local run.
+- Run 52: Expanded JOB_TYPE_VARIANTS covers all common naming conventions. If 0 jobs still appear locally, the issue is a non-standard JobType value in Workiz — Bradley needs to check what name was entered for the job type.
 - Resolution criteria: Bradley runs `python3 workers/workiz_report.py daily` locally and sees jobs in the report.
 
 ---
@@ -110,65 +107,61 @@ Key resolved issues by category:
 ## OPEN — Danny PM cron not running (10 days overdue) 🔴 CRITICAL
 - First seen: 2026-05-20 (run 28)
 - Description: Last successful pull: May 12. Apollo blocked in cloud. Cron not set up on Bradley's Mac.
-- Run 51: 10 days since last pull. Round 2 enrollment June 4 = 13 days away. Summit County + Medina leads MUST be in cache before June 4 or Round 2 enrolls zero new contacts.
-- All tools ready: scripts/crontab_setup.txt (paste into crontab -e), scripts/danny_launchd_plist.xml (Mac alternative), scripts/danny_cron_check.sh (diagnostic).
-- Fresh angle: If crontab setup is too complex, Bradley can run one manual pull right now: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py danny`
+- Run 52: 10 days since last pull. Round 2 enrollment June 4 = 13 days away. Summit County + Medina leads MUST be in cache before June 4. Vera relay now also alerts if Carla pull goes stale 10+ days (added run 52).
+- Fresh angle: Manual run is the fastest path. One command, takes 5 minutes, unlocks the whole Round 2 pipeline: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both`
 - Resolution criteria: logs/cron.log shows Danny pull entry by May 26.
 
 ---
 
 ## OPEN — Google Business Profile not managed
 - First seen: 2026-05-20 (run 30)
-- Description: GBP is a free, high-ROI local SEO channel. Posts drive ranking for "power washing [city]" searches.
-- Run 51: gbp_weekly_routine_2026-05-21.md is the complete protocol (4 post templates, 30 min/week). gbp_post_may21_2026.md has ready-to-post May content.
+- Description: GBP posts drive local SEO ranking for "power washing [city]" searches. Free channel.
+- Run 52: gbp_weekly_routine_2026-05-21.md is the complete protocol (4 post templates, 30 min/week). gbp_post_may21_2026.md has ready-to-post May content.
 - Resolution criteria: Bradley posts first GBP photo by May 26 at business.google.com/dashboard.
 
 ---
 
 ## OPEN — No review request automation
 - First seen: 2026-05-20 (run 30)
-- Workaround: Manual template at outputs/tommy/review_request_sequence_2026-05-18.md. Use after each completed job.
-- Run 51: Post-peak season priority (July+). Twilio credentials needed.
+- Workaround: Manual template at outputs/tommy/review_request_sequence_2026-05-18.md.
+- Run 52: Post-peak season priority (July+). Twilio credentials needed for automation.
 
 ---
 
 ## OPEN — Gas station contacts not enrolled in Mixmax (18 emails idle)
 - First seen: 2026-05-20 (run 31)
-- Description: 18 gas station district manager contacts pulled May 19. Sequence ID = PENDING — can't enroll until Bradley creates the sequence in Mixmax.
-- Run 51: Sequence copy is at outputs/danny/sequence_gas_stations_2026-05-19.md. Setup guide at outputs/vera/mixmax_sequence_setup_guide_2026-05-20.md.
-- Action: Create sequence in Mixmax UI → paste ID into integrations/mixmax.py line 54 → run lead_pipeline.py → all 18 auto-enroll.
+- Description: 18 gas station district manager contacts pulled May 19. Sequence ID = PENDING.
+- Run 52: Sequence copy at outputs/danny/sequence_gas_stations_2026-05-19.md. Setup guide at outputs/vera/mixmax_sequence_setup_guide_2026-05-20.md. These 18 contacts auto-enroll the moment Bradley creates the sequence and pastes the ID into integrations/mixmax.py line 54.
 
 ---
 
 ## OPEN — Google Ads and Facebook Ads not launched
-- First seen: 2026-05-21 (run 36) + 2026-05-22 (run 48)
+- First seen: 2026-05-21 (run 36)
 - Description: All copy ready (outputs/rick/). Not launched. Peak season revenue being missed daily.
-- Run 51: New simplified launch checklist: outputs/vera/may26_ads_launch_checklist_2026-05-22.md. Google Guaranteed setup guide: outputs/rick/google_guaranteed_setup_2026-05-22.md.
-- Launch target: May 26. Every day of delay in peak season is revenue going to competitors.
+- Run 52: Launch target May 26. Checklist: outputs/vera/may26_ads_launch_checklist_2026-05-22.md. Google Guaranteed setup guide: outputs/rick/google_guaranteed_setup_2026-05-22.md. Every day of delay in peak season costs estimated $100–200 in lost leads.
 - Resolution criteria: At least one campaign live by May 27. Confirmed by Bradley in Slack.
 
 ---
 
 ## OPEN — Past customer reengagement not launched
 - First seen: 2026-05-20 (run 29)
-- Description: Tommy's text templates sitting unused. Fastest path to residential revenue — zero ad spend.
-- Run 51: Launch guide at outputs/donna/past_customer_reengagement_launch_2026-05-21.md. 20-minute execution on May 26 morning.
-- Revenue potential: $1,400–$4,000 from 20–30 past customers at 20–35% conversion.
+- Description: Tommy's text templates ready. Fastest path to residential revenue — zero ad spend.
+- Run 52: Launch guide: outputs/donna/past_customer_reengagement_launch_2026-05-21.md. Execute May 26 morning. Revenue potential: $1,400–$4,000 from 20–30 contacts.
 - Resolution criteria: Bradley sends texts May 26.
 
 ---
 
 ## OPEN — Marcus running cloud-only (no live web search)
 - First seen: 2026-05-21 (run 44)
-- Description: Marcus's competitor profiling and VOC mining requires live web search (Google Maps, Yelp). Web search is blocked in the cloud execution environment.
-- Run 51: Marcus has produced competitive_intel_brief_2026-05-21.md and peak_season_intel_update_2026-05-22.md from known market data — not silent, just limited. Fresh competitor Google reviews (last 60 days) still missing.
-- Resolution criteria: Bradley runs Marcus locally with web search enabled: `claude` CLI, then "Marcus, profile the top 5 power washing competitors in Cleveland — pull their latest Google Maps reviews."
+- Description: Marcus's competitor profiling requires live web search. Blocked in cloud.
+- Run 52: Marcus has competitive_intel_brief_2026-05-21.md and peak_season_intel_update_2026-05-22.md — useful but not real-time. Fresh competitor Google reviews (last 60 days) still missing.
+- Resolution criteria: Bradley runs Marcus locally: `claude` CLI → "Marcus, profile top 5 Cleveland power washing competitors."
 
 ---
 
-## RUN METRICS — Run 51 | 2026-05-22
-- Total RESOLVED: 55
+## RUN METRICS — Run 52 | 2026-05-22
+- Total RESOLVED: 55 (unchanged — all require Bradley action)
 - Total OPEN: 17 (0 new closed, 0 new opened)
-- Auto-upgrades shipped: 3 (workiz_report.py JobType variants, tommy.md format entries, donna.md format entries)
-- Deliverables written: 2 (may23_morning_call_protocol, may26_ads_launch_checklist)
-- Highest priority action: Call top 5 hot leads tomorrow 9am (may23_morning_call_protocol) + Pause Instantly.ai tonight (3 min)
+- Auto-upgrades shipped: 4 (lead_pipeline DANNY_TITLES managing_partner+principal, vera_relay Carla staleness check, new check_replies.py worker, crontab check_replies entry)
+- Deliverables written: 2 (reply_window_tracker_2026-05-22.md, this open_issues update)
+- Highest priority action: (1) Pause Instantly.ai TONIGHT — 3 min, (2) Run check_replies.py tomorrow 9am, (3) Danny manual pull `python3 workers/lead_pipeline.py both`
