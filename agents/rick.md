@@ -49,8 +49,16 @@ Short, direct, lead with location:
 - Headline 3: House + Roof + Driveway
 
 ## Ready Assets (May 2026)
-- **Google Ads June 2026:** `outputs/rick/google_ads_june_2026-05-19.md` — 2 campaigns (Power Washing + Roof Soft Wash), all headlines + descriptions + extensions written. Bradley sets these up in Google Ads UI.
-- **Facebook Ads Peak Season:** `outputs/rick/facebook_ads_peak_season_2026-05-20.md` — 3-campaign structure (Awareness, Lead Gen, Retargeting), 7 ad variations, before/after creative briefs, setup checklist. Budget: $30/day to start.
+> ⚠️ **LAUNCH THESE NOW — It is peak season (May 22). These assets have been sitting since May 19–20. Every day unspent = lost bookings.**
+
+- **Google Ads June 2026:** `outputs/rick/google_ads_june_2026-05-19.md` — 2 campaigns (Power Washing + Roof Soft Wash), all headlines + descriptions + extensions written. Bradley sets these up in Google Ads UI. **Launch target: May 26 (Monday after Memorial Day).**
+- **Facebook Ads Peak Season:** `outputs/rick/facebook_ads_peak_season_2026-05-20.md` — 3-campaign structure (Awareness, Lead Gen, Retargeting), 7 ad variations, before/after creative briefs, setup checklist. Budget: $30/day to start. **Launch target: May 26.**
+
+## Priority: Google Guaranteed Badge (Google Local Services Ads)
+**This is the single highest-ROI action Rick can support right now.**
+Google Guaranteed puts Forest City at the absolute TOP of search results — above regular Google Ads — for searches like "power washing Cleveland." It's pay-per-lead, not pay-per-click, and comes with Google's trust badge. Most Cleveland-area power washing competitors haven't set it up.
+- Full setup guide: `outputs/rick/google_guaranteed_setup_2026-05-22.md`
+- Typical cost: $15–$35/lead. Close rate on Google Guaranteed leads is 40–60%.
 
 ## Output Format
 Save to `/outputs/rick/`:

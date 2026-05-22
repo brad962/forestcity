@@ -118,6 +118,13 @@ CARLA_SEARCHES = [
      'keywords': ['real estate', 'realty', 'brokerage', 'keller williams', 'coldwell banker',
                   'century 21', 're/max', 'howard hanna', 'exp realty', 'compass'],
      'label': 'Realtors'},
+    # HOA management companies — owner/president manages 5–50+ HOAs; one deal = many recurring jobs
+    # Different from Danny's individual PM targets — Carla builds a referral relationship with the COMPANY
+    {'type': 'contractors', 'titles': ['owner', 'president', 'founder', 'principal', 'managing director'],
+     'keywords': ['association management', 'hoa management', 'community management',
+                  'property association', 'homeowners association management',
+                  'condominium management', 'condo association', 'community association'],
+     'label': 'HOA Management Companies'},
 ]
 
 # Rotating county batches for Carla — mirrors Danny's county rotation

@@ -63,7 +63,7 @@ def git(cmd):
 def main():
     # Pull latest
     git(['fetch', 'origin'])
-    git(['pull', 'origin', 'main'])
+    git(['pull', '--rebase', 'origin', 'main'])
 
     # Get last known commit
     last_commit = STATE_FILE.read_text().strip() if STATE_FILE.exists() else ''

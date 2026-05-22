@@ -6,6 +6,30 @@
 # ─── CRITICAL: these have been down since May 12 ──────────────────────────────
 # Danny's lead pull must run or Round 2 enrollment (June 4) has no new leads.
 # ──────────────────────────────────────────────────────────────────────────────
+#
+# ═══════════════════════════════════════════════════════════════════════════════
+# STEP 1: INSTALL CRON
+# Open Terminal, run: crontab -e
+# Press 'i' to enter insert mode, paste all job lines below, press Esc, type :wq Enter
+#
+# STEP 2: VERIFY IT INSTALLED
+# Run: crontab -l
+# You should see all 6 lines. If blank, repeat Step 1.
+#
+# STEP 3: VERIFY CRON IS RUNNING (run these in Terminal right now)
+# Check if cron daemon is active:
+#   sudo launchctl list | grep cron
+# Manually trigger a test run:
+#   cd /Users/bradleyneal/forestcity && python3 workers/vera_relay.py
+# Check the log file after 5 minutes:
+#   tail -50 /Users/bradleyneal/forestcity/logs/cron.log
+# If the log file has new lines, cron is working.
+#
+# STEP 4: MANUALLY RUN DANNY NOW (cron has been down 10+ days)
+# Do NOT wait for Monday's 7am cron — run this immediately:
+#   cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both
+# This pulls Summit County leads needed for Round 2 enrollment June 4.
+# ═══════════════════════════════════════════════════════════════════════════════
 
 # Danny — pull property manager leads (rotating counties, weekly Monday 7am)
 0 7 * * 1 cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both >> logs/cron.log 2>&1
