@@ -39,7 +39,12 @@ JOB_TYPE_FILTER = "Power Washing"
 JOB_TYPE_VARIANTS = {
     'power washing', 'power wash', 'powerwashing', 'powerwash',
     'pressure washing', 'pressure wash', 'pressurewashing',
-    'exterior cleaning', 'house washing', 'soft wash', 'softwash',
+    'exterior cleaning', 'exterior washing', 'house washing', 'house wash',
+    'soft wash', 'softwash', 'soft washing',
+    'roof washing', 'roof cleaning', 'roof soft wash',
+    'driveway washing', 'driveway cleaning', 'concrete cleaning', 'concrete washing',
+    'deck cleaning', 'deck washing', 'fence cleaning', 'fence washing',
+    'commercial washing', 'commercial cleaning', 'building washing',
 }
 
 

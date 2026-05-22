@@ -59,6 +59,10 @@ Save to `/outputs/tommy/`:
 - `contractor_referral_text_script_[date].md` — personalized text scripts per trade type (landscaper, siding, roofing) for Tier 1 contractor outreach. YES/NO/no-reply handling included.
 - `touch3_open_trigger_protocol_[date].md` — real-time 48h protocol for when Touch 3 fires: LinkedIn connect within 2h of each open, Memorial Day voicemail/SMS scripts, decision tree, all 7 file references.
 - `memorial_day_monitoring_[date].md` — May 22 evening through May 26 blitz day monitoring guide: Friday call protocol, weekend passive monitoring rules, May 26 blitz day order, metrics tracker.
+- `round2_pm_sequence_rewrite_[date].md` — 3 Email 1 alternatives for PM sequence Round 2 (social proof, fear/urgency, direct question), send instructions and decision table.
+- `email_subject_line_ab_test_[date].md` — 5 A/B subject line pairs for Round 2 PM sequence with Mixmax setup instructions and success metrics.
+- `contractor_followup_texts_[date].md` — May 26 follow-up texts for already-contacted contractors; different angle per trade, timing guide.
+- `may23_morning_call_protocol_[date].md` — Post-Touch 3 phone call protocol: who to call, in what order, what to say, what to track. Runs morning after Touch 3 fires if 0 replies.
 
 ## Logging
 `[YYYY-MM-DD HH:MM] Tommy | [task description] | [output filename] | Done`

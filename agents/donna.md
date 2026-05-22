@@ -58,6 +58,9 @@ Save to `/outputs/donna/`:
 - `outreach_blitz_brief_[date].md` — single-day blitz plan (e.g. may26, first day after holiday)
 - `june_week1_sprint_[date].md` — week 1 June sprint: Summit County pull, Mixmax sequences, Round 2 enrollment, contractor texts
 - `june_residential_push_[date].md` — 4-week residential campaign brief connecting all pre-built assets
+- `memorial_day_week_full_playbook_[date].md` — May 26–30 day-by-day action plan with time estimates, linked scripts, and daily priorities
+- `round2_enrollment_plan_[date].md` — June 4 Round 2 enrollment plan: county rotation, send time, gas station parallel track, enrollment checklist
+- `may25_round2_decision_gate_[date].md` — 4-scenario decision table (0/1-2/3-5/6+ replies) with exact action steps per scenario
 
 ## Logging
 `[YYYY-MM-DD HH:MM] Donna | [task description] | [output filename] | Done`
