@@ -159,6 +159,16 @@ def main():
         if all_hot:
             for h in all_hot:
                 print(f'   ⚡ {h["name"]} | {h["email"]} | {h["opens"]} opens | {h["seq"]}')
+            # Post hot leads to Slack so Bradley can act on LinkedIn connects + calls
+            hot_lines = '\n'.join(
+                f'>• {h["name"]} — {h["opens"]} opens | {h["seq"]}'
+                for h in all_hot[:10]
+            )
+            post_slack(
+                f'⚡ *Mixmax — {len(all_hot)} Hot Lead{"s" if len(all_hot) != 1 else ""} (0 replies yet)*\n'
+                f'{hot_lines}\n'
+                f'>Connect on LinkedIn + call these contacts TODAY.'
+            )
         log(f'0 replies | {len(all_hot)} hot leads')
 
     print('\nDone. Run again tomorrow morning.')

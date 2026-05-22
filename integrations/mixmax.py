@@ -79,6 +79,10 @@ PROPERTY_MANAGER_TITLES = [
     'condominium manager',
     # In Danny search titles but was missing from routing — PM firms where director-level title is used
     'property management director',
+    # In DANNY_TITLES but absent from routing — manual imports with these titles route correctly now
+    'leasing manager',
+    'managing partner',
+    'principal',
 ]
 
 REALTOR_TITLES = [
@@ -218,6 +222,11 @@ def enroll_lead(lead: dict) -> dict:
     """
     Enroll a single lead in the correct Mixmax sequence.
     Returns a result dict with status, sequence_name, and any errors.
+
+    ⚠️ INSTANTLY.AI OVERLAP: If any Instantly.ai campaigns are running against these
+    same contacts, duplicate emails will trigger spam filters and kill reply rates.
+    Before enrolling a Round 2 batch, confirm Instantly.ai campaigns a1c08c3d and
+    626cd15d are PAUSED. Guide: outputs/vera/instantly_pause_guide_2026-05-22.md
     """
     email = lead.get('email', '').strip()
     if not email:

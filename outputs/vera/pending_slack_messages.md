@@ -1,48 +1,56 @@
 🔧 *Vera — Auto-Upgrade*
->Changed: check_replies.py — sequences now import dynamically from integrations/mixmax.py
->Why: When gas_station and fleet_washing sequences go live in Mixmax, they'll be scanned automatically without any code change needed.
->File: workers/check_replies.py
----
-🔧 *Vera — Auto-Upgrade*
->Changed: integrations/mixmax.py PROPERTY_MANAGER_TITLES — added 'property management director'
->Why: This title was in Danny's Apollo search list but missing from routing detection — any manually imported "Property Management Director" contact would fall through to the default instead of hitting the PM sequence.
+>Changed: integrations/mixmax.py PROPERTY_MANAGER_TITLES — added 'leasing manager', 'managing partner', 'principal'
+>Why: All 3 were in DANNY_TITLES and Apollo search but absent from routing — manual imports now route to PM sequence correctly
 >File: integrations/mixmax.py
 ---
 🔧 *Vera — Auto-Upgrade*
->Changed: workers/nina_report.py — added Company column to hot leads tables (daily + weekly)
->Why: When Bradley sees a hot lead, the first thing he needs is the company name — not just a name and email. Added _load_company_map() and injected it into both report tables.
->File: workers/nina_report.py
+>Changed: workers/check_replies.py — added Slack notification when hot leads exist (not just replies)
+>Why: During the 72-hour post-Touch-3 window, Bradley needs to know how many opens happened even if 0 replies — gets daily Slack summary with names + open counts
+>File: workers/check_replies.py
 ---
 🔧 *Vera — Auto-Upgrade*
->Changed: workers/lead_pipeline.py Carla contractors search — added 'window cleaning' alongside 'window washing'
->Why: Both terms are widely used in Apollo profiles; they return different companies from the same industry.
->File: workers/lead_pipeline.py
+>Changed: workers/workiz_report.py — removed dead JOB_TYPE_FILTER constant
+>Why: Was defined but never used; JOB_TYPE_VARIANTS is the live filter; dead code removed
+>File: workers/workiz_report.py
 ---
 🔧 *Vera — Auto-Upgrade*
->Changed: agents/danny.md — updated Summit County urgency note date from "May 21/22" to "May 22+"
->Why: Stale dates in agent files erode credibility of the urgency signal.
->File: agents/danny.md
+>Changed: workers/vera_relay.py — added lock file protection (_acquire_lock/_release_lock, 3-min stale timeout)
+>Why: Cron fires every 5 min; if git took >5 min two instances would collide on push; lock file prevents this
+>File: workers/vera_relay.py
 ---
-📋 *Vera — New Deliverable: Free Lead Harvest Protocol*
->File: outputs/donna/free_lead_harvest_protocol_2026-05-22.md
->What: Zero-spend residential lead harvest for peak season. 4 channels: (1) 5 NE Ohio Facebook homeowner groups — copy-paste post + reply scripts ready, (2) Nextdoor business page — 5-step setup + post copy, (3) GBP before/after photo upload cadence, (4) past customer referral text campaign.
->Why now: Ads aren't live. Touch 3 is in the reply window. This protocol can generate 5–15 inbound inquiries before May 27 with ~100 minutes of effort spread over 5 days. POST IN FACEBOOK GROUPS TODAY — 20 minutes.
+🔧 *Vera — Auto-Upgrade*
+>Changed: integrations/mixmax.py enroll_lead() — added Instantly.ai overlap warning in docstring
+>Why: Code-level persistent reminder before any Round 2 enrollment: pause campaigns a1c08c3d + 626cd15d first
+>File: integrations/mixmax.py
 ---
-🚨 *Vera — Tonight Action Required (2 items)*
->1. *Pause Instantly.ai* — both campaigns overlap your Mixmax contacts → duplicate emails → spam filters → root cause of 0 replies. Guide: outputs/vera/instantly_pause_guide_2026-05-22.md. Takes 3 minutes.
->2. *Text Tier 1 contractors* — Anthony/Land Pro (440-320-2779), Dontez/GTP (440-396-0814), Chris/Twin (216-773-0757), Venus/Reliable (216-810-2497), Logan/Pagels (216-956-5263). Scripts: outputs/tommy/contractor_referral_text_script_2026-05-20.md
+📄 *Vera — New Deliverable*
+>File: outputs/tommy/hoa_spring_meeting_email_2026-05-22.md
+>What: 3 email variants for Round 2 PM sequence using HOA board meeting season angle
+>Why: May–June is when NE Ohio HOA boards meet to evaluate vendors. "Before your board meeting" is timely + specific — competitors don't use it. Variants: board meeting, resident complaints, vendor evaluation. Send June 4 at 10:30am.
 ---
-💡 *Vera — Upgrade Proposal: LinkedIn Company Page*
->Idea: Set up a LinkedIn Company Page for Forest City Power Washing
->Why: When Bradley cold-connects on LinkedIn, prospects click through to verify the business. A company page with logo, about, and before/after photos converts "who is this?" into "legit local business." 20 minutes to set up.
->Impact: Higher connect acceptance rate on all PM outreach. Social proof layer behind every sequence.
->Reply YES to approve and I'll write the setup guide + all profile copy.
+📄 *Vera — New Deliverable*
+>File: outputs/donna/weekend_lead_gen_checklist_2026-05-22.md
+>What: Memorial Day weekend (May 23–25) free lead gen checklist — runs parallel to reply window monitoring
+>Why: Homeowners are on Facebook and Nextdoor all weekend. 90 minutes: 3 FB group posts, GBP photo, 5 past customer texts, Nextdoor setup. Zero ad spend. Bridges to the May 26 paid blitz.
 ---
-✅ *Vera — Scan Complete 2026-05-22 (Run 53)*
->5 auto-upgrades shipped | 1 deliverable | 1 proposal | 17 open issues (0 new)
->
->Bradley's top 4 actions TODAY:
->1. 🔴 Pause Instantly.ai — 3 min → outputs/vera/instantly_pause_guide_2026-05-22.md
->2. 📱 Post in NE Ohio Facebook groups — 20 min → outputs/donna/free_lead_harvest_protocol_2026-05-22.md
->3. 📞 Text Tier 1 contractors tonight → outputs/tommy/contractor_referral_text_script_2026-05-20.md
->4. 🖥️ Run Danny lead pull: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both`
+🚨 *Vera — TONIGHT Priority (May 22)*
+>1. Pause Instantly.ai campaigns a1c08c3d + 626cd15d — 3 min: outputs/vera/instantly_pause_guide_2026-05-22.md
+>2. LinkedIn connects with 2+ open contacts — context is live TONIGHT while "just sent you an email" is fresh
+>3. Run check_replies.py locally if possible to get live open count
+
+🗓️ *Vera — Weekend Plan (May 23–25)*
+>Checklist: outputs/donna/weekend_lead_gen_checklist_2026-05-22.md
+>Sat morning (30 min): 3 Facebook homeowner group posts + GBP photo upload
+>Sun morning (30 min): 5 past customer texts + Nextdoor setup
+>Mon May 26: Danny pull + ads launch + contractor texts + check_replies.py at 9am
+---
+💡 *Vera — Upgrade Proposal*
+>Idea: Shift Round 2 PM enrollment from June 4 to June 9 if Danny cron hasn't run by May 26
+>Why: Next auto-run is June 1; if it fails, June 4 enrollment uses 3-week-old leads. June 9 gives buffer.
+>Impact: Higher quality Round 2 contacts (Summit + Medina fresh); Wednesday June 9 = stronger send day
+>Reply YES to approve schedule shift — only applies if manual Danny pull doesn't happen by May 26.
+---
+✅ *Vera — Scan Complete 2026-05-22 (Run 54)*
+>4 auto-upgrades shipped | 2 deliverables | 1 proposal | 59 RESOLVED | 17 OPEN
+>Touch 3 reply window LIVE — 72 hours through Sunday May 25
+>Key items: Instantly.ai pause TONIGHT, weekend free lead gen, May 26 blitz day

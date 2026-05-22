@@ -34,7 +34,6 @@ WORKIZ_TOKEN = os.environ.get('WORKIZ_API_TOKEN', '')
 WORKIZ_SECRET = os.environ.get('WORKIZ_API_SECRET', '')
 
 BASE_URL = f"https://api.workiz.com/api/v1/{WORKIZ_TOKEN}"
-JOB_TYPE_FILTER = "Power Washing"
 # Accept common casing/naming variations from Workiz
 JOB_TYPE_VARIANTS = {
     'power washing', 'power wash', 'powerwashing', 'powerwash',

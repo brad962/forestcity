@@ -11,11 +11,14 @@ import subprocess
 import urllib.request
 from datetime import datetime
 from pathlib import Path
+import time
 
 BASE_DIR = Path(__file__).parent.parent.resolve()
 PENDING_FILE = BASE_DIR / 'outputs' / 'vera' / 'pending_slack_messages.md'
 STATE_FILE = BASE_DIR / 'outputs' / 'vera' / 'relay_last_commit.txt'
 LOG_FILE = BASE_DIR / 'logs' / 'activity.log'
+LOCK_FILE = BASE_DIR / 'outputs' / 'vera' / '.relay_lock'
+LOCK_TIMEOUT_SECONDS = 180  # if lock is older than 3 min, assume stale and override
 
 # Load env
 _env = BASE_DIR / '.env'
@@ -139,7 +142,43 @@ def _check_carla_staleness():
         log(f'Carla staleness alert posted — {days_stale} days since last pull')
 
 
+def _acquire_lock() -> bool:
+    """Return True if we got the lock, False if another instance is running."""
+    LOCK_FILE.parent.mkdir(exist_ok=True)
+    if LOCK_FILE.exists():
+        try:
+            age = time.time() - LOCK_FILE.stat().st_mtime
+            if age < LOCK_TIMEOUT_SECONDS:
+                return False  # Another instance is running
+        except Exception:
+            pass
+        LOCK_FILE.unlink(missing_ok=True)  # stale lock — remove
+    try:
+        LOCK_FILE.write_text(str(os.getpid()))
+        return True
+    except Exception:
+        return False
+
+
+def _release_lock():
+    try:
+        LOCK_FILE.unlink(missing_ok=True)
+    except Exception:
+        pass
+
+
 def main():
+    if not _acquire_lock():
+        print('Another vera_relay instance is running — exiting.')
+        return
+
+    try:
+        _main_body()
+    finally:
+        _release_lock()
+
+
+def _main_body():
     # Always check staleness (runs even if no new Vera commits)
     _check_danny_staleness()
     _check_carla_staleness()
