@@ -159,6 +159,13 @@ Key resolved issues by category:
 
 ---
 
+## RUN METRICS — Run 53 | 2026-05-22
+- Total RESOLVED: 55 (unchanged — all require Bradley action)
+- Total OPEN: 17 (0 new closed, 0 new opened)
+- Auto-upgrades shipped: 5 (check_replies.py dynamic sequence sync, mixmax.py property_management_director routing fix, nina_report.py Company column in hot leads tables, lead_pipeline.py window cleaning keyword, danny.md date update)
+- Deliverables written: 1 (free_lead_harvest_protocol_2026-05-22.md — free residential lead gen while ads aren't live)
+- Highest priority action: (1) Pause Instantly.ai TONIGHT — 3 min, (2) Post in 3 Facebook homeowner groups TODAY, (3) Run check_replies.py tomorrow 9am, (4) Danny manual pull `python3 workers/lead_pipeline.py both`
+
 ## RUN METRICS — Run 52 | 2026-05-22
 - Total RESOLVED: 55 (unchanged — all require Bradley action)
 - Total OPEN: 17 (0 new closed, 0 new opened)

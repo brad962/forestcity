@@ -61,6 +61,7 @@ Save to `/outputs/donna/`:
 - `memorial_day_week_full_playbook_[date].md` — May 26–30 day-by-day action plan with time estimates, linked scripts, and daily priorities
 - `round2_enrollment_plan_[date].md` — June 4 Round 2 enrollment plan: county rotation, send time, gas station parallel track, enrollment checklist
 - `may25_round2_decision_gate_[date].md` — 4-scenario decision table (0/1-2/3-5/6+ replies) with exact action steps per scenario
+- `free_lead_harvest_protocol_[date].md` — zero-spend residential lead gen covering Facebook Groups (5 specific NE Ohio groups), Nextdoor setup, GBP photos, and past customer referral texts; execution schedule May 22–26 with 100-min total time commitment
 
 ## Logging
 `[YYYY-MM-DD HH:MM] Donna | [task description] | [output filename] | Done`

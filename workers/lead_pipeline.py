@@ -112,8 +112,9 @@ DANNY_ORG_KEYWORDS = [
 CARLA_SEARCHES = [
     {'type': 'contractors', 'titles': ['owner', 'president', 'founder'],
      'keywords': ['siding', 'exterior contractor', 'roofing', 'gutters', 'painting',
-                  'landscaping', 'lawn care', 'window washing', 'chimney', 'concrete',
-                  'deck builder', 'deck contractor', 'asphalt sealing', 'driveway sealing',
+                  'landscaping', 'lawn care', 'window washing', 'window cleaning',
+                  'chimney', 'concrete', 'deck builder', 'deck contractor',
+                  'asphalt sealing', 'driveway sealing',
                   'irrigation', 'sprinkler system', 'lawn irrigation'],
      'label': 'Contractors'},
     # Home-services companies that visit properties weekly — high-value referral sources

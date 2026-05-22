@@ -77,6 +77,8 @@ PROPERTY_MANAGER_TITLES = [
     'association manager',
     # Full spelling — 'condo manager' substring does NOT match 'condominium manager' (added 2026-05-22)
     'condominium manager',
+    # In Danny search titles but was missing from routing — PM firms where director-level title is used
+    'property management director',
 ]
 
 REALTOR_TITLES = [

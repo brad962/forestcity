@@ -34,11 +34,33 @@ _load_env()
 MIXMAX_TOKEN  = os.environ.get('MIXMAX_TOKEN', '')
 SLACK_WEBHOOK = os.environ.get('SLACK_WEBHOOK_OFFICE', '')
 
-SEQUENCES = {
-    '6a048cfc110bc620ca0f1aee': 'Property Managers',
-    '6a048cfba81429e5dfe55010': 'Realtors',
-    '6a048cfd624a5989a68ba16c': 'Contractors',
+_DISPLAY_NAMES = {
+    'property_manager': 'Property Managers',
+    'realtor': 'Realtors',
+    'contractor': 'Contractors',
+    'gas_station': 'Gas Stations',
+    'fleet_washing': 'Fleet Washing',
 }
+
+
+def _load_sequences():
+    """Import live sequences from mixmax.py — auto-includes gas/fleet when they go live."""
+    try:
+        from integrations.mixmax import SEQUENCES as MX_SEQS, _sequence_is_live
+        return {
+            meta['id']: _DISPLAY_NAMES.get(seq_type, seq_type.replace('_', ' ').title())
+            for seq_type, meta in MX_SEQS.items()
+            if _sequence_is_live(seq_type)
+        }
+    except Exception:
+        return {
+            '6a048cfc110bc620ca0f1aee': 'Property Managers',
+            '6a048cfba81429e5dfe55010': 'Realtors',
+            '6a048cfd624a5989a68ba16c': 'Contractors',
+        }
+
+
+SEQUENCES = _load_sequences()
 
 
 def fetch_recipients(seq_id: str) -> list:

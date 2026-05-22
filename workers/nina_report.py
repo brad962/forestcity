@@ -193,6 +193,22 @@ def _load_phone_map():
         return {}
 
 
+def _load_company_map():
+    """Build email → company_name map from contacts cache (best-effort)."""
+    cache_file = BASE_DIR / 'contacts_cache.json'
+    if not cache_file.exists():
+        return {}
+    try:
+        data = json.loads(cache_file.read_text())
+        return {
+            c['email'].lower(): c.get('company_name', '') or c.get('company', '')
+            for c in data.get('contacts', [])
+            if c.get('email') and (c.get('company_name') or c.get('company'))
+        }
+    except Exception:
+        return {}
+
+
 def run_daily():
     print('\n📊 Nina — Daily Hot Leads Report')
     OUTPUTS.mkdir(exist_ok=True)
@@ -202,6 +218,7 @@ def run_daily():
     linkedin_map = _load_linkedin_map()
     phone_map    = _load_phone_map()
 
+    company_map  = _load_company_map()
     seq_stats_cache = {}
     api_responses_received = 0
     for seq_id, meta in SEQUENCES.items():
@@ -214,10 +231,11 @@ def run_daily():
         all_replied.extend([(meta['name'], r) for r in stats['replied_contacts']])
         print(f'  {meta["name"]}: {stats["total"]} enrolled | {stats["open_rate"]} opens | {stats["reply_rate"]} replies')
 
-    # Inject LinkedIn URLs and phone numbers from contacts cache
+    # Inject LinkedIn URLs, phone numbers, and company names from contacts cache
     for _, lead in all_hot:
         lead['linkedin'] = linkedin_map.get(lead['email'].lower(), '')
         lead['phone']    = phone_map.get(lead['email'].lower(), '')
+        lead['company']  = company_map.get(lead['email'].lower(), '')
 
     api_blocked = (api_responses_received == 0)
 
@@ -253,14 +271,15 @@ def run_daily():
             '## ⚡ HOT LEADS — High Engagement',
             '*2+ opens or clicked a link. Connect on LinkedIn now.*',
             '',
-            '| Name | Email | Phone | Sequence | Opens | Replied | LinkedIn |',
-            '|------|-------|-------|----------|-------|---------|---------|',
+            '| Name | Company | Email | Phone | Sequence | Opens | Replied | LinkedIn |',
+            '|------|---------|-------|-------|----------|-------|---------|---------|',
         ]
         for seq_name, l in all_hot:
             replied_str = '✅ Yes' if l['replied'] else 'No'
             li = f'[Connect]({l["linkedin"]})' if l.get('linkedin') else '—'
             ph = l.get('phone', '') or '—'
-            lines.append(f'| {l["name"]} | {l["email"]} | {ph} | {seq_name} | {l["opens"]} | {replied_str} | {li} |')
+            co = l.get('company', '') or '—'
+            lines.append(f'| {l["name"]} | {co} | {l["email"]} | {ph} | {seq_name} | {l["opens"]} | {replied_str} | {li} |')
         lines.append('')
     else:
         lines += ['## No hot leads yet', '*Check back once emails start sending.*', '']
@@ -303,8 +322,8 @@ def run_weekly():
     date_str = datetime.now().strftime('%Y-%m-%d')
     all_stats = []
     linkedin_map = _load_linkedin_map()
-
-    phone_map = _load_phone_map()
+    phone_map    = _load_phone_map()
+    company_map  = _load_company_map()
     api_responses_received = 0
     for seq_id, meta in SEQUENCES.items():
         recipients = fetch_recipients(seq_id)
@@ -314,6 +333,7 @@ def run_weekly():
         for lead in stats['hot_leads']:
             lead['linkedin'] = linkedin_map.get(lead['email'].lower(), '')
             lead['phone']    = phone_map.get(lead['email'].lower(), '')
+            lead['company']  = company_map.get(lead['email'].lower(), '')
         all_stats.append(stats)
         print(f'  {meta["name"]}: {stats["total"]} | opens={stats["open_rate"]} | replies={stats["reply_rate"]}')
 
@@ -378,13 +398,14 @@ def run_weekly():
             '## ⚡ Hot Leads — No Reply Yet',
             '*2+ opens with no reply. Connect on LinkedIn or call them this week.*',
             '',
-            '| Name | Email | Phone | Sequence | Opens | Stage | LinkedIn |',
-            '|------|-------|-------|----------|-------|-------|---------|',
+            '| Name | Company | Email | Phone | Sequence | Opens | Stage | LinkedIn |',
+            '|------|---------|-------|-------|----------|-------|-------|---------|',
         ]
         for seq_name, l in all_hot_unreplied:
             li = f'[Connect]({l["linkedin"]})' if l.get('linkedin') else '—'
             ph = l.get('phone', '') or '—'
-            lines.append(f'| {l["name"]} | {l["email"]} | {ph} | {seq_name} | {l["opens"]} | {l.get("stage", 1)} | {li} |')
+            co = l.get('company', '') or '—'
+            lines.append(f'| {l["name"]} | {co} | {l["email"]} | {ph} | {seq_name} | {l["opens"]} | {l.get("stage", 1)} | {li} |')
         lines.append('')
     elif not api_blocked:
         lines += ['## Hot Leads', '*No contacts with 2+ opens yet — check back next week.*', '']
