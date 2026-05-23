@@ -65,6 +65,7 @@ Save to `/outputs/tommy/`:
 - `may23_morning_call_protocol_[date].md` — Post-Touch 3 phone call protocol: who to call, in what order, what to say, what to track. Runs morning after Touch 3 fires if 0 replies.
 - `may26_monday_morning_followup_texts_[date].md` — May 26 personal text scripts for post-reply-window pivot; 3 PM versions, 2 contractor, 1 realtor; timing guide + response scripts
 - `may25_sunday_evening_protocol_[date].md` — Sunday evening May 25 reply window close protocol: check replies → if 0 replies: pause Instantly, LinkedIn connects, queue bridge emails → Monday alarm schedule.
+- `annual_plan_upsell_sequence_[date].md` — post-job annual plan upsell: same-day text + 30-day follow-up email + objection handling; locks in 2-visit recurring revenue ($400–$600/yr per customer); send within 2 hours of job completion while satisfaction is peak
 
 ## Logging
 `[YYYY-MM-DD HH:MM] Tommy | [task description] | [output filename] | Done`

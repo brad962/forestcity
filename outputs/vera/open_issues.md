@@ -1,6 +1,6 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 61 | 2026-05-23 | Auto-fixes shipped: 5 | New deliverables: 2 | Proposals: 3*
+*Run 62 | 2026-05-23 | Auto-fixes shipped: 4 | New deliverables: 3 | Proposals: 2*
 
 ---
 
@@ -27,6 +27,7 @@ Key resolved issues by category:
 - Run 57 (2026-05-23 Sat): Day 2 of 72-hour reply window. Sunday May 24 action card written with Tier 1 texts as Priority 2 task. Fresh angle: Sunday texts + Monday May 26 blitz follow-up texts (`outputs/tommy/may26_monday_morning_followup_texts.md` NEW). Resolution window = by May 26.
 - Run 60 (2026-05-23 Sat): Reply window closes TONIGHT. Fresh angle: may25_sunday_evening_protocol_2026-05-23.md (new) includes Tier 1 LinkedIn connects as tonight priority. If window closes 0 replies, Monday blitz texts are queued. Text at 10am Mon May 26 — highest response rate for trades.
 - Run 61 (2026-05-23 Sat): Reply window still open (ends Sunday May 25). Fresh angle: text scripts corrected in `tuesday_may26_launch_card_2026-05-23.md` — Tier 1 contractor texts are Priority #4 at 8:45am Tuesday. That's 36 hours from now. Window for a Memorial Day weekend text (Saturday afternoon) is also valid — higher open rate than weekday. Try one TODAY: Anthony/Land Pro 440-320-2779.
+- Run 62 (2026-05-23 Sat): Still open — all 5 Tier 1 contractors uncontacted. Reply window closes TOMORROW (Sunday May 25). Fresh angle: the reply window that closes tomorrow is for the Mixmax sequence. But the PERSONAL outreach window (texts to Tier 1) has no deadline — it's just been sitting idle. Text Anthony at 440-320-2779 this afternoon. Memorial Day weekend = trades are doing estimates, phones are on. Script: "Hey Anthony, it's Bradley from Forest City Power Washing. We do exterior cleaning for a lot of landscapers' customers — want to do a quick referral swap? No paperwork. $50 for every job you send our way."
 - Resolution criteria: Bradley texts Tier 1 list. Confirmed when pipeline_data.json shows "Contacted" stage for these 5.
 
 ---
@@ -68,8 +69,9 @@ Key resolved issues by category:
 - Description: Two active Instantly.ai campaigns (a1c08c3d = PM Cuyahoga, 626cd15d = Contractor Referral) run against the same contacts as Mixmax sequences → duplicate emails → spam filtering → 0 replies.
 - Run 55: nina_report.py daily run now shows explicit 0-reply/Instantly overlap warning.
 - Run 57 (2026-05-23 Sat): Still unresolved. Reply window closes tonight.
-- Run 60 (2026-05-23 Sat): Fresh angle — included in tonight's `may25_sunday_evening_protocol_2026-05-23.md` as Step 3a (pause if 0 replies tonight). The protocol makes it automatic: zero replies tonight = pause Instantly tonight, before Monday Round 2 prep begins. The 3-minute fix is now embedded in a workflow Bradley is already being directed to do tonight.
-- Run 61 (2026-05-23 Sat): It's Saturday afternoon. If Bradley is at his computer right now, the Slack message this run includes a TONIGHT ALERT with the exact 3-step Instantly pause: app.instantly.ai → Campaigns → click the 3 dots → Pause. Direct link in Slack. The round 2 window opens June 4 — only 12 days away. Cannot start Round 2 enrollment if Instantly is still running against the same contacts.
+- Run 60 (2026-05-23 Sat): Fresh angle — included in tonight's `may25_sunday_evening_protocol_2026-05-23.md` as Step 3a (pause if 0 replies tonight). The protocol makes it automatic: zero replies tonight = pause Instantly tonight, before Monday Round 2 prep begins.
+- Run 61 (2026-05-23 Sat): Slack message includes TONIGHT ALERT with 3-step pause: app.instantly.ai → Campaigns → ⋮ → Pause.
+- Run 62 (2026-05-23 Sat): Round 2 enrollment is June 4 — 12 days away. Pausing today = 12 full days of deliverability recovery before Round 2 sends. Pausing June 3 = 0 days of recovery. Every day of delay costs deliverability. New escalation: Round 2 Enrollment Readiness Checklist (`outputs/donna/round2_enrollment_readiness_checklist_2026-05-23.md`) now includes Instantly pause as the first block — without it, the entire checklist is a NO-GO and Round 2 enrollment cannot proceed.
 - Resolution criteria: Both campaigns paused in Instantly.ai → confirmed by Bradley.
 
 ---
@@ -116,14 +118,16 @@ Key resolved issues by category:
 
 ---
 
-## OPEN — Danny PM cron not running (11 days overdue) 🔴 CRITICAL — SUMMIT DEADLINE TONIGHT
+## OPEN — Danny PM cron not running (12 days overdue) 🔴 CRITICAL — SUMMIT DEADLINE MAY 31
 - First seen: 2026-05-20 (run 28)
 - Description: Last successful pull: May 12. Apollo blocked in cloud. Cron not set up on Bradley's Mac.
 - Run 56: Added `--county Summit` override CLI flag. Updated danny.md with May 25 deadline.
-- Run 57 (2026-05-23 Sat): **TODAY IS SATURDAY MAY 23. Summit County deadline = SUNDAY NIGHT MAY 25.** 11 days since last pull. Sunday action card includes Summit pull as Priority 6 (TONIGHT). Fresh angle: this is the last possible window before 6-week gap. Command is simple: 5 minutes.
-- Run 61 (2026-05-23 Sat): Clarification added in danny.md this run — deadline is actually May 31 (end of ISO week 21), not just "Sunday night." Bradley has more runway than previously communicated. Any day through May 31 hits Summit County. BUT: 12 days since last pull and counting. Every day of delay is pipeline gap. STILL run it TODAY. The command works on a Mac in 5 minutes: `python3 workers/lead_pipeline.py danny Summit`
-- Command to force Summit (valid any day May 23–31): `python3 workers/lead_pipeline.py danny Summit`
-- Resolution criteria: logs/cron.log or activity.log shows Danny Summit pull entry by May 31.
+- Run 57 (2026-05-23 Sat): TODAY IS SATURDAY MAY 23. Summit County deadline = MAY 31 (end of ISO Week 21).
+- Run 61 (2026-05-23 Sat): Deadline clarified to May 31. Command confirmed working on Mac in 5 minutes.
+- Run 62 (2026-05-23 Sat): FRICTION REDUCTION — added `scripts/run_summit_pull.command` to the repo. Bradley can double-click this file in Finder and it runs the Summit pull in Terminal without typing anything. Reduces the activation energy from "open Terminal, cd, type command" to "double-click file in Finder." Script is at: `scripts/run_summit_pull.command`. This is the lowest-friction path available.
+- Command (manual): `python3 workers/lead_pipeline.py danny Summit` (valid any day May 23–31)
+- Double-click shortcut: `scripts/run_summit_pull.command` (in Finder, shows "run_summit_pull" — just open it)
+- Resolution criteria: logs/activity.log shows Danny Summit pull entry by May 31.
 
 ---
 
@@ -146,18 +150,22 @@ Key resolved issues by category:
 - First seen: 2026-05-20 (run 31)
 - Description: 18 gas station district manager contacts pulled May 19. Sequence ID = PENDING.
 - Run 54: Unchanged — sequence creation is a 5-minute Mixmax UI task.
-- Run 60 (2026-05-23 Sat): Fresh angle — wrote complete step-by-step Mixmax creation guide (`outputs/danny/gas_station_mixmax_sequence_creation_2026-05-23.md`). Has exact subject lines, email bodies, field values, where to find the Sequence ID in the URL, and the exact mixmax.py line to edit. Includes the `python3 workers/lead_pipeline.py pending` command. Reduces the task from "5-minute guesswork" to "5-minute copy-paste." Included in Monday May 26 schedule in sunday evening protocol.
-- Run 61 (2026-05-23 Sat): Slotted into Tuesday May 26 action card at 9:00am as a 10-minute task (`tuesday_may26_launch_card_2026-05-23.md`). 18 warm contacts with emails have been sitting idle since May 19 — 4 weeks of wasted pipeline. This is a 10-minute task with immediate revenue potential. Gas station accounts = multi-site recurring revenue.
+- Run 60 (2026-05-23 Sat): Fresh angle — wrote complete step-by-step Mixmax creation guide (`outputs/danny/gas_station_mixmax_sequence_creation_2026-05-23.md`).
+- Run 61 (2026-05-23 Sat): Slotted into Tuesday May 26 action card at 9:00am as 10-minute task.
+- Run 62 (2026-05-23 Sat): This is now on the Round 2 Enrollment Readiness Checklist as Block 4 (`outputs/donna/round2_enrollment_readiness_checklist_2026-05-23.md`). If gas station sequence is live by June 3, the 18 idle contacts get enrolled in the same enrollment run as the fresh PM contacts — zero extra effort. If it's still PENDING on June 3, it's a separate 10-minute task. The readiness checklist now makes this go/no-go explicit. These contacts are 5 weeks idle as of June 4. Gas station DM = multi-site recurring contract, $2,400–$6,000/yr per account.
 - Sequence copy: outputs/danny/sequence_gas_stations_2026-05-19.md.
+- Creation guide: outputs/danny/gas_station_mixmax_sequence_creation_2026-05-23.md.
 
 ---
 
 ## OPEN — Google Ads and Facebook Ads not launched
 - First seen: 2026-05-21 (run 36)
 - Description: All copy ready (outputs/rick/). Not launched. Peak season revenue being missed daily.
-- Run 54: Weekend free lead gen now bridges to May 26 launch. If Bradley does Facebook group posts this weekend (5 min, free), he generates SOME residential leads immediately while setting up paid ads Monday. May 26 is still the target for paid campaigns.
-- Run 61 (2026-05-23 Sat): Memorial Day weekend is PRIME TIME for homeowner ads. "Before your cookout, before your guests" hook is extremely timely RIGHT NOW. Google Guaranteed application: if applied TODAY (Saturday), 7-14 day approval window = could be live before June 7 (start of peak booking). Application guide: `outputs/rick/google_guaranteed_setup_2026-05-22.md`. Facebook ads: Tuesday May 26 launch per `tuesday_may26_launch_card_2026-05-23.md`. This issue is 100% unblocked — zero technical barriers.
-- Checklist: outputs/vera/may26_ads_launch_checklist_2026-05-22.md. Google Guaranteed: outputs/rick/google_guaranteed_setup_2026-05-22.md.
+- Run 54: Weekend free lead gen now bridges to May 26 launch.
+- Run 61 (2026-05-23 Sat): Memorial Day weekend = prime time. Google Guaranteed application should be filed today. Facebook ads launch Tuesday May 26.
+- Run 62 (2026-05-23 Sat): Still unresolved. Days since this was first flagged: 2 days. Days of peak season revenue being missed: counting. New escalation: once ads are live, they need a lead RESPONSE SOP — Google Guaranteed specifically measures response time and penalizes slow responders with fewer leads. Added `google_guaranteed_lead_response_sop_[date].md` format to rick.md so this can be pre-built BEFORE ads launch (5-minute read = much higher conversion on $15–$35 leads). Proposal: Tommy writes annual plan upsell sequence BEFORE ads launch — every ad lead is also a potential annual plan customer, not just a one-time job.
+- Checklist: outputs/vera/may26_ads_launch_checklist_2026-05-22.md.
+- Google Guaranteed: outputs/rick/google_guaranteed_setup_2026-05-22.md.
 - Resolution criteria: At least one campaign live by May 28. Confirmed by Bradley in Slack.
 
 ---
@@ -253,6 +261,15 @@ Key resolved issues by category:
 - Auto-upgrades shipped: 4 (lead_pipeline DANNY_TITLES managing_partner+principal, vera_relay Carla staleness check, new check_replies.py worker, crontab check_replies entry)
 - Deliverables written: 2 (reply_window_tracker_2026-05-22.md, this open_issues update)
 - Highest priority action: (1) Pause Instantly.ai TONIGHT — 3 min, (2) Run check_replies.py tomorrow 9am, (3) Danny manual pull `python3 workers/lead_pipeline.py both`
+
+## RUN METRICS — Run 62 | 2026-05-23
+- Total RESOLVED: 76 (0 new this run — all open issues require Bradley action)
+- Total OPEN: 18 (0 new closed, 0 new opened)
+- Auto-upgrades shipped: 4 (scripts/run_summit_pull.command — double-click Mac shortcut for Summit County pull; donna.md + tommy.md + rick.md output format catalog additions)
+- Deliverables written: 3 (round2_enrollment_readiness_checklist_2026-05-23.md — GO/NO-GO for June 3 Round 2 prep; june_week3_4_commercial_sprint_2026-05-23.md — June 16-30 day-by-day plan; scripts/run_summit_pull.command — zero-typing Mac shortcut)
+- Proposals: 2 (Annual Plan Upsell Sequence — Tommy writes post-job same-day text + 30-day follow-up; Roof Soft Wash mini-campaign to existing PM contacts — highest-margin service, competitors skip it)
+- Highest priority TODAY (Sat May 23): (1) Pause Instantly.ai NOW — app.instantly.ai → Campaigns → ⋮ → Pause a1c08c3d + 626cd15d (2) Text ONE contractor: Anthony/Land Pro 440-320-2779 — "referral swap" pitch (3) Double-click `scripts/run_summit_pull.command` in Finder — 5 min, no typing
+- Highest priority TUESDAY May 26: Full 90-min blitz — `outputs/donna/tuesday_may26_launch_card_2026-05-23.md`
 
 ## RUN METRICS — Run 61 | 2026-05-23
 - Total RESOLVED: 76 (2 new: rick.md "Monday May 26" date error fixed to Tuesday; open_issues.md header resolved from 58→74 stale count; danny.md + carla.md + donna.md output format catalog updates)

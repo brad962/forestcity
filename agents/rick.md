@@ -65,6 +65,7 @@ Save to `/outputs/rick/`:
 - `facebook_ads_[campaign]_[date].md` — 5-10 ad variations per batch
 - `google_ads_[date].md` — headlines, descriptions, extensions
 - `performance_report_[date].md` — metrics and recommendations
+- `google_guaranteed_lead_response_sop_[date].md` — SOP for handling Google Guaranteed inbound leads: respond within 5 min (Google measures response time), call script, what to say if they don't answer, how to close the quote; response time directly affects lead volume from Google
 
 ## Logging
 `[YYYY-MM-DD HH:MM] Rick | [task description] | [output filename] | Done`
