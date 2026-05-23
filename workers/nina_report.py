@@ -236,9 +236,10 @@ def run_daily():
         lead['linkedin'] = linkedin_map.get(lead['email'].lower(), '')
         lead['phone']    = phone_map.get(lead['email'].lower(), '')
         lead['company']  = company_map.get(lead['email'].lower(), '')
-    # Inject phone into replied contacts — Bradley needs it immediately to call back
+    # Inject phone + company into replied contacts — both needed for immediate follow-up
     for _, r in all_replied:
-        r['phone'] = phone_map.get(r['email'].lower(), '')
+        r['phone']   = phone_map.get(r['email'].lower(), '')
+        r['company'] = company_map.get(r['email'].lower(), '')
 
     api_blocked = (api_responses_received == 0)
 
@@ -272,12 +273,13 @@ def run_daily():
             '## 🔥 REPLIED — Action Required',
             '*These contacts responded. Follow up today.*',
             '',
-            '| Name | Email | Phone | Sequence | Stage |',
-            '|------|-------|-------|----------|-------|',
+            '| Name | Company | Email | Phone | Sequence | Stage |',
+            '|------|---------|-------|-------|----------|-------|',
         ]
         for seq_name, r in all_replied:
             ph = r.get('phone', '') or '—'
-            lines.append(f'| {r["name"]} | {r["email"]} | {ph} | {seq_name} | {r["stage"]} |')
+            co = r.get('company', '') or '—'
+            lines.append(f'| {r["name"]} | {co} | {r["email"]} | {ph} | {seq_name} | {r["stage"]} |')
         lines.append('')
 
     if all_hot:
@@ -388,19 +390,21 @@ def run_weekly():
     for s in all_stats:
         lines.append(f'| {s["sequence"]} | {s["total"]} | {s["active"]} | {s["opens"]} | {len(s["replied_contacts"])} | {s["open_rate"]} | {s["reply_rate"]} |')
 
-    # Inject phone into replied contacts for weekly report
+    # Inject phone + company into replied contacts for weekly report
     for s in all_stats:
         for r in s['replied_contacts']:
-            r['phone'] = phone_map.get(r['email'].lower(), '')
+            r['phone']   = phone_map.get(r['email'].lower(), '')
+            r['company'] = company_map.get(r['email'].lower(), '')
 
     lines += ['', '## Contacts Who Replied', '']
     for s in all_stats:
         if s['replied_contacts']:
             lines.append(f'### {s["sequence"]}')
-            lines += ['| Name | Email | Phone | Stage | Opens |', '|------|-------|-------|-------|-------|']
+            lines += ['| Name | Company | Email | Phone | Stage | Opens |', '|------|---------|-------|-------|-------|-------|']
             for r in s['replied_contacts']:
                 ph = r.get('phone', '') or '—'
-                lines.append(f'| {r["name"]} | {r["email"]} | {ph} | {r["stage"]} | {r["opens"]} |')
+                co = r.get('company', '') or '—'
+                lines.append(f'| {r["name"]} | {co} | {r["email"]} | {ph} | {r["stage"]} | {r["opens"]} |')
             lines.append('')
 
     if not any(s['replied_contacts'] for s in all_stats):

@@ -67,6 +67,7 @@ Save to `/outputs/tommy/`:
 - `may25_sunday_evening_protocol_[date].md` — Sunday evening May 25 reply window close protocol: check replies → if 0 replies: pause Instantly, LinkedIn connects, queue bridge emails → Monday alarm schedule.
 - `annual_plan_upsell_sequence_[date].md` — post-job annual plan upsell: same-day text + 30-day follow-up email + objection handling; locks in 2-visit recurring revenue ($400–$600/yr per customer); send within 2 hours of job completion while satisfaction is peak
 - `pre_job_reminder_text_sequence_[date].md` — day-before + 2-hour reminder texts for confirmed jobs; reduces no-shows, sets expectations for soft-wash smell/residue, builds professionalism signal before crew arrives
+- `round2_pm_sequence_voc_rewrite_[date].md` — Round 2 PM 3-touch sequence rewritten using Marcus's VOC library phrases; uses exact NE Ohio customer language ("green and slimy," "roof looks black," "kept putting it off") instead of generic outreach copy; this version ships for June 4 enrollment
 
 ## Logging
 `[YYYY-MM-DD HH:MM] Tommy | [task description] | [output filename] | Done`

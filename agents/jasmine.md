@@ -45,6 +45,7 @@ Save to `/outputs/jasmine/`:
 - `linkedin_posts_may26_week_[date].md` — LinkedIn posts May 26–30 (commercial audience; post-Touch 3 connect week — Bradley is connecting with PM hot leads, these posts reinforce credibility)
 - `linkedin_posts_june_[date].md` — LinkedIn posts for June (commercial audience; June Booking Blitz window — PM prospects, HOA boards, facility managers)
 - `before_after_photo_capture_protocol_[date].md` — how to capture + log before/after photos after every job; file naming, lighting tips, Facebook/Instagram publish checklist, Jasmine flyer pipeline steps
+- `facebook_posts_memorial_day_weekend_[date].md` — 3 Facebook posts for Memorial Day Sat/Sun/Mon (May 23–26); uses the holiday social gathering angle ("before the neighbors show up"), "before the cookout" hook, and post-holiday back-to-work urgency; highest-scroll-rate weekend of peak season
 
 ## Logging
 `[YYYY-MM-DD HH:MM] Jasmine | [task description] | [output filename] | Done`

@@ -234,3 +234,95 @@
 >
 >🔴 TUESDAY May 26 — 90-min launch blitz (full card: outputs/donna/tuesday_may26_launch_card_2026-05-23.md):
 >8:00am Summit pull → 8:20am bridge emails → 9:00am gas station sequence → 9:15am ads launch → First job: use pre_job_reminder_text scripts (outputs/tommy/) → After job: annual plan upsell text within 2h
+
+
+---
+
+🔧 *Vera — Auto-Upgrade (Run 65)*
+>Changed: `workers/nina_report.py` — replied contacts now show Company column in daily AND weekly REPLIED table
+>Why: Bradley was seeing replies with no company name — had to cross-reference by email to identify the contact; company now appears inline alongside name/phone
+>File: workers/nina_report.py
+
+---
+
+🔧 *Vera — Auto-Upgrade (Run 65)*
+>Changed: `agents/danny.md` — removed hard-coded "TODAY IS SATURDAY MAY 23" from urgency note; replaced with date-agnostic "WEEK 21 = SUMMIT COUNTY — DEADLINE MAY 31"
+>Why: Date-specific wording went stale every day and required a Vera update each run; new wording stays accurate through May 31 without manual refresh
+>File: agents/danny.md
+
+---
+
+🔧 *Vera — Auto-Upgrade (Run 65)*
+>Changed: `agents/tommy.md` — added `round2_pm_sequence_voc_rewrite_[date].md` to output format list
+>Why: Marcus's VOC library (run 64) is now the primary input for Round 2 copy; Tommy has a named deliverable type for future VOC-powered PM sequence rewrites
+>File: agents/tommy.md
+
+---
+
+🔧 *Vera — Auto-Upgrade (Run 65)*
+>Changed: `agents/jasmine.md` — added `facebook_posts_memorial_day_weekend_[date].md` to output format list
+>Why: Memorial Day weekend (Sat–Mon) is the highest-scroll-rate 3-day window of peak season; format now exists for any future holiday weekend
+>File: agents/jasmine.md
+
+---
+
+📋 *Vera — Deliverable: Round 2 PM Sequence — VOC Rewrite (Run 65)*
+>File: outputs/tommy/round2_pm_sequence_voc_rewrite_2026-05-23.md
+>What: Complete 3-touch PM email sequence rewritten using Marcus's NE Ohio VOC library. Three Touch 1 variants: algae-builds-up angle, residents-notice angle, direct-question. Touch 2 uses "black streaks on the roof," "kept putting it off," and "objection in every tenant walk-through." Touch 3 is a clean last-call with peak-season urgency.
+>Use it: Open on June 3. Paste each email into Mixmax before Round 2 enrollment on June 4. 30 minutes = dramatically different copy than Round 1.
+
+---
+
+📋 *Vera — Deliverable: Memorial Day Weekend Facebook Posts (Run 65)*
+>File: outputs/jasmine/facebook_posts_memorial_day_weekend_2026-05-23.md
+>What: 3 Facebook posts for Sat May 24 / Sun May 25 / Mon May 26. Saturday: "neighbors are outside this weekend." Sunday: "before the cookout, before the guests." Monday: "summer officially starts this week" urgency hook. Bonus LinkedIn post for Monday commercial audience. Each post has exact timing + image caption guidance.
+>Use it: Post Saturday 9:30am. Sunday 8am (re-post to Stories noon). Monday 7am — boost $5–10 if budget available.
+
+---
+
+🔴 *Vera — CRITICAL (Run 65): Pause Instantly.ai — 11 days until Round 2*
+>Today = May 23. Round 2 enrollment = June 4. 11 days of deliverability recovery if you pause TODAY.
+>Pause June 3 = 0 days of recovery. Every day = worse inbox placement on June 4.
+>3 minutes: app.instantly.ai → Campaigns → a1c08c3d → ⋮ → Pause. Repeat for 626cd15d.
+>Then add INSTANTLY_PAUSED=true to .env to clear the enroll_batch() warning.
+
+---
+
+🔴 *Vera — CRITICAL (Run 65): Summit County — 8 days left*
+>May 31 = hard deadline. June 1 = Medina. Summit gone until July 6.
+>Double-click `scripts/run_summit_pull.command` in Finder — opens Terminal automatically, no typing.
+>Best window: Tuesday morning May 26 before the rest of the blitz.
+
+---
+
+💡 *Vera — Upgrade Proposal (Run 65)*
+>Idea: Video testimonial capture during this week's jobs
+>Why: One 30-second on-site testimonial = 2–3 weeks of Facebook/Instagram ad content at zero cost. Jasmine's before/after protocol is running — video is the next level up. Video converts 3–5x better than static photos in Facebook ads.
+>Impact: Film once this week = recurring ad content all summer.
+>Reply YES to approve and Tommy will write the video capture + release protocol.
+
+---
+
+💡 *Vera — Upgrade Proposal (Run 65)*
+>Idea: Annual Plan early-bird offer — book by June 15, save $50
+>Why: Tommy wrote the annual plan upsell sequence (Run 63). It's missing a deadline. Adding "save $50 if you book your Annual Plan by June 15" creates urgency and converts May/June job customers into recurring annual revenue during peak season.
+>Impact: 5 annual plan conversions at $325/yr = $1,625 locked recurring. The sequence is already written — this adds one time-bound hook.
+>Reply YES to approve and I'll add the early-bird language to the existing sequence.
+
+---
+
+✅ *Vera — Scan Complete 2026-05-23 (Run 65)*
+>4 auto-upgrades shipped | 2 deliverables | 2 proposals | 1 new RESOLVED (nina_report company column) | 18 open issues
+>
+>New RESOLVED: nina_report.py replied contacts now show Company — hot leads and replied contacts both have full contact info in every report
+>
+>TODAY (Sat May 23):
+>1. 🔴 Pause Instantly.ai (3 min) — app.instantly.ai — a1c08c3d + 626cd15d
+>2. 📱 Post Saturday FB post from outputs/jasmine/facebook_posts_memorial_day_weekend (9:30am)
+>3. 📞 Text Anthony/Land Pro: 440-320-2779 — referral swap pitch
+>
+>TUESDAY May 26 launch blitz:
+>1. 🏔️ Summit pull — double-click scripts/run_summit_pull.command (5 min)
+>2. 📧 Paste Round 2 VOC emails into Mixmax — outputs/tommy/round2_pm_sequence_voc_rewrite (30 min)
+>3. 📱 Launch Facebook + Google ads (all assets ready — outputs/rick/)
+>4. 💬 Past customer texts (outputs/tommy/)

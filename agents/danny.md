@@ -83,7 +83,7 @@ Danny rotates counties by ISO week number (`week % 6`). Cron runs every Monday 7
 | Week 26  | June 29 | Lorain County |
 | Week 27  | July 6 | Summit County (repeats) |
 
-> 🚨 **TODAY IS SATURDAY MAY 23 — RUN SUMMIT COUNTY THIS WEEKEND.** Week 21 = Summit County (May 25–31 inclusive). May 25 = Memorial Day (Mac likely off). May 26 = **TUESDAY** — first work day back, still ISO Week 21, still targets Summit. Hard deadline: **May 31 (end of week 21).** June 1 (Week 22) rotates to Medina — Summit is gone until July 6 (6-week gap). Run any day May 23–31: `python3 workers/lead_pipeline.py danny Summit`. The cron has not pulled leads since May 12 (12+ days). Ideal: run TODAY or TOMORROW before the holiday.
+> 🚨 **WEEK 21 = SUMMIT COUNTY — DEADLINE MAY 31 (end of week).** May 25 = Memorial Day (Mac likely off). May 26 = **TUESDAY** — first work day back, still ISO Week 21. June 1 (Week 22) rotates to Medina — Summit is gone until July 6 (6-week gap). Run any day May 23–31: `python3 workers/lead_pipeline.py danny Summit`. Or double-click `scripts/run_summit_pull.command` in Finder — no typing required. Cron has not pulled since May 12 (12+ days).
 
 ## Output Format
 

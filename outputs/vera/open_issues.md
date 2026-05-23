@@ -1,10 +1,10 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 64 | 2026-05-23 | Auto-fixes shipped: 4 | New deliverables: 3 | Proposals: 2*
+*Run 65 | 2026-05-23 | Auto-fixes shipped: 4 | New deliverables: 2 | Proposals: 2 | New RESOLVED: 1*
 
 ---
 
-## RESOLVED SUMMARY (76 total — details in git history)
+## RESOLVED SUMMARY (77 total — details in git history)
 
 Key resolved issues by category:
 - **Pipeline routing:** PM-before-realtor check order, gas_station/fleet false positives removed, all 5 PM title variants added (multifamily, CAI, condo, association manager)
@@ -28,6 +28,7 @@ Key resolved issues by category:
 - Run 60 (2026-05-23 Sat): Reply window closes TONIGHT. Fresh angle: may25_sunday_evening_protocol_2026-05-23.md (new) includes Tier 1 LinkedIn connects as tonight priority. If window closes 0 replies, Monday blitz texts are queued. Text at 10am Mon May 26 — highest response rate for trades.
 - Run 61 (2026-05-23 Sat): Reply window still open (ends Sunday May 25). Fresh angle: text scripts corrected in `tuesday_may26_launch_card_2026-05-23.md` — Tier 1 contractor texts are Priority #4 at 8:45am Tuesday. That's 36 hours from now. Window for a Memorial Day weekend text (Saturday afternoon) is also valid — higher open rate than weekday. Try one TODAY: Anthony/Land Pro 440-320-2779.
 - Run 62 (2026-05-23 Sat): Still open — all 5 Tier 1 contractors uncontacted. Reply window closes TOMORROW (Sunday May 25). Fresh angle: the reply window that closes tomorrow is for the Mixmax sequence. But the PERSONAL outreach window (texts to Tier 1) has no deadline — it's just been sitting idle. Text Anthony at 440-320-2779 this afternoon. Memorial Day weekend = trades are doing estimates, phones are on. Script: "Hey Anthony, it's Bradley from Forest City Power Washing. We do exterior cleaning for a lot of landscapers' customers — want to do a quick referral swap? No paperwork. $50 for every job you send our way."
+- Run 65 (2026-05-23 Sat): Tier 1 texts queued for Tuesday May 26 blitz (tuesday_may26_launch_card). Mixmax reply window closes tomorrow. Nothing Vera can do from cloud — this requires Bradley to open his phone. Priority #2 on Tuesday morning.
 - Resolution criteria: Bradley texts Tier 1 list. Confirmed when pipeline_data.json shows "Contacted" stage for these 5.
 
 ---
@@ -72,6 +73,7 @@ Key resolved issues by category:
 - Run 60 (2026-05-23 Sat): Fresh angle — included in tonight's `may25_sunday_evening_protocol_2026-05-23.md` as Step 3a (pause if 0 replies tonight). The protocol makes it automatic: zero replies tonight = pause Instantly tonight, before Monday Round 2 prep begins.
 - Run 61 (2026-05-23 Sat): Slack message includes TONIGHT ALERT with 3-step pause: app.instantly.ai → Campaigns → ⋮ → Pause.
 - Run 62 (2026-05-23 Sat): Round 2 enrollment is June 4 — 12 days away. Pausing today = 12 full days of deliverability recovery before Round 2 sends. Pausing June 3 = 0 days of recovery. Every day of delay costs deliverability. New escalation: Round 2 Enrollment Readiness Checklist (`outputs/donna/round2_enrollment_readiness_checklist_2026-05-23.md`) now includes Instantly pause as the first block — without it, the entire checklist is a NO-GO and Round 2 enrollment cannot proceed.
+- Run 65 (2026-05-23 Sat): 11 days until Round 2 enrollment. Pause now = 11 days recovery. Every day not paused = worse deliverability on June 4. This is the single most impactful action before Tuesday.
 - Resolution criteria: Both campaigns paused in Instantly.ai → confirmed by Bradley.
 
 ---
@@ -125,6 +127,7 @@ Key resolved issues by category:
 - Run 57 (2026-05-23 Sat): TODAY IS SATURDAY MAY 23. Summit County deadline = MAY 31 (end of ISO Week 21).
 - Run 61 (2026-05-23 Sat): Deadline clarified to May 31. Command confirmed working on Mac in 5 minutes.
 - Run 62 (2026-05-23 Sat): FRICTION REDUCTION — added `scripts/run_summit_pull.command` to the repo. Bradley can double-click this file in Finder and it runs the Summit pull in Terminal without typing anything. Reduces the activation energy from "open Terminal, cd, type command" to "double-click file in Finder." Script is at: `scripts/run_summit_pull.command`. This is the lowest-friction path available.
+- Run 65 (2026-05-23 Sat): danny.md urgency note updated to remove stale "TODAY IS SATURDAY MAY 23" — now reads "WEEK 21 = SUMMIT COUNTY — DEADLINE MAY 31" which won't go stale daily. 8 days remain. Double-click shortcut at `scripts/run_summit_pull.command` is the fastest path.
 - Command (manual): `python3 workers/lead_pipeline.py danny Summit` (valid any day May 23–31)
 - Double-click shortcut: `scripts/run_summit_pull.command` (in Finder, shows "run_summit_pull" — just open it)
 - Resolution criteria: logs/activity.log shows Danny Summit pull entry by May 31.
@@ -198,6 +201,10 @@ Key resolved issues by category:
 ## RESOLVED — workiz_report.py dead JOB_TYPE_FILTER constant
 - Resolved: 2026-05-22
 - Fix: Removed unused constant JOB_TYPE_FILTER — JOB_TYPE_VARIANTS is the live filter; dead code removed
+
+## RESOLVED — nina_report.py replied contacts missing company field
+- Resolved: 2026-05-23 (Run 65)
+- Fix: Added company injection to `run_daily()` and `run_weekly()` replied contacts loop; added Company column to REPLIED table in both daily and weekly report markdown output. Hot leads already showed company — replied contacts (the highest-value rows) did not. Bradley can now see immediately which company a reply came from without cross-referencing other files.
 
 ## RESOLVED — vera_relay.py concurrent instance race condition
 - Resolved: 2026-05-22
