@@ -79,6 +79,22 @@ def _load_phone_map() -> dict:
         return {}
 
 
+def _load_company_map() -> dict:
+    """Build email → company_name from contacts cache."""
+    cache_file = BASE_DIR / 'contacts_cache.json'
+    if not cache_file.exists():
+        return {}
+    try:
+        data = json.loads(cache_file.read_text())
+        return {
+            c['email'].lower(): c.get('company_name', '') or c.get('company', '')
+            for c in data.get('contacts', [])
+            if c.get('email') and (c.get('company_name') or c.get('company'))
+        }
+    except Exception:
+        return {}
+
+
 def fetch_recipients(seq_id: str) -> list:
     url = f'https://api.mixmax.com/v1/sequences/{seq_id}/recipients?apiToken={MIXMAX_TOKEN}&limit=200'
     try:
@@ -120,6 +136,7 @@ def main():
     all_hot       = []
     api_ok        = False
     phone_map     = _load_phone_map()
+    company_map   = _load_company_map()
 
     for seq_id, seq_name in SEQUENCES.items():
         recipients = fetch_recipients(seq_id)
@@ -136,23 +153,26 @@ def main():
             opens = (r.get('analytics') or {}).get('events', {}).get('opens', 0)
             name  = r.get('to', {}).get('name', '?')
             email = r.get('to', {}).get('email', '')
-            phone = phone_map.get(email.lower(), '')
+            phone   = phone_map.get(email.lower(), '')
+            company = company_map.get(email.lower(), '')
 
             if total_replies > 0:
-                replied.append({'name': name, 'email': email, 'opens': opens, 'phone': phone})
-                all_replies.append({'name': name, 'email': email, 'seq': seq_name, 'phone': phone})
+                replied.append({'name': name, 'email': email, 'opens': opens, 'phone': phone, 'company': company})
+                all_replies.append({'name': name, 'email': email, 'seq': seq_name, 'phone': phone, 'company': company})
             elif opens >= 2:
-                hot.append({'name': name, 'email': email, 'opens': opens, 'phone': phone})
-                all_hot.append({'name': name, 'email': email, 'seq': seq_name, 'opens': opens, 'phone': phone})
+                hot.append({'name': name, 'email': email, 'opens': opens, 'phone': phone, 'company': company})
+                all_hot.append({'name': name, 'email': email, 'seq': seq_name, 'opens': opens, 'phone': phone, 'company': company})
 
         status = '🔥 REPLIED' if replied else ('⚡ Hot' if hot else '—')
         print(f'  {seq_name}: {len(recipients)} enrolled | {len(replied)} replied | {len(hot)} hot | {status}')
         for r in replied:
             ph_str = f' | 📞 {r["phone"]}' if r.get('phone') else ''
-            print(f'    ✅ REPLY: {r["name"]} ({r["email"]}){ph_str} — {r["opens"]} opens')
+            co_str = f' | {r["company"]}' if r.get('company') else ''
+            print(f'    ✅ REPLY: {r["name"]}{co_str} ({r["email"]}){ph_str} — {r["opens"]} opens')
         for h in hot:
             ph_str = f' | 📞 {h["phone"]}' if h.get('phone') else ''
-            print(f'    ⚡ HOT:   {h["name"]} ({h["email"]}){ph_str} — {h["opens"]} opens, no reply yet')
+            co_str = f' | {h["company"]}' if h.get('company') else ''
+            print(f'    ⚡ HOT:   {h["name"]}{co_str} ({h["email"]}){ph_str} — {h["opens"]} opens, no reply yet')
 
     print('=' * 50)
 
@@ -169,7 +189,7 @@ def main():
             print(f'   → {r["name"]} | {r["email"]}{ph_str} | {r["seq"]}')
 
         reply_lines = '\n'.join(
-            f'>• {r["name"]} — {r["email"]} | 📞 {r["phone"] or "—"} ({r["seq"]})'
+            f'>• {r["name"]} | {r.get("company", "") or "—"} — {r["email"]} | 📞 {r["phone"] or "—"} ({r["seq"]})'
             for r in all_replies
         )
         post_slack(
@@ -185,7 +205,7 @@ def main():
                 print(f'   ⚡ {h["name"]} | {h["email"]} | {h["opens"]} opens | {h["seq"]}')
             # Post hot leads to Slack so Bradley can act on LinkedIn connects + calls
             hot_lines = '\n'.join(
-                f'>• {h["name"]} — {h["opens"]} opens | {h["seq"]} | 📞 {h["phone"] or "—"}'
+                f'>• {h["name"]} | {h.get("company", "") or "—"} — {h["opens"]} opens | {h["seq"]} | 📞 {h["phone"] or "—"}'
                 for h in all_hot[:10]
             )
             post_slack(

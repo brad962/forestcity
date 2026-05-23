@@ -1,101 +1,63 @@
 🔧 *Vera — Auto-Upgrade*
->Changed: workers/vera_relay.py — added _flush_unpushed_commits() before git pull --rebase
->Why: If a push failed mid-relay, next run would rebase a "cleared messages" commit on top of new Vera pushes, silently dropping all Slack messages. Now flushes unpushed commits first.
->File: workers/vera_relay.py
+>Changed: workers/check_replies.py — added company enrichment to hot leads output
+>Why: Hot leads Slack notification showed name + opens + phone but no company. Bradley couldn't tell a PM from a contractor at a glance. Now shows company next to name in both terminal and Slack output.
+>File: workers/check_replies.py
 ---
 🔧 *Vera — Auto-Upgrade*
->Changed: agents/tommy.md — added may26_monday_morning_followup_texts_[date].md to output format list
->Why: File was created in Run 57 but not documented in tommy.md output format.
+>Changed: agents/donna.md — added june1_prep_checklist and june_commercial_calendar to output format list
+>Why: Both files were created (Runs 58-59) but not catalogued in donna.md — output format list was out of sync.
+>File: agents/donna.md
+---
+🔧 *Vera — Auto-Upgrade*
+>Changed: agents/rick.md — made urgency date generic instead of a hard-coded daily date
+>Why: "May 23" was going stale every day, requiring manual updates. Changed to "late May 2026" so the urgency message stays accurate without daily edits.
+>File: agents/rick.md
+---
+🔧 *Vera — Auto-Upgrade*
+>Changed: agents/tommy.md — added may25_sunday_evening_protocol to output format list
+>Why: New deliverable created this run; catalogued in tommy.md for future reference.
 >File: agents/tommy.md
 ---
 🔧 *Vera — Auto-Upgrade*
->Changed: agents/danny.md — updated Summit County urgency note to TODAY (May 23 = 2 days left)
->Why: Urgency note date was stale; refreshed to reflect Saturday May 23 and Sunday May 25 deadline.
+>Changed: agents/danny.md — added gas_station_mixmax_sequence_creation to output format list
+>Why: New deliverable created this run; catalogued in danny.md for future reference.
 >File: agents/danny.md
 ---
-🔧 *Vera — Auto-Upgrade*
->Changed: scripts/crontab_setup.txt — added 2pm check_replies.py scan Mon-Fri
->Why: Reply window is active. Some contacts open emails in the morning and reply mid-afternoon. Double-scan adds 30 seconds of compute for same-day reply detection.
->File: scripts/crontab_setup.txt
----
-🔧 *Vera — Auto-Upgrade*
->Changed: agents/jasmine.md — added linkedin_posts_may26_week_[date].md to output format
->Why: LinkedIn posts for May 26-30 were missing from the output format catalog.
->File: agents/jasmine.md
+📄 *Vera — New Deliverable*
+>File: outputs/danny/gas_station_mixmax_sequence_creation_2026-05-23.md
+>What: Step-by-step Mixmax UI walkthrough to create the Gas Station sequence — includes exact subject lines, email bodies, send timing, and where to copy the sequence ID. After creating: paste ID into integrations/mixmax.py → run `python3 workers/lead_pipeline.py pending` → 18 contacts auto-enroll. Total time: 5 minutes.
+>Why now: 18 district manager contacts have been sitting unenrolled since May 19 (4 days idle). Each DM manages 5-15 locations. One account = recurring multi-site revenue.
 ---
 📄 *Vera — New Deliverable*
->File: outputs/jasmine/linkedin_posts_may26_week_2026-05-23.md
->What: 3 LinkedIn posts for May 26 (Mon), May 28 (Wed), May 30 (Fri) targeting PMs + contractors
->Post 1: HOA board meeting season + budget allocation angle
->Post 2: Before/after commercial ROI hook (warm-up for hot leads who opened email)
->Post 3: Contractor referral partnership pitch
->Each post includes a DM reuse guide — Bradley can paste the post link in LinkedIn DMs as a conversation opener with PM connects.
+>File: outputs/tommy/may25_sunday_evening_protocol_2026-05-23.md
+>What: Sunday evening (tonight) window-close protocol — exactly what to do at 8pm: run check_replies, handle any replies, if 0 replies: pause Instantly.ai (3 min), send LinkedIn connects to hot leads, queue bridge emails for Monday 9am, set alarm for Monday morning 90-min blitz schedule.
+>Why now: The 72-hour reply window closes TONIGHT. This is the pivot moment. Clear action plan prevents wasted time and captured opportunities.
 ---
-📄 *Vera — New Deliverable*
->File: outputs/donna/june_commercial_calendar_2026-05-23.md
->What: 4-week commercial action calendar, May 26 through June 18
->Covers: Summit/Medina pulls (May 26), Round 2 enrollment gate (June 4), ads launch, LinkedIn wave schedule, contractor follow-up waves, revenue math ($10,600-$16,000 potential)
->Every task has an owner, time, and linked resource file. This is the master view for the next 4 weeks.
----
-🚨 *Vera — SUMMIT COUNTY DEADLINE: SUNDAY NIGHT MAY 25*
->TODAY is Saturday May 23. 2 days left. After May 25, Summit rotation doesn't return until July 6 (6-week gap during peak season).
->Command (run from /Users/bradleyneal/forestcity): python3 workers/lead_pipeline.py danny Summit
->5-minute task. Round 2 enrollment (June 4) depends on having Summit leads in the pool.
+🚨 *Vera — REPLY WINDOW CLOSES TONIGHT (Sunday May 25)*
+>Touch 3 fired Thursday May 22. The 72-hour window ends tonight.
+>If 0 replies by tonight → the sequence is spent. Monday pivot is ready.
+>TONIGHT'S 15-min protocol: outputs/tommy/may25_sunday_evening_protocol_2026-05-23.md
+>Step 1: `python3 workers/check_replies.py` — see exact reply count
+>Step 2: If 0 replies → pause Instantly.ai (a1c08c3d + 626cd15d) — 3 min, 2 clicks each
+>Step 3: LinkedIn connects with top 5 hot leads — seen Monday morning
+>Step 4: Queue bridge emails for Monday 9am
 ---
 💡 *Vera — Upgrade Proposal*
->Idea: Yard sign + on-site 3-QR-code referral card
->Why: Bradley visits homes for every job. Neighbors watch. A yard sign ("Just cleaned by Forest City") + a wallet card with 3 QR codes (Google Review / Facebook Follow / Refer a Neighbor text) costs ~$15 to print and captures word-of-mouth at the highest-leverage moment — right after the job looks amazing.
->Impact: Neighbor referrals from direct sightlines. No digital system needed. Tommy writes the card copy, print at FedEx Office.
->Reply YES to approve and Tommy will write the yard sign + referral card copy this week.
+>Idea: Post-job doorstep video testimonial protocol
+>Why: Bradley visits every job site. Right after finishing — when the house looks incredible and the homeowner is delighted — is the single best moment to capture a video testimonial. A 15-second phone video ("I was nervous but look at this") becomes a Facebook Reel, an Instagram post, a Google review prompt, and a social proof ad. The moment costs zero dollars and is the most powerful content format for local services.
+>Impact: 1 video/week = 4-5 reels/month. Authentic before/after content that runs as ads performs 3-5x better than static images. Revenue from social proof compounds over the summer.
+>Execution: Tommy writes the ask script (3 sentences Bradley says at the door). Jasmine writes 3 caption variations for each video. Launch next job.
+>Reply YES to approve and Tommy + Jasmine produce the protocol this week.
 ---
 💡 *Vera — Upgrade Proposal*
->Idea: Referral partner voicemail scripts for Carla's warm contractor contacts
->Why: ~40 contractor/realtor contacts opened Carla's emails but haven't replied. At this stage, one 30-second voicemail outperforms a 4th email. Tommy would write 3 voicemail variants (contractor / realtor / HVAC) + a follow-up text template.
->Impact: Referral network activation before June Booking Blitz. One active referral partner = 2-4 jobs/month minimum.
->Reply YES to approve and Tommy will write the scripts.
+>Idea: CAI Ohio Chapter vendor directory listing
+>Why: The Community Associations Institute (CAI) is the professional association for HOA and property managers — exactly Danny's audience. The Ohio chapter maintains a vendor directory that PMs actively reference when vetting service providers. A listing costs $150-300/year and puts Forest City in front of decision-makers who are ALREADY looking for vendors like us.
+>Impact: Inbound leads from PMs searching the vendor directory. Adds third-party credibility to Danny's cold emails ("we're a CAI-listed vendor"). Compounds over time as the listing generates reviews.
+>Action needed: Bradley joins as a vendor member at caionline.org → Ohio chapter → vendor directory listing.
+>Reply YES to approve and Vera will write the listing copy.
 ---
-✅ *Vera — Scan Complete 2026-05-23*
+✅ *Vera — Scan Complete 2026-05-23 (Run 60)*
 >5 auto-upgrades shipped | 2 deliverables | 2 proposals | 17 open issues (all require Bradley action)
->New RESOLVED this run: vera_relay unpushed-commit flush (prevents silent Slack message loss)
->Top priority TODAY: (1) Summit County pull — python3 workers/lead_pipeline.py danny Summit (2) LinkedIn Post 1 + 5 PM connects (3) Pause Instantly.ai a1c08c3d + 626cd15d — 3 min
->Master calendar for May 26-June 18: outputs/donna/june_commercial_calendar_2026-05-23.md
----
-🔧 *Vera — Auto-Upgrade*
->Changed: agents/danny.md — fixed Week 22 date bug in urgency note
->Why: Note said "May 26 (Week 22) = Medina County" — factually wrong. May 26 is Tuesday of ISO Week 21. Week 22 = June 1. Running on May 26 STILL targets Summit (21 % 6 = 3), which is correct. Corrected to avoid Bradley believing he missed the Medina window when he hasn't.
->File: agents/danny.md
----
-🔧 *Vera — Auto-Upgrade*
->Changed: CLAUDE.md — added check_replies.py to crontab section (was missing)
->Why: crontab_setup.txt had 8:45am + 2pm check_replies entries (added Run 51/58) but CLAUDE.md was never updated — the master doc was out of sync. Fixed so CLAUDE.md matches the actual deployed crontab.
->File: CLAUDE.md
----
-🔧 *Vera — Auto-Upgrade*
->Changed: agents/rick.md — updated stale "May 22" date in LAUNCH NOW warning to "May 23"
->Why: The urgency note referenced May 22 as "today" — stale by 1 day. Keeping it current so it reads as fresh and urgent, not like a notice that was ignored.
->File: agents/rick.md
----
-📄 *Vera — New Deliverable*
->File: outputs/donna/june1_prep_checklist_2026-05-23.md
->What: 15-minute June 1 morning checklist — everything to do on the first day of the June Booking Blitz
->Covers: Medina County pull (Danny + Carla), Summit County catch-up if missed, Nina weekly report, bridge email follow-ups, Instantly.ai pause check, Round 2 enrollment timeline (June 4), ads launch reminder, gas station sequence creation (5-min task), weekly targets
->Why: June 1 is the most important transition day — from Memorial Day mode into the real blitz. Without a checklist it gets scattered. With it, 15 minutes launches the whole month.
----
-💡 *Vera — Upgrade Proposal*
->Idea: Instagram Reels channel — before/after video content
->Why: Instagram Reels with before/after power washing transformations are the #1 organic growth format in home services right now. Competitors in other markets are getting 10k–200k views per video. Forest City has zero Instagram presence. Cost = $0 (Bradley films with phone, Jasmine writes caption and hashtags).
->Impact: Brand awareness with NE Ohio homeowners aged 25-45, inbound DM inquiries, credibility signal for PM/contractor contacts who look you up after receiving email. Jasmine can extend her Facebook content calendar to cover Instagram with minimal extra work.
->Reply YES to approve — Jasmine writes a 30-day Instagram Reels content plan + filming guide this week.
----
-💡 *Vera — Upgrade Proposal*
->Idea: Post-job automated text sequence (3 messages, 0 extra cost until Twilio is live)
->Sequence: (1) Same-day after job: "Thanks [name] — here's your review link" (2) Day 7: "Know anyone who needs their [driveway/siding/roof] done? I'll give you $50 for every job you send our way" (3) Day 30: "Spring cleaning check — ready for another visit this season?"
->Why: Review velocity drives Google ranking. One extra review per job = better "power washing Cleveland" ranking over time. The referral ask on Day 7 catches the peak satisfaction window. Tommy writes all 3 texts today; Bradley sends manually until Twilio is live.
->Impact: Estimated 1-2 extra Google reviews per week during peak season, 0.5-1 referral job/week from past customers. Tommy can write this in 20 minutes if you approve.
->Reply YES to approve — Tommy writes the full 3-text post-job sequence today.
----
-✅ *Vera — Scan Complete 2026-05-23 (Run 59)*
->3 auto-upgrades shipped | 1 deliverable | 2 proposals | 17 open issues (all require Bradley action)
->Key fix this run: danny.md had "May 26 (Week 22) = Medina County" — WRONG. May 26 is Week 21. Running on May 26 still gives Summit leads. June 1 = Week 22 = Medina.
->New deliverable: june1_prep_checklist — 15-min June 1 morning launch sequence
->Top priorities TODAY: (1) Summit County pull — python3 workers/lead_pipeline.py danny Summit (2) Pause Instantly.ai campaigns (3) LinkedIn connects + post
+>New this run: check_replies.py company enrichment; gas station creation guide (5 min to unlock 18 contacts); Sunday evening reply window close protocol
+>TONIGHT: Reply window closes. Run the protocol: outputs/tommy/may25_sunday_evening_protocol_2026-05-23.md
+>MONDAY May 26: Bridge emails 9am → Danny Summit pull 8:15am → Facebook Ads launch 9am → gas station sequence creation 10am

@@ -49,7 +49,7 @@ Short, direct, lead with location:
 - Headline 3: House + Roof + Driveway
 
 ## Ready Assets (May 2026)
-> ⚠️ **LAUNCH THESE NOW — It is peak season (May 23). These assets have been sitting since May 19–20. Every day unspent = lost bookings.**
+> ⚠️ **LAUNCH THESE NOW — It is peak season (late May 2026). These assets have been sitting since May 19–20. Every day unspent = lost bookings. Target launch date: May 26 (Monday after Memorial Day).**
 
 - **Google Ads June 2026:** `outputs/rick/google_ads_june_2026-05-19.md` — 2 campaigns (Power Washing + Roof Soft Wash), all headlines + descriptions + extensions written. Bradley sets these up in Google Ads UI. **Launch target: May 26 (Monday after Memorial Day).**
 - **Facebook Ads Peak Season:** `outputs/rick/facebook_ads_peak_season_2026-05-20.md` — 3-campaign structure (Awareness, Lead Gen, Retargeting), 7 ad variations, before/after creative briefs, setup checklist. Budget: $30/day to start. **Launch target: May 26.**

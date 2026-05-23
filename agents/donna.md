@@ -65,6 +65,8 @@ Save to `/outputs/donna/`:
 - `weekend_lead_gen_checklist_[date].md` — Memorial Day weekend free lead gen: Saturday FB group posts + GBP photo, Sunday past customer texts + Nextdoor setup; bridges to May 26 blitz day
 - `june_week2_sprint_[date].md` — June 9–13 day-by-day sprint: Geauga+Portage pull, Round 2 check, contractor follow-up wave 2, GBP+Google Guaranteed status, weekly pipeline report
 - `sunday_may24_action_card_[date].md` — single-screen Sunday May 24 action card: past customer texts, Nextdoor post, Summit County final call deadline reminder
+- `june1_prep_checklist_[date].md` — 15-minute June 1 morning launch checklist: Medina pull command, Summit catch-up path, Nina weekly, bridge email follow-up, Instantly.ai pause check, Round 2 June 4 timeline, gas station sequence creation, weekly targets
+- `june_commercial_calendar_[date].md` — 4-week commercial action calendar May 26–June 18: every action has owner + time + linked resource; critical path map; revenue math
 
 ## Logging
 `[YYYY-MM-DD HH:MM] Donna | [task description] | [output filename] | Done`

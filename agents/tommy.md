@@ -63,7 +63,8 @@ Save to `/outputs/tommy/`:
 - `email_subject_line_ab_test_[date].md` — 5 A/B subject line pairs for Round 2 PM sequence with Mixmax setup instructions and success metrics.
 - `contractor_followup_texts_[date].md` — May 26 follow-up texts for already-contacted contractors; different angle per trade, timing guide.
 - `may23_morning_call_protocol_[date].md` — Post-Touch 3 phone call protocol: who to call, in what order, what to say, what to track. Runs morning after Touch 3 fires if 0 replies.
-- `may26_monday_morning_followup_texts_[date].md` — May 26 personal text scripts for post-reply-window pivot; 3 PM versions, 2 contractor, 1 realtor; timing guide + response scripts.
+- `may26_monday_morning_followup_texts_[date].md` — May 26 personal text scripts for post-reply-window pivot; 3 PM versions, 2 contractor, 1 realtor; timing guide + response scripts
+- `may25_sunday_evening_protocol_[date].md` — Sunday evening May 25 reply window close protocol: check replies → if 0 replies: pause Instantly, LinkedIn connects, queue bridge emails → Monday alarm schedule.
 
 ## Logging
 `[YYYY-MM-DD HH:MM] Tommy | [task description] | [output filename] | Done`

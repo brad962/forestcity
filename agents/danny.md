@@ -90,6 +90,7 @@ Danny rotates counties by ISO week number (`week % 6`). Cron runs every Monday 7
 Save lead lists to `/outputs/danny/` as:
 - `leads_[location]_[date].md` — full contact list with name, title, company, email, phone
 - `sequence_[campaign-name]_[date].md` — email sequence copy
+- `gas_station_mixmax_sequence_creation_[date].md` — step-by-step Mixmax UI guide to create the Gas Station sequence, paste the ID into mixmax.py, and enroll the 18 waiting contacts via `python3 workers/lead_pipeline.py pending`
 
 ## Logging
 After completing a task, add a line to `/logs/activity.log`:
