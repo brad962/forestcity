@@ -42,6 +42,7 @@ Save to `/outputs/jasmine/`:
 - `facebook_posts_june_week2_4_[date].md` — June weeks 2–4 (June 8–27) full batch
 - `content_calendar_[month]_[date].md` — monthly calendar
 - `linkedin_posts_[date].md`
+- `linkedin_posts_may26_week_[date].md` — LinkedIn posts May 26–30 (commercial audience; post-Touch 3 connect week — Bradley is connecting with PM hot leads, these posts reinforce credibility)
 
 ## Logging
 `[YYYY-MM-DD HH:MM] Jasmine | [task description] | [output filename] | Done`

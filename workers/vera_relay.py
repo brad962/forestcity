@@ -193,10 +193,30 @@ def main():
         _release_lock()
 
 
+def _flush_unpushed_commits():
+    """Push any local commits not yet on remote before pulling.
+    Without this, a failed push of the 'cleared pending_messages' commit means
+    the next rebase applies that empty-file commit on top of new Vera messages,
+    silently discarding them from Slack delivery."""
+    result = git(['log', 'origin/main..HEAD', '--oneline'])
+    unpushed = [l for l in result.stdout.strip().splitlines() if l.strip()]
+    if not unpushed:
+        return
+    print(f'  Flushing {len(unpushed)} unpushed local commit(s) before pull...')
+    push_result = git(['push', 'origin', 'main'])
+    if push_result.returncode == 0:
+        log(f'Flushed {len(unpushed)} unpushed commit(s) before pull')
+    else:
+        print(f'  ⚠️ Flush push failed: {push_result.stderr[:100]} — continuing with pull')
+
+
 def _main_body():
     # Always check staleness (runs even if no new Vera commits)
     _check_danny_staleness()
     _check_carla_staleness()
+
+    # Flush unpushed commits before pulling — prevents cleared-file rebase clobbering new messages
+    _flush_unpushed_commits()
 
     # Pull latest
     git(['fetch', 'origin'])

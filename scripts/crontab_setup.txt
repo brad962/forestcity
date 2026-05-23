@@ -53,3 +53,7 @@
 # check_replies — quick Mixmax reply scan (Mon-Fri 8:45am — posts to Slack if anyone replied)
 # Critical during active sequence windows. 30-second run.
 45 8 * * 1-5 cd /Users/bradleyneal/forestcity && python3 workers/check_replies.py >> logs/cron.log 2>&1
+
+# check_replies afternoon — catches contacts who open in the morning and reply by afternoon (Mon-Fri 2pm)
+# Double-scan is low cost (30 sec) and ensures same-day response during active reply windows.
+0 14 * * 1-5 cd /Users/bradleyneal/forestcity && python3 workers/check_replies.py >> logs/cron.log 2>&1

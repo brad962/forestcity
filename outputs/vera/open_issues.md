@@ -1,6 +1,6 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 57 | 2026-05-23 | Auto-fixes shipped: 5 | New deliverables: 2 | Proposals: 0*
+*Run 58 | 2026-05-23 | Auto-fixes shipped: 5 | New deliverables: 2 | Proposals: 2*
 
 ---
 
@@ -184,7 +184,19 @@ Key resolved issues by category:
 - Resolved: 2026-05-22
 - Fix: Added _acquire_lock()/_release_lock() with LOCK_FILE + 3-minute stale-lock timeout; concurrent 5-min cron instances now exit cleanly instead of colliding on git operations
 
+## RESOLVED — vera_relay.py Slack message loss when push fails mid-relay
+- Resolved: 2026-05-23
+- Fix: Added _flush_unpushed_commits() called at start of _main_body() before git pull --rebase; if a prior push failed leaving a "cleared pending_messages" commit unpushed, it gets pushed first; prevents rebase from applying the empty-file commit on top of new Vera messages and silently discarding them
+
 ---
+
+## RUN METRICS — Run 58 | 2026-05-23
+- Total RESOLVED: 73 (1 new: vera_relay unpushed-commit flush — prevents Slack message loss when push fails mid-relay)
+- Total OPEN: 17 (0 new closed — all require Bradley action; 0 new opened)
+- Auto-upgrades shipped: 5 (vera_relay.py unpushed commit flush; tommy.md missing output entry; danny.md Summit urgency date to May 23; crontab 2pm check_replies scan; jasmine.md linkedin_posts_may26_week format entry)
+- Deliverables written: 2 (linkedin_posts_may26_week_2026-05-23.md — fills May 26-30 LinkedIn gap for PM connect week; june_commercial_calendar_2026-05-23.md — 4-week commercial action calendar May 26–June 18)
+- Proposals: 2 (yard sign + on-site referral card protocol; referral partner voicemail scripts for warm contractor follow-up)
+- Highest priority actions TODAY: (1) Summit County pull — `python3 workers/lead_pipeline.py danny Summit` — DEADLINE SUNDAY NIGHT (2) Post LinkedIn Post 1 (HOA board meeting angle) + 5 PM connect requests (3) Pause Instantly.ai campaigns a1c08c3d + 626cd15d — 3 min fix
 
 ## RUN METRICS — Run 57 | 2026-05-23
 - Total RESOLVED: 72 (5 new: CONTRACTOR_TITLES duplicates removed, tree service/arborist added to routing + Carla search, PM title variants site manager/community director/building ops mgr/property administrator added, check_replies.py hot leads Slack shows phone)
