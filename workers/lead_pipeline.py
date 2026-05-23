@@ -94,6 +94,11 @@ DANNY_TITLES = [
     # Commercial/retail property segment — office buildings, shopping centers (added 2026-05-22 run 56)
     'leasing director',    # large multifamily/office leasing director — distinct from leasing manager
     'center manager',      # shopping center manager — common title at retail property groups
+    # Additional PM title variants covering residential communities + commercial buildings (added 2026-05-23)
+    'site manager',              # residential community site manager
+    'community director',        # HOA community director (distinct from community manager)
+    'building operations manager', # commercial PM ops title at office/industrial properties
+    'property administrator',    # administrative PM role — often signs vendor contracts
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -121,7 +126,8 @@ CARLA_SEARCHES = [
                   'landscaping', 'lawn care', 'window washing', 'window cleaning',
                   'chimney', 'concrete', 'deck builder', 'deck contractor',
                   'asphalt sealing', 'driveway sealing',
-                  'irrigation', 'sprinkler system', 'lawn irrigation'],
+                  'irrigation', 'sprinkler system', 'lawn irrigation',
+                  'tree service', 'tree care', 'arborist'],
      'label': 'Contractors'},
     # Home-services companies that visit properties weekly — high-value referral sources
     {'type': 'contractors', 'titles': ['owner', 'president', 'founder', 'operator'],

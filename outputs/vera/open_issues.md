@@ -1,6 +1,6 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 56 | 2026-05-22 | Auto-fixes shipped: 7 | New deliverables: 2 | Proposals: 1*
+*Run 57 | 2026-05-23 | Auto-fixes shipped: 5 | New deliverables: 2 | Proposals: 0*
 
 ---
 
@@ -22,7 +22,8 @@ Key resolved issues by category:
 - First seen: 2026-05-18
 - Description: 33 contacts in New Lead stage. 0 last_contact dates. Tier 1 contractors need personal text.
 - Tier 1: Anthony/Land Pro (440-320-2779), Dontez/GTP (440-396-0814), Chris/Twin Improvements (216-773-0757), Venus/Reliable Roofing (216-810-2497), Logan/Pagels (216-956-5263)
-- Run 54: Touch 3 fired today (May 22). 72-hour reply window LIVE. Weekend checklist written: `outputs/donna/weekend_lead_gen_checklist_2026-05-22.md` — Tier 1 contractor texts are in Saturday morning tasks. May 26 is blitz day.
+- Run 54: Touch 3 fired May 22. Weekend checklist written.
+- Run 57 (2026-05-23 Sat): Day 2 of 72-hour reply window. Sunday May 24 action card written with Tier 1 texts as Priority 2 task. Fresh angle: Sunday texts + Monday May 26 blitz follow-up texts (`outputs/tommy/may26_monday_morning_followup_texts.md` NEW). Resolution window = by May 26.
 - Resolution criteria: Bradley texts Tier 1 list. Confirmed when pipeline_data.json shows "Contacted" stage for these 5.
 
 ---
@@ -62,7 +63,8 @@ Key resolved issues by category:
 ## OPEN — Instantly.ai vs Mixmax Overlap (0% reply rate root cause) 🔴
 - First seen: 2026-05-18
 - Description: Two active Instantly.ai campaigns (a1c08c3d = PM Cuyahoga, 626cd15d = Contractor Referral) run against the same contacts as Mixmax sequences → duplicate emails → spam filtering → 0 replies.
-- Run 55: Touch 3 window is live (72 hours through May 25). Fresh angle: nina_report.py daily run now shows an explicit 0-reply/Instantly.ai overlap warning when the API is live, 0 replies, and 10+ contacts enrolled — Bradley sees it EVERY DAY in the daily report until resolved. Evening debrief also highlights this as Priority 1 action tonight.
+- Run 55: nina_report.py daily run now shows explicit 0-reply/Instantly overlap warning.
+- Run 57 (2026-05-23 Sat): Still unresolved. This is day 2 of 72-hour window. If 0 replies by May 25, Instantly.ai overlap is likely root cause. MUST pause before Round 2 enrollment June 4. Pause guide: `outputs/vera/instantly_pause_guide_2026-05-22.md`. This is a 3-minute fix — needs Bradley to open Instantly.ai dashboard.
 - Resolution criteria: Both campaigns paused in Instantly.ai → confirmed by Bradley.
 
 ---
@@ -107,12 +109,13 @@ Key resolved issues by category:
 
 ---
 
-## OPEN — Danny PM cron not running (10 days overdue) 🔴 CRITICAL
+## OPEN — Danny PM cron not running (11 days overdue) 🔴 CRITICAL — SUMMIT DEADLINE TONIGHT
 - First seen: 2026-05-20 (run 28)
 - Description: Last successful pull: May 12. Apollo blocked in cloud. Cron not set up on Bradley's Mac.
-- Run 56: NEW CRITICAL ANGLE — Summit County window closes TODAY/WEEKEND. May 22-25 = Week 21 = Summit. May 26 = Week 22 = Medina. If no manual run before Sunday May 25 night, Summit County is gone until July 6 (6 weeks). Added `--county Summit` override to lead_pipeline.py so Bradley can always force Summit: `python3 workers/lead_pipeline.py danny Summit`. Updated agents/danny.md with explicit deadline.
-- Resolution criteria: logs/cron.log or activity.log shows Danny pull entry by May 26. Summit County pull = run before May 26. Medina County pull = May 26 cron or manual.
-- Command to force Summit (works any day): `python3 workers/lead_pipeline.py danny Summit`
+- Run 56: Added `--county Summit` override CLI flag. Updated danny.md with May 25 deadline.
+- Run 57 (2026-05-23 Sat): **TODAY IS SATURDAY MAY 23. Summit County deadline = SUNDAY NIGHT MAY 25.** 11 days since last pull. Sunday action card includes Summit pull as Priority 6 (TONIGHT). Fresh angle: this is the last possible window before 6-week gap. Command is simple: 5 minutes.
+- Command to force Summit (run TODAY or TOMORROW): `python3 workers/lead_pipeline.py danny Summit`
+- Resolution criteria: logs/cron.log or activity.log shows Danny summit pull entry by May 26.
 
 ---
 
@@ -182,6 +185,14 @@ Key resolved issues by category:
 - Fix: Added _acquire_lock()/_release_lock() with LOCK_FILE + 3-minute stale-lock timeout; concurrent 5-min cron instances now exit cleanly instead of colliding on git operations
 
 ---
+
+## RUN METRICS — Run 57 | 2026-05-23
+- Total RESOLVED: 72 (5 new: CONTRACTOR_TITLES duplicates removed, tree service/arborist added to routing + Carla search, PM title variants site manager/community director/building ops mgr/property administrator added, check_replies.py hot leads Slack shows phone)
+- Total OPEN: 17 (0 new closed — all require Bradley action; 0 new opened)
+- Auto-upgrades shipped: 5 (mixmax.py CONTRACTOR_TITLES cleanup+tree service; lead_pipeline.py tree service in Carla search; lead_pipeline.py + mixmax.py 4 new PM titles; check_replies.py hot leads phone in Slack; donna.md output format entries)
+- Deliverables written: 2 (sunday_may24_action_card.md, may26_monday_morning_followup_texts.md)
+- Proposals: 0
+- Highest priority action (TONIGHT): (1) Run `python3 workers/lead_pipeline.py danny Summit` — SUMMIT DEADLINE IS TONIGHT (2) Pause Instantly.ai campaigns a1c08c3d + 626cd15d — 3 min (3) LinkedIn connects with 2+ open leads NOW — Friday evening seen Monday morning
 
 ## RUN METRICS — Run 56 | 2026-05-22
 - Total RESOLVED: 67 (5 new this run: irrigation/sprinkler routing gap, commercial segment title gap, nina_report replied phone, check_replies phone, danny county override)

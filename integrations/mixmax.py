@@ -85,6 +85,11 @@ PROPERTY_MANAGER_TITLES = [
     # Commercial/retail segment — leasing director and center manager are common at office/retail properties (added 2026-05-22)
     'leasing director',
     'center manager',
+    # Additional PM title variants covering residential communities + commercial buildings (added 2026-05-23)
+    'site manager',              # residential community site manager (common at large apartment/condo complexes)
+    'community director',        # HOA community director (distinct from community manager)
+    'building operations manager', # commercial PM ops title at office/industrial properties
+    'property administrator',    # administrative PM role — often signs vendor contracts
 ]
 
 REALTOR_TITLES = [
@@ -102,10 +107,14 @@ CONTRACTOR_TITLES = [
     'chimney', 'hvac', 'heating', 'cooling', 'air condition', 'pool service',
     'pool clean', 'pest control', 'exterminator', 'junk removal', 'home clean',
     'maid', 'moving company', 'mover',
-    # Deck and driveway trades — customer often books power washing same visit (added 2026-05-20)
-    'deck builder', 'deck contractor', 'asphalt seal', 'driveway seal', 'concrete seal',
+    # Deck and driveway trades — 'deck build' already matches 'deck builder' via substring;
+    # 'driveway seal' already above; removed duplicates (added 2026-05-20, cleaned 2026-05-23)
+    'asphalt seal', 'concrete seal',
     # Irrigation/sprinkler companies — in customers' yards constantly, high referral value (added 2026-05-22)
     'irrigation', 'sprinkler',
+    # Tree service / arborists — visit properties constantly, see dirty roofs/siding; natural referral partner
+    # NOTE: also in FLEET_KEYWORDS, but CONTRACTOR_TITLES is checked first — correct routing for Carla
+    'tree service', 'tree care', 'arborist',
 ]
 
 

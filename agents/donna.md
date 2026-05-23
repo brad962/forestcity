@@ -62,6 +62,9 @@ Save to `/outputs/donna/`:
 - `round2_enrollment_plan_[date].md` — June 4 Round 2 enrollment plan: county rotation, send time, gas station parallel track, enrollment checklist
 - `may25_round2_decision_gate_[date].md` — 4-scenario decision table (0/1-2/3-5/6+ replies) with exact action steps per scenario
 - `free_lead_harvest_protocol_[date].md` — zero-spend residential lead gen covering Facebook Groups (5 specific NE Ohio groups), Nextdoor setup, GBP photos, and past customer referral texts; execution schedule May 22–26 with 100-min total time commitment
+- `weekend_lead_gen_checklist_[date].md` — Memorial Day weekend free lead gen: Saturday FB group posts + GBP photo, Sunday past customer texts + Nextdoor setup; bridges to May 26 blitz day
+- `june_week2_sprint_[date].md` — June 9–13 day-by-day sprint: Geauga+Portage pull, Round 2 check, contractor follow-up wave 2, GBP+Google Guaranteed status, weekly pipeline report
+- `sunday_may24_action_card_[date].md` — single-screen Sunday May 24 action card: past customer texts, Nextdoor post, Summit County final call deadline reminder
 
 ## Logging
 `[YYYY-MM-DD HH:MM] Donna | [task description] | [output filename] | Done`

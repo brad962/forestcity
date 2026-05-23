@@ -185,7 +185,7 @@ def main():
                 print(f'   ⚡ {h["name"]} | {h["email"]} | {h["opens"]} opens | {h["seq"]}')
             # Post hot leads to Slack so Bradley can act on LinkedIn connects + calls
             hot_lines = '\n'.join(
-                f'>• {h["name"]} — {h["opens"]} opens | {h["seq"]}'
+                f'>• {h["name"]} — {h["opens"]} opens | {h["seq"]} | 📞 {h["phone"] or "—"}'
                 for h in all_hot[:10]
             )
             post_slack(

@@ -67,3 +67,55 @@ Or force any county at any time (new flag added this run):
 >Key fixes: irrigation/sprinkler routing, commercial PM segment (leasing director, center manager, shopping centers), replied contacts now show phone number, Danny county override CLI flag
 >🚨 Summit County window CLOSES SUNDAY: `python3 workers/lead_pipeline.py danny Summit`
 >May 26 playbook: bridge emails to top 5 hot leads + ads launch + Medina County pull
+---
+🔧 *Vera — Auto-Upgrade (Run 57)*
+>Changed: integrations/mixmax.py CONTRACTOR_TITLES — removed 2 duplicate keywords ('deck contractor' + 'driveway seal' appeared twice each); added 'tree service', 'tree care', 'arborist' as new routing keywords
+>Why: Duplicates were harmless but sloppy. Tree service/arborists are high-value referral partners (visit properties constantly, see dirty roofs) and were missing entirely — they were routing to fleet_washing sequence instead of contractor
+>File: integrations/mixmax.py
+---
+🔧 *Vera — Auto-Upgrade (Run 57)*
+>Changed: integrations/mixmax.py PROPERTY_MANAGER_TITLES + workers/lead_pipeline.py DANNY_TITLES — added 4 new PM title variants: 'site manager', 'community director', 'building operations manager', 'property administrator'
+>Why: Residential community site managers, HOA community directors, commercial building ops managers, and PM administrators were all missing — they sign vendor contracts but weren't being detected
+>File: integrations/mixmax.py, workers/lead_pipeline.py
+---
+🔧 *Vera — Auto-Upgrade (Run 57)*
+>Changed: workers/lead_pipeline.py CARLA_SEARCHES — added 'tree service', 'tree care', 'arborist' to contractor search keywords
+>Why: Arborists + tree services visit properties every season and see dirty roofs/siding constantly — natural referral partners, completely missing from Apollo search
+>File: workers/lead_pipeline.py
+---
+🔧 *Vera — Auto-Upgrade (Run 57)*
+>Changed: workers/check_replies.py — added phone number to hot leads Slack notification format
+>Why: When check_replies.py posts hot leads to Slack, the phone was missing from the message — Bradley had to look it up separately. Now shows: Name — X opens | Sequence | 📞 phone
+>File: workers/check_replies.py
+---
+🔧 *Vera — Auto-Upgrade (Run 57)*
+>Changed: agents/donna.md — added 3 missing output format entries (weekend_lead_gen_checklist, june_week2_sprint, sunday_may24_action_card)
+>Why: Files existed in outputs/donna/ but weren't documented in donna.md output format list — makes it harder for Donna to know what she's produced
+>File: agents/donna.md
+---
+📋 *Vera — Deliverable (Run 57)*
+>File: outputs/vera/sunday_may24_action_card.md
+>What: Single-screen Sunday May 24 action card — 6 priorities with scripts, timing, and tracking table
+>Key items: check Mixmax replies first, 5 past customer texts, Nextdoor post, GBP photo, LinkedIn connects, SUMMIT COUNTY PULL TONIGHT
+---
+📋 *Vera — Deliverable (Run 57)*
+>File: outputs/tommy/may26_monday_morning_followup_texts.md
+>What: Personal text scripts for Monday May 26 — one-at-a-time texts to top 5-8 hot leads after 72-hour reply window closes
+>Includes: 3 PM versions, 2 contractor versions, 1 realtor version, timing guide, response scripts, DO NOT rules
+---
+🚨 *Vera — SUMMIT COUNTY DEADLINE: TONIGHT*
+>Summit County window = Week 21 = closes SUNDAY NIGHT MAY 25.
+>May 26 = Week 22 = Medina County. No way back to Summit until July 6.
+>ONE COMMAND — runs in 5 minutes:
+>`python3 workers/lead_pipeline.py danny Summit`
+>This is 11 days of missed leads. Run it tonight.
+---
+🚨 *Vera — REPLY WINDOW: Day 2 of 3*
+>Touch 3 fired Thursday May 22. Window closes Monday May 25.
+>TODAY: Run check_replies.py to see if anyone opened over the weekend.
+>If 0 replies by May 25 → Monday May 26 pivot: bridge emails + personal texts (file: outputs/tommy/may26_monday_morning_followup_texts.md)
+>Instantly.ai campaigns a1c08c3d + 626cd15d still need to be PAUSED before Round 2. 3-minute fix.
+---
+✅ *Vera — Scan Complete 2026-05-23 (Run 57)*
+>5 auto-upgrades shipped | 2 deliverables | 0 new proposals | 17 open issues (0 closed this run)
+>Key actions needed TODAY: (1) Danny Summit pull TONIGHT (2) Pause Instantly.ai (3) LinkedIn connects with hot leads
