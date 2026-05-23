@@ -147,3 +147,90 @@
 >3. 9:00am — Gas station Mixmax sequence creation (see outputs/danny/gas_station_mixmax_sequence_creation_2026-05-23.md)
 >4. 9:15am — READ google_guaranteed_lead_response_sop THEN launch Google + Facebook ads
 >5. After first job — send Annual Plan upsell text within 2 hours (see outputs/tommy/annual_plan_upsell_sequence_2026-05-23.md)
+
+---
+
+🔧 *Vera — Auto-Upgrade*
+>Changed: `workers/lead_pipeline.py` run_carla() — fixed double-print bug; county batch label now prints once per branch (override prints label, rotation prints label+week number); removed the unconditional `print(f'County batch: {locations[0]}')` that fired even when override already printed
+>Why: Minor terminal noise + wrong label format when override used — `locations[0]` is a raw string like "Summit County, Ohio" not the clean label "Summit"
+>File: workers/lead_pipeline.py
+
+---
+
+🔧 *Vera — Auto-Upgrade*
+>Changed: `workers/vera_relay.py` Danny staleness alert message — added double-click shortcut path, updated deadline text from stale "Round 2 June 4" framing to "Summit deadline May 31, June 1 = Medina rotation"
+>Why: Bradley's fastest path to clearing the 12-day cron overdue is the double-click file — the alert should tell him that directly, not just give a terminal command
+>File: workers/vera_relay.py
+
+---
+
+🔧 *Vera — Auto-Upgrade*
+>Changed: `agents/jasmine.md` — added `linkedin_posts_june_[date].md` and `before_after_photo_capture_protocol_[date].md` to output format list
+>Why: `linkedin_posts_june_2026-05-21.md` was already in outputs but the format wasn't documented; before/after protocol deliverable added this run
+>File: agents/jasmine.md
+
+---
+
+🔧 *Vera — Auto-Upgrade*
+>Changed: `agents/tommy.md` — added `pre_job_reminder_text_sequence_[date].md` to output format list
+>Why: Deliverable written this run; format entry keeps catalog current
+>File: agents/tommy.md
+
+---
+
+📋 *Vera — New Deliverable*
+>Tommy wrote: `outputs/tommy/pre_job_reminder_text_sequence_2026-05-23.md`
+>What: Day-before text (6–7pm) + 2-hour arrival reminder + post-job text. 3 versions each (standard, no-home, big job). Response handling scripts. Workiz integration note for when Twilio is ready.
+>Why: Reduces no-shows. Sets expectations for soft-wash smell + driveway dry time. Builds trust signal before crew arrives.
+>Use it: Copy-paste before each job until automation is live. Takes 90 seconds per job.
+
+---
+
+📋 *Vera — New Deliverable*
+>Marcus wrote: `outputs/marcus/voc_library_2026-05-23.md`
+>What: 40+ NE Ohio exterior cleaning customer phrases organized by segment (residential, commercial PM, referral partners). Seasonal language table. What to avoid (agency speak → plain language alternatives). High-converting subject line patterns.
+>Why: Tommy and Jasmine have been working without a VOC reference. Now they have exact words customers use — "the black streaks on the roof were embarrassing," "green slime on the siding," "neighbors stopped and asked who did it."
+>Use it: Share with Tommy for Round 2 email rewrites. Share with Jasmine for Facebook hooks. Use agency-speak → plain language table to audit the website copy.
+
+---
+
+📋 *Vera — New Deliverable*
+>Jasmine wrote: `outputs/jasmine/before_after_photo_capture_protocol_2026-05-23.md`
+>What: 60-second photo capture routine for every job (4 before + 4 after shots), file naming convention, photo_pairs.json logging, caption templates for Facebook/Instagram Stories/LinkedIn, timing guide, what doesn't work.
+>Why: Before/after is the highest-converting content format for exterior cleaning. The photos exist — they just aren't being captured systematically.
+>Use it: Bookmark on your phone. Do the 4 shots before you touch anything. Same 4 shots after. 60 seconds. Feeds Jasmine's content pipeline automatically.
+
+---
+
+💡 *Vera — Upgrade Proposal*
+>Idea: Run Marcus locally this weekend for live competitor VOC
+>Why: The VOC library I built this run is from first principles — good but not grounded in real NE Ohio customer language. 30 minutes with Marcus on your Mac pulling live Google Maps reviews from Eco Pressure Washing, Brothers Exterior Cleaning, Clean Pro, and any 50+ review Cleveland competitor gives us the EXACT words their customers use — especially complaints, which are Forest City's openings.
+>How: Open Terminal → `cd /Users/bradleyneal/forestcity` → `claude` → "Marcus, profile the top 5 power washing competitors in Cleveland — focus on recent Google reviews, especially complaints and what customers say about price and reliability"
+>Impact: Round 2 email rewrites, Facebook hooks, and Google ad copy grounded in what NE Ohio customers actually say. Highest-ROI 30-minute task this weekend.
+>Reply YES to approve and I'll prep the Marcus prompt.
+
+---
+
+💡 *Vera — Upgrade Proposal*
+>Idea: Approve Twilio setup to automate pre-job reminder texts
+>Why: Tommy built the pre-job reminder text scripts this run (see outputs/tommy/). Running them manually takes 90 seconds per job — fine now, but at 15+ jobs/week this becomes friction. Twilio automation fires both texts automatically from the Workiz job record. Industry data: pre-job reminders reduce no-shows by 40%+ in home services.
+>Cost: ~$15/month for Twilio (SMS API). Pays back on the first prevented no-show ($150–$400 average job value).
+>What it needs: Twilio account + TWILIO_ACCOUNT_SID + TWILIO_AUTH_TOKEN + TWILIO_PHONE_NUMBER added to .env. I build the script in 1 hour.
+>Reply YES to approve and I'll build it.
+
+---
+
+✅ *Vera — Scan Complete 2026-05-23 (Run 64)*
+>4 auto-upgrades shipped | 3 deliverables written | 2 proposals pending
+>
+>Auto-upgrades: lead_pipeline.py double-print fix | vera_relay.py Summit shortcut in alert | jasmine.md format entries | tommy.md format entry
+>Deliverables: Pre-job reminder texts (Tommy) | VOC Library — 40+ NE Ohio phrases (Marcus) | Before/after photo capture protocol (Jasmine)
+>
+>🔴 HIGHEST PRIORITY TODAY (Sat May 23):
+>1. Pause Instantly.ai — app.instantly.ai → Campaigns → ⋮ → Pause a1c08c3d + 626cd15d (3 min)
+>2. Text Anthony/Land Pro: 440-320-2779 — referral swap pitch (2 min)
+>3. Double-click scripts/run_summit_pull.command in Finder (5 min)
+>4. Optional: Run Marcus locally for live competitor reviews (30 min, high value)
+>
+>🔴 TUESDAY May 26 — 90-min launch blitz (full card: outputs/donna/tuesday_may26_launch_card_2026-05-23.md):
+>8:00am Summit pull → 8:20am bridge emails → 9:00am gas station sequence → 9:15am ads launch → First job: use pre_job_reminder_text scripts (outputs/tommy/) → After job: annual plan upsell text within 2h

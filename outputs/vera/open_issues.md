@@ -1,6 +1,6 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 63 | 2026-05-23 | Auto-fixes shipped: 3 | New deliverables: 2 | Proposals: 2*
+*Run 64 | 2026-05-23 | Auto-fixes shipped: 4 | New deliverables: 3 | Proposals: 2*
 
 ---
 
@@ -261,6 +261,15 @@ Key resolved issues by category:
 - Auto-upgrades shipped: 4 (lead_pipeline DANNY_TITLES managing_partner+principal, vera_relay Carla staleness check, new check_replies.py worker, crontab check_replies entry)
 - Deliverables written: 2 (reply_window_tracker_2026-05-22.md, this open_issues update)
 - Highest priority action: (1) Pause Instantly.ai TONIGHT — 3 min, (2) Run check_replies.py tomorrow 9am, (3) Danny manual pull `python3 workers/lead_pipeline.py both`
+
+## RUN METRICS — Run 64 | 2026-05-23
+- Total RESOLVED: 76 (0 new this run — all open issues require Bradley action)
+- Total OPEN: 18 (0 new closed, 0 new opened)
+- Auto-upgrades shipped: 4 (lead_pipeline.py run_carla() double-print bug fixed — removed unconditional county-batch print, each branch now prints its own label; vera_relay.py Danny staleness message updated with double-click shortcut + May 31 deadline; agents/jasmine.md 2 new output format entries; agents/tommy.md pre_job_reminder format entry)
+- Deliverables written: 3 (pre_job_reminder_text_sequence_2026-05-23.md — day-before + 2h-before + post-job texts, response handling, Workiz integration note; voc_library_2026-05-23.md — Marcus VOC framework from first principles: 40+ phrases, residential/commercial/referral tables, seasonal NE Ohio language, what to avoid; before_after_photo_capture_protocol_2026-05-23.md — Jasmine capture guide with shot types, file naming, photo_pairs.json integration, caption templates, Instagram Stories, LinkedIn version)
+- Proposals: 2 (Run Marcus locally for live competitor VOC from Google Maps reviews — run `claude` CLI on Mac, ask Marcus to profile top 5 Cleveland competitors; Approve Twilio setup to automate pre-job reminder texts — $15/mo cost, reduces no-shows 40%+, pays back on first prevented no-show)
+- Highest priority TODAY (Sat May 23): (1) Pause Instantly.ai NOW — app.instantly.ai → Campaigns → ⋮ → Pause a1c08c3d + 626cd15d (2) Text Anthony/Land Pro 440-320-2779 — script in open_issues.md (3) Double-click scripts/run_summit_pull.command in Finder — 5 min, no typing required
+- Highest priority TUESDAY May 26: 8:00am Summit pull → 8:20am bridge emails → 9:00am gas station sequence → 9:15am ads launch → Read google_guaranteed_lead_response_sop BEFORE first ad lead comes in
 
 ## RUN METRICS — Run 63 | 2026-05-23
 - Total RESOLVED: 76 (0 new this run — all open issues require Bradley action)

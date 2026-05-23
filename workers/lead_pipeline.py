@@ -466,9 +466,10 @@ def run_carla(county_override=None):
             print(f'  ⚠️ County "{county_override}" not found. Valid values: {valid}')
             print(f'  Falling back to rotation.')
             locations = CARLA_COUNTY_ROTATION[week_num % len(CARLA_COUNTY_ROTATION)]
+            print(f'  County batch: {CARLA_COUNTY_LABELS[week_num % len(CARLA_COUNTY_LABELS)]} (week {week_num} rotation)')
     else:
         locations = CARLA_COUNTY_ROTATION[week_num % len(CARLA_COUNTY_ROTATION)]
-    print(f'  County batch: {locations[0]}')
+        print(f'  County batch: {CARLA_COUNTY_LABELS[week_num % len(CARLA_COUNTY_LABELS)]} (week {week_num} rotation)')
 
     all_new = []
     all_people_count = 0

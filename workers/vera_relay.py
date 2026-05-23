@@ -98,8 +98,9 @@ def _check_danny_staleness():
     msg = (
         f'🔴 *Danny Cron Alert — {days_stale} days since last lead pull*\n'
         f'>Last pull: {label}\n'
-        f'>Run NOW: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py danny`\n'
-        f'>Round 2 enrollment June 4 — needs Summit + Medina leads before June 2.'
+        f'>Quick path: Double-click `scripts/run_summit_pull.command` in Finder (no typing needed)\n'
+        f'>Or: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py danny Summit`\n'
+        f'>Summit deadline: May 31. June 1 rotates to Medina. Round 2 enrollment June 4.'
     )
     if post_slack(msg):
         alert_sentinel.parent.mkdir(exist_ok=True)
