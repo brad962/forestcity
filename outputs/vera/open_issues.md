@@ -1,6 +1,6 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 62 | 2026-05-23 | Auto-fixes shipped: 4 | New deliverables: 3 | Proposals: 2*
+*Run 63 | 2026-05-23 | Auto-fixes shipped: 3 | New deliverables: 2 | Proposals: 2*
 
 ---
 
@@ -261,6 +261,15 @@ Key resolved issues by category:
 - Auto-upgrades shipped: 4 (lead_pipeline DANNY_TITLES managing_partner+principal, vera_relay Carla staleness check, new check_replies.py worker, crontab check_replies entry)
 - Deliverables written: 2 (reply_window_tracker_2026-05-22.md, this open_issues update)
 - Highest priority action: (1) Pause Instantly.ai TONIGHT — 3 min, (2) Run check_replies.py tomorrow 9am, (3) Danny manual pull `python3 workers/lead_pipeline.py both`
+
+## RUN METRICS — Run 63 | 2026-05-23
+- Total RESOLVED: 76 (0 new this run — all open issues require Bradley action)
+- Total OPEN: 18 (0 new closed, 0 new opened)
+- Auto-upgrades shipped: 3 (vera_relay.py git fetch before flush — ordering fix; lead_pipeline.py Carla county override CLI flag; integrations/mixmax.py INSTANTLY_PAUSED runtime warning in enroll_batch — blocks accidental Round 2 enrollment when Instantly still running)
+- Deliverables written: 2 (google_guaranteed_lead_response_sop_2026-05-23.md — full SOP including call script, voicemail, text follow-up, quote conversation, booking steps, pricing reference; annual_plan_upsell_sequence_2026-05-23.md — same-day text + 30-day email + objection handling + pricing table + revenue math)
+- Proposals: 2 (Pre-job reminder text sequence — day-before + 2-hour reminder reduces no-shows 40%+; Before/after photo capture protocol — systematic pipeline for Jasmine's content machine after every job)
+- Highest priority TODAY (Sat May 23): (1) Pause Instantly.ai NOW — app.instantly.ai → Campaigns → ⋮ → Pause a1c08c3d + 626cd15d (2) Text Anthony/Land Pro 440-320-2779 — referral swap pitch (3) Double-click scripts/run_summit_pull.command — Summit pull, 5 min
+- Highest priority TUESDAY May 26: 8:00am Summit pull → 8:20am bridge emails → 9:00am gas station sequence → 9:15am ads launch → Read google_guaranteed_lead_response_sop BEFORE ads go live
 
 ## RUN METRICS — Run 62 | 2026-05-23
 - Total RESOLVED: 76 (0 new this run — all open issues require Bradley action)

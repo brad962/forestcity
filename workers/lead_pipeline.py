@@ -158,6 +158,7 @@ CARLA_COUNTY_ROTATION = [
     ['Medina County, Ohio', 'Medina, Ohio', 'Brunswick, Ohio'],
     ['Geauga County, Ohio', 'Portage County, Ohio'],
 ]
+CARLA_COUNTY_LABELS = ['Cuyahoga', 'Lake', 'Lorain', 'Summit', 'Medina', 'Geauga+Portage']
 
 
 def log(worker, task, output_file, status='Done'):
@@ -447,12 +448,26 @@ def run_danny(county_override=None):
     return new_leads
 
 
-def run_carla():
+def run_carla(county_override=None):
     print('\n🟣 Carla — Referral Partner Lead Pull')
     existing = load_existing_emails()
 
-    week_num  = datetime.now().isocalendar()[1]
-    locations = CARLA_COUNTY_ROTATION[week_num % len(CARLA_COUNTY_ROTATION)]
+    week_num = datetime.now().isocalendar()[1]
+    if county_override:
+        idx = next(
+            (i for i, label in enumerate(CARLA_COUNTY_LABELS) if county_override.lower() in label.lower()),
+            None
+        )
+        if idx is not None:
+            locations = CARLA_COUNTY_ROTATION[idx]
+            print(f'  County batch: {CARLA_COUNTY_LABELS[idx]} [MANUAL OVERRIDE]')
+        else:
+            valid = ', '.join(CARLA_COUNTY_LABELS)
+            print(f'  ⚠️ County "{county_override}" not found. Valid values: {valid}')
+            print(f'  Falling back to rotation.')
+            locations = CARLA_COUNTY_ROTATION[week_num % len(CARLA_COUNTY_ROTATION)]
+    else:
+        locations = CARLA_COUNTY_ROTATION[week_num % len(CARLA_COUNTY_ROTATION)]
     print(f'  County batch: {locations[0]}')
 
     all_new = []
@@ -795,16 +810,17 @@ def run_pending_sequences():
 if __name__ == '__main__':
     mode = sys.argv[1] if len(sys.argv) > 1 else 'both'
     # Optional county override for Danny: python3 workers/lead_pipeline.py danny Summit
+    # Optional county override for Carla: python3 workers/lead_pipeline.py carla Summit
     # Forces a specific county batch regardless of the week rotation.
     # Valid labels: Cuyahoga, Lake, Lorain, Summit, Medina, Geauga+Portage
-    county_override = sys.argv[2] if len(sys.argv) > 2 and mode == 'danny' else None
+    county_override = sys.argv[2] if len(sys.argv) > 2 and mode in ('danny', 'carla') else None
 
     print(f'\n=== Forest City Lead Pipeline — {datetime.now().strftime("%Y-%m-%d %H:%M")} ===')
 
     if mode in ('danny', 'both'):
-        run_danny(county_override=county_override)
+        run_danny(county_override=county_override if mode == 'danny' else None)
     if mode in ('carla', 'both'):
-        run_carla()
+        run_carla(county_override=county_override if mode == 'carla' else None)
 
     # 'pending' mode: enroll contacts waiting on sequences that just went live,
     # without triggering a fresh Apollo pull. Use this once gas_station/fleet

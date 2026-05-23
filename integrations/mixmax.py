@@ -309,7 +309,20 @@ def enroll_batch(leads: list, skip_existing: bool = True) -> dict:
     """
     Enroll a list of leads. Tracks results by status.
     Returns summary dict.
+
+    ⚠️ INSTANTLY.AI PAUSE REQUIRED: Set INSTANTLY_PAUSED=true in .env after pausing
+    campaigns a1c08c3d + 626cd15d. Without this, duplicate emails → spam filters → 0 replies.
     """
+    # Warn loudly if enrolling a real batch and Instantly.ai pause isn't confirmed
+    if len(leads) > 5 and os.environ.get('INSTANTLY_PAUSED', '').lower() != 'true':
+        print('⚠️  WARNING: INSTANTLY.AI NOT CONFIRMED PAUSED')
+        print('   Duplicate emails to same contacts = spam filters = 0% reply rate.')
+        print('   Step 1: Pause campaigns a1c08c3d + 626cd15d at app.instantly.ai')
+        print('   Step 2: Add INSTANTLY_PAUSED=true to your .env file')
+        print('   Guide: outputs/vera/instantly_pause_guide_2026-05-22.md')
+        print('   Enrollment proceeding — fix deliverability first or Round 2 will fail too.')
+        print()
+
     results = {'enrolled': [], 'skipped': [], 'errors': []}
 
     for lead in leads:

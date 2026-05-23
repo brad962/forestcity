@@ -76,3 +76,74 @@
 >TODAY: (1) Pause Instantly.ai — 3 min (2) Text Anthony/Land Pro 440-320-2779 — 5 min (3) Double-click `scripts/run_summit_pull.command` — 5 min. Total: 13 minutes. All 3 are overdue.
 >TUESDAY May 26: `outputs/donna/tuesday_may26_launch_card_2026-05-23.md` — 90 min blitz
 >JUNE 3: `outputs/donna/round2_enrollment_readiness_checklist_2026-05-23.md` — GO/NO-GO before Round 2
+
+---
+
+🔧 *Vera — Auto-Upgrade*
+>Changed: `workers/vera_relay.py` — moved `git fetch` to run BEFORE `_flush_unpushed_commits()` instead of after
+>Why: The flush function checks `origin/main..HEAD` to find unpushed commits. Without a fresh fetch, `origin/main` is stale — the check could miss real unpushed commits on first run after an outage or fresh clone.
+>File: workers/vera_relay.py
+
+---
+
+🔧 *Vera — Auto-Upgrade*
+>Changed: `workers/lead_pipeline.py` — added county override CLI flag for Carla (mirrors Danny's existing flag)
+>Why: Danny has `python3 workers/lead_pipeline.py danny Summit` but Carla had no equivalent. Now: `python3 workers/lead_pipeline.py carla Summit` forces any county batch without typing the full location. Useful for catching up Carla on the same Summit/Medina counties Danny missed.
+>File: workers/lead_pipeline.py
+
+---
+
+🔧 *Vera — Auto-Upgrade*
+>Changed: `integrations/mixmax.py` `enroll_batch()` — added INSTANTLY_PAUSED runtime warning. When enrolling 6+ leads and `INSTANTLY_PAUSED=true` is NOT in `.env`, prints a loud warning block before proceeding.
+>Why: Round 2 enrollment is June 4. If Instantly.ai campaigns are still running at enrollment time, the same contacts get duplicate emails → spam filters → 0% reply rate again. This warning fires every time `lead_pipeline.py` runs a batch until Bradley adds `INSTANTLY_PAUSED=true` to `.env`.
+>File: integrations/mixmax.py
+
+---
+
+📋 *Vera — Deliverable: Google Guaranteed Lead Response SOP*
+>File: outputs/rick/google_guaranteed_lead_response_sop_2026-05-23.md
+>Google Guaranteed measures response time. Slow responders get fewer leads automatically. SOP covers: 5-minute response target, live call script, voicemail script, text follow-up, quote conversation (what to ask, ballpark pricing), Workiz booking steps, dispute protocol for bad leads. READ THIS BEFORE ADS GO LIVE TUESDAY.
+
+---
+
+📋 *Vera — Deliverable: Annual Plan Upsell Sequence*
+>File: outputs/tommy/annual_plan_upsell_sequence_2026-05-23.md
+>Same-day text (within 2 hours of completion) + 30-day follow-up email + full objection handling. Pricing table: $325–$850/yr. Revenue math: 20 Annual Plan customers = $8,000–$13,000 locked recurring. Each signup = $0 re-acquisition cost for that job every year.
+
+---
+
+💡 *Vera — Upgrade Proposal*
+>Idea: Pre-job reminder text sequence — automatic day-before + 2-hour reminder to every booked job
+>Why: No-show rate for home services without reminders is 15–25%. A $0 text the day before reduces that to under 5%. Every no-show costs a full day slot in peak season.
+>Impact: More jobs completed per week, fewer wasted drives, better Google review rate (customers who remembered the appointment = higher satisfaction)
+>Implementation: Needs Twilio (TWILIO_ACCOUNT_SID + TWILIO_AUTH_TOKEN in .env). Tommy can write the scripts in under an hour once Twilio is connected.
+>Reply YES to approve and I'll have Tommy write the scripts + Donna build the automation plan.
+
+---
+
+💡 *Vera — Upgrade Proposal*
+>Idea: After-job photo capture protocol — systematic before/after photo pipeline for Jasmine
+>Why: Jasmine's before/after content format is the single highest-performing post type for home services. Right now there's no system for capturing photos on-site. Bradley is leaving the best content on the table at every job.
+>Impact: 3–5 new before/after photos per week → Facebook + Instagram content → trust-building with homeowners who are evaluating whether to book
+>Implementation: A 1-page SOP: photo angles to shoot (before arriving, after finishing), file naming, where to drop them so Jasmine picks them up. Zero cost. 3 minutes per job.
+>Reply YES and I'll have Jasmine write the capture SOP and set up the photo_pairs.json workflow.
+
+---
+
+✅ *Vera — Scan Complete 2026-05-23 (Run 63)*
+>3 auto-upgrades shipped | 2 deliverables written | 2 proposals pending
+>
+>Auto-upgrades: vera_relay.py fetch ordering fix | lead_pipeline.py Carla county override | mixmax.py INSTANTLY_PAUSED enrollment guard
+>Deliverables: Google Guaranteed Lead Response SOP (read before Tuesday ads launch) | Annual Plan Upsell Sequence (send within 2h of job completion)
+>
+>🔴 HIGHEST PRIORITY TODAY (Sat May 23):
+>1. Pause Instantly.ai — app.instantly.ai → Campaigns → ⋮ → Pause a1c08c3d + 626cd15d (3 min)
+>2. Text Anthony/Land Pro: 440-320-2779 — "referral swap" pitch (2 min)
+>3. Double-click scripts/run_summit_pull.command in Finder (5 min, no typing)
+>
+>🔴 HIGHEST PRIORITY TUESDAY May 26:
+>1. 8:00am — Summit pull (already set up, just double-click the file)
+>2. 8:20am — Bridge emails to top 5 hot leads (see outputs/tommy/hot_lead_bridge_email_may26_2026-05-22.md)
+>3. 9:00am — Gas station Mixmax sequence creation (see outputs/danny/gas_station_mixmax_sequence_creation_2026-05-23.md)
+>4. 9:15am — READ google_guaranteed_lead_response_sop THEN launch Google + Facebook ads
+>5. After first job — send Annual Plan upsell text within 2 hours (see outputs/tommy/annual_plan_upsell_sequence_2026-05-23.md)

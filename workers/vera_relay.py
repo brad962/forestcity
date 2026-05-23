@@ -215,11 +215,13 @@ def _main_body():
     _check_danny_staleness()
     _check_carla_staleness()
 
+    # Fetch first so origin/main is current before flush checks origin/main..HEAD
+    git(['fetch', 'origin'])
+
     # Flush unpushed commits before pulling — prevents cleared-file rebase clobbering new messages
     _flush_unpushed_commits()
 
     # Pull latest
-    git(['fetch', 'origin'])
     git(['pull', '--rebase', 'origin', 'main'])
 
     # Get last known commit
