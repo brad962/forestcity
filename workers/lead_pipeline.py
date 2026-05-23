@@ -330,7 +330,7 @@ def run_danny(county_override=None):
         search = DANNY_SEARCHES[week_num % len(DANNY_SEARCHES)]
         print(f'  County batch: {search["label"]} (week {week_num} rotation)')
 
-    people = apollo_search(DANNY_TITLES, search['counties'], per_page=25, keywords=DANNY_ORG_KEYWORDS)
+    people = apollo_search(DANNY_TITLES, search['counties'], per_page=50, keywords=DANNY_ORG_KEYWORDS)
     print(f'  Found {len(people)} people from Apollo')
 
     new_leads = []
@@ -474,7 +474,7 @@ def run_carla(county_override=None):
     all_new = []
     all_people_count = 0
     for search in CARLA_SEARCHES:
-        people = apollo_search(search['titles'], locations, per_page=15, keywords=search.get('keywords'))
+        people = apollo_search(search['titles'], locations, per_page=20, keywords=search.get('keywords'))
         all_people_count += len(people)
         print(f'  {search["label"]}: Found {len(people)} people')
 

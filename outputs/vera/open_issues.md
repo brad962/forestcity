@@ -1,6 +1,6 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 66 | 2026-05-23 | Auto-fixes shipped: 4 | New deliverables: 2 | Proposals: 2 | New RESOLVED: 0*
+*Run 67 | 2026-05-23 | Auto-fixes shipped: 3 | New deliverables: 3 | Proposals: 2 | New RESOLVED: 0*
 
 ---
 
@@ -216,6 +216,15 @@ Key resolved issues by category:
 - Fix: Added _flush_unpushed_commits() called at start of _main_body() before git pull --rebase; if a prior push failed leaving a "cleared pending_messages" commit unpushed, it gets pushed first; prevents rebase from applying the empty-file commit on top of new Vera messages and silently discarding them
 
 ---
+
+## RUN METRICS — Run 67 | 2026-05-23
+- Total RESOLVED: 77 (0 new this run — all open issues require Bradley action)
+- Total OPEN: 18 (0 new closed, 0 new opened)
+- Auto-upgrades shipped: 3 (lead_pipeline.py Danny per_page 25→50 + Carla 15→20; carla.md 2 new output format entries; scripts/run_summit_both.command — new double-click shortcut for Danny+Carla Summit pull in one step)
+- Deliverables written: 3 (gbp_memorial_day_post_2026-05-23.md — GBP post for TODAY, 2-min to publish, Memorial Day weekend search traffic; contractor_referral_sequence_voc_rewrite_2026-05-23.md — Carla's 3-touch contractor sequence using Marcus VOC + 10 trade-specific customizations; summit_county_referral_pull_guide_2026-05-23.md — Carla Summit County parallel pull guide)
+- Proposals: 2 (update CLAUDE.md with run_summit_both.command; add Carla county-specific staleness check to vera_relay.py)
+- Highest priority TODAY (Sat May 23): (1) Post GBP NOW — business.google.com/dashboard — outputs/vera/gbp_memorial_day_post_2026-05-23.md (2) Pause Instantly.ai — app.instantly.ai → Campaigns → ⋮ → Pause a1c08c3d + 626cd15d (3) Double-click scripts/run_summit_both.command — Danny + Carla Summit County, 6 min (4) Post Saturday Facebook post — outputs/jasmine/facebook_posts_memorial_day_weekend_2026-05-23.md
+- Highest priority TUESDAY May 26: Full 90-min blitz — `outputs/donna/tuesday_may26_launch_card_2026-05-23.md`
 
 ## RUN METRICS — Run 66 | 2026-05-23
 - Total RESOLVED: 77 (0 new this run — all open issues require Bradley action)

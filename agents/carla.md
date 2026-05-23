@@ -58,6 +58,8 @@ Save to `/outputs/carla/`:
 - `outreach_[partner-type]_[date].md` — email/LinkedIn message copy
 - `referral_partner_onboarding_[date].md` — step-by-step post-YES onboarding: confirmation text, follow-up, welcome kit, first-week ping, payout message, 5 objections handled
 - `june_referral_revival_texts_[date].md` — text scripts per trade type (landscaper, siding, painter, gutter, realtor, HVAC) to reactivate pipeline contacts ahead of June Booking Blitz; response handling; timing guide
+- `contractor_referral_sequence_voc_rewrite_[date].md` — full 3-touch contractor/referral sequence rewritten using Marcus's NE Ohio VOC library; includes trade-specific Touch 1 customizations for 10 partner types; ships with Round 2 enrollment June 4
+- `summit_county_referral_pull_guide_[date].md` — Summit County Apollo pull guide for Carla; mirrors Danny's county override; run same week as Danny Summit pull for coordinated coverage
 
 ## Logging
 `[YYYY-MM-DD HH:MM] Carla | [task description] | [output filename] | Done`

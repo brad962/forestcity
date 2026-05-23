@@ -78,3 +78,79 @@
 >3. 🔴 Launch Facebook + Google Ads Tuesday May 26 — all copy ready, monitoring guide now written
 >
 >New this run: Facebook ads first-week guide (Rick) + neighbor canvassing scripts (Tommy). Both ready to use Tuesday.
+
+---
+
+🔧 *Vera — Auto-Upgrade*
+>Changed: `workers/lead_pipeline.py` — Danny Apollo per_page 25 → 50; Carla per_page 15 → 20
+>Why: Peak season Summit County pull is the most important one until July 6. Doubling Danny's lead volume means more contacts enrolled in the PM sequence — more shots at a reply before Round 2. Carla's contractor pull also gets 33% more referral partner contacts per county.
+>File: workers/lead_pipeline.py
+
+---
+
+🔧 *Vera — Auto-Upgrade*
+>Changed: `agents/carla.md` — added 2 new output format entries (contractor_referral_sequence_voc_rewrite, summit_county_referral_pull_guide)
+>Why: Both deliverables written this run; catalogued for future reference so Carla knows what to produce and where to save it.
+>File: agents/carla.md
+
+---
+
+🔧 *Vera — Auto-Upgrade*
+>Changed: New file `scripts/run_summit_both.command` — double-click Mac shortcut that runs BOTH Danny Summit AND Carla Summit pulls in sequence
+>Why: The existing run_summit_pull.command only does Danny. Carla has been on the same county rotation but no Finder-shortcut existed. One double-click now pulls PMs + referral partners for Summit County simultaneously. Takes 5-8 minutes, no typing.
+>File: scripts/run_summit_both.command
+
+---
+
+📋 *Vera — Deliverable: GBP Memorial Day Post*
+>File: `outputs/vera/gbp_memorial_day_post_2026-05-23.md`
+>Memorial Day weekend = peak search traffic for "power washing near me." GBP post for TODAY (Saturday May 23) — 2 minutes to post at business.google.com/dashboard. Two versions: with photo (better) + text-only. Free impressions, shows in local search panel this weekend.
+
+---
+
+📋 *Vera — Deliverable: Carla Contractor Sequence VOC Rewrite*
+>File: `outputs/carla/contractor_referral_sequence_voc_rewrite_2026-05-23.md`
+>The May 12 contractor outreach used generic B2B language. This version uses Marcus's NE Ohio VOC phrases ("green and slimy," "roof turned black") + trade-specific Touch 1 customizations for 10 partner types (landscaper, roofer, gutter, HVAC, tree service, pool, irrigation, etc.). Ships June 4 in Round 2 enrollment alongside the PM VOC rewrite.
+
+---
+
+📋 *Vera — Deliverable: Carla Summit County Pull Guide*
+>File: `outputs/carla/summit_county_referral_pull_guide_2026-05-23.md`
+>Guide for running Carla's Summit County pull this week — same geography, same timing as Danny's Summit PM pull. One double-click: `scripts/run_summit_both.command` pulls both Danny PMs and Carla contractors/realtors in one go.
+
+---
+
+🚨 *Vera — TODAY ACTION ALERT (Saturday May 23)*
+>*(1) POST GBP NOW — go to business.google.com/dashboard → Add update → paste from outputs/vera/gbp_memorial_day_post_2026-05-23.md — 2 minutes, free impressions this weekend*
+>*(2) PAUSE INSTANTLY.AI — app.instantly.ai → Campaigns → ⋮ → Pause a1c08c3d + 626cd15d — 3 minutes — 12 days of deliverability recovery before Round 2 enrollment*
+>*(3) POST FACEBOOK — 3 posts written for Sat/Sun/Mon in outputs/jasmine/facebook_posts_memorial_day_weekend_2026-05-23.md — first one posts TODAY*
+
+---
+
+💡 *Vera — Upgrade Proposal*
+>Idea: Update `scripts/run_summit_pull.command` description in CLAUDE.md to mention the new `run_summit_both.command` option that pulls Danny + Carla simultaneously
+>Why: CLAUDE.md currently only documents the Danny-only shortcut. Bradley may not know the combined version exists.
+>Impact: One command instead of two — Summit County PMs and referral partners both covered on the same run.
+>Reply YES to approve and I'll update CLAUDE.md.
+
+---
+
+💡 *Vera — Upgrade Proposal*
+>Idea: Add a "Carla Summit catch-up" alert to `vera_relay.py` — same logic as the Danny staleness check, fires if Carla hasn't pulled Summit County this week
+>Why: Danny's missed Summit pull has been flagged for 12+ days. Carla's missed Summit pull has never been flagged because no staleness check exists for county-specific misses. Carla's Summit contacts are valuable — contractors and realtors in Akron/Summit area = a different network than Cuyahoga.
+>Impact: Bradley gets a Slack nudge for Carla the same way he does for Danny.
+>Reply YES to approve and I'll add the check to vera_relay.py.
+
+---
+
+✅ *Vera — Scan Complete 2026-05-23 (Run 67)*
+>3 auto-upgrades shipped | 3 deliverables written | 2 proposals | 0 new issues resolved
+>
+>Open issues (18): All require Bradley action. Today's priority stack:
+>1. 🔴 POST GBP right now — business.google.com/dashboard — 2 min — free Memorial Day weekend impressions
+>2. 🔴 Pause Instantly.ai — app.instantly.ai — 3 min — 12 days until Round 2 enrollment starts
+>3. 🔴 Double-click scripts/run_summit_both.command — pulls Danny + Carla Summit County in one go — 6 min
+>4. 🔴 Post Saturday Facebook post — outputs/jasmine/facebook_posts_memorial_day_weekend_2026-05-23.md — 2 min
+>5. 🟡 Text Anthony/Land Pro 440-320-2779 — referral swap pitch — any time today
+>
+>Tuesday May 26 priority stack still live: `outputs/donna/tuesday_may26_launch_card_2026-05-23.md`
