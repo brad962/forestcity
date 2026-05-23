@@ -1,6 +1,6 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 58 | 2026-05-23 | Auto-fixes shipped: 5 | New deliverables: 2 | Proposals: 2*
+*Run 59 | 2026-05-23 | Auto-fixes shipped: 3 | New deliverables: 1 | Proposals: 2*
 
 ---
 
@@ -242,3 +242,11 @@ Key resolved issues by category:
 - Auto-upgrades shipped: 4 (lead_pipeline DANNY_TITLES managing_partner+principal, vera_relay Carla staleness check, new check_replies.py worker, crontab check_replies entry)
 - Deliverables written: 2 (reply_window_tracker_2026-05-22.md, this open_issues update)
 - Highest priority action: (1) Pause Instantly.ai TONIGHT — 3 min, (2) Run check_replies.py tomorrow 9am, (3) Danny manual pull `python3 workers/lead_pipeline.py both`
+
+## RUN METRICS — Run 59 | 2026-05-23
+- Total RESOLVED: 74 (1 new: danny.md Week 22 date bug — "May 26 (Week 22) = Medina" was wrong; May 26 is Week 21; running on May 26 still targets Summit; fixed to "June 1 (Week 22) = Medina")
+- Total OPEN: 17 (0 new closed — all require Bradley action; 0 new opened)
+- Auto-upgrades shipped: 3 (danny.md Week 22 date fix; CLAUDE.md check_replies cron lines added; rick.md stale "May 22" date → "May 23")
+- Deliverables written: 1 (june1_prep_checklist_2026-05-23.md — 15-min June 1 morning launch: Medina pull, Summit catch-up, Nina weekly, bridge email follow-up, Instantly pause check, Round 2 timeline, gas station sequence creation)
+- Proposals: 2 (Instagram Reels channel; post-job 3-text automation sequence)
+- Highest priority actions TODAY: (1) Summit County pull — `python3 workers/lead_pipeline.py danny Summit` — NOW, deadline TOMORROW NIGHT (2) Pause Instantly.ai campaigns a1c08c3d + 626cd15d (3) LinkedIn connects with 2+ open leads

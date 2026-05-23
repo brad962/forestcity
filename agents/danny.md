@@ -83,7 +83,7 @@ Danny rotates counties by ISO week number (`week % 6`). Cron runs every Monday 7
 | Week 26  | June 29 | Lorain County |
 | Week 27  | July 6 | Summit County (repeats) |
 
-> 🚨 **TODAY IS SATURDAY MAY 23 — SUMMIT COUNTY DEADLINE: SUNDAY NIGHT MAY 25.** Week 21 = Summit County. May 26 (Week 22) = **Medina County**. If you don't run by Sunday night, Summit is gone until **July 6 (Week 27)** — 6 weeks of pipeline gap in peak summer. Command (run today or tomorrow): `python3 workers/lead_pipeline.py danny Summit`. The cron has not pulled leads since May 12 (11+ days).
+> 🚨 **TODAY IS SATURDAY MAY 23 — SUMMIT COUNTY DEADLINE: SUNDAY NIGHT MAY 25.** Week 21 = Summit County (May 25–31). **June 1 (Week 22) = Medina County** — NOT May 26. May 26 is Tuesday, still ISO Week 21 → running the pipeline on May 26 targets Summit (correct). If you don't run Summit by Monday June 1, it is gone until **July 6 (Week 27)** — 6 weeks of pipeline gap in peak summer. Command (run today, tomorrow, or Tuesday May 26 — all hit Summit): `python3 workers/lead_pipeline.py danny Summit`. The cron has not pulled leads since May 12 (11+ days).
 
 ## Output Format
 

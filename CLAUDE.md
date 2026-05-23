@@ -130,6 +130,10 @@ Add these to your local crontab (`crontab -e`) on your Mac:
 # Workiz Daily Report — weekdays at 9am
 0 9 * * 1-5 cd /Users/bradleyneal/forestcity && python3 workers/workiz_report.py daily >> logs/cron.log 2>&1
 
+# Mixmax Reply Check — weekdays 8:45am and 2pm (post-Touch 3 window monitoring)
+45 8 * * 1-5 cd /Users/bradleyneal/forestcity && python3 workers/check_replies.py >> logs/cron.log 2>&1
+0 14 * * 1-5 cd /Users/bradleyneal/forestcity && python3 workers/check_replies.py >> logs/cron.log 2>&1
+
 # Vera Relay (Slack message delivery) — every 5 minutes
 */5 * * * * cd /Users/bradleyneal/forestcity && python3 workers/vera_relay.py >> logs/cron.log 2>&1
 ```
