@@ -67,6 +67,7 @@ Save to `/outputs/donna/`:
 - `sunday_may24_action_card_[date].md` — single-screen Sunday May 24 action card: past customer texts, Nextdoor post, Summit County final call deadline reminder
 - `june1_prep_checklist_[date].md` — 15-minute June 1 morning launch checklist: Medina pull command, Summit catch-up path, Nina weekly, bridge email follow-up, Instantly.ai pause check, Round 2 June 4 timeline, gas station sequence creation, weekly targets
 - `june_commercial_calendar_[date].md` — 4-week commercial action calendar May 26–June 18: every action has owner + time + linked resource; critical path map; revenue math
+- `tuesday_may26_launch_card_[date].md` — corrected 90-minute Tuesday May 26 launch plan (Summit pull, bridge emails, gas station sequence, ads launch, contractor texts); revenue math; week-of priority stack
 
 ## Logging
 `[YYYY-MM-DD HH:MM] Donna | [task description] | [output filename] | Done`

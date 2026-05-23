@@ -57,6 +57,7 @@ Save to `/outputs/carla/`:
 - `partners_[type]_[county]_[date].md` — contact list
 - `outreach_[partner-type]_[date].md` — email/LinkedIn message copy
 - `referral_partner_onboarding_[date].md` — step-by-step post-YES onboarding: confirmation text, follow-up, welcome kit, first-week ping, payout message, 5 objections handled
+- `june_referral_revival_texts_[date].md` — text scripts per trade type (landscaper, siding, painter, gutter, realtor, HVAC) to reactivate pipeline contacts ahead of June Booking Blitz; response handling; timing guide
 
 ## Logging
 `[YYYY-MM-DD HH:MM] Carla | [task description] | [output filename] | Done`

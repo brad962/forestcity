@@ -83,7 +83,7 @@ Danny rotates counties by ISO week number (`week % 6`). Cron runs every Monday 7
 | Week 26  | June 29 | Lorain County |
 | Week 27  | July 6 | Summit County (repeats) |
 
-> 🚨 **TODAY IS SATURDAY MAY 23 — SUMMIT COUNTY DEADLINE: SUNDAY NIGHT MAY 25.** Week 21 = Summit County (May 25–31). **June 1 (Week 22) = Medina County** — NOT May 26. May 26 is Tuesday, still ISO Week 21 → running the pipeline on May 26 targets Summit (correct). If you don't run Summit by Monday June 1, it is gone until **July 6 (Week 27)** — 6 weeks of pipeline gap in peak summer. Command (run today, tomorrow, or Tuesday May 26 — all hit Summit): `python3 workers/lead_pipeline.py danny Summit`. The cron has not pulled leads since May 12 (11+ days).
+> 🚨 **TODAY IS SATURDAY MAY 23 — RUN SUMMIT COUNTY THIS WEEKEND.** Week 21 = Summit County (May 25–31 inclusive). May 25 = Memorial Day (Mac likely off). May 26 = **TUESDAY** — first work day back, still ISO Week 21, still targets Summit. Hard deadline: **May 31 (end of week 21).** June 1 (Week 22) rotates to Medina — Summit is gone until July 6 (6-week gap). Run any day May 23–31: `python3 workers/lead_pipeline.py danny Summit`. The cron has not pulled leads since May 12 (12+ days). Ideal: run TODAY or TOMORROW before the holiday.
 
 ## Output Format
 
@@ -91,6 +91,9 @@ Save lead lists to `/outputs/danny/` as:
 - `leads_[location]_[date].md` — full contact list with name, title, company, email, phone
 - `sequence_[campaign-name]_[date].md` — email sequence copy
 - `gas_station_mixmax_sequence_creation_[date].md` — step-by-step Mixmax UI guide to create the Gas Station sequence, paste the ID into mixmax.py, and enroll the 18 waiting contacts via `python3 workers/lead_pipeline.py pending`
+- `linkedin_hot_lead_dm_protocol_[date].md` — LinkedIn DM templates for high-open PM leads
+- `pm_sequence_touch1_rewrite_[date].md` — rewritten Touch 1 email variants for PM sequence
+- `round2_enrollment_plan_[date].md` — Round 2 Mixmax enrollment plan (county batch, timing, checklist)
 
 ## Logging
 After completing a task, add a line to `/logs/activity.log`:
