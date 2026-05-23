@@ -1,6 +1,6 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 65 | 2026-05-23 | Auto-fixes shipped: 4 | New deliverables: 2 | Proposals: 2 | New RESOLVED: 1*
+*Run 66 | 2026-05-23 | Auto-fixes shipped: 4 | New deliverables: 2 | Proposals: 2 | New RESOLVED: 0*
 
 ---
 
@@ -74,6 +74,7 @@ Key resolved issues by category:
 - Run 61 (2026-05-23 Sat): Slack message includes TONIGHT ALERT with 3-step pause: app.instantly.ai → Campaigns → ⋮ → Pause.
 - Run 62 (2026-05-23 Sat): Round 2 enrollment is June 4 — 12 days away. Pausing today = 12 full days of deliverability recovery before Round 2 sends. Pausing June 3 = 0 days of recovery. Every day of delay costs deliverability. New escalation: Round 2 Enrollment Readiness Checklist (`outputs/donna/round2_enrollment_readiness_checklist_2026-05-23.md`) now includes Instantly pause as the first block — without it, the entire checklist is a NO-GO and Round 2 enrollment cannot proceed.
 - Run 65 (2026-05-23 Sat): 11 days until Round 2 enrollment. Pause now = 11 days recovery. Every day not paused = worse deliverability on June 4. This is the single most impactful action before Tuesday.
+- Run 66 (2026-05-23 Sat): Auto-fix applied: danny.md updated to explicitly flag these two campaigns as ACTIVE (was saying "Not active" — misleading any agent reading the file). enroll_batch() already warns at runtime. Open issue remains: Bradley must pause in app.instantly.ai UI.
 - Resolution criteria: Both campaigns paused in Instantly.ai → confirmed by Bradley.
 
 ---
@@ -215,6 +216,15 @@ Key resolved issues by category:
 - Fix: Added _flush_unpushed_commits() called at start of _main_body() before git pull --rebase; if a prior push failed leaving a "cleared pending_messages" commit unpushed, it gets pushed first; prevents rebase from applying the empty-file commit on top of new Vera messages and silently discarding them
 
 ---
+
+## RUN METRICS — Run 66 | 2026-05-23
+- Total RESOLVED: 77 (0 new this run — all open issues require Bradley action)
+- Total OPEN: 18 (0 new closed, 0 new opened)
+- Auto-upgrades shipped: 4 (danny.md Instantly.ai "Not active" → accurate warning with campaign IDs; vera_relay.py git log window -20 → -100 to prevent silent Slack message drops; rick.md output format catalog + facebook_ads_first_week_monitoring_guide entry; tommy.md output format catalog + neighbor_canvass_script entry)
+- Deliverables written: 2 (facebook_ads_first_week_monitoring_guide_2026-05-23.md — Day 1/3/7 guide for first-time Facebook ad launch, metric thresholds, lead response setup, budget scaling, common mistakes; neighbor_canvass_script_2026-05-23.md — 4 versions: door-knock script, leave-behind card, same-street past customer text, in-neighborhood commercial text; revenue math: ~$750/week zero-cost at 10 jobs/week)
+- Proposals: 2 (see Slack messages)
+- Highest priority TODAY (Sat May 23): (1) Pause Instantly.ai — app.instantly.ai → Campaigns → ⋮ → Pause a1c08c3d + 626cd15d (2) Double-click scripts/run_summit_pull.command — Summit County pull, 5 min (3) Text Anthony 440-320-2779 — referral swap pitch
+- Highest priority TUESDAY May 26: 8:00am Summit pull → 8:20am bridge emails → 9:00am gas station sequence → 9:15am Facebook/Google Ads launch → READ facebook_ads_first_week_monitoring_guide BEFORE first lead arrives → START door-knocking neighbors after first job
 
 ## RUN METRICS — Run 58 | 2026-05-23
 - Total RESOLVED: 73 (1 new: vera_relay unpushed-commit flush — prevents Slack message loss when push fails mid-relay)

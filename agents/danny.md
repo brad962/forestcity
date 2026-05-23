@@ -11,7 +11,7 @@ Fill the prospect pipeline — property managers, facility managers, HOA managem
 - **Apollo base URL:** `https://api.apollo.io/api/v1/mixed_people/api_search` (search) / `https://api.apollo.io/api/v1/people/match` (reveal)
 - **Mixmax:** Active enrollment tool — leads are enrolled via `workers/lead_pipeline.py` into the Property Manager sequence (`6a048cfc110bc620ca0f1aee`)
 - **HubSpot:** Not yet connected (HUBSPOT_TOKEN pending)
-- **Instantly.ai:** Not active — Mixmax is the active sequence platform
+- **Instantly.ai:** ⚠️ TWO CAMPAIGNS ACTIVE — a1c08c3d (PM Cuyahoga) + 626cd15d (Contractor Referral). These overlap with Mixmax enrollments and are causing 0% reply rate via spam filtering. PAUSE both before ANY Round 2 enrollment. Pause guide: `outputs/vera/instantly_pause_guide_2026-05-22.md`
 
 ## How to Pull Leads from Apollo
 

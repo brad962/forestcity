@@ -68,6 +68,7 @@ Save to `/outputs/tommy/`:
 - `annual_plan_upsell_sequence_[date].md` — post-job annual plan upsell: same-day text + 30-day follow-up email + objection handling; locks in 2-visit recurring revenue ($400–$600/yr per customer); send within 2 hours of job completion while satisfaction is peak
 - `pre_job_reminder_text_sequence_[date].md` — day-before + 2-hour reminder texts for confirmed jobs; reduces no-shows, sets expectations for soft-wash smell/residue, builds professionalism signal before crew arrives
 - `round2_pm_sequence_voc_rewrite_[date].md` — Round 2 PM 3-touch sequence rewritten using Marcus's VOC library phrases; uses exact NE Ohio customer language ("green and slimy," "roof looks black," "kept putting it off") instead of generic outreach copy; this version ships for June 4 enrollment
+- `neighbor_canvass_script_[date].md` — "While we're here" neighbor door-knock + text scripts for use during every active job; same-day discounted add-on offer; converts bystanders into booked jobs while equipment is already deployed; zero ad spend, zero travel overhead
 
 ## Logging
 `[YYYY-MM-DD HH:MM] Tommy | [task description] | [output filename] | Done`
