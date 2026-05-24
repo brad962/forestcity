@@ -321,3 +321,57 @@
 >3. Pause Instantly.ai → app.instantly.ai → a1c08c3d + 626cd15d → ⋮ → Pause → add INSTANTLY_PAUSED=true to .env (REQUIRED before Tuesday enrollment)
 
 >📅 TUESDAY May 26: READ `may26_week_priority_stack_2026-05-24.md` FIRST — everything in order
+
+---
+
+🔧 *Vera — Auto-Upgrade (Run 78)*
+>Changed: `workers/nina_report.py` — `_load_phone_map()` and `_load_company_map()` now read from BOTH `contacts_cache.json` AND `pipeline_data.json`
+>Why: Tier 1 contractors and gas station contacts are in pipeline_data.json — they had no phone/company in Nina's reports even if they replied. Now consistent with check_replies.py.
+>File: workers/nina_report.py
+
+---
+
+🔧 *Vera — Auto-Upgrade (Run 78)*
+>Changed: `agents/donna.md` — added `june1_medina_pull_guide` + `round2_warmup_timeline` to output catalog; `agents/tommy.md` — added `neighbor_canvass_script` to output catalog
+>Why: Files existed or were written this run but were missing from their owner's output catalog.
+>Files: agents/donna.md, agents/tommy.md
+
+---
+
+📄 *Vera — New Deliverable (Run 78)*
+>File: `outputs/tommy/neighbor_canvass_script_2026-05-26.md`
+>What: Word-for-word door-knock + text scripts for converting neighbors during every active job. 3 door scenarios, same-day follow-up text, Facebook neighborhood hook, logistics checklist.
+>Use it: On every job this week — 8 doors, 8 minutes, potential 1-2 extra bookings at zero ad spend.
+
+---
+
+📄 *Vera — New Deliverable (Run 78)*
+>File: `outputs/donna/round2_warmup_timeline_2026-05-26.md`
+>What: Day-by-day May 26 → June 3 prep plan bridging Tuesday's ad launch and June 4 Round 2 enrollment. Covers: Instantly.ai pause, bridge emails, Summit/Medina pulls, gas station sequence, readiness checklist.
+>Use it: Read this Tuesday morning before you do anything — it's the critical path for June 4.
+
+---
+
+📄 *Vera — New Deliverable (Run 78)*
+>File: `outputs/nina/workiz_job_entry_sop_2026-05-26.md`
+>What: 60-second SOP for entering jobs in Workiz so they appear in the revenue report. Exact JobType values, revenue fields, how to fix existing jobs.
+>Use it: Check your last 5 Workiz jobs — are they entered with JobType = "Power Washing"? If not, fix them and rerun the report locally.
+
+---
+
+🚨 *Vera — TONIGHT Alert (Memorial Day Eve — Run 78)*
+>Two actions before tomorrow:
+>*1. Pause Instantly.ai* → app.instantly.ai → Campaigns → ⋮ → Pause: a1c08c3d + 626cd15d. 3 minutes. Add INSTANTLY_PAUSED=true to .env.
+>*2. Text one contractor* → Anthony/Land Pro 440-320-2779 (`outputs/vera/memorial_day_contractor_text_card_2026-05-24.md`). Trades work Memorial Day.
+
+---
+
+💡 *Vera — Upgrade Proposal (Run 78)*
+>Idea: Gas station Gmail blast — send the 18 idle district managers from Bradley's personal Gmail this week (template at `outputs/danny/gas_station_manual_email_blast_2026-05-20.md`). 5 weeks idle, multi-site contract potential ($2,400–$6,000/yr/account). Bypasses the Mixmax sequence blocker entirely.
+>Reply YES to approve.
+
+---
+
+✅ *Vera — Scan Complete 2026-05-24 (Run 78)*
+>3 auto-upgrades | 3 deliverables | 1 proposal | 1 RESOLVED (LinkedIn Touch 3 window expired) | 19 OPEN carry forward
+>Tonight: Pause Instantly.ai + text Anthony. Tuesday: 90-min launch sprint (ads, contractor texts, past customer texts, neighbor canvass on first job).

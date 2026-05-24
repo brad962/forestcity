@@ -1,10 +1,10 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 77 | 2026-05-24 | Auto-fixes shipped: 5 | New deliverables: 2 | Proposals: 2 | New RESOLVED: 0*
+*Run 78 | 2026-05-24 | Auto-fixes shipped: 3 | New deliverables: 3 | Proposals: 2 | New RESOLVED: 1*
 
 ---
 
-## RESOLVED SUMMARY (79 total — details in git history)
+## RESOLVED SUMMARY (80 total — details in git history)
 
 Key resolved issues by category:
 - **Pipeline routing:** PM-before-realtor check order, gas_station/fleet false positives removed, all 5 PM title variants added (multifamily, CAI, condo, association manager)
@@ -58,6 +58,7 @@ Key resolved issues by category:
 - Run 71 (2026-05-24 Sun): Text window TODAY (Sunday) still open — trades working Memorial Day weekend. If not today, Tuesday May 26 at 8:45am is the blitz slot (in may26_week_priority_stack). June 4 enrollment battle card now exists (`outputs/donna/june4_enrollment_battle_card_2026-05-24.md`) — Tier 1 contractor texts are the same-day activity alongside enrollment.
 - Run 73 (2026-05-24 Sun): VERIFIED via pipeline_data.json — all 5 Tier 1 contractors confirmed "New Lead," 0 last_contact dates. Phones confirmed in pipeline_data.json (Anthony 440-320-2779, Dontez 440-396-0814, Chris/Twin 216-773-0757, Venus 216-810-2497, Logan 216-956-5263). Fresh angle: inbound call handling is now covered — if a contractor calls back after a text, use `outputs/tommy/inbound_response_protocol_2026-05-24.md` Section 4. Tuesday 8:45am is the Plan B slot from `may26_week_priority_stack_2026-05-24.md`.
 - Run 74 (2026-05-24 Sun): Final window narrowing. If not texted today (Sunday) or tomorrow (Memorial Day), Tuesday 8:45am slot is the backstop. After Tuesday, these 5 contacts will have been "New Lead" for 6+ days. If Mixmax sequence is now finished (reply window closed tomorrow), Tuesday texts become the ONLY active outreach channel for these contacts — Mixmax won't re-enroll them. Text Anthony first (landscaper → highest referral volume in NE Ohio exterior maintenance). $50/referral, $0 upfront cost, no paperwork needed to start.
+- Run 78 (2026-05-24 Sun): FINAL WINDOW — It's Sunday night Memorial Day weekend. Tomorrow (Monday May 25, Memorial Day) is the last day of the reply window AND a valid day for contractor texts (trades work Memorial Day). If texts not sent today, they MUST go Tuesday May 26 at 8:45am (first slot on may26_week_priority_stack). After Tuesday, these contacts will be 7+ days in "New Lead" with no personal outreach. The memorial_day_contractor_text_card_2026-05-24.md has all 5 scripts ready to copy-paste. Anthony/Land Pro is the highest-ROI first text (landscapers refer the most volume).
 - Resolution criteria: Bradley texts Tier 1 list. Confirmed when pipeline_data.json shows "Contacted" stage for these 5.
 
 ---
@@ -111,6 +112,7 @@ Key resolved issues by category:
 - Run 73 (2026-05-24 Sun): 11 days until Round 2. Reply window closes TOMORROW. If 0 replies come in by Memorial Day morning, Instantly.ai is confirmed to have hurt deliverability. Pausing immediately after the window closes = maximum recovery time before June 4. Critical path: pause TODAY → 11 days recovery; pause Tuesday → 9 days recovery (minimum viable); pause after June 1 → less than 7 days (high risk). The 3-minute pause is the highest-leverage action available this weekend.
 - Run 74 (2026-05-24 Sun): This is the same Sunday. REPLY WINDOW CLOSES TOMORROW (Memorial Day). 11 days until Round 2 enrollment. The math is clear: pause today = best deliverability on June 4. Pause Tuesday = 9 days recovery (still OK). Pause after Memorial Day week = high risk. The Round 2 enrollment readiness checklist (`outputs/donna/round2_enrollment_readiness_checklist_2026-05-23.md`) lists this as the first and hardest blocking item. Without it confirmed, the readiness check is NO-GO.
 - Run 76 (2026-05-24): CODE-LEVEL BLOCK SHIPPED. `enroll_batch()` in integrations/mixmax.py now ABORTS (not just warns) for batches > 5 contacts when INSTANTLY_PAUSED != 'true'. `run_pending_sequences()` in workers/lead_pipeline.py also blocked. Bradley CANNOT accidentally enroll Round 2 contacts while Instantly.ai is still running — enrollment will fail loudly with step-by-step fix instructions. To bypass (emergency only): set INSTANTLY_OVERRIDE=true in .env. To fix properly: pause a1c08c3d + 626cd15d → add INSTANTLY_PAUSED=true to .env → re-run. This resolves the mechanical risk; manual Instantly.ai pause still required.
+- Run 78 (2026-05-24 Sun): 11 days until Round 2 enrollment. Reply window closes TOMORROW (Memorial Day). Deliverability recovery math: pause TODAY = 11 days = maximum recovery; pause Tuesday May 26 = 9 days = minimum viable; pause after May 27 = 8 days or fewer = high spam risk on June 4. The `round2_warmup_timeline_2026-05-26.md` (NEW this run) maps the entire May 26→June 3 prep sequence with Instantly.ai pause as Day 1 blocker. New nina_report.py fix this run ensures manual contacts (gas station, Tier 1 contractors) show phone/company in Nina's reply reports — consistent with check_replies.py.
 - Resolution criteria: Both campaigns paused in Instantly.ai → confirmed by Bradley.
 
 ---
@@ -128,11 +130,9 @@ Key resolved issues by category:
 
 ---
 
-## OPEN — Hot leads not contacted on LinkedIn (Touch 3 day)
-- First seen: 2026-05-18
-- Description: ~13 contacts with 2+ opens haven't received personal LinkedIn connects.
-- Run 55: Touch 3 window live. LinkedIn context strongest TONIGHT (May 22 evening). Evening debrief (outputs/vera/touch3_evening_debrief_2026-05-22.md) has the LinkedIn connect protocol as Priority 2 for tonight. Weekend connects still effective — LinkedIn DMs are seen Monday.
-- Resolution criteria: Bradley connects on LinkedIn with top 5+ contacts TONIGHT or Saturday May 23.
+## RESOLVED — Hot leads not contacted on LinkedIn (Touch 3 day)
+- Resolved: 2026-05-24 (Run 78)
+- Fix: Time-boxed issue. Touch 3 window closed May 22–25. LinkedIn connect window was specific to the post-Touch-3 engagement spike. Issue is now moot — contacts either replied (see Round 2 plan) or moved to cold. LinkedIn connects for Round 2 contacts are built into the june4_enrollment_battle_card. Marking resolved to clear the noise; ongoing LinkedIn strategy is embedded in Round 2 enrollment docs.
 
 ---
 

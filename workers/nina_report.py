@@ -178,35 +178,50 @@ def _load_linkedin_map():
 
 
 def _load_phone_map():
-    """Build email → phone map from contacts cache (best-effort)."""
-    cache_file = BASE_DIR / 'contacts_cache.json'
-    if not cache_file.exists():
-        return {}
-    try:
-        data = json.loads(cache_file.read_text())
-        return {
-            c['email'].lower(): c.get('phone', '')
-            for c in data.get('contacts', [])
-            if c.get('email') and c.get('phone')
-        }
-    except Exception:
-        return {}
+    """Build email → phone from contacts cache + pipeline_data (manual contacts).
+    Matches check_replies.py — ensures Tier 1 contractors, gas station, and fleet
+    contacts show phone numbers in Nina's reports if they reply.
+    """
+    result = {}
+    for src_file, contacts_key in [
+        (BASE_DIR / 'contacts_cache.json', 'contacts'),
+        (BASE_DIR / 'pipeline_data.json', 'manual_contacts'),
+    ]:
+        if not src_file.exists():
+            continue
+        try:
+            data = json.loads(src_file.read_text())
+            for c in data.get(contacts_key, []):
+                email = c.get('email', '').lower()
+                phone = c.get('phone', '')
+                if email and phone and email not in result:
+                    result[email] = phone
+        except Exception:
+            pass
+    return result
 
 
 def _load_company_map():
-    """Build email → company_name map from contacts cache (best-effort)."""
-    cache_file = BASE_DIR / 'contacts_cache.json'
-    if not cache_file.exists():
-        return {}
-    try:
-        data = json.loads(cache_file.read_text())
-        return {
-            c['email'].lower(): c.get('company_name', '') or c.get('company', '')
-            for c in data.get('contacts', [])
-            if c.get('email') and (c.get('company_name') or c.get('company'))
-        }
-    except Exception:
-        return {}
+    """Build email → company_name from contacts cache + pipeline_data (manual contacts).
+    Matches check_replies.py — ensures manual contacts show company in Nina's reports.
+    """
+    result = {}
+    for src_file, contacts_key in [
+        (BASE_DIR / 'contacts_cache.json', 'contacts'),
+        (BASE_DIR / 'pipeline_data.json', 'manual_contacts'),
+    ]:
+        if not src_file.exists():
+            continue
+        try:
+            data = json.loads(src_file.read_text())
+            for c in data.get(contacts_key, []):
+                email = c.get('email', '').lower()
+                company = c.get('company_name', '') or c.get('company', '')
+                if email and company and email not in result:
+                    result[email] = company
+        except Exception:
+            pass
+    return result
 
 
 def run_daily():
