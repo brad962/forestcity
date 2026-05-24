@@ -40,8 +40,11 @@ Carla mirrors Danny's county rotation by ISO week number (`week % 6`). Cron runs
 | Week 25  | June 22 | Lake County |
 | Week 26  | June 29 | Lorain County |
 
-> 🗒️ **Manual override:** `python3 workers/lead_pipeline.py carla Summit`
+> 🗒️ **Manual override:** `python3 workers/lead_pipeline.py carla Summit` (Week 21, deadline May 31)
 > Double-click shortcut (Danny + Carla together): `scripts/run_summit_both.command`
+>
+> 🗒️ **Week 22 = Medina County — June 1:** `python3 workers/lead_pipeline.py carla Medina`
+> Double-click shortcut (Danny + Carla together): `scripts/run_medina_both.command` — same as Summit pattern
 
 ## Finding Partners via Apollo
 

@@ -1,6 +1,6 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 76 | 2026-05-24 | Auto-fixes shipped: 3 | New deliverables: 3 | Proposals: 0 | New RESOLVED: 2*
+*Run 77 | 2026-05-24 | Auto-fixes shipped: 5 | New deliverables: 2 | Proposals: 2 | New RESOLVED: 0*
 
 ---
 
@@ -44,6 +44,7 @@ Key resolved issues by category:
 ## OPEN — Manual Contacts Sitting Untouched (New Lead stage) 🔴
 - First seen: 2026-05-18
 - Description: 33 contacts in New Lead stage. 0 last_contact dates. Tier 1 contractors need personal text.
+- Run 77 (2026-05-24 Sun): FRESH DELIVERABLE — `outputs/vera/memorial_day_contractor_text_card_2026-05-24.md` written this run. 5 copy-paste texts for all 5 Tier 1 contractors. Send at 10am Monday May 25 (Memorial Day — trades are working, phones on). Zero reading required. Open card, copy, send, done. All 5 numbers confirmed in pipeline_data.json. This is the simplest possible path to finally moving these contacts out of "New Lead."
 - Tier 1: Anthony/Land Pro (440-320-2779), Dontez/GTP (440-396-0814), Chris/Twin Improvements (216-773-0757), Venus/Reliable Roofing (216-810-2497), Logan/Pagels (216-956-5263)
 - Run 54: Touch 3 fired May 22. Weekend checklist written.
 - Run 57 (2026-05-23 Sat): Day 2 of 72-hour reply window. Sunday May 24 action card written with Tier 1 texts as Priority 2 task. Fresh angle: Sunday texts + Monday May 26 blitz follow-up texts (`outputs/tommy/may26_monday_morning_followup_texts.md` NEW). Resolution window = by May 26.
@@ -162,13 +163,11 @@ Key resolved issues by category:
 ## OPEN — Danny PM cron not running (12 days overdue) 🔴 CRITICAL — SUMMIT DEADLINE MAY 31
 - First seen: 2026-05-20 (run 28)
 - Description: Last successful pull: May 12. Apollo blocked in cloud. Cron not set up on Bradley's Mac.
-- Run 56: Added `--county Summit` override CLI flag. Updated danny.md with May 25 deadline.
-- Run 57 (2026-05-23 Sat): TODAY IS SATURDAY MAY 23. Summit County deadline = MAY 31 (end of ISO Week 21).
-- Run 61 (2026-05-23 Sat): Deadline clarified to May 31. Command confirmed working on Mac in 5 minutes.
-- Run 62 (2026-05-23 Sat): FRICTION REDUCTION — added `scripts/run_summit_pull.command` to the repo. Bradley can double-click this file in Finder and it runs the Summit pull in Terminal without typing anything. Reduces the activation energy from "open Terminal, cd, type command" to "double-click file in Finder." Script is at: `scripts/run_summit_pull.command`. This is the lowest-friction path available.
-- Run 65 (2026-05-23 Sat): danny.md urgency note updated to remove stale "TODAY IS SATURDAY MAY 23" — now reads "WEEK 21 = SUMMIT COUNTY — DEADLINE MAY 31" which won't go stale daily. 8 days remain. Double-click shortcut at `scripts/run_summit_pull.command` is the fastest path.
+- Run 62: Added `scripts/run_summit_pull.command` double-click shortcut.
+- Run 65: danny.md urgency note updated to generic "WEEK 21 = SUMMIT COUNTY — DEADLINE MAY 31."
 - Command (manual): `python3 workers/lead_pipeline.py danny Summit` (valid any day May 23–31)
-- Double-click shortcut: `scripts/run_summit_pull.command` (in Finder, shows "run_summit_pull" — just open it)
+- Double-click shortcut: `scripts/run_summit_pull.command` (in Finder — just open it)
+- Run 77 (2026-05-24 Sun): NEXT COUNTY PREP — Created `scripts/run_medina_pull.command` and `scripts/run_medina_both.command` for Week 22 (June 1 = Medina County). When Summit deadline passes May 31, the very next day is Medina. Shortcut is ready. Also wrote `outputs/donna/june1_medina_pull_guide_2026-05-24.md` — operationalized June 1 guide. Summary: Summit (May 23–31) → Medina (June 1) → Geauga+Portage (June 8). All three have double-click shortcuts. danny.md and carla.md updated with Week 22 urgency note.
 - Resolution criteria: logs/activity.log shows Danny Summit pull entry by May 31.
 
 ---
@@ -262,6 +261,26 @@ Key resolved issues by category:
 - Fix: Added _flush_unpushed_commits() called at start of _main_body() before git pull --rebase; if a prior push failed leaving a "cleared pending_messages" commit unpushed, it gets pushed first; prevents rebase from applying the empty-file commit on top of new Vera messages and silently discarding them
 
 ---
+
+## RUN METRICS — Run 77 | 2026-05-24
+- Total RESOLVED: 79 (0 new this run — all open issues require Bradley action or permanent infrastructure constraints)
+- Total OPEN: 20 (0 new closed, 0 new opened)
+- Auto-upgrades shipped: 5
+  1. scripts/run_medina_pull.command — new double-click Finder shortcut for Medina County Danny pull (Week 22 = June 1); mirrors Summit shortcut pattern; proactive 8 days before the deadline
+  2. scripts/run_medina_both.command — Danny + Carla Medina pull together in one click
+  3. CLAUDE.md — added Medina shortcuts to Quick Shortcuts section with week labels
+  4. agents/danny.md — added Week 22 Medina urgency note after Summit deadline; countdown-style like Summit note was
+  5. agents/carla.md — added Week 22 Medina note with double-click shortcut reference
+- Deliverables written: 2
+  1. outputs/vera/memorial_day_contractor_text_card_2026-05-24.md — 5 copy-paste texts for all 5 Tier 1 contractors at 10am Monday Memorial Day; includes if-they-reply scripts and pipeline_data.json update instructions; zero reading required — open card, copy, send
+  2. outputs/donna/june1_medina_pull_guide_2026-05-24.md — operationalized June 1 Medina County pull guide; mirrors Summit guide pattern; includes pre-pull check, both command options, June 4 enrollment connection, Medina-specific Apollo targets
+- Proposals: 2 (see Slack messages — Workiz missed-call auto-text before Tuesday launch; Instagram account activation while before/after content is fresh)
+- Key context: Medina County shortcuts built 8 days early — same lead time that Summit shortcut had, which proved effective. After Summit deadline May 31, the very next step is Medina June 1 → enrollment June 4. No gap in the friction-reduction chain.
+- Highest priority TOMORROW (Mon May 25 Memorial Day):
+  1. 10am: Open `outputs/vera/memorial_day_contractor_text_card_2026-05-24.md` — 5 texts, 10 minutes, closes weeks-old open issue
+  2. 10am: Run `python3 workers/check_replies.py` → see monday_memorial_day_final_check_2026-05-24.md for decision tree
+  3. Pause Instantly.ai: app.instantly.ai → a1c08c3d + 626cd15d → ⋮ → Pause
+- Highest priority TUESDAY May 26: READ `may26_week_priority_stack_2026-05-24.md` first → all actions in order
 
 ## RUN METRICS — Run 75 | 2026-05-24
 - Total RESOLVED: 77 (0 new — all open issues require Bradley action or permanent infrastructure constraints)

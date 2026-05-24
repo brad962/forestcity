@@ -264,3 +264,60 @@
 >STILL NEEDS BRADLEY TODAY (Sunday May 24):
 >• Text Anthony/Land Pro 440-320-2779 — Memorial Day weekend, trades are working
 >• Pause Instantly.ai — app.instantly.ai → a1c08c3d + 626cd15d → Pause → add INSTANTLY_PAUSED=true to .env (now required to unblock enrollment)
+---
+🔧 *Vera — Auto-Upgrade*
+>Changed: scripts/run_medina_pull.command + scripts/run_medina_both.command — new double-click Finder shortcuts for Medina County
+>Why: Week 22 = June 1 (Medina County). Cron is still down. Built the shortcut 8 days early — same lead time that made run_summit_pull.command effective. No friction on June 1 morning.
+>File: scripts/run_medina_pull.command + run_medina_both.command
+---
+🔧 *Vera — Auto-Upgrade*
+>Changed: CLAUDE.md Quick Shortcuts — added Medina pull shortcuts with week labels
+>Why: Summit shortcuts are listed there; Medina needed the same treatment before June 1 so Bradley sees it when he opens the master reference doc
+>File: CLAUDE.md
+---
+🔧 *Vera — Auto-Upgrade*
+>Changed: agents/danny.md — Week 22 Medina urgency note added below Summit deadline
+>Why: After Summit (May 31), next pull is Medina June 1 → Round 2 enrollment June 4. Danny.md had no Medina urgency text. Fixed.
+>File: agents/danny.md
+---
+🔧 *Vera — Auto-Upgrade*
+>Changed: agents/carla.md — Week 22 Medina note with run_medina_both.command shortcut added
+>Why: Carla's county rotation section had Summit shortcut references but nothing for Medina. Both workers need to know the June 1 path.
+>File: agents/carla.md
+---
+📋 *Vera — Deliverable: memorial_day_contractor_text_card_2026-05-24.md*
+>What: 5 copy-paste texts for all 5 Tier 1 contractors — send at 10am Monday Memorial Day
+>Anthony/Land Pro 440-320-2779 | Dontez/GTP 440-396-0814 | Chris/Twin 216-773-0757 | Venus/Reliable Roofing 216-810-2497 | Logan/Pagels 216-956-5263
+>Why: 10am Memorial Day = highest open rate for contractor texts (trades are working, not buried in afternoon calls). Reply scripts + pipeline_data.json update instructions included.
+>File: outputs/vera/memorial_day_contractor_text_card_2026-05-24.md
+>Action: Open card at 10am tomorrow. Copy. Send. Done.
+---
+📋 *Vera — Deliverable: june1_medina_pull_guide_2026-05-24.md*
+>What: Operationalized June 1 Medina County pull guide — mirrors Summit pull guide pattern
+>Why: June 1 is 8 days away. Medina pull feeds Round 2 enrollment June 4. Guide covers double-click vs. Terminal options, pre-pull checklist, June 4 enrollment connection, Medina-specific Apollo context.
+>File: outputs/donna/june1_medina_pull_guide_2026-05-24.md
+>Action: Read June 1 morning before running the pull.
+---
+💡 *Vera — Upgrade Proposal*
+>Idea: Enable Workiz missed-call auto-text BEFORE Tuesday ads launch
+>Why: Google and Facebook ads launch Tuesday. Every missed call from an ad lead is a permanently lost booking. Workiz has a built-in "missed call auto-reply" SMS feature — no code, no Twilio, no cost. Enable in Workiz Settings → Communications → Auto-Reply.
+>Impact: Ad leads who call and get voicemail get an immediate text: "Hey, it's Forest City — missed your call! Book here or reply to this text." 40-60% of missed calls will reply to an auto-text. Without it, most missed calls = lost forever.
+>Reply YES to approve and I'll write the exact auto-reply message text.
+---
+💡 *Vera — Upgrade Proposal*
+>Idea: Activate Forest City Instagram account now (if not already live)
+>Why: Peak photo season. Pre_job_reminder_text_sequence captures before/after at every job. Jasmine has 5 Instagram Stories scripts ready (outputs/jasmine/instagram_stories_scripts_2026-05-24.md). Stories are the highest-engagement format for before/after content — 4x more views than feed posts in the cleaning services category. Starting now means 20+ pieces of content by June 30 = real social proof before the summer rush ends.
+>Impact: Free channel. No ad spend. Before/after content = organic reach via shares. Reviews from neighbors who see the posts. Jasmine's scripts are phone-camera only, no editing skill required.
+>Reply YES to approve and Jasmine will write an Instagram bio + profile setup guide.
+---
+✅ *Vera — Scan Complete 2026-05-24 (Run 77)*
+>5 auto-upgrades shipped | 2 deliverables | 2 proposals | 20 open issues (0 new RESOLVED)
+
+>🔑 BIGGEST WIN THIS RUN: Medina County is now as frictionless as Summit was. run_medina_pull.command + run_medina_both.command are live in scripts/. Danny and Carla agent files updated. June 1 = double-click, done.
+
+>🗓️ TOMORROW (Mon May 25 Memorial Day):
+>1. 10am — Open `outputs/vera/memorial_day_contractor_text_card_2026-05-24.md` → 5 texts → send (10 min, closes a 6-day-old open issue)
+>2. 10am — `python3 workers/check_replies.py` → decision gate in monday_memorial_day_final_check_2026-05-24.md
+>3. Pause Instantly.ai → app.instantly.ai → a1c08c3d + 626cd15d → ⋮ → Pause → add INSTANTLY_PAUSED=true to .env (REQUIRED before Tuesday enrollment)
+
+>📅 TUESDAY May 26: READ `may26_week_priority_stack_2026-05-24.md` FIRST — everything in order

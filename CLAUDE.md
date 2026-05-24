@@ -144,5 +144,7 @@ To check if cron is running: `cat logs/cron.log | tail -50`
 
 No Terminal required — just open Finder, navigate to the `forestcity/scripts/` folder, and double-click:
 
-- **`run_summit_pull.command`** — Danny's Summit County lead pull (opens Terminal automatically, runs, closes)
-- **`run_summit_both.command`** — Danny + Carla Summit County pull in sequence (both workers, one click)
+- **`run_summit_pull.command`** — Danny's Summit County lead pull (opens Terminal automatically, runs, closes) — Week 21, deadline May 31
+- **`run_summit_both.command`** — Danny + Carla Summit County pull in sequence (both workers, one click) — Week 21
+- **`run_medina_pull.command`** — Danny's Medina County lead pull (Week 22, June 1) — double-click in Finder
+- **`run_medina_both.command`** — Danny + Carla Medina County pull in sequence (Week 22, June 1) — both workers, one click
