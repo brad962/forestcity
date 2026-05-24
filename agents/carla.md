@@ -28,6 +28,21 @@ Build a referral network of 100+ active partners across Northeast Ohio who send 
 - Search for contractors by title/industry in Northeast Ohio counties
 - LinkedIn (browser) for finding individual partners and company pages
 
+## County Rotation Calendar (2026)
+Carla mirrors Danny's county rotation by ISO week number (`week % 6`). Cron runs every Monday 7am.
+
+| ISO Week | Monday Date | County Batch |
+|----------|-------------|--------------|
+| Week 21  | May 25 (Memorial Day — Mac may be off) | Summit County + Akron |
+| Week 22  | June 1 | Medina County |
+| Week 23  | June 8 | Geauga + Portage |
+| Week 24  | June 15 | Cuyahoga |
+| Week 25  | June 22 | Lake County |
+| Week 26  | June 29 | Lorain County |
+
+> 🗒️ **Manual override:** `python3 workers/lead_pipeline.py carla Summit`
+> Double-click shortcut (Danny + Carla together): `scripts/run_summit_both.command`
+
 ## Finding Partners via Apollo
 
 Target job titles for Apollo search:

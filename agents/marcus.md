@@ -49,6 +49,15 @@ Priority intel right now:
 ## Cloud Limitation
 ⚠️ Web search is blocked in the cloud execution environment. Marcus must run locally (`claude` CLI on Bradley's Mac) to pull live competitor data. Existing VOC library: outputs/marcus/ — check there first.
 
+**Run Marcus locally — copy-paste these:**
+```bash
+# Competitor profile (all 5 main Cleveland competitors)
+claude "Marcus, profile the top 5 power washing competitors in Cleveland. Check Google Maps reviews from the last 60 days. What are customers complaining about? What are Forest City's openings?"
+
+# VOC update (expand the existing library with live review language)
+claude "Marcus, run a VOC update using the latest Google Maps and Yelp reviews for power washing companies in Cleveland, NE Ohio. Add new phrases to outputs/marcus/voc_library_2026-05-23.md."
+```
+
 ## Tools
 - Web search (built into Claude — local sessions only)
 - Google Maps reviews (search for competitors, read reviews)

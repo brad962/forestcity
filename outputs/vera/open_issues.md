@@ -1,6 +1,6 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 72 | 2026-05-24 | Auto-fixes shipped: 4 | New deliverables: 4 | Proposals: 2 | New RESOLVED: 0*
+*Run 73 | 2026-05-24 | Auto-fixes shipped: 4 | New deliverables: 3 | Proposals: 0 | New RESOLVED: 0*
 
 ---
 
@@ -33,6 +33,7 @@ Key resolved issues by category:
 - Run 69 (2026-05-24 Sun): TODAY is the day. Mixmax reply window closes TOMORROW (Mon May 25 Memorial Day). Today + tomorrow = last chance for Memorial Day weekend contractor contact before Tuesday's 90-min blitz. Text Anthony first (landscaper = highest referral ROI). Text Venus second (roofer = high-ticket jobs). 2 texts = 10 minutes of real action. `tuesday_may26_launch_card_2026-05-23.md` has the full Tier 1 list at Priority 4 (8:45am Tuesday) as the backstop if not texted today.
 - Run 70 (2026-05-24 Sun): Same window — still Sunday. 5 contacts, 2 texts in 10 minutes. If not done today, these move to Tuesday morning blitz (8:45am slot). When any of these contacts calls back after a text, use `outputs/tommy/hot_lead_callback_script_2026-05-24.md` (new this run) — the inbound call conversion rate from warm contractors is much higher than cold, and Bradley has no script for that scenario until now.
 - Run 71 (2026-05-24 Sun): Text window TODAY (Sunday) still open — trades working Memorial Day weekend. If not today, Tuesday May 26 at 8:45am is the blitz slot (in may26_week_priority_stack). June 4 enrollment battle card now exists (`outputs/donna/june4_enrollment_battle_card_2026-05-24.md`) — Tier 1 contractor texts are the same-day activity alongside enrollment.
+- Run 73 (2026-05-24 Sun): VERIFIED via pipeline_data.json — all 5 Tier 1 contractors confirmed "New Lead," 0 last_contact dates. Phones confirmed in pipeline_data.json (Anthony 440-320-2779, Dontez 440-396-0814, Chris/Twin 216-773-0757, Venus 216-810-2497, Logan 216-956-5263). Fresh angle: inbound call handling is now covered — if a contractor calls back after a text, use `outputs/tommy/inbound_response_protocol_2026-05-24.md` Section 4. Tuesday 8:45am is the Plan B slot from `may26_week_priority_stack_2026-05-24.md`.
 - Resolution criteria: Bradley texts Tier 1 list. Confirmed when pipeline_data.json shows "Contacted" stage for these 5.
 
 ---
@@ -83,6 +84,7 @@ Key resolved issues by category:
 - Run 69 (2026-05-24 Sun): 11 days until Round 2. Pause window = NOW. app.instantly.ai → Campaigns → ⋮ (three dots on right) → Pause. Do both campaigns: a1c08c3d + 626cd15d. 3 minutes. Every day of recovery = better deliverability on June 4. After pausing, add INSTANTLY_PAUSED=true to .env so enroll_batch() stops warning.
 - Run 70 (2026-05-24 Sun): Still 11 days. May 25 (Memorial Day) = last day with no cost for not pausing. June 4 is 11 days away. Email deliverability recovery needs at least 7–10 days. If not paused by Tuesday May 26, the recovery window before Round 2 drops below 7 days — high risk of landing in spam again. This is a 3-minute action: app.instantly.ai → Campaigns → ⋮ → Pause.
 - Run 71 (2026-05-24 Sun): 11 days until Round 2. June 4 enrollment battle card now has an explicit Instantly.ai pre-check as Step 1 the night of June 3 (grep INSTANTLY_PAUSED .env). If still not paused by Tuesday May 26, the recovery window is exactly 9 days — minimum viable. Every day after Tuesday = higher spam risk for June 4.
+- Run 73 (2026-05-24 Sun): 11 days until Round 2. Reply window closes TOMORROW. If 0 replies come in by Memorial Day morning, Instantly.ai is confirmed to have hurt deliverability. Pausing immediately after the window closes = maximum recovery time before June 4. Critical path: pause TODAY → 11 days recovery; pause Tuesday → 9 days recovery (minimum viable); pause after June 1 → less than 7 days (high risk). The 3-minute pause is the highest-leverage action available this weekend.
 - Resolution criteria: Both campaigns paused in Instantly.ai → confirmed by Bradley.
 
 ---
@@ -227,6 +229,17 @@ Key resolved issues by category:
 - Fix: Added _flush_unpushed_commits() called at start of _main_body() before git pull --rebase; if a prior push failed leaving a "cleared pending_messages" commit unpushed, it gets pushed first; prevents rebase from applying the empty-file commit on top of new Vera messages and silently discarding them
 
 ---
+
+## RUN METRICS — Run 73 | 2026-05-24
+- Total RESOLVED: 77 (0 new — all open issues require Bradley action or are permanent infrastructure constraints)
+- Total OPEN: 18 (0 new closed, 0 new opened)
+- Auto-upgrades shipped: 4 (carla.md — county rotation calendar added; marcus.md — local CLI run commands added; donna.md — June Booking Blitz section updated with current action docs; tommy.md — inbound_response_protocol format entry added)
+- Deliverables written: 3 (weekly_summary_2026-05-25.md — Vera's first-ever Monday 6am weekly summary: upgrades this week, proposals pending, biggest Tuesday opportunity; facebook_posts_june_week1_2026-05-24.md — 5 Facebook posts for June 2–6 Booking Blitz launch week, June 4 commercial post synced with Round 2 enrollment; inbound_response_protocol_2026-05-24.md — handles organic Facebook comment/DM, website form, inbound call, missed call recovery; complements Rick's paid-ad SOPs)
+- Proposals: 0 (all pending proposals already in Slack from Runs 70–72; no new proposals this run)
+- Key verifications this run: pipeline_data.json confirmed — all 5 Tier 1 contractors still "New Lead," phones present; gas station contacts all have lead_type="gas_station" set — routing confirmed correct for pending enrollment; run_summit_pull.command + run_summit_both.command scripts verified — both correct; vera_relay.py code reviewed — no bugs found
+- Highest priority TODAY (Sun May 24 evening): (1) Text Anthony/Land Pro 440-320-2779 — "referral swap" pitch (2) Pause Instantly.ai — app.instantly.ai → a1c08c3d + 626cd15d → Pause
+- Highest priority TOMORROW (Mon May 25 Memorial Day): Run check_replies.py at 10am → see monday_memorial_day_final_check_2026-05-24.md
+- Highest priority TUESDAY May 26: Read may26_week_priority_stack_2026-05-24.md first → Post Facebook Post 1 at 8am → Launch ads 9:15am → Past customer texts 10am → Tier 1 contractor texts 8:45am
 
 ## RUN METRICS — Run 72 | 2026-05-24
 - Total RESOLVED: 77 (0 new — all open issues require Bradley action or are permanent infrastructure constraints)

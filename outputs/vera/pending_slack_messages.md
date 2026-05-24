@@ -69,3 +69,60 @@
 >• annual_plan_customer_welcome_kit_2026-05-24.md (Tommy — post-YES onboarding)
 >
 >🔴 CRITICAL: Instantly.ai still active. Pause before June 4 or Round 2 lands in spam.
+---
+🔧 *Vera — Auto-Upgrade*
+>Changed: agents/carla.md — added county rotation calendar section
+>Why: Carla mirrors Danny's county rotation but had no calendar; Week 21 = Summit, same as Danny — double-click run_summit_both.command pulls both together
+>File: agents/carla.md
+---
+🔧 *Vera — Auto-Upgrade*
+>Changed: agents/marcus.md — added exact local CLI commands to Cloud Limitation section
+>Why: "run Marcus locally" has been an open action item for 25 runs with no copy-paste command; now Bradley can run one line and Marcus is live
+>File: agents/marcus.md
+---
+🔧 *Vera — Auto-Upgrade*
+>Changed: agents/donna.md — June Booking Blitz section updated with current action docs
+>Why: Section was pointing to May 20 sprint (stale); now points to june_week1_sprint_2026-05-24.md and adds june4_enrollment_battle_card_2026-05-24.md as the press-GO doc
+>File: agents/donna.md
+---
+🔧 *Vera — Auto-Upgrade*
+>Changed: agents/tommy.md — added inbound_response_protocol format entry
+>Why: New format written this run (organic Facebook DM/comment + website form + inbound call); Tommy's catalog updated to document it
+>File: agents/tommy.md
+---
+📅 *Vera — Monday 6am Weekly Summary*
+>Week of May 19–24 | Full summary: outputs/vera/weekly_summary_2026-05-25.md
+>
+>This week in numbers:
+>• 17 auto-upgrades shipped (scripts, agents, CLAUDE.md)
+>• 20 deliverables written (ads, monitoring guides, enrollment docs, VOC content)
+>• 4 proposals pending approval
+>• Touch 3 fired May 22 — 45 contacts enrolled
+>• Reply window closes TODAY (Memorial Day)
+>
+>🏁 Everything is staged for Tuesday. One-page launch plan: outputs/donna/may26_week_priority_stack_2026-05-24.md
+>
+>Biggest opportunity this week: Tuesday May 26 launch day — Facebook posts + ads + past customer texts + contractor blitz. Potential pipeline: $3,000–$9,600.
+---
+📄 *Vera — New Deliverable: Jasmine*
+>File: outputs/jasmine/facebook_posts_june_week1_2026-05-24.md
+>What: 5 Facebook posts for June 2–6 — launch week of the June Booking Blitz. June 4 post (Wednesday) is commercial/HOA angle, deliberately timed to coincide with Round 2 email enrollment that same day. PM who gets the email AND sees the post = double Forest City touchpoint in 24 hours.
+>Action: Schedule all 5 posts in advance OR post each morning. June 4 post goes up at 9am — same day as Danny's Round 2 enrollment run.
+---
+📄 *Vera — New Deliverable: Tommy*
+>File: outputs/tommy/inbound_response_protocol_2026-05-24.md
+>What: How to handle organic inbound — Facebook DM/comment, website contact form, inbound call, missed call recovery. Separate from Rick's paid-ad response SOPs (which cover Lead Gen form submissions). Covers: public comment reply, DM opener, website form email, call script with pricing ranges, warm close, cold follow-up.
+>Action: READ before Tuesday launch — organic engagement from the May 26 Facebook posts will start within hours of posting.
+---
+✅ *Vera — Scan Complete 2026-05-24 (Run 73)*
+>4 auto-upgrades shipped | 3 deliverables written | 0 new proposals | 18 open issues
+>
+>Run 73 verifications:
+>• pipeline_data.json checked — 5 Tier 1 contractors confirmed "New Lead," phones verified
+>• Gas station contacts — all 12 have lead_type="gas_station" set (enrollment ready when Mixmax ID added)
+>• Scripts verified — run_summit_pull.command + run_summit_both.command both correct
+>• vera_relay.py reviewed — no bugs
+>
+>🔴 Today's top 2 actions (15 min total):
+>1. Text Anthony/Land Pro — 440-320-2779 (referral swap pitch)
+>2. Pause Instantly.ai — app.instantly.ai → a1c08c3d + 626cd15d → Pause
