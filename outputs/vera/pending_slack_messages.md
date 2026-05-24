@@ -154,3 +154,89 @@
 >5. 🟡 Text Anthony/Land Pro 440-320-2779 — referral swap pitch — any time today
 >
 >Tuesday May 26 priority stack still live: `outputs/donna/tuesday_may26_launch_card_2026-05-23.md`
+
+---
+
+🔧 *Vera — Auto-Upgrade (Run 68)*
+>Changed: `workers/lead_pipeline.py` — Carla's output filename now includes county label (e.g., `leads_referral_partners_summit_2026-05-24.md` instead of `leads_referral_partners_2026-05-24.md`)
+>Why: If Bradley ran Summit pull today and a second county tomorrow, the second file silently overwrote the first — county-labeled filename prevents data loss on same-day runs
+>File: workers/lead_pipeline.py
+
+---
+
+🔧 *Vera — Auto-Upgrade (Run 68)*
+>Changed: `workers/vera_relay.py` — Carla staleness alert now shows `run_summit_both.command` double-click shortcut alongside the manual command
+>Why: The Danny alert already had the shortcut; Carla alert was missing it. One double-click covers both workers simultaneously.
+>File: workers/vera_relay.py
+
+---
+
+🔧 *Vera — Auto-Upgrade (Run 68)*
+>Changed: `agents/nina.md` — added `check_replies.py` to Nina's tools section
+>Why: Nina "owns" check_replies.py (it scans her sequences and posts Slack) but her agent file never mentioned it. Gap between what the script does and what the agent knows about.
+>File: agents/nina.md
+
+---
+
+🔧 *Vera — Auto-Upgrade (Run 68)*
+>Changed: `agents/carla.md` — added pool_service_referral_blitz format to output catalog
+>Why: Pool service is the highest-value untapped referral segment in NE Ohio right now (Memorial Day pool openings happening TODAY). New deliverable written this run.
+>File: agents/carla.md
+
+---
+
+📄 *Vera — Deliverable (Run 68)*
+>New file: `outputs/donna/monday_memorial_day_final_check_2026-05-24.md`
+>What: Memorial Day morning 10-minute protocol — reply window closes TOMORROW (Monday May 25). Run check_replies.py at 10am. Decision tree for what to do based on reply count.
+>Why: Tomorrow is the last day of the Touch 3 reply window AND a holiday. This gives Bradley a clear, short action for one specific moment without requiring a full work day.
+
+---
+
+📄 *Vera — Deliverable (Run 68)*
+>New file: `outputs/carla/pool_service_referral_blitz_2026-05-24.md`
+>What: Memorial Day pool season pitch for pool service companies — Apollo search query, LinkedIn DM, email script, text, follow-up sequence, objection handling, revenue math
+>Why: NE Ohio pool openings happen Memorial Day weekend. Pool techs are in customers' backyards RIGHT NOW seeing dirty decks and siding. This is the best week of the year to pitch this trade. One pool company with 100 customers = ~$5,250 in referred revenue.
+
+---
+
+📄 *Vera — Deliverable (Run 68)*
+>New file: `outputs/rick/facebook_lead_gen_launch_checklist_2026-05-24.md`
+>What: 5-block pre-launch checklist: Pixel setup, lead notification email, Lead Gen Form settings, budget/targeting confirmation, lead response SOP confirmation
+>Why: Most first-time Facebook ad launchers miss the lead notification setup — leads sit silently in Ads Manager until manually downloaded. This checklist prevents the single most common mistake that kills a first-week launch. Read BEFORE clicking Publish Tuesday.
+
+---
+
+💡 *Vera — Upgrade Proposal (Run 68)*
+>Idea: Apollo search for pool service companies in Cuyahoga, Lake, Summit, Lorain Counties — Memorial Day week pull as a one-time Carla addition
+>Why: Pool service companies are booking customers THIS WEEK. A pitch sent Monday or Tuesday gets read when they're on the road between pool appointments — phone always on, good headspace. If we wait until June, the emotional peak of "pool opening week" is gone.
+>Impact: 15–30 pool company contacts → potentially 15–25 referrals per season per partner × $350 average = $5k+ annually per company
+>Reply YES to approve and I'll add pool_service to the next Carla Apollo pull in lead_pipeline.py
+
+---
+
+⏰ *Vera — REPLY WINDOW CLOSE ALERT (Run 68)*
+>Touch 3 reply window closes TOMORROW (Monday May 25 = Memorial Day)
+>
+>TODAY (Sunday May 24) last-chance actions:
+>1. 🔴 Pause Instantly.ai — 3 min — app.instantly.ai → Campaigns → Pause a1c08c3d + 626cd15d
+>2. 🔴 Text Anthony/Land Pro 440-320-2779 — trades working today — referral swap pitch
+>3. 🟡 Pool company LinkedIn pitches — `outputs/carla/pool_service_referral_blitz_2026-05-24.md`
+>
+>TOMORROW (Memorial Day): 10am check_replies.py → 10 min → `outputs/donna/monday_memorial_day_final_check_2026-05-24.md`
+>
+>TUESDAY: Read facebook_lead_gen_launch_checklist FIRST → then full 90-min blitz
+
+---
+
+✅ *Vera — Scan Complete 2026-05-24 (Run 68)*
+>4 auto-upgrades shipped | 3 deliverables written | 1 proposal | 0 new issues resolved
+>
+>Open issues (18): All require Bradley action.
+>
+>Today's priority (Sun May 24):
+>1. 🔴 Text Anthony/Land Pro 440-320-2779 — 2 min — trades are working this weekend
+>2. 🔴 Pause Instantly.ai — 3 min — app.instantly.ai → Campaigns → Pause a1c08c3d + 626cd15d
+>3. 🟡 LinkedIn pool company pitches — `outputs/carla/pool_service_referral_blitz_2026-05-24.md`
+>
+>Tomorrow (Memorial Day): 10am check_replies.py only — 10 min — then enjoy the holiday
+>Tuesday May 26: Read facebook_lead_gen_launch_checklist → full launch → 90 min

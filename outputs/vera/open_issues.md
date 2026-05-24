@@ -1,6 +1,6 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 67 | 2026-05-23 | Auto-fixes shipped: 3 | New deliverables: 3 | Proposals: 2 | New RESOLVED: 0*
+*Run 68 | 2026-05-24 | Auto-fixes shipped: 4 | New deliverables: 3 | Proposals: 1 | New RESOLVED: 0*
 
 ---
 
@@ -29,6 +29,7 @@ Key resolved issues by category:
 - Run 61 (2026-05-23 Sat): Reply window still open (ends Sunday May 25). Fresh angle: text scripts corrected in `tuesday_may26_launch_card_2026-05-23.md` — Tier 1 contractor texts are Priority #4 at 8:45am Tuesday. That's 36 hours from now. Window for a Memorial Day weekend text (Saturday afternoon) is also valid — higher open rate than weekday. Try one TODAY: Anthony/Land Pro 440-320-2779.
 - Run 62 (2026-05-23 Sat): Still open — all 5 Tier 1 contractors uncontacted. Reply window closes TOMORROW (Sunday May 25). Fresh angle: the reply window that closes tomorrow is for the Mixmax sequence. But the PERSONAL outreach window (texts to Tier 1) has no deadline — it's just been sitting idle. Text Anthony at 440-320-2779 this afternoon. Memorial Day weekend = trades are doing estimates, phones are on. Script: "Hey Anthony, it's Bradley from Forest City Power Washing. We do exterior cleaning for a lot of landscapers' customers — want to do a quick referral swap? No paperwork. $50 for every job you send our way."
 - Run 65 (2026-05-23 Sat): Tier 1 texts queued for Tuesday May 26 blitz (tuesday_may26_launch_card). Mixmax reply window closes tomorrow. Nothing Vera can do from cloud — this requires Bradley to open his phone. Priority #2 on Tuesday morning.
+- Run 68 (2026-05-24 Sun): Still open. It's Memorial Day weekend — trades are doing estimates and running jobs. TODAY (Sunday) or tomorrow (Memorial Day Monday) is actually the BEST window to text a contractor: they're working but not buried in office tasks. Script for Anthony 440-320-2779: "Hey Anthony, it's Bradley from Forest City Power Washing. We do exterior cleaning for a lot of landscapers' customers — want to do a quick referral swap? No paperwork, $50 for every job you send our way." Tuesday is still Plan B. Text one today.
 - Resolution criteria: Bradley texts Tier 1 list. Confirmed when pipeline_data.json shows "Contacted" stage for these 5.
 
 ---
@@ -75,6 +76,7 @@ Key resolved issues by category:
 - Run 62 (2026-05-23 Sat): Round 2 enrollment is June 4 — 12 days away. Pausing today = 12 full days of deliverability recovery before Round 2 sends. Pausing June 3 = 0 days of recovery. Every day of delay costs deliverability. New escalation: Round 2 Enrollment Readiness Checklist (`outputs/donna/round2_enrollment_readiness_checklist_2026-05-23.md`) now includes Instantly pause as the first block — without it, the entire checklist is a NO-GO and Round 2 enrollment cannot proceed.
 - Run 65 (2026-05-23 Sat): 11 days until Round 2 enrollment. Pause now = 11 days recovery. Every day not paused = worse deliverability on June 4. This is the single most impactful action before Tuesday.
 - Run 66 (2026-05-23 Sat): Auto-fix applied: danny.md updated to explicitly flag these two campaigns as ACTIVE (was saying "Not active" — misleading any agent reading the file). enroll_batch() already warns at runtime. Open issue remains: Bradley must pause in app.instantly.ai UI.
+- Run 68 (2026-05-24 Sun): REPLY WINDOW CLOSES TOMORROW (Monday May 25, Memorial Day). 11 days remain until Round 2 enrollment (June 4). Every day not paused = less deliverability recovery. This is a 3-minute task: app.instantly.ai → Campaigns → ⋮ → Pause a1c08c3d AND 626cd15d. If not paused before Round 2, all Round 2 emails will land in spam just like Round 1.
 - Resolution criteria: Both campaigns paused in Instantly.ai → confirmed by Bradley.
 
 ---
@@ -85,6 +87,7 @@ Key resolved issues by category:
 - Run 56: 72-hour window closes May 25.
 - Run 60 (2026-05-23 Sat): Window closes TONIGHT. Sunday evening protocol (`may25_sunday_evening_protocol_2026-05-23.md`) has the full if/then tree: replies → templates ready; 0 replies → Instantly.ai pause + LinkedIn connects + bridge emails queued for Monday. Round 2 enrollment June 4 with A/B subjects (`outputs/tommy/email_subject_line_ab_test_2026-05-22.md`). Plan B is fully built — no gap if window closes at zero.
 - Run 61 (2026-05-23 Sat): 2 days remain in window (closes Sunday May 25). Memorial Day weekend open rates are lower than weekdays but replies still happen. Bridge email from personal Gmail (bypasses spam, see `outputs/tommy/hot_lead_bridge_email_may26_2026-05-22.md`) has higher chance of landing during the weekend than the Mixmax sequence emails did. Round 2 June 4 plan fully built regardless of outcome.
+- Run 68 (2026-05-24 Sun): Reply window closes TOMORROW (Monday May 25, Memorial Day). Final check: run `python3 workers/check_replies.py` at 10am Monday (10 minutes). Decision gate: `outputs/donna/may25_round2_decision_gate_2026-05-22.md`. Protocol for tomorrow: `outputs/donna/monday_memorial_day_final_check_2026-05-24.md` (NEW). 0 replies = pivot cleanly to Round 2 June 4 with VOC-rewritten copy.
 - Resolution criteria: At least 1 confirmed reply before May 25 OR Round 2 rewrite + enrollment launched by June 4.
 
 ---
@@ -216,6 +219,16 @@ Key resolved issues by category:
 - Fix: Added _flush_unpushed_commits() called at start of _main_body() before git pull --rebase; if a prior push failed leaving a "cleared pending_messages" commit unpushed, it gets pushed first; prevents rebase from applying the empty-file commit on top of new Vera messages and silently discarding them
 
 ---
+
+## RUN METRICS — Run 68 | 2026-05-24
+- Total RESOLVED: 77 (0 new this run — all open issues require Bradley action)
+- Total OPEN: 18 (0 new closed, 0 new opened)
+- Auto-upgrades shipped: 4 (lead_pipeline.py run_carla() output filename now includes county label — prevents same-day overwrite when two counties pulled; vera_relay.py Carla staleness alert updated with run_summit_both.command double-click shortcut; agents/nina.md added check_replies.py reference; agents/carla.md added pool_service_referral_blitz format)
+- Deliverables written: 3 (monday_memorial_day_final_check_2026-05-24.md — 10-min Memorial Day morning protocol, reply window closes tomorrow; pool_service_referral_blitz_2026-05-24.md — Memorial Day pool season outreach for Carla, NE Ohio pool openings happening NOW; facebook_lead_gen_launch_checklist_2026-05-24.md — 5-block pre-launch checklist for Tuesday Facebook ads: Pixel, lead notifications, form settings, budget, response SOP)
+- Proposals: 1 (pool service referral blitz — Memorial Day timing makes this the best week to pitch pool companies; revenue math: 15 referrals × $350 = $5,250 from a single relationship)
+- Highest priority TODAY (Sun May 24): (1) Text Anthony/Land Pro 440-320-2779 — trades working Memorial Day weekend, phones are on (2) Pause Instantly.ai — 3 min — app.instantly.ai → Campaigns → ⋮ → Pause a1c08c3d + 626cd15d (3) LinkedIn pitches to pool service companies — `outputs/carla/pool_service_referral_blitz_2026-05-24.md`
+- Highest priority MONDAY May 25 (Memorial Day): Run check_replies.py at 10am — 10 min — `outputs/donna/monday_memorial_day_final_check_2026-05-24.md`
+- Highest priority TUESDAY May 26: Read `outputs/rick/facebook_lead_gen_launch_checklist_2026-05-24.md` BEFORE launching ads → then full 90-min blitz `outputs/donna/tuesday_may26_launch_card_2026-05-23.md`
 
 ## RUN METRICS — Run 67 | 2026-05-23
 - Total RESOLVED: 77 (0 new this run — all open issues require Bradley action)

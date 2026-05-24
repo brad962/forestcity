@@ -460,16 +460,21 @@ def run_carla(county_override=None):
         )
         if idx is not None:
             locations = CARLA_COUNTY_ROTATION[idx]
-            print(f'  County batch: {CARLA_COUNTY_LABELS[idx]} [MANUAL OVERRIDE]')
+            county_label = CARLA_COUNTY_LABELS[idx]
+            print(f'  County batch: {county_label} [MANUAL OVERRIDE]')
         else:
             valid = ', '.join(CARLA_COUNTY_LABELS)
             print(f'  ⚠️ County "{county_override}" not found. Valid values: {valid}')
             print(f'  Falling back to rotation.')
-            locations = CARLA_COUNTY_ROTATION[week_num % len(CARLA_COUNTY_ROTATION)]
-            print(f'  County batch: {CARLA_COUNTY_LABELS[week_num % len(CARLA_COUNTY_LABELS)]} (week {week_num} rotation)')
+            county_idx = week_num % len(CARLA_COUNTY_ROTATION)
+            locations = CARLA_COUNTY_ROTATION[county_idx]
+            county_label = CARLA_COUNTY_LABELS[county_idx]
+            print(f'  County batch: {county_label} (week {week_num} rotation)')
     else:
-        locations = CARLA_COUNTY_ROTATION[week_num % len(CARLA_COUNTY_ROTATION)]
-        print(f'  County batch: {CARLA_COUNTY_LABELS[week_num % len(CARLA_COUNTY_LABELS)]} (week {week_num} rotation)')
+        county_idx = week_num % len(CARLA_COUNTY_ROTATION)
+        locations = CARLA_COUNTY_ROTATION[county_idx]
+        county_label = CARLA_COUNTY_LABELS[county_idx]
+        print(f'  County batch: {county_label} (week {week_num} rotation)')
 
     all_new = []
     all_people_count = 0
@@ -529,12 +534,12 @@ def run_carla(county_override=None):
         save_to_cache(all_new)
 
         date_str = datetime.now().strftime('%Y-%m-%d')
-        out_file = f'leads_referral_partners_{date_str}.md'
+        out_file = f'leads_referral_partners_{county_label.lower().replace("+", "_")}_{date_str}.md'
         out_path = OUTPUTS / 'carla' / out_file
         out_path.parent.mkdir(exist_ok=True)
 
         lines = [
-            f'# Referral Partner Leads',
+            f'# Referral Partner Leads — {county_label}',
             f'### Apollo Pull | {datetime.now().strftime("%Y-%m-%d %H:%M")}',
             f'*Carla Reyes | Referral Partner Manager*',
             '',
@@ -548,9 +553,9 @@ def run_carla(county_override=None):
             lines.append(f'| {l["first_name"]} {l["last_name"]} | {l["title"]} | {l["company_name"]} | {l["email"]} | {l.get("phone","—")} | {l.get("_lead_type","—")} |')
 
         out_path.write_text('\n'.join(lines))
-        log('carla', f'Apollo pull — {len(all_new)} new referral partners, {enrolled} enrolled in Mixmax', out_file)
+        log('carla', f'Apollo pull — {len(all_new)} new referral partners in {county_label}, {enrolled} enrolled in Mixmax', out_file)
         _write_carla_sentinel()
-        git_push('carla', f'Carla: lead pull {date_str}')
+        git_push('carla', f'Carla: lead pull {county_label} {date_str}')
         send_report_card(
             worker_name='carla',
             title='Lead Pull Complete',

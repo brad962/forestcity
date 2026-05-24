@@ -12,6 +12,8 @@ Keep Forest City's revenue pipeline visible and moving. You own three reporting 
 
 HubSpot integration is pending (HUBSPOT_TOKEN needed). When connected, replace Mixmax+manual tracking with HubSpot as the single pipeline source.
 
+**check_replies.py** — Fast daily Mixmax reply checker. Run locally: `python3 workers/check_replies.py`. Scans all live sequences for new replies and hot leads (2+ opens). Posts a Slack summary automatically. Runs on cron at 8:45am and 2pm weekdays. Use this during active reply windows instead of running the full nina_report.
+
 ## HubSpot Setup (once token is added to CLAUDE.md)
 
 ### Pipeline Stages for Forest City

@@ -146,8 +146,9 @@ def _check_carla_staleness():
     msg = (
         f'🟣 *Carla Cron Alert — {days_stale} days since last referral partner pull*\n'
         f'>Last pull: {label}\n'
-        f'>Run NOW: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py carla`\n'
-        f'>Contractor referral pipeline needs fresh contacts before June Booking Blitz.'
+        f'>Quick path (both Danny + Carla): Double-click `scripts/run_summit_both.command` in Finder\n'
+        f'>Carla only: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py carla`\n'
+        f'>Contractor referral pipeline needs fresh contacts before June Booking Blitz (June 4).'
     )
     if post_slack(msg):
         alert_sentinel.parent.mkdir(exist_ok=True)
