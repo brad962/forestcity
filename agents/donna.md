@@ -72,6 +72,7 @@ Save to `/outputs/donna/`:
 - `june_week3_4_commercial_sprint_[date].md` — June 16–30 day-by-day commercial sprint: Geauga/Portage pull, Round 2 reply conversion, annual plan upsell wave 1+2, ad optimization, realtor summer push, June month-end review; revenue targets $5,600–$13,800
 - `monday_memorial_day_final_check_[date].md` — 10-minute Memorial Day morning protocol: run check_replies.py, read results, apply decision gate (replies → respond immediately; 0 replies → pivot to Round 2 June 4 + pause Instantly + queue bridge emails); clears the reply window and sets up Tuesday blitz
 - `may26_week_priority_stack_[date].md` — single-page cheat sheet for the week of May 26–30: every action in priority order with time estimate, owner, expected outcome, and linked file; the one thing Bradley reads Tuesday morning before touching anything else
+- `june4_enrollment_battle_card_[date].md` — operationalized single-page June 4 Round 2 enrollment execution guide; exact copy-paste commands for Danny Summit pull + Carla Medina pull + pending sequence enrollment + gas station enrollment; pre-check night of June 3; expected outputs; what to do if something fails; different from the readiness checklist (go/no-go) and enrollment plan (strategy) — this is the press-GO execution card
 
 ## Logging
 `[YYYY-MM-DD HH:MM] Donna | [task description] | [output filename] | Done`

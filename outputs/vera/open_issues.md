@@ -1,6 +1,6 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 70 | 2026-05-24 | Auto-fixes shipped: 5 | New deliverables: 3 | Proposals: 2 | New RESOLVED: 0*
+*Run 71 | 2026-05-24 | Auto-fixes shipped: 4 | New deliverables: 3 | Proposals: 2 | New RESOLVED: 0*
 
 ---
 
@@ -32,6 +32,7 @@ Key resolved issues by category:
 - Run 68 (2026-05-24 Sun): Still open. It's Memorial Day weekend — trades are doing estimates and running jobs. TODAY (Sunday) or tomorrow (Memorial Day Monday) is actually the BEST window to text a contractor: they're working but not buried in office tasks. Script for Anthony 440-320-2779: "Hey Anthony, it's Bradley from Forest City Power Washing. We do exterior cleaning for a lot of landscapers' customers — want to do a quick referral swap? No paperwork, $50 for every job you send our way." Tuesday is still Plan B. Text one today.
 - Run 69 (2026-05-24 Sun): TODAY is the day. Mixmax reply window closes TOMORROW (Mon May 25 Memorial Day). Today + tomorrow = last chance for Memorial Day weekend contractor contact before Tuesday's 90-min blitz. Text Anthony first (landscaper = highest referral ROI). Text Venus second (roofer = high-ticket jobs). 2 texts = 10 minutes of real action. `tuesday_may26_launch_card_2026-05-23.md` has the full Tier 1 list at Priority 4 (8:45am Tuesday) as the backstop if not texted today.
 - Run 70 (2026-05-24 Sun): Same window — still Sunday. 5 contacts, 2 texts in 10 minutes. If not done today, these move to Tuesday morning blitz (8:45am slot). When any of these contacts calls back after a text, use `outputs/tommy/hot_lead_callback_script_2026-05-24.md` (new this run) — the inbound call conversion rate from warm contractors is much higher than cold, and Bradley has no script for that scenario until now.
+- Run 71 (2026-05-24 Sun): Text window TODAY (Sunday) still open — trades working Memorial Day weekend. If not today, Tuesday May 26 at 8:45am is the blitz slot (in may26_week_priority_stack). June 4 enrollment battle card now exists (`outputs/donna/june4_enrollment_battle_card_2026-05-24.md`) — Tier 1 contractor texts are the same-day activity alongside enrollment.
 - Resolution criteria: Bradley texts Tier 1 list. Confirmed when pipeline_data.json shows "Contacted" stage for these 5.
 
 ---
@@ -81,6 +82,7 @@ Key resolved issues by category:
 - Run 68 (2026-05-24 Sun): REPLY WINDOW CLOSES TOMORROW (Monday May 25, Memorial Day). 11 days remain until Round 2 enrollment (June 4). Every day not paused = less deliverability recovery. This is a 3-minute task: app.instantly.ai → Campaigns → ⋮ → Pause a1c08c3d AND 626cd15d. If not paused before Round 2, all Round 2 emails will land in spam just like Round 1.
 - Run 69 (2026-05-24 Sun): 11 days until Round 2. Pause window = NOW. app.instantly.ai → Campaigns → ⋮ (three dots on right) → Pause. Do both campaigns: a1c08c3d + 626cd15d. 3 minutes. Every day of recovery = better deliverability on June 4. After pausing, add INSTANTLY_PAUSED=true to .env so enroll_batch() stops warning.
 - Run 70 (2026-05-24 Sun): Still 11 days. May 25 (Memorial Day) = last day with no cost for not pausing. June 4 is 11 days away. Email deliverability recovery needs at least 7–10 days. If not paused by Tuesday May 26, the recovery window before Round 2 drops below 7 days — high risk of landing in spam again. This is a 3-minute action: app.instantly.ai → Campaigns → ⋮ → Pause.
+- Run 71 (2026-05-24 Sun): 11 days until Round 2. June 4 enrollment battle card now has an explicit Instantly.ai pre-check as Step 1 the night of June 3 (grep INSTANTLY_PAUSED .env). If still not paused by Tuesday May 26, the recovery window is exactly 9 days — minimum viable. Every day after Tuesday = higher spam risk for June 4.
 - Resolution criteria: Both campaigns paused in Instantly.ai → confirmed by Bradley.
 
 ---
@@ -93,6 +95,7 @@ Key resolved issues by category:
 - Run 61 (2026-05-23 Sat): 2 days remain in window (closes Sunday May 25). Memorial Day weekend open rates are lower than weekdays but replies still happen. Bridge email from personal Gmail (bypasses spam, see `outputs/tommy/hot_lead_bridge_email_may26_2026-05-22.md`) has higher chance of landing during the weekend than the Mixmax sequence emails did. Round 2 June 4 plan fully built regardless of outcome.
 - Run 68 (2026-05-24 Sun): Reply window closes TOMORROW (Monday May 25, Memorial Day). Final check: run `python3 workers/check_replies.py` at 10am Monday (10 minutes). Decision gate: `outputs/donna/may25_round2_decision_gate_2026-05-22.md`. Protocol for tomorrow: `outputs/donna/monday_memorial_day_final_check_2026-05-24.md`. 0 replies = pivot cleanly to Round 2 June 4 with VOC-rewritten copy.
 - Run 69 (2026-05-24 Sun): Round 2 is now 11 days out. VOC-rewritten PM sequence exists (`outputs/tommy/round2_pm_sequence_voc_rewrite_2026-05-23.md`). VOC-rewritten contractor sequence exists (`outputs/carla/contractor_referral_sequence_voc_rewrite_2026-05-23.md`). Enrollment readiness checklist exists (`outputs/donna/round2_enrollment_readiness_checklist_2026-05-23.md`). All assets are staged — the only missing piece is Instantly.ai being paused and a fresh Summit County pull. Both on the May 26 blitz plan.
+- Run 71 (2026-05-24 Sun): check_replies.py fixed this run — now posts Slack "all clear" confirmation when api_ok=True and pipeline is quiet, so Bradley knows the check ran. June 4 battle card written (`outputs/donna/june4_enrollment_battle_card_2026-05-24.md`) — full press-GO execution guide. Reply window closes TOMORROW.
 - Resolution criteria: At least 1 confirmed reply before May 25 OR Round 2 rewrite + enrollment launched by June 4.
 
 ---
@@ -224,6 +227,17 @@ Key resolved issues by category:
 - Fix: Added _flush_unpushed_commits() called at start of _main_body() before git pull --rebase; if a prior push failed leaving a "cleared pending_messages" commit unpushed, it gets pushed first; prevents rebase from applying the empty-file commit on top of new Vera messages and silently discarding them
 
 ---
+
+## RUN METRICS — Run 71 | 2026-05-24
+- Total RESOLVED: 77 (0 new — all open issues require Bradley action or are permanent infrastructure constraints)
+- Total OPEN: 18 (0 new closed, 0 new opened)
+- Auto-upgrades shipped: 4 (check_replies.py — added "all clear" Slack post when API works but pipeline is quiet; was silent before, Bradley couldn't tell if script ran or not; integrations/mixmax.py — added home inspector + property inspector + solar installer + solar panel to CONTRACTOR_TITLES; workers/lead_pipeline.py — added home inspection + solar installation to Carla contractor search keywords; agents/rick.md + tommy.md + donna.md — added 3 new output format catalog entries)
+- Deliverables written: 3 (june4_enrollment_battle_card_2026-05-24.md — operationalized press-GO June 4 execution card with exact copy-paste commands, pre-check June 3, expected outputs, failure modes; past_customer_june_text_scripts_2026-05-24.md — 5 copy-paste text scripts for June 4 past customer blast by service type, personalization guide, response handling, timing guide, revenue math; facebook_ad_week1_revenue_tracker_2026-05-24.md — Day 1/3/7/14 fill-in tracker with benchmarks, decision tree, and revenue projections for first two weeks of ad spend)
+- Proposals: 2 (home inspector referral segment for Carla — high-value new segment at buyer/seller moments; post-5-star review referral text chain — zero-cost referral generation from satisfied customers)
+- Key issue updates: check_replies.py Slack silence bug FIXED this run; June 4 battle card NOW EXISTS — was the last missing operational document; reply window closes TOMORROW (May 25); Instantly.ai still CRITICAL — 11 days recovery window starting NOW
+- Highest priority TODAY (Sun May 24): (1) Text Anthony/Land Pro 440-320-2779 + Venus/Reliable Roofing 216-810-2497 — 10 min (2) Pause Instantly.ai — 3 min — app.instantly.ai → a1c08c3d + 626cd15d → Pause
+- Highest priority TOMORROW (Mon May 25 Memorial Day): Run check_replies.py at 10am — `python3 workers/check_replies.py` — see monday_memorial_day_final_check_2026-05-24.md
+- Highest priority TUESDAY May 26: 8am Summit pull → 8:20am bridge emails → 9am gas station Mixmax sequence → 9:15am Facebook Ads launch → 10am past customer text blast (past_customer_june_text_scripts_2026-05-24.md)
 
 ## RUN METRICS — Run 70 | 2026-05-24
 - Total RESOLVED: 77 (0 new — all open issues require Bradley action or are permanent infrastructure constraints)

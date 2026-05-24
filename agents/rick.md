@@ -69,6 +69,7 @@ Save to `/outputs/rick/`:
 - `google_guaranteed_lead_response_sop_[date].md` — SOP for handling Google Guaranteed inbound leads: respond within 5 min (Google measures response time), call script, what to say if they don't answer, how to close the quote; response time directly affects lead volume from Google
 - `facebook_ads_first_week_monitoring_guide_[date].md` — Day 1 / Day 3 / Day 7 guide for first-time Facebook ad launch; what the learning phase means, which metrics matter (CTR, CPL, cost per booking), when to pause vs wait, lead notification setup, budget scaling trigger, common mistakes that kill the algorithm's learning phase
 - `facebook_lead_gen_launch_checklist_[date].md` — Pre-launch checklist for Facebook Lead Gen campaigns: Pixel installed, lead email notification enabled, Lead Gen Form settings (phone required), budget + targeting confirmed, lead response SOP read; must complete before ads go live
+- `facebook_ad_week1_revenue_tracker_[date].md` — Day 1/3/7/14 fill-in-the-blank tracking sheet for the first 2 weeks after ads launch; columns: impressions, CTR, cost per lead, quotes sent, jobs booked, revenue; benchmark thresholds for each metric; decision tree for when to tweak vs. wait; revenue projection math ($30/day → break-even in jobs)
 
 ## Logging
 `[YYYY-MM-DD HH:MM] Rick | [task description] | [output filename] | Done`

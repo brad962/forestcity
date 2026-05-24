@@ -127,7 +127,9 @@ CARLA_SEARCHES = [
                   'chimney', 'concrete', 'deck builder', 'deck contractor',
                   'asphalt sealing', 'driveway sealing',
                   'irrigation', 'sprinkler system', 'lawn irrigation',
-                  'tree service', 'tree care', 'arborist'],
+                  'tree service', 'tree care', 'arborist',
+                  'home inspection', 'home inspector',  # at buyer/seller moment; sees dirty houses every job
+                  'solar installation', 'solar energy'],  # on roofs constantly; homeowner in invest-in-home mode
      'label': 'Contractors'},
     # Home-services companies that visit properties weekly — high-value referral sources
     {'type': 'contractors', 'titles': ['owner', 'president', 'founder', 'operator'],

@@ -115,6 +115,10 @@ CONTRACTOR_TITLES = [
     # Tree service / arborists — visit properties constantly, see dirty roofs/siding; natural referral partner
     # NOTE: also in FLEET_KEYWORDS, but CONTRACTOR_TITLES is checked first — correct routing for Carla
     'tree service', 'tree care', 'arborist',
+    # Home inspectors — trusted advisor at buyer/seller moment; sees dirty siding/roofs at every inspection (added 2026-05-24)
+    'home inspector', 'property inspector', 'home inspection',
+    # Solar installers — on roofs constantly, see algae/moss; homeowner is already in "invest in home" mode (added 2026-05-24)
+    'solar installer', 'solar panel', 'solar installation',
 ]
 
 

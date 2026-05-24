@@ -213,6 +213,13 @@ def main():
                 f'{hot_lines}\n'
                 f'>Connect on LinkedIn + call these contacts TODAY.'
             )
+        else:
+            # API alive but completely quiet — post confirmation so Bradley knows the check ran clean
+            post_slack(
+                f'✅ *Mixmax — Check Complete ({datetime.now().strftime("%I:%M %p")})*\n'
+                f'>No replies or hot leads yet. Pipeline is quiet.\n'
+                f'>Run check_replies.py again at 2pm or tomorrow morning.'
+            )
         log(f'0 replies | {len(all_hot)} hot leads')
 
     print('\nDone. Run again tomorrow morning.')
