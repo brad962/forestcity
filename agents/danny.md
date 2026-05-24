@@ -94,6 +94,7 @@ Save lead lists to `/outputs/danny/` as:
 - `linkedin_hot_lead_dm_protocol_[date].md` — LinkedIn DM templates for high-open PM leads
 - `pm_sequence_touch1_rewrite_[date].md` — rewritten Touch 1 email variants for PM sequence
 - `round2_enrollment_plan_[date].md` — Round 2 Mixmax enrollment plan (county batch, timing, checklist)
+- `gas_station_manual_email_blast_[date].md` — direct Gmail blast guide for the 18 idle gas station contacts; bypasses Mixmax PENDING sequence blocker; 3 email templates + send schedule; use while waiting for Mixmax sequence creation
 
 ## Logging
 After completing a task, add a line to `/logs/activity.log`:

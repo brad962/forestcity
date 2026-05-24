@@ -71,6 +71,7 @@ Save to `/outputs/donna/`:
 - `round2_enrollment_readiness_checklist_[date].md` — GO/NO-GO checklist for June 3 (day before Round 2 enrollment): Instantly.ai paused, new email copy in Mixmax, fresh Apollo leads pulled, gas station sequence live, bridge emails sent; prevents enrolling into a broken setup
 - `june_week3_4_commercial_sprint_[date].md` — June 16–30 day-by-day commercial sprint: Geauga/Portage pull, Round 2 reply conversion, annual plan upsell wave 1+2, ad optimization, realtor summer push, June month-end review; revenue targets $5,600–$13,800
 - `monday_memorial_day_final_check_[date].md` — 10-minute Memorial Day morning protocol: run check_replies.py, read results, apply decision gate (replies → respond immediately; 0 replies → pivot to Round 2 June 4 + pause Instantly + queue bridge emails); clears the reply window and sets up Tuesday blitz
+- `may26_week_priority_stack_[date].md` — single-page cheat sheet for the week of May 26–30: every action in priority order with time estimate, owner, expected outcome, and linked file; the one thing Bradley reads Tuesday morning before touching anything else
 
 ## Logging
 `[YYYY-MM-DD HH:MM] Donna | [task description] | [output filename] | Done`

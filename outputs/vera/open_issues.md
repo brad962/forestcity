@@ -1,6 +1,6 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 69 | 2026-05-24 | Auto-fixes shipped: 3 | New deliverables: 3 | Proposals: 2 | New RESOLVED: 0*
+*Run 70 | 2026-05-24 | Auto-fixes shipped: 5 | New deliverables: 3 | Proposals: 2 | New RESOLVED: 0*
 
 ---
 
@@ -31,6 +31,7 @@ Key resolved issues by category:
 - Run 65 (2026-05-23 Sat): Tier 1 texts queued for Tuesday May 26 blitz (tuesday_may26_launch_card). Mixmax reply window closes tomorrow. Nothing Vera can do from cloud — this requires Bradley to open his phone. Priority #2 on Tuesday morning.
 - Run 68 (2026-05-24 Sun): Still open. It's Memorial Day weekend — trades are doing estimates and running jobs. TODAY (Sunday) or tomorrow (Memorial Day Monday) is actually the BEST window to text a contractor: they're working but not buried in office tasks. Script for Anthony 440-320-2779: "Hey Anthony, it's Bradley from Forest City Power Washing. We do exterior cleaning for a lot of landscapers' customers — want to do a quick referral swap? No paperwork, $50 for every job you send our way." Tuesday is still Plan B. Text one today.
 - Run 69 (2026-05-24 Sun): TODAY is the day. Mixmax reply window closes TOMORROW (Mon May 25 Memorial Day). Today + tomorrow = last chance for Memorial Day weekend contractor contact before Tuesday's 90-min blitz. Text Anthony first (landscaper = highest referral ROI). Text Venus second (roofer = high-ticket jobs). 2 texts = 10 minutes of real action. `tuesday_may26_launch_card_2026-05-23.md` has the full Tier 1 list at Priority 4 (8:45am Tuesday) as the backstop if not texted today.
+- Run 70 (2026-05-24 Sun): Same window — still Sunday. 5 contacts, 2 texts in 10 minutes. If not done today, these move to Tuesday morning blitz (8:45am slot). When any of these contacts calls back after a text, use `outputs/tommy/hot_lead_callback_script_2026-05-24.md` (new this run) — the inbound call conversion rate from warm contractors is much higher than cold, and Bradley has no script for that scenario until now.
 - Resolution criteria: Bradley texts Tier 1 list. Confirmed when pipeline_data.json shows "Contacted" stage for these 5.
 
 ---
@@ -79,6 +80,7 @@ Key resolved issues by category:
 - Run 66 (2026-05-23 Sat): Auto-fix applied: danny.md updated to explicitly flag these two campaigns as ACTIVE (was saying "Not active" — misleading any agent reading the file). enroll_batch() already warns at runtime. Open issue remains: Bradley must pause in app.instantly.ai UI.
 - Run 68 (2026-05-24 Sun): REPLY WINDOW CLOSES TOMORROW (Monday May 25, Memorial Day). 11 days remain until Round 2 enrollment (June 4). Every day not paused = less deliverability recovery. This is a 3-minute task: app.instantly.ai → Campaigns → ⋮ → Pause a1c08c3d AND 626cd15d. If not paused before Round 2, all Round 2 emails will land in spam just like Round 1.
 - Run 69 (2026-05-24 Sun): 11 days until Round 2. Pause window = NOW. app.instantly.ai → Campaigns → ⋮ (three dots on right) → Pause. Do both campaigns: a1c08c3d + 626cd15d. 3 minutes. Every day of recovery = better deliverability on June 4. After pausing, add INSTANTLY_PAUSED=true to .env so enroll_batch() stops warning.
+- Run 70 (2026-05-24 Sun): Still 11 days. May 25 (Memorial Day) = last day with no cost for not pausing. June 4 is 11 days away. Email deliverability recovery needs at least 7–10 days. If not paused by Tuesday May 26, the recovery window before Round 2 drops below 7 days — high risk of landing in spam again. This is a 3-minute action: app.instantly.ai → Campaigns → ⋮ → Pause.
 - Resolution criteria: Both campaigns paused in Instantly.ai → confirmed by Bradley.
 
 ---
@@ -222,6 +224,17 @@ Key resolved issues by category:
 - Fix: Added _flush_unpushed_commits() called at start of _main_body() before git pull --rebase; if a prior push failed leaving a "cleared pending_messages" commit unpushed, it gets pushed first; prevents rebase from applying the empty-file commit on top of new Vera messages and silently discarding them
 
 ---
+
+## RUN METRICS — Run 70 | 2026-05-24
+- Total RESOLVED: 77 (0 new — all open issues require Bradley action or are permanent infrastructure constraints)
+- Total OPEN: 18 (0 new closed, 0 new opened)
+- Auto-upgrades shipped: 5 (rick.md Ready Assets header "Monday after Memorial Day" → "Tuesday after Memorial Day" — survived 9 previous runs hiding in the header while sub-items were already corrected; carla.md added realtor_summer_voc_sequence format entry; tommy.md added hot_lead_callback_script format entry; donna.md added may26_week_priority_stack format entry; danny.md added gas_station_manual_email_blast format entry — file existed in outputs/danny/ since May 20 with no catalog entry)
+- Deliverables written: 3 (realtor_summer_voc_sequence_2026-05-24.md — full 3-touch realtor referral sequence using NE Ohio VOC, 3 trade-specific Touch 1 variants, response handling, $18K revenue math; hot_lead_callback_script_2026-05-24.md — word-for-word script for when a PM/realtor/contractor who opened Mixmax email 2-3x calls back, 3 discovery questions, phone quoting guide, 5-step closing, post-call actions; may26_week_priority_stack_2026-05-24.md — single-page cheat sheet for week of May 26-30: 10-slot Tuesday 90-min action plan, Wed-Fri priority tables, critical path deadlines, week-end check)
+- Proposals: 2 (NE Ohio Home Maintenance Checklist content — brief exists since May 12, actual 12-month content never written; Tommy should write it; becomes the email list-building asset for Kit.com; realtor pipeline revival blitz — all 7 NE Ohio counties in June with fresh Apollo pull; 10 realtor partners = $18K potential)
+- Key issue updates: Tier 1 contractors — TODAY window still open (Sunday May 24), Anthony text is the highest-ROI single action available; Instantly.ai — 11 days until Round 2, every day not paused = worse deliverability June 4; rick.md "Monday" bug — RESOLVED in this run after surviving 9 previous fixes in the same file; Reply window — closes TOMORROW (Memorial Day), run check_replies.py at 10am per monday_memorial_day_final_check_2026-05-24.md
+- Highest priority TODAY (Sun May 24): (1) Text Anthony/Land Pro 440-320-2779 (2) Text Venus/Reliable Roofing 216-810-2497 — 10 min total (3) Pause Instantly.ai — app.instantly.ai → a1c08c3d + 626cd15d → Pause (3 min)
+- Highest priority TOMORROW (Mon May 25 Memorial Day): Run check_replies.py at 10am — outputs/donna/monday_memorial_day_final_check_2026-05-24.md
+- Highest priority TUESDAY May 26: Read outputs/rick/facebook_lead_response_sop_2026-05-24.md FIRST → then outputs/donna/may26_week_priority_stack_2026-05-24.md
 
 ## RUN METRICS — Run 69 | 2026-05-24
 - Total RESOLVED: 77 (0 new this run — all open issues require Bradley action)

@@ -61,6 +61,7 @@ Save to `/outputs/carla/`:
 - `contractor_referral_sequence_voc_rewrite_[date].md` — full 3-touch contractor/referral sequence rewritten using Marcus's NE Ohio VOC library; includes trade-specific Touch 1 customizations for 10 partner types; ships with Round 2 enrollment June 4
 - `summit_county_referral_pull_guide_[date].md` — Summit County Apollo pull guide for Carla; mirrors Danny's county override; run same week as Danny Summit pull for coordinated coverage
 - `pool_service_referral_blitz_[date].md` — Memorial Day / pool opening season blitz; pool companies servicing NE Ohio customers RIGHT NOW see dirty decks and siding every visit; includes trade-specific pitch, timing guide, and seasonal hook
+- `realtor_summer_voc_sequence_[date].md` — 3-touch realtor referral sequence rewritten for summer listing season using Marcus's NE Ohio VOC library; hooks: pre-listing curb appeal, "before the lockbox goes up," faster sale price; send June 4 alongside Round 2 PM enrollment to activate the realtor segment simultaneously
 
 ## Logging
 `[YYYY-MM-DD HH:MM] Carla | [task description] | [output filename] | Done`

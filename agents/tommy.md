@@ -69,6 +69,7 @@ Save to `/outputs/tommy/`:
 - `pre_job_reminder_text_sequence_[date].md` — day-before + 2-hour reminder texts for confirmed jobs; reduces no-shows, sets expectations for soft-wash smell/residue, builds professionalism signal before crew arrives
 - `round2_pm_sequence_voc_rewrite_[date].md` — Round 2 PM 3-touch sequence rewritten using Marcus's VOC library phrases; uses exact NE Ohio customer language ("green and slimy," "roof looks black," "kept putting it off") instead of generic outreach copy; this version ships for June 4 enrollment
 - `neighbor_canvass_script_[date].md` — "While we're here" neighbor door-knock + text scripts for use during every active job; same-day discounted add-on offer; converts bystanders into booked jobs while equipment is already deployed; zero ad spend, zero travel overhead
+- `hot_lead_callback_script_[date].md` — word-for-word script for when a PM/realtor/contractor who opened the Mixmax email 2-3+ times calls back organically; completely different psychology from cold outreach — they have intent; covers: opening, 3 discovery questions, how to quote on the phone, how to close, handling "send me something in writing"
 
 ## Logging
 `[YYYY-MM-DD HH:MM] Tommy | [task description] | [output filename] | Done`
