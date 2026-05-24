@@ -178,3 +178,49 @@
 >2. 20 min: Kit.com setup (kit_email_capture_setup_2026-05-24.md) — BEFORE ads launch
 >3. 15 min: Claim Yelp listing (yelp_business_profile_guide_2026-05-24.md)
 >4. Summit pull 8am → bridge emails 8:20am → contractor texts 8:45am → gas station sequence 9am → ads launch 9:15am → past customer texts 10am
+---
+🔧 *Vera — Auto-Upgrade*
+>Changed: workers/jasmine_flyer.py — "We serve the greater Cleveland area" → "We serve Northeast Ohio — all 7 counties"
+>Why: Forest City serves Cuyahoga, Lake, Lorain, Summit, Medina, Geauga, and Portage — "greater Cleveland area" excluded Akron/Summit and everything south. Every auto-generated flyer post now shows the full service area.
+>File: workers/jasmine_flyer.py
+---
+🔧 *Vera — Auto-Upgrade*
+>Changed: workers/vera_relay.py — removed hardcoded "danny Summit" from Danny staleness alert; now shows generic rotation command
+>Why: After May 31, the hardcoded "python3 lead_pipeline.py danny Summit" would instruct Bradley to pull the wrong county. The alert now shows `python3 workers/lead_pipeline.py danny` which auto-selects the current week's county via rotation — always correct.
+>File: workers/vera_relay.py
+---
+📄 *Vera — New Deliverable: Jasmine*
+>File: outputs/jasmine/facebook_posts_june_week2_4_2026-05-24.md
+>What: Refreshed 9 Facebook posts + 3 LinkedIn posts for June 9–27. Supersedes the May 20 version that predated Marcus's VOC library. Uses exact NE Ohio customer language: "green and slimy siding," "roof looks black from the street," "kept putting it off," "looks like you repainted it." Week 2 has commercial/PM angle (Round 2 emails just went out June 4). Week 3 has residential 4th of July hook. Week 4 has urgency + annual plan.
+>Action: Use this version instead of the May 20 file starting June 9.
+---
+📄 *Vera — New Deliverable: Rick*
+>File: outputs/rick/facebook_ad_creative_voc_refresh_2026-05-24.md
+>What: Drop-in Facebook ad copy using Marcus's NE Ohio VOC phrases. 6 hook variants + 3 body copy variants. Replaces the generic May 20 hooks with language customers are ALREADY THINKING: "green and slimy siding," "kept putting it off," "roof looks black from the street," "looks like you repainted it," "lake moisture," "road salt splash."
+>⚠️ BEFORE TUESDAY LAUNCH — 15 min in Ads Manager to swap. Higher-CTR hooks → cheaper leads from day 1 of the learning phase.
+>Action: Open Ads Manager, edit each ad's Headline + Primary Text with the corresponding hook from this file. Campaign structure/targeting/budget unchanged.
+---
+💡 *Vera — Upgrade Proposal*
+>Idea: Swap Facebook ad copy hooks before Tuesday launch using facebook_ad_creative_voc_refresh_2026-05-24.md
+>Why: May 20 ad creative predates Marcus's VOC research. The new hooks use exact NE Ohio customer language that stops the scroll faster → higher CTR → cheaper cost per lead in the learning phase.
+>Impact: 15-min swap before clicking "launch." Better hooks can reduce CPL by 20–40% in first-week learning phase — potentially the difference between $15 and $25 per lead on a $30/day budget.
+>Files: outputs/rick/facebook_ad_creative_voc_refresh_2026-05-24.md + facebook_ads_peak_season_2026-05-20.md (unchanged for structure/targeting/budget)
+>Reply YES to approve — just do it before launching Tuesday.
+---
+💡 *Vera — Upgrade Proposal*
+>Idea: File Google Guaranteed (Local Services Ads) application TODAY or Tuesday
+>Why: Application takes 7–14 days to approve. Filed today (Sunday May 24) = potentially live by June 7. Filed Tuesday = June 9. Filed after Wednesday = won't be live before June Booking Blitz (Round 2 enrollment June 4). Google Guaranteed puts Forest City ABOVE regular Google Ads in search results. Pay-per-lead ($15–$35), not pay-per-click. Most NE Ohio competitors haven't set it up.
+>Impact: Could be the highest-ROI ad channel active during peak June season. Every day of delay = days offline.
+>Action: ads.google.com/local-services-ads → 10 minutes to start the application. Full guide: outputs/rick/google_guaranteed_setup_2026-05-22.md
+>Reply YES to flag this as done.
+---
+✅ *Vera — Scan Complete 2026-05-24 (Run 75)*
+>2 auto-upgrades shipped | 2 deliverables | 2 proposals | 20 open issues (1 new: Facebook ad copy VOC gap)
+
+>Run 75 priority additions for TUESDAY May 26:
+>• Read facebook_ad_creative_voc_refresh_2026-05-24.md BEFORE launching ads — 15-min swap in Ads Manager
+>• File Google Guaranteed today or Tuesday before ads launch (google_guaranteed_setup_2026-05-22.md)
+
+>STILL OPEN — needs Bradley action TODAY (Sunday):
+>• Text Anthony/Land Pro 440-320-2779 — Memorial Day weekend, trades are working
+>• Pause Instantly.ai — app.instantly.ai → a1c08c3d + 626cd15d → Pause (3 min)

@@ -199,7 +199,7 @@ def write_facebook_post(description: str, date: str) -> str:
 
 {desc}
 
-One visit and it looks like a completely different property. We serve the greater Cleveland area and we're booking now.
+One visit and it looks like a completely different property. We serve Northeast Ohio — all 7 counties — and we're booking now.
 
 📞 {cta}
 

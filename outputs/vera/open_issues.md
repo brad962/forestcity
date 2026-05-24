@@ -1,6 +1,6 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 74 | 2026-05-24 | Auto-fixes shipped: 4 | New deliverables: 3 | Proposals: 1 | New RESOLVED: 0*
+*Run 75 | 2026-05-24 | Auto-fixes shipped: 2 | New deliverables: 2 | Proposals: 2 | New RESOLVED: 0*
 
 ---
 
@@ -16,6 +16,15 @@ Key resolved issues by category:
 - **Content gaps:** county rotation calendar, crontab setup, LinkedIn June posts, nina weekly hot leads section with phone numbers, vera_relay Danny staleness detector
 - **Routing accuracy:** detect_lead_type order swapped (PM before realtor), condominium manager substring bug
 - **Run 61 new RESOLVED:** rick.md "Monday after Memorial Day" date error fixed to Tuesday; danny.md urgency note clarified (deadline = May 31, not just "Sunday night"); danny.md output format catalog updated; open_issues.md header corrected (58 → 74 total); donna.md + carla.md new output format entries added
+
+---
+
+## OPEN — Facebook Ad Copy Predates VOC Research 🔴 NEW (Run 75)
+- First seen: 2026-05-24 (Run 75)
+- Description: `facebook_ads_peak_season_2026-05-20.md` (Facebook ad creative, Campaign 2 Lead Gen) was written May 20 — 3 days before Marcus's VOC library was completed (May 23). The ad hooks don't use proven NE Ohio customer language ("green and slimy," "kept putting it off," "roof looks black from the street"). This means lower CTR at launch = higher CPL = wasted budget.
+- Fix is ready: `outputs/rick/facebook_ad_creative_voc_refresh_2026-05-24.md` — 6 drop-in hooks + 3 body copy variants using exact VOC phrases. 15-min swap in Ads Manager before Tuesday launch.
+- Run 75: Fresh hooks written this run. Proposal sent to Slack.
+- Resolution criteria: Bradley swaps hooks before clicking "launch" on May 26. Confirmed when ads are running with updated copy.
 
 ---
 
@@ -244,6 +253,20 @@ Key resolved issues by category:
 - Fix: Added _flush_unpushed_commits() called at start of _main_body() before git pull --rebase; if a prior push failed leaving a "cleared pending_messages" commit unpushed, it gets pushed first; prevents rebase from applying the empty-file commit on top of new Vera messages and silently discarding them
 
 ---
+
+## RUN METRICS — Run 75 | 2026-05-24
+- Total RESOLVED: 77 (0 new — all open issues require Bradley action or permanent infrastructure constraints)
+- Total OPEN: 20 (1 new: Facebook Ad Copy Predates VOC Research — fix ready in rick/facebook_ad_creative_voc_refresh_2026-05-24.md)
+- Auto-upgrades shipped: 2 (workers/jasmine_flyer.py — "greater Cleveland area" → "Northeast Ohio" in auto-generated post template, accurate for 7-county service area; workers/vera_relay.py — removed hardcoded Summit county from Danny staleness alert, now uses generic rotation command that's always correct after May 31)
+- Deliverables written: 2 (facebook_posts_june_week2_4_2026-05-24.md — 9 Facebook posts + 3 LinkedIn posts for June 9–27 using Marcus VOC library + June Booking Blitz context; supersedes May 20 version; facebook_ad_creative_voc_refresh_2026-05-24.md — 6 drop-in Facebook ad hooks + 3 body copy variants using exact NE Ohio VOC phrases; 15-min swap before Tuesday launch to improve CTR from day 1)
+- Proposals: 2 (Facebook ad copy VOC swap before Tuesday — 15 min action with potentially significant CTR impact; Google Guaranteed application urgency — filing now = potentially live by June 7, filing after Wednesday = won't be live before June Booking Blitz)
+- Key code fixes: jasmine_flyer.py "greater Cleveland area" was factually wrong for a 7-county service area; vera_relay.py hardcoded "Summit" would have told Bradley to force Summit county after May 31 rotation moved to Medina
+- TUESDAY May 26 PRIORITY STACK (see may26_week_priority_stack_2026-05-24.md for full card):
+  1. Read may26_week_priority_stack_2026-05-24.md FIRST
+  2. 15 min: Swap Facebook ad copy using facebook_ad_creative_voc_refresh_2026-05-24.md BEFORE launching
+  3. 23 min: Kit.com setup — kit_email_capture_setup_2026-05-24.md — email capture BEFORE ads launch
+  4. 15 min: Yelp listing claim — yelp_business_profile_guide_2026-05-24.md
+  5. 8am Summit pull → bridge emails → contractor texts 8:45am → gas station sequence → ads launch 9:15am
 
 ## RUN METRICS — Run 74 | 2026-05-24
 - Total RESOLVED: 77 (0 new — all open issues require Bradley action or permanent infrastructure constraints)
