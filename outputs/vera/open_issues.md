@@ -1,10 +1,10 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 75 | 2026-05-24 | Auto-fixes shipped: 2 | New deliverables: 2 | Proposals: 2 | New RESOLVED: 0*
+*Run 76 | 2026-05-24 | Auto-fixes shipped: 3 | New deliverables: 3 | Proposals: 0 | New RESOLVED: 2*
 
 ---
 
-## RESOLVED SUMMARY (77 total — details in git history)
+## RESOLVED SUMMARY (79 total — details in git history)
 
 Key resolved issues by category:
 - **Pipeline routing:** PM-before-realtor check order, gas_station/fleet false positives removed, all 5 PM title variants added (multifamily, CAI, condo, association manager)
@@ -109,6 +109,7 @@ Key resolved issues by category:
 - Run 71 (2026-05-24 Sun): 11 days until Round 2. June 4 enrollment battle card now has an explicit Instantly.ai pre-check as Step 1 the night of June 3 (grep INSTANTLY_PAUSED .env). If still not paused by Tuesday May 26, the recovery window is exactly 9 days — minimum viable. Every day after Tuesday = higher spam risk for June 4.
 - Run 73 (2026-05-24 Sun): 11 days until Round 2. Reply window closes TOMORROW. If 0 replies come in by Memorial Day morning, Instantly.ai is confirmed to have hurt deliverability. Pausing immediately after the window closes = maximum recovery time before June 4. Critical path: pause TODAY → 11 days recovery; pause Tuesday → 9 days recovery (minimum viable); pause after June 1 → less than 7 days (high risk). The 3-minute pause is the highest-leverage action available this weekend.
 - Run 74 (2026-05-24 Sun): This is the same Sunday. REPLY WINDOW CLOSES TOMORROW (Memorial Day). 11 days until Round 2 enrollment. The math is clear: pause today = best deliverability on June 4. Pause Tuesday = 9 days recovery (still OK). Pause after Memorial Day week = high risk. The Round 2 enrollment readiness checklist (`outputs/donna/round2_enrollment_readiness_checklist_2026-05-23.md`) lists this as the first and hardest blocking item. Without it confirmed, the readiness check is NO-GO.
+- Run 76 (2026-05-24): CODE-LEVEL BLOCK SHIPPED. `enroll_batch()` in integrations/mixmax.py now ABORTS (not just warns) for batches > 5 contacts when INSTANTLY_PAUSED != 'true'. `run_pending_sequences()` in workers/lead_pipeline.py also blocked. Bradley CANNOT accidentally enroll Round 2 contacts while Instantly.ai is still running — enrollment will fail loudly with step-by-step fix instructions. To bypass (emergency only): set INSTANTLY_OVERRIDE=true in .env. To fix properly: pause a1c08c3d + 626cd15d → add INSTANTLY_PAUSED=true to .env → re-run. This resolves the mechanical risk; manual Instantly.ai pause still required.
 - Resolution criteria: Both campaigns paused in Instantly.ai → confirmed by Bradley.
 
 ---
@@ -227,6 +228,14 @@ Key resolved issues by category:
 - Resolution criteria: Bradley runs Marcus locally: `claude` CLI → "Marcus, profile top 5 Cleveland power washing competitors."
 
 ---
+
+## RESOLVED — vera_relay.py Summit-specific shortcut stale after June 1
+- Resolved: 2026-05-24 (Run 76)
+- Fix: Removed `scripts/run_summit_both.command` shortcut reference from Danny and Carla staleness alerts in vera_relay.py. The shortcut is Summit-specific (hardcodes Summit county) and would instruct the wrong county pull for any week after May 31. Alerts now show only the generic rotation command which auto-selects the correct county by week number.
+
+## RESOLVED — run_pending_sequences() missing Instantly.ai protection
+- Resolved: 2026-05-24 (Run 76)
+- Fix: Added INSTANTLY_PAUSED check to run_pending_sequences() in workers/lead_pipeline.py. Previously, `python3 workers/lead_pipeline.py pending` (used to enroll gas station + fleet contacts when Mixmax IDs are added) had no protection against Instantly.ai overlap — it would enroll directly via enroll_lead() bypassing the enroll_batch() guard. Now blocked unless INSTANTLY_PAUSED=true or INSTANTLY_OVERRIDE=true.
 
 ## RESOLVED — PROPERTY_MANAGER_TITLES missing 3 titles (leasing manager, managing partner, principal)
 - Resolved: 2026-05-22

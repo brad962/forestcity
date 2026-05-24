@@ -224,3 +224,43 @@
 >STILL OPEN — needs Bradley action TODAY (Sunday):
 >• Text Anthony/Land Pro 440-320-2779 — Memorial Day weekend, trades are working
 >• Pause Instantly.ai — app.instantly.ai → a1c08c3d + 626cd15d → Pause (3 min)
+
+---
+🔧 *Vera — Auto-Upgrade: integrations/mixmax.py*
+>Changed: enroll_batch() now ABORTS enrollment for batches > 5 contacts when INSTANTLY_PAUSED != 'true' (previously just warned and proceeded)
+>Why: The warn-and-proceed behavior was being ignored for 20+ runs. The block means Bradley CANNOT accidentally enroll Round 2 contacts into Mixmax while Instantly.ai is still running duplicate campaigns — enrollment fails loudly with step-by-step fix instructions. Set INSTANTLY_PAUSED=true in .env after pausing to unblock. Emergency bypass: INSTANTLY_OVERRIDE=true.
+>File: integrations/mixmax.py
+---
+🔧 *Vera — Auto-Upgrade: workers/lead_pipeline.py*
+>Changed: run_pending_sequences() now checks INSTANTLY_PAUSED before enrolling pending contacts (gas station + fleet contacts waiting on Mixmax IDs)
+>Why: run_pending_sequences() called enroll_lead() directly, bypassing the enroll_batch() guard entirely. When Bradley adds the gas station Mixmax ID and runs `python3 workers/lead_pipeline.py pending`, 18 gas station contacts would enroll with no protection. Now blocked unless INSTANTLY_PAUSED=true.
+>File: workers/lead_pipeline.py
+---
+🔧 *Vera — Auto-Upgrade: workers/vera_relay.py*
+>Changed: Removed run_summit_both.command shortcut reference from Danny + Carla staleness alerts; replaced with generic rotation command
+>Why: run_summit_both.command hardcodes Summit County. After May 31 (Week 22 = Medina), the shortcut would instruct the wrong county pull. Staleness alerts now show `python3 workers/lead_pipeline.py danny/carla` which auto-rotates by week number — always correct regardless of when the alert fires.
+>File: workers/vera_relay.py
+---
+📄 *Vera — New Deliverable: Tommy*
+>File: outputs/tommy/annual_plan_upsell_sequence_2026-05-24.md
+>What: Word-for-word annual plan upsell system. 2-hour post-job text (2 versions: direct + soft), pricing guide by service combo ($350–$700/yr), response handling (YES/maybe/no), 30-day follow-up email (ready to send), 4 objection responses (too expensive, might sell house, need to think). Revenue math: 10 customers = $4,000–$6,000/yr locked.
+>Action: Use within 2 hours of EVERY job completion this season. Conversion is highest while the house looks amazing and they can see the before/after.
+---
+📄 *Vera — New Deliverable: Tommy*
+>File: outputs/tommy/pre_job_reminder_text_sequence_2026-05-24.md
+>What: 3-text pre/post-job sequence. Day-before confirmation (soft-wash smell heads-up + no-show prevention), day-of ETA text (+ running-late version + gate/access version), job-complete text (with Google review prompt version). Also includes soft-wash FAQ reply templates for "is it safe for plants?" / "do I need to be home?" / "will algae come back?" (annual plan bridge at the end).
+>Action: Start using IMMEDIATELY for any booked jobs this week, especially first-time ad leads who don't know Forest City yet.
+---
+📄 *Vera — New Deliverable: Donna*
+>File: outputs/donna/june_week2_sprint_2026-05-24.md
+>What: June 9–13 day-by-day sprint. Monday: Geauga+Portage county pull (Danny + Carla) + Nina weekly report + Round 2 reply review + contractor follow-up Wave 2. Tuesday: Facebook + Google Week 1 ad review with specific decision thresholds (CPL > $30 → tighten audience; CPL < $20 + 3 leads → scale to $45/day). Wednesday: GBP post + quote follow-up for Week 1 leads + Workiz report. Thursday: Mixmax Round 2 check (Day 8 post-enrollment). Friday: week review + Week 3 prep. Revenue target: $3,200–$7,500.
+>Action: Read Monday June 9 morning before opening anything else.
+---
+✅ *Vera — Scan Complete 2026-05-24 (Run 76)*
+>3 auto-upgrades shipped | 3 deliverables | 0 proposals | 20 open issues (2 new RESOLVED this run)
+
+>🔒 BIGGEST FIX THIS RUN: Round 2 enrollment is now mechanically blocked until Instantly.ai is paused. Bradley cannot accidentally enroll 50+ contacts while Instantly is still running — the command will fail with step-by-step instructions. This prevents Round 2 from failing the same way as Round 1.
+
+>STILL NEEDS BRADLEY TODAY (Sunday May 24):
+>• Text Anthony/Land Pro 440-320-2779 — Memorial Day weekend, trades are working
+>• Pause Instantly.ai — app.instantly.ai → a1c08c3d + 626cd15d → Pause → add INSTANTLY_PAUSED=true to .env (now required to unblock enrollment)

@@ -317,15 +317,26 @@ def enroll_batch(leads: list, skip_existing: bool = True) -> dict:
     ⚠️ INSTANTLY.AI PAUSE REQUIRED: Set INSTANTLY_PAUSED=true in .env after pausing
     campaigns a1c08c3d + 626cd15d. Without this, duplicate emails → spam filters → 0 replies.
     """
-    # Warn loudly if enrolling a real batch and Instantly.ai pause isn't confirmed
+    # Block enrollment if Instantly.ai pause not confirmed — prevents duplicate emails → spam → 0% reply rate
     if len(leads) > 5 and os.environ.get('INSTANTLY_PAUSED', '').lower() != 'true':
-        print('⚠️  WARNING: INSTANTLY.AI NOT CONFIRMED PAUSED')
-        print('   Duplicate emails to same contacts = spam filters = 0% reply rate.')
-        print('   Step 1: Pause campaigns a1c08c3d + 626cd15d at app.instantly.ai')
-        print('   Step 2: Add INSTANTLY_PAUSED=true to your .env file')
-        print('   Guide: outputs/vera/instantly_pause_guide_2026-05-22.md')
-        print('   Enrollment proceeding — fix deliverability first or Round 2 will fail too.')
-        print()
+        if os.environ.get('INSTANTLY_OVERRIDE', '').lower() != 'true':
+            print('🚫 ENROLLMENT BLOCKED — INSTANTLY.AI NOT CONFIRMED PAUSED')
+            print('   Same contacts in both Instantly.ai + Mixmax = duplicate emails = spam = 0% reply rate.')
+            print()
+            print('   STEP 1: Go to app.instantly.ai → Campaigns')
+            print('   STEP 2: Find a1c08c3d (PM Cuyahoga) + 626cd15d (Contractor Referral) → ⋮ → Pause')
+            print('   STEP 3: Add  INSTANTLY_PAUSED=true  to your .env file')
+            print()
+            print('   Then re-run. Guide: outputs/vera/instantly_pause_guide_2026-05-22.md')
+            print('   To bypass (not recommended): set  INSTANTLY_OVERRIDE=true  in .env')
+            return {'enrolled': [], 'skipped': [], 'errors': [
+                'Enrollment blocked — INSTANTLY_PAUSED not confirmed. '
+                'Pause campaigns a1c08c3d + 626cd15d at app.instantly.ai, '
+                'then add INSTANTLY_PAUSED=true to .env and re-run.'
+            ]}
+        else:
+            print('⚠️  INSTANTLY.AI NOT PAUSED — bypassing block (INSTANTLY_OVERRIDE=true)')
+            print()
 
     results = {'enrolled': [], 'skipped': [], 'errors': []}
 

@@ -727,6 +727,16 @@ def run_pending_sequences():
     """
     from integrations.mixmax import enroll_lead, _sequence_is_live
 
+    # Block if Instantly.ai campaigns are still running — same duplicate-email risk as enroll_batch
+    if os.environ.get('INSTANTLY_PAUSED', '').lower() != 'true':
+        if os.environ.get('INSTANTLY_OVERRIDE', '').lower() != 'true':
+            print('🚫 PENDING ENROLLMENT BLOCKED — INSTANTLY.AI NOT CONFIRMED PAUSED')
+            print('   Add INSTANTLY_PAUSED=true to .env after pausing campaigns a1c08c3d + 626cd15d.')
+            print('   Guide: outputs/vera/instantly_pause_guide_2026-05-22.md')
+            return
+        else:
+            print('⚠️  INSTANTLY.AI NOT PAUSED — bypassing block (INSTANTLY_OVERRIDE=true)')
+
     pending = []
     cache = {}  # initialized here so the persist block below never hits NameError
 
