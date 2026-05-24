@@ -1,0 +1,120 @@
+# June GBP Content Calendar — Google Business Profile
+### Created: 2026-05-24 | Vera Cole — CIO
+*5 posts for June. One per week. Free search traffic for "power washing [city]" queries.*
+*Publish at: business.google.com/dashboard → Posts → Create*
+
+---
+
+## Why GBP Posts Matter in June
+Google Business Profile posts appear directly in local search results. A business with weekly posts ranks higher for "power washing Cleveland" type searches than one that's dormant. June = peak search volume for this query. Each post stays live for 7 days.
+
+**Time per post: 2–3 minutes. Cost: $0.**
+
+---
+
+## Week 1 — Publish Monday June 2
+
+**Hook:** Algae doesn't take a summer vacation.
+
+**Body:**
+If your roof has dark streaks or your siding is turning green, that's algae — and it's been growing all spring. Left alone, it stains, deteriorates, and makes your home look a decade older than it is.
+
+We're booking June now for house washing, roof soft wash, and driveway cleaning across Cuyahoga, Lake, Lorain, Summit, and Medina counties.
+
+**CTA:** Call or click to get a quote — slots fill up as summer heats up.
+
+**Image:** House with visible green/black staining on siding (before photo). If you have one, use a real job photo.
+
+**Keywords to include:** power washing Cleveland, house washing Northeast Ohio, algae removal
+
+---
+
+## Week 2 — Publish Monday June 9
+
+**Hook:** Before your next showing. After your best offer.
+
+**Body:**
+Realtors and homeowners know: a freshly washed house sells faster and for more. We pressure wash siding, driveways, and decks before listing appointments all summer — same week availability for pre-listing jobs.
+
+Serving Cuyahoga, Summit, Lake, Lorain, and Medina County.
+
+**CTA:** DM us or call for availability. We can usually turn around a pre-listing quote within 24 hours.
+
+**Image:** Clean bright home exterior with manicured landscaping — after photo from a real job or stock.
+
+**Keywords:** pressure washing before selling house, house washing Cleveland, curb appeal power washing
+
+---
+
+## Week 3 — Publish Monday June 16
+
+**Hook:** What 10 years of NE Ohio winters does to a driveway.
+
+**Body:**
+Road salt, freeze-thaw cycles, and algae growth leave driveways stained and pitted. We clean concrete and asphalt driveways throughout Northeast Ohio — takes about an hour, looks brand new.
+
+Currently booking June–July for Cuyahoga, Summit, Lake, Lorain, and Medina counties.
+
+**CTA:** Get a free quote — call or click. We'll tell you exactly what it costs before we schedule.
+
+**Image:** Side-by-side driveway before/after — salt staining vs. clean concrete.
+
+**Keywords:** driveway cleaning Cleveland, concrete cleaning Northeast Ohio, pressure washing driveway Ohio
+
+---
+
+## Week 4 — Publish Monday June 23
+
+**Hook:** Your deck deserves more than a hose.
+
+**Body:**
+Wood decks accumulate algae, mold, and grime through Ohio's wet springs and summers. We soft wash wood and composite decks without blasting the surface — preserves the wood, removes the buildup. Pairs well with a house wash if we're already on site.
+
+**CTA:** Deck + house wash combo is the most popular package this time of year. Call or click to get on the June schedule.
+
+**Image:** Deck before/after — grimy green boards vs. clean grey wood.
+
+**Keywords:** deck washing Cleveland, deck cleaning Northeast Ohio, power wash deck Ohio
+
+---
+
+## Week 5 — Publish Monday June 30
+
+**Hook:** July 4th weekend is next week. Is your house ready?
+
+**Body:**
+You've got people coming over. Your neighbors are outside. Your house is the backdrop for every photo taken on your street this weekend.
+
+One afternoon with our crew and it looks like a completely different property. We serve all 7 Northeast Ohio counties and we're still booking last-minute June slots.
+
+**CTA:** Call or text for same-week availability. We'll do what we can.
+
+**Image:** Clean bright home, summer vibes — family-friendly looking property exterior.
+
+**Keywords:** last minute power washing Cleveland, house washing before July 4, power washing NE Ohio
+
+---
+
+## Publishing Instructions
+1. Go to **business.google.com/dashboard**
+2. Select your business → **Posts** → **Create post**
+3. Choose: **What's new** (not Offer/Event — those expire differently)
+4. Paste the **Body** text
+5. Upload the **Image** (JPG at least 720x720)
+6. Add **CTA button**: "Get quote" → link to your website or phone number
+7. Click **Publish**
+
+**Best time to post:** Monday morning 7–9am for max weekday visibility.
+
+---
+
+## Tracking
+After posting, check weekly: Business Profile → **Performance** → Posts. Look for: views, clicks, calls from post. If a post gets 50+ views in the first week, that hook angle works — repeat it.
+
+---
+
+*See also: `outputs/vera/gbp_weekly_routine_2026-05-21.md` for the recurring posting routine.*
+*Memorial Day post: `outputs/vera/gbp_memorial_day_post_2026-05-23.md` (post NOW if not already published)*
+
+---
+*Generated by Vera Cole — CIO | 2026-05-24*

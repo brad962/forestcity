@@ -65,8 +65,10 @@ Save to `/outputs/rick/`:
 - `facebook_ads_[campaign]_[date].md` — 5-10 ad variations per batch
 - `google_ads_[date].md` — headlines, descriptions, extensions
 - `performance_report_[date].md` — metrics and recommendations
+- `google_guaranteed_setup_[date].md` — step-by-step Google Guaranteed (Local Services Ads) application guide: account creation, license/insurance verification, background check, badge setup, budget; includes expected timeline (7–14 days approval) and post-approval optimization
 - `google_guaranteed_lead_response_sop_[date].md` — SOP for handling Google Guaranteed inbound leads: respond within 5 min (Google measures response time), call script, what to say if they don't answer, how to close the quote; response time directly affects lead volume from Google
 - `facebook_ads_first_week_monitoring_guide_[date].md` — Day 1 / Day 3 / Day 7 guide for first-time Facebook ad launch; what the learning phase means, which metrics matter (CTR, CPL, cost per booking), when to pause vs wait, lead notification setup, budget scaling trigger, common mistakes that kill the algorithm's learning phase
+- `facebook_lead_gen_launch_checklist_[date].md` — Pre-launch checklist for Facebook Lead Gen campaigns: Pixel installed, lead email notification enabled, Lead Gen Form settings (phone required), budget + targeting confirmed, lead response SOP read; must complete before ads go live
 
 ## Logging
 `[YYYY-MM-DD HH:MM] Rick | [task description] | [output filename] | Done`
