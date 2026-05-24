@@ -29,7 +29,7 @@ Example payload for property managers in Cuyahoga County:
   "person_titles": ["property manager", "facility manager", "building manager"],
   "q_organization_keyword_tags": ["property management", "hoa management", "association management", "community management"],
   "person_locations": ["Cleveland, Ohio", "Cuyahoga County, Ohio"],
-  "per_page": 25
+  "per_page": 50
 }
 ```
 

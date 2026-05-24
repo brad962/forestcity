@@ -139,3 +139,10 @@ Add these to your local crontab (`crontab -e`) on your Mac:
 ```
 
 To check if cron is running: `cat logs/cron.log | tail -50`
+
+## Quick Shortcuts (Double-Click in Finder)
+
+No Terminal required — just open Finder, navigate to the `forestcity/scripts/` folder, and double-click:
+
+- **`run_summit_pull.command`** — Danny's Summit County lead pull (opens Terminal automatically, runs, closes)
+- **`run_summit_both.command`** — Danny + Carla Summit County pull in sequence (both workers, one click)

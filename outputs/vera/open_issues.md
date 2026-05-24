@@ -1,6 +1,6 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 71 | 2026-05-24 | Auto-fixes shipped: 4 | New deliverables: 3 | Proposals: 2 | New RESOLVED: 0*
+*Run 72 | 2026-05-24 | Auto-fixes shipped: 4 | New deliverables: 4 | Proposals: 2 | New RESOLVED: 0*
 
 ---
 
@@ -227,6 +227,17 @@ Key resolved issues by category:
 - Fix: Added _flush_unpushed_commits() called at start of _main_body() before git pull --rebase; if a prior push failed leaving a "cleared pending_messages" commit unpushed, it gets pushed first; prevents rebase from applying the empty-file commit on top of new Vera messages and silently discarding them
 
 ---
+
+## RUN METRICS — Run 72 | 2026-05-24
+- Total RESOLVED: 77 (0 new — all open issues require Bradley action or are permanent infrastructure constraints)
+- Total OPEN: 18 (0 new closed, 0 new opened)
+- Auto-upgrades shipped: 4 (agents/rick.md — added google_ads_first_week_monitoring_guide format entry; agents/tommy.md — added annual_plan_customer_welcome_kit format entry; CLAUDE.md — added Quick Shortcuts section for run_summit_pull.command + run_summit_both.command double-click shortcuts; agents/danny.md — updated example Apollo payload per_page 25→50 to match actual code)
+- Deliverables written: 4 (facebook_posts_may26_week_2026-05-24.md — 5 launch-week Facebook posts Tue May 26 through Sat May 30 with schedule guide; google_ads_first_week_monitoring_guide_2026-05-24.md — Day 1/3/7 monitoring guide with CTR benchmarks, CPC ranges, negative keywords, Quality Score guide, common mistakes; june_week1_sprint_2026-05-24.md — refreshed June 2–6 day-by-day sprint incorporating all new context: VOC rewrites, enrollment battle card, past customer texts, ads monitoring, revenue targets; annual_plan_customer_welcome_kit_2026-05-24.md — post-YES annual plan onboarding: 4-touch sequence from confirmation text through referral seed + FAQ answers + revenue math)
+- Proposals: 2 (Kit.com email capture setup — ads are live but no email list funnel beyond Facebook Lead Gen form; Kit.com + Home Maintenance Checklist content = organic lead capture at zero cost; Yelp Business profile activation — free local search channel alongside GBP; most competitors don't actively manage it; 15-min setup, ongoing impressions)
+- Key issue updates: Tier 1 contractors — TODAY is final Sunday window (Memorial Day tomorrow); 5 contractors untouched since May 18; Anthony 440-320-2779 and Venus 216-810-2497 are highest-ROI 10-min action; Instantly.ai — 11 days until June 4 enrollment, every day paused = one more day of recovery; Tuesday is now the main action day: use facebook_posts_may26_week for launch-week social, google_ads_first_week_monitoring_guide for Day 1 check, june_week1_sprint for June plan
+- Highest priority TODAY (Sun May 24 evening): (1) Text Anthony/Land Pro 440-320-2779 — "referral swap" pitch (2) Text Venus/Reliable Roofing 216-810-2497 (3) Pause Instantly.ai — app.instantly.ai → a1c08c3d + 626cd15d
+- Highest priority TOMORROW (Mon May 25, Memorial Day): Run check_replies.py at 10am → `outputs/donna/monday_memorial_day_final_check_2026-05-24.md`
+- Highest priority TUESDAY May 26: (1) Post `facebook_posts_may26_week_2026-05-24.md` Post 1 at 8am (2) Launch ads 9:15am (3) Check Day 1 at end of day using `google_ads_first_week_monitoring_guide_2026-05-24.md` (4) Full blitz: `may26_week_priority_stack_2026-05-24.md`
 
 ## RUN METRICS — Run 71 | 2026-05-24
 - Total RESOLVED: 77 (0 new — all open issues require Bradley action or are permanent infrastructure constraints)

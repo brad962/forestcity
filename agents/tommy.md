@@ -71,6 +71,7 @@ Save to `/outputs/tommy/`:
 - `neighbor_canvass_script_[date].md` — "While we're here" neighbor door-knock + text scripts for use during every active job; same-day discounted add-on offer; converts bystanders into booked jobs while equipment is already deployed; zero ad spend, zero travel overhead
 - `hot_lead_callback_script_[date].md` — word-for-word script for when a PM/realtor/contractor who opened the Mixmax email 2-3+ times calls back organically; completely different psychology from cold outreach — they have intent; covers: opening, 3 discovery questions, how to quote on the phone, how to close, handling "send me something in writing"
 - `past_customer_june_text_scripts_[date].md` — 5 copy-paste text scripts for June past customer re-engagement wave (house wash, roof, driveway, annual plan upsell, "neighbor referral"); send June 4 at 10am; includes personalization guide, response handling, and revenue math ($1,200-$4,000 expected from 10 texts)
+- `annual_plan_customer_welcome_kit_[date].md` — post-YES onboarding kit for annual plan customers: confirmation text (within 30 min), welcome email (same day), schedule-your-2-visits email (within 48h), what to expect on each visit, referral ask timing, FAQ answers for common questions; closes the gap between upsell pitch and customer feeling taken care of
 
 ## Logging
 `[YYYY-MM-DD HH:MM] Tommy | [task description] | [output filename] | Done`
