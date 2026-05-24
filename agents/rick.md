@@ -71,6 +71,7 @@ Save to `/outputs/rick/`:
 - `facebook_lead_gen_launch_checklist_[date].md` — Pre-launch checklist for Facebook Lead Gen campaigns: Pixel installed, lead email notification enabled, Lead Gen Form settings (phone required), budget + targeting confirmed, lead response SOP read; must complete before ads go live
 - `facebook_ad_week1_revenue_tracker_[date].md` — Day 1/3/7/14 fill-in-the-blank tracking sheet for the first 2 weeks after ads launch; columns: impressions, CTR, cost per lead, quotes sent, jobs booked, revenue; benchmark thresholds for each metric; decision tree for when to tweak vs. wait; revenue projection math ($30/day → break-even in jobs)
 - `google_ads_first_week_monitoring_guide_[date].md` — Day 1/3/7 guide for first-time Google Ads launch; CTR benchmarks (branded >5%, general >2%), CPC ranges for power washing in NE Ohio ($2–$5/click), Quality Score formation timeline, conversion tracking verification, ad schedule recommendations, common mistakes (editing too early, killing Quality Score before it forms)
+- `yelp_business_profile_guide_[date].md` — step-by-step guide to claim and optimize Forest City's Yelp Business listing; free channel, 15-min setup, zero ongoing cost; local search visibility alongside GBP; most NE Ohio competitors don't actively manage Yelp — first-mover advantage on reviews; includes photo upload checklist, category selection, response templates for first reviews
 
 ## Logging
 `[YYYY-MM-DD HH:MM] Rick | [task description] | [output filename] | Done`

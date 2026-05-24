@@ -1,6 +1,6 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 73 | 2026-05-24 | Auto-fixes shipped: 4 | New deliverables: 3 | Proposals: 0 | New RESOLVED: 0*
+*Run 74 | 2026-05-24 | Auto-fixes shipped: 4 | New deliverables: 3 | Proposals: 1 | New RESOLVED: 0*
 
 ---
 
@@ -19,6 +19,19 @@ Key resolved issues by category:
 
 ---
 
+## OPEN — Email List at 0 / Lead Magnet Not Live 🔴 NEW
+- First seen: 2026-05-24 (Run 74)
+- Description: Facebook and Google ads launch Tuesday May 26. Traffic that doesn't book immediately has nowhere to go — no email opt-in, no nurture, permanently lost. The Home Maintenance Checklist brief has existed since May 12 but was never turned into a live opt-in. Kit.com is free up to 10K subscribers.
+- Assets now ready (all written this run):
+  - Checklist content: `outputs/tommy/home_maintenance_checklist_content_2026-05-24.md`
+  - Kit.com setup guide: `outputs/donna/kit_email_capture_setup_2026-05-24.md`
+  - Nurture sequence: `outputs/donna/nurture_sequence_home_maintenance_checklist_2026-05-12.md` (exists since May 12)
+- Setup time: 23 minutes. Should be done before Tuesday ads launch.
+- Run 74: Assets written. Kit.com account still needs to be created at kit.com. Setup guide is ready.
+- Resolution criteria: Kit.com landing page live + first subscriber captured.
+
+---
+
 ## OPEN — Manual Contacts Sitting Untouched (New Lead stage) 🔴
 - First seen: 2026-05-18
 - Description: 33 contacts in New Lead stage. 0 last_contact dates. Tier 1 contractors need personal text.
@@ -34,6 +47,7 @@ Key resolved issues by category:
 - Run 70 (2026-05-24 Sun): Same window — still Sunday. 5 contacts, 2 texts in 10 minutes. If not done today, these move to Tuesday morning blitz (8:45am slot). When any of these contacts calls back after a text, use `outputs/tommy/hot_lead_callback_script_2026-05-24.md` (new this run) — the inbound call conversion rate from warm contractors is much higher than cold, and Bradley has no script for that scenario until now.
 - Run 71 (2026-05-24 Sun): Text window TODAY (Sunday) still open — trades working Memorial Day weekend. If not today, Tuesday May 26 at 8:45am is the blitz slot (in may26_week_priority_stack). June 4 enrollment battle card now exists (`outputs/donna/june4_enrollment_battle_card_2026-05-24.md`) — Tier 1 contractor texts are the same-day activity alongside enrollment.
 - Run 73 (2026-05-24 Sun): VERIFIED via pipeline_data.json — all 5 Tier 1 contractors confirmed "New Lead," 0 last_contact dates. Phones confirmed in pipeline_data.json (Anthony 440-320-2779, Dontez 440-396-0814, Chris/Twin 216-773-0757, Venus 216-810-2497, Logan 216-956-5263). Fresh angle: inbound call handling is now covered — if a contractor calls back after a text, use `outputs/tommy/inbound_response_protocol_2026-05-24.md` Section 4. Tuesday 8:45am is the Plan B slot from `may26_week_priority_stack_2026-05-24.md`.
+- Run 74 (2026-05-24 Sun): Final window narrowing. If not texted today (Sunday) or tomorrow (Memorial Day), Tuesday 8:45am slot is the backstop. After Tuesday, these 5 contacts will have been "New Lead" for 6+ days. If Mixmax sequence is now finished (reply window closed tomorrow), Tuesday texts become the ONLY active outreach channel for these contacts — Mixmax won't re-enroll them. Text Anthony first (landscaper → highest referral volume in NE Ohio exterior maintenance). $50/referral, $0 upfront cost, no paperwork needed to start.
 - Resolution criteria: Bradley texts Tier 1 list. Confirmed when pipeline_data.json shows "Contacted" stage for these 5.
 
 ---
@@ -85,6 +99,7 @@ Key resolved issues by category:
 - Run 70 (2026-05-24 Sun): Still 11 days. May 25 (Memorial Day) = last day with no cost for not pausing. June 4 is 11 days away. Email deliverability recovery needs at least 7–10 days. If not paused by Tuesday May 26, the recovery window before Round 2 drops below 7 days — high risk of landing in spam again. This is a 3-minute action: app.instantly.ai → Campaigns → ⋮ → Pause.
 - Run 71 (2026-05-24 Sun): 11 days until Round 2. June 4 enrollment battle card now has an explicit Instantly.ai pre-check as Step 1 the night of June 3 (grep INSTANTLY_PAUSED .env). If still not paused by Tuesday May 26, the recovery window is exactly 9 days — minimum viable. Every day after Tuesday = higher spam risk for June 4.
 - Run 73 (2026-05-24 Sun): 11 days until Round 2. Reply window closes TOMORROW. If 0 replies come in by Memorial Day morning, Instantly.ai is confirmed to have hurt deliverability. Pausing immediately after the window closes = maximum recovery time before June 4. Critical path: pause TODAY → 11 days recovery; pause Tuesday → 9 days recovery (minimum viable); pause after June 1 → less than 7 days (high risk). The 3-minute pause is the highest-leverage action available this weekend.
+- Run 74 (2026-05-24 Sun): This is the same Sunday. REPLY WINDOW CLOSES TOMORROW (Memorial Day). 11 days until Round 2 enrollment. The math is clear: pause today = best deliverability on June 4. Pause Tuesday = 9 days recovery (still OK). Pause after Memorial Day week = high risk. The Round 2 enrollment readiness checklist (`outputs/donna/round2_enrollment_readiness_checklist_2026-05-23.md`) lists this as the first and hardest blocking item. Without it confirmed, the readiness check is NO-GO.
 - Resolution criteria: Both campaigns paused in Instantly.ai → confirmed by Bradley.
 
 ---
@@ -229,6 +244,18 @@ Key resolved issues by category:
 - Fix: Added _flush_unpushed_commits() called at start of _main_body() before git pull --rebase; if a prior push failed leaving a "cleared pending_messages" commit unpushed, it gets pushed first; prevents rebase from applying the empty-file commit on top of new Vera messages and silently discarding them
 
 ---
+
+## RUN METRICS — Run 74 | 2026-05-24
+- Total RESOLVED: 77 (0 new — all open issues require Bradley action or permanent infrastructure constraints)
+- Total OPEN: 19 (1 new: Email List at 0 / Lead Magnet Not Live — new high-priority issue; 0 closed)
+- Auto-upgrades shipped: 4 (workers/check_replies.py — phone_map and company_map now also read pipeline_data.json manual contacts; agents/rick.md — added yelp_business_profile_guide format to catalog; agents/donna.md — added kit_email_capture_setup format to catalog; agents/tommy.md — added home_maintenance_checklist_content format to catalog)
+- Deliverables written: 3 (home_maintenance_checklist_content_2026-05-24.md — actual 12-month NE Ohio home maintenance checklist for homeowners; yelp_business_profile_guide_2026-05-24.md — 15-min Yelp listing claim + optimization guide, free channel, first-mover in NE Ohio power washing; kit_email_capture_setup_2026-05-24.md — Kit.com landing page + delivery automation + nurture trigger for the checklist magnet; 23 minutes to implement before Tuesday ads launch)
+- Proposals: 1 (Jasmine refresh of facebook_posts_june_week2_4 — current version from May 20 predates VOC rewrites and June Booking Blitz context; should be rewritten before June 8 when that content goes live)
+- New issue: Email List at 0 — with ads launching Tuesday, every non-converting visitor is permanently lost without an email opt-in; all 3 required assets now written and ready; 23 min to implement before Tuesday
+- Key code fix: check_replies.py phone/company enrichment now reads both contacts_cache.json AND pipeline_data.json — future-proofs for when gas station/fleet contacts get Mixmax sequences and show up in reply checks
+- Highest priority TODAY (Sun May 24 evening): (1) Text Anthony/Land Pro 440-320-2779 — "referral swap" pitch (2) Pause Instantly.ai — app.instantly.ai → a1c08c3d + 626cd15d → Pause
+- Highest priority TOMORROW (Mon May 25 Memorial Day): Run check_replies.py at 10am → read monday_memorial_day_final_check_2026-05-24.md
+- Highest priority TUESDAY May 26: (1) READ may26_week_priority_stack_2026-05-24.md FIRST (2) 20 min Kit.com setup BEFORE ads launch — kit_email_capture_setup_2026-05-24.md (3) Claim Yelp listing — yelp_business_profile_guide_2026-05-24.md — 15 min (4) Then launch ads per launch card
 
 ## RUN METRICS — Run 73 | 2026-05-24
 - Total RESOLVED: 77 (0 new — all open issues require Bradley action or are permanent infrastructure constraints)

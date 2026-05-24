@@ -126,3 +126,55 @@
 >🔴 Today's top 2 actions (15 min total):
 >1. Text Anthony/Land Pro — 440-320-2779 (referral swap pitch)
 >2. Pause Instantly.ai — app.instantly.ai → a1c08c3d + 626cd15d → Pause
+---
+🔧 *Vera — Auto-Upgrade: check_replies.py*
+>Changed: phone_map and company_map now read both contacts_cache.json AND pipeline_data.json
+>Why: Manual contacts (gas station, fleet, Tier 1 contractors) added directly to pipeline_data.json now get phone/company enrichment in reply check output — future-proofs for when gas station/fleet Mixmax sequences go live.
+>File: workers/check_replies.py
+---
+🔧 *Vera — Auto-Upgrade: agents/rick.md*
+>Changed: Added yelp_business_profile_guide_[date].md to Rick's output format catalog
+>Why: Yelp was proposed in Run 72 as a free local search channel but never had a documented output format — adding it now so the deliverable (written this run) has a home in Rick's catalog.
+>File: agents/rick.md
+---
+🔧 *Vera — Auto-Upgrade: agents/donna.md*
+>Changed: Added kit_email_capture_setup_[date].md to Donna's output format catalog
+>Why: Kit.com email capture was proposed Run 72; the setup guide was written this run; now documented in Donna's catalog so future runs don't re-propose what's already built.
+>File: agents/donna.md
+---
+🔧 *Vera — Auto-Upgrade: agents/tommy.md*
+>Changed: Added home_maintenance_checklist_content_[date].md to Tommy's output format catalog
+>Why: The brief for the Home Maintenance Checklist has existed since May 12 but the actual content document had no format entry — this signals it as a first-class deliverable (and it's now written).
+>File: agents/tommy.md
+---
+📄 *Vera — New Deliverable: Tommy*
+>File: outputs/tommy/home_maintenance_checklist_content_2026-05-24.md
+>What: The actual NE Ohio 12-month home exterior maintenance checklist — the document subscribers receive when they opt in. Month-by-month tasks built for NE Ohio's climate (lake humidity, freeze-thaw, algae season timing, driveway sealing windows). NOT the brief (that existed since May 12) — this is the actual content.
+>Action: Use as the opt-in magnet at the Kit.com landing page. Every subscriber is a potential booking. Pairs with kit_email_capture_setup_2026-05-24.md (see next message).
+---
+📄 *Vera — New Deliverable: Rick*
+>File: outputs/rick/yelp_business_profile_guide_2026-05-24.md
+>What: Step-by-step Yelp Business Profile activation and optimization guide. Free, 15-minute setup, zero ongoing cost. Most NE Ohio power washing competitors don't actively manage Yelp — first-mover advantage. Includes profile copy (ready to paste), photo checklist, Request-a-Quote setup, ongoing review request text script, and Yelp vs. GBP comparison table.
+>Action: Open biz.yelp.com, search Forest City Power Washing, claim the listing. Takes 15 minutes. Can be done Tuesday before ads launch.
+---
+📄 *Vera — New Deliverable: Donna*
+>File: outputs/donna/kit_email_capture_setup_2026-05-24.md
+>What: Full Kit.com email capture setup guide for the NE Ohio Home Maintenance Checklist magnet. Covers: Kit.com account creation (free), landing page copy (ready to paste), delivery automation email (ready to send), 3-touch nurture trigger using the existing `nurture_sequence_home_maintenance_checklist_2026-05-12.md`, Facebook ad traffic integration. Setup time: 23 minutes.
+>⚠️ Action BEFORE Tuesday: Without this live, every ad visitor who doesn't book immediately = permanently lost. 23 minutes before ads launch = email list that grows automatically.
+---
+💡 *Vera — Upgrade Proposal*
+>Idea: Refresh Jasmine's June Week 2–4 Facebook posts before June 8
+>Why: `outputs/jasmine/facebook_posts_june_week2_4_2026-05-20.md` was written May 20 — before all VOC rewrites, before June Booking Blitz strategy was finalized, and before the Round 2 enrollment angle was built. June 8–27 is the height of peak season and these posts will run alongside active commercial enrollment outreach.
+>Impact: Posts that use current VOC language + commercial booking angle will outperform the May 20 version on engagement and drive-to-quote clicks; also gives Jasmine a June Week 2–4 version that's synced with the June commercial calendar.
+>Reply YES to approve — Jasmine rewrites 5 posts, replaces the May 20 file.
+---
+✅ *Vera — Scan Complete 2026-05-24 (Run 74)*
+>4 auto-upgrades shipped | 3 deliverables | 1 proposal | 19 open issues (1 new: Email List at 0)
+
+>🆕 New issue this run: Email capture gap — ads launch Tuesday with no opt-in. All 3 assets written and ready. 23-min setup before Tuesday = permanent email list asset.
+
+>Run 74 priority stack (TUESDAY May 26):
+>1. Read may26_week_priority_stack_2026-05-24.md FIRST
+>2. 20 min: Kit.com setup (kit_email_capture_setup_2026-05-24.md) — BEFORE ads launch
+>3. 15 min: Claim Yelp listing (yelp_business_profile_guide_2026-05-24.md)
+>4. Summit pull 8am → bridge emails 8:20am → contractor texts 8:45am → gas station sequence 9am → ads launch 9:15am → past customer texts 10am
