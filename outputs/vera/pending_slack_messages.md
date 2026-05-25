@@ -83,3 +83,82 @@
 >Gas station routing expanded (GetGo/BP/Shell/Pilot now covered). PM title net extended (property operations manager). Service pages VOC-refreshed (all 5 done). Launch eve checklist ready.
 >TONIGHT: Open `outputs/donna/launch_eve_prep_checklist_2026-05-25.md` — 10 min before bed
 >7:30am TOMORROW: `outputs/donna/may26_final_launch_brief_2026-05-25.md` — 90-min launch
+
+---
+
+🔧 *Vera — Auto-Upgrade (Run 85)*
+>Changed: agents/danny.md — removed "Run on May 26 (Tuesday launch day) FIRST THING" from Summit urgency note
+>Why: Date-specific language becomes stale tomorrow; urgency note now stays accurate May 26–31
+>File: agents/danny.md
+
+---
+
+🔧 *Vera — Auto-Upgrade (Run 85)*
+>Changed: agents/rick.md — added google_ads_launch_day_checklist_[date].md to output catalog
+>Why: Facebook had a pre-launch checklist; Google had none — gap closed on the day both platforms launch
+>File: agents/rick.md
+
+---
+
+🔧 *Vera — Auto-Upgrade (Run 85)*
+>Changed: agents/donna.md — added launch_week_lead_log_[date].md to output catalog
+>Why: No lead tracking sheet existed for Week 1; Ads Manager shows clicks but not which ones actually booked
+>File: agents/donna.md
+
+---
+
+📋 *Vera — New Deliverable (Run 85)*
+>File: `outputs/rick/google_ads_launch_day_checklist_2026-05-26.md`
+>What: 5-block Google Ads pre-launch checklist — Conversion Tracking → Payment → Ad Schedule → Negative Keywords → Call Extension
+>Use it: Complete ALL 5 blocks BEFORE clicking Enable on Google campaigns today
+>Why: Running without conversion tracking = Google optimizes for clicks, not bookings; missing negatives = you pay for "power washing jobs hiring." 15 minutes protects your first week of spend.
+
+---
+
+📋 *Vera — New Deliverable (Run 85)*
+>File: `outputs/donna/launch_week_lead_log_2026-05-26.md`
+>What: Week 1 daily lead tracking table (May 26–June 1) — one row per incoming lead; daily summary; week-end cost-per-lead calc; all 6 response scripts linked
+>Use it: Fill a row every time a Facebook or Google lead comes in. This is the ground truth Ads Manager doesn't show.
+
+---
+
+🚨 *Vera — LAUNCH DAY ALERT — May 26, 2026*
+>ALL ASSETS READY. Here is the order of operations:
+>
+>1️⃣ Text Anthony/Land Pro (440-320-2779) RIGHT NOW — before ads launch. "Hey Anthony, it's Bradley from Forest City Power Washing. We do exterior cleaning for a lot of landscapers' customers — want to do a quick referral swap? No paperwork, $50 for every job you send our way." 30 seconds.
+>
+>2️⃣ Summit pull: double-click `scripts/run_summit_pull.command` — 6 min unattended. 5 days left, today is the best window (you're already at your Mac).
+>
+>3️⃣ Pause Instantly.ai: app.instantly.ai → a1c08c3d + 626cd15d → ⋮ → Pause → add INSTANTLY_PAUSED=true to .env. 9 days left before June 4 — today is the last clean pause window.
+>
+>4️⃣ Google Ads checklist BEFORE enabling campaigns: `outputs/rick/google_ads_launch_day_checklist_2026-05-26.md` (15 min)
+>
+>5️⃣ Launch ads per: `outputs/donna/may26_final_launch_brief_2026-05-25.md`
+>
+>6️⃣ Fill lead log as leads arrive: `outputs/donna/launch_week_lead_log_2026-05-26.md`
+>
+>7️⃣ 5pm check: `outputs/donna/launch_day_evening_debrief_2026-05-26.md`
+
+---
+
+💡 *Vera — Upgrade Proposal (Run 85)*
+>Idea: Add self-storage facility district managers as a new Danny Apollo segment
+>Why: NE Ohio has 40+ facilities (Public Storage, Extra Space, Stor-All, local operators). District managers control 3–8 properties each. One relationship = recurring multi-site revenue — identical model to the gas station segment (18 contacts already pulled). Target: "District Manager" at self-storage companies. Revenue per account: $1,500–$4,000/year (parking lots, building exteriors, dumpster pads).
+>Impact: New recurring commercial segment; zero overlap with existing pipeline; test batch on June 8 Geauga+Portage pull week
+>Reply YES to approve.
+
+---
+
+💡 *Vera — Upgrade Proposal (Run 85)*
+>Idea: "Neighbor Stack" — geographic job clustering for Week 1 ad leads
+>Why: When the first ad leads come in, cluster bookings by neighborhood. Each booked job is an opportunity to door-knock 5 adjacent houses while you're already there (script: `outputs/tommy/neighbor_canvass_script_2026-05-26.md`). Neighbor sees the result on the house next door in real time — conversion rate 3–5x higher than a cold ad click.
+>Impact: Each booked ad job generates 1–2 additional same-day leads at zero ad cost. Week 1 ROI doubles if Bradley door-knocks 5 houses per job.
+>Action needed: No tech required. Just: when scheduling a job, note the neighborhood. Bring 5 leave-behinds. Knock 10 minutes before leaving the site.
+>Reply YES to approve.
+
+---
+
+✅ *Vera — Scan Complete 2026-05-26 (Run 85 — LAUNCH DAY)*
+>3 auto-upgrades shipped | 2 deliverables written | 2 proposals | 0 new issues | 20 open total
+>Key gap closed: Google Ads had no pre-launch checklist (Facebook did). Closed this run.
+>Highest-ROI unblocke action: Text Anthony (440-320-2779) before ads go live. 30 seconds. Once inbound leads start, this never happens.

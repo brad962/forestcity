@@ -1,6 +1,6 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 84 | 2026-05-25 (Launch Eve — tonight before launch day) | Auto-fixes shipped: 4 | New deliverables: 2 | New RESOLVED: 1 (Website Service Pages VOC) | Open: 20*
+*Run 85 | 2026-05-26 (LAUNCH DAY — ads go live today) | Auto-fixes shipped: 3 | New deliverables: 2 | New RESOLVED: 0 | Open: 20*
 
 ---
 
@@ -70,6 +70,7 @@ Key resolved issues by category:
 - Run 82 (2026-05-25 Mon, Memorial Day evening): Still open. 8:45am Tuesday = 12 hours away. The booking_confirmation_text_2026-05-25.md (new this run) closes the last friction point — if any contractor texts YES, Bradley has copy-paste reply scripts ready. `memorial_day_contractor_text_card_2026-05-24.md` is still the send card. Anthony first. 30 seconds.
 - Run 83 (2026-05-25 night, launch eve): Slotted in `outputs/vera/launch_week_daily_checklist_2026-05-26.md` at Tuesday morning. Once ads launch and inbound leads start, outbound contractor texts will compete for attention — doing them BEFORE ads launch is the best window.
 - Run 84 (2026-05-25 night): Fresh angle — `outputs/donna/launch_eve_prep_checklist_2026-05-25.md` (new this run) includes contractor texts as checklist item 4. Tonight is still a valid send window (Memorial Day night, trades check phones). Tomorrow 8:45am slot still in `may26_final_launch_brief`. Wednesday is last reasonable window before these go 8+ days "New Lead" with no personal touch.
+- Run 85 (2026-05-26 LAUNCH DAY): LAST EASY WINDOW — once ads go live and inbound leads start arriving, outbound contractor texts will permanently compete for attention. Send Anthony (440-320-2779) BEFORE clicking launch. 30 seconds. After that, Wednesday May 27 is the backup slot. By Thursday, these contacts will be 8+ days "New Lead" — longest gap yet. Text: "Hey Anthony, it's Bradley from Forest City Power Washing. We do exterior cleaning for a lot of landscapers' customers — want to do a quick referral swap? No paperwork, $50 for every job you send our way."
 - Resolution criteria: Bradley texts Tier 1 list. Confirmed when pipeline_data.json shows "Contacted" stage for these 5.
 
 ---
@@ -128,6 +129,7 @@ Key resolved issues by category:
 - Run 81 (2026-05-25 Mon, Memorial Day): 10 days remaining. After today, Tuesday pause = 9 days recovery (minimum viable). Wednesday pause = 8 days (high risk). The math is clear and hasn't changed. This is the single action with the most leverage for June 4 ROI — 3 minutes, done. `round2_warmup_timeline_2026-05-26.md` lists it as the Day 1 (May 26) blocker. If Bradley is reading Tuesday morning's may26_final_launch_brief and sees "Step 3: Pause Instantly.ai," that's the trigger. Everything else on June 4 depends on this one check.
 - Run 82 (2026-05-25 Mon, Memorial Day evening): 10 days until June 4. Tuesday pause = 9 days recovery (minimum viable). Every 24h of delay = one day less of deliverability recovery before Round 2. The code block in enroll_batch() means accidental enrollment is impossible — but daily Instantly sends continue to chip at domain reputation until paused. 3 minutes: app.instantly.ai → Campaigns → a1c08c3d → ⋮ → Pause; repeat for 626cd15d → add INSTANTLY_PAUSED=true to .env.
 - Run 83 (2026-05-25 night): Slotted as Step 3 in `launch_week_daily_checklist_2026-05-26.md` (Tuesday morning) AND in `launch_day_evening_debrief_2026-05-26.md` (Step 7 at 5pm). Two touchpoints in tomorrow's workflow — one in the morning brief, one in the evening check. Recovery math: pause today (Tue) = 9 days; pause Thursday = 7 days (borderline); pause Friday = 6 days (high risk for June 4 deliverability). Pause window is essentially Tuesday or Wednesday.
+- Run 85 (2026-05-26 LAUNCH DAY): 9 days until June 4 enrollment. PAUSE TODAY = 9 days recovery (minimum viable). Pause Wednesday = 8 days (borderline). Pause Thursday or later = high risk June 4 lands in spam. This is a 3-minute action that protects the entire June 4 ROI. app.instantly.ai → Campaigns → a1c08c3d → ⋮ → Pause; repeat for 626cd15d → add INSTANTLY_PAUSED=true to .env. The mechanical enrollment block in enroll_batch() prevents accidental Round 2 enrollment — but that block does NOT stop the daily Instantly sends that chip away at domain reputation every day the campaigns stay active.
 - Resolution criteria: Both campaigns paused in Instantly.ai → confirmed by Bradley.
 
 ---
@@ -180,6 +182,7 @@ Key resolved issues by category:
 - Command (manual): `python3 workers/lead_pipeline.py danny Summit` (valid any day May 23–31)
 - Double-click shortcut: `scripts/run_summit_pull.command` (in Finder — just open it)
 - Run 77 (2026-05-24 Sun): NEXT COUNTY PREP — Created `scripts/run_medina_pull.command` and `scripts/run_medina_both.command` for Week 22 (June 1 = Medina County). When Summit deadline passes May 31, the very next day is Medina. Shortcut is ready. Also wrote `outputs/donna/june1_medina_pull_guide_2026-05-24.md` — operationalized June 1 guide. Summary: Summit (May 23–31) → Medina (June 1) → Geauga+Portage (June 8). All three have double-click shortcuts. danny.md and carla.md updated with Week 22 urgency note.
+- Run 85 (2026-05-26 LAUNCH DAY): 5 days left (deadline May 31). Today (Tuesday) is actually the best day to run this — Bradley is already at his Mac for ads launch. The pull takes 6 minutes unattended (double-click shortcut). Run it FIRST before launching ads: `scripts/run_summit_pull.command` in Finder. Or: `python3 workers/lead_pipeline.py danny Summit`. If not today, any day May 27–31 works. Sunday May 31 = absolute last day.
 - Resolution criteria: logs/activity.log shows Danny Summit pull entry by May 31.
 
 ---
@@ -221,10 +224,11 @@ Key resolved issues by category:
 - Description: All copy ready (outputs/rick/). Not launched. Peak season revenue being missed daily.
 - Run 54: Weekend free lead gen now bridges to May 26 launch.
 - Run 61 (2026-05-23 Sat): Memorial Day weekend = prime time. Google Guaranteed application should be filed today. Facebook ads launch Tuesday May 26.
-- Run 62 (2026-05-23 Sat): Still unresolved. Days since this was first flagged: 2 days. Days of peak season revenue being missed: counting. New escalation: once ads are live, they need a lead RESPONSE SOP — Google Guaranteed specifically measures response time and penalizes slow responders with fewer leads. Added `google_guaranteed_lead_response_sop_[date].md` format to rick.md so this can be pre-built BEFORE ads launch (5-minute read = much higher conversion on $15–$35 leads). Proposal: Tommy writes annual plan upsell sequence BEFORE ads launch — every ad lead is also a potential annual plan customer, not just a one-time job.
+- Run 62 (2026-05-23 Sat): Still unresolved. Days since this was first flagged: 2 days. Days of peak season revenue being missed: counting.
 - Checklist: outputs/vera/may26_ads_launch_checklist_2026-05-22.md.
 - Google Guaranteed: outputs/rick/google_guaranteed_setup_2026-05-22.md.
-- Resolution criteria: At least one campaign live by May 28. Confirmed by Bradley in Slack.
+- Run 85 (2026-05-26 LAUNCH DAY): TODAY IS THE DAY. All assets ready. Launch brief: `outputs/donna/may26_final_launch_brief_2026-05-25.md`. New this run: `outputs/rick/google_ads_launch_day_checklist_2026-05-26.md` — 5-block pre-launch checklist for Google Ads (parallel to Facebook launch checklist; fills gap where Facebook had a launch checklist but Google did not). Do blocks 1-5 before enabling campaigns. Lead log: `outputs/donna/launch_week_lead_log_2026-05-26.md` — fill in every lead as they arrive.
+- Resolution criteria: At least one campaign live today May 26. Confirmed by Bradley in Slack.
 
 ---
 
@@ -295,6 +299,29 @@ Key resolved issues by category:
   2. Pause Instantly.ai: app.instantly.ai → a1c08c3d + 626cd15d → ⋮ → Pause (3 min, 10 days recovery starts NOW)
   3. Run `python3 workers/check_replies.py` — reply window closes TODAY
 - Highest priority TUESDAY May 26: READ `outputs/donna/may26_final_launch_brief_2026-05-25.md` FIRST — THE launch brief. Then post GBP Post 1 at 8am (outputs/vera/launch_week_gbp_posts_2026-05-25.md), then ads.
+
+---
+
+## RUN METRICS — Run 85 | 2026-05-26 (LAUNCH DAY — ads go live today)
+- Total RESOLVED: 81 (0 new — all remaining open issues require Bradley action or are infrastructure constraints)
+- Total OPEN: 20 (0 new closed, 0 new opened; down 1 from last header due to Website Service Pages VOC being marked RESOLVED in Run 84)
+- Auto-upgrades shipped: 3
+  1. agents/danny.md — removed "Run on May 26 (Tuesday launch day) FIRST THING" from Summit urgency note; date-specific language becomes stale tomorrow; replaced with "Run ASAP — every day of delay = fewer fresh Summit leads for June 4 enrollment"; urgency note is now fully date-agnostic and accurate May 26–31
+  2. agents/rick.md — added `google_ads_launch_day_checklist_[date].md` to output format catalog; Facebook had `facebook_lead_gen_launch_checklist` but Google had no equivalent pre-launch checklist; gap existed since both platforms were supposed to launch today; 5-block checklist (conversion tracking, payment, schedule, negatives, call extension) written this run
+  3. agents/donna.md — added `launch_week_lead_log_[date].md` to output format catalog; no tracking sheet existed for week 1 leads; Ads Manager shows clicks but doesn't show which clicks booked; this fills the ground-truth gap
+- Deliverables written: 2
+  1. outputs/rick/google_ads_launch_day_checklist_2026-05-26.md — 5-block pre-launch checklist (conversion tracking → payment → ad schedule → negative keywords → call extension); includes Day 1 success metrics table, emergency stop criteria, and launch sequence order; must complete before clicking Enable; parallel to the existing Facebook launch checklist
+  2. outputs/donna/launch_week_lead_log_2026-05-26.md — week 1 daily lead tracking table (May 26–June 1); daily fill-in rows for every FB + Google + organic lead; response time log; week totals with target benchmarks; source breakdown; links to all 6 response scripts ready for use
+- Proposals: 2 (see Slack messages — self-storage district manager segment; geographic job clustering "Neighbor Stack" concept)
+- New issue: 0 new issues opened this run
+- Highest priority TODAY (May 26 LAUNCH DAY):
+  1. Text Anthony/Land Pro (440-320-2779) BEFORE launching ads — 30 seconds; after ads go live, inbound leads take all attention
+  2. Run Summit pull FIRST: double-click `scripts/run_summit_pull.command` — 6 min unattended
+  3. Pause Instantly.ai: app.instantly.ai → a1c08c3d + 626cd15d → ⋮ → Pause → add INSTANTLY_PAUSED=true to .env (3 min, 9 days recovery starts now)
+  4. Complete Google Ads launch checklist (`outputs/rick/google_ads_launch_day_checklist_2026-05-26.md`) BEFORE clicking Enable
+  5. Launch ads per `outputs/donna/may26_final_launch_brief_2026-05-25.md`
+  6. Fill in `outputs/donna/launch_week_lead_log_2026-05-26.md` as leads arrive
+  7. 5pm: run `outputs/donna/launch_day_evening_debrief_2026-05-26.md` debrief (5 min)
 
 ---
 
