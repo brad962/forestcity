@@ -513,3 +513,49 @@
 >4 auto-upgrades shipped | 2 deliverables | 3 proposals | 1 issue partially resolved (gas station — 2 paths now unblocked) | 20 OPEN issues carry forward
 >Biggest move this run: gas station Instantly bypass (code fix) + Gmail blast guide — 18 idle DM contacts finally have a path to outreach tomorrow
 >Tomorrow is launch day. The brief is ready. Go get it.
+
+---
+🔧 *Vera — Auto-Upgrade*
+>Changed: agents/donna.md — Memorial Day Sprint section updated; stale `may26_cron_restart_brief.md` reference replaced with definitive `may26_final_launch_brief_2026-05-25.md`
+>Why: Old reference pointed to an obsolete file; Tuesday's definitive launch brief is now the authoritative launch card and should be the one Bradley opens first
+>File: agents/donna.md
+---
+🔧 *Vera — Auto-Upgrade*
+>Changed: agents/donna.md — added `may26_final_launch_brief_[date].md` to Output Format catalog
+>Why: File written in Run 80 but never documented in Donna's catalog; catalog is now current
+>File: agents/donna.md
+---
+🔧 *Vera — Auto-Upgrade*
+>Changed: agents/tommy.md — added `website_copy_service_pages_voc_refresh_[date].md` to output format catalog
+>Why: Service pages were written May 20, three days before Marcus's VOC library was completed; format entry flags the gap and lets Tommy produce the refresh after ads go live
+>File: agents/tommy.md
+---
+📄 *Vera — New Deliverable: Vera (GBP)*
+>File: outputs/vera/launch_week_gbp_posts_2026-05-25.md
+>What: 5 Google Business Profile posts for May 26–31 (launch week) — the June GBP calendar starts June 2, creating a 6-day gap while ads are running; Post 1 goes up Tuesday 8am alongside Facebook posts and ads launch; Post 5 targets Summit County (active pull week); each post takes 2 minutes to publish
+>Action: Post 1 at 8am Tuesday (business.google.com/dashboard → Posts → Create Post). Posts 2–5 scheduled for Wed–Sat at 9am. Then switch to june_gbp_content_calendar_2026-05-24.md starting June 2.
+---
+💡 *Vera — Upgrade Proposal*
+>Idea: Set up Google Ads call tracking before or immediately after ads launch (May 26)
+>Why: Without call tracking, Bradley will see clicks and spend but won't know which keywords or ads generated actual phone calls = actual bookings. At $30/day, after 2 weeks = $420 spent with no ability to optimize. Google Ads has free built-in call tracking via Google Forwarding Number — no third-party tool needed.
+>Impact: Connects ad spend to actual booked jobs; enables keyword-level optimization by Week 2; prevents wasted spend on keywords that get clicks but no calls; essential before scaling budget above $50/day
+>How: Google Ads → Tools → Conversions → + New → Phone calls from ads → Google forwarding number → 60-second setup. No website changes required.
+>Reply YES to approve and I'll write a step-by-step setup guide.
+---
+⚡ *Vera — TOMORROW LAUNCH DAY — Run 81 Final Prep*
+>It's Memorial Day evening. Launch is tomorrow (Tuesday May 26).
+>
+>3 things before midnight tonight:
+>1. Text Anthony/Land Pro 440-320-2779 — "referral swap" pitch — 30 seconds — do it NOW
+>2. Pause Instantly.ai — app.instantly.ai → Campaigns → ⋮ → Pause a1c08c3d + 626cd15d — 3 minutes — TODAY = 10 days recovery before June 4
+>3. Run `python3 workers/check_replies.py` — reply window closes TODAY
+>
+>Tomorrow morning order: READ `outputs/donna/may26_final_launch_brief_2026-05-25.md` FIRST. Then post GBP Post 1 at 8am (outputs/vera/launch_week_gbp_posts_2026-05-25.md). Then go.
+---
+✅ *Vera — Scan Complete 2026-05-25 (Run 81 — Memorial Day Night)*
+>3 auto-upgrades shipped | 1 deliverable (GBP launch week posts) | 1 proposal (Google Ads call tracking) | 1 new issue (service pages predate VOC — low priority) | 21 open issues
+>
+>New asset: GBP launch week posts — closes the May 26–31 content gap; post first one tomorrow at 8am alongside Facebook + ads
+>Donna.md: definitive Tuesday launch brief is now properly documented in catalog and Seasonal Campaign Plans section
+>
+>🔴 Still waiting on Bradley: Instantly.ai pause + contractor texts. Both doable in 5 minutes tonight.

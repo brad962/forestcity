@@ -1,6 +1,6 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 80 | 2026-05-25 (Memorial Day — final run before launch day) | Auto-fixes shipped: 4 | New deliverables: 2 | Proposals: 3 | New RESOLVED: 1*
+*Run 81 | 2026-05-25 (Memorial Day — last run before Tuesday launch) | Auto-fixes shipped: 3 | New deliverables: 1 | Proposals: 1 | New issues: 1 | New RESOLVED: 0*
 
 ---
 
@@ -16,6 +16,14 @@ Key resolved issues by category:
 - **Content gaps:** county rotation calendar, crontab setup, LinkedIn June posts, nina weekly hot leads section with phone numbers, vera_relay Danny staleness detector
 - **Routing accuracy:** detect_lead_type order swapped (PM before realtor), condominium manager substring bug
 - **Run 61 new RESOLVED:** rick.md "Monday after Memorial Day" date error fixed to Tuesday; danny.md urgency note clarified (deadline = May 31, not just "Sunday night"); danny.md output format catalog updated; open_issues.md header corrected (58 → 74 total); donna.md + carla.md new output format entries added
+
+---
+
+## OPEN — Website Service Pages Predate VOC Research 🟡 (Run 81)
+- First seen: 2026-05-25 (Run 81)
+- Description: `outputs/tommy/website_copy_service_pages_2026-05-20.md` was written May 20 — 3 days before Marcus's VOC library was completed (May 23). These pages are the Google Ads landing pages. Better VOC alignment = better Quality Score = lower CPC. Pages aren't bad, but use generic language in several spots where exact VOC phrases ("green and slimy," "roof looks black," "I didn't realize how dirty it was") would increase relevance score.
+- Run 81 (2026-05-25): Added `website_copy_service_pages_voc_refresh_[date].md` format entry to tommy.md. Format is now documented — Tommy can produce on demand. Priority is lower than Facebook ad copy swap (ads launch tomorrow; landing page optimization is a Day 3–7 action after ads are live and Quality Score is forming).
+- Resolution criteria: Tommy writes VOC refresh version after ads have been live for 1 week. Not critical before launch — landing pages are functional.
 
 ---
 
@@ -60,6 +68,7 @@ Key resolved issues by category:
 - Run 74 (2026-05-24 Sun): Final window narrowing. If not texted today (Sunday) or tomorrow (Memorial Day), Tuesday 8:45am slot is the backstop. After Tuesday, these 5 contacts will have been "New Lead" for 6+ days. If Mixmax sequence is now finished (reply window closed tomorrow), Tuesday texts become the ONLY active outreach channel for these contacts — Mixmax won't re-enroll them. Text Anthony first (landscaper → highest referral volume in NE Ohio exterior maintenance). $50/referral, $0 upfront cost, no paperwork needed to start.
 - Run 78 (2026-05-24 Sun): FINAL WINDOW — It's Sunday night Memorial Day weekend. Tomorrow (Monday May 25, Memorial Day) is the last day of the reply window AND a valid day for contractor texts (trades work Memorial Day). If texts not sent today, they MUST go Tuesday May 26 at 8:45am (first slot on may26_week_priority_stack). After Tuesday, these contacts will be 7+ days in "New Lead" with no personal outreach. The memorial_day_contractor_text_card_2026-05-24.md has all 5 scripts ready to copy-paste. Anthony/Land Pro is the highest-ROI first text (landscapers refer the most volume).
 - Run 79 (2026-05-25 Mon, Memorial Day): TODAY IS THE DAY. It is Memorial Day. Trades are working — phones are on. `memorial_day_contractor_text_card_2026-05-24.md` has all 5 scripts. Open it, copy, send Anthony first (440-320-2779). 10 minutes, 5 texts. If not today, Tuesday 8:45am is the absolute last slot before these contacts are 7+ days "New Lead" with zero personal touch. After ads launch Tuesday, Bradley will be busy with inbound — these outbound texts will get deprioritized further.
+- Run 81 (2026-05-25 Mon, Memorial Day): Still open. Fresh angle: ads launch TOMORROW. Once Bradley has inbound leads to handle, these outbound contractor texts will fall to the bottom of the list. Anthony (440-320-2779) takes 30 seconds. After Tuesday's launch, Tier 1 outreach will compete with ad leads for attention — and ad leads will always win. Text TODAY. If not today, the 8:45am Tuesday slot in may26_final_launch_brief is the last planned window before June 4.
 - Resolution criteria: Bradley texts Tier 1 list. Confirmed when pipeline_data.json shows "Contacted" stage for these 5.
 
 ---
@@ -115,6 +124,7 @@ Key resolved issues by category:
 - Run 76 (2026-05-24): CODE-LEVEL BLOCK SHIPPED. `enroll_batch()` in integrations/mixmax.py now ABORTS (not just warns) for batches > 5 contacts when INSTANTLY_PAUSED != 'true'. `run_pending_sequences()` in workers/lead_pipeline.py also blocked. Bradley CANNOT accidentally enroll Round 2 contacts while Instantly.ai is still running — enrollment will fail loudly with step-by-step fix instructions. To bypass (emergency only): set INSTANTLY_OVERRIDE=true in .env. To fix properly: pause a1c08c3d + 626cd15d → add INSTANTLY_PAUSED=true to .env → re-run. This resolves the mechanical risk; manual Instantly.ai pause still required.
 - Run 78 (2026-05-24 Sun): 11 days until Round 2 enrollment. Reply window closes TOMORROW (Memorial Day). Deliverability recovery math: pause TODAY = 11 days = maximum recovery; pause Tuesday May 26 = 9 days = minimum viable; pause after May 27 = 8 days or fewer = high spam risk on June 4. The `round2_warmup_timeline_2026-05-26.md` (NEW this run) maps the entire May 26→June 3 prep sequence with Instantly.ai pause as Day 1 blocker. New nina_report.py fix this run ensures manual contacts (gas station, Tier 1 contractors) show phone/company in Nina's reply reports — consistent with check_replies.py.
 - Run 79 (2026-05-25 Mon, Memorial Day): 10 days until Round 2 enrollment. Reply window closes TODAY. Mixmax reply window = DONE after today whether paused or not — this is now purely about June 4 deliverability. Pause TODAY = 10 days recovery. Pause Tuesday = 9 days (minimum viable). Pause Wednesday or later = under 8 days = high risk June 4 lands in spam again. This is still a 3-minute action: app.instantly.ai → Campaigns → ⋮ → Pause a1c08c3d AND 626cd15d. Code block in enroll_batch() and run_pending_sequences() means Bradley cannot accidentally enroll Round 2 while Instantly runs — but the mechanical block does NOT fix the deliverability damage that accumulates every day Instantly stays active.
+- Run 81 (2026-05-25 Mon, Memorial Day): 10 days remaining. After today, Tuesday pause = 9 days recovery (minimum viable). Wednesday pause = 8 days (high risk). The math is clear and hasn't changed. This is the single action with the most leverage for June 4 ROI — 3 minutes, done. `round2_warmup_timeline_2026-05-26.md` lists it as the Day 1 (May 26) blocker. If Bradley is reading Tuesday morning's may26_final_launch_brief and sees "Step 3: Pause Instantly.ai," that's the trigger. Everything else on June 4 depends on this one check.
 - Resolution criteria: Both campaigns paused in Instantly.ai → confirmed by Bradley.
 
 ---
@@ -266,6 +276,25 @@ Key resolved issues by category:
 ## RESOLVED — vera_relay.py Slack message loss when push fails mid-relay
 - Resolved: 2026-05-23
 - Fix: Added _flush_unpushed_commits() called at start of _main_body() before git pull --rebase; if a prior push failed leaving a "cleared pending_messages" commit unpushed, it gets pushed first; prevents rebase from applying the empty-file commit on top of new Vera messages and silently discarding them
+
+---
+
+## RUN METRICS — Run 81 | 2026-05-25 (Memorial Day — last run before Tuesday launch)
+- Total RESOLVED: 80 (0 new — all open issues require Bradley action or permanent infrastructure constraints)
+- Total OPEN: 21 (1 new: Website Service Pages Predate VOC Research; 0 closed)
+- Auto-upgrades shipped: 3
+  1. agents/donna.md — Memorial Day Sprint section: replaced stale `may26_cron_restart_brief.md` reference with `may26_final_launch_brief_2026-05-25.md` (the definitive Tuesday guide); clarified supersession of earlier launch cards
+  2. agents/donna.md — added `may26_final_launch_brief_[date].md` to Output Format catalog; written in Run 80 but never documented; catalog now reflects all current deliverables
+  3. agents/tommy.md — added `website_copy_service_pages_voc_refresh_[date].md` to output format catalog; service pages written May 20 predate VOC library; format entry documents the gap and enables Tommy to produce on demand
+- Deliverables written: 1
+  1. outputs/vera/launch_week_gbp_posts_2026-05-25.md — 5 GBP posts for May 26–31 (launch week); the June GBP calendar starts June 2, Memorial Day post covers May 25 — zero content existed for this entire window; each post takes 2 min to publish at business.google.com; Post 1 fires Tuesday 8am alongside ads launch; Post 5 targets Summit County (where Danny's pull is active); genuine content gap, zero cost to close
+- Proposals: 1 (Google Ads call tracking — see Slack messages)
+- New issue: Website service pages predate VOC research — lower priority than FB ad copy since pages are functional; Day 3–7 optimization after ads go live
+- Highest priority TODAY (Mon May 25 Memorial Day):
+  1. Text Anthony/Land Pro 440-320-2779 — "referral swap" pitch (30 seconds, highest referral ROI)
+  2. Pause Instantly.ai: app.instantly.ai → a1c08c3d + 626cd15d → ⋮ → Pause (3 min, 10 days recovery starts NOW)
+  3. Run `python3 workers/check_replies.py` — reply window closes TODAY
+- Highest priority TUESDAY May 26: READ `outputs/donna/may26_final_launch_brief_2026-05-25.md` FIRST — THE launch brief. Then post GBP Post 1 at 8am (outputs/vera/launch_week_gbp_posts_2026-05-25.md), then ads.
 
 ---
 
