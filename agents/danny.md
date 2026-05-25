@@ -83,9 +83,9 @@ Danny rotates counties by ISO week number (`week % 6`). Cron runs every Monday 7
 | Week 26  | June 29 | Lorain County |
 | Week 27  | July 6 | Summit County (repeats) |
 
-> 🚨 **WEEK 21 = SUMMIT COUNTY — DEADLINE MAY 31.** Run any day May 23–31: `python3 workers/lead_pipeline.py danny Summit`. Or double-click `scripts/run_summit_pull.command` — no typing required. Cron has not pulled since May 12.
+> 🚨 **TODAY IS MEMORIAL DAY MAY 25. TOMORROW (MAY 26) = LAUNCH DAY.** Summit County pull is overdue since May 12. 6 days left until the May 31 deadline. Run TOMORROW MORNING FIRST THING: double-click `scripts/run_summit_pull.command` (no typing) OR `python3 workers/lead_pipeline.py danny Summit`. This is Priority #1 on the May 26 blitz card.
 >
-> 🚨 **WEEK 22 = MEDINA COUNTY — JUNE 1 (Monday).** After Summit deadline passes, the very next run is Medina. If cron is still down, double-click `scripts/run_medina_pull.command` on Monday June 1 — same pattern as Summit shortcut. Or: `python3 workers/lead_pipeline.py danny Medina`. Do NOT skip — Medina is a high-value county (Brunswick, Wadsworth, Medina city) and June 4 enrollment needs fresh leads from this pull.
+> 🚨 **WEEK 22 = MEDINA COUNTY — JUNE 1 (Monday).** After Summit is done, the very next run is Medina. Double-click `scripts/run_medina_pull.command` on June 1 OR `python3 workers/lead_pipeline.py danny Medina`. Do NOT skip — June 4 enrollment needs fresh Medina leads. Existing Medina shortcut is already built.
 
 ## Output Format
 

@@ -735,15 +735,9 @@ def run_pending_sequences():
     """
     from integrations.mixmax import enroll_lead, _sequence_is_live
 
-    # Block if Instantly.ai campaigns are still running — same duplicate-email risk as enroll_batch
-    if os.environ.get('INSTANTLY_PAUSED', '').lower() != 'true':
-        if os.environ.get('INSTANTLY_OVERRIDE', '').lower() != 'true':
-            print('🚫 PENDING ENROLLMENT BLOCKED — INSTANTLY.AI NOT CONFIRMED PAUSED')
-            print('   Add INSTANTLY_PAUSED=true to .env after pausing campaigns a1c08c3d + 626cd15d.')
-            print('   Guide: outputs/vera/instantly_pause_guide_2026-05-22.md')
-            return
-        else:
-            print('⚠️  INSTANTLY.AI NOT PAUSED — bypassing block (INSTANTLY_OVERRIDE=true)')
+    # Lead types that were NEVER enrolled in Instantly.ai (campaigns a1c08c3d + 626cd15d were
+    # PM Cuyahoga + Contractor Referral only). These types have zero duplicate-email risk.
+    INSTANTLY_SAFE_TYPES = {'gas_station', 'fleet_washing'}
 
     pending = []
     cache = {}  # initialized here so the persist block below never hits NameError
@@ -781,6 +775,26 @@ def run_pending_sequences():
 
     if not pending:
         return
+
+    # Check if ALL pending contacts are Instantly-safe types (never in Instantly.ai campaigns)
+    all_instantly_safe = all(
+        (c.get('_lead_type') or c.get('lead_type', '')) in INSTANTLY_SAFE_TYPES
+        for _, c in pending
+    )
+
+    # Block enrollment for contact types that overlap with Instantly.ai campaigns,
+    # unless Instantly is confirmed paused or the override is set.
+    if not all_instantly_safe:
+        if os.environ.get('INSTANTLY_PAUSED', '').lower() != 'true':
+            if os.environ.get('INSTANTLY_OVERRIDE', '').lower() != 'true':
+                print('🚫 PENDING ENROLLMENT BLOCKED — INSTANTLY.AI NOT CONFIRMED PAUSED')
+                print('   Add INSTANTLY_PAUSED=true to .env after pausing campaigns a1c08c3d + 626cd15d.')
+                print('   Guide: outputs/vera/instantly_pause_guide_2026-05-22.md')
+                return
+            else:
+                print('⚠️  INSTANTLY.AI NOT PAUSED — bypassing block (INSTANTLY_OVERRIDE=true)')
+    else:
+        print('ℹ️  All pending contacts are gas_station/fleet_washing — never in Instantly.ai. Bypassing Instantly check.')
 
     print(f'\n⏳ Enrolling {len(pending)} pending contacts now that sequences are live...')
     enrolled = 0

@@ -53,6 +53,7 @@ Short, direct, lead with location:
 
 - **Google Ads June 2026:** `outputs/rick/google_ads_june_2026-05-19.md` — 2 campaigns (Power Washing + Roof Soft Wash), all headlines + descriptions + extensions written. Bradley sets these up in Google Ads UI. **Launch target: May 26 (Tuesday after Memorial Day).**
 - **Facebook Ads Peak Season:** `outputs/rick/facebook_ads_peak_season_2026-05-20.md` — 3-campaign structure (Awareness, Lead Gen, Retargeting), 7 ad variations, before/after creative briefs, setup checklist. Budget: $30/day to start. **Launch target: May 26 (Tuesday).**
+  - ⚠️ **BEFORE LAUNCH — SWAP HOOKS:** `outputs/rick/facebook_ad_creative_voc_refresh_2026-05-24.md` — 6 drop-in hooks + 3 body copy variants using Marcus's proven NE Ohio VOC phrases ("green and slimy," "roof looks black from the street," "kept putting it off"). The May 20 copy predates VOC research. 15-minute swap in Ads Manager before clicking launch. Higher CTR = lower cost per lead = faster payback.
 
 ## Priority: Google Guaranteed Badge (Google Local Services Ads)
 **This is the single highest-ROI action Rick can support right now.**

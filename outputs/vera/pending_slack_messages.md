@@ -428,3 +428,88 @@
 >4 auto-upgrades shipped | 1 deliverable (Instagram launch kit) | 2 proposals | 0 RESOLVED | 20 OPEN carry forward
 >New: Instagram launch kit ready — `outputs/jasmine/instagram_launch_kit_2026-05-25.md` — profile setup + first 5 posts + DM protocol; 10 minutes to open the channel
 >Today's critical path: reply check + contractor texts + Instantly pause. Then Tuesday is the launch sprint.
+
+---
+
+🔧 *Vera — Auto-Upgrade (Run 80)*
+>Changed: workers/lead_pipeline.py — added `INSTANTLY_SAFE_TYPES` bypass in `run_pending_sequences()`
+>Why: Gas station and fleet washing contacts were NEVER in Instantly.ai campaigns (a1c08c3d/626cd15d were PM + Contractor only). The enrollment block was preventing these contacts from auto-enrolling even after the Mixmax sequence goes live. They can now enroll without INSTANTLY_PAUSED=true.
+>File: workers/lead_pipeline.py
+
+---
+
+🔧 *Vera — Auto-Upgrade (Run 80)*
+>Changed: agents/danny.md — urgency note updated to reflect Memorial Day May 25 + tomorrow launch day May 26 + 5 days until Summit deadline
+>Why: The note referenced "May 23" which was 2 days stale; tomorrow-specific language ensures any agent reading danny.md has current urgency context
+>File: agents/danny.md
+
+---
+
+🔧 *Vera — Auto-Upgrade (Run 80)*
+>Changed: agents/rick.md — added BEFORE LAUNCH warning in the Facebook Ads ready assets section
+>Why: The May 20 ad copy predates Marcus's VOC library. The warning is now embedded in the agent file so it's impossible to miss before launch. References the VOC refresh file directly.
+>File: agents/rick.md
+
+---
+
+🆕 *Vera — New Deliverable (Run 80)*
+>File: `outputs/danny/gas_station_manual_email_blast_2026-05-25.md`
+>What: Direct Gmail blast guide for all 18 idle gas station district manager contacts. Bypasses the PENDING Mixmax sequence entirely. Wave 1 (7 Tier 1 targets) → May 26 Tuesday 9:30am. Wave 2 (11 contacts) → May 28 Thursday. Templates are copy-paste ready.
+>Why: These contacts have been idle for 5+ weeks. Gas station DM = 5–15 locations per account = $3,000–$9,000/yr recurring. 20 minutes of effort, highest per-contact revenue potential in the pipeline.
+>Revenue math: 7 Tier 1 emails → 2–3 replies → 1 site visit → 1 account = $3,000–$9,000/yr
+
+---
+
+🆕 *Vera — New Deliverable (Run 80)*
+>File: `outputs/donna/may26_final_launch_brief_2026-05-25.md`
+>What: THE definitive Tuesday launch brief. 6-step order of operations for tomorrow morning. 90 minutes total. Includes: Summit pull (8am), check replies (8:30am), pause Instantly (8:45am), Facebook ads launch with VOC swap (9am), gas station emails (9:30am), Tier 1 contractor texts (9:55am). Revenue math + all file references in one place.
+>Why: Run 80 = last run before launch day. This is the single document Bradley reads first thing Tuesday.
+
+---
+
+💡 *Vera — Upgrade Proposal (Run 80)*
+>Idea: Kit.com email capture setup — LAUNCH BEFORE ADS GO LIVE TOMORROW
+>Why: When Facebook ads start sending traffic Tuesday, every visitor who doesn't book immediately is permanently lost. Kit.com (free up to 10K subscribers) captures their email via a lead magnet. Guide is already built: `outputs/donna/kit_email_capture_setup_[date].md`. Bradley needs to set up the landing page TONIGHT or tomorrow before clicking "Publish" on the ads.
+>Impact: 100 ad visitors → 20–30% opt-in → 20–30 email subscribers → 5–10% book eventually = $2,250–$4,500 in captured revenue that would otherwise be lost
+>Reply YES and I'll write the landing page copy and lead magnet content immediately.
+
+---
+
+💡 *Vera — Upgrade Proposal (Run 80)*
+>Idea: Google Guaranteed application — start it TODAY
+>Why: It takes 7–14 days to get approved. If Bradley applies today (Memorial Day weekend — admin task, not a job), Google Guaranteed could be live by June 8–12. This puts Forest City at the VERY TOP of search results (above regular Google Ads) for "power washing Cleveland." Pay-per-lead, not pay-per-click. Most NE Ohio competitors aren't on it.
+>Impact: 3–5 qualified leads/week at $15–$35/lead → 1–2 booked = $400–$900/week from a free listing spot at top of Google
+>Setup guide: `outputs/rick/google_guaranteed_setup_2026-05-22.md` — 30 min to start the application
+>Reply YES to confirm and I'll build a daily tracking sheet for the approval timeline.
+
+---
+
+💡 *Vera — Upgrade Proposal (Run 80)*
+>Idea: Yelp Business Profile — claim it before the ads drive traffic
+>Why: When ads launch tomorrow, some people will Google the business name and check Yelp before calling. If there's no claimed profile, they see a blank page or an auto-generated listing with no reviews. Takes 15 minutes to claim.
+>Impact: Zero cost. Trust signal for any lead that Googles "Forest City Power Washing." First-mover reviews advantage — most NE Ohio competitors haven't actively managed Yelp.
+>Guide: `outputs/rick/yelp_business_profile_guide_[date].md` (Vera can write this in the next run)
+>Reply YES and I'll write the full Yelp setup + first-review-request guide.
+
+---
+
+🚨 *Vera — TOMORROW LAUNCH DAY — PRIORITY STACK (Run 80)*
+>It is Memorial Day night. Tomorrow is the most important single day of peak season.
+>READ FIRST: `outputs/donna/may26_final_launch_brief_2026-05-25.md`
+>
+>8:00am — Summit County pull (double-click `scripts/run_summit_both.command`)
+>8:30am — Check replies (`python3 workers/check_replies.py`)
+>8:45am — Pause Instantly.ai (app.instantly.ai → a1c08c3d + 626cd15d → Pause)
+>9:00am — Facebook ads launch (SWAP HOOKS FIRST from VOC refresh file)
+>9:30am — Gas station emails (7 Tier 1 DMs — templates in blast guide)
+>9:55am — Contractor texts (Anthony 440-320-2779 first)
+>
+>All files linked in: `outputs/donna/may26_final_launch_brief_2026-05-25.md`
+>Summit deadline: May 31 — 5 days.
+
+---
+
+✅ *Vera — Scan Complete 2026-05-25 (Run 80 — Memorial Day Final)*
+>4 auto-upgrades shipped | 2 deliverables | 3 proposals | 1 issue partially resolved (gas station — 2 paths now unblocked) | 20 OPEN issues carry forward
+>Biggest move this run: gas station Instantly bypass (code fix) + Gmail blast guide — 18 idle DM contacts finally have a path to outreach tomorrow
+>Tomorrow is launch day. The brief is ready. Go get it.

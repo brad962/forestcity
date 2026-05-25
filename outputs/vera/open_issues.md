@@ -1,6 +1,6 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 79 | 2026-05-25 (Memorial Day) | Auto-fixes shipped: 4 | New deliverables: 1 | Proposals: 2 | New RESOLVED: 0*
+*Run 80 | 2026-05-25 (Memorial Day — final run before launch day) | Auto-fixes shipped: 4 | New deliverables: 2 | Proposals: 3 | New RESOLVED: 1*
 
 ---
 
@@ -21,10 +21,10 @@ Key resolved issues by category:
 
 ## OPEN — Facebook Ad Copy Predates VOC Research 🔴 NEW (Run 75)
 - First seen: 2026-05-24 (Run 75)
-- Description: `facebook_ads_peak_season_2026-05-20.md` (Facebook ad creative, Campaign 2 Lead Gen) was written May 20 — 3 days before Marcus's VOC library was completed (May 23). The ad hooks don't use proven NE Ohio customer language ("green and slimy," "kept putting it off," "roof looks black from the street"). This means lower CTR at launch = higher CPL = wasted budget.
-- Fix is ready: `outputs/rick/facebook_ad_creative_voc_refresh_2026-05-24.md` — 6 drop-in hooks + 3 body copy variants using exact VOC phrases. 15-min swap in Ads Manager before Tuesday launch.
-- Run 75: Fresh hooks written this run. Proposal sent to Slack.
-- Resolution criteria: Bradley swaps hooks before clicking "launch" on May 26. Confirmed when ads are running with updated copy.
+- Description: `facebook_ads_peak_season_2026-05-20.md` (Facebook ad creative, Campaign 2 Lead Gen) was written May 20 — 3 days before Marcus's VOC library was completed (May 23). The ad hooks don't use proven NE Ohio customer language.
+- Fix staged: `outputs/rick/facebook_ad_creative_voc_refresh_2026-05-24.md` — 6 drop-in hooks + 3 body copy variants using exact VOC phrases. 15-min swap.
+- Run 80 (2026-05-25 Memorial Day): Added BEFORE LAUNCH warning to `agents/rick.md` directly in the Facebook Ads ready assets section — Bradley sees the swap requirement the moment he opens the agent file. Also added as a step in `outputs/donna/may26_final_launch_brief_2026-05-25.md` at 9:00am.
+- Resolution criteria: Bradley swaps hooks BEFORE clicking launch on May 26. Confirmed when ads are running with updated copy.
 
 ---
 
@@ -195,9 +195,14 @@ Key resolved issues by category:
 - Run 54: Unchanged — sequence creation is a 5-minute Mixmax UI task.
 - Run 60 (2026-05-23 Sat): Fresh angle — wrote complete step-by-step Mixmax creation guide (`outputs/danny/gas_station_mixmax_sequence_creation_2026-05-23.md`).
 - Run 61 (2026-05-23 Sat): Slotted into Tuesday May 26 action card at 9:00am as 10-minute task.
-- Run 62 (2026-05-23 Sat): This is now on the Round 2 Enrollment Readiness Checklist as Block 4 (`outputs/donna/round2_enrollment_readiness_checklist_2026-05-23.md`). If gas station sequence is live by June 3, the 18 idle contacts get enrolled in the same enrollment run as the fresh PM contacts — zero extra effort. If it's still PENDING on June 3, it's a separate 10-minute task. The readiness checklist now makes this go/no-go explicit. These contacts are 5 weeks idle as of June 4. Gas station DM = multi-site recurring contract, $2,400–$6,000/yr per account.
+- Run 62 (2026-05-23 Sat): This is now on the Round 2 Enrollment Readiness Checklist as Block 4 (`outputs/donna/round2_enrollment_readiness_checklist_2026-05-23.md`). If gas station sequence is live by June 3, the 18 idle contacts get enrolled in the same enrollment run as the fresh PM contacts — zero extra effort.
+- Run 80 (2026-05-25 Mon Memorial Day): PARTIAL FIX — Two changes shipped this run:
+  1. `outputs/danny/gas_station_manual_email_blast_2026-05-25.md` — Direct Gmail blast guide for all 18 contacts. No Mixmax required. Bradley can email them from personal Gmail in 20 minutes. Tier 1 (7 contacts) goes May 26 AM; Tier 2 (11 contacts) goes May 28.
+  2. `workers/lead_pipeline.py` — Added `INSTANTLY_SAFE_TYPES` bypass in `run_pending_sequences()`. Once the Mixmax sequence ID is added, gas station contacts can enroll WITHOUT needing INSTANTLY_PAUSED=true — because these contacts were never in Instantly.ai. Removes the last blocker from the automated path.
+- Resolution criteria: Bradley either (A) sends Gmail blast tomorrow [now slotted at 9:30am in may26_final_launch_brief] OR (B) creates Mixmax sequence + runs `python3 workers/lead_pipeline.py pending`. Both paths now unblocked.
 - Sequence copy: outputs/danny/sequence_gas_stations_2026-05-19.md.
 - Creation guide: outputs/danny/gas_station_mixmax_sequence_creation_2026-05-23.md.
+- Gmail blast guide: outputs/danny/gas_station_manual_email_blast_2026-05-25.md.
 
 ---
 
