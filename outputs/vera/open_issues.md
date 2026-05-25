@@ -1,6 +1,6 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 78 | 2026-05-24 | Auto-fixes shipped: 3 | New deliverables: 3 | Proposals: 2 | New RESOLVED: 1*
+*Run 79 | 2026-05-25 (Memorial Day) | Auto-fixes shipped: 4 | New deliverables: 1 | Proposals: 2 | New RESOLVED: 0*
 
 ---
 
@@ -59,6 +59,7 @@ Key resolved issues by category:
 - Run 73 (2026-05-24 Sun): VERIFIED via pipeline_data.json — all 5 Tier 1 contractors confirmed "New Lead," 0 last_contact dates. Phones confirmed in pipeline_data.json (Anthony 440-320-2779, Dontez 440-396-0814, Chris/Twin 216-773-0757, Venus 216-810-2497, Logan 216-956-5263). Fresh angle: inbound call handling is now covered — if a contractor calls back after a text, use `outputs/tommy/inbound_response_protocol_2026-05-24.md` Section 4. Tuesday 8:45am is the Plan B slot from `may26_week_priority_stack_2026-05-24.md`.
 - Run 74 (2026-05-24 Sun): Final window narrowing. If not texted today (Sunday) or tomorrow (Memorial Day), Tuesday 8:45am slot is the backstop. After Tuesday, these 5 contacts will have been "New Lead" for 6+ days. If Mixmax sequence is now finished (reply window closed tomorrow), Tuesday texts become the ONLY active outreach channel for these contacts — Mixmax won't re-enroll them. Text Anthony first (landscaper → highest referral volume in NE Ohio exterior maintenance). $50/referral, $0 upfront cost, no paperwork needed to start.
 - Run 78 (2026-05-24 Sun): FINAL WINDOW — It's Sunday night Memorial Day weekend. Tomorrow (Monday May 25, Memorial Day) is the last day of the reply window AND a valid day for contractor texts (trades work Memorial Day). If texts not sent today, they MUST go Tuesday May 26 at 8:45am (first slot on may26_week_priority_stack). After Tuesday, these contacts will be 7+ days in "New Lead" with no personal outreach. The memorial_day_contractor_text_card_2026-05-24.md has all 5 scripts ready to copy-paste. Anthony/Land Pro is the highest-ROI first text (landscapers refer the most volume).
+- Run 79 (2026-05-25 Mon, Memorial Day): TODAY IS THE DAY. It is Memorial Day. Trades are working — phones are on. `memorial_day_contractor_text_card_2026-05-24.md` has all 5 scripts. Open it, copy, send Anthony first (440-320-2779). 10 minutes, 5 texts. If not today, Tuesday 8:45am is the absolute last slot before these contacts are 7+ days "New Lead" with zero personal touch. After ads launch Tuesday, Bradley will be busy with inbound — these outbound texts will get deprioritized further.
 - Resolution criteria: Bradley texts Tier 1 list. Confirmed when pipeline_data.json shows "Contacted" stage for these 5.
 
 ---
@@ -113,6 +114,7 @@ Key resolved issues by category:
 - Run 74 (2026-05-24 Sun): This is the same Sunday. REPLY WINDOW CLOSES TOMORROW (Memorial Day). 11 days until Round 2 enrollment. The math is clear: pause today = best deliverability on June 4. Pause Tuesday = 9 days recovery (still OK). Pause after Memorial Day week = high risk. The Round 2 enrollment readiness checklist (`outputs/donna/round2_enrollment_readiness_checklist_2026-05-23.md`) lists this as the first and hardest blocking item. Without it confirmed, the readiness check is NO-GO.
 - Run 76 (2026-05-24): CODE-LEVEL BLOCK SHIPPED. `enroll_batch()` in integrations/mixmax.py now ABORTS (not just warns) for batches > 5 contacts when INSTANTLY_PAUSED != 'true'. `run_pending_sequences()` in workers/lead_pipeline.py also blocked. Bradley CANNOT accidentally enroll Round 2 contacts while Instantly.ai is still running — enrollment will fail loudly with step-by-step fix instructions. To bypass (emergency only): set INSTANTLY_OVERRIDE=true in .env. To fix properly: pause a1c08c3d + 626cd15d → add INSTANTLY_PAUSED=true to .env → re-run. This resolves the mechanical risk; manual Instantly.ai pause still required.
 - Run 78 (2026-05-24 Sun): 11 days until Round 2 enrollment. Reply window closes TOMORROW (Memorial Day). Deliverability recovery math: pause TODAY = 11 days = maximum recovery; pause Tuesday May 26 = 9 days = minimum viable; pause after May 27 = 8 days or fewer = high spam risk on June 4. The `round2_warmup_timeline_2026-05-26.md` (NEW this run) maps the entire May 26→June 3 prep sequence with Instantly.ai pause as Day 1 blocker. New nina_report.py fix this run ensures manual contacts (gas station, Tier 1 contractors) show phone/company in Nina's reply reports — consistent with check_replies.py.
+- Run 79 (2026-05-25 Mon, Memorial Day): 10 days until Round 2 enrollment. Reply window closes TODAY. Mixmax reply window = DONE after today whether paused or not — this is now purely about June 4 deliverability. Pause TODAY = 10 days recovery. Pause Tuesday = 9 days (minimum viable). Pause Wednesday or later = under 8 days = high risk June 4 lands in spam again. This is still a 3-minute action: app.instantly.ai → Campaigns → ⋮ → Pause a1c08c3d AND 626cd15d. Code block in enroll_batch() and run_pending_sequences() means Bradley cannot accidentally enroll Round 2 while Instantly runs — but the mechanical block does NOT fix the deliverability damage that accumulates every day Instantly stays active.
 - Resolution criteria: Both campaigns paused in Instantly.ai → confirmed by Bradley.
 
 ---
@@ -261,6 +263,24 @@ Key resolved issues by category:
 - Fix: Added _flush_unpushed_commits() called at start of _main_body() before git pull --rebase; if a prior push failed leaving a "cleared pending_messages" commit unpushed, it gets pushed first; prevents rebase from applying the empty-file commit on top of new Vera messages and silently discarding them
 
 ---
+
+## RUN METRICS — Run 79 | 2026-05-25 (Memorial Day)
+- Total RESOLVED: 80 (0 new this run — all open issues require Bradley action or are permanent infrastructure constraints)
+- Total OPEN: 20 (0 new closed, 0 new opened)
+- Auto-upgrades shipped: 4
+  1. agents/nina.md — added workiz_job_entry_sop_[date].md to output format catalog; deliverable existed in outputs/nina/ since Run 78 but format entry was missing
+  2. agents/tommy.md — removed duplicate neighbor_canvass_script_[date].md entry; same format name appeared twice; kept the more detailed version
+  3. workers/lead_pipeline.py — added Instantly.ai warning to verify_and_repair_enrollment(); function calls enroll_lead() directly, bypassing the enroll_batch() guard; now warns when INSTANTLY_PAUSED is not set
+  4. agents/jasmine.md — added instagram_launch_kit_[date].md to output format catalog
+- Deliverables written: 1
+  1. outputs/jasmine/instagram_launch_kit_2026-05-25.md — full Instagram channel launch kit: Business Account setup, profile bio copy, 5-Highlight plan, first-5-post sequence with captions, DM response protocol, pipeline_data.json lead logging guide, 30-day quick wins; everything needed to open the channel starting today or Tuesday; pairs with existing instagram_stories_scripts_2026-05-24.md
+- Proposals: 2 (Workiz built-in review request automation; gas station Gmail blast this week)
+- Code bugs fixed this run: verify_and_repair_enrollment() Instantly warning; tommy.md duplicate entry; nina.md catalog gap
+- Highest priority TODAY (Mon May 25, Memorial Day):
+  1. 10am: Run `python3 workers/check_replies.py` — reply window closes TODAY
+  2. 10am: Open memorial_day_contractor_text_card_2026-05-24.md — text Anthony 440-320-2779 first
+  3. Pause Instantly.ai: app.instantly.ai → a1c08c3d + 626cd15d → ⋮ → Pause (10 days recovery starts NOW)
+- Highest priority TUESDAY May 26: READ may26_week_priority_stack_2026-05-24.md FIRST → VOC ad swap → Kit.com setup → ads launch → contractor texts 8:45am → Instagram profile setup
 
 ## RUN METRICS — Run 77 | 2026-05-24
 - Total RESOLVED: 79 (0 new this run — all open issues require Bradley action or permanent infrastructure constraints)

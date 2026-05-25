@@ -57,6 +57,7 @@ Save to `/outputs/nina/`:
 - `workiz_[daily|weekly]_[date].md` — Workiz job revenue and status report
 - `stale_leads_[date].md`
 - `zapier_recipes_[date].md`
+- `workiz_job_entry_sop_[date].md` — 60-second SOP for entering jobs in Workiz with the correct JobType so they appear in the power washing revenue report; exact JobType values, revenue fields, how to fix existing jobs, how to verify locally
 
 ## Logging
 `[YYYY-MM-DD HH:MM] Nina | [task description] | [output filename] | Done`

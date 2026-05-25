@@ -636,6 +636,14 @@ def verify_and_repair_enrollment():
     Runs automatically at the end of every lead pull.
     """
     print('\n🔍 Verifying Mixmax enrollment...')
+    # Warn if Instantly.ai is still running — re-enrolling contacts while Instantly is active
+    # can create duplicate sends for contacts that originally failed enrollment (first Mixmax email
+    # + active Instantly email = duplicate → spam risk for those contacts).
+    if os.environ.get('INSTANTLY_PAUSED', '').lower() != 'true':
+        if os.environ.get('INSTANTLY_OVERRIDE', '').lower() != 'true':
+            print('  ⚠️  INSTANTLY.AI NOT PAUSED — repair enrollment will proceed but re-enrolled contacts')
+            print('     may receive duplicate emails if Instantly campaigns a1c08c3d/626cd15d are still active.')
+            print('     Pause at app.instantly.ai → set INSTANTLY_PAUSED=true in .env to suppress this warning.')
 
     if not CACHE_FILE.exists():
         print('  No cache file — skipping.')

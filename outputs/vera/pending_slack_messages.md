@@ -375,3 +375,56 @@
 ✅ *Vera — Scan Complete 2026-05-24 (Run 78)*
 >3 auto-upgrades | 3 deliverables | 1 proposal | 1 RESOLVED (LinkedIn Touch 3 window expired) | 19 OPEN carry forward
 >Tonight: Pause Instantly.ai + text Anthony. Tuesday: 90-min launch sprint (ads, contractor texts, past customer texts, neighbor canvass on first job).
+
+---
+
+🔧 *Vera — Auto-Upgrade*
+>Changed: agents/nina.md — added workiz_job_entry_sop_[date].md to output format catalog
+>Why: Deliverable was written Run 78 (outputs/nina/) but was never documented in Nina's catalog — gap closed
+>File: agents/nina.md
+
+---
+
+🔧 *Vera — Auto-Upgrade*
+>Changed: agents/tommy.md — removed duplicate neighbor_canvass_script_[date].md entry
+>Why: Same output format appeared twice with slightly different descriptions; removed the shorter version; catalog is cleaner now
+>File: agents/tommy.md
+
+---
+
+🔧 *Vera — Auto-Upgrade*
+>Changed: workers/lead_pipeline.py — added Instantly.ai warning to verify_and_repair_enrollment()
+>Why: The function calls enroll_lead() directly, bypassing the enroll_batch() guard that blocks enrollment when Instantly.ai is running; now warns explicitly so re-enrollment during active Instantly campaigns is visible rather than silent
+>File: workers/lead_pipeline.py
+
+---
+
+💡 *Vera — Upgrade Proposal*
+>Idea: Enable Workiz built-in review request automation — when job status changes to "Completed," Workiz can auto-send a review request text (no Twilio required, no code, it's built into Workiz already). 5-minute setup: Workiz dashboard → Settings → Automated Messages → After Job Completed → add SMS template with Google review link.
+>Why: Every completed job is a review opportunity. Manual follow-up is inconsistent. Workiz's native feature handles this for free — no Twilio cost, no code deployment. Google reviews directly improve Google Guaranteed lead volume once that's live.
+>Impact: Consistent review velocity from every job. Google Guaranteed algorithm rewards high-rated providers with more leads. Zero incremental cost. Setup takes 5 minutes.
+>Reply YES to approve.
+
+---
+
+💡 *Vera — Upgrade Proposal*
+>Idea: Gas station Gmail blast — 18 district manager contacts have been idle for 5 weeks. Mixmax sequence is still PENDING. Template exists at `outputs/danny/gas_station_manual_email_blast_2026-05-20.md`. Send directly from Bradley's Gmail this week (no Mixmax required, no sequence creation needed). Multi-site recurring contract potential: $2,400–$6,000/yr per account.
+>Why: These contacts are losing memory of any prior brand exposure with every passing week. Sending from personal Gmail during the first week of paid ads launch (when Bradley is already in "go mode") takes 15 minutes and doesn't require Mixmax to be set up first.
+>Impact: 18 contacts activated. Best-case: 1-2 meetings. Worst case: zero harm, contacts on radar before June 4 Round 2 enrollment.
+>Reply YES to approve and I'll confirm the best 3 contacts to send first.
+
+---
+
+🚨 *TODAY — Memorial Day Priority Stack (Bradley)*
+>It's May 25. Reply window closes TODAY.
+>1. 10am: `python3 workers/check_replies.py` — run locally — reply window is over after today
+>2. 10am: Open `outputs/vera/memorial_day_contractor_text_card_2026-05-24.md` → text Anthony/Land Pro 440-320-2779 first — trades are working today
+>3. NOW: app.instantly.ai → Campaigns → a1c08c3d + 626cd15d → ⋮ → Pause (10 days of deliverability recovery if you do it now; 9 days if Tuesday)
+>TOMORROW (Tuesday May 26): READ `may26_week_priority_stack_2026-05-24.md` FIRST — don't touch the ads manager until you've read it
+
+---
+
+✅ *Vera — Scan Complete 2026-05-25 (Run 79 — Memorial Day)*
+>4 auto-upgrades shipped | 1 deliverable (Instagram launch kit) | 2 proposals | 0 RESOLVED | 20 OPEN carry forward
+>New: Instagram launch kit ready — `outputs/jasmine/instagram_launch_kit_2026-05-25.md` — profile setup + first 5 posts + DM protocol; 10 minutes to open the channel
+>Today's critical path: reply check + contractor texts + Instantly pause. Then Tuesday is the launch sprint.

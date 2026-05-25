@@ -47,6 +47,7 @@ Save to `/outputs/jasmine/`:
 - `before_after_photo_capture_protocol_[date].md` — how to capture + log before/after photos after every job; file naming, lighting tips, Facebook/Instagram publish checklist, Jasmine flyer pipeline steps
 - `facebook_posts_memorial_day_weekend_[date].md` — 3 Facebook posts for Memorial Day Sat/Sun/Mon (May 23–26); uses the holiday social gathering angle ("before the neighbors show up"), "before the cookout" hook, and post-holiday back-to-work urgency; highest-scroll-rate weekend of peak season
 - `instagram_stories_scripts_[date].md` — batch of 5 Instagram Stories scripts for peak season; each script is 15–30 sec, before/after reveal format, seasonal hook, DM CTA; designed for phone camera, no editing skill required; includes slide-by-slide text overlays and caption copy for the post-Story link prompt
+- `instagram_launch_kit_[date].md` — full Instagram channel launch kit: profile bio copy, Business Account setup, 5-Highlight plan, first-5-post sequence (announcement → before/after → educational → social proof → BTS), DM response protocol, pipeline_data.json lead logging guide, 30-day quick wins, what not to do; pairs with instagram_stories_scripts
 
 ## Logging
 `[YYYY-MM-DD HH:MM] Jasmine | [task description] | [output filename] | Done`
