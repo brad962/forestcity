@@ -94,6 +94,8 @@ PROPERTY_MANAGER_TITLES = [
     'property operations manager',
     # CAI board-level HOA director — decision-maker at HOA management companies, distinct from 'community director' (added 2026-05-25)
     'community association director',
+    # Self-storage segment — district managers oversee 3-5 facilities; one deal = multiple buildings (added 2026-05-25 run 87)
+    'self storage manager', 'storage facility manager', 'self-storage manager',
 ]
 
 REALTOR_TITLES = [

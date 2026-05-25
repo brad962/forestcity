@@ -1,6 +1,31 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 86 | 2026-05-25 (Memorial Day — launch eve) | Auto-fixes shipped: 3 | New deliverables: 2 | New RESOLVED: 0 | Open: 21 (1 new)*
+*Run 87 | 2026-05-25 (Memorial Day — eve of launch) | Auto-fixes shipped: 6 | New deliverables: 3 | New RESOLVED: 0 | Open: 21 (0 new)*
+
+---
+
+## RUN METRICS — Run 87 | 2026-05-25 (Memorial Day — hours before launch)
+- Total RESOLVED: 81 (0 new this run — remaining issues require Bradley action or infrastructure)
+- Total OPEN: 21 (0 new; 0 closed)
+- Auto-upgrades shipped: 6
+  1. pipeline_data.json — added next_followup=2026-05-25 for 5 Tier 1 contractors (Land Pro, GTP, Twin, Reliable Roofing, Pagels); previously had no followup date; now flags as overdue in Nina's weekly report starting tomorrow
+  2. agents/tommy.md — added CURRENT version notation for neighbor_canvass_script_2026-05-26.md; supersedes May 23 version; matches pattern established for website_copy_service_pages and other versioned deliverables
+  3. integrations/mixmax.py — added 3 self-storage titles to PROPERTY_MANAGER_TITLES; 'self storage manager', 'storage facility manager', 'self-storage manager'; new commercial segment approved for Apollo pull
+  4. workers/lead_pipeline.py — added self-storage titles to DANNY_TITLES + added 'self storage', 'self-storage', 'storage facility', 'storage units' to DANNY_ORG_KEYWORDS; auto-captures self-storage district managers in next county rotation
+  5. agents/danny.md — documented Self-Storage as new secondary segment with full context: target titles, chains, Apollo search tip, revenue math, strategy brief reference
+  6. agents/donna.md + carla.md — added new output format entries for self_storage_commercial_segment_brief and june4_carla_activation_card
+- Deliverables written: 3
+  1. outputs/donna/self_storage_commercial_segment_brief_2026-05-25.md — new commercial segment: self-storage facilities; Extra Space/Life Storage/CubeSmart/StorageMart/Public Storage in NE Ohio; district managers oversee 3–5 facilities; revenue math $72K–$128K/year from 10 accounts; Apollo search parameters + pitch angle + PM sequence routing
+  2. outputs/vera/launch_day_contractor_followups_2026-05-25.md — 5-minute, 3-text card for tomorrow morning (May 26 launch day); Bryan/Bulletproof/Damrons all due tomorrow; copy-paste texts + reply handling; "do this FIRST before touching the ads dashboard"
+  3. outputs/carla/june4_carla_activation_card_2026-05-25.md — Carla's press-GO June 4 card; 3 tracks: enroll Medina leads via `pending`, pool service text blitz (5 contacts), contractor pipeline revival (6 contacts); 45 min total; success metrics; parallel to Danny's battle card
+- Highest priority TODAY (Mon May 25 Memorial Day evening):
+  1. Run `launch_eve_prep_checklist_2026-05-25.md` before bed — verify billing, draft emails, set alarms
+  2. Pause Instantly.ai: app.instantly.ai → a1c08c3d + 626cd15d → ⋮ → Pause → add INSTANTLY_PAUSED=true to .env
+  3. Text 5 Tier 1 contractors if not already done (memorial_day_contractor_text_card_2026-05-24.md)
+- Highest priority TOMORROW (Tue May 26 LAUNCH DAY — in order):
+  1. Send 3 contractor follow-up texts FIRST (launch_day_contractor_followups_2026-05-25.md — 5 min)
+  2. READ `outputs/donna/may26_final_launch_brief_2026-05-25.md` — THE launch brief
+  3. Complete Google Ads pre-launch checklist: `outputs/rick/google_ads_launch_day_checklist_2026-05-26.md`
 
 ---
 
@@ -16,23 +41,16 @@
   2. outputs/vera/may27_day2_post_launch_sprint_2026-05-25.md — Wednesday May 27 morning action card; fills the 24h gap between Day 1 evening debrief (5pm Tue) and Day 3 monitoring guide (Thu); covers: lead log check, ads manager glance (do NOT edit), GBP Post 2, gas station Wave 2 emails, contractor texts follow-up, first-lead response protocol, neighbor canvass if jobs scheduled; includes DO NOT TOUCH ADS warning (editing on Day 2 resets learning phase)
 - Proposals: 0 (all active proposals from Runs 83-85 still pending Bradley approval)
 - New issue: "Contacted contractors stale" — Bryan is 12 days with no follow-up, Bulletproof/Damrons are 6 days; pipeline_data.json has no next_followup dates set for any "Contacted" contacts
-- Highest priority TODAY (Mon May 25 Memorial Day):
-  1. Text Bryan 216-402-1924 ASAP — 12 days is too long (`contacted_contractor_followup_card_2026-05-25.md` has the script)
-  2. Text Anthony 440-320-2779 — Tier 1 contractor referral pitch (30 seconds)
-  3. Pause Instantly.ai: app.instantly.ai → a1c08c3d + 626cd15d → ⋮ → Pause → add INSTANTLY_PAUSED=true to .env
-- Highest priority TOMORROW (Tue May 26 LAUNCH DAY):
-  1. READ `outputs/donna/may26_final_launch_brief_2026-05-25.md` FIRST — THE launch brief
-  2. Complete Google Ads pre-launch checklist before enabling: `outputs/rick/google_ads_launch_day_checklist_2026-05-26.md`
-  3. Day 2 card for Wednesday: `outputs/vera/may27_day2_post_launch_sprint_2026-05-25.md`
 
 ---
 
-## OPEN — Contacted Contractors Stale — Bryan 12 Days No Follow-Up 🔴 NEW
+## OPEN — Contacted Contractors Stale — Bryan 13 Days No Follow-Up 🔴
 - First seen: 2026-05-25 (Run 86)
-- Description: pipeline_data.json shows 3 contacts in "Contacted" stage with no `next_followup` dates set. Bryan/CLE Lawn Care Plus was contacted 2026-05-13 (12 days ago). Bulletproof Lawncare and Damrons Landscaping contacted 2026-05-19 (6 days ago). None have had a second touch. At 12 days without follow-up, a warm referral lead goes cold.
+- Description: 3 contacts in "Contacted" stage with follow-ups overdue. Bryan/CLE Lawn Care Plus contacted 2026-05-13 (13 days). Bulletproof Lawncare and Damrons Landscaping contacted 2026-05-19 (6 days). next_followup=2026-05-26 now set in pipeline_data.json for all 3. Follow-ups are due TOMORROW (launch day). Risk: gets buried in launch day chaos.
 - Attempts:
-  - 2026-05-25: Wrote `contacted_contractor_followup_card_2026-05-25.md` with exact copy-paste 2nd-touch scripts for all 3 contacts; includes reply handling + pipeline_data.json update instructions. Requires Bradley to send 3 texts.
-- Resolution criteria: pipeline_data.json shows updated last_contact dates + next_followup set for all 3 contacts.
+  - 2026-05-25 (Run 86): Wrote `contacted_contractor_followup_card_2026-05-25.md` with exact copy-paste 2nd-touch scripts for all 3 contacts.
+  - 2026-05-25 (Run 87): Wrote `launch_day_contractor_followups_2026-05-25.md` — launch-day-specific reminder card; "do these FIRST before touching the ads dashboard"; updated copy-paste texts; reply handling. Also set next_followup=2026-05-25 for 5 Tier 1 contractors in New Lead stage (Land Pro, GTP, Twin, Reliable Roofing, Pagels) — flags as overdue in Nina's weekly report.
+- Resolution criteria: Bradley sends the 3 follow-up texts to Bryan/Bulletproof/Damrons on May 26 and updates pipeline_data.json stages.
 
 ---
 

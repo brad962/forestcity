@@ -80,6 +80,7 @@ Save to `/outputs/carla/`:
 - `summit_county_referral_pull_guide_[date].md` — Summit County Apollo pull guide for Carla; mirrors Danny's county override; run same week as Danny Summit pull for coordinated coverage
 - `pool_service_referral_blitz_[date].md` — Memorial Day / pool opening season blitz; pool companies servicing NE Ohio customers RIGHT NOW see dirty decks and siding every visit; includes trade-specific pitch, timing guide, and seasonal hook
 - `realtor_summer_voc_sequence_[date].md` — 3-touch realtor referral sequence rewritten for summer listing season using Marcus's NE Ohio VOC library; hooks: pre-listing curb appeal, "before the lockbox goes up," faster sale price; send June 4 alongside Round 2 PM enrollment to activate the realtor segment simultaneously
+- `june4_carla_activation_card_[date].md` — Carla's press-GO execution card for June 4 (parallel to Danny's june4_enrollment_battle_card); 3-track plan: enroll Medina leads via `pending`, pool service text blitz (5 contacts), contractor pipeline revival (6 contacts with copy-paste scripts); 45-min total; success metrics table; coordinates with Danny's PM enrollment timing
 
 ## Logging
 `[YYYY-MM-DD HH:MM] Carla | [task description] | [output filename] | Done`

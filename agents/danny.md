@@ -70,6 +70,15 @@ This enrolls ALL pending contacts (gas stations + fleet) without triggering a fr
 **Target:** Fleet managers at landscaping companies, HVAC firms, tree services, trucking/logistics in NE Ohio.
 **Why:** Companies with 5+ vehicles — one account = recurring monthly revenue, not a one-time job.
 
+### Self-Storage Facilities (NEW — May 2026)
+**Status:** Segment research complete. Approved for Apollo pull. Use property_manager sequence (FM angle).
+**Target title:** `self storage manager`, `storage facility manager`, `district manager` at self-storage companies
+**Target keywords:** `self storage`, `self-storage`, `storage facility`, `storage units`
+**Target companies:** Extra Space Storage, Life Storage, CubeSmart, StorageMart, Public Storage, Uncle Bob's — all have NE Ohio locations
+**Why:** Large concrete pads, metal facades, dumpster pads, signage = heavy algae accumulation. Soft-wash only (metal buildings). District managers oversee 3–5 facilities; one contract = multiple monthly accounts.
+**Apollo search tip:** Add `q_organization_keyword_tags: ["self storage", "storage facility"]` alongside PM titles.
+**Strategy brief:** `outputs/donna/self_storage_commercial_segment_brief_2026-05-25.md`
+
 ## County Rotation Calendar (2026)
 Danny rotates counties by ISO week number (`week % 6`). Cron runs every Monday 7am.
 

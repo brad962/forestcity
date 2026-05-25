@@ -103,6 +103,8 @@ DANNY_TITLES = [
     'property operations manager',
     # CAI board-level HOA director — decision-maker at HOA firms (added 2026-05-25)
     'community association director',
+    # Self-storage segment — district/facility managers oversee multiple properties (added 2026-05-25 run 87)
+    'self storage manager', 'storage facility manager', 'self-storage manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -122,6 +124,8 @@ DANNY_ORG_KEYWORDS = [
     # Commercial/retail property segment (added 2026-05-22 run 56)
     'shopping center management', 'office building management',
     'retail property management', 'commercial building management',
+    # Self-storage facilities — large concrete pads + metal building facades = recurring soft-wash accounts (added 2026-05-25 run 87)
+    'self storage', 'self-storage', 'storage facility', 'storage units',
 ]
 
 CARLA_SEARCHES = [
