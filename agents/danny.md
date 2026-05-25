@@ -79,6 +79,14 @@ This enrolls ALL pending contacts (gas stations + fleet) without triggering a fr
 **Apollo search tip:** Add `q_organization_keyword_tags: ["self storage", "storage facility"]` alongside PM titles.
 **Strategy brief:** `outputs/donna/self_storage_commercial_segment_brief_2026-05-25.md`
 
+### Car Dealerships (NEW — May 2026)
+**Status:** Apollo keywords live. No pull yet. Include in next county rotation run.
+**Target:** Facility Manager, General Manager, Service Director at car dealerships and auto groups
+**Why:** Large paved lots (oil stains, tire marks), building exteriors, covered service bays = heavy cleaning demand. Multi-location dealer groups in NE Ohio (Hidy Automotive, Valley Ford, Ganley, etc.) = one deal = 3-8 locations. Recurring monthly or quarterly contract.
+**Revenue per visit:** $1,500–$3,000 for lot + building. Monthly = $18,000–$36,000/year per dealer group.
+**Apollo keywords:** `car dealership`, `auto dealership`, `automotive dealer`, `auto group` — auto-included in DANNY_ORG_KEYWORDS as of 2026-05-26 run 88.
+**Pitch angle:** "You can't leave $40,000 cars sitting in a lot that looks like an oil slick" — same as PM angle (professional image + property value), but tailored to car lot visibility and customer impression.
+
 ## County Rotation Calendar (2026)
 Danny rotates counties by ISO week number (`week % 6`). Cron runs every Monday 7am.
 

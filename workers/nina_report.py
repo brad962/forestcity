@@ -472,6 +472,11 @@ def run_weekly():
             ]
             if untouched:
                 manual_health_lines.append(f'⚠️ **{len(untouched)} contacts have never been reached out to.** Work through the priority list this week.')
+                for c in untouched[:10]:
+                    name = f'{c.get("first_name","")} {c.get("last_name","")}'.strip() or c.get('company', '?')
+                    manual_health_lines.append(f'  - {name} ({c.get("company","")}) | {c.get("lead_type","?")} | {c.get("phone","")}')
+                if len(untouched) > 10:
+                    manual_health_lines.append(f'  - ...and {len(untouched) - 10} more')
                 manual_health_lines.append('')
 
             # Follow-up due in next 7 days
@@ -480,11 +485,31 @@ def run_weekly():
             week_end = (datetime.now() + timedelta(days=7)).strftime('%Y-%m-%d')
             due_soon = [c for c in manual if c.get('next_followup') and today_str <= c['next_followup'] <= week_end]
             overdue = [c for c in manual if c.get('next_followup') and c['next_followup'] < today_str]
+
+            # Also flag "Contacted" stage contacts with last_contact > 7 days ago and no next_followup set
+            from datetime import date as _date
+            stale_contacted = []
+            for c in manual:
+                if c.get('stage') == 'Contacted' and c.get('last_contact') and not c.get('next_followup'):
+                    try:
+                        last_dt = _date.fromisoformat(c['last_contact'])
+                        days_ago = (_date.fromisoformat(today_str) - last_dt).days
+                        if days_ago >= 7:
+                            stale_contacted.append((c, days_ago))
+                    except Exception:
+                        pass
+
             if overdue:
                 manual_health_lines.append(f'🔴 **OVERDUE follow-ups ({len(overdue)}) — reach out now:**')
                 for c in overdue:
                     name = f'{c.get("first_name","")} {c.get("last_name","")}'.strip() or c.get('company', '?')
                     manual_health_lines.append(f'  - {name} ({c.get("company","")}) | was due {c["next_followup"]} | {c.get("phone","")}')
+                manual_health_lines.append('')
+            if stale_contacted:
+                manual_health_lines.append(f'🟡 **"Contacted" stage — no follow-up date set, going stale ({len(stale_contacted)}):**')
+                for c, days_ago in stale_contacted:
+                    name = f'{c.get("first_name","")} {c.get("last_name","")}'.strip() or c.get('company', '?')
+                    manual_health_lines.append(f'  - {name} ({c.get("company","")}) | contacted {days_ago} days ago | {c.get("phone","")} — add next_followup date')
                 manual_health_lines.append('')
             if due_soon:
                 manual_health_lines.append(f'📅 **Follow-ups due this week ({len(due_soon)}):**')

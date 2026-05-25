@@ -126,6 +126,8 @@ DANNY_ORG_KEYWORDS = [
     'retail property management', 'commercial building management',
     # Self-storage facilities — large concrete pads + metal building facades = recurring soft-wash accounts (added 2026-05-25 run 87)
     'self storage', 'self-storage', 'storage facility', 'storage units',
+    # Car dealerships — large paved lots + building exteriors; facility managers + GMs are decision-makers (added 2026-05-26 run 88)
+    'car dealership', 'auto dealership', 'automotive dealer', 'auto group', 'car dealer',
 ]
 
 CARLA_SEARCHES = [
@@ -137,7 +139,9 @@ CARLA_SEARCHES = [
                   'irrigation', 'sprinkler system', 'lawn irrigation',
                   'tree service', 'tree care', 'arborist',
                   'home inspection', 'home inspector',  # at buyer/seller moment; sees dirty houses every job
-                  'solar installation', 'solar energy'],  # on roofs constantly; homeowner in invest-in-home mode
+                  'solar installation', 'solar energy',  # on roofs constantly; homeowner in invest-in-home mode
+                  'plumbing', 'plumber',                 # in homes 2-4x/year; trusted advisor; sees every exterior surface
+                  'electrician', 'electrical contractor'],  # same reasoning; high referral value (added 2026-05-26)
      'label': 'Contractors'},
     # Home-services companies that visit properties weekly — high-value referral sources
     {'type': 'contractors', 'titles': ['owner', 'president', 'founder', 'operator'],

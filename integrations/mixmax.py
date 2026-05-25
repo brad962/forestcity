@@ -125,6 +125,8 @@ CONTRACTOR_TITLES = [
     'home inspector', 'property inspector', 'home inspection',
     # Solar installers — on roofs constantly, see algae/moss; homeowner is already in "invest in home" mode (added 2026-05-24)
     'solar installer', 'solar panel', 'solar installation',
+    # Plumbers and electricians — in homes 2-4x/year, trusted advisor relationship, see dirty exteriors on every call (added 2026-05-26 run 88)
+    'plumber', 'plumbing', 'electrician', 'electrical contractor',
 ]
 
 

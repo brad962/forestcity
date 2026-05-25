@@ -1,6 +1,23 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 87 | 2026-05-25 (Memorial Day — eve of launch) | Auto-fixes shipped: 6 | New deliverables: 3 | New RESOLVED: 0 | Open: 21 (0 new)*
+*Run 88 | 2026-05-26 (LAUNCH DAY) | Auto-fixes shipped: 7 | New deliverables: 2 | New RESOLVED: 0 | Open: 23 (2 new)*
+
+---
+
+## RUN METRICS — Run 88 | 2026-05-26 (LAUNCH DAY)
+- Total RESOLVED: 81 (0 new this run)
+- Total OPEN: 23 (2 new issues added: Annual Plan Pitch Gap + Car Dealerships Segment Unlocked)
+- Auto-upgrades shipped: 7
+  1. integrations/mixmax.py — added 'plumber', 'plumbing', 'electrician', 'electrical contractor' to CONTRACTOR_TITLES; high-value referral partners in homes 2-4x/year currently missing from routing
+  2. workers/lead_pipeline.py — mirrored plumber/electrician keywords to CARLA_SEARCHES Contractors category
+  3. workers/lead_pipeline.py — added car dealership org keywords to DANNY_ORG_KEYWORDS: 'car dealership', 'auto dealership', 'automotive dealer', 'auto group', 'car dealer'; large paved lots + building exteriors = recurring accounts; dealer groups = 3-8 locations per deal
+  4. workers/nina_report.py — enhanced manual pipeline health section: (a) now lists actual names of untouched contacts (not just count); (b) added "stale Contacted" detection — flags Contacted-stage contacts with last_contact > 7 days ago and no next_followup date set; prevents contacts silently aging out without a follow-up scheduled
+  5. agents/carla.md — added Plumbers (#16) and Electricians (#17) as target partner types with full context
+  6. agents/danny.md — documented Car Dealerships as new secondary segment (Ganley, Hidy, Valley Ford etc. in NE Ohio); revenue math $18K–$36K/year per dealer group; Apollo keywords already live in DANNY_ORG_KEYWORDS
+  7. agents/tommy.md + agents/donna.md — added new output format entries for annual_plan_pitch_script and june1_sunday_evening_checklist
+- Deliverables written: 2
+  1. outputs/tommy/annual_plan_pitch_script_2026-05-26.md — 20-second on-call annual plan pitch (after quote YES); 3 response scripts; revenue math
+  2. outputs/donna/june1_sunday_evening_checklist_2026-05-26.md — Sunday June 1 night prep before Medina pull + Round 2 staging
 
 ---
 
@@ -44,13 +61,30 @@
 
 ---
 
-## OPEN — Contacted Contractors Stale — Bryan 13 Days No Follow-Up 🔴
+## OPEN — Contacted Contractors Stale — Bryan 14 Days No Follow-Up 🔴
 - First seen: 2026-05-25 (Run 86)
-- Description: 3 contacts in "Contacted" stage with follow-ups overdue. Bryan/CLE Lawn Care Plus contacted 2026-05-13 (13 days). Bulletproof Lawncare and Damrons Landscaping contacted 2026-05-19 (6 days). next_followup=2026-05-26 now set in pipeline_data.json for all 3. Follow-ups are due TOMORROW (launch day). Risk: gets buried in launch day chaos.
+- Description: 3 contacts in "Contacted" stage with follow-ups due TODAY (May 26 = launch day). Bryan/CLE Lawn Care Plus contacted 2026-05-13 (14 days). Bulletproof Lawncare and Damrons Landscaping contacted 2026-05-19 (7 days). All 3 have next_followup=2026-05-26 set — Nina's report flags them as overdue. Risk: launch day chaos buries these.
 - Attempts:
   - 2026-05-25 (Run 86): Wrote `contacted_contractor_followup_card_2026-05-25.md` with exact copy-paste 2nd-touch scripts for all 3 contacts.
-  - 2026-05-25 (Run 87): Wrote `launch_day_contractor_followups_2026-05-25.md` — launch-day-specific reminder card; "do these FIRST before touching the ads dashboard"; updated copy-paste texts; reply handling. Also set next_followup=2026-05-25 for 5 Tier 1 contractors in New Lead stage (Land Pro, GTP, Twin, Reliable Roofing, Pagels) — flags as overdue in Nina's weekly report.
-- Resolution criteria: Bradley sends the 3 follow-up texts to Bryan/Bulletproof/Damrons on May 26 and updates pipeline_data.json stages.
+  - 2026-05-25 (Run 87): Wrote `launch_day_contractor_followups_2026-05-25.md` — "do these FIRST before touching the ads dashboard." Also nina_report.py weekly now shows these as "due today" in the follow-up section.
+  - 2026-05-26 (Run 88): All 3 have next_followup=2026-05-26 (today). nina_report.py enhanced this run to also show stale "Contacted" contacts without any next_followup date — future contacts won't fall through this gap. This issue now purely needs Bradley action.
+- Resolution criteria: Bradley sends the 3 follow-up texts to Bryan (216-402-1924), Bulletproof (216-307-4344), Damrons (440-494-0422) today and updates pipeline_data.json stages.
+
+---
+
+## OPEN — Annual Plan Not Being Pitched On Quote Calls 🟡 NEW (Run 88)
+- First seen: 2026-05-26 (Run 88)
+- Description: Tommy has annual_plan_upsell_sequence (post-job texts) and annual_plan_customer_welcome_kit (post-YES email) — but no script for pitching the annual plan VERBALLY during the quote call itself. Now that Facebook + Google ads are live and leads are incoming, every quote call is an opportunity to convert a one-time customer to a $400–$600/year recurring contract. Without a verbal pitch script, this happens inconsistently at best.
+- Fix applied: Wrote `outputs/tommy/annual_plan_pitch_script_2026-05-26.md` — 20-second pitch for after quote acceptance, 3 response handling scripts, revenue math ($9K/year from 20 customers). Auto-resolve criteria below.
+- Resolution criteria: Bradley reads the script once and starts using it on calls. Tracked when annual plan bookings appear in pipeline_data.json.
+
+---
+
+## OPEN — Car Dealerships Segment Not Yet Pulled 🟡 NEW (Run 88)
+- First seen: 2026-05-26 (Run 88)
+- Description: Car dealerships = high-value commercial segment (large paved lots, building exteriors, covered service bays, multi-location dealer groups). NE Ohio dealer groups like Ganley, Hidy Automotive, Valley Ford have 3-8 locations each. Revenue per deal group = $18K–$36K/year recurring. Not targeted in any previous pull.
+- Fix applied this run: Added car dealership org keywords to DANNY_ORG_KEYWORDS in lead_pipeline.py: 'car dealership', 'auto dealership', 'automotive dealer', 'auto group', 'car dealer'. Documented in agents/danny.md as new secondary segment. Keywords are LIVE — auto-included in next Apollo run.
+- Resolution criteria: Dealer contacts appear in next Danny county pull (Week 22 = Medina, June 1). May need specific Apollo search for automotive orgs if county pull doesn't surface them.
 
 ---
 
@@ -180,6 +214,7 @@ Key resolved issues by category:
 - Run 82 (2026-05-25 Mon, Memorial Day evening): 10 days until June 4. Tuesday pause = 9 days recovery (minimum viable). Every 24h of delay = one day less of deliverability recovery before Round 2. The code block in enroll_batch() means accidental enrollment is impossible — but daily Instantly sends continue to chip at domain reputation until paused. 3 minutes: app.instantly.ai → Campaigns → a1c08c3d → ⋮ → Pause; repeat for 626cd15d → add INSTANTLY_PAUSED=true to .env.
 - Run 83 (2026-05-25 night): Slotted as Step 3 in `launch_week_daily_checklist_2026-05-26.md` (Tuesday morning) AND in `launch_day_evening_debrief_2026-05-26.md` (Step 7 at 5pm). Two touchpoints in tomorrow's workflow — one in the morning brief, one in the evening check. Recovery math: pause today (Tue) = 9 days; pause Thursday = 7 days (borderline); pause Friday = 6 days (high risk for June 4 deliverability). Pause window is essentially Tuesday or Wednesday.
 - Run 85 (2026-05-26 LAUNCH DAY): 9 days until June 4 enrollment. PAUSE TODAY = 9 days recovery (minimum viable). Pause Wednesday = 8 days (borderline). Pause Thursday or later = high risk June 4 lands in spam. This is a 3-minute action that protects the entire June 4 ROI. app.instantly.ai → Campaigns → a1c08c3d → ⋮ → Pause; repeat for 626cd15d → add INSTANTLY_PAUSED=true to .env. The mechanical enrollment block in enroll_batch() prevents accidental Round 2 enrollment — but that block does NOT stop the daily Instantly sends that chip away at domain reputation every day the campaigns stay active.
+- Run 88 (2026-05-26 LAUNCH DAY): 9 days remaining. Today is the last day for minimum-viable recovery. New June 1 Sunday evening checklist (outputs/donna/june1_sunday_evening_checklist_2026-05-26.md) includes a Instantly.ai status verify as Step 1 — gives Bradley a second checkpoint on Sunday night even if it doesn't happen today. Pause window is TODAY or TOMORROW. After Wednesday = high risk June 4 lands in spam.
 - Resolution criteria: Both campaigns paused in Instantly.ai → confirmed by Bradley.
 
 ---
