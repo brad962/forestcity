@@ -1,6 +1,28 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 89 | 2026-05-25 | Auto-fixes shipped: 4 | New deliverables: 2 | New RESOLVED: 0 | Open: 23 (0 new, 0 closed)*
+*Run 90 | 2026-05-25 | Auto-fixes shipped: 5 | New deliverables: 3 | New RESOLVED: 0 | Open: 25 (2 new: No real-time ad lead notification system; No first-booking protocol for ad-generated jobs)*
+
+---
+
+## RUN METRICS — Run 90 | 2026-05-25
+- Total RESOLVED: 81 (0 new this run)
+- Total OPEN: 25 (2 new; 0 closed — remaining issues require Bradley action or infrastructure)
+- Auto-upgrades shipped: 5
+  1. agents/carla.md — added CURRENT version notation for `june_referral_revival_texts_2026-05-23.md`; eliminates "which version do I use?" confusion when Carla references revival texts on June 4 activation
+  2. agents/carla.md — added CURRENT version notation for `contractor_referral_sequence_voc_rewrite_2026-05-23.md`; VOC rewrite is the Round 2 send version; old version predates VOC research
+  3. agents/carla.md — added CURRENT version notation for `pool_service_referral_blitz_2026-05-24.md` and `realtor_summer_voc_sequence_2026-05-24.md`; both files existed in outputs/ but carla.md had no CURRENT marker — any agent reading carla.md couldn't tell which version to use
+  4. agents/rick.md — added `ad_lead_notification_setup_[date].md` to output format catalog; new deliverable written this run; the SOP exists but there was no "how does Bradley even KNOW a lead came in within 5 minutes?" guide; that gap costs 9× conversion rate
+  5. agents/tommy.md — added `first_ad_booking_protocol_[date].md` to output format catalog; new deliverable written this run; the booking_confirmation_flow covers what to do at YES — but the first ad-generated booking is a landmark moment requiring photo capture, CPA calculation, Google review timing, and before/after social post; none of those were systematized
+- Deliverables written: 3
+  1. outputs/rick/ad_lead_notification_setup_2026-05-25.md — step-by-step notification setup for Facebook Business Suite push + email alerts + Google Ads conversion alerts; Day 1 first-response protocol (call within 5 min, text within 10 if no answer); lead log fill-in guide; closes the gap between "lead submits form" and "Bradley knows about it"; critical for tomorrow's launch
+  2. outputs/tommy/first_ad_booking_protocol_2026-05-25.md — 7-step protocol for the first job booked from a paid ad; CPA math, before/after photo capture, annual plan pitch on-site, Google review text within 2 hours, before/after Facebook+Instagram post, pipeline_data.json update with lead_source; creates 4 reusable assets from one job; fires every time an ad lead books
+  3. outputs/donna/zero_leads_day1_contingency_2026-05-25.md — decision guide for if Day 1 ends with zero ad leads; 3-point diagnostic (spend?, learning?, form?); Day 1 benchmark table (0 is normal); DO NOT EDIT rule enforced; free channel actions to run while ads learn; prevents panic-pausing that resets the algorithm; pairs with launch_day_evening_debrief at 5pm
+- Key issue status this run:
+  - Contacted Contractors: Bryan = 13+ days, Bulletproof/Damrons = 7+ days overdue. All scripts written. Pure Bradley action needed today.
+  - Instantly.ai: 9 days recovery remaining. Code block prevents accidental enrollment. Manual pause still required.
+  - Summit pull: 6 days left (May 31). Double-click shortcut ready.
+  - Ads: Launch day TOMORROW (May 26). All assets ready. Notification setup guide written this run.
+  - Gas station: Gmail blast guide ready. Wave 1 due tomorrow AM.
 
 ---
 
@@ -78,6 +100,22 @@
   2. outputs/vera/may27_day2_post_launch_sprint_2026-05-25.md — Wednesday May 27 morning action card; fills the 24h gap between Day 1 evening debrief (5pm Tue) and Day 3 monitoring guide (Thu); covers: lead log check, ads manager glance (do NOT edit), GBP Post 2, gas station Wave 2 emails, contractor texts follow-up, first-lead response protocol, neighbor canvass if jobs scheduled; includes DO NOT TOUCH ADS warning (editing on Day 2 resets learning phase)
 - Proposals: 0 (all active proposals from Runs 83-85 still pending Bradley approval)
 - New issue: "Contacted contractors stale" — Bryan is 12 days with no follow-up, Bulletproof/Damrons are 6 days; pipeline_data.json has no next_followup dates set for any "Contacted" contacts
+
+---
+
+## OPEN — No Real-Time Ad Lead Notification System 🔴 NEW (Run 90)
+- First seen: 2026-05-25 (Run 90)
+- Description: Facebook Lead Gen ads launch May 26. When a lead submits the form, Bradley needs to know within 5 minutes — research shows leads contacted within 5 min convert at 9× the rate of leads contacted after 30 min. There was no guide for setting up Facebook Business Suite push notifications, email alerts, or Google Ads conversion alerts. The facebook_lead_response_sop tells what to DO with a lead but not how to KNOW about it in real time.
+- Fix applied (Run 90): Wrote `outputs/rick/ad_lead_notification_setup_2026-05-25.md` — 4-part setup guide: (1) FB Business Suite push notifications, (2) FB email alerts set to Immediately, (3) optional Zapier SMS, (4) Google Ads conversion email alerts; plus Day 1 first-response protocol and lead log guide. Setup time: 15 minutes before launch.
+- Resolution criteria: Bradley opens the notification setup guide before launching ads and completes the setup checklist. Confirmed when he receives a test lead notification.
+
+---
+
+## OPEN — No "First Ad Booking" Protocol 🟡 NEW (Run 90)
+- First seen: 2026-05-25 (Run 90)
+- Description: The job_booking_confirmation_flow (Run 89) covers what to do at the moment of YES. But the FIRST job booked from a paid ad is a distinct moment requiring specific additional actions: CPA calculation (is the ad working?), before/after photo capture for social proof, Google review request with precise timing (within 2 hours), before/after Facebook+Instagram post for organic reach, and pipeline_data.json source tracking. None of these were systematized.
+- Fix applied (Run 90): Wrote `outputs/tommy/first_ad_booking_protocol_2026-05-25.md` — 7-step protocol that fires on every job booked from ads (especially the first). Creates 4 reusable assets from one job: before/after photos, Google review, social post, CPA data. Steps 2-3 (photo capture) are on-site and can't be done later.
+- Resolution criteria: Bradley reads the protocol before Day 1, uses it on the first booked job from an ad lead.
 
 ---
 

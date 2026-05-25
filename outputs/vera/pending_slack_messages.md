@@ -226,3 +226,66 @@
 >job_booking_confirmation_flow.md written — the 5-step YES-to-booked card that ties 4 existing tools together in one place
 >ad_lead_tracker.md written — manual logging guide so Facebook/Google leads aren't invisible to Nina's pipeline reports
 >CRITICAL TODAY: Pause Instantly.ai (9 days recovery) → Summit pull (6 days left, May 31) → Contractor texts (Bryan 14 days, Bulletproof/Damrons 7 days) → Ads live
+
+---
+
+🔧 *Vera — Auto-Upgrade (Run 90)*
+>Changed: agents/carla.md — added CURRENT version markers for 4 output files (june_referral_revival_texts, contractor_referral_sequence_voc_rewrite, pool_service_referral_blitz, realtor_summer_voc_sequence)
+>Why: All 4 files existed in outputs/carla/ but carla.md had no CURRENT markers — any agent or Bradley reading the catalog couldn't tell which version to use for June 4 activation; now unambiguous
+>File: agents/carla.md
+
+---
+
+🔧 *Vera — Auto-Upgrade (Run 90)*
+>Changed: agents/rick.md — added ad_lead_notification_setup to output format catalog; agents/tommy.md — added first_ad_booking_protocol to output format catalog; agents/donna.md — added zero_leads_day1_contingency to output format catalog
+>Why: Three new deliverables written this run; catalogs updated immediately so agents can reference them
+>File: agents/rick.md + agents/tommy.md + agents/donna.md
+
+---
+
+📄 *Vera — Deliverable (Run 90)*
+>File: `outputs/rick/ad_lead_notification_setup_2026-05-25.md`
+>What: Step-by-step guide to set up INSTANT phone alerts for Facebook Lead Gen form submissions + Google Ads leads
+>Gap filled: The facebook_lead_response_sop told Bradley what to DO with a lead — but not how to KNOW about it within 5 minutes. Leads contacted within 5 min convert at 9× the rate of 30-min responses.
+>Content: Facebook Business Suite push notification setup, email alerts set to Immediately, optional Zapier SMS, Google Ads conversion email + app alerts, Day 1 first-response protocol
+>Action: Open before launching ads tomorrow (May 26). Setup checklist takes 15 minutes. Do it before clicking launch.
+
+---
+
+📄 *Vera — Deliverable (Run 90)*
+>File: `outputs/tommy/first_ad_booking_protocol_2026-05-25.md`
+>What: 7-step protocol for when the first job from a paid ad gets booked — and every ad job after that
+>Gap filled: booking_confirmation_flow covers the YES moment. But first-ad-booking requires: CPA math, before/after photo capture on-site, annual plan pitch at job end, Google review text within 2h, before/after social post, pipeline_data.json source tracking. None of those were systematized.
+>Content: Each step has exact timing, scripts, and file references. Creates 4 reusable assets from 1 job.
+>Action: Read once before launch week. Photos must be taken on-site — they can't be staged later.
+
+---
+
+📄 *Vera — Deliverable (Run 90)*
+>File: `outputs/donna/zero_leads_day1_contingency_2026-05-25.md`
+>What: Decision guide for if May 26 ads launch and zero leads arrive by 5pm
+>Gap filled: No protocol existed for the "0 leads on Day 1" scenario that's extremely common for first-time advertisers and can trigger panic-pausing that resets the Facebook algorithm and wastes the learning phase.
+>Content: 3-point diagnostic (are campaigns spending? learning phase? form working?), Day 1 benchmark table (0 leads is normal on Day 1), Emergency checklist for $0 spend by noon, free channel work to do while ads learn, pairs with launch_day_evening_debrief at 5pm
+>Action: Don't open this unless you have 0 leads at 4pm. If you do — open it before touching anything in Ads Manager.
+
+---
+
+🚨 *Vera — LAUNCH DAY TOMORROW (May 26) — Final Pre-Launch Checklist*
+>Everything is ready. Here's the order:
+>1. 8:00am: Set up lead notifications — `outputs/rick/ad_lead_notification_setup_2026-05-25.md` (15 min)
+>2. 8:15am: Run Summit pull — double-click `scripts/run_summit_pull.command` (6 min unattended)
+>3. 8:20am: Text Bryan 216-402-1924 + Bulletproof 216-307-4344 + Damrons 440-494-0422 — `outputs/vera/launch_day_contractor_followups_2026-05-25.md` (5 min)
+>4. 8:30am: Pause Instantly.ai — app.instantly.ai → a1c08c3d + 626cd15d → ⋮ → Pause → add INSTANTLY_PAUSED=true to .env (3 min, 9 days recovery starts NOW)
+>5. 9:00am: Complete Google Ads launch checklist — `outputs/rick/google_ads_launch_day_checklist_2026-05-26.md`
+>6. 9:30am: Read `outputs/donna/may26_final_launch_brief_2026-05-25.md` — THE launch document
+>7. Launch ads. Post GBP Post 1. Send gas station Wave 1 emails.
+>8. 5:00pm: Run `outputs/donna/launch_day_evening_debrief_2026-05-26.md` — 5 min check
+>If 0 leads by 4pm: open `outputs/donna/zero_leads_day1_contingency_2026-05-25.md` before touching anything.
+
+---
+
+✅ *Vera — Scan Complete 2026-05-25 (Run 90)*
+>5 auto-upgrades shipped | 3 new deliverables | 2 new issues added | 25 open (23 carry-forward, 2 new)
+>Key deliverables this run: ad lead notification setup (critical for tomorrow), first-ad-booking protocol, zero-leads Day 1 contingency
+>Highest priority tomorrow: Set up lead notifications BEFORE launching ads. Read zero_leads_day1_contingency before touching Ads Manager if no leads by 4pm.
+>Next critical date: May 31 (Summit pull deadline) → June 1 (Medina pull) → June 4 (Round 2 enrollment)
