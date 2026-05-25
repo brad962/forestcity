@@ -128,6 +128,8 @@ DANNY_ORG_KEYWORDS = [
     'self storage', 'self-storage', 'storage facility', 'storage units',
     # Car dealerships — large paved lots + building exteriors; facility managers + GMs are decision-makers (added 2026-05-26 run 88)
     'car dealership', 'auto dealership', 'automotive dealer', 'auto group', 'car dealer',
+    # Parking + industrial segments — high square footage of concrete/asphalt; recurring pressure washing demand (added 2026-05-25 run 89)
+    'parking management', 'parking facility', 'parking garage', 'industrial park', 'business park',
 ]
 
 CARLA_SEARCHES = [

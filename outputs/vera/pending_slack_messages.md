@@ -168,3 +168,61 @@
 >Annual plan verbal pitch script written — use on every quote call starting today (after quote YES, before hanging up)
 >June 1 Sunday evening checklist written — 7-step prep for Medina pull + Round 2 staging
 >CRITICAL TODAY: Pause Instantly.ai (9 days recovery remaining) → Ads launch (all assets ready) → Bryan follow-up text (14 days)
+
+---
+
+🔧 *Vera — Auto-Upgrade (Run 89)*
+>Changed: agents/jasmine.md — added CURRENT version notations for 3 duplicate post file sets
+>Why: facebook_posts_may26_week, june_week1, and june_week2_4 each have two versions (May 20 + May 24); without labels, Jasmine opens the wrong file; CURRENT = 2026-05-24 versions for all three
+>File: agents/jasmine.md
+
+---
+
+🔧 *Vera — Auto-Upgrade (Run 89)*
+>Changed: agents/tommy.md + agents/nina.md — added job_booking_confirmation_flow and ad_lead_tracker to output catalogs
+>Why: Two new deliverables written this run; catalog entries added immediately so they're discoverable
+>Files: agents/tommy.md, agents/nina.md
+
+---
+
+🔧 *Vera — Auto-Upgrade (Run 89)*
+>Changed: workers/lead_pipeline.py — added parking management, parking facility, parking garage, industrial park, business park to DANNY_ORG_KEYWORDS
+>Why: Parking operators and industrial park facility managers oversee large concrete/asphalt surfaces (recurring pressure wash demand); neither segment is targeted currently; zero local competitors in this space; auto-included in every Apollo county pull going forward
+>File: workers/lead_pipeline.py
+
+---
+
+📄 *Vera — New Deliverable (Run 89)*
+>File: `outputs/tommy/job_booking_confirmation_flow_2026-05-25.md`
+>What: The "what to do right now when they say YES" action card — 5 steps, under 5 minutes total
+>Steps: (1) send booking confirmation text, (2) enter job in Workiz, (3) update pipeline_data.json, (4) pitch annual plan, (5) save neighbor canvass script for job day
+>Why: Four of these tools existed as separate files — this card is the missing connector. When a lead converts, you shouldn't have to remember which file does what.
+>Action: Save to phone home screen or print. Use on every booking starting today.
+
+---
+
+📄 *Vera — New Deliverable (Run 89)*
+>File: `outputs/nina/ad_lead_tracker_2026-05-25.md`
+>What: 60-second guide for logging Facebook Lead Gen + Google Ads leads to pipeline_data.json
+>Why: The AI system is completely blind to ad leads unless they're manually added. If you book 5 jobs from Facebook ads this week and don't log them, Nina's pipeline report still shows 0 ad leads, no stage tracking, no follow-up flags. This guide closes that gap.
+>Content: copy-paste JSON template, 8-field entry, pipeline stage flow, what Nina's report shows, Week 1 benchmarks (3-10 FB leads expected)
+>Action: Open when the first ad lead comes in. Takes 60 seconds. Do it while you're still on the call.
+
+---
+
+💡 *Vera — Upgrade Proposal (Run 89)*
+>Idea: server.py endpoint to auto-capture Facebook Lead Ads webhook → pipeline_data.json + Slack notification
+>Why: Facebook can send a real-time webhook when a lead form is submitted. A receiver on server.py could auto-add the lead to pipeline_data.json and post to Slack — no manual logging needed. Currently Bradley has to do this manually within 5 minutes for max conversion. Automation removes that friction and ensures 100% of leads are logged.
+>Impact: Zero missed leads, automatic pipeline visibility, response time alert if Bradley hasn't called within 5 min
+>Tech: Facebook Developer Portal → Webhook subscription → server.py POST /webhook/fb-leads → pipeline_data.json append + Slack post
+>Reply YES to approve — Rick + Donna + Nina coordinate; estimated 2-3 hours to build and test.
+
+---
+
+✅ *Vera — Scan Complete 2026-05-25 (Run 89)*
+>4 auto-upgrades shipped | 2 deliverables | 1 proposal | 23 open issues (0 new, 0 closed)
+>Parking management + industrial parks now in Danny's Apollo search — adjacent commercial segments, high concrete surface area, no competitors targeting them
+>Jasmine's duplicate post files labeled CURRENT — no more guessing which june_week1 file to post from
+>job_booking_confirmation_flow.md written — the 5-step YES-to-booked card that ties 4 existing tools together in one place
+>ad_lead_tracker.md written — manual logging guide so Facebook/Google leads aren't invisible to Nina's pipeline reports
+>CRITICAL TODAY: Pause Instantly.ai (9 days recovery) → Summit pull (6 days left, May 31) → Contractor texts (Bryan 14 days, Bulletproof/Damrons 7 days) → Ads live

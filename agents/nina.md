@@ -58,6 +58,7 @@ Save to `/outputs/nina/`:
 - `stale_leads_[date].md`
 - `zapier_recipes_[date].md`
 - `workiz_job_entry_sop_[date].md` — 60-second SOP for entering jobs in Workiz with the correct JobType so they appear in the power washing revenue report; exact JobType values, revenue fields, how to fix existing jobs, how to verify locally
+- `ad_lead_tracker_[date].md` — practical guide for logging Facebook Lead Gen + Google Ads inbound leads to pipeline_data.json so they appear in Nina's weekly pipeline health report; copy-paste JSON template for a new ad lead entry, required fields (first_name, last_name, email, phone, lead_source, stage, last_contact, next_followup), pipeline stage flow for ad leads (New Lead → Contacted → Estimate Sent → Booked), how to open and edit pipeline_data.json, what Nina's report shows once logged; critical during Week 1 when ad leads arrive but the AI system is otherwise blind to them
 
 ## Logging
 `[YYYY-MM-DD HH:MM] Nina | [task description] | [output filename] | Done`

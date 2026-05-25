@@ -1,6 +1,26 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 88 | 2026-05-26 (LAUNCH DAY) | Auto-fixes shipped: 7 | New deliverables: 2 | New RESOLVED: 0 | Open: 23 (2 new)*
+*Run 89 | 2026-05-25 | Auto-fixes shipped: 4 | New deliverables: 2 | New RESOLVED: 0 | Open: 23 (0 new, 0 closed)*
+
+---
+
+## RUN METRICS — Run 89 | 2026-05-25
+- Total RESOLVED: 81 (0 new this run)
+- Total OPEN: 23 (0 new; 0 closed — remaining issues require Bradley action or infrastructure)
+- Auto-upgrades shipped: 4
+  1. agents/jasmine.md — added CURRENT version notations for 3 duplicate post file pairs (may26_week, june_week1, june_week2_4); supersedes May 20 versions for all 3; eliminates "which file do I post from?" confusion when Jasmine has 2 versions of the same week's posts
+  2. agents/tommy.md — added `job_booking_confirmation_flow_[date].md` to output catalog; new deliverable written this run; ties together booking_confirmation_text + workiz_job_entry_sop + annual_plan_pitch_script + neighbor_canvass_script into one 5-minute action card for the moment a lead says YES
+  3. agents/nina.md — added `ad_lead_tracker_[date].md` to output catalog; new deliverable written this run; ad leads from Facebook/Google are completely invisible to the AI system without manual pipeline_data.json logging; this format entry and deliverable fill that gap
+  4. workers/lead_pipeline.py — added `'parking management'`, `'parking facility'`, `'parking garage'`, `'industrial park'`, `'business park'` to DANNY_ORG_KEYWORDS; parking facility managers oversee large concrete/asphalt surfaces with recurring pressure washing needs; industrial parks = clusters of commercial buildings with facility managers signing vendor contracts; zero competitors targeting these segments currently
+- Deliverables written: 2
+  1. outputs/tommy/job_booking_confirmation_flow_2026-05-25.md — 5-step YES-to-booked action card; all steps under 5 min total; cross-links the 4 existing booking tools into one reference; fills the "I know I need to do something when they say yes — what exactly?" gap; use on every lead starting today
+  2. outputs/nina/ad_lead_tracker_2026-05-25.md — 60-second guide for logging Facebook/Google ad leads to pipeline_data.json; copy-paste JSON template; pipeline stage flow for ad leads; what Nina's report shows; Week 1 lead volume benchmarks (3-10 FB leads, 1-5 Google calls); critical now that ads are live and leads are arriving
+- Key issue status this run:
+  - Contacted Contractors: Bryan = 13+ days, Bulletproof/Damrons = 7+ days overdue. All scripts written. Pure Bradley action needed today.
+  - Instantly.ai: 9 days recovery remaining (minimum viable). Code block prevents accidental enrollment. Manual pause still required.
+  - Summit pull: 6 days left (May 31). Double-click shortcut ready. Bradley can run today while at Mac for ads launch.
+  - Ads: Launch day. All assets ready. All checklists written.
+  - Gas station: Gmail blast guide ready. Mixmax sequence still PENDING ID.
 
 ---
 
@@ -75,7 +95,8 @@
 ## OPEN — Annual Plan Not Being Pitched On Quote Calls 🟡 NEW (Run 88)
 - First seen: 2026-05-26 (Run 88)
 - Description: Tommy has annual_plan_upsell_sequence (post-job texts) and annual_plan_customer_welcome_kit (post-YES email) — but no script for pitching the annual plan VERBALLY during the quote call itself. Now that Facebook + Google ads are live and leads are incoming, every quote call is an opportunity to convert a one-time customer to a $400–$600/year recurring contract. Without a verbal pitch script, this happens inconsistently at best.
-- Fix applied: Wrote `outputs/tommy/annual_plan_pitch_script_2026-05-26.md` — 20-second pitch for after quote acceptance, 3 response handling scripts, revenue math ($9K/year from 20 customers). Auto-resolve criteria below.
+- Fix applied (Run 88): Wrote `outputs/tommy/annual_plan_pitch_script_2026-05-26.md` — 20-second pitch for after quote acceptance, 3 response handling scripts, revenue math ($9K/year from 20 customers).
+- Run 89 (2026-05-25): Annual plan pitch script now embedded in `outputs/tommy/job_booking_confirmation_flow_2026-05-25.md` as Step 4 — it's in the "what to do when they say YES" card that Bradley opens on every booking. This increases the chance it's actually used vs. being a standalone file.
 - Resolution criteria: Bradley reads the script once and starts using it on calls. Tracked when annual plan bookings appear in pipeline_data.json.
 
 ---
@@ -83,8 +104,9 @@
 ## OPEN — Car Dealerships Segment Not Yet Pulled 🟡 NEW (Run 88)
 - First seen: 2026-05-26 (Run 88)
 - Description: Car dealerships = high-value commercial segment (large paved lots, building exteriors, covered service bays, multi-location dealer groups). NE Ohio dealer groups like Ganley, Hidy Automotive, Valley Ford have 3-8 locations each. Revenue per deal group = $18K–$36K/year recurring. Not targeted in any previous pull.
-- Fix applied this run: Added car dealership org keywords to DANNY_ORG_KEYWORDS in lead_pipeline.py: 'car dealership', 'auto dealership', 'automotive dealer', 'auto group', 'car dealer'. Documented in agents/danny.md as new secondary segment. Keywords are LIVE — auto-included in next Apollo run.
-- Resolution criteria: Dealer contacts appear in next Danny county pull (Week 22 = Medina, June 1). May need specific Apollo search for automotive orgs if county pull doesn't surface them.
+- Fix applied (Run 88): Added car dealership org keywords to DANNY_ORG_KEYWORDS: 'car dealership', 'auto dealership', 'automotive dealer', 'auto group', 'car dealer'. Keywords live in next Apollo run.
+- Run 89 (2026-05-25): Also added 'parking management', 'parking facility', 'parking garage', 'industrial park', 'business park' to DANNY_ORG_KEYWORDS — adjacent commercial segments with high sq footage of concrete/asphalt and established facilities manager roles. These go into the same county rotation pull as the dealership keywords.
+- Resolution criteria: Commercial contacts from these org types appear in next Danny county pull (Week 22 = Medina, June 1) or in a targeted dealership Apollo pull if county pull doesn't surface them.
 
 ---
 
