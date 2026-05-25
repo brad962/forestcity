@@ -90,6 +90,8 @@ PROPERTY_MANAGER_TITLES = [
     'community director',        # HOA community director (distinct from community manager)
     'building operations manager', # commercial PM ops title at office/industrial properties
     'property administrator',    # administrative PM role — often signs vendor contracts
+    # Large national PM firms (Greystar, Lincoln Property, etc.) use this ops title (added 2026-05-25)
+    'property operations manager',
 ]
 
 REALTOR_TITLES = [
@@ -127,8 +129,12 @@ GAS_STATION_KEYWORDS = [
     'petroleum', 'speedway', 'circle k', 'sheetz', 'certifiedoil',
     'truenorth', 'open pantry', 'sunoco', 'marathon', "love's",
     'ferrellgas', '7-eleven', 'bellstore', 'campbell oil',
+    # NE Ohio gas station chains with significant local presence (added 2026-05-25)
+    'getgo', 'giant eagle fuel', 'bp station', 'shell station',
+    'pilot flying j', 'pilot travel', 'kwik trip', 'citgo',
+    'exxon', 'mobil', 'valero', 'fuel center',
     # NOTE: 'district manager' removed — too generic; non-gas-station DMs would mismatch.
-    # Company name keywords (speedway, circle k, etc.) are sufficient for routing.
+    # Company name keywords are sufficient for routing.
 ]
 
 FLEET_KEYWORDS = [

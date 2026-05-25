@@ -99,6 +99,8 @@ DANNY_TITLES = [
     'community director',        # HOA community director (distinct from community manager)
     'building operations manager', # commercial PM ops title at office/industrial properties
     'property administrator',    # administrative PM role — often signs vendor contracts
+    # Large national PM firms (Greystar, Lincoln Property, etc.) use this ops title (added 2026-05-25)
+    'property operations manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.

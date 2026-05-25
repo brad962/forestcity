@@ -44,3 +44,42 @@
 >STATUS: System is launch-ready. All 83 runs of prep are staged. Tomorrow is the day.
 >TONIGHT priority: Pause Instantly.ai now → 9 days recovery starts tonight. 3 minutes: app.instantly.ai → a1c08c3d + 626cd15d → ⋮ → Pause → add INSTANTLY_PAUSED=true to .env
 >TOMORROW MORNING: READ outputs/donna/may26_final_launch_brief_2026-05-25.md FIRST. Then launch_week_daily_checklist at 5pm. This is it.
+---
+🔧 *Vera — Auto-Upgrade (Run 84)*
+>Changed: `integrations/mixmax.py` — added GetGo/Giant Eagle Fuel, BP, Shell, Pilot Flying J, Exxon, Mobil, Valero, Citgo, Kwik Trip to GAS_STATION_KEYWORDS
+>Why: Major NE Ohio gas station chains were missing; GetGo is one of NE Ohio's largest c-store chains and wasn't in the routing list
+>File: integrations/mixmax.py
+---
+🔧 *Vera — Auto-Upgrade (Run 84)*
+>Changed: `workers/lead_pipeline.py` + `integrations/mixmax.py` — added 'property operations manager' to DANNY_TITLES and PROPERTY_MANAGER_TITLES
+>Why: National PM firms like Greystar and Lincoln Property use this title; contacts there were falling through to the default instead of the PM sequence
+>File: workers/lead_pipeline.py + integrations/mixmax.py
+---
+🔧 *Vera — Auto-Upgrade (Run 84)*
+>Changed: `agents/tommy.md` — updated website_copy_service_pages_voc_refresh catalog entry to note current file is DONE (2026-05-25); marks open issue as resolved
+>File: agents/tommy.md
+---
+🔧 *Vera — Auto-Upgrade (Run 84)*
+>Changed: `agents/donna.md` — added launch_eve_prep_checklist format entry to output catalog
+>File: agents/donna.md
+---
+📄 *Vera — Deliverable (Run 84): website_copy_service_pages_voc_refresh_2026-05-25.md*
+>File: `outputs/tommy/website_copy_service_pages_voc_refresh_2026-05-25.md`
+>What: Drop-in replacement for all 5 Google Ads landing pages using Marcus's exact NE Ohio VOC phrases
+>Key H1s: "Your Siding Is Green and Slimy. We Fix That." / "Your Roof Looks Black from the Street. That's Not Age — It's Alive." / "Every NE Ohio Driveway Has Road Salt Stains. Here's How to Get Rid of Them."
+>Trust blocks use real customer language: "I've been meaning to do it for three years. Wish I'd done it sooner." / "Saved us from replacing the deck."
+>Action: 15-min swap in web builder — do it Day 3–7 after ads go live. Roof Soft Wash page first.
+>RESOLVES open issue from Run 81.
+---
+📄 *Vera — Deliverable (Run 84): launch_eve_prep_checklist_2026-05-25.md*
+>File: `outputs/donna/launch_eve_prep_checklist_2026-05-25.md`
+>What: 10-minute "before bed" checklist for tonight — so tomorrow morning has zero friction
+>7 items: verify FB Ads billing active, verify Google Ads access, draft gas station emails, check contractor texts sent, Instantly.ai pause, swap FB hooks to draft, set alarms (7:30am + 5pm)
+>Also: full staged asset table (all tomorrow's tasks with time estimates) + what can wait this week
+>Read it NOW — it's for tonight.
+---
+✅ *Vera — Scan Complete 2026-05-25 (Run 84 | Final prep before Launch Day)*
+>4 auto-upgrades | 2 deliverables | 1 RESOLVED (Website Service Pages VOC — open 4 runs) | 20 open issues
+>Gas station routing expanded (GetGo/BP/Shell/Pilot now covered). PM title net extended (property operations manager). Service pages VOC-refreshed (all 5 done). Launch eve checklist ready.
+>TONIGHT: Open `outputs/donna/launch_eve_prep_checklist_2026-05-25.md` — 10 min before bed
+>7:30am TOMORROW: `outputs/donna/may26_final_launch_brief_2026-05-25.md` — 90-min launch

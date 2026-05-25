@@ -1,10 +1,10 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 83 | 2026-05-25 (Memorial Day night — 12 hours before launch) | Auto-fixes shipped: 4 | New deliverables: 2 | Proposals: 2 | New issues: 0 | New RESOLVED: 0*
+*Run 84 | 2026-05-25 (Launch Eve — tonight before launch day) | Auto-fixes shipped: 4 | New deliverables: 2 | New RESOLVED: 1 (Website Service Pages VOC) | Open: 20*
 
 ---
 
-## RESOLVED SUMMARY (80 total — details in git history)
+## RESOLVED SUMMARY (81 total — details in git history)
 
 Key resolved issues by category:
 - **Pipeline routing:** PM-before-realtor check order, gas_station/fleet false positives removed, all 5 PM title variants added (multifamily, CAI, condo, association manager)
@@ -19,11 +19,9 @@ Key resolved issues by category:
 
 ---
 
-## OPEN — Website Service Pages Predate VOC Research 🟡 (Run 81)
-- First seen: 2026-05-25 (Run 81)
-- Description: `outputs/tommy/website_copy_service_pages_2026-05-20.md` was written May 20 — 3 days before Marcus's VOC library was completed (May 23). These pages are the Google Ads landing pages. Better VOC alignment = better Quality Score = lower CPC. Pages aren't bad, but use generic language in several spots where exact VOC phrases ("green and slimy," "roof looks black," "I didn't realize how dirty it was") would increase relevance score.
-- Run 81 (2026-05-25): Added `website_copy_service_pages_voc_refresh_[date].md` format entry to tommy.md. Format is now documented — Tommy can produce on demand. Priority is lower than Facebook ad copy swap (ads launch tomorrow; landing page optimization is a Day 3–7 action after ads are live and Quality Score is forming).
-- Resolution criteria: Tommy writes VOC refresh version after ads have been live for 1 week. Not critical before launch — landing pages are functional.
+## RESOLVED — Website Service Pages Predate VOC Research
+- Resolved: 2026-05-25 (Run 84)
+- Fix: `outputs/tommy/website_copy_service_pages_voc_refresh_2026-05-25.md` — all 5 service pages rewritten using exact NE Ohio VOC phrases from Marcus's library. H1s, subheads, and trust blocks refreshed. Implementation notes include web builder swap guide (15 min) and Google Ads Quality Score context. Supersedes May 20 version. Bradley should swap in before or right after ads go live.
 
 ---
 
@@ -70,7 +68,8 @@ Key resolved issues by category:
 - Run 79 (2026-05-25 Mon, Memorial Day): TODAY IS THE DAY. It is Memorial Day. Trades are working — phones are on. `memorial_day_contractor_text_card_2026-05-24.md` has all 5 scripts. Open it, copy, send Anthony first (440-320-2779). 10 minutes, 5 texts. If not today, Tuesday 8:45am is the absolute last slot before these contacts are 7+ days "New Lead" with zero personal touch. After ads launch Tuesday, Bradley will be busy with inbound — these outbound texts will get deprioritized further.
 - Run 81 (2026-05-25 Mon, Memorial Day): Still open. Fresh angle: ads launch TOMORROW. Once Bradley has inbound leads to handle, these outbound contractor texts will fall to the bottom of the list. Anthony (440-320-2779) takes 30 seconds. After Tuesday's launch, Tier 1 outreach will compete with ad leads for attention — and ad leads will always win. Text TODAY. If not today, the 8:45am Tuesday slot in may26_final_launch_brief is the last planned window before June 4.
 - Run 82 (2026-05-25 Mon, Memorial Day evening): Still open. 8:45am Tuesday = 12 hours away. The booking_confirmation_text_2026-05-25.md (new this run) closes the last friction point — if any contractor texts YES, Bradley has copy-paste reply scripts ready. `memorial_day_contractor_text_card_2026-05-24.md` is still the send card. Anthony first. 30 seconds.
-- Run 83 (2026-05-25 night, launch eve): Slotted in `outputs/vera/launch_week_daily_checklist_2026-05-26.md` at Tuesday morning. Once ads launch and inbound leads start, outbound contractor texts will compete for attention — doing them BEFORE ads launch is the best window. If missed Tuesday, Wednesday morning is still valid. After Wednesday, these contacts will be 8+ days "New Lead" with zero personal touch — the worst outcome.
+- Run 83 (2026-05-25 night, launch eve): Slotted in `outputs/vera/launch_week_daily_checklist_2026-05-26.md` at Tuesday morning. Once ads launch and inbound leads start, outbound contractor texts will compete for attention — doing them BEFORE ads launch is the best window.
+- Run 84 (2026-05-25 night): Fresh angle — `outputs/donna/launch_eve_prep_checklist_2026-05-25.md` (new this run) includes contractor texts as checklist item 4. Tonight is still a valid send window (Memorial Day night, trades check phones). Tomorrow 8:45am slot still in `may26_final_launch_brief`. Wednesday is last reasonable window before these go 8+ days "New Lead" with no personal touch.
 - Resolution criteria: Bradley texts Tier 1 list. Confirmed when pipeline_data.json shows "Contacted" stage for these 5.
 
 ---
