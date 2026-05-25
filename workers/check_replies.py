@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
 check_replies.py — Fast Mixmax reply checker.
-Scans all 3 live sequences for new replies. Prints results + posts to Slack if any found.
+Scans all live sequences for new replies and hot leads (2+ opens). Prints results + posts to Slack.
 Run any time: python3 workers/check_replies.py
-Designed for daily use during the 72-hour post-Touch 3 reply window.
+Runs on cron at 8:45am and 2pm weekdays. Use this for ongoing pipeline monitoring.
 """
 
 import json

@@ -1,6 +1,6 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 82 | 2026-05-25 (Memorial Day evening — launch eve) | Auto-fixes shipped: 3 | New deliverables: 2 | Proposals: 2 | New issues: 0 | New RESOLVED: 1 (workiz substring match — code bug fixed)*
+*Run 83 | 2026-05-25 (Memorial Day night — 12 hours before launch) | Auto-fixes shipped: 4 | New deliverables: 2 | Proposals: 2 | New issues: 0 | New RESOLVED: 0*
 
 ---
 
@@ -70,6 +70,7 @@ Key resolved issues by category:
 - Run 79 (2026-05-25 Mon, Memorial Day): TODAY IS THE DAY. It is Memorial Day. Trades are working — phones are on. `memorial_day_contractor_text_card_2026-05-24.md` has all 5 scripts. Open it, copy, send Anthony first (440-320-2779). 10 minutes, 5 texts. If not today, Tuesday 8:45am is the absolute last slot before these contacts are 7+ days "New Lead" with zero personal touch. After ads launch Tuesday, Bradley will be busy with inbound — these outbound texts will get deprioritized further.
 - Run 81 (2026-05-25 Mon, Memorial Day): Still open. Fresh angle: ads launch TOMORROW. Once Bradley has inbound leads to handle, these outbound contractor texts will fall to the bottom of the list. Anthony (440-320-2779) takes 30 seconds. After Tuesday's launch, Tier 1 outreach will compete with ad leads for attention — and ad leads will always win. Text TODAY. If not today, the 8:45am Tuesday slot in may26_final_launch_brief is the last planned window before June 4.
 - Run 82 (2026-05-25 Mon, Memorial Day evening): Still open. 8:45am Tuesday = 12 hours away. The booking_confirmation_text_2026-05-25.md (new this run) closes the last friction point — if any contractor texts YES, Bradley has copy-paste reply scripts ready. `memorial_day_contractor_text_card_2026-05-24.md` is still the send card. Anthony first. 30 seconds.
+- Run 83 (2026-05-25 night, launch eve): Slotted in `outputs/vera/launch_week_daily_checklist_2026-05-26.md` at Tuesday morning. Once ads launch and inbound leads start, outbound contractor texts will compete for attention — doing them BEFORE ads launch is the best window. If missed Tuesday, Wednesday morning is still valid. After Wednesday, these contacts will be 8+ days "New Lead" with zero personal touch — the worst outcome.
 - Resolution criteria: Bradley texts Tier 1 list. Confirmed when pipeline_data.json shows "Contacted" stage for these 5.
 
 ---
@@ -127,20 +128,17 @@ Key resolved issues by category:
 - Run 79 (2026-05-25 Mon, Memorial Day): 10 days until Round 2 enrollment. Reply window closes TODAY. Mixmax reply window = DONE after today whether paused or not — this is now purely about June 4 deliverability. Pause TODAY = 10 days recovery. Pause Tuesday = 9 days (minimum viable). Pause Wednesday or later = under 8 days = high risk June 4 lands in spam again. This is still a 3-minute action: app.instantly.ai → Campaigns → ⋮ → Pause a1c08c3d AND 626cd15d. Code block in enroll_batch() and run_pending_sequences() means Bradley cannot accidentally enroll Round 2 while Instantly runs — but the mechanical block does NOT fix the deliverability damage that accumulates every day Instantly stays active.
 - Run 81 (2026-05-25 Mon, Memorial Day): 10 days remaining. After today, Tuesday pause = 9 days recovery (minimum viable). Wednesday pause = 8 days (high risk). The math is clear and hasn't changed. This is the single action with the most leverage for June 4 ROI — 3 minutes, done. `round2_warmup_timeline_2026-05-26.md` lists it as the Day 1 (May 26) blocker. If Bradley is reading Tuesday morning's may26_final_launch_brief and sees "Step 3: Pause Instantly.ai," that's the trigger. Everything else on June 4 depends on this one check.
 - Run 82 (2026-05-25 Mon, Memorial Day evening): 10 days until June 4. Tuesday pause = 9 days recovery (minimum viable). Every 24h of delay = one day less of deliverability recovery before Round 2. The code block in enroll_batch() means accidental enrollment is impossible — but daily Instantly sends continue to chip at domain reputation until paused. 3 minutes: app.instantly.ai → Campaigns → a1c08c3d → ⋮ → Pause; repeat for 626cd15d → add INSTANTLY_PAUSED=true to .env.
+- Run 83 (2026-05-25 night): Slotted as Step 3 in `launch_week_daily_checklist_2026-05-26.md` (Tuesday morning) AND in `launch_day_evening_debrief_2026-05-26.md` (Step 7 at 5pm). Two touchpoints in tomorrow's workflow — one in the morning brief, one in the evening check. Recovery math: pause today (Tue) = 9 days; pause Thursday = 7 days (borderline); pause Friday = 6 days (high risk for June 4 deliverability). Pause window is essentially Tuesday or Wednesday.
 - Resolution criteria: Both campaigns paused in Instantly.ai → confirmed by Bradley.
 
 ---
 
-## OPEN — 0% reply rate across enrolled contacts
+## OPEN — 0% reply rate across enrolled contacts → Round 2 June 4
 - First seen: 2026-05-18
-- Description: ~45 contacts enrolled, 0 replies across all 3 email touches.
-- Run 56: 72-hour window closes May 25.
-- Run 60 (2026-05-23 Sat): Window closes TONIGHT. Sunday evening protocol (`may25_sunday_evening_protocol_2026-05-23.md`) has the full if/then tree: replies → templates ready; 0 replies → Instantly.ai pause + LinkedIn connects + bridge emails queued for Monday. Round 2 enrollment June 4 with A/B subjects (`outputs/tommy/email_subject_line_ab_test_2026-05-22.md`). Plan B is fully built — no gap if window closes at zero.
-- Run 61 (2026-05-23 Sat): 2 days remain in window (closes Sunday May 25). Memorial Day weekend open rates are lower than weekdays but replies still happen. Bridge email from personal Gmail (bypasses spam, see `outputs/tommy/hot_lead_bridge_email_may26_2026-05-22.md`) has higher chance of landing during the weekend than the Mixmax sequence emails did. Round 2 June 4 plan fully built regardless of outcome.
-- Run 68 (2026-05-24 Sun): Reply window closes TOMORROW (Monday May 25, Memorial Day). Final check: run `python3 workers/check_replies.py` at 10am Monday (10 minutes). Decision gate: `outputs/donna/may25_round2_decision_gate_2026-05-22.md`. Protocol for tomorrow: `outputs/donna/monday_memorial_day_final_check_2026-05-24.md`. 0 replies = pivot cleanly to Round 2 June 4 with VOC-rewritten copy.
-- Run 69 (2026-05-24 Sun): Round 2 is now 11 days out. VOC-rewritten PM sequence exists (`outputs/tommy/round2_pm_sequence_voc_rewrite_2026-05-23.md`). VOC-rewritten contractor sequence exists (`outputs/carla/contractor_referral_sequence_voc_rewrite_2026-05-23.md`). Enrollment readiness checklist exists (`outputs/donna/round2_enrollment_readiness_checklist_2026-05-23.md`). All assets are staged — the only missing piece is Instantly.ai being paused and a fresh Summit County pull. Both on the May 26 blitz plan.
-- Run 71 (2026-05-24 Sun): check_replies.py fixed this run — now posts Slack "all clear" confirmation when api_ok=True and pipeline is quiet, so Bradley knows the check ran. June 4 battle card written (`outputs/donna/june4_enrollment_battle_card_2026-05-24.md`) — full press-GO execution guide. Reply window closes TOMORROW.
-- Resolution criteria: At least 1 confirmed reply before May 25 OR Round 2 rewrite + enrollment launched by June 4.
+- Description: ~45 contacts enrolled, 0 replies across all 3 email touches. Reply window CLOSED May 25. Now in Round 2 staging mode.
+- Run 83 (2026-05-25 night): **Reply window is officially closed.** We are fully in Round 2 June 4 mode. All Round 2 assets are staged: VOC-rewritten PM sequence (`outputs/tommy/round2_pm_sequence_voc_rewrite_2026-05-23.md`), VOC-rewritten contractor sequence (`outputs/carla/contractor_referral_sequence_voc_rewrite_2026-05-23.md`), enrollment readiness checklist (`outputs/donna/round2_enrollment_readiness_checklist_2026-05-23.md`), press-GO battle card (`outputs/donna/june4_enrollment_battle_card_2026-05-24.md`). Only blockers remaining: (1) Instantly.ai pause — code-level enrollment block ships, accidental enrollment is impossible, but daily Instantly sends chip deliverability; (2) Medina County pull June 1 for fresh contacts. Everything else is ready.
+- Next action: June 3 (day before Round 2) — run readiness checklist. June 4 — run battle card.
+- Resolution criteria: Round 2 enrollment launched June 4 with VOC-rewritten copy.
 
 ---
 
@@ -298,6 +296,27 @@ Key resolved issues by category:
   2. Pause Instantly.ai: app.instantly.ai → a1c08c3d + 626cd15d → ⋮ → Pause (3 min, 10 days recovery starts NOW)
   3. Run `python3 workers/check_replies.py` — reply window closes TODAY
 - Highest priority TUESDAY May 26: READ `outputs/donna/may26_final_launch_brief_2026-05-25.md` FIRST — THE launch brief. Then post GBP Post 1 at 8am (outputs/vera/launch_week_gbp_posts_2026-05-25.md), then ads.
+
+---
+
+## RUN METRICS — Run 83 | 2026-05-25 (Memorial Day night — launch eve, 12 hours out)
+- Total RESOLVED: 81 (0 new this run — all remaining open issues require Bradley action or are infrastructure constraints)
+- Total OPEN: 21 (0 new closed, 0 new opened — "0% reply rate" issue re-framed as "Round 2 June 4" but remains open until enrollment actually happens)
+- Auto-upgrades shipped: 4
+  1. agents/danny.md — removed hardcoded "TODAY IS MEMORIAL DAY MAY 25. TOMORROW (MAY 26) = LAUNCH DAY. 6 days left" from urgency note; language was wrong the moment May 26 arrived; replaced with date-agnostic "SUMMIT COUNTY — DEADLINE: MAY 31" note that remains accurate May 26–31
+  2. workers/check_replies.py — removed stale "72-hour post-Touch 3 reply window" docstring; reply window closed May 25; script is now the permanent daily pipeline health tool, not a temporary window monitor; docstring updated to reflect ongoing use
+  3. agents/donna.md — added launch_day_evening_debrief_[date].md to output format catalog; genuine gap between morning launch brief (what TO DO) and Day 3 ad monitoring guide (what to CHECK); end-of-day-1 debrief fills this 12-hour blind spot
+  4. open_issues.md — "0% reply rate" issue updated to reflect reply window closed May 25; now framed as Round 2 June 4 staging; all assets staged, only blockers are Instantly.ai pause + Medina pull June 1
+- Deliverables written: 2
+  1. outputs/donna/launch_day_evening_debrief_2026-05-26.md — 5-minute end-of-Day-1 check at 5pm Tuesday; 7 steps: ads live?, Summit pull done?, any leads?, GBP Post 1 published?, gas station emails sent?, contractor texts sent?, Instantly.ai paused?; "what success looks like on Day 1" table; closes the gap between the 90-min morning brief and the Day 3 ad check
+  2. outputs/vera/launch_week_daily_checklist_2026-05-26.md — May 26–31 daily 10-min micro-checklist; every day has 5–7 specific tasks with linked files; covers: GBP posts (1/day), reply checks, ad monitoring, contractor follow-ups, gas station Wave 2, Summit deadline, neighbor canvass, before/after photo capture; "week success" table with specific targets (3–10 FB leads, 2–5 jobs booked, 5 GBP posts)
+- Proposals: 2 (Workiz/Facebook lead intake automation; post-launch review request for first ad-generated jobs)
+- Highest priority TOMORROW (Tue May 26 LAUNCH DAY):
+  1. READ `outputs/donna/may26_final_launch_brief_2026-05-25.md` FIRST (THE launch brief)
+  2. Post GBP Post 1 at 8am (launch_week_gbp_posts_2026-05-25.md)
+  3. Pause Instantly.ai → launch ads → Summit pull → gas station emails → contractor texts
+  4. 5pm: run `outputs/donna/launch_day_evening_debrief_2026-05-26.md` debrief card (5 min)
+- This week (May 26–31): use `outputs/vera/launch_week_daily_checklist_2026-05-26.md` — 10 min/day keeps everything moving
 
 ---
 
