@@ -1,6 +1,38 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 85 | 2026-05-26 (LAUNCH DAY — ads go live today) | Auto-fixes shipped: 3 | New deliverables: 2 | New RESOLVED: 0 | Open: 20*
+*Run 86 | 2026-05-25 (Memorial Day — launch eve) | Auto-fixes shipped: 3 | New deliverables: 2 | New RESOLVED: 0 | Open: 21 (1 new)*
+
+---
+
+## RUN METRICS — Run 86 | 2026-05-25 (Memorial Day — launch eve)
+- Total RESOLVED: 81 (0 new this run — all remaining open issues require Bradley action or are infrastructure constraints)
+- Total OPEN: 21 (1 new: Contacted contractors stale / Bryan 12 days no follow-up; 0 closed)
+- Auto-upgrades shipped: 3
+  1. agents/danny.md — removed "5 days left as of May 26" from Summit urgency note; today is May 25, "as of May 26" was wrong and stale; note now deadline-only (May 31) without day count that ages out in 24h
+  2. integrations/mixmax.py — added 'community association director' to PROPERTY_MANAGER_TITLES; CAI board-level HOA director is a genuine decision-maker distinct from 'community director' and 'community association manager'; was missing from routing
+  3. workers/lead_pipeline.py — added 'community association director' to DANNY_TITLES; mirrors mixmax.py routing to ensure Apollo search and sequence routing stay in sync
+- Deliverables written: 2
+  1. outputs/vera/contacted_contractor_followup_card_2026-05-25.md — specific 2nd-touch scripts for 3 stale "Contacted" contacts: Bryan/CLE Lawn Care Plus (12 days, 216-402-1924), Bulletproof Lawncare (6 days, 216-307-4344), Damrons Landscaping (6 days, 440-494-0422); new issue discovery (pipeline_data.json shows no next_followup dates for these contacts); includes if-they-reply scripts and pipeline_data.json update instructions; Bryan is critically overdue
+  2. outputs/vera/may27_day2_post_launch_sprint_2026-05-25.md — Wednesday May 27 morning action card; fills the 24h gap between Day 1 evening debrief (5pm Tue) and Day 3 monitoring guide (Thu); covers: lead log check, ads manager glance (do NOT edit), GBP Post 2, gas station Wave 2 emails, contractor texts follow-up, first-lead response protocol, neighbor canvass if jobs scheduled; includes DO NOT TOUCH ADS warning (editing on Day 2 resets learning phase)
+- Proposals: 0 (all active proposals from Runs 83-85 still pending Bradley approval)
+- New issue: "Contacted contractors stale" — Bryan is 12 days with no follow-up, Bulletproof/Damrons are 6 days; pipeline_data.json has no next_followup dates set for any "Contacted" contacts
+- Highest priority TODAY (Mon May 25 Memorial Day):
+  1. Text Bryan 216-402-1924 ASAP — 12 days is too long (`contacted_contractor_followup_card_2026-05-25.md` has the script)
+  2. Text Anthony 440-320-2779 — Tier 1 contractor referral pitch (30 seconds)
+  3. Pause Instantly.ai: app.instantly.ai → a1c08c3d + 626cd15d → ⋮ → Pause → add INSTANTLY_PAUSED=true to .env
+- Highest priority TOMORROW (Tue May 26 LAUNCH DAY):
+  1. READ `outputs/donna/may26_final_launch_brief_2026-05-25.md` FIRST — THE launch brief
+  2. Complete Google Ads pre-launch checklist before enabling: `outputs/rick/google_ads_launch_day_checklist_2026-05-26.md`
+  3. Day 2 card for Wednesday: `outputs/vera/may27_day2_post_launch_sprint_2026-05-25.md`
+
+---
+
+## OPEN — Contacted Contractors Stale — Bryan 12 Days No Follow-Up 🔴 NEW
+- First seen: 2026-05-25 (Run 86)
+- Description: pipeline_data.json shows 3 contacts in "Contacted" stage with no `next_followup` dates set. Bryan/CLE Lawn Care Plus was contacted 2026-05-13 (12 days ago). Bulletproof Lawncare and Damrons Landscaping contacted 2026-05-19 (6 days ago). None have had a second touch. At 12 days without follow-up, a warm referral lead goes cold.
+- Attempts:
+  - 2026-05-25: Wrote `contacted_contractor_followup_card_2026-05-25.md` with exact copy-paste 2nd-touch scripts for all 3 contacts; includes reply handling + pipeline_data.json update instructions. Requires Bradley to send 3 texts.
+- Resolution criteria: pipeline_data.json shows updated last_contact dates + next_followup set for all 3 contacts.
 
 ---
 

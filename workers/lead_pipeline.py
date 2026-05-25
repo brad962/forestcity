@@ -101,6 +101,8 @@ DANNY_TITLES = [
     'property administrator',    # administrative PM role — often signs vendor contracts
     # Large national PM firms (Greystar, Lincoln Property, etc.) use this ops title (added 2026-05-25)
     'property operations manager',
+    # CAI board-level HOA director — decision-maker at HOA firms (added 2026-05-25)
+    'community association director',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
