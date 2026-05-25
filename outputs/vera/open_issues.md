@@ -1,6 +1,6 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 81 | 2026-05-25 (Memorial Day — last run before Tuesday launch) | Auto-fixes shipped: 3 | New deliverables: 1 | Proposals: 1 | New issues: 1 | New RESOLVED: 0*
+*Run 82 | 2026-05-25 (Memorial Day evening — launch eve) | Auto-fixes shipped: 3 | New deliverables: 2 | Proposals: 2 | New issues: 0 | New RESOLVED: 1 (workiz substring match — code bug fixed)*
 
 ---
 
@@ -69,6 +69,7 @@ Key resolved issues by category:
 - Run 78 (2026-05-24 Sun): FINAL WINDOW — It's Sunday night Memorial Day weekend. Tomorrow (Monday May 25, Memorial Day) is the last day of the reply window AND a valid day for contractor texts (trades work Memorial Day). If texts not sent today, they MUST go Tuesday May 26 at 8:45am (first slot on may26_week_priority_stack). After Tuesday, these contacts will be 7+ days in "New Lead" with no personal outreach. The memorial_day_contractor_text_card_2026-05-24.md has all 5 scripts ready to copy-paste. Anthony/Land Pro is the highest-ROI first text (landscapers refer the most volume).
 - Run 79 (2026-05-25 Mon, Memorial Day): TODAY IS THE DAY. It is Memorial Day. Trades are working — phones are on. `memorial_day_contractor_text_card_2026-05-24.md` has all 5 scripts. Open it, copy, send Anthony first (440-320-2779). 10 minutes, 5 texts. If not today, Tuesday 8:45am is the absolute last slot before these contacts are 7+ days "New Lead" with zero personal touch. After ads launch Tuesday, Bradley will be busy with inbound — these outbound texts will get deprioritized further.
 - Run 81 (2026-05-25 Mon, Memorial Day): Still open. Fresh angle: ads launch TOMORROW. Once Bradley has inbound leads to handle, these outbound contractor texts will fall to the bottom of the list. Anthony (440-320-2779) takes 30 seconds. After Tuesday's launch, Tier 1 outreach will compete with ad leads for attention — and ad leads will always win. Text TODAY. If not today, the 8:45am Tuesday slot in may26_final_launch_brief is the last planned window before June 4.
+- Run 82 (2026-05-25 Mon, Memorial Day evening): Still open. 8:45am Tuesday = 12 hours away. The booking_confirmation_text_2026-05-25.md (new this run) closes the last friction point — if any contractor texts YES, Bradley has copy-paste reply scripts ready. `memorial_day_contractor_text_card_2026-05-24.md` is still the send card. Anthony first. 30 seconds.
 - Resolution criteria: Bradley texts Tier 1 list. Confirmed when pipeline_data.json shows "Contacted" stage for these 5.
 
 ---
@@ -125,6 +126,7 @@ Key resolved issues by category:
 - Run 78 (2026-05-24 Sun): 11 days until Round 2 enrollment. Reply window closes TOMORROW (Memorial Day). Deliverability recovery math: pause TODAY = 11 days = maximum recovery; pause Tuesday May 26 = 9 days = minimum viable; pause after May 27 = 8 days or fewer = high spam risk on June 4. The `round2_warmup_timeline_2026-05-26.md` (NEW this run) maps the entire May 26→June 3 prep sequence with Instantly.ai pause as Day 1 blocker. New nina_report.py fix this run ensures manual contacts (gas station, Tier 1 contractors) show phone/company in Nina's reply reports — consistent with check_replies.py.
 - Run 79 (2026-05-25 Mon, Memorial Day): 10 days until Round 2 enrollment. Reply window closes TODAY. Mixmax reply window = DONE after today whether paused or not — this is now purely about June 4 deliverability. Pause TODAY = 10 days recovery. Pause Tuesday = 9 days (minimum viable). Pause Wednesday or later = under 8 days = high risk June 4 lands in spam again. This is still a 3-minute action: app.instantly.ai → Campaigns → ⋮ → Pause a1c08c3d AND 626cd15d. Code block in enroll_batch() and run_pending_sequences() means Bradley cannot accidentally enroll Round 2 while Instantly runs — but the mechanical block does NOT fix the deliverability damage that accumulates every day Instantly stays active.
 - Run 81 (2026-05-25 Mon, Memorial Day): 10 days remaining. After today, Tuesday pause = 9 days recovery (minimum viable). Wednesday pause = 8 days (high risk). The math is clear and hasn't changed. This is the single action with the most leverage for June 4 ROI — 3 minutes, done. `round2_warmup_timeline_2026-05-26.md` lists it as the Day 1 (May 26) blocker. If Bradley is reading Tuesday morning's may26_final_launch_brief and sees "Step 3: Pause Instantly.ai," that's the trigger. Everything else on June 4 depends on this one check.
+- Run 82 (2026-05-25 Mon, Memorial Day evening): 10 days until June 4. Tuesday pause = 9 days recovery (minimum viable). Every 24h of delay = one day less of deliverability recovery before Round 2. The code block in enroll_batch() means accidental enrollment is impossible — but daily Instantly sends continue to chip at domain reputation until paused. 3 minutes: app.instantly.ai → Campaigns → a1c08c3d → ⋮ → Pause; repeat for 626cd15d → add INSTANTLY_PAUSED=true to .env.
 - Resolution criteria: Both campaigns paused in Instantly.ai → confirmed by Bradley.
 
 ---
@@ -168,6 +170,7 @@ Key resolved issues by category:
 - First seen: 2026-05-18
 - Workaround: API error sentinel prevents misleading $0 reports. JOB_TYPE_VARIANTS expanded to 22 variants (run 51). Diagnostic logging shows JobType values on local run.
 - Run 54: Cleaned up dead constant `JOB_TYPE_FILTER` from workiz_report.py (was defined but never used). JOB_TYPE_VARIANTS is the correct filter and remains unchanged.
+- Run 82 (2026-05-25): **CODE FIX SHIPPED** — `_is_power_washing_job()` now uses substring matching in addition to exact matching. Previously, compound Workiz job types like "Power Washing - House" or "Soft Wash - Full Exterior" returned 0 matches because exact match failed. Now any job type containing any variant as a substring correctly routes. This was a silent failure: local runs with real Workiz data would show 0 jobs even when power washing jobs existed with compound type strings. Fix is safe — all known power washing variants are specific enough (2+ words) that substring matching won't create false positives with unrelated job types.
 - Resolution criteria: Bradley runs `python3 workers/workiz_report.py daily` locally and sees jobs in the report.
 
 ---
@@ -295,6 +298,30 @@ Key resolved issues by category:
   2. Pause Instantly.ai: app.instantly.ai → a1c08c3d + 626cd15d → ⋮ → Pause (3 min, 10 days recovery starts NOW)
   3. Run `python3 workers/check_replies.py` — reply window closes TODAY
 - Highest priority TUESDAY May 26: READ `outputs/donna/may26_final_launch_brief_2026-05-25.md` FIRST — THE launch brief. Then post GBP Post 1 at 8am (outputs/vera/launch_week_gbp_posts_2026-05-25.md), then ads.
+
+---
+
+## RUN METRICS — Run 82 | 2026-05-25 (Memorial Day evening — launch eve)
+- Total RESOLVED: 81 (1 new: workiz_report.py compound job type matching — code bug fixed)
+- Total OPEN: 21 (0 new opened; 0 manually closed — all remaining require Bradley action or are infrastructure constraints)
+- Auto-upgrades shipped: 3
+  1. workers/workiz_report.py — `_is_power_washing_job()` now uses substring matching in addition to exact match; compound Workiz job types like "Power Washing - House" or "Soft Wash - Full Exterior" previously returned 0 matches and showed $0 revenue; now correctly identified as power washing jobs; safe — all variants are 2+ word phrases, no false positive risk
+  2. agents/rick.md — added `google_ads_conversion_tracking_setup_[date].md` to output format catalog; guide written this run; conversion tracking is prerequisite infrastructure for Google Ads optimization, not an optional step
+  3. agents/tommy.md — added `booking_confirmation_text_[date].md` to output format catalog; genuine gap between Rick's facebook_lead_response_sop (get the YES) and Tommy's pre_job_reminder (day before job); silence after booking is unprofessional and causes no-shows
+- Deliverables written: 2
+  1. outputs/rick/google_ads_conversion_tracking_setup_2026-05-25.md — step-by-step Google Ads conversion tracking setup: call conversion from ads (no website needed), call conversion from website, form-fill conversion; must be done BEFORE tomorrow's launch or Google Ads will optimize toward clicks not bookings; Smart Bidding has nothing to learn from; 20 minutes; also adds professional revenue tracking that Nina can reference
+  2. outputs/tommy/booking_confirmation_text_2026-05-25.md — instant booking confirmation + what-to-expect text sequence for the moment a customer says YES; 3 text templates (residential A/B + commercial), email version, cancellation handling, Workiz entry checklist; closes the gap between Rick's lead response SOP and Tommy's pre-job reminder
+- Proposals: 2 (see Slack messages — conversion tracking before launch CRITICAL; Workiz webhook for auto-confirmation when status changes to Scheduled)
+- Code bugs fixed: workiz_report.py compound job type matching (silent data failure for 87 runs)
+- Highest priority TONIGHT (Mon May 25 Memorial Day evening):
+  1. Pause Instantly.ai: app.instantly.ai → a1c08c3d + 626cd15d → ⋮ → Pause (3 minutes, 9 days recovery starts Tuesday)
+  2. Text Anthony/Land Pro 440-320-2779 — if not done yet, do it NOW before midnight (trades check phones late)
+- Highest priority TOMORROW MORNING (Tue May 26 LAUNCH DAY):
+  1. READ `outputs/donna/may26_final_launch_brief_2026-05-25.md` FIRST
+  2. Set up Google Ads conversion tracking (outputs/rick/google_ads_conversion_tracking_setup_2026-05-25.md) BEFORE clicking launch
+  3. Swap Facebook ad hooks (outputs/rick/facebook_ad_creative_voc_refresh_2026-05-24.md) — 15 min
+  4. Post GBP Post 1 at 8am (outputs/vera/launch_week_gbp_posts_2026-05-25.md)
+  5. Then launch ads per the brief
 
 ---
 

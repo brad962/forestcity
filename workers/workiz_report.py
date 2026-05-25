@@ -50,7 +50,9 @@ JOB_TYPE_VARIANTS = {
 def _is_power_washing_job(job_type) -> bool:
     if not job_type:
         return False
-    return job_type.strip().lower() in JOB_TYPE_VARIANTS
+    jt = job_type.strip().lower()
+    # Exact match first; then substring match for compound types like "Power Washing - House"
+    return jt in JOB_TYPE_VARIANTS or any(v in jt for v in JOB_TYPE_VARIANTS)
 
 
 WORKIZ_API_ERROR = "__API_ERROR__"

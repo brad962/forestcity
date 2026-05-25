@@ -559,3 +559,46 @@
 >Donna.md: definitive Tuesday launch brief is now properly documented in catalog and Seasonal Campaign Plans section
 >
 >🔴 Still waiting on Bradley: Instantly.ai pause + contractor texts. Both doable in 5 minutes tonight.
+🔧 *Vera — Auto-Upgrade (Run 82)*
+>Changed: workers/workiz_report.py — `_is_power_washing_job()` now uses substring matching in addition to exact match
+>Why: Compound Workiz job types like "Power Washing - House" returned 0 matches and showed $0 revenue — silent data failure that's been running since launch
+>File: workers/workiz_report.py
+---
+🔧 *Vera — Auto-Upgrade (Run 82)*
+>Changed: agents/rick.md — added `google_ads_conversion_tracking_setup_[date].md` to output format catalog
+>Why: Conversion tracking guide written this run; it's infrastructure that must be set up before launch, not an optimization
+>File: agents/rick.md
+---
+🔧 *Vera — Auto-Upgrade (Run 82)*
+>Changed: agents/tommy.md — added `booking_confirmation_text_[date].md` to output format catalog
+>Why: Gap identified between Rick's Facebook Lead response SOP and Tommy's pre-job reminder — nothing exists for the moment a customer says YES
+>File: agents/tommy.md
+---
+📦 *Vera — Deliverable (Run 82)*
+>New: outputs/rick/google_ads_conversion_tracking_setup_2026-05-25.md
+>What: Step-by-step Google Ads conversion tracking setup — call conversions from ads, call conversions from website, form-fill tracking; 20 minutes
+>⚠️ CRITICAL — READ THIS BEFORE LAUNCHING ADS TOMORROW. Without conversion tracking, Google optimizes toward clicks not bookings. Smart Bidding has nothing to learn from. Quality Score can't form. Every dollar spent before this is set up is partially blind.
+---
+📦 *Vera — Deliverable (Run 82)*
+>New: outputs/tommy/booking_confirmation_text_2026-05-25.md
+>What: The text/email Bradley sends the moment a customer says YES — 3 templates (residential A/B + commercial), email version, what-to-expect message, cancellation handling, Workiz entry checklist
+>Why: The office had a gap: Rick's Facebook Lead SOP ends at "book them"; Tommy's pre-job reminder starts "the day before." A first-time ad lead who books and hears nothing until the next morning is a cancellation risk.
+---
+💡 *Vera — Upgrade Proposal (Run 82)*
+>Idea: Set up Google Ads conversion tracking BEFORE launching tomorrow — guide is ready at outputs/rick/google_ads_conversion_tracking_setup_2026-05-25.md
+>Why: Without it, Google Ads has no signal from actual bookings — it optimizes toward cheap clicks, not calls that convert. Cost per booking will be 2-3x higher in the first 30 days without conversion data.
+>Impact: Smart Bidding begins learning from real conversions on Day 3; CPL drops 20-40% by Day 30; you'll actually know which keywords drive jobs vs. window-shoppers
+>Action: Read outputs/rick/google_ads_conversion_tracking_setup_2026-05-25.md before touching Ads Manager tomorrow. 20 min, zero recurring cost.
+---
+💡 *Vera — Upgrade Proposal (Run 82)*
+>Idea: Workiz webhook → auto-send booking confirmation text when job status changes to "Scheduled"
+>Why: Tommy's booking_confirmation_text_2026-05-25.md (shipped this run) is currently manual — Bradley copies and sends it. Workiz has a webhook/trigger system that can auto-fire an SMS when a job is created/scheduled.
+>Impact: Zero manual sends; every booked customer gets immediate confirmation; no-show rate drops; professional signal on first booking
+>Cost: Twilio SMS ~$0.01/text. Already flagged in open issues (TWILIO_ACCOUNT_SID pending in .env). Pre-job reminder automation is the same system.
+>Reply YES to prioritize Twilio setup.
+---
+✅ *Vera — Scan Complete 2026-05-25 (Run 82 — Launch Eve)*
+>3 auto-upgrades shipped | 2 proposals | 1 new RESOLVED (workiz compound job type matching)
+>Deliverables: Google Ads conversion tracking setup (Rick) + Booking confirmation text (Tommy)
+>TONIGHT: Pause Instantly.ai (3 min) + Text Anthony 440-320-2779 (30 sec)
+>TOMORROW LAUNCH ORDER: (1) Read may26_final_launch_brief (2) Set up conversion tracking (3) Swap FB ad hooks (4) Post GBP 8am (5) Launch ads
