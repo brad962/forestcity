@@ -6,6 +6,7 @@ floating in the center (rounded white pill background), then pushes to
 #fc-ai-office via GitHub raw URL + Slack chat.postMessage.
 """
 
+import hashlib
 import os
 import sys
 import json
@@ -182,17 +183,44 @@ def write_facebook_post(description: str, date: str) -> str:
     else:
         booking_month = month
 
+    # Rotate hooks by hashing the description — same job always gets same hook, but variety across jobs
+    hook_idx = int(hashlib.md5(desc[:20].encode()).hexdigest(), 16) % 4
+
     if mo in (3, 4, 5):
-        hook = "The algae doesn't care that it's spring. Your neighbors do."
+        hooks = [
+            "The algae doesn't care that it's spring. Your neighbors do.",
+            "It sat there all winter. Now it's May. Time to deal with it.",
+            "Green siding, black roof streaks, road salt on the driveway. Spring in Northeast Ohio.",
+            "Your house went through a Northeast Ohio winter. This is what it looks like now.",
+        ]
+        hook = hooks[hook_idx]
         cta  = f"We're booking into {booking_month} now — DM us or comment QUOTE to get on the schedule before the summer rush."
     elif mo in (6, 7, 8):
-        hook = "Before the cookout. Before the guests. Before the photos."
+        hooks = [
+            "Before the cookout. Before the guests. Before the photos.",
+            "You've been walking past it every day. So have your neighbors.",
+            "15 years of road salt, algae, and Ohio humidity. Gone in 2 hours.",
+            "Your siding is green. Your driveway has black streaks. Company's coming.",
+        ]
+        hook = hooks[hook_idx]
         cta  = f"Summer slots are filling fast — DM us or comment QUOTE and we'll get you on the {booking_month} schedule."
     elif mo in (9, 10):
-        hook = "One job before winter and your house is protected all season."
+        hooks = [
+            "One job before winter and your house is protected all season.",
+            "You've got 6 weeks before the first frost. Don't let the house go into winter like this.",
+            "The algae built up all summer. Here's what one afternoon can do.",
+            "Pre-winter clean. Protect the siding, the roof, the driveway. One visit.",
+        ]
+        hook = hooks[hook_idx]
         cta  = "Fall slots go fast — DM us or comment QUOTE to lock in your date."
     else:
-        hook = "Clean house. Less stress. One afternoon."
+        hooks = [
+            "Clean house. Less stress. One afternoon.",
+            "You don't have to wait for spring. We're working all winter.",
+            "Northeast Ohio homes take a beating in the off-season. We fix that.",
+            "Off-season booking, on-season results. Spots are open now.",
+        ]
+        hook = hooks[hook_idx]
         cta  = "DM us or comment QUOTE to get on the schedule."
 
     post = f"""{hook}

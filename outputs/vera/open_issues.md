@@ -1,6 +1,27 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 94 | 2026-05-26 | Auto-fixes shipped: 3 | New deliverables: 1 | New RESOLVED: 0 | Open: 24 (senior living titles gap closed; nina_report stale engagement detection added)*
+*Run 95 | 2026-05-26 | Auto-fixes shipped: 5 | New deliverables: 1 | New RESOLVED: 0 | Open: 24 (new FM title variants; Estimate Sent detection; hook rotation; gas station + Tier 1 pipeline_data updates)*
+
+---
+
+## RUN METRICS — Run 95 | 2026-05-26
+- Total RESOLVED: 83 (0 new this run — remaining open issues require Bradley action or infrastructure)
+- Total OPEN: 24 (0 new; 0 closed)
+- Auto-upgrades shipped: 5
+  1. workers/jasmine_flyer.py — added hook rotation; 4 seasonal variants per season rotating deterministically by job description hash; every Facebook post from a before/after photo now starts with a different hook instead of the same static line every time; spring, summer, fall, and winter each have 4 distinct hooks
+  2. workers/nina_report.py — added 💰 ESTIMATE SENT staleness detection tier; flags Estimate Sent contacts where last_contact > 5 days ago with no follow-up; these are warm leads (they saw the estimate!) going cold silently; fires automatically in weekly report when pipeline has estimate-stage contacts
+  3. workers/lead_pipeline.py — added `director of facilities`, `campus manager`, `facilities operations manager` to DANNY_TITLES; these are word-order/variant forms not matched by existing `facilities director` (substring direction check: 'facilities director' in 'director of facilities' = False); campus manager catches university/corporate campus FM targets (large paved areas + multiple buildings = high-value accounts)
+  4. integrations/mixmax.py — mirrored `director of facilities`, `campus manager`, `facilities operations manager` to PROPERTY_MANAGER_TITLES; ensures correct routing on import for contacts with these title variants
+  5. pipeline_data.json — set `next_followup = 2026-05-27` for 12 gas station contacts (had 'none'); set Tier 1 New Lead contractors (Land Pro, GTP, Twin, Reliable, Pagels) from overdue 2026-05-25 to 2026-05-27 (launch-day grace); Nina's weekly report will now flag all 17 contacts as due tomorrow instead of silently omitting them
+- Deliverables written: 1
+  1. `outputs/vera/may29_friday_summit_deadline_card_2026-05-26.md` — Friday May 29 single-screen card; 5 actions: Summit pull (tomorrow is the wall), Tier 1 contractor texts (last business-day window before Sunday deadline), Ads Day 4 read-only glance, gas station Wave 1 if not sent, Instantly.ai pause; May 29→June 4 countdown table; fills the gap between may28_summit_emergency_card (Wednesday) and the Sunday hard deadline
+- Key issue status this run:
+  - Summit pull: 4 DAYS LEFT (May 31). Friday card written. Bradley must run by Sunday.
+  - Instantly.ai: Still needs pause. June 4 = 9 days. After May 28 = borderline.
+  - Gas station: 12 contacts (corrected from "18" — pipeline_data.json has 12). next_followup set to May 27. Gmail blast guide ready.
+  - Tier 1 contractors: next_followup advanced to May 27. Bryan 13 days cold remains CRITICAL.
+  - Ads: Day 1 complete. Day 3 check Thursday May 28. Day 7 review Tuesday June 2.
+  - Pipeline: No Estimate Sent contacts currently — new detection tier ready for when quotes go out.
 
 ---
 
@@ -306,6 +327,7 @@ Key resolved issues by category:
 - Run 91 (2026-05-26 LAUNCH DAY): FRESH ANGLE — unified all 8 pending contractor contacts (3 overdue Contacted + 5 Tier 1 New Leads) into a single `outputs/vera/launch_day_contractor_outreach_stack_2026-05-26.md` card. All 8 contacts on one page with copy-paste texts. This is the 5th deliverable written for this issue, spanning 9 runs. The only remaining action is Bradley opening his phone. AS OF TODAY, Tier 1 contractors are 7+ days "New Lead" — longest gap in the history of the pipeline. Every additional day without contact reduces reply probability.
 - Run 92 (2026-05-26 end of launch day): 8+ days "New Lead" for all 5 Tier 1 contractors. Ads are live — inbound leads will now compete for Bradley's attention. The window to do this BEFORE inbound traffic arrives is likely closed. Outbound contractor texts must now compete with inbound ad leads. Use `june4_readiness_snapshot_2026-05-26.md` Blocker #4 section — names + numbers all on one page.
 - Run 94 (2026-05-26): 9+ days for Tier 1 New Leads. Bryan 13+ days since last_contact. Nina report now shows Bryan in new 🚨 ENGAGEMENT GONE COLD tier. `may27_day2_lead_triage_summit_card_2026-05-26.md` includes contractor texts as Wednesday morning priority #2. This is the 6th deliverable written for this issue across 17 runs.
+- Run 95 (2026-05-26): pipeline_data.json updated — Tier 1 next_followup advanced from May 25 (1 day overdue) to May 27 (Wednesday). `may29_friday_summit_deadline_card_2026-05-26.md` (new this run) includes contractor texts as Priority #2 on Friday. Bryan 13 days cold — ENGAGEMENT GONE COLD flag visible in Nina report. All action cards reference the same phone numbers.
 - Resolution criteria: Bradley texts Tier 1 list + overdue Contacted contacts using `launch_day_contractor_outreach_stack_2026-05-26.md`. Confirmed when pipeline_data.json shows "Contacted" stage for all 5 Tier 1 contacts.
 
 ---
@@ -370,6 +392,7 @@ Key resolved issues by category:
 - Run 92 (2026-05-26 end of launch day): 9 days remaining. Pause TODAY or TOMORROW (May 27). After Wednesday = borderline; after Thursday = high risk for June 4 deliverability. The `june4_readiness_snapshot_2026-05-26.md` (new this run) lists this as Blocker #1 with exact 3-step pause instructions.
 - Run 93 (2026-05-26 evening): End of Day 1 — ads launched but Instantly.ai still running. 9 days remaining. Window: TODAY (tonight) or tomorrow May 27. After May 28 = borderline (8 days recovery). After May 29 = high risk (7 days). Thursday May 29 is the absolute last day for minimum-viable recovery. app.instantly.ai → a1c08c3d → ⋮ → Pause; repeat 626cd15d → add INSTANTLY_PAUSED=true to .env.
 - Run 94 (2026-05-26 end of Day 1): 9 days remaining. Same window: TONIGHT or tomorrow morning (May 27). After May 28 = borderline. Wednesday pause = 8 days recovery. `may27_day2_lead_triage_summit_card_2026-05-26.md` (new this run) lists Instantly pause as the priority stack for today — the same card that covers Summit pull and gas station Wave 1.
+- Run 95 (2026-05-26 late): 9 days remaining. May 27 (tomorrow) pause = 9 days recovery (minimum viable). May 28 pause = 8 days (borderline). May 29 pause = 7 days (high risk June 4 lands in spam). Friday May 29 card (`may29_friday_summit_deadline_card_2026-05-26.md`) includes Instantly pause as action #5. This is still a 3-minute action: app.instantly.ai → Campaigns → a1c08c3d → ⋮ → Pause; repeat for 626cd15d → add INSTANTLY_PAUSED=true to .env.
 - Resolution criteria: Both campaigns paused in Instantly.ai → confirmed by Bradley.
 
 ---
@@ -424,6 +447,7 @@ Key resolved issues by category:
 - Run 77 (2026-05-24 Sun): NEXT COUNTY PREP — Created `scripts/run_medina_pull.command` and `scripts/run_medina_both.command` for Week 22 (June 1 = Medina County). When Summit deadline passes May 31, the very next day is Medina. Shortcut is ready. Also wrote `outputs/donna/june1_medina_pull_guide_2026-05-24.md` — operationalized June 1 guide. Summary: Summit (May 23–31) → Medina (June 1) → Geauga+Portage (June 8). All three have double-click shortcuts. danny.md and carla.md updated with Week 22 urgency note.
 - Run 85 (2026-05-26 LAUNCH DAY): 5 days left (deadline May 31). Today (Tuesday) is actually the best day to run this — Bradley is already at his Mac for ads launch. The pull takes 6 minutes unattended (double-click shortcut). Run it FIRST before launching ads: `scripts/run_summit_pull.command` in Finder. Or: `python3 workers/lead_pipeline.py danny Summit`. If not today, any day May 27–31 works. Sunday May 31 = absolute last day.
 - Run 93 (2026-05-26 evening): 5 DAYS LEFT. If not done today, Wednesday May 28 is the next optimal window. `outputs/vera/may28_summit_pull_emergency_card_2026-05-26.md` (new this run) is a 25-minute card: double-click shortcut + contractor texts while it runs. Sunday May 31 is the hard wall. After May 31, the auto-rotation switches to Medina County (June 1) — Summit data missed entirely for June 4 enrollment.
+- Run 95 (2026-05-26 late): 4 DAYS LEFT (May 29 = 3 days, May 31 = deadline). Wednesday May 28 = optimal window with may28 emergency card. Friday May 29 card (`may29_friday_summit_deadline_card_2026-05-26.md`) also fires for this. Saturday May 30 = backup window. Sunday May 31 = absolute last day. Double-click `scripts/run_summit_pull.command` — 6 minutes, no typing.
 - Resolution criteria: logs/activity.log shows Danny Summit pull entry by May 31.
 
 ---
@@ -443,9 +467,9 @@ Key resolved issues by category:
 
 ---
 
-## OPEN — Gas station contacts not enrolled in Mixmax (18 emails idle)
+## OPEN — Gas station contacts not enrolled in Mixmax (12 contacts confirmed in pipeline_data.json)
 - First seen: 2026-05-20 (run 31)
-- Description: 18 gas station district manager contacts pulled May 19. Sequence ID = PENDING.
+- Description: 12 gas station district manager contacts in pipeline_data.json (count corrected from "18" — pipeline_data.json has 12; remainder may have been in a separate Apollo output file). Sequence ID = PENDING. All 12 now have `next_followup = 2026-05-27` (updated Run 95).
 - Run 54: Unchanged — sequence creation is a 5-minute Mixmax UI task.
 - Run 60 (2026-05-23 Sat): Fresh angle — wrote complete step-by-step Mixmax creation guide (`outputs/danny/gas_station_mixmax_sequence_creation_2026-05-23.md`).
 - Run 61 (2026-05-23 Sat): Slotted into Tuesday May 26 action card at 9:00am as 10-minute task.

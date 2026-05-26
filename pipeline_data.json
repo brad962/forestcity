@@ -41,7 +41,7 @@
       "stage": "New Lead",
       "notes": "Send text",
       "last_contact": "",
-      "next_followup": "2026-05-25",
+      "next_followup": "2026-05-27",
       "est_value": "",
       "source": "manual"
     },
@@ -56,7 +56,7 @@
       "stage": "New Lead",
       "notes": "Send text",
       "last_contact": "",
-      "next_followup": "2026-05-25",
+      "next_followup": "2026-05-27",
       "est_value": "",
       "source": "manual"
     },
@@ -236,7 +236,7 @@
       "stage": "New Lead",
       "notes": "Siding contractor",
       "last_contact": "",
-      "next_followup": "2026-05-25",
+      "next_followup": "2026-05-27",
       "est_value": "",
       "source": "manual"
     },
@@ -251,7 +251,7 @@
       "stage": "New Lead",
       "notes": "Roofing contractor",
       "last_contact": "",
-      "next_followup": "2026-05-25",
+      "next_followup": "2026-05-27",
       "est_value": "",
       "source": "manual"
     },
@@ -266,7 +266,7 @@
       "stage": "New Lead",
       "notes": "Siding contractor",
       "last_contact": "",
-      "next_followup": "2026-05-25",
+      "next_followup": "2026-05-27",
       "est_value": "",
       "source": "manual"
     },
@@ -373,7 +373,8 @@
       "notes": "Gas station outreach \u2014 email sequence pending",
       "last_contact": "",
       "source": "apollo",
-      "_lead_type": "gas_station"
+      "_lead_type": "gas_station",
+      "next_followup": "2026-05-27"
     },
     {
       "id": "gas_kevin_kayden",
@@ -388,7 +389,8 @@
       "notes": "Gas station outreach \u2014 email sequence pending",
       "last_contact": "",
       "source": "apollo",
-      "_lead_type": "gas_station"
+      "_lead_type": "gas_station",
+      "next_followup": "2026-05-27"
     },
     {
       "id": "gas_mark_elyden",
@@ -403,7 +405,8 @@
       "notes": "truenorth HQ 440-792-4200. Gas station outreach pending",
       "last_contact": "",
       "source": "apollo",
-      "_lead_type": "gas_station"
+      "_lead_type": "gas_station",
+      "next_followup": "2026-05-27"
     },
     {
       "id": "gas_amer_odat",
@@ -418,7 +421,8 @@
       "notes": "Gas station outreach \u2014 email sequence pending",
       "last_contact": "",
       "source": "apollo",
-      "_lead_type": "gas_station"
+      "_lead_type": "gas_station",
+      "next_followup": "2026-05-27"
     },
     {
       "id": "gas_nicholas_goad",
@@ -433,7 +437,8 @@
       "notes": "Facilities buyer \u2014 high priority. Email sequence pending",
       "last_contact": "",
       "source": "apollo",
-      "_lead_type": "gas_station"
+      "_lead_type": "gas_station",
+      "next_followup": "2026-05-27"
     },
     {
       "id": "gas_shaher_hassanain",
@@ -448,7 +453,8 @@
       "notes": "Gas station outreach \u2014 email sequence pending",
       "last_contact": "",
       "source": "apollo",
-      "_lead_type": "gas_station"
+      "_lead_type": "gas_station",
+      "next_followup": "2026-05-27"
     },
     {
       "id": "gas_brian_koenig",
@@ -463,7 +469,8 @@
       "notes": "Large chain \u2014 longer cycle. Email sequence pending",
       "last_contact": "",
       "source": "apollo",
-      "_lead_type": "gas_station"
+      "_lead_type": "gas_station",
+      "next_followup": "2026-05-27"
     },
     {
       "id": "gas_douglas_petersen",
@@ -478,7 +485,8 @@
       "notes": "Gas station outreach \u2014 email sequence pending",
       "last_contact": "",
       "source": "apollo",
-      "_lead_type": "gas_station"
+      "_lead_type": "gas_station",
+      "next_followup": "2026-05-27"
     },
     {
       "id": "gas_richard_gale",
@@ -493,7 +501,8 @@
       "notes": "GetGo fuel stations. Email sequence pending",
       "last_contact": "",
       "source": "apollo",
-      "_lead_type": "gas_station"
+      "_lead_type": "gas_station",
+      "next_followup": "2026-05-27"
     },
     {
       "id": "gas_portaldp_carlton",
@@ -508,7 +517,8 @@
       "notes": "Gas station outreach \u2014 email sequence pending",
       "last_contact": "",
       "source": "apollo",
-      "_lead_type": "gas_station"
+      "_lead_type": "gas_station",
+      "next_followup": "2026-05-27"
     },
     {
       "id": "gas_daryl_gibson",
@@ -523,7 +533,8 @@
       "notes": "Gas station outreach \u2014 email sequence pending",
       "last_contact": "",
       "source": "apollo",
-      "_lead_type": "gas_station"
+      "_lead_type": "gas_station",
+      "next_followup": "2026-05-27"
     },
     {
       "id": "gas_bill_campana",
@@ -538,7 +549,8 @@
       "notes": "Gas station outreach \u2014 email sequence pending",
       "last_contact": "",
       "source": "apollo",
-      "_lead_type": "gas_station"
+      "_lead_type": "gas_station",
+      "next_followup": "2026-05-27"
     }
   ],
   "calls": {

@@ -99,6 +99,8 @@ PROPERTY_MANAGER_TITLES = [
     # Senior & assisted living — primary decision-maker titles; mirrors DANNY_TITLES (added 2026-05-26 run 94)
     # 'facility manager' already above; 'executive director' + 'administrator' are the titles Apollo surfaces
     'executive director', 'administrator', 'director of care', 'senior living director',
+    # Word-order variants for correct routing on import (added 2026-05-26 run 95)
+    'director of facilities', 'campus manager', 'facilities operations manager',
 ]
 
 REALTOR_TITLES = [

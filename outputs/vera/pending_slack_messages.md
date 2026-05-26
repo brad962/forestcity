@@ -145,3 +145,48 @@
 >Key fixes: Senior Living Apollo search now captures Executive Directors + Administrators (the decision-makers who sign contracts). Nina's report now catches contacts cold 14+ days regardless of followup date setting.
 >Wednesday morning: Read outputs/vera/may27_day2_lead_triage_summit_card_2026-05-26.md — Summit pull + lead triage in 10 min.
 >Instantly.ai: STILL RUNNING. 9 days left. Pause tonight. Every day = worse deliverability June 4.
+
+---
+🔧 *Vera — Auto-Upgrade (Run 95)*
+>Changed: workers/jasmine_flyer.py — added 4-hook seasonal rotation to write_facebook_post()
+>Why: Every before/after Facebook post started with the same static hook per season; now 4 distinct hooks rotate by description hash so consecutive posts sound different.
+>File: workers/jasmine_flyer.py
+---
+🔧 *Vera — Auto-Upgrade (Run 95)*
+>Changed: workers/nina_report.py — added 💰 ESTIMATE SENT staleness detection tier
+>Why: Contacts in "Estimate Sent" stage going 5+ days without follow-up were invisible in Nina's report; these are the warmest leads in the pipeline (they saw the quote) and the most expensive ones to let go cold.
+>File: workers/nina_report.py
+---
+🔧 *Vera — Auto-Upgrade (Run 95)*
+>Changed: workers/lead_pipeline.py + integrations/mixmax.py — added `director of facilities`, `campus manager`, `facilities operations manager` to DANNY_TITLES and PROPERTY_MANAGER_TITLES
+>Why: `facilities director` does NOT substring-match "Director of Facilities" (different word order); Apollo returns contacts with these title variants and they were falling through the cracks.
+>Files: workers/lead_pipeline.py, integrations/mixmax.py
+---
+🔧 *Vera — Auto-Upgrade (Run 95)*
+>Changed: pipeline_data.json — set next_followup=2026-05-27 for 12 gas station contacts + advanced Tier 1 New Lead contractors from overdue May 25 to May 27
+>Why: Gas station contacts had "none" for next_followup — invisible in Nina's weekly report; Tier 1 contractors were 1 day overdue from launch day; all 17 now show as "due tomorrow" in Wednesday's report.
+>File: pipeline_data.json
+---
+📋 *Vera — New Deliverable (Run 95)*
+>File: outputs/vera/may29_friday_summit_deadline_card_2026-05-26.md
+>What: Friday May 29 single-screen action card — Summit pull (tomorrow is the wall), Tier 1 contractor texts (last business-day window), Ads Day 4 read-only, gas station Wave 1, Instantly.ai pause; day-by-day countdown May 29→June 4
+>Why: There was a gap between the may28 Summit emergency card (Wednesday) and the Sunday hard deadline — Friday is the last day with full business-day availability before the weekend crunch.
+---
+💡 *Vera — Upgrade Proposal (Run 95)*
+>Idea: Add a Facebook Lead Gen webhook endpoint to server.py that auto-logs form submissions to pipeline_data.json
+>Why: Right now, ad leads are invisible to the AI system until Bradley manually updates pipeline_data.json. The ad_lead_tracker guide exists but requires manual logging after every lead. A webhook endpoint (/webhook/facebook-lead) + Meta App webhook subscription would auto-populate name/phone/email into pipeline_data.json the moment a lead submits the form.
+>Impact: Nina's weekly report would automatically show all ad leads in correct pipeline stages; Vera's audit would catch leads not contacted within 48h; zero manual data entry for Bradley
+>Reply YES to approve — implementation is ~80 lines in server.py + 15-min Meta App webhook setup.
+---
+💡 *Vera — Upgrade Proposal (Run 95)*
+>Idea: Yelp Business Profile claim and setup (guide already exists: outputs/rick/yelp_business_profile_guide_2026-05-24.md)
+>Why: Google Ads are live. Reviews and Yelp visibility compound the paid channel. Most NE Ohio power washing competitors don't actively manage Yelp — first-mover advantage on reviews. Setup takes 15 minutes. Zero ongoing cost. Yelp reviews feed into Apple Maps and Bing local search.
+>Impact: Additional free discovery channel; Google Guaranteed application requires proof of established business presence — Yelp listing helps; first 3-star review improvement can move from 3.0 to 4.0+ visible on Yelp search.
+>Reply YES to approve — Bradley just needs to go to yelp.com/biz and claim the listing.
+---
+✅ *Vera — Scan Complete 2026-05-26 (Run 95)*
+>5 auto-upgrades shipped | 1 deliverable written | 2 proposals | 0 new open issues
+>Pipeline: 36 contacts; Bryan 13 days cold (CRITICAL); Tier 1 texts overdue; gas station 12 contacts due May 27
+>Summit: 4 days left — Friday card written, double-click shortcut ready
+>Ads: Day 1 complete; Day 3 check Thu May 28; Day 7 review Tue June 2
+>June 4 enrollment: 9 days — all assets staged, only blockers are Bradley actions (Instantly pause, Summit pull, contractor texts, gas station blast)

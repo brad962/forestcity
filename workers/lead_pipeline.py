@@ -109,6 +109,10 @@ DANNY_TITLES = [
     # 'facility manager' already above; 'executive director' + 'administrator' are the primary titles at
     # senior living, memory care, and skilled nursing facilities — without these Apollo returns nothing
     'executive director', 'administrator', 'director of care', 'senior living director',
+    # Word-order variants — 'facilities director' does NOT substring-match 'director of facilities' (added 2026-05-26 run 95)
+    'director of facilities',         # reverse word order of 'facilities director'; different substring
+    'campus manager',                  # university/corporate campus FM; large paved areas + buildings = high-value accounts
+    'facilities operations manager',   # ops-level FM at large commercial/industrial properties
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.

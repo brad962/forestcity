@@ -552,6 +552,24 @@ def run_weekly():
                     manual_health_lines.append(f'  - {name} ({c.get("company","")}) | last contact {days_since} days ago | {c.get("phone","")} — reach out TODAY with different angle')
                 manual_health_lines.append('')
 
+            # Flag "Estimate Sent" contacts where last_contact > 5 days ago — warm leads going cold
+            stale_estimates = []
+            for c in manual:
+                if c.get('stage') == 'Estimate Sent' and c.get('last_contact'):
+                    try:
+                        last_dt = _date_eng.fromisoformat(c['last_contact'])
+                        days_since = (_date_eng.fromisoformat(today_str) - last_dt).days
+                        if days_since >= 5:
+                            stale_estimates.append((c, days_since))
+                    except Exception:
+                        pass
+            if stale_estimates:
+                manual_health_lines.append(f'💰 **ESTIMATE SENT — no follow-up in 5+ days ({len(stale_estimates)}) — revenue at risk:**')
+                for c, days_since in stale_estimates:
+                    name = f'{c.get("first_name","")} {c.get("last_name","")}'.strip() or c.get('company', '?')
+                    manual_health_lines.append(f'  - {name} ({c.get("company","")}) | estimate sent {days_since} days ago | {c.get("phone","")} — follow up TODAY')
+                manual_health_lines.append('')
+
             if due_soon:
                 manual_health_lines.append(f'📅 **Follow-ups due this week ({len(due_soon)}):**')
                 for c in due_soon:
