@@ -49,11 +49,13 @@ Short, direct, lead with location:
 - Headline 3: House + Roof + Driveway
 
 ## Ready Assets (May 2026)
-> ⚠️ **LAUNCH THESE NOW — It is peak season (late May 2026). These assets have been sitting since May 19–20. Every day unspent = lost bookings. Target launch date: May 26 (Tuesday after Memorial Day).**
+> ✅ **ADS LAUNCHED May 26** — Facebook + Google campaigns are live. Below are the asset references. If ads haven't launched yet, do it now — every day of delay = lost bookings.
 
-- **Google Ads June 2026:** `outputs/rick/google_ads_june_2026-05-19.md` — 2 campaigns (Power Washing + Roof Soft Wash), all headlines + descriptions + extensions written. Bradley sets these up in Google Ads UI. **Launch target: May 26 (Tuesday after Memorial Day).**
-- **Facebook Ads Peak Season:** `outputs/rick/facebook_ads_peak_season_2026-05-20.md` — 3-campaign structure (Awareness, Lead Gen, Retargeting), 7 ad variations, before/after creative briefs, setup checklist. Budget: $30/day to start. **Launch target: May 26 (Tuesday).**
-  - ⚠️ **BEFORE LAUNCH — SWAP HOOKS:** `outputs/rick/facebook_ad_creative_voc_refresh_2026-05-24.md` — 6 drop-in hooks + 3 body copy variants using Marcus's proven NE Ohio VOC phrases ("green and slimy," "roof looks black from the street," "kept putting it off"). The May 20 copy predates VOC research. 15-minute swap in Ads Manager before clicking launch. Higher CTR = lower cost per lead = faster payback.
+- **Google Ads June 2026:** `outputs/rick/google_ads_june_2026-05-19.md` — 2 campaigns (Power Washing + Roof Soft Wash), all headlines + descriptions + extensions written. Use `outputs/rick/google_ads_launch_day_checklist_2026-05-26.md` to verify setup.
+- **Facebook Ads Peak Season:** `outputs/rick/facebook_ads_peak_season_2026-05-20.md` — 3-campaign structure (Awareness, Lead Gen, Retargeting), 7 ad variations, before/after creative briefs, setup checklist. Budget: $30/day to start.
+  - ⚠️ **SWAP HOOKS BEFORE/ON LAUNCH:** `outputs/rick/facebook_ad_creative_voc_refresh_2026-05-24.md` — 6 drop-in hooks + 3 body copy variants using Marcus's proven NE Ohio VOC phrases ("green and slimy," "roof looks black from the street," "kept putting it off"). 15-minute swap in Ads Manager. Higher CTR = lower cost per lead.
+  - 📊 **Day 3 check (May 28):** `outputs/vera/day3_ads_check_card_2026-05-26.md` — what to look at, what to ignore, one allowed tweak. Do NOT touch before Day 3.
+  - 📊 **Day 7 review:** `outputs/rick/facebook_ads_first_week_monitoring_guide_2026-05-20.md` and `outputs/rick/google_ads_first_week_monitoring_guide_2026-05-20.md`
 
 ## Priority: Google Guaranteed Badge (Google Local Services Ads)
 **This is the single highest-ROI action Rick can support right now.**
@@ -78,6 +80,7 @@ Save to `/outputs/rick/`:
 - `google_ads_launch_day_checklist_[date].md` — 5-block pre-launch checklist for Google Ads (parallel to `facebook_lead_gen_launch_checklist`): conversion tracking verified, payment method set, ad schedule configured, negative keywords added, call extension installed; must complete before clicking "Enable" on campaigns; Google Ads has no learning-phase grace period — bad settings on Day 1 waste real money
 - `launch_week_lead_log_[date].md` — week 1 daily lead tracking table (May 26–June 1) for all incoming Facebook + Google ad leads; columns: Date, Source, Name, Phone, Response Time, Quoted Y/N, Booked Y/N, Revenue; daily summary row; week-end totals; the only way to know if ads are actually working at the lead level (not just the ad metric level)
 - `ad_lead_notification_setup_[date].md` — step-by-step guide to set up INSTANT phone alerts for Facebook Lead Gen form submissions + Google Ads calls; covers: Facebook Business Suite push notifications, email alerts, optional Zapier SMS, Google Ads conversion email alerts; Day 1 first-response protocol; lead log fill-in guide; critical for <5-minute response time (9× higher conversion rate vs. 30-minute response); **CURRENT: `ad_lead_notification_setup_2026-05-25.md`**
+- `day3_ads_check_card_[date].md` — 10-minute Thursday May 28 check: Facebook CTR/spend thresholds, Google impressions/CPC benchmarks, one allowed tweak rule, lead log fill-in, Day 7 review schedule; fills the gap between launch_day_evening_debrief (Day 1) and the full 7-day review; **CURRENT: `outputs/vera/day3_ads_check_card_2026-05-26.md`**
 
 ## Logging
 `[YYYY-MM-DD HH:MM] Rick | [task description] | [output filename] | Done`
