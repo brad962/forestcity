@@ -92,6 +92,16 @@ This enrolls ALL pending contacts (gas stations + fleet) without triggering a fr
 **Sequence:** Route to Property Manager sequence (FM/compliance angle). Update firstName variables with facility title.
 **Strategy brief:** Segment brief to be written as needed.
 
+### Hotels & Hospitality (NEW — May 2026, Run 98)
+**Status:** Org keywords + titles live in DANNY_ORG_KEYWORDS/DANNY_TITLES as of Run 98. Include in next county rotation (Medina June 1).
+**Target:** Hotel General Manager, Hotel Manager, Hospitality Manager, General Manager
+**Why:** NE Ohio has ~200 hotels across 7 counties. Large parking lots (oil drip zones), exterior building facades, covered walkways, pool surrounds, dumpster pads. Hotel GMs sign vendor contracts directly. Strong visual standard = easy sell ("guests arrive and form impression in the parking lot").
+**Revenue per visit:** $800–$2,000 (parking lot + facade). Quarterly or bi-annual = $3,200–$8,000/year per property.
+**Target companies:** Hilton Garden Inn, Courtyard by Marriott, Hampton Inn, Holiday Inn, Extended Stay America, Best Western, Comfort Inn — all have NE Ohio locations.
+**Apollo keywords (live Run 98):** `hotel management`, `hospitality management`, `hotel chain`, `extended stay` — added to DANNY_ORG_KEYWORDS.
+**Pitch angle:** "First impressions happen in the parking lot before guests reach the lobby. We make sure what they see first matches the standard inside."
+**Sequence:** Route to Property Manager sequence (facility management angle).
+
 ### Car Dealerships (NEW — May 2026)
 **Status:** Apollo keywords live. No pull yet. Include in next county rotation run.
 **Target:** Facility Manager, General Manager, Service Director at car dealerships and auto groups

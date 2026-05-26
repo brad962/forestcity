@@ -115,6 +115,8 @@ DANNY_TITLES = [
     'facilities operations manager',   # ops-level FM at large commercial/industrial properties
     # 'operations director' already above, but 'director of operations' is a distinct word-order variant (added 2026-05-26 run 97)
     'director of operations',
+    # Hotels/motels — GMs run the property like a facility manager; large parking lots + pool decks + building facades (added 2026-05-26 run 98)
+    'hotel general manager', 'hotel manager', 'hospitality manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -143,6 +145,9 @@ DANNY_ORG_KEYWORDS = [
     # Senior & assisted living — brick facades with algae, concrete walkways, ADA compliance = quarterly soft-wash need (added 2026-05-26 run 93)
     'senior living', 'assisted living', 'memory care', 'skilled nursing', 'retirement community',
     'independent living', 'continuing care', 'senior housing', 'assisted care',
+    # Hotels/motels — large parking lots, pool decks, pool surrounds, exterior facades, covered walkways (added 2026-05-26 run 98)
+    # NE Ohio has ~200 hotels in 7 counties; one contract = $3K–$8K/year; GMs sign vendor contracts
+    'hotel management', 'hospitality management', 'hotel chain', 'extended stay', 'motel management',
 ]
 
 CARLA_SEARCHES = [

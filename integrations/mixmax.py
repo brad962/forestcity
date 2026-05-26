@@ -103,6 +103,8 @@ PROPERTY_MANAGER_TITLES = [
     'director of facilities', 'campus manager', 'facilities operations manager',
     # 'operations director' already above; 'director of operations' is a distinct non-matching word order (added 2026-05-26 run 97)
     'director of operations',
+    # Hotels/motels — GMs are the vendor decision-makers; large parking lots + pool decks + facades (added 2026-05-26 run 98)
+    'hotel general manager', 'hotel manager', 'hospitality manager',
 ]
 
 REALTOR_TITLES = [

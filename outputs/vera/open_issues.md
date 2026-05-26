@@ -1,6 +1,40 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 97 | 2026-05-26 | Auto-fixes shipped: 3 | New deliverables: 2 | New RESOLVED: 0 | Open: 25 (1 new: 21 untouched contractor contacts; Bryan fresh angle: free demo wash offer)*
+*Run 98 | 2026-05-26 | Auto-fixes shipped: 5 | New deliverables: 1 | New RESOLVED: 0 | Open: 27 (2 new: Sheetz data quality + administrator title overbroad)*
+
+---
+
+## RUN METRICS — Run 98 | 2026-05-26
+- Total RESOLVED: 83 (0 new this run)
+- Total OPEN: 27 (2 new: Sheetz data quality + administrator title overbroad)
+- Auto-upgrades shipped: 5
+  1. pipeline_data.json — advanced Bulletproof/Damrons/Bryan next_followup from 2026-05-26 → 2026-05-27 (overdue Contacted contacts now show as DUE TODAY in tomorrow's Nina report)
+  2. pipeline_data.json — added next_followup=2026-05-28 for 16 untouched New Lead contractors (Pyro, Garten, Dales, C&M, Kays, Walkers, Clemence, Islander, Lawn Care for World, Soldan, Blue Line, Kardiac, Don't Move Improve, Woolworth, Everguard, Camlin); were invisible to Nina's report — now surface Thursday
+  3. workers/lead_pipeline.py — added Hotels/Hospitality segment to DANNY_ORG_KEYWORDS ('hotel management', 'hospitality management', 'hotel chain', 'extended stay', 'motel management') + added 'hotel general manager', 'hotel manager', 'hospitality manager' to DANNY_TITLES; ~200 hotels in NE Ohio; large parking lots + pool decks + facades; GMs sign vendor contracts; $3K–$8K/year per property
+  4. integrations/mixmax.py — mirrored 'hotel general manager', 'hotel manager', 'hospitality manager' to PROPERTY_MANAGER_TITLES; correct routing for hotel management contacts on import
+  5. agents/danny.md — documented Hotels & Hospitality as new secondary segment with target titles, revenue math, pitch angle, Apollo keyword reference
+- Deliverables written: 1
+  1. `outputs/vera/pipeline_triage_card_2026-05-27.md` — all 36 active pipeline contacts sorted by priority; Contacted due tomorrow (3) → Tier 1 New Lead due tomorrow (5) → Wave 2 due Thursday (16) → Gas station (12); copy-paste structure with specific phone numbers and script references; opens tomorrow morning
+
+---
+
+## OPEN — Sheetz Contact Data Quality 🆕 (Run 98)
+- First seen: 2026-05-26 (Run 98)
+- Description: The Sheetz gas station contact in pipeline_data.json has two data quality problems: (1) First name "Portaldp" is not a real name — this appears to be a garbled Apollo import (likely "P." Carlton or similar); (2) Email "pcarlaon@sheetz.com" contains a probable typo — should be "pcarlton@sheetz.com". Emailing this address will bounce and could affect sender reputation if it bounces hard.
+- Fix needed: Either verify the correct Sheetz contact at sheetz.com/contact or skip this contact in the Gmail blast. Before sending the gas station Wave 1 blast, manually update first_name and email for `gas_portaldp_carlton` in pipeline_data.json.
+- Contact ID: gas_portaldp_carlton
+- Attempts:
+  - 2026-05-26 (Run 98): Flagged in pipeline_triage_card_2026-05-27.md with ⚠️ warning; pending Bradley manual correction
+
+---
+
+## OPEN — 'administrator' Title Overly Broad in PROPERTY_MANAGER_TITLES 🟡 (Run 98)
+- First seen: 2026-05-26 (Run 98)
+- Description: `'administrator'` was added to PROPERTY_MANAGER_TITLES in Run 94 to catch senior living facility administrators. However, `detect_lead_type()` uses `kw in combined` (substring match on title+company). This means any contact titled "IT Administrator", "Database Administrator", "School Administrator", "Hospital Administrator", or similar would falsely route to the PM sequence. For Apollo-pulled contacts this is harmless (they have `_lead_type` set explicitly), but for manual imports via `enroll_batch()` without `_lead_type`, misrouting would occur.
+- Risk level: LOW (most contacts flow through Apollo with explicit `_lead_type`). Manual imports are rare.
+- Proposed fix: Replace `'administrator'` with `'facility administrator'` or `'care facility administrator'` in PROPERTY_MANAGER_TITLES. This still catches senior living facility administrators (their common title is "Facility Administrator" or "Administrator" at care facilities) while avoiding false positives.
+- Attempts:
+  - 2026-05-26 (Run 98): Identified and logged. Not fixed yet — want to confirm real-world impact before narrowing (no current false positives observed)
 
 ---
 
@@ -23,6 +57,7 @@
 - Contacts: Pyro Landscaping, Garten Gurus, Dales, C&M Landscaping, Kays Express Lawn Care, Walkers Landscape, Islander Landscaping, Lawn Care for the World, Soldan Landscaping, GTP Landscaping, Land Pro Management, Clemence Collaborations, Blue Line Restorations, Kardiac Construction, Don't Move Improve, Woolworth Construction, Everguard Pros, Camlin Contracting, Twin Improvements, Reliable Roofing, Pagels Quality Construction
 - Attempts:
   - 2026-05-26 (Run 97): Wrote `outputs/carla/contractor_first_touch_blitz_2026-05-26.md` — sorted Wave 1 (landscapers, 11) + Wave 2 (construction, 10); first-touch text script; 45-min timeline; pipeline update instructions; revenue math
+  - 2026-05-26 (Run 98): All 16 untouched contacts now have `next_followup=2026-05-28` (Thursday) in pipeline_data.json; 5 Tier 1 contacts already had 2026-05-27; full triage card written (`pipeline_triage_card_2026-05-27.md`) with Wednesday 8-text blitz + Thursday 16-contact wave; Nina's report will surface all of them as DUE THIS WEEK starting tomorrow
 
 ---
 

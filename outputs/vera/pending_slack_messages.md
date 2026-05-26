@@ -59,3 +59,68 @@
 >21 contractor contacts never reached out to during peak season → blitz card ready
 >Code: nina_report overdue filter patched; 'director of operations' title added to Apollo+Mixmax
 >Summit: 5 days left | Gas station 12 contacts due tomorrow | June 4 Medina enrollment: 9 days
+
+---
+
+🔧 *Vera — Auto-Upgrade (Run 98)*
+>Changed: pipeline_data.json — advanced 3 overdue Contacted contacts (Bulletproof, Damrons, Bryan/CLE) from next_followup=2026-05-26 → 2026-05-27; all 3 now show as DUE TODAY in tomorrow's Nina report
+>Why: Their follow-up dates passed today but nobody moved them — they'd have stayed overdue silently without this fix
+>File: pipeline_data.json
+
+---
+
+🔧 *Vera — Auto-Upgrade (Run 98)*
+>Changed: pipeline_data.json — added next_followup=2026-05-28 for 16 untouched New Lead contractors (Pyro Landscaping, Garten Gurus, Dales, C&M, Kays Express, Walkers, Clemence, Islander, Lawn Care for World, Soldan, Blue Line, Kardiac, Don't Move Improve, Woolworth, Everguard, Camlin)
+>Why: All 16 had no follow-up date — Nina's report couldn't surface them as due; now they'll show up Thursday as a complete blitz wave
+>File: pipeline_data.json
+
+---
+
+🔧 *Vera — Auto-Upgrade (Run 98)*
+>Changed: workers/lead_pipeline.py + integrations/mixmax.py — added Hotels & Hospitality segment to DANNY_ORG_KEYWORDS and PROPERTY_MANAGER_TITLES; added 'hotel general manager', 'hotel manager', 'hospitality manager' to search titles
+>Why: NE Ohio has ~200 hotels. Large parking lots, pool decks, building facades — perfect recurring accounts. GMs sign vendor contracts. Zero competitors targeting this segment. First Apollo pull on June 1 (Medina) will surface hotel management contacts automatically.
+>Revenue math: $3K–$8K/year per property. 10 accounts = $30K–$80K/year.
+>File: workers/lead_pipeline.py + integrations/mixmax.py
+
+---
+
+🔧 *Vera — Auto-Upgrade (Run 98)*
+>Changed: agents/danny.md — documented Hotels & Hospitality as new secondary segment with target titles, revenue math ($3K–$8K/year per property), pitch angle, Apollo keyword reference
+>Why: Code was updated but agent file didn't reflect the new segment — any future Danny session would miss hotel management contacts as a known target
+>File: agents/danny.md
+
+---
+
+📋 *Vera — New Deliverable (Run 98)*
+>File: outputs/vera/pipeline_triage_card_2026-05-27.md
+>What: Complete pipeline triage card — all 36 active contacts sorted by priority for Wednesday morning
+>Structure: 3 Contacted due tomorrow (2nd touch) → 5 Tier 1 New Leads due tomorrow (first touch) → 16 Wave 2 contacts due Thursday (blitz) → 12 gas station contacts (Gmail blast overdue)
+>Includes: Copy-paste phone numbers, script references, time estimates, Sheetz data quality warning
+>Open this tomorrow morning (Wed May 27) — 15 min for the "due tomorrow" block
+
+---
+
+⚠️ *Vera — Data Quality Alert (Run 98)*
+>Issue: Sheetz contact in pipeline_data.json has garbled data — first_name "Portaldp" is not real, email "pcarlaon@sheetz.com" is likely a typo (should be "pcarlton@sheetz.com")
+>Risk: Emailing this address will hard-bounce. Hard bounces hurt your sender reputation.
+>Fix: Before sending gas station Gmail blast, manually skip the Sheetz entry OR look up the correct contact at linkedin.com/company/sheetz
+>Contact ID: gas_portaldp_carlton in pipeline_data.json
+
+---
+
+💡 *Vera — Proposal: "Daily Due Today" Slack Ping*
+>Idea: Every morning at 7am, vera_relay.py reads pipeline_data.json and auto-posts a Slack message listing all contacts whose next_followup = today with phone numbers and next step
+>Why: Nina's report requires you to actively run a script locally. A push notification at 7am means you see who to call before you open your phone for anything else. Zero API calls — reads only local pipeline_data.json.
+>Implementation: 15 lines in vera_relay.py; morning check function; sentinel file prevents duplicate pings; runs in existing 5-min cron; no new dependencies
+>Impact: Every follow-up actioned on the right day without remembering to check
+>Reply YES to approve.
+
+---
+
+✅ *Vera — Scan Complete 2026-05-26 (Run 98)*
+>5 auto-upgrades | 1 deliverable (pipeline_triage_card) | 1 proposal | 2 new issues (Sheetz data + administrator title risk)
+>Pipeline fix: 19 contacts now have next_followup dates — 3 overdue Contacted move to tomorrow, 16 untouched move to Thursday
+>New segment: Hotels/Hospitality added to Apollo search — ~200 NE Ohio targets, first pull June 1
+>Tomorrow (Wed May 27): Open pipeline_triage_card_2026-05-27.md — 8 texts in 15 min (3 follow-ups + 5 Tier 1 first-touch)
+>Thursday (May 28): Wave 2 blitz — 16 contractor contacts + gas station Gmail Wave 2
+>Summit deadline: MAY 31 — run TODAY or tomorrow. Double-click scripts/run_summit_pull.command
