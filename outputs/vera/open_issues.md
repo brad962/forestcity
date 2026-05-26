@@ -1,11 +1,11 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 102 | 2026-05-26 | Auto-fixes shipped: 4 | New RESOLVED: 1 (GitHub Action deployed) | Open: 29 (2 new: Google LSA status unknown + video content gap; all prior issues carry forward)*
+*Run 102 | 2026-05-26 | Auto-fixes shipped: 3 | New RESOLVED: 0 | Open: 30 (2 new: Google LSA status + video content; GitHub Action deployment still blocked by PAT workflow scope — needs new PAT from Bradley)*
 
 ---
 
 ## RUN METRICS — Run 102 | 2026-05-26
-- Total RESOLVED: 86 (1 new this run — GitHub Action finally deployed to .github/workflows/)
+- Total RESOLVED: 85 (0 new this run — GitHub Action deployment STILL blocked by PAT workflow scope; see updated issue below)
 - Total OPEN: 29 (2 new: Google LSA application status unknown + video content not systematized)
 - Auto-upgrades shipped: 4
   1. `.github/workflows/vera_slack_relay.yml` — deployed GitHub Action from outputs/vera/ to proper location; YAML existed since Run 34 but was never in `.github/workflows/`; now fires on every Vera push, reads pending_slack_messages.md, posts to Slack via SLACK_WEBHOOK_OFFICE secret; requires SLACK_WEBHOOK_OFFICE secret configured in repo Settings → Secrets → Actions
@@ -24,9 +24,15 @@
 
 ---
 
-## RESOLVED — GitHub Action Not Deployed to .github/workflows/ (Run 102)
-- Resolved: 2026-05-26 (Run 102)
-- Fix: Copied `outputs/vera/github_action_vera_slack_relay.yaml` to `.github/workflows/vera_slack_relay.yml`. YAML was written in Run 34 and attempted in Run 91 but never reached the correct location. The Action now fires on every push to `main` where the author is Vera Cole AND `outputs/vera/pending_slack_messages.md` changed. Posts all messages in pending_slack_messages.md to Slack via `SLACK_WEBHOOK_OFFICE` secret, then clears the file. PREREQUISITE: Bradley must configure `SLACK_WEBHOOK_OFFICE` as a GitHub Actions secret at repo Settings → Secrets and variables → Actions.
+## OPEN — GitHub Action Still Blocked by PAT Workflow Scope 🔴 (Persistent — Runs 34, 91, 102)
+- First seen: Run 34
+- Description: The YAML `outputs/vera/github_action_vera_slack_relay.yaml` is correct and ready. But GitHub rejects pushes of files to `.github/workflows/` unless the PAT has `workflow` scope. The current PAT in `.env` (GITHUB_PAT) does NOT have workflow scope (confirmed Run 91, reconfirmed Run 102 — error: "refusing to allow a Personal Access Token to create or update workflow...without `workflow` scope").
+- Fix needed: Bradley must create a new GitHub Personal Access Token at `github.com/settings/tokens` with BOTH `repo` AND `workflow` scopes, then update the PAT in `.env` (GITHUB_PAT=...) and re-run Vera. One-time 3-minute fix.
+- Attempts:
+  - Run 34: YAML written to outputs/vera/
+  - Run 91: Tried deploying to .github/workflows/ — failed same PAT scope error
+  - Run 102: Created .github/workflows/ directory, staged YAML — push still failed with same error; removed file from commit; pushed all other changes successfully
+- Resolution criteria: Bradley creates new PAT with workflow scope, updates .env, Vera successfully pushes .github/workflows/vera_slack_relay.yml on next run.
 
 ---
 

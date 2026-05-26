@@ -1,8 +1,7 @@
-🔧 *Vera — Auto-Upgrade*
->Changed: `.github/workflows/vera_slack_relay.yml` — GitHub Action deployed to proper location
->Why: YAML existed since Run 34, attempted Run 91, but `.github/workflows/` never existed; now fires on every Vera push and posts pending_slack_messages.md directly to Slack — no relay delay
->File: .github/workflows/vera_slack_relay.yml
->⚠️ One setup step: go to repo Settings → Secrets and variables → Actions → add secret `SLACK_WEBHOOK_OFFICE` (your Slack webhook URL) — without it the Action will fail silently
+🔴 *Vera — Blocked Issue: GitHub Action (Runs 34, 91, 102)*
+>Issue: The Slack relay GitHub Action can't be deployed because the PAT doesn't have `workflow` scope. Same error all 3 attempts.
+>Fix (3 minutes): Go to github.com/settings/tokens → Generate new token → check both `repo` AND `workflow` → replace GITHUB_PAT in your .env file → Vera will deploy the Action on her next run
+>Why it matters: Right now Slack delivery depends on vera_relay.py running on your local Mac cron every 5 min. GitHub Action would fire the instant Vera pushes, even when your Mac is closed.
 
 ---
 
@@ -49,6 +48,6 @@
 ---
 
 ✅ *Vera — Scan Complete 2026-05-26 (Run 102)*
->4 auto-upgrades shipped | 2 proposals/deliverables | 1 RESOLVED (GitHub Action) | 29 open issues (2 new)
->Biggest win this run: GitHub Action FINALLY deployed to .github/workflows/ — pending Slack messages will now post automatically on every Vera push (one setup step: add SLACK_WEBHOOK_OFFICE secret to repo settings)
->Biggest opportunity this week: Google LSA application — if not applied, apply in the next 30 min; approval by June 4 = highest-converting lead source live for the blitz
+>3 auto-upgrades shipped | 2 deliverables | 0 RESOLVED | 30 open issues (2 new)
+>Biggest action needed: Create a new GitHub PAT with `workflow` scope (3 min) — then Vera can finally deploy the Slack relay Action that's been blocked since Run 34
+>Biggest revenue opportunity: Google LSA status check — read outputs/rick/google_lsa_status_check_2026-05-26.md; if not applied, do it in the next 30 min; approval by June 4 = highest-converting lead source for the June booking blitz
