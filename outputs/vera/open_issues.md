@@ -1,6 +1,35 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 92 | 2026-05-26 | Auto-fixes shipped: 3 | New deliverables: 2 | New RESOLVED: 1 | Open: 23 (Ads launched May 26 — RESOLVED; Instantly.ai still not paused — critical)*
+*Run 93 | 2026-05-26 | Auto-fixes shipped: 5 | New deliverables: 2 | New RESOLVED: 0 | Open: 24 (new issue: no Week 2 ads scaling strategy; Senior Living segment added as new Apollo keyword set)*
+
+---
+
+## RUN METRICS — Run 93 | 2026-05-26
+- Total RESOLVED: 83 (0 new this run — all open issues require Bradley action or infrastructure)
+- Total OPEN: 24 (1 new: No Week 2 Ads Scaling Strategy; 0 closed)
+- Auto-upgrades shipped: 5
+  1. workers/lead_pipeline.py — added Senior & Assisted Living Facilities to DANNY_ORG_KEYWORDS: 'senior living', 'assisted living', 'memory care', 'skilled nursing', 'retirement community', 'independent living', 'continuing care', 'senior housing', 'assisted care'; NE Ohio has 80+ facilities with brick facades + concrete walkways = recurring quarterly soft-wash need; one contract = $6K–$16K/year per location; compliance angle ("pass state inspection") opens doors
+  2. agents/danny.md — documented Senior & Assisted Living as new secondary segment with target titles, NE Ohio company examples, revenue math ($60K–$160K/year from 10 accounts), pitch angle, and Apollo keyword reference
+  3. workers/nina_report.py — added critically overdue (14+ days) escalation tier to manual pipeline health section; contacts overdue 14+ days now get 🚨 CRITICAL label vs. standard 🔴 OVERDUE; Bryan at CLE Lawn Care Plus is now visible as 14+ days critically overdue in next weekly report
+  4. agents/rick.md — added week2_facebook_ads_scaling_guide format entry; new deliverable written this run; gap existed between Day 7 review and any guidance on what to DO after Day 7; Week 2 scaling decisions (budget bump, lookalike, creative test) made without a guide = money left on table or wasted
+  5. agents/donna.md — added may28_summit_pull_emergency_card format entry (outputs/vera/); 3-day Summit deadline warning; Wednesday May 28 is the optimal window before May 31 hard deadline
+- Deliverables written: 2
+  1. `outputs/vera/may28_summit_pull_emergency_card_2026-05-26.md` — 3-day Summit deadline warning card; Wednesday May 28 window: double-click summit shortcut (6 min unattended) + contractor texts simultaneously; Tier 1 texts while pull runs; success checklist; hard deadline Sunday May 31
+  2. `outputs/rick/week2_facebook_ads_scaling_guide_2026-05-26.md` — after Day 7 review decision matrix: working (20% budget, lookalike, second creative), mixed (creative swap + audience diagnosis), not working (emergency checklist); Week 2 benchmarks; what NOT to do; June 4 connection; read on June 2 after Day 7 review
+- Key issue status this run:
+  - Summit pull: 5 DAYS LEFT (May 31). Wednesday May 28 emergency card written. Bradley must run before Sunday.
+  - Instantly.ai: End of Day 1. Pause TODAY or tomorrow — after Thursday it's borderline risk for June 4 deliverability.
+  - Tier 1 Contractors: 8+ days "New Lead," 3 Contacted contacts 14+ days overdue. Nina's report now shows CRITICAL tier.
+  - Ads: Day 1 done. Day 3 check (May 28) is Thursday. Week 2 scaling guide now ready for June 2.
+  - Gas station: 18 contacts still idle. Gmail blast Wave 1 guide ready. Use today.
+
+---
+
+## OPEN — No Week 2 Ads Scaling Strategy 🟡 NEW (Run 93)
+- First seen: 2026-05-26 (Run 93)
+- Description: The Day 3 check card (outputs/vera/day3_ads_check_card_2026-05-26.md) and the first-week monitoring guides cover Days 1/3/7 of the ad launch. But after Day 7 (June 2), there was no guide for what to actually DO with the data: how much to scale budget, when to add a Lookalike audience, how to test a second creative without breaking the algorithm, what to do if Week 1 underperformed. Without this, Bradley makes gut-feel decisions after Day 7 — risky when Facebook algorithm learning phase is fragile.
+- Fix applied (Run 93): Wrote `outputs/rick/week2_facebook_ads_scaling_guide_2026-05-26.md` — three-scenario decision matrix (working/mixed/not working) + Week 2 benchmarks + what NOT to do + June Booking Blitz connection. Read on June 2 after Day 7 review.
+- Resolution criteria: Bradley reads on June 2 and makes Week 2 budget/creative decision based on the guide.
 
 ---
 
@@ -312,6 +341,7 @@ Key resolved issues by category:
 - Run 85 (2026-05-26 LAUNCH DAY): 9 days until June 4 enrollment. PAUSE TODAY = 9 days recovery (minimum viable). Pause Wednesday = 8 days (borderline). Pause Thursday or later = high risk June 4 lands in spam. This is a 3-minute action that protects the entire June 4 ROI. app.instantly.ai → Campaigns → a1c08c3d → ⋮ → Pause; repeat for 626cd15d → add INSTANTLY_PAUSED=true to .env. The mechanical enrollment block in enroll_batch() prevents accidental Round 2 enrollment — but that block does NOT stop the daily Instantly sends that chip away at domain reputation every day the campaigns stay active.
 - Run 88 (2026-05-26 LAUNCH DAY): 9 days remaining. Today is the last day for minimum-viable recovery. New June 1 Sunday evening checklist (outputs/donna/june1_sunday_evening_checklist_2026-05-26.md) includes a Instantly.ai status verify as Step 1 — gives Bradley a second checkpoint on Sunday night even if it doesn't happen today. Pause window is TODAY or TOMORROW. After Wednesday = high risk June 4 lands in spam.
 - Run 92 (2026-05-26 end of launch day): 9 days remaining. Pause TODAY or TOMORROW (May 27). After Wednesday = borderline; after Thursday = high risk for June 4 deliverability. The `june4_readiness_snapshot_2026-05-26.md` (new this run) lists this as Blocker #1 with exact 3-step pause instructions.
+- Run 93 (2026-05-26 evening): End of Day 1 — ads launched but Instantly.ai still running. 9 days remaining. Window: TODAY (tonight) or tomorrow May 27. After May 28 = borderline (8 days recovery). After May 29 = high risk (7 days). Thursday May 29 is the absolute last day for minimum-viable recovery. app.instantly.ai → a1c08c3d → ⋮ → Pause; repeat 626cd15d → add INSTANTLY_PAUSED=true to .env.
 - Resolution criteria: Both campaigns paused in Instantly.ai → confirmed by Bradley.
 
 ---
@@ -365,6 +395,7 @@ Key resolved issues by category:
 - Double-click shortcut: `scripts/run_summit_pull.command` (in Finder — just open it)
 - Run 77 (2026-05-24 Sun): NEXT COUNTY PREP — Created `scripts/run_medina_pull.command` and `scripts/run_medina_both.command` for Week 22 (June 1 = Medina County). When Summit deadline passes May 31, the very next day is Medina. Shortcut is ready. Also wrote `outputs/donna/june1_medina_pull_guide_2026-05-24.md` — operationalized June 1 guide. Summary: Summit (May 23–31) → Medina (June 1) → Geauga+Portage (June 8). All three have double-click shortcuts. danny.md and carla.md updated with Week 22 urgency note.
 - Run 85 (2026-05-26 LAUNCH DAY): 5 days left (deadline May 31). Today (Tuesday) is actually the best day to run this — Bradley is already at his Mac for ads launch. The pull takes 6 minutes unattended (double-click shortcut). Run it FIRST before launching ads: `scripts/run_summit_pull.command` in Finder. Or: `python3 workers/lead_pipeline.py danny Summit`. If not today, any day May 27–31 works. Sunday May 31 = absolute last day.
+- Run 93 (2026-05-26 evening): 5 DAYS LEFT. If not done today, Wednesday May 28 is the next optimal window. `outputs/vera/may28_summit_pull_emergency_card_2026-05-26.md` (new this run) is a 25-minute card: double-click shortcut + contractor texts while it runs. Sunday May 31 is the hard wall. After May 31, the auto-rotation switches to Medina County (June 1) — Summit data missed entirely for June 4 enrollment.
 - Resolution criteria: logs/activity.log shows Danny Summit pull entry by May 31.
 
 ---

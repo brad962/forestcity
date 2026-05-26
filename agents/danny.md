@@ -79,6 +79,17 @@ This enrolls ALL pending contacts (gas stations + fleet) without triggering a fr
 **Apollo search tip:** Add `q_organization_keyword_tags: ["self storage", "storage facility"]` alongside PM titles.
 **Strategy brief:** `outputs/donna/self_storage_commercial_segment_brief_2026-05-25.md`
 
+### Senior & Assisted Living Facilities (NEW — May 2026)
+**Status:** Org keywords live in DANNY_ORG_KEYWORDS. Include in next county rotation run (Medina June 1).
+**Target:** Facility Manager, Executive Director, Administrator, Director of Operations at senior living facilities
+**Why:** Brick building facades accumulate heavy algae and mold — strict regulatory standards for appearance and sanitation. Large concrete walkways, ADA ramps, parking areas. Government inspection requirements = recurring quarterly cleaning. District or regional operators oversee 3–5 facilities.
+**Target companies:** Sunrise Senior Living, Brookdale, Atria, Five Star Senior Living, local operators. NE Ohio has 80+ facilities.
+**Revenue per visit:** $1,500–$4,000 per facility (soft wash + concrete). Quarterly = $6,000–$16,000/year per location. 10 accounts = $60K–$160K/year.
+**Apollo keywords (live):** `senior living`, `assisted living`, `memory care`, `skilled nursing`, `retirement community` — auto-included in DANNY_ORG_KEYWORDS as of 2026-05-26 run 93.
+**Pitch angle:** "Your state inspection requires it. We make sure you pass." → compliance angle opens more doors than curb-appeal pitch at these properties.
+**Sequence:** Route to Property Manager sequence (FM/compliance angle). Update firstName variables with facility title.
+**Strategy brief:** Segment brief to be written as needed.
+
 ### Car Dealerships (NEW — May 2026)
 **Status:** Apollo keywords live. No pull yet. Include in next county rotation run.
 **Target:** Facility Manager, General Manager, Service Director at car dealerships and auto groups

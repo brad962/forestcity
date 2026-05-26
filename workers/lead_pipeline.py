@@ -130,6 +130,9 @@ DANNY_ORG_KEYWORDS = [
     'car dealership', 'auto dealership', 'automotive dealer', 'auto group', 'car dealer',
     # Parking + industrial segments — high square footage of concrete/asphalt; recurring pressure washing demand (added 2026-05-25 run 89)
     'parking management', 'parking facility', 'parking garage', 'industrial park', 'business park',
+    # Senior & assisted living — brick facades with algae, concrete walkways, ADA compliance = quarterly soft-wash need (added 2026-05-26 run 93)
+    'senior living', 'assisted living', 'memory care', 'skilled nursing', 'retirement community',
+    'independent living', 'continuing care', 'senior housing', 'assisted care',
 ]
 
 CARLA_SEARCHES = [

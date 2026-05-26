@@ -500,11 +500,30 @@ def run_weekly():
                         pass
 
             if overdue:
-                manual_health_lines.append(f'🔴 **OVERDUE follow-ups ({len(overdue)}) — reach out now:**')
+                from datetime import date as _date2
+                critical_overdue = []
+                regular_overdue = []
                 for c in overdue:
-                    name = f'{c.get("first_name","")} {c.get("last_name","")}'.strip() or c.get('company', '?')
-                    manual_health_lines.append(f'  - {name} ({c.get("company","")}) | was due {c["next_followup"]} | {c.get("phone","")}')
-                manual_health_lines.append('')
+                    try:
+                        days_late = (_date2.fromisoformat(today_str) - _date2.fromisoformat(c['next_followup'])).days
+                        if days_late >= 14:
+                            critical_overdue.append((c, days_late))
+                        else:
+                            regular_overdue.append(c)
+                    except Exception:
+                        regular_overdue.append(c)
+                if critical_overdue:
+                    manual_health_lines.append(f'🚨 **CRITICALLY OVERDUE ({len(critical_overdue)}) — 14+ days, risk of losing contact permanently:**')
+                    for c, days_late in critical_overdue:
+                        name = f'{c.get("first_name","")} {c.get("last_name","")}'.strip() or c.get('company', '?')
+                        manual_health_lines.append(f'  - {name} ({c.get("company","")}) | {days_late} DAYS OVERDUE | {c.get("phone","")} — reach out TODAY')
+                    manual_health_lines.append('')
+                if regular_overdue:
+                    manual_health_lines.append(f'🔴 **OVERDUE follow-ups ({len(regular_overdue)}) — reach out now:**')
+                    for c in regular_overdue:
+                        name = f'{c.get("first_name","")} {c.get("last_name","")}'.strip() or c.get('company', '?')
+                        manual_health_lines.append(f'  - {name} ({c.get("company","")}) | was due {c["next_followup"]} | {c.get("phone","")}')
+                    manual_health_lines.append('')
             if stale_contacted:
                 manual_health_lines.append(f'🟡 **"Contacted" stage — no follow-up date set, going stale ({len(stale_contacted)}):**')
                 for c, days_ago in stale_contacted:

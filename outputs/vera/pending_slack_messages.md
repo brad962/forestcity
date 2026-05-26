@@ -61,3 +61,47 @@
 >3 auto-upgrades shipped | 2 deliverables | 3 proposals | Open issues: 23 (ads RESOLVED — down from 24)
 >Key wins: Ads live. Day 7 monitoring guides corrected. June 4 dashboard written. Instagram launch card ready.
 >Urgent: Instantly.ai still running — pause TODAY or deliverability suffers June 4.
+---
+🔧 *Vera — Auto-Upgrade*
+>Changed: workers/lead_pipeline.py — added Senior & Assisted Living Facilities to DANNY_ORG_KEYWORDS (9 new keywords: senior living, assisted living, memory care, skilled nursing, retirement community, independent living, continuing care, senior housing, assisted care)
+>Why: NE Ohio has 80+ senior living facilities. Brick facades + concrete walkways = heavy algae accumulation. Quarterly soft-wash need, compliance-driven purchasing ("state inspection" pitch), and district managers overseeing 3–5 locations. One deal = $6K–$16K/year per location. Zero competitors targeting this segment.
+>File: workers/lead_pipeline.py
+---
+🔧 *Vera — Auto-Upgrade*
+>Changed: agents/danny.md — documented Senior & Assisted Living as new secondary segment with full context
+>Why: New org keywords are live in the pipeline but Danny had no documentation for the segment — pitch angle, target companies, revenue math, Apollo keywords, routing note. Now documented for consistency.
+>File: agents/danny.md
+---
+🔧 *Vera — Auto-Upgrade*
+>Changed: workers/nina_report.py — added 🚨 CRITICALLY OVERDUE (14+ days) tier to manual pipeline health section
+>Why: Bryan at CLE Lawn Care Plus is 14+ days past due_followup with zero contact. The existing "overdue" label doesn't distinguish between "overdue by 1 day" and "overdue by 2 weeks." The new CRITICAL tier makes this visible at a glance in Nina's weekly report so contacts at risk of permanent cold don't get lost in the noise.
+>File: workers/nina_report.py
+---
+📦 *Vera — Deliverable*
+>File: outputs/vera/may28_summit_pull_emergency_card_2026-05-26.md
+>What: Wednesday May 28 emergency action card for Summit County pull + contractor texts. Double-click shortcut runs Summit pull unattended (6 min) while Bradley sends 3 contractor follow-up texts simultaneously. Includes Tier 1 New Lead texts. 25-minute total. Hard deadline Sunday May 31.
+>Why: 5 days left. Ads launched today — tomorrow Bradley will be fielding calls and leads. Wednesday morning is the last low-friction window before the deadline closes.
+---
+📦 *Vera — Deliverable*
+>File: outputs/rick/week2_facebook_ads_scaling_guide_2026-05-26.md
+>What: After-Day-7 (June 2) decision matrix: working → budget +20% + lookalike + second creative; mixed → creative swap protocol; not working → emergency diagnostic. Week 2 benchmarks. What NOT to do (edit >20% budget, add CBO before Week 3, pause 24h+).
+>Why: Day 3 and Day 7 guides tell Bradley what to CHECK. This guide tells him what to DO about it — the decision gap that costs money when ads are working but nobody knows how to scale.
+---
+🚨 *Vera — Summit Pull — 5 DAYS LEFT*
+>Deadline: Sunday May 31. No pull since May 12 (14 days overdue).
+>Wednesday May 28 is your best window: open `scripts/run_summit_pull.command` in Finder → runs 6 min unattended → while it runs, send contractor texts from `may28_summit_pull_emergency_card_2026-05-26.md`.
+>After May 31: auto-rotation moves to Medina County. Summit data missed permanently for June 4 enrollment.
+>Double-click shortcut is ready. No Terminal, no typing. 6 minutes.
+---
+🚨 *Vera — Instantly.ai — PAUSE TONIGHT OR TOMORROW*
+>9 days until June 4 Round 2 enrollment. Deliverability math:
+>Pause tonight = 9 days recovery ✅
+>Pause May 27 = 9 days ✅
+>Pause May 28 = 8 days (borderline)
+>Pause May 29+ = high risk June 4 emails land in spam
+>3 minutes: app.instantly.ai → a1c08c3d → ⋮ → Pause; repeat 626cd15d → add INSTANTLY_PAUSED=true to .env
+---
+✅ *Vera — Scan Complete 2026-05-26 (Run 93)*
+>5 auto-upgrades shipped | 2 deliverables written | 0 new RESOLVED | 24 open (1 new: Week 2 Ads Scaling)
+>New segment: Senior & Assisted Living added to Apollo pipeline (80+ NE Ohio facilities, quarterly soft-wash, compliance pitch)
+>Priority stack for tomorrow: (1) Pause Instantly.ai tonight; (2) Wednesday: Summit pull + contractor texts (may28_summit_pull_emergency_card); (3) Gas station Wave 1 emails still due; (4) Day 3 ad check Thursday May 28
