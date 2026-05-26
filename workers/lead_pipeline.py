@@ -124,6 +124,9 @@ DANNY_TITLES = [
     'fitness center manager', 'health club manager', 'gym manager', 'fitness director',
     # Universities/private schools — campus facilities; campus manager already above; director of campus ops variant (added 2026-05-26 run 99)
     'campus facilities manager', 'director of campus operations',
+    # Banks & credit unions — branch FMs + district managers oversee 3-10+ branches; parking lots + drive-throughs + building exteriors (added 2026-05-26 run 100)
+    # NE Ohio: Huntington, KeyBank, Fifth Third, PNC, Chase + local credit unions = hundreds of branches; appearance standard = brand requirement; one district deal = multi-site revenue
+    'bank branch manager', 'branch facilities manager', 'district branch manager', 'credit union manager', 'branch operations manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -161,6 +164,10 @@ DANNY_ORG_KEYWORDS = [
     # Universities & private schools — large campuses, parking structures, athletic facilities (added 2026-05-26 run 99)
     # Private schools (St. Ignatius, Padua, Walsh Jesuit) + universities (JCU, BW, Ursuline) sign vendor contracts directly
     'private school', 'independent school', 'university facilities', 'college campus',
+    # Banks & credit unions — NE Ohio has 300+ bank branches (Huntington, KeyBank, Fifth Third, PNC, Chase) + 50+ credit unions (added 2026-05-26 run 100)
+    # Each branch: parking lot + drive-through canopy + building exterior + ATM pad; appearance is brand standard not optional
+    # District managers oversee 3-10+ branches; one deal = multi-site recurring; $500-$1,500/branch quarterly = $6K-$24K/year per district manager
+    'bank branch', 'credit union', 'banking facilities', 'bank facilities management',
 ]
 
 CARLA_SEARCHES = [

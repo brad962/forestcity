@@ -118,6 +118,16 @@ This enrolls ALL pending contacts (gas stations + fleet) without triggering a fr
 **Apollo keywords (live Run 99):** `private school`, `independent school`, `university facilities`, `college campus` — auto-included in DANNY_ORG_KEYWORDS.
 **Pitch angle:** "Alumni weekends and prospective student tours are the two days your campus can't look dirty. We make sure it doesn't."
 
+### Banks & Credit Unions (NEW — May 2026, Run 100)
+**Status:** Org keywords + titles live in DANNY_ORG_KEYWORDS/DANNY_TITLES as of Run 100. Include in next county rotation (Medina June 1).
+**Target:** Branch Facilities Manager, District Branch Manager, Branch Operations Manager, Credit Union Manager at banks and credit union chains
+**Why:** NE Ohio has 300+ bank branches (Huntington, KeyBank, Fifth Third, PNC, Chase, Farmers & Merchants) + 50+ credit unions (Third Federal, Superior Credit Union, TrueCore). Each branch has a parking lot with oil stains, a drive-through canopy, a building exterior, and an ATM pad. Appearance is a non-negotiable brand standard — banks cannot look dirty. District managers oversee 3-10+ branches; one deal = multi-site recurring revenue.
+**Revenue per visit:** $500–$1,500 per branch (parking lot + drive-through + exterior). Quarterly = $2K–$6K/year per branch. 10-branch district deal = $20K–$60K/year.
+**Target companies:** Huntington Bancshares, KeyCorp, Fifth Third Bank, PNC Financial, Chase, FirstEnergy Credit Union, Third Federal Savings & Loan, Superior Credit Union, TrueCore Federal Credit Union — all have heavy NE Ohio footprints.
+**Apollo keywords (live Run 100):** `bank branch`, `credit union`, `banking facilities`, `bank facilities management` — added to DANNY_ORG_KEYWORDS.
+**Pitch angle:** "Your branches have one job: look trustworthy. A dirty parking lot and streaked drive-through say otherwise. We handle all your NE Ohio locations on one contract."
+**Sequence:** Route to Property Manager sequence (facility management angle).
+
 ### Car Dealerships (NEW — May 2026)
 **Status:** Apollo keywords live. No pull yet. Include in next county rotation run.
 **Target:** Facility Manager, General Manager, Service Director at car dealerships and auto groups

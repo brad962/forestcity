@@ -594,12 +594,36 @@ def run_weekly():
     except Exception:
         pass
 
+    # --- Ad Lead Source Breakdown (pipeline_data.json) ---
+    ad_source_lines = []
+    try:
+        pipeline_f2 = BASE_DIR / 'pipeline_data.json'
+        if pipeline_f2.exists():
+            pd2 = json.loads(pipeline_f2.read_text())
+            mc2 = pd2.get('manual_contacts', [])
+            sources = {}
+            for c in mc2:
+                src = c.get('lead_source', 'organic / unknown')
+                sources[src] = sources.get(src, 0) + 1
+            if any('facebook' in s.lower() or 'google' in s.lower() or 'ad' in s.lower() for s in sources):
+                ad_source_lines = [
+                    '## 📊 Pipeline Lead Sources',
+                    '',
+                    '| Source | Contacts |',
+                    '|--------|----------|',
+                ]
+                for src, cnt in sorted(sources.items(), key=lambda x: -x[1]):
+                    ad_source_lines.append(f'| {src} | {cnt} |')
+                ad_source_lines.append('')
+    except Exception:
+        pass
+
     reply_item = (
         f'- [ ] Review {total_replied} {"reply" if total_replied == 1 else "replies"} and respond personally'
         if total_replied > 0
         else '- [ ] No replies yet — sequence is sending, check open rates'
     )
-    lines += manual_health_lines + [
+    lines += manual_health_lines + ad_source_lines + [
         '## Action Items for Bradley',
         '',
         reply_item,

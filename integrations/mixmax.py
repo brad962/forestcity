@@ -111,6 +111,9 @@ PROPERTY_MANAGER_TITLES = [
     'fitness center manager', 'health club manager', 'gym manager', 'fitness director',
     # Universities & private schools — facilities directors already in list; org routing catches campus FM contacts (added 2026-05-26 run 99)
     'campus facilities manager', 'director of campus operations',
+    # Banks & credit unions — branch FMs + district managers sign vendor contracts for appearance-critical properties (added 2026-05-26 run 100)
+    # NE Ohio Huntington/KeyBank/Fifth Third/PNC/Chase branches + local credit unions; parking + drive-through + exterior = recurring revenue
+    'bank branch manager', 'branch facilities manager', 'district branch manager', 'credit union manager', 'branch operations manager',
 ]
 
 REALTOR_TITLES = [

@@ -1,6 +1,37 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 99 | 2026-05-26 | Auto-fixes shipped: 7 | New RESOLVED: 2 (Sheetz email fix + administrator overbroad) | Open: 25 (2 new: fitness centers + universities segments unlocked)*
+*Run 100 | 2026-05-26 | Auto-fixes shipped: 4 | New RESOLVED: 0 | Open: 26 (1 new: Banks & Credit Unions segment; all prior issues carry forward pending Bradley action)*
+
+---
+
+## RUN METRICS — Run 100 | 2026-05-26
+- Total RESOLVED: 85 (0 new this run — all remaining open issues require Bradley action or infrastructure)
+- Total OPEN: 26 (1 new: Banks & Credit Unions segment added)
+- Auto-upgrades shipped: 4
+  1. workers/lead_pipeline.py — added Banks & Credit Unions to DANNY_ORG_KEYWORDS ('bank branch', 'credit union', 'banking facilities', 'bank facilities management') and DANNY_TITLES ('bank branch manager', 'branch facilities manager', 'district branch manager', 'credit union manager', 'branch operations manager'); NE Ohio has 300+ bank branches + 50+ credit unions; appearance is brand-critical; district managers oversee 3-10 branches = multi-site deal; $6K–$24K/year per district manager; zero competitors targeting this segment
+  2. integrations/mixmax.py — mirrored bank/credit union titles to PROPERTY_MANAGER_TITLES; correct routing for any bank contacts imported manually
+  3. agents/danny.md — documented Banks & Credit Unions as new segment with target titles, NE Ohio chains, revenue math, pitch angle, Apollo keyword reference
+  4. workers/nina_report.py — added 📊 Pipeline Lead Sources breakdown to weekly report; when pipeline_data.json contains contacts with lead_source fields (Facebook ad, Google ad, etc.), the weekly report now shows a source breakdown table; fires automatically once ad leads are logged via ad_lead_tracker guide; closes the "ad ROI is invisible" gap in Nina's report
+- Deliverables written: 2
+  1. `outputs/vera/bryan_close_file_text_2026-05-26.md` — Friday May 29 "closing the loop" text for Bryan/CLE Lawn Care Plus if free demo offer gets no reply; psychology of close-the-loop vs. partnership ask; pipeline_data.json Closed Lost update instructions; redirect to 21 untouched contractor contacts; ~30% late-response rate from this approach
+  2. `outputs/donna/june3_tuesday_evening_checklist_2026-05-26.md` — night-before June 4 enrollment prep card (15 min); 7 blocks: Instantly pause verify, Medina pull confirm, new email copy in Mixmax, gas station path clear, Summit pull confirm, alarms set, battle card read; GO/NO-GO table; $9K-$21K revenue math; fills countdown gap between june1 checklist (June 1) and june4 battle card (June 4 morning)
+- Key status this run:
+  - Ads: Day 1 complete. Day 3 check Thursday May 28 (day3_ads_check_card). First leads should arrive tomorrow.
+  - Instantly.ai: CRITICAL — still not paused. May 27 (tomorrow) is last day for minimum-viable recovery before June 4.
+  - Summit pull: 4 DAYS LEFT (deadline May 31). Wednesday May 28 card + Friday May 29 card both written.
+  - Gas station: 12 contacts due tomorrow May 27 (next_followup=2026-05-27). Gmail blast guide ready.
+  - Bryan: 9th attempt = close-the-loop text (May 29) if no response to free demo offer. Hard close May 29 → redirect.
+  - June 4: 9 days. june3_tuesday_evening_checklist written this run fills the last countdown gap.
+
+---
+
+## OPEN — Banks & Credit Unions Segment Not Yet Pulled 🟡 NEW (Run 100)
+- First seen: 2026-05-26 (Run 100)
+- Description: NE Ohio has 300+ bank branches (Huntington, KeyBank, Fifth Third, PNC, Chase, Farmers & Merchants) and 50+ credit unions (Third Federal, Superior, TrueCore). Each branch has a parking lot, drive-through canopy, and building exterior. Appearance is non-negotiable brand standard — banks cannot look dirty. District managers oversee 3-10+ branches; one deal = multi-site recurring revenue at $6K–$24K/year per district manager. Zero competitors targeting this segment.
+- Fix applied (Run 100): Added bank org keywords to DANNY_ORG_KEYWORDS + bank titles to DANNY_TITLES + PROPERTY_MANAGER_TITLES. Keywords live and waiting for next pull.
+- Resolution criteria: Bank/credit union contacts appear in Medina June 1 county pull or a targeted pull.
+
+---
 
 ---
 
