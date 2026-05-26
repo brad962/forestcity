@@ -55,7 +55,7 @@ Target locations (use county + "Ohio"):
 ## Secondary Segments (Active — May 2026)
 
 ### Gas Stations & C-Stores
-**Status:** 18 contacts pulled (2026-05-19). Sequence pending Mixmax ID.
+**Status:** 12 contacts pulled (2026-05-19). Sequence pending Mixmax ID. (Count corrected Run 96 — pipeline_data.json has 12; earlier "18" was an overcount.)
 **Target title:** District Manager (manages 5–15 locations; one deal = recurring multi-site revenue)
 **Sequence copy:** `outputs/danny/sequence_gas_stations_2026-05-19.md`
 **Leads file:** `outputs/danny/leads_gas_stations_2026-05-19.md`

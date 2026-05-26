@@ -571,11 +571,20 @@ def run_weekly():
                 manual_health_lines.append('')
 
             if due_soon:
-                manual_health_lines.append(f'📅 **Follow-ups due this week ({len(due_soon)}):**')
-                for c in due_soon:
-                    name = f'{c.get("first_name","")} {c.get("last_name","")}'.strip() or c.get('company', '?')
-                    manual_health_lines.append(f'  - {name} ({c.get("company","")}) | due {c["next_followup"]} | {c.get("phone","")}')
-                manual_health_lines.append('')
+                due_today = [c for c in due_soon if c['next_followup'] == today_str]
+                due_later = [c for c in due_soon if c['next_followup'] != today_str]
+                if due_today:
+                    manual_health_lines.append(f'🔴 **DUE TODAY ({len(due_today)}) — contact these FIRST:**')
+                    for c in due_today:
+                        name = f'{c.get("first_name","")} {c.get("last_name","")}'.strip() or c.get('company', '?')
+                        manual_health_lines.append(f'  - {name} ({c.get("company","")}) | DUE TODAY | {c.get("phone","")}')
+                    manual_health_lines.append('')
+                if due_later:
+                    manual_health_lines.append(f'📅 **Follow-ups due this week ({len(due_later)}):**')
+                    for c in due_later:
+                        name = f'{c.get("first_name","")} {c.get("last_name","")}'.strip() or c.get('company', '?')
+                        manual_health_lines.append(f'  - {name} ({c.get("company","")}) | due {c["next_followup"]} | {c.get("phone","")}')
+                    manual_health_lines.append('')
     except Exception:
         pass
 

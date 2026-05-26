@@ -1,6 +1,27 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 95 | 2026-05-26 | Auto-fixes shipped: 5 | New deliverables: 1 | New RESOLVED: 0 | Open: 24 (new FM title variants; Estimate Sent detection; hook rotation; gas station + Tier 1 pipeline_data updates)*
+*Run 96 | 2026-05-26 | Auto-fixes shipped: 4 | New deliverables: 2 | New RESOLVED: 0 | Open: 24 (no new; contractor stale issue updated with LinkedIn DM angle; off-hours lead response gap identified and closed)*
+
+---
+
+## RUN METRICS — Run 96 | 2026-05-26
+- Total RESOLVED: 83 (0 new this run)
+- Total OPEN: 24 (0 new; 0 closed)
+- Auto-upgrades shipped: 4
+  1. workers/nina_report.py — split `due_soon` list into "🔴 DUE TODAY" vs "📅 due this week"; gas station + Tier 1 contractor contacts with next_followup=2026-05-27 will now show in RED "DUE TODAY" section tomorrow morning instead of blending with the general due-this-week list; actionability gap closed
+  2. workers/jasmine_flyer.py — fixed empty-description hook hash bug; md5("") always produces the same hash (hook_idx always 0), meaning all jobs entered without a description always get the same hook; now falls back to date/hour-seeded value when description < 4 chars
+  3. agents/danny.md — corrected gas station contact count from "18" to "12"; pipeline_data.json has 12 contacts; "18" overstated the waiting list by 50%; count corrected with source note
+  4. agents/tommy.md — added `off_hours_lead_response_kit_[date].md` to output format catalog; new deliverable written this run; closes the gap between getting a Facebook ad lead notification at 9pm and knowing what to say before you can call
+- Deliverables written: 2
+  1. `outputs/vera/contractor_linkedin_revival_2026-05-26.md` — LinkedIn DM scripts for Bryan/CLE Lawn Care Plus (14+ days cold), Bulletproof Lawncare, Damrons Landscaping; fresh channel approach — all 6 prior deliverables used text/call only; LinkedIn professional context = different response rate; connection request notes + follow-up DMs + pipeline update instructions; Run 96 fresh angle on the Bryan persistent issue
+  2. `outputs/tommy/off_hours_lead_response_kit_2026-05-26.md` — 3 instant text templates by time of day (evening/weekend/mid-job); specific callback timing language; morning voicemail + text scripts; Meta Business Suite instant reply setup; what NOT to do; 5-min response = 9× conversion rate vs. 30-min; pairs with ad_lead_notification_setup and facebook_lead_response_sop
+- Key issue status this run:
+  - Summit pull: 4 DAYS LEFT (May 31). Next window: Thursday May 28 or Friday May 29 (both have action cards).
+  - Instantly.ai: Still not paused. 9 days remaining minimum viable recovery. May 27 pause = still viable.
+  - Gas station: next_followup set to 2026-05-27 — will show RED in Nina's report tomorrow morning.
+  - Tier 1 contractors: next_followup set to 2026-05-27 — same. RED section in Nina report tomorrow.
+  - Bryan: LinkedIn DM protocol now ready. Fresh channel. Try LinkedIn connect TONIGHT or first thing tomorrow.
+  - Off-hours leads: Gap identified and closed this run. Facebook ads launched today — evening leads will start arriving.
 
 ---
 
@@ -328,7 +349,8 @@ Key resolved issues by category:
 - Run 92 (2026-05-26 end of launch day): 8+ days "New Lead" for all 5 Tier 1 contractors. Ads are live — inbound leads will now compete for Bradley's attention. The window to do this BEFORE inbound traffic arrives is likely closed. Outbound contractor texts must now compete with inbound ad leads. Use `june4_readiness_snapshot_2026-05-26.md` Blocker #4 section — names + numbers all on one page.
 - Run 94 (2026-05-26): 9+ days for Tier 1 New Leads. Bryan 13+ days since last_contact. Nina report now shows Bryan in new 🚨 ENGAGEMENT GONE COLD tier. `may27_day2_lead_triage_summit_card_2026-05-26.md` includes contractor texts as Wednesday morning priority #2. This is the 6th deliverable written for this issue across 17 runs.
 - Run 95 (2026-05-26): pipeline_data.json updated — Tier 1 next_followup advanced from May 25 (1 day overdue) to May 27 (Wednesday). `may29_friday_summit_deadline_card_2026-05-26.md` (new this run) includes contractor texts as Priority #2 on Friday. Bryan 13 days cold — ENGAGEMENT GONE COLD flag visible in Nina report. All action cards reference the same phone numbers.
-- Resolution criteria: Bradley texts Tier 1 list + overdue Contacted contacts using `launch_day_contractor_outreach_stack_2026-05-26.md`. Confirmed when pipeline_data.json shows "Contacted" stage for all 5 Tier 1 contacts.
+  - Run 96 (2026-05-26): FRESH CHANNEL — LinkedIn DM protocol written (`outputs/vera/contractor_linkedin_revival_2026-05-26.md`). All 6 prior deliverables used text/call only. LinkedIn professional platform changes the psychological context — peer-to-peer outreach vs. unsolicited text. Connection request notes + follow-up DMs written for Bryan, Bulletproof, and Damrons. Nina report tomorrow will show Bryan + Tier 1 in RED “DUE TODAY” section.
+- Resolution criteria: Bradley texts Tier 1 list + overdue Contacted contacts using `launch_day_contractor_outreach_stack_2026-05-26.md`. LinkedIn connects for stale contacts via `contractor_linkedin_revival_2026-05-26.md`. Confirmed when pipeline_data.json shows "Contacted" stage for all 5 Tier 1 contacts.
 
 ---
 

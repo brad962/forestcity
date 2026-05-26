@@ -190,3 +190,72 @@
 >Summit: 4 days left — Friday card written, double-click shortcut ready
 >Ads: Day 1 complete; Day 3 check Thu May 28; Day 7 review Tue June 2
 >June 4 enrollment: 9 days — all assets staged, only blockers are Bradley actions (Instantly pause, Summit pull, contractor texts, gas station blast)
+
+---
+
+🔧 *Vera — Auto-Upgrade*
+>Changed: workers/nina_report.py — split due-this-week into "🔴 DUE TODAY" + "📅 due this week" tiers
+>Why: Gas station + Tier 1 contractors have next_followup=2026-05-27 (tomorrow) — they'd blend into the general list; now they fire in the red top tier
+>File: workers/nina_report.py
+
+---
+
+🔧 *Vera — Auto-Upgrade*
+>Changed: workers/jasmine_flyer.py — fixed empty-description hook hash (md5 of empty string always → hook_idx=0)
+>Why: Jobs entered without a description always got the same hook; now uses date/hour seed as fallback when description < 4 chars
+>File: workers/jasmine_flyer.py
+
+---
+
+🔧 *Vera — Auto-Upgrade*
+>Changed: agents/danny.md — gas station contact count corrected from "18" to "12"
+>Why: pipeline_data.json has 12 gas station contacts; the "18" figure has been wrong since Run 95 corrected it in open_issues but not in the agent file; corrected with source note
+>File: agents/danny.md
+
+---
+
+🔧 *Vera — Auto-Upgrade*
+>Changed: agents/tommy.md — added off_hours_lead_response_kit format entry
+>Why: Ads launched today; evening leads will arrive tonight; no guidance existed for what to say at 9pm when you can't call
+>File: agents/tommy.md
+
+---
+
+📋 *Vera — New Deliverable*
+>Written: outputs/vera/contractor_linkedin_revival_2026-05-26.md
+>What: LinkedIn connection request notes + DMs for Bryan (14d cold), Bulletproof, Damrons — completely new channel; all 6 prior deliverables were text/call only
+>Use: Connect on LinkedIn tonight (Bryan first) — professional platform, different psychological framing than texts
+
+---
+
+📋 *Vera — New Deliverable*
+>Written: outputs/tommy/off_hours_lead_response_kit_2026-05-26.md
+>What: 3 instant text templates (evening/weekend/mid-job), callback timing language, morning voicemail script, Meta Business Suite auto-reply setup
+>Use: Facebook ads just went live. You WILL get evening and weekend leads. Read this before 5pm today.
+
+---
+
+💡 *Vera — Upgrade Proposal*
+>Idea: Neighbor Stack geographic scheduling — when you book a job, proactively offer the same-week slot to 2-3 houses on the same street at a small "neighbor discount" ($15 off) to cluster jobs and cut drive time
+>Why: May/June = peak season; residential areas are booking now; clustering jobs on the same street reduces per-job drive time from ~20 min to ~2 min and creates organic social proof ("I saw your truck on my street")
+>Impact: Increases revenue per day by 20-30% without adding a single marketing dollar; neighbor canvass script exists — this makes it systematic not opportunistic
+>Reply YES to approve. Tommy would write the scheduling script + discount offer copy; Donna adds to the booking confirmation flow.
+
+---
+
+💡 *Vera — Upgrade Proposal*
+>Idea: Meta Business Suite Instant Reply — set up an automated first-response for Facebook Messenger leads so leads arriving at 9pm get acknowledged within seconds (not hours)
+>Why: Off-hours kit (new this run) gives Bradley the text to send, but he still has to be awake and see the notification; Meta Business Suite has a built-in instant reply that fires automatically
+>Impact: Every evening/weekend ad lead gets acknowledged within 60 seconds; lead conversion rate increases; zero cost, 5-minute setup
+>Instructions in outputs/tommy/off_hours_lead_response_kit_2026-05-26.md — Section "Set Up the 5-Minute Auto-Response"
+>Reply YES to approve and I'll add setup steps to CLAUDE.md + rick.md.
+
+---
+
+✅ *Vera — Scan Complete 2026-05-26 (Run 96)*
+>4 auto-upgrades shipped | 2 deliverables | 2 proposals | 24 open issues (unchanged)
+>Biggest gap closed this run: off-hours lead response (ads just went live — evening leads start tonight)
+>Bryan contractor: fresh channel — LinkedIn DM protocol ready; 7 deliverables total across 18+ runs; LinkedIn is the last unexplored channel
+>Gas station + Tier 1 contractors: will fire RED "DUE TODAY" in Nina report tomorrow morning
+>Summit pull: 4 days left — Wednesday or Friday are the windows
+

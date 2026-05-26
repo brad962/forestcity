@@ -183,8 +183,10 @@ def write_facebook_post(description: str, date: str) -> str:
     else:
         booking_month = month
 
-    # Rotate hooks by hashing the description — same job always gets same hook, but variety across jobs
-    hook_idx = int(hashlib.md5(desc[:20].encode()).hexdigest(), 16) % 4
+    # Rotate hooks by hashing the description — same job always gets same hook, but variety across jobs.
+    # Fall back to time-based seed when description is blank/very short (md5 of "" is always identical).
+    hash_src = desc[:20] if len(desc) >= 4 else f"{dt.year}{dt.month}{dt.day}{dt.hour}"
+    hook_idx = int(hashlib.md5(hash_src.encode()).hexdigest(), 16) % 4
 
     if mo in (3, 4, 5):
         hooks = [
