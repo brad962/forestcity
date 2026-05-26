@@ -97,14 +97,20 @@ PROPERTY_MANAGER_TITLES = [
     # Self-storage segment — district managers oversee 3-5 facilities; one deal = multiple buildings (added 2026-05-25 run 87)
     'self storage manager', 'storage facility manager', 'self-storage manager',
     # Senior & assisted living — primary decision-maker titles; mirrors DANNY_TITLES (added 2026-05-26 run 94)
-    # 'facility manager' already above; 'executive director' + 'administrator' are the titles Apollo surfaces
-    'executive director', 'administrator', 'director of care', 'senior living director',
+    # 'facility manager' already above; 'executive director' + 'facility administrator' are the titles Apollo surfaces
+    # NOTE: 'administrator' was narrowed to 'facility administrator' (run 99) — 'administrator' alone matched
+    # IT Administrator, Database Administrator, School Administrator etc. on manual imports (substring = 'administrator')
+    'executive director', 'facility administrator', 'director of care', 'senior living director',
     # Word-order variants for correct routing on import (added 2026-05-26 run 95)
     'director of facilities', 'campus manager', 'facilities operations manager',
     # 'operations director' already above; 'director of operations' is a distinct non-matching word order (added 2026-05-26 run 97)
     'director of operations',
     # Hotels/motels — GMs are the vendor decision-makers; large parking lots + pool decks + facades (added 2026-05-26 run 98)
     'hotel general manager', 'hotel manager', 'hospitality manager',
+    # Fitness centers & health clubs — large parking lots + building exteriors; chains have district/regional FMs (added 2026-05-26 run 99)
+    'fitness center manager', 'health club manager', 'gym manager', 'fitness director',
+    # Universities & private schools — facilities directors already in list; org routing catches campus FM contacts (added 2026-05-26 run 99)
+    'campus facilities manager', 'director of campus operations',
 ]
 
 REALTOR_TITLES = [

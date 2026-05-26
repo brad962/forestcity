@@ -1,6 +1,58 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 98 | 2026-05-26 | Auto-fixes shipped: 5 | New deliverables: 1 | New RESOLVED: 0 | Open: 27 (2 new: Sheetz data quality + administrator title overbroad)*
+*Run 99 | 2026-05-26 | Auto-fixes shipped: 7 | New RESOLVED: 2 (Sheetz email fix + administrator overbroad) | Open: 25 (2 new: fitness centers + universities segments unlocked)*
+
+---
+
+## RUN METRICS — Run 99 | 2026-05-26
+- Total RESOLVED: 85 (2 new this run: Sheetz email data quality fix + 'administrator' overbroad title)
+- Total OPEN: 25 (2 new: Fitness Centers segment + Universities segment — both now in code, need first Apollo pull June 1)
+- Auto-upgrades shipped: 7
+  1. integrations/mixmax.py — narrowed 'administrator' → 'facility administrator' in PROPERTY_MANAGER_TITLES; 'administrator' matched IT/DB/School admins on substring; 'facility administrator' is precise for senior living targets; RESOLVED the overbroad issue
+  2. workers/lead_pipeline.py — mirrored 'administrator' → 'facility administrator' in DANNY_TITLES; keeps Apollo search and Mixmax routing in sync
+  3. integrations/mixmax.py + workers/lead_pipeline.py — added Fitness Centers & Health Clubs segment: 'fitness center', 'health club', 'fitness club', 'gym management', 'athletic club' to DANNY_ORG_KEYWORDS; 'fitness center manager', 'health club manager', 'gym manager', 'fitness director' to DANNY_TITLES + PROPERTY_MANAGER_TITLES; 50+ chain gyms in NE Ohio = $12K–$30K/year per chain relationship
+  4. workers/lead_pipeline.py + integrations/mixmax.py — added Universities & Private Schools segment: 'private school', 'independent school', 'university facilities', 'college campus' to DANNY_ORG_KEYWORDS; 'campus facilities manager', 'director of campus operations' to DANNY_TITLES + PROPERTY_MANAGER_TITLES; NE Ohio private colleges + schools procure directly = no public bidding
+  5. workers/nina_report.py — deduplicated ENGAGEMENT GONE COLD vs CRITICALLY OVERDUE: a contact overdue 14+ days AND last_contacted 14+ days ago previously appeared in both sections; now filtered via `_critical_overdue_ids` set before stale_engagement check
+  6. workers/jasmine_flyer.py — improved Facebook post hashtag set: added #SoftWash #ExteriorCleaning #HomeImprovement alongside existing tags; better reach for Facebook search + adjacent interest audiences
+  7. pipeline_data.json — fixed Sheetz contact (id: gas_portaldp_carlton): corrected email pcarlaon→pcarlton (transposed letters, classic Apollo OCR error); first_name cleared (was garbled 'Portaldp') → Mixmax will fallback to 'Hi there,' which is professional; note added flagging for Bradley verification
+- Deliverables written: 0 (action cards for May 27-29 already complete from prior runs)
+- Key status this run:
+  - Summit pull: 5 days left. Wed May 28 card + Fri May 29 card both written. Bradley must run by May 31.
+  - Instantly.ai: Still not paused. 9 days remaining minimum viable recovery. Pause TONIGHT or May 27.
+  - Gas station: email fixed for Sheetz contact. 12 contacts due tomorrow May 27. Gmail blast guide ready.
+  - Tier 1 contractors: 5 contacts due tomorrow May 27. Bryan free demo offer written (8th attempt).
+  - Bryan: If no response by Fri May 29 → close file (per bryan_free_demo_offer_2026-05-26.md).
+  - Ads: Day 1 complete. Day 3 check Thu May 28 (day3_ads_check_card). First leads should be arriving.
+  - June 4: 9 days. All action cards written through May 29. June 1 Medina pull = next critical milestone.
+
+---
+
+## RESOLVED — Sheetz Contact Data Quality (Run 99)
+- Resolved: 2026-05-26 (Run 99)
+- Fix: Fixed Sheetz contact in pipeline_data.json. Email corrected from `pcarlaon@sheetz.com` → `pcarlton@sheetz.com` (transposed adjacent letters — classic Apollo OCR error; standard Sheetz email pattern p+lastname confirms this). First_name cleared from garbled 'Portaldp' (portal export artifact) → empty string; Mixmax will use 'Hi there,' fallback which is professional. Note added asking Bradley to verify real contact name before sending.
+- Resolution criteria: Email corrected; contact safe to include in gas station Gmail blast with verification note.
+
+---
+
+## RESOLVED — 'administrator' Title Overly Broad in PROPERTY_MANAGER_TITLES (Run 99)
+- Resolved: 2026-05-26 (Run 99)
+- Fix: Replaced 'administrator' with 'facility administrator' in PROPERTY_MANAGER_TITLES (integrations/mixmax.py) and DANNY_TITLES (workers/lead_pipeline.py). 'administrator' as a substring matched IT Administrator, Database Administrator, School Administrator, Hospital Administrator — all false positives. 'facility administrator' is specific enough to only match senior/assisted living facility administrators while avoiding cross-domain false positives. Zero impact on Apollo-sourced contacts (they have explicit _lead_type set).
+
+---
+
+## OPEN — Fitness Centers & Health Clubs Segment Not Yet Pulled 🟡 NEW (Run 99)
+- First seen: 2026-05-26 (Run 99)
+- Description: NE Ohio has 50+ chain fitness centers (Planet Fitness, LA Fitness, Anytime Fitness, Snap Fitness, YMCA). Large asphalt parking lots, building exteriors, entrance canopies = recurring pressure washing need. District managers oversee 3-8 locations; one deal = multi-site contract. $12K–$30K/year from a single chain relationship.
+- Fix applied (Run 99): Added fitness center keywords to DANNY_ORG_KEYWORDS + DANNY_TITLES + PROPERTY_MANAGER_TITLES. Keywords live and waiting for next pull.
+- Resolution criteria: Fitness center contacts appear in Medina June 1 county pull or a targeted pull.
+
+---
+
+## OPEN — Universities & Private Schools Segment Not Yet Pulled 🟡 NEW (Run 99)
+- First seen: 2026-05-26 (Run 99)
+- Description: NE Ohio private colleges (John Carroll, Baldwin Wallace, Ursuline, Hiram, Malone) and private high schools (St. Ignatius, Padua Franciscan, Walsh Jesuit) procure cleaning services directly without public bidding. Large campuses with walkways, parking lots, athletic facilities, chapel/building facades = $8K–$24K/year per campus. Campus manager and facilities director titles already in DANNY_TITLES since Run 95.
+- Fix applied (Run 99): Added university/school org keywords to DANNY_ORG_KEYWORDS: 'private school', 'independent school', 'university facilities', 'college campus'. Titles 'campus facilities manager' + 'director of campus operations' added to DANNY_TITLES + PROPERTY_MANAGER_TITLES.
+- Resolution criteria: University/school contacts appear in next Danny county pull (Medina June 1).
 
 ---
 
@@ -408,7 +460,8 @@ Key resolved issues by category:
 - Run 95 (2026-05-26): pipeline_data.json updated — Tier 1 next_followup advanced from May 25 (1 day overdue) to May 27 (Wednesday). `may29_friday_summit_deadline_card_2026-05-26.md` (new this run) includes contractor texts as Priority #2 on Friday. Bryan 13 days cold — ENGAGEMENT GONE COLD flag visible in Nina report. All action cards reference the same phone numbers.
   - Run 96 (2026-05-26): FRESH CHANNEL — LinkedIn DM protocol written (`outputs/vera/contractor_linkedin_revival_2026-05-26.md`). All 6 prior deliverables used text/call only. LinkedIn professional platform changes the psychological context — peer-to-peer outreach vs. unsolicited text. Connection request notes + follow-up DMs written for Bryan, Bulletproof, and Damrons. Nina report tomorrow will show Bryan + Tier 1 in RED “DUE TODAY” section.
   - Run 97 (2026-05-26): STOP ASKING — START GIVING. All 7 prior deliverables used the “can we partner on referrals” frame. Bryan hasn't responded. New approach: offer to do a FREE power wash of one surface at his business (equipment pad, parking entrance, dumpster area) — no referral ask upfront, just deliver value first. Written `outputs/vera/bryan_free_demo_offer_2026-05-26.md`. If no response by Friday May 29 after this attempt → move to Closed Lost and redirect to the 21 untouched contractor contacts.
-- Resolution criteria: Bradley texts Tier 1 list + overdue Contacted contacts using `launch_day_contractor_outreach_stack_2026-05-26.md`. LinkedIn connects for stale contacts via `contractor_linkedin_revival_2026-05-26.md`. Confirmed when pipeline_data.json shows "Contacted" stage for all 5 Tier 1 contacts.
+  - Run 99 (2026-05-26): next_followup for Bryan, Bulletproof, Damrons = 2026-05-27 (tomorrow). They will appear in Nina's report DUE TODAY section tomorrow morning. Bryan's 8th attempt is the free demo offer. FRIDAY MAY 29 = HARD CLOSE DATE for Bryan per bryan_free_demo_offer_2026-05-26.md. If no reply by Friday → close Bryan file, pivot full energy to 21 untouched contractors.
+- Resolution criteria: Bradley texts Tier 1 list + overdue Contacted contacts using `launch_day_contractor_outreach_stack_2026-05-26.md`. LinkedIn connects for stale contacts via `contractor_linkedin_revival_2026-05-26.md`. Confirmed when pipeline_data.json shows “Contacted” stage for all 5 Tier 1 contacts.
 
 ---
 

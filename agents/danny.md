@@ -102,6 +102,22 @@ This enrolls ALL pending contacts (gas stations + fleet) without triggering a fr
 **Pitch angle:** "First impressions happen in the parking lot before guests reach the lobby. We make sure what they see first matches the standard inside."
 **Sequence:** Route to Property Manager sequence (facility management angle).
 
+### Fitness Centers & Health Clubs (NEW — May 2026, Run 99)
+**Status:** Org keywords + titles live in DANNY_ORG_KEYWORDS/DANNY_TITLES as of Run 99. Include in next county rotation (Medina June 1).
+**Target:** Fitness Center Manager, Health Club Manager, Gym Manager, Fitness Director, General Manager, Regional Manager at fitness chains
+**Why:** NE Ohio has 50+ chain fitness centers (Planet Fitness, LA Fitness, Anytime Fitness, Snap Fitness, YMCA). Large asphalt parking lots, building exteriors, entrance canopies. Members expect cleanliness — a dirty parking lot = member complaints and churn. District managers oversee 3–8 locations.
+**Revenue per visit:** $600–$1,500 (parking lot + exterior). 2x/year = $1,200–$3,000 per location. 10-location chain = $12K–$30K/year.
+**Apollo keywords (live Run 99):** `fitness center`, `health club`, `fitness club`, `gym management`, `athletic club` — auto-included in DANNY_ORG_KEYWORDS.
+**Pitch angle:** "Members form their first impression in the parking lot before they get to the equipment. What does yours say about the facility?"
+
+### Universities & Private Schools (NEW — May 2026, Run 99)
+**Status:** Org keywords live in DANNY_ORG_KEYWORDS as of Run 99. Campus Manager + Facilities Director titles already live. Include in next county rotation (Medina June 1).
+**Target:** Campus Facilities Manager, Director of Campus Operations, Facilities Director, Campus Manager at private universities and independent schools
+**Why:** NE Ohio private colleges (John Carroll University, Baldwin Wallace, Ursuline, Hiram, Malone) and private schools (St. Ignatius, Padua, Walsh Jesuit) procure vendor services directly without public bidding. Large campus walkways, parking areas, athletic facility exteriors, chapel facades = recurring cleaning need. Maintenance directors sign multi-year service contracts.
+**Revenue per visit:** $2,000–$6,000 (campus walk + parking + building exteriors). Annual = $8K–$24K per campus.
+**Apollo keywords (live Run 99):** `private school`, `independent school`, `university facilities`, `college campus` — auto-included in DANNY_ORG_KEYWORDS.
+**Pitch angle:** "Alumni weekends and prospective student tours are the two days your campus can't look dirty. We make sure it doesn't."
+
 ### Car Dealerships (NEW — May 2026)
 **Status:** Apollo keywords live. No pull yet. Include in next county rotation run.
 **Target:** Facility Manager, General Manager, Service Director at car dealerships and auto groups

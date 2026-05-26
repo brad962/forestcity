@@ -535,9 +535,14 @@ def run_weekly():
             # Flag "Contacted" stage contacts cold for 14+ days regardless of next_followup date.
             # Catches contacts like Bryan (last contact 14d ago, followup set for today) that the
             # overdue section misses because next_followup hasn't technically passed yet.
+            # Deduplication: skip contacts already shown in critical_overdue to avoid double-listing
+            # the same contact (a contact can be both overdue 14+ days AND last-contacted 14+ days ago).
             from datetime import date as _date_eng
+            _critical_overdue_ids = {id(c) for c, _ in critical_overdue} if overdue else set()
             stale_engagement = []
             for c in manual:
+                if id(c) in _critical_overdue_ids:
+                    continue  # already shown in CRITICALLY OVERDUE section
                 if c.get('stage') == 'Contacted' and c.get('last_contact'):
                     try:
                         last_dt = _date_eng.fromisoformat(c['last_contact'])

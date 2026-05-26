@@ -106,9 +106,11 @@ DANNY_TITLES = [
     # Self-storage segment — district/facility managers oversee multiple properties (added 2026-05-25 run 87)
     'self storage manager', 'storage facility manager', 'self-storage manager',
     # Senior & assisted living — top decision-maker titles missing from search (added 2026-05-26 run 94)
-    # 'facility manager' already above; 'executive director' + 'administrator' are the primary titles at
+    # 'facility manager' already above; 'executive director' + 'facility administrator' are the primary titles at
     # senior living, memory care, and skilled nursing facilities — without these Apollo returns nothing
-    'executive director', 'administrator', 'director of care', 'senior living director',
+    # NOTE: narrowed 'administrator' → 'facility administrator' (run 99) — 'administrator' is too broad a
+    # substring; would match IT Administrator, Database Administrator, etc. in Apollo results
+    'executive director', 'facility administrator', 'director of care', 'senior living director',
     # Word-order variants — 'facilities director' does NOT substring-match 'director of facilities' (added 2026-05-26 run 95)
     'director of facilities',         # reverse word order of 'facilities director'; different substring
     'campus manager',                  # university/corporate campus FM; large paved areas + buildings = high-value accounts
@@ -117,6 +119,11 @@ DANNY_TITLES = [
     'director of operations',
     # Hotels/motels — GMs run the property like a facility manager; large parking lots + pool decks + building facades (added 2026-05-26 run 98)
     'hotel general manager', 'hotel manager', 'hospitality manager',
+    # Fitness centers & health clubs — district/regional FMs at chains (Planet Fitness, LA Fitness, Anytime) (added 2026-05-26 run 99)
+    # NE Ohio has 50+ chain fitness centers; large parking lots + building exteriors; GMs sign vendor contracts
+    'fitness center manager', 'health club manager', 'gym manager', 'fitness director',
+    # Universities/private schools — campus facilities; campus manager already above; director of campus ops variant (added 2026-05-26 run 99)
+    'campus facilities manager', 'director of campus operations',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -148,6 +155,12 @@ DANNY_ORG_KEYWORDS = [
     # Hotels/motels — large parking lots, pool decks, pool surrounds, exterior facades, covered walkways (added 2026-05-26 run 98)
     # NE Ohio has ~200 hotels in 7 counties; one contract = $3K–$8K/year; GMs sign vendor contracts
     'hotel management', 'hospitality management', 'hotel chain', 'extended stay', 'motel management',
+    # Fitness centers & health clubs — Planet Fitness, LA Fitness, Anytime, snap fitness; large lots + building exteriors (added 2026-05-26 run 99)
+    # NE Ohio has 50+ chain gyms; district managers oversee 3-8 locations; one deal = multi-site recurring revenue
+    'fitness center', 'health club', 'fitness club', 'gym management', 'athletic club',
+    # Universities & private schools — large campuses, parking structures, athletic facilities (added 2026-05-26 run 99)
+    # Private schools (St. Ignatius, Padua, Walsh Jesuit) + universities (JCU, BW, Ursuline) sign vendor contracts directly
+    'private school', 'independent school', 'university facilities', 'college campus',
 ]
 
 CARLA_SEARCHES = [
