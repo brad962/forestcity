@@ -164,7 +164,9 @@ DANNY_ORG_KEYWORDS = [
     'independent living', 'continuing care', 'senior housing', 'assisted care',
     # Hotels/motels — large parking lots, pool decks, pool surrounds, exterior facades, covered walkways (added 2026-05-26 run 98)
     # NE Ohio has ~200 hotels in 7 counties; one contract = $3K–$8K/year; GMs sign vendor contracts
+    # 'lodging management' + 'hotel group' + 'motel chain' added run 102 — catches hotel companies not tagged as 'hotel management' in Apollo
     'hotel management', 'hospitality management', 'hotel chain', 'extended stay', 'motel management',
+    'lodging management', 'lodging facilities', 'hotel group', 'motel chain', 'resort management',
     # Fitness centers & health clubs — Planet Fitness, LA Fitness, Anytime, snap fitness; large lots + building exteriors (added 2026-05-26 run 99)
     # NE Ohio has 50+ chain gyms; district managers oversee 3-8 locations; one deal = multi-site recurring revenue
     'fitness center', 'health club', 'fitness club', 'gym management', 'athletic club',

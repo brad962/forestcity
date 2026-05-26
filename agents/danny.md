@@ -98,7 +98,7 @@ This enrolls ALL pending contacts (gas stations + fleet) without triggering a fr
 **Why:** NE Ohio has ~200 hotels across 7 counties. Large parking lots (oil drip zones), exterior building facades, covered walkways, pool surrounds, dumpster pads. Hotel GMs sign vendor contracts directly. Strong visual standard = easy sell ("guests arrive and form impression in the parking lot").
 **Revenue per visit:** $800–$2,000 (parking lot + facade). Quarterly or bi-annual = $3,200–$8,000/year per property.
 **Target companies:** Hilton Garden Inn, Courtyard by Marriott, Hampton Inn, Holiday Inn, Extended Stay America, Best Western, Comfort Inn — all have NE Ohio locations.
-**Apollo keywords (live Run 98):** `hotel management`, `hospitality management`, `hotel chain`, `extended stay` — added to DANNY_ORG_KEYWORDS.
+**Apollo keywords (live Run 98, expanded Run 102):** `hotel management`, `hospitality management`, `hotel chain`, `extended stay`, `motel management`, `lodging management`, `lodging facilities`, `hotel group`, `motel chain`, `resort management` — added to DANNY_ORG_KEYWORDS. Run 102 added `lodging management` / `hotel group` / `motel chain` variants — some NE Ohio hotel operators tag themselves under lodging/resort terminology in Apollo rather than "hotel management."
 **Pitch angle:** "First impressions happen in the parking lot before guests reach the lobby. We make sure what they see first matches the standard inside."
 **Sequence:** Route to Property Manager sequence (facility management angle).
 

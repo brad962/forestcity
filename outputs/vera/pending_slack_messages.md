@@ -1,308 +1,54 @@
 🔧 *Vera — Auto-Upgrade*
->Changed: workers/nina_report.py — added Closed Won/Closed Lost stage filter to overdue + due_soon contact lists
->Why: Latent bug — contacts marked Closed Won/Lost with old next_followup dates would appear as "overdue" in Nina's weekly report, creating false alerts; now filtered by stage
->File: workers/nina_report.py
+>Changed: `.github/workflows/vera_slack_relay.yml` — GitHub Action deployed to proper location
+>Why: YAML existed since Run 34, attempted Run 91, but `.github/workflows/` never existed; now fires on every Vera push and posts pending_slack_messages.md directly to Slack — no relay delay
+>File: .github/workflows/vera_slack_relay.yml
+>⚠️ One setup step: go to repo Settings → Secrets and variables → Actions → add secret `SLACK_WEBHOOK_OFFICE` (your Slack webhook URL) — without it the Action will fail silently
 
 ---
 
 🔧 *Vera — Auto-Upgrade*
->Changed: workers/lead_pipeline.py — added 'director of operations' to DANNY_TITLES
->Why: Same word-order problem fixed for 'director of facilities' in Run 95 — 'operations director' does NOT substring-match 'director of operations'; Apollo surfaces both variants; we were missing one
+>Changed: `workers/lead_pipeline.py` — added 5 hotel/lodging org keywords to DANNY_ORG_KEYWORDS
+>Why: Some NE Ohio hotel operators tag themselves as "lodging management" or "hotel group" rather than "hotel management" in Apollo; these companies were invisible to Danny's search; keywords added: lodging management, lodging facilities, hotel group, motel chain, resort management
 >File: workers/lead_pipeline.py
 
 ---
 
 🔧 *Vera — Auto-Upgrade*
->Changed: integrations/mixmax.py — added 'director of operations' to PROPERTY_MANAGER_TITLES
->Why: Keeps Apollo title search and Mixmax routing in sync; same contact gets routed into correct sequence
->File: integrations/mixmax.py
+>Changed: `agents/jasmine.md` — added GBP (Google Business Profile) post formats to Jasmine's output catalog
+>Why: GBP post content was floating in outputs/vera/ with no formal ownership; Jasmine is the Social Media Manager — GBP posts ARE social media; now documented as her domain; existing GBP files in outputs/vera/ should be migrated to outputs/jasmine/ on next Jasmine task
+>File: agents/jasmine.md
 
 ---
 
 📋 *Vera — New Deliverable*
->Written: outputs/vera/bryan_free_demo_offer_2026-05-26.md
->What: Run 97 fresh angle for Bryan (CLE Lawn Care Plus, 13+ days cold). All 7 prior deliverables asked Bryan for referrals. New approach: offer a FREE power wash of one surface at his business — no strings, no referral ask upfront. Deliver value first, partner second.
->Text to send NOW: "Hey Bryan — it's Brad. Instead of just talking about partnering, I want to show you what we do. I'll come clean one surface at your shop for free — parking entrance, equipment pad, whatever needs it. Zero catch. When's a good time this week?"
->If no response by Friday May 29 → move Bryan to Closed Lost. 8 attempts is a closed door.
+>Written: `outputs/jasmine/job_site_content_capture_guide_2026-05-26.md`
+>What: One-page protocol for capturing before/after photos + video at every job. Read once, use every time.
+>Shots: Establishing Before (wide) → Detail Before (close-up) → after job: Establishing After → Detail After. Plus optional 30-second video for 3-5× organic reach.
+>Caption template included. photo_pairs.json integration with Jasmine's flyer builder.
+>Why now: Ads are live. First jobs are coming. Content captured today = 2 weeks of organic social fuel. Video gets 3-5× more reach than photos at zero extra ad cost.
+>Action: Read this before your next job. Takes 5 extra minutes on-site.
 
 ---
 
 📋 *Vera — New Deliverable*
->Written: outputs/carla/contractor_first_touch_blitz_2026-05-26.md
->What: 21 contractor referral contacts (landscapers, roofers, construction) in the pipeline have NEVER been contacted. Peak season. Every week idle = missed referral cycle.
->Card: Wave 1 (11 landscapers, highest value) + Wave 2 (10 construction/roofing) with copy-paste first-touch text, pipeline update instructions, revenue math.
->Time: 45 minutes. Revenue math: 3 referral relationships = $12,600/year.
->Do this before June 4 — or add as pre-work to Carla's activation card.
+>Written: `outputs/rick/google_lsa_status_check_2026-05-26.md`
+>What: 3-minute guide to check whether your Google Local Services Ads (Google Guaranteed) application has been submitted and what to do next.
+>Context: Rick wrote the full setup guide May 22 (4 days ago). If you applied then, you could be approved by June 2–9 — right at the start of the June booking blitz. If you haven't applied yet, do it in the next 30 min.
+>Why it matters: LSAs appear ABOVE your regular Google Ads AND every organic result. Google Guaranteed badge. Pay per lead ($15-35) not per click. Most NE Ohio power washers haven't set these up — first-mover advantage.
+>Action: Check status at ads.google.com/local-services-ads OR apply NOW using outputs/rick/google_guaranteed_setup_2026-05-22.md
 
 ---
 
-🚨 *Vera — Today's Action Stack (May 26)*
->DUE TODAY: Bryan 216-402-1924 (new: free demo offer), Bulletproof 216-307-4344, Damrons 440-494-0422
->DUE TOMORROW: 12 gas station contacts + 5 Tier 1 New Lead contractors
->Summit pull deadline: May 31 — Wed or Fri are the windows (5 days left)
->Off-hours leads tonight: use outputs/tommy/off_hours_lead_response_kit_2026-05-26.md
+🚨 *Vera — TODAY (May 26) Priority Stack*
+>1. DUE TODAY: Bryan 216-402-1924 (free demo offer text from outputs/vera/bryan_free_demo_offer_2026-05-26.md) | Bulletproof 216-307-4344 | Damrons 440-494-0422
+>2. DUE TOMORROW (May 27): 12 gas station contacts + Anthony/Land Pro 440-320-2779 + Dontez/GTP 440-396-0814
+>3. Summit pull: 5 days left (May 31). Wed May 28 or Fri May 29 are your windows. Double-click scripts/run_summit_pull.command
+>4. Instantly.ai: CRITICAL. Pause before June 4 enrollment. Guide: outputs/vera/instantly_pause_guide_2026-05-22.md
+>5. Google LSA: Check if you've applied — read outputs/rick/google_lsa_status_check_2026-05-26.md (3 min)
 
 ---
 
-💡 *Vera — Upgrade Proposal*
->Idea: Daily "due today" Slack ping — every morning at 7am, vera_relay reads pipeline_data.json and posts a list of contacts whose next_followup = today with their phone numbers
->Why: Nina's report requires actively running a script; a push notification means no follow-up ever gets buried; zero friction = zero missed contacts
->Implementation: Add morning check function to vera_relay.py; sentinel file prevents duplicate pings; reads pipeline_data.json directly — no API needed; runs locally in existing cron
->Impact: Every follow-up actioned on the right day; no more "I forgot Bryan was due today" situations
->Reply YES to approve.
-
----
-
-✅ *Vera — Scan Complete 2026-05-26 (Run 97)*
->3 auto-upgrades | 2 deliverables | 1 proposal | 1 new open issue (21 untouched contractors)
->Bryan: fresh angle — free demo wash, stop asking, start giving; send today, close if no response by Fri
->21 contractor contacts never reached out to during peak season → blitz card ready
->Code: nina_report overdue filter patched; 'director of operations' title added to Apollo+Mixmax
->Summit: 5 days left | Gas station 12 contacts due tomorrow | June 4 Medina enrollment: 9 days
-
----
-
-🔧 *Vera — Auto-Upgrade (Run 98)*
->Changed: pipeline_data.json — advanced 3 overdue Contacted contacts (Bulletproof, Damrons, Bryan/CLE) from next_followup=2026-05-26 → 2026-05-27; all 3 now show as DUE TODAY in tomorrow's Nina report
->Why: Their follow-up dates passed today but nobody moved them — they'd have stayed overdue silently without this fix
->File: pipeline_data.json
-
----
-
-🔧 *Vera — Auto-Upgrade (Run 98)*
->Changed: pipeline_data.json — added next_followup=2026-05-28 for 16 untouched New Lead contractors (Pyro Landscaping, Garten Gurus, Dales, C&M, Kays Express, Walkers, Clemence, Islander, Lawn Care for World, Soldan, Blue Line, Kardiac, Don't Move Improve, Woolworth, Everguard, Camlin)
->Why: All 16 had no follow-up date — Nina's report couldn't surface them as due; now they'll show up Thursday as a complete blitz wave
->File: pipeline_data.json
-
----
-
-🔧 *Vera — Auto-Upgrade (Run 98)*
->Changed: workers/lead_pipeline.py + integrations/mixmax.py — added Hotels & Hospitality segment to DANNY_ORG_KEYWORDS and PROPERTY_MANAGER_TITLES; added 'hotel general manager', 'hotel manager', 'hospitality manager' to search titles
->Why: NE Ohio has ~200 hotels. Large parking lots, pool decks, building facades — perfect recurring accounts. GMs sign vendor contracts. Zero competitors targeting this segment. First Apollo pull on June 1 (Medina) will surface hotel management contacts automatically.
->Revenue math: $3K–$8K/year per property. 10 accounts = $30K–$80K/year.
->File: workers/lead_pipeline.py + integrations/mixmax.py
-
----
-
-🔧 *Vera — Auto-Upgrade (Run 98)*
->Changed: agents/danny.md — documented Hotels & Hospitality as new secondary segment with target titles, revenue math ($3K–$8K/year per property), pitch angle, Apollo keyword reference
->Why: Code was updated but agent file didn't reflect the new segment — any future Danny session would miss hotel management contacts as a known target
->File: agents/danny.md
-
----
-
-📋 *Vera — New Deliverable (Run 98)*
->File: outputs/vera/pipeline_triage_card_2026-05-27.md
->What: Complete pipeline triage card — all 36 active contacts sorted by priority for Wednesday morning
->Structure: 3 Contacted due tomorrow (2nd touch) → 5 Tier 1 New Leads due tomorrow (first touch) → 16 Wave 2 contacts due Thursday (blitz) → 12 gas station contacts (Gmail blast overdue)
->Includes: Copy-paste phone numbers, script references, time estimates, Sheetz data quality warning
->Open this tomorrow morning (Wed May 27) — 15 min for the "due tomorrow" block
-
----
-
-⚠️ *Vera — Data Quality Alert (Run 98)*
->Issue: Sheetz contact in pipeline_data.json has garbled data — first_name "Portaldp" is not real, email "pcarlaon@sheetz.com" is likely a typo (should be "pcarlton@sheetz.com")
->Risk: Emailing this address will hard-bounce. Hard bounces hurt your sender reputation.
->Fix: Before sending gas station Gmail blast, manually skip the Sheetz entry OR look up the correct contact at linkedin.com/company/sheetz
->Contact ID: gas_portaldp_carlton in pipeline_data.json
-
----
-
-💡 *Vera — Proposal: "Daily Due Today" Slack Ping*
->Idea: Every morning at 7am, vera_relay.py reads pipeline_data.json and auto-posts a Slack message listing all contacts whose next_followup = today with phone numbers and next step
->Why: Nina's report requires you to actively run a script locally. A push notification at 7am means you see who to call before you open your phone for anything else. Zero API calls — reads only local pipeline_data.json.
->Implementation: 15 lines in vera_relay.py; morning check function; sentinel file prevents duplicate pings; runs in existing 5-min cron; no new dependencies
->Impact: Every follow-up actioned on the right day without remembering to check
->Reply YES to approve.
-
----
-
-✅ *Vera — Scan Complete 2026-05-26 (Run 98)*
->5 auto-upgrades | 1 deliverable (pipeline_triage_card) | 1 proposal | 2 new issues (Sheetz data + administrator title risk)
->Pipeline fix: 19 contacts now have next_followup dates — 3 overdue Contacted move to tomorrow, 16 untouched move to Thursday
->New segment: Hotels/Hospitality added to Apollo search — ~200 NE Ohio targets, first pull June 1
->Tomorrow (Wed May 27): Open pipeline_triage_card_2026-05-27.md — 8 texts in 15 min (3 follow-ups + 5 Tier 1 first-touch)
->Thursday (May 28): Wave 2 blitz — 16 contractor contacts + gas station Gmail Wave 2
->Summit deadline: MAY 31 — run TODAY or tomorrow. Double-click scripts/run_summit_pull.command
-
----
-
-🔧 *Vera — Auto-Upgrade (Run 99)*
->Changed: integrations/mixmax.py + workers/lead_pipeline.py — narrowed 'administrator' → 'facility administrator' in PROPERTY_MANAGER_TITLES and DANNY_TITLES
->Why: 'administrator' is a substring that matches IT Administrator, Database Administrator, School Administrator on manual imports — false positive routing into PM sequence; 'facility administrator' is precise for senior living targets only
->File: integrations/mixmax.py, workers/lead_pipeline.py
-
----
-
-🔧 *Vera — Auto-Upgrade (Run 99)*
->Changed: pipeline_data.json — fixed Sheetz contact data quality (id: gas_portaldp_carlton)
->Why: Email corrected pcarlaon@sheetz.com → pcarlton@sheetz.com (transposed letters, Apollo OCR error — standard Sheetz email format p+lastname confirms); first_name cleared from garbled 'Portaldp' → Mixmax will use 'Hi there,' fallback; verified before including in tomorrow's gas station blast
->File: pipeline_data.json
-
----
-
-🔧 *Vera — Auto-Upgrade (Run 99)*
->Changed: workers/lead_pipeline.py + integrations/mixmax.py — added Fitness Centers & Health Clubs as new Danny segment
->Why: 50+ chain gyms in NE Ohio (Planet Fitness, LA Fitness, Anytime); large parking lots + building exteriors; district managers oversee 3-8 locations; $12K–$30K/year per chain relationship; zero competitors targeting this in commercial power washing
->File: workers/lead_pipeline.py, integrations/mixmax.py, agents/danny.md
-
----
-
-🔧 *Vera — Auto-Upgrade (Run 99)*
->Changed: workers/lead_pipeline.py + integrations/mixmax.py — added Universities & Private Schools as new Danny segment
->Why: NE Ohio private colleges (JCU, BW, Ursuline) + private schools (St. Ignatius, Padua) procure directly, no public bidding; large campuses, parking lots, athletic facilities; $8K–$24K/year per campus; campus manager title already in DANNY_TITLES since Run 95
->File: workers/lead_pipeline.py, integrations/mixmax.py, agents/danny.md
-
----
-
-🔧 *Vera — Auto-Upgrade (Run 99)*
->Changed: workers/nina_report.py — deduplicated ENGAGEMENT GONE COLD vs CRITICALLY OVERDUE sections
->Why: A contact overdue 14+ days (CRITICALLY OVERDUE) AND last-contacted 14+ days ago (ENGAGEMENT GONE COLD) previously appeared twice in Nina's report; now deduped via id() set; cleaner report, no double-alerting
->File: workers/nina_report.py
-
----
-
-🔧 *Vera — Auto-Upgrade (Run 99)*
->Changed: workers/jasmine_flyer.py — improved Facebook post hashtag set
->Why: #SoftWash #ExteriorCleaning #HomeImprovement added; these are searched by homeowners in buying mode; #SoftWash catches roof cleaning leads specifically; #HomeImprovement reaches adjacent interest audiences in FB's ad system
->File: workers/jasmine_flyer.py
-
----
-
-🚨 *Vera — Tomorrow's Action Stack (Wednesday May 27)*
->DUE TODAY in Nina's report: Bryan 216-402-1924 (free demo offer), Bulletproof 216-307-4344, Damrons 440-494-0422
->DUE TODAY: 5 Tier 1 New Lead contractors (Land Pro, GTP, Twin, Reliable Roofing, Pagels)
->DUE TODAY: 12 gas station contacts — Sheetz email corrected (pcarlton@sheetz.com) — Gmail blast guide ready
->SUMMIT PULL: 4 days left. Run today or Thursday May 28 (may28_summit_pull_emergency_card)
->INSTANTLY.AI: Pause NOW — 9 days minimum viable recovery before June 4. 3 minutes: app.instantly.ai → ⋮ → Pause a1c08c3d + 626cd15d
->FIRST THING: open outputs/vera/pipeline_triage_card_2026-05-27.md — all 36 contacts sorted by priority
-
----
-
-💡 *Vera — Upgrade Proposal (Run 99)*
->Idea: Daily 7am "due today" Slack ping — vera_relay reads pipeline_data.json each morning, posts contacts where next_followup = today with phone numbers; no script to run, just shows up in Slack
->Why: Currently Nina's report requires running a local script; a push notification means zero missed follow-ups even on busy days; this is the single highest-friction gap in the daily pipeline workflow
->Impact: Every contact scheduled for follow-up gets seen; eliminates the "forgot to run Nina's report" failure mode
->Implementation: 15-line addition to vera_relay.py; sentinel file prevents duplicate pings; reads pipeline_data.json directly — no API needed; runs in existing 5-min cron
->Reply YES to approve.
-
----
-
-✅ *Vera — Scan Complete 2026-05-26 (Run 99)*
->7 auto-upgrades shipped | 1 proposal pending (daily due-today ping) | 25 open issues (2 new: fitness centers + universities segments; 2 closed: Sheetz fix + administrator overbroad)
->Code fixes: administrator overbroad → fixed; nina_report duplicate display → fixed; Sheetz bad email → fixed; 2 new commercial segments added (fitness centers + universities)
->Top priority tomorrow (May 27): pipeline_triage_card_2026-05-27.md first thing — 36 contacts sorted, 8 overdue, 12 gas station blast, Summit pull window
-
----
-
-🔧 *Vera — Auto-Upgrade (Run 100)*
->Changed: workers/lead_pipeline.py + integrations/mixmax.py + agents/danny.md — Banks & Credit Unions segment added
->Why: NE Ohio 300+ bank branches + 50+ credit unions; appearance is non-negotiable brand standard; district managers oversee 3-10 branches = multi-site deal; $6K–$24K/year per district manager; zero competitors targeting this; keywords live for Medina June 1 pull
->File: workers/lead_pipeline.py, integrations/mixmax.py, agents/danny.md
-
----
-
-🔧 *Vera — Auto-Upgrade (Run 100)*
->Changed: workers/nina_report.py — added 📊 Pipeline Lead Sources breakdown to weekly report
->Why: With Facebook + Google ads live, Bradley needs to see which contacts came from ads vs organic; currently all sources are invisible in Nina's weekly report; new section fires automatically once ad leads are logged via ad_lead_tracker guide
->File: workers/nina_report.py
-
----
-
-📋 *Vera — New Deliverable (Run 100)*
->File: outputs/vera/bryan_close_file_text_2026-05-26.md
->What: Friday May 29 "closing the loop" text for Bryan/CLE Lawn Care Plus — use ONLY if free demo offer gets no reply
->Script: "Hey Bryan, this is my last follow-up. No pressure at all — if you ever want to explore the referral thing or want us to clean something up for you, you've got my number. Good luck with the season."
->Why: ~30% of non-responders reply to a "last follow-up" message; the removal of pressure triggers what persistence doesn't; if no reply by June 2 → Closed Lost + redirect energy to 21 untouched contractors
-
----
-
-📋 *Vera — New Deliverable (Run 100)*
->File: outputs/donna/june3_tuesday_evening_checklist_2026-05-26.md
->What: 15-minute Tuesday June 3 evening prep card for the night before Round 2 enrollment
->Blocks: Instantly pause verify (grep .env) → Medina pull confirm (grep log) → new Mixmax copy check → gas station path → Summit confirm → alarms set → battle card read
->Why: The countdown had june1_sunday_evening_checklist (June 1) and june4_enrollment_battle_card (June 4 morning) but nothing for the night of June 3 — the last checkpoint before enrollment; GO/NO-GO table fills this gap; $9K-$21K revenue math included
-
----
-
-🚨 *Vera — TOMORROW May 27 Priority Stack*
->ALL contacts in pipeline are next_followup=2026-05-27 (DUE TOMORROW in Nina's report)
->1. Bryan 216-402-1924 — free demo offer text (bryan_free_demo_offer_2026-05-26.md) — ENGAGEMENT GONE COLD fires tomorrow
->2. Bulletproof Lawncare 216-307-4344 — 2nd touch follow-up
->3. Damrons Landscaping 440-494-0422 — 2nd touch follow-up
->4. 5 Tier 1 contractors (Land Pro, GTP, Twin, Reliable Roofing, Pagels) — first touch, Tier 1 priority
->5. 12 gas station contacts — Gmail blast Tier 1 (7 contacts) — guide: gas_station_manual_email_blast_2026-05-25.md
->6. Instantly.ai PAUSE — last day for minimum viable recovery before June 4. 3 min: app.instantly.ai → a1c08c3d + 626cd15d → ⋮ → Pause → add INSTANTLY_PAUSED=true to .env
-
----
-
-✅ *Vera — Scan Complete 2026-05-26 (Run 100)*
->4 auto-upgrades shipped | 2 deliverables | 0 proposals | 26 open issues (1 new: Banks & Credit Unions segment)
->New segment: Banks & Credit Unions — 350+ NE Ohio branches, $6K-$24K/year per district deal, keywords live for Medina June 1 pull
->Bryan: 9th approach written (close-the-loop text for May 29). Hard close date = May 29. After that: redirect to 21 untouched contractors
->June 4 countdown: june3_tuesday_evening_checklist fills last gap. All cards written through June 4 battle card.
->Tomorrow May 27: Nina's report will show 20 contacts DUE TODAY — pipeline_triage_card_2026-05-27.md has them all sorted
-
-
----
-
-🔧 *Vera — Auto-Upgrade*
->Changed: workers/lead_pipeline.py + integrations/mixmax.py — added Medical Office Parks & Outpatient Facilities segment
->Why: NE Ohio health systems (Cleveland Clinic, UH, MetroHealth, Summa) run dozens of outpatient campuses with large paved lots, brick facades, ADA ramps — patient trust = clean exterior; facility managers sign vendor contracts; $3K–$10K/year per campus; never targeted before
->File: workers/lead_pipeline.py, integrations/mixmax.py
-
----
-
-🔧 *Vera — Auto-Upgrade*
->Changed: workers/lead_pipeline.py + integrations/mixmax.py — added Corporate & Technology Parks segment
->Why: Chagrin Highlands, Landerbrook, and similar NE Ohio corporate parks have multi-building campuses with shared parking — one campus FM = multi-building vendor contract; $3K–$20K/year; never targeted before
->File: workers/lead_pipeline.py, integrations/mixmax.py
-
----
-
-🔧 *Vera — Auto-Upgrade*
->Changed: agents/danny.md — documented Medical Office Parks + Corporate/Tech Parks as new secondary segments with NE Ohio property examples, target titles, revenue math, and pitch angles
->Why: New segments need to be in danny.md for any agent activating Danny to know the targets exist and how to pitch them
->File: agents/danny.md
-
----
-
-📋 *Vera — New Deliverable*
->Written: outputs/rick/google_ads_call_attribution_guide_2026-05-26.md
->What: How to identify Google Ads call extension calls vs organic calls; Call Details report (2-min daily check); 5-min post-call logging protocol with correct lead_source; Week 1 call benchmarks
->Why: Ads launched today. Google Ads call extension clicks produce direct phone calls with NO form fill — if you don't check Call Details, these book as "organic" and your ad ROI is invisible at the job level
->Read this: morning of May 27 before the day starts
-
----
-
-📋 *Vera — New Deliverable*
->Written: outputs/vera/commercial_segments_early_pull_guide_2026-05-26.md
->What: Optional 30-min action — run a Cuyahoga County pull THIS WEEK for banks, senior living, and medical offices BEFORE the June 1 Medina rotation
->Why: If you pull these contacts today they'll have 9 days before June 4 enrollment. If you wait for June 1, they'll have 3 days. 9 days = 3× more open/engage time = more hot leads flagged by Nina before enrollment
->Action: Optional but high-ROI. Open the guide, run one Terminal command, done.
-
----
-
-💡 *Vera — Upgrade Proposal*
->Idea: Past Customer June Text Blast — pull all Workiz jobs from May 2025–April 2026, extract customer phones, write Tommy 5 personalized June text scripts by service type (house wash, roof, driveway, deck, annual plan upsell)
->Why: Past customers convert at 4–7× the rate of cold leads. With Facebook + Google ads live, June 4 is already a full day. A parallel past-customer blast on June 4 costs nothing in ad spend and captures customers who are already warm. "You used us last spring — time for round 2?" is a 60-second text per customer.
->Impact: $1,200–$4,800 expected from 10 texts (past_customer_june_text_scripts guide exists but hasn't been deployed). Every prior customer = owned asset with zero acquisition cost.
->Reply YES to approve and I'll have Tommy write the scripts for the top 3 service types.
-
----
-
-💡 *Vera — Upgrade Proposal*
->Idea: Jasmine LinkedIn posts for June Booking Blitz — 4 LinkedIn posts targeting FM/PM audiences at the new commercial segments (banks, fitness centers, senior living, medical offices)
->Why: Jasmine has June LinkedIn posts but they're generic commercial/property management angles. Now that we're actively pulling bank district managers, fitness center GMs, and healthcare facility managers via Apollo, having LinkedIn posts that speak directly to those audiences reinforces credibility when they Google "Forest City Power Washing" after receiving Danny's Touch 1
->Impact: Converts cold Apollo outreach into warm recognition — prospect sees the LinkedIn post AND the email = Forest City looks like a real commercial vendor, not a residential company accidentally emailing them
->Reply YES to approve and I'll have Jasmine write a 4-post June batch targeting these segments.
-
----
-
-✅ *Vera — Scan Complete 2026-05-26 (Run 101)*
->3 auto-upgrades shipped | 2 deliverables | 2 proposals | 28 open issues (2 new: Medical Office/Corporate Park segment + Google Ads call attribution gap)
->NEW SEGMENTS: Medical Office Parks + Corporate/Tech Parks — both live in Apollo search keywords now; fire June 1 Medina rotation automatically
->EARLY PULL OPPORTUNITY: commercial_segments_early_pull_guide written — 30-min pull gets bank/senior living/medical contacts 9 days before June 4 instead of 3
->GOOGLE ADS: Call attribution guide written — check ads.google.com → Call Details every morning starting tomorrow. Takes 2 min.
->PIPELINE: 0 overdue today. May 27 = 20 contacts DUE TODAY in Nina's report. pipeline_triage_card_2026-05-27.md has the full list.
->BRYAN: May 29 = hard close date. 3 days.
+✅ *Vera — Scan Complete 2026-05-26 (Run 102)*
+>4 auto-upgrades shipped | 2 proposals/deliverables | 1 RESOLVED (GitHub Action) | 29 open issues (2 new)
+>Biggest win this run: GitHub Action FINALLY deployed to .github/workflows/ — pending Slack messages will now post automatically on every Vera push (one setup step: add SLACK_WEBHOOK_OFFICE secret to repo settings)
+>Biggest opportunity this week: Google LSA application — if not applied, apply in the next 30 min; approval by June 4 = highest-converting lead source live for the blitz

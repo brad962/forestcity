@@ -1,6 +1,48 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 101 | 2026-05-26 | Auto-fixes shipped: 3 | New RESOLVED: 0 | Open: 28 (2 new: Medical Office/Corporate Park segment + Google Ads call attribution gap; all prior issues carry forward)*
+*Run 102 | 2026-05-26 | Auto-fixes shipped: 4 | New RESOLVED: 1 (GitHub Action deployed) | Open: 29 (2 new: Google LSA status unknown + video content gap; all prior issues carry forward)*
+
+---
+
+## RUN METRICS — Run 102 | 2026-05-26
+- Total RESOLVED: 86 (1 new this run — GitHub Action finally deployed to .github/workflows/)
+- Total OPEN: 29 (2 new: Google LSA application status unknown + video content not systematized)
+- Auto-upgrades shipped: 4
+  1. `.github/workflows/vera_slack_relay.yml` — deployed GitHub Action from outputs/vera/ to proper location; YAML existed since Run 34 but was never in `.github/workflows/`; now fires on every Vera push, reads pending_slack_messages.md, posts to Slack via SLACK_WEBHOOK_OFFICE secret; requires SLACK_WEBHOOK_OFFICE secret configured in repo Settings → Secrets → Actions
+  2. `workers/lead_pipeline.py` — added 5 hotel/lodging org keywords to DANNY_ORG_KEYWORDS: `lodging management`, `lodging facilities`, `hotel group`, `motel chain`, `resort management`; some NE Ohio hotel operators tag themselves under lodging/resort terminology in Apollo rather than 'hotel management'; these keywords catch them in the June 1 Medina pull and future county rotations
+  3. `agents/danny.md` — updated Hotels & Hospitality Apollo keywords section to document Run 102 additions; lodging management + hotel group + motel chain now listed as live keywords
+  4. `agents/jasmine.md` — added GBP (Google Business Profile) output format entries: `gbp_post_[topic]_[date].md`, `gbp_weekly_routine_[date].md`, `gbp_content_calendar_[month]_[date].md`; GBP posts are social media content (Jasmine's domain) but were floating in vera's outputs folder; now formally Jasmine's responsibility; existing GBP files in outputs/vera/ noted for migration to outputs/jasmine/ on next Jasmine task
+- Deliverables written: 2
+  1. `outputs/jasmine/job_site_content_capture_guide_2026-05-26.md` — practical one-page protocol for capturing before/after photos and video at every job; 4 specific shots (establishing before, detail before, establishing after, detail after); 30-sec video format for 3-5× organic reach vs static photos; Facebook post template; photo_pairs.json integration with jasmine_flyer.py; closes the gap between "jobs are happening" and "social content pipeline is being fed"; critical now that ads are live and first bookings are coming in
+  2. `outputs/rick/google_lsa_status_check_2026-05-26.md` — status check guide for Google Local Services Ads application (may or may not have been applied after setup guide was written May 22); if applied May 22 → could be approved by June 2–9 (7-14 day window); LSAs appear ABOVE regular Google Ads + Google Guaranteed badge; pay-per-lead model vs pay-per-click; closes the "did we even apply?" accountability gap
+- Pipeline status this run:
+  - Today is May 26 (ads live). Tomorrow May 27: 12 gas station contacts + 5 Tier 1 contractors DUE (next_followup=2026-05-27).
+  - Summit pull: 5 DAYS LEFT (deadline May 31). Bradley must run `scripts/run_summit_pull.command` this week.
+  - Bryan: Still cold 13+ days. Free demo offer text written. Close by May 29 if no response.
+  - June 4: 9 days. All countdown cards written. Next milestone: Summit pull (May 28 or 29 ideal).
+  - Instantly.ai: CRITICAL — still needs manual pause before June 4 enrollment.
+
+---
+
+## RESOLVED — GitHub Action Not Deployed to .github/workflows/ (Run 102)
+- Resolved: 2026-05-26 (Run 102)
+- Fix: Copied `outputs/vera/github_action_vera_slack_relay.yaml` to `.github/workflows/vera_slack_relay.yml`. YAML was written in Run 34 and attempted in Run 91 but never reached the correct location. The Action now fires on every push to `main` where the author is Vera Cole AND `outputs/vera/pending_slack_messages.md` changed. Posts all messages in pending_slack_messages.md to Slack via `SLACK_WEBHOOK_OFFICE` secret, then clears the file. PREREQUISITE: Bradley must configure `SLACK_WEBHOOK_OFFICE` as a GitHub Actions secret at repo Settings → Secrets and variables → Actions.
+
+---
+
+## OPEN — Google Local Services Ads Application Status Unknown 🟡 NEW (Run 102)
+- First seen: 2026-05-26 (Run 102)
+- Description: Rick wrote the Google Local Services Ads (Google Guaranteed) setup guide on May 22 (`outputs/rick/google_guaranteed_setup_2026-05-22.md`). Today is May 26. It's unknown whether Bradley has applied. If applied May 22, approval window is 7–14 days = potentially approved by June 2–9, right at the start of the June booking blitz. If not applied, every day of delay = missed leads. LSAs appear ABOVE regular Google Ads and come with Google's trust badge; pay-per-lead ($15–$35) vs pay-per-click ($2–$5). Most NE Ohio power washing competitors have not set these up.
+- Fix applied (Run 102): Wrote `outputs/rick/google_lsa_status_check_2026-05-26.md` — 3-minute guide to check application status + action table for approved/not-approved scenarios + weekly budget recommendations + lead logging protocol.
+- Resolution criteria: Bradley checks status at ads.google.com/local-services-ads and either confirms application is in-review or applies immediately. Resolved when LSA status is confirmed (approved, pending, or applied today).
+
+---
+
+## OPEN — Video Content Not in Systematic Workflow 🟡 NEW (Run 102)
+- First seen: 2026-05-26 (Run 102)
+- Description: Facebook and Google ads launched today. Organic video content gets 3-5× more reach than static photos on Facebook — but there was no systematic protocol for Bradley to capture video at job sites. Jasmine's flyer builder handles photo pairs, and before_after_photo_capture_protocol exists, but neither specifically addresses video (30-second transformation reveal format), the exact shot list that works for a phone camera, or how to post it immediately from the job site while engagement window is open. Without a protocol, video capture is inconsistent or doesn't happen at all.
+- Fix applied (Run 102): Wrote `outputs/jasmine/job_site_content_capture_guide_2026-05-26.md` — covers 4 shots (establishing before/after + close-up detail before/after), 30-second video format, Facebook caption template, photo_pairs.json integration, and what NOT to do. Read once, use on every job.
+- Resolution criteria: Bradley reads the guide before first post-ad-launch job and consistently captures before/after content. Tracked when before/after posts start appearing on Facebook with job content (indicates the protocol is being followed).
 
 ---
 

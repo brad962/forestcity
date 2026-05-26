@@ -1,0 +1,135 @@
+# Job Site Content Capture Guide
+*Jasmine Burke | Social Media Manager*
+*Written: 2026-05-26 | Read this ONCE before your first job, then use it on every job*
+
+---
+
+## Why This Matters
+
+Every job you complete is worth **$0 in social media** if you don't capture it.
+Every job you capture is worth **2 weeks of Facebook + Instagram content**.
+Video gets **3–5× more organic reach** than photos on Facebook. Zero extra ad spend.
+
+Read this once. Bookmark it. Do it at every job starting today.
+
+---
+
+## The 4 Shots — Every Job, Every Time
+
+**BEFORE arriving (or first 2 minutes on-site, before any work starts):**
+
+### Shot 1 — Establishing Before (Wide)
+- Step back 20–30 feet from the surface you're cleaning
+- Capture the full house, driveway, or building in frame
+- Make the problem obvious: algae, stains, black streaks, road salt
+
+**What to say:** Nothing. Let the image speak. Or say: *"This is what we walked up to this morning in [city]."*
+
+### Shot 2 — Detail Before (Close-Up)
+- Get close (3–5 feet) on the worst stained area
+- Show the texture of the algae, the black streak, the oil stain
+- This is the "cringe shot" — make it uncomfortable to look at
+
+**AFTER the job, before loading up:**
+
+### Shot 3 — Establishing After (Wide)
+- Same angle and position as Shot 1 (this is critical — side-by-side comparison)
+- Same time of day if possible (lighting match helps the reveal hit harder)
+- Make it obvious: clean, bright, fresh
+
+### Shot 4 — Detail After (Close-Up)
+- Same spot as Shot 2, same angle
+- The contrast with Shot 2 IS the content
+
+---
+
+## The Video Option (15 extra seconds — 3× the reach)
+
+Do this instead of or alongside the 4 photos above:
+
+**Shoot a 30-second "transformation reveal" video:**
+1. Slow pan across the dirty surface (10 sec)
+2. One line: *"Here's what this looks like 2 hours later"* or say nothing
+3. Slow pan across the same surface, cleaned (10 sec)
+4. End on wide establishing shot of the clean property (10 sec)
+
+**Tips:**
+- Hold the phone horizontally (landscape) for Facebook, vertically (portrait) for Instagram Stories
+- Don't stabilize too hard — a slight pan looks more natural than locked-off shots
+- No editing needed. Raw footage works.
+
+---
+
+## Immediate Posting (While You're Still On Site)
+
+**Facebook post — copy-paste template:**
+```
+[City, Neighborhood, or "Northeast Ohio"] before and after.
+
+[One sentence about the problem — what you saw when you arrived]
+
+One afternoon and it looks like a completely different property.
+
+DM us or comment QUOTE to get on the schedule. We're booking into [Month] now — slots fill fast.
+
+#ClevelandOhio #NortheastOhio #PowerWashing #SoftWash #CurbAppeal #ForestCityPowerWashing
+```
+
+**Example:**
+> Strongsville driveway — here's what 10 years of road salt does.
+> Arrived to black stains from the street to the garage. One afternoon and it looks brand new.
+> DM us or comment QUOTE to get on the schedule. Booking into June now.
+> #ClevelandOhio #NortheastOhio #PowerWashing #CurbAppeal
+
+Post before you drive away. Engagement is highest in the first 60 minutes.
+
+---
+
+## Adding to Jasmine's Flyer Builder (takes 2 minutes)
+
+After every job, add the before/after pair to `logs/photo_pairs.json`:
+
+```json
+{
+  "id": "job_[city]_[date]_[surface]",
+  "before": "assets/photos/before_[date]_[description].jpg",
+  "after": "assets/photos/after_[date]_[description].jpg",
+  "date": "2026-05-26",
+  "description": "Strongsville driveway — 10 years road salt + algae, full concrete clean"
+}
+```
+
+Jasmine's flyer builder (`workers/jasmine_flyer.py`) picks up this entry automatically, stitches the side-by-side with the logo, and queues it for Slack. Run `python3 workers/jasmine_flyer.py` to process.
+
+---
+
+## What NOT to Do
+
+- ❌ Don't skip the before shot thinking you'll remember the angle for the after — you won't
+- ❌ Don't shoot into direct sun (blown out, no detail)
+- ❌ Don't post blurry close-ups — if it's blurry, re-shoot it
+- ❌ Don't wait until you're back at the office to post — post while on-site
+
+---
+
+## Quick Reference Card
+
+| Timing | Shot | Details |
+|--------|------|---------|
+| On arrival | Establishing Before (wide) | 20-30 ft back |
+| On arrival | Detail Before (close-up) | Worst stain area |
+| Before loading up | Establishing After (wide) | Same angle |
+| Before loading up | Detail After (close-up) | Same spot |
+| Optional | 30-sec transformation video | Pan dirty → same angle clean |
+
+**Revenue from content:**
+- Each before/after = 1 organic Facebook post + 1 Instagram post + 1 Jasmine flyer
+- 10 jobs/month × 1 post each = 10 pieces of free content
+- Video posts average 3,000–8,000 organic reach for a local service page with 500+ followers
+- Even 5 organic bookings/month from social = $1,500–$3,500 revenue at zero ad cost
+
+---
+
+*Pairs with: `tommy/first_ad_booking_protocol_2026-05-25.md` | `tommy/neighbor_canvass_script_2026-05-26.md` | `workers/jasmine_flyer.py`*
+
+*Generated by Jasmine Burke | 2026-05-26*
