@@ -105,6 +105,10 @@ DANNY_TITLES = [
     'community association director',
     # Self-storage segment — district/facility managers oversee multiple properties (added 2026-05-25 run 87)
     'self storage manager', 'storage facility manager', 'self-storage manager',
+    # Senior & assisted living — top decision-maker titles missing from search (added 2026-05-26 run 94)
+    # 'facility manager' already above; 'executive director' + 'administrator' are the primary titles at
+    # senior living, memory care, and skilled nursing facilities — without these Apollo returns nothing
+    'executive director', 'administrator', 'director of care', 'senior living director',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.

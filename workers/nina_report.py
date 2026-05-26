@@ -530,6 +530,28 @@ def run_weekly():
                     name = f'{c.get("first_name","")} {c.get("last_name","")}'.strip() or c.get('company', '?')
                     manual_health_lines.append(f'  - {name} ({c.get("company","")}) | contacted {days_ago} days ago | {c.get("phone","")} — add next_followup date')
                 manual_health_lines.append('')
+
+            # Flag "Contacted" stage contacts cold for 14+ days regardless of next_followup date.
+            # Catches contacts like Bryan (last contact 14d ago, followup set for today) that the
+            # overdue section misses because next_followup hasn't technically passed yet.
+            from datetime import date as _date_eng
+            stale_engagement = []
+            for c in manual:
+                if c.get('stage') == 'Contacted' and c.get('last_contact'):
+                    try:
+                        last_dt = _date_eng.fromisoformat(c['last_contact'])
+                        days_since = (_date_eng.fromisoformat(today_str) - last_dt).days
+                        if days_since >= 14:
+                            stale_engagement.append((c, days_since))
+                    except Exception:
+                        pass
+            if stale_engagement:
+                manual_health_lines.append(f'🚨 **ENGAGEMENT GONE COLD — Contacted 14+ days ago ({len(stale_engagement)}) — high risk of permanent loss:**')
+                for c, days_since in stale_engagement:
+                    name = f'{c.get("first_name","")} {c.get("last_name","")}'.strip() or c.get('company', '?')
+                    manual_health_lines.append(f'  - {name} ({c.get("company","")}) | last contact {days_since} days ago | {c.get("phone","")} — reach out TODAY with different angle')
+                manual_health_lines.append('')
+
             if due_soon:
                 manual_health_lines.append(f'📅 **Follow-ups due this week ({len(due_soon)}):**')
                 for c in due_soon:

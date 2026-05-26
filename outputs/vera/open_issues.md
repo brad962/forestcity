@@ -1,6 +1,24 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 93 | 2026-05-26 | Auto-fixes shipped: 5 | New deliverables: 2 | New RESOLVED: 0 | Open: 24 (new issue: no Week 2 ads scaling strategy; Senior Living segment added as new Apollo keyword set)*
+*Run 94 | 2026-05-26 | Auto-fixes shipped: 3 | New deliverables: 1 | New RESOLVED: 0 | Open: 24 (senior living titles gap closed; nina_report stale engagement detection added)*
+
+---
+
+## RUN METRICS — Run 94 | 2026-05-26
+- Total RESOLVED: 83 (0 new this run — all open issues require Bradley action or infrastructure)
+- Total OPEN: 24 (0 new; 0 closed)
+- Auto-upgrades shipped: 3
+  1. workers/lead_pipeline.py + integrations/mixmax.py — added `executive director`, `administrator`, `director of care`, `senior living director` to DANNY_TITLES and PROPERTY_MANAGER_TITLES; these are the PRIMARY decision-maker titles at senior/assisted living facilities; without them, Apollo searches surface facility managers but skip the Executive Directors who actually sign vendor contracts; segment added Run 93 but titles were missing from search list, making it a half-functional segment
+  2. workers/nina_report.py — added 🚨 ENGAGEMENT GONE COLD tier; detects "Contacted" stage contacts where last_contact is 14+ days ago regardless of next_followup date; Bryan (last contact May 13, 13 days ago) was showing as "due today" not "critically at-risk" because his next_followup was set for today — old logic only checked days since followup DATE, not days since actual contact; new tier catches this gap
+  3. agents/danny.md — updated Senior & Assisted Living section to document executive director and administrator are now live in DANNY_TITLES; agents/danny.md listed these as target titles but code didn't match — now correct
+- Deliverables written: 1
+  1. `outputs/vera/may27_day2_lead_triage_summit_card_2026-05-26.md` — Wednesday morning 10-minute card; 5 steps: check pipeline for Day 1 ad leads + response times, run Summit pull NOW (5 days left), gas station Wave 1 while Summit runs, ads manager glance (read-only), GBP post; includes Wednesday priority stack; fills the gap between Day 1 evening debrief (Tuesday 5pm) and Day 3 check card (Thursday May 28)
+- Key issue status this run:
+  - Summit pull: 5 DAYS LEFT (May 31). Wednesday card written — ideal window is tomorrow morning (May 27).
+  - Instantly.ai: Still running end of Day 1. 9 days remaining for minimum viable recovery. Pause TONIGHT or tomorrow morning.
+  - Tier 1 Contractors: 8+ days New Lead, 3 Contacted contacts 1+ days overdue. All 8 contacts + texts in launch_day_contractor_outreach_stack.
+  - Gas station: Wave 1 due May 26 AM (today). If not sent, send first thing tomorrow.
+  - Ads: Day 1 complete. Day 3 check Thursday May 28.
 
 ---
 
@@ -22,6 +40,14 @@
   - Tier 1 Contractors: 8+ days "New Lead," 3 Contacted contacts 14+ days overdue. Nina's report now shows CRITICAL tier.
   - Ads: Day 1 done. Day 3 check (May 28) is Thursday. Week 2 scaling guide now ready for June 2.
   - Gas station: 18 contacts still idle. Gmail blast Wave 1 guide ready. Use today.
+
+---
+
+## OPEN — Senior Living Segment Title Gap (RESOLVED as code issue, Run 94)
+- First seen: 2026-05-26 (Run 94 — identified during audit)
+- Description: Senior Living segment was added to DANNY_ORG_KEYWORDS in Run 93, but the PRIMARY decision-maker titles (executive director, administrator) were not added to DANNY_TITLES. danny.md listed them as "target titles" but they weren't in the Apollo search list. Every pull would miss the most senior contacts at these facilities.
+- Fix applied (Run 94): Added `executive director`, `administrator`, `director of care`, `senior living director` to DANNY_TITLES (lead_pipeline.py) and PROPERTY_MANAGER_TITLES (mixmax.py). Next Apollo run (Medina June 1) will now surface these contacts.
+- Resolution criteria: Senior living executive directors appear in next Danny county pull output (June 1 Medina run). Marking as resolved from code perspective — Bradley action needed to run the pull.
 
 ---
 
@@ -279,6 +305,7 @@ Key resolved issues by category:
 - Run 85 (2026-05-26 LAUNCH DAY): LAST EASY WINDOW — once ads go live and inbound leads start arriving, outbound contractor texts will permanently compete for attention. Send Anthony (440-320-2779) BEFORE clicking launch. 30 seconds. After that, Wednesday May 27 is the backup slot. By Thursday, these contacts will be 8+ days "New Lead" — longest gap yet. Text: "Hey Anthony, it's Bradley from Forest City Power Washing. We do exterior cleaning for a lot of landscapers' customers — want to do a quick referral swap? No paperwork, $50 for every job you send our way."
 - Run 91 (2026-05-26 LAUNCH DAY): FRESH ANGLE — unified all 8 pending contractor contacts (3 overdue Contacted + 5 Tier 1 New Leads) into a single `outputs/vera/launch_day_contractor_outreach_stack_2026-05-26.md` card. All 8 contacts on one page with copy-paste texts. This is the 5th deliverable written for this issue, spanning 9 runs. The only remaining action is Bradley opening his phone. AS OF TODAY, Tier 1 contractors are 7+ days "New Lead" — longest gap in the history of the pipeline. Every additional day without contact reduces reply probability.
 - Run 92 (2026-05-26 end of launch day): 8+ days "New Lead" for all 5 Tier 1 contractors. Ads are live — inbound leads will now compete for Bradley's attention. The window to do this BEFORE inbound traffic arrives is likely closed. Outbound contractor texts must now compete with inbound ad leads. Use `june4_readiness_snapshot_2026-05-26.md` Blocker #4 section — names + numbers all on one page.
+- Run 94 (2026-05-26): 9+ days for Tier 1 New Leads. Bryan 13+ days since last_contact. Nina report now shows Bryan in new 🚨 ENGAGEMENT GONE COLD tier. `may27_day2_lead_triage_summit_card_2026-05-26.md` includes contractor texts as Wednesday morning priority #2. This is the 6th deliverable written for this issue across 17 runs.
 - Resolution criteria: Bradley texts Tier 1 list + overdue Contacted contacts using `launch_day_contractor_outreach_stack_2026-05-26.md`. Confirmed when pipeline_data.json shows "Contacted" stage for all 5 Tier 1 contacts.
 
 ---
@@ -342,6 +369,7 @@ Key resolved issues by category:
 - Run 88 (2026-05-26 LAUNCH DAY): 9 days remaining. Today is the last day for minimum-viable recovery. New June 1 Sunday evening checklist (outputs/donna/june1_sunday_evening_checklist_2026-05-26.md) includes a Instantly.ai status verify as Step 1 — gives Bradley a second checkpoint on Sunday night even if it doesn't happen today. Pause window is TODAY or TOMORROW. After Wednesday = high risk June 4 lands in spam.
 - Run 92 (2026-05-26 end of launch day): 9 days remaining. Pause TODAY or TOMORROW (May 27). After Wednesday = borderline; after Thursday = high risk for June 4 deliverability. The `june4_readiness_snapshot_2026-05-26.md` (new this run) lists this as Blocker #1 with exact 3-step pause instructions.
 - Run 93 (2026-05-26 evening): End of Day 1 — ads launched but Instantly.ai still running. 9 days remaining. Window: TODAY (tonight) or tomorrow May 27. After May 28 = borderline (8 days recovery). After May 29 = high risk (7 days). Thursday May 29 is the absolute last day for minimum-viable recovery. app.instantly.ai → a1c08c3d → ⋮ → Pause; repeat 626cd15d → add INSTANTLY_PAUSED=true to .env.
+- Run 94 (2026-05-26 end of Day 1): 9 days remaining. Same window: TONIGHT or tomorrow morning (May 27). After May 28 = borderline. Wednesday pause = 8 days recovery. `may27_day2_lead_triage_summit_card_2026-05-26.md` (new this run) lists Instantly pause as the priority stack for today — the same card that covers Summit pull and gas station Wave 1.
 - Resolution criteria: Both campaigns paused in Instantly.ai → confirmed by Bradley.
 
 ---

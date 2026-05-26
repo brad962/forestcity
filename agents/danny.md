@@ -86,6 +86,7 @@ This enrolls ALL pending contacts (gas stations + fleet) without triggering a fr
 **Target companies:** Sunrise Senior Living, Brookdale, Atria, Five Star Senior Living, local operators. NE Ohio has 80+ facilities.
 **Revenue per visit:** $1,500–$4,000 per facility (soft wash + concrete). Quarterly = $6,000–$16,000/year per location. 10 accounts = $60K–$160K/year.
 **Apollo keywords (live):** `senior living`, `assisted living`, `memory care`, `skilled nursing`, `retirement community` — auto-included in DANNY_ORG_KEYWORDS as of 2026-05-26 run 93.
+**Target titles (live in DANNY_TITLES as of 2026-05-26 run 94):** `executive director`, `administrator`, `director of care`, `senior living director` — these are the PRIMARY decision-maker titles at senior living facilities. Without them, Apollo searches return facility managers but miss the executive-level contacts who sign vendor contracts. `facility manager` and `facilities director` were already in the list.
 **Pitch angle:** "Your state inspection requires it. We make sure you pass." → compliance angle opens more doors than curb-appeal pitch at these properties.
 **Sequence:** Route to Property Manager sequence (FM/compliance angle). Update firstName variables with facility title.
 **Strategy brief:** Segment brief to be written as needed.
