@@ -127,6 +127,13 @@ DANNY_TITLES = [
     # Banks & credit unions — branch FMs + district managers oversee 3-10+ branches; parking lots + drive-throughs + building exteriors (added 2026-05-26 run 100)
     # NE Ohio: Huntington, KeyBank, Fifth Third, PNC, Chase + local credit unions = hundreds of branches; appearance standard = brand requirement; one district deal = multi-site revenue
     'bank branch manager', 'branch facilities manager', 'district branch manager', 'credit union manager', 'branch operations manager',
+    # Medical office & healthcare facilities — NE Ohio health systems run dozens of outpatient campuses (added 2026-05-26 run 101)
+    # Large paved lots + brick facades + ADA ramps; patient-facing appearance = FM priority; FMs sign vendor contracts
+    'medical facility manager', 'healthcare facility manager', 'medical office manager', 'clinic manager',
+    'outpatient facilities manager', 'medical building manager',
+    # Corporate/tech parks — campus FMs oversee multiple buildings + shared parking; professional exterior standard (added 2026-05-26 run 101)
+    # 'campus manager' already in list above; adding specific variants for corporate/tech park context
+    'corporate facilities manager', 'campus operations manager', 'office park manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -168,6 +175,16 @@ DANNY_ORG_KEYWORDS = [
     # Each branch: parking lot + drive-through canopy + building exterior + ATM pad; appearance is brand standard not optional
     # District managers oversee 3-10+ branches; one deal = multi-site recurring; $500-$1,500/branch quarterly = $6K-$24K/year per district manager
     'bank branch', 'credit union', 'banking facilities', 'bank facilities management',
+    # Medical office parks & outpatient facilities — NE Ohio health systems (Cleveland Clinic, UH, MetroHealth, Summa) have dozens of
+    # outpatient campuses along Routes 82/303/91/422; large paved lots, brick facades, ADA ramps, covered drop-off areas;
+    # appearance standard = patient trust signal; facility managers sign vendor contracts; $800–$2,500/visit; quarterly = $3K–$10K/year (added 2026-05-26 run 101)
+    'medical office', 'medical plaza', 'medical park', 'outpatient facility', 'healthcare facility', 'medical building',
+    'outpatient center', 'medical campus', 'physician office', 'specialty clinic',
+    # Corporate & technology parks — Chagrin Highlands, Bishop Trautman Business Park, Tiedeman, Great Northern;
+    # multiple buildings per park, shared parking lots, professional exterior standard = vendor contract;
+    # campus facilities manager oversees all buildings; $1,500–$5,000/visit for full campus (added 2026-05-26 run 101)
+    'corporate campus', 'corporate park', 'technology park', 'office complex', 'office campus',
+    'tech park', 'business campus', 'innovation campus',
 ]
 
 CARLA_SEARCHES = [

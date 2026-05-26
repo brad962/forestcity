@@ -136,6 +136,24 @@ This enrolls ALL pending contacts (gas stations + fleet) without triggering a fr
 **Apollo keywords:** `car dealership`, `auto dealership`, `automotive dealer`, `auto group` — auto-included in DANNY_ORG_KEYWORDS as of 2026-05-26 run 88.
 **Pitch angle:** "You can't leave $40,000 cars sitting in a lot that looks like an oil slick" — same as PM angle (professional image + property value), but tailored to car lot visibility and customer impression.
 
+### Medical Office Parks & Outpatient Facilities (NEW — May 2026, Run 101)
+**Status:** Org keywords + titles live in DANNY_ORG_KEYWORDS/DANNY_TITLES as of Run 101. Include in next county rotation (Medina June 1) or targeted early pull.
+**Target:** Medical Facility Manager, Healthcare Facility Manager, Medical Office Manager, Outpatient Facilities Manager at health system outpatient campuses and medical plazas
+**Why:** NE Ohio health systems (Cleveland Clinic, University Hospitals, MetroHealth, Summa Health, Mercy) operate dozens of outpatient campuses along major corridors (Routes 82, 303, 91, 422). Each campus has large paved parking lots, brick facades that accumulate algae, ADA ramps with algae staining, and covered drop-off areas. Appearance directly affects patient trust — it's a professional standard not optional. FMs report to health system facilities management departments and sign vendor contracts.
+**Revenue per visit:** $800–$2,500 per campus (parking + facade + ramps). Quarterly = $3,200–$10,000/year per campus. Health system portfolio (10+ campuses) = $32K–$100K/year potential.
+**Target companies:** Cleveland Clinic Outpatient Campuses (Orange Village, Strongsville, Avon, Lyndhurst, etc.), UH Outpatient Facilities, MetroHealth Community Health Centers, Summa Health Medical Offices, Southwest Medical Center, Richmond Heights Medical Plaza
+**Apollo keywords (live Run 101):** `medical office`, `medical plaza`, `medical park`, `outpatient facility`, `healthcare facility`, `medical building`, `outpatient center`, `medical campus` — auto-included in DANNY_ORG_KEYWORDS.
+**Pitch angle:** "Your patients form their first impression in the parking lot before they walk through the door. A stained facade and algae-covered ramps say something about the practice. We handle all your campus locations on one quarterly contract."
+
+### Corporate & Technology Parks (NEW — May 2026, Run 101)
+**Status:** Org keywords + titles live in DANNY_ORG_KEYWORDS/DANNY_TITLES as of Run 101. Include in next county rotation (Medina June 1).
+**Target:** Corporate Facilities Manager, Campus Operations Manager, Office Park Manager at corporate/tech campuses
+**Why:** NE Ohio has several major corporate and technology parks — Chagrin Highlands (Beachwood/Orange Village), Landerbrook Corporate Center, Bishop Trautman Business Park, Crocker Park area (Westlake), and others. Multi-building campuses share parking lots, walkways, and landscaped common areas. A campus facilities manager oversees all buildings and signs vendor contracts. One deal = multi-building recurring contract.
+**Revenue per visit:** $1,500–$5,000 for full campus (parking + building exteriors + walkways). 2–4 visits/year = $3,000–$20,000/year per campus.
+**Target companies:** Major employer campuses (Progressive Insurance HQ, Sherwin-Williams campus, GOJO Industries, Parker Hannifin, Lincoln Electric), corporate park management companies
+**Apollo keywords (live Run 101):** `corporate campus`, `corporate park`, `technology park`, `office complex`, `office campus`, `tech park`, `business campus` — auto-included in DANNY_ORG_KEYWORDS.
+**Pitch angle:** "Your tenants signed leases because the campus looked sharp. The parking lots, walkways, and building facades are the first thing they see every morning. One quarterly contract covers all buildings."
+
 ## County Rotation Calendar (2026)
 Danny rotates counties by ISO week number (`week % 6`). Cron runs every Monday 7am.
 

@@ -243,3 +243,66 @@
 >June 4 countdown: june3_tuesday_evening_checklist fills last gap. All cards written through June 4 battle card.
 >Tomorrow May 27: Nina's report will show 20 contacts DUE TODAY — pipeline_triage_card_2026-05-27.md has them all sorted
 
+
+---
+
+🔧 *Vera — Auto-Upgrade*
+>Changed: workers/lead_pipeline.py + integrations/mixmax.py — added Medical Office Parks & Outpatient Facilities segment
+>Why: NE Ohio health systems (Cleveland Clinic, UH, MetroHealth, Summa) run dozens of outpatient campuses with large paved lots, brick facades, ADA ramps — patient trust = clean exterior; facility managers sign vendor contracts; $3K–$10K/year per campus; never targeted before
+>File: workers/lead_pipeline.py, integrations/mixmax.py
+
+---
+
+🔧 *Vera — Auto-Upgrade*
+>Changed: workers/lead_pipeline.py + integrations/mixmax.py — added Corporate & Technology Parks segment
+>Why: Chagrin Highlands, Landerbrook, and similar NE Ohio corporate parks have multi-building campuses with shared parking — one campus FM = multi-building vendor contract; $3K–$20K/year; never targeted before
+>File: workers/lead_pipeline.py, integrations/mixmax.py
+
+---
+
+🔧 *Vera — Auto-Upgrade*
+>Changed: agents/danny.md — documented Medical Office Parks + Corporate/Tech Parks as new secondary segments with NE Ohio property examples, target titles, revenue math, and pitch angles
+>Why: New segments need to be in danny.md for any agent activating Danny to know the targets exist and how to pitch them
+>File: agents/danny.md
+
+---
+
+📋 *Vera — New Deliverable*
+>Written: outputs/rick/google_ads_call_attribution_guide_2026-05-26.md
+>What: How to identify Google Ads call extension calls vs organic calls; Call Details report (2-min daily check); 5-min post-call logging protocol with correct lead_source; Week 1 call benchmarks
+>Why: Ads launched today. Google Ads call extension clicks produce direct phone calls with NO form fill — if you don't check Call Details, these book as "organic" and your ad ROI is invisible at the job level
+>Read this: morning of May 27 before the day starts
+
+---
+
+📋 *Vera — New Deliverable*
+>Written: outputs/vera/commercial_segments_early_pull_guide_2026-05-26.md
+>What: Optional 30-min action — run a Cuyahoga County pull THIS WEEK for banks, senior living, and medical offices BEFORE the June 1 Medina rotation
+>Why: If you pull these contacts today they'll have 9 days before June 4 enrollment. If you wait for June 1, they'll have 3 days. 9 days = 3× more open/engage time = more hot leads flagged by Nina before enrollment
+>Action: Optional but high-ROI. Open the guide, run one Terminal command, done.
+
+---
+
+💡 *Vera — Upgrade Proposal*
+>Idea: Past Customer June Text Blast — pull all Workiz jobs from May 2025–April 2026, extract customer phones, write Tommy 5 personalized June text scripts by service type (house wash, roof, driveway, deck, annual plan upsell)
+>Why: Past customers convert at 4–7× the rate of cold leads. With Facebook + Google ads live, June 4 is already a full day. A parallel past-customer blast on June 4 costs nothing in ad spend and captures customers who are already warm. "You used us last spring — time for round 2?" is a 60-second text per customer.
+>Impact: $1,200–$4,800 expected from 10 texts (past_customer_june_text_scripts guide exists but hasn't been deployed). Every prior customer = owned asset with zero acquisition cost.
+>Reply YES to approve and I'll have Tommy write the scripts for the top 3 service types.
+
+---
+
+💡 *Vera — Upgrade Proposal*
+>Idea: Jasmine LinkedIn posts for June Booking Blitz — 4 LinkedIn posts targeting FM/PM audiences at the new commercial segments (banks, fitness centers, senior living, medical offices)
+>Why: Jasmine has June LinkedIn posts but they're generic commercial/property management angles. Now that we're actively pulling bank district managers, fitness center GMs, and healthcare facility managers via Apollo, having LinkedIn posts that speak directly to those audiences reinforces credibility when they Google "Forest City Power Washing" after receiving Danny's Touch 1
+>Impact: Converts cold Apollo outreach into warm recognition — prospect sees the LinkedIn post AND the email = Forest City looks like a real commercial vendor, not a residential company accidentally emailing them
+>Reply YES to approve and I'll have Jasmine write a 4-post June batch targeting these segments.
+
+---
+
+✅ *Vera — Scan Complete 2026-05-26 (Run 101)*
+>3 auto-upgrades shipped | 2 deliverables | 2 proposals | 28 open issues (2 new: Medical Office/Corporate Park segment + Google Ads call attribution gap)
+>NEW SEGMENTS: Medical Office Parks + Corporate/Tech Parks — both live in Apollo search keywords now; fire June 1 Medina rotation automatically
+>EARLY PULL OPPORTUNITY: commercial_segments_early_pull_guide written — 30-min pull gets bank/senior living/medical contacts 9 days before June 4 instead of 3
+>GOOGLE ADS: Call attribution guide written — check ads.google.com → Call Details every morning starting tomorrow. Takes 2 min.
+>PIPELINE: 0 overdue today. May 27 = 20 contacts DUE TODAY in Nina's report. pipeline_triage_card_2026-05-27.md has the full list.
+>BRYAN: May 29 = hard close date. 3 days.

@@ -114,6 +114,12 @@ PROPERTY_MANAGER_TITLES = [
     # Banks & credit unions — branch FMs + district managers sign vendor contracts for appearance-critical properties (added 2026-05-26 run 100)
     # NE Ohio Huntington/KeyBank/Fifth Third/PNC/Chase branches + local credit unions; parking + drive-through + exterior = recurring revenue
     'bank branch manager', 'branch facilities manager', 'district branch manager', 'credit union manager', 'branch operations manager',
+    # Medical office & outpatient facilities — NE Ohio health system campuses (Cleveland Clinic, UH, MetroHealth outpatient sites) (added 2026-05-26 run 101)
+    # Appearance = patient trust signal; FMs sign vendor contracts; large paved lots + brick facades + ADA ramps
+    'medical facility manager', 'healthcare facility manager', 'medical office manager', 'clinic manager',
+    'outpatient facilities manager', 'medical building manager',
+    # Corporate/tech park FMs — campus operations managers oversee multiple buildings + shared parking (added 2026-05-26 run 101)
+    'corporate facilities manager', 'campus operations manager', 'office park manager',
 ]
 
 REALTOR_TITLES = [

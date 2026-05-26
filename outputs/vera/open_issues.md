@@ -1,6 +1,42 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 100 | 2026-05-26 | Auto-fixes shipped: 4 | New RESOLVED: 0 | Open: 26 (1 new: Banks & Credit Unions segment; all prior issues carry forward pending Bradley action)*
+*Run 101 | 2026-05-26 | Auto-fixes shipped: 3 | New RESOLVED: 0 | Open: 28 (2 new: Medical Office/Corporate Park segment + Google Ads call attribution gap; all prior issues carry forward)*
+
+---
+
+## RUN METRICS — Run 101 | 2026-05-26
+- Total RESOLVED: 85 (0 new this run — all remaining open issues require Bradley action or infrastructure)
+- Total OPEN: 28 (2 new: Medical Office/Corporate Park segment + Google Ads call attribution gap)
+- Auto-upgrades shipped: 3
+  1. workers/lead_pipeline.py + integrations/mixmax.py — added Medical Office Parks & Outpatient Facilities segment: org keywords ('medical office', 'medical plaza', 'medical park', 'outpatient facility', 'healthcare facility', 'medical building', 'outpatient center', 'medical campus', 'physician office', 'specialty clinic') + titles ('medical facility manager', 'healthcare facility manager', 'medical office manager', 'clinic manager', 'outpatient facilities manager', 'medical building manager'); NE Ohio health systems (Cleveland Clinic, UH, MetroHealth, Summa) have dozens of outpatient campuses; appearance = patient trust signal; $3K–$10K/year per campus; never targeted in prior runs
+  2. workers/lead_pipeline.py + integrations/mixmax.py — added Corporate & Technology Parks segment: org keywords ('corporate campus', 'corporate park', 'technology park', 'office complex', 'office campus', 'tech park', 'business campus', 'innovation campus') + titles ('corporate facilities manager', 'campus operations manager', 'office park manager'); Chagrin Highlands, Landerbrook, Crocker Park-area parks; campus FM = one vendor contract = multiple buildings; $3K–$20K/year
+  3. agents/danny.md — documented Medical Office Parks + Corporate/Tech Parks as new secondary segments with target titles, NE Ohio property examples, revenue math, pitch angles, Apollo keyword references
+- Deliverables written: 2
+  1. `outputs/rick/google_ads_call_attribution_guide_2026-05-26.md` — how to identify Google Ads call extension calls vs organic calls; Call Details report walkthrough; 5-minute post-call logging protocol; pipeline_data.json lead_source field; daily 2-min call check routine; Week 1 call benchmarks (0–2 Day 1, 2–6/day Day 5–7); closes the "Google Ads call comes in but gets logged as organic" gap
+  2. `outputs/vera/commercial_segments_early_pull_guide_2026-05-26.md` — optional additive action: run Cuyahoga early pull this week for banks/senior living/medical offices BEFORE June 1 Medina rotation; gets new-segment contacts 9 days before June 4 instead of 3 days; doubles their open/engage window; 30-min unattended; Terminal command included
+- Pipeline status this run:
+  - Today is May 26 (launch day). Ads are live.
+  - Pipeline: 36 contacts total — 0 overdue today, 15+ contacts DUE TOMORROW (May 27): 12 gas station + 3 Contacted contractors (Bryan, Bulletproof, Damrons).
+  - May 27: Nina's report will show these in RED "DUE TODAY" section. Open it first thing.
+  - Summit pull: still due by May 31 (5 days). early_pull_guide written this run.
+  - Bryan hard close: May 29 (per bryan_free_demo_offer + bryan_close_file_text).
+
+---
+
+## OPEN — Medical Office Parks & Corporate/Tech Parks Segment Not Yet Pulled 🟡 NEW (Run 101)
+- First seen: 2026-05-26 (Run 101)
+- Description: NE Ohio health systems (Cleveland Clinic, UH, MetroHealth, Summa) run dozens of outpatient campuses and medical plazas along key corridors — these have large paved lots, brick facades with algae, ADA ramps, covered drop-off areas. Appearance is a patient trust signal. Corporate tech parks (Chagrin Highlands, Landerbrook, Crocker Park area) have multiple buildings and shared parking; one deal = multi-building contract. Neither segment was in any prior run.
+- Fix applied (Run 101): Added medical office and corporate park org keywords to DANNY_ORG_KEYWORDS + matching titles to DANNY_TITLES + PROPERTY_MANAGER_TITLES (mirrored). Keywords live for next county rotation pull (Medina June 1).
+- Optional early pull: `outputs/vera/commercial_segments_early_pull_guide_2026-05-26.md` — run Cuyahoga pull this week to get these contacts 9 days before June 4 instead of 3.
+- Resolution criteria: Medical office and corporate park contacts appear in next Danny county pull output (June 1 Medina or early Cuyahoga).
+
+---
+
+## OPEN — Google Ads Call Attribution Gap 🟡 NEW (Run 101)
+- First seen: 2026-05-26 (Run 101)
+- Description: Ads launched today. Google Ads generates leads two ways: (1) form fill on website (tracked automatically) and (2) call extension click (direct phone call — invisible unless Bradley checks Call Details in Google Ads). Without tracking these calls, Google Ads-generated bookings get logged as "organic" in pipeline_data.json, making ad ROI invisible at the job level. This inflates the perceived value of organic leads and understates Google Ads performance.
+- Fix applied (Run 101): Wrote `outputs/rick/google_ads_call_attribution_guide_2026-05-26.md` — how to identify Google Ads calls in real-time (Call Details report, forwarding number, ask the caller), 5-minute post-call logging protocol with correct lead_source field, daily 2-min morning check routine.
+- Resolution criteria: Bradley reads the guide and starts checking Call Details every morning. Confirmed when first Google Ads call is logged in pipeline_data.json with lead_source="Google Ads call".
 
 ---
 
