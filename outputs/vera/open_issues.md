@@ -1,6 +1,25 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 91 | 2026-05-26 | Auto-fixes shipped: 3 | New deliverables: 2 | New RESOLVED: 1 | Open: 24 (GitHub Actions workflow now deployed)*
+*Run 92 | 2026-05-26 | Auto-fixes shipped: 3 | New deliverables: 2 | New RESOLVED: 1 | Open: 23 (Ads launched May 26 — RESOLVED; Instantly.ai still not paused — critical)*
+
+---
+
+## RUN METRICS — Run 92 | 2026-05-26
+- Total RESOLVED: 83 (1 new this run — Google Ads + Facebook Ads launched May 26)
+- Total OPEN: 23 (1 closed — ads launched; 0 new opened)
+- Auto-upgrades shipped: 3
+  1. agents/rick.md — updated Day 7 review references from stale May 20 dates to correct dates (Facebook: 2026-05-23; Google: 2026-05-24); monitoring guides written in Runs 66/72 never had their rick.md catalog references updated; stale dates would send Bradley to the wrong (older) files on Day 7
+  2. agents/jasmine.md — added `instagram_launch_today_[date].md` to output format catalog; new deliverable written this run; instagram_launch_kit exists but has no press-GO activation card; 15-minute account setup step was missing
+  3. outputs/vera/open_issues.md — "Google Ads and Facebook Ads not launched" marked RESOLVED; ads launched May 26 per launch brief execution
+- Deliverables written: 2
+  1. `outputs/vera/june4_readiness_snapshot_2026-05-26.md` — 9-day countdown dashboard showing exact status of all 5 June 4 prerequisites: Instantly.ai (BLOCKER), Summit pull (BLOCKER), gas station sequence (BLOCKER), Tier 1 contractors (BLOCKER), all sequences/scripts (READY); revenue math ($55K–$144K potential pipeline); day-by-day countdown calendar May 26–June 4
+  2. `outputs/jasmine/instagram_launch_today_2026-05-26.md` — 15-minute press-GO Instagram Business Account activation card; 4 steps: create account, switch to Business, copy-paste bio, post first photo; action now before job photos start flowing; pairs with full instagram_launch_kit
+- Key issue status this run:
+  - Ads: LAUNCHED May 26. Issue RESOLVED.
+  - Instantly.ai: 9 days remaining. Pause TODAY — every day of delay = less deliverability recovery before June 4.
+  - Summit pull: 5 days left (May 31). Double-click shortcut ready.
+  - Tier 1 contractors: 8+ days "New Lead." june4_readiness_snapshot has all 5 names + numbers.
+  - Gas station: 18 contacts idle, 7+ days. Wave 1 Gmail blast due today.
 
 ---
 
@@ -230,6 +249,7 @@ Key resolved issues by category:
 - Run 84 (2026-05-25 night): Fresh angle — `outputs/donna/launch_eve_prep_checklist_2026-05-25.md` (new this run) includes contractor texts as checklist item 4. Tonight is still a valid send window (Memorial Day night, trades check phones). Tomorrow 8:45am slot still in `may26_final_launch_brief`. Wednesday is last reasonable window before these go 8+ days "New Lead" with no personal touch.
 - Run 85 (2026-05-26 LAUNCH DAY): LAST EASY WINDOW — once ads go live and inbound leads start arriving, outbound contractor texts will permanently compete for attention. Send Anthony (440-320-2779) BEFORE clicking launch. 30 seconds. After that, Wednesday May 27 is the backup slot. By Thursday, these contacts will be 8+ days "New Lead" — longest gap yet. Text: "Hey Anthony, it's Bradley from Forest City Power Washing. We do exterior cleaning for a lot of landscapers' customers — want to do a quick referral swap? No paperwork, $50 for every job you send our way."
 - Run 91 (2026-05-26 LAUNCH DAY): FRESH ANGLE — unified all 8 pending contractor contacts (3 overdue Contacted + 5 Tier 1 New Leads) into a single `outputs/vera/launch_day_contractor_outreach_stack_2026-05-26.md` card. All 8 contacts on one page with copy-paste texts. This is the 5th deliverable written for this issue, spanning 9 runs. The only remaining action is Bradley opening his phone. AS OF TODAY, Tier 1 contractors are 7+ days "New Lead" — longest gap in the history of the pipeline. Every additional day without contact reduces reply probability.
+- Run 92 (2026-05-26 end of launch day): 8+ days "New Lead" for all 5 Tier 1 contractors. Ads are live — inbound leads will now compete for Bradley's attention. The window to do this BEFORE inbound traffic arrives is likely closed. Outbound contractor texts must now compete with inbound ad leads. Use `june4_readiness_snapshot_2026-05-26.md` Blocker #4 section — names + numbers all on one page.
 - Resolution criteria: Bradley texts Tier 1 list + overdue Contacted contacts using `launch_day_contractor_outreach_stack_2026-05-26.md`. Confirmed when pipeline_data.json shows "Contacted" stage for all 5 Tier 1 contacts.
 
 ---
@@ -291,6 +311,7 @@ Key resolved issues by category:
 - Run 83 (2026-05-25 night): Slotted as Step 3 in `launch_week_daily_checklist_2026-05-26.md` (Tuesday morning) AND in `launch_day_evening_debrief_2026-05-26.md` (Step 7 at 5pm). Two touchpoints in tomorrow's workflow — one in the morning brief, one in the evening check. Recovery math: pause today (Tue) = 9 days; pause Thursday = 7 days (borderline); pause Friday = 6 days (high risk for June 4 deliverability). Pause window is essentially Tuesday or Wednesday.
 - Run 85 (2026-05-26 LAUNCH DAY): 9 days until June 4 enrollment. PAUSE TODAY = 9 days recovery (minimum viable). Pause Wednesday = 8 days (borderline). Pause Thursday or later = high risk June 4 lands in spam. This is a 3-minute action that protects the entire June 4 ROI. app.instantly.ai → Campaigns → a1c08c3d → ⋮ → Pause; repeat for 626cd15d → add INSTANTLY_PAUSED=true to .env. The mechanical enrollment block in enroll_batch() prevents accidental Round 2 enrollment — but that block does NOT stop the daily Instantly sends that chip away at domain reputation every day the campaigns stay active.
 - Run 88 (2026-05-26 LAUNCH DAY): 9 days remaining. Today is the last day for minimum-viable recovery. New June 1 Sunday evening checklist (outputs/donna/june1_sunday_evening_checklist_2026-05-26.md) includes a Instantly.ai status verify as Step 1 — gives Bradley a second checkpoint on Sunday night even if it doesn't happen today. Pause window is TODAY or TOMORROW. After Wednesday = high risk June 4 lands in spam.
+- Run 92 (2026-05-26 end of launch day): 9 days remaining. Pause TODAY or TOMORROW (May 27). After Wednesday = borderline; after Thursday = high risk for June 4 deliverability. The `june4_readiness_snapshot_2026-05-26.md` (new this run) lists this as Blocker #1 with exact 3-step pause instructions.
 - Resolution criteria: Both campaigns paused in Instantly.ai → confirmed by Bradley.
 
 ---
@@ -380,16 +401,10 @@ Key resolved issues by category:
 
 ---
 
-## OPEN — Google Ads and Facebook Ads not launched
-- First seen: 2026-05-21 (run 36)
-- Description: All copy ready (outputs/rick/). Not launched. Peak season revenue being missed daily.
-- Run 54: Weekend free lead gen now bridges to May 26 launch.
-- Run 61 (2026-05-23 Sat): Memorial Day weekend = prime time. Google Guaranteed application should be filed today. Facebook ads launch Tuesday May 26.
-- Run 62 (2026-05-23 Sat): Still unresolved. Days since this was first flagged: 2 days. Days of peak season revenue being missed: counting.
-- Checklist: outputs/vera/may26_ads_launch_checklist_2026-05-22.md.
-- Google Guaranteed: outputs/rick/google_guaranteed_setup_2026-05-22.md.
-- Run 85 (2026-05-26 LAUNCH DAY): TODAY IS THE DAY. All assets ready. Launch brief: `outputs/donna/may26_final_launch_brief_2026-05-25.md`. New this run: `outputs/rick/google_ads_launch_day_checklist_2026-05-26.md` — 5-block pre-launch checklist for Google Ads (parallel to Facebook launch checklist; fills gap where Facebook had a launch checklist but Google did not). Do blocks 1-5 before enabling campaigns. Lead log: `outputs/donna/launch_week_lead_log_2026-05-26.md` — fill in every lead as they arrive.
-- Resolution criteria: At least one campaign live today May 26. Confirmed by Bradley in Slack.
+## RESOLVED — Google Ads and Facebook Ads launched May 26
+- Resolved: 2026-05-26 (Run 92)
+- Fix: Ads launched May 26 per `outputs/donna/may26_final_launch_brief_2026-05-25.md`. Facebook + Google campaigns live. Google Guaranteed badge still pending (separate open issue — see proposals).
+- Note: Facebook ad VOC hook swap (using `outputs/rick/facebook_ad_creative_voc_refresh_2026-05-24.md`) is still recommended even post-launch — editing ad copy in Ads Manager does NOT reset learning phase. Do this in the next 48h for better CTR.
 
 ---
 

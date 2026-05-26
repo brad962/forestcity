@@ -55,7 +55,7 @@ Short, direct, lead with location:
 - **Facebook Ads Peak Season:** `outputs/rick/facebook_ads_peak_season_2026-05-20.md` — 3-campaign structure (Awareness, Lead Gen, Retargeting), 7 ad variations, before/after creative briefs, setup checklist. Budget: $30/day to start.
   - ⚠️ **SWAP HOOKS BEFORE/ON LAUNCH:** `outputs/rick/facebook_ad_creative_voc_refresh_2026-05-24.md` — 6 drop-in hooks + 3 body copy variants using Marcus's proven NE Ohio VOC phrases ("green and slimy," "roof looks black from the street," "kept putting it off"). 15-minute swap in Ads Manager. Higher CTR = lower cost per lead.
   - 📊 **Day 3 check (May 28):** `outputs/vera/day3_ads_check_card_2026-05-26.md` — what to look at, what to ignore, one allowed tweak. Do NOT touch before Day 3.
-  - 📊 **Day 7 review:** `outputs/rick/facebook_ads_first_week_monitoring_guide_2026-05-20.md` and `outputs/rick/google_ads_first_week_monitoring_guide_2026-05-20.md`
+  - 📊 **Day 7 review (CURRENT):** `outputs/rick/facebook_ads_first_week_monitoring_guide_2026-05-23.md` and `outputs/rick/google_ads_first_week_monitoring_guide_2026-05-24.md`
 
 ## Priority: Google Guaranteed Badge (Google Local Services Ads)
 **This is the single highest-ROI action Rick can support right now.**
