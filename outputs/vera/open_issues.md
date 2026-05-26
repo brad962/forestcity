@@ -1,6 +1,28 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 96 | 2026-05-26 | Auto-fixes shipped: 4 | New deliverables: 2 | New RESOLVED: 0 | Open: 24 (no new; contractor stale issue updated with LinkedIn DM angle; off-hours lead response gap identified and closed)*
+*Run 97 | 2026-05-26 | Auto-fixes shipped: 3 | New deliverables: 2 | New RESOLVED: 0 | Open: 25 (1 new: 21 untouched contractor contacts; Bryan fresh angle: free demo wash offer)*
+
+---
+
+## RUN METRICS — Run 97 | 2026-05-26
+- Total RESOLVED: 83 (0 new this run)
+- Total OPEN: 25 (1 new: 21 untouched contractor contacts during peak season)
+- Auto-upgrades shipped: 3
+  1. workers/nina_report.py — added Closed Won/Closed Lost stage filter to overdue + due_soon lists; latent bug — closed contacts with old next_followup dates would appear as overdue; now filtered
+  2. workers/lead_pipeline.py — added 'director of operations' to DANNY_TITLES; same word-order problem as 'director of facilities' (Run 95); Apollo surfaces this exact phrase; 'operations director' does NOT substring-match it
+  3. integrations/mixmax.py — mirrored 'director of operations' to PROPERTY_MANAGER_TITLES for correct sequence routing
+- Deliverables written: 2
+  1. `outputs/vera/bryan_free_demo_offer_2026-05-26.md` — Run 97 fresh angle: stop asking Bryan for referrals, offer a free power wash of one surface at his business instead; completely different dynamic from 7 prior text/call/LinkedIn outreach attempts; if this doesn't work after 3 days, close the file
+  2. `outputs/carla/contractor_first_touch_blitz_2026-05-26.md` — 21 untouched contractor contacts sorted into landscaper wave (11) + construction wave (10); copy-paste first-touch text; 45-min blitz card; revenue math; pipeline update instructions
+
+---
+
+## OPEN — 21 Untouched Contractor Referral Contacts During Peak Season 🆕 (Run 97)
+- First seen: 2026-05-26 (Run 97)
+- Description: 21 contractor referral contacts in pipeline_data.json have zero outreach history — no last_contact date, no text, no call, nothing. These are landscapers, construction companies, and roofers that Carla should be building referral relationships with. It's May 26, peak season, and these companies are at client properties every day. Every week they sit untouched is a missed referral cycle.
+- Contacts: Pyro Landscaping, Garten Gurus, Dales, C&M Landscaping, Kays Express Lawn Care, Walkers Landscape, Islander Landscaping, Lawn Care for the World, Soldan Landscaping, GTP Landscaping, Land Pro Management, Clemence Collaborations, Blue Line Restorations, Kardiac Construction, Don't Move Improve, Woolworth Construction, Everguard Pros, Camlin Contracting, Twin Improvements, Reliable Roofing, Pagels Quality Construction
+- Attempts:
+  - 2026-05-26 (Run 97): Wrote `outputs/carla/contractor_first_touch_blitz_2026-05-26.md` — sorted Wave 1 (landscapers, 11) + Wave 2 (construction, 10); first-touch text script; 45-min timeline; pipeline update instructions; revenue math
 
 ---
 
@@ -350,6 +372,7 @@ Key resolved issues by category:
 - Run 94 (2026-05-26): 9+ days for Tier 1 New Leads. Bryan 13+ days since last_contact. Nina report now shows Bryan in new 🚨 ENGAGEMENT GONE COLD tier. `may27_day2_lead_triage_summit_card_2026-05-26.md` includes contractor texts as Wednesday morning priority #2. This is the 6th deliverable written for this issue across 17 runs.
 - Run 95 (2026-05-26): pipeline_data.json updated — Tier 1 next_followup advanced from May 25 (1 day overdue) to May 27 (Wednesday). `may29_friday_summit_deadline_card_2026-05-26.md` (new this run) includes contractor texts as Priority #2 on Friday. Bryan 13 days cold — ENGAGEMENT GONE COLD flag visible in Nina report. All action cards reference the same phone numbers.
   - Run 96 (2026-05-26): FRESH CHANNEL — LinkedIn DM protocol written (`outputs/vera/contractor_linkedin_revival_2026-05-26.md`). All 6 prior deliverables used text/call only. LinkedIn professional platform changes the psychological context — peer-to-peer outreach vs. unsolicited text. Connection request notes + follow-up DMs written for Bryan, Bulletproof, and Damrons. Nina report tomorrow will show Bryan + Tier 1 in RED “DUE TODAY” section.
+  - Run 97 (2026-05-26): STOP ASKING — START GIVING. All 7 prior deliverables used the “can we partner on referrals” frame. Bryan hasn't responded. New approach: offer to do a FREE power wash of one surface at his business (equipment pad, parking entrance, dumpster area) — no referral ask upfront, just deliver value first. Written `outputs/vera/bryan_free_demo_offer_2026-05-26.md`. If no response by Friday May 29 after this attempt → move to Closed Lost and redirect to the 21 untouched contractor contacts.
 - Resolution criteria: Bradley texts Tier 1 list + overdue Contacted contacts using `launch_day_contractor_outreach_stack_2026-05-26.md`. LinkedIn connects for stale contacts via `contractor_linkedin_revival_2026-05-26.md`. Confirmed when pipeline_data.json shows "Contacted" stage for all 5 Tier 1 contacts.
 
 ---

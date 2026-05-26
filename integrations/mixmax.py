@@ -101,6 +101,8 @@ PROPERTY_MANAGER_TITLES = [
     'executive director', 'administrator', 'director of care', 'senior living director',
     # Word-order variants for correct routing on import (added 2026-05-26 run 95)
     'director of facilities', 'campus manager', 'facilities operations manager',
+    # 'operations director' already above; 'director of operations' is a distinct non-matching word order (added 2026-05-26 run 97)
+    'director of operations',
 ]
 
 REALTOR_TITLES = [

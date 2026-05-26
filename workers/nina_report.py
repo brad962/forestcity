@@ -483,8 +483,9 @@ def run_weekly():
             from datetime import timedelta
             today_str = datetime.now().strftime('%Y-%m-%d')
             week_end = (datetime.now() + timedelta(days=7)).strftime('%Y-%m-%d')
-            due_soon = [c for c in manual if c.get('next_followup') and today_str <= c['next_followup'] <= week_end]
-            overdue = [c for c in manual if c.get('next_followup') and c['next_followup'] < today_str]
+            _inactive = {'Closed Won', 'Closed Lost'}
+            due_soon = [c for c in manual if c.get('next_followup') and today_str <= c['next_followup'] <= week_end and c.get('stage') not in _inactive]
+            overdue = [c for c in manual if c.get('next_followup') and c['next_followup'] < today_str and c.get('stage') not in _inactive]
 
             # Also flag "Contacted" stage contacts with last_contact > 7 days ago and no next_followup set
             from datetime import date as _date
