@@ -262,8 +262,8 @@ Key resolved issues by category:
 - First seen: 2026-05-20 (run 34)
 - Description: vera-slack-relay.yaml and github_action_vera_slack_relay.yaml exist in outputs/vera/ but can't be pushed to .github/workflows/ — PAT needs 'workflow' scope.
 - Run 55: Still blocked. No change this run. Local vera_relay.py with lock file is stable. PAT scope upgrade remains a 2-minute fix.
-- Run 91 (2026-05-26): FRESH APPROACH — Instead of waiting for PAT scope upgrade, committed `.github/workflows/vera_slack_relay.yml` directly in this run's git commit. If the push succeeds (PAT may have been updated), the GitHub Action becomes live and all future Vera pushes will auto-post Slack messages. If push fails with permissions error, the next step is: Settings → Developer settings → Personal access tokens → Edit → check 'workflow' → Save → then the next push will work automatically.
-- Action if push fails: Settings → Developer settings → Personal access tokens → Edit ghp_lrUhBq7... → check 'workflow' → Save
+- Run 91 (2026-05-26): CONFIRMED — Attempted to push `.github/workflows/vera_slack_relay.yml`. Push failed with: "refusing to allow a Personal Access Token to create or update workflow without `workflow` scope." The PAT has NOT been updated with workflow scope. The YAML file is ready in `.github/workflows/vera_slack_relay.yml` locally and committed in the git history — it just can't be pushed without the scope. Fix is a 2-minute action.
+- ✅ EXACT FIX: github.com → Settings → Developer settings → Personal access tokens → find the forestcity PAT → Edit → check "workflow" → Update token → then run: `git -C /Users/bradleyneal/forestcity push origin main` — the .github/workflows/vera_slack_relay.yml file is already staged locally and will push automatically.
 
 ---
 
