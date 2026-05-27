@@ -1,6 +1,35 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 104 | 2026-05-27 | Auto-fixes shipped: 4 | New RESOLVED: 0 | Open: 31 (Grocery segment added; vera_relay.py gets daily Instantly.ai pause reminder; GitHub Action YAML committed to .github/workflows/ — push attempt included in this run; Wave 2 contractor blitz card for May 28)*
+*Run 105 | 2026-05-27 | Auto-fixes shipped: 3 | New RESOLVED: 0 | Open: 32 (Distribution Centers/Logistics segment added; nina_report.py gets "Due Tomorrow" preview in daily report; June 1–4 sprint card written)*
+
+---
+
+## RUN METRICS — Run 105 | 2026-05-27
+- Total RESOLVED: 85 (0 new this run)
+- Total OPEN: 32 (1 new: Distribution Centers & Logistics segment not yet pulled)
+- Auto-upgrades shipped: 3
+  1. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — added Distribution Centers & Logistics as new commercial segment; DANNY_TITLES: `distribution center manager`, `fulfillment center manager`, `warehouse manager`, `logistics facility manager`, `dock manager`, `transportation facility manager`, `warehouse operations manager`, `regional distribution manager`; DANNY_ORG_KEYWORDS: `distribution center`, `fulfillment center`, `warehouse operations`, `logistics center`, `shipping facility`, `freight terminal`, `food distribution`, `beverage distribution`, `wholesale distribution`; NE Ohio is a major Midwest freight hub (Amazon, UPS, FedEx, XPO, Sysco, GFS); loading docks accumulate oil/grease/food residue = recurring need; OSHA compliance angle; district FMs sign multi-site contracts; $8K–$24K/year per facility
+  2. `workers/nina_report.py` — added "Due Tomorrow" preview section to daily hot leads report; previously the daily report showed only OVERDUE + DUE TODAY; contacts due the next day were invisible until morning; now shows 👀 DUE TOMORROW section (up to 8 contacts, +N more) so Bradley can see tomorrow's workload today; also added `due_tomorrow_count` to report_card metrics; critical for days like tomorrow May 28 (16 Wave 2 contractor texts due)
+  3. `agents/danny.md` — documented Distribution Centers & Logistics as new secondary segment with target titles, NE Ohio examples, OSHA compliance angle, revenue math ($8K–$24K/year per facility), pitch angle, Apollo keyword reference
+- Deliverables written: 1
+  1. `outputs/vera/june1_june4_sprint_card_2026-05-27.md` — 4-day countdown card from June 1 (Medina pull) through June 4 (Round 2 enrollment); consolidates 6 existing guides into a sequential action plan; includes Go/No-Go table for June 3 evening, revenue math, blocker status table; fills the gap between individual daily guides and a unified end-to-end enrollment sprint view
+- Pipeline status this run:
+  - TODAY May 27: 20 contacts DUE/OVERDUE (Bryan + Bulletproof + Damrons + 5 Tier 1 + 12 gas stations). All have been due since 2026-05-27. If not acted on today, they'll show as OVERDUE in tomorrow's Nina report.
+  - TOMORROW May 28: 16 Wave 2 contractors due. "Due Tomorrow" section will now appear in today's daily report.
+  - Summit pull: 4 DAYS LEFT (deadline May 31). Must run by Sunday.
+  - June 4: 8 days. All assets ready. Instantly.ai pause still the only blocker.
+  - Gas station: 12 contacts all past due today. Gmail blast guide ready. Mixmax sequence still PENDING.
+  - Distribution Centers: LIVE in code. First pull: Medina June 1.
+
+---
+
+## OPEN — Distribution Centers & Logistics Segment Not Yet Pulled 🟡 NEW (Run 105)
+- First seen: 2026-05-27 (Run 105)
+- Description: NE Ohio is a primary Midwest freight hub. Amazon has fulfillment/distribution centers in Independence, Euclid, and North Randall. UPS and FedEx have major ground hubs in Stow, Valley View, Brunswick, and North Olmsted. XPO Logistics, Saia, Old Dominion all have terminals. Sysco Cleveland and Gordon Food Service run large food distribution centers near the metro. Loading dock concrete and building exteriors accumulate heavy oil, grease, diesel exhaust, and food residue — this is commercial pressure washing with an OSHA compliance angle (clean loading docks are required for forklift safety and food safety audits). District/regional FMs oversee multiple sites and sign multi-facility vendor contracts. One deal = $8K–$24K/year. Zero competitors targeting this segment.
+- Fix applied (Run 105): Added distribution/logistics org keywords to DANNY_ORG_KEYWORDS + title variants to DANNY_TITLES + PROPERTY_MANAGER_TITLES. Keywords live for next county rotation pull (Medina June 1).
+- Resolution criteria: Distribution center/logistics contacts appear in Medina June 1 county pull or a targeted Cuyahoga early pull.
+
+---
 
 ---
 

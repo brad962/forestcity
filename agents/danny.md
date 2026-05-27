@@ -164,6 +164,16 @@ This enrolls ALL pending contacts (gas stations + fleet) without triggering a fr
 **Pitch angle:** "Your parking lot is the first thing customers walk across before they enter the store. Cart return areas, drive-through canopies, and pavement staining say something about your brand standard. We handle all your NE Ohio locations on one quarterly contract."
 **Sequence:** Route to Property Manager sequence (facility management angle).
 
+### Distribution Centers & Logistics Facilities (NEW — May 2026, Run 105)
+**Status:** Org keywords + titles live in DANNY_ORG_KEYWORDS/DANNY_TITLES as of Run 105. Include in next county rotation (Medina June 1 or targeted Cuyahoga early pull).
+**Target:** Distribution Center Manager, Fulfillment Center Manager, Warehouse Manager, Warehouse Operations Manager, Logistics Facility Manager, Regional Distribution Manager
+**Why:** NE Ohio is a primary Midwest freight hub. Amazon has multiple fulfillment/distribution centers near Cleveland and Akron. UPS, FedEx, XPO Logistics, Saia, Old Dominion all have major terminals. Sysco and Gordon Food Service run large food distribution centers. Loading dock concrete accumulates oil, grease, diesel exhaust, and food residue — this is heavy-duty commercial pressure washing, not curb-appeal work. OSHA compliance angle: clean loading docks are required for forklift safety and food safety audits — this drives urgency and repeat contracts. District FMs oversee multiple sites; one contract = multi-facility recurring revenue.
+**Revenue per visit:** $2,000–$6,000 for loading dock areas + building exterior. 4 visits/year = $8,000–$24,000 per facility. Multi-site district deal = $24K–$72K/year.
+**Target companies:** Amazon (Independence, Euclid, North Randall distribution/fulfillment centers), UPS (Cleveland hub, Stow hub), FedEx Ground (Valley View, Brunswick, North Olmsted), XPO Logistics NE Ohio terminals, Sysco Cleveland, Gordon Food Service (Grand Rapids HQ, multiple NE Ohio distribution points), beverage distributors (Great Lakes Coca-Cola, Anheuser-Busch Cleveland distribution).
+**Apollo keywords (live Run 105):** `distribution center`, `fulfillment center`, `warehouse operations`, `logistics center`, `shipping facility`, `freight terminal`, `food distribution`, `beverage distribution`, `wholesale distribution` — added to DANNY_ORG_KEYWORDS.
+**Pitch angle:** "Your loading docks accumulate oil, grease, and exhaust from daily dock activity. OSHA expects clean concrete for forklift safety. We handle all your NE Ohio facilities on one quarterly contract — no separate scheduling."
+**Sequence:** Route to Property Manager sequence (facility management / compliance angle).
+
 ## County Rotation Calendar (2026)
 Danny rotates counties by ISO week number (`week % 6`). Cron runs every Monday 7am.
 

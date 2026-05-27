@@ -123,6 +123,11 @@ PROPERTY_MANAGER_TITLES = [
     # Grocery/supermarket chains — Giant Eagle, Heinen's, Marc's, Kroger, Aldi/Meijer in NE Ohio;
     # district FMs sign vendor contracts; high-traffic parking + drive-through pharmacy canopies + building exteriors (added 2026-05-27 run 104)
     'grocery district manager', 'supermarket facilities manager',
+    # Distribution centers & logistics — NE Ohio freight hub (Amazon, UPS, FedEx, XPO, Sysco);
+    # loading dock areas + building exteriors; OSHA compliance angle; district FMs sign multi-site contracts (added 2026-05-27 run 105)
+    'distribution center manager', 'fulfillment center manager', 'warehouse manager',
+    'logistics facility manager', 'dock manager', 'transportation facility manager',
+    'warehouse operations manager', 'regional distribution manager',
 ]
 
 REALTOR_TITLES = [

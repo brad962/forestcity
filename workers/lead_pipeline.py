@@ -137,6 +137,13 @@ DANNY_TITLES = [
     # Grocery/supermarket chains — district FM-level contacts sign vendor contracts across multiple stores (added 2026-05-27 run 104)
     # 'facilities manager' + 'district manager' already in list; adding grocery-specific variants Apollo surfaces
     'grocery district manager', 'supermarket facilities manager',
+    # Distribution centers & logistics — NE Ohio is a major freight hub (Amazon, UPS, FedEx, XPO, Sysco, GFS);
+    # loading dock areas accumulate oil, grease, fuel, food residue = recurring high-priority cleaning;
+    # OSHA compliance angle: loading docks must be clean for forklift safety + food safety audits;
+    # district/regional FMs sign multi-site contracts; large facilities = $2K-$6K/visit; 4x/year = $8K-$24K/facility (added 2026-05-27 run 105)
+    'distribution center manager', 'fulfillment center manager', 'warehouse manager',
+    'logistics facility manager', 'dock manager', 'transportation facility manager',
+    'warehouse operations manager', 'regional distribution manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -196,6 +203,15 @@ DANNY_ORG_KEYWORDS = [
     # $600–$2,000/store visit; 10-store district deal = $6K–$20K/year (added 2026-05-27 run 104)
     'grocery store', 'supermarket chain', 'grocery chain', 'food retail', 'grocery management',
     'supermarket management',
+    # Distribution centers & logistics facilities — NE Ohio is a primary freight hub for the Midwest;
+    # Amazon (multiple fulfillment/distribution centers near CLE/Akron), UPS Worldport feeder hubs,
+    # FedEx Ground stations, XPO Logistics, Saia, Old Dominion, Sysco/Gordon Food Service distribution;
+    # loading dock concrete + building exteriors accumulate oil, fuel, food residue = recurring soft-wash/pressure-wash;
+    # OSHA compliance: forklift safety + food safety audits require clean dock areas;
+    # $2K-$6K/visit for large facility; 4 visits/year = $8K-$24K/facility; district FMs oversee multiple sites (added 2026-05-27 run 105)
+    'distribution center', 'fulfillment center', 'warehouse operations', 'logistics center',
+    'shipping facility', 'freight terminal', 'loading dock facility', 'transportation hub',
+    'food distribution', 'beverage distribution', 'wholesale distribution',
 ]
 
 CARLA_SEARCHES = [

@@ -319,17 +319,22 @@ def run_daily():
     manual_today_lines = []
     due_today_count = 0
     overdue_count = 0
+    due_tomorrow_count = 0
     try:
+        from datetime import timedelta
         pipeline_f = BASE_DIR / 'pipeline_data.json'
         if pipeline_f.exists():
             pd_data = json.loads(pipeline_f.read_text())
             manual = pd_data.get('manual_contacts', [])
             _inactive_d = {'Closed Won', 'Closed Lost'}
+            tomorrow_str = (datetime.now() + timedelta(days=1)).strftime('%Y-%m-%d')
             due_today_m = [c for c in manual if c.get('next_followup') == date_str and c.get('stage') not in _inactive_d]
             overdue_m = [c for c in manual if c.get('next_followup') and c['next_followup'] < date_str and c.get('stage') not in _inactive_d]
+            due_tomorrow_m = [c for c in manual if c.get('next_followup') == tomorrow_str and c.get('stage') not in _inactive_d]
             due_today_count = len(due_today_m)
             overdue_count = len(overdue_m)
-            if due_today_m or overdue_m:
+            due_tomorrow_count = len(due_tomorrow_m)
+            if due_today_m or overdue_m or due_tomorrow_m:
                 manual_today_lines = ['---', '## 📋 Manual Pipeline — Action Required Today', '']
                 if overdue_m:
                     manual_today_lines.append(f'🔴 **OVERDUE ({len(overdue_m)}) — past due:**')
@@ -344,6 +349,15 @@ def run_daily():
                         lt = c.get('lead_type', c.get('_lead_type', '')).replace('_', ' ')
                         manual_today_lines.append(f'  - {name} ({c.get("company","")}) | {c.get("stage","")} | {lt} | {c.get("phone","")}')
                     manual_today_lines.append('')
+                if due_tomorrow_m:
+                    manual_today_lines.append(f'👀 **DUE TOMORROW — heads up ({len(due_tomorrow_m)}):**')
+                    for c in due_tomorrow_m[:8]:
+                        name = f'{c.get("first_name","")} {c.get("last_name","")}'.strip() or c.get('company', '?')
+                        lt = c.get('lead_type', c.get('_lead_type', '')).replace('_', ' ')
+                        manual_today_lines.append(f'  - {name} ({c.get("company","")}) | {c.get("stage","")} | {lt} | {c.get("phone","")}')
+                    if len(due_tomorrow_m) > 8:
+                        manual_today_lines.append(f'  - ...and {len(due_tomorrow_m) - 8} more')
+                    manual_today_lines.append('')
     except Exception:
         pass
 
@@ -354,8 +368,8 @@ def run_daily():
 
     out_file = f'hot_leads_{date_str}.md'
     (OUTPUTS / out_file).write_text('\n'.join(lines))
-    log(f'Daily hot leads report — {len(all_replied)} replied, {len(all_hot)} hot, {due_today_count} due today', out_file)
-    print(f'  → {len(all_replied)} replied, {len(all_hot)} hot leads, {due_today_count} due today. Saved to {out_file}')
+    log(f'Daily hot leads report — {len(all_replied)} replied, {len(all_hot)} hot, {due_today_count} due today, {due_tomorrow_count} due tomorrow', out_file)
+    print(f'  → {len(all_replied)} replied, {len(all_hot)} hot leads, {due_today_count} due today, {due_tomorrow_count} due tomorrow. Saved to {out_file}')
     git_push(f'Nina: daily hot leads {date_str}')
     action_needed = bool(all_replied or due_today_count or overdue_count)
     status = 'ACTION NEEDED' if action_needed else ('DONE' if not all_hot else 'ACTION NEEDED')
@@ -378,6 +392,7 @@ def run_daily():
             ('Replied', len(all_replied)),
             ('Hot Leads', len(all_hot)),
             ('Due Today', due_today_count),
+            ('Due Tomorrow', due_tomorrow_count),
         ],
         summary_lines=summary or ['No hot leads yet — check back tomorrow'],
         status=status,
