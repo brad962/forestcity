@@ -389,6 +389,111 @@ def _check_ad_lead_log_reminder():
         log(f'Ad lead log reminder posted — Day {day_num} of launch week')
 
 
+def _check_medina_reminder():
+    """Fire Medina County pull reminder May 30–June 4 (pull due June 1, needed for June 4 enrollment)."""
+    from datetime import date as _date_m
+    today = _date_m.today()
+    start = _date_m(2026, 5, 30)
+    end   = _date_m(2026, 6, 4)
+    if not (start <= today <= end):
+        return
+
+    alert_sentinel = BASE_DIR / 'outputs' / 'vera' / '.medina_alert_sent_date'
+    today_str = today.strftime('%Y-%m-%d')
+    if alert_sentinel.exists() and alert_sentinel.read_text().strip() == today_str:
+        return
+
+    days_to_june1 = (_date_m(2026, 6, 1) - today).days
+    if days_to_june1 > 0:
+        label = f'{days_to_june1} day{"s" if days_to_june1 != 1 else ""} away'
+        note  = f'Medina pull opens in {label} — stage your shortcut now.'
+    elif days_to_june1 == 0:
+        label = 'TODAY'
+        note  = 'Run it now — June 4 enrollment needs fresh Medina leads.'
+    else:
+        days_late = abs(days_to_june1)
+        label = f'{days_late} day{"s" if days_late != 1 else ""} overdue'
+        note  = f'Medina pull is {label} — run immediately to have leads ready for June 4 enrollment.'
+
+    msg = (
+        f'📍 *Medina County Pull — {label}*\n'
+        f'>{note}\n'
+        f'>Command: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Medina`\n'
+        f'>Or double-click: `scripts/run_medina_both.command` in Finder\n'
+        f'>Guide: `outputs/donna/june1_medina_pull_guide_2026-05-26.md`'
+    )
+    if post_slack(msg):
+        alert_sentinel.parent.mkdir(exist_ok=True)
+        try:
+            alert_sentinel.write_text(today_str)
+        except Exception:
+            pass
+        log(f'Medina County pull reminder posted — {label}')
+
+
+def _check_day7_ads_review():
+    """Fire Day 7 ads scaling review on June 2 (7 days after May 26 launch)."""
+    from datetime import date as _date_ad7
+    today = _date_ad7.today()
+    if today != _date_ad7(2026, 6, 2):
+        return
+
+    alert_sentinel = BASE_DIR / 'outputs' / 'vera' / '.day7_ads_alert_sent_date'
+    today_str = today.strftime('%Y-%m-%d')
+    if alert_sentinel.exists() and alert_sentinel.read_text().strip() == today_str:
+        return
+
+    msg = (
+        '📊 *Ads Day 7 — Week 2 Scaling Decision (June 2)*\n'
+        '>7 days since launch (May 26). Time for the full Week 2 scaling review.\n'
+        '>Facebook review: `outputs/rick/facebook_ads_first_week_monitoring_guide_2026-05-23.md`\n'
+        '>Google review: `outputs/rick/google_ads_first_week_monitoring_guide_2026-05-24.md`\n'
+        '>Week 2 scaling decision matrix: `outputs/rick/week2_facebook_ads_scaling_guide_2026-05-26.md`\n'
+        '>If CTR >1.5% + CPL <$30 → bump budget 20%. Mixed → creative swap. Not working → diagnostic.'
+    )
+    if post_slack(msg):
+        alert_sentinel.parent.mkdir(exist_ok=True)
+        try:
+            alert_sentinel.write_text(today_str)
+        except Exception:
+            pass
+        log('Day 7 ads scaling review reminder posted')
+
+
+def _check_june4_enrollment_countdown():
+    """Fire June 4 Round 2 enrollment countdown on June 2 and June 3 (pre-flight reminders)."""
+    from datetime import date as _date_j4
+    today = _date_j4.today()
+    start = _date_j4(2026, 6, 2)
+    end   = _date_j4(2026, 6, 3)
+    if not (start <= today <= end):
+        return
+
+    alert_sentinel = BASE_DIR / 'outputs' / 'vera' / '.june4_enrollment_alert_date'
+    today_str = today.strftime('%Y-%m-%d')
+    if alert_sentinel.exists() and alert_sentinel.read_text().strip() == today_str:
+        return
+
+    days_left = (_date_j4(2026, 6, 4) - today).days
+    label = 'TOMORROW' if days_left == 1 else f'{days_left} days away'
+
+    msg = (
+        f'🚀 *June 4 Round 2 Enrollment — {label}*\n'
+        f'>Round 2 = Medina+Summit PM enrollment + gas station enrollment + contractor text blast.\n'
+        f'>Night-before checklist: `outputs/donna/june3_tuesday_evening_checklist_2026-05-26.md`\n'
+        f'>Battle card (June 4 morning): `outputs/donna/june4_enrollment_battle_card_2026-05-24.md`\n'
+        f'>GO/NO-GO tracker: `outputs/vera/june4_enrollment_readiness_tracker_2026-05-27.md`\n'
+        f'>Verify: Instantly.ai paused ✓ | Medina pull done ✓ | Summit pull done ✓ | Gas station sequence created ✓'
+    )
+    if post_slack(msg):
+        alert_sentinel.parent.mkdir(exist_ok=True)
+        try:
+            alert_sentinel.write_text(today_str)
+        except Exception:
+            pass
+        log(f'June 4 enrollment countdown posted — {label}')
+
+
 def _acquire_lock() -> bool:
     """Return True if we got the lock, False if another instance is running."""
     LOCK_FILE.parent.mkdir(exist_ok=True)
@@ -452,6 +557,9 @@ def _main_body():
     _check_summit_deadline()
     _check_gas_station_pending()
     _check_ad_lead_log_reminder()
+    _check_medina_reminder()
+    _check_day7_ads_review()
+    _check_june4_enrollment_countdown()
 
     # Fetch first so origin/main is current before flush checks origin/main..HEAD
     git(['fetch', 'origin'])

@@ -1,6 +1,21 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 110 | 2026-05-27 | Auto-fixes shipped: 4 | New RESOLVED: 0 | Open: 40 (Churches + Childcare segments added; vera_relay.py ad lead log daily reminder; May 28 Thursday 60-min execution card written)*
+*Run 111 | 2026-05-27 | Auto-fixes shipped: 2 | New RESOLVED: 0 | Open: 40 (vera_relay 3 new reminders; GitHub Actions workflow deployed)*
+
+---
+
+## RUN METRICS — Run 111 | 2026-05-27
+- Total RESOLVED: 85 (0 new this run)
+- Total OPEN: 40 (0 new this run)
+- Auto-upgrades shipped: 2
+  1. `workers/vera_relay.py` — added 3 new relay reminder functions: `_check_medina_reminder()` (fires May 30–June 4, Medina pull countdown), `_check_day7_ads_review()` (fires June 2, Day 7 ads scaling decision), `_check_june4_enrollment_countdown()` (fires June 2–3, Round 2 pre-flight). Closes the 8-day gap in relay coverage between Summit deadline (May 31) and June 4 enrollment.
+  2. `.github/workflows/vera_slack_relay.yml` — deployed GitHub Actions workflow to correct location. Previously stuck in `outputs/vera/` since Run 34. Now in `.github/workflows/` where GitHub Actions can execute it. Fires on Vera pushes that change `pending_slack_messages.md`. Requires `SLACK_WEBHOOK_OFFICE` secret in repo settings and PAT with `workflow` scope.
+- GitHub Action status: DEPLOYED TO CORRECT PATH this run. Push attempt will reveal if PAT has workflow scope. If 403 error → PAT still needs workflow scope upgrade. vera_relay.py local cron remains the working fallback.
+- Pipeline status this run:
+  - Summit pull: 4 DAYS LEFT (deadline May 31). 🚨 CRITICAL.
+  - May 28: Day 3 ads check + Wave 2 contractor texts
+  - June 1: Medina County pull (relay now reminds starting May 30)
+  - June 4: Round 2 enrollment (relay now counts down June 2-3)
 
 ---
 
@@ -8,18 +23,10 @@
 - Total RESOLVED: 85 (0 new this run)
 - Total OPEN: 40 (2 new: Churches & Religious Facilities + Childcare/Daycare segments not yet pulled)
 - Auto-upgrades shipped: 4
-  1. `workers/lead_pipeline.py` + `integrations/mixmax.py` — added **Churches & Religious Facilities** as new commercial segment; titles: `church facilities manager`, `parish administrator`, `religious facilities manager`, `church administrator`, `facilities coordinator`; org keywords: `church campus`, `religious organization`, `faith community`, `church facilities`, `parish management`, `diocese facilities`; 500+ large NE Ohio churches (Diocese of Cleveland 185 parishes + evangelical megachurches); large parking lots + brick facades + outdoor areas; church administrator signs directly; $1K-$3K/visit; 2-3x/year = $2K-$9K/year per campus
-  2. `workers/lead_pipeline.py` + `integrations/mixmax.py` — added **Childcare & Early Education Centers** as new commercial segment; titles: `childcare center director`, `daycare director`, `early childhood director`, `preschool director`; org keywords: `childcare center`, `daycare center`, `early childhood education`, `preschool facility`, `early learning center`; 1,000+ NE Ohio licensed centers; state licensing inspections create recurring urgency; $300-$800/visit; 2x/year = $600-$1,600/year per center; Bright Horizons + KinderCare district FMs sign multi-site contracts
-  3. `agents/danny.md` — documented Churches & Religious Facilities + Childcare/Daycare as new secondary segments with target titles, NE Ohio examples, revenue math, pitch angles, Apollo keyword references
-  4. `workers/vera_relay.py` — added `_check_ad_lead_log_reminder()`: fires once/day May 26–June 1 reminding Bradley to fill in the launch week lead log; wired into `_main_body()`; without daily logging Google Ads optimizes toward clicks not bookings and CPA math is invisible; self-deactivates after June 1
-- Deliverables written: 1
-  1. `outputs/vera/may28_thursday_60min_card_2026-05-27.md` — integrated 60-min Thursday morning card; 3-block parallel execution: Block 1 (Summit pull, 5 min click, runs unattended), Block 2 (Wave 2 16-contact contractor texts, 45 min while Summit runs), Block 3 (Day 3 ads check, 10 min read-only); success checklist; revenue math; critical path table through June 4
-- GitHub Action status: STILL BLOCKED. PAT `workflow` scope required. vera_relay.py local cron IS the working delivery mechanism. Bradley must take Option A (browser upload) or Option B (PAT upgrade) — guides written in Runs 104+106.
-- Pipeline status this run:
-  - TODAY May 27: 20 contacts DUE. Three blocks in `may27_wednesday_blitz_card`. Past customer blast is FASTEST revenue.
-  - TOMORROW May 28: 16 Wave 2 contractor texts + Day 3 ads check + Summit pull. Use `may28_thursday_60min_card`.
-  - Summit pull: 4 DAYS LEFT (deadline May 31). 🚨 CRITICAL. Every day of delay = missed peak season leads.
-  - June 4: 8 days. Readiness tracker live.
+  1. `workers/lead_pipeline.py` + `integrations/mixmax.py` — added **Churches & Religious Facilities** as new commercial segment
+  2. `workers/lead_pipeline.py` + `integrations/mixmax.py` — added **Childcare & Early Education Centers** as new commercial segment
+  3. `agents/danny.md` — documented Churches & Religious Facilities + Childcare/Daycare as new secondary segments
+  4. `workers/vera_relay.py` — added `_check_ad_lead_log_reminder()` fires May 26–June 1
 
 ---
 
