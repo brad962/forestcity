@@ -315,22 +315,59 @@ def run_daily():
     else:
         lines += ['## No hot leads yet', '*Check back once emails start sending.*', '']
 
-    lines += [
+    # --- Manual Pipeline: Due Today & Overdue (visible in daily report) ---
+    manual_today_lines = []
+    due_today_count = 0
+    overdue_count = 0
+    try:
+        pipeline_f = BASE_DIR / 'pipeline_data.json'
+        if pipeline_f.exists():
+            pd_data = json.loads(pipeline_f.read_text())
+            manual = pd_data.get('manual_contacts', [])
+            _inactive_d = {'Closed Won', 'Closed Lost'}
+            due_today_m = [c for c in manual if c.get('next_followup') == date_str and c.get('stage') not in _inactive_d]
+            overdue_m = [c for c in manual if c.get('next_followup') and c['next_followup'] < date_str and c.get('stage') not in _inactive_d]
+            due_today_count = len(due_today_m)
+            overdue_count = len(overdue_m)
+            if due_today_m or overdue_m:
+                manual_today_lines = ['---', '## 📋 Manual Pipeline — Action Required Today', '']
+                if overdue_m:
+                    manual_today_lines.append(f'🔴 **OVERDUE ({len(overdue_m)}) — past due:**')
+                    for c in overdue_m:
+                        name = f'{c.get("first_name","")} {c.get("last_name","")}'.strip() or c.get('company', '?')
+                        manual_today_lines.append(f'  - {name} ({c.get("company","")}) | was due {c["next_followup"]} | {c.get("phone","")}')
+                    manual_today_lines.append('')
+                if due_today_m:
+                    manual_today_lines.append(f'🟡 **DUE TODAY ({len(due_today_m)}):**')
+                    for c in due_today_m:
+                        name = f'{c.get("first_name","")} {c.get("last_name","")}'.strip() or c.get('company', '?')
+                        lt = c.get('lead_type', c.get('_lead_type', '')).replace('_', ' ')
+                        manual_today_lines.append(f'  - {name} ({c.get("company","")}) | {c.get("stage","")} | {lt} | {c.get("phone","")}')
+                    manual_today_lines.append('')
+    except Exception:
+        pass
+
+    lines += manual_today_lines + [
         '---',
         f'*Generated automatically by Nina | {datetime.now().strftime("%Y-%m-%d %H:%M")}*',
     ]
 
     out_file = f'hot_leads_{date_str}.md'
     (OUTPUTS / out_file).write_text('\n'.join(lines))
-    log(f'Daily hot leads report — {len(all_replied)} replied, {len(all_hot)} hot', out_file)
-    print(f'  → {len(all_replied)} replied, {len(all_hot)} hot leads. Saved to {out_file}')
+    log(f'Daily hot leads report — {len(all_replied)} replied, {len(all_hot)} hot, {due_today_count} due today', out_file)
+    print(f'  → {len(all_replied)} replied, {len(all_hot)} hot leads, {due_today_count} due today. Saved to {out_file}')
     git_push(f'Nina: daily hot leads {date_str}')
-    status = 'ACTION NEEDED' if all_replied else ('DONE' if not all_hot else 'ACTION NEEDED')
+    action_needed = bool(all_replied or due_today_count or overdue_count)
+    status = 'ACTION NEEDED' if action_needed else ('DONE' if not all_hot else 'ACTION NEEDED')
     summary = []
     if all_replied:
         summary.append(f'{len(all_replied)} contacts replied — follow up TODAY')
     if all_hot:
         summary.append(f'{len(all_hot)} hot leads (2+ opens) — connect on LinkedIn')
+    if due_today_count:
+        summary.append(f'{due_today_count} manual pipeline contacts due today')
+    if overdue_count:
+        summary.append(f'{overdue_count} manual pipeline contacts overdue')
     for seq_id, meta in SEQUENCES.items():
         stats = seq_stats_cache[seq_id]
         summary.append(f'{meta["name"]}: {stats["total"]} enrolled, {stats["open_rate"]} opens')
@@ -340,6 +377,7 @@ def run_daily():
         metrics=[
             ('Replied', len(all_replied)),
             ('Hot Leads', len(all_hot)),
+            ('Due Today', due_today_count),
         ],
         summary_lines=summary or ['No hot leads yet — check back tomorrow'],
         status=status,
