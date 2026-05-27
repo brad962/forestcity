@@ -10,7 +10,7 @@
 - Auto-upgrades shipped: 2
   1. `workers/vera_relay.py` — added 3 new relay reminder functions: `_check_medina_reminder()` (fires May 30–June 4, Medina pull countdown), `_check_day7_ads_review()` (fires June 2, Day 7 ads scaling decision), `_check_june4_enrollment_countdown()` (fires June 2–3, Round 2 pre-flight). Closes the 8-day gap in relay coverage between Summit deadline (May 31) and June 4 enrollment.
   2. `.github/workflows/vera_slack_relay.yml` — deployed GitHub Actions workflow to correct location. Previously stuck in `outputs/vera/` since Run 34. Now in `.github/workflows/` where GitHub Actions can execute it. Fires on Vera pushes that change `pending_slack_messages.md`. Requires `SLACK_WEBHOOK_OFFICE` secret in repo settings and PAT with `workflow` scope.
-- GitHub Action status: DEPLOYED TO CORRECT PATH this run. Push attempt will reveal if PAT has workflow scope. If 403 error → PAT still needs workflow scope upgrade. vera_relay.py local cron remains the working fallback.
+- GitHub Action status: STILL BLOCKED (Run 111 confirmed). Created `.github/workflows/vera_slack_relay.yml` in local clone, push rejected with: "refusing to allow a Personal Access Token to create or update workflow without `workflow` scope". File reverted. vera_relay.py local cron remains the working Slack delivery mechanism. Fix requires Bradley to regenerate PAT with `workflow` scope OR upload file via GitHub UI (guides: outputs/vera/github_action_manual_upload_guide_2026-05-27.md).
 - Pipeline status this run:
   - Summit pull: 4 DAYS LEFT (deadline May 31). 🚨 CRITICAL.
   - May 28: Day 3 ads check + Wave 2 contractor texts

@@ -6,11 +6,11 @@
 >Why: The relay had no reminders covering Summit deadline (May 31) → Medina pull (June 1) → June 4 enrollment. 8-day gap now closed.
 >File: `workers/vera_relay.py`
 ---
-🔧 *Vera — Auto-Upgrade | Run 111 | 2026-05-27*
->Changed: `.github/workflows/vera_slack_relay.yml` — deployed GitHub Actions workflow to correct location
->Why: The workflow file has lived in `outputs/vera/` since Run 34 without being placed in `.github/workflows/` where GitHub Actions executes it. Moved to correct path. If PAT has workflow scope this now fires on every Vera push that changes pending_slack_messages.md — eliminating dependency on Mac cron.
->REQUIRES: Set `SLACK_WEBHOOK_OFFICE` secret in repo → Settings → Secrets and variables → Actions. If push fails with 403, PAT needs `workflow` scope at github.com → Settings → Developer settings → Personal access tokens.
->File: `.github/workflows/vera_slack_relay.yml`
+🔧 *Vera — Diagnosis | Run 111 | GitHub Actions PAT Scope (Confirmed)*
+>Status: CONFIRMED BLOCKED — PAT `ghp_lrUhBq7...` lacks `workflow` scope.
+>Vera attempted to push `.github/workflows/vera_slack_relay.yml` directly this run. GitHub rejected with: "refusing to allow a Personal Access Token to create or update workflow without workflow scope."
+>Fix (2 options): Option A — 5 min via browser: go to github.com/brad962/forestcity → Code → `.github/workflows/` → create file → paste content from `outputs/vera/github_action_vera_slack_relay.yaml`. Option B — regenerate PAT at github.com → Settings → Developer settings → PATs → check `workflow` scope → update in local .env.
+>Until fixed, vera_relay.py on Mac cron (every 5 min) IS the working Slack relay.
 ---
 💡 *Vera — Upgrade Proposal | Run 111*
 >Idea: Add `_check_june4_past_customer_blast()` to vera_relay.py — fires once June 4 morning
