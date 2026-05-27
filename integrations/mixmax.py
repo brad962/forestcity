@@ -141,6 +141,16 @@ PROPERTY_MANAGER_TITLES = [
     # Auto body & collision shops — OSHA/EPA compliance angle; district managers sign multi-location contracts (added 2026-05-27 run 108)
     'auto body shop manager', 'collision center manager', 'body shop manager',
     'collision shop manager', 'district collision manager', 'body shop district manager',
+    # HOA board-level decision-makers — boards vote on vendor budgets in May-June;
+    # DIFFERENT from HOA managers; self-managed HOAs have no management company — board president IS the decision-maker;
+    # Apollo surfaces at HOA/condo association orgs; adds 'hoa member' substring risk — using specific compound phrases (added 2026-05-27 run 109)
+    'hoa president', 'hoa board president', 'community association president',
+    'hoa treasurer', 'hoa board treasurer',
+    'condo board president', 'condominium board president',
+    # Marinas & waterfront — Lake Erie shoreline; pre-season May-June = peak prep window;
+    # marina managers sign vendor contracts for concrete ramps, dock areas, storage lots (added 2026-05-27 run 109)
+    'marina manager', 'marina director', 'harbor master', 'waterfront facilities manager',
+    'marina operations manager', 'dock master',
 ]
 
 REALTOR_TITLES = [

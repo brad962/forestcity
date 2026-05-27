@@ -205,6 +205,25 @@ This enrolls ALL pending contacts (gas stations + fleet) without triggering a fr
 **Pitch angle:** "Your drive-through canopy is the first surface every customer walks under. Grease buildup, mold, and exhaust staining are a corporate inspection failure waiting to happen. One quarterly contract covers all your NE Ohio locations — no separate scheduling."
 **Sequence:** Route to Property Manager sequence (facility management / brand standards angle).
 
+### HOA Board Presidents & Treasurers (NEW — May 2026, Run 109)
+**Status:** Titles live in DANNY_TITLES + PROPERTY_MANAGER_TITLES as of Run 109. Include in next county rotation (Medina June 1).
+**Target:** HOA President, HOA Board President, Community Association President, HOA Treasurer, Condo Board President
+**Why:** These are DIFFERENT from HOA managers. HOA managers work for the management company that serves the HOA. HOA board presidents and treasurers are elected volunteers who sit on the actual HOA board — they control the budget and sign vendor contracts. Self-managed HOAs (no management company at all) have ONLY the board president as decision-maker. Apollo indexes these titles at HOA/condo association organizations. May-June = budget season when boards are approving summer vendor lists. This is the highest-authority contact at any HOA.
+**Revenue:** Same as standard HOA accounts — $400–$1,500/visit, 2–4x/year = $800–$6,000/year per HOA. But board president outreach has HIGHER close rate because they can approve on the spot (no escalation to board required).
+**Pitch angle:** "HOA boards are locking in their summer vendor list this month. If you've been meaning to address the parking lot or common area cleaning, now is when the decision gets made — not in July when it's already scheduled for fall."
+**Sequence:** Route to Property Manager sequence.
+
+### Marinas & Waterfront Properties (NEW — May 2026, Run 109)
+**Status:** Org keywords + titles live in DANNY_ORG_KEYWORDS/DANNY_TITLES as of Run 109. Include in Medina June 1 + Lake County pull (June 22).
+**Target:** Marina Manager, Marina Director, Harbor Master, Waterfront Facilities Manager, Marina Operations Manager, Dock Master
+**Why:** Lake Erie shoreline gives Forest City a LOCAL COMPETITIVE ADVANTAGE. NE Ohio marinas include Lorain County (Vermilion, Sheffield Lake, Lorain marina), Erie County (Sandusky Bay, Cedar Point boat launch), Mentor Headlands, Lakewood, Cleveland Lakefront. Marinas have large concrete boat ramps, dock areas, fuel station concrete, parking lots, and storage building exteriors. Pre-season prep in May-June is the critical window — boats come out of storage, facilities need to be clean for the season opener. Most marinas have NO vendor relationship for this work. Contact NOW before they hire someone by Memorial Day weekend or just live with it for another year.
+**Revenue per visit:** $1,500–$6,000 (boat ramp + dock area + fuel station concrete + building exterior + parking). 2–3 visits/year (pre-season + post-season) = $3,000–$18,000/year per marina. Zero competitors targeting this.
+**Target companies:** Mentor Harbor Yachting Club, Sheffield Lake Marina, Vermilion Lagoons, Lorain Harbor, Sandusky Bay marinas, Cleveland Lakefront Marinas (Edgewater, Euclid, Bratenahl), privately operated boat storage/launch facilities on Lake Erie.
+**Apollo keywords (live Run 109):** `marina management`, `marine services`, `boat storage`, `yacht club`, `sailing club`, `waterfront property`, `marina facility`, `boat launch` — added to DANNY_ORG_KEYWORDS.
+**Pitch angle:** "Before you open for the season, your ramps, fuel dock, and parking areas need a clean start — especially after winter runoff. We can schedule a pre-season clean before Memorial Day weekend and a post-season pack-up clean in October."
+**Timing:** CONTACT NOW — marina managers are already prepping for Memorial Day weekend opener. Every week that passes is another weekend they operate dirty.
+**Sequence:** Route to Property Manager sequence (facility management / seasonal prep angle).
+
 ## Peak Season Angle — HOA Budget Season (May–June)
 HOA boards typically hold their annual budget and vendor approval meetings in May–June before the summer maintenance season. This means property managers and community association managers are ACTIVELY reviewing vendor lists RIGHT NOW. The PM sequence Touch 1 and any LinkedIn outreach should reference this window: "HOA boards are approving their summer vendor lists this month" or "Most associations lock in their exterior maintenance vendor before July." This creates urgency without being pushy — it's calendar-based fact. Works especially well for community associations, HOA management companies, and multifamily operators who work on fiscal budgets.
 

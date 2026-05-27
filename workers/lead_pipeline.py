@@ -166,6 +166,19 @@ DANNY_TITLES = [
     # $800-$2,500/shop; district manager oversees 5-15 locations = $4K-$37K/year deal; zero current competitors (added 2026-05-27 run 108)
     'auto body shop manager', 'collision center manager', 'body shop manager',
     'collision shop manager', 'district collision manager', 'body shop district manager',
+    # HOA board-level decision-makers — boards vote on vendor contracts + annual budgets in May-June;
+    # DIFFERENT from HOA managers (management company employees) — these ELECTED VOLUNTEERS sign the checks;
+    # self-managed HOAs have NO management company; board president is the only decision-maker;
+    # Apollo surfaces these at HOA/condo association orgs (added 2026-05-27 run 109)
+    'hoa president', 'hoa board president', 'community association president',
+    'hoa treasurer', 'hoa board treasurer',
+    'condo board president', 'condominium board president',
+    # Marinas & waterfront properties — Lake Erie shoreline (Vermilion, Lorain, Sandusky Bay, Mentor Headlands, Lakewood);
+    # concrete boat ramps, dock areas, storage buildings, parking lots = pressure washing need all season;
+    # May-June = peak pre-season marina prep; marina managers sign vendor contracts;
+    # $1,500-$6,000/visit; 2-3x/year = $3K-$18K/year per marina; zero competitors targeting this (added 2026-05-27 run 109)
+    'marina manager', 'marina director', 'harbor master', 'waterfront facilities manager',
+    'marina operations manager', 'dock master',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -249,6 +262,11 @@ DANNY_ORG_KEYWORDS = [
     # Maaco, CARSTAR, Caliber Collision, Crash Champions district managers sign vendor contracts (added 2026-05-27 run 108)
     'auto body shop', 'body shop', 'collision center', 'collision repair', 'auto body',
     'auto collision', 'vehicle collision',
+    # Marinas & waterfront properties — Lake Erie shoreline (Vermilion, Lorain, Sandusky Bay, Mentor Headlands);
+    # NE Ohio has dozens of marinas and yacht clubs; pre-season prep (May-June) = concrete ramps, dock areas, storage lots;
+    # marina manager signs vendor contracts; $1,500-$6,000/visit; 2-3x/year; zero competitors; LOCAL LAKE ERIE ADVANTAGE (added 2026-05-27 run 109)
+    'marina management', 'marine services', 'boat storage', 'yacht club', 'sailing club',
+    'waterfront property', 'marina facility', 'boat launch',
 ]
 
 CARLA_SEARCHES = [
