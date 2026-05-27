@@ -673,6 +673,123 @@ def _check_post_june4_monitoring():
         log(f'Post-June 4 sequence monitoring reminder posted — Day {day_num}')
 
 
+def _check_wave2_day3_followup():
+    """Fire ONLY on May 31 — Day 3 after Wave 2 contractor first-touch texts (May 28).
+    Day 3 is the follow-up window: not so soon it's annoying, not so late they've forgotten.
+    One-time, self-deactivating. May 31 is also the Summit pull deadline — two birds, one day."""
+    from datetime import date as _date_w2d3
+    today = _date_w2d3.today()
+    if today != _date_w2d3(2026, 5, 31):
+        return
+
+    alert_sentinel = BASE_DIR / 'outputs' / 'vera' / '.wave2_day3_followup_sent_date'
+    today_str = today.strftime('%Y-%m-%d')
+    if alert_sentinel.exists() and alert_sentinel.read_text().strip() == today_str:
+        return
+
+    msg = (
+        '📲 *Wave 2 Contractor Follow-Up — Day 3 (May 31)*\n'
+        '>16 Wave 2 contractors received first-touch texts Thursday May 28. Today = Day 3 follow-up window.\n'
+        '>Follow up with anyone who opened but didn\'t reply — or no response at all:\n'
+        '>  "Hey [name], wanted to follow up from Thursday. Worth a quick chat about referring each other?\n'
+        '>   I refer your services to our customers, you refer ours. No paperwork, just a $50 referral deal."\n'
+        '>Full Day 3 scripts by trade: `outputs/vera/wave2_contractor_followup_schedule_2026-05-27.md`\n'
+        '>ALSO TODAY: Summit County pull deadline (last chance). Run while texts are sending — 6 min unattended.'
+    )
+    if post_slack(msg):
+        alert_sentinel.parent.mkdir(exist_ok=True)
+        try:
+            alert_sentinel.write_text(today_str)
+        except Exception:
+            pass
+        log('Wave 2 contractor Day 3 follow-up reminder posted (May 31 only)')
+
+
+def _check_june8_geauga_portage():
+    """Fire June 4–8 countdown for the Geauga + Portage County pull (Week 23, June 8 Monday).
+    Geauga + Portage = Chardon, Chesterland, Kent, Ravenna — smaller market but
+    funeral homes, self-storage, HOA management firms, and rural commercial properties.
+    Cron handles this automatically, but a reminder surfaces it if cron drifts."""
+    from datetime import date as _date_gp
+    today = _date_gp.today()
+    start = _date_gp(2026, 6, 4)
+    end   = _date_gp(2026, 6, 8)
+    if not (start <= today <= end):
+        return
+
+    alert_sentinel = BASE_DIR / 'outputs' / 'vera' / '.geauga_portage_alert_sent_date'
+    today_str = today.strftime('%Y-%m-%d')
+    if alert_sentinel.exists() and alert_sentinel.read_text().strip() == today_str:
+        return
+
+    pull_date = _date_gp(2026, 6, 8)
+    days_left = (pull_date - today).days
+    if days_left > 0:
+        label = f'{days_left} day{"s" if days_left != 1 else ""} away'
+        note = 'Cron will fire automatically Mon 7am if running. Verify cron is live: `cat logs/cron.log | tail -10`'
+    else:
+        label = 'TODAY'
+        note = 'Run now if cron missed it: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Geauga+Portage`'
+
+    msg = (
+        f'📍 *Geauga + Portage County Pull — {label} (June 8)*\n'
+        f'>Week 23 county rotation: Chardon, Chesterland, Kent, Ravenna.\n'
+        f'>Smaller market (~15–25 leads) but includes: funeral homes, self-storage, HOA mgmt firms, rural commercial.\n'
+        f'>{note}\n'
+        f'>If cron is off: `python3 workers/lead_pipeline.py both Geauga+Portage`'
+    )
+    if post_slack(msg):
+        alert_sentinel.parent.mkdir(exist_ok=True)
+        try:
+            alert_sentinel.write_text(today_str)
+        except Exception:
+            pass
+        log(f'Geauga + Portage County pull reminder posted — {label}')
+
+
+def _check_june22_lake_county():
+    """Fire June 17–22 countdown for the Lake County pull (Week 25, June 22 Monday).
+    Lake County = Mentor, Willoughby, Painesville — AND the Lake Erie shoreline.
+    This is the MARINA county. Mentor Harbor, Sheffield Lake, Euclid marina, Lorain Harbor.
+    Pre-season is gone but summer maintenance window is open — contact marina managers NOW."""
+    from datetime import date as _date_lk
+    today = _date_lk.today()
+    start = _date_lk(2026, 6, 17)
+    end   = _date_lk(2026, 6, 22)
+    if not (start <= today <= end):
+        return
+
+    alert_sentinel = BASE_DIR / 'outputs' / 'vera' / '.lake_county_alert_sent_date'
+    today_str = today.strftime('%Y-%m-%d')
+    if alert_sentinel.exists() and alert_sentinel.read_text().strip() == today_str:
+        return
+
+    pull_date = _date_lk(2026, 6, 22)
+    days_left = (pull_date - today).days
+    if days_left > 0:
+        label = f'{days_left} day{"s" if days_left != 1 else ""} away'
+        note = f'Staging now — cron fires June 22 Monday 7am.'
+    else:
+        label = 'TODAY — LAKE ERIE MARINA PULL'
+        note = 'Run now: `python3 workers/lead_pipeline.py both Lake` or double-click Lake shortcut if it exists.'
+
+    msg = (
+        f'⚓ *Lake County Pull — {label} (June 22) — MARINA SEGMENT*\n'
+        f'>Lake County is the marina/waterfront county: Mentor Harbor, Sheffield Lake, Euclid shoreline, Bratenahl.\n'
+        f'>Marina managers need mid-season cleaning (June–July) for dock areas, fuel station concrete, boat ramp.\n'
+        f'>Also in this county: hotel chains (Mentor/Willoughby corridor), senior living, retail PM firms.\n'
+        f'>{note}\n'
+        f'>Command: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Lake`'
+    )
+    if post_slack(msg):
+        alert_sentinel.parent.mkdir(exist_ok=True)
+        try:
+            alert_sentinel.write_text(today_str)
+        except Exception:
+            pass
+        log(f'Lake County pull reminder posted — {label}')
+
+
 def _acquire_lock() -> bool:
     """Return True if we got the lock, False if another instance is running."""
     LOCK_FILE.parent.mkdir(exist_ok=True)
@@ -744,6 +861,9 @@ def _main_body():
     _check_wave2_contractor_blitz()
     _check_past_customer_blast()
     _check_ad_lead_day5_escalation()
+    _check_wave2_day3_followup()
+    _check_june8_geauga_portage()
+    _check_june22_lake_county()
 
     # Fetch first so origin/main is current before flush checks origin/main..HEAD
     git(['fetch', 'origin'])

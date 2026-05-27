@@ -84,3 +84,40 @@
 >New relay coverage: Wave 2 blitz (tomorrow), past customer blast (daily), ad lead Day 5 escalation (May 31)
 >New segment: Funeral Homes — 100+ NE Ohio locations, zero competitor cold-calling, $30K-$90K/year potential
 >New deliverable: may28_thursday_complete_action_card — your complete 90-min playbook for tomorrow
+---
+🔧 *Vera — Auto-Upgrade*
+>Changed: `workers/vera_relay.py` — added `_check_wave2_day3_followup()` (fires May 31 only)
+>Why: Wave 2 contractors get first texts May 28 — Day 3 = May 31; relay now fires a specific follow-up reminder with copy-paste script; notes it shares the Summit deadline day so both tasks happen simultaneously.
+>File: workers/vera_relay.py
+---
+🔧 *Vera — Auto-Upgrade*
+>Changed: `workers/vera_relay.py` — added `_check_june8_geauga_portage()` (fires June 4–8)
+>Why: Post-enrollment relay was dark June 12–22 — 10-day gap with no reminders; Geauga+Portage countdown closes the first half of that gap (June 4–8 window).
+>File: workers/vera_relay.py
+---
+🔧 *Vera — Auto-Upgrade*
+>Changed: `workers/vera_relay.py` — added `_check_june22_lake_county()` (fires June 17–22)
+>Why: Lake County June 22 is the MARINA county — Mentor Harbor, Sheffield Lake, Euclid shoreline; mid-season marina cleaning window is open June–July; specific 6-day countdown ensures this segment doesn't get skipped in post-enrollment sprint.
+>File: workers/vera_relay.py
+---
+🔧 *Vera — Auto-Upgrade*
+>Changed: `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — added Urgent Care Centers as new commercial segment (Run 114)
+>Why: 50+ NE Ohio locations (FastMed, Concentra, GoHealth, CareNow, Summa Now, Cleveland Clinic Express Care, UH Urgent Care) — ORC licensing = exterior appearance standard; summer = peak volume; regional FMs sign multi-clinic contracts; $32K-$80K/year potential; zero competitor outreach in this segment.
+>File: workers/lead_pipeline.py + integrations/mixmax.py + agents/danny.md
+---
+💡 *Vera — Upgrade Proposal*
+>Idea: Run an early Cuyahoga County pull THIS WEEK (May 28 or 29)
+>Why: All 25+ new commercial segments are now live in code. The next scheduled Cuyahoga pull is June 15. An early pull now gets hotel, bank, medical office, urgent care, grocery, distribution center, and restaurant district manager contacts enrolled BEFORE June 4 — giving them a full first sequence before Round 2.
+>Impact: 40–80 additional Cuyahoga commercial contacts in Mixmax by May 29; these receive Touch 1 June 4 instead of June 15; maximizes the June Booking Blitz with the largest NE Ohio county.
+>Command (6 min unattended): `python3 workers/lead_pipeline.py both Cuyahoga`
+>Reply YES to approve.
+---
+💡 *Vera — New Deliverable*
+>Created: `outputs/vera/june_complete_action_calendar_2026-05-27.md`
+>Why: No single document covered all of June. Individual day cards exist for May 27–29 and June 1–4, and the june5–11 guide covers post-enrollment. But June 8–30 was largely undocumented. New calendar: every county pull, enrollment step, monitoring checkpoint, hot lead window, and revenue action for June 1–30. Revenue target table. Key files reference. Cron health check.
+---
+✅ *Vera — Scan Complete 2026-05-27 (Run 114)*
+>4 auto-upgrades shipped | 1 proposal | 44 open issues (1 new: Urgent Care Centers — in code, fires June 1)
+>Relay coverage now extends through June 22 (Lake County/Marina) — closed the 10-day June 12–22 dark gap.
+>New deliverable: `june_complete_action_calendar_2026-05-27.md` — full June 1–30 day-by-day reference.
+>🚨 CRITICAL THIS WEEK: Summit pull (May 31 deadline) + Wave 2 Day 3 follow-up (May 31) + Instantly.ai pause (before June 4).

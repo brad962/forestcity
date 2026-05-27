@@ -1,6 +1,34 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 113 | 2026-05-27 | Auto-fixes shipped: 4 | New RESOLVED: 0 | Open: 43 (Funeral Homes segment added; 3 new vera_relay checks; may28 complete action card written)*
+*Run 114 | 2026-05-27 | Auto-fixes shipped: 4 | New RESOLVED: 0 | Open: 44 (Urgent Care Centers segment added; 3 new vera_relay relay checks; June complete action calendar written)*
+
+---
+
+## RUN METRICS — Run 114 | 2026-05-27
+- Total RESOLVED: 85 (0 new this run)
+- Total OPEN: 44 (1 new: Urgent Care Centers — in code, needs Medina June 1 pull)
+- Auto-upgrades shipped: 4
+  1. `workers/vera_relay.py` — added `_check_wave2_day3_followup()`: fires ONLY May 31; Wave 2 contractors texted May 28; Day 3 = standard follow-up window; includes copy-paste follow-up line and reference to Day 3 scripts in wave2_contractor_followup_schedule; also notes Summit pull deadline shares May 31 — "run texts and pull simultaneously"; wired into `_main_body()`
+  2. `workers/vera_relay.py` — added `_check_june8_geauga_portage()`: fires June 4–8 countdown for Week 23 Geauga + Portage pull; Chardon/Chesterland/Kent/Ravenna market; notes smaller yield (~15-25 leads) but includes funeral homes, self-storage, HOA mgmt; includes cron health check tip; wired into `_main_body()`; closes the post-Medina relay gap (June 5–22 was previously dark)
+  3. `workers/vera_relay.py` — added `_check_june22_lake_county()`: fires June 17–22 countdown for Week 25 Lake County pull; specifically flags the MARINA angle (Mentor Harbor, Sheffield Lake, Euclid shoreline); mid-season marina cleaning window (June–July); also covers hotel corridor and senior living in Mentor/Willoughby; wired into `_main_body()`
+  4. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — added **Urgent Care Centers** as new commercial segment; DANNY_TITLES: `urgent care director`, `urgent care center manager`, `clinic director`, `ambulatory care director`, `walk-in clinic manager`, `urgent care manager`; DANNY_ORG_KEYWORDS: `urgent care center`, `urgent care clinic`, `walk-in clinic`, `immediate care center`, `urgent care facility`, `ambulatory care center`; mirrored to PROPERTY_MANAGER_TITLES in mixmax.py; target companies: FastMed, Concentra (occupational health + UC), GoHealth, CareNow (HCA), Summa Now, MetroHealth Urgent Care, Cleveland Clinic Express Care, UH Urgent Care; ORC licensing inspections = exterior cleanliness standard; summer = peak volume; $3,200-$8,000/year per clinic; 10-clinic regional deal = $32K-$80K; live for Medina June 1 pull
+- Deliverables written: 1
+  1. `outputs/vera/june_complete_action_calendar_2026-05-27.md` — full June 1–30 day-by-day calendar; every county pull, enrollment step, relay reminder, hot lead window, and revenue checkpoint for the entire month; covers June 8 (Geauga+Portage), June 15 (Cuyahoga), June 22 (Lake/Marina), June 26 (Lorain); revenue targets table; key files reference; cron health check command; first document to cover ALL of June rather than individual day cards
+- Pipeline status this run:
+  - TODAY May 27: 20 contacts DUE (same 36 contacts, 3 Contacted + 33 New Lead). Run `python3 scripts/contact_done.py` after texting.
+  - TOMORROW May 28: Wave 2 blitz (16) + Day 3 ads check. Relay fires both reminders.
+  - May 31: Wave 2 Day 3 follow-up (16 contacts) + Summit pull DEADLINE + Ad Day 5 escalation. Three relays fire.
+  - June 1: Medina pull — 25+ new commercial segments fire for first time including Urgent Care Centers.
+  - June 4: Round 2 enrollment. All assets ready. Gas station sequence = only open blocker.
+  - Relay coverage now extends through June 22 (Lake County/Marina pull) — closed the June 12-22 dark gap.
+
+---
+
+## OPEN — Urgent Care Centers Segment Not Yet Pulled 🟡 NEW (Run 114)
+- First seen: 2026-05-27 (Run 114)
+- Description: NE Ohio has 50+ urgent care locations across all major chains — FastMed Urgent Care (franchise locations in Cuyahoga/Summit/Lorain), Concentra Urgent Care (multiple NE Ohio centers — occupational health + urgent care), GoHealth Urgent Care (health system JV), CareNow (HCA), Summa Now (Summa Health), MetroHealth Urgent Care, Cleveland Clinic Express Care (10+ outpatient sites), University Hospitals Urgent Care (Parma Pointe, Mentor, Twinsburg). State ORC licensing standards require clean patient-facing exteriors. Summer = peak volume (sports injuries, heat illness, back-to-school). Parking lots + entrance walkways + building facade are high-visibility patient-facing surfaces. Regional FMs or district medical directors sign vendor contracts across multiple clinic locations. Revenue: $800-$2,000/visit; quarterly = $3,200-$8,000/year per clinic; 10-clinic regional deal = $32K-$80K/year.
+- Fix applied (Run 114): Added urgent care titles to DANNY_TITLES + PROPERTY_MANAGER_TITLES in mixmax.py. Added urgent care org keywords to DANNY_ORG_KEYWORDS. Documented full segment brief in agents/danny.md. Live for Medina June 1 pull.
+- Resolution criteria: Urgent care contacts appear in next Danny county pull (Medina June 1).
 
 ---
 

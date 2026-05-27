@@ -206,6 +206,15 @@ DANNY_TITLES = [
     # $1,000-$3,000/visit; spring + fall = 2x/year = $2K-$6K/year per location (added 2026-05-27 run 113)
     'funeral director', 'funeral home director', 'mortuary manager', 'funeral home manager',
     'mortuary director', 'funeral services director',
+    # Urgent care centers — FastMed Urgent Care, Concentra (multiple NE Ohio locations), GoHealth,
+    # CareNow (HCA), Summa Now, MetroHealth Urgent Care, Cleveland Clinic Express Care, UH Urgent Care;
+    # state licensing inspectors check exterior cleanliness and patient-facing appearance (ORC licensing standards);
+    # high patient volume = maximum foot traffic across parking lot + entrance walkways + building exterior;
+    # regional FMs or district medical directors sign vendor contracts across multiple clinic locations;
+    # $800-$2,000/visit (parking + entrance + facade). Quarterly = $3,200-$8,000/year per clinic;
+    # 10-clinic regional deal = $32K-$80K/year; summer = peak volume (sports injuries, heat illness, vacations) (added 2026-05-27 run 114)
+    'urgent care director', 'urgent care center manager', 'clinic director',
+    'ambulatory care director', 'walk-in clinic manager', 'urgent care manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -315,6 +324,11 @@ DANNY_ORG_KEYWORDS = [
     # funeral directors/owners sign vendor contracts; low competition; $2K-$6K/year per location (added 2026-05-27 run 113)
     'funeral home', 'funeral services', 'mortuary services', 'funeral parlor', 'memorial services',
     'cremation services', 'funeral home management',
+    # Urgent care centers — FastMed, Concentra, GoHealth, CareNow, Summa Now, MetroHealth Urgent Care;
+    # ORC licensing = exterior cleanliness standards; summer = peak volume; high foot traffic on entry surfaces;
+    # regional FMs sign multi-clinic contracts; $3,200-$8,000/year per clinic; first pull Medina June 1 (added 2026-05-27 run 114)
+    'urgent care center', 'urgent care clinic', 'walk-in clinic', 'immediate care center',
+    'urgent care facility', 'ambulatory care center',
 ]
 
 CARLA_SEARCHES = [

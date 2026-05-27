@@ -170,6 +170,11 @@ PROPERTY_MANAGER_TITLES = [
     # funeral directors/owners sign vendor contracts; low competition; $2K-$6K/year per location (added 2026-05-27 run 113)
     'funeral director', 'funeral home director', 'mortuary manager', 'funeral home manager',
     'mortuary director', 'funeral services director',
+    # Urgent care centers — FastMed, Concentra, GoHealth, CareNow, Summa Now, MetroHealth Urgent Care;
+    # state licensing inspections check patient-facing exterior appearance; high foot traffic = clean entry mandatory;
+    # regional FMs sign multi-clinic vendor contracts; $3,200-$8,000/year per clinic (added 2026-05-27 run 114)
+    'urgent care director', 'urgent care center manager', 'clinic director',
+    'ambulatory care director', 'walk-in clinic manager', 'urgent care manager',
 ]
 
 REALTOR_TITLES = [
