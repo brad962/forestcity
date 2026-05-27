@@ -526,6 +526,119 @@ def _check_day3_ads_check():
         log('Ads Day 3 first-tweak-window reminder posted')
 
 
+def _check_wave2_contractor_blitz():
+    """Fire ONLY on May 28 — the 16 Wave 2 contractor first-touch text day.
+    Provides the blitz card reference and contact count. One-time, self-deactivating."""
+    from datetime import date as _date_w2
+    today = _date_w2.today()
+    if today != _date_w2(2026, 5, 28):
+        return
+
+    alert_sentinel = BASE_DIR / 'outputs' / 'vera' / '.wave2_blitz_alert_sent_date'
+    today_str = today.strftime('%Y-%m-%d')
+    if alert_sentinel.exists() and alert_sentinel.read_text().strip() == today_str:
+        return
+
+    msg = (
+        '📲 *Wave 2 Contractor Blitz — TODAY (May 28)*\n'
+        '>16 first-touch texts are due today to Wave 2 landscapers + construction contractors.\n'
+        '>Blitz card (3 copy-paste texts by trade type): `outputs/vera/wave2_contractor_blitz_may28_2026-05-27.md`\n'
+        '>Follow-up schedule (Day 3 May 31, Day 7 June 4): `outputs/vera/wave2_contractor_followup_schedule_2026-05-27.md`\n'
+        '>Tip: run Summit pull first (6 min unattended), send texts WHILE it runs = zero wasted time.'
+    )
+    if post_slack(msg):
+        alert_sentinel.parent.mkdir(exist_ok=True)
+        try:
+            alert_sentinel.write_text(today_str)
+        except Exception:
+            pass
+        log('Wave 2 contractor blitz reminder posted (May 28 only)')
+
+
+def _check_past_customer_blast():
+    """Fire daily May 27–June 7: remind Bradley that past customers are the fastest revenue path
+    while Google/Facebook ads are in the 7-day learning phase and generating 0-2 leads/day.
+    Tommy wrote the guide May 27. Zero excuses not to send 10 texts in 30 minutes.
+    Self-deactivates June 8."""
+    from datetime import date as _date_pc
+    today = _date_pc.today()
+    start = _date_pc(2026, 5, 27)
+    end   = _date_pc(2026, 6, 7)
+    if not (start <= today <= end):
+        return
+
+    alert_sentinel = BASE_DIR / 'outputs' / 'vera' / '.past_customer_blast_sent_date'
+    today_str = today.strftime('%Y-%m-%d')
+    if alert_sentinel.exists() and alert_sentinel.read_text().strip() == today_str:
+        return
+
+    msg = (
+        '💰 *Past Customer Blast — Fastest Revenue This Week*\n'
+        '>Ads are in learning phase (7 days, $0–2 leads/day right now). Fastest revenue = past customers.\n'
+        '>30 minutes of texts → $1,800–$3,000 in booked jobs based on typical re-engagement rates.\n'
+        '>Guide + 5 copy-paste text scripts by scenario: `outputs/tommy/past_customer_june_blast_2026-05-27.md`\n'
+        '>Look up past customers in Workiz → text the ones from 2025 + spring 2026 who haven\'t rebooked.'
+    )
+    if post_slack(msg):
+        alert_sentinel.parent.mkdir(exist_ok=True)
+        try:
+            alert_sentinel.write_text(today_str)
+        except Exception:
+            pass
+        log('Past customer blast reminder posted')
+
+
+def _check_ad_lead_day5_escalation():
+    """Fire on May 31 (Day 5 after May 26 launch) with an escalated alert if NO ad leads
+    are logged in pipeline_data.json. By Day 5 there should be at least 1-3 logged leads
+    if ads are working. Zero logged = either no leads or they're going un-logged.
+    One-time, self-deactivating."""
+    from datetime import date as _date_d5
+    today = _date_d5.today()
+    if today != _date_d5(2026, 5, 31):
+        return
+
+    alert_sentinel = BASE_DIR / 'outputs' / 'vera' / '.ad_day5_escalation_sent_date'
+    today_str = today.strftime('%Y-%m-%d')
+    if alert_sentinel.exists() and alert_sentinel.read_text().strip() == today_str:
+        return
+
+    # Check if any ad leads are logged in pipeline_data.json
+    pipeline_f = BASE_DIR / 'pipeline_data.json'
+    ad_lead_count = 0
+    if pipeline_f.exists():
+        try:
+            import json as _json
+            pd = _json.loads(pipeline_f.read_text())
+            for c in pd.get('manual_contacts', []):
+                src = (c.get('lead_source', '') or '').lower()
+                if 'facebook' in src or 'google' in src or 'ad' in src or 'fb' in src:
+                    ad_lead_count += 1
+        except Exception:
+            pass
+
+    if ad_lead_count > 0:
+        return  # Leads are being logged — no escalation needed
+
+    msg = (
+        '🚨 *Ads Day 5 — Zero Leads Logged in Pipeline (May 31)*\n'
+        '>5 days since launch (May 26). No Facebook or Google ad leads found in pipeline_data.json.\n'
+        '>Two possibilities:\n'
+        '>  1. Ads haven\'t generated leads yet (check Facebook Lead Center + Google Ads → Conversions)\n'
+        '>  2. Leads came in but weren\'t logged (check Workiz for booked jobs this week)\n'
+        '>Action (5 min): Check Facebook Business Suite → Leads Center for form fills this week.\n'
+        '>If leads exist but aren\'t logged: `outputs/nina/ad_lead_tracker_2026-05-26.md` (30-sec log process)\n'
+        '>If zero leads in FB Lead Center: Day 5 diagnostic in `outputs/vera/day3_ads_check_card_2026-05-26.md`'
+    )
+    if post_slack(msg):
+        alert_sentinel.parent.mkdir(exist_ok=True)
+        try:
+            alert_sentinel.write_text(today_str)
+        except Exception:
+            pass
+        log('Ad lead Day 5 escalation alert posted — 0 ad leads logged after 5 days')
+
+
 def _check_post_june4_monitoring():
     """Fire daily June 5–11: remind Bradley that Round 2 emails are actively sending,
     check Nina hot leads report daily, respond to replies within 24 hours.
@@ -628,6 +741,9 @@ def _main_body():
     _check_june4_enrollment_countdown()
     _check_day3_ads_check()
     _check_post_june4_monitoring()
+    _check_wave2_contractor_blitz()
+    _check_past_customer_blast()
+    _check_ad_lead_day5_escalation()
 
     # Fetch first so origin/main is current before flush checks origin/main..HEAD
     git(['fetch', 'origin'])

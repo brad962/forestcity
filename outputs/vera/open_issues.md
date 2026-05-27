@@ -1,8 +1,38 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 112 | 2026-05-27 | Auto-fixes shipped: 5 | New RESOLVED: 0 | Open: 42 (vera_relay Day 3 ads check + post-June-4 monitoring; golf courses + cemeteries added; june5 deliverable written)*
+*Run 113 | 2026-05-27 | Auto-fixes shipped: 4 | New RESOLVED: 0 | Open: 43 (Funeral Homes segment added; 3 new vera_relay checks; may28 complete action card written)*
 
 ---
+
+## RUN METRICS — Run 113 | 2026-05-27
+- Total RESOLVED: 85 (0 new this run)
+- Total OPEN: 43 (1 new: Funeral Homes segment — in code, needs Medina June 1 pull)
+- Auto-upgrades shipped: 4
+  1. `workers/vera_relay.py` — added `_check_wave2_contractor_blitz()`: fires ONLY May 28; specific Slack reminder for the 16 Wave 2 contractor first-touch text day; includes blitz card reference and tip to run Summit pull simultaneously; wired into `_main_body()`
+  2. `workers/vera_relay.py` — added `_check_past_customer_blast()`: fires daily May 27–June 7; past customers = fastest revenue while ads are in learning phase ($1,800-$3,000 from 30 min of texts); points to Tommy's guide; self-deactivates June 8; fills gap in daily revenue urgency reminders
+  3. `workers/vera_relay.py` — added `_check_ad_lead_day5_escalation()`: fires May 31; reads pipeline_data.json; if 0 contacts have lead_source containing 'facebook'/'google'/'ad', posts escalated alert (5 days of ads, zero leads logged); covers "leads came in but aren't tracked" failure mode; self-deactivating
+  4. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — added **Funeral Homes** as new commercial segment; titles: `funeral director`, `funeral home director`, `mortuary manager`, `funeral home manager`, `mortuary director`, `funeral services director`; org keywords: `funeral home`, `funeral services`, `mortuary services`, `funeral parlor`, `memorial services`, `cremation services`, `funeral home management`; 100+ NE Ohio locations (Davis-Becker, Brown-Forward, McGorray-Hanna, Busch, Tributes, Chambers); appearance = respect on hardest family days; $2K-$6K/year; zero competitor cold-calling; live for Medina June 1 pull
+- Deliverables written: 1
+  1. `outputs/vera/may28_thursday_complete_action_card_2026-05-27.md` — tomorrow's single-screen 90-min action plan; Block 1: Day 3 ads check (10 min, metric thresholds, one-tweak rule); Block 2: Summit pull (6 min unattended, double-click); Block 3: Wave 2 contractor texts while pull runs (16 contacts, 3 copy-paste scripts by trade, complete phone table); Block 4: Bryan close-file decision; Block 5: past customer blast (fastest revenue while ads in learning phase); blockers table; Wave 2 follow-up schedule
+- Pipeline status this run:
+  - TODAY May 27: 20 contacts DUE (same as Run 112 — no updates yet from Bradley). If not done today, they go OVERDUE tomorrow.
+  - TOMORROW May 28: 16 Wave 2 texts due + Day 3 ads check + Summit pull. All covered in may28_thursday_complete_action_card.
+  - Summit: 4 DAYS LEFT (deadline May 31). Relay now fires countdown daily + Wave 2 reminder tomorrow.
+  - Gas station: 12 contacts idle 8+ days. Sequence PENDING. 30-min guide ready.
+  - June 4: 8 days. All assets ready. Instantly.ai pause = only system blocker.
+  - Past customers: Fastest revenue NOW while ads in learning phase. Tommy guide ready. Relay now reminds daily.
+
+---
+
+## OPEN — Funeral Homes Segment Not Yet Pulled 🟡 NEW (Run 113)
+- First seen: 2026-05-27 (Run 113)
+- Description: NE Ohio has 100+ funeral homes — Davis-Becker, Brown-Forward, McGorray-Hanna, Busch Funeral Homes (Cuyahoga Falls/Sagamore Hills), Tributes Funeral Care (Olmsted Falls/Strongsville), Chambers Funeral Home, Shook-Staley, Humenik Funeral Chapel, Waite & Son, plus dozens of family-owned independent homes across all 7 counties. Large paved parking lots (families gather on their hardest days — maximum emotional visibility for the property), brick/stone facades, covered porticos/carports, chapel exteriors. Appearance is non-negotiable when families are grieving — a dirty parking lot or algae-stained facade is noticed and associated with the quality of the service. Funeral directors/owners sign vendor contracts directly. Almost zero cold-calling pressure from power washing competitors in this segment. Revenue: $1,000-$3,000/visit; spring + fall = 2x/year = $2,000-$6,000/year per location. 15 accounts = $30K-$90K/year.
+- Fix applied (Run 113): Added funeral home titles to DANNY_TITLES (`funeral director`, `funeral home director`, `mortuary manager`, `funeral home manager`, `mortuary director`, `funeral services director`) + PROPERTY_MANAGER_TITLES. Added funeral home org keywords to DANNY_ORG_KEYWORDS (`funeral home`, `funeral services`, `mortuary services`, `funeral parlor`, `memorial services`, `cremation services`, `funeral home management`). Documented full segment brief in agents/danny.md with pitch angle, NE Ohio examples, revenue math, timing notes. Live for Medina June 1 pull.
+- Resolution criteria: Funeral home contacts appear in next Danny county pull (Medina June 1).
+
+---
+
+
 
 ## RUN METRICS — Run 112 | 2026-05-27
 - Total RESOLVED: 85 (0 new this run)

@@ -54,3 +54,33 @@
 >New relay coverage gaps closed: Day 3 ads check (fires May 28) + post-enrollment daily monitoring (June 5–11)
 >New deliverable: june5_post_enrollment_follow_through_2026-05-27.md — day-by-day June 5–11 guide
 >New segments live in code: Golf Courses (100+ NE Ohio) + Cemeteries (Memorial Day/Father's Day window)
+---
+🔧 *Vera — Auto-Upgrade*
+>Changed: `workers/vera_relay.py` — added `_check_wave2_contractor_blitz()` (fires May 28 only)
+>Why: Tomorrow is the 16-contact Wave 2 first-touch text day — no relay reminder existed for this specific action. Now fires tomorrow morning with the blitz card reference and a tip to run Summit pull simultaneously so no time is wasted.
+>File: workers/vera_relay.py
+---
+🔧 *Vera — Auto-Upgrade*
+>Changed: `workers/vera_relay.py` — added `_check_past_customer_blast()` (fires daily May 27–June 7)
+>Why: Ads launched May 26 and are in the 7-day learning phase. Fastest revenue RIGHT NOW = past customers (30-60% re-engagement rate, $1,800-$3,000 from 30 minutes of texts). Tommy wrote the guide May 27 but no relay reminder existed. Now fires every morning until June 8.
+>File: workers/vera_relay.py
+---
+🔧 *Vera — Auto-Upgrade*
+>Changed: `workers/vera_relay.py` — added `_check_ad_lead_day5_escalation()` (fires May 31 only)
+>Why: If 5 days after launch and zero ad leads are logged in pipeline_data.json, Bradley needs an escalated alert. Could mean leads arrived but weren't tracked, or ads haven't converted yet. Reads the pipeline file directly and only fires if 0 ad-sourced contacts are found.
+>File: workers/vera_relay.py
+---
+🔧 *Vera — Auto-Upgrade*
+>Changed: `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — added Funeral Homes as new commercial segment
+>Why: NE Ohio has 100+ funeral homes (Davis-Becker, Brown-Forward, McGorray-Hanna, Busch, Tributes). Large paved lots + chapel facades + covered porticos. Appearance = respect on families' hardest days. Funeral directors sign contracts directly. Zero competitors cold-calling this segment. $2K-$6K/year per location. 15 accounts = $30K-$90K/year. Adjacent to the Cemetery segment just added in Run 112.
+>File: workers/lead_pipeline.py + integrations/mixmax.py + agents/danny.md
+---
+💡 *Vera — New Deliverable*
+>Created: `outputs/vera/may28_thursday_complete_action_card_2026-05-27.md`
+>Why: Tomorrow is the densest action day of the week — Day 3 ads check + Summit pull + 16 Wave 2 contractor texts + Bryan close decision + past customer blast. No single card consolidated all of it. Now you have a 90-min block-by-block plan: what to do first, what to run while it runs, copy-paste texts for all 16 Wave 2 contractors with phone numbers, metric thresholds for the ads check, and Bryan's decision tree.
+---
+✅ *Vera — Scan Complete 2026-05-27 (Run 113)*
+>4 auto-upgrades shipped | 0 proposals | 43 open issues (1 new: Funeral Homes — in code, pull June 1)
+>New relay coverage: Wave 2 blitz (tomorrow), past customer blast (daily), ad lead Day 5 escalation (May 31)
+>New segment: Funeral Homes — 100+ NE Ohio locations, zero competitor cold-calling, $30K-$90K/year potential
+>New deliverable: may28_thursday_complete_action_card — your complete 90-min playbook for tomorrow

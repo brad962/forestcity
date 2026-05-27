@@ -198,6 +198,14 @@ DANNY_TITLES = [
     # NE Ohio: Forest Hills Memorial Park, Sunset Memorial Park, Knollwood, Lake View Cemetery (landmark);
     # facilities directors manage long-term vendor relationships; spring = peak visitor season; $1K-$3K/year (added 2026-05-27 run 112)
     'cemetery superintendent', 'cemetery director', 'cemetery manager', 'memorial park director',
+    # Funeral homes — 100+ NE Ohio locations (Davis-Becker, Brown-Forward, McGorray-Hanna, Busch Funeral Homes);
+    # large paved parking lots (family gathering day = maximum visibility for a grieving family);
+    # brick/stone building facades + covered porticos + chapel exterior + carport areas;
+    # appearance directly reflects respect and professionalism — cannot look neglected on the most emotional day of a family's life;
+    # funeral home director or owner signs vendor contracts; low competition = no cold-calling from competitors;
+    # $1,000-$3,000/visit; spring + fall = 2x/year = $2K-$6K/year per location (added 2026-05-27 run 113)
+    'funeral director', 'funeral home director', 'mortuary manager', 'funeral home manager',
+    'mortuary director', 'funeral services director',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -302,6 +310,11 @@ DANNY_ORG_KEYWORDS = [
     'golf course', 'country club', 'golf club', 'golf course management', 'private club',
     # Cemeteries & memorial parks — large paved driveways + pavilion areas; spring = peak visitor season (added 2026-05-27 run 112)
     'cemetery management', 'memorial park management', 'cemetery services',
+    # Funeral homes — 100+ NE Ohio locations; parking lots, chapel facades, covered porticos;
+    # families see the property on their most emotional day — appearance is non-negotiable;
+    # funeral directors/owners sign vendor contracts; low competition; $2K-$6K/year per location (added 2026-05-27 run 113)
+    'funeral home', 'funeral services', 'mortuary services', 'funeral parlor', 'memorial services',
+    'cremation services', 'funeral home management',
 ]
 
 CARLA_SEARCHES = [

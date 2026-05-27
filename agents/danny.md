@@ -265,6 +265,17 @@ This enrolls ALL pending contacts (gas stations + fleet) without triggering a fr
 **Timing:** Contact in the next 7 days — Memorial Day (May 25 already passed, but June prep season continues). Families visit on Father's Day (June 15) and throughout summer.
 **Sequence:** Route to Property Manager sequence (facility management / appearance / respect angle).
 
+### Funeral Homes (NEW — May 2026, Run 113)
+**Status:** Org keywords + titles live in DANNY_ORG_KEYWORDS/DANNY_TITLES as of Run 113. Include in next county rotation (Medina June 1).
+**Target:** Funeral Director, Funeral Home Director, Mortuary Manager, Funeral Home Manager, Mortuary Director
+**Why:** NE Ohio has 100+ funeral homes — Davis-Becker, Brown-Forward Funeral Home, McGorray-Hanna, Busch Funeral Homes, Chambers Funeral Home, Tributes Funeral Care, plus dozens of independent and family-owned homes. Large paved parking lots (families gathering on their hardest days), brick/stone building facades, covered porticos and carport areas, chapel exteriors, and administration building facades. The appearance of a funeral home on the day of a service is non-negotiable — families notice everything on their most emotional occasions. There is almost no cold-calling pressure from power washing competitors in this segment. Funeral home directors or owners sign vendor contracts directly.
+**Revenue per visit:** $1,000–$3,000 (parking lot + entrance + facade + portico + chapel exterior). Spring + fall = 2 visits/year = $2,000–$6,000/year per location. 15 locations = $30K–$90K/year.
+**Target companies:** Davis-Becker Funeral Home (multiple NE Ohio locations), Brown-Forward Funeral Home, McGorray-Hanna Funeral Home (Parma area), Busch Funeral Home (Cuyahoga Falls, Sagamore Hills), Tributes Funeral Care (Olmsted Falls, Strongsville), Chambers Funeral Home (Valley City), Shook-Staley Funeral Home, Humenik Funeral Chapel, Waite & Son Funeral Home, independent family-owned homes in all 7 counties.
+**Apollo keywords (live Run 113):** `funeral home`, `funeral services`, `mortuary services`, `funeral parlor`, `memorial services`, `cremation services`, `funeral home management` — added to DANNY_ORG_KEYWORDS.
+**Pitch angle:** "Families visit your property on their most difficult days. The parking lot and building exterior are the first and last thing they see. One spring clean and one fall clean ensure the property looks as respectful as the service you provide — and it's one less thing you have to manage during your busiest weeks."
+**Timing:** Contact before Memorial Day / peak funeral season (spring is highest volume for cemetery-adjacent services). Father's Day (June 15) is also a high-visitation date.
+**Sequence:** Route to Property Manager sequence (facility management / appearance / respect angle).
+
 ## Peak Season Angle — HOA Budget Season (May–June)
 HOA boards typically hold their annual budget and vendor approval meetings in May–June before the summer maintenance season. This means property managers and community association managers are ACTIVELY reviewing vendor lists RIGHT NOW. The PM sequence Touch 1 and any LinkedIn outreach should reference this window: "HOA boards are approving their summer vendor lists this month" or "Most associations lock in their exterior maintenance vendor before July." This creates urgency without being pushy — it's calendar-based fact. Works especially well for community associations, HOA management companies, and multifamily operators who work on fiscal budgets.
 

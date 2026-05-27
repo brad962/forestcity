@@ -166,6 +166,10 @@ PROPERTY_MANAGER_TITLES = [
     'golf course director', 'director of golf', 'golf operations manager',
     # Cemeteries & memorial parks — large paved driveways + monument areas; spring = peak visitor season (added 2026-05-27 run 112)
     'cemetery superintendent', 'cemetery director', 'cemetery manager', 'memorial park director',
+    # Funeral homes — 100+ NE Ohio locations; appearance is non-negotiable on the most emotional day for families;
+    # funeral directors/owners sign vendor contracts; low competition; $2K-$6K/year per location (added 2026-05-27 run 113)
+    'funeral director', 'funeral home director', 'mortuary manager', 'funeral home manager',
+    'mortuary director', 'funeral services director',
 ]
 
 REALTOR_TITLES = [
