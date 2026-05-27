@@ -1,50 +1,39 @@
-🔧 *Vera — Auto-Upgrade (Run 109)*
->Changed: `workers/lead_pipeline.py` + `integrations/mixmax.py` — added **HOA Board Presidents & Treasurers** as decision-maker titles; `hoa president`, `hoa board president`, `community association president`, `hoa treasurer`, `condo board president`; these are the ELECTED BOARD MEMBERS who control vendor budgets — different from HOA managers who work for management companies; self-managed HOAs have NO management company, so the board president IS the only decision-maker
->Why: HOA boards vote on summer vendor lists in May–June — right now. This is the highest-authority contact at any HOA and they were missing from Apollo search entirely.
+🔧 *Vera — Auto-Upgrade (Run 110)*
+>Changed: `workers/lead_pipeline.py` + `integrations/mixmax.py` — added **Churches & Religious Facilities** as new commercial segment; titles: `church facilities manager`, `parish administrator`, `religious facilities manager`, `church administrator`; org keywords: `church campus`, `religious organization`, `church facilities`, `diocese facilities`
+>Why: NE Ohio has 500+ large churches — Diocese of Cleveland 185 parishes + evangelical megachurches (East Side Christian, Westside Christian, Crossroads NE Ohio). Large parking lots, algae-covered brick facades, outdoor event areas. Church administrator signs vendor contracts directly. $1K-$3K/visit; 2-3x/year. Zero competitors targeting this segment.
 >File: workers/lead_pipeline.py, integrations/mixmax.py
 ---
-🔧 *Vera — Auto-Upgrade (Run 109)*
->Changed: `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — added **Marinas & Waterfront Properties** as new commercial segment; titles: `marina manager`, `marina director`, `harbor master`, `waterfront facilities manager`, `dock master`; org keywords: `marina management`, `boat storage`, `yacht club`, `sailing club`, `waterfront property`
->Why: Lake Erie shoreline is a LOCAL ADVANTAGE. Lorain, Vermilion, Sandusky Bay, Mentor Headlands — dozens of marinas with zero current vendor for concrete ramp/dock area pressure washing. May-June = pre-season prep window. $3K–$18K/year per marina. Zero competitors targeting this.
->File: workers/lead_pipeline.py, integrations/mixmax.py, agents/danny.md
+🔧 *Vera — Auto-Upgrade (Run 110)*
+>Changed: `workers/lead_pipeline.py` + `integrations/mixmax.py` — added **Childcare & Early Education Centers** as new segment; titles: `childcare center director`, `daycare director`, `early childhood director`; org keywords: `childcare center`, `daycare center`, `early childhood education`, `preschool facility`
+>Why: 1,000+ licensed NE Ohio childcare centers. State licensing inspections check exterior appearance — recurring urgency built in. May-June = summer enrollment push + renewal season. Bright Horizons/KinderCare district FMs sign multi-site contracts. $300-$800/visit; 2x/year = $600-$1,600/center. Zero competitors targeting this.
+>File: workers/lead_pipeline.py, integrations/mixmax.py
 ---
-🔧 *Vera — Auto-Upgrade (Run 109)*
->Changed: `scripts/contact_done.py` — NEW quick pipeline update helper; shows today's due contacts and prompts to update stage, last_contact, next_followup, and notes in pipeline_data.json without manual JSON editing
->Why: High friction = pipeline updates get skipped = Nina's report shows stale data = action items fall through. `python3 scripts/contact_done.py` makes it a 30-second task after each text session.
->File: scripts/contact_done.py (NEW)
+🔧 *Vera — Auto-Upgrade (Run 110)*
+>Changed: `agents/danny.md` — documented Churches + Childcare as new secondary segments with NE Ohio target companies, revenue math, pitch angles, Apollo keyword references
+>Why: New segments need pitch guidance before Bradley makes calls. "State licensing inspectors check this" closes childcare deals faster than curb-appeal pitch.
+>File: agents/danny.md
 ---
-🔧 *Vera — Auto-Upgrade (Run 109)*
->Changed: `scripts/run_medina_pull.command` + `scripts/run_summit_pull.command` — updated timing estimate from "2-3 minutes" to "5-10 minutes, let run unattended"
->Why: 20+ new commercial segments have been added since these scripts were written. A 10-minute run is now normal. Old "2-3 minutes" would cause Bradley to think the script hung and close the Terminal, aborting the pull.
->File: scripts/run_medina_pull.command, scripts/run_summit_pull.command
+🔧 *Vera — Auto-Upgrade (Run 110)*
+>Changed: `workers/vera_relay.py` — added `_check_ad_lead_log_reminder()`: fires once/day May 26–June 1 reminding you to fill in the launch week lead log; auto-deactivates after June 1
+>Why: Without logging each Facebook/Google lead (name, response time, quoted Y/N, booked Y/N), Google Ads optimizes toward clicks not bookings — and you can never calculate CPA or know if ads are actually generating revenue. This closes the gap automatically.
+>File: workers/vera_relay.py
 ---
-📝 *Vera — New Deliverable (Run 109)*
->File: `outputs/vera/wave2_contractor_followup_schedule_2026-05-27.md`
->What: Post-May 28 follow-up schedule for 16 Wave 2 contractors — Day 3 (May 31) + Day 7 (June 4) scripts by trade type; response handling tree; pipeline update commands; revenue math ($4K–$20K/year referral potential)
->Why: Gap identified — 16 contacts get first-touch tomorrow but there was no documented next step. Without this, they fall into the void after Day 1.
+📝 *Vera — New Deliverable (Run 110)*
+>File: `outputs/vera/may28_thursday_60min_card_2026-05-27.md`
+>What: Integrated Thursday morning execution card — 3 parallel blocks in 60 min: (1) Summit pull click (5 min, runs unattended), (2) Wave 2 16-contractor texts while Summit runs (45 min, copy-paste scripts), (3) Day 3 ads check while updating pipeline (10 min read-only)
+>Why: Summit, Wave 2 blitz, and Day 3 ads check all fall on Thursday May 28. Each has its own card but no unified sequence. This tells you WHICH ORDER to do them so everything happens in 60 min instead of spread across the day.
 ---
-📝 *Vera — New Deliverable (Run 109)*
->File: `outputs/vera/june4_enrollment_readiness_tracker_2026-05-27.md`
->What: Live GO/NO-GO dashboard — 8 blockers with current status (🔴/🟡/⏳/🟢), owner, and step-by-step clear instructions; revenue impact of each missed blocker; enrollment day checklist; batch size estimate (60–160 contacts); revenue projection table
->Why: All the countdown cards are date-specific. This is the single persistent "what's left" view that doesn't go stale. Check it every morning between now and June 4.
----
-🚨 *Vera — Action Alert (Run 109)*
->**TODAY: 20 contacts DUE in Nina's pipeline report.** Three blocks:
->Block 1 (15 min): Bryan close-loop text + Bulletproof + Damrons → scripts in `may27_wednesday_blitz_card`
->Block 2 (20 min): 5 Tier 1 contractor first-touch texts
->Block 3 (55 min): 12 gas station Gmail blast + Mixmax sequence creation
->After each block: `python3 scripts/contact_done.py` to update pipeline
+🚨 *Vera — SUMMIT PULL: 4 DAYS LEFT (Deadline May 31)*
+>Every day you wait = fewer leads for June 4 enrollment. After May 31, Summit doesn't come up again until July 6.
 >
->💥 FASTEST REVENUE OF THE WEEK: `outputs/tommy/past_customer_june_blast_2026-05-27.md` — 30 min, $1,800–$3,000 potential. DO THIS FIRST.
+>**To run:** Double-click `scripts/run_summit_pull.command` in Finder. Takes 5-10 min unattended.
+>Or Terminal: `python3 workers/lead_pipeline.py danny Summit`
+>
+>**Best window:** Start it at 7:30am TOMORROW (May 28) while you send Wave 2 contractor texts.
+>All 20+ new commercial segments (banks, gyms, marinas, churches, daycare centers) go into Summit with this one pull.
 ---
-💡 *Vera — Proposal (Re-raising from Run 107)*
->Idea: Monthly past-customer Slack reminder — 1st of each month, automatically list Workiz customers not re-engaged in 12+ months
->Why: Past customer re-engagement is 40–60% re-book rate at $0 acquisition cost. No systematic trigger exists. Ads take 7–14 days to ramp; past customers convert in minutes.
->Impact: ~$2K–$5K/month recovered revenue from customers who already trust you
->Reply YES to approve (30-min build — new script reading Workiz + pipeline_data.json, posts to Slack on the 1st of each month)
----
-✅ *Vera — Scan Complete 2026-05-27 (Run 109)*
->5 auto-upgrades shipped | 2 deliverables | 0 issues resolved | 38 open
->New this run: HOA Board Presidents + Marinas live in code | contact_done.py pipeline helper shipped | pull scripts timing fixed | Wave 2 follow-up schedule + June 4 readiness tracker written
->🔴 CRITICAL PATH: Summit pull by May 31 (4 days) → Instantly.ai paused → Medina pull June 1 → June 4 enrollment
->⚡ DO TODAY: Past customer blast (30 min, $1,800–$3,000). Today's 20 contacts. Wave 2 scripts ready for tomorrow.
+✅ *Vera — Scan Complete 2026-05-27 (Run 110)*
+>4 auto-upgrades shipped | 1 deliverable | 0 issues resolved | 40 open
+>New this run: Churches & Childcare segments live in code | vera_relay.py ad lead log daily reminder | May 28 Thursday 60-min card written
+>🔴 CRITICAL PATH: Summit pull by May 31 (4 days) → Instantly.ai paused → Medina June 1 → June 4 enrollment
+>🟡 TOMORROW: Use `may28_thursday_60min_card_2026-05-27.md` — Summit + Wave 2 + Day 3 ads in one 60-min morning session

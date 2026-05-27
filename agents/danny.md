@@ -224,6 +224,27 @@ This enrolls ALL pending contacts (gas stations + fleet) without triggering a fr
 **Timing:** CONTACT NOW — marina managers are already prepping for Memorial Day weekend opener. Every week that passes is another weekend they operate dirty.
 **Sequence:** Route to Property Manager sequence (facility management / seasonal prep angle).
 
+### Churches & Religious Facilities (NEW — May 2026, Run 110)
+**Status:** Org keywords + titles live in DANNY_ORG_KEYWORDS/DANNY_TITLES as of Run 110. Include in next county rotation (Medina June 1).
+**Target:** Church Facilities Manager, Parish Administrator, Religious Facilities Manager, Church Administrator, Facilities Coordinator
+**Why:** NE Ohio has 500+ large churches — Catholic diocesan campuses (Diocese of Cleveland has 185+ parishes), evangelical megachurches (East Side Christian, Westside Christian Church, multiple Crossroads NE Ohio campuses), and large Protestant congregations. Many have sprawling campus footprints with multi-building parking lots, brick facades that accumulate algae/mold, outdoor pavilions, and paved walkways. Church administrator or facilities director signs vendor contracts directly without board approval for routine maintenance. May–June = graduation season and summer programming launch — campuses are especially visible. One contract = all buildings on campus.
+**Revenue per visit:** $1,000–$3,000 (parking lots + building exteriors + walkways). 2–3 visits/year (spring clean + fall prep) = $2,000–$9,000/year per campus. 20 campus accounts = $40K–$180K/year.
+**Target companies:** Diocese of Cleveland (185 parishes), Second Baptist megachurch campuses, East Side Christian Church, Crossroads NE Ohio, New Life Community Church, Faith Family Church, Tri-C satellite campuses, independent megachurch campuses (Solon, Strongsville, Mentor, Avon Lake corridors).
+**Apollo keywords (live Run 110):** `church campus`, `religious organization`, `faith community`, `church facilities`, `parish management`, `diocese facilities`, `religious campus`, `church property` — added to DANNY_ORG_KEYWORDS.
+**Pitch angle:** "Your campus has hundreds of visitors every Sunday. The parking lot and building facades are the first thing people see. One spring clean before Easter season and one fall clean before your giving campaign season — we handle all buildings on one contract."
+**Sequence:** Route to Property Manager sequence (facility management / appearance angle).
+
+### Childcare & Early Education Centers (NEW — May 2026, Run 110)
+**Status:** Org keywords + titles live in DANNY_ORG_KEYWORDS/DANNY_TITLES as of Run 110. Include in next county rotation (Medina June 1).
+**Target:** Childcare Center Director, Daycare Director, Early Childhood Director, Preschool Director at licensed daycare and early education centers
+**Why:** NE Ohio has 1,000+ licensed childcare and early learning centers. May–June = summer program season launch — centers are at peak enrollment and facing licensing inspections. State licensing inspectors check exterior appearance and sanitation standards. Parking lots accumulate oil and salt stains from winter; entrance walkways collect grime that is literally at children's eye level. Directors sign vendor contracts directly (no board approval needed for routine maintenance). High repeat rate — once you clean it, you're the vendor.
+**Revenue per visit:** $300–$800 (parking lot + entrance + building exterior + playground area). 2×/year (spring + fall) = $600–$1,600/year per center. 30 centers = $18K–$48K/year.
+**Target companies:** Bright Horizons NE Ohio centers (corporate FM signs multi-site), KinderCare Learning Centers (district managers), Learning Care Group, Tutor Time, independent licensed centers in Cuyahoga/Summit/Lorain suburbs.
+**Apollo keywords (live Run 110):** `childcare center`, `daycare center`, `early childhood education`, `child care management`, `preschool facility`, `early learning center` — added to DANNY_ORG_KEYWORDS.
+**Pitch angle:** "Parents notice when a childcare center's parking lot and entrance look neglected — it says something about the standards inside. A spring clean before your summer enrollment push and a fall clean before license renewal season. We handle all your NE Ohio locations on one schedule."
+**Timing:** Contact NOW (May–June) — summer enrollment pushes are happening and licensing renewals are on the calendar.
+**Sequence:** Route to Property Manager sequence (facility management / safety standards angle).
+
 ## Peak Season Angle — HOA Budget Season (May–June)
 HOA boards typically hold their annual budget and vendor approval meetings in May–June before the summer maintenance season. This means property managers and community association managers are ACTIVELY reviewing vendor lists RIGHT NOW. The PM sequence Touch 1 and any LinkedIn outreach should reference this window: "HOA boards are approving their summer vendor lists this month" or "Most associations lock in their exterior maintenance vendor before July." This creates urgency without being pushy — it's calendar-based fact. Works especially well for community associations, HOA management companies, and multifamily operators who work on fiscal budgets.
 

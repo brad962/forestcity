@@ -355,6 +355,40 @@ def _check_carla_staleness():
         log(f'Carla staleness alert posted — {days_stale} days since last pull')
 
 
+def _check_ad_lead_log_reminder():
+    """During Week 1 after ad launch (May 26 – June 1), remind Bradley once/day to fill in the lead log.
+    Every lead that isn't logged = invisible CPA math = can't know if ads are working at the job level.
+    Auto-deactivates after June 1.
+    """
+    from datetime import date as _date_ad
+    today = _date_ad.today()
+    launch_date = _date_ad(2026, 5, 26)
+    end_date = _date_ad(2026, 6, 1)
+    if today < launch_date or today > end_date:
+        return
+
+    alert_sentinel = BASE_DIR / 'outputs' / 'vera' / '.ad_log_reminder_sent_date'
+    today_str = today.strftime('%Y-%m-%d')
+    if alert_sentinel.exists() and alert_sentinel.read_text().strip() == today_str:
+        return
+
+    day_num = (today - launch_date).days + 1
+    msg = (
+        f'📊 *Ad Launch — Day {day_num} Lead Log Reminder*\n'
+        f'>Every Facebook + Google lead needs to be logged today: name, source, response time, quoted Y/N, booked Y/N.\n'
+        f'>Log: `outputs/rick/launch_week_lead_log_2026-05-26.md` (or use Nina\'s ad_lead_tracker guide)\n'
+        f'>Without this, Google Ads optimizes toward clicks not bookings — and you can\'t see CPA.\n'
+        f'>Day 3 check (May 28): `outputs/vera/day3_ads_check_card_2026-05-26.md`'
+    )
+    if post_slack(msg):
+        alert_sentinel.parent.mkdir(exist_ok=True)
+        try:
+            alert_sentinel.write_text(today_str)
+        except Exception:
+            pass
+        log(f'Ad lead log reminder posted — Day {day_num} of launch week')
+
+
 def _acquire_lock() -> bool:
     """Return True if we got the lock, False if another instance is running."""
     LOCK_FILE.parent.mkdir(exist_ok=True)
@@ -417,6 +451,7 @@ def _main_body():
     _check_instantly_paused()
     _check_summit_deadline()
     _check_gas_station_pending()
+    _check_ad_lead_log_reminder()
 
     # Fetch first so origin/main is current before flush checks origin/main..HEAD
     git(['fetch', 'origin'])

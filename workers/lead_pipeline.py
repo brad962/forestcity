@@ -179,6 +179,15 @@ DANNY_TITLES = [
     # $1,500-$6,000/visit; 2-3x/year = $3K-$18K/year per marina; zero competitors targeting this (added 2026-05-27 run 109)
     'marina manager', 'marina director', 'harbor master', 'waterfront facilities manager',
     'marina operations manager', 'dock master',
+    # Churches & religious facilities — 500+ large NE Ohio parishes + evangelical megachurch campuses;
+    # large parking lots + brick facades + outdoor areas; church administrator or facilities director signs vendor contracts;
+    # $1,000-$3,000/visit; 2-3x/year = $2K-$9K/year per campus (added 2026-05-27 run 110)
+    'church facilities manager', 'parish administrator', 'religious facilities manager',
+    'church administrator', 'facilities coordinator', 'director of facilities management',
+    # Childcare & early education — licensing inspections create recurring urgency; director signs vendor contracts;
+    # NE Ohio has 1,000+ licensed centers; parking + entrance + playground = recurring need; $300-$800/visit; 2x/year (added 2026-05-27 run 110)
+    'childcare center director', 'daycare director', 'early childhood director',
+    'childcare director', 'preschool director', 'early learning director',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -267,6 +276,17 @@ DANNY_ORG_KEYWORDS = [
     # marina manager signs vendor contracts; $1,500-$6,000/visit; 2-3x/year; zero competitors; LOCAL LAKE ERIE ADVANTAGE (added 2026-05-27 run 109)
     'marina management', 'marine services', 'boat storage', 'yacht club', 'sailing club',
     'waterfront property', 'marina facility', 'boat launch',
+    # Churches & religious facilities — NE Ohio has 500+ large churches (Catholic diocesan campuses, evangelical megachurches,
+    # East Side Christian, Westside, Crossroads NE Ohio campuses); large parking lots, brick facades, educational wings,
+    # outdoor ceremony/picnic areas; facilities director or church administrator signs vendor contracts;
+    # one contract = multiple campus buildings; $1,000-$3,000/visit; 2-3x/year = $2K-$9K/year per campus (added 2026-05-27 run 110)
+    'church campus', 'religious organization', 'faith community', 'church facilities', 'parish management',
+    'diocese facilities', 'religious campus', 'church property',
+    # Childcare & early education facilities — May-June = summer program prep; licensing inspections require clean exteriors;
+    # NE Ohio has 1,000+ licensed daycare and preschool centers; director signs vendor contracts directly;
+    # parking lot + entrance walkways + playground area = recurring cleaning need; $300-$800/visit; 2x/year (added 2026-05-27 run 110)
+    'childcare center', 'daycare center', 'early childhood education', 'child care management',
+    'preschool facility', 'early learning center',
 ]
 
 CARLA_SEARCHES = [

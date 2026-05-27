@@ -151,6 +151,15 @@ PROPERTY_MANAGER_TITLES = [
     # marina managers sign vendor contracts for concrete ramps, dock areas, storage lots (added 2026-05-27 run 109)
     'marina manager', 'marina director', 'harbor master', 'waterfront facilities manager',
     'marina operations manager', 'dock master',
+    # Churches & religious facilities — large NE Ohio Catholic parishes + evangelical campuses;
+    # church administrator or facilities director signs vendor contracts; large parking lots + brick facades + outdoor event areas;
+    # 500+ large NE Ohio churches; $1,000-$3,000/visit; 2-3x/year (added 2026-05-27 run 110)
+    'church facilities manager', 'parish administrator', 'religious facilities manager',
+    'church administrator', 'facilities coordinator', 'director of facilities management',
+    # Childcare & early education — licensing inspections create recurring urgency; director signs vendor contracts directly;
+    # NE Ohio has 1,000+ licensed centers; parking + entrance + playground = recurring pressure washing need (added 2026-05-27 run 110)
+    'childcare center director', 'daycare director', 'early childhood director',
+    'childcare director', 'preschool director', 'early learning director',
 ]
 
 REALTOR_TITLES = [

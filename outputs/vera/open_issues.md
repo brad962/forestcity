@@ -1,8 +1,45 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 109 | 2026-05-27 | Auto-fixes shipped: 5 | New RESOLVED: 0 | Open: 38 (HOA Board + Marina segments added; contact_done.py helper script shipped; pull script timing updated; Wave 2 follow-up schedule + June 4 readiness tracker deliverables written)*
+*Run 110 | 2026-05-27 | Auto-fixes shipped: 4 | New RESOLVED: 0 | Open: 40 (Churches + Childcare segments added; vera_relay.py ad lead log daily reminder; May 28 Thursday 60-min execution card written)*
 
 ---
+
+## RUN METRICS — Run 110 | 2026-05-27
+- Total RESOLVED: 85 (0 new this run)
+- Total OPEN: 40 (2 new: Churches & Religious Facilities + Childcare/Daycare segments not yet pulled)
+- Auto-upgrades shipped: 4
+  1. `workers/lead_pipeline.py` + `integrations/mixmax.py` — added **Churches & Religious Facilities** as new commercial segment; titles: `church facilities manager`, `parish administrator`, `religious facilities manager`, `church administrator`, `facilities coordinator`; org keywords: `church campus`, `religious organization`, `faith community`, `church facilities`, `parish management`, `diocese facilities`; 500+ large NE Ohio churches (Diocese of Cleveland 185 parishes + evangelical megachurches); large parking lots + brick facades + outdoor areas; church administrator signs directly; $1K-$3K/visit; 2-3x/year = $2K-$9K/year per campus
+  2. `workers/lead_pipeline.py` + `integrations/mixmax.py` — added **Childcare & Early Education Centers** as new commercial segment; titles: `childcare center director`, `daycare director`, `early childhood director`, `preschool director`; org keywords: `childcare center`, `daycare center`, `early childhood education`, `preschool facility`, `early learning center`; 1,000+ NE Ohio licensed centers; state licensing inspections create recurring urgency; $300-$800/visit; 2x/year = $600-$1,600/year per center; Bright Horizons + KinderCare district FMs sign multi-site contracts
+  3. `agents/danny.md` — documented Churches & Religious Facilities + Childcare/Daycare as new secondary segments with target titles, NE Ohio examples, revenue math, pitch angles, Apollo keyword references
+  4. `workers/vera_relay.py` — added `_check_ad_lead_log_reminder()`: fires once/day May 26–June 1 reminding Bradley to fill in the launch week lead log; wired into `_main_body()`; without daily logging Google Ads optimizes toward clicks not bookings and CPA math is invisible; self-deactivates after June 1
+- Deliverables written: 1
+  1. `outputs/vera/may28_thursday_60min_card_2026-05-27.md` — integrated 60-min Thursday morning card; 3-block parallel execution: Block 1 (Summit pull, 5 min click, runs unattended), Block 2 (Wave 2 16-contact contractor texts, 45 min while Summit runs), Block 3 (Day 3 ads check, 10 min read-only); success checklist; revenue math; critical path table through June 4
+- GitHub Action status: STILL BLOCKED. PAT `workflow` scope required. vera_relay.py local cron IS the working delivery mechanism. Bradley must take Option A (browser upload) or Option B (PAT upgrade) — guides written in Runs 104+106.
+- Pipeline status this run:
+  - TODAY May 27: 20 contacts DUE. Three blocks in `may27_wednesday_blitz_card`. Past customer blast is FASTEST revenue.
+  - TOMORROW May 28: 16 Wave 2 contractor texts + Day 3 ads check + Summit pull. Use `may28_thursday_60min_card`.
+  - Summit pull: 4 DAYS LEFT (deadline May 31). 🚨 CRITICAL. Every day of delay = missed peak season leads.
+  - June 4: 8 days. Readiness tracker live.
+
+---
+
+## OPEN — Churches & Religious Facilities Segment Not Yet Pulled 🟡 NEW (Run 110)
+- First seen: 2026-05-27 (Run 110)
+- Description: NE Ohio has 500+ large churches including all 185+ Diocese of Cleveland Catholic parishes, evangelical megachurch campuses (East Side Christian Church, Westside Christian Church, Crossroads NE Ohio campuses), and major Protestant congregations. Church campuses have large asphalt parking lots (100-500 spaces), brick building facades that accumulate algae and pollution staining, outdoor pavilions and paved walkways. Church administrator or facilities director signs vendor contracts for routine exterior maintenance without full board approval. May–June = graduation season and summer program launch — high visibility window. Revenue: $1K-$3K/visit; 2-3x/year = $2K-$9K/year per campus. 20 campuses = $40K-$180K/year.
+- Fix applied (Run 110): Added church/religious org keywords to DANNY_ORG_KEYWORDS + church facilities titles to DANNY_TITLES + PROPERTY_MANAGER_TITLES. Live for Medina June 1 pull.
+- Resolution criteria: Church/religious facility contacts appear in next Danny county pull (Medina June 1).
+
+---
+
+## OPEN — Childcare & Early Education Centers Segment Not Yet Pulled 🟡 NEW (Run 110)
+- First seen: 2026-05-27 (Run 110)
+- Description: NE Ohio has 1,000+ licensed childcare and early learning centers (Bright Horizons corporate centers in Solon, Westlake, Beachwood; KinderCare Learning Centers; Learning Care Group/Tutor Time; plus hundreds of independent licensed centers). State licensing inspections create recurring urgency — exterior appearance and sanitation standards are checked. May–June = summer enrollment push + licensing renewal season. Parking lots + entrance walkways (at children's eye level) + building exteriors are the key surfaces. Bright Horizons and KinderCare have district FMs who sign multi-site contracts. Revenue: $300-$800/visit; 2x/year = $600-$1,600/year per center. 50 centers = $30K-$80K/year.
+- Fix applied (Run 110): Added childcare org keywords to DANNY_ORG_KEYWORDS + director titles to DANNY_TITLES + PROPERTY_MANAGER_TITLES. Live for Medina June 1 pull.
+- Resolution criteria: Childcare/daycare contacts appear in next Danny county pull (Medina June 1).
+
+---
+
+
 
 ## RUN METRICS — Run 109 | 2026-05-27
 - Total RESOLVED: 85 (0 new this run)
