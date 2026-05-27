@@ -138,7 +138,11 @@
   - Run 102: Staged YAML to .github/workflows/ — push failed; removed from commit
   - Run 103: Wrote YAML to .github/workflows/ directly in clone and pushed — push failed (no .github/ dir exists at all, PAT issue confirmed)
   - Run 104: DIFFERENT APPROACH — wrote manual_upload_guide with step-by-step browser-based deployment (no PAT needed); also committed .github/workflows/vera_slack_relay.yml to this run's push attempt; also added `_check_instantly_paused()` to vera_relay.py as alternative reminder mechanism
-  - Run 106: Created `.github/workflows/` directory and wrote `vera_slack_relay.yml` afresh. Also updated Action to include post-post file-clear step (prior version didn't clear the file after posting = duplicate sends on every push). Push will test whether PAT scope is the only blocker or if the directory creation resolves it.
+  - Run 106: Created `.github/workflows/` directory fresh. Fixed Action to include post-posting file-clear (prior version didn't clear = duplicate sends on every push). **CONFIRMED ROOT CAUSE:** GitHub returned explicit 403: "refusing to allow a Personal Access Token to create or update workflow without `workflow` scope." The YAML is correct, the directory exists locally, the logic is sound. PAT scope is the ONLY blocker. Workflow file kept locally, push excluded to avoid blocking other changes.
+- **CONFIRMED ROOT CAUSE (Run 106):** PAT lacks `workflow` scope. This is now 100% certain. vera_relay.py (local cron, every 5 min) IS the working Slack delivery mechanism. GitHub Action is backup.
+- **RESOLUTION (Bradley's action, ONE of these):**
+  - **Option A (2 min web UI — easiest):** github.com/brad962/forestcity → Add file → Upload → `.github/workflows/vera_slack_relay.yml` → paste YAML from `outputs/vera/github_action_vera_slack_relay.yaml` → commit to main. Then add SLACK_WEBHOOK_OFFICE secret in Settings → Secrets → Actions.
+  - **Option B (upgrade PAT, 3 min):** github.com/settings/tokens → create new PAT with `repo` + `workflow` scopes → update GITHUB_PAT in `.env`. Then Vera deploys automatically on next run.
 - Resolution criteria: `.github/workflows/vera_slack_relay.yml` exists in the repo on GitHub main branch AND SLACK_WEBHOOK_OFFICE secret is configured in repo Settings → Secrets → Actions.
 
 ---
