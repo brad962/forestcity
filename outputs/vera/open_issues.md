@@ -1,6 +1,43 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 111 | 2026-05-27 | Auto-fixes shipped: 2 | New RESOLVED: 0 | Open: 40 (vera_relay 3 new reminders; GitHub Actions workflow deployed)*
+*Run 112 | 2026-05-27 | Auto-fixes shipped: 5 | New RESOLVED: 0 | Open: 42 (vera_relay Day 3 ads check + post-June-4 monitoring; golf courses + cemeteries added; june5 deliverable written)*
+
+---
+
+## RUN METRICS — Run 112 | 2026-05-27
+- Total RESOLVED: 85 (0 new this run)
+- Total OPEN: 42 (2 new: Golf Courses/Country Clubs + Cemeteries/Memorial Parks — in code, need first pull)
+- Auto-upgrades shipped: 5
+  1. `workers/vera_relay.py` — added `_check_day3_ads_check()`: fires ONLY on May 28; Day 3 is the first allowed tweak window for Facebook algorithm; posts metric thresholds + one-tweak rule to Slack; wired into `_main_body()`; fills the specific gap between launch notification (May 26) and Day 7 review (June 2)
+  2. `workers/vera_relay.py` — added `_check_post_june4_monitoring()`: fires daily June 5–11; reminds Bradley to run Nina's daily hot leads report + respond to replies within 24h; wired into `_main_body()`; closes the "enrolled and forgot about it" gap that killed Round 1
+  3. `workers/lead_pipeline.py` + `integrations/mixmax.py` — added **Golf Courses & Country Clubs** as new commercial segment; DANNY_TITLES: `golf course superintendent`, `golf club manager`, `club general manager`, `golf course director`, `director of golf`, `golf operations manager`; DANNY_ORG_KEYWORDS: `golf course`, `country club`, `golf club`, `golf course management`, `private club`; NE Ohio 100+ courses; May-June = peak season; $3K-$15K/year; zero competitors
+  4. `workers/lead_pipeline.py` + `integrations/mixmax.py` — added **Cemeteries & Memorial Parks** as new secondary segment; titles: `cemetery superintendent`, `cemetery director`, `cemetery manager`, `memorial park director`; org keywords: `cemetery management`, `memorial park management`, `cemetery services`; Memorial Day + Father's Day = peak visitation; $2K-$9K/year; long-term vendor relationships
+  5. `agents/danny.md` — documented Golf Courses & Country Clubs + Cemeteries & Memorial Parks as new secondary segments with full context (target titles, NE Ohio examples, revenue math, pitch angles, Apollo keyword references)
+- Deliverables written: 1
+  1. `outputs/vera/june5_post_enrollment_follow_through_2026-05-27.md` — June 5–11 day-by-day action plan for the week after Round 2 enrollment; daily checklist, open/reply rate benchmarks, copy-paste response scripts, LinkedIn connect scripts, what NOT to do; fills the critical gap between "enrollment fired June 4" and "replies start arriving June 7–9"; previously no guide existed for this window
+- Pipeline status this run:
+  - TODAY May 27: 20 contacts DUE (Bulletproof + Damrons + Bryan + 5 Tier 1 contractors + 12 gas stations). Wave 2 blitz card ready.
+  - TOMORROW May 28: 16 Wave 2 contractor first-touch texts DUE + Ads Day 3 check (relay now fires reminder)
+  - Summit pull: 4 DAYS LEFT (May 31 deadline). CRITICAL.
+  - June 1: Medina pull (golf courses + cemeteries now in code for first time)
+  - June 4: 8 days. All assets ready. Relay now covers June 5–11 post-enrollment window.
+  - GitHub Action: still blocked. PAT needs workflow scope. vera_relay.py cron is working relay.
+
+---
+
+## OPEN — Golf Courses & Country Clubs Segment Not Yet Pulled 🟡 NEW (Run 112)
+- First seen: 2026-05-27 (Run 112)
+- Description: NE Ohio has 100+ golf courses — Quail Hollow Club (PGA Tour host), StoneWater Golf Club, Firestone Country Club, Gleneagles, Fowler's Mill, Sleepy Hollow, Fox Creek, Windmill Lakes, plus dozens of municipal and private clubs. May-June = peak play season with member events, corporate outings, and tournaments. Large parking lots + cart staging areas + clubhouse exteriors = recurring quarterly pressure wash need. Golf course superintendents manage grounds and sign vendor contracts. Club GMs can approve larger multi-service contracts. Zero competitors targeting this segment. Revenue: $3K-$15K/year per course; 10 accounts = $30K-$150K/year.
+- Fix applied (Run 112): Added golf course superintendent + golf club manager + club general manager + golf course director + director of golf + golf operations manager to DANNY_TITLES + PROPERTY_MANAGER_TITLES. Added `golf course`, `country club`, `golf club`, `golf course management`, `private club` to DANNY_ORG_KEYWORDS. Live for Medina June 1 pull.
+- Resolution criteria: Golf course/country club contacts appear in next Danny county pull (Medina June 1).
+
+---
+
+## OPEN — Cemeteries & Memorial Parks Segment Not Yet Pulled 🟡 NEW (Run 112)
+- First seen: 2026-05-27 (Run 112)
+- Description: NE Ohio cemeteries include Forest Hills Memorial Park, Sunset Memorial Park, Knollwood Cemetery, Lake View Cemetery (Cleveland landmark, 285 acres), Hillcrest Memorial Park. Large paved entrance drives, monument areas, parking lots, mausoleum exteriors. Memorial Day + Father's Day = peak visitation (highest-traffic days). Facilities directors manage vendor relationships. Almost no power washing company targets this segment. Revenue: $2K-$9K/year per cemetery; long-term vendor relationships (don't switch vendors often once established).
+- Fix applied (Run 112): Added cemetery superintendent + cemetery director + cemetery manager + memorial park director to DANNY_TITLES + PROPERTY_MANAGER_TITLES. Added `cemetery management`, `memorial park management`, `cemetery services` to DANNY_ORG_KEYWORDS. Live for Medina June 1 pull.
+- Resolution criteria: Cemetery/memorial park contacts appear in next Danny county pull (Medina June 1).
 
 ---
 

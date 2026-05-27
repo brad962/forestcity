@@ -160,6 +160,12 @@ PROPERTY_MANAGER_TITLES = [
     # NE Ohio has 1,000+ licensed centers; parking + entrance + playground = recurring pressure washing need (added 2026-05-27 run 110)
     'childcare center director', 'daycare director', 'early childhood director',
     'childcare director', 'preschool director', 'early learning director',
+    # Golf courses & country clubs — NE Ohio has 100+ courses; peak May-June season; superintendent + GM sign vendor contracts;
+    # clubhouse exterior + cart area + parking lot = recurring quarterly wash; zero competitors (added 2026-05-27 run 112)
+    'golf course superintendent', 'golf club manager', 'club general manager',
+    'golf course director', 'director of golf', 'golf operations manager',
+    # Cemeteries & memorial parks — large paved driveways + monument areas; spring = peak visitor season (added 2026-05-27 run 112)
+    'cemetery superintendent', 'cemetery director', 'cemetery manager', 'memorial park director',
 ]
 
 REALTOR_TITLES = [

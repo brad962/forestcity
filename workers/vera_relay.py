@@ -494,6 +494,72 @@ def _check_june4_enrollment_countdown():
         log(f'June 4 enrollment countdown posted — {label}')
 
 
+def _check_day3_ads_check():
+    """Fire specifically on May 28 — Day 3 after May 26 launch.
+    Day 3 is the FIRST allowed tweak window for Facebook algorithm (touching before Day 3 resets learning phase).
+    One-time, self-deactivating."""
+    from datetime import date as _date_d3
+    today = _date_d3.today()
+    if today != _date_d3(2026, 5, 28):
+        return
+
+    alert_sentinel = BASE_DIR / 'outputs' / 'vera' / '.day3_ads_alert_sent_date'
+    today_str = today.strftime('%Y-%m-%d')
+    if alert_sentinel.exists() and alert_sentinel.read_text().strip() == today_str:
+        return
+
+    msg = (
+        '📊 *Ads Day 3 — First Tweak Window (May 28)*\n'
+        '>Day 3 is the FIRST day you\'re allowed to touch the Facebook campaign without resetting the algorithm learning phase.\n'
+        '>Facebook thresholds: CTR <1% = check creative | CPL >$50 = check audience | Reach <500 = check budget\n'
+        '>Google thresholds: CTR <2% = check keywords/ads | CPC >$8 = pause low-quality keywords\n'
+        '>One-tweak rule: if adjusting, change ONE thing only (creative OR audience OR budget — never all three)\n'
+        '>If numbers are acceptable → leave it alone. Facebook needs 7 days to optimize.\n'
+        '>Full check card: `outputs/vera/day3_ads_check_card_2026-05-26.md`'
+    )
+    if post_slack(msg):
+        alert_sentinel.parent.mkdir(exist_ok=True)
+        try:
+            alert_sentinel.write_text(today_str)
+        except Exception:
+            pass
+        log('Ads Day 3 first-tweak-window reminder posted')
+
+
+def _check_post_june4_monitoring():
+    """Fire daily June 5–11: remind Bradley that Round 2 emails are actively sending,
+    check Nina hot leads report daily, respond to replies within 24 hours.
+    Round 2 Day 3 (June 7) = first opens/replies expected. Self-deactivates June 12."""
+    from datetime import date as _date_j4m
+    today = _date_j4m.today()
+    start = _date_j4m(2026, 6, 5)
+    end   = _date_j4m(2026, 6, 11)
+    if not (start <= today <= end):
+        return
+
+    alert_sentinel = BASE_DIR / 'outputs' / 'vera' / '.post_june4_monitor_sent_date'
+    today_str = today.strftime('%Y-%m-%d')
+    if alert_sentinel.exists() and alert_sentinel.read_text().strip() == today_str:
+        return
+
+    day_num = (today - start).days + 2  # June 5 = Day 2 post-enrollment
+    msg = (
+        f'📬 *Round 2 Sequence — Day {day_num} (Post-Enrollment)*\n'
+        f'>Enrolled contacts are actively receiving emails. First opens/replies expected June 7–9.\n'
+        f'>Run Nina\'s daily report locally: `cd /Users/bradleyneal/forestcity && python3 workers/nina_report.py daily`\n'
+        f'>When someone REPLIES → respond within 24 hours → book the call or estimate\n'
+        f'>Hot leads (2+ opens, no reply) → connect on LinkedIn same day → message: "saw you opened our email"\n'
+        f'>Sequence cadence: Touch 1 (Day 0) → Touch 2 (Day 3) → Touch 3 (Day 7) → let Nina surface the hot ones'
+    )
+    if post_slack(msg):
+        alert_sentinel.parent.mkdir(exist_ok=True)
+        try:
+            alert_sentinel.write_text(today_str)
+        except Exception:
+            pass
+        log(f'Post-June 4 sequence monitoring reminder posted — Day {day_num}')
+
+
 def _acquire_lock() -> bool:
     """Return True if we got the lock, False if another instance is running."""
     LOCK_FILE.parent.mkdir(exist_ok=True)
@@ -560,6 +626,8 @@ def _main_body():
     _check_medina_reminder()
     _check_day7_ads_review()
     _check_june4_enrollment_countdown()
+    _check_day3_ads_check()
+    _check_post_june4_monitoring()
 
     # Fetch first so origin/main is current before flush checks origin/main..HEAD
     git(['fetch', 'origin'])

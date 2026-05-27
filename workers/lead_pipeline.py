@@ -188,6 +188,16 @@ DANNY_TITLES = [
     # NE Ohio has 1,000+ licensed centers; parking + entrance + playground = recurring need; $300-$800/visit; 2x/year (added 2026-05-27 run 110)
     'childcare center director', 'daycare director', 'early childhood director',
     'childcare director', 'preschool director', 'early learning director',
+    # Golf courses & country clubs — NE Ohio has 100+ courses (Quail Hollow, StoneWater, Firestone CC, Gleneagles,
+    # Fowler's Mill, Sleepy Hollow, Fox Creek, Windmill Lakes); May-June = peak play season + member events + tournaments;
+    # clubhouse exterior + cart staging area + parking lot = recurring pressure wash need; superintendent manages grounds
+    # + signs vendor contracts; club GM can override for larger contracts; $2K-$8K/year per course; zero competitors (added 2026-05-27 run 112)
+    'golf course superintendent', 'golf club manager', 'club general manager',
+    'golf course director', 'director of golf', 'golf operations manager',
+    # Cemeteries & memorial parks — large paved driveways, monument areas, pavilions, funeral home offices;
+    # NE Ohio: Forest Hills Memorial Park, Sunset Memorial Park, Knollwood, Lake View Cemetery (landmark);
+    # facilities directors manage long-term vendor relationships; spring = peak visitor season; $1K-$3K/year (added 2026-05-27 run 112)
+    'cemetery superintendent', 'cemetery director', 'cemetery manager', 'memorial park director',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -287,6 +297,11 @@ DANNY_ORG_KEYWORDS = [
     # parking lot + entrance walkways + playground area = recurring cleaning need; $300-$800/visit; 2x/year (added 2026-05-27 run 110)
     'childcare center', 'daycare center', 'early childhood education', 'child care management',
     'preschool facility', 'early learning center',
+    # Golf courses & country clubs — 100+ NE Ohio courses; large paved lots + cart staging + clubhouse exterior;
+    # May-June = peak season (member events, tournaments, corporate outings); zero competitors targeting this segment (added 2026-05-27 run 112)
+    'golf course', 'country club', 'golf club', 'golf course management', 'private club',
+    # Cemeteries & memorial parks — large paved driveways + pavilion areas; spring = peak visitor season (added 2026-05-27 run 112)
+    'cemetery management', 'memorial park management', 'cemetery services',
 ]
 
 CARLA_SEARCHES = [

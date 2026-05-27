@@ -245,6 +245,26 @@ This enrolls ALL pending contacts (gas stations + fleet) without triggering a fr
 **Timing:** Contact NOW (May–June) — summer enrollment pushes are happening and licensing renewals are on the calendar.
 **Sequence:** Route to Property Manager sequence (facility management / safety standards angle).
 
+### Golf Courses & Country Clubs (NEW — May 2026, Run 112)
+**Status:** Org keywords + titles live in DANNY_ORG_KEYWORDS/DANNY_TITLES as of Run 112. Include in next county rotation (Medina June 1).
+**Target:** Golf Course Superintendent, Golf Club Manager, Club General Manager, Golf Course Director, Director of Golf, Golf Operations Manager
+**Why:** NE Ohio has 100+ golf courses — Quail Hollow Club (PGA Tour host), StoneWater Golf Club, Firestone Country Club (Akron, longtime tournament venue), Gleneagles Golf Club, Fowler's Mill Golf Course, Sleepy Hollow Golf Course, Fox Creek Golf Course, Windmill Lakes Golf Club, and dozens of municipal and private courses. May–June = peak play season with member events, corporate outings, and tournaments. The parking lot, clubhouse exterior, cart staging area, and entrance drives must be clean for every event — appearance is part of the member experience. Golf course superintendents manage facilities and sign vendor contracts. Zero competitors targeting this segment.
+**Revenue per visit:** $1,500–$5,000 (parking lot + cart staging area + clubhouse exterior + entrance). 2–3 visits/year (spring clean + post-tournament + fall prep) = $3,000–$15,000/year per course. 10 courses = $30K–$150K/year.
+**Apollo keywords (live Run 112):** `golf course`, `country club`, `golf club`, `golf course management`, `private club` — added to DANNY_ORG_KEYWORDS.
+**Pitch angle:** "Member events and corporate outings are every weekend in June. The parking lot and clubhouse exterior are part of the member experience — a dirty entrance drive is noticed. One spring clean before the season and a fall clean after tournament season. We work around your event schedule."
+**Timing:** Contact NOW — pre-season prep decisions are made in May before June tournament schedules lock in.
+**Sequence:** Route to Property Manager sequence (facility management / appearance angle).
+
+### Cemeteries & Memorial Parks (NEW — May 2026, Run 112)
+**Status:** Org keywords + titles live in DANNY_ORG_KEYWORDS/DANNY_TITLES as of Run 112. Include in next county rotation (Medina June 1).
+**Target:** Cemetery Superintendent, Cemetery Director, Cemetery Manager, Memorial Park Director
+**Why:** NE Ohio has multiple large cemetery operations — Forest Hills Memorial Park, Sunset Memorial Park, Knollwood Cemetery, Lake View Cemetery (a Cleveland landmark with 285 acres), Hillcrest Memorial Park. Large paved entrance drives, monument areas, parking lots, mausoleum exteriors, and chapel/administration buildings. Spring = peak visitation season (Memorial Day weekend is the highest-traffic day of the year for cemeteries). Facilities directors manage long-term vendor relationships; appearance directly reflects respect for the families they serve. Low competition — almost no power washing company targets this segment.
+**Revenue per visit:** $1,000–$3,000 (main entrance + parking + mausoleum exterior + chapel/admin building). 2–3 visits/year = $2,000–$9,000/year per cemetery. Long-term relationships — cemeteries don't switch vendors often once established.
+**Apollo keywords (live Run 112):** `cemetery management`, `memorial park management`, `cemetery services` — added to DANNY_ORG_KEYWORDS.
+**Pitch angle:** "Memorial Day weekend is your highest-traffic day of the year. Every family visiting expects a clean, respectful appearance — entrance drives, mausoleum exteriors, and parking areas. We schedule pre-Memorial Day and post-summer cleanings to keep the appearance consistent year-round."
+**Timing:** Contact in the next 7 days — Memorial Day (May 25 already passed, but June prep season continues). Families visit on Father's Day (June 15) and throughout summer.
+**Sequence:** Route to Property Manager sequence (facility management / appearance / respect angle).
+
 ## Peak Season Angle — HOA Budget Season (May–June)
 HOA boards typically hold their annual budget and vendor approval meetings in May–June before the summer maintenance season. This means property managers and community association managers are ACTIVELY reviewing vendor lists RIGHT NOW. The PM sequence Touch 1 and any LinkedIn outreach should reference this window: "HOA boards are approving their summer vendor lists this month" or "Most associations lock in their exterior maintenance vendor before July." This creates urgency without being pushy — it's calendar-based fact. Works especially well for community associations, HOA management companies, and multifamily operators who work on fiscal budgets.
 
