@@ -128,6 +128,10 @@ PROPERTY_MANAGER_TITLES = [
     'distribution center manager', 'fulfillment center manager', 'warehouse manager',
     'logistics facility manager', 'dock manager', 'transportation facility manager',
     'warehouse operations manager', 'regional distribution manager',
+    # Restaurants & QSR chains — drive-through canopies, parking lots, dumpster pads; district managers sign
+    # multi-location vendor contracts for 5-20 locations; $16K-$48K/year per district deal (added 2026-05-27 run 106)
+    'restaurant district manager', 'food service district manager', 'franchise operations manager',
+    'restaurant facilities manager', 'qsr district manager', 'franchise district manager',
 ]
 
 REALTOR_TITLES = [

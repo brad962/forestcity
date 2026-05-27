@@ -144,6 +144,12 @@ DANNY_TITLES = [
     'distribution center manager', 'fulfillment center manager', 'warehouse manager',
     'logistics facility manager', 'dock manager', 'transportation facility manager',
     'warehouse operations manager', 'regional distribution manager',
+    # Restaurants & QSR chains — McDonald's, Burger King, Wendy's, Taco Bell, Panera, Chipotle, Applebee's, Bob Evans in NE Ohio;
+    # drive-through canopies accumulate grease, mildew, exhaust; parking lots have heavy traffic stains + dumpster pad grime;
+    # district managers sign vendor contracts for 5-20 locations; $400-$1,200/location visit; quarterly = $1.6K-$4.8K/location;
+    # 10-location district deal = $16K-$48K/year; first pull Medina June 1 (added 2026-05-27 run 106)
+    'restaurant district manager', 'food service district manager', 'franchise operations manager',
+    'restaurant facilities manager', 'qsr district manager', 'franchise district manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -212,6 +218,12 @@ DANNY_ORG_KEYWORDS = [
     'distribution center', 'fulfillment center', 'warehouse operations', 'logistics center',
     'shipping facility', 'freight terminal', 'loading dock facility', 'transportation hub',
     'food distribution', 'beverage distribution', 'wholesale distribution',
+    # Restaurants & QSR chains — heavy NE Ohio saturation of McDonald's, Burger King, Wendy's, Taco Bell,
+    # Panera, Chipotle, Applebee's, Bob Evans, Cracker Barrel; drive-through canopies, parking lots, dumpster pads;
+    # franchisees and district managers sign multi-location vendor contracts;
+    # $400-$1,200/location; quarterly = $1.6K-$4.8K/location; 10-location district deal = $16K-$48K/year (added 2026-05-27 run 106)
+    'restaurant chain', 'fast food franchise', 'food service management', 'restaurant franchise',
+    'quick service restaurant', 'restaurant management', 'qsr management', 'casual dining',
 ]
 
 CARLA_SEARCHES = [

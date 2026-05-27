@@ -142,8 +142,48 @@ def _check_instantly_paused():
         log('Instantly.ai not-paused daily reminder posted to Slack')
 
 
+def _check_nina_staleness():
+    """Alert if Nina's daily hot leads report hasn't run in 2+ days — pipeline visibility gap."""
+    alert_sentinel = BASE_DIR / 'outputs' / 'vera' / '.nina_alert_sent_date'
+    today_str = datetime.now().strftime('%Y-%m-%d')
+
+    if alert_sentinel.exists() and alert_sentinel.read_text().strip() == today_str:
+        return
+
+    last_nina_dt = None
+    if LOG_FILE.exists():
+        try:
+            for line in reversed(LOG_FILE.read_text().splitlines()):
+                if 'Nina' in line and ('hot leads report' in line or 'workiz' in line.lower()):
+                    date_part = line[1:11]
+                    last_nina_dt = datetime.strptime(date_part, '%Y-%m-%d')
+                    break
+        except Exception:
+            pass
+
+    days_stale = (datetime.now() - last_nina_dt).days if last_nina_dt else 99
+    if days_stale < 2:
+        return
+
+    label = last_nina_dt.strftime('%B %d') if last_nina_dt else 'unknown'
+    msg = (
+        f'📊 *Nina Cron Alert — {days_stale} days since last daily report*\n'
+        f'>Last report: {label}\n'
+        f'>Pipeline visibility gap — hot leads and due-today contacts not being surfaced.\n'
+        f'>Run locally: `cd /Users/bradleyneal/forestcity && python3 workers/nina_report.py daily`\n'
+        f'>Check cron: `cat logs/cron.log | tail -20`'
+    )
+    if post_slack(msg):
+        alert_sentinel.parent.mkdir(exist_ok=True)
+        try:
+            alert_sentinel.write_text(today_str)
+        except Exception:
+            pass
+        log(f'Nina staleness alert posted — {days_stale} days since last report')
+
+
 def _check_carla_staleness():
-    """Check when Carla last ran. Post Slack alert if > 10 days. Once per day."""
+    """Check when Carla last ran. Post Slack alert if > 8 days (same cadence as Danny). Once per day."""
     alert_sentinel = BASE_DIR / 'outputs' / 'vera' / '.carla_alert_sent_date'
     pull_sentinel  = BASE_DIR / 'outputs' / 'vera' / '.carla_last_pull_date'
     today_str = datetime.now().strftime('%Y-%m-%d')
@@ -170,7 +210,7 @@ def _check_carla_staleness():
             pass
 
     days_stale = (datetime.now() - last_pull_dt).days if last_pull_dt else 99
-    if days_stale < 10:
+    if days_stale < 8:
         return
 
     label = last_pull_dt.strftime('%B %d') if last_pull_dt else 'unknown'
@@ -246,6 +286,7 @@ def _main_body():
     # Always check staleness (runs even if no new Vera commits)
     _check_danny_staleness()
     _check_carla_staleness()
+    _check_nina_staleness()
     _check_instantly_paused()
 
     # Fetch first so origin/main is current before flush checks origin/main..HEAD

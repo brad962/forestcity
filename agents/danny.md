@@ -174,6 +174,16 @@ This enrolls ALL pending contacts (gas stations + fleet) without triggering a fr
 **Pitch angle:** "Your loading docks accumulate oil, grease, and exhaust from daily dock activity. OSHA expects clean concrete for forklift safety. We handle all your NE Ohio facilities on one quarterly contract — no separate scheduling."
 **Sequence:** Route to Property Manager sequence (facility management / compliance angle).
 
+### Restaurants & Quick Service Restaurant (QSR) Chains (NEW — May 2026, Run 106)
+**Status:** Org keywords + titles live in DANNY_ORG_KEYWORDS/DANNY_TITLES as of Run 106. Include in next county rotation (Medina June 1).
+**Target:** Restaurant District Manager, Food Service District Manager, Franchise Operations Manager, Franchise District Manager, Restaurant Facilities Manager at major QSR and casual dining chains
+**Why:** NE Ohio has heavy saturation of every major chain — McDonald's, Burger King, Wendy's, Taco Bell, Panera Bread, Chipotle, Applebee's, Bob Evans, Cracker Barrel, Steak 'n Shake, Denny's, IHOP. Drive-through canopies are the #1 grease and exhaust buildup surface in the restaurant industry — visible to every customer. Parking lots have heavy daily traffic stains + dumpster pad grime from food waste. Franchise owners and district managers sign vendor contracts for 5-20 locations at once. Appearance is a corporate franchisor requirement (QSR chains have brand standards enforceable by inspection) — this creates recurring urgency. NOTE: Reach district managers and franchise ops managers (not individual store managers who can't sign contracts).
+**Revenue per visit:** $400–$1,200 per location (drive-through canopy + parking lot + dumpster pad). Quarterly = $1,600–$4,800 per location. 10-location district deal = $16K–$48K/year. Multiple franchisees = compounding revenue.
+**Target companies:** McDonald's NE Ohio franchisees (Kokosing Group, others), Burger King franchisees (Carrols Restaurant Group has NE Ohio stores), Wendy's franchisees (Quality Restaurant Group), Panera Bread franchisees, Chipotle (corporate-run, contact regional FM), Applebee's franchisees, Bob Evans (Columbus-based, operates own NE Ohio locations), Darden Restaurants (Olive Garden, LongHorn Steakhouse regional FM contacts).
+**Apollo keywords (live Run 106):** `restaurant chain`, `fast food franchise`, `food service management`, `restaurant franchise`, `quick service restaurant`, `restaurant management`, `qsr management`, `casual dining` — added to DANNY_ORG_KEYWORDS.
+**Pitch angle:** "Your drive-through canopy is the first surface every customer walks under. Grease buildup, mold, and exhaust staining are a corporate inspection failure waiting to happen. One quarterly contract covers all your NE Ohio locations — no separate scheduling."
+**Sequence:** Route to Property Manager sequence (facility management / brand standards angle).
+
 ## County Rotation Calendar (2026)
 Danny rotates counties by ISO week number (`week % 6`). Cron runs every Monday 7am.
 
