@@ -120,6 +120,9 @@ PROPERTY_MANAGER_TITLES = [
     'outpatient facilities manager', 'medical building manager',
     # Corporate/tech park FMs — campus operations managers oversee multiple buildings + shared parking (added 2026-05-26 run 101)
     'corporate facilities manager', 'campus operations manager', 'office park manager',
+    # Grocery/supermarket chains — Giant Eagle, Heinen's, Marc's, Kroger, Aldi/Meijer in NE Ohio;
+    # district FMs sign vendor contracts; high-traffic parking + drive-through pharmacy canopies + building exteriors (added 2026-05-27 run 104)
+    'grocery district manager', 'supermarket facilities manager',
 ]
 
 REALTOR_TITLES = [

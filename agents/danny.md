@@ -154,6 +154,16 @@ This enrolls ALL pending contacts (gas stations + fleet) without triggering a fr
 **Apollo keywords (live Run 101):** `corporate campus`, `corporate park`, `technology park`, `office complex`, `office campus`, `tech park`, `business campus` — auto-included in DANNY_ORG_KEYWORDS.
 **Pitch angle:** "Your tenants signed leases because the campus looked sharp. The parking lots, walkways, and building facades are the first thing they see every morning. One quarterly contract covers all buildings."
 
+### Grocery & Supermarket Chains (NEW — May 2026, Run 104)
+**Status:** Org keywords + titles live in DANNY_ORG_KEYWORDS/DANNY_TITLES as of Run 104. Include in next county rotation (Medina June 1).
+**Target:** Grocery District Manager, Supermarket Facilities Manager, Facilities Manager, District Manager at grocery chains
+**Why:** NE Ohio is heavily saturated with major grocery chains — Giant Eagle (200+ stores across OH/PA/WV/MD, headquartered in Pittsburgh but dominant NE Ohio footprint), Heinen's (23 NE Ohio stores), Marc's Stores (64 locations), plus national chains Kroger, Aldi, Meijer. Every store has a large parking lot with heavy cart traffic (oil stains, tire marks, gum on pavement), a building exterior, and often a drive-through pharmacy canopy. Parking lots are the #1 first impression for food retailers. District FMs oversee 5–15 locations; one district deal = recurring multi-site contract. These contacts are NOT pitched on curb appeal — the angle is food safety compliance and parking lot appearance standards.
+**Revenue per visit:** $600–$2,000 per store (parking lot + exterior + canopy). 2–4x/year = $1,200–$8,000 per location. District deal (8 stores) = $9,600–$64,000/year.
+**Target companies:** Giant Eagle (corporate facilities, Ohio Division), Heinen's (family-owned, direct FM access), Marc's Stores (discount chain, appearance standards), Kroger (Cincinnati HQ but NE Ohio district FMs sign local vendor contracts), Aldi US (district managers oversee ~20 stores), Meijer (Grand Rapids HQ, NE Ohio expansion stores).
+**Apollo keywords (live Run 104):** `grocery store`, `supermarket chain`, `grocery chain`, `food retail`, `grocery management`, `supermarket management` — added to DANNY_ORG_KEYWORDS.
+**Pitch angle:** "Your parking lot is the first thing customers walk across before they enter the store. Cart return areas, drive-through canopies, and pavement staining say something about your brand standard. We handle all your NE Ohio locations on one quarterly contract."
+**Sequence:** Route to Property Manager sequence (facility management angle).
+
 ## County Rotation Calendar (2026)
 Danny rotates counties by ISO week number (`week % 6`). Cron runs every Monday 7am.
 

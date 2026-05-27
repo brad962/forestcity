@@ -110,6 +110,38 @@ def _check_danny_staleness():
         log(f'Danny staleness alert posted — {days_stale} days since last pull')
 
 
+def _check_instantly_paused():
+    """Warn Bradley once per day if Instantly.ai is not confirmed paused.
+    Instantly.ai overlap = duplicate emails = spam filters = 0% reply rate on Round 2.
+    Fires every morning until INSTANTLY_PAUSED=true is added to .env.
+    """
+    alert_sentinel = BASE_DIR / 'outputs' / 'vera' / '.instantly_alert_sent_date'
+    today_str = datetime.now().strftime('%Y-%m-%d')
+
+    if alert_sentinel.exists() and alert_sentinel.read_text().strip() == today_str:
+        return  # Already alerted today
+
+    if os.environ.get('INSTANTLY_PAUSED', '').lower() == 'true':
+        return  # Confirmed paused — no alert needed
+
+    msg = (
+        '⚠️ *Instantly.ai NOT Paused — Daily Reminder*\n'
+        '>Campaigns a1c08c3d (PM Cuyahoga) + 626cd15d (Contractor Referral) are NOT confirmed paused.\n'
+        '>Duplicate sends to Round 2 contacts = spam filters = 0% reply rate on June 4 enrollment.\n'
+        '>\n'
+        '>FIX (3 min): app.instantly.ai → Campaigns → ⋮ → Pause both campaigns\n'
+        '>Then add  INSTANTLY_PAUSED=true  to your .env file\n'
+        '>Guide: outputs/vera/instantly_pause_guide_2026-05-22.md'
+    )
+    if post_slack(msg):
+        alert_sentinel.parent.mkdir(exist_ok=True)
+        try:
+            alert_sentinel.write_text(today_str)
+        except Exception:
+            pass
+        log('Instantly.ai not-paused daily reminder posted to Slack')
+
+
 def _check_carla_staleness():
     """Check when Carla last ran. Post Slack alert if > 10 days. Once per day."""
     alert_sentinel = BASE_DIR / 'outputs' / 'vera' / '.carla_alert_sent_date'
@@ -214,6 +246,7 @@ def _main_body():
     # Always check staleness (runs even if no new Vera commits)
     _check_danny_staleness()
     _check_carla_staleness()
+    _check_instantly_paused()
 
     # Fetch first so origin/main is current before flush checks origin/main..HEAD
     git(['fetch', 'origin'])

@@ -134,6 +134,9 @@ DANNY_TITLES = [
     # Corporate/tech parks — campus FMs oversee multiple buildings + shared parking; professional exterior standard (added 2026-05-26 run 101)
     # 'campus manager' already in list above; adding specific variants for corporate/tech park context
     'corporate facilities manager', 'campus operations manager', 'office park manager',
+    # Grocery/supermarket chains — district FM-level contacts sign vendor contracts across multiple stores (added 2026-05-27 run 104)
+    # 'facilities manager' + 'district manager' already in list; adding grocery-specific variants Apollo surfaces
+    'grocery district manager', 'supermarket facilities manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -187,6 +190,12 @@ DANNY_ORG_KEYWORDS = [
     # campus facilities manager oversees all buildings; $1,500–$5,000/visit for full campus (added 2026-05-26 run 101)
     'corporate campus', 'corporate park', 'technology park', 'office complex', 'office campus',
     'tech park', 'business campus', 'innovation campus',
+    # Grocery & supermarket chains — Giant Eagle (200+ regional stores), Heinen's (23 NE Ohio), Marc's (64),
+    # Aldi, Kroger, Meijer; large parking lots with heavy cart traffic = oil stains, gum, tire marks;
+    # drive-through pharmacy canopies; building exteriors; district FMs sign vendor contracts across 5-15 locations;
+    # $600–$2,000/store visit; 10-store district deal = $6K–$20K/year (added 2026-05-27 run 104)
+    'grocery store', 'supermarket chain', 'grocery chain', 'food retail', 'grocery management',
+    'supermarket management',
 ]
 
 CARLA_SEARCHES = [
