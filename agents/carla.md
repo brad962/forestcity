@@ -24,6 +24,7 @@ Build a referral network of 100+ active partners across Northeast Ohio who send 
 15. **Asphalt/driveway sealing companies** — resurface driveways where pressure washing is the standard prep step; natural pre-job referral
 16. **Plumbers / plumbing companies** — in homes 2-4x/year on average; trusted advisor relationship with homeowner; see the full exterior on every visit (algae on foundation, dirty siding around hose bibs); natural cross-referral (added 2026-05-26)
 17. **Electricians / electrical contractors** — same reasoning as plumbers; on-site for service calls and panel upgrades; homeowner in service mode = open to other vendor recommendations; see dirty siding and roof algae on every service call (added 2026-05-26)
+18. **Snow removal / ice management companies** — completely idle May–September; actively seeking summer revenue streams; service the SAME driveways, parking lots, and commercial surfaces Forest City washes; the off-season trusted contractor relationship = warm referral introduction; pitch: "You're already their winter vendor — be their summer referral, we'll do the same for you in September." Target: owners at small/mid snow removal operators with 10–50 accounts. (added 2026-05-27 run 107)
 
 ## Tools You Use
 - **Apollo.io API key:** load from `.env` as `APOLLO_KEY` — never hardcode in files

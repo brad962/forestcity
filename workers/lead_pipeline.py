@@ -144,6 +144,11 @@ DANNY_TITLES = [
     'distribution center manager', 'fulfillment center manager', 'warehouse manager',
     'logistics facility manager', 'dock manager', 'transportation facility manager',
     'warehouse operations manager', 'regional distribution manager',
+    # Car dealerships — fixed ops and service directors manage vehicle service bays + large paved lots;
+    # 'general manager' already in list; adding dealership-specific titles not matched by existing entries (added 2026-05-27 run 107)
+    'fixed operations director',    # dealership-specific: oversees service + parts; parking lot + service bay concrete = recurring wash
+    'automotive service director',  # variant; signs vendor contracts for lot maintenance
+    'dealer principal',             # owner/operator of single-rooftop dealership; lot + showroom exterior standard
     # Restaurants & QSR chains — McDonald's, Burger King, Wendy's, Taco Bell, Panera, Chipotle, Applebee's, Bob Evans in NE Ohio;
     # drive-through canopies accumulate grease, mildew, exhaust; parking lots have heavy traffic stains + dumpster pad grime;
     # district managers sign vendor contracts for 5-20 locations; $400-$1,200/location visit; quarterly = $1.6K-$4.8K/location;
@@ -237,7 +242,12 @@ CARLA_SEARCHES = [
                   'home inspection', 'home inspector',  # at buyer/seller moment; sees dirty houses every job
                   'solar installation', 'solar energy',  # on roofs constantly; homeowner in invest-in-home mode
                   'plumbing', 'plumber',                 # in homes 2-4x/year; trusted advisor; sees every exterior surface
-                  'electrician', 'electrical contractor'],  # same reasoning; high referral value (added 2026-05-26)
+                  'electrician', 'electrical contractor',  # same reasoning; high referral value (added 2026-05-26)
+                  # Snow removal companies — completely idle in May-June; actively seeking summer revenue;
+                  # service the same driveways, parking lots, and commercial lots Forest City washes;
+                  # high referral value because they're the trusted off-season contractor relationship (added 2026-05-27 run 107)
+                  'snow removal', 'snow plowing', 'snow plow', 'ice management',
+                  'winter maintenance', 'snow and ice', 'snow clearing'],
      'label': 'Contractors'},
     # Home-services companies that visit properties weekly — high-value referral sources
     {'type': 'contractors', 'titles': ['owner', 'president', 'founder', 'operator'],

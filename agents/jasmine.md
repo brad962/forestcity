@@ -38,7 +38,7 @@ Save to `/outputs/jasmine/`:
 - `facebook_posts_week_[date].md` — batch of 5 posts
 - `facebook_posts_memorial_day_week_[date].md` — Memorial Day week (May 21–25) posts
 - `facebook_posts_may26_week_[date].md` — post-Memorial Day week (May 26–30) posts; **CURRENT: `facebook_posts_may26_week_2026-05-24.md`** (supersedes 2026-05-20 version)
-- `facebook_posts_june_week1_[date].md` — June week 1 (June 2–6) posts; **CURRENT: `facebook_posts_june_week1_2026-05-24.md`** (supersedes 2026-05-20 version)
+- `facebook_posts_june_week1_[date].md` — June week 1 (June 2–6) posts; **CURRENT: `facebook_posts_june_week1_2026-06-02.md`** (supersedes 2026-05-24 and 2026-05-20 versions — June 2 version is the live file for this week)
 - `facebook_posts_june_week2_4_[date].md` — June weeks 2–4 (June 8–27) full batch; **CURRENT: `facebook_posts_june_week2_4_2026-05-24.md`** (supersedes 2026-05-20 version)
 - `content_calendar_[month]_[date].md` — monthly calendar
 - `linkedin_posts_[date].md`

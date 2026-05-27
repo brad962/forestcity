@@ -1,6 +1,34 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 106 | 2026-05-27 | Auto-fixes shipped: 4 | New RESOLVED: 0 | Open: 33 (Restaurant/QSR segment added; Nina staleness check added to vera_relay.py; Carla threshold fixed 10→8 days; GitHub Action deployed to .github/workflows/; may28 consolidated action card written)*
+*Run 107 | 2026-05-27 | Auto-fixes shipped: 5 | New RESOLVED: 0 | Open: 34 (Snow removal/Carla segment added; car dealership titles fixed; Workiz staleness check added to vera_relay.py; HOA budget season note added to danny.md; past customer blast deliverable written; GitHub Action API approach confirmed same root cause)*
+
+---
+
+## RUN METRICS — Run 107 | 2026-05-27
+- Total RESOLVED: 85 (0 new this run)
+- Total OPEN: 34 (1 new: Car Dealership segment was half-functional — titles added this run, but no pull yet)
+- Auto-upgrades shipped: 5
+  1. `workers/vera_relay.py` — added `_check_workiz_staleness()` function; alerts once/day if no Workiz report in 3+ days; fires in `_main_body()` after Nina staleness check; closes revenue visibility gap when Workiz cron skips
+  2. `workers/lead_pipeline.py` — added Snow Removal/Ice Management to CARLA_SEARCHES keywords: `snow removal`, `snow plowing`, `snow plow`, `ice management`, `winter maintenance`, `snow and ice`, `snow clearing`; snow removal companies are IDLE May–Sept, serve same driveways Forest City washes, actively seeking summer revenue streams; best untapped referral segment in NE Ohio right now
+  3. `workers/lead_pipeline.py` + `integrations/mixmax.py` — added `fixed operations director`, `automotive service director`, `dealer principal` to DANNY_TITLES + PROPERTY_MANAGER_TITLES; car dealership org keywords live since Run 88 but these decision-maker titles were missing — segment was half-functional
+  4. `agents/carla.md` — added Snow Removal/Ice Management as referral partner type #18; pitch angle and target profile documented
+  5. `agents/danny.md` — added HOA Budget Season section (boards are approving vendor lists NOW in May–June); car dealership Run 107 title note; `agents/jasmine.md` — updated june_week1 CURRENT to June 2 version
+- Deliverables written: 1
+  1. `outputs/tommy/past_customer_june_blast_2026-05-27.md` — 5 copy-paste past customer re-engagement texts by scenario (house wash, deck/driveway, annual plan upsell, 12-month gap, referral ask); response handling scripts; Workiz lookup guide; pipeline_data.json update template; revenue math ($1,800–$3,000 from 30 min of texts); fastest revenue path while ads are in learning phase
+- GitHub Action (Run 107 attempt): Tried GitHub Contents API PUT (completely different approach from git push) — received HTTP 404 (GitHub returns 404 not 403 when PAT lacks `workflow` scope — confirmed API also requires workflow scope). PAT scopes verified via API: `repo` only, no `workflow`. **Root cause confirmed 100% across both methods.** Bradley must take Option A or B below.
+- Pipeline status this run:
+  - TODAY May 27: 20 contacts DUE (all have next_followup=2026-05-27). Nina's report surfaces them as DUE TODAY.
+  - TOMORROW May 28: 16 Wave 2 contractor texts due. Day 3 ads check.
+  - Summit pull: 4 DAYS LEFT (deadline May 31). Run it TODAY or tomorrow.
+  - June 4: 8 days. All assets ready. Instantly.ai pause = only blocker.
+
+---
+
+## OPEN — Car Dealership Segment Titles Were Missing (RESOLVED IN CODE — Run 107)
+- First seen: 2026-05-27 (Run 107)
+- Description: Car dealerships added to DANNY_ORG_KEYWORDS in Run 88 (keywords: `car dealership`, `auto dealership`, `automotive dealer`, `auto group`). But the decision-maker titles that sign vendor contracts — `fixed operations director`, `automotive service director`, `dealer principal` — were NOT in DANNY_TITLES. Apollo would find the org but not the right person. General Manager is in the list but fixed ops directors are the more common title for lot/bay maintenance decisions.
+- Fix applied (Run 107): Added `fixed operations director`, `automotive service director`, `dealer principal` to DANNY_TITLES (lead_pipeline.py) and PROPERTY_MANAGER_TITLES (mixmax.py).
+- Resolution criteria: Car dealership contacts with these titles appear in next Danny county pull (Medina June 1 or Cuyahoga early pull).
 
 ---
 

@@ -182,6 +182,46 @@ def _check_nina_staleness():
         log(f'Nina staleness alert posted — {days_stale} days since last report')
 
 
+def _check_workiz_staleness():
+    """Alert if no Workiz job report has run in 3+ days — revenue visibility gap."""
+    alert_sentinel = BASE_DIR / 'outputs' / 'vera' / '.workiz_alert_sent_date'
+    today_str = datetime.now().strftime('%Y-%m-%d')
+
+    if alert_sentinel.exists() and alert_sentinel.read_text().strip() == today_str:
+        return
+
+    last_workiz_dt = None
+    if LOG_FILE.exists():
+        try:
+            for line in reversed(LOG_FILE.read_text().splitlines()):
+                if 'Nina' in line and 'workiz' in line.lower():
+                    date_part = line[1:11]
+                    last_workiz_dt = datetime.strptime(date_part, '%Y-%m-%d')
+                    break
+        except Exception:
+            pass
+
+    days_stale = (datetime.now() - last_workiz_dt).days if last_workiz_dt else 99
+    if days_stale < 3:
+        return
+
+    label = last_workiz_dt.strftime('%B %d') if last_workiz_dt else 'unknown'
+    msg = (
+        f'💼 *Workiz Cron Alert — {days_stale} days since last job report*\n'
+        f'>Last report: {label}\n'
+        f'>Revenue visibility gap — booked jobs and outstanding balances not being tracked.\n'
+        f'>Run locally: `cd /Users/bradleyneal/forestcity && python3 workers/workiz_report.py daily`\n'
+        f'>Check cron: `cat logs/cron.log | tail -20`'
+    )
+    if post_slack(msg):
+        alert_sentinel.parent.mkdir(exist_ok=True)
+        try:
+            alert_sentinel.write_text(today_str)
+        except Exception:
+            pass
+        log(f'Workiz staleness alert posted — {days_stale} days since last report')
+
+
 def _check_carla_staleness():
     """Check when Carla last ran. Post Slack alert if > 8 days (same cadence as Danny). Once per day."""
     alert_sentinel = BASE_DIR / 'outputs' / 'vera' / '.carla_alert_sent_date'
@@ -287,6 +327,7 @@ def _main_body():
     _check_danny_staleness()
     _check_carla_staleness()
     _check_nina_staleness()
+    _check_workiz_staleness()
     _check_instantly_paused()
 
     # Fetch first so origin/main is current before flush checks origin/main..HEAD

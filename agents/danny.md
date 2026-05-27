@@ -134,6 +134,7 @@ This enrolls ALL pending contacts (gas stations + fleet) without triggering a fr
 **Why:** Large paved lots (oil stains, tire marks), building exteriors, covered service bays = heavy cleaning demand. Multi-location dealer groups in NE Ohio (Hidy Automotive, Valley Ford, Ganley, etc.) = one deal = 3-8 locations. Recurring monthly or quarterly contract.
 **Revenue per visit:** $1,500–$3,000 for lot + building. Monthly = $18,000–$36,000/year per dealer group.
 **Apollo keywords:** `car dealership`, `auto dealership`, `automotive dealer`, `auto group` — auto-included in DANNY_ORG_KEYWORDS as of 2026-05-26 run 88.
+**New titles (Run 107):** `fixed operations director`, `automotive service director`, `dealer principal` — now live in DANNY_TITLES. Fixed ops directors manage service bays + lot maintenance; dealer principals are owner-operators who sign all vendor contracts directly.
 **Pitch angle:** "You can't leave $40,000 cars sitting in a lot that looks like an oil slick" — same as PM angle (professional image + property value), but tailored to car lot visibility and customer impression.
 
 ### Medical Office Parks & Outpatient Facilities (NEW — May 2026, Run 101)
@@ -183,6 +184,9 @@ This enrolls ALL pending contacts (gas stations + fleet) without triggering a fr
 **Apollo keywords (live Run 106):** `restaurant chain`, `fast food franchise`, `food service management`, `restaurant franchise`, `quick service restaurant`, `restaurant management`, `qsr management`, `casual dining` — added to DANNY_ORG_KEYWORDS.
 **Pitch angle:** "Your drive-through canopy is the first surface every customer walks under. Grease buildup, mold, and exhaust staining are a corporate inspection failure waiting to happen. One quarterly contract covers all your NE Ohio locations — no separate scheduling."
 **Sequence:** Route to Property Manager sequence (facility management / brand standards angle).
+
+## Peak Season Angle — HOA Budget Season (May–June)
+HOA boards typically hold their annual budget and vendor approval meetings in May–June before the summer maintenance season. This means property managers and community association managers are ACTIVELY reviewing vendor lists RIGHT NOW. The PM sequence Touch 1 and any LinkedIn outreach should reference this window: "HOA boards are approving their summer vendor lists this month" or "Most associations lock in their exterior maintenance vendor before July." This creates urgency without being pushy — it's calendar-based fact. Works especially well for community associations, HOA management companies, and multifamily operators who work on fiscal budgets.
 
 ## County Rotation Calendar (2026)
 Danny rotates counties by ISO week number (`week % 6`). Cron runs every Monday 7am.
