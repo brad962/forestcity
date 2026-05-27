@@ -320,8 +320,9 @@ def run_daily():
     due_today_count = 0
     overdue_count = 0
     due_tomorrow_count = 0
+    stale_estimate_count = 0
     try:
-        from datetime import timedelta
+        from datetime import timedelta, date as _date_daily
         pipeline_f = BASE_DIR / 'pipeline_data.json'
         if pipeline_f.exists():
             pd_data = json.loads(pipeline_f.read_text())
@@ -331,16 +332,34 @@ def run_daily():
             due_today_m = [c for c in manual if c.get('next_followup') == date_str and c.get('stage') not in _inactive_d]
             overdue_m = [c for c in manual if c.get('next_followup') and c['next_followup'] < date_str and c.get('stage') not in _inactive_d]
             due_tomorrow_m = [c for c in manual if c.get('next_followup') == tomorrow_str and c.get('stage') not in _inactive_d]
+            # Stale estimates: "Estimate Sent" contacts with no follow-up in 5+ days — warm leads going cold fast
+            stale_estimate_m = []
+            for c in manual:
+                if c.get('stage') == 'Estimate Sent' and c.get('last_contact') and c.get('stage') not in _inactive_d:
+                    try:
+                        last_dt = _date_daily.fromisoformat(c['last_contact'])
+                        days_since = (_date_daily.fromisoformat(date_str) - last_dt).days
+                        if days_since >= 5:
+                            stale_estimate_m.append((c, days_since))
+                    except Exception:
+                        pass
             due_today_count = len(due_today_m)
             overdue_count = len(overdue_m)
             due_tomorrow_count = len(due_tomorrow_m)
-            if due_today_m or overdue_m or due_tomorrow_m:
+            stale_estimate_count = len(stale_estimate_m)
+            if due_today_m or overdue_m or due_tomorrow_m or stale_estimate_m:
                 manual_today_lines = ['---', '## 📋 Manual Pipeline — Action Required Today', '']
                 if overdue_m:
                     manual_today_lines.append(f'🔴 **OVERDUE ({len(overdue_m)}) — past due:**')
                     for c in overdue_m:
                         name = f'{c.get("first_name","")} {c.get("last_name","")}'.strip() or c.get('company', '?')
                         manual_today_lines.append(f'  - {name} ({c.get("company","")}) | was due {c["next_followup"]} | {c.get("phone","")}')
+                    manual_today_lines.append('')
+                if stale_estimate_m:
+                    manual_today_lines.append(f'💰 **ESTIMATE SENT — no follow-up in 5+ days ({len(stale_estimate_m)}) — revenue at risk:**')
+                    for c, days_since in stale_estimate_m:
+                        name = f'{c.get("first_name","")} {c.get("last_name","")}'.strip() or c.get('company', '?')
+                        manual_today_lines.append(f'  - {name} ({c.get("company","")}) | estimate sent {days_since} days ago | {c.get("phone","")} — follow up TODAY')
                     manual_today_lines.append('')
                 if due_today_m:
                     manual_today_lines.append(f'🟡 **DUE TODAY ({len(due_today_m)}):**')
@@ -368,16 +387,18 @@ def run_daily():
 
     out_file = f'hot_leads_{date_str}.md'
     (OUTPUTS / out_file).write_text('\n'.join(lines))
-    log(f'Daily hot leads report — {len(all_replied)} replied, {len(all_hot)} hot, {due_today_count} due today, {due_tomorrow_count} due tomorrow', out_file)
-    print(f'  → {len(all_replied)} replied, {len(all_hot)} hot leads, {due_today_count} due today, {due_tomorrow_count} due tomorrow. Saved to {out_file}')
+    log(f'Daily hot leads report — {len(all_replied)} replied, {len(all_hot)} hot, {due_today_count} due today, {due_tomorrow_count} due tomorrow, {stale_estimate_count} stale estimates', out_file)
+    print(f'  → {len(all_replied)} replied, {len(all_hot)} hot leads, {due_today_count} due today, {due_tomorrow_count} due tomorrow, {stale_estimate_count} stale estimates. Saved to {out_file}')
     git_push(f'Nina: daily hot leads {date_str}')
-    action_needed = bool(all_replied or due_today_count or overdue_count)
+    action_needed = bool(all_replied or due_today_count or overdue_count or stale_estimate_count)
     status = 'ACTION NEEDED' if action_needed else ('DONE' if not all_hot else 'ACTION NEEDED')
     summary = []
     if all_replied:
         summary.append(f'{len(all_replied)} contacts replied — follow up TODAY')
     if all_hot:
         summary.append(f'{len(all_hot)} hot leads (2+ opens) — connect on LinkedIn')
+    if stale_estimate_count:
+        summary.append(f'{stale_estimate_count} stale estimates (5+ days no follow-up) — revenue at risk')
     if due_today_count:
         summary.append(f'{due_today_count} manual pipeline contacts due today')
     if overdue_count:
@@ -391,8 +412,8 @@ def run_daily():
         metrics=[
             ('Replied', len(all_replied)),
             ('Hot Leads', len(all_hot)),
+            ('Stale Estimates', stale_estimate_count),
             ('Due Today', due_today_count),
-            ('Due Tomorrow', due_tomorrow_count),
         ],
         summary_lines=summary or ['No hot leads yet — check back tomorrow'],
         status=status,

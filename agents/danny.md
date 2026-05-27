@@ -175,6 +175,26 @@ This enrolls ALL pending contacts (gas stations + fleet) without triggering a fr
 **Pitch angle:** "Your loading docks accumulate oil, grease, and exhaust from daily dock activity. OSHA expects clean concrete for forklift safety. We handle all your NE Ohio facilities on one quarterly contract — no separate scheduling."
 **Sequence:** Route to Property Manager sequence (facility management / compliance angle).
 
+### Event Venues & Banquet Halls (NEW — May 2026, Run 108)
+**Status:** Org keywords + titles live in DANNY_ORG_KEYWORDS/DANNY_TITLES as of Run 108. Include in next county rotation (Medina June 1).
+**Target:** Venue Manager, Event Venue Manager, Banquet Manager, Venue Director, Event Center Manager, Catering Director, Conference Center Manager
+**Why:** NE Ohio spring/summer wedding season peaks May–July. Landerhaven Events (Mayfield Heights), Emerald Event Center, Hilton Cleveland Downtown ballrooms, Sheraton Suites, LaCentre Conference & Banquet (Westlake), Creekside Event Center — these venues have large parking lots, building exteriors, outdoor patios, and ceremony areas that must look pristine because event photos are permanent. A dirty parking lot at a June wedding is a reputational event, not just an aesthetic one. Venue directors sign vendor contracts directly; one pre-season contract = 2-4 visits annually.
+**Revenue per visit:** $1,500–$5,000 (parking lot + building exterior + entrance area + outdoor patio/ceremony space). 2–4 visits/year (pre-wedding season + post-summer) = $3,000–$8,000/year per venue. 10 venues = $30K–$80K/year.
+**Target companies:** Landerhaven Events, Emerald Event Center, LaCentre Conference & Banquet, Galaxy Restaurant & Event Center, Fernwood Garden & Event Center, hotel banquet departments (Hilton, Marriott, Sheraton), standalone wedding barns and estates.
+**Apollo keywords (live Run 108):** `event venue`, `banquet hall`, `wedding venue`, `event center`, `conference center`, `banquet facility`, `event facility`, `wedding reception` — added to DANNY_ORG_KEYWORDS.
+**Pitch angle:** "Your guests form their first impression in the parking lot before they reach the lobby or ceremony space. For venues, the exterior isn't just curb appeal — it's part of the experience. We schedule one pre-season clean before your spring booking rush and a fall clean after peak season."
+**Timing:** Contact NOW (May–June) — venues are about to enter their busiest stretch and the vendor relationship needs to be established before summer.
+**Sequence:** Route to Property Manager sequence (facility management / appearance angle).
+
+### Auto Body & Collision Shops (NEW — May 2026, Run 108)
+**Status:** Org keywords + titles live in DANNY_ORG_KEYWORDS/DANNY_TITLES as of Run 108. Include in next county rotation (Medina June 1).
+**Target:** Auto Body Shop Manager, Collision Center Manager, Body Shop Manager, District Collision Manager at multi-location collision repair chains
+**Why:** Auto body shops have large concrete aprons covered in oil, hydraulic fluid, paint overspray, and chemical residue from body repair. OSHA and EPA require clean shop driveways and parking areas (stormwater runoff compliance). NE Ohio has heavy presence of Maaco, CARSTAR, Caliber Collision (owned by Caliber), Crash Champions (acquired Service King NE Ohio locations) — these are corporate chains with district managers who sign vendor contracts for 5–15 locations. Small independents also need cleaning but usually pay per-visit, not contract.
+**Revenue per visit:** $800–$2,500 per shop (concrete apron + parking + building exterior). Quarterly contract = $3,200–$10,000/year per location. District deal (8 shops) = $25,600–$80,000/year.
+**Apollo keywords (live Run 108):** `auto body shop`, `body shop`, `collision center`, `collision repair`, `auto body`, `auto collision`, `vehicle collision` — added to DANNY_ORG_KEYWORDS.
+**Pitch angle:** "Your shop driveways tell customers what they can expect inside. Oil-stained concrete and chemical residue in the parking lot before they even walk in. We handle all your NE Ohio locations on one quarterly contract — OSHA clean and brand standard."
+**Sequence:** Route to Property Manager sequence (facility management / compliance angle).
+
 ### Restaurants & Quick Service Restaurant (QSR) Chains (NEW — May 2026, Run 106)
 **Status:** Org keywords + titles live in DANNY_ORG_KEYWORDS/DANNY_TITLES as of Run 106. Include in next county rotation (Medina June 1).
 **Target:** Restaurant District Manager, Food Service District Manager, Franchise Operations Manager, Franchise District Manager, Restaurant Facilities Manager at major QSR and casual dining chains

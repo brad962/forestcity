@@ -46,3 +46,33 @@
 >🔥 TODAY: 20 contacts DUE in Nina's report. Summit pull DEADLINE May 31 (4 days left). Instantly.ai MUST be paused before June 4 (8 days).
 >📅 TOMORROW: 16 Wave 2 contractor texts due. Day 3 ads check (may28_summit_pull_emergency_card).
 >⚡ FASTEST WIN: Send past customer blast today (see outputs/tommy/past_customer_june_blast_2026-05-27.md) — 30 min = $1,800–$3,000 potential.
+---
+🔧 *Vera — Auto-Upgrade (Run 108)*
+>Changed: `workers/lead_pipeline.py` + `integrations/mixmax.py` — added **Event Venues & Banquet Halls** as new commercial segment; titles: `venue manager`, `event venue manager`, `banquet manager`, `event center manager`, `venue director`, `catering director`, `conference center manager`; org keywords: `event venue`, `banquet hall`, `wedding venue`, `event center`, `conference center`, `banquet facility`
+>Why: NE Ohio spring wedding season peaks May–July; Landerhaven, Emerald Event Center, Hilton Cleveland ballrooms, hotel event spaces — venue directors sign vendor contracts and exterior appearance is non-negotiable (event photos are permanent); $3K–$8K/year per venue; contact NOW before summer rush locks in other vendors
+>File: workers/lead_pipeline.py, integrations/mixmax.py
+---
+🔧 *Vera — Auto-Upgrade (Run 108)*
+>Changed: `workers/lead_pipeline.py` + `integrations/mixmax.py` — added **Auto Body & Collision Shops** as new commercial segment; titles: `auto body shop manager`, `collision center manager`, `body shop manager`, `district collision manager`; org keywords: `auto body shop`, `body shop`, `collision center`, `collision repair`, `auto collision`
+>Why: Maaco, CARSTAR, Caliber Collision, Crash Champions district managers sign vendor contracts for 5-15 NE Ohio shops; concrete aprons covered in oil/paint overspray; OSHA stormwater compliance creates recurring urgency; one district deal = $25K–$80K/year; zero competitors targeting this segment
+>File: workers/lead_pipeline.py, integrations/mixmax.py
+---
+🔧 *Vera — Auto-Upgrade (Run 108)*
+>Changed: `workers/nina_report.py` — added stale estimates check to the **daily** hot leads report; "Estimate Sent" contacts with last_contact > 5 days now surface as `💰 ESTIMATE SENT — no follow-up in 5+ days — revenue at risk:` with names, days, and phone numbers; stale_estimate_count added to report card metrics
+>Why: The stale estimate warning only existed in the weekly report — a warm estimate could sit untouched for 5+ days before the Monday report caught it; adding it to the daily report means Bradley sees it the same morning it crosses the 5-day threshold
+>File: workers/nina_report.py
+---
+🔧 *Vera — Auto-Upgrade (Run 108)*
+>Changed: `workers/vera_relay.py` — added `_check_summit_deadline()` (fires daily countdown alert through May 31) + `_check_gas_station_pending()` (fires daily alert if gas_station contacts in pipeline but sequence still PENDING); both wired into `_main_body()`
+>Why: Summit deadline is 4 days away with no code-level daily push; gas station 12 contacts have been waiting since May 19 with no persistent daily reminder; both alerts are now self-deactivating once the condition clears
+>File: workers/vera_relay.py
+---
+📝 *Vera — New Deliverable (Run 108)*
+>File: `outputs/vera/may27_wednesday_pm_action_card_2026-05-27.md`
+>What: Single-screen Wednesday afternoon action card — Summit County 4-day countdown with exact command; gas station sequence 30-min guide reference; exact contractor text scripts for Bryan/Bulletproof/Damrons; pipeline snapshot (36 contacts, 33 untouched, 20 due today); priority stack table with time + revenue estimates for every task this week
+>Why: Consolidates all current blockers and actions into one read — no need to open 6 different guides
+---
+✅ *Vera — Scan Complete 2026-05-27 (Run 108)*
+>5 auto-upgrades shipped | 1 deliverable | 0 issues resolved | 36 open
+>New this run: Event Venues + Auto Body segments live in code | Stale estimates now in daily Nina report | Summit countdown + gas station PENDING alerts wired into vera_relay.py
+>Critical path: Summit pull by May 31 → Medina pull June 1 → Instantly paused → June 4 Round 2 enrollment

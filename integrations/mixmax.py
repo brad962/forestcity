@@ -135,6 +135,12 @@ PROPERTY_MANAGER_TITLES = [
     # multi-location vendor contracts for 5-20 locations; $16K-$48K/year per district deal (added 2026-05-27 run 106)
     'restaurant district manager', 'food service district manager', 'franchise operations manager',
     'restaurant facilities manager', 'qsr district manager', 'franchise district manager',
+    # Event venues & banquet halls — appearance critical for event photos; venue directors sign vendor contracts (added 2026-05-27 run 108)
+    'venue manager', 'event venue manager', 'banquet manager', 'event center manager',
+    'venue director', 'venue operations manager', 'catering director', 'conference center manager',
+    # Auto body & collision shops — OSHA/EPA compliance angle; district managers sign multi-location contracts (added 2026-05-27 run 108)
+    'auto body shop manager', 'collision center manager', 'body shop manager',
+    'collision shop manager', 'district collision manager', 'body shop district manager',
 ]
 
 REALTOR_TITLES = [

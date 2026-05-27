@@ -222,6 +222,92 @@ def _check_workiz_staleness():
         log(f'Workiz staleness alert posted — {days_stale} days since last report')
 
 
+def _check_summit_deadline():
+    """Fire a countdown alert daily May 27–May 31. Summit pull deadline is May 31.
+    After May 31 Summit doesn't run until July 6 (Medina→Geauga+Portage→Cuyahoga rotation).
+    """
+    from datetime import date as _date_s
+    today = _date_s.today()
+    deadline = _date_s(2026, 5, 31)
+    if today > deadline:
+        return
+    days_left = (deadline - today).days
+
+    alert_sentinel = BASE_DIR / 'outputs' / 'vera' / '.summit_alert_sent_date'
+    today_str = today.strftime('%Y-%m-%d')
+    if alert_sentinel.exists() and alert_sentinel.read_text().strip() == today_str:
+        return
+
+    urgency_emoji = '🚨' if days_left <= 1 else '⏰'
+    days_label = 'TODAY — FINAL DAY' if days_left == 0 else f'{days_left} DAY{"S" if days_left != 1 else ""} LEFT'
+    msg = (
+        f'{urgency_emoji} *Summit County Pull — {days_label} (Deadline May 31)*\n'
+        f'>Miss this window = no Summit leads until July 6 (next time it comes up in rotation).\n'
+        f'>All new commercial segments (restaurants, banks, gyms, medical offices) miss peak season.\n'
+        f'>Command (6 min, unattended): `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py danny Summit`\n'
+        f'>Or double-click: scripts/run_summit_pull.command in Finder.'
+    )
+    if post_slack(msg):
+        alert_sentinel.parent.mkdir(exist_ok=True)
+        try:
+            alert_sentinel.write_text(today_str)
+        except Exception:
+            pass
+        log(f'Summit County deadline countdown posted — {days_left} days left')
+
+
+def _check_gas_station_pending():
+    """Alert daily if gas_station contacts are in pipeline but sequence is still PENDING."""
+    alert_sentinel = BASE_DIR / 'outputs' / 'vera' / '.gas_station_pending_alert_date'
+    today_str = datetime.now().strftime('%Y-%m-%d')
+    if alert_sentinel.exists() and alert_sentinel.read_text().strip() == today_str:
+        return
+
+    try:
+        sys_path_saved = __import__('sys').path[:]
+        __import__('sys').path.insert(0, str(BASE_DIR))
+        from integrations.mixmax import SEQUENCES
+        if SEQUENCES.get('gas_station', {}).get('id') != 'PENDING':
+            return  # Sequence is live — no alert needed
+    except Exception:
+        return
+    finally:
+        try:
+            __import__('sys').path[:] = sys_path_saved
+        except Exception:
+            pass
+
+    pipeline_f = BASE_DIR / 'pipeline_data.json'
+    if not pipeline_f.exists():
+        return
+    try:
+        import json as _json
+        pd = _json.loads(pipeline_f.read_text())
+        gas_contacts = [
+            c for c in pd.get('manual_contacts', [])
+            if c.get('lead_type') == 'gas_station' or c.get('_lead_type') == 'gas_station'
+        ]
+    except Exception:
+        return
+
+    if not gas_contacts:
+        return
+
+    msg = (
+        f'⛽ *Gas Station Sequence Still PENDING — {len(gas_contacts)} contacts waiting*\n'
+        f'>These {len(gas_contacts)} contacts cannot be enrolled until you create the Mixmax sequence (30 min).\n'
+        f'>Setup guide: `outputs/danny/gas_station_sequence_create_now_2026-05-27.md`\n'
+        f'>Or: Mixmax → Sequences → New → paste ID into `integrations/mixmax.py` line 54.'
+    )
+    if post_slack(msg):
+        alert_sentinel.parent.mkdir(exist_ok=True)
+        try:
+            alert_sentinel.write_text(today_str)
+        except Exception:
+            pass
+        log(f'Gas station PENDING alert posted — {len(gas_contacts)} contacts waiting')
+
+
 def _check_carla_staleness():
     """Check when Carla last ran. Post Slack alert if > 8 days (same cadence as Danny). Once per day."""
     alert_sentinel = BASE_DIR / 'outputs' / 'vera' / '.carla_alert_sent_date'
@@ -329,6 +415,8 @@ def _main_body():
     _check_nina_staleness()
     _check_workiz_staleness()
     _check_instantly_paused()
+    _check_summit_deadline()
+    _check_gas_station_pending()
 
     # Fetch first so origin/main is current before flush checks origin/main..HEAD
     git(['fetch', 'origin'])

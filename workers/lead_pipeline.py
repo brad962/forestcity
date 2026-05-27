@@ -155,6 +155,17 @@ DANNY_TITLES = [
     # 10-location district deal = $16K-$48K/year; first pull Medina June 1 (added 2026-05-27 run 106)
     'restaurant district manager', 'food service district manager', 'franchise operations manager',
     'restaurant facilities manager', 'qsr district manager', 'franchise district manager',
+    # Event venues & banquet halls — NE Ohio spring/summer wedding season peaks May-June; Landerhaven, Emerald Event Center,
+    # Hilton Cleveland ballrooms, Sheraton Suites, standalone wedding barns; large parking lots + building exteriors +
+    # outdoor patios + ceremony areas must look pristine (event photos are permanent); venue directors sign vendor contracts;
+    # 2-4 visits/year (pre-wedding season + post-summer cleanup); $1,500-$5,000/visit; $3K-$8K/year per venue (added 2026-05-27 run 108)
+    'venue manager', 'event venue manager', 'banquet manager', 'event center manager',
+    'venue director', 'venue operations manager', 'catering director', 'conference center manager',
+    # Auto body & collision shops — large concrete aprons + building exteriors accumulate oil, paint overspray, chemical residue;
+    # OSHA/EPA compliance angle; Maaco, CARSTAR, Caliber Collision, Crash Champions have district managers signing vendor contracts;
+    # $800-$2,500/shop; district manager oversees 5-15 locations = $4K-$37K/year deal; zero current competitors (added 2026-05-27 run 108)
+    'auto body shop manager', 'collision center manager', 'body shop manager',
+    'collision shop manager', 'district collision manager', 'body shop district manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -229,6 +240,15 @@ DANNY_ORG_KEYWORDS = [
     # $400-$1,200/location; quarterly = $1.6K-$4.8K/location; 10-location district deal = $16K-$48K/year (added 2026-05-27 run 106)
     'restaurant chain', 'fast food franchise', 'food service management', 'restaurant franchise',
     'quick service restaurant', 'restaurant management', 'qsr management', 'casual dining',
+    # Event venues & banquet halls — NE Ohio wedding season peaks May-June; Landerhaven, Emerald, Hilton Cleveland,
+    # Sheraton Suites, wedding barns; large parking lots + outdoor patios + building exteriors = curb appeal is non-negotiable;
+    # venue directors sign vendor contracts; one contract = $3K-$8K/year (added 2026-05-27 run 108)
+    'event venue', 'banquet hall', 'wedding venue', 'event center', 'conference center',
+    'banquet facility', 'event facility', 'wedding reception',
+    # Auto body & collision shops — large concrete aprons accumulate oil, paint overspray, chemical residue;
+    # Maaco, CARSTAR, Caliber Collision, Crash Champions district managers sign vendor contracts (added 2026-05-27 run 108)
+    'auto body shop', 'body shop', 'collision center', 'collision repair', 'auto body',
+    'auto collision', 'vehicle collision',
 ]
 
 CARLA_SEARCHES = [
