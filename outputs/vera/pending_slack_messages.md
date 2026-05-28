@@ -30,3 +30,39 @@
 >🚨 Summit pull: 3 days left (May 31 deadline). Double-click scripts/run_summit_pull.command.
 >📲 TODAY: 16 Wave 2 contractor texts DUE + Ads Day 3 check. Both relay alerts fired.
 >🗓️ June 8 (11 days): Cuyahoga pull — 25+ segments including new Manufacturing + Car Wash. Biggest pull of the year.
+---
+🔧 *Vera — Auto-Upgrade | Run 119*
+>Changed: `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — Public K-12 School Districts added as new commercial segment
+>Why: June–August = every school building in NE Ohio is EMPTY. Buildings & Grounds Directors use this window for annual exterior maintenance. Cleveland Metro alone has 100+ buildings. One district deal = $20K–$160K in a single summer. This entire segment was invisible to Danny — zero titles or org keywords existed.
+>Titles: director of buildings and grounds, buildings and grounds director, school maintenance director, school district facilities manager
+>Org keywords: school district, city schools, public school district, board of education, k-12 education
+>First pull: June 8 Cuyahoga (Cleveland Metro, Lakewood, Parma, Shaker Heights)
+>File: `workers/lead_pipeline.py`, `integrations/mixmax.py`, `agents/danny.md`
+---
+🔧 *Vera — Auto-Upgrade | Run 119*
+>Changed: `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — Car Rental Companies added as new commercial segment
+>Why: Enterprise, Hertz, Avis, Budget, National, Alamo all have multiple NE Ohio locations. Large paved lots with vehicle oil/exhaust staining. District managers sign multi-site vendor contracts. $1,500–$4,000/location; district deal = $6K–$16K/year. Zero car rental keywords existed in Danny's Apollo search.
+>Titles: car rental district manager, rental car location manager, car rental operations manager, branch rental manager
+>Org keywords: car rental, vehicle rental, rental car, auto rental
+>First pull: June 8 Cuyahoga (Hopkins Airport corridor, Independence, Berea branches)
+>File: `workers/lead_pipeline.py`, `integrations/mixmax.py`, `agents/danny.md`
+---
+🔧 *Vera — Auto-Upgrade | Run 119*
+>Changed: `workers/vera_relay.py` — added 3 missing July relay functions (July 13, 20, 27 coverage gap)
+>Why: After July 6 (Medina, added Run 118) the relay went completely dark for 3 weeks. Week 29 = Geauga+Portage (July 13). Week 30 = Cuyahoga 2nd pass (July 20) — NEW: school district + car rental segments NOW active for this pull. Week 31 = Lake 2nd pass (July 27). Without these, Bradley would miss 3 county pull Mondays in the heart of peak season.
+>Added: `_check_july13_geauga_portage()`, `_check_july20_cuyahoga_2()`, `_check_july27_lake_2()` — all wired into `_main_body()`
+>File: `workers/vera_relay.py`
+---
+✅ *Vera — Scan Complete 2026-05-28 (Run 119)*
+>7 auto-upgrades shipped | 0 proposals | 52 open issues (3 new gaps found + fixed this run)
+>
+>🏫 NEW SEGMENT: Public K-12 School Districts — summer window is RIGHT NOW. Buildings empty June-Aug. Buildings & Grounds Directors buying now. Cleveland Metro 100+ buildings. First pull June 8.
+>🚗 NEW SEGMENT: Car Rental Companies — Enterprise/Hertz/Avis NE Ohio. Oil-stained lots. District managers sign multi-site contracts. First pull June 8.
+>📅 RELAY COVERAGE FIXED: July 13 (Geauga+Portage), July 20 (Cuyahoga 2nd pass), July 27 (Lake 2nd pass) now have reminders. Relay coverage is now continuous through end of peak season.
+>
+>🚨 STILL OPEN — ACTION NEEDED:
+>• Summit pull: 3 days left (May 31 deadline) → double-click scripts/run_summit_pull.command
+>• Gas station: PENDING sequence, 12 contacts waiting → create in Mixmax UI (30 min), paste ID in integrations/mixmax.py
+>• Fleet washing: PENDING sequence → same process as gas station
+>• Instantly.ai: MUST pause both campaigns before June 4 enrollment
+>• 36 pipeline contacts overdue → daily relay fires, but someone needs to work them

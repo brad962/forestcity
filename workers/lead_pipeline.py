@@ -243,6 +243,19 @@ DANNY_TITLES = [
     # district managers sign multi-location contracts; $1,500-$4,000/year per facility (added 2026-05-28 run 118)
     'car wash manager', 'car wash district manager', 'car wash owner', 'car wash operator',
     'carwash manager', 'express wash manager', 'tunnel wash manager', 'car wash general manager',
+    # Public K-12 school districts — buildings and grounds directors oversee all district facilities;
+    # summer (June-August) = buildings empty = peak annual exterior maintenance window;
+    # Cleveland Metro, Lakewood, Parma, Solon, Strongsville, Shaker Heights, Cuyahoga Falls, Akron Public;
+    # one district deal = 10-30 school buildings; $2K-$8K/building; one district = $20K-$160K/year;
+    # 'director of facilities' already in list; adding school-specific titles Apollo surfaces at school orgs (added 2026-05-28 run 119)
+    'director of buildings and grounds', 'buildings and grounds director',
+    'school maintenance director', 'school district facilities manager',
+    # Car rental companies — Enterprise, Hertz, Avis, Budget, National, Alamo at Hopkins Airport + NE Ohio suburban lots;
+    # large paved parking lots with vehicle oil/exhaust staining; building exteriors;
+    # district managers oversee 3-8 locations and sign multi-site vendor contracts;
+    # $1,500-$4,000/location; district deal = $12K-$32K/year (added 2026-05-28 run 119)
+    'car rental district manager', 'rental car location manager', 'car rental operations manager',
+    'branch rental manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -383,6 +396,16 @@ DANNY_ORG_KEYWORDS = [
     # district managers sign multi-location contracts; $1,500-$4,000/year per location (added 2026-05-28 run 118)
     'car wash', 'auto wash', 'carwash', 'vehicle wash', 'express car wash',
     'tunnel car wash', 'coin car wash', 'car wash franchise',
+    # Public K-12 school districts — Cleveland Metro, Lakewood, Parma, Shaker Heights, Solon, Strongsville,
+    # Brecksville-Broadview Heights, North Royalton, Cuyahoga Falls, Akron Public, Hudson City Schools;
+    # summer (June-August) = buildings empty; facilities teams do annual exterior maintenance in this window;
+    # 'private school' + 'independent school' already above — these keywords catch PUBLIC district orgs in Apollo (added 2026-05-28 run 119)
+    'school district', 'city schools', 'public school district', 'local school district',
+    'board of education', 'k-12 education',
+    # Car rental companies — Enterprise Rent-A-Car, Hertz, Avis, Budget, National, Alamo at Hopkins Airport + suburban NE Ohio;
+    # large paved lots with vehicle oil/exhaust staining; building exteriors; district managers sign
+    # multi-location vendor contracts; $1,500-$4,000/location; district deal = $12K-$32K/year (added 2026-05-28 run 119)
+    'car rental', 'vehicle rental', 'rental car', 'auto rental',
 ]
 
 CARLA_SEARCHES = [

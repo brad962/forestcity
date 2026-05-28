@@ -963,3 +963,12 @@
 [2026-05-28 03:10] Vera | Auto-upgrade: agents/danny.md — fixed county rotation calendar table (all dates were one week late); added Manufacturing + Car Wash segment documentation; corrected Week 24=June 8 Cuyahoga, Week 25=June 15 Lake, Week 26=June 22 Lorain, Week 27=June 29 Summit, Week 28=July 6 Medina | agents/danny.md | Done
 [2026-05-28 03:10] Vera | Updated outputs/vera/open_issues.md — Run 118 metrics; 2 new issues found and fixed (county dates, fleet pending); persistent troubleshooting updates | outputs/vera/open_issues.md | Done
 [2026-05-28 03:10] Vera | Updated outputs/vera/pending_slack_messages.md — 5 auto-upgrade notifications + scan complete summary for relay | outputs/vera/pending_slack_messages.md | Done
+[2026-05-28 12:00] Vera | Run 119 — Auto-upgrade: added Public K-12 School Districts titles to DANNY_TITLES | workers/lead_pipeline.py | Done
+[2026-05-28 12:00] Vera | Run 119 — Auto-upgrade: added school district org keywords to DANNY_ORG_KEYWORDS | workers/lead_pipeline.py | Done
+[2026-05-28 12:00] Vera | Run 119 — Auto-upgrade: added Car Rental Companies titles to DANNY_TITLES | workers/lead_pipeline.py | Done
+[2026-05-28 12:00] Vera | Run 119 — Auto-upgrade: added car rental org keywords to DANNY_ORG_KEYWORDS | workers/lead_pipeline.py | Done
+[2026-05-28 12:00] Vera | Run 119 — Auto-upgrade: added school district + car rental titles to PROPERTY_MANAGER_TITLES | integrations/mixmax.py | Done
+[2026-05-28 12:00] Vera | Run 119 — Auto-upgrade: added Public K-12 School Districts + Car Rental Companies segment briefs | agents/danny.md | Done
+[2026-05-28 12:00] Vera | Run 119 — Auto-upgrade: added _check_july13_geauga_portage() + _check_july20_cuyahoga_2() + _check_july27_lake_2() relay functions; wired into _main_body() | workers/vera_relay.py | Done
+[2026-05-28 12:00] Vera | Run 119 — Updated open_issues.md with Run 119 header, 3 new issues found and fixed | outputs/vera/open_issues.md | Done
+[2026-05-28 12:00] Vera | Run 119 — Wrote 5 Slack messages to pending_slack_messages.md (4 auto-upgrades + scan complete summary) | outputs/vera/pending_slack_messages.md | Done

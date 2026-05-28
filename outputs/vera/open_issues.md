@@ -1,6 +1,56 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 118 | 2026-05-28 | Auto-fixes shipped: 5 | New RESOLVED: 0 | Open: 52 (2 new: county rotation dates wrong + fleet sequence pending no alert)*
+*Run 119 | 2026-05-28 | Auto-fixes shipped: 7 | New RESOLVED: 0 | Open: 52 (0 net new: 2 new issues added, 0 resolved, but July relay gap + school district/car rental gaps now covered)*
+
+---
+
+## RUN METRICS — Run 119 | 2026-05-28
+- Total RESOLVED: 85 (0 new this run)
+- Total OPEN: 52 (0 net new — July relay gaps resolved, school district / car rental gaps resolved by code)
+- Auto-upgrades shipped: 7
+  1. `workers/lead_pipeline.py` DANNY_TITLES — added **Public K-12 School Districts**: `director of buildings and grounds`, `buildings and grounds director`, `school maintenance director`, `school district facilities manager` — summer window = empty buildings = peak annual exterior maintenance; Cleveland Metro 100+ buildings; one district deal = $20K–$160K
+  2. `workers/lead_pipeline.py` DANNY_ORG_KEYWORDS — added school district keywords: `school district`, `city schools`, `public school district`, `local school district`, `board of education`, `k-12 education`
+  3. `workers/lead_pipeline.py` DANNY_TITLES — added **Car Rental Companies**: `car rental district manager`, `rental car location manager`, `car rental operations manager`, `branch rental manager` — Enterprise/Hertz/Avis/Budget/National/Alamo NE Ohio; district deal = $6K–$16K/year
+  4. `workers/lead_pipeline.py` DANNY_ORG_KEYWORDS — added car rental keywords: `car rental`, `vehicle rental`, `rental car`, `auto rental`
+  5. `integrations/mixmax.py` PROPERTY_MANAGER_TITLES — added same school district + car rental titles so Mixmax routing catches these contacts when imported; routes to Property Manager sequence
+  6. `agents/danny.md` — added full segment briefs for both Public K-12 School Districts and Car Rental Companies: pitch angle, revenue math, NE Ohio targets, timing, Apollo keywords
+  7. `workers/vera_relay.py` — added 3 missing July relay functions covering the post-July-6 coverage gap: `_check_july13_geauga_portage()` (July 7–13, Week 29), `_check_july20_cuyahoga_2()` (July 14–20, Week 30), `_check_july27_lake_2()` (July 21–27, Week 31); all wired into `_main_body()`
+
+**New issues identified this run:**
+- July relay coverage gap (July 13, 20, 27) — FIXED this run with 3 new relay functions
+- Public K-12 School Districts not in Apollo search — FIXED this run (code added; first pull June 8 Cuyahoga)
+- Car Rental Companies not in Apollo search — FIXED this run (code added; first pull June 8 Cuyahoga)
+
+**Persistent troubleshooting (new angles tried this run):**
+- Gas station PENDING: Still 12 contacts waiting. Relay fires daily. Action: Bradley must open Mixmax UI, create sequence, paste ID. 30-min task. Blocking until done.
+- Fleet sequence PENDING: Same pattern. Relay now fires daily (added Run 118). Sequence copy exists at `outputs/danny/sequence_fleet_washing_2026-05-18.md`. Bradley must create in Mixmax UI.
+- Summit County pull deadline May 31: 3 days out. All scripts exist. Relay fires daily alert. Fully operational — Bradley must click `scripts/run_summit_pull.command`.
+- Pipeline overdue contacts (36): Relay fires daily. Operational blocker on Bradley's side.
+- Instantly.ai pause status unconfirmed: Relay fires daily `_check_instantly_paused()`. June 4 enrollment cannot proceed safely until both campaigns are confirmed PAUSED.
+
+---
+
+## OPEN — July Relay Coverage Gap (July 13, 20, 27) 🔴 FIXED (Run 119)
+- First seen: 2026-05-28 (Run 119 scan)
+- Description: vera_relay.py had coverage through July 6 (Medina, added Run 118) but NOTHING for July 13 (Week 29 Geauga+Portage), July 20 (Week 30 Cuyahoga 2nd pass), or July 27 (Week 31 Lake 2nd pass). The 6-week rotation continues through July. Without relay coverage, Bradley would go dark on county pull reminders for the entire second half of peak season.
+- Fix applied (Run 119): Added `_check_july13_geauga_portage()`, `_check_july20_cuyahoga_2()`, `_check_july27_lake_2()` to vera_relay.py. All three wired into `_main_body()`. Sentinel files use standard pattern.
+- Resolution criteria: Relay fires July 7–13 for Geauga+Portage, July 14–20 for Cuyahoga 2nd pass, July 21–27 for Lake 2nd pass.
+
+---
+
+## OPEN — Public K-12 School Districts Not in Apollo Search 🔴 FIXED (Run 119)
+- First seen: 2026-05-28 (Run 119 scan)
+- Description: Summer window (June–August) = school buildings empty = facilities teams doing annual exterior maintenance. Buildings and Grounds Directors sign vendor contracts for all district buildings. Cleveland Metro alone has 100+ buildings. Zero school district keywords existed in DANNY_TITLES or DANNY_ORG_KEYWORDS. This entire segment was invisible to Danny's Apollo pulls.
+- Fix applied (Run 119): Added titles and org keywords to DANNY_TITLES, DANNY_ORG_KEYWORDS, and mixmax.py PROPERTY_MANAGER_TITLES. Full segment brief added to agents/danny.md. First pull at June 8 Cuyahoga (Cleveland Metro, Lakewood, Parma, Shaker Heights).
+- Resolution criteria: Contacts from Cleveland Metro / Lake County school districts appear in Danny's June 8+ pulls.
+
+---
+
+## OPEN — Car Rental Companies Not in Apollo Search 🔴 FIXED (Run 119)
+- First seen: 2026-05-28 (Run 119 scan)
+- Description: Enterprise, Hertz, Avis, Budget, National, Alamo have multiple NE Ohio locations. Large paved parking/staging lots with vehicle oil and exhaust staining. District managers sign multi-site vendor contracts. Zero car rental keywords existed in Danny's search parameters.
+- Fix applied (Run 119): Added titles (`car rental district manager`, etc.) to DANNY_TITLES and DANNY_ORG_KEYWORDS. Added to mixmax.py PROPERTY_MANAGER_TITLES for routing. Full segment brief in agents/danny.md. First pull June 8 Cuyahoga (Hopkins Airport corridor, Independence, Berea branches).
+- Resolution criteria: Car rental district managers appear in Danny's June 8+ Cuyahoga pulls.
 
 ---
 

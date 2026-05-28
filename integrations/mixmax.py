@@ -197,6 +197,14 @@ PROPERTY_MANAGER_TITLES = [
     # district managers sign multi-location contracts; ironic pitch = memorable; $1,500-$4,000/year (added 2026-05-28 run 118)
     'car wash manager', 'car wash district manager', 'car wash owner', 'car wash operator',
     'carwash manager', 'express wash manager', 'tunnel wash manager', 'car wash general manager',
+    # Public K-12 school districts — summer = buildings empty; facilities teams do annual maintenance;
+    # buildings and grounds directors sign vendor contracts for all district buildings (added 2026-05-28 run 119)
+    'director of buildings and grounds', 'buildings and grounds director',
+    'school maintenance director', 'school district facilities manager',
+    # Car rental companies — large paved lots at airport + suburban locations;
+    # district managers sign multi-site vendor contracts (added 2026-05-28 run 119)
+    'car rental district manager', 'rental car location manager', 'car rental operations manager',
+    'branch rental manager',
 ]
 
 REALTOR_TITLES = [

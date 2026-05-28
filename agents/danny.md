@@ -331,6 +331,29 @@ This enrolls ALL pending contacts (gas stations + fleet) without triggering a fr
 **Timing:** Spring opening/ramp-up (March–May) and fall cleanup (October). But year-round exterior cleaning need — contact any time.
 **Sequence:** Route to Property Manager sequence (facility management / professional appearance angle).
 
+### Public K-12 School Districts (NEW — May 2026, Run 119)
+**Status:** Org keywords + titles live in DANNY_ORG_KEYWORDS/DANNY_TITLES as of Run 119. Fires starting June 8 Cuyahoga pull (Cleveland Metro Schools, Lakewood, Parma, Shaker Heights, Cleveland Heights–University Heights) and June 15 Lake County pull (Mentor, Willoughby-Eastlake, Euclid, Wickliffe).
+**Target:** Director of Buildings and Grounds, Buildings and Grounds Director, School Maintenance Director, School District Facilities Manager, Director of Facilities (already in list — school district orgs), VP Facilities, Operations Director at district offices.
+**Why:** NE Ohio's largest school districts each operate 10–30+ buildings: elementary schools, middle schools, high schools, athletic facilities, admin buildings, bus garages, maintenance depots. Buildings sit EMPTY June through August — facilities teams use this window to do annual deep cleaning, painting, and exterior maintenance. The summer maintenance window IS the buying season. Decision-maker is the Buildings and Grounds Director who reports to the Superintendent; they control the facilities vendor budget and are looking for exterior cleaning vendors RIGHT NOW (May/June = planning window for summer contracts). Cleveland Metro Schools alone has 100+ buildings across the city.
+**Revenue per district:** $2,000–$8,000/building (exterior wash + parking lot + sidewalks). 30-school district = $60K–$240K in a single summer. Even a 10-school suburban district = $20K–$80K. Annual recurring.
+**Revenue per visit (single building):** $800–$3,000 depending on size.
+**NE Ohio targets:** Cleveland Metropolitan School District (100+ buildings), Lakewood City Schools, Parma City Schools, Shaker Heights City Schools, Cleveland Heights–University Heights City Schools, Solon City Schools, Strongsville City Schools, Brecksville-Broadview Heights City Schools, North Royalton City Schools, Cuyahoga Falls City Schools, Akron Public Schools, Hudson City School District, Mentor Exempted Village Schools, Willoughby-Eastlake City Schools.
+**Apollo keywords (live Run 119):** `school district`, `city schools`, `public school district`, `local school district`, `board of education`, `k-12 education` — added to DANNY_ORG_KEYWORDS.
+**Pitch angle:** "Your buildings are empty all summer. That's the window to get exteriors done — no kids, no buses, no interruptions. Let's talk about a summer schedule before your crew's calendar fills up."
+**Timing:** May–June = prime contact window (planning summer vendor contracts). June–August = work window. Contact B&G Directors NOW before summer schedules lock.
+**Sequence:** Route to Property Manager sequence (facility/institutional management angle).
+
+### Car Rental Companies (NEW — May 2026, Run 119)
+**Status:** Org keywords + titles live in DANNY_ORG_KEYWORDS/DANNY_TITLES as of Run 119. Fires starting June 8 Cuyahoga pull (Hopkins Airport corridor, Berea, Middleburg Heights Enterprise/Hertz/Avis/Budget/National/Alamo branches).
+**Target:** Car Rental District Manager, Rental Car Location Manager, Car Rental Operations Manager, Branch Rental Manager, Area Manager (car rental orgs).
+**Why:** Enterprise, Hertz, Avis, Budget, National, and Alamo each have multiple NE Ohio locations: Hopkins Airport, Berea, Middleburg Heights, Strongsville, Mayfield Heights, Independence, Akron/Canton Airport corridor, and suburban branches throughout. Each location has: (a) a large parking/staging lot with vehicle oil stains, exhaust residue, and tire marks; (b) a customer-facing building exterior that represents the brand; (c) a car prep/staging area. District managers oversee 3–8 locations and sign area-wide vendor contracts. One contract = multiple locations serviced on a recurring schedule.
+**Revenue per location:** $1,500–$4,000/year (lot cleaning + building exterior + 2× annual visits). District contract (4 locations) = $6,000–$16,000/year.
+**NE Ohio targets:** Enterprise Rent-A-Car (highest branch density in NE Ohio), Hertz (Hopkins + suburban), Avis Budget Group (combined footprint), National/Alamo (Hopkins Airport concession), Silvercar/Audi (premium), plus regional independents (Affordable Auto Rental, Penske, etc.).
+**Apollo keywords (live Run 119):** `car rental`, `vehicle rental`, `rental car`, `auto rental` — added to DANNY_ORG_KEYWORDS.
+**Pitch angle:** "Your lots take a beating every day — oil, exhaust, tire marks. A quarterly clean keeps the customer-facing areas looking sharp and protects the pavement long-term. District contract means one call covers all your NE Ohio locations."
+**Timing:** Spring (March–May) = lots show winter salt/grime worst; pre-summer ramp-up. Fall = post-summer cleanup before snow season. Contact district managers any time — ongoing need.
+**Sequence:** Route to Property Manager sequence (multi-site facility management angle).
+
 ## Peak Season Angle — HOA Budget Season (May–June)
 HOA boards typically hold their annual budget and vendor approval meetings in May–June before the summer maintenance season. This means property managers and community association managers are ACTIVELY reviewing vendor lists RIGHT NOW. The PM sequence Touch 1 and any LinkedIn outreach should reference this window: "HOA boards are approving their summer vendor lists this month" or "Most associations lock in their exterior maintenance vendor before July." This creates urgency without being pushy — it's calendar-based fact. Works especially well for community associations, HOA management companies, and multifamily operators who work on fiscal budgets.
 

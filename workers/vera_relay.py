@@ -1289,6 +1289,134 @@ def _flush_unpushed_commits():
         print(f'  ⚠️ Flush push failed: {push_result.stderr[:100]} — continuing with pull')
 
 
+def _check_july13_geauga_portage():
+    """Fire July 7–13 countdown for Geauga+Portage pull (Week 29, July 13 Monday).
+    Week 29 % 6 = 5 → Geauga+Portage in the rotation. Chardon, Painesville Township,
+    Portage County (Kent, Ravenna, Streetsboro, Aurora). Second cycle of peak season.
+    Without this reminder July relay coverage has a gap after Week 28 Medina."""
+    from datetime import date as _date_gp
+    today = _date_gp.today()
+    start = _date_gp(2026, 7, 7)
+    end   = _date_gp(2026, 7, 13)
+    if not (start <= today <= end):
+        return
+
+    alert_sentinel = BASE_DIR / 'outputs' / 'vera' / '.july13_geauga_portage_sent_date'
+    today_str = today.strftime('%Y-%m-%d')
+    if alert_sentinel.exists() and alert_sentinel.read_text().strip() == today_str:
+        return
+
+    pull_date = _date_gp(2026, 7, 13)
+    days_left = (pull_date - today).days
+    if days_left > 0:
+        label = f'{days_left} day{"s" if days_left != 1 else ""} away'
+        note = 'Cron fires Mon July 13 at 7am. Verify: `cat logs/cron.log | tail -10`'
+    else:
+        label = 'TODAY — GEAUGA + PORTAGE COUNTY'
+        note = 'Run now if cron missed: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Geauga`'
+
+    msg = (
+        f'📍 *Geauga + Portage County Pull — {label} (July 13)*\n'
+        f'>Week 29 rotation: Chardon, Painesville Township, Kent, Ravenna, Streetsboro, Aurora.\n'
+        f'>Second cycle of peak season — these contacts are warm to summer exterior cleaning timing.\n'
+        f'>After this: Week 30 = Cuyahoga 2nd pass (July 20), Week 31 = Lake 2nd pass (July 27).\n'
+        f'>{note}\n'
+        f'>Command: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Geauga`'
+    )
+    if post_slack(msg):
+        alert_sentinel.parent.mkdir(exist_ok=True)
+        try:
+            alert_sentinel.write_text(today_str)
+        except Exception:
+            pass
+        log(f'July 13 Geauga+Portage pull reminder posted — {label}')
+
+
+def _check_july20_cuyahoga_2():
+    """Fire July 14–20 countdown for Cuyahoga 2nd pass (Week 30, July 20 Monday).
+    Week 30 % 6 = 0 → Cuyahoga in the rotation. Largest NE Ohio market — second pass
+    catches contacts that didn't open Round 1, plus any new contacts pulled from new segments
+    (school districts, car rentals, etc. added in Run 119). Peak season second half."""
+    from datetime import date as _date_c2
+    today = _date_c2.today()
+    start = _date_c2(2026, 7, 14)
+    end   = _date_c2(2026, 7, 20)
+    if not (start <= today <= end):
+        return
+
+    alert_sentinel = BASE_DIR / 'outputs' / 'vera' / '.july20_cuyahoga_2_sent_date'
+    today_str = today.strftime('%Y-%m-%d')
+    if alert_sentinel.exists() and alert_sentinel.read_text().strip() == today_str:
+        return
+
+    pull_date = _date_c2(2026, 7, 20)
+    days_left = (pull_date - today).days
+    if days_left > 0:
+        label = f'{days_left} day{"s" if days_left != 1 else ""} away'
+        note = 'Cron fires Mon July 20 at 7am. Verify: `cat logs/cron.log | tail -10`'
+    else:
+        label = 'TODAY — CUYAHOGA COUNTY 2ND PASS'
+        note = 'Run now if cron missed: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Cuyahoga`'
+
+    msg = (
+        f'📍 *Cuyahoga County 2nd Pass — {label} (July 20)*\n'
+        f'>Week 30 rotation: Cuyahoga — Cleveland, Lakewood, Parma, Strongsville, Berea, Westlake, Rocky River.\n'
+        f'>Second pass: catches non-opens from June 8 + new segments (school districts, car rental) now active.\n'
+        f'>Highest-volume market — all commercial segments at max. School districts NOW in active summer window.\n'
+        f'>{note}\n'
+        f'>Command: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Cuyahoga`'
+    )
+    if post_slack(msg):
+        alert_sentinel.parent.mkdir(exist_ok=True)
+        try:
+            alert_sentinel.write_text(today_str)
+        except Exception:
+            pass
+        log(f'July 20 Cuyahoga 2nd pass reminder posted — {label}')
+
+
+def _check_july27_lake_2():
+    """Fire July 21–27 countdown for Lake County 2nd pass (Week 31, July 27 Monday).
+    Week 31 % 6 = 1 → Lake in the rotation. Mentor, Willoughby, Eastlake, Painesville,
+    Wickliffe, Madison Township. Second pass + school districts in summer window."""
+    from datetime import date as _date_l2
+    today = _date_l2.today()
+    start = _date_l2(2026, 7, 21)
+    end   = _date_l2(2026, 7, 27)
+    if not (start <= today <= end):
+        return
+
+    alert_sentinel = BASE_DIR / 'outputs' / 'vera' / '.july27_lake_2_sent_date'
+    today_str = today.strftime('%Y-%m-%d')
+    if alert_sentinel.exists() and alert_sentinel.read_text().strip() == today_str:
+        return
+
+    pull_date = _date_l2(2026, 7, 27)
+    days_left = (pull_date - today).days
+    if days_left > 0:
+        label = f'{days_left} day{"s" if days_left != 1 else ""} away'
+        note = 'Cron fires Mon July 27 at 7am. Verify: `cat logs/cron.log | tail -10`'
+    else:
+        label = 'TODAY — LAKE COUNTY 2ND PASS'
+        note = 'Run now if cron missed: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Lake`'
+
+    msg = (
+        f'📍 *Lake County 2nd Pass — {label} (July 27)*\n'
+        f'>Week 31 rotation: Mentor, Willoughby-Eastlake, Wickliffe, Painesville, Madison Township.\n'
+        f'>Second pass: Mentor Exempted Village Schools + Willoughby-Eastlake City Schools in summer window NOW.\n'
+        f'>Marina + waterfront segment (Mentor Harbor, Mentor Lagoons) — late-July timing is peak.\n'
+        f'>{note}\n'
+        f'>Command: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Lake`'
+    )
+    if post_slack(msg):
+        alert_sentinel.parent.mkdir(exist_ok=True)
+        try:
+            alert_sentinel.write_text(today_str)
+        except Exception:
+            pass
+        log(f'July 27 Lake County 2nd pass reminder posted — {label}')
+
+
 def _main_body():
     # Always check staleness (runs even if no new Vera commits)
     _check_danny_staleness()
@@ -1320,6 +1448,9 @@ def _main_body():
     _check_annual_plan_pitch_reminder()
     _check_fleet_sequence_pending()
     _check_july6_medina()
+    _check_july13_geauga_portage()
+    _check_july20_cuyahoga_2()
+    _check_july27_lake_2()
 
     # Fetch first so origin/main is current before flush checks origin/main..HEAD
     git(['fetch', 'origin'])
