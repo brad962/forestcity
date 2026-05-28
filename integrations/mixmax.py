@@ -205,6 +205,20 @@ PROPERTY_MANAGER_TITLES = [
     # district managers sign multi-site vendor contracts (added 2026-05-28 run 119)
     'car rental district manager', 'rental car location manager', 'car rental operations manager',
     'branch rental manager',
+    # Tire & auto service chains — Discount Tire, Jiffy Lube, Firestone, Midas, Valvoline, Monro in NE Ohio;
+    # district managers sign multi-location vendor contracts (added 2026-05-28 run 120)
+    'tire center manager', 'auto service center manager', 'tire store manager', 'service center manager',
+    'quick lube manager', 'auto lube manager', 'tire district manager',
+    # Movie theaters / cineplexes — AMC, Regal, Cinemark, Atlas Cinemas NE Ohio; GMs sign vendor contracts (added 2026-05-28 run 120)
+    'theater general manager', 'cinema manager', 'movie theater manager', 'multiplex manager',
+    'theater operations manager',
+    # Public library systems — Cuyahoga County PL, Akron-Summit County PL; government FMs (added 2026-05-28 run 120)
+    'library director', 'public library director', 'library facilities manager', 'library system director',
+    'branch library manager', 'library operations manager',
+    # Bowling alleys & entertainment centers — Brunswick Zone, Dave & Buster's, AMF in NE Ohio;
+    # large parking lots + building exteriors; GMs sign vendor contracts (added 2026-05-28 run 120)
+    'bowling alley manager', 'bowling center manager', 'entertainment center manager',
+    'family entertainment center manager', 'recreation center manager',
 ]
 
 REALTOR_TITLES = [

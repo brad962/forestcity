@@ -256,6 +256,31 @@ DANNY_TITLES = [
     # $1,500-$4,000/location; district deal = $12K-$32K/year (added 2026-05-28 run 119)
     'car rental district manager', 'rental car location manager', 'car rental operations manager',
     'branch rental manager',
+    # Tire & auto service chains — Discount Tire (100+ NE Ohio locations), Jiffy Lube, Firestone Complete Auto Care,
+    # Midas, Valvoline Instant Oil Change, Monro Muffler, Goodyear service centers;
+    # high-traffic paved lots + building exteriors + dumpster pads accumulate oil staining;
+    # district managers sign multi-location vendor contracts; ironic pitch: "we clean around your cars";
+    # $400-$800/location; quarterly = $1.6K-$3.2K/location; 20-location district deal = $32K-$64K/year (added 2026-05-28 run 120)
+    'tire center manager', 'auto service center manager', 'tire store manager', 'service center manager',
+    'quick lube manager', 'auto lube manager', 'tire district manager', 'automotive service center director',
+    # Movie theaters / cineplexes — AMC Ridge Park, Regal Great Lakes Mall, Cinemark Valley View,
+    # Atlas Cinemas (NE Ohio regional chain with 8 locations); large paved parking lots;
+    # GMs sign vendor contracts; high foot traffic = stained entry concrete, drive lanes, dumpster areas;
+    # spring cleaning before summer blockbuster season = natural pitch window; $1,500-$4,000/year (added 2026-05-28 run 120)
+    'theater general manager', 'cinema manager', 'movie theater manager', 'multiplex manager',
+    'theater operations manager', 'cinema general manager',
+    # Public library systems — Cuyahoga County Public Library (28 branches, 2nd busiest system in USA),
+    # Akron-Summit County PL, Lake County PL, Medina County PL, Portage County District Library;
+    # government facility managers sign vendor contracts; high foot traffic = stained entry walkways + parking lots;
+    # public appearance = community trust signal; $500-$1,500/branch; system deal = $10K-$40K/year (added 2026-05-28 run 120)
+    'library director', 'public library director', 'library facilities manager', 'library system director',
+    'branch library manager', 'library operations manager',
+    # Bowling alleys & entertainment centers — Brunswick Zone (Stow, Strongsville, Twinsburg), AMF Bowling,
+    # Dave & Buster's (Westlake), Main Event, Lucky Strike, Great Lakes Bowling;
+    # large parking lots + building exteriors + entrance areas; GMs sign vendor contracts;
+    # $800-$2,000/visit; 2-4x/year; zero competitors targeting this segment (added 2026-05-28 run 120)
+    'bowling alley manager', 'bowling center manager', 'entertainment center manager',
+    'family entertainment center manager', 'bowling center director', 'recreation center manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -406,6 +431,17 @@ DANNY_ORG_KEYWORDS = [
     # large paved lots with vehicle oil/exhaust staining; building exteriors; district managers sign
     # multi-location vendor contracts; $1,500-$4,000/location; district deal = $12K-$32K/year (added 2026-05-28 run 119)
     'car rental', 'vehicle rental', 'rental car', 'auto rental',
+    # Tire & auto service chains — Discount Tire, Jiffy Lube, Firestone, Midas, Valvoline, Monro;
+    # oil-stained paved lots + building exteriors; district managers sign multi-site contracts (added 2026-05-28 run 120)
+    'tire center', 'auto service center', 'tire store', 'quick lube', 'auto lube',
+    'tire franchise', 'automotive service franchise', 'muffler shop',
+    # Movie theaters & cineplexes — large paved lots, marquee exteriors, entry concrete (added 2026-05-28 run 120)
+    'movie theater', 'cinema', 'multiplex', 'film theater', 'theater management',
+    # Public library systems — government facility managers, high foot traffic entry surfaces (added 2026-05-28 run 120)
+    'public library', 'library system', 'county library', 'library district',
+    # Bowling alleys & entertainment centers — large parking lots, building exteriors (added 2026-05-28 run 120)
+    'bowling alley', 'bowling center', 'family entertainment center', 'entertainment center',
+    'bowling lanes',
 ]
 
 CARLA_SEARCHES = [
