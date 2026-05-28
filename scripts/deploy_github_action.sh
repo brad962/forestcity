@@ -16,6 +16,32 @@
 set -e
 
 REPO_DIR="/Users/bradleyneal/forestcity"
+
+# ── Pre-flight: verify PAT has 'workflow' scope ─────────────────────────────
+echo "→ Pre-flight check: GitHub PAT scope"
+PAT=$(git -C "$REPO_DIR" remote get-url origin 2>/dev/null | sed 's|https://||;s|@.*||')
+if [ -n "$PAT" ]; then
+    SCOPES=$(curl -sI -H "Authorization: token $PAT" https://api.github.com/user 2>/dev/null | grep -i '^x-oauth-scopes:' || true)
+    if echo "$SCOPES" | grep -q "workflow"; then
+        echo "  ✅ PAT has 'workflow' scope — good to go."
+    else
+        echo ""
+        echo "❌  PAT is missing 'workflow' scope."
+        echo "    Push will be rejected by GitHub. Fix first (2 minutes):"
+        echo ""
+        echo "    1. Open: https://github.com/settings/tokens"
+        echo "    2. Find your token (starts with ghp_lrUhBq7...)"
+        echo "    3. Click Edit → check the ☑ 'workflow' box → Update token"
+        echo "    4. Re-run this script."
+        echo ""
+        exit 1
+    fi
+else
+    echo "  ⚠️  Could not extract PAT from remote URL — continuing without scope check."
+    echo "     If the push fails with 'refusing to allow', add 'workflow' scope at github.com/settings/tokens"
+fi
+echo ""
+# ────────────────────────────────────────────────────────────────────────────
 WORKFLOW_SRC="$REPO_DIR/outputs/vera/github_action_vera_slack_relay.yaml"
 WORKFLOW_DST="$REPO_DIR/.github/workflows/vera-slack-relay.yaml"
 

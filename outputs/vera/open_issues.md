@@ -1,6 +1,22 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 115 | 2026-05-28 | Auto-fixes shipped: 4 | New RESOLVED: 0 | Open: 47 (3 new relay gaps closed in code; Veterinary Clinics segment added; relay calendar now fully covered through June 30)*
+*Run 116 | 2026-05-28 | Auto-fixes shipped: 2 | New RESOLVED: 0 | Open: 48 (1 new: review request automation not active)*
+
+---
+
+## RUN METRICS — Run 116 | 2026-05-28
+- Total RESOLVED: 85 (0 new this run)
+- Total OPEN: 48 (1 new: Google review request automation gap)
+- Auto-upgrades shipped: 2
+  1. `workers/vera_relay.py` — added `_check_review_request_reminder()`: fires daily May 28–Sept 30 during peak season; posts daily Slack reminder to text completed customers a Google review request; most NE Ohio competitors at 25–50 reviews; 75+ breaks out of pack; target 5 requests/week = 100+ reviews by season end; wired into `_main_body()`
+  2. `scripts/deploy_github_action.sh` — added PAT scope pre-flight check; extracts PAT from remote URL, calls GitHub API to read `X-OAuth-Scopes` header, exits with clear error + upgrade link if 'workflow' scope missing; prevents the confusing silent `refusing to allow` push error that has blocked GitHub Actions setup for 82+ runs
+- Deliverable created: `outputs/vera/may28_peak_season_gap_audit_2026-05-28.md` — consolidated audit of all active revenue gaps on May 28 with priority stack + copy-paste actions
+
+**Persistent troubleshooting (new angles tried this run):**
+- GitHub Actions PAT: deploy_github_action.sh now validates scope before attempting push — the root cause has always been the missing 'workflow' scope on the PAT; this check makes the error explicit and actionable
+- Danny cron: Summit deadline is May 31 (3 days); scripts exist (`scripts/run_summit_pull.command`); relay fires daily; operationally stuck on Bradley running it locally
+- Gas station PENDING: relay fires daily; 4 guides written; operationally stuck on Bradley creating the Mixmax sequence
+- Review requests: NEW ISSUE identified and added to relay this run — daily reminder now fires peak season
 
 ---
 
@@ -29,6 +45,16 @@
   - Instantly.ai: STILL NOT PAUSED. June 4 enrollment BLOCKED until done.
   - June 1 (4 days): Medina pull — 27+ new commercial segments fire including Veterinary Clinics.
   - June 4 (7 days): All assets ready. Instantly.ai pause = ONLY remaining blocker.
+
+---
+
+## OPEN — Google Review Request Automation Not Active 🟡 NEW (Run 116)
+- First seen: 2026-05-28 (Run 116)
+- Description: After every completed job, Forest City should send a Google review request text to the customer. Currently this never happens — no script, no workflow, no reminder. Most NE Ohio power washing competitors sit at 25–50 reviews. Google Maps + LSA rankings heavily favor businesses with more recent, higher-count reviews. Getting to 75+ reviews creates a meaningful separation from competitors. At 100+ reviews Forest City becomes the dominant ranked business in the area — that's free inbound leads at scale. 5 review requests/week × 20 weeks of peak season = up to 100 new reviews.
+- Impact: Review count directly affects Google Maps ranking, LSA position, and consumer trust at point of booking.
+- Attempts:
+  - 2026-05-28 (Run 116): Added `_check_review_request_reminder()` to vera_relay.py — fires daily peak season (May 28–Sept 30) with a copy-paste review request text template and link instructions. Daily Slack reminder until the habit is established. Also created `outputs/vera/may28_peak_season_gap_audit_2026-05-28.md` with the full context and urgency. PROPOSAL: build `workers/review_request.py` to pull Workiz completed jobs and auto-generate a daily review request send list.
+- Resolution criteria: Bradley sends at least 5 Google review request texts per week during peak season. Forest City reaches 75+ Google reviews by August 1.
 
 ---
 

@@ -906,6 +906,45 @@ def _check_post_june11_monitoring():
         log(f'Post-June 11 sequence monitoring reminder posted — Day {day_num}')
 
 
+def _check_review_request_reminder():
+    """Fire daily during peak season May 28 – Sept 30.
+    After every completed job, Bradley should send a Google review request text.
+    Google reviews → higher Maps + LSA ranking → more inbound leads.
+    Most NE Ohio power washing competitors sit at 25–50 reviews. Hitting 75+ breaks away.
+    Self-deactivates Oct 1.
+    """
+    from datetime import date as _date_rr
+    today = _date_rr.today()
+    start = _date_rr(2026, 5, 28)
+    end   = _date_rr(2026, 9, 30)
+    if not (start <= today <= end):
+        return
+
+    alert_sentinel = BASE_DIR / 'outputs' / 'vera' / '.review_request_reminder_date'
+    today_str = today.strftime('%Y-%m-%d')
+    if alert_sentinel.exists() and alert_sentinel.read_text().strip() == today_str:
+        return
+
+    msg = (
+        '⭐ *Google Review Request — Send After Today\'s Jobs*\n'
+        '>Every completed job = a chance for a 5-star review. Most NE Ohio competitors: 25–50 reviews.\n'
+        '>At 75+ Forest City enters top-tier ranking on Google Maps and LSA — that\'s free inbound leads.\n'
+        '>Text template (30 sec per customer):\n'
+        '>  "Hey [Name], Bradley here from Forest City Power Washing. Hope everything looks great!\n'
+        '>   If you have 30 seconds, would mean the world if you left a quick Google review:\n'
+        '>   [your Google Maps review link]  Thanks so much!"\n'
+        '>Get your review link: Google Maps → search "Forest City Power Washing" → Reviews → "Get more reviews" → Copy link.\n'
+        '>Target: 5 review requests/week = 100+ new reviews by end of season.'
+    )
+    if post_slack(msg):
+        alert_sentinel.parent.mkdir(exist_ok=True)
+        try:
+            alert_sentinel.write_text(today_str)
+        except Exception:
+            pass
+        log('Review request daily reminder posted to Slack')
+
+
 def _acquire_lock() -> bool:
     """Return True if we got the lock, False if another instance is running."""
     LOCK_FILE.parent.mkdir(exist_ok=True)
@@ -983,6 +1022,7 @@ def _main_body():
     _check_june15_cuyahoga()
     _check_june29_lorain()
     _check_post_june11_monitoring()
+    _check_review_request_reminder()
 
     # Fetch first so origin/main is current before flush checks origin/main..HEAD
     git(['fetch', 'origin'])
