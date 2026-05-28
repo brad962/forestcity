@@ -790,6 +790,122 @@ def _check_june22_lake_county():
         log(f'Lake County pull reminder posted — {label}')
 
 
+def _check_june15_cuyahoga():
+    """Fire June 10–15 countdown for the Cuyahoga County pull (Week 24, June 15 Monday).
+    Cuyahoga is the LARGEST market — Cleveland, Parma, Lakewood, Strongsville, Beachwood.
+    All new commercial segments (restaurants, banks, urgent care, fitness, hotels) fire here
+    at maximum volume. Never miss the Cuyahoga window."""
+    from datetime import date as _date_cy
+    today = _date_cy.today()
+    start = _date_cy(2026, 6, 10)
+    end   = _date_cy(2026, 6, 15)
+    if not (start <= today <= end):
+        return
+
+    alert_sentinel = BASE_DIR / 'outputs' / 'vera' / '.cuyahoga_june15_alert_sent_date'
+    today_str = today.strftime('%Y-%m-%d')
+    if alert_sentinel.exists() and alert_sentinel.read_text().strip() == today_str:
+        return
+
+    pull_date = _date_cy(2026, 6, 15)
+    days_left = (pull_date - today).days
+    if days_left > 0:
+        label = f'{days_left} day{"s" if days_left != 1 else ""} away'
+        note = 'Cron fires Mon 7am if running. Verify: `cat logs/cron.log | tail -10`'
+    else:
+        label = 'TODAY — CUYAHOGA (LARGEST COUNTY)'
+        note = 'Run now if cron missed: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Cuyahoga`'
+
+    msg = (
+        f'🏙️ *Cuyahoga County Pull — {label} (June 15) — BIGGEST MARKET*\n'
+        f'>Cuyahoga = Cleveland, Parma, Lakewood, Strongsville, Beachwood. Highest lead volume of all 6 counties.\n'
+        f'>All commercial segments fire here at max volume: restaurants, banks, urgent care, hotels, fitness, grocery.\n'
+        f'>{note}\n'
+        f'>Command: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Cuyahoga`'
+    )
+    if post_slack(msg):
+        alert_sentinel.parent.mkdir(exist_ok=True)
+        try:
+            alert_sentinel.write_text(today_str)
+        except Exception:
+            pass
+        log(f'Cuyahoga June 15 pull reminder posted — {label}')
+
+
+def _check_june29_lorain():
+    """Fire June 24–29 countdown for the Lorain County pull (Week 26, June 29 Monday).
+    Lorain = Elyria, Avon, North Ridgeville — strong industrial + HOA corridor.
+    Avon is one of the fastest-growing NE Ohio suburbs — high HOA density + new commercial."""
+    from datetime import date as _date_lo
+    today = _date_lo.today()
+    start = _date_lo(2026, 6, 24)
+    end   = _date_lo(2026, 6, 29)
+    if not (start <= today <= end):
+        return
+
+    alert_sentinel = BASE_DIR / 'outputs' / 'vera' / '.lorain_june29_alert_sent_date'
+    today_str = today.strftime('%Y-%m-%d')
+    if alert_sentinel.exists() and alert_sentinel.read_text().strip() == today_str:
+        return
+
+    pull_date = _date_lo(2026, 6, 29)
+    days_left = (pull_date - today).days
+    if days_left > 0:
+        label = f'{days_left} day{"s" if days_left != 1 else ""} away'
+        note = 'Cron fires Mon June 29 at 7am — verify it\'s running: `cat logs/cron.log | tail -10`'
+    else:
+        label = 'TODAY — LORAIN COUNTY'
+        note = 'Run now if cron missed: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Lorain`'
+
+    msg = (
+        f'📍 *Lorain County Pull — {label} (June 29)*\n'
+        f'>Lorain = Elyria, Avon, North Ridgeville. Avon is one of NE Ohio\'s fastest-growing suburbs.\n'
+        f'>High HOA density in Avon subdivisions + strong industrial corridor along Rt 83 (self-storage, auto body, distribution).\n'
+        f'>{note}\n'
+        f'>Command: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Lorain`'
+    )
+    if post_slack(msg):
+        alert_sentinel.parent.mkdir(exist_ok=True)
+        try:
+            alert_sentinel.write_text(today_str)
+        except Exception:
+            pass
+        log(f'Lorain June 29 pull reminder posted — {label}')
+
+
+def _check_post_june11_monitoring():
+    """Fire daily June 12–30. Round 2 sequence replies trickle in for 21 days post-enrollment.
+    The post_june4_monitoring() covers June 5–11. This bridges June 12–30 so Bradley never goes
+    dark on a sequence that is still actively delivering and generating replies."""
+    from datetime import date as _date_pm
+    today = _date_pm.today()
+    start = _date_pm(2026, 6, 12)
+    end   = _date_pm(2026, 6, 30)
+    if not (start <= today <= end):
+        return
+
+    alert_sentinel = BASE_DIR / 'outputs' / 'vera' / '.post_june11_monitor_sent_date'
+    today_str = today.strftime('%Y-%m-%d')
+    if alert_sentinel.exists() and alert_sentinel.read_text().strip() == today_str:
+        return
+
+    day_num = (today - _date_pm(2026, 6, 4)).days + 1  # Day relative to June 4 enrollment
+    msg = (
+        f'📬 *Round 2 Sequence — Day {day_num} (Keep Monitoring)*\n'
+        f'>Replies trickle in for up to 21 days post-enrollment — don\'t go dark after June 11.\n'
+        f'>Run Nina\'s daily report: `cd /Users/bradleyneal/forestcity && python3 workers/nina_report.py daily`\n'
+        f'>Respond to ANY reply within 24 hours — late replies are often the most qualified prospects.\n'
+        f'>Hot leads (2+ opens, no reply): LinkedIn connect + "saw you opened our email" message.'
+    )
+    if post_slack(msg):
+        alert_sentinel.parent.mkdir(exist_ok=True)
+        try:
+            alert_sentinel.write_text(today_str)
+        except Exception:
+            pass
+        log(f'Post-June 11 sequence monitoring reminder posted — Day {day_num}')
+
+
 def _acquire_lock() -> bool:
     """Return True if we got the lock, False if another instance is running."""
     LOCK_FILE.parent.mkdir(exist_ok=True)
@@ -864,6 +980,9 @@ def _main_body():
     _check_wave2_day3_followup()
     _check_june8_geauga_portage()
     _check_june22_lake_county()
+    _check_june15_cuyahoga()
+    _check_june29_lorain()
+    _check_post_june11_monitoring()
 
     # Fetch first so origin/main is current before flush checks origin/main..HEAD
     git(['fetch', 'origin'])

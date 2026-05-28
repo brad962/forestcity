@@ -1,6 +1,66 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 114 | 2026-05-27 | Auto-fixes shipped: 4 | New RESOLVED: 0 | Open: 44 (Urgent Care Centers segment added; 3 new vera_relay relay checks; June complete action calendar written)*
+*Run 115 | 2026-05-28 | Auto-fixes shipped: 4 | New RESOLVED: 0 | Open: 47 (3 new relay gaps closed in code; Veterinary Clinics segment added; relay calendar now fully covered through June 30)*
+
+---
+
+## RUN METRICS — Run 115 | 2026-05-28
+- Total RESOLVED: 85 (0 new this run)
+- Total OPEN: 47 (4 new: relay gap June 15, relay gap June 29, post-June 11 monitoring gap, Veterinary Clinics segment not yet pulled)
+- Auto-upgrades shipped: 4
+  1. `workers/vera_relay.py` — added `_check_june15_cuyahoga()`: fires June 10–15; Cuyahoga = largest-volume pull in 6-county rotation; all 25+ commercial segments fire here at maximum volume; no relay reminder existed for Week 24; 6-day countdown wired into `_main_body()`
+  2. `workers/vera_relay.py` — added `_check_june29_lorain()`: fires June 24–29; Lorain County (Elyria, Avon, North Ridgeville) is Week 26 cron; Avon = fastest-growing NE Ohio suburb, high HOA density; no reminder existed after Lake County (June 22); closes the final gap in the 2026 relay calendar; wired into `_main_body()`
+  3. `workers/vera_relay.py` — added `_check_post_june11_monitoring()`: fires daily June 12–30; existing post_june4_monitoring covers June 5–11 only; sequence replies trickle in for 21 days post-enrollment; day counter relative to June 4 enrollment; wired into `_main_body()`
+  4. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — added **Veterinary Clinics & Animal Hospitals** as new commercial segment; DANNY_TITLES: `veterinary practice manager`, `animal hospital manager`, `veterinary clinic manager`, `vet clinic manager`, `animal hospital director`, `veterinary district manager`; DANNY_ORG_KEYWORDS: `veterinary clinic`, `animal hospital`, `veterinary practice`, `vet clinic`, `animal care center`, `veterinary hospital`, `pet hospital`; mirrored to PROPERTY_MANAGER_TITLES; Banfield (8+ NE Ohio), VCA, BluePearl, NVA, Petco VetCo; $16K–$40K/year per 20-clinic chain; licensing inspection = exterior standard; zero competitor outreach; live for Medina June 1 pull
+- Relay calendar coverage as of Run 115 (FULLY COVERED through June 30):
+  - May 31: Wave 2 Day 3 follow-up + Summit deadline ✓
+  - June 1: Medina pull reminder (May 30–June 4) ✓
+  - June 2–3: Day 7 ads + June 4 enrollment countdown ✓
+  - June 5–11: Post-enrollment daily monitoring ✓
+  - June 4–8: Geauga+Portage countdown ✓
+  - June 10–15: **Cuyahoga countdown (NEW Run 115)** ✓
+  - June 12–30: **Post-June 11 monitoring (NEW Run 115)** ✓
+  - June 17–22: Lake County/Marina countdown ✓
+  - June 24–29: **Lorain County countdown (NEW Run 115)** ✓
+- Pipeline status this run:
+  - TODAY May 28: Day 3 ads check + 16 Wave 2 first-touch texts DUE. Relay fires both reminders.
+  - Summit pull: 3 DAYS LEFT (deadline May 31). 🚨 CRITICAL.
+  - Gas station: 12 contacts STILL waiting on PENDING sequence. 30-min guide ready.
+  - Instantly.ai: STILL NOT PAUSED. June 4 enrollment BLOCKED until done.
+  - June 1 (4 days): Medina pull — 27+ new commercial segments fire including Veterinary Clinics.
+  - June 4 (7 days): All assets ready. Instantly.ai pause = ONLY remaining blocker.
+
+---
+
+## OPEN — Relay Gap: Cuyahoga June 15 Pull Not Covered 🟡 NEW (Run 115)
+- First seen: 2026-05-28 (Run 115)
+- Description: No relay reminder existed for Cuyahoga County pull (Week 24, June 15 Monday). Cuyahoga is the largest-volume county — Cleveland, Parma, Lakewood, Strongsville, Beachwood. All 25+ commercial segments fire here at maximum volume. Missing this = biggest revenue opportunity in the 6-county rotation lost.
+- Fix applied (Run 115): Added `_check_june15_cuyahoga()` to vera_relay.py — fires June 10–15 with 6-day countdown. Wired into `_main_body()`.
+- Resolution criteria: Cuyahoga pull runs on or around June 15, 2026 (cron auto-fires Week 24 Monday 7am if running; relay fires countdown if it drifts).
+
+---
+
+## OPEN — Relay Gap: Lorain June 29 Pull Not Covered 🟡 NEW (Run 115)
+- First seen: 2026-05-28 (Run 115)
+- Description: No relay reminder for Lorain County pull (Week 26, June 29 Monday). Lorain = Elyria, Avon, North Ridgeville. Avon is one of NE Ohio's fastest-growing suburbs — high HOA density + strong Rt 83 industrial corridor (self-storage, auto body, distribution). After Lake County (June 22), the relay had no reminders through end of June.
+- Fix applied (Run 115): Added `_check_june29_lorain()` to vera_relay.py — fires June 24–29 with 6-day countdown. Closes the final gap in the 2026 relay calendar. Wired into `_main_body()`.
+- Resolution criteria: Lorain pull runs on or around June 29, 2026 (cron auto-fires Week 26 Monday 7am).
+
+---
+
+## OPEN — Relay Gap: Post-June 11 Sequence Monitoring Dark 🟡 NEW (Run 115)
+- First seen: 2026-05-28 (Run 115)
+- Description: `_check_post_june4_monitoring()` covers June 5–11 only. After June 11, relay was completely dark through end of June. Round 2 replies trickle in for 21 days post-enrollment (through June 25). Late responders are the most qualified — they opened multiple times but took longer to act. Bradley needs daily reminder to check Nina's report through end of June.
+- Fix applied (Run 115): Added `_check_post_june11_monitoring()` to vera_relay.py — fires daily June 12–30. Day counter relative to June 4 enrollment. Wired into `_main_body()`.
+- Resolution criteria: Relay fires daily reminders June 12–30 and Bradley maintains a habit of checking Nina's report through end of June.
+
+---
+
+## OPEN — Veterinary Clinics & Animal Hospitals Segment Not Yet Pulled 🟡 NEW (Run 115)
+- First seen: 2026-05-28 (Run 115)
+- Description: NE Ohio has 300+ vet clinics. Corporate chain targets: Banfield Pet Hospital (8+ NE Ohio PetSmart locations), VCA Animal Hospitals, BluePearl Specialty + Emergency (Westlake + Northfield), National Veterinary Associates, Petco VetCo Wellness Clinics. State vet licensing = exterior appearance standard. High foot traffic creates persistent mud/salt/oil staining. District FMs at corporate chains sign multi-clinic contracts. Zero competitors in this segment. $16K–$40K/year per 20-clinic deal.
+- Fix applied (Run 115): Added vet clinic titles to DANNY_TITLES + PROPERTY_MANAGER_TITLES (mixmax.py) + vet clinic org keywords to DANNY_ORG_KEYWORDS. Documented full segment brief in agents/danny.md. Live for Medina June 1 pull.
+- Resolution criteria: Veterinary clinic contacts appear in next Danny county pull (Medina June 1 or Cuyahoga June 15).
 
 ---
 

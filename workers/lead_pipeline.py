@@ -215,6 +215,15 @@ DANNY_TITLES = [
     # 10-clinic regional deal = $32K-$80K/year; summer = peak volume (sports injuries, heat illness, vacations) (added 2026-05-27 run 114)
     'urgent care director', 'urgent care center manager', 'clinic director',
     'ambulatory care director', 'walk-in clinic manager', 'urgent care manager',
+    # Veterinary clinics & animal hospitals — NE Ohio has 300+ vet clinics/animal hospitals;
+    # Banfield (PetSmart-affiliated), VCA Animal Hospitals, BluePearl Specialty + Emergency,
+    # National Veterinary Associates, Petco VetCo operate corporate chains with district FMs;
+    # state licensing inspections require clean patient-facing exteriors + entry walkways + parking;
+    # high foot traffic = recurring pressure washing need for entrance surfaces + lot striping areas;
+    # practice manager or district FM signs vendor contracts across multiple clinic locations;
+    # $400-$1,000/visit; 2x/year per clinic = $800-$2,000; 20-clinic chain deal = $16K-$40K/year (added 2026-05-28 run 115)
+    'veterinary practice manager', 'animal hospital manager', 'veterinary clinic manager',
+    'vet clinic manager', 'animal hospital director', 'veterinary district manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -329,6 +338,12 @@ DANNY_ORG_KEYWORDS = [
     # regional FMs sign multi-clinic contracts; $3,200-$8,000/year per clinic; first pull Medina June 1 (added 2026-05-27 run 114)
     'urgent care center', 'urgent care clinic', 'walk-in clinic', 'immediate care center',
     'urgent care facility', 'ambulatory care center',
+    # Veterinary clinics & animal hospitals — Banfield (PetSmart-affiliated), VCA Animal Hospitals,
+    # BluePearl Specialty + Emergency (Westlake, Northfield), National Veterinary Associates, Petco VetCo;
+    # licensing inspections = clean exterior requirement; high-traffic parking + entry walkways = recurring need;
+    # corporate chains sign multi-clinic vendor contracts across NE Ohio (added 2026-05-28 run 115)
+    'veterinary clinic', 'animal hospital', 'veterinary practice', 'vet clinic',
+    'animal care center', 'veterinary hospital', 'pet hospital',
 ]
 
 CARLA_SEARCHES = [

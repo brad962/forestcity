@@ -175,6 +175,11 @@ PROPERTY_MANAGER_TITLES = [
     # regional FMs sign multi-clinic vendor contracts; $3,200-$8,000/year per clinic (added 2026-05-27 run 114)
     'urgent care director', 'urgent care center manager', 'clinic director',
     'ambulatory care director', 'walk-in clinic manager', 'urgent care manager',
+    # Veterinary clinics & animal hospitals — Banfield, VCA, BluePearl, National Veterinary Associates;
+    # 300+ NE Ohio locations; licensing inspections = exterior appearance standard;
+    # district FMs sign multi-clinic contracts; $800-$2,000/clinic; 20-clinic chain = $16K-$40K/year (added 2026-05-28 run 115)
+    'veterinary practice manager', 'animal hospital manager', 'veterinary clinic manager',
+    'vet clinic manager', 'animal hospital director', 'veterinary district manager',
 ]
 
 REALTOR_TITLES = [
