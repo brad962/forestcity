@@ -1919,6 +1919,101 @@ def _check_neighbor_canvass_weekly():
         log(f'Neighbor canvass weekly reminder posted — week {week_str}')
 
 
+def _check_early_cuyahoga_opportunity():
+    """Fire May 28–June 7 — one-time window to run an EARLY Cuyahoga pull.
+    20+ new commercial segments added in Runs 120–125 (hospital campuses, municipal facilities,
+    DSO dental groups, tire chains, movie theaters, bowling, pet boarding, dialysis, sports complexes)
+    won't get Cuyahoga contacts until the scheduled June 8 pull.
+    Running Cuyahoga NOW gives those contacts 7–10 extra days in the sequence before June 4 enrollment.
+    This is additive — does NOT replace the June 8 rotation pull, it SUPPLEMENTS it.
+    Self-deactivates June 8 (the scheduled Cuyahoga pull fires that day anyway)."""
+    from datetime import date as _date_ec
+    today = _date_ec.today()
+    start = _date_ec(2026, 5, 28)
+    end   = _date_ec(2026, 6, 7)
+    if not (start <= today <= end):
+        return
+
+    alert_sentinel = BASE_DIR / 'outputs' / 'vera' / '.early_cuyahoga_opportunity_date'
+    today_str = today.strftime('%Y-%m-%d')
+    if alert_sentinel.exists() and alert_sentinel.read_text().strip() == today_str:
+        return
+
+    days_to_june8 = (_date_ec(2026, 6, 8) - today).days
+    msg = (
+        f'🏙️ *Early Cuyahoga Pull Opportunity — {days_to_june8} Days Before Scheduled June 8 Pull*\n'
+        f'>20+ new commercial segments added in recent runs (hospital campuses, municipal facilities,\n'
+        f'>DSO dental groups, tire chains, movie theaters, bowling, pet boarding, dialysis, sports complexes)\n'
+        f'>won\'t get Cuyahoga contacts until the scheduled June 8 rotation pull.\n'
+        f'>Running an EARLY Cuyahoga pull today = {days_to_june8} extra days for those contacts BEFORE June 4 enrollment.\n'
+        f'>This is additive — it won\'t interfere with the June 8 rotation pull.\n'
+        f'>Command (20 min unattended): `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py danny Cuyahoga`\n'
+        f'>Guide: `outputs/vera/commercial_segments_early_pull_guide_2026-05-26.md`'
+    )
+    if post_slack(msg):
+        alert_sentinel.parent.mkdir(exist_ok=True)
+        try:
+            alert_sentinel.write_text(today_str)
+        except Exception:
+            pass
+        log(f'Early Cuyahoga pull opportunity alert posted — {days_to_june8} days before June 8 scheduled pull')
+
+
+def _check_spring_2027_early_booking():
+    """Fire every Monday Oct 16, 2026 – March 31, 2027.
+    After the Oct 15 final push, NE Ohio outdoor washing season closes.
+    This is the 'Spring 2027 Early Booking Mode' — the off-season should generate spring deposits,
+    not silence. Competitors who go dark in winter lose mindshare. Forest City can collect early
+    deposits, pitch Annual Plans, and plan the 2027 ad campaign while competitors are dormant.
+    Self-deactivates April 1, 2027."""
+    from datetime import date as _date_sp
+    today = _date_sp.today()
+    start = _date_sp(2026, 10, 16)
+    end   = _date_sp(2027, 3, 31)
+    if not (start <= today <= end):
+        return
+    if today.weekday() != 0:  # Monday only
+        return
+
+    alert_sentinel = BASE_DIR / 'outputs' / 'vera' / '.spring_2027_early_booking_week'
+    week_str = today.strftime('%Y-W%W')
+    if alert_sentinel.exists() and alert_sentinel.read_text().strip() == week_str:
+        return
+
+    month = today.month
+    if month >= 10:
+        # October–December: collect early deposits + Annual Plan renewals
+        msg = (
+            '❄️ *Spring 2027 Early Booking — Off-Season Mode Active*\n'
+            '>Season is closed. Competitors are dark. This is when you build next year\'s book.\n'
+            '>This week\'s actions:\n'
+            '>  1. Collect spring 2027 deposits from 2026 customers (10% discount for early booking)\n'
+            '>  2. Annual Plan renewals — text customers: "Renew your annual plan now, lock in 2026 pricing"\n'
+            '>  3. Commercial contacts who didn\'t convert: "We\'re booking spring 2027 contracts now. Slots fill fast."\n'
+            '>Past customer text: "Hey [Name], Forest City here. Booking spring 2027 now. Want first pick of dates? $50 deposit holds your slot."\n'
+            '>Goal: 20+ spring deposits by Jan 1 = guaranteed spring revenue before the season starts.'
+        )
+    else:
+        # January–March: push harder on spring bookings, start ad campaign planning
+        msg = (
+            '🌱 *Spring 2027 Early Booking — Final Push Before Season Restarts*\n'
+            '>Spring is approaching. Time to convert off-season interest into booked jobs.\n'
+            '>This week\'s actions:\n'
+            '>  1. Follow up on any outstanding early-booking deposits from October–December outreach\n'
+            '>  2. Plan 2027 ad campaigns — review what worked in 2026 (CPL, best creative, peak dates)\n'
+            '>  3. Re-engage commercial contacts from 2026 sequences who went cold — new outreach angle: "2027 spring pricing"\n'
+            '>  4. Check if Google LSA is still active — if not, re-apply before April ad spend\n'
+            '>Launch calendar: target ads-on by April 1 to capture the first warm weekends.'
+        )
+    if post_slack(msg):
+        alert_sentinel.parent.mkdir(exist_ok=True)
+        try:
+            alert_sentinel.write_text(week_str)
+        except Exception:
+            pass
+        log(f'Spring 2027 early booking reminder posted — week {week_str}')
+
+
 def _check_october_final_push():
     """Fire Oct 1–15 — last bookings before the NE Ohio freeze window closes.
     NE Ohio typically drops below 40°F overnight around Oct 20–Nov 1.
@@ -2005,6 +2100,8 @@ def _main_body():
     _check_google_lsa_status_weekly()
     _check_neighbor_canvass_weekly()
     _check_october_final_push()
+    _check_early_cuyahoga_opportunity()
+    _check_spring_2027_early_booking()
 
     # Fetch first so origin/main is current before flush checks origin/main..HEAD
     git(['fetch', 'origin'])

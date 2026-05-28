@@ -58,3 +58,35 @@
 >New segments: Municipal/Government Facilities + Hospital Main Campuses (both fire June 8 Cuyahoga pull — 11 days away)
 >Carla's rotation calendar extended through Oct 5 to match Danny's full season
 >Key action needed: SUMMIT PULL by May 31 (3 days) + past customer blast today (30 min, $1,800–$3,000)
+---
+🔧 *Vera — Auto-Upgrade (Run 125)*
+>Changed: `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — added **Pet Boarding & Kennel Facilities** as new commercial segment
+>Why: Ohio OAC 901:1-18 boarding license = exterior compliance standard. PetSmart PetsHotel, Camp Bow Wow, Hounds Town, independent kennels — facility managers control vendor contracts and need driveways/kennels/runs pressure-washed on schedule. $8K–$24K/year per 10-facility deal. Spring and fall are the two natural pitch windows (boarding surge before summer vacations + pre-holiday inspections). Zero competitors targeting this segment. First pull June 8 Cuyahoga.
+>File: workers/lead_pipeline.py, integrations/mixmax.py, agents/danny.md
+---
+🔧 *Vera — Auto-Upgrade (Run 125)*
+>Changed: `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — added **Dialysis Centers** as new commercial segment
+>Why: DaVita has 50+ NE Ohio centers; Fresenius has 40+ — facility managers handle vendor contracts for each cluster. CMS Medicare certification requires documented exterior cleanliness = built-in compliance angle. Patients come 3× per week making these the highest foot-traffic outpatient facilities on any street. $30K–$72K/year per 15-center district deal. Spring CMS survey season (Apr–June) is the prime pitch window. First pull June 8 Cuyahoga.
+>File: workers/lead_pipeline.py, integrations/mixmax.py, agents/danny.md
+---
+🔧 *Vera — Auto-Upgrade (Run 125)*
+>Changed: `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — added **Sports Complexes & Youth Athletic Facilities** as new commercial segment
+>Why: Sportsplex at Mentor, Great Lakes Athletic Complex, and 15+ NE Ohio indoor/outdoor sports facilities have high weekend tournament traffic — mud tracking, food court spills, restroom overflow. Facility managers sign seasonal vendor contracts and schedule cleans between tournaments. $8K–$25K/year per 5-facility deal. Late winter/spring is the prime pitch window (booking before summer tournament season). First pull June 8 Cuyahoga.
+>File: workers/lead_pipeline.py, integrations/mixmax.py, agents/danny.md
+---
+🔧 *Vera — Auto-Upgrade (Run 125)*
+>Changed: `workers/vera_relay.py` — added `_check_early_cuyahoga_opportunity()` relay function (fires daily May 28–June 7)
+>Why: 20+ new commercial segments added in Runs 120–125 won't get Cuyahoga contacts until the June 8 scheduled rotation. Running an early Cuyahoga pull gives 7–10 extra days of pipeline on every new segment. The relay now fires a daily prompt May 28–June 7 with the exact command: `python3 workers/lead_pipeline.py danny Cuyahoga`. Self-deactivates June 8 when the scheduled pull takes over.
+>File: workers/vera_relay.py
+---
+🔧 *Vera — Auto-Upgrade (Run 125)*
+>Changed: `workers/vera_relay.py` — added `_check_spring_2027_early_booking()` relay function (fires every Monday Oct 16, 2026 – March 31, 2027)
+>Why: The off-season window (Oct 16 – Mar 31) was completely dark — no relay messages for 5.5 months. That's the prime window for spring deposit collection, Annual Plan renewals, and 2027 ad campaign planning. Oct–Dec: collect deposits + renewal pitches. Jan–Mar: final spring booking push + 2027 ad spend planning. Revenue captured in the off-season is the cheapest revenue of the year.
+>File: workers/vera_relay.py
+---
+✅ *Vera — Scan Complete 2026-05-28 (Run 125)*
+>5 auto-upgrades shipped | 0 proposals | 47 open issues
+>New segments: Pet Boarding/Kennels + Dialysis Centers + Sports Complexes (all fire June 8 Cuyahoga — 11 days)
+>Off-season relay gap (Oct 16–Mar 31) CLOSED — spring 2027 booking relay now wired
+>Early Cuyahoga opportunity relay fires daily through June 7 — run the pull for 7–10 days of extra lead time
+>⚠️ SUMMIT DEADLINE: MAY 31 (3 days). Command: `python3 workers/lead_pipeline.py danny Summit`

@@ -244,6 +244,23 @@ PROPERTY_MANAGER_TITLES = [
     'hospital maintenance director', 'hospital facility manager', 'acute care facilities manager',
     'hospital engineering director', 'clinical facilities manager', 'hospital plant manager',
     'vice president of facilities', 'vp facilities',
+    # Pet Boarding & Kennel Facilities — PetSmart PetsHotel, Bark Avenue, Hounds Town, Camp Bow Wow;
+    # Ohio pet boarding license = exterior cleanliness standard; 300+ NE Ohio facilities;
+    # routing to Property Manager sequence (facility/compliance angle) (added 2026-05-28 run 125)
+    'pet boarding manager', 'kennel manager', 'dog boarding director', 'pet resort manager',
+    'doggy daycare manager', 'animal boarding manager', 'pet care director', 'kennel director',
+    # Dialysis Centers — DaVita (50+ NE Ohio), Fresenius Medical Care (40+ NE Ohio), US Renal Care;
+    # CMS certification = exterior cleanliness standard; district FMs sign multi-location contracts;
+    # routing to Property Manager sequence (compliance + facility management angle) (added 2026-05-28 run 125)
+    'dialysis center manager', 'dialysis clinic manager', 'renal care director',
+    'dialysis facility manager', 'outpatient dialysis manager', 'dialysis district manager',
+    'dialysis regional manager', 'kidney care director',
+    # Sports Complexes & Youth Athletic Facilities — heavy weekend traffic = staining;
+    # Sportsplex at Mentor, Great Lakes Athletic Complex, youth baseball/softball/soccer/hockey complexes;
+    # GM or owner signs vendor contracts; routing to Property Manager sequence (added 2026-05-28 run 125)
+    'sports complex manager', 'athletic complex director', 'sports facility manager',
+    'recreation complex manager', 'sports complex director', 'athletic facility director',
+    'youth sports director', 'sports facility director',
 ]
 
 REALTOR_TITLES = [

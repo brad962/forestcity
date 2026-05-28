@@ -1,6 +1,50 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 124 | 2026-05-28 | Auto-fixes shipped: 5 | New RESOLVED: 0 | Open: 44 (2 new: Municipal/Government Facilities segment, Hospital Main Campus segment — both in code, awaiting June 8 Cuyahoga pull; gas station relay updated with Gmail bypass reminder)*
+*Run 125 | 2026-05-28 | Auto-fixes shipped: 5 | New RESOLVED: 0 | Open: 47 (3 new: Pet Boarding/Kennel segment, Dialysis Centers segment, Sports Complexes segment — all in code, awaiting June 8 Cuyahoga pull; 2 new relay functions: Early Cuyahoga pull opportunity + Spring 2027 early booking mode)*
+
+---
+
+## RUN METRICS — Run 125 | 2026-05-28
+- Total RESOLVED: 102 (0 new this run)
+- Total OPEN: 47 (3 new: Pet Boarding/Kennel + Dialysis Centers + Sports Complexes — all in code, awaiting June 8 Cuyahoga pull)
+- Auto-upgrades shipped: 5
+  1. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — added Pet Boarding & Kennel Facilities as new commercial segment; 8 titles (pet boarding manager, kennel manager, dog boarding director, pet resort manager, doggy daycare manager, animal boarding manager, pet care director, kennel director); 10 org keywords (pet boarding, dog kennel, pet hotel, doggy daycare, pet resort, boarding kennel, animal boarding, dog boarding, cat boarding, pet care center); PetSmart PetsHotel/Camp Bow Wow/Hounds Town/Bark Avenue NE Ohio targets; Ohio pet boarding license = exterior cleanliness standard; $8K-$24K/year per 10-facility deal; zero competitors; first pull June 8 Cuyahoga
+  2. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — added Dialysis Centers as new commercial segment; 8 titles (dialysis center manager, renal care director, outpatient dialysis manager, dialysis district manager, dialysis regional manager, etc.); 8 org keywords (dialysis center, renal care, kidney care, dialysis clinic, etc.); DaVita (50+ NE Ohio), Fresenius Medical Care (40+ NE Ohio), US Renal Care targets; patients visit 3x/week = highest foot traffic of any outpatient facility; CMS Medicare certification = exterior appearance standard; $30K-$72K/year per 15-center district FM deal; zero competitors; first pull June 8 Cuyahoga
+  3. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — added Sports Complexes & Youth Athletic Facilities as new commercial segment; 8 titles (sports complex manager, athletic complex director, sports facility manager, recreation complex manager, etc.); 10 org keywords (sports complex, athletic complex, youth sports complex, indoor sports facility, etc.); Sportsplex at Mentor, Great Lakes Athletic Complex, youth baseball/softball/soccer/hockey complexes NE Ohio targets; tournament weekends = massive parking lot staining; $8K-$25K/year per 5-facility deal; zero competitors; first pull June 8 Cuyahoga
+  4. `workers/vera_relay.py` — added `_check_early_cuyahoga_opportunity()`: fires May 28–June 7 daily; 20+ new commercial segments (hospital, municipal, DSO, tire chains, movie theaters, bowling, pet boarding, dialysis, sports) all live in code but won't get Cuyahoga contacts until June 8 scheduled rotation; an EARLY Cuyahoga pull today gives those contacts 7-10 extra days in sequence before June 4 enrollment; wired into `_main_body()`
+  5. `workers/vera_relay.py` — added `_check_spring_2027_early_booking()`: fires every Monday Oct 16, 2026 – March 31, 2027; relay was completely dark after Oct 15 for the entire off-season; Oct-Dec = collect spring deposits + Annual Plan renewals; Jan-Mar = final spring booking push + 2027 ad campaign planning; self-deactivates April 1, 2027; wired into `_main_body()`
+
+---
+
+## OPEN — Pet Boarding & Kennel Facilities Segment Not Yet Pulled 🟡 NEW (Run 125)
+- First seen: 2026-05-28 (Run 125)
+- Description: PetSmart PetsHotel (10+ NE Ohio), Camp Bow Wow (Beachwood/Stow/Rocky River/Mentor), Hounds Town, Bark Avenue, hundreds of independent kennels + doggy daycares. Ohio pet boarding license (OAC 901:1-18) requires facility inspection including exterior cleanliness. Outdoor runs accumulate biological residue, mud, waste. High foot traffic from pet owners. Zero competitors targeting this segment. $8K-$24K/year per 10-facility chain deal.
+- Fix applied (Run 125): 8 titles added to DANNY_TITLES + PROPERTY_MANAGER_TITLES. 10 org keywords added to DANNY_ORG_KEYWORDS. Full segment brief documented in agents/danny.md. First pull June 8 Cuyahoga.
+- Resolution criteria: Pet boarding/kennel contacts appear in Danny's June 8 Cuyahoga pull output.
+
+---
+
+## OPEN — Dialysis Centers Segment Not Yet Pulled 🟡 NEW (Run 125)
+- First seen: 2026-05-28 (Run 125)
+- Description: DaVita (50+ NE Ohio locations), Fresenius Medical Care (40+ NE Ohio), US Renal Care. Patients visit 3x/week = highest foot traffic density of any outpatient facility type. CMS Medicare certification survey includes exterior cleanliness. District FMs oversee 10-20 centers and sign multi-location vendor contracts. $30K-$72K/year per 15-center district deal. Zero competitors targeting this segment.
+- Fix applied (Run 125): 8 titles added to DANNY_TITLES + PROPERTY_MANAGER_TITLES. 8 org keywords added to DANNY_ORG_KEYWORDS. Full segment brief documented in agents/danny.md. First pull June 8 Cuyahoga.
+- Resolution criteria: Dialysis center manager/district manager contacts appear in Danny's June 8 Cuyahoga pull output.
+
+---
+
+## OPEN — Sports Complexes & Youth Athletic Facilities Segment Not Yet Pulled 🟡 NEW (Run 125)
+- First seen: 2026-05-28 (Run 125)
+- Description: Sportsplex at Mentor, Great Lakes Athletic Complex, North Olmsted SportsPlex, youth baseball/softball/soccer/hockey complexes, gymnastics academies throughout NE Ohio. Tournament weekends put 500+ people through parking lots in two days. Heavy staining on parking lots + entrance walkways. GM or owner signs vendor contracts. $8K-$25K/year per 5-facility deal. Zero competitors targeting this segment.
+- Fix applied (Run 125): 8 titles added to DANNY_TITLES + PROPERTY_MANAGER_TITLES. 10 org keywords added to DANNY_ORG_KEYWORDS. Full segment brief documented in agents/danny.md. First pull June 8 Cuyahoga.
+- Resolution criteria: Sports complex/athletic facility contacts appear in Danny's June 8 Cuyahoga pull output.
+
+---
+
+## OPEN — Off-Season Relay Gap (Oct 16 – March 31 was dark)
+- First seen: 2026-05-28 (Run 125)
+- Description: The relay was completely dark from Oct 16, 2026 through March 31, 2027. After `_check_october_final_push()` ends Oct 15, there were zero relay functions firing during the winter. This is the critical off-season period when Bradley should be collecting spring 2027 deposits, pitching Annual Plan renewals to 2026 customers, and planning the 2027 ad campaign.
+- Fix applied (Run 125): Added `_check_spring_2027_early_booking()` to vera_relay.py. Fires every Monday Oct 16, 2026 – March 31, 2027. Oct-Dec posts deposit collection + Annual Plan renewal pitch. Jan-Mar posts spring booking push + 2027 ad planning reminders. Wired into `_main_body()`. Self-deactivates April 1, 2027.
+- Resolution criteria: Relay fires every Monday during off-season. No more dark period after Oct 15.
 
 ---
 

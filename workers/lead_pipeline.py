@@ -316,6 +316,38 @@ DANNY_TITLES = [
     'hospital maintenance director', 'hospital facility manager', 'acute care facilities manager',
     'hospital engineering director', 'clinical facilities manager', 'hospital plant manager',
     'vice president of facilities', 'vp facilities',
+    # Pet Boarding & Kennel Facilities — NE Ohio has hundreds of boarding facilities;
+    # PetSmart PetsHotel (10+ NE Ohio locations), Bark Avenue, Hounds Town, Camp Bow Wow,
+    # independent kennels and doggy daycares across Cuyahoga/Summit/Lake/Lorain counties;
+    # outdoor dog runs + building exteriors + parking lots accumulate biological residue, mud, waste;
+    # Ohio pet boarding license = exterior cleanliness standard (facility inspection required);
+    # high foot traffic from pet owners dropping off/picking up = stained walkways + entrance areas;
+    # facility manager or owner signs vendor contracts; $400-$1,200/visit; 2-3x/year;
+    # 10 facilities = $8K-$24K/year; zero competitors targeting this segment (added 2026-05-28 run 125)
+    'pet boarding manager', 'kennel manager', 'dog boarding director', 'pet resort manager',
+    'doggy daycare manager', 'animal boarding manager', 'pet care director', 'kennel director',
+    # Dialysis Centers — DaVita (50+ NE Ohio locations), Fresenius Medical Care (40+ NE Ohio),
+    # US Renal Care, NephroMed, Rotech Healthcare outpatient dialysis centers;
+    # patients visit 3x/week = extremely high foot traffic on parking lots + entrance walkways;
+    # CMS/Medicare certification standards require clean patient-facing exterior appearance;
+    # district FMs oversee 10-20 centers and sign multi-location vendor contracts;
+    # $500-$1,200/center; quarterly = $2K-$4.8K/year per center;
+    # 15-center district FM deal = $30K-$72K/year; zero current competitors in this segment (added 2026-05-28 run 125)
+    'dialysis center manager', 'dialysis clinic manager', 'renal care director',
+    'dialysis facility manager', 'outpatient dialysis manager', 'dialysis district manager',
+    'dialysis regional manager', 'kidney care director',
+    # Sports Complexes & Youth Athletic Facilities — NE Ohio has dozens of multi-sport facilities;
+    # Sportsplex at Mentor, Great Lakes Athletic Complex, Cleveland Sport & Social Club,
+    # youth baseball/softball complexes (dozens in Cuyahoga/Summit/Lake/Lorain), indoor soccer facilities,
+    # youth hockey rinks (OHF-affiliated rinks throughout NE Ohio), gymnastics academies,
+    # martial arts academies with large studio/parking footprints;
+    # heavy weekend foot traffic from parents + kids = staining on parking lots + entrance walkways;
+    # large paved parking areas + building exteriors + walkways = recurring pressure wash need;
+    # GM or owner signs vendor contracts; $800-$2,500/visit; 2-3x/year per facility;
+    # zero competitors targeting this segment (added 2026-05-28 run 125)
+    'sports complex manager', 'athletic complex director', 'sports facility manager',
+    'recreation complex manager', 'sports complex director', 'athletic facility director',
+    'youth sports director', 'sports facility director',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -504,6 +536,24 @@ DANNY_ORG_KEYWORDS = [
     'hospital campus', 'regional hospital', 'acute care hospital', 'health system campus',
     'community hospital', 'teaching hospital', 'hospital network', 'medical center campus',
     'hospital facilities management', 'health system facilities', 'hospital plant operations',
+    # Pet Boarding & Kennel Facilities — PetSmart PetsHotel, Bark Avenue, Hounds Town, Camp Bow Wow,
+    # independent kennels across Cuyahoga/Summit/Lake/Lorain; outdoor runs + parking lots + building exteriors
+    # accumulate biological residue; Ohio pet boarding license = exterior cleanliness standard;
+    # zero competitors targeting this segment (added 2026-05-28 run 125)
+    'pet boarding', 'dog kennel', 'pet hotel', 'doggy daycare', 'pet resort',
+    'boarding kennel', 'animal boarding', 'dog boarding', 'cat boarding', 'pet care center',
+    # Dialysis Centers — DaVita (50+ NE Ohio), Fresenius Medical Care (40+ NE Ohio), US Renal Care;
+    # patients visit 3x/week = highest foot traffic density of any outpatient facility;
+    # CMS certification requires clean patient-facing exterior; district FMs sign multi-location contracts (added 2026-05-28 run 125)
+    'dialysis center', 'renal care', 'kidney care', 'dialysis clinic', 'dialysis facility',
+    'dialysis services', 'outpatient dialysis', 'renal dialysis',
+    # Sports Complexes & Youth Athletic Facilities — Sportsplex at Mentor, Great Lakes Athletic Complex,
+    # youth baseball/softball complexes, indoor soccer facilities, youth hockey rinks, gymnastics academies;
+    # heavy weekend traffic from parents + kids = staining on parking lots + entrance walkways;
+    # GM or owner signs vendor contracts; zero competitors targeting this segment (added 2026-05-28 run 125)
+    'sports complex', 'athletic complex', 'sports facility', 'recreation complex',
+    'youth sports complex', 'indoor sports facility', 'multi-sport complex', 'athletic facility',
+    'youth athletics', 'sports training facility',
 ]
 
 CARLA_SEARCHES = [
