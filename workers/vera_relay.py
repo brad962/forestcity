@@ -945,6 +945,192 @@ def _check_review_request_reminder():
         log('Review request daily reminder posted to Slack')
 
 
+def _check_pipeline_overdue_contacts():
+    """Fire daily. Reads pipeline_data.json and surfaces all contacts with a past-due
+    next_followup date. 36 contacts were sitting overdue with no Slack alert — this closes
+    the operational gap between the pipeline existing and Bradley actually acting on it.
+    Posts daily with a dedupe sentinel. Self-refreshes every calendar day."""
+    from datetime import date as _date_po
+    import json as _json_po
+    today = _date_po.today()
+
+    alert_sentinel = BASE_DIR / 'outputs' / 'vera' / '.pipeline_overdue_alert_date'
+    today_str = today.strftime('%Y-%m-%d')
+    if alert_sentinel.exists() and alert_sentinel.read_text().strip() == today_str:
+        return
+
+    pipeline_file = BASE_DIR / 'pipeline_data.json'
+    if not pipeline_file.exists():
+        return
+
+    try:
+        data = _json_po.loads(pipeline_file.read_text())
+        contacts = data.get('manual_contacts', [])
+    except Exception:
+        return
+
+    skip_stages = {'Closed Won', 'Closed Lost'}
+    overdue = []
+    no_date = []
+
+    for c in contacts:
+        stage = c.get('stage', '')
+        if stage in skip_stages:
+            continue
+        nf = (c.get('next_followup') or '').strip()
+        company = c.get('company') or f"{c.get('first_name','')} {c.get('last_name','')}".strip() or 'Unknown'
+        lead_type = c.get('lead_type', '')
+        if not nf:
+            no_date.append((company, stage, lead_type))
+        else:
+            try:
+                nf_date = _date_po.fromisoformat(nf[:10])
+                if nf_date <= today:
+                    overdue.append((company, stage, nf, lead_type))
+            except Exception:
+                no_date.append((company, stage, lead_type))
+
+    total = len(overdue) + len(no_date)
+    if total == 0:
+        return
+
+    lines = [f'📋 *Pipeline Follow-Up Due — {total} Contact{"s" if total != 1 else ""} Need Action Today*']
+
+    if overdue:
+        lines.append(f'>*Overdue ({len(overdue)}):*')
+        for company, stage, nf, ltype in sorted(overdue, key=lambda x: x[2])[:8]:
+            lines.append(f'>  • {company} ({stage}) — was due {nf}')
+        if len(overdue) > 8:
+            lines.append(f'>  … and {len(overdue) - 8} more overdue')
+
+    if no_date:
+        lines.append(f'>*No follow-up date set ({len(no_date)}):*')
+        for company, stage, ltype in no_date[:5]:
+            lines.append(f'>  • {company} ({stage})')
+        if len(no_date) > 5:
+            lines.append(f'>  … and {len(no_date) - 5} more without dates')
+
+    gas_count = sum(1 for c in overdue if c[3] == 'gas_station') + sum(1 for c in no_date if c[2] == 'gas_station')
+    if gas_count:
+        lines.append(f'>⛽ {gas_count} gas station contacts need Mixmax sequence before enrolling — guide: `outputs/danny/gas_station_sequence_create_now_2026-05-27.md`')
+
+    lines.append(f'>Update pipeline: `python3 scripts/contact_done.py` or edit pipeline_data.json directly.')
+
+    msg = '\n'.join(lines)
+    if post_slack(msg):
+        alert_sentinel.parent.mkdir(exist_ok=True)
+        try:
+            alert_sentinel.write_text(today_str)
+        except Exception:
+            pass
+        log(f'Pipeline overdue contacts alert posted — {total} contacts need action')
+
+
+def _check_wave2_day7_followup():
+    """Fire June 3–4 — Day 7 follow-up for Wave 2 contractor first-touch texts (sent May 28).
+    Day 7 is the final warm touch before contacts move to cold cadence.
+    Fires June 3 as a heads-up, June 4 as the action day (also Round 2 enrollment day)."""
+    from datetime import date as _date_w2d7
+    today = _date_w2d7.today()
+    start = _date_w2d7(2026, 6, 3)
+    end   = _date_w2d7(2026, 6, 4)
+    if not (start <= today <= end):
+        return
+
+    alert_sentinel = BASE_DIR / 'outputs' / 'vera' / '.wave2_day7_followup_sent_date'
+    today_str = today.strftime('%Y-%m-%d')
+    if alert_sentinel.exists() and alert_sentinel.read_text().strip() == today_str:
+        return
+
+    msg = (
+        '📲 *Wave 2 Contractor — Day 7 Final Follow-Up (June 3–4)*\n'
+        '>Wave 2 texts went out May 28. Day 7 = final warm touch before contacts go cold.\n'
+        '>Script for no-reply contacts:\n'
+        '>  "Hey [name], just checking in one more time. We refer our customers to local contractors they can trust —\n'
+        '>   happy to send work your way if you\'re open to a quick intro. No pressure either way."\n'
+        '>For Day 3 replies that went warm — push to a 10-min call today or tomorrow.\n'
+        '>Full follow-up schedule: `outputs/vera/wave2_contractor_followup_schedule_2026-05-27.md`\n'
+        '>ALSO TODAY: June 4 = Round 2 enrollment day. Battle card: `outputs/donna/june4_enrollment_battle_card_2026-05-24.md`'
+    )
+    if post_slack(msg):
+        alert_sentinel.parent.mkdir(exist_ok=True)
+        try:
+            alert_sentinel.write_text(today_str)
+        except Exception:
+            pass
+        log('Wave 2 contractor Day 7 follow-up reminder posted (June 3–4 window)')
+
+
+def _check_instagram_reminder():
+    """Fire June 1–2 only. Jasmine built a 15-minute Instagram launch guide that has gone unused.
+    Instagram is the highest-reach platform for before/after content — 3–5× organic reach vs Facebook.
+    Forest City has zero Instagram presence heading into peak season.
+    One-time reminder, self-deactivates June 3."""
+    from datetime import date as _date_ig
+    today = _date_ig.today()
+    start = _date_ig(2026, 6, 1)
+    end   = _date_ig(2026, 6, 2)
+    if not (start <= today <= end):
+        return
+
+    alert_sentinel = BASE_DIR / 'outputs' / 'vera' / '.instagram_reminder_sent_date'
+    today_str = today.strftime('%Y-%m-%d')
+    if alert_sentinel.exists() and alert_sentinel.read_text().strip() == today_str:
+        return
+
+    msg = (
+        '📸 *Instagram Launch — 15 Minutes, Zero Cost, Free Reach All Season*\n'
+        '>Jasmine\'s press-GO guide: `outputs/jasmine/instagram_launch_today_2026-05-26.md`\n'
+        '>Steps: Create Business Account → paste bio → post first before/after photo. 15 min.\n'
+        '>Before/after content gets 3–5× the organic reach on Instagram vs the same Facebook post.\n'
+        '>No content calendar needed yet — just launch the account so it\'s live when job photos start rolling in.\n'
+        '>Every day without an account = reach left on the table during peak season.'
+    )
+    if post_slack(msg):
+        alert_sentinel.parent.mkdir(exist_ok=True)
+        try:
+            alert_sentinel.write_text(today_str)
+        except Exception:
+            pass
+        log('Instagram launch reminder posted (June 1–2 one-time window)')
+
+
+def _check_annual_plan_pitch_reminder():
+    """Fire every Monday June–September. Open issue since Run 88 — Annual Plan is never pitched on calls.
+    Annual Plan is Forest City's highest-LTV product (2× revenue per customer, recurring).
+    One Monday reminder = 20+ opportunities per week to pitch it. One sentence is all it takes.
+    Self-deactivates October 1."""
+    from datetime import date as _date_ap
+    today = _date_ap.today()
+    start = _date_ap(2026, 6, 1)
+    end   = _date_ap(2026, 9, 30)
+    if not (start <= today <= end):
+        return
+    if today.weekday() != 0:  # Monday only
+        return
+
+    alert_sentinel = BASE_DIR / 'outputs' / 'vera' / '.annual_plan_reminder_week'
+    week_str = today.strftime('%Y-W%W')
+    if alert_sentinel.exists() and alert_sentinel.read_text().strip() == week_str:
+        return
+
+    msg = (
+        '📋 *This Week: Pitch the Annual Plan on Every Quote Call*\n'
+        '>Annual Plan = 2 visits (spring + fall), one price, recurring customer. Highest-LTV product.\n'
+        '>One sentence close: "We also do an Annual Plan — spring wash + fall wash, one price,\n'
+        '>  you just call us each season. Most of our regulars do it. Want me to add it as an option?"\n'
+        '>Add "Annual Plan" as a line item in Workiz so it appears on every estimate automatically.\n'
+        '>Full quote conversion kit: `outputs/tommy/quote_to_close_kit_2026-05-21.md`'
+    )
+    if post_slack(msg):
+        alert_sentinel.parent.mkdir(exist_ok=True)
+        try:
+            alert_sentinel.write_text(week_str)
+        except Exception:
+            pass
+        log(f'Annual Plan pitch weekly reminder posted — week {week_str}')
+
+
 def _acquire_lock() -> bool:
     """Return True if we got the lock, False if another instance is running."""
     LOCK_FILE.parent.mkdir(exist_ok=True)
@@ -1023,6 +1209,10 @@ def _main_body():
     _check_june29_lorain()
     _check_post_june11_monitoring()
     _check_review_request_reminder()
+    _check_pipeline_overdue_contacts()
+    _check_wave2_day7_followup()
+    _check_instagram_reminder()
+    _check_annual_plan_pitch_reminder()
 
     # Fetch first so origin/main is current before flush checks origin/main..HEAD
     git(['fetch', 'origin'])

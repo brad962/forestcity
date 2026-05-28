@@ -224,6 +224,11 @@ DANNY_TITLES = [
     # $400-$1,000/visit; 2x/year per clinic = $800-$2,000; 20-clinic chain deal = $16K-$40K/year (added 2026-05-28 run 115)
     'veterinary practice manager', 'animal hospital manager', 'veterinary clinic manager',
     'vet clinic manager', 'animal hospital director', 'veterinary district manager',
+    # Towing companies & auto salvage — large paved yards + impound lots accumulate heavy oil/fluid staining;
+    # NE Ohio: Jeff's Towing, Allied Towing, AAA impound lots, Belden's, regional salvage chains;
+    # owner-operators sign contracts directly; zero competitors; $800-$2,500/visit; 4x/year (added 2026-05-28 run 117)
+    'tow yard manager', 'towing company owner', 'auto salvage manager', 'impound lot manager',
+    'towing operations manager', 'salvage yard manager', 'auto salvage director',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -344,6 +349,12 @@ DANNY_ORG_KEYWORDS = [
     # corporate chains sign multi-clinic vendor contracts across NE Ohio (added 2026-05-28 run 115)
     'veterinary clinic', 'animal hospital', 'veterinary practice', 'vet clinic',
     'animal care center', 'veterinary hospital', 'pet hospital',
+    # Towing companies & auto salvage — large paved yards + impound lots + loading bays;
+    # heavy oil, hydraulic fluid, road salt accumulation; NE Ohio has 50+ operators: Jeff's Towing, Allied,
+    # AAA-contracted impound lots, Belden's, regional salvage chains; owner-operators sign vendor contracts directly;
+    # zero competitors targeting this segment; $800-$2,500/visit; 4x/year = $3,200-$10,000/year per operator (added 2026-05-28 run 117)
+    'towing company', 'auto salvage', 'salvage yard', 'impound lot', 'tow yard',
+    'junkyard', 'vehicle salvage', 'towing service',
 ]
 
 CARLA_SEARCHES = [

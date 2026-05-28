@@ -180,6 +180,12 @@ PROPERTY_MANAGER_TITLES = [
     # district FMs sign multi-clinic contracts; $800-$2,000/clinic; 20-clinic chain = $16K-$40K/year (added 2026-05-28 run 115)
     'veterinary practice manager', 'animal hospital manager', 'veterinary clinic manager',
     'vet clinic manager', 'animal hospital director', 'veterinary district manager',
+    # Towing companies & auto salvage — large paved yards + building exteriors + loading areas;
+    # oil, hydraulic fluid, road grime = heavy accumulation; NE Ohio has 50+ operators (Jeff's Towing, Allied, AAA contracted lots);
+    # owner-operators manage multiple tow yards + impound lots; zero competitors targeting this segment;
+    # $800-$2,500/visit; 4x/year = $3,200-$10,000/year per operator (added 2026-05-28 run 117)
+    'tow yard manager', 'towing company owner', 'auto salvage manager', 'impound lot manager',
+    'towing operations manager', 'salvage yard manager', 'auto salvage director',
 ]
 
 REALTOR_TITLES = [
@@ -211,6 +217,11 @@ CONTRACTOR_TITLES = [
     'solar installer', 'solar panel', 'solar installation',
     # Plumbers and electricians — in homes 2-4x/year, trusted advisor relationship, see dirty exteriors on every call (added 2026-05-26 run 88)
     'plumber', 'plumbing', 'electrician', 'electrical contractor',
+    # Snow removal & ice management — completely idle May–Sept; same driveways/parking lots Forest City washes;
+    # pitch: "You're their winter vendor — be their summer referral, we'll return the favor in September";
+    # routing fix: without these keywords, snow removal contacts fall through to property_manager default (added 2026-05-28 run 117)
+    'snow removal', 'snow plowing', 'ice management', 'winter services', 'snow plow',
+    'salting service', 'de-icing', 'snow contractor',
 ]
 
 

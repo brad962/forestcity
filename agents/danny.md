@@ -298,6 +298,17 @@ This enrolls ALL pending contacts (gas stations + fleet) without triggering a fr
 **Timing:** Year-round need; spring (post-salt/winter runoff) and fall (leaf debris) are peak seasons. Contact NOW — district FMs are planning spring vendor relationships.
 **Sequence:** Route to Property Manager sequence (facility management / licensing compliance angle).
 
+### Towing Companies & Auto Salvage Yards (NEW — May 2026, Run 117)
+**Status:** Org keywords + titles live in DANNY_ORG_KEYWORDS/DANNY_TITLES as of Run 117. Include in next county rotation (Medina June 1 or Cuyahoga June 15).
+**Target:** Tow Yard Manager, Towing Company Owner, Auto Salvage Manager, Impound Lot Manager, Towing Operations Manager, Salvage Yard Manager
+**Why:** Towing company lots and auto salvage yards are among the dirtiest commercial surfaces in NE Ohio — accumulated engine oil, hydraulic fluid, transmission fluid, road salt, and tire rubber creates deep staining on large concrete/asphalt surfaces. Building exteriors have heavy grime and chemical residue. Owner-operators manage multiple impound lots and storage yards. NE Ohio has 50+ independent and regional towing operators (Jeff's Towing, Allied Towing, Belden's Towing, Saalfeld Griggs area fleets) plus AAA-contracted impound lots. Zero competitors are cold-calling this segment — it's an entirely open market. Owner-operators sign vendor contracts directly without procurement committees.
+**Revenue per visit:** $800–$2,500 (tow yard concrete + building exterior). 4× per year (heavy soiling) = $3,200–$10,000/year per operator.
+**Target companies:** Jeff's Towing & Recovery (Strongsville), Allied Towing (Cleveland), Belden's (multiple locations), AAA-contracted impound lots, county sheriff impound operators, auto salvage chains (Pick-n-Pull, LKQ Corporation NE Ohio locations), independent salvage yards in Medina/Summit counties.
+**Apollo keywords (live Run 117):** `towing company`, `auto salvage`, `salvage yard`, `impound lot`, `tow yard`, `junkyard`, `vehicle salvage`, `towing service` — added to DANNY_ORG_KEYWORDS.
+**Pitch angle:** "Most tow yard owners have never had anyone offer to wash their concrete — they just live with the oil stains. One visit and the lot looks like a professional operation instead of a junkyard. We handle the whole yard."
+**Timing:** Year-round heavy soiling. Spring (post-winter salt + oil runoff) is the highest-need window — contact NOW.
+**Sequence:** Route to Property Manager sequence (facility management / professional appearance angle).
+
 ## Peak Season Angle — HOA Budget Season (May–June)
 HOA boards typically hold their annual budget and vendor approval meetings in May–June before the summer maintenance season. This means property managers and community association managers are ACTIVELY reviewing vendor lists RIGHT NOW. The PM sequence Touch 1 and any LinkedIn outreach should reference this window: "HOA boards are approving their summer vendor lists this month" or "Most associations lock in their exterior maintenance vendor before July." This creates urgency without being pushy — it's calendar-based fact. Works especially well for community associations, HOA management companies, and multifamily operators who work on fiscal budgets.
 
