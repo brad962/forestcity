@@ -1607,6 +1607,159 @@ def _check_aug31_cuyahoga_3():
         log(f'Aug 31 Cuyahoga 3rd pass reminder posted — {label}')
 
 
+def _check_sept7_lake_3():
+    """Fire Sept 1–7 countdown for Lake County 3rd pass (Week 37, Sept 7 Monday).
+    Week 37 % 6 = 1 → Lake in the rotation. Mentor, Willoughby, Painesville, Wickliffe.
+    Third pass — fall angle; marina post-season cleanup window starting; school districts back in session."""
+    from datetime import date as _date_s7
+    today = _date_s7.today()
+    start = _date_s7(2026, 9, 1)
+    end   = _date_s7(2026, 9, 7)
+    if not (start <= today <= end):
+        return
+
+    alert_sentinel = BASE_DIR / 'outputs' / 'vera' / '.sept7_lake_3_sent_date'
+    today_str = today.strftime('%Y-%m-%d')
+    if alert_sentinel.exists() and alert_sentinel.read_text().strip() == today_str:
+        return
+
+    pull_date = _date_s7(2026, 9, 7)
+    days_left = (pull_date - today).days
+    label = f'{days_left} day{"s" if days_left != 1 else ""} away' if days_left > 0 else 'TODAY — LAKE COUNTY 3RD PASS'
+    note  = 'Cron fires Mon Sept 7 at 7am. Verify: `cat logs/cron.log | tail -10`' if days_left > 0 else \
+            'Run now if cron missed: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Lake`'
+
+    msg = (
+        f'📍 *Lake County 3rd Pass — {label} (Sept 7)*\n'
+        f'>Week 37 rotation: Mentor, Willoughby, Painesville, Wickliffe. Third pass — fall booking angle active.\n'
+        f'>Marina post-season cleanup window opening — contact NOW for October dock area + storage lot cleaning.\n'
+        f'>{note}\n'
+        f'>Command: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Lake`'
+    )
+    if post_slack(msg):
+        alert_sentinel.parent.mkdir(exist_ok=True)
+        try:
+            alert_sentinel.write_text(today_str)
+        except Exception:
+            pass
+        log(f'Sept 7 Lake County 3rd pass reminder posted — {label}')
+
+
+def _check_sept14_lorain_3():
+    """Fire Sept 8–14 countdown for Lorain County 3rd pass (Week 38, Sept 14 Monday).
+    Week 38 % 6 = 2 → Lorain. Elyria, Avon, North Ridgeville + Lake Erie shoreline.
+    Third pass — peak fall booking push; Avon growth corridor HOAs locking in fall vendor lists."""
+    from datetime import date as _date_s14
+    today = _date_s14.today()
+    start = _date_s14(2026, 9, 8)
+    end   = _date_s14(2026, 9, 14)
+    if not (start <= today <= end):
+        return
+
+    alert_sentinel = BASE_DIR / 'outputs' / 'vera' / '.sept14_lorain_3_sent_date'
+    today_str = today.strftime('%Y-%m-%d')
+    if alert_sentinel.exists() and alert_sentinel.read_text().strip() == today_str:
+        return
+
+    pull_date = _date_s14(2026, 9, 14)
+    days_left = (pull_date - today).days
+    label = f'{days_left} day{"s" if days_left != 1 else ""} away' if days_left > 0 else 'TODAY — LORAIN COUNTY 3RD PASS'
+    note  = 'Cron fires Mon Sept 14 at 7am. Verify: `cat logs/cron.log | tail -10`' if days_left > 0 else \
+            'Run now if cron missed: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Lorain`'
+
+    msg = (
+        f'📍 *Lorain County 3rd Pass — {label} (Sept 14)*\n'
+        f'>Week 38 rotation: Elyria, Avon, North Ridgeville. Third pass — fall closing window.\n'
+        f'>Avon HOA boards approving fall vendor lists NOW. Pitch: "Lock in before October fills."\n'
+        f'>{note}\n'
+        f'>Command: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Lorain`'
+    )
+    if post_slack(msg):
+        alert_sentinel.parent.mkdir(exist_ok=True)
+        try:
+            alert_sentinel.write_text(today_str)
+        except Exception:
+            pass
+        log(f'Sept 14 Lorain County 3rd pass reminder posted — {label}')
+
+
+def _check_sept21_summit_3():
+    """Fire Sept 15–21 countdown for Summit County 3rd pass (Week 39, Sept 21 Monday).
+    Week 39 % 6 = 3 → Summit. Akron, Fairlawn, Stow, Cuyahoga Falls.
+    Third pass — final pre-winter push for second-largest commercial market."""
+    from datetime import date as _date_s21
+    today = _date_s21.today()
+    start = _date_s21(2026, 9, 15)
+    end   = _date_s21(2026, 9, 21)
+    if not (start <= today <= end):
+        return
+
+    alert_sentinel = BASE_DIR / 'outputs' / 'vera' / '.sept21_summit_3_sent_date'
+    today_str = today.strftime('%Y-%m-%d')
+    if alert_sentinel.exists() and alert_sentinel.read_text().strip() == today_str:
+        return
+
+    pull_date = _date_s21(2026, 9, 21)
+    days_left = (pull_date - today).days
+    label = f'{days_left} day{"s" if days_left != 1 else ""} away' if days_left > 0 else 'TODAY — SUMMIT COUNTY 3RD PASS'
+    note  = 'Cron fires Mon Sept 21 at 7am. Verify: `cat logs/cron.log | tail -10`' if days_left > 0 else \
+            'Run now if cron missed: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Summit`'
+
+    msg = (
+        f'📍 *Summit County 3rd Pass — {label} (Sept 21)*\n'
+        f'>Week 39 rotation: Akron, Fairlawn, Stow, Cuyahoga Falls. Third pass — pre-winter push.\n'
+        f'>Industrial segment (manufacturing, distribution, towing) — fall maintenance before freeze window.\n'
+        f'>{note}\n'
+        f'>Command: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Summit`'
+    )
+    if post_slack(msg):
+        alert_sentinel.parent.mkdir(exist_ok=True)
+        try:
+            alert_sentinel.write_text(today_str)
+        except Exception:
+            pass
+        log(f'Sept 21 Summit County 3rd pass reminder posted — {label}')
+
+
+def _check_sept28_medina_4():
+    """Fire Sept 22–28 countdown for Medina County 4th pass (Week 40, Sept 28 Monday).
+    Week 40 % 6 = 4 → Medina. Medina, Brunswick, Wadsworth.
+    Final pass of the season — last pre-winter push before freeze closes the outdoor cleaning window."""
+    from datetime import date as _date_s28
+    today = _date_s28.today()
+    start = _date_s28(2026, 9, 22)
+    end   = _date_s28(2026, 9, 28)
+    if not (start <= today <= end):
+        return
+
+    alert_sentinel = BASE_DIR / 'outputs' / 'vera' / '.sept28_medina_4_sent_date'
+    today_str = today.strftime('%Y-%m-%d')
+    if alert_sentinel.exists() and alert_sentinel.read_text().strip() == today_str:
+        return
+
+    pull_date = _date_s28(2026, 9, 28)
+    days_left = (pull_date - today).days
+    label = f'{days_left} day{"s" if days_left != 1 else ""} away' if days_left > 0 else 'TODAY — MEDINA 4TH PASS (FINAL)'
+    note  = 'Cron fires Mon Sept 28 at 7am. Verify: `cat logs/cron.log | tail -10`' if days_left > 0 else \
+            'Run now if cron missed: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Medina`'
+
+    msg = (
+        f'📍 *Medina County 4th Pass — {label} (Sept 28) — FINAL PUSH OF THE SEASON*\n'
+        f'>Week 40 rotation: Medina, Brunswick, Wadsworth. This is the last pull before the season closes.\n'
+        f'>Close pitch: "Last chance before the freeze. Book your fall clean this week — October fills fast."\n'
+        f'>After this: season wraps. Start planning spring 2027 campaign before first frost.\n'
+        f'>{note}\n'
+        f'>Command: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Medina`'
+    )
+    if post_slack(msg):
+        alert_sentinel.parent.mkdir(exist_ok=True)
+        try:
+            alert_sentinel.write_text(today_str)
+        except Exception:
+            pass
+        log(f'Sept 28 Medina 4th pass reminder posted — {label}')
+
+
 def _check_fall_prep_reminder():
     """Fire every Monday Aug 3 – Sept 28.
     By August, the outreach message must shift from peak-season urgency to fall-booking urgency.
@@ -1684,6 +1837,10 @@ def _main_body():
     _check_aug17_medina_3()
     _check_aug24_geauga_portage_2()
     _check_aug31_cuyahoga_3()
+    _check_sept7_lake_3()
+    _check_sept14_lorain_3()
+    _check_sept21_summit_3()
+    _check_sept28_medina_4()
     _check_fall_prep_reminder()
 
     # Fetch first so origin/main is current before flush checks origin/main..HEAD

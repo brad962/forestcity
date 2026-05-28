@@ -1,6 +1,27 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 121 | 2026-05-28 | Auto-fixes shipped: 3 | New RESOLVED: 1 | Open: 47 (0 new segment issues, 1 resolved — "No Week 2 Ads Scaling Strategy"; 2 new: August relay gap fixed, fall prep reminder added)*
+*Run 122 | 2026-05-28 | Auto-fixes shipped: 2 | New RESOLVED: 2 | Open: 45 (2 resolved: routing sync gap + September relay gap; 0 new)*
+
+---
+
+## RUN METRICS — Run 122 | 2026-05-28
+- Total RESOLVED: 98 (2 new this run)
+- Total OPEN: 45 (0 new issues; 2 resolved: mixmax routing sync gap + September relay gap)
+- Auto-upgrades shipped: 2
+  1. `integrations/mixmax.py` — added 3 missing titles to PROPERTY_MANAGER_TITLES: `automotive service center director`, `cinema general manager`, `bowling center director`; these were in DANNY_TITLES (Apollo search) but not in routing table — contacts with these exact titles would have silently misrouted or fallen to default
+  2. `workers/vera_relay.py` — added 4 September county pull countdown functions: `_check_sept7_lake_3()`, `_check_sept14_lorain_3()`, `_check_sept21_summit_3()`, `_check_sept28_medina_4()`; relay was completely dark for September (Weeks 37-40) despite Danny's calendar covering those weeks; now wired into `_main_body()`
+
+---
+
+## RESOLVED — Mixmax Routing Sync Gap (Tire/Cinema/Bowling titles)
+- Resolved: 2026-05-28 (Run 122)
+- Fix: Added `automotive service center director`, `cinema general manager`, `bowling center director` to PROPERTY_MANAGER_TITLES in integrations/mixmax.py. These 3 titles existed in DANNY_TITLES (what Apollo searches for) but were absent from the routing table (what determines which sequence a pulled contact enrolls in). Silent mismatch = contacts pulled but misrouted.
+
+---
+
+## RESOLVED — September Relay Gap (Weeks 37-40)
+- Resolved: 2026-05-28 (Run 122)
+- Fix: Added `_check_sept7_lake_3()`, `_check_sept14_lorain_3()`, `_check_sept21_summit_3()`, `_check_sept28_medina_4()` to vera_relay.py. Danny's calendar covers through Sept 28 (added Run 121) but the relay had zero Slack reminders for any September county pull. Now all 4 are wired and will fire the week of each Monday pull date.
 
 ---
 

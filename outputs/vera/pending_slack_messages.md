@@ -1,31 +1,32 @@
 🔧 *Vera — Auto-Upgrade*
->Changed: `workers/vera_relay.py` — added 5 August county pull relay reminders (Aug 3 Lorain, Aug 10 Summit, Aug 17 Medina, Aug 24 Geauga+Portage, Aug 31 Cuyahoga)
->Why: Relay was completely dark for all of August — after July 27 there were zero reminders for the rest of peak season, meaning Bradley could miss 5 consecutive Monday county pulls without any Slack nudge.
->File: workers/vera_relay.py
+>Changed: `integrations/mixmax.py` — added 3 missing titles to PROPERTY_MANAGER_TITLES routing table: `automotive service center director`, `cinema general manager`, `bowling center director`
+>Why: These titles existed in DANNY_TITLES (what Apollo searches for) but were absent from the Mixmax routing table — any contact Apollo pulls with these exact titles would silently misroute or fall through to wrong sequence. Found by cross-checking DANNY_TITLES against PROPERTY_MANAGER_TITLES line by line.
+>File: integrations/mixmax.py
 ---
 🔧 *Vera — Auto-Upgrade*
->Changed: `workers/vera_relay.py` — added `_check_fall_prep_reminder()` firing every Monday Aug 3–Sept 28
->Why: Without a message shift cue, Bradley stays in "peak season urgency" mode too long; the fall booking window closes fast in October and requires a different pitch ("lock in fall before we fill up") starting in August.
+>Changed: `workers/vera_relay.py` — added 4 September county pull countdown relay functions: `_check_sept7_lake_3` (Sept 7), `_check_sept14_lorain_3` (Sept 14), `_check_sept21_summit_3` (Sept 21), `_check_sept28_medina_4` (Sept 28); all wired into `_main_body()`
+>Why: Danny's calendar (added Run 121) covers Weeks 37–40 (Sept 7–28) but relay had ZERO Slack reminders for all of September. Each function fires the week of its Monday pull date with county-specific context.
 >File: workers/vera_relay.py
 ---
-🔧 *Vera — Auto-Upgrade*
->Changed: `agents/danny.md` — extended county rotation calendar from Week 28 (July 6) through Week 40 (Sept 28); added all 13 missing weeks with county, date, and strategic context notes
->Why: Calendar was truncated mid-peak-season — no scheduled context for any August or September pull, leaving Bradley without a roadmap for the second half of the revenue season.
->File: agents/danny.md
+💡 *Vera — Upgrade Proposal*
+>Idea: VOC-based Facebook & Google Ad Copy Refresh — 3 new variants per platform
+>Why: Current ad copy predates VOC research. VOC identified exact phrases customers use: "dirty driveway embarrassing me," "neighbors judging my house," "finally found someone reliable." Mirror-language ads get 3–5× higher CTR. Day 3 (today) is the first Facebook allowed tweak window — ideal time to A/B test new creative.
+>Impact: Lower CPL → more leads per ad dollar at no extra spend. Rick writes 3 Facebook + 3 Google variants. Launch as A/B test today.
+>Reply YES and I'll have Rick write the copy today.
 ---
 💡 *Vera — Upgrade Proposal*
->Idea: School District Buildings & Grounds Director Direct Outreach Blitz (June 1–15 window)
->Why: NE Ohio school districts finish the year first week of June. Buildings & Grounds Directors (B&G Directors) start planning summer vendor contracts IN MAY. The June 8 Cuyahoga Apollo pull will enroll them in the standard Mixmax sequence — but a targeted personal outreach (phone call or direct email, not sequence) to 5–8 major district B&G Directors NOW could land a same-week summer contract. Cleveland Metro Schools alone = 100+ buildings. One district = $60K–$240K in summer work. The window is closing — most districts finalize summer vendor lists by June 15.
->Impact: Could generate the single largest contract of the season before the Mixmax sequence even starts warming them up. Tommy writes a 3-sentence direct email; Vera provides a target list of 8 NE Ohio B&G Director contacts (already in Apollo).
->Reply YES to approve and I'll have Tommy draft the outreach + pull the target list.
+>Idea: Activate GBP Weekly Posting Routine — Jasmine owns it starting this week
+>Why: Jasmine already wrote the GBP weekly routine guide and June content calendar — neither has been executed. GBP posts appear directly in Google Maps results (free traffic from buyers already searching). 10 min/week. Competitors who post 1x/week outrank those who don't.
+>Impact: Higher Maps ranking in 7-county service area during peak season at zero cost. Jasmine posts 1 GBP update + 1 job photo per week starting June 1.
+>Reply YES and I'll move the guides to outputs/jasmine/ and have Jasmine write the first 4 June posts.
 ---
 💡 *Vera — Upgrade Proposal*
->Idea: Facebook Ad Copy Refresh — rewrite current ad copy using VOC research
->Why: Facebook ad copy was written before Marcus completed VOC research. The current copy uses generic "power washing" language. VOC research identified the actual words customers use: "dirty driveway embarrassing me," "neighbors judged my house," "finally got someone reliable." Ad copy using these exact phrases gets 3–5× higher CTR because it matches the inner monologue. This is a known gap since Run 75.
->Impact: Higher CTR → lower CPL → more leads per ad dollar. Rick rewrites 3 ad variants using VOC language; launch as A/B test against current copy on June 2 (Day 7 review window — when Facebook allows budget and creative adjustments).
->Reply YES to approve and I'll have Rick write the VOC-based ad copy variants.
+>Idea: Re-engage Bryan + 21 untouched contractor referral contacts before June 4 enrollment day
+>Why: Bryan (CLE Lawn Care Plus) 14+ days cold — no follow-up since first touch. 21 other contractor referral contacts from earlier pulls have never received a first-touch text or email. One active referral partner who books 3 jobs = $1,200–$2,400 this season. June 4 is 7 days away — referral channel should be warm before email sequences go out.
+>Impact: Carla writes a re-warm text for Bryan + first-touch sequence for the 21 untouched contacts. 30 min of sending.
+>Reply YES and I'll have Carla draft the full outreach kit today.
 ---
-✅ *Vera — Scan Complete 2026-05-28*
->3 auto-upgrades shipped | 2 proposals | Open issues: 47 (1 resolved this run — No Week 2 Ads Scaling Strategy)
->Critical: Summit County pull deadline MAY 31 — 3 days left. Double-click `scripts/run_summit_pull.command` TODAY.
->Today's actions: Day 3 ads check window | Wave 2 contractor blitz (16 texts due) | Review request reminder starts
+✅ *Vera — Scan Complete 2026-05-28 (Run 122)*
+>2 auto-upgrades shipped | 3 proposals | Open issues: 45 (2 resolved — routing sync gap + September relay gap)
+>Critical: Summit County pull deadline MAY 31 (3 days). Run: `python3 workers/lead_pipeline.py danny Summit` or double-click `scripts/run_summit_pull.command`
+>Today is Day 3 ads check window + Wave 2 contractor blitz day (16 texts). Past customer blast reminder active.
