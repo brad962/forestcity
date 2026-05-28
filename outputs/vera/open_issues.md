@@ -1,6 +1,42 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 117 | 2026-05-28 | Auto-fixes shipped: 5 | New RESOLVED: 0 | Open: 50 (2 new: pipeline overdue contacts no relay + towing companies segment)*
+*Run 118 | 2026-05-28 | Auto-fixes shipped: 5 | New RESOLVED: 0 | Open: 52 (2 new: county rotation dates wrong + fleet sequence pending no alert)*
+
+---
+
+## RUN METRICS — Run 118 | 2026-05-28
+- Total RESOLVED: 85 (0 new this run)
+- Total OPEN: 52 (2 new: county rotation date bug corrected in code, fleet sequence pending alert added)
+- Auto-upgrades shipped: 5
+  1. `workers/vera_relay.py` — **CRITICAL BUG FIX** — corrected all June county rotation relay dates; prior runs labeled all June relay reminders with wrong county (one week off — Geauga on June 8 when it's Cuyahoga, Cuyahoga on June 15 when it's Lake, etc.); fixed to match actual `week_num % 6` rotation: June 8=Cuyahoga, June 15=Lake, June 22=Lorain, June 29=Summit; also updated date ranges (June 10→June 11 for Lake, June 18→June 22 for Lorain, June 25→June 29 for Summit) to match actual pull Monday dates; sentinel names retained for compatibility
+  2. `workers/vera_relay.py` — added `_check_july6_medina()`: fires June 30–July 6; Medina County (Week 28) pull; previously NO relay reminder existed for the July rotation restart; wired into `_main_body()`
+  3. `workers/vera_relay.py` — added `_check_fleet_sequence_pending()`: fires daily if fleet_washing sequence still PENDING; parallel to existing `_check_gas_station_pending()`; both sequences have been PENDING since launch; fleet had zero Slack alert; wired into `_main_body()`
+  4. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — added **Manufacturing & Industrial Facilities** as new commercial segment; DANNY_TITLES: `plant manager`, `plant superintendent`, `manufacturing plant manager`, `plant facilities manager`, `industrial facility manager`, `maintenance manager`, `plant maintenance manager`, `ehs manager`, `environmental health safety manager`, `manufacturing facility manager`; DANNY_ORG_KEYWORDS: `manufacturing plant`, `industrial facility`, `production facility`, `metal fabrication`, `steel manufacturing`, `auto parts manufacturer`, `industrial manufacturing`, `assembly plant`, `manufacturing operations`, `plant operations`; Ford/Lincoln Electric/Eaton/Parker Hannifin/Republic Steel/North Star BlueScope; OSHA loading dock compliance angle; $3,000-$15,000/year per facility; first pull June 8 Cuyahoga
+  5. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — added **Car Wash Facilities** as new commercial segment; DANNY_TITLES: `car wash manager`, `car wash district manager`, `car wash owner`, `car wash operator`, `carwash manager`, `express wash manager`, `tunnel wash manager`, `car wash general manager`; DANNY_ORG_KEYWORDS: `car wash`, `auto wash`, `carwash`, `vehicle wash`, `express car wash`, `tunnel car wash`, `coin car wash`, `car wash franchise`; Mr. Clean/Mister Car Wash/Cobblestone NE Ohio; ironic pitch = memorable; OSHA stormwater compliance; $1,500-$4,000/year per location; first pull June 8 Cuyahoga
+- `agents/danny.md` — ALSO fixed county rotation table dates (all were one week late); added note about date correction
+
+**Persistent troubleshooting (new angles tried this run):**
+- County rotation bug: ROOT CAUSE FOUND — prior relay functions were labeled with incorrect county names and dates, all shifted one week late. `_check_june8_geauga_portage()` said Geauga+Portage but June 8 = Cuyahoga (Week 24). `_check_june15_cuyahoga()` said Cuyahoga June 15 but June 15 = Lake (Week 25). Etc. All relay functions updated with correct county + correct date language.
+- Fleet sequence pending: ROOT CAUSE — `_check_fleet_sequence_pending()` never existed. Gas station had one (added Run 108) but fleet had nothing. Added this run.
+- Pipeline overdue contacts: Relay now fires daily. All 36 contacts still overdue — operational blocker on Bradley's side. Relay covers it.
+- Gas station: 12 contacts still waiting. PENDING sequence. Relay fires daily. Bradley action needed.
+- GitHub Actions PAT: Accepted workaround. vera_relay.py local cron is the delivery mechanism.
+
+---
+
+## OPEN — June County Rotation Dates Were All One Week Late 🔴 FIXED (Run 118)
+- First seen: 2026-05-28 (Run 118)
+- Description: All June county relay reminders had wrong county names AND wrong dates. The rotation fires based on `week_num % 6`. Week 24 % 6 = 0 = Cuyahoga. Week 24 Monday = June 8, not June 15. Every relay function from `_check_june8_geauga_portage()` through `_check_june29_lorain()` was one week off — telling Bradley to run Geauga+Portage on June 8 (actually Cuyahoga), Cuyahoga on June 15 (actually Lake), etc. Bradley would have been confused and possibly missed the actual county pull dates.
+- Fix applied (Run 118): Updated all 4 relay functions with correct county names and market descriptions. Updated date ranges to match actual Monday pull dates. Added `_check_july6_medina()` for Week 28 July 6 restart (previously no reminder). Also corrected county rotation table in `agents/danny.md`.
+- Resolution criteria: Relay correctly reminds about Cuyahoga June 4-8, Lake June 11-15, Lorain June 18-22, Summit June 25-29, Medina June 30–July 6.
+
+---
+
+## OPEN — Fleet Washing Sequence Has No Pending Alert 🔴 FIXED (Run 118)
+- First seen: 2026-05-28 (Run 118)
+- Description: `fleet_washing` sequence has been PENDING since the system launched. `gas_station` got a daily Slack alert (`_check_gas_station_pending()`) added in Run 108, but fleet had nothing. If any fleet contacts exist in the cache, they are stranded with zero visibility.
+- Fix applied (Run 118): Added `_check_fleet_sequence_pending()` to vera_relay.py. Fires daily if fleet sequence is still PENDING. Includes instructions to create in Mixmax UI and paste ID. Sequence copy already exists at `outputs/danny/sequence_fleet_washing_2026-05-18.md`. Wired into `_main_body()`.
+- Resolution criteria: Relay fires daily fleet alert until ID is pasted into integrations/mixmax.py.
 
 ---
 

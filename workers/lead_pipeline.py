@@ -229,6 +229,20 @@ DANNY_TITLES = [
     # owner-operators sign contracts directly; zero competitors; $800-$2,500/visit; 4x/year (added 2026-05-28 run 117)
     'tow yard manager', 'towing company owner', 'auto salvage manager', 'impound lot manager',
     'towing operations manager', 'salvage yard manager', 'auto salvage director',
+    # Manufacturing & industrial facilities — NE Ohio = major Midwest manufacturing hub;
+    # Ford Avon Lake plant, Lincoln Electric, Eaton, Parker Hannifin, Republic Steel, North Star BlueScope;
+    # hundreds of mid-size suppliers in Lorain/Lake/Cuyahoga/Summit corridors;
+    # loading docks, building exteriors, parking lots = recurring pressure wash; OSHA compliance angle;
+    # plant FMs sign vendor contracts; $800-$4,000/visit; quarterly = $3,000-$15,000/year per facility (added 2026-05-28 run 118)
+    'plant manager', 'plant superintendent', 'manufacturing plant manager', 'plant facilities manager',
+    'industrial facility manager', 'maintenance manager', 'plant maintenance manager',
+    'ehs manager', 'environmental health safety manager', 'manufacturing facility manager',
+    # Car wash facilities — NE Ohio has Mr. Clean Car Wash (12+ locations), Mister Car Wash, independent coin-ops;
+    # car wash GMs/owners understand clean surfaces; building exteriors, vacuum areas, equipment bays;
+    # ironic pitch: "We wash your building while you wash cars"; OSHA water runoff compliance angle;
+    # district managers sign multi-location contracts; $1,500-$4,000/year per facility (added 2026-05-28 run 118)
+    'car wash manager', 'car wash district manager', 'car wash owner', 'car wash operator',
+    'carwash manager', 'express wash manager', 'tunnel wash manager', 'car wash general manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -355,6 +369,20 @@ DANNY_ORG_KEYWORDS = [
     # zero competitors targeting this segment; $800-$2,500/visit; 4x/year = $3,200-$10,000/year per operator (added 2026-05-28 run 117)
     'towing company', 'auto salvage', 'salvage yard', 'impound lot', 'tow yard',
     'junkyard', 'vehicle salvage', 'towing service',
+    # Manufacturing & industrial facilities — NE Ohio is a major Midwest manufacturing hub;
+    # Ford Avon Lake, Lincoln Electric (Euclid), Eaton (Beachwood HQ), Parker Hannifin (Mayfield Heights),
+    # Republic Steel (Canton), North Star BlueScope (Delta), hundreds of Tier 1/2 auto suppliers;
+    # loading docks accumulate oil, grease, chemical residue; OSHA compliance = recurring urgency;
+    # plant FMs sign vendor contracts for exterior cleaning; $800-$4,000/visit; 4x/year (added 2026-05-28 run 118)
+    'manufacturing plant', 'industrial facility', 'production facility', 'metal fabrication',
+    'steel manufacturing', 'auto parts manufacturer', 'industrial manufacturing',
+    'assembly plant', 'manufacturing operations', 'plant operations',
+    # Car wash facilities — Mr. Clean Car Wash (12+ NE Ohio locations), Mister Car Wash, independent coin-ops;
+    # building exteriors, vacuum bays, equipment areas need periodic pressure washing;
+    # ironic pitch: "We wash your building while you wash cars"; OSHA stormwater/runoff compliance;
+    # district managers sign multi-location contracts; $1,500-$4,000/year per location (added 2026-05-28 run 118)
+    'car wash', 'auto wash', 'carwash', 'vehicle wash', 'express car wash',
+    'tunnel car wash', 'coin car wash', 'car wash franchise',
 ]
 
 CARLA_SEARCHES = [

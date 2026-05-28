@@ -309,6 +309,28 @@ This enrolls ALL pending contacts (gas stations + fleet) without triggering a fr
 **Timing:** Year-round heavy soiling. Spring (post-winter salt + oil runoff) is the highest-need window — contact NOW.
 **Sequence:** Route to Property Manager sequence (facility management / professional appearance angle).
 
+### Manufacturing & Industrial Facilities (NEW — May 2026, Run 118)
+**Status:** Org keywords + titles live in DANNY_ORG_KEYWORDS/DANNY_TITLES as of Run 118. Fires starting June 8 Cuyahoga pull.
+**Target:** Plant Manager, Plant Superintendent, Manufacturing Plant Manager, Plant Facilities Manager, Industrial Facility Manager, Maintenance Manager, EHS Manager
+**Why:** NE Ohio is one of the largest manufacturing markets in the Midwest — Ford Avon Lake Assembly (SUVs), Lincoln Electric (Euclid), Eaton (Beachwood HQ), Parker Hannifin (Mayfield Heights), Republic Steel (Canton), North Star BlueScope (Delta), plus hundreds of Tier 1/2 auto parts suppliers in Lorain/Summit/Lake corridors. Manufacturing facilities have large concrete loading dock areas that accumulate oil, grease, diesel exhaust, and chemical residue — OSHA compliance and forklift safety standards require clean surfaces. Building exteriors accumulate industrial grime. Parking lots serve shift workers 24/7. Plant FMs and maintenance managers sign vendor contracts directly for facility upkeep.
+**Revenue per visit:** $800–$4,000 (loading docks + building exterior + parking). Quarterly = $3,000–$15,000/year per facility. Multi-plant district deal = $30K–$150K/year.
+**Target companies:** Ford Ohio Assembly Plants, Lincoln Electric, Eaton Corporation NE Ohio facilities, Parker Hannifin, Republic Steel, Ferro Corporation, Invacare (Elyria), Nordson Corporation (Westlake), SIFCO Industries, Materion, plus Tier 1/2 automotive suppliers throughout Summit, Medina, and Lorain counties.
+**Apollo keywords (live Run 118):** `manufacturing plant`, `industrial facility`, `production facility`, `metal fabrication`, `steel manufacturing`, `auto parts manufacturer`, `industrial manufacturing`, `assembly plant`, `manufacturing operations`, `plant operations` — added to DANNY_ORG_KEYWORDS.
+**Pitch angle:** "OSHA requires clean loading docks. Most plant managers have a backlog of grime they've been ignoring. One visit changes the compliance conversation."
+**Timing:** Spring/early summer = annual facility cleanup window; summer = OSHA inspection season; fall = pre-winter treatment.
+**Sequence:** Route to Property Manager sequence (facility management / OSHA compliance angle).
+
+### Car Wash Facilities (NEW — May 2026, Run 118)
+**Status:** Org keywords + titles live in DANNY_ORG_KEYWORDS/DANNY_TITLES as of Run 118. Fires starting June 8 Cuyahoga pull.
+**Target:** Car Wash Manager, Car Wash District Manager, Car Wash Owner, Car Wash Operator, Express Wash Manager, Tunnel Wash Manager
+**Why:** NE Ohio has 12+ Mr. Clean Car Wash locations, Mister Car Wash (expanding nationally), Cobblestone Car Wash, Shine-N-Seal, and dozens of independent coin-operated and full-service washes. The irony of "we wash your building while you wash cars" is immediately memorable — it lands in conversation and gets a reaction. Building exteriors accumulate soap scum, road grime, and chemical residue. Vacuum bays and drive-through equipment areas need exterior pressure washing. OSHA requires stormwater runoff management (oil-water separators) — clean wash bay exteriors are part of compliance. District managers for chains sign multi-location vendor contracts.
+**Revenue per visit:** $800–$2,000 (building exterior + vacuum bays + equipment areas). 2× per year = $1,500–$4,000/year per location. Multi-location district deal = $15K–$40K/year.
+**Target companies:** Mr. Clean Car Wash (NE Ohio franchise), Mister Car Wash (national expansion into Ohio), Cobblestone Auto Spa, Shine-N-Seal, Zips Car Wash, plus independent operators.
+**Apollo keywords (live Run 118):** `car wash`, `auto wash`, `carwash`, `vehicle wash`, `express car wash`, `tunnel car wash`, `coin car wash`, `car wash franchise` — added to DANNY_ORG_KEYWORDS.
+**Pitch angle:** "You're in the business of clean. Your customers notice when your building isn't. Let us handle the outside while you handle the cars."
+**Timing:** Spring opening/ramp-up (March–May) and fall cleanup (October). But year-round exterior cleaning need — contact any time.
+**Sequence:** Route to Property Manager sequence (facility management / professional appearance angle).
+
 ## Peak Season Angle — HOA Budget Season (May–June)
 HOA boards typically hold their annual budget and vendor approval meetings in May–June before the summer maintenance season. This means property managers and community association managers are ACTIVELY reviewing vendor lists RIGHT NOW. The PM sequence Touch 1 and any LinkedIn outreach should reference this window: "HOA boards are approving their summer vendor lists this month" or "Most associations lock in their exterior maintenance vendor before July." This creates urgency without being pushy — it's calendar-based fact. Works especially well for community associations, HOA management companies, and multifamily operators who work on fiscal budgets.
 
@@ -317,13 +339,16 @@ Danny rotates counties by ISO week number (`week % 6`). Cron runs every Monday 7
 
 | ISO Week | Monday Date | County Batch |
 |----------|-------------|--------------|
-| Week 21  | May 25 (Memorial Day — Mac may be off) | Summit County + Akron |
-| Week 22  | June 1 | Medina County |
-| Week 23  | June 8 | Geauga + Portage |
-| Week 24  | June 15 | Cuyahoga |
-| Week 25  | June 22 | Lake County |
-| Week 26  | June 29 | Lorain County |
-| Week 27  | July 6 | Summit County (repeats) |
+| Week 21  | May 18 | Summit County + Akron |
+| Week 22  | May 25 | Medina County (cron auto-fires; Summit being pulled manually by May 31) |
+| Week 23  | June 1  | Geauga + Portage (cron auto-fires; Medina pulled manually June 1 override) |
+| Week 24  | June 8  | Cuyahoga — largest market, all segments fire at max volume |
+| Week 25  | June 15 | Lake County — marina/waterfront segment + Mentor/Willoughby corridor |
+| Week 26  | June 22 | Lorain County — Avon growth corridor + Rt 83 industrial |
+| Week 27  | June 29 | Summit County (repeats 6-week cycle) |
+| Week 28  | July 6  | Medina County (repeats) |
+
+> ⚠️ **Date correction (Run 118):** Prior versions of this table had dates shifted one week late. The actual cron fires on the Monday of the listed ISO week. June 8 = Cuyahoga (not June 15). June 15 = Lake (not June 22). Relay reminders corrected to match.
 
 > 🚨 **SUMMIT COUNTY PULL — DEADLINE: MAY 31.** Pull overdue since May 12. Run ASAP — every day of delay = fewer fresh Summit leads for June 4 enrollment. Double-click `scripts/run_summit_pull.command` (no typing) OR `python3 workers/lead_pipeline.py danny Summit`.
 >

@@ -308,6 +308,64 @@ def _check_gas_station_pending():
         log(f'Gas station PENDING alert posted — {len(gas_contacts)} contacts waiting')
 
 
+def _check_fleet_sequence_pending():
+    """Alert daily if fleet_washing sequence is still PENDING.
+    Parallel to _check_gas_station_pending() — both sequences are PENDING and both
+    may have stranded contacts in contacts_cache.json. Fleet contacts waiting for
+    sequence ID since the sequence was added to integrations/mixmax.py."""
+    alert_sentinel = BASE_DIR / 'outputs' / 'vera' / '.fleet_pending_alert_date'
+    today_str = datetime.now().strftime('%Y-%m-%d')
+    if alert_sentinel.exists() and alert_sentinel.read_text().strip() == today_str:
+        return
+
+    try:
+        sys_path_saved = __import__('sys').path[:]
+        __import__('sys').path.insert(0, str(BASE_DIR))
+        from integrations.mixmax import SEQUENCES
+        if SEQUENCES.get('fleet_washing', {}).get('id') != 'PENDING':
+            return  # Sequence is live — no alert needed
+    except Exception:
+        return
+    finally:
+        try:
+            __import__('sys').path[:] = sys_path_saved
+        except Exception:
+            pass
+
+    # Check for stranded fleet contacts in cache or pipeline
+    cache_file = BASE_DIR / 'contacts_cache.json'
+    pipeline_file = BASE_DIR / 'pipeline_data.json'
+    fleet_count = 0
+    for src_file, key in [(cache_file, 'contacts'), (pipeline_file, 'manual_contacts')]:
+        if not src_file.exists():
+            continue
+        try:
+            import json as _json
+            data = _json.loads(src_file.read_text())
+            fleet_count += sum(
+                1 for c in data.get(key, [])
+                if c.get('_lead_type') == 'fleet_washing' or c.get('lead_type') == 'fleet_washing'
+            )
+        except Exception:
+            pass
+
+    msg = (
+        f'🚛 *Fleet Washing Sequence Still PENDING — Create in Mixmax UI*\n'
+        f'>Fleet sequence has been PENDING since the system launched. {fleet_count} fleet contacts waiting (if any).\n'
+        f'>Create in Mixmax → Sequences → New → Name: "Forest City Power Washing — Fleet Washing Outreach"\n'
+        f'>Paste the new ID into `integrations/mixmax.py` line ~48 (fleet_washing id field).\n'
+        f'>Then run: `python3 workers/lead_pipeline.py pending` to auto-enroll waiting contacts.\n'
+        f'>Sequence copy: `outputs/danny/sequence_fleet_washing_2026-05-18.md`'
+    )
+    if post_slack(msg):
+        alert_sentinel.parent.mkdir(exist_ok=True)
+        try:
+            alert_sentinel.write_text(today_str)
+        except Exception:
+            pass
+        log('Fleet washing PENDING sequence alert posted')
+
+
 def _check_carla_staleness():
     """Check when Carla last ran. Post Slack alert if > 8 days (same cadence as Danny). Once per day."""
     alert_sentinel = BASE_DIR / 'outputs' / 'vera' / '.carla_alert_sent_date'
@@ -706,10 +764,10 @@ def _check_wave2_day3_followup():
 
 
 def _check_june8_geauga_portage():
-    """Fire June 4–8 countdown for the Geauga + Portage County pull (Week 23, June 8 Monday).
-    Geauga + Portage = Chardon, Chesterland, Kent, Ravenna — smaller market but
-    funeral homes, self-storage, HOA management firms, and rural commercial properties.
-    Cron handles this automatically, but a reminder surfaces it if cron drifts."""
+    """Fire June 4–8 countdown for the Cuyahoga County pull (Week 24, June 8 Monday).
+    Week 24 % 6 = 0 → Cuyahoga in the rotation. Cleveland, Parma, Lakewood, Strongsville, Beachwood.
+    Largest-volume county — all 25+ commercial segments fire here at maximum volume.
+    (Function name retained for sentinel file compatibility — content corrected Run 118.)"""
     from datetime import date as _date_gp
     today = _date_gp.today()
     start = _date_gp(2026, 6, 4)
@@ -726,17 +784,17 @@ def _check_june8_geauga_portage():
     days_left = (pull_date - today).days
     if days_left > 0:
         label = f'{days_left} day{"s" if days_left != 1 else ""} away'
-        note = 'Cron will fire automatically Mon 7am if running. Verify cron is live: `cat logs/cron.log | tail -10`'
+        note = 'Cron fires Mon June 8 at 7am if running. Verify: `cat logs/cron.log | tail -10`'
     else:
-        label = 'TODAY'
-        note = 'Run now if cron missed it: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Geauga+Portage`'
+        label = 'TODAY — CUYAHOGA (BIGGEST MARKET)'
+        note = 'Run now if cron missed: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Cuyahoga`'
 
     msg = (
-        f'📍 *Geauga + Portage County Pull — {label} (June 8)*\n'
-        f'>Week 23 county rotation: Chardon, Chesterland, Kent, Ravenna.\n'
-        f'>Smaller market (~15–25 leads) but includes: funeral homes, self-storage, HOA mgmt firms, rural commercial.\n'
+        f'🏙️ *Cuyahoga County Pull — {label} (June 8) — LARGEST MARKET*\n'
+        f'>Week 24 rotation: Cleveland, Parma, Lakewood, Strongsville, Beachwood. Highest lead volume of all 6 counties.\n'
+        f'>All commercial segments fire here: restaurants, banks, urgent care, hotels, fitness, grocery, manufacturing.\n'
         f'>{note}\n'
-        f'>If cron is off: `python3 workers/lead_pipeline.py both Geauga+Portage`'
+        f'>Command: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Cuyahoga`'
     )
     if post_slack(msg):
         alert_sentinel.parent.mkdir(exist_ok=True)
@@ -744,17 +802,17 @@ def _check_june8_geauga_portage():
             alert_sentinel.write_text(today_str)
         except Exception:
             pass
-        log(f'Geauga + Portage County pull reminder posted — {label}')
+        log(f'Cuyahoga June 8 pull reminder posted — {label}')
 
 
 def _check_june22_lake_county():
-    """Fire June 17–22 countdown for the Lake County pull (Week 25, June 22 Monday).
-    Lake County = Mentor, Willoughby, Painesville — AND the Lake Erie shoreline.
-    This is the MARINA county. Mentor Harbor, Sheffield Lake, Euclid marina, Lorain Harbor.
-    Pre-season is gone but summer maintenance window is open — contact marina managers NOW."""
+    """Fire June 18–22 countdown for the Lorain County pull (Week 26, June 22 Monday).
+    Week 26 % 6 = 2 → Lorain in the rotation. Elyria, Avon, North Ridgeville.
+    Avon = fastest-growing NE Ohio suburb; strong HOA density + Rt 83 industrial corridor.
+    (Function name retained for sentinel file compatibility — content corrected Run 118.)"""
     from datetime import date as _date_lk
     today = _date_lk.today()
-    start = _date_lk(2026, 6, 17)
+    start = _date_lk(2026, 6, 18)
     end   = _date_lk(2026, 6, 22)
     if not (start <= today <= end):
         return
@@ -768,18 +826,18 @@ def _check_june22_lake_county():
     days_left = (pull_date - today).days
     if days_left > 0:
         label = f'{days_left} day{"s" if days_left != 1 else ""} away'
-        note = f'Staging now — cron fires June 22 Monday 7am.'
+        note = f'Cron fires Mon June 22 at 7am. Verify: `cat logs/cron.log | tail -10`'
     else:
-        label = 'TODAY — LAKE ERIE MARINA PULL'
-        note = 'Run now: `python3 workers/lead_pipeline.py both Lake` or double-click Lake shortcut if it exists.'
+        label = 'TODAY — LORAIN COUNTY'
+        note = 'Run now if cron missed: `python3 workers/lead_pipeline.py both Lorain`'
 
     msg = (
-        f'⚓ *Lake County Pull — {label} (June 22) — MARINA SEGMENT*\n'
-        f'>Lake County is the marina/waterfront county: Mentor Harbor, Sheffield Lake, Euclid shoreline, Bratenahl.\n'
-        f'>Marina managers need mid-season cleaning (June–July) for dock areas, fuel station concrete, boat ramp.\n'
-        f'>Also in this county: hotel chains (Mentor/Willoughby corridor), senior living, retail PM firms.\n'
+        f'📍 *Lorain County Pull — {label} (June 22)*\n'
+        f'>Week 26 rotation: Elyria, Avon, North Ridgeville. Avon = fastest-growing NE Ohio suburb.\n'
+        f'>High HOA density in Avon subdivisions + strong industrial corridor along Rt 83 (self-storage, auto body, distribution).\n'
+        f'>Also includes Lorain Harbor/marina corridor and Vermilion Lake Erie shoreline.\n'
         f'>{note}\n'
-        f'>Command: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Lake`'
+        f'>Command: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Lorain`'
     )
     if post_slack(msg):
         alert_sentinel.parent.mkdir(exist_ok=True)
@@ -787,17 +845,18 @@ def _check_june22_lake_county():
             alert_sentinel.write_text(today_str)
         except Exception:
             pass
-        log(f'Lake County pull reminder posted — {label}')
+        log(f'Lorain June 22 pull reminder posted — {label}')
 
 
 def _check_june15_cuyahoga():
-    """Fire June 10–15 countdown for the Cuyahoga County pull (Week 24, June 15 Monday).
-    Cuyahoga is the LARGEST market — Cleveland, Parma, Lakewood, Strongsville, Beachwood.
-    All new commercial segments (restaurants, banks, urgent care, fitness, hotels) fire here
-    at maximum volume. Never miss the Cuyahoga window."""
+    """Fire June 11–15 countdown for the Lake County pull (Week 25, June 15 Monday).
+    Week 25 % 6 = 1 → Lake in the rotation. Mentor, Willoughby, Painesville + Lake Erie shoreline.
+    This is the MARINA county. Mentor Harbor, Sheffield Lake, Euclid shoreline.
+    Mid-season marina cleaning window (June–July) for dock areas, fuel station concrete, boat ramp.
+    (Function name retained for sentinel file compatibility — content corrected Run 118.)"""
     from datetime import date as _date_cy
     today = _date_cy.today()
-    start = _date_cy(2026, 6, 10)
+    start = _date_cy(2026, 6, 11)
     end   = _date_cy(2026, 6, 15)
     if not (start <= today <= end):
         return
@@ -811,17 +870,18 @@ def _check_june15_cuyahoga():
     days_left = (pull_date - today).days
     if days_left > 0:
         label = f'{days_left} day{"s" if days_left != 1 else ""} away'
-        note = 'Cron fires Mon 7am if running. Verify: `cat logs/cron.log | tail -10`'
+        note = 'Cron fires Mon June 15 at 7am. Verify: `cat logs/cron.log | tail -10`'
     else:
-        label = 'TODAY — CUYAHOGA (LARGEST COUNTY)'
-        note = 'Run now if cron missed: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Cuyahoga`'
+        label = 'TODAY — LAKE ERIE MARINA PULL'
+        note = 'Run now if cron missed: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Lake`'
 
     msg = (
-        f'🏙️ *Cuyahoga County Pull — {label} (June 15) — BIGGEST MARKET*\n'
-        f'>Cuyahoga = Cleveland, Parma, Lakewood, Strongsville, Beachwood. Highest lead volume of all 6 counties.\n'
-        f'>All commercial segments fire here at max volume: restaurants, banks, urgent care, hotels, fitness, grocery.\n'
+        f'⚓ *Lake County Pull — {label} (June 15) — MARINA SEGMENT*\n'
+        f'>Week 25 rotation: Mentor, Willoughby, Painesville + Lake Erie shoreline.\n'
+        f'>Marina managers need mid-season cleaning (June–July) for dock areas, fuel concrete, boat ramp.\n'
+        f'>Also in this county: hotel chains (Mentor/Willoughby corridor), senior living, retail PM firms.\n'
         f'>{note}\n'
-        f'>Command: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Cuyahoga`'
+        f'>Command: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Lake`'
     )
     if post_slack(msg):
         alert_sentinel.parent.mkdir(exist_ok=True)
@@ -829,16 +889,17 @@ def _check_june15_cuyahoga():
             alert_sentinel.write_text(today_str)
         except Exception:
             pass
-        log(f'Cuyahoga June 15 pull reminder posted — {label}')
+        log(f'Lake County June 15 pull reminder posted — {label}')
 
 
 def _check_june29_lorain():
-    """Fire June 24–29 countdown for the Lorain County pull (Week 26, June 29 Monday).
-    Lorain = Elyria, Avon, North Ridgeville — strong industrial + HOA corridor.
-    Avon is one of the fastest-growing NE Ohio suburbs — high HOA density + new commercial."""
+    """Fire June 25–29 countdown for the Summit County pull (Week 27, June 29 Monday).
+    Week 27 % 6 = 3 → Summit in the rotation. Akron, Fairlawn, Stow, Cuyahoga Falls.
+    Summit contains the second-largest commercial density after Cuyahoga. Rubber City history = industrial.
+    (Function name retained for sentinel file compatibility — content corrected Run 118.)"""
     from datetime import date as _date_lo
     today = _date_lo.today()
-    start = _date_lo(2026, 6, 24)
+    start = _date_lo(2026, 6, 25)
     end   = _date_lo(2026, 6, 29)
     if not (start <= today <= end):
         return
@@ -854,15 +915,16 @@ def _check_june29_lorain():
         label = f'{days_left} day{"s" if days_left != 1 else ""} away'
         note = 'Cron fires Mon June 29 at 7am — verify it\'s running: `cat logs/cron.log | tail -10`'
     else:
-        label = 'TODAY — LORAIN COUNTY'
-        note = 'Run now if cron missed: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Lorain`'
+        label = 'TODAY — SUMMIT COUNTY (AKRON)'
+        note = 'Run now if cron missed: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Summit`'
 
     msg = (
-        f'📍 *Lorain County Pull — {label} (June 29)*\n'
-        f'>Lorain = Elyria, Avon, North Ridgeville. Avon is one of NE Ohio\'s fastest-growing suburbs.\n'
-        f'>High HOA density in Avon subdivisions + strong industrial corridor along Rt 83 (self-storage, auto body, distribution).\n'
+        f'📍 *Summit County Pull — {label} (June 29)*\n'
+        f'>Week 27 rotation: Akron, Fairlawn, Stow, Cuyahoga Falls. Summit = 2nd largest commercial market.\n'
+        f'>Rubber City industrial legacy — strong auto parts manufacturing, distribution, and self-storage corridor.\n'
+        f'>Also: University of Akron campus, Summa Health outpatient facilities, Medina Road hotel/retail strip.\n'
         f'>{note}\n'
-        f'>Command: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Lorain`'
+        f'>Command: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Summit`'
     )
     if post_slack(msg):
         alert_sentinel.parent.mkdir(exist_ok=True)
@@ -870,7 +932,50 @@ def _check_june29_lorain():
             alert_sentinel.write_text(today_str)
         except Exception:
             pass
-        log(f'Lorain June 29 pull reminder posted — {label}')
+        log(f'Summit June 29 pull reminder posted — {label}')
+
+
+def _check_july6_medina():
+    """Fire June 30–July 6 countdown for the Medina County pull (Week 28, July 6 Monday).
+    Week 28 % 6 = 4 → Medina in the rotation. Medina, Brunswick, Wadsworth, Seville.
+    July is peak power washing season — Medina's mid-size commercial + residential HOA market.
+    Without this reminder, the July restart has no relay coverage and Bradley could miss it."""
+    from datetime import date as _date_m6
+    today = _date_m6.today()
+    start = _date_m6(2026, 6, 30)
+    end   = _date_m6(2026, 7, 6)
+    if not (start <= today <= end):
+        return
+
+    alert_sentinel = BASE_DIR / 'outputs' / 'vera' / '.july6_medina_alert_sent_date'
+    today_str = today.strftime('%Y-%m-%d')
+    if alert_sentinel.exists() and alert_sentinel.read_text().strip() == today_str:
+        return
+
+    pull_date = _date_m6(2026, 7, 6)
+    days_left = (pull_date - today).days
+    if days_left > 0:
+        label = f'{days_left} day{"s" if days_left != 1 else ""} away'
+        note = 'Cron fires Mon July 6 at 7am. Verify: `cat logs/cron.log | tail -10`'
+    else:
+        label = 'TODAY — MEDINA COUNTY (JULY RESTART)'
+        note = 'Run now if cron missed: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Medina`'
+
+    msg = (
+        f'📍 *Medina County Pull — {label} (July 6) — JULY ROTATION RESTARTS*\n'
+        f'>Week 28 rotation: Medina, Brunswick, Wadsworth. July = peak season — highest booking velocity.\n'
+        f'>July Medina pull: fresh Medina leads for the second half of peak season. All segments now active.\n'
+        f'>After this: Week 29 = Geauga+Portage (July 13), Week 30 = Cuyahoga (July 20).\n'
+        f'>{note}\n'
+        f'>Command: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Medina`'
+    )
+    if post_slack(msg):
+        alert_sentinel.parent.mkdir(exist_ok=True)
+        try:
+            alert_sentinel.write_text(today_str)
+        except Exception:
+            pass
+        log(f'July 6 Medina pull reminder posted — {label}')
 
 
 def _check_post_june11_monitoring():
@@ -1213,6 +1318,8 @@ def _main_body():
     _check_wave2_day7_followup()
     _check_instagram_reminder()
     _check_annual_plan_pitch_reminder()
+    _check_fleet_sequence_pending()
+    _check_july6_medina()
 
     # Fetch first so origin/main is current before flush checks origin/main..HEAD
     git(['fetch', 'origin'])

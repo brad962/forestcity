@@ -186,6 +186,17 @@ PROPERTY_MANAGER_TITLES = [
     # $800-$2,500/visit; 4x/year = $3,200-$10,000/year per operator (added 2026-05-28 run 117)
     'tow yard manager', 'towing company owner', 'auto salvage manager', 'impound lot manager',
     'towing operations manager', 'salvage yard manager', 'auto salvage director',
+    # Manufacturing & industrial facilities — NE Ohio manufacturing hub (Ford Avon Lake, Lincoln Electric, Eaton, Parker Hannifin);
+    # loading docks + building exteriors + parking lots; OSHA compliance = recurring contract;
+    # plant FMs + maintenance managers sign vendor contracts; $3,000-$15,000/year per facility (added 2026-05-28 run 118)
+    'plant manager', 'plant superintendent', 'manufacturing plant manager', 'plant facilities manager',
+    'industrial facility manager', 'maintenance manager', 'plant maintenance manager',
+    'ehs manager', 'environmental health safety manager', 'manufacturing facility manager',
+    # Car wash facilities — Mr. Clean Car Wash (12+ NE Ohio), Mister Car Wash, independent operators;
+    # building exteriors, vacuum areas, equipment bays; OSHA stormwater compliance;
+    # district managers sign multi-location contracts; ironic pitch = memorable; $1,500-$4,000/year (added 2026-05-28 run 118)
+    'car wash manager', 'car wash district manager', 'car wash owner', 'car wash operator',
+    'carwash manager', 'express wash manager', 'tunnel wash manager', 'car wash general manager',
 ]
 
 REALTOR_TITLES = [
