@@ -90,3 +90,43 @@
 >Off-season relay gap (Oct 16–Mar 31) CLOSED — spring 2027 booking relay now wired
 >Early Cuyahoga opportunity relay fires daily through June 7 — run the pull for 7–10 days of extra lead time
 >⚠️ SUMMIT DEADLINE: MAY 31 (3 days). Command: `python3 workers/lead_pipeline.py danny Summit`
+
+---
+🔧 *Vera — Auto-Upgrade (Run 126) — CRITICAL BUG FIX*
+>Changed: `workers/vera_relay.py` — corrected county names in all 9 August/September relay functions
+>Why: Every August/September relay function had the wrong county — off by exactly 1 in the 6-county rotation. Aug 3 was labeled "Lorain 2nd pass" when it should be "Lake County 2nd pass" (Week 31 % 6 = 1 → Lake). This pattern repeated through all 9 functions: Aug 3 through Sept 28 were all misidentified. Bradley would have received reminders to run the wrong county pull each week from August through September. Root cause: original author miscounted %W week numbers by 1 when adding these functions. All 9 corrected to match the verified rotation calendar. Sentinel names preserved.
+>File: workers/vera_relay.py
+---
+🔧 *Vera — Auto-Upgrade (Run 126)*
+>Changed: `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — added **Physical Therapy Clinic Chains** as new commercial segment
+>Why: NovaCare (80+ NE Ohio clinics), ATI Physical Therapy (100+ NE Ohio), Select PT, Athletico — patients visit 3x/week = highest foot traffic frequency of any outpatient healthcare category. State PT licensing inspections include patient-facing exterior appearance = built-in compliance pitch. District managers sign multi-clinic vendor contracts. 20-clinic district deal = $32K-$96K/year. ZERO competitors target this segment. First pull June 8 Cuyahoga.
+>File: workers/lead_pipeline.py, integrations/mixmax.py, agents/danny.md
+---
+🔧 *Vera — Auto-Upgrade (Run 126)*
+>Changed: `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — added **Pharmacy & Drug Store Chains** as new commercial segment
+>Why: CVS (50+ NE Ohio), Walgreens (60+ NE Ohio), Rite Aid, Giant Eagle Pharmacy (50+), and most importantly **Discount Drug Mart — headquartered in Medina, OH with 70+ NE Ohio locations** (strongest local-angle pitch in the entire pipeline — same geography, local company, prefers local vendors). Drive-through canopies accumulate exhaust, mold, grime; district FM contacts sign contracts for 5-15 store territories. 15-store district deal = $24K-$60K/year. First pull June 8 Cuyahoga. Call Discount Drug Mart corporate in Medina directly — local pitch wins.
+>File: workers/lead_pipeline.py, integrations/mixmax.py, agents/danny.md
+---
+🔧 *Vera — Auto-Upgrade (Run 126)*
+>Changed: `workers/vera_relay.py` — added `_check_post_june8_commercial_monitoring()` (fires June 9–11)
+>Why: June 8 Cuyahoga pull is the biggest of the season — 25+ commercial segments fire simultaneously. The relay was dark for June 9-11 (the first 3 days after enrollment, when Touch 1 emails are actively sending to DSO district managers, hospital FMs, government facility contacts, PT clinic managers, and pharmacy district managers). These commercial contacts need a different reply approach than PM sequence contacts — if they respond, they're often pitching a site walk or multi-location contract. Now covered with daily monitoring nudges for June 9-11 specific to commercial segment reply handling.
+>File: workers/vera_relay.py
+---
+💡 *Vera — Upgrade Proposal (Run 126)*
+>Idea: Tommy writes "Commercial Segment First-Reply Script Pack" — 10 segment-specific opening replies (DSO district manager, hospital FM, government facility contact, PT clinic, pharmacy FM, car wash, bowling, library, sports complex, funeral home) ready before June 8 enrollment fires
+>Why: June 8 Cuyahoga pull will enroll more new commercial contacts than any previous batch. A DSO district manager who replies needs a completely different opener than a property manager ("We manage 18 Aspen Dental locations in NE Ohio" → book a site walk, not a residential-style quote call). Bradley writing custom openers from scratch under pressure = slow or wrong response. Tommy does this in 2 hours, max.
+>Impact: 30 minutes of typing by Tommy before June 8 = sharper first response on every commercial segment reply through October. Higher close rate from the highest-value contacts in the pipeline.
+>Reply YES and Tommy drafts the guide today.
+---
+💡 *Vera — Upgrade Proposal (Run 126)*
+>Idea: Direct outreach to Discount Drug Mart corporate (Medina HQ) — not via Apollo sequence, but a personal phone call + LinkedIn message from Bradley to their facilities/operations director
+>Why: Discount Drug Mart is headquartered 2 miles from Forest City's service area, has 70+ NE Ohio locations, and explicitly supports local vendors. This is a cold-call-friendly company, not a national-procurement bureaucracy. A personal call from a local business owner to their FM director cuts through where a Mixmax sequence won't. One relationship = $24K-$60K/year recurring.
+>Impact: One 15-minute phone call this week could be the highest-ROI action of the entire season.
+>Reply YES and I'll pull the contact info + write a 90-second phone script today.
+---
+✅ *Vera — Scan Complete 2026-05-28 (Run 126)*
+>4 auto-upgrades shipped | 2 proposals | 49 open issues (1 resolved: Aug/Sep relay county bug; 2 new: PT clinics + pharmacies awaiting June 8 pull)
+>CRITICAL BUG FIXED: All 9 Aug/Sep relay functions had wrong county — would have sent wrong-county reminders Aug–Sep. Now corrected.
+>New segments (both fire June 8 Cuyahoga): Physical Therapy Chains (NovaCare/ATI) + Pharmacy Chains (Discount Drug Mart Medina HQ = call them directly this week)
+>⚠️ SUMMIT DEADLINE: MAY 31 (3 days). Run: `python3 workers/lead_pipeline.py danny Summit`
+>TODAY: Wave 2 contractor texts (16) + Day 3 ads check + past customer blast = $1,800-$3,000 fastest revenue

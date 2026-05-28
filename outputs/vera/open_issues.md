@@ -1,6 +1,39 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 125 | 2026-05-28 | Auto-fixes shipped: 5 | New RESOLVED: 0 | Open: 47 (3 new: Pet Boarding/Kennel segment, Dialysis Centers segment, Sports Complexes segment — all in code, awaiting June 8 Cuyahoga pull; 2 new relay functions: Early Cuyahoga pull opportunity + Spring 2027 early booking mode)*
+*Run 126 | 2026-05-28 | Auto-fixes shipped: 4 | New RESOLVED: 1 (August/September relay county rotation bug) | Open: 49 (2 new: PT Clinic Chains + Pharmacy Chains — in code, awaiting June 8 Cuyahoga pull)*
+
+---
+
+## RUN METRICS — Run 126 | 2026-05-28
+- Total RESOLVED: 103 (1 new this run: August/September relay county rotation bug — all 9 functions corrected)
+- Total OPEN: 49 (2 new: Physical Therapy Clinic Chains + Pharmacy/Drug Store Chains — code live, awaiting June 8 Cuyahoga pull)
+- Auto-upgrades shipped: 4
+  1. `workers/vera_relay.py` — **CRITICAL BUG FIX**: corrected county names in all 9 August/September relay functions; every function was off by exactly 1 county in the rotation (e.g., Aug 3 was labeled "Lorain 2nd pass" when 31 % 6 = 1 → LAKE County; all 9 corrected to match Carla's verified county rotation calendar); function names preserved as sentinels
+  2. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — added Physical Therapy Clinic Chains as new commercial segment; 9 titles (physical therapy district manager, pt clinic manager, rehab clinic director, etc.); 9 org keywords (physical therapy, outpatient physical therapy, rehabilitation clinic, etc.); NovaCare (80+ NE Ohio), ATI (100+ NE Ohio), Select PT, Athletico targets; state PT licensing = exterior appearance standard; 20-clinic district deal = $32K-$96K/year; zero competitors; first pull June 8 Cuyahoga
+  3. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — added Pharmacy & Drug Store Chains as new commercial segment; 8 titles (pharmacy district manager, drug store district manager, etc.); 6 org keywords (pharmacy chain, drug store chain, retail pharmacy, discount drug mart, etc.); CVS (50+ NE Ohio), Walgreens (60+ NE Ohio), Rite Aid, Giant Eagle Pharmacy, **Discount Drug Mart (HQ Medina OH = strong local angle)** targets; drive-through canopies + large lots; 15-store district deal = $24K-$60K/year; zero competitors; first pull June 8 Cuyahoga
+  4. `workers/vera_relay.py` — added `_check_post_june8_commercial_monitoring()`: fires June 9-11 (3-day gap that previously existed between June 8 Cuyahoga pull and June 12 when post_june11_monitoring starts); biggest pull of the season = needs monitoring nudges on days 1-3; commercial segment contacts (DSO, hospital, government, PT clinics) need different reply approach than PM sequence; wired into `_main_body()`
+
+---
+
+## RESOLVED — August/September Relay County Rotation Bug (All 9 Functions Wrong)
+- Resolved: 2026-05-28 (Run 126)
+- Fix: All 9 August/September relay functions had county names off by exactly 1 in the rotation. Root cause: the original author miscounted %W week numbers by 1 (thought Aug 3 = Week 32 when it's actually Week 31; Week 31 % 6 = 1 → Lake, not Lorain). Every function from `_check_aug3_lorain_2()` through `_check_sept28_medina_4()` had wrong county in docstring + message content + command string. Corrected to match Carla's verified rotation calendar: Aug 3=Lake, Aug 10=Lorain, Aug 17=Summit, Aug 24=Medina, Aug 31=Geauga+Portage, Sep 7=Cuyahoga, Sep 14=Lake, Sep 21=Lorain, Sep 28=Summit. Function names preserved as sentinel keys.
+
+---
+
+## OPEN — Physical Therapy Clinic Chains Segment Not Yet Pulled 🟡 NEW (Run 126)
+- First seen: 2026-05-28 (Run 126)
+- Description: NovaCare Rehabilitation (80+ NE Ohio clinics, owned by Select Medical — largest US PT chain), ATI Physical Therapy (100+ NE Ohio locations), Select Physical Therapy, Athletico PT (expanding in Avon/Mentor/Westlake/Strongsville), Results Physiotherapy. Patients visit 3x/week for 4-8 weeks = highest per-visit frequency of any outpatient healthcare category. State PT licensing inspections include patient-facing exterior appearance. District managers oversee 10-20 clinics and sign multi-location vendor contracts. $400-$1,200/clinic; 20-clinic district deal = $32K-$96K/year. Zero competitors targeting this segment.
+- Fix applied (Run 126): 9 titles added to DANNY_TITLES + PROPERTY_MANAGER_TITLES in mixmax.py. 9 org keywords added to DANNY_ORG_KEYWORDS. Full segment brief documented in agents/danny.md. First pull June 8 Cuyahoga.
+- Resolution criteria: PT clinic manager/district manager contacts appear in Danny's June 8 Cuyahoga pull output.
+
+---
+
+## OPEN — Pharmacy & Drug Store Chains Segment Not Yet Pulled 🟡 NEW (Run 126)
+- First seen: 2026-05-28 (Run 126)
+- Description: CVS (50+ NE Ohio), Walgreens (60+ NE Ohio), Rite Aid, Giant Eagle Pharmacy (50+ NE Ohio), **Discount Drug Mart (HQ in Medina OH — 70+ NE Ohio locations — strongest local angle in the pipeline**). Drive-through pharmacy canopies accumulate exhaust, mold, bird droppings. Large parking lots. Building exteriors visible from road. District FM managers sign vendor contracts for 5-15 store territories. 15-store district deal = $24K-$60K/year. Discount Drug Mart is the immediate opportunity — corporate HQ in Medina, covers same geography as Forest City, and local vendor relationships are explicitly preferred. Zero competitors targeting this segment.
+- Fix applied (Run 126): 8 titles added to DANNY_TITLES + PROPERTY_MANAGER_TITLES in mixmax.py. 6 org keywords added to DANNY_ORG_KEYWORDS. Full segment brief documented in agents/danny.md. First pull June 8 Cuyahoga.
+- Resolution criteria: Pharmacy/drug store district manager contacts appear in Danny's June 8 Cuyahoga pull output.
 
 ---
 

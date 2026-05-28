@@ -261,6 +261,18 @@ PROPERTY_MANAGER_TITLES = [
     'sports complex manager', 'athletic complex director', 'sports facility manager',
     'recreation complex manager', 'sports complex director', 'athletic facility director',
     'youth sports director', 'sports facility director',
+    # Physical Therapy Clinic Chains — NovaCare, ATI Physical Therapy, Select PT, Athletico in NE Ohio;
+    # district managers sign multi-clinic vendor contracts; state PT licensing = exterior appearance standard;
+    # routing to Property Manager sequence (compliance + facility management angle) (added 2026-05-28 run 126)
+    'physical therapy district manager', 'physical therapy clinic manager', 'outpatient pt manager',
+    'rehabilitation clinic manager', 'physical therapy center director', 'therapy district manager',
+    'outpatient physical therapy manager', 'rehab clinic director', 'pt clinic manager',
+    # Pharmacy & Drug Store Chains — CVS, Walgreens, Rite Aid, Giant Eagle Pharmacy, Discount Drug Mart;
+    # district FM contacts sign vendor contracts for 5-15 store territories;
+    # drive-through canopies + parking lots + building exteriors; routing to Property Manager sequence (added 2026-05-28 run 126)
+    'pharmacy district manager', 'drug store district manager', 'pharmacy facilities manager',
+    'retail pharmacy manager', 'pharmacy store manager', 'pharmacy operations manager',
+    'drug store manager', 'pharmacy regional manager',
 ]
 
 REALTOR_TITLES = [

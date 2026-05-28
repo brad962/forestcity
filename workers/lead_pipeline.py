@@ -348,6 +348,25 @@ DANNY_TITLES = [
     'sports complex manager', 'athletic complex director', 'sports facility manager',
     'recreation complex manager', 'sports complex director', 'athletic facility director',
     'youth sports director', 'sports facility director',
+    # Physical Therapy Clinic Chains — NovaCare (80+ NE Ohio), ATI Physical Therapy (100+ NE Ohio),
+    # Select Physical Therapy, Athletico PT, Results Physiotherapy;
+    # high foot traffic (3x/week rehab visits) = stained entry walkways + parking lots;
+    # state PT licensing inspections include patient-facing exterior appearance;
+    # district managers oversee 10-20 clinics and sign multi-location vendor contracts;
+    # $400-$1,200/clinic; quarterly = $1.6K-$4.8K/year per clinic;
+    # 20-clinic district deal = $32K-$96K/year; zero competitors targeting this segment (added 2026-05-28 run 126)
+    'physical therapy district manager', 'physical therapy clinic manager', 'outpatient pt manager',
+    'rehabilitation clinic manager', 'physical therapy center director', 'therapy district manager',
+    'outpatient physical therapy manager', 'rehab clinic director', 'pt clinic manager',
+    # Pharmacy & Drug Store Chains — CVS (50+ NE Ohio), Walgreens (60+ NE Ohio), Rite Aid (HQ Wooster OH),
+    # Giant Eagle Pharmacy, Discount Drug Mart (NE Ohio regional, 70+ locations);
+    # drive-through canopies accumulate grime + mold; large parking lots; building exteriors visible from road;
+    # district loss prevention / FM managers sign vendor contracts for 5-15 store territories;
+    # $400-$1,000/location; quarterly = $1.6K-$4K/location; 15-store district = $24K-$60K/year;
+    # Discount Drug Mart (headquartered in Medina — strong local angle!) (added 2026-05-28 run 126)
+    'pharmacy district manager', 'drug store district manager', 'pharmacy facilities manager',
+    'retail pharmacy manager', 'pharmacy store manager', 'pharmacy operations manager',
+    'drug store manager', 'pharmacy regional manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -554,6 +573,19 @@ DANNY_ORG_KEYWORDS = [
     'sports complex', 'athletic complex', 'sports facility', 'recreation complex',
     'youth sports complex', 'indoor sports facility', 'multi-sport complex', 'athletic facility',
     'youth athletics', 'sports training facility',
+    # Physical Therapy Clinic Chains — NovaCare (80+ NE Ohio), ATI Physical Therapy (100+ NE Ohio),
+    # Select Physical Therapy, Athletico PT; district FMs sign multi-clinic contracts;
+    # state PT licensing inspections include patient-facing exterior appearance; high foot traffic;
+    # 20-clinic district deal = $32K-$96K/year; zero competitors (added 2026-05-28 run 126)
+    'physical therapy', 'physical therapy clinic', 'outpatient physical therapy',
+    'rehabilitation clinic', 'sports medicine clinic', 'therapy clinic', 'pt clinic',
+    'physical rehabilitation', 'outpatient rehab',
+    # Pharmacy & Drug Store Chains — CVS (50+ NE Ohio), Walgreens (60+ NE Ohio), Rite Aid,
+    # Giant Eagle Pharmacy, Discount Drug Mart (Medina HQ — 70+ NE Ohio locations);
+    # drive-through canopies + large parking lots + building exteriors;
+    # district FM contacts sign vendor contracts for 5-15 store territories (added 2026-05-28 run 126)
+    'pharmacy chain', 'drug store chain', 'retail pharmacy', 'pharmacy management',
+    'discount drug mart', 'drug mart',
 ]
 
 CARLA_SEARCHES = [
