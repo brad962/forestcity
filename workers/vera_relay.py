@@ -297,7 +297,9 @@ def _check_gas_station_pending():
         f'⛽ *Gas Station Sequence Still PENDING — {len(gas_contacts)} contacts waiting*\n'
         f'>These {len(gas_contacts)} contacts cannot be enrolled until you create the Mixmax sequence (30 min).\n'
         f'>Setup guide: `outputs/danny/gas_station_sequence_create_now_2026-05-27.md`\n'
-        f'>Or: Mixmax → Sequences → New → paste ID into `integrations/mixmax.py` line 54.'
+        f'>Or: Mixmax → Sequences → New → paste ID into `integrations/mixmax.py` line 54.\n'
+        f'>⚡ **BYPASS TODAY:** Gmail blast guide ready — email all {len(gas_contacts)} contacts directly right now.\n'
+        f'>File: `outputs/danny/gas_station_manual_email_blast_2026-05-19.md` — 3 templates + send schedule.'
     )
     if post_slack(msg):
         alert_sentinel.parent.mkdir(exist_ok=True)

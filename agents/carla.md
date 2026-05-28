@@ -34,20 +34,36 @@ Build a referral network of 100+ active partners across Northeast Ohio who send 
 ## County Rotation Calendar (2026)
 Carla mirrors Danny's county rotation by ISO week number (`week % 6`). Cron runs every Monday 7am.
 
-| ISO Week | Monday Date | County Batch |
-|----------|-------------|--------------|
-| Week 21  | May 25 (Memorial Day — Mac may be off) | Summit County + Akron |
-| Week 22  | June 1 | Medina County |
-| Week 23  | June 8 | Geauga + Portage |
-| Week 24  | June 15 | Cuyahoga |
-| Week 25  | June 22 | Lake County |
-| Week 26  | June 29 | Lorain County |
+| ISO Week | Monday Date | County Batch | Notes |
+|----------|-------------|--------------|-------|
+| Week 21  | May 25 (Memorial Day) | Summit County + Akron | Manual override — run `run_summit_both.command` |
+| Week 22  | June 1 | Medina County | Run `run_medina_both.command` |
+| Week 23  | June 8 | Geauga + Portage | All new segments live |
+| Week 24  | June 15 | Cuyahoga | Largest market — cron auto-fires |
+| Week 25  | June 22 | Lake County | Marina/waterfront corridor |
+| Week 26  | June 29 | Lorain County | Avon growth corridor |
+| Week 27  | July 6  | Summit County (2nd pass) | Cron auto-fires |
+| Week 28  | July 13 | Medina County (2nd pass) | |
+| Week 29  | July 20 | Geauga + Portage (2nd pass) | |
+| Week 30  | July 27 | Cuyahoga (2nd pass) | Referral network refresh |
+| Week 31  | Aug 3   | Lake County (2nd pass) | |
+| Week 32  | Aug 10  | Lorain County (2nd pass) | |
+| Week 33  | Aug 17  | Summit County (3rd pass) | Begin fall angle messaging |
+| Week 34  | Aug 24  | Medina County (3rd pass) | Shift to "lock in fall dates" pitch |
+| Week 35  | Aug 31  | Geauga + Portage (3rd pass) | |
+| Week 36  | Sept 7  | Cuyahoga (3rd pass) | Fall pre-winter urgency |
+| Week 37  | Sept 14 | Lake County (3rd pass) | |
+| Week 38  | Sept 21 | Lorain County (3rd pass) | |
+| Week 39  | Sept 28 | Summit County (4th pass) | Final pre-freeze push |
+| Week 40  | Oct 5   | Medina County (4th pass) | Annual plan pitch window |
 
 > 🗒️ **Manual override:** `python3 workers/lead_pipeline.py carla Summit` (Week 21, deadline May 31)
 > Double-click shortcut (Danny + Carla together): `scripts/run_summit_both.command`
 >
 > 🗒️ **Week 22 = Medina County — June 1:** `python3 workers/lead_pipeline.py carla Medina`
 > Double-click shortcut (Danny + Carla together): `scripts/run_medina_both.command` — same as Summit pattern
+
+> ⚠️ **Date correction (Run 124):** Extended Carla's rotation calendar through Week 40 (Oct 5) to mirror Danny's extension from Run 121. Carla previously showed only Weeks 21-26. Calendar now covers the full 2026 peak season through fall close.
 
 ## Finding Partners via Apollo
 

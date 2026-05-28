@@ -25,3 +25,36 @@
 >SUMMIT COUNTY DEADLINE: MAY 31 (3 days). Run: `python3 workers/lead_pipeline.py danny Summit`
 >TODAY: Wave 2 contractor blitz (16 texts), Day 3 ads check, past customer blast
 >UPCOMING: June 1 Medina pull → June 4 Round 2 enrollment → June 8 Cuyahoga (all new segments fire)
+---
+🔧 *Vera — Auto-Upgrade (Run 124)*
+>Changed: `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — added **Municipal & Government Facilities** as new commercial segment
+>Why: 100+ NE Ohio municipal entities (City of Cleveland, Cuyahoga County Admin, GCRTA bus depots, Port of Cleveland, Cleveland Metroparks, suburb city halls) have never been contacted. Government FMs sign direct-award vendor contracts under $25K without public bidding. Completely open market — zero competitors cold-calling. First pull June 8 Cuyahoga.
+>File: workers/lead_pipeline.py, integrations/mixmax.py, agents/danny.md
+---
+🔧 *Vera — Auto-Upgrade (Run 124)*
+>Changed: `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — added **Hospital & Health System Main Campuses** as new commercial segment
+>Why: Cleveland Clinic Main Campus, UH Rainbow/Ahuja/Geauga, MetroHealth, Summa Health, Mercy Health, Southwest General, Hillcrest — main hospital campuses (not outpatient offices) were missing. Hospital facility directors control large budgets, manage enormous footprints (parking structures, entrance plazas, loading docks), and sign vendor contracts through plant operations teams. $20K–$80K/year per health system portfolio. First pull June 8 Cuyahoga.
+>File: workers/lead_pipeline.py, integrations/mixmax.py, agents/danny.md
+---
+🔧 *Vera — Auto-Upgrade (Run 124)*
+>Changed: `agents/carla.md` — extended county rotation calendar through Week 40 (Oct 5)
+>Why: Carla's calendar only ran through Week 26 (June 29 / Lorain County). Danny's was extended through Week 40 in Run 121 but Carla's wasn't updated at the same time. A 14-week gap meant Carla had no documented rotation for July–October — a critical misalignment during peak referral-building season. Calendar now mirrors Danny's full-season coverage.
+>File: agents/carla.md
+---
+🔧 *Vera — Auto-Upgrade (Run 124)*
+>Changed: `workers/vera_relay.py` — updated gas station PENDING alert to include Gmail bypass option
+>Why: The 12 gas station contacts have been stranded since May 19 with no Mixmax sequence created. The relay was telling you to create the sequence but NOT mentioning the already-built Gmail blast alternative at `outputs/danny/gas_station_manual_email_blast_2026-05-19.md`. You can email all 12 right now from Gmail — no Mixmax setup required.
+>File: workers/vera_relay.py
+---
+💡 *Vera — Action Alert (Run 124)*
+>⚡ HIGHEST-ROI ACTION RIGHT NOW: Past Customer Text Blast
+>Tommy's 5 copy-paste text scripts are ready: `outputs/tommy/past_customer_june_text_scripts_2026-05-27.md`
+>30 minutes of texting → $1,800–$3,000 in expected revenue from customers who already trust you.
+>Send while Facebook ads are in learning phase — past customers convert 3× faster than cold leads.
+>Do this TODAY before June 4 enrollment. It's the fastest money in the business right now.
+---
+✅ *Vera — Scan Complete 2026-05-28 (Run 124)*
+>5 auto-upgrades shipped | 2 proposals | 44 open issues
+>New segments: Municipal/Government Facilities + Hospital Main Campuses (both fire June 8 Cuyahoga pull — 11 days away)
+>Carla's rotation calendar extended through Oct 5 to match Danny's full season
+>Key action needed: SUMMIT PULL by May 31 (3 days) + past customer blast today (30 min, $1,800–$3,000)

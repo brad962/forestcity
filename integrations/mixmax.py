@@ -228,6 +228,22 @@ PROPERTY_MANAGER_TITLES = [
     'dso district manager', 'dental district manager', 'dental group practice director',
     'practice area director', 'regional dental director', 'dental operations director',
     'dental regional manager', 'group practice administrator',
+    # Municipal & Government Facilities — city halls, county buildings, township offices, transit depots;
+    # RTA (GCRTA), Port of Cleveland, Cleveland Metroparks; large parking lots + public plazas;
+    # government FMs sign direct-award vendor contracts; routing to Property Manager sequence (added 2026-05-28 run 124)
+    'city facilities manager', 'municipal facility manager', 'government facility manager',
+    'township facilities manager', 'public works facilities manager', 'county facilities director',
+    'transit facility manager', 'city maintenance director', 'municipal buildings manager',
+    'government buildings manager', 'public facilities manager', 'parks district manager',
+    'parks and recreation director', 'parks facilities manager',
+    # Hospital & Health System Main Campuses — main hospital buildings (not outpatient offices above);
+    # Cleveland Clinic Main, UH Rainbow/Ahuja/Geauga, MetroHealth, Summa Health Akron City, Mercy Health;
+    # hospital facility directors manage parking structures, entrance plazas, loading docks;
+    # routing to Property Manager sequence (facility management / compliance angle) (added 2026-05-28 run 124)
+    'hospital facilities director', 'hospital plant operations manager', 'health system facilities director',
+    'hospital maintenance director', 'hospital facility manager', 'acute care facilities manager',
+    'hospital engineering director', 'clinical facilities manager', 'hospital plant manager',
+    'vice president of facilities', 'vp facilities',
 ]
 
 REALTOR_TITLES = [

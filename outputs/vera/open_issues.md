@@ -1,6 +1,34 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 123 | 2026-05-28 | Auto-fixes shipped: 4 | New RESOLVED: 4 | Open: 42 (4 resolved: Oct relay gap, Week 2 ads gap, Google LSA relay gap, neighbor canvass relay gap; 1 new: Dental DSO segment — code added, awaiting June 8 Cuyahoga pull)*
+*Run 124 | 2026-05-28 | Auto-fixes shipped: 5 | New RESOLVED: 0 | Open: 44 (2 new: Municipal/Government Facilities segment, Hospital Main Campus segment — both in code, awaiting June 8 Cuyahoga pull; gas station relay updated with Gmail bypass reminder)*
+
+---
+
+## RUN METRICS — Run 124 | 2026-05-28
+- Total RESOLVED: 102 (0 new this run)
+- Total OPEN: 44 (2 new: Municipal/Government Facilities + Hospital Main Campus — both in code, awaiting June 8 pull)
+- Auto-upgrades shipped: 5
+  1. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — added Municipal & Government Facilities as new commercial segment; 13 titles (city/municipal/government FM, public works, transit facility manager, parks director); 16 org keywords (city facilities, public works, transit authority, port authority, parks district, metropolitan park, etc.); NE Ohio targets: City of Cleveland, Cuyahoga County, GCRTA bus depots, Port of Cleveland, Cleveland Metroparks, 20+ suburb city halls; $800-$3,000/visit; direct-award contracts under $25K; first pull June 8 Cuyahoga
+  2. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — added Hospital & Health System Main Campuses as new commercial segment; 10 titles (hospital facilities director, plant operations manager, VP of facilities, etc.); 11 org keywords (hospital campus, acute care hospital, health system campus, hospital network, etc.); NE Ohio targets: Cleveland Clinic Main, UH Rainbow/Ahuja/Geauga, MetroHealth, Summa Health, Mercy Health, Southwest General, Hillcrest, Marymount, South Pointe, Parma Community; $2K-$8K/visit; first pull June 8 Cuyahoga
+  3. `agents/carla.md` — extended county rotation calendar through Week 40 (Oct 5); previously showed only Weeks 21-26; now matches Danny's full-season calendar through fall close; Carla's calendar was 14 weeks shorter than Danny's (a gap introduced when Danny's was extended in Run 121)
+  4. `workers/vera_relay.py` — updated `_check_gas_station_pending()` message to include Gmail bypass option; 12 gas station contacts have been stranded since May 19; added mention of `gas_station_manual_email_blast_2026-05-19.md` — Bradley can email all 12 directly from Gmail TODAY without waiting for Mixmax sequence creation
+  5. `outputs/vera/open_issues.md` + `outputs/vera/pending_slack_messages.md` — Run 124 metrics logged; new issues tracked; Slack messages queued
+
+---
+
+## OPEN — Municipal & Government Facilities Segment Not Yet Pulled 🟡 NEW (Run 124)
+- First seen: 2026-05-28 (Run 124)
+- Description: City halls, county admin buildings, township offices, GCRTA bus depots, Port of Cleveland, Cleveland Metroparks facilities. Large parking lots, entrance plazas, public walkways. Government FMs sign direct-award vendor contracts under $25K. Completely untouched segment.
+- Fix applied (Run 124): 13 titles added to DANNY_TITLES + PROPERTY_MANAGER_TITLES in mixmax.py. 16 org keywords added to DANNY_ORG_KEYWORDS. Full segment brief documented in agents/danny.md. All set for June 8 Cuyahoga pull.
+- Resolution criteria: Government/municipal FM contacts appear in Danny's June 8 Cuyahoga pull output.
+
+---
+
+## OPEN — Hospital & Health System Main Campus Segment Not Yet Pulled 🟡 NEW (Run 124)
+- First seen: 2026-05-28 (Run 124)
+- Description: Main hospital campuses (not outpatient offices, already in pipeline). Cleveland Clinic Main, UH Rainbow/Ahuja/Geauga, MetroHealth, Summa Health, Mercy Health, Southwest General, Hillcrest. Hospital facility directors manage large footprints: parking structures, entrance plazas, loading docks. $2K-$8K/visit; portfolio = $20K-$80K/year.
+- Fix applied (Run 124): 10 titles added to DANNY_TITLES + PROPERTY_MANAGER_TITLES in mixmax.py. 11 org keywords added to DANNY_ORG_KEYWORDS. Full segment brief documented in agents/danny.md. All set for June 8 Cuyahoga pull.
+- Resolution criteria: Hospital facilities director/plant operations manager contacts appear in Danny's June 8 Cuyahoga pull output.
 
 ---
 

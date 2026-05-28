@@ -291,6 +291,31 @@ DANNY_TITLES = [
     'dso district manager', 'dental district manager', 'dental group practice director',
     'practice area director', 'regional dental director', 'dental operations director',
     'dental regional manager', 'group practice administrator',
+    # Municipal & Government Facilities — city halls, county admin buildings, township public works,
+    # RTA/transit depots, port authority, Cleveland Metroparks, county justice centers;
+    # government FMs control large paved surfaces (vehicle lots, entrance plazas, public walkways);
+    # appearance is a public-trust signal; small contracts (<$25K) often direct-awarded without public bid;
+    # NE Ohio: City of Cleveland (multiple municipal buildings), Cuyahoga County Admin Building,
+    # GCRTA bus depots (Hayden Garage, Triskett Garage, Warrensville Garage), Port of Cleveland,
+    # Cleveland Metroparks facilities, multiple suburb city halls (Strongsville, Parma, Lakewood) (added 2026-05-28 run 124)
+    'city facilities manager', 'municipal facility manager', 'government facility manager',
+    'township facilities manager', 'public works facilities manager', 'county facilities director',
+    'transit facility manager', 'city maintenance director', 'municipal buildings manager',
+    'government buildings manager', 'public facilities manager', 'parks district manager',
+    'parks and recreation director', 'parks facilities manager',
+    # Hospital & Health System Main Campuses — main hospital buildings (NOT outpatient offices, already in list above);
+    # Cleveland Clinic Main Campus (Euclid Ave), UH Rainbow/Ahuja/Geauga, MetroHealth Medical Center,
+    # Summa Health Akron City Hospital, Mercy Health facilities, Southwest General (Middleburg Heights),
+    # Hillcrest Hospital, Marymount Hospital, South Pointe Hospital, Huron Hospital;
+    # hospital facility directors manage enormous building footprints with large parking structures,
+    # building exteriors, entrance plazas, loading dock areas, medical waste staging areas;
+    # facility engineering and plant operations are distinct from outpatient FM contacts;
+    # $2,000-$8,000/building (exterior + entrance + loading dock). Annual or bi-annual contracts;
+    # health system portfolio = $30K-$200K/year for full-service plant operations FM (added 2026-05-28 run 124)
+    'hospital facilities director', 'hospital plant operations manager', 'health system facilities director',
+    'hospital maintenance director', 'hospital facility manager', 'acute care facilities manager',
+    'hospital engineering director', 'clinical facilities manager', 'hospital plant manager',
+    'vice president of facilities', 'vp facilities',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -459,6 +484,26 @@ DANNY_ORG_KEYWORDS = [
     # DSO targets ONLY — solo-dentist offices are too small; Apollo org keyword catches DSO orgs specifically (added 2026-05-28 run 123)
     'dental service organization', 'dso', 'dental group', 'dental practice management',
     'dental management company', 'group dental practice', 'dental services group',
+    # Municipal & Government Facilities — city halls, county admin buildings, township offices,
+    # RTA transit depots (GCRTA Hayden/Triskett/Warrensville garages), Port of Cleveland,
+    # Cleveland Metroparks maintenance facilities, suburb city halls, county justice centers;
+    # large parking lots, entrance plazas, public walkways = high-visibility appearance standard;
+    # government FM contacts sign vendor contracts on small direct-award contracts; NE Ohio has
+    # 100+ municipal entities with active facilities maintenance budgets (added 2026-05-28 run 124)
+    'city facilities', 'municipal facilities', 'government facilities', 'public works department',
+    'county administration', 'township administration', 'transit authority', 'port authority',
+    'parks district', 'metropolitan park', 'government building management', 'municipal building',
+    'city public works', 'county public works', 'civic center', 'city administration',
+    # Hospital & Health System Main Campuses — main acute-care hospital buildings (separate from
+    # outpatient medical offices already in DANNY_ORG_KEYWORDS above);
+    # Cleveland Clinic Main Campus, UH Rainbow Babies, UH Ahuja, UH Geauga, MetroHealth Medical Center,
+    # Summa Health Akron City Hospital, Mercy Health West, Southwest General, Hillcrest Hospital,
+    # Marymount Hospital, South Pointe Hospital, Parma Community General Hospital;
+    # hospital facility directors manage large building footprints: parking structures, entrance plazas,
+    # loading docks, exterior facades — all requiring periodic pressure washing (added 2026-05-28 run 124)
+    'hospital campus', 'regional hospital', 'acute care hospital', 'health system campus',
+    'community hospital', 'teaching hospital', 'hospital network', 'medical center campus',
+    'hospital facilities management', 'health system facilities', 'hospital plant operations',
 ]
 
 CARLA_SEARCHES = [
