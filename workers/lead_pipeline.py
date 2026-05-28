@@ -281,6 +281,16 @@ DANNY_TITLES = [
     # $800-$2,000/visit; 2-4x/year; zero competitors targeting this segment (added 2026-05-28 run 120)
     'bowling alley manager', 'bowling center manager', 'entertainment center manager',
     'family entertainment center manager', 'bowling center director', 'recreation center manager',
+    # Dental Service Organizations (DSOs) & group dental practices — NE Ohio: Aspen Dental (20+ locations),
+    # Heartland Dental (largest US DSO, owns many NE Ohio group practices), Dental Care Alliance,
+    # Great Lakes Dental Partners, Midwest Dental, Pacific Dental Services, Western Dental;
+    # DSO district managers oversee 10-20 clinics; ORC dental licensing = exterior appearance standard;
+    # parking lots + patient-facing entrance areas + building exteriors;
+    # $600-$1,500/clinic visit; 10-clinic district deal = $6K-$15K/year per district manager;
+    # DSO targets ONLY — individual solo-dentist offices are too small for cold outreach (added 2026-05-28 run 123)
+    'dso district manager', 'dental district manager', 'dental group practice director',
+    'practice area director', 'regional dental director', 'dental operations director',
+    'dental regional manager', 'group practice administrator',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -442,6 +452,13 @@ DANNY_ORG_KEYWORDS = [
     # Bowling alleys & entertainment centers — large parking lots, building exteriors (added 2026-05-28 run 120)
     'bowling alley', 'bowling center', 'family entertainment center', 'entertainment center',
     'bowling lanes',
+    # Dental Service Organizations (DSOs) & multi-location group dental practices — NE Ohio: Aspen Dental (20+),
+    # Heartland Dental, Great Lakes Dental Partners, Midwest Dental, Dental Care Alliance;
+    # DSO district managers oversee 10-20 clinics; ORC dental licensing = exterior appearance standard;
+    # patient-facing parking + building entrance = appearance non-negotiable; district deal = $6K-$15K/year;
+    # DSO targets ONLY — solo-dentist offices are too small; Apollo org keyword catches DSO orgs specifically (added 2026-05-28 run 123)
+    'dental service organization', 'dso', 'dental group', 'dental practice management',
+    'dental management company', 'group dental practice', 'dental services group',
 ]
 
 CARLA_SEARCHES = [

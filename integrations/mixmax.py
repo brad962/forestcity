@@ -222,6 +222,12 @@ PROPERTY_MANAGER_TITLES = [
     # 'bowling center director' added run 122 — was in DANNY_TITLES but missing here (routing sync gap)
     'bowling alley manager', 'bowling center manager', 'entertainment center manager',
     'family entertainment center manager', 'bowling center director', 'recreation center manager',
+    # Dental Service Organizations (DSOs) — Aspen Dental, Heartland Dental, Dental Care Alliance in NE Ohio;
+    # district managers oversee 10-20 clinics and sign multi-location vendor contracts;
+    # ORC dental licensing = exterior appearance standard; routing to Property Manager sequence (added 2026-05-28 run 123)
+    'dso district manager', 'dental district manager', 'dental group practice director',
+    'practice area director', 'regional dental director', 'dental operations director',
+    'dental regional manager', 'group practice administrator',
 ]
 
 REALTOR_TITLES = [

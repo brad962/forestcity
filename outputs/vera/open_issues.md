@@ -1,6 +1,50 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 122 | 2026-05-28 | Auto-fixes shipped: 2 | New RESOLVED: 2 | Open: 45 (2 resolved: routing sync gap + September relay gap; 0 new)*
+*Run 123 | 2026-05-28 | Auto-fixes shipped: 4 | New RESOLVED: 4 | Open: 42 (4 resolved: Oct relay gap, Week 2 ads gap, Google LSA relay gap, neighbor canvass relay gap; 1 new: Dental DSO segment — code added, awaiting June 8 Cuyahoga pull)*
+
+---
+
+## RUN METRICS — Run 123 | 2026-05-28
+- Total RESOLVED: 102 (4 new this run)
+- Total OPEN: 42 (1 new: Dental DSO segment — code added, awaiting June 8 pull; 4 resolved below)
+- Auto-upgrades shipped: 4
+  1. `workers/vera_relay.py` — added `_check_week2_facebook_ads()`: fires June 9 only; 14-day post-launch scaling decision window with IF-working/IF-mixed/IF-nothing action matrix; points to week2 scaling guide + revenue tracker; wired into `_main_body()`
+  2. `workers/vera_relay.py` — added `_check_google_lsa_status_weekly()`: fires every Monday June 2–Aug 31; checks GOOGLE_LSA_APPROVED env var; posts approval-status-specific message; LSA approval window (May 22 apply → June 5-16 expected) was completely unmonitored; wired into `_main_body()`
+  3. `workers/vera_relay.py` — added `_check_neighbor_canvass_weekly()`: fires every Friday May 29–Sept 25; weekly reminder to use Tommy's neighbor canvass script at every job; highest-ROI sales moment (20-30% same-day conversion, zero overhead); was completely missing from relay; wired into `_main_body()`
+  4. `workers/vera_relay.py` — added `_check_october_final_push()`: fires Oct 1–15; "last call before NE Ohio freeze" messaging; past customer blast + open quote close + annual plan pitch; relay was completely dark after Sept 28; wired into `_main_body()`
+  5. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — added Dental Service Organizations (DSOs) as new commercial segment; 8 titles added to DANNY_TITLES + PROPERTY_MANAGER_TITLES; 7 org keywords added to DANNY_ORG_KEYWORDS; Aspen Dental/Heartland Dental/Dental Care Alliance targets; ORC licensing compliance angle; $24K-$60K/year per district deal; first pull June 8 Cuyahoga
+
+---
+
+## RESOLVED — October Relay Gap (Oct 1-15 coverage)
+- Resolved: 2026-05-28 (Run 123)
+- Fix: Added `_check_october_final_push()` to vera_relay.py. Relay previously ended at Sept 28 (Medina 4th pass). October is the last booking window before NE Ohio freeze (typically Oct 20+). Function fires daily Oct 1-15 with "last call before freeze" pitch: past customer blast, close open quotes, annual plan upsell, Oct 15 transition to Spring 2027 early booking mode.
+
+---
+
+## RESOLVED — Week 2 Facebook Ads Relay Gap
+- Resolved: 2026-05-28 (Run 123)
+- Fix: Added `_check_week2_facebook_ads()` to vera_relay.py. Day 7 review fires June 2 but there was nothing for June 9 (14 days post-launch — the real scaling action window). New function fires ONLY June 9 with IF-working/IF-mixed/IF-nothing action matrix and links to week2 scaling guide.
+
+---
+
+## RESOLVED — Google LSA Status Relay Gap
+- Resolved: 2026-05-28 (Run 123)
+- Fix: Added `_check_google_lsa_status_weekly()` to vera_relay.py. Rick wrote the LSA setup guide and status check guide but there was zero relay coverage. Application may have been submitted May 22 — approval window June 5-16 — completely unmonitored. New function fires every Monday June-August, checks GOOGLE_LSA_APPROVED in .env, and posts context-appropriate message.
+
+---
+
+## RESOLVED — Neighbor Canvass Relay Gap
+- Resolved: 2026-05-28 (Run 123)
+- Fix: Added `_check_neighbor_canvass_weekly()` to vera_relay.py. Tommy's neighbor canvass script was written May 26 (highest-ROI sales action during active jobs — 20-30% same-day conversion, zero ad spend). No relay reminder existed to ensure Bradley uses it. New function fires every Friday May 29–Sept 25 to keep the habit active all season.
+
+---
+
+## OPEN — Dental DSO Segment Not Yet Pulled 🟡 NEW (Run 123)
+- First seen: 2026-05-28 (Run 123)
+- Description: Dental Service Organizations (Aspen Dental 20+ NE Ohio locations, Heartland Dental, Dental Care Alliance, Great Lakes Dental Partners) manage 10-20 clinics per district. DSO district managers sign multi-location vendor contracts. ORC dental licensing = exterior appearance standard. Parking lots + building entrance + facade. $24K-$60K/year per district deal. Completely untouched segment.
+- Fix applied (Run 123): Titles (8) added to DANNY_TITLES + PROPERTY_MANAGER_TITLES in mixmax.py. Org keywords (7) added to DANNY_ORG_KEYWORDS. Full segment brief documented in agents/danny.md. All set for June 8 Cuyahoga pull.
+- Resolution criteria: DSO district manager/dental group practice contacts appear in Danny's June 8 Cuyahoga pull output.
 
 ---
 

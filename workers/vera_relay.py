@@ -1798,6 +1798,163 @@ def _check_fall_prep_reminder():
         log(f'Fall prep weekly reminder posted — week {week_str}')
 
 
+def _check_week2_facebook_ads():
+    """Fire ONLY June 9 — 14 days after May 26 launch.
+    Week 2 is the first window to make a meaningful scaling decision with real data.
+    Day 7 (June 2) review was the diagnostic; June 9 is the action window: scale winners, kill losers.
+    Without this, ads drift after the Day 7 check with no structured follow-through."""
+    from datetime import date as _date_w2
+    today = _date_w2.today()
+    if today != _date_w2(2026, 6, 9):
+        return
+
+    alert_sentinel = BASE_DIR / 'outputs' / 'vera' / '.week2_facebook_ads_sent_date'
+    today_str = today.strftime('%Y-%m-%d')
+    if alert_sentinel.exists() and alert_sentinel.read_text().strip() == today_str:
+        return
+
+    msg = (
+        '📊 *Facebook Ads — Week 2 Scaling Action (June 9)*\n'
+        '>14 days post-launch. You have real data. Time to act on it.\n'
+        '>IF working (CPL < $25, leads coming in): bump budget 20% + test a new hook variant\n'
+        '>IF mixed (some leads, high CPL): swap underperforming creative; do NOT touch targeting yet\n'
+        '>IF nothing (0 leads, $0 spend): check campaign is active + form is submitting + lead notification email is set up\n'
+        '>Week 2 scaling guide: `outputs/rick/week2_facebook_ads_scaling_guide_2026-05-26.md`\n'
+        '>Ad week 1 revenue tracker: `outputs/rick/facebook_ad_week1_revenue_tracker_2026-05-26.md`\n'
+        '>Key rule: never change budget + creative + targeting at the same time — one variable at a time.'
+    )
+    if post_slack(msg):
+        alert_sentinel.parent.mkdir(exist_ok=True)
+        try:
+            alert_sentinel.write_text(today_str)
+        except Exception:
+            pass
+        log('Week 2 Facebook ads scaling action reminder posted — June 9')
+
+
+def _check_google_lsa_status_weekly():
+    """Fire every Monday June 2 – Aug 31.
+    Google Local Services Ads (Google Guaranteed) application may have been submitted May 22.
+    Approval takes 7–14 days. Once approved, the badge appears above regular Google Ads.
+    Weekly check ensures Bradley doesn't miss the approval window or forget to set up lead routing."""
+    from datetime import date as _date_lsa
+    today = _date_lsa.today()
+    start = _date_lsa(2026, 6, 2)
+    end   = _date_lsa(2026, 8, 31)
+    if not (start <= today <= end):
+        return
+    if today.weekday() != 0:  # Monday only
+        return
+
+    alert_sentinel = BASE_DIR / 'outputs' / 'vera' / '.google_lsa_check_week'
+    week_str = today.strftime('%Y-W%W')
+    if alert_sentinel.exists() and alert_sentinel.read_text().strip() == week_str:
+        return
+
+    lsa_approved = os.environ.get('GOOGLE_LSA_APPROVED', '').lower() == 'true'
+    if lsa_approved:
+        msg = (
+            '🏅 *Google LSA — Weekly Lead Volume Check (Monday)*\n'
+            '>Google Guaranteed is LIVE. Check your LSA dashboard for new leads this week.\n'
+            '>LSA dashboard: ads.google.com/local-services-ads\n'
+            '>Respond to new LSA leads within 5 min — Google tracks response time and it affects lead volume.\n'
+            '>Response SOP: `outputs/rick/google_guaranteed_lead_response_sop_2026-05-22.md`\n'
+            '>Log all LSA leads to pipeline_data.json (lead_source: "Google LSA").'
+        )
+    else:
+        msg = (
+            '🏅 *Google LSA — Weekly Status Check (Monday)*\n'
+            '>Google Guaranteed application status: NOT CONFIRMED APPROVED.\n'
+            '>If applied May 22: approval window was June 5–16. Check the status now.\n'
+            '>Check here: ads.google.com/local-services-ads → "Status"\n'
+            '>If APPROVED: add  GOOGLE_LSA_APPROVED=true  to .env and set up lead routing (SOP in `outputs/rick/`)\n'
+            '>If PENDING: no action needed — just check again next Monday.\n'
+            '>If NOT YET APPLIED: apply today — takes 20 min; puts you ABOVE regular Google Ads in search results.'
+        )
+    if post_slack(msg):
+        alert_sentinel.parent.mkdir(exist_ok=True)
+        try:
+            alert_sentinel.write_text(week_str)
+        except Exception:
+            pass
+        log(f'Google LSA weekly status check posted — week {week_str}, approved={lsa_approved}')
+
+
+def _check_neighbor_canvass_weekly():
+    """Fire every Friday May 29 – Sept 25.
+    After every active job, Bradley should knock on 3 neighboring doors.
+    Tommy's script converts 20-30% of neighbors into same-day or next-day bookings.
+    Zero ad spend, zero travel overhead — highest-ROI sales moment of the week.
+    Weekly Friday reminder ensures the habit stays active all season."""
+    from datetime import date as _date_nc
+    today = _date_nc.today()
+    start = _date_nc(2026, 5, 29)
+    end   = _date_nc(2026, 9, 25)
+    if not (start <= today <= end):
+        return
+    if today.weekday() != 4:  # Friday only
+        return
+
+    alert_sentinel = BASE_DIR / 'outputs' / 'vera' / '.neighbor_canvass_week'
+    week_str = today.strftime('%Y-W%W')
+    if alert_sentinel.exists() and alert_sentinel.read_text().strip() == week_str:
+        return
+
+    msg = (
+        '🚪 *Neighbor Canvass — Weekly Reminder (Every Active Job)*\n'
+        '>Before you leave EVERY job this week: knock on 3 neighboring doors.\n'
+        '>"We\'re working on the house next door — want me to give you a quick quote while I\'m here?"\n'
+        '>Same-day bookings convert at 20-30%. Zero extra drive time. Highest ROI moment in the business.\n'
+        '>Script (all 3 door scenarios + same-day follow-up text): `outputs/tommy/neighbor_canvass_script_2026-05-26.md`\n'
+        '>Log any booked neighbors in pipeline_data.json with lead_source="neighbor canvass".'
+    )
+    if post_slack(msg):
+        alert_sentinel.parent.mkdir(exist_ok=True)
+        try:
+            alert_sentinel.write_text(week_str)
+        except Exception:
+            pass
+        log(f'Neighbor canvass weekly reminder posted — week {week_str}')
+
+
+def _check_october_final_push():
+    """Fire Oct 1–15 — last bookings before the NE Ohio freeze window closes.
+    NE Ohio typically drops below 40°F overnight around Oct 20–Nov 1.
+    This is the final 2-week window to book exterior cleaning before properties sit dirty all winter.
+    Urgency pitch: 'Lock in your date this week — October fills fast and we stop taking new bookings Nov 1.'
+    Without this reminder, Bradley stays in peak-season mode too long and misses the fall close window."""
+    from datetime import date as _date_oct
+    today = _date_oct.today()
+    start = _date_oct(2026, 10, 1)
+    end   = _date_oct(2026, 10, 15)
+    if not (start <= today <= end):
+        return
+
+    alert_sentinel = BASE_DIR / 'outputs' / 'vera' / '.october_final_push_sent_date'
+    today_str = today.strftime('%Y-%m-%d')
+    if alert_sentinel.exists() and alert_sentinel.read_text().strip() == today_str:
+        return
+
+    days_left_in_window = (end - today).days
+    msg = (
+        f'❄️ *October Final Push — {days_left_in_window} days left in booking window*\n'
+        '>NE Ohio freeze window: temperatures drop below cleaning threshold around Oct 20.\n'
+        '>THIS WEEK: past customer blast — "Time for your fall cleaning before the freeze. We\'re booking fast."\n'
+        '>Close on EVERY open quote: "October is almost full — want me to block a date for you today?"\n'
+        '>Annual Plan pitch: spring + fall for one price — lock both dates in now while you have them.\n'
+        '>After Oct 15: shift to "Spring 2027 Early Booking" mode. Start collecting spring deposits.\n'
+        '>Past customer text script: `outputs/tommy/past_customer_june_text_scripts_2026-05-26.md` (adapt for fall urgency)\n'
+        '>Annual plan pitch: `outputs/tommy/annual_plan_pitch_script_2026-05-26.md`'
+    )
+    if post_slack(msg):
+        alert_sentinel.parent.mkdir(exist_ok=True)
+        try:
+            alert_sentinel.write_text(today_str)
+        except Exception:
+            pass
+        log(f'October final push reminder posted — {days_left_in_window} days left in window')
+
+
 def _main_body():
     # Always check staleness (runs even if no new Vera commits)
     _check_danny_staleness()
@@ -1842,6 +1999,10 @@ def _main_body():
     _check_sept21_summit_3()
     _check_sept28_medina_4()
     _check_fall_prep_reminder()
+    _check_week2_facebook_ads()
+    _check_google_lsa_status_weekly()
+    _check_neighbor_canvass_weekly()
+    _check_october_final_push()
 
     # Fetch first so origin/main is current before flush checks origin/main..HEAD
     git(['fetch', 'origin'])
