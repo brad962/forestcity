@@ -370,6 +370,18 @@ Danny rotates counties by ISO week number (`week % 6`). Cron runs every Monday 7
 | Week 26  | June 22 | Lorain County — Avon growth corridor + Rt 83 industrial |
 | Week 27  | June 29 | Summit County (repeats 6-week cycle) |
 | Week 28  | July 6  | Medina County (repeats) |
+| Week 29  | July 13 | Geauga + Portage (2nd pass) |
+| Week 30  | July 20 | Cuyahoga 2nd pass — school districts now in summer window |
+| Week 31  | July 27 | Lake County 2nd pass — marina mid-season clean window |
+| Week 32  | Aug 3   | Lorain County 2nd pass |
+| Week 33  | Aug 10  | Summit County 2nd pass — school districts still open for summer contracts |
+| Week 34  | Aug 17  | Medina County 3rd pass — shift messaging to fall booking angle |
+| Week 35  | Aug 24  | Geauga + Portage 2nd pass |
+| Week 36  | Aug 31  | Cuyahoga 3rd pass — fall closing window begins; shift pitch to "lock in fall before October fills" |
+| Week 37  | Sept 7  | Lake County 3rd pass |
+| Week 38  | Sept 14 | Lorain County 3rd pass |
+| Week 39  | Sept 21 | Summit County 3rd pass — fall cleaning season |
+| Week 40  | Sept 28 | Medina County 4th pass — final pre-winter push |
 
 > ⚠️ **Date correction (Run 118):** Prior versions of this table had dates shifted one week late. The actual cron fires on the Monday of the listed ISO week. June 8 = Cuyahoga (not June 15). June 15 = Lake (not June 22). Relay reminders corrected to match.
 

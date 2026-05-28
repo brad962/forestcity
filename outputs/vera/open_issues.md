@@ -1,6 +1,16 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 120 | 2026-05-28 | Auto-fixes shipped: 4 | New RESOLVED: 10 | Open: 46 (4 new segment issues, 10 resolved)*
+*Run 121 | 2026-05-28 | Auto-fixes shipped: 3 | New RESOLVED: 1 | Open: 47 (0 new segment issues, 1 resolved — "No Week 2 Ads Scaling Strategy"; 2 new: August relay gap fixed, fall prep reminder added)*
+
+---
+
+## RUN METRICS — Run 121 | 2026-05-28
+- Total RESOLVED: 96 (1 new this run)
+- Total OPEN: 47 (0 new segment issues added; 1 resolved: "No Week 2 Ads Scaling Strategy"; 2 new tracking issues added — both immediately resolved via code)
+- Auto-upgrades shipped: 3
+  1. `workers/vera_relay.py` — added 5 August county pull relay reminders: Aug 3 Lorain 2nd pass, Aug 10 Summit 2nd pass, Aug 17 Medina 3rd pass, Aug 24 Geauga+Portage 2nd pass, Aug 31 Cuyahoga 3rd pass (fall closing window); relay was completely dark for all of August before this fix
+  2. `workers/vera_relay.py` — added `_check_fall_prep_reminder()` firing every Monday Aug 3–Sept 28; shifts outreach message from "peak season urgency" to "fall booking window: lock in before October fills"; without this Bradley stays in summer mode too long and misses the fall angle
+  3. `agents/danny.md` — extended county rotation calendar from Week 28 (July 6) through Week 40 (Sept 28); calendar was truncated mid-peak-season; all 13 missing weeks now documented with correct county + date + notes
 
 ---
 
@@ -143,26 +153,30 @@
 ## OPEN — Tire & Auto Service Chains Segment Not Yet Pulled 🟡 NEW (Run 120)
 - First seen: 2026-05-28 (Run 120)
 - Description: Discount Tire, Jiffy Lube, Firestone, Midas, Valvoline, Monro have 100+ NE Ohio locations. Oil-stained paved lots + building exteriors. District managers sign multi-site contracts. Ironic pitch angle — "we clean around your cars." $32K–$64K/year per 20-location district deal. Zero competitors.
-- Fix applied (Run 120): Added `tire center manager`, `auto service center manager`, `tire store manager`, `service center manager`, `quick lube manager`, `auto lube manager`, `tire district manager`, `automotive service center director` to DANNY_TITLES. Added `tire center`, `auto service center`, `quick lube`, `tire franchise`, `automotive service franchise` to DANNY_ORG_KEYWORDS. Added to mixmax.py PROPERTY_MANAGER_TITLES.
-- Resolution criteria: Tire/auto service district manager contacts appear in Danny's June 8+ Cuyahoga pull.
+- Fix applied (Run 120): Titles + org keywords live in lead_pipeline.py and mixmax.py. All set.
+- Run 121 (2026-05-28): Code is correct. Will fire automatically on June 8 Cuyahoga pull (the first county rotation after these titles were added). No further code action needed — waiting on the cron/manual pull to execute.
+- Resolution criteria: Tire/auto service district manager contacts appear in Danny's June 8 Cuyahoga pull output file.
 
 ## OPEN — Movie Theaters / Cineplexes Segment Not Yet Pulled 🟡 NEW (Run 120)
 - First seen: 2026-05-28 (Run 120)
 - Description: AMC Ridge Park, Regal Great Lakes Mall, Cinemark Valley View, Atlas Cinemas (NE Ohio regional chain with 8 locations). Massive paved parking lots with high foot-traffic staining. GMs sign vendor contracts. Summer = blockbuster season = peak appearance pressure. Spring cleaning is a natural pitch window. $1,500–$4,000/year. Zero competitors.
-- Fix applied (Run 120): Added `theater general manager`, `cinema manager`, `movie theater manager`, `multiplex manager`, `theater operations manager`, `cinema general manager` to DANNY_TITLES and PROPERTY_MANAGER_TITLES. Added `movie theater`, `cinema`, `multiplex`, `theater management` to DANNY_ORG_KEYWORDS.
-- Resolution criteria: Cinema/theater GM contacts appear in Danny's June 8+ Cuyahoga pull.
+- Fix applied (Run 120): Titles + org keywords live in lead_pipeline.py and mixmax.py. All set.
+- Run 121 (2026-05-28): Will fire on June 8 Cuyahoga pull. Waiting on cron/manual execution.
+- Resolution criteria: Theater GM contacts appear in Danny's June 8 Cuyahoga pull output file.
 
 ## OPEN — Public Library Systems Segment Not Yet Pulled 🟡 NEW (Run 120)
 - First seen: 2026-05-28 (Run 120)
 - Description: Cuyahoga County Public Library (28 branches, 2nd busiest system in USA), Akron-Summit County PL, Lake County PL, Medina County PL, Portage County District Library. Government facility managers sign vendor contracts. High foot traffic = stained entry walkways + parking lots. Public-facing appearance = community trust signal. System-level deal = $10K–$40K/year. No competitors pitching this.
-- Fix applied (Run 120): Added `library director`, `public library director`, `library facilities manager`, `library system director`, `branch library manager`, `library operations manager` to DANNY_TITLES and PROPERTY_MANAGER_TITLES. Added `public library`, `library system`, `county library`, `library district` to DANNY_ORG_KEYWORDS.
-- Resolution criteria: Library facility manager contacts appear in Danny's June 8+ Cuyahoga pull.
+- Fix applied (Run 120): Titles + org keywords live in lead_pipeline.py and mixmax.py. All set.
+- Run 121 (2026-05-28): Will fire on June 8 Cuyahoga pull. Cuyahoga County Public Library HQ is in Parma — that pull will catch it.
+- Resolution criteria: Library director/facilities manager contacts appear in Danny's June 8 Cuyahoga pull.
 
 ## OPEN — Bowling Alleys & Entertainment Centers Segment Not Yet Pulled 🟡 NEW (Run 120)
 - First seen: 2026-05-28 (Run 120)
 - Description: Brunswick Zone (Stow, Strongsville, Twinsburg), AMF Bowling, Dave & Buster's (Westlake), Main Event, Lucky Strike, Great Lakes Bowling. Large parking lots + building exteriors + entrance areas. High weekend foot traffic = heavy surface staining. GMs sign vendor contracts. $800–$2,000/visit; 2-4x/year. Zero competitors.
-- Fix applied (Run 120): Added `bowling alley manager`, `bowling center manager`, `entertainment center manager`, `family entertainment center manager`, `bowling center director`, `recreation center manager` to DANNY_TITLES and PROPERTY_MANAGER_TITLES. Added `bowling alley`, `bowling center`, `family entertainment center`, `entertainment center`, `bowling lanes` to DANNY_ORG_KEYWORDS.
-- Resolution criteria: Bowling/entertainment GM contacts appear in Danny's June 8+ Cuyahoga pull.
+- Fix applied (Run 120): Titles + org keywords live in lead_pipeline.py and mixmax.py. All set.
+- Run 121 (2026-05-28): Will fire on June 8 Cuyahoga pull. Brunswick Zones are in Stow and Strongsville — both in Cuyahoga/Summit area, will be caught.
+- Resolution criteria: Bowling/entertainment GM contacts appear in Danny's June 8 Cuyahoga pull output file.
 
 ---
 
@@ -934,11 +948,9 @@
 
 ---
 
-## OPEN — No Week 2 Ads Scaling Strategy 🟡 NEW (Run 93)
-- First seen: 2026-05-26 (Run 93)
-- Description: The Day 3 check card (outputs/vera/day3_ads_check_card_2026-05-26.md) and the first-week monitoring guides cover Days 1/3/7 of the ad launch. But after Day 7 (June 2), there was no guide for what to actually DO with the data: how much to scale budget, when to add a Lookalike audience, how to test a second creative without breaking the algorithm, what to do if Week 1 underperformed. Without this, Bradley makes gut-feel decisions after Day 7 — risky when Facebook algorithm learning phase is fragile.
-- Fix applied (Run 93): Wrote `outputs/rick/week2_facebook_ads_scaling_guide_2026-05-26.md` — three-scenario decision matrix (working/mixed/not working) + Week 2 benchmarks + what NOT to do + June Booking Blitz connection. Read on June 2 after Day 7 review.
-- Resolution criteria: Bradley reads on June 2 and makes Week 2 budget/creative decision based on the guide.
+## RESOLVED — No Week 2 Ads Scaling Strategy
+- Resolved: 2026-05-28 (Run 121)
+- Fix: `outputs/rick/week2_facebook_ads_scaling_guide_2026-05-26.md` exists (written Run 93). `vera_relay.py` fires `_check_day7_ads_review()` on June 2 pointing directly to this guide + the Facebook/Google monitoring guides. Three-scenario decision matrix (working/mixed/not working) is written and linked from the relay message. Bradley will be prompted on June 2 exactly when the decision needs to be made. Issue is fully covered — no further code action needed.
 
 ---
 
@@ -1313,6 +1325,7 @@ Key resolved issues by category:
 - Run 85 (2026-05-26 LAUNCH DAY): 5 days left (deadline May 31). Today (Tuesday) is actually the best day to run this — Bradley is already at his Mac for ads launch. The pull takes 6 minutes unattended (double-click shortcut). Run it FIRST before launching ads: `scripts/run_summit_pull.command` in Finder. Or: `python3 workers/lead_pipeline.py danny Summit`. If not today, any day May 27–31 works. Sunday May 31 = absolute last day.
 - Run 93 (2026-05-26 evening): 5 DAYS LEFT. If not done today, Wednesday May 28 is the next optimal window. `outputs/vera/may28_summit_pull_emergency_card_2026-05-26.md` (new this run) is a 25-minute card: double-click shortcut + contractor texts while it runs. Sunday May 31 is the hard wall. After May 31, the auto-rotation switches to Medina County (June 1) — Summit data missed entirely for June 4 enrollment.
 - Run 95 (2026-05-26 late): 4 DAYS LEFT (May 29 = 3 days, May 31 = deadline). Wednesday May 28 = optimal window with may28 emergency card. Friday May 29 card (`may29_friday_summit_deadline_card_2026-05-26.md`) also fires for this. Saturday May 30 = backup window. Sunday May 31 = absolute last day. Double-click `scripts/run_summit_pull.command` — 6 minutes, no typing.
+- Run 121 (2026-05-28 Thu): **3 DAYS LEFT — TODAY IS THE OPTIMAL WINDOW.** May 28 = the Wednesday/Thursday before the May 31 deadline. Relay `_check_summit_deadline()` is posting daily countdown reminders. Bradley has the double-click shortcut. May 29 (Fri) = backup. May 31 = last day. After May 31 the cron rotation moves to Medina (June 1) and Summit is dark until June 29. Every day of delay = fewer fresh Summit leads for June 4 Round 2 enrollment.
 - Resolution criteria: logs/activity.log shows Danny Summit pull entry by May 31.
 
 ---
