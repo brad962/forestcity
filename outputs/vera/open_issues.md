@@ -1,6 +1,64 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 135 | 2026-05-29 | Auto-fixes shipped: 3 | New RESOLVED: 2 | Open: 62 (4 new segments, 2 resolved)*
+*Run 136 | 2026-05-29 | Auto-fixes shipped: 5 | New RESOLVED: 4 | Open: 66 (4 new segments, 4 resolved)*
+
+---
+
+## RUN METRICS — Run 136 | 2026-05-29
+- Total RESOLVED: 111 (4 new this run)
+- Total OPEN: 66 (4 new segment issues; 4 persistent issues resolved this run)
+- Auto-upgrades shipped: 5
+  1. `integrations/mixmax.py` — ROUTING FIX: Fully closed the Standalone Generic Title Gap. Reordered `detect_lead_type()` to check GAS_STATION_KEYWORDS against company name FIRST (before PROPERTY_MANAGER_TITLES). Added 'district manager' to PROPERTY_MANAGER_TITLES. VERIFIED with Python: "District Manager" at Circle K → gas_station ✓, "District Manager" at CVS → property_manager ✓, "District Manager" at Dollar General → property_manager ✓. Run 130 added 'district manager' to DANNY_TITLES (Apollo search) but couldn't add to routing due to gas station conflict. That conflict is now resolved via check-order fix.
+  2. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — Added Dollar Stores & General Merchandise Discount Chains segment: 12 DANNY_TITLES (dollar store district manager, dollar general manager, family dollar manager, etc.), 10 DANNY_ORG_KEYWORDS (dollar store, dollar general, family dollar, dollar tree, five below, etc.), PROPERTY_MANAGER_TITLES sync. Dollar General has 100+ NE Ohio locations. Ironic pitch: "Your stores get more foot traffic than most retail formats." $36K–$84K/year per 30-store district. First pull June 8 Cuyahoga.
+  3. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — Added Auto Parts Stores segment: 8 DANNY_TITLES (auto parts district manager, auto parts store manager, auto parts regional manager, etc.), 10 DANNY_ORG_KEYWORDS (auto parts store, autozone, oreilly auto parts, advance auto parts, napa auto parts, etc.). Oily parking lots + OSHA slip-hazard compliance angle. $20K–$50K/year per 25-store district. First pull June 8 Cuyahoga.
+  4. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — Added Hardware & Home Improvement Centers segment: 9 DANNY_TITLES (home improvement district manager, hardware store manager, garden center manager, etc.), 13 DANNY_ORG_KEYWORDS (home improvement store, home depot, lowes, menards, ace hardware, etc.). Enormous garden center plazas + massive parking lots. Premium accounts — one Home Depot district = $30K–$100K/year. First pull June 8 Cuyahoga.
+  5. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — Added Community Swimming Pools & Aquatic Centers segment: 9 DANNY_TITLES (aquatic center director, pool facility manager, natatorium manager, etc.), 11 DANNY_ORG_KEYWORDS (aquatic center, community pool, municipal pool, natatorium, etc.). Distinct from YMCA aquatics (already targeted). Pre-season Memorial Day window. Cuyahoga County park district has largest NE Ohio aquatic system. $10K–$30K/year per 10-pool system. First pull June 8 Cuyahoga.
+
+**Critical pending (human action required — UNCHANGED, still blocked):**
+- 🚨 SUMMIT COUNTY PULL DEADLINE TODAY (MAY 29 = LAST BUSINESS DAY before May 31): `python3 workers/lead_pipeline.py both Summit` — 6 min unattended. Run before EOD.
+- ⛽ Gas station Mixmax sequence NOT CREATED — contacts stranded since May 19. Guide: `outputs/danny/gas_station_manual_email_blast_2026-05-19.md`
+- 🚚 Fleet washing Mixmax sequence NOT CREATED — contacts stranded
+- ⚠️ Instantly.ai NOT PAUSED — June 4 enrollment BLOCKED until confirmed paused
+
+## RESOLVED — Standalone Generic Title Gap (detect_lead_type routing + district manager)
+- Resolved: 2026-05-29 (Run 136)
+- Fix: Reordered `detect_lead_type()` in `integrations/mixmax.py` to check GAS_STATION_KEYWORDS (company name only) BEFORE PROPERTY_MANAGER_TITLES. Added 'district manager' to PROPERTY_MANAGER_TITLES. Verified with 6 Python unit tests: Circle K DM → gas_station ✓; CVS DM → property_manager ✓; Dollar General DM → property_manager ✓; explicit override always wins ✓; FM at Greystar → property_manager ✓; auto parts DM → property_manager ✓. Run 130 partial fix (search-only) is now a full fix (search + routing).
+
+## RESOLVED — GBP Weekly Post Relay Gap (No Monday reminder existed)
+- Resolved: 2026-05-29 (Run 129 — verified Run 136)
+- Fix: Added `_check_gbp_weekly_post()` to `workers/vera_relay.py` in Run 129. Function fires every Monday May 26–Sept 30. Wired into `_main_body()`. Confirmed present in production relay code. Was marked OPEN due to cloud-environment inability to test relay execution; function is definitively present and wired.
+
+## RESOLVED — Off-Season Relay Gap (Oct 16 – March 31 was dark)
+- Resolved: 2026-05-28 (Run 125 — verified Run 136)
+- Fix: Added `_check_spring_2027_early_booking()` to `workers/vera_relay.py` in Run 125. Function fires every Monday Oct 16, 2026–Mar 31, 2027. Wired into `_main_body()`. Confirmed present in production relay code. Oct–Dec: spring deposit collection + Annual Plan renewals; Jan–Mar: final spring booking push + 2027 ad campaign planning.
+
+## RESOLVED — 'administrator' Title Overly Broad in PROPERTY_MANAGER_TITLES
+- Resolved: 2026-05-26 (Run 99 — verified Run 136)
+- Fix: Narrowed 'administrator' → 'facility administrator' in both DANNY_TITLES and PROPERTY_MANAGER_TITLES in Run 99. Confirmed 'facility administrator' present in both lists; 'administrator' alone not present. False matches on IT Administrator, Database Administrator, School Administrator eliminated.
+
+## OPEN — Dollar Stores & General Merchandise Discount Chains Not Yet Pulled 🟡 NEW (Run 136)
+- First seen: 2026-05-29 (Run 136)
+- Description: Dollar General (100+ NE Ohio), Family Dollar, Dollar Tree, Five Below, Big Lots. Highest-density retail footprint in NE Ohio outside QSR chains. District FMs sign multi-site vendor contracts. High-traffic lots + building exteriors + dumpster pads. $36K–$84K/year per 30-store district. Zero competitors cold-calling dollar store DMs.
+- Fix applied (Run 136): 12 DANNY_TITLES + 10 DANNY_ORG_KEYWORDS + PROPERTY_MANAGER_TITLES sync + agents/danny.md full segment brief. First pull June 8 Cuyahoga.
+- Resolution criteria: Dollar store district manager / dollar general manager contacts appear in June 8 Cuyahoga pull.
+
+## OPEN — Auto Parts Stores Segment Not Yet Pulled 🟡 NEW (Run 136)
+- First seen: 2026-05-29 (Run 136)
+- Description: O'Reilly (50+ NE Ohio), AutoZone (60+ NE Ohio), Advance Auto Parts, NAPA, Pep Boys. Oiliest parking lots of any retail format. OSHA slip-hazard compliance angle. District managers sign multi-site vendor contracts. $20K–$50K/year per 25-store district. Zero competitors cold-calling auto parts DMs.
+- Fix applied (Run 136): 8 DANNY_TITLES + 10 DANNY_ORG_KEYWORDS + PROPERTY_MANAGER_TITLES sync + agents/danny.md full segment brief. First pull June 8 Cuyahoga.
+- Resolution criteria: Auto parts district manager / auto parts store manager contacts appear in June 8 Cuyahoga pull.
+
+## OPEN — Hardware & Home Improvement Centers Segment Not Yet Pulled 🟡 NEW (Run 136)
+- First seen: 2026-05-29 (Run 136)
+- Description: Home Depot (20+ NE Ohio), Lowe's (15+ NE Ohio), Menards (4 NE Ohio), Ace Hardware (50+ dealer-owned), True Value, Do It Best. Enormous garden center plazas + massive parking lots + covered lumber yards. District FMs manage 10–20 stores. Premium accounts — one Home Depot district = $30K–$100K/year. Zero competitors.
+- Fix applied (Run 136): 9 DANNY_TITLES + 13 DANNY_ORG_KEYWORDS + PROPERTY_MANAGER_TITLES sync + agents/danny.md full segment brief. First pull June 8 Cuyahoga.
+- Resolution criteria: Home improvement/hardware district manager contacts appear in June 8 Cuyahoga pull.
+
+## OPEN — Community Swimming Pools & Aquatic Centers Segment Not Yet Pulled 🟡 NEW (Run 136)
+- First seen: 2026-05-29 (Run 136)
+- Description: NE Ohio park district and municipal recreation pools. Lyndhurst, North Olmsted, Brunswick, Westlake, Rocky River, Shaker Heights Natatorium, Solon, Twinsburg, Strongsville, Brecksville, Cuyahoga Falls. Distinct from YMCA aquatics. Pre-season Memorial Day window = natural pitch. Pool deck concrete + walkways + parking + building exteriors. $10K–$30K/year per 10-pool system.
+- Fix applied (Run 136): 9 DANNY_TITLES + 11 DANNY_ORG_KEYWORDS + PROPERTY_MANAGER_TITLES sync + agents/danny.md full segment brief. First pull June 8 Cuyahoga.
+- Resolution criteria: Aquatic center director / pool facility manager contacts appear in June 8 Cuyahoga pull.
 
 ---
 

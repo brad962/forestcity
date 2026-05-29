@@ -312,11 +312,10 @@ PROPERTY_MANAGER_TITLES = [
     'taproom manager', 'brewery manager', 'craft brewery manager', 'tap room manager',
     'brewery operations manager', 'taproom director', 'brewery general manager',
     # Standalone generic decision-maker titles for routing of manually-imported leads.
-    # 'district manager' deliberately EXCLUDED — it was previously in GAS_STATION_KEYWORDS and caused
-    # routing conflicts: 'district manager' would match PROPERTY_MANAGER_TITLES first, sending gas station
-    # DMs to the wrong sequence. The automated pipeline is unaffected (explicit _lead_type bypasses this list).
-    # For manual imports of DS/AM/RD contacts from target segments, the explicit lead type should be set on import.
-    # (added 2026-05-29 run 130 — routing-safe subset only)
+    # 'district manager' is now SAFE to include because detect_lead_type() checks GAS_STATION_KEYWORDS
+    # against company name FIRST (before PROPERTY_MANAGER_TITLES), so "District Manager" at Circle K
+    # routes to gas_station, while "District Manager" at CVS routes to property_manager. (fixed run 136)
+    'district manager',     # CVS, Walgreens, Discount Tire, Jiffy Lube, QSR franchises, DSO chains, etc.
     'area manager',         # Enterprise Rent-A-Car, Planet Fitness, Anytime Fitness, Aspen Dental chains
     'regional director',    # DaVita dialysis, NovaCare PT, Concentra, Heartland Dental, hotel brand regional FMs
     'branch manager',       # bank branches (Huntington, KeyBank, Fifth Third, PNC) — branch-level vendor contact
@@ -358,6 +357,40 @@ PROPERTY_MANAGER_TITLES = [
     'sports venue facilities manager', 'stadium facilities manager', 'arena facilities manager',
     'venue operations director', 'sports facility operations manager', 'stadium operations manager',
     'arena operations manager', 'ballpark facilities manager',
+    # Dollar Stores & General Merchandise Discount Chains — Dollar General (100+ NE Ohio), Family Dollar,
+    # Dollar Tree, Five Below, Big Lots; enormous NE Ohio store density; district FMs sign multi-site vendor
+    # contracts; large paved lots + building exteriors + dumpster pads; $300-$700/location quarterly;
+    # 30-location district deal = $36K-$84K/year; zero competitors cold-calling dollar store DMs (added 2026-05-29 run 136)
+    'dollar store district manager', 'dollar store manager', 'general merchandise manager',
+    'general merchandise district manager', 'family dollar manager', 'dollar general manager',
+    'discount store manager', 'dollar store operations manager', 'value retail manager',
+    'five below manager', 'big lots manager', 'discount retail manager',
+    # Auto Parts Stores — O'Reilly Auto Parts (50+ NE Ohio), AutoZone (60+ NE Ohio), Advance Auto Parts,
+    # NAPA Auto Parts (Genuine Parts Co.), Pep Boys; oily parking lots + building exteriors + dumpster areas;
+    # district managers sign multi-site vendor contracts; $400-$800/location; 25-location district = $20K-$50K/year;
+    # zero competitors cold-calling auto parts district managers in NE Ohio (added 2026-05-29 run 136)
+    'auto parts district manager', 'auto parts store manager', 'auto parts regional manager',
+    'automotive parts manager', 'parts store district manager', 'parts store manager',
+    'auto parts operations manager', 'auto parts facilities manager',
+    # Hardware & Home Improvement Centers — Home Depot (20+ NE Ohio), Lowe's (15+ NE Ohio), Menards,
+    # Ace Hardware (50+ NE Ohio dealer-owned), True Value, Do It Best; enormous garden center plazas +
+    # massive parking lots + building exteriors + lumber yard areas + outdoor display pads;
+    # district FMs manage 10-20 stores and sign vendor contracts; $1,500-$5,000/location;
+    # one Home Depot district = $30K-$100K/year; premium accounts (added 2026-05-29 run 136)
+    'home improvement district manager', 'hardware store manager', 'home center manager',
+    'home improvement store manager', 'hardware district manager', 'building materials manager',
+    'home improvement operations manager', 'garden center manager', 'hardware store district manager',
+    # Community Swimming Pools & Aquatic Centers — NE Ohio municipal pools (Lyndhurst, North Olmsted,
+    # Brunswick Swim Center, Westlake Rec Center, Rocky River Recreation Center, Shaker Heights Natatorium,
+    # Solon Rec Center, Twinsburg Family Aquatic Center, Strongsville Rec Center pool, Brecksville pool);
+    # NE Ohio park districts operate dozens of seasonal outdoor pools + year-round aquatic centers;
+    # pool deck concrete + surrounding walkways + parking lots + building exteriors = recurring cleaning need;
+    # summer = peak operational season = natural pitch window for pre-season exterior cleaning;
+    # aquatic center directors sign vendor contracts; $1,000-$3,000/location; 10-pool system = $10K-$30K/year;
+    # DISTINCT from YMCA pools (already targeted) — these are standalone municipal recreation facilities (added 2026-05-29 run 136)
+    'aquatic center director', 'pool facility manager', 'swimming pool manager',
+    'community pool director', 'aquatic facility manager', 'recreational aquatic manager',
+    'natatorium manager', 'aquatic center manager', 'public pool manager',
 ]
 
 REALTOR_TITLES = [
@@ -432,7 +465,15 @@ def detect_lead_type(lead: dict) -> str:
     company = (lead.get('company_name') or lead.get('organization') or '').lower()
     combined = f"{title} {company}"
 
-    # Check PM titles first — they are more specific than realtor keywords.
+    # Check gas station by COMPANY NAME first — before any title-based routing.
+    # This prevents 'district manager' (now in PROPERTY_MANAGER_TITLES) from incorrectly routing
+    # a gas station DM to the PM sequence. Gas station detection is company-based (brand names,
+    # industry terms) so checking company alone is more precise than checking combined.
+    for kw in GAS_STATION_KEYWORDS:
+        if kw in company:
+            return 'gas_station'
+
+    # Check PM titles next — more specific than realtor keywords.
     # 'real estate' in REALTOR_TITLES is a substring that would falsely match
     # any PM title-holder working at "XYZ Real Estate Management".
     for kw in PROPERTY_MANAGER_TITLES:
@@ -444,9 +485,6 @@ def detect_lead_type(lead: dict) -> str:
     for kw in CONTRACTOR_TITLES:
         if kw in combined:
             return 'contractor'
-    for kw in GAS_STATION_KEYWORDS:
-        if kw in combined:
-            return 'gas_station'
     for kw in FLEET_KEYWORDS:
         if kw in combined:
             return 'fleet_washing'

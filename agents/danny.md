@@ -614,6 +614,78 @@ Events drive 20,000–70,000+ fans = maximum visible staining on all surfaces. F
 
 ---
 
+### Dollar Stores & General Merchandise Discount Chains (NEW — May 2026, Run 136)
+
+**Target:** Dollar Store District Manager, Dollar General Manager, Family Dollar Manager, Dollar Tree District Manager, General Merchandise District Manager, Discount Store Manager, Five Below Manager, Big Lots Manager
+
+**Why:** Dollar General alone has 100+ NE Ohio locations across all 7 counties. Family Dollar and Dollar Tree add another 100+. Five Below and Big Lots have 20+ each. This is the highest-density retail footprint in NE Ohio outside of QSR chains. District managers typically oversee 15–40 stores per territory. High foot traffic + large paved lots = constant staining from gum, oil, food residue, spilled merchandise. Building exteriors and dumpster pad areas accumulate grime fast. Zero competitors are cold-calling dollar store district managers. These are commoditized accounts — they buy based on price and reliability, not relationships, so a single low-friction cold email often closes them.
+
+**Pitch angle:** "Your stores get more foot traffic than most retail formats. We keep the parking lots and exteriors looking right across multi-store territories — one invoice, one contact, one quarterly schedule for your whole district."
+
+**Revenue potential:** $300–$700/location quarterly; 30-location district deal = $36,000–$84,000/year. DG, FD, and DT combined district = potential $120K+/year contract.
+
+**Target companies:** Dollar General Corp (Nashville HQ, NE Ohio district managers), Family Dollar/Dollar Tree (merged, Dollar Tree Inc.), Five Below Inc., Big Lots (Columbus OH HQ — local angle!).
+
+**Apollo keywords (live Run 136):** `dollar store`, `dollar general`, `family dollar`, `dollar tree`, `five below`, `general merchandise retail`, `discount retail store`, `big lots`, `discount store chain`, `value retail`, `tuesday morning` — added to DANNY_ORG_KEYWORDS.
+
+**Sequence:** Route to Property Manager sequence (multi-site facilities vendor angle). First pull: June 8 Cuyahoga.
+
+---
+
+### Auto Parts Stores (NEW — May 2026, Run 136)
+
+**Target:** Auto Parts District Manager, Auto Parts Store Manager, Auto Parts Regional Manager, Parts Store District Manager, Parts Store Manager, Auto Parts Operations Manager, Auto Parts Facilities Manager
+
+**Why:** O'Reilly Auto Parts has 50+ NE Ohio locations. AutoZone has 60+. Advance Auto Parts (formerly Pep Boys in some markets) has 40+. NAPA (Genuine Parts Company) has 50+ dealer-owned locations. The parking lots and concrete aprons around service bays at these stores accumulate motor oil, transmission fluid, hydraulic fluid, grease, and tire residue — among the most visibly stained surfaces of any retail format. OSHA compliance angle: oily concrete parking lots = slip and fall liability. District managers oversee 20–30 locations and sign vendor contracts. Zero competitors are targeting auto parts chain district managers.
+
+**Pitch angle:** "Auto parts stores have the oiliest parking lots of any retail format — we know it, your district manager knows it, and OSHA's slip-hazard guidelines apply here too. We clean 20+ locations per district on one quarterly schedule."
+
+**Revenue potential:** $400–$800/location quarterly; 25-location district = $20,000–$50,000/year. O'Reilly + AutoZone combined = massive recurring revenue opportunity.
+
+**Target companies:** O'Reilly Auto Parts, AutoZone, Advance Auto Parts, NAPA/Genuine Parts Co., Pep Boys, Parts Authority.
+
+**Apollo keywords (live Run 136):** `auto parts store`, `auto parts chain`, `automotive parts retailer`, `oreilly auto parts`, `autozone`, `advance auto parts`, `napa auto parts`, `pep boys`, `parts authority`, `auto parts management` — added to DANNY_ORG_KEYWORDS.
+
+**Sequence:** Route to Property Manager sequence (multi-site facilities / compliance angle). First pull: June 8 Cuyahoga.
+
+---
+
+### Hardware & Home Improvement Centers (NEW — May 2026, Run 136)
+
+**Target:** Home Improvement District Manager, Hardware Store Manager, Home Center Manager, Home Improvement Store Manager, Hardware District Manager, Building Materials Manager, Garden Center Manager, Hardware Store District Manager
+
+**Why:** NE Ohio has 20+ Home Depot locations, 15+ Lowe's, and multiple Menards stores. Ace Hardware has 50+ dealer-owned NE Ohio locations. These stores have enormous footprints — big-box locations can have 10+ acres of paved parking + covered garden center plazas + outdoor lumber yard areas + cart corrals. Seasonal grime accumulates heavily: mulch dust, potting soil, fertilizer residue, oil stains from loading vehicles, and heavy foot traffic. Pre-summer season (May–June) is the peak pressure-washing window because garden center season = maximum outdoor surface use. District FMs typically oversee 10–20 stores. Home Depot district managers are among the highest-value cold outreach targets in all of commercial retail.
+
+**Pitch angle:** "Garden center season puts maximum foot traffic on your outdoor surfaces. We schedule a pre-summer clean across your district before the rush — one invoice, one contact, consistent results across every location."
+
+**Revenue potential:** $1,500–$5,000/location; one Home Depot district = $30,000–$100,000/year. Premium accounts with large contracts and reliable annual renewal.
+
+**Target companies:** Home Depot (Atlanta HQ, NE Ohio district managers), Lowe's Companies Inc., Menards Inc. (Eau Claire WI HQ), Ace Hardware Corp. (dealer-owned, contact local district coordinator), True Value Company, Do It Best Corp.
+
+**Apollo keywords (live Run 136):** `home improvement store`, `hardware store chain`, `home center`, `home depot`, `lowes`, `lowe's`, `menards`, `ace hardware`, `true value hardware`, `do it best`, `building supply store`, `home improvement retail`, `hardware chain` — added to DANNY_ORG_KEYWORDS.
+
+**Sequence:** Route to Property Manager sequence (large facility / multi-site vendor angle). First pull: June 8 Cuyahoga.
+
+---
+
+### Community Swimming Pools & Aquatic Centers (NEW — May 2026, Run 136)
+
+**Target:** Aquatic Center Director, Pool Facility Manager, Swimming Pool Manager, Community Pool Director, Aquatic Facility Manager, Natatorium Manager, Aquatic Center Manager, Public Pool Manager, Recreational Aquatic Manager
+
+**Why:** NE Ohio park districts and municipal recreation departments operate dozens of seasonal outdoor pools and year-round indoor aquatic centers. Targets include: Lyndhurst Community Pool, North Olmsted Aquatic Center, Brunswick Swim Center, Westlake Recreation Center, Rocky River Recreation Center, Shaker Heights Natatorium, Solon Recreation Center, Twinsburg Family Aquatic Center, Strongsville Recreation Center, Brecksville Community Pool, Cuyahoga Falls Natatorium, Cleveland Metroparks' recreation facilities. Pool deck concrete + surrounding walkways + entry areas + parking lots accumulate algae, mineral deposits, sunscreen residue, and foot traffic staining over the off-season. Pre-season cleaning (April–May) is the natural pitch window — aquatic directors want everything looking right before Memorial Day opening weekend. DISTINCT from YMCA aquatics (already targeted as a separate segment).
+
+**Pitch angle:** "Before Memorial Day weekend, pool deck concrete, entry walkways, and the surrounding parking areas should look clean for the first day of the season. We work with recreation departments across NE Ohio to get everything ready before the opener."
+
+**Revenue potential:** $1,000–$3,000/location; 10-pool system (park district) = $10,000–$30,000/year. Cuyahoga County's park district has the largest aquatic system in NE Ohio.
+
+**Target companies:** Cuyahoga County recreation departments, Summit County MetroParks, various NE Ohio municipal parks and recreation departments.
+
+**Apollo keywords (live Run 136):** `aquatic center`, `community pool`, `municipal pool`, `swimming pool facility`, `natatorium`, `public swimming pool`, `recreation aquatic center`, `community aquatics`, `indoor aquatic center`, `outdoor pool management`, `municipal aquatics` — added to DANNY_ORG_KEYWORDS.
+
+**Sequence:** Route to Property Manager sequence (public facility / seasonal timing angle). First pull: June 8 Cuyahoga.
+
+---
+
 ## Peak Season Angle — HOA Budget Season (May–June)
 HOA boards typically hold their annual budget and vendor approval meetings in May–June before the summer maintenance season. This means property managers and community association managers are ACTIVELY reviewing vendor lists RIGHT NOW. The PM sequence Touch 1 and any LinkedIn outreach should reference this window: "HOA boards are approving their summer vendor lists this month" or "Most associations lock in their exterior maintenance vendor before July." This creates urgency without being pushy — it's calendar-based fact. Works especially well for community associations, HOA management companies, and multifamily operators who work on fiscal budgets.
 

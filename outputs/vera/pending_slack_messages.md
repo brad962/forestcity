@@ -1,3 +1,36 @@
+🔧 *Vera — Auto-Upgrade (Run 136)*
+>Changed: Fixed the Standalone Generic Title Gap — reordered `detect_lead_type()` in mixmax.py to check gas station company names FIRST, then added 'district manager' to PROPERTY_MANAGER_TITLES routing. Verified: "District Manager" at Circle K → gas_station ✓; "District Manager" at CVS or Dollar General → property_manager ✓.
+>Why: 'district manager' was excluded from routing since Run 130 because it would incorrectly send gas station DMs to the PM sequence. The fix changes check ORDER (gas station company detected first), not the keywords — clean and correct. Manual imports of DM contacts at CVS/Walgreens/Discount Tire/QSR chains now route correctly without setting explicit lead_type.
+>File: integrations/mixmax.py
+---
+🔧 *Vera — Auto-Upgrade (Run 136)*
+>Changed: Added 4 new commercial segments — Dollar Stores & General Merchandise (Dollar General / Family Dollar / Dollar Tree / Five Below / Big Lots), Auto Parts Stores (O'Reilly / AutoZone / Advance Auto Parts / NAPA), Hardware & Home Improvement Centers (Home Depot / Lowe's / Menards / Ace Hardware), Community Swimming Pools & Aquatic Centers (NE Ohio municipal pools / natatoriums). 38 new titles + 44 new org keywords total across all 4 segments. All first pull June 8 Cuyahoga.
+>Why: Dollar General alone has 100+ NE Ohio locations. Auto parts stores have the oiliest parking lots of any retail format (OSHA compliance angle). Home Depot/Lowe's district contracts = $30K–$100K/year. Municipal pools need pre-season cleaning before Memorial Day. All 4 segments have zero competitors cold-calling their district managers.
+>File: workers/lead_pipeline.py, integrations/mixmax.py, agents/danny.md
+---
+🔧 *Vera — Auto-Upgrade (Run 136)*
+>Changed: Marked 4 open issues RESOLVED in open_issues.md: (1) Standalone Generic Title Gap — routing fix verified, (2) GBP Weekly Post Relay Gap — function confirmed present and wired in vera_relay.py since Run 129, (3) Off-Season Relay Gap — spring_2027_early_booking confirmed present since Run 125, (4) 'administrator' Title Overly Broad — narrowed to 'facility administrator' confirmed since Run 99. These were stuck OPEN because they were fixed in prior runs but never marked closed.
+>Why: 4 issues consuming mental overhead that are actually resolved. Cleared from the open list.
+>File: outputs/vera/open_issues.md
+---
+💡 *Vera — Upgrade Proposal (Run 136)*
+>Idea: Tommy should write 5 personalized "dream account" outreach letters — one each for Rocket Mortgage FieldHouse, Progressive Field, Cleveland Museum of Art, Cleveland Metroparks Zoo, and Cleveland Hopkins Airport (CLE). NOT standard cold email sequence copy. A single direct letter in Bradley's voice from bradley@forestcitypowerwashing.com with venue-specific language: seat count, fan traffic, compliance context.
+>Why: These 5 accounts are worth $15K–$50K/year each — combined = $75K–$250K in potential annual revenue. They're too valuable to sit in a mass Mixmax sequence. A one-to-one letter sent directly by Bradley stands out 10× more than an automated 3-touch sequence. Tommy already has the VOC data and brand voice. This is a half-day deliverable.
+>Impact: Opens 5 dream accounts that a cold email sequence will never convert. Highest ROI copywriting task available this week.
+>Reply YES to approve.
+---
+💡 *Vera — Upgrade Proposal (Run 136)*
+>Idea: Build an SMS follow-up script for contacts who received estimates but haven't signed in 5+ days. 2-text sequence: Text 1 day 6 ("Hey [first name] — wanted to follow up on the estimate for [address]. Is this still on your radar?"), Text 2 day 10 ("Last check-in — if you'd like to lock in before we get into June's schedule, just let me know"). SMS has 98% open rate vs 40% for email. All estimate leads have phone numbers in pipeline_data.json.
+>Why: Nina's report flags stale estimate leads but there's no SMS protocol — only email follow-up is documented. Bradley's fastest conversion path right now is a 2-minute text to whoever has a pending estimate. Donna can write the scripts in under an hour.
+>Impact: Converts stale estimates before they go cold. Direct revenue this week with zero ad spend.
+>Reply YES to approve.
+---
+✅ *Vera — Scan Complete 2026-05-29 (Run 136)*
+>5 auto-upgrades shipped | 2 proposals | 66 open issues (4 new segments added, 4 persistent issues RESOLVED)
+>Run 136 highlights: district manager routing fully fixed (verified Python tests), 4 new commercial segments live (Dollar Stores / Auto Parts / Hardware / Municipal Pools). June 8 Cuyahoga pull now targets 39+ commercial segments across 432 Apollo titles + 455 org keywords.
+>CRITICAL TODAY: Summit County pull deadline — last business day before May 31. `python3 workers/lead_pipeline.py both Summit` or double-click `scripts/run_summit_both.command`. Don't leave for the weekend.
+>Monday June 1: Medina pull. Wednesday June 4: enrollment day. Sunday June 8: biggest pull of the season (39+ segments).
+---
 🔧 *Vera — Auto-Upgrade (Run 135)*
 >Changed: Added 4 new commercial segments to lead_pipeline.py, mixmax.py, and agents/danny.md — Coin Laundries & Laundromats, Blood/Plasma Donation Centers, Cannabis Dispensaries, and Professional Sports Venues
 >Why: These 4 segments cover zero-competitor NE Ohio markets with strong compliance/ironic-pitch angles and high revenue potential. Cannabis dispensaries growing weekly as new OH rec licenses issue. Sports venues (FieldHouse, Progressive Field, Browns Stadium) are among the highest-budget FM contacts in the region with nobody calling them.

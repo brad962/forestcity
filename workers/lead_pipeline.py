@@ -520,6 +520,51 @@ DANNY_TITLES = [
     'sports venue facilities manager', 'stadium facilities manager', 'arena facilities manager',
     'venue operations director', 'sports facility operations manager', 'stadium operations manager',
     'arena operations manager', 'ballpark facilities manager',
+    # Dollar Stores & General Merchandise Discount Chains — Dollar General (100+ NE Ohio), Family Dollar,
+    # Dollar Tree, Five Below, Big Lots; enormous NE Ohio store density (DG alone has 100+ in 7-county area);
+    # district FMs sign multi-site vendor contracts for 15-40 stores per district territory;
+    # high-traffic paved lots + building exteriors + dumpster pads accumulate staining + gum + seasonal grime;
+    # $300-$700/location; quarterly = $1.2K-$2.8K/location; 30-location district = $36K-$84K/year;
+    # zero competitors cold-calling dollar store district managers in NE Ohio; first pull June 8 Cuyahoga (added 2026-05-29 run 136)
+    'dollar store district manager', 'dollar store manager', 'general merchandise manager',
+    'general merchandise district manager', 'family dollar manager', 'dollar general manager',
+    'discount store manager', 'dollar store operations manager', 'value retail manager',
+    'five below manager', 'big lots manager', 'discount retail manager',
+    # Auto Parts Stores — O'Reilly Auto Parts (50+ NE Ohio), AutoZone (60+ NE Ohio), Advance Auto Parts,
+    # NAPA Auto Parts (Genuine Parts Company, largest auto parts network in US), Pep Boys, Parts Authority;
+    # parking lots + aprons around service bays accumulate motor oil, hydraulic fluid, grease staining;
+    # OSHA compliance angle: oil-stained parking lots = slip hazard = citation risk;
+    # district managers sign multi-site vendor contracts for 20-30 locations;
+    # $400-$800/location; quarterly = $1.6K-$3.2K/location; 25-location district = $20K-$50K/year;
+    # zero competitors cold-calling auto parts district managers in NE Ohio; first pull June 8 Cuyahoga (added 2026-05-29 run 136)
+    'auto parts district manager', 'auto parts store manager', 'auto parts regional manager',
+    'automotive parts manager', 'parts store district manager', 'parts store manager',
+    'auto parts operations manager', 'auto parts facilities manager',
+    # Hardware & Home Improvement Centers — Home Depot (20+ NE Ohio), Lowe's (15+ NE Ohio), Menards (4 NE Ohio),
+    # Ace Hardware (50+ NE Ohio dealer-owned locations), True Value Hardware, Do It Best;
+    # enormous paved garden center plazas + massive parking lots (10+ acres at big-box locations) +
+    # building exteriors + covered lumber yard areas + outdoor display pads;
+    # seasonal grime (mulch dust, potting soil, fertilizer residue, oil stains) accumulates heavily;
+    # district FMs manage 10-20 stores and sign vendor contracts for exterior maintenance;
+    # $1,500-$5,000/location; one Home Depot district = $30K-$100K/year; zero competitors;
+    # first pull June 8 Cuyahoga (all major big-box home improvement retailers in Cuyahoga County) (added 2026-05-29 run 136)
+    'home improvement district manager', 'hardware store manager', 'home center manager',
+    'home improvement store manager', 'hardware district manager', 'building materials manager',
+    'home improvement operations manager', 'garden center manager', 'hardware store district manager',
+    # Community Swimming Pools & Aquatic Centers — NE Ohio park districts and recreation departments operate
+    # dozens of seasonal outdoor pools + year-round indoor aquatic centers;
+    # targets: Lyndhurst Community Pool, North Olmsted Aquatic Center, Brunswick Swim Center,
+    # Westlake Recreation Center, Rocky River Recreation Center, Shaker Heights Natatorium,
+    # Solon Recreation Center aquatics, Twinsburg Family Aquatic Center, Strongsville Rec Center,
+    # Brecksville Community Pool, Cuyahoga Falls Natatorium, Summit County MetroParks rec centers;
+    # pool deck concrete + surrounding walkways + entry areas + parking lots = recurring cleaning need;
+    # summer = peak operation season = natural pre-season pitch window (April-May exterior cleaning);
+    # aquatic center directors sign vendor contracts; $1,000-$3,000/location; 10-pool system = $10K-$30K/year;
+    # DISTINCT from YMCA aquatics (already targeted) — these are standalone municipal recreation facilities;
+    # first pull June 8 Cuyahoga (Cuyahoga County park district runs largest NE Ohio aquatic system) (added 2026-05-29 run 136)
+    'aquatic center director', 'pool facility manager', 'swimming pool manager',
+    'community pool director', 'aquatic facility manager', 'recreational aquatic manager',
+    'natatorium manager', 'aquatic center manager', 'public pool manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -815,6 +860,30 @@ DANNY_ORG_KEYWORDS = [
     # facility directors manage large maintenance budgets; zero competitors (added 2026-05-29 run 135)
     'sports venue', 'professional sports venue', 'sports arena management', 'stadium management',
     'arena management', 'sports facility management', 'ballpark management', 'venue facilities',
+    # Dollar Stores & General Merchandise Discount Chains — Dollar General, Family Dollar, Dollar Tree,
+    # Five Below, Big Lots; 100+ NE Ohio locations per major chain; district FMs sign vendor contracts;
+    # high-traffic lots + building exteriors; zero competitors cold-calling this segment (added 2026-05-29 run 136)
+    'dollar store', 'dollar general', 'family dollar', 'dollar tree', 'five below',
+    'general merchandise retail', 'discount retail store', 'big lots', 'discount store chain',
+    'value retail', 'tuesday morning',
+    # Auto Parts Stores — O'Reilly, AutoZone, Advance Auto Parts, NAPA, Pep Boys;
+    # oily parking lots + building exteriors + dumpster areas; OSHA slip-hazard compliance;
+    # district managers sign multi-site vendor contracts (added 2026-05-29 run 136)
+    'auto parts store', 'auto parts chain', 'automotive parts retailer', 'oreilly auto parts',
+    'autozone', 'advance auto parts', 'napa auto parts', 'pep boys', 'parts authority',
+    'auto parts management',
+    # Hardware & Home Improvement Centers — Home Depot, Lowe's, Menards, Ace Hardware, True Value;
+    # enormous garden center plazas + massive parking lots + covered lumber yards;
+    # district FMs sign vendor contracts; premium high-value accounts (added 2026-05-29 run 136)
+    'home improvement store', 'hardware store chain', 'home center', 'home depot',
+    'lowes', "lowe's", 'menards', 'ace hardware', 'true value hardware', 'do it best',
+    'building supply store', 'home improvement retail', 'hardware chain',
+    # Community Swimming Pools & Aquatic Centers — NE Ohio park district and municipal recreation pools;
+    # seasonal outdoor + year-round indoor; pool deck + walkways + parking lots + building exteriors;
+    # summer pre-season pitch window (April-May); distinct from YMCA aquatics already targeted (added 2026-05-29 run 136)
+    'aquatic center', 'community pool', 'municipal pool', 'swimming pool facility',
+    'natatorium', 'public swimming pool', 'recreation aquatic center', 'community aquatics',
+    'indoor aquatic center', 'outdoor pool management', 'municipal aquatics',
 ]
 
 CARLA_SEARCHES = [
