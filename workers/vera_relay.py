@@ -463,10 +463,12 @@ def _check_ad_lead_log_reminder():
 
 
 def _check_medina_reminder():
-    """Fire Medina County pull reminder May 30–June 4 (pull due June 1, needed for June 4 enrollment)."""
+    """Fire Medina County pull reminder May 29–June 4 (pull due June 1, needed for June 4 enrollment).
+    Start date corrected from May 30 → May 29 (Run 138): May 29 is the last Friday before the pull
+    weekend — Bradley needs the Friday heads-up, not just Saturday morning."""
     from datetime import date as _date_m
     today = _date_m.today()
-    start = _date_m(2026, 5, 30)
+    start = _date_m(2026, 5, 29)
     end   = _date_m(2026, 6, 4)
     if not (start <= today <= end):
         return

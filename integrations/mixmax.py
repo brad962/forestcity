@@ -403,6 +403,12 @@ PROPERTY_MANAGER_TITLES = [
     'uniform services manager', 'laundry services manager', 'uniform district manager',
     'linen services manager', 'textile services manager', 'workwear services manager',
     'uniform operations manager', 'garment services manager',
+    # Warehouse Club & Membership Retail — Costco, Sam's Club, BJ's Wholesale Club;
+    # enormous parking lots + gas station concourses + building exteriors not caught by 'grocery chain';
+    # routing to Property Manager sequence (multi-site facility management angle) (added 2026-05-29 run 138)
+    'warehouse club manager', 'warehouse club general manager', 'wholesale club manager',
+    'wholesale club district manager', 'warehouse club facilities manager', 'membership store manager',
+    'warehouse store manager', 'membership warehouse manager', 'wholesale store manager',
 ]
 
 REALTOR_TITLES = [

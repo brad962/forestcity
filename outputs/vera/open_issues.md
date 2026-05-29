@@ -1,6 +1,26 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 137 | 2026-05-29 | Auto-fixes shipped: 4 | New RESOLVED: 1 (Aug/Sep relay bug — re-opened and properly resolved) | Open: 68 (2 new segments added)*
+*Run 138 | 2026-05-29 | Auto-fixes shipped: 3 | New RESOLVED: 1 (Medina Friday warning gap) | Open: 68 (1 new segment added)*
+
+---
+
+## RUN METRICS — Run 138 | 2026-05-29
+- Total RESOLVED: 113 (Medina reminder start-date gap fixed)
+- Total OPEN: 68 (Warehouse Club segment code live, awaiting June 8 pull; 67 carried from Run 137)
+- Auto-upgrades shipped: 3
+  1. `workers/vera_relay.py` — **BUG FIX**: `_check_medina_reminder()` start date corrected May 30 → May 29. May 29 is the last Friday before the June 1 Medina pull — Bradley needs the Friday warning to prepare for the weekend/Monday. With start=May 30 (Saturday), the relay was completely dark on the last business day before the pull.
+  2. `workers/lead_pipeline.py` — Added Warehouse Club & Membership Retail segment: 9 DANNY_TITLES (warehouse club manager, wholesale club manager, wholesale club district manager, warehouse club facilities manager, membership store manager, warehouse store manager, membership warehouse manager, wholesale club general manager, wholesale store manager) + 11 DANNY_ORG_KEYWORDS (warehouse club, membership warehouse, wholesale club, wholesale retail, membership retail, warehouse retail, costco, sam's club, bj's wholesale, membership store, warehouse store). Costco (3 NE Ohio) + Sam's Club (4 NE Ohio) + BJ's Wholesale (2 NE Ohio) = 9 locations. 8–15 acre lots + gas concourses + building exteriors. REAL GAP: Apollo does not tag these as 'grocery store'; they only appear under 'wholesale retail'/'warehouse club' org tags. $3K–$8K/location visit; 4x/year; one Costco district deal = $36K–$96K/year. Zero competitors.
+  3. `integrations/mixmax.py` — Added 9 warehouse club titles to PROPERTY_MANAGER_TITLES routing list. Synced with DANNY_TITLES addition above.
+
+## RESOLVED — Medina Friday Warning Gap (vera_relay.py)
+- Resolved: 2026-05-29
+- Fix: Changed `_check_medina_reminder()` start date from `_date_m(2026, 5, 30)` to `_date_m(2026, 5, 29)`. Today (Friday May 29) is the last business day before the June 1 Medina pull weekend. With start=May 30 (Saturday), Bradley would receive zero warning on the last day he could easily prep. Now fires today.
+
+## OPEN — Warehouse Club & Membership Retail Segment Not Yet Pulled 🟡 NEW (Run 138)
+- First seen: 2026-05-29
+- Description: Code live in lead_pipeline.py + mixmax.py + danny.md. Segment brief written. Awaiting June 8 Cuyahoga pull to fire for the first time. Cannot be resolved until Apollo pull runs locally.
+- Attempts:
+  - 2026-05-29: Added all code, org keywords, titles, and segment brief. Waiting for Bradley to run June 8 pull.
 
 ---
 

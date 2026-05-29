@@ -584,6 +584,18 @@ DANNY_TITLES = [
     'uniform services manager', 'laundry services manager', 'uniform district manager',
     'linen services manager', 'textile services manager', 'workwear services manager',
     'uniform operations manager', 'garment services manager',
+    # Warehouse Club & Membership Retail — Costco (3+ NE Ohio: Westlake, Macedonia, Avon/Sheffield),
+    # Sam's Club (4+ NE Ohio: Mayfield Heights, Avon, Brunswick, Stow), BJ's Wholesale Club (2 NE Ohio);
+    # ENORMOUS parking lots (8–15 acres per location) NOT caught by 'grocery chain' in Apollo — Costco/Sam's
+    # are tagged 'wholesale retail' or 'membership warehouse' in Apollo, not 'grocery store';
+    # gas station concourses + massive building exteriors + cart return areas;
+    # district/regional FM contacts sign vendor contracts (Costco regional FM covers 3–5 locations);
+    # Revenue: $3,000–$8,000/location (parking + building + gas concourse). 4x/year = $12K–$32K/location;
+    # Costco regional district (3 NE Ohio locations) = $36K–$96K/year; zero competitors targeting;
+    # first pull June 8 Cuyahoga (Costco Westlake + Sam's Club Mayfield Heights in Cuyahoga County) (added 2026-05-29 run 138)
+    'warehouse club manager', 'warehouse club general manager', 'wholesale club manager',
+    'wholesale club district manager', 'warehouse club facilities manager', 'membership store manager',
+    'warehouse store manager', 'membership warehouse manager', 'wholesale store manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -913,6 +925,14 @@ DANNY_ORG_KEYWORDS = [
     'uniform services', 'linen services', 'workwear services', 'textile services',
     'uniform laundry', 'industrial laundry', 'garment services', 'cintas',
     'aramark uniform', 'unifirst', 'uniform rental',
+    # Warehouse Club & Membership Retail — Apollo does NOT tag Costco/Sam's Club as 'grocery store';
+    # they're indexed under 'wholesale retail', 'membership warehouse', 'warehouse club' etc.;
+    # Costco (Westlake/Macedonia/Sheffield), Sam's Club (Mayfield Heights/Avon/Brunswick/Stow),
+    # BJ's Wholesale Club (2 NE Ohio); enormous 8–15 acre lots + gas station concourses + building exteriors;
+    # real segment gap: only caught by 'supermarket chain' (unreliable) — specific keywords fill the gap (added 2026-05-29 run 138)
+    'warehouse club', 'membership warehouse', 'wholesale club', 'wholesale retail',
+    'membership retail', 'warehouse retail', 'costco', "sam's club", "bj's wholesale",
+    'membership store', 'warehouse store',
 ]
 
 CARLA_SEARCHES = [

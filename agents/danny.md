@@ -720,6 +720,22 @@ Events drive 20,000–70,000+ fans = maximum visible staining on all surfaces. F
 
 **Sequence:** Route to Property Manager sequence (industrial facility / recurring maintenance vendor angle). First pull: June 8 Cuyahoga.
 
+### Warehouse Club & Membership Retail (NEW — May 2026, Run 138)
+
+**Target:** Warehouse Club Manager, Wholesale Club Manager, Wholesale Club District Manager, Warehouse Club Facilities Manager, Membership Store Manager, Warehouse Store Manager, Membership Warehouse Manager.
+
+**Why:** Apollo does NOT tag Costco, Sam's Club, or BJ's as "grocery store" — these are indexed under "wholesale retail," "membership warehouse," and "warehouse club" tags. Without specific org keywords and titles, these enormous accounts are INVISIBLE in our pipeline despite sitting in the middle of every major NE Ohio commercial corridor. NE Ohio footprint: **Costco** (Westlake/Sheffield, Macedonia, Avon area — 3 locations), **Sam's Club** (Mayfield Heights, Avon, Brunswick, Stow — 4 locations), **BJ's Wholesale Club** (Sheffield/Avon area, Twinsburg — 2 locations). Parking lots are 8–15 acres per location — among the largest commercial paved surfaces in NE Ohio. Gas station concourses attached to every Costco/Sam's Club lot are particularly high-traffic and grimy. Building exteriors are massive, road-visible, and must meet corporate brand standards. Regional facilities managers oversee 3–5 locations per district. One Costco district (3 NE Ohio locations) = $36K–$96K/year. These are not small accounts.
+
+**Revenue per visit:** $3,000–$8,000 per location (massive parking lot + gas station concourse + building exterior + cart corrals). 4 visits/year = $12K–$32K per location. A Costco regional FM deal (3 NE Ohio stores) = $36K–$96K/year. No competitor is currently targeting warehouse club FM contacts in NE Ohio.
+
+**Target companies:** Costco Wholesale (regional facilities management — call or email through Costco real estate/FM division), Sam's Club (Walmart subsidiary — Sam's Club Facility Maintenance district contacts), BJ's Wholesale Club (Northeast regional FM team; BJ's is smaller, easier first call than Costco or Sam's).
+
+**Apollo keywords (live Run 138):** `warehouse club`, `membership warehouse`, `wholesale club`, `wholesale retail`, `membership retail`, `warehouse retail`, `costco`, `sam's club`, `bj's wholesale`, `membership store`, `warehouse store` — added to DANNY_ORG_KEYWORDS.
+
+**Pitch angle:** "Your parking lots see 5,000+ cars a day. The gas station concourse alone accumulates more tire rubber and oil than most commercial lots combined. We do the entire footprint — lot, concourse, building exterior — in one visit. One contract for all three NE Ohio locations on a quarterly schedule."
+
+**Sequence:** Route to Property Manager sequence (multi-site facility management angle). First pull: June 8 Cuyahoga (Costco Westlake + Sam's Club Mayfield Heights are both in Cuyahoga County).
+
 ---
 
 ## Peak Season Angle — HOA Budget Season (May–June)
