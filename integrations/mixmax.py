@@ -311,6 +311,23 @@ PROPERTY_MANAGER_TITLES = [
     # routing to Property Manager sequence (FM/vendor contract angle); zero competitors cold-calling (added 2026-05-29 run 129)
     'taproom manager', 'brewery manager', 'craft brewery manager', 'tap room manager',
     'brewery operations manager', 'taproom director', 'brewery general manager',
+    # Standalone generic decision-maker titles for routing of manually-imported leads.
+    # 'district manager' deliberately EXCLUDED — it was previously in GAS_STATION_KEYWORDS and caused
+    # routing conflicts: 'district manager' would match PROPERTY_MANAGER_TITLES first, sending gas station
+    # DMs to the wrong sequence. The automated pipeline is unaffected (explicit _lead_type bypasses this list).
+    # For manual imports of DS/AM/RD contacts from target segments, the explicit lead type should be set on import.
+    # (added 2026-05-29 run 130 — routing-safe subset only)
+    'area manager',         # Enterprise Rent-A-Car, Planet Fitness, Anytime Fitness, Aspen Dental chains
+    'regional director',    # DaVita dialysis, NovaCare PT, Concentra, Heartland Dental, hotel brand regional FMs
+    'branch manager',       # bank branches (Huntington, KeyBank, Fifth Third, PNC) — branch-level vendor contact
+    # Museums & Cultural Institutions — Cleveland Museum of Art, Cleveland Museum of Natural History,
+    # Cleveland Metroparks Zoo, Rock & Roll Hall of Fame, Great Lakes Science Center, Maltz Museum,
+    # Stan Hywet Hall, Severance Hall, Cleveland Play House; zero competitors targeting this segment;
+    # appearance is non-negotiable for donor events + public trust; routing to Property Manager sequence (added 2026-05-29 run 130)
+    'museum facilities manager', 'museum director', 'cultural center director', 'museum manager',
+    'zoo facilities manager', 'zoo director', 'aquarium manager', 'botanical garden manager',
+    'cultural institution manager', 'arts center director', 'science center manager',
+    'natural history museum manager', 'art museum facilities manager', 'historic estate manager',
 ]
 
 REALTOR_TITLES = [

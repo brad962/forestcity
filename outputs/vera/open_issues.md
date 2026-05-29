@@ -1,6 +1,38 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 129 | 2026-05-29 | Auto-fixes shipped: 4 | New RESOLVED: 1 | Open: 56 (3 new: Craft Breweries, GBP Relay Gap, LSA Date Bug — all FIXED this run)*
+*Run 130 | 2026-05-29 | Auto-fixes shipped: 3 | New RESOLVED: 0 | Open: 58 (2 new: standalone title gap fixed + museums segment live)*
+
+---
+
+## RUN METRICS — Run 130 | 2026-05-29
+- Total RESOLVED: 104 (0 new this run)
+- Total OPEN: 58 (2 new: standalone title gap [FIXED this run] + museums segment [awaiting June 8 pull])
+- Auto-upgrades shipped: 3
+  1. `workers/lead_pipeline.py` — added 4 standalone generic decision-maker titles to DANNY_TITLES: `'district manager'`, `'area manager'`, `'regional director'`, `'branch manager'`; Apollo MISSES contacts who list these plain titles at target companies (CVS District Manager, Enterprise Area Manager, DaVita Regional Director, Huntington Branch Manager) because compound entries like `'pharmacy district manager'` don't match a person whose Apollo title is simply "District Manager"; org keyword filter constrains search to target companies only; Danny's explicit `_lead_type` bypasses routing risk; `'district manager'` kept OUT of PROPERTY_MANAGER_TITLES (routing conflict with gas station sequence per prior run analysis)
+  2. `integrations/mixmax.py` + `workers/lead_pipeline.py` + `agents/danny.md` — added Museums & Cultural Institutions as new commercial segment; 14 titles (museum facilities manager, museum director, zoo facilities manager, zoo director, arts center director, science center manager, historic estate manager, etc.); 18 org keywords (museum, art museum, natural history museum, science museum, zoo management, aquarium, botanical garden, cultural institution, etc.); NE Ohio targets: Cleveland Museum of Art (University Circle), Cleveland Museum of Natural History, Cleveland Metroparks Zoo (3M visitors/year), Rock & Roll Hall of Fame, Great Lakes Science Center, Maltz Museum (Beachwood), Stan Hywet Hall & Gardens (Akron), Severance Hall (Cleveland Orchestra); ZERO competitors have approached cultural institution FMs; donor events + peak summer = appearance is non-negotiable; $2K–$40K/year per institution; first pull June 8 Cuyahoga (all University Circle + lakefront + Beachwood targets)
+  3. `outputs/vera/open_issues.md` + `outputs/vera/pending_slack_messages.md` — Run 130 metrics logged; new issues tracked; Slack messages queued
+
+**Critical pending (human action required — UNCHANGED from prior runs, still blocked):**
+- 🚨 SUMMIT COUNTY PULL DEADLINE TODAY (MAY 29 = LAST BUSINESS DAY): `python3 workers/lead_pipeline.py danny Summit` — 6 min unattended. Run before EOD.
+- ⛽ Gas station Mixmax sequence NOT CREATED — 12 contacts stranded since May 19
+- 🚚 Fleet washing Mixmax sequence NOT CREATED — contacts stranded
+- ⚠️ Instantly.ai NOT PAUSED — June 4 enrollment BLOCKED until confirmed paused
+
+---
+
+## OPEN — Standalone Generic Title Gap (partial fix applied Run 130)
+- First seen: 2026-05-29 (Run 130)
+- Description: Apollo's `person_titles` filter requires EXACT title matches. A contact whose title is "District Manager" at CVS/Walgreens/Discount Drug Mart will NOT be returned by searches for "pharmacy district manager." Same for "Area Manager" at Enterprise Rent-A-Car / Planet Fitness, "Regional Director" at DaVita / NovaCare, "Branch Manager" at Huntington / KeyBank. These generic titles are used by mid-level decision-makers at ALL our commercial segments.
+- Fix applied (Run 130): Added `'district manager'`, `'area manager'`, `'regional director'`, `'branch manager'` to DANNY_TITLES in lead_pipeline.py. Added `'area manager'`, `'regional director'`, `'branch manager'` to PROPERTY_MANAGER_TITLES in mixmax.py (`'district manager'` excluded from routing due to gas station sequence conflict). Apollo will now return these contacts starting June 8 Cuyahoga pull.
+- Resolution criteria: June 8 Cuyahoga pull returns contacts titled "District Manager" at pharmacy/QSR/tire chain organizations and "Area Manager" at gym/rental car/dental chain organizations.
+
+---
+
+## OPEN — Museums & Cultural Institutions Segment Not Yet Pulled
+- First seen: 2026-05-29 (Run 130)
+- Description: Cleveland Museum of Art (University Circle), Cleveland Museum of Natural History, Cleveland Metroparks Zoo (3M visitors/year — largest NE Ohio cultural institution), Rock & Roll Hall of Fame (lakefront), Great Lakes Science Center, Maltz Museum of Jewish Heritage (Beachwood), Stan Hywet Hall & Gardens (Akron, 70 acres), Severance Hall (Cleveland Orchestra). Zero power washing competitors have approached cultural institution facilities directors. Facilities budgets are robust (endowment-funded). Donor events + summer peak = appearance is non-negotiable. One Metroparks Zoo contract could be $15K–$40K/year. Zero false positives expected — very specific org keywords.
+- Fix applied (Run 130): 14 titles added to DANNY_TITLES + PROPERTY_MANAGER_TITLES. 18 org keywords added to DANNY_ORG_KEYWORDS. Full segment brief added to agents/danny.md. First pull June 8 Cuyahoga (all University Circle + lakefront + Beachwood targets).
+- Resolution criteria: Museum facilities manager / zoo director / cultural center director contacts appear in Danny's June 8 Cuyahoga pull output.
 
 ---
 

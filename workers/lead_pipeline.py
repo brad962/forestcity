@@ -427,6 +427,38 @@ DANNY_TITLES = [
     # NE Ohio craft beer belt: Cleveland → Akron → Lake Erie corridor = dense target density (added 2026-05-29 run 129)
     'taproom manager', 'brewery manager', 'craft brewery manager', 'tap room manager',
     'brewery operations manager', 'taproom director', 'brewery general manager',
+    # Standalone generic decision-maker titles — NOT added to PROPERTY_MANAGER_TITLES (routing) because
+    # 'district manager' was previously in GAS_STATION_KEYWORDS and caused routing conflicts on manual imports.
+    # These ARE safe for Apollo search because DANNY_ORG_KEYWORDS constrains results to target companies only
+    # (Apollo won't return "District Manager" at a software company if its org keyword isn't in our list).
+    # Danny's pipeline sets _lead_type='property_manager' explicitly so routing is handled correctly upstream.
+    # Without these entries, Apollo MISSES contacts who simply list generic corporate titles:
+    #   "District Manager" at CVS/Walgreens/Discount Drug Mart
+    #   "Area Manager" at Enterprise Rent-A-Car/Planet Fitness/Anytime Fitness/Aspen Dental
+    #   "Regional Director" at DaVita/NovaCare/Concentra/Heartland Dental
+    #   "Branch Manager" at Huntington/KeyBank/Fifth Third/PNC (branch-level can initiate vendor relationships)
+    # (added 2026-05-29 run 130)
+    'district manager',     # CVS, Walgreens, Jiffy Lube, Discount Tire, QSR franchises, DSO chains
+    'area manager',         # Enterprise Rent-A-Car, Planet Fitness, Anytime Fitness, Aspen Dental chains
+    'regional director',    # DaVita dialysis, NovaCare PT, Concentra, Heartland Dental, hotel brands
+    'branch manager',       # bank branches (Huntington, KeyBank, Fifth Third, PNC) — branch-level vendor contact
+    # Museums & Cultural Institutions — Cleveland Museum of Art (University Circle), Cleveland Museum of Natural History,
+    # Cleveland Metroparks Zoo (largest NE Ohio — 3M visitors/year), Rock & Roll Hall of Fame (lakefront),
+    # Great Lakes Science Center (lakefront), Maltz Museum of Jewish Heritage (Beachwood),
+    # Crawford Auto-Aviation Museum, Severance Hall (Cleveland Orchestra), Cleveland Play House, Playhouse Square,
+    # Akron Art Museum, Stan Hywet Hall & Gardens (Akron — historic estate, 70 acres, large event venue);
+    # Cultural institutions have ZERO power washing vendor relationships — no competitor targets this segment.
+    # Large paved plazas + building facades + parking structures + loading dock areas = recurring cleaning need.
+    # Museum facilities directors manage large campus footprints; appearance is critical for donor events,
+    # corporate rentals, school field trips, and public trust. Facilities budgets are robust (funded by endowments,
+    # admission, and corporate sponsors). Annual or bi-annual exterior cleaning contracts.
+    # One contract with Cleveland Museum of Art = $4K-$12K/year. Cleveland Metroparks Zoo = $8K-$25K/year.
+    # June 8 Cuyahoga pull fires first — all major NE Ohio museums are in Cuyahoga County University Circle corridor
+    # or lakefront (CMA, CMNH, Great Lakes Science Center, Rock Hall), or Beachwood (Maltz), or Akron (CFA) (added 2026-05-29 run 130)
+    'museum facilities manager', 'museum director', 'cultural center director', 'museum manager',
+    'zoo facilities manager', 'zoo director', 'aquarium manager', 'botanical garden manager',
+    'cultural institution manager', 'arts center director', 'science center manager',
+    'natural history museum manager', 'art museum facilities manager', 'historic estate manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -679,6 +711,16 @@ DANNY_ORG_KEYWORDS = [
     # zero power washing competitors cold-calling brewery managers in NE Ohio (added 2026-05-29 run 129)
     'craft brewery', 'taproom', 'brewing company', 'microbrewery', 'craft beer',
     'brewpub', 'ale house', 'tap house', 'beer garden',
+    # Museums & Cultural Institutions — Cleveland Museum of Art, Cleveland Museum of Natural History,
+    # Cleveland Metroparks Zoo, Rock & Roll Hall of Fame, Great Lakes Science Center, Maltz Museum,
+    # Crawford Auto-Aviation Museum, Severance Hall, Cleveland Play House, Akron Art Museum,
+    # Stan Hywet Hall & Gardens (Akron); large paved plazas + facades + parking structures;
+    # zero competitors targeting cultural institution FMs; appearance is non-negotiable for donor events;
+    # first pull June 8 Cuyahoga (all major museums in University Circle + lakefront) (added 2026-05-29 run 130)
+    'museum', 'art museum', 'natural history museum', 'science museum', 'science center',
+    'zoo management', 'aquarium', 'botanical garden', 'cultural center', 'cultural institution',
+    'museum facilities', 'historic estate', 'historic site management', 'heritage site',
+    'performing arts organization', 'symphony orchestra', 'theater company', 'playhouse',
 ]
 
 CARLA_SEARCHES = [

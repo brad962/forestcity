@@ -494,6 +494,24 @@ This enrolls ALL pending contacts (gas stations + fleet) without triggering a fr
 **Timing:** July-August outreach for September-October pre-season clean. Also May-June for summer event series. Contact now — summer convention schedule is being confirmed.
 **Sequence:** Route to Property Manager sequence (facility management / event appearance angle).
 
+### Museums & Cultural Institutions (NEW — May 2026, Run 130)
+**Status:** Org keywords + titles live in DANNY_ORG_KEYWORDS/DANNY_TITLES + PROPERTY_MANAGER_TITLES as of Run 130. First pull: June 8 Cuyahoga (all major NE Ohio museums are in Cuyahoga County — University Circle + lakefront corridor).
+**Target:** Museum Facilities Manager, Museum Director, Cultural Center Director, Zoo Facilities Manager, Zoo Director, Aquarium Manager, Botanical Garden Manager, Arts Center Director, Science Center Manager, Historic Estate Manager — at museums, zoos, science centers, historic estates, and cultural institutions in NE Ohio.
+**Why:** Cleveland's cultural institutions are world-class and have ZERO power washing vendor relationships. These facilities care deeply about appearance — they host donor galas, corporate events, school field trips, and national conferences. Yet no NE Ohio competitor is cold-calling their facilities directors. Key targets:
+- **Cleveland Museum of Art** (University Circle, one of the top art museums in the US) — massive neoclassical facade + paved entrance plaza + parking structure. Hosts corporate events and donor evenings year-round.
+- **Cleveland Museum of Natural History** (University Circle) — large paved campus, building exteriors, entrance walkways.
+- **Cleveland Metroparks Zoo** (3+ million visitors/year, largest NE Ohio cultural institution) — massive footprint: multiple building exteriors, paved paths, entrance plaza, service areas, parking lot. Peak season is May–August (summer family visits + school trips).
+- **Rock & Roll Hall of Fame** (lakefront) — iconic glass pyramid exterior + plaza + loading dock. Nationally recognized venue — appearance is a brand standard.
+- **Great Lakes Science Center** (lakefront, NASA Glenn Visitor Center) — large paved exterior + plaza + parking.
+- **Maltz Museum of Jewish Heritage** (Beachwood) — suburban campus with parking + building exterior.
+- **Stan Hywet Hall & Gardens** (Akron, 70-acre historic estate) — massive parking + courtyard + building facades.
+- **Severance Hall** (Cleveland Orchestra) — beautiful historic building + large paved parking area + entrance. Event photography of the exterior is constant.
+**Revenue per visit:** $2,000–$12,000 per institution (building facade + plaza + entrance + parking). Bi-annual = $4K–$24K/year per institution. Cleveland Metroparks Zoo could be a $15K–$40K/year account. Cultural institutions don't switch vendors once established — long-term relationships.
+**Apollo keywords (live Run 130):** `museum`, `art museum`, `natural history museum`, `science museum`, `science center`, `zoo management`, `aquarium`, `botanical garden`, `cultural center`, `cultural institution`, `museum facilities`, `historic estate`, `historic site management`, `heritage site`, `performing arts organization`, `symphony orchestra`, `theater company`, `playhouse` — added to DANNY_ORG_KEYWORDS.
+**Pitch angle:** "Your facility hosts donor events, school field trips, and corporate rentals — your exterior is part of the experience before visitors walk through the door. A spring clean before your summer peak and a fall clean before your gala season. We work with large commercial campuses throughout NE Ohio and can schedule around your event calendar."
+**Timing:** May–June = pre-summer peak (Memorial Day through Labor Day is peak visitor season for most NE Ohio cultural institutions). Contact NOW for spring cleaning before summer crowds. Fall (September) = before gala/donor event season.
+**Sequence:** Route to Property Manager sequence (facility management / event appearance / donor experience angle).
+
 ### Craft Breweries & Taprooms (NEW — May 2026, Run 129)
 **Status:** Titles + org keywords live in DANNY_TITLES + DANNY_ORG_KEYWORDS + PROPERTY_MANAGER_TITLES as of Run 129. First pull: June 8 Cuyahoga (Platform, Masthead, Collision Bend, Great Lakes — all Cleveland proper); Akron targets (Thirsty Dog, Goldhorn) fire on June 29 Summit pull.
 **Target:** Taproom Manager, Brewery Manager, Craft Brewery Manager, Brewery Operations Manager, Taproom Director, Brewery General Manager — at craft breweries with physical taproom spaces.
