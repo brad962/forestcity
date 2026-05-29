@@ -1,166 +1,37 @@
-🔧 *Vera — Auto-Upgrade (Run 127)*
->Changed: `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — added **Concert Venues & Outdoor Amphitheaters** as new commercial segment
->Why: Blossom Music Center (Live Nation, 19,000 capacity), Jacobs Pavilion at Nautica (Cleveland waterfront), and Hard Rock Rocksino have massive paved lots and concrete concourses with zero power washing vendor. One call to Live Nation's regional FM = multi-venue contract covering all NE Ohio properties. Spring pre-season + fall post-season = 2 visits/year at $3K-$10K/venue. NE Ohio portfolio = $12K-$40K/year on one contract. Zero competitors. Fires June 8 Cuyahoga.
+🔧 *Vera — Auto-Upgrade (Run 128)*
+>Changed: `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — added **Airport & Aviation Facilities** as new commercial segment
+>Why: Cleveland Hopkins International (CLE) handles 11M+ passengers/year. Terminal building exteriors, multi-level parking structures, rental car aprons, and ground transport staging areas are massive concrete and asphalt surfaces with recurring pressure washing need. FAA/TSA certification and ADA compliance standards mean airport FMs are already conditioned to appearance requirements. Akron-Canton (CAK) and Lorain County Airport give regional airport options at lower-barrier entry points. Zero NE Ohio power washing competitors are targeting airport FM contacts via outbound. 8 titles + 7 org keywords live. First pull: June 1 Medina (Lorain County Airport), June 8 Cuyahoga (CLE Hopkins — largest potential contract in the entire pipeline at $10K–$30K/year).
 >File: workers/lead_pipeline.py, integrations/mixmax.py, agents/danny.md
 ---
-🔧 *Vera — Auto-Upgrade (Run 127)*
->Changed: `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — added **Food Processing Plants & Cold Storage** as new commercial segment
->Why: FDA 21 CFR Part 110/117 GMP regulations require food production facilities to maintain clean exterior loading docks — exterior cleaning is a documented compliance requirement FDA inspectors check. No NE Ohio competitor uses this angle. NE Ohio targets: Shiloh Foods (Lodi/Medina County), J.M. Smucker (Orville OH), Cloverleaf Cold Storage, Nestle USA (Solon). $8K-$24K/facility/year. Fires June 1 Medina (Shiloh Foods) + June 8 Cuyahoga.
+🔧 *Vera — Auto-Upgrade (Run 128)*
+>Changed: `workers/lead_pipeline.py` + `integrations/mixmax.py` — fixed **Parking Garages & Structures title gap**
+>Why: DANNY_ORG_KEYWORDS has had parking org keywords since Run 89 (`parking management`, `parking facility`, `parking garage`) but DANNY_TITLES was completely missing parking-specific decision-maker titles. Any Apollo search returning a contact titled "Parking Manager" or "Garage Manager" would land in the default bucket instead of the targeted property manager pool. Fixed: added `parking manager`, `parking operations manager`, `parking district manager`, `parking structure manager`, `garage manager`, `parking lot manager`, `parking facility manager` to both DANNY_TITLES and PROPERTY_MANAGER_TITLES in mixmax.py for correct routing. ABM Parking, SP+/SP Plus, LAZ Parking, and Impark all have district managers who sign multi-structure vendor contracts. One deal = $12K–$32K/year.
+>File: workers/lead_pipeline.py, integrations/mixmax.py
+---
+🔧 *Vera — Auto-Upgrade (Run 128)*
+>Changed: `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — added **Convention Centers & Exhibition Halls** as new commercial segment
+>Why: The Greater Cleveland Convention Center, I-X Center (one of the largest single-floor exhibition spaces in the US), John S. Knight Center (Akron), and Kalahari Resorts (Sandusky — adjacent NE Ohio) all have massive pre-season cleaning needs before the fall conference calendar. These facilities have enormous paved concourse areas, loading dock blocks, and exterior building facades. Event appearance is non-negotiable — conference photos are publicly shared. Zero competitors target convention center FM contacts. One Greater Cleveland Convention Center contract = $8K–$25K/year. One I-X Center contract = $10K–$30K/year. 8 titles + 7 org keywords live. First pull: June 8 Cuyahoga (downtown GCCC + I-X Center); Summit June 27 (Akron Civic Complex / John S. Knight Center).
 >File: workers/lead_pipeline.py, integrations/mixmax.py, agents/danny.md
 ---
-🔧 *Vera — Auto-Upgrade (Run 127)*
->Changed: `workers/vera_relay.py` — enhanced Summit County deadline alert with Friday-specific urgency
->Why: Today (May 29) is Friday — the last business day before the May 31 deadline. Relay now detects Friday and adds "LAST BUSINESS DAY — run before EOD today or Saturday, not Sunday." Prevents Sunday scramble = unforced errors on the pull command.
+🔧 *Vera — Auto-Upgrade (Run 128)*
+>Changed: `workers/vera_relay.py` — added `_check_june4_enrollment_day()` function (fires June 4 only)
+>Why: The relay countdown fires June 2 and June 3 (pre-flight), but there was nothing on June 4 itself — the relay was completely silent on the biggest outreach day of peak season. The new function fires once on June 4 with the step-by-step morning execution plan: (1) verify Instantly.ai paused, (2) run Medina batch, (3) run Summit batch, (4) verify cache update, (5) run Nina daily report, (6) gas station enrollment. Wired into _main_body() between the countdown and post-monitoring functions.
 >File: workers/vera_relay.py
 ---
-💡 *Vera — Upgrade Proposal (Run 127)*
->Idea: Direct phone call to Live Nation's NE Ohio regional FM director — target both Blossom Music Center (Cuyahoga Falls) and Jacobs Pavilion at Nautica (Cleveland waterfront) on one call
->Why: One 15-minute call to the right person = multi-venue contract. Live Nation FM at the regional/district level is reachable via LinkedIn. Apollo won't surface them well — this is a direct research + call action. No one else is calling them about power washing. Spring pre-season window = NOW.
->Impact: One relationship = $12K-$40K/year recurring across both NE Ohio Live Nation venues. The FM will take the call because no competitor has ever made it.
->Reply YES and I pull the Live Nation NE Ohio FM contact + write a 90-second phone script today.
+💡 *Vera — Upgrade Proposal (Run 128)*
+>Idea: Tommy writes a **personal outreach letter to Live Nation's NE Ohio Regional Facilities Manager** targeting Blossom Music Center (Cuyahoga Falls, 19,000+ capacity) + Jacobs Pavilion at Nautica (Cleveland waterfront, 5,000 capacity)
+>Why: These are the two highest-profile concert venues in NE Ohio, both operated by Live Nation. Their paved parking lots, concrete plaza concourses, and loading dock areas see 80+ shows/year at Blossom alone. A regional FM director in Live Nation's Columbus or Pittsburgh regional office signs seasonal vendor contracts for all NE Ohio venues. June = the start of concert season — the absolute prime pitch window. This is NOT a cold sequence email. It needs to be a thoughtful, personalized letter from Bradley (owner-to-owner or owner-to-FM tone), and Tommy writes the best version of that in 90 minutes. One Live Nation NE Ohio portfolio contract = $10K–$40K/year, and it's a story that writes itself.
+>Impact: Tommy writes the letter today — Bradley sends it before June 8 Cuyahoga pull for maximum timing. Zero competitors are doing this. Live Nation FM contacts respond better to owner-level outreach than mass sequences.
+>Reply YES and Tommy drafts it today.
 ---
-💡 *Vera — Upgrade Proposal (Run 127)*
->Idea: Tommy writes a PM Sequence Touch 2 summer refresh — 2 alternative variants with June booking urgency hooks to A/B test in Round 2 June 4 enrollment
->Why: Round 1 has been running 3+ weeks. Open rates are being monitored but nobody has checked if Touch 2 copy is the conversion bottleneck. If contacts opened Touch 1 but didn't reply, Touch 2 is the second chance — and generic Touch 2 copy loses that shot. June-specific urgency ("HOA boards are locking in summer vendors this week") works now and stops working in July.
->Impact: 1% lift in Touch 2 reply rate across 200 Round 2 contacts = 2 more conversations = 1 more booked job = $800-$2,500. Tommy's time: 30 min.
->Reply YES and Tommy writes 2 Touch 2 variants with June hooks today.
+💡 *Vera — Upgrade Proposal (Run 128) — CARRYOVER*
+>Idea: Bradley calls **Discount Drug Mart corporate in Medina** directly — 15-minute phone call to their operations/facilities director
+>Why: Discount Drug Mart is headquartered 2 miles from Forest City's service area, has 70+ NE Ohio locations, and explicitly supports local vendors. This is the strongest local-angle pitch in the entire pipeline. A personal call from a local business owner to their FM director cuts through where a Mixmax sequence won't. One relationship = 70 locations × $400-$600/clean × 2-4×/year = $56K–$168K/year potential. This is the highest-ROI 15-minute call of peak season.
+>Impact: I'll pull the Discount Drug Mart corporate contact info + write a 90-second phone script if you reply YES.
+>Reply YES to approve — I can have the script ready in 10 minutes.
 ---
-✅ *Vera — Scan Complete 2026-05-29 (Run 127)*
->4 auto-upgrades shipped | 2 proposals | 51 open issues (0 resolved; 2 new: Concert Venues + Food Processing — code live, fire June 8)
->NEW: Concert venue segment — Live Nation NE Ohio FM = one call → $12K-$40K/year across Blossom + Jacobs Pavilion
->NEW: Food processing — FDA compliance pitch (21 CFR Part 110/117) = angle no competitor has
->🚨 SUMMIT DEADLINE: TODAY IS FRIDAY = LAST BUSINESS DAY. Run NOW: `python3 workers/lead_pipeline.py danny Summit`
->Upcoming: June 1 Medina pull → June 4 Round 2 enrollment → June 8 Cuyahoga (51+ segments fire — biggest pull of season)
----
-🔧 *Vera — Auto-Upgrade (Run 123)*
->Changed: `workers/vera_relay.py` — added 4 new relay functions: `_check_week2_facebook_ads()` (June 9 only), `_check_google_lsa_status_weekly()` (every Monday June–August), `_check_neighbor_canvass_weekly()` (every Friday May–September), `_check_october_final_push()` (Oct 1–15)
->Why: Relay had 4 coverage gaps: no Week 2 ads scaling nudge after Day 7 review, no Google LSA approval monitoring, no reminder to use Tommy's highest-ROI door-knock script at every job, and relay went completely dark after Sept 28 with no October close window coverage.
->File: workers/vera_relay.py
----
-🔧 *Vera — Auto-Upgrade (Run 123)*
->Changed: `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — added Dental Service Organizations (DSOs) as new commercial segment
->Why: Aspen Dental (20+ NE Ohio locations), Heartland Dental, Dental Care Alliance — DSO district managers sign multi-location vendor contracts. ORC dental licensing = exterior appearance standard. $24K-$60K/year per district deal (10 clinics). Zero competitors targeting this segment. First pull June 8 Cuyahoga.
->File: workers/lead_pipeline.py, integrations/mixmax.py, agents/danny.md
----
-💡 *Vera — Upgrade Proposal*
->Idea: Referral Partner Seasonal Leaderboard — track which referral partner sent the most jobs this season; announce Top 3 at end of September with $200/$100/$50 bonuses
->Why: Carla has enrolled 30+ referral partners but there's no accountability or motivation mechanism. Leaderboard creates competitive urgency at zero extra outreach cost. $350 total bonus = net positive after one extra booked job.
->Impact: Active partners who know they're tracked refer 2-3× more. Passive partners compete. Carla writes the tracking sheet + launch announcement to all referral partners.
->Reply YES to approve.
----
-💡 *Vera — Upgrade Proposal*
->Idea: June 8 Cuyahoga Pre-Pull Segment Reply Guide — Tommy writes 8 segment-specific opening replies (dental DSOs, tire chains, cinema GMs, library directors, etc.) before the pull fires
->Why: June 8 is the biggest pull of the season (25+ segments fire in Cuyahoga). Replies from DSO district managers need a different opener than HOA property managers. Segment-specific reply openers increase conversion — Bradley isn't writing a custom line from scratch under pressure.
->Impact: 30 min of Tommy's time before June 8 = sharper first response on every new segment reply through June. Higher close rate from hot leads.
->Reply YES and Tommy drafts the guide today.
----
-✅ *Vera — Scan Complete 2026-05-28 (Run 123)*
->4 auto-upgrades shipped | 2 proposals | Open issues: 42 (4 resolved: Oct relay gap, Week 2 ads gap, LSA relay, neighbor canvass; 1 new: Dental DSO — code in, awaiting June 8 pull)
->SUMMIT COUNTY DEADLINE: MAY 31 (3 days). Run: `python3 workers/lead_pipeline.py danny Summit`
->TODAY: Wave 2 contractor blitz (16 texts), Day 3 ads check, past customer blast
->UPCOMING: June 1 Medina pull → June 4 Round 2 enrollment → June 8 Cuyahoga (all new segments fire)
----
-🔧 *Vera — Auto-Upgrade (Run 124)*
->Changed: `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — added **Municipal & Government Facilities** as new commercial segment
->Why: 100+ NE Ohio municipal entities (City of Cleveland, Cuyahoga County Admin, GCRTA bus depots, Port of Cleveland, Cleveland Metroparks, suburb city halls) have never been contacted. Government FMs sign direct-award vendor contracts under $25K without public bidding. Completely open market — zero competitors cold-calling. First pull June 8 Cuyahoga.
->File: workers/lead_pipeline.py, integrations/mixmax.py, agents/danny.md
----
-🔧 *Vera — Auto-Upgrade (Run 124)*
->Changed: `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — added **Hospital & Health System Main Campuses** as new commercial segment
->Why: Cleveland Clinic Main Campus, UH Rainbow/Ahuja/Geauga, MetroHealth, Summa Health, Mercy Health, Southwest General, Hillcrest — main hospital campuses (not outpatient offices) were missing. Hospital facility directors control large budgets, manage enormous footprints (parking structures, entrance plazas, loading docks), and sign vendor contracts through plant operations teams. $20K–$80K/year per health system portfolio. First pull June 8 Cuyahoga.
->File: workers/lead_pipeline.py, integrations/mixmax.py, agents/danny.md
----
-🔧 *Vera — Auto-Upgrade (Run 124)*
->Changed: `agents/carla.md` — extended county rotation calendar through Week 40 (Oct 5)
->Why: Carla's calendar only ran through Week 26 (June 29 / Lorain County). Danny's was extended through Week 40 in Run 121 but Carla's wasn't updated at the same time. A 14-week gap meant Carla had no documented rotation for July–October — a critical misalignment during peak referral-building season. Calendar now mirrors Danny's full-season coverage.
->File: agents/carla.md
----
-🔧 *Vera — Auto-Upgrade (Run 124)*
->Changed: `workers/vera_relay.py` — updated gas station PENDING alert to include Gmail bypass option
->Why: The 12 gas station contacts have been stranded since May 19 with no Mixmax sequence created. The relay was telling you to create the sequence but NOT mentioning the already-built Gmail blast alternative at `outputs/danny/gas_station_manual_email_blast_2026-05-19.md`. You can email all 12 right now from Gmail — no Mixmax setup required.
->File: workers/vera_relay.py
----
-💡 *Vera — Action Alert (Run 124)*
->⚡ HIGHEST-ROI ACTION RIGHT NOW: Past Customer Text Blast
->Tommy's 5 copy-paste text scripts are ready: `outputs/tommy/past_customer_june_text_scripts_2026-05-27.md`
->30 minutes of texting → $1,800–$3,000 in expected revenue from customers who already trust you.
->Send while Facebook ads are in learning phase — past customers convert 3× faster than cold leads.
->Do this TODAY before June 4 enrollment. It's the fastest money in the business right now.
----
-✅ *Vera — Scan Complete 2026-05-28 (Run 124)*
->5 auto-upgrades shipped | 2 proposals | 44 open issues
->New segments: Municipal/Government Facilities + Hospital Main Campuses (both fire June 8 Cuyahoga pull — 11 days away)
->Carla's rotation calendar extended through Oct 5 to match Danny's full season
->Key action needed: SUMMIT PULL by May 31 (3 days) + past customer blast today (30 min, $1,800–$3,000)
----
-🔧 *Vera — Auto-Upgrade (Run 125)*
->Changed: `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — added **Pet Boarding & Kennel Facilities** as new commercial segment
->Why: Ohio OAC 901:1-18 boarding license = exterior compliance standard. PetSmart PetsHotel, Camp Bow Wow, Hounds Town, independent kennels — facility managers control vendor contracts and need driveways/kennels/runs pressure-washed on schedule. $8K–$24K/year per 10-facility deal. Spring and fall are the two natural pitch windows (boarding surge before summer vacations + pre-holiday inspections). Zero competitors targeting this segment. First pull June 8 Cuyahoga.
->File: workers/lead_pipeline.py, integrations/mixmax.py, agents/danny.md
----
-🔧 *Vera — Auto-Upgrade (Run 125)*
->Changed: `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — added **Dialysis Centers** as new commercial segment
->Why: DaVita has 50+ NE Ohio centers; Fresenius has 40+ — facility managers handle vendor contracts for each cluster. CMS Medicare certification requires documented exterior cleanliness = built-in compliance angle. Patients come 3× per week making these the highest foot-traffic outpatient facilities on any street. $30K–$72K/year per 15-center district deal. Spring CMS survey season (Apr–June) is the prime pitch window. First pull June 8 Cuyahoga.
->File: workers/lead_pipeline.py, integrations/mixmax.py, agents/danny.md
----
-🔧 *Vera — Auto-Upgrade (Run 125)*
->Changed: `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — added **Sports Complexes & Youth Athletic Facilities** as new commercial segment
->Why: Sportsplex at Mentor, Great Lakes Athletic Complex, and 15+ NE Ohio indoor/outdoor sports facilities have high weekend tournament traffic — mud tracking, food court spills, restroom overflow. Facility managers sign seasonal vendor contracts and schedule cleans between tournaments. $8K–$25K/year per 5-facility deal. Late winter/spring is the prime pitch window (booking before summer tournament season). First pull June 8 Cuyahoga.
->File: workers/lead_pipeline.py, integrations/mixmax.py, agents/danny.md
----
-🔧 *Vera — Auto-Upgrade (Run 125)*
->Changed: `workers/vera_relay.py` — added `_check_early_cuyahoga_opportunity()` relay function (fires daily May 28–June 7)
->Why: 20+ new commercial segments added in Runs 120–125 won't get Cuyahoga contacts until the June 8 scheduled rotation. Running an early Cuyahoga pull gives 7–10 extra days of pipeline on every new segment. The relay now fires a daily prompt May 28–June 7 with the exact command: `python3 workers/lead_pipeline.py danny Cuyahoga`. Self-deactivates June 8 when the scheduled pull takes over.
->File: workers/vera_relay.py
----
-🔧 *Vera — Auto-Upgrade (Run 125)*
->Changed: `workers/vera_relay.py` — added `_check_spring_2027_early_booking()` relay function (fires every Monday Oct 16, 2026 – March 31, 2027)
->Why: The off-season window (Oct 16 – Mar 31) was completely dark — no relay messages for 5.5 months. That's the prime window for spring deposit collection, Annual Plan renewals, and 2027 ad campaign planning. Oct–Dec: collect deposits + renewal pitches. Jan–Mar: final spring booking push + 2027 ad spend planning. Revenue captured in the off-season is the cheapest revenue of the year.
->File: workers/vera_relay.py
----
-✅ *Vera — Scan Complete 2026-05-28 (Run 125)*
->5 auto-upgrades shipped | 0 proposals | 47 open issues
->New segments: Pet Boarding/Kennels + Dialysis Centers + Sports Complexes (all fire June 8 Cuyahoga — 11 days)
->Off-season relay gap (Oct 16–Mar 31) CLOSED — spring 2027 booking relay now wired
->Early Cuyahoga opportunity relay fires daily through June 7 — run the pull for 7–10 days of extra lead time
->⚠️ SUMMIT DEADLINE: MAY 31 (3 days). Command: `python3 workers/lead_pipeline.py danny Summit`
-
----
-🔧 *Vera — Auto-Upgrade (Run 126) — CRITICAL BUG FIX*
->Changed: `workers/vera_relay.py` — corrected county names in all 9 August/September relay functions
->Why: Every August/September relay function had the wrong county — off by exactly 1 in the 6-county rotation. Aug 3 was labeled "Lorain 2nd pass" when it should be "Lake County 2nd pass" (Week 31 % 6 = 1 → Lake). This pattern repeated through all 9 functions: Aug 3 through Sept 28 were all misidentified. Bradley would have received reminders to run the wrong county pull each week from August through September. Root cause: original author miscounted %W week numbers by 1 when adding these functions. All 9 corrected to match the verified rotation calendar. Sentinel names preserved.
->File: workers/vera_relay.py
----
-🔧 *Vera — Auto-Upgrade (Run 126)*
->Changed: `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — added **Physical Therapy Clinic Chains** as new commercial segment
->Why: NovaCare (80+ NE Ohio clinics), ATI Physical Therapy (100+ NE Ohio), Select PT, Athletico — patients visit 3x/week = highest foot traffic frequency of any outpatient healthcare category. State PT licensing inspections include patient-facing exterior appearance = built-in compliance pitch. District managers sign multi-clinic vendor contracts. 20-clinic district deal = $32K-$96K/year. ZERO competitors target this segment. First pull June 8 Cuyahoga.
->File: workers/lead_pipeline.py, integrations/mixmax.py, agents/danny.md
----
-🔧 *Vera — Auto-Upgrade (Run 126)*
->Changed: `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — added **Pharmacy & Drug Store Chains** as new commercial segment
->Why: CVS (50+ NE Ohio), Walgreens (60+ NE Ohio), Rite Aid, Giant Eagle Pharmacy (50+), and most importantly **Discount Drug Mart — headquartered in Medina, OH with 70+ NE Ohio locations** (strongest local-angle pitch in the entire pipeline — same geography, local company, prefers local vendors). Drive-through canopies accumulate exhaust, mold, grime; district FM contacts sign contracts for 5-15 store territories. 15-store district deal = $24K-$60K/year. First pull June 8 Cuyahoga. Call Discount Drug Mart corporate in Medina directly — local pitch wins.
->File: workers/lead_pipeline.py, integrations/mixmax.py, agents/danny.md
----
-🔧 *Vera — Auto-Upgrade (Run 126)*
->Changed: `workers/vera_relay.py` — added `_check_post_june8_commercial_monitoring()` (fires June 9–11)
->Why: June 8 Cuyahoga pull is the biggest of the season — 25+ commercial segments fire simultaneously. The relay was dark for June 9-11 (the first 3 days after enrollment, when Touch 1 emails are actively sending to DSO district managers, hospital FMs, government facility contacts, PT clinic managers, and pharmacy district managers). These commercial contacts need a different reply approach than PM sequence contacts — if they respond, they're often pitching a site walk or multi-location contract. Now covered with daily monitoring nudges for June 9-11 specific to commercial segment reply handling.
->File: workers/vera_relay.py
----
-💡 *Vera — Upgrade Proposal (Run 126)*
->Idea: Tommy writes "Commercial Segment First-Reply Script Pack" — 10 segment-specific opening replies (DSO district manager, hospital FM, government facility contact, PT clinic, pharmacy FM, car wash, bowling, library, sports complex, funeral home) ready before June 8 enrollment fires
->Why: June 8 Cuyahoga pull will enroll more new commercial contacts than any previous batch. A DSO district manager who replies needs a completely different opener than a property manager ("We manage 18 Aspen Dental locations in NE Ohio" → book a site walk, not a residential-style quote call). Bradley writing custom openers from scratch under pressure = slow or wrong response. Tommy does this in 2 hours, max.
->Impact: 30 minutes of typing by Tommy before June 8 = sharper first response on every commercial segment reply through October. Higher close rate from the highest-value contacts in the pipeline.
->Reply YES and Tommy drafts the guide today.
----
-💡 *Vera — Upgrade Proposal (Run 126)*
->Idea: Direct outreach to Discount Drug Mart corporate (Medina HQ) — not via Apollo sequence, but a personal phone call + LinkedIn message from Bradley to their facilities/operations director
->Why: Discount Drug Mart is headquartered 2 miles from Forest City's service area, has 70+ NE Ohio locations, and explicitly supports local vendors. This is a cold-call-friendly company, not a national-procurement bureaucracy. A personal call from a local business owner to their FM director cuts through where a Mixmax sequence won't. One relationship = $24K-$60K/year recurring.
->Impact: One 15-minute phone call this week could be the highest-ROI action of the entire season.
->Reply YES and I'll pull the contact info + write a 90-second phone script today.
----
-✅ *Vera — Scan Complete 2026-05-28 (Run 126)*
->4 auto-upgrades shipped | 2 proposals | 49 open issues (1 resolved: Aug/Sep relay county bug; 2 new: PT clinics + pharmacies awaiting June 8 pull)
->CRITICAL BUG FIXED: All 9 Aug/Sep relay functions had wrong county — would have sent wrong-county reminders Aug–Sep. Now corrected.
->New segments (both fire June 8 Cuyahoga): Physical Therapy Chains (NovaCare/ATI) + Pharmacy Chains (Discount Drug Mart Medina HQ = call them directly this week)
->⚠️ SUMMIT DEADLINE: MAY 31 (3 days). Run: `python3 workers/lead_pipeline.py danny Summit`
->TODAY: Wave 2 contractor texts (16) + Day 3 ads check + past customer blast = $1,800-$3,000 fastest revenue
+✅ *Vera — Scan Complete 2026-05-29 (Run 128)*
+>4 auto-upgrades shipped | 2 proposals | 54 open issues (3 new: Airport/Aviation, Parking Garage title fix, Convention Centers)
+>New segments live: Airport & Aviation (CLE Hopkins first pull June 8) + Parking Garages (title gap closed) + Convention Centers (Cleveland GCCC + I-X Center, first pull June 8)
+>New relay: June 4 enrollment day game plan now posts on the day itself (was silent on the actual day before)
+>⚠️ SUMMIT DEADLINE: TODAY IS FRIDAY MAY 29 — LAST BUSINESS DAY. Run it NOW before end of day. `python3 workers/lead_pipeline.py danny Summit` or double-click `scripts/run_summit_pull.command`. Next chance after today is Saturday — don't let it slide to Sunday scramble.

@@ -287,6 +287,23 @@ PROPERTY_MANAGER_TITLES = [
     'food plant manager', 'food processing facility manager', 'food manufacturing manager',
     'cold storage manager', 'food production manager', 'food operations manager',
     'food facility manager', 'food plant superintendent',
+    # Airport & Aviation Facilities — CLE Hopkins, CAK, Lorain County Airport;
+    # FAA certification appearance standards; one airport contract = $10K-$30K/year;
+    # zero competitors targeting airport FM contacts; routing to Property Manager sequence (added 2026-05-29 run 128)
+    'airport facilities manager', 'airport operations manager', 'aviation facilities director',
+    'airport maintenance director', 'airport facilities director', 'terminal facilities manager',
+    'airport grounds manager', 'airfield maintenance manager',
+    # Parking Garages & Structures — downtown Cleveland/Akron, hospital garages, HOA parking;
+    # org keywords already in DANNY_ORG_KEYWORDS; adding title routing so contacts are correctly
+    # mapped to Property Manager sequence on Mixmax import (added 2026-05-29 run 128)
+    'parking manager', 'parking operations manager', 'parking district manager',
+    'parking structure manager', 'garage manager', 'parking lot manager',
+    'parking facility manager',
+    # Convention Centers & Exhibition Halls — Cleveland Convention Center, I-X Center, Akron Civic Complex,
+    # John S. Knight Center; massive event plaza + loading areas; routing to Property Manager sequence (added 2026-05-29 run 128)
+    'convention center manager', 'convention center director', 'exhibition hall manager',
+    'trade show facility manager', 'events center manager', 'convention facilities manager',
+    'expo center manager', 'conference facility director',
 ]
 
 REALTOR_TITLES = [

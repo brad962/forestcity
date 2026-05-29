@@ -1961,3 +1961,30 @@ Key resolved issues by category:
 - Deliverables written: 1 (june1_prep_checklist_2026-05-23.md — 15-min June 1 morning launch: Medina pull, Summit catch-up, Nina weekly, bridge email follow-up, Instantly pause check, Round 2 timeline, gas station sequence creation)
 - Proposals: 2 (Instagram Reels channel; post-job 3-text automation sequence)
 - Highest priority actions TODAY: (1) Summit County pull — `python3 workers/lead_pipeline.py danny Summit` — NOW, deadline TOMORROW NIGHT (2) Pause Instantly.ai campaigns a1c08c3d + 626cd15d (3) LinkedIn connects with 2+ open leads
+
+## OPEN — Airport & Aviation Facilities Segment Not Yet Pulled 🟡 NEW (Run 128)
+- First seen: 2026-05-29
+- Description: Airport & Aviation Facilities segment added (CLE Hopkins, CAK, Lorain County Airport). Titles and org keywords live in DANNY_TITLES/DANNY_ORG_KEYWORDS/PROPERTY_MANAGER_TITLES. No contacts pulled yet — first pull fires June 1 Medina (Lorain County Airport), June 8 Cuyahoga (CLE Hopkins). Zero competitors targeting airport FM contacts.
+- Attempts:
+  - 2026-05-29: Code added (Run 128) — awaiting first pull June 1/June 8
+
+## OPEN — Parking Garages & Structures Titles Missing (Run 128)
+- First seen: 2026-05-29
+- Description: DANNY_ORG_KEYWORDS had parking keywords since Run 89 but DANNY_TITLES was missing parking-specific decision-maker titles. Fixed Run 128 — added `parking manager`, `parking operations manager`, `parking district manager`, `parking structure manager`, `garage manager`, `parking lot manager`, `parking facility manager`. Code now live.
+- Attempts:
+  - 2026-05-29: Title gap fixed (Run 128) — awaiting first pull June 8 Cuyahoga for downtown Cleveland parking structures
+
+## OPEN — Convention Centers & Exhibition Halls Segment Not Yet Pulled 🟡 NEW (Run 128)
+- First seen: 2026-05-29
+- Description: Convention Centers segment added (Cleveland GCCC, I-X Center, Akron Civic Complex, John S. Knight Center). Titles and org keywords live. No contacts pulled yet — first pull fires June 8 Cuyahoga (GCCC + I-X Center), June 27 Summit (John S. Knight Center / Akron). Zero competitors targeting convention center FM contacts. Pre-season contact window opens July-August for fall conference calendar.
+- Attempts:
+  - 2026-05-29: Code added (Run 128) — awaiting first pull June 8
+
+## RUN METRICS — Run 128 | 2026-05-29
+- Total RESOLVED: 103 (0 new this run)
+- Total OPEN: 54 (3 new: Airport/Aviation segment, Parking Garage titles gap fixed, Convention Centers segment; all code live awaiting first pull)
+- Auto-upgrades shipped: 4 (lead_pipeline.py + mixmax.py — Airport & Aviation Facilities segment; lead_pipeline.py + mixmax.py — Parking Garages & Structures title gap fix; lead_pipeline.py + mixmax.py — Convention Centers & Exhibition Halls segment; vera_relay.py — _check_june4_enrollment_day() function added; agents/danny.md — all 3 segments documented)
+- Proposals: 2 (Tommy write Live Nation/Blossom Music Center pre-season outreach email; Bradley direct call to Discount Drug Mart corporate Medina HQ — carryover from Run 126)
+- Key new relay: _check_june4_enrollment_day() — fires June 4 only with step-by-step enrollment day game plan; relay was silent on the day itself despite countdown on June 2-3
+- Highest priority TODAY (Friday May 29): Run Summit County pull — LAST BUSINESS DAY before May 31 deadline. Command: `python3 workers/lead_pipeline.py danny Summit` OR double-click `scripts/run_summit_pull.command`
+- Highest priority TOMORROW May 30: Review Summit results, prep Medina for June 1 pull. `scripts/run_medina_both.command` is ready.

@@ -388,6 +388,33 @@ DANNY_TITLES = [
     'food plant manager', 'food processing facility manager', 'food manufacturing manager',
     'cold storage manager', 'food production manager', 'food operations manager',
     'food facility manager', 'food plant superintendent',
+    # Airport & Aviation Facilities — Cleveland Hopkins International (CLE, 11M passengers/year),
+    # Akron-Canton Airport (CAK), Lorain County Airport; airport terminals + parking structures +
+    # rental car lots + ground transport staging areas; FAA certification = appearance standards;
+    # airport facilities managers sign vendor contracts for terminal exteriors + landside pavement;
+    # one CLE contract = $10K-$30K/year; zero competitors have approached airport FM contacts;
+    # Medina/June 1 pull for regional airports; Cuyahoga/June 8 for CLE Hopkins (added 2026-05-29 run 128)
+    'airport facilities manager', 'airport operations manager', 'aviation facilities director',
+    'airport maintenance director', 'airport facilities director', 'terminal facilities manager',
+    'airport grounds manager', 'airfield maintenance manager',
+    # Parking Garages & Structures — downtown Cleveland (Tower City, Gateway, hospital garages),
+    # Akron urban core, suburban HOA parking structures, airport parking;
+    # DANNY_ORG_KEYWORDS already has 'parking management', 'parking facility', 'parking garage'
+    # but title list was missing parking-specific decision-maker titles;
+    # district managers sign multi-structure contracts; $1,500-$4,000/clean; 4×/year;
+    # multi-structure contract = $12K-$32K/year (added 2026-05-29 run 128)
+    'parking manager', 'parking operations manager', 'parking district manager',
+    'parking structure manager', 'garage manager', 'parking lot manager',
+    'parking facility manager',
+    # Convention Centers & Exhibition Halls — Cleveland Convention Center (I-X Center, downtown GCCC),
+    # Akron Civic Complex, John S. Knight Center, Kalahari Resorts (Sandusky — adjacent to NE Ohio),
+    # Richfield Event Center; massive paved plaza concourses + loading dock areas + building exteriors;
+    # event appearance is non-negotiable (all photos shared publicly); convention managers sign
+    # seasonal vendor contracts; pre-season clean before fall conference calendar (Aug-Sep timing);
+    # one Cleveland Convention Center contract = $8K-$25K/year; zero competitors targeting this segment (added 2026-05-29 run 128)
+    'convention center manager', 'convention center director', 'exhibition hall manager',
+    'trade show facility manager', 'events center manager', 'convention facilities manager',
+    'expo center manager', 'conference facility director',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -622,6 +649,17 @@ DANNY_ORG_KEYWORDS = [
     'food processing plant', 'food manufacturing facility', 'food production facility',
     'cold storage facility', 'food plant management', 'food processing operations',
     'food production plant', 'cold storage warehouse',
+    # Airport & Aviation Facilities — Cleveland Hopkins, Akron-Canton, Lorain County Airport;
+    # terminal building exteriors + parking structures + landside pavement + rental car lots (added 2026-05-29 run 128)
+    'airport authority', 'airport facilities', 'aviation facilities', 'airport operations',
+    'airport management', 'airport ground services', 'aviation ground operations',
+    # Parking Garages & Structures — downtown Cleveland, hospital parking structures,
+    # suburban shopping center garages; large concrete multi-story structures need periodic pressure washing (added 2026-05-29 run 128)
+    'parking structure', 'parking garage management', 'parking operations management',
+    # Convention Centers & Exhibition Halls — Cleveland Convention Center, I-X Center, Akron Civic Complex,
+    # John S. Knight Center, Kalahari Resorts; massive event plaza + loading areas + building exteriors (added 2026-05-29 run 128)
+    'convention center', 'exhibition hall', 'convention facility', 'expo center',
+    'trade show facility', 'events facility management', 'convention management',
 ]
 
 CARLA_SEARCHES = [

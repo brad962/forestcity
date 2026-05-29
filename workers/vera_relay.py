@@ -704,6 +704,42 @@ def _check_ad_lead_day5_escalation():
         log('Ad lead Day 5 escalation alert posted — 0 ad leads logged after 5 days')
 
 
+def _check_june4_enrollment_day():
+    """Fire ONLY on June 4 — enrollment day itself. Provides the step-by-step morning game plan:
+    run Medina + Summit batches, check Instantly paused, fire enrollment script.
+    Separate from the pre-flight countdown (June 2-3) — this fires on the day, not before it.
+    One-time, self-deactivating."""
+    from datetime import date as _date_j4d
+    today = _date_j4d.today()
+    if today != _date_j4d(2026, 6, 4):
+        return
+
+    alert_sentinel = BASE_DIR / 'outputs' / 'vera' / '.june4_enrollment_day_sent'
+    today_str = today.strftime('%Y-%m-%d')
+    if alert_sentinel.exists() and alert_sentinel.read_text().strip() == today_str:
+        return
+
+    msg = (
+        '🚀 *IT\'S JUNE 4 — ROUND 2 ENROLLMENT DAY*\n'
+        '>Step 1: Verify Instantly.ai campaigns a1c08c3d + 626cd15d are PAUSED (app.instantly.ai → Campaigns → ⋮ → Pause)\n'
+        '>Step 2: Run Medina batch: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Medina`\n'
+        '>Step 3: Run Summit batch: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Summit`\n'
+        '>Step 4: Check contacts_cache.json total — confirm new leads are appended\n'
+        '>Step 5: Review Nina\'s report: `python3 workers/nina_report.py daily` — any hot leads from Round 1 to call first?\n'
+        '>Step 6: Gas station contacts — if sequence ID is pasted into mixmax.py, they enroll automatically. If not, Gmail blast today.\n'
+        '>Full battle card: `outputs/donna/june4_enrollment_battle_card_2026-05-24.md`\n'
+        '>GO/NO-GO tracker: `outputs/vera/june4_enrollment_readiness_tracker_2026-05-27.md`\n'
+        '>This is the biggest outreach day of peak season. Execute in order. Don\'t skip Step 1.'
+    )
+    if post_slack(msg):
+        alert_sentinel.parent.mkdir(exist_ok=True)
+        try:
+            alert_sentinel.write_text(today_str)
+        except Exception:
+            pass
+        log('June 4 enrollment day game plan posted')
+
+
 def _check_post_june4_monitoring():
     """Fire daily June 5–11: remind Bradley that Round 2 emails are actively sending,
     check Nina hot leads report daily, respond to replies within 24 hours.
@@ -2118,6 +2154,7 @@ def _main_body():
     _check_medina_reminder()
     _check_day7_ads_review()
     _check_june4_enrollment_countdown()
+    _check_june4_enrollment_day()
     _check_day3_ads_check()
     _check_post_june4_monitoring()
     _check_wave2_contractor_blitz()
