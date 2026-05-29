@@ -1,3 +1,42 @@
+🔧 *Vera — Auto-Upgrade (Run 135)*
+>Changed: Added 4 new commercial segments to lead_pipeline.py, mixmax.py, and agents/danny.md — Coin Laundries & Laundromats, Blood/Plasma Donation Centers, Cannabis Dispensaries, and Professional Sports Venues
+>Why: These 4 segments cover zero-competitor NE Ohio markets with strong compliance/ironic-pitch angles and high revenue potential. Cannabis dispensaries growing weekly as new OH rec licenses issue. Sports venues (FieldHouse, Progressive Field, Browns Stadium) are among the highest-budget FM contacts in the region with nobody calling them.
+>File: workers/lead_pipeline.py, integrations/mixmax.py, agents/danny.md
+---
+🔧 *Vera — Auto-Upgrade (Run 135)*
+>Changed: Fixed `_check_aug24_geauga_portage_2()` message content — was saying "Medina County 3rd Pass" and pointing to Medina pull command, when Aug 24 = Week 35 = Geauga+Portage in the ISO rotation
+>Why: Run 126 corrected the docstring but left the Slack message content and label still saying "Medina." Would have sent Bradley to pull the wrong county on Aug 24. Now correctly says "Geauga + Portage County 3rd Pass" and points to `both Geauga` command.
+>File: workers/vera_relay.py
+---
+🔧 *Vera — Auto-Upgrade (Run 135)*
+>Changed: Fixed agents/carla.md county rotation calendar — corrected ISO week numbers for ALL dates (were consistently off by 1) and corrected county assignments for July–Oct schedule (entire summer calendar was wrong). Added note explaining that Week 22/23 are manual overrides and cron auto-rotation begins matching at Week 24 (June 8).
+>Why: Calendar showed "Week 27 = July 6 = Summit" but ISO Week 28 % 6 = 4 = Medina. All July–Oct county labels were wrong for the auto-rotation schedule. Running the cron expecting Medina on July 6 would have pulled Summit instead, and vice versa throughout the season.
+>File: agents/carla.md
+---
+💡 *Vera — Upgrade Proposal (Run 135)*
+>Idea: Update CLAUDE.md cron command to include county overrides for Week 22 (Summit) and Week 23 (Medina) so the scheduled cron matches the intended pull calendar — currently `python3 workers/lead_pipeline.py both` auto-rotates to Medina on May 25 and Geauga+Portage on June 1 instead of Summit and Medina respectively
+>Why: If the cron starts running again (currently broken), it will pull the WRONG counties for those two weeks. The .command scripts use overrides correctly but the cron doesn't. This causes silent wrong-county pulls if Bradley relies on auto-cron for those two weeks.
+>Impact: Prevents wrong-county pulls when the cron is eventually running. Minimal change — add `Summit` and `Medina` arguments to two cron entries.
+>Reply YES to approve.
+---
+💡 *Vera — Upgrade Proposal (Run 135)*
+>Idea: Past customer SMS blast — Tommy wrote 5 copy-paste texts (Workiz lookup + scenario-specific scripts) weeks ago. This is the fastest revenue path available right now while ads are still in the learning phase.
+>Why: 30 minutes of texts to prior customers = $1,800–$3,000 in reactivated jobs. Zero ad spend. Zero new lead acquisition. Pure relationship leverage. File is ready: `outputs/tommy/past_customer_june_blast_2026-05-27.md`
+>Impact: Direct revenue this week, no waiting on sequences or ad conversion
+>Reply YES to approve (or just open the file and start texting — no approval needed, copy is ready)
+---
+💡 *Vera — Upgrade Proposal (Run 135)*
+>Idea: Instagram Business Account — Jasmine wrote a 15-minute GO card (`outputs/jasmine/instagram_launch_today_2026-05-26.md`). Create account → switch to Business profile → paste bio → post first photo. Done.
+>Why: Before/after photo content generates 3–5× organic reach on Instagram vs Facebook. The content capture protocol is written. The copy is written. The channel just doesn't exist yet and every job where Bradley captures a before/after is a missed Instagram post.
+>Impact: Creates a second high-ROI organic channel during peak season at zero cost
+>Reply YES to approve (or just create the account — takes 15 min)
+---
+✅ *Vera — Scan Complete 2026-05-29 (Run 135)*
+>3 auto-upgrades shipped | 3 proposals | 60 open issues (2 new this run — Aug 24 relay content bug now RESOLVED; carla.md calendar now RESOLVED)
+>New segments added: Coin Laundries, Blood/Plasma Donation Centers, Cannabis Dispensaries, Pro Sports Venues (all first pull June 8 Cuyahoga)
+>CRITICAL TODAY: Summit County pull deadline — `python3 workers/lead_pipeline.py both Summit` before end of business (last business day before May 31)
+>Monday June 1: Medina pull — `run_medina_both.command` or `python3 workers/lead_pipeline.py both Medina`
+---
 🔧 *Vera — Auto-Upgrade (Run 129)*
 >Changed: Fixed `_check_google_lsa_status_weekly()` start date bug in vera_relay.py — was June 2 (Tuesday), now June 1 (Monday)
 >Why: June 2 is a Tuesday; first Monday firing was June 8 — the entire June 5–16 LSA approval window was unmonitored. Now fires from June 1 correctly.

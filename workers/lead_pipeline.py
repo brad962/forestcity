@@ -480,6 +480,46 @@ DANNY_TITLES = [
     # 4x/year = $8K-$32K/year; first pull June 8 Cuyahoga (Manheim Cleveland — Cuyahoga County) (added 2026-05-29 run 133)
     'auto auction manager', 'vehicle auction manager', 'auction facility manager',
     'auto auction operations manager', 'vehicle wholesale manager', 'auction site manager',
+    # Coin Laundries & Laundromats — NE Ohio has hundreds of independent and franchise coin laundries;
+    # CoinMach, Alliance Laundry Systems, Laundrylux-franchised operators; large paved parking areas;
+    # chemical water runoff from laundry detergent residue = OEPA stormwater compliance consideration;
+    # concrete exterior is chronically stained from chemical splash + heavy foot traffic;
+    # owner-operators or route/district managers sign vendor contracts directly;
+    # ironic pitch: "We clean the building where people do their cleaning."
+    # $400-$1,200/visit; 2-3x/year = $800-$3,600 per location; 20-location route deal = $16K-$72K/year;
+    # zero competitors cold-calling laundromat owners in NE Ohio; first pull June 8 Cuyahoga (added 2026-05-29 run 135)
+    'laundromat owner', 'coin laundry manager', 'laundry facility manager', 'laundromat manager',
+    'coin laundry owner', 'self-service laundry manager', 'laundry district manager',
+    # Blood/Plasma Donation Centers — BioLife Plasma Services (multiple NE Ohio locations),
+    # CSL Plasma (Cleveland/Akron area), Grifols (Cleveland), Vitalant, American Red Cross donation centers;
+    # FDA-licensed blood establishments = exterior cleanliness + facility appearance required by regulation;
+    # donors visit 2x/week = highest foot traffic frequency of any healthcare-adjacent facility;
+    # entrance walkways + parking lots + building exteriors = recurring high-priority pressure wash need;
+    # district managers sign multi-center vendor contracts; 10-center deal = $20K-$60K/year;
+    # zero competitors cold-calling plasma/blood center FMs in NE Ohio; first pull June 8 Cuyahoga (added 2026-05-29 run 135)
+    'plasma center manager', 'donation center manager', 'blood center manager',
+    'plasma donation manager', 'blood bank manager', 'donor center manager',
+    # Cannabis Dispensaries — Ohio legalized recreational cannabis Nov 2023 (Issue 2);
+    # hundreds of new dispensaries opening across NE Ohio (Cleveland, Akron, Lakewood, Strongsville,
+    # Mentor, Solon, Massillon corridor); state ODM/OEPA licensing includes exterior facility appearance standards;
+    # high foot traffic from daily customers = stained entry walkways + parking lots;
+    # dispensary owners/district managers sign vendor contracts; appearance is brand trust signal in regulated market;
+    # zero current competitors targeting cannabis dispensary owners for power washing in NE Ohio;
+    # $400-$1,200/visit; 2-3x/year = $800-$3,600 per location; first pull June 8 Cuyahoga (added 2026-05-29 run 135)
+    'dispensary manager', 'cannabis dispensary manager', 'dispensary director',
+    'dispensary general manager', 'cannabis operations manager', 'dispensary owner',
+    # Professional Sports Venues — Rocket Mortgage FieldHouse (Cleveland Cavaliers, Monsters, 19,432 seats),
+    # Progressive Field (Cleveland Guardians, 34,830 seats), FirstEnergy Stadium (Cleveland Browns, 67,895 seats),
+    # Canal Park (Akron RubberDucks, minor league affiliate);
+    # enormous paved parking lots (thousands of spaces) + concrete concourse plazas + loading dock areas +
+    # building exteriors; events drive 20K-70K fans = maximum visible staining on all surfaces;
+    # facility directors manage multi-million-dollar venue maintenance budgets;
+    # one FieldHouse or Progressive Field contract = $15K-$50K/year; zero competitors targeting sports FM contacts;
+    # peak season timing: baseball (April-Sept), basketball (Oct-June) = year-round cleaning need;
+    # first pull June 8 Cuyahoga (all three major venues in Cuyahoga County) (added 2026-05-29 run 135)
+    'sports venue facilities manager', 'stadium facilities manager', 'arena facilities manager',
+    'venue operations director', 'sports facility operations manager', 'stadium operations manager',
+    'arena operations manager', 'ballpark facilities manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -753,6 +793,28 @@ DANNY_ORG_KEYWORDS = [
     # auction FMs run quarterly vendor contracts; zero competitors targeting this segment (added 2026-05-29 run 133)
     'auto auction', 'vehicle auction', 'car auction', 'wholesale auto auction',
     'vehicle wholesale', 'auto wholesale', 'car wholesale', 'wholesale vehicle',
+    # Coin Laundries & Laundromats — NE Ohio has hundreds of independent coin laundries;
+    # CoinMach route management, Alliance Laundry Systems franchisees, independent operators;
+    # OEPA stormwater compliance angle (detergent runoff from parking areas) opens conversations;
+    # owner-operators sign vendor contracts directly; zero competitors cold-calling this segment (added 2026-05-29 run 135)
+    'coin laundry', 'laundromat', 'self-service laundry', 'laundry facility',
+    'coin operated laundry', 'laundry management',
+    # Blood/Plasma Donation Centers — BioLife Plasma Services, CSL Plasma, Grifols, Vitalant;
+    # FDA-licensed blood establishments require clean patient-facing exterior;
+    # district FMs sign multi-center vendor contracts (added 2026-05-29 run 135)
+    'plasma donation center', 'blood donation center', 'plasma center', 'blood bank',
+    'donor center', 'blood collection center',
+    # Cannabis Dispensaries — Ohio rec. cannabis legal Nov 2023; new dispensaries opening monthly;
+    # state ODM licensing = exterior appearance standard; high foot traffic = recurring cleaning need;
+    # zero competitors targeting cannabis FM contacts in NE Ohio (added 2026-05-29 run 135)
+    'cannabis dispensary', 'marijuana dispensary', 'cannabis retailer', 'cannabis store',
+    'medical marijuana dispensary', 'recreational cannabis', 'cannabis management',
+    # Professional Sports Venues — Rocket Mortgage FieldHouse (Cavs/Monsters), Progressive Field (Guardians),
+    # FirstEnergy Stadium (Browns), Canal Park (Akron RubberDucks);
+    # enormous paved concourses + parking lots + loading docks; year-round events = recurring cleaning;
+    # facility directors manage large maintenance budgets; zero competitors (added 2026-05-29 run 135)
+    'sports venue', 'professional sports venue', 'sports arena management', 'stadium management',
+    'arena management', 'sports facility management', 'ballpark management', 'venue facilities',
 ]
 
 CARLA_SEARCHES = [

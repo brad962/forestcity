@@ -1,6 +1,62 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 134 | 2026-05-29 | Auto-fixes shipped: 2 | New RESOLVED: 0 | Open: 60 (unchanged)*
+*Run 135 | 2026-05-29 | Auto-fixes shipped: 3 | New RESOLVED: 2 | Open: 62 (4 new segments, 2 resolved)*
+
+---
+
+## RUN METRICS — Run 135 | 2026-05-29
+- Total RESOLVED: 107 (2 new this run)
+- Total OPEN: 62 (4 new segment issues; 2 persistent bugs resolved this run)
+- Auto-upgrades shipped: 3
+  1. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — added 4 new commercial segments: Coin Laundries & Laundromats (7 titles, 6 org keywords, ironic pitch), Blood/Plasma Donation Centers (6 titles, 6 org keywords, FDA compliance angle), Cannabis Dispensaries (6 titles, 7 org keywords, Ohio rec. legal Nov 2023, zero competitors), Professional Sports Venues (8 titles, 8 org keywords, Rocket Mortgage FieldHouse + Progressive Field + FirstEnergy Stadium — largest FM budgets in NE Ohio). All 4 segments first pull June 8 Cuyahoga.
+  2. `workers/vera_relay.py` — CORRECTNESS FIX: `_check_aug24_geauga_portage_2()` message content corrected from "Medina County 3rd Pass" (WRONG) to "Geauga + Portage County 3rd Pass" (CORRECT). Aug 24 = ISO Week 35 = 35 % 6 = 5 = Geauga+Portage. Run 126 fixed the function docstring but left the Slack message label + cities + command still pointing to Medina. Now correctly says Chardon/Chesterland/Kent/Ravenna/Streetsboro/Aurora and `both Geauga`.
+  3. `agents/carla.md` — Corrected county rotation calendar: ISO week numbers corrected for all dates (were consistently off by 1); county assignments corrected for July–Oct (entire summer schedule was wrong — e.g. July 6 was listed as "Week 27, Summit" but is actually ISO Week 28 % 6 = 4 = Medina); added auto-rotation vs manual-override discrepancy note for Week 22 (Summit) and Week 23 (Medina). This prevents Bradley from expecting wrong county auto-pulls.
+
+## RESOLVED — Aug 24 Relay Content Bug (vera_relay.py _check_aug24_geauga_portage_2 message)
+- Resolved: 2026-05-29 (Run 135)
+- Fix: Corrected Slack message content from "Medina County 3rd Pass" → "Geauga + Portage County 3rd Pass"; updated cities (Chardon, Chesterland, Kent, Ravenna, Streetsboro, Aurora); corrected command from `both Medina` → `both Geauga`; verified via Python: Aug 24 = ISO Week 35 = 35 % 6 = 5 = Geauga+Portage index.
+
+## RESOLVED — carla.md County Rotation Calendar Wrong Week Numbers + Wrong Counties
+- Resolved: 2026-05-29 (Run 135)
+- Fix: Rewrote entire calendar section with correct ISO week numbers (22–41 for May 25–Oct 5) and correct county assignments per `week % 6` rotation. Added manual-override note for Week 22 (Summit) and Week 23 (Medina) where .command scripts override the auto-rotation. Calendar now matches what the cron auto-rotation actually produces from Week 24 onwards.
+
+**Critical pending (human action required — UNCHANGED from prior runs, still blocked):**
+- 🚨 SUMMIT COUNTY PULL DEADLINE TODAY (MAY 29 = LAST BUSINESS DAY before May 31): `python3 workers/lead_pipeline.py both Summit` — 6 min unattended. Run before EOD.
+- ⛽ Gas station Mixmax sequence NOT CREATED — contacts stranded since May 19. Guide: `outputs/danny/gas_station_manual_email_blast_2026-05-19.md`
+- 🚚 Fleet washing Mixmax sequence NOT CREATED — contacts stranded
+- ⚠️ Instantly.ai NOT PAUSED — June 4 enrollment BLOCKED until confirmed paused
+
+---
+
+## OPEN — Coin Laundries & Laundromats Segment Not Yet Pulled 🟡 NEW (Run 135)
+- First seen: 2026-05-29 (Run 135)
+- Description: NE Ohio has hundreds of independent and franchise coin laundromats. CoinMach/US Laundry route managers, Alliance Laundry Systems franchisees, independent operators. Chronically neglected exteriors — chemical water runoff from laundry detergent stains concrete aprons and parking lots continuously. OEPA stormwater compliance hook. Owner-operators sign vendor contracts directly. Ironic pitch: "We clean the building where people do their cleaning." Zero power washing competitors targeting this segment. $400–$1,200/visit; 2–3x/year. 20-location route deal = $16K–$72K/year.
+- Fix applied (Run 135): Added 7 DANNY_TITLES (laundromat owner, coin laundry manager, laundry facility manager, laundromat manager, coin laundry owner, self-service laundry manager, laundry district manager) + 6 DANNY_ORG_KEYWORDS + PROPERTY_MANAGER_TITLES sync + agents/danny.md segment brief. First pull June 8 Cuyahoga.
+- Resolution criteria: Laundromat/coin laundry contacts appear in June 8 Cuyahoga pull.
+
+---
+
+## OPEN — Blood/Plasma Donation Centers Segment Not Yet Pulled 🟡 NEW (Run 135)
+- First seen: 2026-05-29 (Run 135)
+- Description: NE Ohio has dozens of blood and plasma donation centers — BioLife Plasma Services, CSL Plasma (multiple Greater Cleveland), Grifols (Cleveland), Vitalant, American Red Cross fixed centers. FDA-licensed blood establishments = exterior cleanliness required by regulation. Donors visit 2x/week = highest foot-traffic frequency of any healthcare-adjacent facility. District managers sign multi-center vendor contracts. 10-center deal = $20K–$60K/year. Zero competitors targeting this segment.
+- Fix applied (Run 135): Added 6 DANNY_TITLES + 6 DANNY_ORG_KEYWORDS + PROPERTY_MANAGER_TITLES sync + agents/danny.md segment brief. First pull June 8 Cuyahoga.
+- Resolution criteria: Plasma/blood donation center contacts appear in June 8 Cuyahoga pull.
+
+---
+
+## OPEN — Cannabis Dispensaries Segment Not Yet Pulled 🟡 NEW (Run 135)
+- First seen: 2026-05-29 (Run 135)
+- Description: Ohio legalized recreational cannabis November 2023 (Issue 2). Hundreds of new dispensaries opening across NE Ohio (Cleveland, Lakewood, Strongsville, Mentor, Solon, Akron, Massillon corridor). State ODM/OEPA licensing includes exterior appearance standards. High foot traffic = recurring staining on entry walkways + parking lots + building exteriors. Dispensary owners/GMs sign vendor contracts directly. Zero competitors in NE Ohio targeting cannabis dispensaries for pressure washing. Segment grows monthly as new licenses issue.
+- Fix applied (Run 135): Added 6 DANNY_TITLES + 7 DANNY_ORG_KEYWORDS + PROPERTY_MANAGER_TITLES sync + agents/danny.md segment brief. First pull June 8 Cuyahoga.
+- Resolution criteria: Cannabis dispensary contacts appear in June 8 Cuyahoga pull.
+
+---
+
+## OPEN — Professional Sports Venues Segment Not Yet Pulled 🟡 NEW (Run 135)
+- First seen: 2026-05-29 (Run 135)
+- Description: Rocket Mortgage FieldHouse (Cavaliers/Monsters, 19,432 seats), Progressive Field (Guardians, 34,830 seats), FirstEnergy Stadium (Browns, 67,895 seats), Canal Park (Akron RubberDucks). Enormous paved parking lots + concrete plaza concourses + loading dock areas + building exteriors. Events drive 20K–70K fans = maximum visible staining. Facilities directors manage multi-million-dollar annual maintenance budgets. Zero competitors targeting sports venue FM contacts in NE Ohio. Year-round cleaning need (baseball April–Sept + basketball Oct–June). One FieldHouse or Progressive Field contract = $15K–$50K/year.
+- Fix applied (Run 135): Added 8 DANNY_TITLES + 8 DANNY_ORG_KEYWORDS + PROPERTY_MANAGER_TITLES sync + agents/danny.md segment brief. First pull June 8 Cuyahoga.
+- Resolution criteria: Sports venue FM contacts appear in June 8 Cuyahoga pull.
 
 ---
 

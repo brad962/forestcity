@@ -1591,10 +1591,11 @@ def _check_aug17_medina_3():
 
 
 def _check_aug24_geauga_portage_2():
-    """Fire Aug 18–24 countdown for Medina County 3rd pass (Week 34, Aug 24 Monday).
-    Week 34 % 6 = 4 → Medina. Medina, Brunswick, Wadsworth, Seville.
-    Third pass — late-summer fall booking prep window; industrial + rural commercial segment.
-    (Function name retained for sentinel compatibility — county corrected Run 126.)"""
+    """Fire Aug 18–24 countdown for Geauga+Portage 3rd pass (Week 35, Aug 24 Monday).
+    Week 35 % 6 = 5 → Geauga+Portage. Chardon, Chesterland, Bainbridge, Kent, Ravenna, Streetsboro, Aurora.
+    Third pass — late-summer fall booking prep window; rural/suburban commercial + golf course segment.
+    (Function name retained for sentinel compatibility — county corrected Run 135: was wrongly
+     saying 'Medina County 3rd Pass' despite Week 35 = Geauga+Portage per ISO rotation.)"""
     from datetime import date as _date_a24
     today = _date_a24.today()
     start = _date_a24(2026, 8, 18)
@@ -1609,16 +1610,17 @@ def _check_aug24_geauga_portage_2():
 
     pull_date = _date_a24(2026, 8, 24)
     days_left = (pull_date - today).days
-    label = f'{days_left} day{"s" if days_left != 1 else ""} away' if days_left > 0 else 'TODAY — MEDINA COUNTY 3RD PASS'
+    label = f'{days_left} day{"s" if days_left != 1 else ""} away' if days_left > 0 else 'TODAY — GEAUGA + PORTAGE COUNTY 3RD PASS'
     note  = 'Cron fires Mon Aug 24 at 7am. Verify: `cat logs/cron.log | tail -10`' if days_left > 0 else \
-            'Run now if cron missed: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Medina`'
+            'Run now if cron missed: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Geauga`'
 
     msg = (
-        f'📍 *Medina County 3rd Pass — {label} (Aug 24)*\n'
-        f'>Week 34: Medina, Brunswick, Wadsworth, Seville. Late summer — fall booking angle active.\n'
-        f'>Begin shifting outreach message: "Lock in fall cleaning before the October rush."\n'
+        f'📍 *Geauga + Portage County 3rd Pass — {label} (Aug 24)*\n'
+        f'>Week 35: Chardon, Chesterland, Bainbridge, Kent, Ravenna, Streetsboro, Aurora. Fall angle fully active.\n'
+        f'>Golf courses at end of peak season — book post-season clubhouse + cart area + parking lot clean.\n'
+        f'>Cemeteries: October visitation peak approaching — book fall prep clean now.\n'
         f'>{note}\n'
-        f'>Command: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Medina`'
+        f'>Command: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Geauga`'
     )
     if post_slack(msg):
         alert_sentinel.parent.mkdir(exist_ok=True)
@@ -1626,7 +1628,7 @@ def _check_aug24_geauga_portage_2():
             alert_sentinel.write_text(today_str)
         except Exception:
             pass
-        log(f'Aug 24 Medina County 3rd pass reminder posted — {label}')
+        log(f'Aug 24 Geauga+Portage County 3rd pass reminder posted — {label}')
 
 
 def _check_aug31_cuyahoga_3():

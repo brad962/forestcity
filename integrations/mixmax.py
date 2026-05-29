@@ -340,6 +340,24 @@ PROPERTY_MANAGER_TITLES = [
     # FM signs quarterly vendor contracts; routing to Property Manager sequence (added 2026-05-29 run 133)
     'auto auction manager', 'vehicle auction manager', 'auction facility manager',
     'auto auction operations manager', 'vehicle wholesale manager', 'auction site manager',
+    # Coin Laundries & Laundromats — ironic pitch; owner-operators sign vendor contracts directly;
+    # routing to Property Manager sequence (FM/facility vendor angle) (added 2026-05-29 run 135)
+    'laundromat owner', 'coin laundry manager', 'laundry facility manager', 'laundromat manager',
+    'coin laundry owner', 'self-service laundry manager', 'laundry district manager',
+    # Blood/Plasma Donation Centers — BioLife, CSL Plasma, Grifols, Vitalant;
+    # FDA licensing = exterior cleanliness standard; district FMs sign multi-center contracts;
+    # routing to Property Manager sequence (compliance + FM angle) (added 2026-05-29 run 135)
+    'plasma center manager', 'donation center manager', 'blood center manager',
+    'plasma donation manager', 'blood bank manager', 'donor center manager',
+    # Cannabis Dispensaries — Ohio rec. cannabis legal Nov 2023; state ODM licensing = appearance standard;
+    # dispensary owners/GMs sign vendor contracts; routing to Property Manager sequence (added 2026-05-29 run 135)
+    'dispensary manager', 'cannabis dispensary manager', 'dispensary director',
+    'dispensary general manager', 'cannabis operations manager', 'dispensary owner',
+    # Professional Sports Venues — Rocket Mortgage FieldHouse, Progressive Field, FirstEnergy Stadium;
+    # facility directors manage large maintenance budgets; routing to Property Manager sequence (added 2026-05-29 run 135)
+    'sports venue facilities manager', 'stadium facilities manager', 'arena facilities manager',
+    'venue operations director', 'sports facility operations manager', 'stadium operations manager',
+    'arena operations manager', 'ballpark facilities manager',
 ]
 
 REALTOR_TITLES = [

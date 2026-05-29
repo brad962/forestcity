@@ -34,30 +34,36 @@ Build a referral network of 100+ active partners across Northeast Ohio who send 
 ## County Rotation Calendar (2026)
 Carla mirrors Danny's county rotation by ISO week number (`week % 6`). Cron runs every Monday 7am.
 
+> ⚠️ **IMPORTANT — Auto-rotation vs Manual Override (corrected Run 135):**
+> The auto-cron rotation (`lead_pipeline.py carla` with no county) uses `ISO_week % 6` to select the county.
+> The first two entries (Week 22 and Week 23) do NOT match the cron auto-rotation — they are **manual overrides**
+> using the named `.command` scripts. Always use the `.command` scripts for these two dates.
+> From Week 24 (June 8) onwards, the cron auto-rotation matches this calendar exactly.
+
 | ISO Week | Monday Date | County Batch | Notes |
 |----------|-------------|--------------|-------|
-| Week 21  | May 25 (Memorial Day) | Summit County + Akron | Manual override — run `run_summit_both.command` |
-| Week 22  | June 1 | Medina County | Run `run_medina_both.command` |
-| Week 23  | June 8 | Geauga + Portage | All new segments live |
-| Week 24  | June 15 | Cuyahoga | Largest market — cron auto-fires |
-| Week 25  | June 22 | Lake County | Marina/waterfront corridor |
-| Week 26  | June 29 | Lorain County | Avon growth corridor |
-| Week 27  | July 6  | Summit County (2nd pass) | Cron auto-fires |
-| Week 28  | July 13 | Medina County (2nd pass) | |
-| Week 29  | July 20 | Geauga + Portage (2nd pass) | |
-| Week 30  | July 27 | Cuyahoga (2nd pass) | Referral network refresh |
-| Week 31  | Aug 3   | Lake County (2nd pass) | |
-| Week 32  | Aug 10  | Lorain County (2nd pass) | |
-| Week 33  | Aug 17  | Summit County (3rd pass) | Begin fall angle messaging |
-| Week 34  | Aug 24  | Medina County (3rd pass) | Shift to "lock in fall dates" pitch |
-| Week 35  | Aug 31  | Geauga + Portage (3rd pass) | |
-| Week 36  | Sept 7  | Cuyahoga (3rd pass) | Fall pre-winter urgency |
-| Week 37  | Sept 14 | Lake County (3rd pass) | |
-| Week 38  | Sept 21 | Lorain County (3rd pass) | |
-| Week 39  | Sept 28 | Summit County (4th pass) | Final pre-freeze push |
-| Week 40  | Oct 5   | Medina County (4th pass) | Annual plan pitch window |
+| Week 22  | May 25 (Memorial Day) | **MANUAL → Summit County** | Auto-rotation = Medina. **Override: `run_summit_both.command`** |
+| Week 23  | June 1 | **MANUAL → Medina County** | Auto-rotation = Geauga+Portage. **Override: `run_medina_both.command`** |
+| Week 24  | June 8 | Cuyahoga | Largest market — all new commercial segments first pull; cron auto-fires |
+| Week 25  | June 15 | Lake County | Marina/waterfront corridor |
+| Week 26  | June 22 | Lorain County | Avon growth corridor |
+| Week 27  | June 29 | Summit County (2nd pass) | Cron auto-fires |
+| Week 28  | July 6  | Medina County (2nd pass) | Cron auto-fires |
+| Week 29  | July 13 | Geauga + Portage (2nd pass) | |
+| Week 30  | July 20 | Cuyahoga (2nd pass) | Referral network refresh |
+| Week 31  | July 27 | Lake County (2nd pass) | |
+| Week 32  | Aug 3   | Lorain County (2nd pass) | |
+| Week 33  | Aug 10  | Summit County (2nd pass) | Begin fall angle messaging |
+| Week 34  | Aug 17  | Medina County (3rd pass) | Shift to "lock in fall dates" pitch |
+| Week 35  | Aug 24  | Geauga + Portage (3rd pass) | Golf courses + cemeteries fall prep |
+| Week 36  | Aug 31  | Cuyahoga (3rd pass) | Fall pre-winter urgency — largest market |
+| Week 37  | Sept 7  | Lake County (3rd pass) | Marina post-season cleanup window |
+| Week 38  | Sept 14 | Lorain County (3rd pass) | |
+| Week 39  | Sept 21 | Summit County (4th pass) | Final pre-freeze push |
+| Week 40  | Sept 28 | Medina County (4th pass) | Annual plan pitch window |
+| Week 41  | Oct 5   | Geauga + Portage (4th pass) | End of season — closing cleans |
 
-> 🗒️ **Manual override:** `python3 workers/lead_pipeline.py carla Summit` (Week 21, deadline May 31)
+> 🗒️ **Manual override syntax:** `python3 workers/lead_pipeline.py carla Summit`
 > Double-click shortcut (Danny + Carla together): `scripts/run_summit_both.command`
 >
 > 🗒️ **Week 22 = Medina County — June 1:** `python3 workers/lead_pipeline.py carla Medina`

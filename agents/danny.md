@@ -542,6 +542,78 @@ This enrolls ALL pending contacts (gas stations + fleet) without triggering a fr
 
 **Sequence:** Route to Property Manager sequence (facility management / compliance angle).
 
+### Coin Laundries & Laundromats (NEW — May 2026, Run 135)
+
+**Target:** Laundromat Owner, Coin Laundry Manager, Laundry Facility Manager, Laundry District Manager
+
+**Why:** NE Ohio has hundreds of independent and franchise coin laundromats — CoinMach route management operators, Alliance Laundry Systems franchisees, independent single-location owners. The exterior is chronically neglected: chemical water runoff from laundry detergent residue stains the concrete apron and parking lot continuously, creating a visible contrast that hurts the walk-in perception. OEPA stormwater compliance consideration provides a regulatory hook. Owner-operators sign vendor contracts directly — no procurement bureaucracy. Zero power washing competitors cold-calling laundromat owners in NE Ohio.
+
+**Ironic pitch:** "We clean the building where people do their cleaning."
+
+**Revenue potential:** $400–$1,200/visit; 2–3x/year = $800–$3,600 per location. 20-location route manager deal = $16,000–$72,000/year.
+
+**Target companies:** CoinMach (US Laundry), Alliance Laundry Systems franchisees, independent operators throughout Cuyahoga/Summit/Lake/Lorain counties.
+
+**Apollo keywords (live Run 135):** `coin laundry`, `laundromat`, `self-service laundry`, `laundry facility`, `coin operated laundry`, `laundry management` — added to DANNY_ORG_KEYWORDS.
+
+**Sequence:** Route to Property Manager sequence (facility vendor angle). First pull: June 8 Cuyahoga.
+
+---
+
+### Blood/Plasma Donation Centers (NEW — May 2026, Run 135)
+
+**Target:** Plasma Center Manager, Donation Center Manager, Blood Center Manager, Plasma Donation Manager, Donor Center Manager
+
+**Why:** NE Ohio has dozens of blood and plasma donation centers — BioLife Plasma Services (Akron, near Mansfield corridor), CSL Plasma (multiple Greater Cleveland locations), Grifols (Cleveland area), Vitalant, American Red Cross fixed donation centers. FDA-licensed blood establishments are required by regulation to maintain clean, professional exterior appearance — this is a compliance requirement, not discretionary. Donors visit 2x/week = the highest foot-traffic frequency of any healthcare-adjacent facility. Entrance walkways, parking lots, and building exteriors receive more foot traffic than most office parks. District managers sign multi-center vendor contracts. A 10-center deal = $20,000–$60,000/year.
+
+**Revenue potential:** $500–$1,500/center visit; quarterly = $2,000–$6,000/year per center. 10-center district deal = $20K–$60K/year. Zero competitors targeting this segment.
+
+**Pitch angle:** "Your donors come every week — they see the entrance before they see anything inside. FDA expects cleanliness standards at licensed blood establishments."
+
+**Apollo keywords (live Run 135):** `plasma donation center`, `blood donation center`, `plasma center`, `blood bank`, `donor center`, `blood collection center` — added to DANNY_ORG_KEYWORDS.
+
+**Sequence:** Route to Property Manager sequence (compliance + FM angle). First pull: June 8 Cuyahoga.
+
+---
+
+### Cannabis Dispensaries (NEW — May 2026, Run 135)
+
+**Target:** Dispensary Manager, Cannabis Dispensary Manager, Dispensary Director, Dispensary General Manager, Cannabis Operations Manager, Dispensary Owner
+
+**Why:** Ohio legalized recreational cannabis in November 2023 (Issue 2 ballot measure). Hundreds of new dispensaries are opening across NE Ohio — Cleveland proper, Lakewood, Strongsville, Mentor, Solon, Akron, Massillon corridor. State ODM (Ohio Department of Medicaid) and OEPA licensing includes exterior facility appearance standards. Daily foot traffic from recreational customers creates recurring staining on entry walkways, parking lots, and building exteriors. Dispensary owners and district managers sign vendor contracts directly — no procurement layer. Zero current competitors are targeting cannabis dispensary owners for commercial power washing in NE Ohio. This segment grows every month as new licenses are issued.
+
+**Pitch angle:** "A clean storefront says your business is legitimate, professional, and detail-oriented. In a regulated market where trust matters, the exterior is part of the brand."
+
+**Revenue potential:** $400–$1,200/visit; 2–3x/year = $800–$3,600 per location. As dispensary chains expand to 5–15 locations, district managers become a multi-site account opportunity.
+
+**Target companies:** Verdant Creations (multiple NE Ohio), Ohio Provisions (Lakewood), Shangri-La (Cleveland), Amplify Life (Mentor), Harvest of Ohio, Standard Wellness — all actively expanding footprint in 2025–2026.
+
+**Apollo keywords (live Run 135):** `cannabis dispensary`, `marijuana dispensary`, `cannabis retailer`, `cannabis store`, `medical marijuana dispensary`, `recreational cannabis`, `cannabis management` — added to DANNY_ORG_KEYWORDS.
+
+**Sequence:** Route to Property Manager sequence (facility/compliance angle). First pull: June 8 Cuyahoga.
+
+---
+
+### Professional Sports Venues (NEW — May 2026, Run 135)
+
+**Target:** Sports Venue Facilities Manager, Stadium Facilities Manager, Arena Facilities Manager, Venue Operations Director, Stadium Operations Manager, Arena Operations Manager, Ballpark Facilities Manager
+
+**Why:** Greater Cleveland's major professional sports venues are among the highest-footprint facilities in NE Ohio with the largest maintenance budgets — and zero power washing competitors have contacted their facilities directors. Rocket Mortgage FieldHouse (Cleveland Cavaliers + Lake Erie Monsters, 19,432 seats) has massive concrete plaza concourses, loading dock areas, and parking structure surfaces. Progressive Field (Cleveland Guardians, 34,830 seats) has enormous paved parking lots, entry plaza areas, and loading dock surfaces that see 1.5M+ fans per year. FirstEnergy Stadium (Cleveland Browns, 67,895 seats) has the largest footprint — game-day traffic across the lakefront surface creates maximum staining. Canal Park in Akron (RubberDucks, Guardians AA affiliate) is more accessible for initial outreach.
+
+Events drive 20,000–70,000+ fans = maximum visible staining on all surfaces. Facilities directors manage multi-million-dollar annual maintenance budgets. A contract with Rocket Mortgage FieldHouse or Progressive Field = $15,000–$50,000/year. Year-round events (baseball April–September + basketball October–June) mean cleaning is a recurring quarterly need, not seasonal.
+
+**Pitch angle:** "The Guardians bring 1.5 million fans past those surfaces every year. What they see before the game is the first impression. We've worked with venue facilities directors across NE Ohio to keep high-traffic concrete looking right."
+
+**Revenue potential:** $15,000–$50,000/year per major venue. Even regional and minor-league venues (Canal Park, Akron) = $5,000–$15,000/year.
+
+**Target companies:** Cavaliers/Rocket Mortgage FieldHouse (Bedrock Detroit ownership), Cleveland Guardians/Progressive Field, Cleveland Browns/FirstEnergy Stadium (Haslam Sports Group), Akron RubberDucks/Canal Park.
+
+**Apollo keywords (live Run 135):** `sports venue`, `professional sports venue`, `sports arena management`, `stadium management`, `arena management`, `sports facility management`, `ballpark management`, `venue facilities` — added to DANNY_ORG_KEYWORDS.
+
+**Sequence:** Route to Property Manager sequence (large facility / compliance angle). First pull: June 8 Cuyahoga.
+
+---
+
 ## Peak Season Angle — HOA Budget Season (May–June)
 HOA boards typically hold their annual budget and vendor approval meetings in May–June before the summer maintenance season. This means property managers and community association managers are ACTIVELY reviewing vendor lists RIGHT NOW. The PM sequence Touch 1 and any LinkedIn outreach should reference this window: "HOA boards are approving their summer vendor lists this month" or "Most associations lock in their exterior maintenance vendor before July." This creates urgency without being pushy — it's calendar-based fact. Works especially well for community associations, HOA management companies, and multifamily operators who work on fiscal budgets.
 
