@@ -415,6 +415,18 @@ DANNY_TITLES = [
     'convention center manager', 'convention center director', 'exhibition hall manager',
     'trade show facility manager', 'events center manager', 'convention facilities manager',
     'expo center manager', 'conference facility director',
+    # Craft Breweries & Taprooms — NE Ohio is a major craft beer market (100+ breweries);
+    # Great Lakes Brewing Co (Cleveland — OG NE Ohio craft), Platform Beer Co (Cleveland), Masthead Brewing,
+    # Thirsty Dog Brewing (Akron), Goldhorn Brewery, Terrestrial Brewing, Collision Bend Brewing,
+    # Forest City Brewery (Cleveland), Crooked River Brewing, Trail Brew Works, Brew Kettle;
+    # outdoor beer gardens + patios + large parking lots + building facades;
+    # spring pre-season clean BEFORE patio season opens (May–June) = natural pitch window;
+    # seasonal events (tapping parties, summer outdoor concerts, festivals) = appearance is marketing;
+    # taproom managers or owners sign vendor contracts directly; zero power washing competitors cold-calling;
+    # $800-$2,500/visit; 2-3x/year (spring open + fall close + event prep); $1.6K-$7.5K/year per taproom;
+    # NE Ohio craft beer belt: Cleveland → Akron → Lake Erie corridor = dense target density (added 2026-05-29 run 129)
+    'taproom manager', 'brewery manager', 'craft brewery manager', 'tap room manager',
+    'brewery operations manager', 'taproom director', 'brewery general manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -660,6 +672,13 @@ DANNY_ORG_KEYWORDS = [
     # John S. Knight Center, Kalahari Resorts; massive event plaza + loading areas + building exteriors (added 2026-05-29 run 128)
     'convention center', 'exhibition hall', 'convention facility', 'expo center',
     'trade show facility', 'events facility management', 'convention management',
+    # Craft Breweries & Taprooms — Great Lakes Brewing, Platform Beer, Masthead, Thirsty Dog, Goldhorn,
+    # Terrestrial, Collision Bend, Forest City Brewery, Crooked River, Brew Kettle, Trail Brew Works;
+    # outdoor patios + parking + building facades; spring patio opening = natural pitch window;
+    # seasonal events = appearance is marketing; taproom GM or owner signs vendor contracts directly;
+    # zero power washing competitors cold-calling brewery managers in NE Ohio (added 2026-05-29 run 129)
+    'craft brewery', 'taproom', 'brewing company', 'microbrewery', 'craft beer',
+    'brewpub', 'ale house', 'tap house', 'beer garden',
 ]
 
 CARLA_SEARCHES = [

@@ -1,6 +1,61 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 127 | 2026-05-29 | Auto-fixes shipped: 4 | New RESOLVED: 0 | Open: 51 (2 new: Concert Venues + Food Processing — in code, awaiting June 8 Cuyahoga pull)*
+*Run 129 | 2026-05-29 | Auto-fixes shipped: 4 | New RESOLVED: 1 | Open: 56 (3 new: Craft Breweries, GBP Relay Gap, LSA Date Bug — all FIXED this run)*
+
+---
+
+## RUN METRICS — Run 129 | 2026-05-29
+- Total RESOLVED: 104 (1 new this run: LSA weekly relay date bug)
+- Total OPEN: 56 (3 new: Craft Breweries segment / GBP relay gap / LSA date bug — all resolved this run via code; plus 2 carried from Run 128: Airport/Aviation + Convention Centers in code, awaiting June 8 pull)
+- Auto-upgrades shipped: 4
+  1. `workers/vera_relay.py` — **BUG FIX**: corrected `_check_google_lsa_status_weekly()` start date from `2026, 6, 2` (Tuesday) to `2026, 6, 1` (Monday); June 2 is a Tuesday so the first Monday firing was June 8, missing the entire June 5–16 LSA approval window; June 1 is the first Monday of June — LSA could be approved that week and Bradley would have had no relay alert until June 8 was already past
+  2. `workers/vera_relay.py` — added `_check_gbp_weekly_post()`: fires every Monday May 26–Sept 30; prompts weekly GBP post with reference to Tommy's June content calendar; GBP weekly posting keeps Forest City active in Maps rankings during peak season; zero NE Ohio power washing competitors post weekly; wired into `_main_body()` after `_check_neighbor_canvass_weekly()`
+  3. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — added Craft Breweries & Taprooms as new commercial segment; 7 titles (taproom manager, brewery manager, craft brewery manager, tap room manager, brewery operations manager, taproom director, brewery general manager); 9 org keywords (craft brewery, taproom, brewing company, microbrewery, craft beer, brewpub, ale house, tap house, beer garden); Great Lakes Brewing, Platform Beer, Masthead, Thirsty Dog, Goldhorn, Terrestrial, Collision Bend, Forest City Brewery targets; spring patio opening = natural pitch window; event season = appearance is marketing; zero competitors cold-calling brewery managers; $1.6K–$7.5K/year per taproom; first pull June 8 Cuyahoga
+  4. `outputs/vera/open_issues.md` + `outputs/vera/pending_slack_messages.md` — Run 129 metrics logged; new issues tracked; Slack messages queued
+
+**Critical pending (human action required — UNCHANGED from prior runs):**
+- 🚨 SUMMIT COUNTY PULL DEADLINE TODAY (MAY 29 = LAST BUSINESS DAY): `python3 workers/lead_pipeline.py danny Summit` — 6 min unattended. Run before EOD.
+- ⛽ Gas station Mixmax sequence NOT CREATED — 12 contacts stranded since May 19
+- 🚚 Fleet washing Mixmax sequence NOT CREATED — contacts stranded
+- ⚠️ Instantly.ai NOT PAUSED — June 4 enrollment BLOCKED
+
+---
+
+## RESOLVED — Google LSA Weekly Relay Date Bug (start date June 2 should be June 1)
+- Resolved: 2026-05-29 (Run 129)
+- Fix: `_check_google_lsa_status_weekly()` had `start = _date_lsa(2026, 6, 2)`. June 2, 2026 is a Tuesday. The function checks `today.weekday() != 0` (Monday only). Result: the FIRST Monday the function could ever fire was June 8 — entirely missing the June 5–16 LSA approval window. Changed start to `2026, 6, 1` (Monday). Now fires June 1, June 8, June 15... correctly monitoring the approval window from the first possible Monday.
+
+---
+
+## OPEN — Craft Breweries & Taprooms Segment Not Yet Pulled 🟡 NEW (Run 129)
+- First seen: 2026-05-29 (Run 129)
+- Description: NE Ohio has 100+ craft breweries with physical taprooms: Great Lakes Brewing Co (Cleveland — largest NE Ohio craft brewery), Platform Beer Co (Cleveland), Masthead Brewing (Cleveland), Thirsty Dog Brewing (Akron), Goldhorn Brewery, Terrestrial Brewing, Collision Bend Brewing (Cleveland), Forest City Brewery (Cleveland — local name opportunity), Crooked River Brewing, Brew Kettle, Trail Brew Works. Outdoor beer gardens + patios + large parking lots + building facades. Spring pre-season clean before patio season = natural pitch. Summer events (tapping parties, outdoor concerts, harvest festivals) = appearance is marketing. Taproom GMs sign vendor contracts directly. Zero competitors cold-calling brewery managers. $800–$2,500/visit; 2–3x/year.
+- Fix applied (Run 129): 7 titles added to DANNY_TITLES + PROPERTY_MANAGER_TITLES. 9 org keywords added to DANNY_ORG_KEYWORDS. Full segment brief documented in agents/danny.md. First pull June 8 Cuyahoga (Cleveland breweries); June 29 Summit pull (Akron breweries).
+- Resolution criteria: Taproom manager/brewery manager contacts appear in Danny's June 8 Cuyahoga pull output.
+
+---
+
+## OPEN — GBP Weekly Post Relay Gap (No Monday reminder existed)
+- First seen: 2026-05-29 (Run 129)
+- Description: Tommy wrote a June GBP content calendar (june_gbp_content_calendar_2026-05-24.md) with pre-written posts. There was zero relay coverage prompting Bradley to actually post weekly to Google Business Profile. Weekly GBP posts keep Forest City active in Maps rankings during peak season. Most NE Ohio competitors never post — weekly posting is free organic lead gen. Without a relay reminder the habit goes dark.
+- Fix applied (Run 129): Added `_check_gbp_weekly_post()` to vera_relay.py. Fires every Monday May 26–Sept 30. References Tommy's June content calendar. Wired into `_main_body()`. Self-deactivates Oct 1.
+- Resolution criteria: Relay fires Monday June 1 (first Monday) with GBP post reminder. RESOLVED pending June 1 relay run.
+
+---
+
+## OPEN — Airport & Aviation Facilities Segment Not Yet Pulled 🟡 NEW (Run 128)
+- First seen: 2026-05-29 (Run 128)
+- Description: Cleveland Hopkins International (CLE, 11M passengers/year), Akron-Canton Airport (CAK), Lorain County Airport. Terminal building exteriors + parking structures + landside pavement + rental car lots. FAA certification appearance standards. One CLE Hopkins contract = $10K–$30K/year. Zero competitors cold-calling airport FM contacts.
+- Fix applied (Run 128): 8 titles added to DANNY_TITLES + PROPERTY_MANAGER_TITLES in mixmax.py. 7 org keywords added to DANNY_ORG_KEYWORDS. Full segment brief documented in agents/danny.md. First pull June 8 Cuyahoga (CLE Hopkins); Lorain County Airport fires on June 22 Lorain pull.
+- Resolution criteria: Airport facilities manager/aviation facilities director contacts appear in Danny's June 8 or June 22 pull output.
+
+---
+
+## OPEN — Convention Centers & Exhibition Halls Segment Not Yet Pulled 🟡 NEW (Run 128)
+- First seen: 2026-05-29 (Run 128)
+- Description: Cleveland Convention Center (downtown, 1M sq ft), I-X Center (Brook Park), John S. Knight Center (Akron), Kalahari Resorts & Conventions (Sandusky). Massive paved plaza concourses + loading dock areas + building exteriors. Fall conference calendar (Sept–Nov) is peak — pre-season clean window is now (June–August). Zero competitors targeting these facilities.
+- Fix applied (Run 128): 8 titles added to DANNY_TITLES + PROPERTY_MANAGER_TITLES in mixmax.py. 7 org keywords added to DANNY_ORG_KEYWORDS. Full segment brief documented in agents/danny.md. First pull June 8 Cuyahoga (GCCC + I-X Center).
+- Resolution criteria: Convention center manager/exhibition hall manager contacts appear in Danny's June 8 Cuyahoga pull output.
 
 ---
 

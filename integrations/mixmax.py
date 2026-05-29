@@ -304,6 +304,13 @@ PROPERTY_MANAGER_TITLES = [
     'convention center manager', 'convention center director', 'exhibition hall manager',
     'trade show facility manager', 'events center manager', 'convention facilities manager',
     'expo center manager', 'conference facility director',
+    # Craft Breweries & Taprooms — Great Lakes Brewing, Platform Beer, Masthead, Thirsty Dog, Goldhorn,
+    # Terrestrial, Collision Bend, Forest City Brewery, Crooked River, Brew Kettle, Trail Brew Works;
+    # outdoor patios + parking + building facades; spring patio opening = natural pitch window;
+    # seasonal events = appearance is marketing; taproom GM or owner signs vendor contracts directly;
+    # routing to Property Manager sequence (FM/vendor contract angle); zero competitors cold-calling (added 2026-05-29 run 129)
+    'taproom manager', 'brewery manager', 'craft brewery manager', 'tap room manager',
+    'brewery operations manager', 'taproom director', 'brewery general manager',
 ]
 
 REALTOR_TITLES = [

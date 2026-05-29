@@ -1887,13 +1887,14 @@ def _check_week2_facebook_ads():
 
 
 def _check_google_lsa_status_weekly():
-    """Fire every Monday June 2 – Aug 31.
+    """Fire every Monday June 1 – Aug 31.
     Google Local Services Ads (Google Guaranteed) application may have been submitted May 22.
     Approval takes 7–14 days. Once approved, the badge appears above regular Google Ads.
-    Weekly check ensures Bradley doesn't miss the approval window or forget to set up lead routing."""
+    Weekly check ensures Bradley doesn't miss the approval window or forget to set up lead routing.
+    Start date corrected from June 2 (Tuesday) to June 1 (Monday) — Run 129 bug fix."""
     from datetime import date as _date_lsa
     today = _date_lsa.today()
-    start = _date_lsa(2026, 6, 2)
+    start = _date_lsa(2026, 6, 1)
     end   = _date_lsa(2026, 8, 31)
     if not (start <= today <= end):
         return
@@ -2104,6 +2105,44 @@ def _check_october_final_push():
         log(f'October final push reminder posted — {days_left_in_window} days left in window')
 
 
+def _check_gbp_weekly_post():
+    """Fire every Monday May 26 – Sept 30.
+    Google Business Profile posts keep Forest City active in Maps rankings during peak season.
+    Tommy wrote a June GBP content calendar (june_gbp_content_calendar_2026-05-24.md).
+    Most NE Ohio power washing competitors never post to GBP — weekly posting is free organic lead gen.
+    Weekly Monday reminder keeps the GBP habit active all season. Self-deactivates Oct 1."""
+    from datetime import date as _date_gbp
+    today = _date_gbp.today()
+    start = _date_gbp(2026, 5, 26)
+    end   = _date_gbp(2026, 9, 30)
+    if not (start <= today <= end):
+        return
+    if today.weekday() != 0:  # Monday only
+        return
+
+    alert_sentinel = BASE_DIR / 'outputs' / 'vera' / '.gbp_weekly_post_week'
+    week_str = today.strftime('%Y-W%W')
+    if alert_sentinel.exists() and alert_sentinel.read_text().strip() == week_str:
+        return
+
+    msg = (
+        '📍 *GBP Post Due — Google Business Profile (Monday)*\n'
+        '>One GBP post/week keeps Forest City active in Maps rankings during peak season.\n'
+        '>Competitors go silent all summer — an active GBP stands out in local search.\n'
+        '>June content calendar (pre-written posts ready to copy): `outputs/tommy/june_gbp_content_calendar_2026-05-24.md`\n'
+        '>Best-performing hook: before/after with location tag ("Just finished this driveway in [City] — result speaks for itself.")\n'
+        '>Post types that drive leads: before/after photo, seasonal availability notice, job spotlight, 5-star review share.\n'
+        '>5 minutes: Google Business Profile Manager → Posts → Add Update → publish.'
+    )
+    if post_slack(msg):
+        alert_sentinel.parent.mkdir(exist_ok=True)
+        try:
+            alert_sentinel.write_text(week_str)
+        except Exception:
+            pass
+        log(f'GBP weekly post reminder posted — week {week_str}')
+
+
 def _check_post_june8_commercial_monitoring():
     """Fire June 9–11: 3-day monitoring window immediately after the June 8 Cuyahoga pull.
     June 8 is the biggest pull of the season (25+ commercial segments, maximum volume).
@@ -2189,6 +2228,7 @@ def _main_body():
     _check_week2_facebook_ads()
     _check_google_lsa_status_weekly()
     _check_neighbor_canvass_weekly()
+    _check_gbp_weekly_post()
     _check_october_final_push()
     _check_early_cuyahoga_opportunity()
     _check_spring_2027_early_booking()
