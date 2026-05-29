@@ -817,8 +817,8 @@ def _check_wave2_day3_followup():
 def _check_june8_geauga_portage():
     """Fire June 4–8 countdown for the Cuyahoga County pull (Week 24, June 8 Monday).
     Week 24 % 6 = 0 → Cuyahoga in the rotation. Cleveland, Parma, Lakewood, Strongsville, Beachwood.
-    Largest-volume county — all 25+ commercial segments fire here at maximum volume.
-    (Function name retained for sentinel file compatibility — content corrected Run 118.)"""
+    LARGEST market — hospitals, museums, YMCA of Greater Cleveland, DSOs, government buildings.
+    Function name retained for sentinel file compatibility (created before Run 118 date correction)."""
     from datetime import date as _date_gp
     today = _date_gp.today()
     start = _date_gp(2026, 6, 4)
@@ -835,24 +835,19 @@ def _check_june8_geauga_portage():
     days_left = (pull_date - today).days
     if days_left > 0:
         label = f'{days_left} day{"s" if days_left != 1 else ""} away'
-        note = 'Cron fires Mon June 8 at 7am if running. Verify: `cat logs/cron.log | tail -10`'
+        note = 'Cron fires Mon June 8 at 7am. Verify: `cat logs/cron.log | tail -10`'
     else:
         label = 'TODAY — CUYAHOGA (BIGGEST MARKET)'
         note = 'Run now if cron missed: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Cuyahoga`'
 
-    batch_note = (
-        '> ✅ Title batching active (Run 132): 200+ titles searched in 4 batches × 50 — all 28 commercial\n'
-        '>    segments now fully queried. Expect contacts you\'ve never seen before: YMCA Directors,\n'
-        '>    Dialysis District Managers, Food Plant Managers, Airport FMs, Museum Directors.\n'
-    ) if days_left == 0 else (
-        '> ✅ Title batching now active: 200+ Danny titles run in 4 batches of 50 — all 28 segments queried.\n'
-    )
     msg = (
         f'🏙️ *Cuyahoga County Pull — {label} (June 8) — LARGEST MARKET*\n'
         f'>Week 24 rotation: Cleveland, Parma, Lakewood, Strongsville, Beachwood. Highest lead volume of all 6 counties.\n'
-        f'>All 28 commercial segments fire here: restaurants, banks, urgent care, hotels, fitness, YMCA, museums,\n'
-        f'>   dialysis, food processing, airports, convention centers, concert venues, craft breweries + more.\n'
-        f'{batch_note}'
+        f'>All 36 commercial segments fire here: hospitals (Cleveland Clinic, UH, MetroHealth), museums\n'
+        f'>   (Cleveland Museum of Art, Metroparks Zoo, Rock Hall), YMCA of Greater Cleveland (12 branches),\n'
+        f'>   DSO chains (Aspen Dental, Heartland), government/transit (GCRTA, Port of Cleveland, city halls),\n'
+        f'>   dialysis (DaVita/Fresenius 50+ centers), concert venues (Blossom, Jacobs Pavilion) + more.\n'
+        f'> ✅ Title + org keyword batching active (Run 134): all 36 segments fully queried.\n'
         f'>{note}\n'
         f'>Command: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Cuyahoga`'
     )
@@ -867,9 +862,9 @@ def _check_june8_geauga_portage():
 
 def _check_june22_lake_county():
     """Fire June 18–22 countdown for the Lorain County pull (Week 26, June 22 Monday).
-    Week 26 % 6 = 2 → Lorain in the rotation. Elyria, Avon, North Ridgeville.
+    Week 26 % 6 = 2 → Lorain in the rotation. Elyria, Avon, North Ridgeville, Vermilion.
     Avon = fastest-growing NE Ohio suburb; strong HOA density + Rt 83 industrial corridor.
-    (Function name retained for sentinel file compatibility — content corrected Run 118.)"""
+    Function name retained for sentinel file compatibility (created before Run 118 date correction)."""
     from datetime import date as _date_lk
     today = _date_lk.today()
     start = _date_lk(2026, 6, 18)
@@ -888,14 +883,14 @@ def _check_june22_lake_county():
         label = f'{days_left} day{"s" if days_left != 1 else ""} away'
         note = f'Cron fires Mon June 22 at 7am. Verify: `cat logs/cron.log | tail -10`'
     else:
-        label = 'TODAY — LORAIN COUNTY'
+        label = 'TODAY — LORAIN COUNTY (AVON CORRIDOR)'
         note = 'Run now if cron missed: `python3 workers/lead_pipeline.py both Lorain`'
 
     msg = (
         f'📍 *Lorain County Pull — {label} (June 22)*\n'
-        f'>Week 26 rotation: Elyria, Avon, North Ridgeville. Avon = fastest-growing NE Ohio suburb.\n'
-        f'>High HOA density in Avon subdivisions + strong industrial corridor along Rt 83 (self-storage, auto body, distribution).\n'
-        f'>Also includes Lorain Harbor/marina corridor and Vermilion Lake Erie shoreline.\n'
+        f'>Week 26 rotation: Elyria, Avon, North Ridgeville, Vermilion. Avon = fastest-growing NE Ohio suburb.\n'
+        f'>High HOA density in new Avon subdivisions. Lorain Harbor marina corridor + Vermilion Lake Erie shoreline.\n'
+        f'>Also: industrial corridor along Rt 83 (self-storage, auto body, distribution), Invacare (Elyria) campus.\n'
         f'>{note}\n'
         f'>Command: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Lorain`'
     )
@@ -905,15 +900,14 @@ def _check_june22_lake_county():
             alert_sentinel.write_text(today_str)
         except Exception:
             pass
-        log(f'Lorain June 22 pull reminder posted — {label}')
+        log(f'Lorain County June 22 pull reminder posted — {label}')
 
 
 def _check_june15_cuyahoga():
     """Fire June 11–15 countdown for the Lake County pull (Week 25, June 15 Monday).
-    Week 25 % 6 = 1 → Lake in the rotation. Mentor, Willoughby, Painesville + Lake Erie shoreline.
-    This is the MARINA county. Mentor Harbor, Sheffield Lake, Euclid shoreline.
-    Mid-season marina cleaning window (June–July) for dock areas, fuel station concrete, boat ramp.
-    (Function name retained for sentinel file compatibility — content corrected Run 118.)"""
+    Week 25 % 6 = 1 → Lake in the rotation. Mentor, Willoughby, Painesville, Lake Erie shoreline.
+    MARINA segment — Mentor Harbor, Sheffield Lake, Euclid shoreline, Lorain County marinas.
+    Function name retained for sentinel file compatibility (created before Run 118 date correction)."""
     from datetime import date as _date_cy
     today = _date_cy.today()
     start = _date_cy(2026, 6, 11)
@@ -932,14 +926,15 @@ def _check_june15_cuyahoga():
         label = f'{days_left} day{"s" if days_left != 1 else ""} away'
         note = 'Cron fires Mon June 15 at 7am. Verify: `cat logs/cron.log | tail -10`'
     else:
-        label = 'TODAY — LAKE ERIE MARINA PULL'
+        label = 'TODAY — LAKE COUNTY (MARINA)'
         note = 'Run now if cron missed: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Lake`'
 
     msg = (
-        f'⚓ *Lake County Pull — {label} (June 15) — MARINA SEGMENT*\n'
+        f'⚓ *Lake County Pull — {label} (June 15) — MARINA CORRIDOR*\n'
         f'>Week 25 rotation: Mentor, Willoughby, Painesville + Lake Erie shoreline.\n'
-        f'>Marina managers need mid-season cleaning (June–July) for dock areas, fuel concrete, boat ramp.\n'
-        f'>Also in this county: hotel chains (Mentor/Willoughby corridor), senior living, retail PM firms.\n'
+        f'>Marina segment: Mentor Harbor, Sheffield Lake, Euclid shoreline — pre-season marina cleaning window.\n'
+        f'>Also: hotel chains (Mentor/Willoughby corridor), senior living, fitness centers (Lake County YMCAs).\n'
+        f'> ✅ Title + org keyword batching active (Run 134): all segments fully queried.\n'
         f'>{note}\n'
         f'>Command: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Lake`'
     )
@@ -954,9 +949,9 @@ def _check_june15_cuyahoga():
 
 def _check_june29_lorain():
     """Fire June 25–29 countdown for the Summit County pull (Week 27, June 29 Monday).
-    Week 27 % 6 = 3 → Summit in the rotation. Akron, Fairlawn, Stow, Cuyahoga Falls.
-    Summit contains the second-largest commercial density after Cuyahoga. Rubber City history = industrial.
-    (Function name retained for sentinel file compatibility — content corrected Run 118.)"""
+    Week 27 % 6 = 3 → Summit in the rotation. Akron, Fairlawn, Stow, Cuyahoga Falls, Hudson.
+    Second pass through Summit — all commercial segments now include full title + org keyword batching.
+    Function name retained for sentinel file compatibility (created before Run 118 date correction)."""
     from datetime import date as _date_lo
     today = _date_lo.today()
     start = _date_lo(2026, 6, 25)
@@ -975,14 +970,14 @@ def _check_june29_lorain():
         label = f'{days_left} day{"s" if days_left != 1 else ""} away'
         note = 'Cron fires Mon June 29 at 7am — verify it\'s running: `cat logs/cron.log | tail -10`'
     else:
-        label = 'TODAY — SUMMIT COUNTY (AKRON)'
+        label = 'TODAY — SUMMIT COUNTY (AKRON CORRIDOR)'
         note = 'Run now if cron missed: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Summit`'
 
     msg = (
         f'📍 *Summit County Pull — {label} (June 29)*\n'
-        f'>Week 27 rotation: Akron, Fairlawn, Stow, Cuyahoga Falls. Summit = 2nd largest commercial market.\n'
-        f'>Rubber City industrial legacy — strong auto parts manufacturing, distribution, and self-storage corridor.\n'
-        f'>Also: University of Akron campus, Summa Health outpatient facilities, Medina Road hotel/retail strip.\n'
+        f'>Week 27 rotation: Akron, Fairlawn, Stow, Cuyahoga Falls, Hudson.\n'
+        f'>Firestone Country Club corridor, Akron Children\'s Hospital, Summa Health Akron City, Stan Hywet.\n'
+        f'>Also: distribution hubs (Stow/Macedonia area), auto body (Caliber/CARSTAR), golf courses.\n'
         f'>{note}\n'
         f'>Command: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Summit`'
     )
@@ -992,7 +987,7 @@ def _check_june29_lorain():
             alert_sentinel.write_text(today_str)
         except Exception:
             pass
-        log(f'Summit June 29 pull reminder posted — {label}')
+        log(f'Lorain June 29 pull reminder posted — {label}')
 
 
 def _check_july6_medina():
@@ -1991,12 +1986,10 @@ def _check_neighbor_canvass_weekly():
 
 def _check_early_cuyahoga_opportunity():
     """Fire May 28–June 7 — one-time window to run an EARLY Cuyahoga pull.
-    20+ new commercial segments added in Runs 120–125 (hospital campuses, municipal facilities,
-    DSO dental groups, tire chains, movie theaters, bowling, pet boarding, dialysis, sports complexes)
-    won't get Cuyahoga contacts until the scheduled June 8 pull.
-    Running Cuyahoga NOW gives those contacts 7–10 extra days in the sequence before June 4 enrollment.
+    36 commercial segments won't get Cuyahoga contacts until the scheduled June 8 pull.
+    Running Cuyahoga NOW gives those contacts extra days in the sequence before June 4 enrollment.
     This is additive — does NOT replace the June 8 rotation pull, it SUPPLEMENTS it.
-    Self-deactivates June 8 (the scheduled Cuyahoga pull fires that day anyway)."""
+    Self-deactivates June 8 (Cuyahoga IS the scheduled pull that day)."""
     from datetime import date as _date_ec
     today = _date_ec.today()
     start = _date_ec(2026, 5, 28)
@@ -2227,10 +2220,9 @@ def _check_june2_medina_verification():
 
 def _check_post_june8_commercial_monitoring():
     """Fire June 9–11: 3-day monitoring window immediately after the June 8 Cuyahoga pull.
-    June 8 is the biggest pull of the season (25+ commercial segments, maximum volume).
     Relay coverage gap: _check_june8_geauga_portage() ends June 8;
     _check_post_june11_monitoring() starts June 12. June 9-11 was completely dark.
-    These are the first 3 days enrolled contacts are receiving Touch 1 — critical to watch."""
+    NOTE: The June 15 Lake County pull (marina corridor) fires next week."""
     from datetime import date as _date_jc
     today = _date_jc.today()
     start = _date_jc(2026, 6, 9)

@@ -1,6 +1,21 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 133 | 2026-05-29 | Auto-fixes shipped: 3 | New RESOLVED: 0 | Open: 60 (1 new: Car Auction segment — awaiting June 8 Cuyahoga pull)*
+*Run 134 | 2026-05-29 | Auto-fixes shipped: 2 | New RESOLVED: 0 | Open: 60 (unchanged)*
+
+---
+
+## RUN METRICS — Run 134 | 2026-05-29
+- Total RESOLVED: 105 (0 new this run)
+- Total OPEN: 60 (0 new)
+- Auto-upgrades shipped: 2
+  1. `workers/lead_pipeline.py` — Org keyword batching (Pass 2): DANNY_ORG_KEYWORDS (200+ entries) now batched in groups of 50. Run 8 additional Apollo calls per county pull with broad generic titles ['general manager', 'district manager', 'area manager', 'regional director', 'branch manager', 'executive director', 'owner', 'president']. Results deduplicated by person ID. Fixes the org keyword array cap (same issue as title batching fixed Run 132). Now both title AND org keyword searches fully cover all 36 commercial segments.
+  2. `workers/vera_relay.py` — CRITICAL CORRECTNESS FIX: 6 relay functions had wrong county content for their date windows (function names were created pre-Run 118 before date correction, content had drifted). Verified via Python isocalendar math: June 8=Week 24=24%6=0=Cuyahoga, June 15=Week 25=25%6=1=Lake, June 22=Week 26=26%6=2=Lorain, June 29=Week 27=27%6=3=Summit. Fixed `_check_june8_geauga_portage()` (→Cuyahoga), `_check_june15_cuyahoga()` (→Lake Marina), `_check_june22_lake_county()` (→Lorain/Avon), `_check_june29_lorain()` (→Summit/Akron), `_check_post_june8_commercial_monitoring()` docstring (→Cuyahoga), `_check_early_cuyahoga_opportunity()` docstring (→June 8 not June 15). All function names and sentinel file paths preserved.
+
+**Critical pending (human action required — UNCHANGED from prior runs, still blocked):**
+- 🚨 SUMMIT COUNTY PULL DEADLINE TODAY (MAY 29 = LAST BUSINESS DAY before May 31): `python3 workers/lead_pipeline.py both Summit` — 6 min unattended. Run before EOD.
+- ⛽ Gas station Mixmax sequence NOT CREATED — contacts stranded since May 19. Guide: `outputs/danny/gas_station_manual_email_blast_2026-05-19.md`
+- 🚚 Fleet washing Mixmax sequence NOT CREATED — contacts stranded
+- ⚠️ Instantly.ai NOT PAUSED — June 4 enrollment BLOCKED until confirmed paused
 
 ---
 

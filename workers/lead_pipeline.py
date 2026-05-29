@@ -974,24 +974,48 @@ def run_danny(county_override=None):
         search = DANNY_SEARCHES[week_num % len(DANNY_SEARCHES)]
         print(f'  County batch: {search["label"]} (week {week_num} rotation)')
 
-    # Batch DANNY_TITLES to avoid Apollo silently capping large person_titles arrays.
-    # 200+ titles in one call = Apollo may only process the first 50-100 silently.
-    # Batching guarantees every segment (hospitals, schools, breweries, dialysis, YMCA, etc.)
-    # is actually queried. Dedup by Apollo person_id prevents double-counting.
+    # Batch DANNY_TITLES + DANNY_ORG_KEYWORDS to prevent Apollo silently capping large arrays.
+    # Pass 1 (title batches): 200+ titles searched in groups of 50, each paired with ALL org keywords.
+    #   Catches contacts whose title is in our list, regardless of which org keywords Apollo processes.
+    # Pass 2 (org keyword batches): broad generic decision-maker titles × 50-keyword batches.
+    #   Catches contacts at target companies whose titles are generic (e.g. "Owner" at YMCA,
+    #   "President" at Manheim Cleveland, "Manager" at Cleveland Museum of Art) and may not match
+    #   specific segment titles above even though their company IS in our org keyword list.
+    # All results deduplicated by Apollo person_id.
     _TITLE_BATCH = 50
+    _ORG_BATCH = 50
     _seen_ids = set()
     people = []
-    _batches = [DANNY_TITLES[i:i + _TITLE_BATCH] for i in range(0, len(DANNY_TITLES), _TITLE_BATCH)]
-    for _bi, _batch in enumerate(_batches):
+
+    # Pass 1: title batches with full org keyword list
+    _t_batches = [DANNY_TITLES[i:i + _TITLE_BATCH] for i in range(0, len(DANNY_TITLES), _TITLE_BATCH)]
+    for _bi, _batch in enumerate(_t_batches):
         _batch_results = apollo_search(_batch, search['counties'], per_page=25, keywords=DANNY_ORG_KEYWORDS)
         for _p in _batch_results:
             _pid = _p.get('id', '')
             if _pid and _pid not in _seen_ids:
                 _seen_ids.add(_pid)
                 people.append(_p)
-        if _batch_results and _bi < len(_batches) - 1:
+        if _bi < len(_t_batches) - 1:
             time.sleep(1)
-    print(f'  Found {len(people)} people from Apollo ({len(_batches)} title batches × {_TITLE_BATCH} titles, deduplicated)')
+
+    # Pass 2: org keyword batches with broad generic decision-maker titles
+    _BROAD_TITLES = [
+        'general manager', 'district manager', 'area manager', 'regional director',
+        'branch manager', 'executive director', 'owner', 'president',
+    ]
+    _ok_batches = [DANNY_ORG_KEYWORDS[i:i + _ORG_BATCH] for i in range(0, len(DANNY_ORG_KEYWORDS), _ORG_BATCH)]
+    for _oki, _ok_batch in enumerate(_ok_batches):
+        _batch_results = apollo_search(_BROAD_TITLES, search['counties'], per_page=25, keywords=_ok_batch)
+        for _p in _batch_results:
+            _pid = _p.get('id', '')
+            if _pid and _pid not in _seen_ids:
+                _seen_ids.add(_pid)
+                people.append(_p)
+        if _oki < len(_ok_batches) - 1:
+            time.sleep(1)
+
+    print(f'  Found {len(people)} people from Apollo ({len(_t_batches)} title batches + {len(_ok_batches)} org-keyword batches, deduplicated)')
 
     new_leads = []
     for p in people:

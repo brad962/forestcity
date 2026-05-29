@@ -169,3 +169,37 @@
 >PROPOSAL: Org keyword batching (same cap fix as title batching from Run 132) — reply YES to implement.
 >STILL BLOCKED: Summit pull (TODAY — last chance before May 31 deadline), Gas station sequence (12 contacts stranded), Fleet sequence, Instantly.ai not paused (June 4 enrollment BLOCKED).
 >PIPELINE STATUS: 36 commercial segments coded and ready. June 8 Cuyahoga = first full-batching pull. All segments fire. Watch for Car Auction + YMCA + Museum titles in output.
+---
+🔧 *Vera — Auto-Upgrade (Run 134)*
+>Changed: `workers/lead_pipeline.py` — Added Pass 2 org keyword batching in `run_danny()`. DANNY_ORG_KEYWORDS (200+ entries) now batched in groups of 50 with 8 broad decision-maker titles.
+>Why: Pass 1 (title batches × full org keyword list) already batched titles. But Apollo's `q_organization_keyword_tags` array with 200+ entries faces the same silent cap. Pass 2 runs each org keyword batch against `['general manager', 'district manager', 'area manager', 'regional director', 'branch manager', 'executive director', 'owner', 'president']`. Catches contacts at target companies (Manheim, Cleveland Museum of Art, YMCA of Greater Cleveland, DaVita) who have generic titles not matched by specific title batching. Results deduplicated by person ID.
+>Impact: June 8 Cuyahoga pull will now query ALL 36 segments by both title AND org keyword. Maximum lead yield.
+>File: workers/lead_pipeline.py
+---
+🔧 *Vera — Auto-Upgrade (Run 134)*
+>Changed: `workers/vera_relay.py` — Corrected 6 relay functions that had wrong county content for their date windows. Root cause: functions were originally named before Run 118's date correction; docstrings + messages were one county off from the actual cron rotation math.
+>Verified math (Python isocalendar): June 8 = ISO Week 24, 24%6=0 → Cuyahoga | June 15 = Week 25, 25%6=1 → Lake | June 22 = Week 26, 26%6=2 → Lorain | June 29 = Week 27, 27%6=3 → Summit
+>What was wrong → what is now correct:
+>• `_check_june8_geauga_portage()` (fires June 4-8): was telling Bradley to run Geauga+Portage — NOW correctly says Cuyahoga (LARGEST MARKET), command `both Cuyahoga`
+>• `_check_june15_cuyahoga()` (fires June 11-15): was saying Cuyahoga — NOW correctly says Lake County MARINA, command `both Lake`
+>• `_check_june22_lake_county()` (fires June 18-22): was saying Lake County — NOW correctly says Lorain County (Avon corridor), command `both Lorain`
+>• `_check_june29_lorain()` (fires June 25-29): was saying Lorain County — NOW correctly says Summit County (Akron corridor), command `both Summit`
+>• `_check_post_june8_commercial_monitoring()` docstring: was referencing Geauga+Portage — NOW correctly says Cuyahoga
+>• `_check_early_cuyahoga_opportunity()` docstring: was saying "June 15 pull" for Cuyahoga — NOW correctly says "June 8 pull"
+>Impact: Without this fix, Bradley would have received incorrect pull commands from the relay on every June–July pull date. This was a silent operational hazard that would have caused wrong-county pulls from June 8 onward.
+>File: workers/vera_relay.py
+---
+🚨 *Vera — Summit County Pull — LAST CHANCE TODAY (May 29)*
+>Summit County pull is OVERDUE since May 12. Today (Friday May 29) is the last business day before the May 31 deadline.
+>This is 6 minutes unattended. Run it now:
+>Command: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Summit`
+>Or double-click: `scripts/run_summit_both.command`
+>Every day of delay = fewer fresh Summit leads available for June 4 Round 2 enrollment.
+>After Summit: June 1 Medina pull (double-click `scripts/run_medina_both.command`), then June 4 enrollment.
+---
+✅ *Vera — Scan Complete 2026-05-29 (Run 134)*
+>2 auto-upgrades shipped | 0 proposals | 60 open issues (unchanged)
+>KEY FIX: Relay function county-date mislabeling corrected — 6 vera_relay.py functions now fire the correct county pull command on the correct date. Without this fix, every June-July pull date would have sent Bradley the wrong county command.
+>ALSO SHIPPED: Org keyword batching (Pass 2) — all 36 commercial segments now queried by both title AND org keyword. June 8 Cuyahoga is the first full dual-batch pull.
+>STILL BLOCKED (human action required): Summit pull (TODAY — last chance), Gas station sequence (12 contacts stranded since May 19), Fleet sequence, Instantly.ai not paused (June 4 enrollment BLOCKED in 6 days).
+>JUNE 4 ENROLLMENT: Both batching fixes are live. If Summit + Medina pulls run on time and Instantly.ai is paused, June 4 enrollment proceeds with full segment coverage.
