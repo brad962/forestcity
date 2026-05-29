@@ -241,16 +241,21 @@ def _check_summit_deadline():
     urgency_emoji = '🚨' if days_left <= 1 else '⏰'
     days_label = 'TODAY — FINAL DAY' if days_left == 0 else f'{days_left} DAY{"S" if days_left != 1 else ""} LEFT'
     friday_note = (
-        '\n>⚠️ FRIDAY = LAST BUSINESS DAY — run the pull before end of day today or Saturday at the latest.\n'
-        '>Do not wait until Sunday May 31. Weekend scramble = mistakes. Run it in 6 min right now.'
+        '\n>⚠️ FRIDAY = LAST BUSINESS DAY — run before EOD today or Saturday. Do NOT wait until Sunday.\n'
+        '>6 min unattended: `python3 workers/lead_pipeline.py both Summit` — start it right now.'
     ) if today.weekday() == 4 else ''
+    saturday_note = (
+        '\n>⚠️ SATURDAY — Run it NOW before Sunday scramble. 6 min, fully unattended.\n'
+        '>Do NOT wait until Sunday (May 31 = deadline day). Start before you do anything else today.'
+    ) if today.weekday() == 5 else ''
     msg = (
         f'{urgency_emoji} *Summit County Pull — {days_label} (Deadline May 31)*\n'
         f'>Miss this window = no Summit leads until July 6 (next time it comes up in rotation).\n'
         f'>All new commercial segments (restaurants, banks, gyms, medical offices, 30+ total) miss peak season.\n'
-        f'>Command (6 min, unattended): `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py danny Summit`\n'
-        f'>Or double-click: scripts/run_summit_pull.command in Finder.'
-        f'{friday_note}'
+        f'>Danny only: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py danny Summit`\n'
+        f'>Danny + Carla (recommended): `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Summit`\n'
+        f'>Or double-click: `scripts/run_summit_both.command` in Finder — both workers, one click.'
+        f'{friday_note}{saturday_note}'
     )
     if post_slack(msg):
         alert_sentinel.parent.mkdir(exist_ok=True)
@@ -283,17 +288,20 @@ def _check_gas_station_pending():
             pass
 
     pipeline_f = BASE_DIR / 'pipeline_data.json'
-    if not pipeline_f.exists():
-        return
-    try:
-        import json as _json
-        pd = _json.loads(pipeline_f.read_text())
-        gas_contacts = [
-            c for c in pd.get('manual_contacts', [])
-            if c.get('lead_type') == 'gas_station' or c.get('_lead_type') == 'gas_station'
-        ]
-    except Exception:
-        return
+    cache_f = BASE_DIR / 'contacts_cache.json'
+    import json as _json_gs
+    gas_contacts = []
+    for src_file, key in [(pipeline_f, 'manual_contacts'), (cache_f, 'contacts')]:
+        if not src_file.exists():
+            continue
+        try:
+            data = _json_gs.loads(src_file.read_text())
+            gas_contacts += [
+                c for c in data.get(key, [])
+                if c.get('lead_type') == 'gas_station' or c.get('_lead_type') == 'gas_station'
+            ]
+        except Exception:
+            pass
 
     if not gas_contacts:
         return
@@ -529,7 +537,7 @@ def _check_june4_enrollment_countdown():
     """Fire June 4 Round 2 enrollment countdown on June 2 and June 3 (pre-flight reminders)."""
     from datetime import date as _date_j4
     today = _date_j4.today()
-    start = _date_j4(2026, 6, 2)
+    start = _date_j4(2026, 6, 1)
     end   = _date_j4(2026, 6, 3)
     if not (start <= today <= end):
         return

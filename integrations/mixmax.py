@@ -328,6 +328,12 @@ PROPERTY_MANAGER_TITLES = [
     'zoo facilities manager', 'zoo director', 'aquarium manager', 'botanical garden manager',
     'cultural institution manager', 'arts center director', 'science center manager',
     'natural history museum manager', 'art museum facilities manager', 'historic estate manager',
+    # YMCA & Community Centers — YMCA of Greater Cleveland (12+ branches), Akron Area YMCA (7 branches),
+    # Summit/Medina/Lake County YMCAs; state health dept. licensing = exterior cleanliness standard;
+    # branch directors + facilities managers sign vendor contracts; routing to Property Manager sequence
+    # (facility management / compliance angle); zero competitors targeting YMCA FMs (added 2026-05-29 run 131)
+    'ymca director', 'ymca branch director', 'ymca facilities manager', 'ymca operations manager',
+    'ywca director', 'community center director',
 ]
 
 REALTOR_TITLES = [

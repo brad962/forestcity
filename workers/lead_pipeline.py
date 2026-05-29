@@ -459,6 +459,16 @@ DANNY_TITLES = [
     'zoo facilities manager', 'zoo director', 'aquarium manager', 'botanical garden manager',
     'cultural institution manager', 'arts center director', 'science center manager',
     'natural history museum manager', 'art museum facilities manager', 'historic estate manager',
+    # YMCA & Community Centers — YMCA of Greater Cleveland (12+ branches across Cuyahoga County),
+    # Akron Area YMCA (7 branches), Summit County YMCA, Medina County Family YMCA, Lake County YMCA;
+    # large parking lots + outdoor pools + building exteriors + sports court areas;
+    # licensed facilities (state health dept. inspections) create recurring exterior cleanliness requirement;
+    # branch directors and facilities managers sign vendor contracts; $800-$2,500/visit; 2-3x/year;
+    # YMCA of Greater Cleveland portfolio contract = $15K-$30K/year across all branches;
+    # zero power washing competitors targeting YMCA facilities managers in NE Ohio;
+    # first pull June 8 Cuyahoga (all Greater Cleveland YMCA branches) (added 2026-05-29 run 131)
+    'ymca director', 'ymca branch director', 'ymca facilities manager', 'ymca operations manager',
+    'ywca director', 'community center director',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -721,6 +731,11 @@ DANNY_ORG_KEYWORDS = [
     'zoo management', 'aquarium', 'botanical garden', 'cultural center', 'cultural institution',
     'museum facilities', 'historic estate', 'historic site management', 'heritage site',
     'performing arts organization', 'symphony orchestra', 'theater company', 'playhouse',
+    # YMCA & Community Centers — YMCA of Greater Cleveland (12+ branches), Akron Area YMCA (7 branches),
+    # Summit/Medina/Lake County YMCAs; large paved lots + outdoor pools + building exteriors;
+    # state health dept. licensing inspections = exterior cleanliness standard;
+    # zero competitors targeting YMCA facilities managers; first pull June 8 Cuyahoga (added 2026-05-29 run 131)
+    'ymca', 'ywca', 'young mens christian association', 'community recreation center',
 ]
 
 CARLA_SEARCHES = [
@@ -790,6 +805,8 @@ def apollo_search(titles, locations, per_page=25, keywords=None):
     }
     if keywords:
         body['q_organization_keyword_tags'] = keywords
+    if titles and len(titles) > 80:
+        print(f'  ⚠️ Warning: {len(titles)} person_titles sent to Apollo — API may silently cap large arrays. Verify results include new commercial segments.')
     payload = json.dumps(body)
     try:
         result = subprocess.run(

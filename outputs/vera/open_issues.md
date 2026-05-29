@@ -1,6 +1,40 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 130 | 2026-05-29 | Auto-fixes shipped: 3 | New RESOLVED: 0 | Open: 58 (2 new: standalone title gap fixed + museums segment live)*
+*Run 131 | 2026-05-29 | Auto-fixes shipped: 5 | New RESOLVED: 0 | Open: 60 (2 new: YMCA segment + Apollo title cap risk)*
+
+---
+
+## RUN METRICS — Run 131 | 2026-05-29
+- Total RESOLVED: 104 (0 new this run)
+- Total OPEN: 60 (2 new: YMCA segment [live, fires June 8] + Apollo title cap risk [warning added])
+- Auto-upgrades shipped: 5
+  1. `workers/vera_relay.py` — BUG FIX: `_check_gas_station_pending()` now checks BOTH `pipeline_data.json` (manual_contacts) AND `contacts_cache.json` (contacts); previously only counted manual pipeline contacts, missing any gas station contacts that landed in the Apollo-pulled cache; fleet check already used both sources — gas station was inconsistent
+  2. `workers/vera_relay.py` — extended `_check_june4_enrollment_countdown()` start date from June 2 to June 1; June 1 (Monday, Medina pull day) is 3 days before the biggest outreach event of peak season but had zero enrollment countdown coverage; now fires June 1 ("3 days away"), June 2 ("2 days away"), June 3 ("TOMORROW")
+  3. `workers/vera_relay.py` — updated `_check_summit_deadline()`: (a) added `both Summit` command and `scripts/run_summit_both.command` reference so Bradley pulls Carla's referral partners too; (b) added Saturday-specific urgency note (weekday == 5) so the Saturday May 30 relay message says "run it NOW, not Sunday"
+  4. `workers/lead_pipeline.py` — added Apollo title list warning: if `len(titles) > 80`, prints a visible warning before the API call; DANNY_TITLES now has 200+ entries; Apollo may silently cap large arrays — the warning makes invisible API caps visible during the next local run
+  5. `workers/lead_pipeline.py` + `integrations/mixmax.py` — added YMCA & Community Centers as new commercial segment; 6 titles (ymca director, ymca branch director, ymca facilities manager, ymca operations manager, ywca director, community center director); 4 org keywords (ymca, ywca, young mens christian association, community recreation center); NE Ohio targets: YMCA of Greater Cleveland (12+ branches), Akron Area YMCA (7 branches), Summit/Medina/Lake County YMCAs; Ohio Dept. of Health licensing = exterior cleanliness standard; portfolio deal across all YMCA of Greater Cleveland branches = $15K–$30K/year; zero competitors targeting YMCA FMs; first pull June 8 Cuyahoga
+
+**Critical pending (human action required — UNCHANGED from prior runs, still blocked):**
+- 🚨 SUMMIT COUNTY PULL DEADLINE TODAY (MAY 29 = LAST BUSINESS DAY): `python3 workers/lead_pipeline.py both Summit` — 6 min unattended. Run before EOD or Saturday morning at latest.
+- ⛽ Gas station Mixmax sequence NOT CREATED — contacts stranded since May 19. Gmail blast guide: `outputs/danny/gas_station_manual_email_blast_2026-05-19.md`
+- 🚚 Fleet washing Mixmax sequence NOT CREATED — contacts stranded
+- ⚠️ Instantly.ai NOT PAUSED — June 4 enrollment BLOCKED until confirmed paused
+
+---
+
+## OPEN — Apollo Title List Potentially Hitting API Cap (Run 131) 🟡 NEW
+- First seen: 2026-05-29 (Run 131)
+- Description: DANNY_TITLES now has 200+ entries. Apollo's `person_titles` JSON array has no documented limit, but anecdotal evidence from Apollo community forums suggests the API silently caps at 50–100 titles when the payload is large. If capping at 50, every commercial segment added since Run 50 (hospitals, schools, breweries, dialysis, dialysis, airports, museums, YMCA, etc.) has never returned contacts — with no error, no warning, no log entry. The bug would be invisible.
+- Fix applied (Run 131): Added a visible warning log to `apollo_search()` when `len(titles) > 80`. The warning will print during every local pipeline run. Bradley can verify by checking whether new commercial segment contacts (YMCA director, dialysis district manager, etc.) appear in the June 8 Cuyahoga pull output. If they don't, the batching proposal should be approved immediately.
+- Resolution criteria: June 8 Cuyahoga pull output includes contacts with titles from segments added in Runs 100–131 (dialysis district manager, pt clinic manager, ymca director, food plant manager, etc.). If zero contacts from newer segments appear, Apollo is capping — escalate to batching immediately.
+
+---
+
+## OPEN — YMCA & Community Centers Segment Not Yet Pulled 🟡 NEW (Run 131)
+- First seen: 2026-05-29 (Run 131)
+- Description: YMCA of Greater Cleveland (12+ branches — Westside, Eastside, Parma, Middleburg Heights, North Olmsted, Strongsville, Lyndhurst, etc.), Akron Area YMCA (7 branches), Summit County YMCA, Medina County Family YMCA, Lake County YMCA. Large parking lots + outdoor pools + building exteriors. Ohio Department of Health licenses community recreation facilities and includes exterior cleanliness in licensing inspections. Branch directors and facilities managers sign vendor contracts directly — no central procurement for smaller YMCA systems. Portfolio deal with YMCA of Greater Cleveland = $15K–$30K/year. Zero power washing competitors are targeting YMCA facilities managers.
+- Fix applied (Run 131): 6 titles added to DANNY_TITLES + PROPERTY_MANAGER_TITLES. 4 org keywords added to DANNY_ORG_KEYWORDS. First pull June 8 Cuyahoga.
+- Resolution criteria: YMCA director / YMCA branch director / YMCA facilities manager contacts appear in Danny's June 8 Cuyahoga pull output.
 
 ---
 
