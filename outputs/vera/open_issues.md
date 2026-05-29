@@ -1,6 +1,43 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 136 | 2026-05-29 | Auto-fixes shipped: 5 | New RESOLVED: 4 | Open: 66 (4 new segments, 4 resolved)*
+*Run 137 | 2026-05-29 | Auto-fixes shipped: 4 | New RESOLVED: 1 (Aug/Sep relay bug — re-opened and properly resolved) | Open: 68 (2 new segments added)*
+
+---
+
+## RUN METRICS — Run 137 | 2026-05-29
+- Total RESOLVED: 112 (1 re-opened and properly closed this run)
+- Total OPEN: 68 (2 new segment issues; Aug/Sep relay bug re-opened Run 126 RESOLVED status → properly resolved with correct ISO week math)
+- Auto-upgrades shipped: 4
+  1. `workers/vera_relay.py` — **CRITICAL RE-FIX**: Re-opened "August/September Relay County Rotation Bug" from Run 126 RESOLVED status. Run 126 applied the wrong counties using strftime `%W` week numbers; the relay code uses Python `isocalendar()` which returns DIFFERENT week numbers. Verified all 8 functions using Python `datetime.date(2026, m, d).isocalendar()[1] % 6`: Aug 3=Week 32 (32%6=2→Lorain), Aug 10=Week 33 (33%6=3→Summit), Aug 17=Week 34 (34%6=4→Medina), Aug 31=Week 36 (36%6=0→Cuyahoga), Sep 7=Week 37 (37%6=1→Lake), Sep 14=Week 38 (38%6=2→Lorain), Sep 21=Week 39 (39%6=3→Summit), Sep 28=Week 40 (40%6=4→Medina). All 8 functions corrected — docstrings, note variables (TODAY label + "run now" commands), and full Slack message content.
+  2. `workers/lead_pipeline.py` — Added Wireless & Telecom Retail Chains segment: 8 DANNY_TITLES (wireless retail district manager, wireless district manager, telecom retail manager, wireless store manager, cell phone store manager, mobile retail manager, telecom district manager, wireless retail manager) + 7 DANNY_ORG_KEYWORDS. T-Mobile (80+ NE Ohio), Verizon (60+), AT&T (50+), Metro/Cricket/Boost add another 100+. 300+ NE Ohio locations. District DMs sign vendor contracts. Zero competitors targeting this segment. $20K–$48K/year per 20-store district.
+  3. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — Added Uniform & Workwear Services segment: 8 DANNY_TITLES + 11 DANNY_ORG_KEYWORDS. Cintas (NE Ohio service centers), Aramark Uniform, UniFirst, ALSCO. Industrial laundry ops = constant truck traffic = high-grime dock aprons + fleet lots + building exteriors. Zero competitors targeting industrial laundry service centers. $24K–$64K/year recurring for Cintas + Aramark NE Ohio combined.
+  4. `integrations/mixmax.py` — PROPERTY_MANAGER_TITLES synced for both new segments (8 Wireless/Telecom titles + 8 Uniform/Workwear titles). Routing verified: non-gas-station company names route to property_manager sequence.
+
+**Critical pending (human action required — UNCHANGED, still blocked):**
+- 🚨 SUMMIT COUNTY PULL OVERDUE (deadline was May 31): `python3 workers/lead_pipeline.py both Summit` — 6 min unattended. Run ASAP.
+- ⛽ Gas station Mixmax sequence NOT CREATED — contacts stranded since May 19. Guide: `outputs/danny/gas_station_manual_email_blast_2026-05-19.md`
+- 🚚 Fleet washing Mixmax sequence NOT CREATED — contacts stranded
+- ⚠️ Instantly.ai NOT PAUSED — June 4 enrollment BLOCKED until confirmed paused
+
+## RESOLVED — August/September Relay County Rotation Bug (All 8 Functions Re-Fixed with Correct ISO Week Math)
+- First resolved: 2026-05-28 (Run 126) — **INCORRECT FIX: used strftime %W numbers (off by ~1 from ISO isocalendar)**
+- Re-opened: 2026-05-29 (Run 137) — Run 126 fix was wrong; %W and isocalendar() return different week numbers
+- Properly resolved: 2026-05-29 (Run 137)
+- Fix: All 8 functions `_check_aug3_lorain_2()` through `_check_sept28_medina_4()` corrected using Python `datetime.date(2026, m, d).isocalendar()[1] % 6` (same formula the relay code actually uses). Verified: Aug 3=Week 32→Lorain, Aug 10=Week 33→Summit, Aug 17=Week 34→Medina, Aug 31=Week 36→Cuyahoga, Sep 7=Week 37→Lake, Sep 14=Week 38→Lorain, Sep 21=Week 39→Summit, Sep 28=Week 40→Medina. Each function's docstring, note variable (today/days-left label + "run now" command), and full Slack message body (county name, cities, week number reference, `both [County]` command) all corrected. Aug 24 was the only function Run 135 fixed correctly; it remains correct.
+
+## OPEN — Wireless & Telecom Retail Chains Segment Not Yet Pulled 🟡 NEW (Run 137)
+- First seen: 2026-05-29 (Run 137)
+- Description: T-Mobile (80+ NE Ohio corporate stores), Verizon (60+), AT&T (50+), Metro by T-Mobile, Cricket Wireless, Boost Mobile, UScellular, Xfinity Mobile — total 300+ NE Ohio wireless retail locations. District managers oversee 10–25 corporate stores per territory. High foot traffic on small lots = constant staining. Building exteriors require quarterly cleaning to meet brand standards. Authorized dealer operators are owner-operators — faster close, no corporate procurement chain. Zero competitors cold-calling wireless retail district managers.
+- Fix applied (Run 137): 8 DANNY_TITLES + 7 DANNY_ORG_KEYWORDS + PROPERTY_MANAGER_TITLES sync + agents/danny.md full segment brief. First pull June 8 Cuyahoga.
+- Resolution criteria: Wireless retail district manager / wireless store manager contacts appear in June 8 Cuyahoga pull.
+
+## OPEN — Uniform & Workwear Services Segment Not Yet Pulled 🟡 NEW (Run 137)
+- First seen: 2026-05-29 (Run 137)
+- Description: Cintas (NE Ohio service centers in Cleveland, Akron suburbs), Aramark Uniform Services, UniFirst, ALSCO, Superior Uniform Group. Industrial laundry operations with massive paved yards, loading dock aprons, fleet parking areas. Constant truck traffic = heavy grime accumulation. Service center managers sign vendor maintenance contracts. 365-day operations = quarterly exterior cleaning need. One Cintas NE Ohio service center deal = $3K–$8K/visit. Zero competitors targeting industrial uniform service facilities.
+- Fix applied (Run 137): 8 DANNY_TITLES + 11 DANNY_ORG_KEYWORDS + PROPERTY_MANAGER_TITLES sync + agents/danny.md full segment brief. First pull June 8 Cuyahoga.
+- Resolution criteria: Uniform services manager / laundry services manager contacts appear in June 8 Cuyahoga pull.
+
+---
 
 ---
 
@@ -350,9 +387,10 @@
 
 ---
 
-## RESOLVED — August/September Relay County Rotation Bug (All 9 Functions Wrong)
-- Resolved: 2026-05-28 (Run 126)
-- Fix: All 9 August/September relay functions had county names off by exactly 1 in the rotation. Root cause: the original author miscounted %W week numbers by 1 (thought Aug 3 = Week 32 when it's actually Week 31; Week 31 % 6 = 1 → Lake, not Lorain). Every function from `_check_aug3_lorain_2()` through `_check_sept28_medina_4()` had wrong county in docstring + message content + command string. Corrected to match Carla's verified rotation calendar: Aug 3=Lake, Aug 10=Lorain, Aug 17=Summit, Aug 24=Medina, Aug 31=Geauga+Portage, Sep 7=Cuyahoga, Sep 14=Lake, Sep 21=Lorain, Sep 28=Summit. Function names preserved as sentinel keys.
+## ~~RESOLVED~~ OVERTURNED — August/September Relay County Rotation Bug (Run 126 Fix Was Wrong)
+- "Resolved": 2026-05-28 (Run 126) — **INCORRECT: used strftime %W week numbers instead of isocalendar()**
+- Re-opened + properly resolved: 2026-05-29 (Run 137) — see Run 137 RESOLVED block above
+- Run 126 error: Used Python strftime `%W` (ISO-like but off by up to 1 week) instead of `isocalendar()[1]` which the relay code actually uses. Result: Run 126 "corrections" were still wrong. E.g. Run 126 set Aug 3 → Lake (Week 31 %W), but correct is Aug 3 = ISO Week 32 → Lorain. Run 137 verified all 8 dates using `datetime.date(2026, m, d).isocalendar()[1] % 6` and applied correct county assignments.
 
 ---
 

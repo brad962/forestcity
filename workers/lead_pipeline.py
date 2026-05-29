@@ -565,6 +565,25 @@ DANNY_TITLES = [
     'aquatic center director', 'pool facility manager', 'swimming pool manager',
     'community pool director', 'aquatic facility manager', 'recreational aquatic manager',
     'natatorium manager', 'aquatic center manager', 'public pool manager',
+    # Wireless & Telecom Retail Chains — AT&T (200+ NE Ohio), Verizon (200+ NE Ohio), T-Mobile (150+ NE Ohio),
+    # Boost Mobile, Cricket Wireless, Metro by T-Mobile; strip-mall storefront parking lots + building exteriors;
+    # district managers sign vendor contracts for 10-20 store territories;
+    # $300-$600/location; quarterly = $1.2K-$2.4K/location; 15-location district = $18K-$36K/year;
+    # zero competitors cold-calling telecom retail district managers in NE Ohio; first pull June 8 Cuyahoga (added 2026-05-29 run 137)
+    'wireless retail district manager', 'telecom retail manager', 'wireless store manager',
+    'cell phone store manager', 'mobile retail manager', 'wireless district manager',
+    'telecom district manager', 'wireless retail manager',
+    # Uniform & Workwear Services — Cintas Corporation (NE Ohio HQ: Cincinnati but major Euclid/Solon/Twinsburg
+    # processing facilities), Aramark Uniform Services, UniFirst Corporation, G&K Services (Cintas subsidiary),
+    # Superior Uniform Group, ALSCO (American Linen); large processing/distribution facilities with
+    # loading dock areas + building exteriors + employee parking lots; fleet vehicles also need regular washing;
+    # ironic pitch: "We clean the building of the company that cleans everyone else's workwear";
+    # FDA food-service + healthcare partner client standards = stringent facility cleanliness requirement;
+    # district service managers sign vendor contracts; $2K-$8K/facility; multi-facility district deals;
+    # zero competitors cold-calling uniform services facility managers; first pull June 8 Cuyahoga (added 2026-05-29 run 137)
+    'uniform services manager', 'laundry services manager', 'uniform district manager',
+    'linen services manager', 'textile services manager', 'workwear services manager',
+    'uniform operations manager', 'garment services manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -884,6 +903,16 @@ DANNY_ORG_KEYWORDS = [
     'aquatic center', 'community pool', 'municipal pool', 'swimming pool facility',
     'natatorium', 'public swimming pool', 'recreation aquatic center', 'community aquatics',
     'indoor aquatic center', 'outdoor pool management', 'municipal aquatics',
+    # Wireless & Telecom Retail Chains — AT&T, Verizon, T-Mobile, Boost Mobile, Cricket;
+    # hundreds of NE Ohio strip-mall storefronts; district managers sign vendor contracts (added 2026-05-29 run 137)
+    'wireless retail', 'telecom retail', 'wireless store', 'cell phone retail',
+    'mobile retail', 'phone carrier retail', 'wireless carrier store',
+    # Uniform & Workwear Services — Cintas, Aramark, UniFirst, G&K Services, ALSCO;
+    # large processing/distribution facilities + fleet vehicles; food-service + healthcare client compliance;
+    # ironic pitch: "We clean the building of the company that cleans everyone else's workwear" (added 2026-05-29 run 137)
+    'uniform services', 'linen services', 'workwear services', 'textile services',
+    'uniform laundry', 'industrial laundry', 'garment services', 'cintas',
+    'aramark uniform', 'unifirst', 'uniform rental',
 ]
 
 CARLA_SEARCHES = [

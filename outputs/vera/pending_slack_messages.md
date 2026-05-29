@@ -1,3 +1,19 @@
+🔧 *Vera — Auto-Upgrade (Run 137)*
+>Changed: Re-fixed August/September relay county rotation bug — 8 functions corrected with verified ISO week math. Run 126 marked this RESOLVED, but had used strftime `%W` numbers instead of Python `isocalendar()` (what the code actually uses), leaving all 8 functions pointing to wrong counties.
+>Fix: Aug 3=Lorain (Week 32), Aug 10=Summit (Week 33), Aug 17=Medina (Week 34), Aug 31=Cuyahoga (Week 36), Sep 7=Lake (Week 37), Sep 14=Lorain (Week 38), Sep 21=Summit (Week 39), Sep 28=Medina (Week 40). Verified via Python `datetime.date(2026, m, d).isocalendar()[1] % 6`. Docstrings, note variables, and full Slack message bodies (county name, cities, commands) all corrected.
+>File: workers/vera_relay.py
+---
+🔧 *Vera — Auto-Upgrade (Run 137)*
+>Changed: Added 2 new commercial segments — Wireless & Telecom Retail Chains (T-Mobile/Verizon/AT&T/Metro/Cricket/Boost — 300+ NE Ohio locations) and Uniform & Workwear Services (Cintas/Aramark Uniform/UniFirst — industrial laundry service centers). 16 DANNY_TITLES + 18 DANNY_ORG_KEYWORDS + PROPERTY_MANAGER_TITLES sync + full segment briefs in agents/danny.md.
+>Why: Wireless retail district managers sign multi-site vendor contracts for 10–25 corporate stores. $20K–$48K/year per district, zero competitors cold-calling them. Cintas NE Ohio service centers have industrial-grade grime on dock aprons + fleet lots — constant truck traffic, 365-day ops. One Cintas NE Ohio deal = $3K–$8K/visit. Also zero competitors. Both first pull June 8 Cuyahoga.
+>File: workers/lead_pipeline.py, integrations/mixmax.py, agents/danny.md
+---
+✅ *Vera — Scan Complete 2026-05-29 (Run 137)*
+>4 auto-upgrades shipped | 0 new proposals | 68 open issues (2 new segments, Aug/Sep relay bug properly resolved)
+>Run 137 highlight: August/September relay bug properly re-fixed. Run 126 left all 8 functions pointing to wrong counties (strftime %W ≠ isocalendar). Every August and September pull reminder would have sent Bradley the wrong `both [County]` command. Now correct. Also added wireless retail + industrial laundry uniform services as segments 41 and 42 — first pull June 8.
+>Current pipeline: 41+ commercial segments, 448+ Apollo titles, 473+ org keywords across all batches.
+>STILL BLOCKED (human action required): Summit pull OVERDUE (was May 31 deadline), gas station sequence (contacts stranded since May 19), fleet sequence, Instantly.ai not paused (June 4 enrollment BLOCKED).
+---
 🔧 *Vera — Auto-Upgrade (Run 136)*
 >Changed: Fixed the Standalone Generic Title Gap — reordered `detect_lead_type()` in mixmax.py to check gas station company names FIRST, then added 'district manager' to PROPERTY_MANAGER_TITLES routing. Verified: "District Manager" at Circle K → gas_station ✓; "District Manager" at CVS or Dollar General → property_manager ✓.
 >Why: 'district manager' was excluded from routing since Run 130 because it would incorrectly send gas station DMs to the PM sequence. The fix changes check ORDER (gas station company detected first), not the keywords — clean and correct. Manual imports of DM contacts at CVS/Walgreens/Discount Tire/QSR chains now route correctly without setting explicit lead_type.

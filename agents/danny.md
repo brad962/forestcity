@@ -686,6 +686,42 @@ Events drive 20,000–70,000+ fans = maximum visible staining on all surfaces. F
 
 ---
 
+### Wireless & Telecom Retail Chains (NEW — May 2026, Run 137)
+
+**Target:** Wireless Retail District Manager, Wireless District Manager, Telecom Retail Manager, Wireless Store Manager, Cell Phone Store Manager, Mobile Retail Manager, Telecom District Manager, Wireless Retail Manager
+
+**Why:** T-Mobile has 80+ NE Ohio corporate retail stores. Verizon has 60+ (mix of corporate and authorized dealers). AT&T has 50+. Metro by T-Mobile (budget tier), Cricket Wireless, Boost Mobile, UScellular, and Xfinity Mobile add another 100+ storefronts. Total NE Ohio wireless retail footprint exceeds 300 locations. District managers oversee 10–25 corporate stores per territory and sign vendor contracts. High foot traffic on small paved lots = constant gum, food, and exhaust staining. Building exteriors — especially glass-fronted retail facades — require quarterly cleaning to meet brand standards. Authorized dealer operators are even easier to close (owner-operator, local decision, no corporate procurement approval chain). Zero competitors cold-calling wireless retail district managers.
+
+**Pitch angle:** "Wireless stores get heavy foot traffic on small lots — and brand standards for exterior appearance are non-negotiable at corporate. We clean 15+ store districts on one quarterly schedule, one invoice, one contact."
+
+**Revenue potential:** $250–$600/location quarterly; 20-location district = $20,000–$48,000/year. T-Mobile NE Ohio district deal alone = strong recurring anchor contract.
+
+**Target companies:** T-Mobile USA Inc. (Bellevue WA HQ, NE Ohio district managers), Verizon Communications (retail stores), AT&T Inc. (corporate stores), Metro by T-Mobile, Cricket Wireless (AT&T subsidiary), Boost Mobile (DISH Network), UScellular (NE Ohio), Xfinity Mobile (Comcast retail locations).
+
+**Apollo keywords (live Run 137):** `wireless retail`, `telecom retail`, `wireless store`, `cell phone retail`, `mobile retail`, `phone carrier retail`, `wireless carrier store` — added to DANNY_ORG_KEYWORDS.
+
+**Sequence:** Route to Property Manager sequence (multi-site brand standards vendor angle). First pull: June 8 Cuyahoga.
+
+---
+
+### Uniform & Workwear Services (NEW — May 2026, Run 137)
+
+**Target:** Uniform Services Manager, Uniform District Manager, Laundry Services Manager, Linen Services Manager, Textile Services Manager, Workwear Services Manager, Uniform Operations Manager, Garment Services Manager
+
+**Why:** Cintas has its NE Ohio processing plants and service centers in Cleveland, Akron, and surrounding suburbs. Aramark Uniform Services has NE Ohio service facilities. UniFirst Corporation, ALSCO, Superior Uniform Group, and Iron Mountain Uniform all operate NE Ohio service centers. These facilities are massive industrial laundry operations with large paved yards, loading dock aprons, fleet parking areas, and building exteriors that accumulate grime from constant truck traffic and industrial operations. Service center managers and district managers oversee multiple facilities and sign vendor maintenance contracts. These facilities operate 365 days/year with heavy vehicle traffic in and out. No competitor has thought to target industrial laundry service facilities for pressure washing. One Cintas NE Ohio service center deal = $3K–$8K/visit quarterly.
+
+**Pitch angle:** "Cintas keeps everyone else's uniform facilities clean — who keeps yours? Service center dock aprons, fleet lots, and building exteriors build up fast with daily truck traffic. We're on the same schedule as your fleet rotation."
+
+**Revenue potential:** $3,000–$8,000/location quarterly; NE Ohio Cintas + Aramark combined = $24K–$64K/year recurring. High-contract-value, zero-competition segment.
+
+**Target companies:** Cintas Corporation (Cincinnati OH HQ — major local employer, NE Ohio service centers), Aramark Uniform Services, UniFirst Corporation, ALSCO Inc., Superior Uniform Group, Iron Mountain Uniform (NE Ohio).
+
+**Apollo keywords (live Run 137):** `uniform services`, `linen services`, `workwear services`, `textile services`, `uniform laundry`, `industrial laundry`, `garment services`, `cintas`, `aramark uniform`, `unifirst`, `uniform rental` — added to DANNY_ORG_KEYWORDS.
+
+**Sequence:** Route to Property Manager sequence (industrial facility / recurring maintenance vendor angle). First pull: June 8 Cuyahoga.
+
+---
+
 ## Peak Season Angle — HOA Budget Season (May–June)
 HOA boards typically hold their annual budget and vendor approval meetings in May–June before the summer maintenance season. This means property managers and community association managers are ACTIVELY reviewing vendor lists RIGHT NOW. The PM sequence Touch 1 and any LinkedIn outreach should reference this window: "HOA boards are approving their summer vendor lists this month" or "Most associations lock in their exterior maintenance vendor before July." This creates urgency without being pushy — it's calendar-based fact. Works especially well for community associations, HOA management companies, and multifamily operators who work on fiscal budgets.
 

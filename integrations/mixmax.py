@@ -391,6 +391,18 @@ PROPERTY_MANAGER_TITLES = [
     'aquatic center director', 'pool facility manager', 'swimming pool manager',
     'community pool director', 'aquatic facility manager', 'recreational aquatic manager',
     'natatorium manager', 'aquatic center manager', 'public pool manager',
+    # Wireless & Telecom Retail Chains — AT&T, Verizon, T-Mobile, Boost, Cricket;
+    # hundreds of NE Ohio strip-mall storefronts; district managers sign vendor contracts;
+    # routing to Property Manager sequence (facility vendor contract angle) (added 2026-05-29 run 137)
+    'wireless retail district manager', 'telecom retail manager', 'wireless store manager',
+    'cell phone store manager', 'mobile retail manager', 'wireless district manager',
+    'telecom district manager', 'wireless retail manager',
+    # Uniform & Workwear Services — Cintas, Aramark, UniFirst, G&K Services, ALSCO;
+    # large processing facilities + fleet vehicles; food-service/healthcare compliance angle;
+    # routing to Property Manager sequence (facility management angle) (added 2026-05-29 run 137)
+    'uniform services manager', 'laundry services manager', 'uniform district manager',
+    'linen services manager', 'textile services manager', 'workwear services manager',
+    'uniform operations manager', 'garment services manager',
 ]
 
 REALTOR_TITLES = [
