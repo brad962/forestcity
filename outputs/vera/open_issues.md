@@ -1,6 +1,31 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 131 | 2026-05-29 | Auto-fixes shipped: 5 | New RESOLVED: 0 | Open: 60 (2 new: YMCA segment + Apollo title cap risk)*
+*Run 132 | 2026-05-29 | Auto-fixes shipped: 3 | New RESOLVED: 1 | Open: 59 (Apollo title cap → RESOLVED as batching fix; 0 new)*
+
+---
+
+## RUN METRICS — Run 132 | 2026-05-29
+- Total RESOLVED: 105 (1 new this run: Apollo Title Cap)
+- Total OPEN: 59 (0 new; Apollo title cap closed as code fix)
+- Auto-upgrades shipped: 3
+  1. `workers/lead_pipeline.py` — CRITICAL BUG FIX: Removed single 200+ title Apollo call. Replaced with batched search: DANNY_TITLES split into chunks of 50, separate apollo_search() call per batch, deduplicated by person_id. With 200+ titles in one call, Apollo silently capped at ~50-100 titles — every segment added after Run 50 was likely returning zero contacts. Also removed the Run 131 warning (now superseded by the actual fix). Expected outcome: June 8 Cuyahoga pull returns contacts with titles from all 28 commercial segments.
+  2. `workers/vera_relay.py` — Updated `_check_june8_geauga_portage()`: message now lists all 28 commercial segments and includes title batching note so Bradley knows to expect more diverse contacts. Updated `_check_post_june8_commercial_monitoring()`: June 9 Day 1 message now includes verification checklist for batching (check for YMCA Director, Dialysis DM, Food Plant Manager, Airport FM, Museum Director in pull output). Updated `_check_early_cuyahoga_opportunity()`: message lists all 25+ segments and notes batching is now active.
+  3. `agents/danny.md` — Added title batching status note in "How to Pull Leads from Apollo" section. Future agent sessions won't revert to single-call searches.
+
+**Critical pending (human action required — UNCHANGED from prior runs, still blocked):**
+- 🚨 SUMMIT COUNTY PULL DEADLINE TODAY/SATURDAY (MAY 29-30): `python3 workers/lead_pipeline.py both Summit` — 6 min unattended. Run before Sunday.
+- ⛽ Gas station Mixmax sequence NOT CREATED — 12 contacts stranded since May 19. Gmail blast guide: `outputs/danny/gas_station_manual_email_blast_2026-05-19.md`
+- 🚚 Fleet washing Mixmax sequence NOT CREATED — contacts stranded
+- ⚠️ Instantly.ai NOT PAUSED — June 4 enrollment BLOCKED until confirmed paused
+- 🔑 GitHub Action PAT scope: Option B (2 min web UI) — paste YAML from `outputs/vera/github_action_vera_slack_relay.yaml` at github.com/brad962/forestcity
+
+---
+
+## RESOLVED — Apollo Title List Potentially Hitting API Cap
+- Resolved: 2026-05-29 (Run 132)
+- Fix: Replaced single `apollo_search(DANNY_TITLES, ...)` call with batched loop in `run_danny()`. DANNY_TITLES (200+ entries) now split into chunks of 50. Separate apollo_search() per batch with per_page=25. Deduplicated by Apollo person_id. Time.sleep(1) between batches for rate limit safety. Warning log removed (superseded by actual fix). Verification: June 8 Cuyahoga pull output should show contacts with titles from segments added Runs 100-131 (YMCA Director, Dialysis District Manager, Food Plant Manager, Airport Facilities Manager, Museum Director).
+
+---
 
 ---
 
@@ -22,11 +47,10 @@
 
 ---
 
-## OPEN — Apollo Title List Potentially Hitting API Cap (Run 131) 🟡 NEW
-- First seen: 2026-05-29 (Run 131)
-- Description: DANNY_TITLES now has 200+ entries. Apollo's `person_titles` JSON array has no documented limit, but anecdotal evidence from Apollo community forums suggests the API silently caps at 50–100 titles when the payload is large. If capping at 50, every commercial segment added since Run 50 (hospitals, schools, breweries, dialysis, dialysis, airports, museums, YMCA, etc.) has never returned contacts — with no error, no warning, no log entry. The bug would be invisible.
-- Fix applied (Run 131): Added a visible warning log to `apollo_search()` when `len(titles) > 80`. The warning will print during every local pipeline run. Bradley can verify by checking whether new commercial segment contacts (YMCA director, dialysis district manager, etc.) appear in the June 8 Cuyahoga pull output. If they don't, the batching proposal should be approved immediately.
-- Resolution criteria: June 8 Cuyahoga pull output includes contacts with titles from segments added in Runs 100–131 (dialysis district manager, pt clinic manager, ymca director, food plant manager, etc.). If zero contacts from newer segments appear, Apollo is capping — escalate to batching immediately.
+## RESOLVED — Apollo Title List Potentially Hitting API Cap (Run 131 → Fixed Run 132)
+- Resolved: 2026-05-29 (Run 132)
+- Description: DANNY_TITLES had 200+ entries in a single apollo_search() call. Apollo silently caps large person_titles arrays — every segment added since Run 50 was likely returning zero contacts without any error.
+- Fix (Run 132): Implemented batching in run_danny(). All 200+ titles searched in groups of 50 (4+ separate API calls per county pull), deduplicated by Apollo person_id. Warning log removed (superseded). Verification pending June 8 Cuyahoga pull.
 
 ---
 

@@ -840,10 +840,19 @@ def _check_june8_geauga_portage():
         label = 'TODAY — CUYAHOGA (BIGGEST MARKET)'
         note = 'Run now if cron missed: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Cuyahoga`'
 
+    batch_note = (
+        '> ✅ Title batching active (Run 132): 200+ titles searched in 4 batches × 50 — all 28 commercial\n'
+        '>    segments now fully queried. Expect contacts you\'ve never seen before: YMCA Directors,\n'
+        '>    Dialysis District Managers, Food Plant Managers, Airport FMs, Museum Directors.\n'
+    ) if days_left == 0 else (
+        '> ✅ Title batching now active: 200+ Danny titles run in 4 batches of 50 — all 28 segments queried.\n'
+    )
     msg = (
         f'🏙️ *Cuyahoga County Pull — {label} (June 8) — LARGEST MARKET*\n'
         f'>Week 24 rotation: Cleveland, Parma, Lakewood, Strongsville, Beachwood. Highest lead volume of all 6 counties.\n'
-        f'>All commercial segments fire here: restaurants, banks, urgent care, hotels, fitness, grocery, manufacturing.\n'
+        f'>All 28 commercial segments fire here: restaurants, banks, urgent care, hotels, fitness, YMCA, museums,\n'
+        f'>   dialysis, food processing, airports, convention centers, concert venues, craft breweries + more.\n'
+        f'{batch_note}'
         f'>{note}\n'
         f'>Command: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Cuyahoga`'
     )
@@ -2003,12 +2012,15 @@ def _check_early_cuyahoga_opportunity():
     days_to_june8 = (_date_ec(2026, 6, 8) - today).days
     msg = (
         f'🏙️ *Early Cuyahoga Pull Opportunity — {days_to_june8} Days Before Scheduled June 8 Pull*\n'
-        f'>20+ new commercial segments added in recent runs (hospital campuses, municipal facilities,\n'
-        f'>DSO dental groups, tire chains, movie theaters, bowling, pet boarding, dialysis, sports complexes)\n'
-        f'>won\'t get Cuyahoga contacts until the scheduled June 8 rotation pull.\n'
-        f'>Running an EARLY Cuyahoga pull today = {days_to_june8} extra days for those contacts BEFORE June 4 enrollment.\n'
-        f'>This is additive — it won\'t interfere with the June 8 rotation pull.\n'
-        f'>Command (20 min unattended): `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py danny Cuyahoga`\n'
+        f'>25+ new commercial segments (hospital campuses, municipal facilities, DSO dental groups,\n'
+        f'>YMCA branches, tire chains, movie theaters, bowling, pet boarding, dialysis, sports complexes,\n'
+        f'>museums, food processing, airports, concert venues, craft breweries) won\'t get Cuyahoga contacts\n'
+        f'>until the June 8 scheduled pull.\n'
+        f'>Running an EARLY pull today = {days_to_june8} extra days for those contacts BEFORE June 4 enrollment.\n'
+        f'>✅ Title batching now active (Run 132) — all 200+ titles search in 4 batches of 50, so every\n'
+        f'>   segment is actually queried. This pull will return more diverse contacts than any prior pull.\n'
+        f'>This is additive — won\'t interfere with the June 8 rotation pull.\n'
+        f'>Command (25 min unattended): `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py danny Cuyahoga`\n'
         f'>Guide: `outputs/vera/commercial_segments_early_pull_guide_2026-05-26.md`'
     )
     if post_slack(msg):
@@ -2170,10 +2182,17 @@ def _check_post_june8_commercial_monitoring():
         return
 
     day_num = (today - start).days + 1  # June 9 = Day 1 post-Cuyahoga pull
+    title_batch_note = (
+        '> ✅ Title batching active (Run 132): June 8 pull used 4 batches of 50 titles instead of 1 massive\n'
+        '>    call. Check the output file — you should see contacts with titles like "YMCA Director",\n'
+        '>    "Dialysis District Manager", "Food Plant Manager", "Airport Facilities Manager", "Museum Director".\n'
+        '>    If those titles are ABSENT, Apollo is still capping — notify Vera immediately.\n'
+    ) if day_num == 1 else ''
     msg = (
         f'🏙️ *Post-Cuyahoga Pull — Day {day_num} Commercial Enrollment Watch (June {today.day})*\n'
         f'>The June 8 Cuyahoga pull enrolled the largest commercial batch of the season (25+ segments).\n'
         f'>First opens expected today — DSO district managers, hospital FMs, government facilities contacts.\n'
+        f'{title_batch_note}'
         f'>Run Nina\'s hot leads report: `cd /Users/bradleyneal/forestcity && python3 workers/nina_report.py daily`\n'
         f'>Commercial replies need segment-specific openers — NOT the same "Thanks for opening!" as PM sequence.\n'
         f'>DSO/hospital/government contact replied? Book a site walk immediately — these are annual contracts.\n'

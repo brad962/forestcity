@@ -805,8 +805,6 @@ def apollo_search(titles, locations, per_page=25, keywords=None):
     }
     if keywords:
         body['q_organization_keyword_tags'] = keywords
-    if titles and len(titles) > 80:
-        print(f'  ⚠️ Warning: {len(titles)} person_titles sent to Apollo — API may silently cap large arrays. Verify results include new commercial segments.')
     payload = json.dumps(body)
     try:
         result = subprocess.run(
@@ -959,8 +957,24 @@ def run_danny(county_override=None):
         search = DANNY_SEARCHES[week_num % len(DANNY_SEARCHES)]
         print(f'  County batch: {search["label"]} (week {week_num} rotation)')
 
-    people = apollo_search(DANNY_TITLES, search['counties'], per_page=50, keywords=DANNY_ORG_KEYWORDS)
-    print(f'  Found {len(people)} people from Apollo')
+    # Batch DANNY_TITLES to avoid Apollo silently capping large person_titles arrays.
+    # 200+ titles in one call = Apollo may only process the first 50-100 silently.
+    # Batching guarantees every segment (hospitals, schools, breweries, dialysis, YMCA, etc.)
+    # is actually queried. Dedup by Apollo person_id prevents double-counting.
+    _TITLE_BATCH = 50
+    _seen_ids = set()
+    people = []
+    _batches = [DANNY_TITLES[i:i + _TITLE_BATCH] for i in range(0, len(DANNY_TITLES), _TITLE_BATCH)]
+    for _bi, _batch in enumerate(_batches):
+        _batch_results = apollo_search(_batch, search['counties'], per_page=25, keywords=DANNY_ORG_KEYWORDS)
+        for _p in _batch_results:
+            _pid = _p.get('id', '')
+            if _pid and _pid not in _seen_ids:
+                _seen_ids.add(_pid)
+                people.append(_p)
+        if _batch_results and _bi < len(_batches) - 1:
+            time.sleep(1)
+    print(f'  Found {len(people)} people from Apollo ({len(_batches)} title batches × {_TITLE_BATCH} titles, deduplicated)')
 
     new_leads = []
     for p in people:
