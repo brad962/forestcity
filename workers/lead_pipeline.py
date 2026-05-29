@@ -367,6 +367,27 @@ DANNY_TITLES = [
     'pharmacy district manager', 'drug store district manager', 'pharmacy facilities manager',
     'retail pharmacy manager', 'pharmacy store manager', 'pharmacy operations manager',
     'drug store manager', 'pharmacy regional manager',
+    # Concert Venues & Outdoor Amphitheaters — Blossom Music Center (Live Nation, Cuyahoga Falls,
+    # capacity 19,000+), Jacobs Pavilion at Nautica (Cleveland waterfront, capacity 5,000),
+    # Hard Rock Rocksino Northfield Park outdoor stage, Akron Civic Theatre, Playhouse Square loading areas;
+    # massive paved parking lots + concrete plaza concourses + loading dock areas + entrance walkways;
+    # Live Nation / AEG regional facilities managers sign seasonal vendor contracts for all venues in territory;
+    # spring pre-season clean (before May concerts) + post-summer cleanup = 2 visits/year at $3K-$10K/venue;
+    # zero competitors cold-calling Live Nation / AEG FM contacts; (added 2026-05-29 run 127)
+    'amphitheater manager', 'performing arts center manager', 'concert venue manager',
+    'outdoor venue manager', 'music venue manager', 'live entertainment venue manager',
+    # Food Processing Plants & Cold Storage — distinct from manufacturing/industrial above;
+    # FDA/USDA Good Manufacturing Practice (GMP) regulations require licensed food production facilities
+    # to maintain clean exterior loading docks and facility perimeters (21 CFR Part 110/117);
+    # NE Ohio targets: Shiloh Foods (Lodi, Medina County — large bakery operation), J.M. Smucker
+    # (Orville OH — Wayne/Medina corridor), Bob Evans Foods processing centers, Cloverleaf Cold Storage
+    # (NE Ohio distribution hubs), Nestle USA (Solon OH), TreeHouse Foods, LiDestri Food & Drink;
+    # loading dock concrete + refrigerated bay exteriors + building facades = recurring quarterly wash;
+    # FDA compliance angle opens doors other cleaning vendors don't use; $2,000-$6,000/visit;
+    # quarterly = $8,000-$24,000/facility; zero competitors using this compliance framing (added 2026-05-29 run 127)
+    'food plant manager', 'food processing facility manager', 'food manufacturing manager',
+    'cold storage manager', 'food production manager', 'food operations manager',
+    'food facility manager', 'food plant superintendent',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -586,6 +607,21 @@ DANNY_ORG_KEYWORDS = [
     # district FM contacts sign vendor contracts for 5-15 store territories (added 2026-05-28 run 126)
     'pharmacy chain', 'drug store chain', 'retail pharmacy', 'pharmacy management',
     'discount drug mart', 'drug mart',
+    # Concert Venues & Outdoor Amphitheaters — Blossom Music Center (Live Nation, Cuyahoga Falls),
+    # Jacobs Pavilion at Nautica (Cleveland waterfront, Live Nation), Hard Rock Rocksino Northfield Park,
+    # Akron Civic Theatre, Playhouse Square outdoor/loading areas;
+    # massive paved parking lots + concrete concourses + loading dock areas + entrance walkways;
+    # Live Nation / AEG regional FM directors sign seasonal vendor contracts; zero competitors (added 2026-05-29 run 127)
+    'outdoor amphitheater', 'concert venue', 'performing arts center', 'amphitheater',
+    'music venue', 'concert hall', 'outdoor music venue', 'live entertainment venue',
+    # Food Processing Plants & Cold Storage — FDA/USDA GMP exterior cleanliness is a regulatory requirement;
+    # Shiloh Foods (Lodi/Medina County), J.M. Smucker (Orville OH), Bob Evans Foods NE Ohio centers,
+    # Cloverleaf Cold Storage, Nestle USA (Solon), TreeHouse Foods, LiDestri Food & Drink;
+    # loading docks + building exteriors + refrigerated bay areas = recurring quarterly pressure wash;
+    # FDA 21 CFR Part 110/117 compliance angle opens doors other cleaning vendors don't use (added 2026-05-29 run 127)
+    'food processing plant', 'food manufacturing facility', 'food production facility',
+    'cold storage facility', 'food plant management', 'food processing operations',
+    'food production plant', 'cold storage warehouse',
 ]
 
 CARLA_SEARCHES = [

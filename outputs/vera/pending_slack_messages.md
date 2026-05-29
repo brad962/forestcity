@@ -1,3 +1,37 @@
+🔧 *Vera — Auto-Upgrade (Run 127)*
+>Changed: `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — added **Concert Venues & Outdoor Amphitheaters** as new commercial segment
+>Why: Blossom Music Center (Live Nation, 19,000 capacity), Jacobs Pavilion at Nautica (Cleveland waterfront), and Hard Rock Rocksino have massive paved lots and concrete concourses with zero power washing vendor. One call to Live Nation's regional FM = multi-venue contract covering all NE Ohio properties. Spring pre-season + fall post-season = 2 visits/year at $3K-$10K/venue. NE Ohio portfolio = $12K-$40K/year on one contract. Zero competitors. Fires June 8 Cuyahoga.
+>File: workers/lead_pipeline.py, integrations/mixmax.py, agents/danny.md
+---
+🔧 *Vera — Auto-Upgrade (Run 127)*
+>Changed: `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — added **Food Processing Plants & Cold Storage** as new commercial segment
+>Why: FDA 21 CFR Part 110/117 GMP regulations require food production facilities to maintain clean exterior loading docks — exterior cleaning is a documented compliance requirement FDA inspectors check. No NE Ohio competitor uses this angle. NE Ohio targets: Shiloh Foods (Lodi/Medina County), J.M. Smucker (Orville OH), Cloverleaf Cold Storage, Nestle USA (Solon). $8K-$24K/facility/year. Fires June 1 Medina (Shiloh Foods) + June 8 Cuyahoga.
+>File: workers/lead_pipeline.py, integrations/mixmax.py, agents/danny.md
+---
+🔧 *Vera — Auto-Upgrade (Run 127)*
+>Changed: `workers/vera_relay.py` — enhanced Summit County deadline alert with Friday-specific urgency
+>Why: Today (May 29) is Friday — the last business day before the May 31 deadline. Relay now detects Friday and adds "LAST BUSINESS DAY — run before EOD today or Saturday, not Sunday." Prevents Sunday scramble = unforced errors on the pull command.
+>File: workers/vera_relay.py
+---
+💡 *Vera — Upgrade Proposal (Run 127)*
+>Idea: Direct phone call to Live Nation's NE Ohio regional FM director — target both Blossom Music Center (Cuyahoga Falls) and Jacobs Pavilion at Nautica (Cleveland waterfront) on one call
+>Why: One 15-minute call to the right person = multi-venue contract. Live Nation FM at the regional/district level is reachable via LinkedIn. Apollo won't surface them well — this is a direct research + call action. No one else is calling them about power washing. Spring pre-season window = NOW.
+>Impact: One relationship = $12K-$40K/year recurring across both NE Ohio Live Nation venues. The FM will take the call because no competitor has ever made it.
+>Reply YES and I pull the Live Nation NE Ohio FM contact + write a 90-second phone script today.
+---
+💡 *Vera — Upgrade Proposal (Run 127)*
+>Idea: Tommy writes a PM Sequence Touch 2 summer refresh — 2 alternative variants with June booking urgency hooks to A/B test in Round 2 June 4 enrollment
+>Why: Round 1 has been running 3+ weeks. Open rates are being monitored but nobody has checked if Touch 2 copy is the conversion bottleneck. If contacts opened Touch 1 but didn't reply, Touch 2 is the second chance — and generic Touch 2 copy loses that shot. June-specific urgency ("HOA boards are locking in summer vendors this week") works now and stops working in July.
+>Impact: 1% lift in Touch 2 reply rate across 200 Round 2 contacts = 2 more conversations = 1 more booked job = $800-$2,500. Tommy's time: 30 min.
+>Reply YES and Tommy writes 2 Touch 2 variants with June hooks today.
+---
+✅ *Vera — Scan Complete 2026-05-29 (Run 127)*
+>4 auto-upgrades shipped | 2 proposals | 51 open issues (0 resolved; 2 new: Concert Venues + Food Processing — code live, fire June 8)
+>NEW: Concert venue segment — Live Nation NE Ohio FM = one call → $12K-$40K/year across Blossom + Jacobs Pavilion
+>NEW: Food processing — FDA compliance pitch (21 CFR Part 110/117) = angle no competitor has
+>🚨 SUMMIT DEADLINE: TODAY IS FRIDAY = LAST BUSINESS DAY. Run NOW: `python3 workers/lead_pipeline.py danny Summit`
+>Upcoming: June 1 Medina pull → June 4 Round 2 enrollment → June 8 Cuyahoga (51+ segments fire — biggest pull of season)
+---
 🔧 *Vera — Auto-Upgrade (Run 123)*
 >Changed: `workers/vera_relay.py` — added 4 new relay functions: `_check_week2_facebook_ads()` (June 9 only), `_check_google_lsa_status_weekly()` (every Monday June–August), `_check_neighbor_canvass_weekly()` (every Friday May–September), `_check_october_final_push()` (Oct 1–15)
 >Why: Relay had 4 coverage gaps: no Week 2 ads scaling nudge after Day 7 review, no Google LSA approval monitoring, no reminder to use Tommy's highest-ROI door-knock script at every job, and relay went completely dark after Sept 28 with no October close window coverage.

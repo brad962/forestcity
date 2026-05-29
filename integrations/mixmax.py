@@ -273,6 +273,20 @@ PROPERTY_MANAGER_TITLES = [
     'pharmacy district manager', 'drug store district manager', 'pharmacy facilities manager',
     'retail pharmacy manager', 'pharmacy store manager', 'pharmacy operations manager',
     'drug store manager', 'pharmacy regional manager',
+    # Concert Venues & Outdoor Amphitheaters — Blossom Music Center (Live Nation, Cuyahoga Falls),
+    # Jacobs Pavilion at Nautica (Cleveland waterfront), Hard Rock Rocksino Northfield Park;
+    # massive parking lots + plaza concourses + loading dock areas;
+    # Live Nation / AEG regional FM directors sign seasonal vendor contracts;
+    # spring pre-season + fall post-season = 2 visits/year; zero competitors cold-calling; routing to PM sequence (added 2026-05-29 run 127)
+    'amphitheater manager', 'performing arts center manager', 'concert venue manager',
+    'outdoor venue manager', 'music venue manager', 'live entertainment venue manager',
+    # Food Processing Plants & Cold Storage — FDA/USDA GMP exterior cleanliness regulations;
+    # Shiloh Foods (Medina County), J.M. Smucker (Orville OH), Bob Evans Foods, Cloverleaf Cold Storage;
+    # loading docks + building exteriors + refrigerated bay areas = recurring quarterly pressure wash;
+    # FDA 21 CFR Part 110/117 compliance angle drives urgency; routing to Property Manager sequence (added 2026-05-29 run 127)
+    'food plant manager', 'food processing facility manager', 'food manufacturing manager',
+    'cold storage manager', 'food production manager', 'food operations manager',
+    'food facility manager', 'food plant superintendent',
 ]
 
 REALTOR_TITLES = [

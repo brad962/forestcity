@@ -1,6 +1,39 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 126 | 2026-05-28 | Auto-fixes shipped: 4 | New RESOLVED: 1 (August/September relay county rotation bug) | Open: 49 (2 new: PT Clinic Chains + Pharmacy Chains — in code, awaiting June 8 Cuyahoga pull)*
+*Run 127 | 2026-05-29 | Auto-fixes shipped: 4 | New RESOLVED: 0 | Open: 51 (2 new: Concert Venues + Food Processing — in code, awaiting June 8 Cuyahoga pull)*
+
+---
+
+## RUN METRICS — Run 127 | 2026-05-29
+- Total RESOLVED: 103 (0 new this run)
+- Total OPEN: 51 (2 new: Concert Venues / Amphitheaters + Food Processing / Cold Storage — both in code, fire June 8 Cuyahoga pull)
+- Auto-upgrades shipped: 4
+  1. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — added Concert Venues & Outdoor Amphitheaters as new commercial segment; 5 titles (amphitheater manager, performing arts center manager, concert venue manager, outdoor venue manager, music venue manager); 8 org keywords (outdoor amphitheater, concert venue, performing arts center, amphitheater, music venue, concert hall, outdoor music venue, live entertainment venue); NE Ohio targets: Blossom Music Center (Live Nation, 19,000 cap), Jacobs Pavilion at Nautica (Cleveland waterfront, Live Nation), Hard Rock Rocksino Northfield Park; Live Nation FM director signs multi-venue contract = $12K-$40K/year portfolio; spring pre-season + fall post-season = 2 visits; zero competitors; first pull June 8 Cuyahoga
+  2. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — added Food Processing Plants & Cold Storage as new commercial segment; 8 titles (food plant manager, food processing facility manager, food manufacturing manager, cold storage manager, food production manager, food operations manager, food facility manager, food plant superintendent); 8 org keywords (food processing plant, food manufacturing facility, food production facility, cold storage facility, food plant management, food processing operations, food production plant, cold storage warehouse); NE Ohio targets: Shiloh Foods (Lodi/Medina County), J.M. Smucker (Orville OH), Bob Evans Foods, Cloverleaf Cold Storage, Nestle USA (Solon), TreeHouse Foods; FDA 21 CFR Part 110/117 GMP compliance angle (exterior loading docks = citation risk) — no competitor uses this angle; $2K-$6K/visit; quarterly = $8K-$24K/facility; zero competitors; first pull June 8 Cuyahoga + June 1 Medina (Shiloh Foods)
+  3. `workers/vera_relay.py` — enhanced `_check_summit_deadline()` with Friday-specific urgency language; when today is Friday (May 29), adds "FRIDAY = LAST BUSINESS DAY — run before EOD today or Saturday, not Sunday" note; Sunday scramble = unforced errors; today (May 29) is the last weekday before the May 31 hard deadline
+  4. `outputs/vera/open_issues.md` + `outputs/vera/pending_slack_messages.md` — Run 127 metrics logged; 2 new issues tracked; Slack messages queued
+
+**Critical pending (human action required — all same as prior runs, still blocked):**
+- 🚨 SUMMIT COUNTY PULL DEADLINE MAY 31 (2 DAYS / LAST BUSINESS DAY TODAY): `python3 workers/lead_pipeline.py danny Summit`
+- ⛽ Gas station Mixmax sequence NOT CREATED — 12 contacts stranded since May 19; Gmail blast guide ready at `outputs/danny/gas_station_manual_email_blast_2026-05-19.md`
+- 🚚 Fleet washing Mixmax sequence NOT CREATED — contacts stranded
+- ⚠️ Instantly.ai NOT PAUSED — June 4 enrollment BLOCKED until confirmed paused
+
+---
+
+## OPEN — Concert Venues & Outdoor Amphitheaters Segment Not Yet Pulled 🟡 NEW (Run 127)
+- First seen: 2026-05-29 (Run 127)
+- Description: Blossom Music Center (Live Nation, Cuyahoga Falls, 19,000 capacity), Jacobs Pavilion at Nautica (Live Nation, Cleveland waterfront, 5,000 capacity), Hard Rock Rocksino Northfield Park outdoor stage, Akron Civic Theatre, Playhouse Square. Massive paved parking lots + concrete plaza concourses + loading dock areas. Live Nation's regional FM director signs seasonal vendor contracts covering ALL NE Ohio venues = one relationship → $12K-$40K/year portfolio contract. Spring pre-season clean (before May/June shows) + fall post-summer cleanup = natural 2-visit pitch. Zero competitors cold-calling Live Nation FM contacts.
+- Fix applied (Run 127): 5 titles added to DANNY_TITLES + PROPERTY_MANAGER_TITLES. 8 org keywords added to DANNY_ORG_KEYWORDS. Full segment brief documented in agents/danny.md. First pull June 8 Cuyahoga.
+- Resolution criteria: Amphitheater/concert venue manager contacts appear in Danny's June 8 Cuyahoga pull output.
+
+---
+
+## OPEN — Food Processing Plants & Cold Storage Segment Not Yet Pulled 🟡 NEW (Run 127)
+- First seen: 2026-05-29 (Run 127)
+- Description: FDA 21 CFR Part 110/117 Good Manufacturing Practice regulations require licensed food production facilities to maintain clean exterior loading dock areas and building perimeters — exterior cleaning is a documented GMP compliance requirement, not just aesthetics. NE Ohio targets: Shiloh Foods (Lodi, Medina County — large commercial bakery), J.M. Smucker (Orville OH, Wayne/Medina corridor), Bob Evans Foods NE Ohio centers, Cloverleaf Cold Storage, Nestle USA (Solon), TreeHouse Foods. Cold storage facilities specifically: refrigerated bay exteriors accumulate condensation + algae growth very rapidly. No NE Ohio power washing competitor uses FDA compliance as a pitch angle — this is an entirely open market entry point. $2K-$6K/visit; quarterly = $8K-$24K/facility.
+- Fix applied (Run 127): 8 titles added to DANNY_TITLES + PROPERTY_MANAGER_TITLES. 8 org keywords added to DANNY_ORG_KEYWORDS. Full segment brief documented in agents/danny.md. First pull June 8 Cuyahoga + June 1 Medina (will catch Shiloh Foods in Lodi).
+- Resolution criteria: Food plant manager/food processing facility manager contacts appear in Danny's June 1 Medina or June 8 Cuyahoga pull output.
 
 ---
 

@@ -240,12 +240,17 @@ def _check_summit_deadline():
 
     urgency_emoji = '🚨' if days_left <= 1 else '⏰'
     days_label = 'TODAY — FINAL DAY' if days_left == 0 else f'{days_left} DAY{"S" if days_left != 1 else ""} LEFT'
+    friday_note = (
+        '\n>⚠️ FRIDAY = LAST BUSINESS DAY — run the pull before end of day today or Saturday at the latest.\n'
+        '>Do not wait until Sunday May 31. Weekend scramble = mistakes. Run it in 6 min right now.'
+    ) if today.weekday() == 4 else ''
     msg = (
         f'{urgency_emoji} *Summit County Pull — {days_label} (Deadline May 31)*\n'
         f'>Miss this window = no Summit leads until July 6 (next time it comes up in rotation).\n'
-        f'>All new commercial segments (restaurants, banks, gyms, medical offices) miss peak season.\n'
+        f'>All new commercial segments (restaurants, banks, gyms, medical offices, 30+ total) miss peak season.\n'
         f'>Command (6 min, unattended): `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py danny Summit`\n'
         f'>Or double-click: scripts/run_summit_pull.command in Finder.'
+        f'{friday_note}'
     )
     if post_slack(msg):
         alert_sentinel.parent.mkdir(exist_ok=True)
