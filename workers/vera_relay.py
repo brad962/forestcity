@@ -2163,6 +2163,68 @@ def _check_gbp_weekly_post():
         log(f'GBP weekly post reminder posted — week {week_str}')
 
 
+def _check_june2_medina_verification():
+    """Fire ONLY June 2 — verify that the June 1 Medina pull actually ran.
+    The Monday cron fires June 1 at 7am. If it ran, .danny_last_pull_date reads '2026-06-01'.
+    If cron failed or skipped, June 4 enrollment is missing Medina leads — escalate immediately.
+    One-time, self-deactivating."""
+    from datetime import date as _date_mv
+    today = _date_mv.today()
+    if today != _date_mv(2026, 6, 2):
+        return
+
+    alert_sentinel = BASE_DIR / 'outputs' / 'vera' / '.june2_medina_verify_sent_date'
+    today_str = today.strftime('%Y-%m-%d')
+    if alert_sentinel.exists() and alert_sentinel.read_text().strip() == today_str:
+        return
+
+    danny_sentinel = BASE_DIR / 'outputs' / 'vera' / '.danny_last_pull_date'
+    carla_sentinel  = BASE_DIR / 'outputs' / 'vera' / '.carla_last_pull_date'
+    danny_ran = False
+    carla_ran = False
+    try:
+        if danny_sentinel.exists():
+            danny_ran = danny_sentinel.read_text().strip() == '2026-06-01'
+    except Exception:
+        pass
+    try:
+        if carla_sentinel.exists():
+            carla_ran = carla_sentinel.read_text().strip() == '2026-06-01'
+    except Exception:
+        pass
+
+    if danny_ran and carla_ran:
+        msg = (
+            '✅ *Medina Pull Verification — June 1 Pull CONFIRMED (Danny + Carla)*\n'
+            '>Both Danny and Carla ran their Medina pull June 1. New leads are in the pipeline.\n'
+            '>Run Nina\'s daily report to surface hot leads: `cd /Users/bradleyneal/forestcity && python3 workers/nina_report.py daily`\n'
+            '>June 4 enrollment is 2 days away — Medina leads are ready to enroll.'
+        )
+    elif danny_ran and not carla_ran:
+        msg = (
+            '⚠️ *Medina Pull Verification — Danny Confirmed, Carla DID NOT RUN*\n'
+            '>Danny\'s Medina pull ran June 1 ✅. Carla\'s referral partner pull did NOT run ❌.\n'
+            '>Run Carla\'s Medina pull now (2 min): `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py carla Medina`\n'
+            '>June 4 enrollment needs both Danny + Carla Medina leads for full coverage.'
+        )
+    else:
+        msg = (
+            '🚨 *Medina Pull Verification — June 1 Pull DID NOT RUN*\n'
+            '>The Monday cron pull for June 1 did NOT run (or ran and found 0 leads).\n'
+            '>June 4 enrollment is in 2 DAYS and is missing the Medina County lead batch.\n'
+            '>Run it NOW — 10 min unattended: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Medina`\n'
+            '>Or double-click: `scripts/run_medina_both.command` in Finder.\n'
+            '>Check cron status: `cat logs/cron.log | tail -20` — verify cron is running.'
+        )
+    if post_slack(msg):
+        alert_sentinel.parent.mkdir(exist_ok=True)
+        try:
+            alert_sentinel.write_text(today_str)
+        except Exception:
+            pass
+        log(f'June 2 Medina pull verification posted — danny_ran={danny_ran}, carla_ran={carla_ran}')
+
+
 def _check_post_june8_commercial_monitoring():
     """Fire June 9–11: 3-day monitoring window immediately after the June 8 Cuyahoga pull.
     June 8 is the biggest pull of the season (25+ commercial segments, maximum volume).
@@ -2259,6 +2321,7 @@ def _main_body():
     _check_october_final_push()
     _check_early_cuyahoga_opportunity()
     _check_spring_2027_early_booking()
+    _check_june2_medina_verification()
     _check_post_june8_commercial_monitoring()
 
     # Fetch first so origin/main is current before flush checks origin/main..HEAD

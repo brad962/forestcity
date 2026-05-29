@@ -334,6 +334,12 @@ PROPERTY_MANAGER_TITLES = [
     # (facility management / compliance angle); zero competitors targeting YMCA FMs (added 2026-05-29 run 131)
     'ymca director', 'ymca branch director', 'ymca facilities manager', 'ymca operations manager',
     'ywca director', 'community center director',
+    # Car Auctions & Vehicle Wholesale — Manheim Cleveland (Cox Automotive), ADESA/KAR Auction (Portage County),
+    # NovaStar Auto Auction, NADB, independent wholesale auction houses;
+    # enormous paved outdoor lots + reconditioning bays + building facades; OSHA stormwater compliance;
+    # FM signs quarterly vendor contracts; routing to Property Manager sequence (added 2026-05-29 run 133)
+    'auto auction manager', 'vehicle auction manager', 'auction facility manager',
+    'auto auction operations manager', 'vehicle wholesale manager', 'auction site manager',
 ]
 
 REALTOR_TITLES = [

@@ -1,6 +1,34 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 132 | 2026-05-29 | Auto-fixes shipped: 3 | New RESOLVED: 1 | Open: 59 (Apollo title cap → RESOLVED as batching fix; 0 new)*
+*Run 133 | 2026-05-29 | Auto-fixes shipped: 3 | New RESOLVED: 0 | Open: 60 (1 new: Car Auction segment — awaiting June 8 Cuyahoga pull)*
+
+---
+
+## RUN METRICS — Run 133 | 2026-05-29
+- Total RESOLVED: 105 (0 new this run)
+- Total OPEN: 60 (1 new: Car Auction & Vehicle Wholesale segment — code live, first pull June 8 Cuyahoga)
+- Auto-upgrades shipped: 3
+  1. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — added Car Auctions & Vehicle Wholesale as new commercial segment; 6 titles (auto auction manager, vehicle auction manager, auction facility manager, auto auction operations manager, vehicle wholesale manager, auction site manager); 8 org keywords (auto auction, vehicle auction, car auction, wholesale auto auction, vehicle wholesale, auto wholesale, car wholesale, wholesale vehicle); Manheim Cleveland (Cox Automotive, Cuyahoga County) as primary target; ADESA/KAR Auction (Portage County) secondary; OSHA stormwater compliance angle; $2K-$8K/visit; 4x/year = $8K-$32K/year per facility; zero competitors; first pull June 8 Cuyahoga
+  2. `workers/vera_relay.py` — added `_check_june2_medina_verification()`: fires ONLY June 2; reads `.danny_last_pull_date` and `.carla_last_pull_date` sentinel files; posts one of 3 messages: (a) confirmed both ran [✅], (b) Danny ran but Carla missed [⚠️], (c) neither ran [🚨 emergency]; wired into `_main_body()` before `_check_post_june8_commercial_monitoring()`; this closes the operational gap where a missed June 1 cron pull would be invisible until June 4 enrollment day
+  3. `outputs/vera/open_issues.md` + `outputs/vera/pending_slack_messages.md` — Run 133 metrics logged; new issues tracked; Slack messages queued
+
+**Critical pending (human action required — UNCHANGED from prior runs, still blocked):**
+- 🚨 SUMMIT COUNTY PULL DEADLINE TODAY (MAY 29 = LAST BUSINESS DAY before May 31): `python3 workers/lead_pipeline.py both Summit` — 6 min unattended. Run before EOD.
+- ⛽ Gas station Mixmax sequence NOT CREATED — contacts stranded since May 19. Guide: `outputs/danny/gas_station_manual_email_blast_2026-05-19.md`
+- 🚚 Fleet washing Mixmax sequence NOT CREATED — contacts stranded
+- ⚠️ Instantly.ai NOT PAUSED — June 4 enrollment BLOCKED until confirmed paused
+
+---
+
+## OPEN — Car Auctions & Vehicle Wholesale Segment Not Yet Pulled 🟡 NEW (Run 133)
+- First seen: 2026-05-29 (Run 133)
+- Description: Manheim Cleveland (Cox Automotive) is one of the largest wholesale auto auctions in NE Ohio. ADESA/KAR Auction operates in Portage County. Both facilities have enormous paved outdoor lots with hundreds of vehicles staged in rows, plus reconditioning service bays and administrative building exteriors. Heavy vehicle traffic = oil drip accumulation, transmission fluid staining, tire marks, grime buildup across all paved surfaces. OSHA stormwater compliance (EPA/OEPA) requires clean lot drainage — exterior cleaning is a regulatory need. Auction FMs run quarterly cleaning cycles. Zero competitors targeting this segment. Manheim Cleveland alone: $2K-$8K/visit; 4x/year = $8K-$32K/year.
+- Fix applied (Run 133): 6 titles added to DANNY_TITLES + PROPERTY_MANAGER_TITLES. 8 org keywords added to DANNY_ORG_KEYWORDS. Full segment brief documented in agents/danny.md. First pull June 8 Cuyahoga (Manheim Cleveland, Cuyahoga County); June 29 Summit (ADESA/KAR Portage County catchment).
+- Resolution criteria: Auto auction manager / vehicle auction manager contacts appear in Danny's June 8 Cuyahoga pull output.
+
+---
+
+*[Previous run metrics follow below — Run 132 onward]*
 
 ---
 

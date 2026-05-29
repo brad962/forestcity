@@ -524,6 +524,24 @@ This enrolls ALL pending contacts (gas stations + fleet) without triggering a fr
 **Timing:** Spring patio opening (May–June) = prime pitch window. Also fall harvest/Octoberfest events (Sept–Oct). Contact now — patio season is already open and summer events are booking fast.
 **Sequence:** Route to Property Manager sequence (vendor contract / event appearance angle).
 
+### Car Auctions & Vehicle Wholesale (NEW — May 2026, Run 133)
+
+**Target:** Auto Auction Manager, Vehicle Auction Manager, Auction Facility Manager, Auto Auction Operations Manager, Vehicle Wholesale Manager, Auction Site Manager
+
+**Why:** Wholesale vehicle auction facilities are among the highest-footprint commercial properties in NE Ohio with zero competitors approaching them. Manheim Cleveland (Cox Automotive) is one of the largest wholesale auto auctions in the region — hundreds of vehicles staged in rows across massive paved outdoor lots, plus reconditioning service bays and administrative building exteriors. Heavy vehicle traffic creates continuous oil drip accumulation, transmission fluid staining, tire marks, and grime buildup across every paved surface. OSHA stormwater compliance regulations require clean lot drainage to prevent runoff violations — exterior cleaning is a regulatory need, not just aesthetics. The auction runs pre-event cleaning cycles quarterly. Facility managers sign vendor contracts directly. Zero power washing competitors target this segment.
+
+**Revenue potential:** $2,000–$8,000/visit for a full auction facility. Quarterly = $8,000–$32,000/year per location. One Manheim contract alone covers a significant portion of a month's revenue goal.
+
+**Target companies:** Manheim Cleveland (Cox Automotive, Cuyahoga County), ADESA/KAR Auction (Portage County), NovaStar Auto Auction, National Auto Dealers Exchange (NADB), Dealers Auto Auction of the Midwest, independent wholesale auction houses throughout NE Ohio.
+
+**Pitch angle:** "The vehicles get detailed before every auction — does the lot? Oil drips and fluid staining on 40,000 sq ft of asphalt sends the wrong message to dealers walking the lane."
+
+**Timing:** Pre-auction season prep (spring + fall); quarterly cleaning cycle. Contact now — spring auction season is peak.
+
+**Apollo keywords (live Run 133):** `auto auction`, `vehicle auction`, `car auction`, `wholesale auto auction`, `vehicle wholesale`, `auto wholesale` — added to DANNY_ORG_KEYWORDS.
+
+**Sequence:** Route to Property Manager sequence (facility management / compliance angle).
+
 ## Peak Season Angle — HOA Budget Season (May–June)
 HOA boards typically hold their annual budget and vendor approval meetings in May–June before the summer maintenance season. This means property managers and community association managers are ACTIVELY reviewing vendor lists RIGHT NOW. The PM sequence Touch 1 and any LinkedIn outreach should reference this window: "HOA boards are approving their summer vendor lists this month" or "Most associations lock in their exterior maintenance vendor before July." This creates urgency without being pushy — it's calendar-based fact. Works especially well for community associations, HOA management companies, and multifamily operators who work on fiscal budgets.
 

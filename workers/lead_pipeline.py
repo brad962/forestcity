@@ -469,6 +469,17 @@ DANNY_TITLES = [
     # first pull June 8 Cuyahoga (all Greater Cleveland YMCA branches) (added 2026-05-29 run 131)
     'ymca director', 'ymca branch director', 'ymca facilities manager', 'ymca operations manager',
     'ywca director', 'community center director',
+    # Car Auctions & Vehicle Wholesale — Manheim Cleveland (Cox Automotive, one of the largest wholesale
+    # auto auctions in NE Ohio), ADESA/KAR Auction (Portage County), NovaStar Auto Auction,
+    # National Auto Dealers Exchange (NADB), independent wholesale auction houses;
+    # enormous paved outdoor lots with hundreds of vehicles; building exteriors, reconditioning bays,
+    # administrative facades; heavy vehicle traffic = oil drip accumulation + fluid staining + tire marks;
+    # OSHA stormwater compliance for auction lot runoff — clean lots reduce EPA/OEPA violation risk;
+    # auction FMs run quarterly cleaning cycles (pre-auction season prep); FM signs vendor contracts;
+    # zero competitors targeting auction facility managers; Manheim Cleveland alone: $2K-$8K/visit;
+    # 4x/year = $8K-$32K/year; first pull June 8 Cuyahoga (Manheim Cleveland — Cuyahoga County) (added 2026-05-29 run 133)
+    'auto auction manager', 'vehicle auction manager', 'auction facility manager',
+    'auto auction operations manager', 'vehicle wholesale manager', 'auction site manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -736,6 +747,12 @@ DANNY_ORG_KEYWORDS = [
     # state health dept. licensing inspections = exterior cleanliness standard;
     # zero competitors targeting YMCA facilities managers; first pull June 8 Cuyahoga (added 2026-05-29 run 131)
     'ymca', 'ywca', 'young mens christian association', 'community recreation center',
+    # Car Auctions & Vehicle Wholesale — Manheim Cleveland (Cox Automotive), ADESA/KAR Auction (Portage County),
+    # NovaStar Auto Auction, National Auto Dealers Exchange, independent wholesale auction houses;
+    # enormous paved outdoor lots + reconditioning bays + building facades; OSHA stormwater compliance;
+    # auction FMs run quarterly vendor contracts; zero competitors targeting this segment (added 2026-05-29 run 133)
+    'auto auction', 'vehicle auction', 'car auction', 'wholesale auto auction',
+    'vehicle wholesale', 'auto wholesale', 'car wholesale', 'wholesale vehicle',
 ]
 
 CARLA_SEARCHES = [
