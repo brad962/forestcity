@@ -789,6 +789,15 @@ DANNY_TITLES = [
     'ice cream franchise manager', 'frozen dessert manager', 'ice cream district manager',
     'ice cream store manager', 'frozen yogurt manager', 'dessert franchise owner',
     'ice cream general manager', 'soft serve manager',
+    # Party/Event Rental Companies — A-1 Party Rental (Solon), Taylor Rental Centers (Avon/Brunswick/N. Olmsted/Medina),
+    # Fun Planners, Abbey Rents, Classic Party Rentals; large outdoor storage yards (tents/tables/chairs) + fleet vehicles
+    # returning from winter storage = heavy grime accumulation; OSHA stormwater compliance on storage yard runoff;
+    # spring = dirty equipment season; peak season May-September = wedding/graduation/corporate events;
+    # owner-operators or managers sign vendor contracts directly without procurement committees;
+    # zero NE Ohio power washing competitors targeting party rental yards; $800-$3,000/visit; 2-3x/year;
+    # first pull June 8 Cuyahoga (added 2026-05-30 run 147)
+    'event rental manager', 'party rental manager', 'party supply manager', 'event equipment manager',
+    'tent rental manager', 'special event manager', 'party rental owner', 'event rental owner',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -1226,6 +1235,14 @@ DANNY_ORG_KEYWORDS = [
     "handel's ice cream", 'frozen yogurt franchise', 'soft serve chain',
     'ice cream management', 'dessert franchise', "bruster's ice cream",
     'cold stone creamery', "rita's italian ice", 'frozen custard',
+    # Party/Event Rental Companies — A-1 Party Rental (Solon), Taylor Rental Centers (4 NE Ohio locations),
+    # Fun Planners, Abbey Rents, Classic Party Rentals; large outdoor storage yards (tents/tables/chairs/linens);
+    # DISTINCT from event venues (already targeted) — these are EQUIPMENT SUPPLIERS with storage yard + fleet vehicles;
+    # wedding/graduation/corporate event season = May-September = dirtiest equipment + most motivated to spend;
+    # OSHA stormwater compliance on storage yard runoff; zero NE Ohio competitors targeting party rental operators;
+    # first pull June 8 Cuyahoga (added 2026-05-30 run 147)
+    'party rental', 'event rental', 'tent rental', 'party supply', 'event equipment rental',
+    'special event rental', 'party supply store', 'wedding rental', 'event equipment',
 ]
 
 CARLA_SEARCHES = [

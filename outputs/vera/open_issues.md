@@ -1,6 +1,26 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 146 | 2026-05-30 | Auto-fixes shipped: 6 | New RESOLVED: 1 | Open: 84 (82 carry-forward + 2 new: Marine/Boat Dealers + Ice Cream Chains)*
+*Run 147 | 2026-05-30 | Auto-fixes shipped: 4 | New RESOLVED: 0 | Open: 85 (84 carry-forward + 1 new: Party/Event Rental Segment Not Yet Pulled)*
+
+---
+
+## RUN METRICS — Run 147 | 2026-05-30
+- Total RESOLVED: 119 (0 new)
+- Total OPEN: 85 (84 carry-forward + 1 new: Party/Event Rental Companies)
+- Auto-upgrades shipped: 4
+  1. `workers/lead_pipeline.py` — NEW: Party/Event Rental Companies as segment #84. 8 DANNY_TITLES (event rental manager, party rental manager, party supply manager, event equipment manager, tent rental manager, special event manager, party rental owner, event rental owner). 9 DANNY_ORG_KEYWORDS (party rental, event rental, tent rental, party supply, event equipment rental, special event rental, party supply store, wedding rental, event equipment). A-1 Party Rental (Solon), Taylor Rental Centers (4 NE Ohio locations), Fun Planners, Abbey Rents. Storage yards + fleet vehicles returning from winter storage = heavy grime. Zero competitors. $800-$3K/visit, 2-3x/year. First pull June 8 Cuyahoga.
+  2. `integrations/mixmax.py` — Synced 8 Party/Event Rental titles to PROPERTY_MANAGER_TITLES for correct Mixmax routing on import.
+  3. `agents/danny.md` — Full Party/Event Rental Companies segment brief added. Segment count updated: "83+" → "84+".
+  4. `workers/vera_relay.py` — BUG FIX: Updated all stale segment counts "82+"/"83+" → "84+" across 11 relay functions. Updated June 8 Cuyahoga countdown message to list Marine/Boat Dealers + Ice Cream Chains + Party/Event Rental (all first-pull June 8). Updated June 15 Lake County message to call out Marine/Boat Dealers (Skipper Buds/Mentor) as a first pull on that run. Updated Early Cuyahoga opportunity message segment list to include new segments.
+
+**Critical pending (human action required — UNCHANGED):**
+- 🚨 SUMMIT COUNTY PULL — DEADLINE TOMORROW May 31. Last day. `python3 workers/lead_pipeline.py both Summit` or double-click `scripts/run_summit_both.command`. 6 min unattended.
+- ⛽ Gas station Mixmax sequence NOT CREATED — contacts stranded since May 19
+- 🚚 Fleet washing Mixmax sequence NOT CREATED — contacts stranded
+- ⚠️ Instantly.ai NOT PAUSED — June 4 enrollment BLOCKED (5 days away)
+
+**Proposal pending:**
+- 💡 Tommy writes June 1–7 Facebook posts immediately — page goes dark June 1 without new content (awaiting YES from Bradley)
 
 ---
 
@@ -25,6 +45,12 @@
 ## RESOLVED — Duplicate 'garden center manager' Title in DANNY_TITLES
 - Resolved: 2026-05-30 (Run 146)
 - Fix: Removed 'garden center manager' from the Hardware & Home Improvement Centers section of DANNY_TITLES (was added in Run 136 alongside home improvement titles, then re-added properly to the Garden Centers & Nurseries section in Run 145). Apollo deduplicates by person_id so there was no functional impact, but having the same title assigned to two different segments created confusion about which segment owns it.
+
+## OPEN — Party/Event Rental Companies Segment Not Yet Pulled 🟡 NEW (Run 147)
+- First seen: 2026-05-30 (Run 147)
+- Description: A-1 Party Rental (Solon), Taylor Rental Centers (4 NE Ohio locations: Avon/Brunswick/N. Olmsted/Medina), Fun Planners, Abbey Rents, Classic Party Rentals. Large outdoor storage yards (tents/tables/chairs) + fleet vehicles returning from winter storage = heavy grime. Spring = dirty equipment season; peak wedding/event season May-September. Zero NE Ohio competitors. $800-$3,000/visit, 2-3x/year.
+- Fix applied (Run 147): 8 titles + 9 org keywords added to lead_pipeline.py DANNY_TITLES + DANNY_ORG_KEYWORDS. 8 titles synced to mixmax.py PROPERTY_MANAGER_TITLES. Full segment brief added to agents/danny.md. First pull: June 8 Cuyahoga.
+- Resolution criteria: Party/event rental contacts appear in Danny's June 8 Cuyahoga pull output.
 
 ## OPEN — Marine/Boat Dealers Segment Not Yet Pulled 🟡 NEW (Run 146)
 - First seen: 2026-05-30

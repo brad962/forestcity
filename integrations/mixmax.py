@@ -476,6 +476,9 @@ PROPERTY_MANAGER_TITLES = [
     'ice cream franchise manager', 'frozen dessert manager', 'ice cream district manager',
     'ice cream store manager', 'frozen yogurt manager', 'dessert franchise owner',
     'ice cream general manager', 'soft serve manager',
+    # Party/Event Rental Companies (added 2026-05-30 run 147)
+    'event rental manager', 'party rental manager', 'party supply manager', 'event equipment manager',
+    'tent rental manager', 'special event manager', 'party rental owner', 'event rental owner',
 ]
 
 REALTOR_TITLES = [

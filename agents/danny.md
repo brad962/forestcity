@@ -35,7 +35,7 @@ Example payload for property managers in Cuyahoga County:
 
 **Always pass `q_organization_keyword_tags`** — this catches decision-makers at property management companies where the contact's title isn't "property manager" (e.g., owner or VP at a 10-property HOA management firm).
 
-> ✅ **Title batching active (Run 132):** `workers/lead_pipeline.py` now batches DANNY_TITLES in groups of 50 and runs multiple Apollo searches per county pull, deduplicating by person ID. This prevents Apollo from silently capping large `person_titles` arrays. With 300+ titles across 83+ commercial segments, the old single-call approach risked returning zero contacts for many segments. Batching guarantees all 83+ segments are queried every pull.
+> ✅ **Title batching active (Run 132):** `workers/lead_pipeline.py` now batches DANNY_TITLES in groups of 50 and runs multiple Apollo searches per county pull, deduplicating by person ID. This prevents Apollo from silently capping large `person_titles` arrays. With 300+ titles across 84+ commercial segments, the old single-call approach risked returning zero contacts for many segments. Batching guarantees all 84+ segments are queried every pull.
 
 Target titles:
 - Property Manager, Property Management Director, Property Director
@@ -1071,6 +1071,23 @@ Peak season is literally RIGHT NOW (late May/June/July). NE Ohio has enormous ic
 **Apollo keywords (live Run 146):** `ice cream franchise`, `frozen dessert`, `ice cream chain`, `dairy queen`, `handel's ice cream`, `frozen yogurt franchise`, `soft serve chain`, `ice cream management`, `dessert franchise`, `bruster's ice cream`, `cold stone creamery`, `rita's italian ice`, `frozen custard` — added to DANNY_ORG_KEYWORDS.
 
 **Sequence:** Route to Property Manager sequence. First pull: June 8 Cuyahoga (DQ + Handel's Cuyahoga locations). Full Lake County pass June 15.
+
+### Party/Event Rental Companies (NEW — May 2026, Run 147)
+Peak wedding/graduation/corporate event season is May–September. NE Ohio has dozens of party rental operators whose storage yards are invisible to every other power washing company.
+
+**NE Ohio targets:** A-1 Party Rental (Solon), Taylor Rental Centers (4 NE Ohio locations: Avon, Brunswick, North Olmsted, Medina), Fun Planners, Abbey Rents, Classic Party Rentals, independent tent/linen/equipment rental operators in all 7 counties.
+
+**Why they need it:** These companies have large outdoor storage yards where tents, tables, chairs, linens, and equipment come back from winter storage caked in dirt and mold. Forklifts track grease and oil across paved storage lots. Warehouses have exterior grime from seasonal use. The pitch window is NOW — spring equipment inspection and cleaning before June weddings. Owner-operators sign vendor contracts directly without procurement. OSHA stormwater compliance applies to chemical runoff from storage yards. Zero NE Ohio power washing competitors targeting this segment.
+
+**Pitch angle:** "Your tents and tables are coming back from winter storage dirty. Before the June wedding season starts, let us pressure wash your storage yard and fleet — so everything goes out client-ready without your team spending a weekend cleaning it."
+
+**Revenue math:** $800–$3,000/visit (storage yard concrete + warehouse exterior + fleet vehicles). 2–3x/year (spring pre-season + fall post-season) = $1,600–$9,000/year per operator. Zero competitors cold-calling this segment in NE Ohio.
+
+**Apollo titles (live Run 147):** `event rental manager`, `party rental manager`, `party supply manager`, `event equipment manager`, `tent rental manager`, `special event manager`, `party rental owner`, `event rental owner` — added to DANNY_TITLES + PROPERTY_MANAGER_TITLES (mixmax.py).
+
+**Apollo keywords (live Run 147):** `party rental`, `event rental`, `tent rental`, `party supply`, `event equipment rental`, `special event rental`, `party supply store`, `wedding rental`, `event equipment` — added to DANNY_ORG_KEYWORDS.
+
+**Sequence:** Route to Property Manager sequence (facility/vendor contract angle). First pull: June 8 Cuyahoga.
 
 ---
 
