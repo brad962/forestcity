@@ -35,7 +35,7 @@ Example payload for property managers in Cuyahoga County:
 
 **Always pass `q_organization_keyword_tags`** — this catches decision-makers at property management companies where the contact's title isn't "property manager" (e.g., owner or VP at a 10-property HOA management firm).
 
-> ✅ **Title batching active (Run 132):** `workers/lead_pipeline.py` now batches DANNY_TITLES in groups of 50 and runs multiple Apollo searches per county pull, deduplicating by person ID. This prevents Apollo from silently capping large `person_titles` arrays. With 300+ titles across 86+ commercial segments, the old single-call approach risked returning zero contacts for many segments. Batching guarantees all 84+ segments are queried every pull.
+> ✅ **Title batching active (Run 132):** `workers/lead_pipeline.py` now batches DANNY_TITLES in groups of 50 and runs multiple Apollo searches per county pull, deduplicating by person ID. This prevents Apollo from silently capping large `person_titles` arrays. With 300+ titles across 88+ commercial segments, the old single-call approach risked returning zero contacts for many segments. Batching guarantees all 88+ segments are queried every pull.
 
 Target titles:
 - Property Manager, Property Management Director, Property Director
@@ -1120,6 +1120,27 @@ Peak moving season is May–September. NE Ohio has dozens of moving company term
 **Routing note:** Contacts at companies named "XYZ Moving Company" where the title is just "owner" or "founder" will naturally route to Carla's contractor sequence (Carla owns the referral partner angle for moving company owners). Danny's segment targets operations/facility managers at these terminals — separate contacts with facility management needs.
 
 **Sequence:** Route to Property Manager sequence (facility exterior maintenance angle). First pull: June 8 Cuyahoga.
+
+### Off-Price Apparel & Home Goods Retail (NEW — May 2026, Run 149)
+**Status:** Org keywords + titles live in DANNY_ORG_KEYWORDS/DANNY_TITLES as of Run 149. First pull June 8 Cuyahoga.
+**Target:** Off-Price Retail District Manager, Discount Apparel District Manager, Home Goods District Manager, Value Retail District Manager
+**Why:** NE Ohio has 35+ TJ Maxx/Marshalls/HomeGoods locations, 6+ Burlington Coat Factory stores, and 3+ Ross Dress for Less. DISTINCT from dollar stores (different Apollo org tags; different customer demographic; different vendor procurement structure). Off-price shoppers are more appearance-sensitive than dollar store customers — TJX Companies (TJ Maxx/Marshalls/HomeGoods parent) has brand standards that include parking lot appearance. Large strip-mall lots with heavy weekend foot traffic = oil stains, cart grime, seasonal salt residue. District managers at TJX, Burlington, and Ross oversee 10–20 NE Ohio locations and sign area-wide vendor contracts.
+**Revenue per visit:** $500–$1,500 (parking lot + building exterior). 2–3x/year = $1,000–$4,500/year per location. 15-location district deal = $15,000–$67,500/year. Zero competitors cold-calling off-price retail district managers.
+**Target companies:** TJX Companies (TJ Maxx, Marshalls, HomeGoods — one district FM covers all three brands in NE Ohio), Burlington Coat Factory (Burlington Stores, Inc., district FMs), Ross Stores (district operations managers cover NE Ohio stores).
+**Apollo keywords (live Run 149):** `tj maxx`, `tjmaxx`, `marshalls`, `homegoods`, `burlington coat factory`, `ross dress for less`, `off-price retail`, `off price retail`, `discount apparel`, `value retailer` — added to DANNY_ORG_KEYWORDS.
+**Pitch angle:** "Your parking lots and building exteriors get hard use from high-traffic shopping. A quarterly clean keeps the property looking sharp — we handle all your NE Ohio locations on one contract."
+**Sequence:** Route to Property Manager sequence (multi-site FM / brand standard angle). First pull: June 8 Cuyahoga.
+
+### Truck Rental Companies (NEW — May 2026, Run 149)
+**Status:** Org keywords + titles live in DANNY_ORG_KEYWORDS/DANNY_TITLES as of Run 149. First pull June 8 Cuyahoga.
+**Target:** Truck Rental District Manager, Moving Truck Rental Manager, Truck Rental Location Manager, Rental Truck Fleet Manager
+**Why:** U-Haul (25+ NE Ohio locations), Penske Truck Rental (15+), Ryder System (10+), Budget Truck Rental. DISTINCT from passenger car rental (different Apollo org keywords; completely different lot conditions). Truck rental lots have moving trucks that track road salt, diesel exhaust, and mud from moving jobs all day — paved lots get dirty at 3× the rate of a car rental. Building exteriors at truck rental locations often go years without cleaning because operator focus is on fleet maintenance, not property appearance. District managers oversee 5–8 locations and sign area-wide vendor contracts.
+**Revenue per location:** $800–$2,500 (truck staging lot + building exterior). Quarterly = $3,200–$10,000/year per location. 5-location district deal = $16,000–$50,000/year. Zero competitors cold-calling truck rental district managers.
+**Target companies:** U-Haul International (district fleet managers in NE Ohio), Penske Truck Rental (national company with NE Ohio district management), Ryder System Inc. (rental truck + last-mile logistics; NE Ohio district FMs), AMERCO/U-Haul dealer network, Budget Truck Rental (Avis Budget Group subsidiary).
+**Apollo keywords (live Run 149):** `u-haul`, `uhaul`, `penske truck`, `ryder truck`, `budget truck rental`, `moving truck rental`, `truck rental company` — added to DANNY_ORG_KEYWORDS.
+**Pitch angle:** "Your lots take a beating from trucks moving in and out all day. Diesel exhaust, road salt, mud from jobs — a quarterly clean keeps the staging area and building exterior looking professional. One contract covers all your NE Ohio locations."
+**Timing:** Spring (post-winter salt runoff) and fall (pre-moving season wind-down) are peak pitch windows. May–September = peak moving season = lots are at their dirtiest AND managers are most focused on fleet and property appearance.
+**Sequence:** Route to Property Manager sequence (multi-site facility lot maintenance angle). First pull: June 8 Cuyahoga.
 
 ---
 

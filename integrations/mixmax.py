@@ -487,6 +487,15 @@ PROPERTY_MANAGER_TITLES = [
     'moving company manager', 'moving company operations manager', 'relocation services manager',
     'moving and storage manager', 'van lines agent manager', 'relocation manager',
     'moving company general manager',
+    # Off-Price Apparel & Home Goods Retail — TJ Maxx, Marshalls, HomeGoods, Burlington, Ross;
+    # routing to Property Manager sequence (multi-site FM/district vendor contract angle) (added 2026-05-30 run 149)
+    'off-price retail district manager', 'discount apparel district manager', 'off price store manager',
+    'value retail district manager', 'home goods district manager', 'off-price district manager',
+    'discount fashion manager',
+    # Truck Rental Companies — U-Haul, Penske, Ryder, Budget Truck;
+    # routing to Property Manager sequence (facility management / lot maintenance angle) (added 2026-05-30 run 149)
+    'truck rental district manager', 'moving truck rental manager', 'truck rental location manager',
+    'rental truck fleet manager', 'moving truck manager', 'truck rental operations manager',
 ]
 
 REALTOR_TITLES = [

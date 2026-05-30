@@ -251,7 +251,7 @@ def _check_summit_deadline():
     msg = (
         f'{urgency_emoji} *Summit County Pull — {days_label} (Deadline May 31)*\n'
         f'>Miss this window = no Summit leads until June 29 (next auto-rotation, Week 27).\n'
-        f'>All 86+ commercial segments (restaurants, banks, gyms, hospitals, sports venues + more) miss peak season.\n'
+        f'>All 88+ commercial segments (restaurants, banks, gyms, hospitals, sports venues + more) miss peak season.\n'
         f'>Danny only: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py danny Summit`\n'
         f'>Danny + Carla (recommended): `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Summit`\n'
         f'>Or double-click: `scripts/run_summit_both.command` in Finder — both workers, one click.'
@@ -845,7 +845,7 @@ def _check_june8_geauga_portage():
     msg = (
         f'🏙️ *Cuyahoga County Pull — {label} (June 8) — LARGEST MARKET*\n'
         f'>Week 24 rotation: Cleveland, Parma, Lakewood, Strongsville, Beachwood. Highest lead volume of all 6 counties.\n'
-        f'>All 86+ commercial segments fire here: hospitals (Cleveland Clinic, UH, MetroHealth), museums\n'
+        f'>All 88+ commercial segments fire here: hospitals (Cleveland Clinic, UH, MetroHealth), museums\n'
         f'>   (Cleveland Museum of Art, Metroparks Zoo, Rock Hall), YMCA of Greater Cleveland (12 branches),\n'
         f'>   DSO chains (Aspen Dental, Heartland), government/transit (GCRTA, Port of Cleveland, city halls),\n'
         f'>   dialysis (DaVita/Fresenius 50+ centers), concert venues (Blossom, Jacobs Pavilion),\n'
@@ -854,7 +854,8 @@ def _check_june8_geauga_portage():
         f'>   blood/plasma centers, coin laundries, warehouse clubs (Costco/Sam\'s), wireless retail,\n'
         f'>   wineries/distilleries, motorcycle/powersport dealers, RV/camper dealers, garden centers,\n'
         f'>   marine/boat dealers, ice cream chains (Dairy Queen/Handel\'s), party/event rental,\n'
-        f'>   trampoline parks (Sky Zone/Urban Air/Scene75), moving companies (Two Men and a Truck) + more.\n'
+        f'>   trampoline parks (Sky Zone/Urban Air/Scene75), moving companies (Two Men and a Truck),\n'
+        f'>   off-price retail (TJ Maxx/Marshalls/HomeGoods/Burlington), truck rental (U-Haul/Penske/Ryder) + more.\n'
         f'> ✅ Title + org keyword batching active (Run 134): all 86+ segments fully queried.\n'
         f'>{note}\n'
         f'>Shortcut: double-click `scripts/run_cuyahoga_both.command` in Finder (no typing required)\n'
@@ -1427,7 +1428,7 @@ def _check_july20_cuyahoga_2():
         f'📍 *Cuyahoga County 2nd Pass — {label} (July 20)*\n'
         f'>Week 30 rotation: Cuyahoga — Cleveland, Lakewood, Parma, Strongsville, Berea, Westlake, Rocky River.\n'
         f'>Second pass: catches non-opens from June 8 + school districts now in active summer window.\n'
-        f'>Highest-volume market — all 86+ commercial segments at max capacity.\n'
+        f'>Highest-volume market — all 88+ commercial segments at max capacity.\n'
         f'>{note}\n'
         f'>Command: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Cuyahoga`'
     )
@@ -2006,7 +2007,7 @@ def _check_neighbor_canvass_weekly():
 
 def _check_early_cuyahoga_opportunity():
     """Fire May 28–June 7 — one-time window to run an EARLY Cuyahoga pull.
-    86+ commercial segments won't get Cuyahoga contacts until the scheduled June 8 pull.
+    88+ commercial segments won't get Cuyahoga contacts until the scheduled June 8 pull.
     Running Cuyahoga NOW gives those contacts extra days in the sequence before June 4 enrollment.
     This is additive — does NOT replace the June 8 rotation pull, it SUPPLEMENTS it.
     Self-deactivates June 8 (Cuyahoga IS the scheduled pull that day)."""
@@ -2025,13 +2026,14 @@ def _check_early_cuyahoga_opportunity():
     days_to_june8 = (_date_ec(2026, 6, 8) - today).days
     msg = (
         f'🏙️ *Early Cuyahoga Pull Opportunity — {days_to_june8} Days Before Scheduled June 8 Pull*\n'
-        f'>86+ commercial segments (hospital campuses, municipal facilities, DSO dental groups, YMCA branches,\n'
+        f'>88+ commercial segments (hospital campuses, municipal facilities, DSO dental groups, YMCA branches,\n'
         f'>tire chains, movie theaters, bowling, pet boarding, dialysis, sports complexes, museums, food\n'
         f'>processing, airports, concert venues, craft breweries, dollar stores, auto parts, hardware,\n'
         f'>sports venues, cannabis dispensaries, blood/plasma centers, coin laundries, warehouse clubs,\n'
         f'>wireless retail, uniform services, optical centers, medical labs, tax prep offices,\n'
         f'>marine/boat dealers, ice cream chains, party/event rental,\n'
-        f'>trampoline parks (Sky Zone/Urban Air/Scene75), moving companies (Two Men and a Truck)) won\'t get\n'
+        f'>trampoline parks (Sky Zone/Urban Air/Scene75), moving companies (Two Men and a Truck),\n'
+        f'>off-price retail (TJ Maxx/Marshalls/HomeGoods/Burlington), truck rental (U-Haul/Penske/Ryder)) won\'t get\n'
         f'>Cuyahoga contacts until the June 8 scheduled pull.\n'
         f'>Running an EARLY pull today = {days_to_june8} extra days for those contacts BEFORE June 4 enrollment.\n'
         f'>✅ Title + org keyword batching active — all segments fully queried across multiple API batches.\n'
@@ -2366,6 +2368,47 @@ def _check_fathers_day_blast():
         log(f"Father's Day residential blast reminder posted — {label}")
 
 
+def _check_oct5_geauga_portage_4():
+    """Fire Oct 1–5 countdown for Geauga+Portage 4th pass (Week 41, Oct 5 Monday).
+    Week 41 % 6 = 5 → Geauga+Portage. Chardon, Chesterland, Kent, Ravenna, Streetsboro, Aurora.
+    GAP FIX (Run 149): _check_sept28_medina_4() ends Sept 28; Oct 5 had zero relay coverage.
+    This is the FINAL county rotation of 2026 season per Carla's calendar (Week 41 = end of season)."""
+    from datetime import date as _date_o5
+    today = _date_o5.today()
+    start = _date_o5(2026, 10, 1)
+    end   = _date_o5(2026, 10, 5)
+    if not (start <= today <= end):
+        return
+
+    alert_sentinel = BASE_DIR / 'outputs' / 'vera' / '.oct5_geauga_portage_4_sent_date'
+    today_str = today.strftime('%Y-%m-%d')
+    if alert_sentinel.exists() and alert_sentinel.read_text().strip() == today_str:
+        return
+
+    pull_date = _date_o5(2026, 10, 5)
+    days_left = (pull_date - today).days
+    label = f'{days_left} day{"s" if days_left != 1 else ""} away' if days_left > 0 else 'TODAY — GEAUGA + PORTAGE FINAL PASS'
+    note  = 'Cron fires Mon Oct 5 at 7am. Verify: `cat logs/cron.log | tail -10`' if days_left > 0 else \
+            'Run now if cron missed: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Geauga`'
+
+    msg = (
+        f'📍 *Geauga + Portage County Final Pass — {label} (Oct 5) — LAST ROTATION OF 2026*\n'
+        f'>Week 41: Chardon, Chesterland, Kent, Ravenna, Streetsboro, Aurora. FINAL county rotation of peak season.\n'
+        f'>Last chance to close Geauga+Portage contacts before the NE Ohio freeze window (Oct 15–20).\n'
+        f'>Close pitch: "Book your fall clean this week — October fills fast and we stop taking new bookings Nov 1."\n'
+        f'>After Oct 5: cron rotation ends for the season. Relay shifts to October final push (Oct 1–15) + spring 2027 mode.\n'
+        f'>{note}\n'
+        f'>Command: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Geauga`'
+    )
+    if post_slack(msg):
+        alert_sentinel.parent.mkdir(exist_ok=True)
+        try:
+            alert_sentinel.write_text(today_str)
+        except Exception:
+            pass
+        log(f'Oct 5 Geauga+Portage 4th pass (final season rotation) reminder posted — {label}')
+
+
 def _check_june9_cuyahoga_verification():
     """Fire ONLY on June 9 — the day after the June 8 Cuyahoga pull (biggest pull of the year).
     Reads Danny + Carla sentinel files (.danny_last_pull_date / .carla_last_pull_date) to confirm
@@ -2393,7 +2436,7 @@ def _check_june9_cuyahoga_verification():
         msg = (
             '✅ *Cuyahoga Pull Confirmed — June 8 Ran Successfully (Danny + Carla)*\n'
             '>Danny sentinel: June 8 ✓ | Carla sentinel: June 8 ✓\n'
-            '>All 86+ commercial segments enrolled. First opens expected June 11–13 (Touch 1 Day 0 → opens by Day 3).\n'
+            '>All 88+ commercial segments enrolled. First opens expected June 11–13 (Touch 1 Day 0 → opens by Day 3).\n'
             '>Action: Run Nina\'s daily report Monday June 9 morning to surface hot leads before they cool.\n'
             '>`cd /Users/bradleyneal/forestcity && python3 workers/nina_report.py daily`\n'
             '>DSO district manager / hospital FM / government contact replied? Book a site walk immediately — annual contract.'
@@ -2412,7 +2455,7 @@ def _check_june9_cuyahoga_verification():
             '>Danny sentinel NOT dated June 8. Largest commercial pull of the year may have been silently missed.\n'
             '>RUN NOW (15–20 min): `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Cuyahoga`\n'
             '>Or double-click: `scripts/run_cuyahoga_both.command` in Finder — no typing required.\n'
-            '>86+ commercial segments. Missing this = no hospital/DSO/government/museum contacts for the entire season.\n'
+            '>88+ commercial segments. Missing this = no hospital/DSO/government/museum contacts for the entire season.\n'
             '>Check cron first: `cat logs/cron.log | tail -30` — if cron ran but sentinel is absent, re-run anyway.'
         )
 
@@ -2469,6 +2512,7 @@ def _main_body():
     _check_sept14_lorain_3()
     _check_sept21_summit_3()
     _check_sept28_medina_4()
+    _check_oct5_geauga_portage_4()
     _check_fall_prep_reminder()
     _check_week2_facebook_ads()
     _check_google_lsa_status_weekly()

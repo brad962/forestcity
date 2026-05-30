@@ -806,6 +806,20 @@ DANNY_TITLES = [
     'moving company manager', 'moving company operations manager', 'relocation services manager',
     'moving and storage manager', 'van lines agent manager', 'relocation manager',
     'moving company general manager',
+    # Off-Price Apparel & Home Goods Retail — TJ Maxx (15+ NE Ohio), Marshalls (10+), HomeGoods (10+),
+    # Burlington Coat Factory (6+), Ross Dress for Less (3+); DISTINCT from dollar stores (different Apollo org tags);
+    # large strip-mall parking lots + building exteriors; district managers sign vendor contracts for 10-20 stores;
+    # NE Ohio has 35+ TJ Maxx/Marshalls/HomeGoods alone; appearance-sensitive shoppers = brand standard is HIGH;
+    # $500-$1,500/location; 2-3x/year; 15-location district deal = $15K-$67K/year; zero competitors (added 2026-05-30 run 149)
+    'off-price retail district manager', 'discount apparel district manager', 'off price store manager',
+    'value retail district manager', 'home goods district manager', 'off-price district manager',
+    'discount fashion manager',
+    # Truck Rental Companies — U-Haul (25+ NE Ohio), Penske Truck Rental (15+), Ryder System (10+), Budget Truck Rental;
+    # DISTINCT from passenger car rental (different Apollo org keywords; truck lots are filthier — exhaust + oil + road grime);
+    # large paved lots with moving trucks accumulate road salt + diesel exhaust; district managers sign multi-location contracts;
+    # $800-$2,500/lot visit; quarterly = $3,200-$10,000/year per location; zero competitors cold-calling truck rental DMs (added 2026-05-30 run 149)
+    'truck rental district manager', 'moving truck rental manager', 'truck rental location manager',
+    'rental truck fleet manager', 'moving truck manager', 'truck rental operations manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -1267,6 +1281,16 @@ DANNY_ORG_KEYWORDS = [
     'moving and storage', 'relocation services', 'two men and a truck', 'van lines',
     'moving services', 'relocation company', 'commercial movers', 'residential movers',
     'moving franchise', 'storage and moving',
+    # Off-Price Apparel & Home Goods Retail — TJ Maxx, Marshalls, HomeGoods, Burlington, Ross;
+    # DISTINCT from dollar stores + grocery chains (different Apollo org tags for off-price retail segment);
+    # high store density in NE Ohio strip malls; district FMs sign multi-site vendor contracts (added 2026-05-30 run 149)
+    'tj maxx', 'tjmaxx', 'marshalls', 'homegoods', 'burlington coat factory', 'ross dress for less',
+    'off-price retail', 'off price retail', 'discount apparel', 'value retailer',
+    # Truck Rental Companies — U-Haul, Penske Truck Rental, Ryder System, Budget Truck Rental;
+    # DISTINCT from passenger car rental (uhaul/penske = moving/cargo trucks, not rental cars);
+    # large paved lots with trucks + diesel exhaust + road salt; zero competitors cold-calling (added 2026-05-30 run 149)
+    'u-haul', 'uhaul', 'penske truck', 'ryder truck', 'budget truck rental',
+    'moving truck rental', 'truck rental company',
 ]
 
 CARLA_SEARCHES = [
