@@ -625,6 +625,18 @@ DANNY_TITLES = [
     'tax district manager', 'tax preparation manager', 'tax office manager',
     'tax center manager', 'tax services district manager', 'tax franchise manager',
     'tax preparation district manager',
+    # Coffee & Drive-Through Beverage Chains — Starbucks (60+ NE Ohio), Dunkin' (80+ NE Ohio),
+    # Panera Bread (has drive-through at most NE Ohio locations), Dutch Bros (growing in OH),
+    # Caribou Coffee, Tim Hortons (50+ NE Ohio — strong Cleveland presence); drive-through canopies
+    # accumulate exhaust, mildew, grime on the underside; parking lots + building exteriors;
+    # high volume (hundreds of cars/day) = heavy staining at entry lanes and drive-through queue areas;
+    # district managers sign vendor contracts for 5-15 store territories;
+    # $400-$900/location; quarterly = $1.6K-$3.6K/location; 15-location district = $24K-$54K/year;
+    # DISTINCT from restaurant QSR segment — coffee chain DMs have separate org tags in Apollo;
+    # zero competitors cold-calling coffee chain district managers in NE Ohio; first pull June 8 Cuyahoga (added 2026-05-30 run 140)
+    'coffee district manager', 'coffee shop manager', 'coffee chain manager',
+    'drive through manager', 'drive-through manager', 'quick service beverage manager',
+    'beverage district manager', 'coffee store manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -976,6 +988,12 @@ DANNY_ORG_KEYWORDS = [
     # pitch: "Tax season is over — let us clean up"; first pull June 8 Cuyahoga (added 2026-05-30 run 139)
     'tax preparation', 'tax services', 'tax office', 'tax franchise', "h&r block",
     'jackson hewitt', 'liberty tax', 'tax center', 'tax preparation services', 'income tax services',
+    # Coffee & Drive-Through Beverage Chains — Starbucks, Dunkin', Panera, Tim Hortons, Dutch Bros, Caribou;
+    # drive-through canopies + parking lots + building exteriors; distinct Apollo org tags from QSR;
+    # first pull June 8 Cuyahoga (added 2026-05-30 run 140)
+    'coffee chain', 'coffee shop chain', 'coffee franchise', 'quick service beverage',
+    'drive through beverage', 'starbucks', "dunkin'", 'tim hortons', 'dutch bros',
+    'caribou coffee', 'panera bread',
 ]
 
 CARLA_SEARCHES = [

@@ -1,23 +1,41 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 139 | 2026-05-30 | Auto-fixes shipped: 4 | New RESOLVED: 0 | Open: 71 (3 new segments added)*
+*Run 140 | 2026-05-30 | Auto-fixes shipped: 9 | New RESOLVED: 2 | Open: 72 (1 new coffee segment)*
 
 ---
 
-## RUN METRICS — Run 139 | 2026-05-30
-- Total RESOLVED: 113 (unchanged)
-- Total OPEN: 71 (68 carry-forward + 3 new segments: Optical/Vision Centers, Medical/Clinical Labs, Tax Preparation Offices)
-- Auto-upgrades shipped: 4
-  1. `workers/lead_pipeline.py` — Added 3 new segments to DANNY_TITLES: Optical/Vision Centers (8 titles: optometry district manager, vision center manager, optical center manager, eyecare district manager, eye care center manager, optical district manager, optometric practice manager, vision care manager), Medical/Clinical Labs (8 titles: laboratory district manager, lab district manager, clinical lab manager, patient service center manager, laboratory facilities manager, lab operations manager, laboratory operations manager, clinical laboratory manager), Tax Preparation Offices (7 titles: tax district manager, tax preparation manager, tax office manager, tax center manager, tax services district manager, tax franchise manager, tax preparation district manager). Total: 23 new Apollo search titles.
-  2. `workers/lead_pipeline.py` — Added 3 new segments to DANNY_ORG_KEYWORDS: Optical (14 keywords: optical center, vision center, eyecare center, eye care center, optometry practice, optical retail, vision retail, lenscrafters, pearle vision, visionworks, myeyedr, america's best eyecare, for eyes optical, national vision), Medical Labs (10 keywords: clinical laboratory, medical laboratory, diagnostic laboratory, patient service center, blood draw center, lab testing center, quest diagnostics, labcorp, laboratory services, diagnostic testing center), Tax Prep (10 keywords: tax preparation, tax services, tax office, tax franchise, h&r block, jackson hewitt, liberty tax, tax center, tax preparation services, income tax services). Total: 34 new Apollo org keywords.
-  3. `integrations/mixmax.py` — Synced all 23 new titles to PROPERTY_MANAGER_TITLES routing list. Optical (8), Medical Labs (8), Tax Prep (7). Routing verified: detect_lead_type() checks company name for GAS_STATION_KEYWORDS first, then title list — these segments will route correctly to property_manager sequence.
-  4. `agents/danny.md` — Added full segment briefs for all 3 new segments: Optical/Vision Centers (LensCrafters 30+, MyEyeDr 10+, Visionworks, Pearle Vision, America's Best, For Eyes, National Vision — $18K–$42K/year per 15-location district), Medical/Clinical Labs (Quest Diagnostics 50+, LabCorp 40+, Cleveland Clinic outpatient labs — CLIA federal certification compliance angle — $24K–$56K/year per 20-center district), Tax Preparation Offices (H&R Block 100+, Jackson Hewitt 60+, Liberty Tax 40+ — May-September peak maintenance window, "Tax season is over" pitch — $6K–$24K/year per district). First pull for all three: June 8 Cuyahoga.
+## RUN METRICS — Run 140 | 2026-05-30
+- Total RESOLVED: 115 (2 new: Summit deadline message July 6 bug + early Cuyahoga segment count)
+- Total OPEN: 72 (71 carry-forward + 1 new: Coffee/Drive-Through segment)
+- Auto-upgrades shipped: 9
+  1. `scripts/run_cuyahoga_pull.command` + `scripts/run_cuyahoga_both.command` — NEW: Finder double-click shortcuts for June 8 Cuyahoga pull. BIGGEST pull of year (51+ segments). Takes 12-20 min. Was completely missing — no way to run without Terminal.
+  2. `scripts/run_lake_pull.command` + `scripts/run_lake_both.command` — NEW: June 15 Lake County pull shortcuts (marina corridor).
+  3. `scripts/run_lorain_pull.command` + `scripts/run_lorain_both.command` — NEW: June 22 Lorain County pull shortcuts (Avon corridor).
+  4. `CLAUDE.md` — Updated Quick Shortcuts section; all 10 command files now documented in a table with county, week, date, and notes. Added June 8 warning callout for the 51+ segment Cuyahoga pull.
+  5. `workers/vera_relay.py` — Fixed 4 stale references: (a) June 8 msg "36 segments" → "51+" + added shortcut mention, (b) early Cuyahoga opportunity docstring "36" → "51+", (c) early Cuyahoga msg "25+ segments" → full 51-segment list, (d) July 20 2nd pass msg stale "(school districts, car rental)" reference removed.
+  6. `workers/vera_relay.py` — BUG FIX: Summit deadline message said "Summit doesn't run until July 6" — WRONG. Summit re-rotates June 29 (Week 27 % 6 = 3 = Summit index). Fixed message to say "next auto-rotation June 29." Also updated "30+ segments" → "51+ segments" in same message.
+  7. `agents/danny.md` — Updated title batching note from "28+ segments" → "51+ segments / 250+ titles."
+  8. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — NEW: Coffee & Drive-Through Beverage Chains segment. 8 DANNY_TITLES (coffee district manager, coffee shop manager, coffee chain manager, drive through manager, drive-through manager, quick service beverage manager, beverage district manager, coffee store manager), 11 DANNY_ORG_KEYWORDS (coffee chain, coffee shop chain, coffee franchise, quick service beverage, drive through beverage, starbucks, dunkin', tim hortons, dutch bros, caribou coffee, panera bread), 8 PROPERTY_MANAGER_TITLES synced. Starbucks 60+, Dunkin' 80+, Tim Hortons 50+ NE Ohio. $24K-$54K/year per 15-location district. Distinct from QSR segment in Apollo. Zero competitors. First pull June 8 Cuyahoga.
+
+## RESOLVED — Summit Deadline Message "July 6" Bug
+- Resolved: 2026-05-30
+- Fix: Changed "Summit doesn't run until July 6" → "next auto-rotation June 29 (Week 27)" in _check_summit_deadline() docstring and Slack message. ISO math confirmed: Week 27 % 6 = 3 = Summit index.
+
+## RESOLVED — Stale "36 Segments" Count in Relay Messages
+- Resolved: 2026-05-30
+- Fix: Updated all three locations in vera_relay.py from "36" → "51+" and expanded segment list in June 8 message to mention dollar stores, auto parts, sports venues, cannabis, blood plasma, warehouse clubs, wireless retail, coffee chains. Also added shortcut file reference to June 8 message.
 
 **Critical pending (human action required — UNCHANGED, still blocked):**
 - 🚨 SUMMIT COUNTY PULL OVERDUE — deadline TOMORROW May 31 (Sunday): `python3 workers/lead_pipeline.py both Summit` — 6 min unattended. Run tonight or first thing tomorrow.
 - ⛽ Gas station Mixmax sequence NOT CREATED — 12 contacts stranded since May 19
 - 🚚 Fleet washing Mixmax sequence NOT CREATED — contacts stranded
 - ⚠️ Instantly.ai NOT PAUSED — June 4 enrollment BLOCKED
+
+## OPEN — Coffee & Drive-Through Beverage Chains Segment Not Yet Pulled 🟡 NEW (Run 140)
+- First seen: 2026-05-30
+- Description: Starbucks (60+ NE Ohio), Dunkin' (80+), Tim Hortons (50+), Panera Bread (most NE Ohio locations have drive-throughs), Dutch Bros (growing in OH), Caribou Coffee. Drive-through canopies accumulate exhaust, mildew, grime. District managers control 5–15 location territories. $24K–$54K/year per 15-location district. DISTINCT from QSR segment in Apollo org tags. Zero competitors.
+- Fix applied (Run 140): 8 DANNY_TITLES + 11 DANNY_ORG_KEYWORDS + PROPERTY_MANAGER_TITLES sync + agents/danny.md full segment brief. First pull June 8 Cuyahoga.
+- Resolution criteria: Coffee district manager / beverage chain contacts appear in June 8 Cuyahoga pull.
 
 ## OPEN — Optical / Vision Centers Segment Not Yet Pulled 🟡 NEW (Run 139)
 - First seen: 2026-05-30

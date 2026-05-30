@@ -421,6 +421,10 @@ PROPERTY_MANAGER_TITLES = [
     'tax district manager', 'tax preparation manager', 'tax office manager',
     'tax center manager', 'tax services district manager', 'tax franchise manager',
     'tax preparation district manager',
+    # Coffee & Drive-Through Beverage Chains (added 2026-05-30 run 140)
+    'coffee district manager', 'coffee shop manager', 'coffee chain manager',
+    'drive through manager', 'drive-through manager', 'quick service beverage manager',
+    'beverage district manager', 'coffee store manager',
 ]
 
 REALTOR_TITLES = [

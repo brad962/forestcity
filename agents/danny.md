@@ -35,7 +35,7 @@ Example payload for property managers in Cuyahoga County:
 
 **Always pass `q_organization_keyword_tags`** — this catches decision-makers at property management companies where the contact's title isn't "property manager" (e.g., owner or VP at a 10-property HOA management firm).
 
-> ✅ **Title batching active (Run 132):** `workers/lead_pipeline.py` now batches DANNY_TITLES in groups of 50 and runs multiple Apollo searches per county pull, deduplicating by person ID. This prevents Apollo from silently capping large `person_titles` arrays. With 200+ titles, the old single-call approach risked returning zero contacts for segments added after Run 50. Batching guarantees all 28+ segments are queried every pull.
+> ✅ **Title batching active (Run 132):** `workers/lead_pipeline.py` now batches DANNY_TITLES in groups of 50 and runs multiple Apollo searches per county pull, deduplicating by person ID. This prevents Apollo from silently capping large `person_titles` arrays. With 250+ titles across 51+ commercial segments, the old single-call approach risked returning zero contacts for many segments. Batching guarantees all 51+ segments are queried every pull.
 
 Target titles:
 - Property Manager, Property Management Director, Property Director
@@ -793,6 +793,24 @@ Events drive 20,000–70,000+ fans = maximum visible staining on all surfaces. F
 **Apollo titles:** `tax district manager`, `tax preparation manager`, `tax office manager`, `tax center manager`, `tax services district manager`, `tax franchise manager`, `tax preparation district manager` — added to DANNY_TITLES and PROPERTY_MANAGER_TITLES.
 
 **Apollo keywords (live Run 139):** `tax preparation`, `tax services`, `tax office`, `tax franchise`, `h&r block`, `jackson hewitt`, `liberty tax`, `tax center`, `tax preparation services`, `income tax services` — added to DANNY_ORG_KEYWORDS.
+
+**Sequence:** Route to Property Manager sequence (multi-site facility management angle). First pull: June 8 Cuyahoga.
+
+### Coffee & Drive-Through Beverage Chains (NEW — May 2026, Run 140)
+
+**Status:** PENDING — first pull June 8 Cuyahoga
+
+**Target:** Coffee District Manager, Coffee Shop Manager, Coffee Chain Manager, Drive-Through Manager, Drive-Through Manager, Quick Service Beverage Manager, Beverage District Manager, Coffee Store Manager.
+
+**Why:** NE Ohio has 290+ coffee and beverage drive-through locations: Starbucks (60+), Dunkin' (80+), Tim Hortons (50+ — very strong Cleveland-area presence), Panera Bread (most NE Ohio locations have drive-throughs), Dutch Bros (growing in Ohio), Caribou Coffee. Drive-through canopies accumulate exhaust residue, mildew, and grime on the underside. Hundreds of vehicles pass through every day — entry lane concrete, queue areas, and building exteriors show heavy staining. District managers control 5–15 location territories and sign vendor contracts. DISTINCT from the QSR restaurant segment — coffee chain companies have separate Apollo org tags and different buying patterns.
+
+**Revenue per visit:** $400–$900/location. Quarterly = $1.6K–$3.6K/location. A 15-location district at 4 visits/year = $24K–$54K/year. Zero competitors cold-calling coffee chain district managers in NE Ohio.
+
+**Pitch angle:** "Your drive-through canopy processes 500+ cars a day — exhaust, humidity, and road grime build up fast. Most drive-through canopies haven't been pressure washed in 2+ years. We handle all 12 of your NE Ohio locations in one mobilization and you never have to think about it again."
+
+**Apollo titles:** `coffee district manager`, `coffee shop manager`, `coffee chain manager`, `drive through manager`, `drive-through manager`, `quick service beverage manager`, `beverage district manager`, `coffee store manager` — added to DANNY_TITLES and PROPERTY_MANAGER_TITLES.
+
+**Apollo keywords (live Run 140):** `coffee chain`, `coffee shop chain`, `coffee franchise`, `quick service beverage`, `drive through beverage`, `starbucks`, `dunkin'`, `tim hortons`, `dutch bros`, `caribou coffee`, `panera bread` — added to DANNY_ORG_KEYWORDS.
 
 **Sequence:** Route to Property Manager sequence (multi-site facility management angle). First pull: June 8 Cuyahoga.
 

@@ -224,7 +224,7 @@ def _check_workiz_staleness():
 
 def _check_summit_deadline():
     """Fire a countdown alert daily May 27–May 31. Summit pull deadline is May 31.
-    After May 31 Summit doesn't run until July 6 (Medina→Geauga+Portage→Cuyahoga rotation).
+    After May 31, Summit next auto-rotates June 29 (Week 27 % 6 = 3 = Summit index).
     """
     from datetime import date as _date_s
     today = _date_s.today()
@@ -250,8 +250,8 @@ def _check_summit_deadline():
     ) if today.weekday() == 5 else ''
     msg = (
         f'{urgency_emoji} *Summit County Pull — {days_label} (Deadline May 31)*\n'
-        f'>Miss this window = no Summit leads until July 6 (next time it comes up in rotation).\n'
-        f'>All new commercial segments (restaurants, banks, gyms, medical offices, 30+ total) miss peak season.\n'
+        f'>Miss this window = no Summit leads until June 29 (next auto-rotation, Week 27).\n'
+        f'>All 51+ commercial segments (restaurants, banks, gyms, hospitals, sports venues + more) miss peak season.\n'
         f'>Danny only: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py danny Summit`\n'
         f'>Danny + Carla (recommended): `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Summit`\n'
         f'>Or double-click: `scripts/run_summit_both.command` in Finder — both workers, one click.'
@@ -845,12 +845,16 @@ def _check_june8_geauga_portage():
     msg = (
         f'🏙️ *Cuyahoga County Pull — {label} (June 8) — LARGEST MARKET*\n'
         f'>Week 24 rotation: Cleveland, Parma, Lakewood, Strongsville, Beachwood. Highest lead volume of all 6 counties.\n'
-        f'>All 36 commercial segments fire here: hospitals (Cleveland Clinic, UH, MetroHealth), museums\n'
+        f'>All 51+ commercial segments fire here: hospitals (Cleveland Clinic, UH, MetroHealth), museums\n'
         f'>   (Cleveland Museum of Art, Metroparks Zoo, Rock Hall), YMCA of Greater Cleveland (12 branches),\n'
         f'>   DSO chains (Aspen Dental, Heartland), government/transit (GCRTA, Port of Cleveland, city halls),\n'
-        f'>   dialysis (DaVita/Fresenius 50+ centers), concert venues (Blossom, Jacobs Pavilion) + more.\n'
-        f'> ✅ Title + org keyword batching active (Run 134): all 36 segments fully queried.\n'
+        f'>   dialysis (DaVita/Fresenius 50+ centers), concert venues (Blossom, Jacobs Pavilion),\n'
+        f'>   dollar stores (DG/FD/DT 300+ locations), auto parts (O\'Reilly/AutoZone/NAPA), hardware\n'
+        f'>   (Home Depot/Lowe\'s), sports venues (Cavs/Guardians/Browns), cannabis dispensaries,\n'
+        f'>   blood/plasma centers, coin laundries, warehouse clubs (Costco/Sam\'s), wireless retail + more.\n'
+        f'> ✅ Title + org keyword batching active (Run 134): all 51+ segments fully queried.\n'
         f'>{note}\n'
+        f'>Shortcut: double-click `scripts/run_cuyahoga_both.command` in Finder (no typing required)\n'
         f'>Command: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Cuyahoga`'
     )
     if post_slack(msg):
@@ -1418,8 +1422,8 @@ def _check_july20_cuyahoga_2():
     msg = (
         f'📍 *Cuyahoga County 2nd Pass — {label} (July 20)*\n'
         f'>Week 30 rotation: Cuyahoga — Cleveland, Lakewood, Parma, Strongsville, Berea, Westlake, Rocky River.\n'
-        f'>Second pass: catches non-opens from June 8 + new segments (school districts, car rental) now active.\n'
-        f'>Highest-volume market — all commercial segments at max. School districts NOW in active summer window.\n'
+        f'>Second pass: catches non-opens from June 8 + school districts now in active summer window.\n'
+        f'>Highest-volume market — all 51+ commercial segments at max capacity.\n'
         f'>{note}\n'
         f'>Command: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Cuyahoga`'
     )
@@ -1998,7 +2002,7 @@ def _check_neighbor_canvass_weekly():
 
 def _check_early_cuyahoga_opportunity():
     """Fire May 28–June 7 — one-time window to run an EARLY Cuyahoga pull.
-    36 commercial segments won't get Cuyahoga contacts until the scheduled June 8 pull.
+    51+ commercial segments won't get Cuyahoga contacts until the scheduled June 8 pull.
     Running Cuyahoga NOW gives those contacts extra days in the sequence before June 4 enrollment.
     This is additive — does NOT replace the June 8 rotation pull, it SUPPLEMENTS it.
     Self-deactivates June 8 (Cuyahoga IS the scheduled pull that day)."""
@@ -2017,15 +2021,17 @@ def _check_early_cuyahoga_opportunity():
     days_to_june8 = (_date_ec(2026, 6, 8) - today).days
     msg = (
         f'🏙️ *Early Cuyahoga Pull Opportunity — {days_to_june8} Days Before Scheduled June 8 Pull*\n'
-        f'>25+ new commercial segments (hospital campuses, municipal facilities, DSO dental groups,\n'
-        f'>YMCA branches, tire chains, movie theaters, bowling, pet boarding, dialysis, sports complexes,\n'
-        f'>museums, food processing, airports, concert venues, craft breweries) won\'t get Cuyahoga contacts\n'
-        f'>until the June 8 scheduled pull.\n'
+        f'>51+ commercial segments (hospital campuses, municipal facilities, DSO dental groups, YMCA branches,\n'
+        f'>tire chains, movie theaters, bowling, pet boarding, dialysis, sports complexes, museums, food\n'
+        f'>processing, airports, concert venues, craft breweries, dollar stores, auto parts, hardware,\n'
+        f'>sports venues, cannabis dispensaries, blood/plasma centers, coin laundries, warehouse clubs,\n'
+        f'>wireless retail, uniform services, optical centers, medical labs, tax prep offices) won\'t get\n'
+        f'>Cuyahoga contacts until the June 8 scheduled pull.\n'
         f'>Running an EARLY pull today = {days_to_june8} extra days for those contacts BEFORE June 4 enrollment.\n'
-        f'>✅ Title batching now active (Run 132) — all 200+ titles search in 4 batches of 50, so every\n'
-        f'>   segment is actually queried. This pull will return more diverse contacts than any prior pull.\n'
+        f'>✅ Title + org keyword batching active — all segments fully queried across multiple API batches.\n'
         f'>This is additive — won\'t interfere with the June 8 rotation pull.\n'
-        f'>Command (25 min unattended): `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py danny Cuyahoga`\n'
+        f'>Shortcut: double-click `scripts/run_cuyahoga_both.command` in Finder (no typing required)\n'
+        f'>Command: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py danny Cuyahoga`\n'
         f'>Guide: `outputs/vera/commercial_segments_early_pull_guide_2026-05-26.md`'
     )
     if post_slack(msg):
