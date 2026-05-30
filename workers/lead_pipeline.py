@@ -749,6 +749,20 @@ DANNY_TITLES = [
     # zero NE Ohio power washing competitors targeting RV dealership GMs (added 2026-05-30 run 144)
     'rv dealer manager', 'rv dealership manager', 'rv dealer general manager', 'camper dealer manager',
     'recreational vehicle dealer manager', 'rv store manager', 'motorhome dealer manager',
+    # Garden Centers & Nurseries — Petitti Garden Centers (12+ NE Ohio — dominant local chain),
+    # Sunrize Garden Center, Rittgers' Greenhouse & Garden Center (Medina), Cornell's Garden Center,
+    # Rolling Ridge Nursery (Medina), Planter's Choice Nursery (Stow), independent retail nurseries;
+    # DISTINCT from landscaping contractors (Carla route) — these are RETAIL garden centers with large display yards;
+    # paved display areas accumulate mulch dust, potting soil, fertilizer residue, and cart-traffic staining daily;
+    # entry concrete + parking lots + display yard aprons = high-visibility, high-stain surfaces;
+    # Ohio Department of Agriculture nursery licensing = exterior facility appearance standard;
+    # spring (April-June) = PEAK PITCH WINDOW — they're at peak revenue and see the worst staining;
+    # GM or district manager signs vendor contracts; $600-$2,000/location visit; 2-3x/year;
+    # Petitti Garden Centers 12 locations × 3 visits = $21,600–$72,000/year (one deal = full season coverage);
+    # zero NE Ohio power washing competitors cold-calling garden center operators (added 2026-05-30 run 145)
+    'garden center manager', 'nursery manager', 'garden center district manager',
+    'plant nursery manager', 'nursery district manager', 'garden supply manager',
+    'greenhouse manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -1162,6 +1176,13 @@ DANNY_ORG_KEYWORDS = [
     'rv dealer', 'rv dealership', 'recreational vehicle dealer', 'camper dealer',
     'motorhome dealer', 'rv sales', 'camping world', 'rv world', 'campers inn',
     'rv rental', 'travel trailer dealer',
+    # Garden Centers & Nurseries — Petitti Garden Centers (12+ NE Ohio), Sunrize Garden Center,
+    # Rittgers' Greenhouse (Medina), Cornell's Garden Center, Rolling Ridge Nursery;
+    # DISTINCT Apollo org tags from landscaping contractors (Carla segment) — retail garden centers;
+    # Ohio Dept. of Agriculture nursery licensing = exterior appearance standard;
+    # spring patio/display prep = PEAK PITCH WINDOW right now (added 2026-05-30 run 145)
+    'garden center', 'plant nursery', 'nursery center', 'garden supply',
+    'petitti garden', 'greenhouse nursery', 'landscape nursery', 'garden retail',
 ]
 
 CARLA_SEARCHES = [

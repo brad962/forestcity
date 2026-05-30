@@ -35,7 +35,7 @@ Example payload for property managers in Cuyahoga County:
 
 **Always pass `q_organization_keyword_tags`** — this catches decision-makers at property management companies where the contact's title isn't "property manager" (e.g., owner or VP at a 10-property HOA management firm).
 
-> ✅ **Title batching active (Run 132):** `workers/lead_pipeline.py` now batches DANNY_TITLES in groups of 50 and runs multiple Apollo searches per county pull, deduplicating by person ID. This prevents Apollo from silently capping large `person_titles` arrays. With 300+ titles across 54+ commercial segments, the old single-call approach risked returning zero contacts for many segments. Batching guarantees all 54+ segments are queried every pull.
+> ✅ **Title batching active (Run 132):** `workers/lead_pipeline.py` now batches DANNY_TITLES in groups of 50 and runs multiple Apollo searches per county pull, deduplicating by person ID. This prevents Apollo from silently capping large `person_titles` arrays. With 300+ titles across 81+ commercial segments, the old single-call approach risked returning zero contacts for many segments. Batching guarantees all 81+ segments are queried every pull.
 
 Target titles:
 - Property Manager, Property Management Director, Property Director
@@ -1011,6 +1011,28 @@ Events drive 20,000–70,000+ fans = maximum visible staining on all surfaces. F
 **Apollo keywords (live Run 144):** `rv dealer`, `rv dealership`, `recreational vehicle dealer`, `camper dealer`, `motorhome dealer`, `rv sales`, `camping world`, `rv world`, `campers inn`, `rv rental`, `travel trailer dealer` — added to DANNY_ORG_KEYWORDS.
 
 **Sequence:** Route to Property Manager sequence. First pull: June 8 Cuyahoga (Streetsboro/Hudson area).
+
+---
+
+### Garden Centers & Nurseries (NEW — May 2026, Run 145)
+
+**Status:** PENDING — first pull June 8 Cuyahoga (Petitti Garden Centers Cuyahoga County locations + any Cuyahoga/Summit nurseries returned by Apollo)
+
+**Target:** Garden Center Manager, Nursery Manager, Garden Center District Manager, Plant Nursery Manager, Nursery District Manager, Garden Supply Manager, Greenhouse Manager.
+
+**Why:** NE Ohio's dominant garden center chain is **Petitti Garden Centers** — 12+ locations spanning Cuyahoga, Summit, Geauga, Lake, and Medina counties. Family-owned and locally beloved since 1971. Petitti is one of the largest independent garden center chains in Ohio. Other NE Ohio targets: **Sunrize Garden Center** (NE Ohio regional chain), **Rittgers' Greenhouse & Garden Center** (Medina area), **Cornell's Garden Center** (Strongsville), **Rolling Ridge Nursery** (Medina), **Planter's Choice Nursery** (Stow), **Petitti's Express** (smaller satellite locations). DISTINCT from landscaping contractors (Carla's referral partner segment) — these are RETAIL garden centers with large display yards and parking areas. Separate Apollo org tags: 'garden center', 'plant nursery' — NOT caught by 'landscaping' or 'lawn care' keywords.
+
+Large paved display areas (mulch, potting soil, fertilizer bags, cart-traffic) accumulate staining that regular commercial cleaners can't handle. Entry concrete and parking lot aprons show the worst staining because customers track soil and product residue constantly. Ohio Department of Agriculture nursery licensing = exterior appearance standard. Spring (April–June) is PEAK PITCH WINDOW — right now. They're generating maximum revenue, are highly visible to customers, and know their display areas need cleaning before the rest of the season.
+
+**Revenue per visit:** $600–$2,000/location (display yard apron + parking lot + building entry). 2–3x/year: spring opening + mid-season + fall cleanup = $1,200–$6,000/year per location. Petitti 12-location deal at 3 visits = **$21,600–$72,000/year**. Zero NE Ohio power washing competitors cold-calling garden center operators.
+
+**Pitch angle:** "Your display yard and entry concrete take the worst of spring traffic — fertilizer, mulch dust, potting soil, and hundreds of carts every day. We do the spring opening wash and fall cleanup for garden center locations across NE Ohio. One call, one schedule, all locations."
+
+**Apollo titles (live Run 145):** `garden center manager`, `nursery manager`, `garden center district manager`, `plant nursery manager`, `nursery district manager`, `garden supply manager`, `greenhouse manager` — added to DANNY_TITLES and PROPERTY_MANAGER_TITLES.
+
+**Apollo keywords (live Run 145):** `garden center`, `plant nursery`, `nursery center`, `garden supply`, `petitti garden`, `greenhouse nursery`, `landscape nursery`, `garden retail` — added to DANNY_ORG_KEYWORDS.
+
+**Sequence:** Route to Property Manager sequence. First pull: June 8 Cuyahoga (Petitti Cuyahoga locations + Summit/Geauga nurseries).
 
 ---
 

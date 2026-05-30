@@ -1,6 +1,29 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 144 | 2026-05-30 | Auto-fixes shipped: 5 | New RESOLVED: 0 | Open: 81 (78 carry-forward + 3 new segments)*
+*Run 145 | 2026-05-30 | Auto-fixes shipped: 3 | New RESOLVED: 0 | Open: 82 (81 carry-forward + 1 new: Garden Centers)*
+
+---
+
+## RUN METRICS — Run 145 | 2026-05-30
+- Total RESOLVED: 118 (none new this run)
+- Total OPEN: 82 (81 carry-forward + 1 new: Garden Centers & Nurseries)
+- Auto-upgrades shipped: 3
+  1. `workers/lead_pipeline.py` — NEW: Garden Centers & Nurseries segment. 7 DANNY_TITLES (garden center manager, nursery manager, garden center district manager, plant nursery manager, nursery district manager, garden supply manager, greenhouse manager). 8 DANNY_ORG_KEYWORDS (garden center, plant nursery, nursery center, garden supply, petitti garden, greenhouse nursery, landscape nursery, garden retail). Petitti Garden Centers (12+ NE Ohio), Sunrize, Rittgers', Cornell's, Rolling Ridge, Planter's Choice. Spring = PEAK PITCH WINDOW right now. $600-$2K/visit; Petitti 12-location deal = $21,600-$72,000/year. Zero competitors. First pull June 8 Cuyahoga.
+  2. `integrations/mixmax.py` — Synced 7 Garden Centers titles to PROPERTY_MANAGER_TITLES. GAS_STATION_KEYWORDS checked first per Run 136 fix; all new titles correctly route to property_manager sequence.
+  3. `workers/vera_relay.py` — BUG FIX: Updated ALL stale segment counts across 7 relay functions. "51+" → "80+" in 6 places (Summit deadline, June 8 Cuyahoga message x2, July 20 2nd pass, early Cuyahoga docstring + message). "54+" → "80+" in 1 place (post-June-8 monitoring). Also added "garden centers" to the June 8 segment list. These counts were stale since Run 140 — actual tally is 80 segments after all additions through Run 144.
+  4. `agents/danny.md` — Full Garden Centers & Nurseries segment brief added. Title batching note updated from "54+ commercial segments" → "81+ commercial segments."
+
+**Critical pending (human action required — UNCHANGED):**
+- 🚨 SUMMIT COUNTY PULL — DEADLINE TOMORROW May 31. Last day. `python3 workers/lead_pipeline.py both Summit` or double-click `scripts/run_summit_both.command`. 6 min unattended.
+- ⛽ Gas station Mixmax sequence NOT CREATED — contacts stranded since May 19
+- 🚚 Fleet washing Mixmax sequence NOT CREATED — contacts stranded
+- ⚠️ Instantly.ai NOT PAUSED — June 4 enrollment BLOCKED (5 days away)
+
+## OPEN — Garden Centers & Nurseries Segment Not Yet Pulled 🟡 NEW (Run 145)
+- First seen: 2026-05-30
+- Description: Petitti Garden Centers (12+ NE Ohio — dominant local chain), Sunrize Garden Center, Rittgers' Greenhouse (Medina), Cornell's Garden Center (Strongsville), Rolling Ridge Nursery (Medina), Planter's Choice Nursery (Stow). DISTINCT from landscaping contractors (Carla segment) — retail garden centers with large display yards. Ohio Dept. of Agriculture nursery licensing = exterior appearance standard. Spring = PEAK PITCH WINDOW right now. $600-$2K/visit; 2-3x/year. Petitti 12-location deal = $21,600-$72,000/year. Zero competitors cold-calling garden center operators.
+- Fix applied (Run 145): 7 DANNY_TITLES + 8 DANNY_ORG_KEYWORDS + PROPERTY_MANAGER_TITLES sync + agents/danny.md full segment brief. First pull June 8 Cuyahoga.
+- Resolution criteria: Garden center manager / nursery manager contacts appear in June 8 Cuyahoga pull.
 
 ---
 

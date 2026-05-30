@@ -464,6 +464,10 @@ PROPERTY_MANAGER_TITLES = [
     # RV & Camper Dealers (added 2026-05-30 run 144)
     'rv dealer manager', 'rv dealership manager', 'rv dealer general manager', 'camper dealer manager',
     'recreational vehicle dealer manager', 'rv store manager', 'motorhome dealer manager',
+    # Garden Centers & Nurseries (added 2026-05-30 run 145)
+    'garden center manager', 'nursery manager', 'garden center district manager',
+    'plant nursery manager', 'nursery district manager', 'garden supply manager',
+    'greenhouse manager',
 ]
 
 REALTOR_TITLES = [

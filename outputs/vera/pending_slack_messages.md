@@ -1,3 +1,34 @@
+🔧 *Vera — Auto-Upgrade Run 145*
+>Changed: Added Garden Centers & Nurseries as new commercial segment (81st segment)
+>Why: Petitti Garden Centers (12+ NE Ohio) is the dominant local chain — and RIGHT NOW (late May/June) is their peak season. Large paved display areas stained with mulch, potting soil, fertilizer. Ohio Dept. of Agriculture nursery licensing = exterior appearance standard. 7 Apollo titles + 8 org keywords added. Zero NE Ohio power washing competitors targeting garden center operators. Petitti 12-location deal = $21,600–$72,000/year.
+>File: workers/lead_pipeline.py, integrations/mixmax.py, agents/danny.md
+---
+🔧 *Vera — Auto-Upgrade Run 145*
+>Changed: Fixed stale segment count across 7 relay functions — "51+" → "80+" (6 places) and "54+" → "80+" (1 place)
+>Why: We now have 80 commercial segments in DANNY_ORG_KEYWORDS after all additions through Run 144. The June 8 Cuyahoga message, Summit deadline, July 20 2nd pass, early Cuyahoga opportunity, and post-June-8 monitoring messages all showed wrong counts. Also added "garden centers" to the June 8 segment list.
+>File: workers/vera_relay.py
+---
+🚨 *Summit County Pull — TOMORROW IS THE DEADLINE (May 31)*
+>Last chance to pull Summit County leads before the window closes.
+>Next auto-rotation: June 29 (Week 27). All 80+ commercial segments (hospitals, gyms, restaurants, breweries, golf courses, etc.) miss Summit leads until then.
+>Double-click: `scripts/run_summit_both.command` in Finder (Danny + Carla, 6 min unattended, no typing)
+>Or: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Summit`
+---
+⛽ *Gas Station + Fleet Sequences Still PENDING*
+>Gas station contacts stranded since May 19. Fleet contacts waiting indefinitely.
+>Gas station: Create in Mixmax UI → Sequences → New → paste ID into integrations/mixmax.py line 54. Guide: `outputs/danny/gas_station_sequence_create_now_2026-05-27.md`
+>Fleet: Create "Forest City Power Washing — Fleet Washing Outreach" → paste ID into mixmax.py line ~48.
+>Or: Gmail blast all gas station contacts today. Templates: `outputs/danny/gas_station_manual_email_blast_2026-05-19.md`
+---
+⚠️ *Instantly.ai STILL NOT PAUSED — June 4 Enrollment Blocked*
+>June 4 Round 2 enrollment is 5 days away. Instantly.ai campaigns a1c08c3d + 626cd15d overlap with Mixmax contacts = duplicate emails = spam filters = 0% reply rate.
+>FIX (3 min): app.instantly.ai → Campaigns → ⋮ → Pause both campaigns → add INSTANTLY_PAUSED=true to .env file
+>Guide: `outputs/vera/instantly_pause_guide_2026-05-22.md`
+---
+✅ *Vera — Scan Complete 2026-05-30 (Run 145)*
+>3 auto-upgrades shipped | 0 proposals | 82 open issues (81 carry-forward + 1 new: Garden Centers)
+>Key: Garden Centers & Nurseries segment #81 added (Petitti 12-location NE Ohio chain). Segment count fixed across all relay messages (51+/54+ → 80+). Summit deadline TOMORROW — critical.
+---
 🔧 *Vera — Auto-Upgrade Run 144*
 >Changed: Added Wineries & Distilleries as new commercial segment (54th segment)
 >Why: 50+ NE Ohio wineries/distilleries (Ferrante, Debonne, Erie Shore, Cuyahoga Valley Winery, Tom's Foolery Distillery, Cleveland Whiskey) are DISTINCT from craft breweries in Apollo ('winery', 'vineyard', 'distillery' tags). Spring patio opening = PRIME pitch window. Wedding rental appearance standard = non-negotiable. Owner/GM signs directly — no corporate procurement. $600–$2,000/visit, 2-3x/year. Zero competitors.
