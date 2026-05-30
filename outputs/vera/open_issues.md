@@ -1,8 +1,29 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 141 | 2026-05-30 | Auto-fixes shipped: 5 | New RESOLVED: 2 | Open: 74 (72 carry-forward + 2 new segments)*
+*Run 142 | 2026-05-30 | Auto-fixes shipped: 4 | New RESOLVED: 0 | Open: 75 (74 carry-forward + 1 new segment)*
 
 ---
+
+## RUN METRICS — Run 142 | 2026-05-30
+- Total RESOLVED: 117 (none new this run)
+- Total OPEN: 75 (74 carry-forward + 1 new: Coworking & Flex Office Spaces)
+- Auto-upgrades shipped: 4
+  1. `workers/lead_pipeline.py` — NEW: Coworking & Flex Office Spaces segment. 9 DANNY_TITLES (coworking space manager, flex office manager, coworking manager, shared workspace manager, business center manager, executive suite manager, shared office director, coworking director, flexible workspace manager), 13 DANNY_ORG_KEYWORDS (coworking space, flex office, shared workspace, coworking, executive suite, flexible office, serviced office, shared office, regus, iwg, wework, industrious office, flexible workspace). IWG/Regus 5+ NE Ohio, WeWork Cleveland downtown. $15K–$40K/year per IWG portfolio. Zero competitors. First pull June 8 Cuyahoga.
+  2. `integrations/mixmax.py` — Synced 9 Coworking titles to PROPERTY_MANAGER_TITLES. Correct routing to Property Manager Mixmax sequence on import.
+  3. `agents/danny.md` — Full Coworking segment brief added (pitch angle: "premium address demands premium appearance," revenue math, target companies, Apollo titles + keywords).
+  4. `workers/vera_relay.py` — NEW: `_check_weekly_booking_velocity()` function. Fires every Friday June 1–Sept 25. Posts weekly Workiz velocity check to Slack: jobs booked, revenue split, outstanding quotes, lead source attribution. Target: 8–12 jobs/week = $4,800–$8,400/week. Wired into `_main_body()` after `_check_neighbor_canvass_weekly()`.
+
+**Critical pending (human action required — UNCHANGED):**
+- 🚨 SUMMIT COUNTY PULL — DEADLINE TODAY May 31. Last chance. `python3 workers/lead_pipeline.py both Summit` or double-click `scripts/run_summit_both.command`
+- ⛽ Gas station Mixmax sequence NOT CREATED — contacts stranded since May 19
+- 🚚 Fleet washing Mixmax sequence NOT CREATED — contacts stranded
+- ⚠️ Instantly.ai NOT PAUSED — June 4 enrollment BLOCKED
+
+## OPEN — Coworking & Flex Office Spaces Segment Not Yet Pulled 🟡 NEW (Run 142)
+- First seen: 2026-05-30
+- Description: IWG/Regus (5+ NE Ohio locations: Beachwood, Westlake, Independence, Solon, Akron), WeWork (Cleveland downtown), Industrious, Serendipity Labs. Large commercial buildings with shared entry lobbies, parking structures, exterior facades. FM/building operators sign vendor contracts — premium tenants expect premium appearance. Distinct from general office building segment — coworking brand depends on first impression. $800–$2,000/visit per location. IWG NE Ohio 5 locations × 2 visits = $8K–$20K/year. Zero competitors targeting coworking facility operators in NE Ohio.
+- Fix applied (Run 142): 9 DANNY_TITLES + 13 DANNY_ORG_KEYWORDS + PROPERTY_MANAGER_TITLES sync + agents/danny.md full segment brief. First pull June 8 Cuyahoga.
+- Resolution criteria: Coworking/flex office manager contacts appear in June 8 Cuyahoga pull.
 
 ## RUN METRICS — Run 141 | 2026-05-30
 - Total RESOLVED: 117 (2 new this run: GBP relay wrong path + post-June8 stale segment count)

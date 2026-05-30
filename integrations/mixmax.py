@@ -435,6 +435,10 @@ PROPERTY_MANAGER_TITLES = [
     'salon district manager', 'hair salon district manager', 'salon regional manager',
     'barbershop district manager', 'beauty salon district manager', 'salon franchise manager',
     'nail salon district manager', 'spa district manager',
+    # Coworking Spaces & Flex Offices (added 2026-05-30 run 142)
+    'coworking space manager', 'flex office manager', 'coworking manager',
+    'shared workspace manager', 'business center manager', 'executive suite manager',
+    'shared office director', 'coworking director', 'flexible workspace manager',
 ]
 
 REALTOR_TITLES = [

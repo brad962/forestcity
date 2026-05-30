@@ -660,6 +660,14 @@ DANNY_TITLES = [
     'salon district manager', 'hair salon district manager', 'salon regional manager',
     'barbershop district manager', 'beauty salon district manager', 'salon franchise manager',
     'nail salon district manager', 'spa district manager',
+    # Coworking Spaces & Flex Offices — IWG/Regus (5+ NE Ohio), WeWork (Cleveland downtown),
+    # Industrious, Serendipity Labs; large commercial buildings with shared entry lobbies,
+    # parking structures, exterior building facades; FM/building operator signs vendor contracts;
+    # premium tenants expect premium appearance; IWG NE Ohio portfolio = $15K-$40K/year;
+    # zero competitors cold-calling coworking facility operators in NE Ohio (added 2026-05-30 run 142)
+    'coworking space manager', 'flex office manager', 'coworking manager',
+    'shared workspace manager', 'business center manager', 'executive suite manager',
+    'shared office director', 'coworking director', 'flexible workspace manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -1025,6 +1033,11 @@ DANNY_ORG_KEYWORDS = [
     # chemical spill compliance + high foot traffic; first pull June 8 Cuyahoga (added 2026-05-30 run 141)
     'hair salon chain', 'barbershop chain', 'beauty salon chain', 'salon franchise',
     'great clips', 'sport clips', 'supercuts', 'hair salon management',
+    # Coworking Spaces & Flex Offices — IWG/Regus, WeWork, Industrious;
+    # large commercial building entry lobbies + parking; premium tenant appearance standard (added 2026-05-30 run 142)
+    'coworking space', 'flex office', 'shared workspace', 'coworking', 'executive suite',
+    'flexible office', 'serviced office', 'shared office', 'regus', 'iwg', 'wework',
+    'industrious office', 'flexible workspace',
 ]
 
 CARLA_SEARCHES = [

@@ -150,3 +150,22 @@
 >New segments: Pet Supply Retail (PetSmart/Petco/Pet Supplies Plus) + Hair/Nail Salon Chains (Great Clips 80+ NE Ohio)
 >Total pipeline segments: 54+. Total DANNY_TITLES: ~275.
 >Today's priority stack: 1) Summit pull (DEADLINE TODAY) 2) Instantly.ai paused (June 4 = 5 days) 3) Gas station sequence in Mixmax 4) Past customer texts (fastest revenue during ad learning phase)
+
+---
+🔧 *Vera — Auto-Upgrade | Run 142 | May 30*
+>Changed: NEW 55th segment — Coworking & Flex Office Spaces (lead_pipeline.py + mixmax.py + danny.md)
+>Why: IWG/Regus (5+ NE Ohio), WeWork Cleveland, Industrious, Serendipity Labs — commercial buildings where the lobby IS the brand. Premium B2B tenants paying $500–$2K/month expect a spotless entry. Pitch: "Your members are paying for a premium address — the lobby and parking deck tell them whether it's worth it." 9 titles + 13 org keywords. $8K–$20K/year per IWG NE Ohio portfolio. Zero competitors targeting coworking operators. First pull June 8 Cuyahoga.
+>Files: `workers/lead_pipeline.py`, `integrations/mixmax.py`, `agents/danny.md`
+
+---
+🔧 *Vera — Auto-Upgrade | Run 142 | May 30*
+>Changed: Added `_check_weekly_booking_velocity()` to vera_relay.py — fires every Friday June 1–Sept 25
+>Why: Ads spend and outreach run every week but nobody was checking whether they're converting into booked jobs. Without a weekly Workiz velocity check, you can run 8 weeks of peak season and not notice you're off-pace until it's too late. Now every Friday you get a 5-minute Workiz prompt: jobs booked, revenue split, outstanding quotes >3 days, lead source attribution. Target: 8–12 jobs/week = $4,800–$8,400/week. Self-deactivates Sept 26.
+>File: `workers/vera_relay.py`
+
+---
+✅ *Vera — Scan Complete 2026-05-30 (Run 142)*
+>4 auto-upgrades shipped | 0 proposals | 75 open issues (74 carry-forward + 1 new segment)
+>New: Coworking & Flex Office Spaces (IWG/Regus/WeWork — 55th commercial segment). Weekly booking velocity check added to relay (every Friday Jun 1–Sept 25).
+>Total pipeline segments: 55+. Total DANNY_TITLES: ~284.
+>Priority stack unchanged: 1) Summit pull (DEADLINE TODAY — last chance) 2) Instantly.ai paused (June 4 = 5 days) 3) Gas station sequence 4) Past customer texts

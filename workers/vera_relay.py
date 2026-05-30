@@ -2136,6 +2136,47 @@ def _check_october_final_push():
         log(f'October final push reminder posted — {days_left_in_window} days left in window')
 
 
+def _check_weekly_booking_velocity():
+    """Fire every Friday June 1 – Sept 25.
+    During peak season, Bradley needs to check weekly booking velocity.
+    Workiz is the ground truth — are enough jobs being booked to hit monthly targets?
+    Without this, ads spend and outreach runs but nobody checks whether efforts
+    are converting into booked revenue. Self-deactivates Sept 26."""
+    from datetime import date as _date_bv
+    today = _date_bv.today()
+    start = _date_bv(2026, 6, 1)
+    end   = _date_bv(2026, 9, 25)
+    if not (start <= today <= end):
+        return
+    if today.weekday() != 4:  # Friday only
+        return
+
+    alert_sentinel = BASE_DIR / 'outputs' / 'vera' / '.booking_velocity_week'
+    week_str = today.strftime('%Y-W%W')
+    if alert_sentinel.exists() and alert_sentinel.read_text().strip() == week_str:
+        return
+
+    msg = (
+        '📈 *Weekly Booking Velocity Check — End of Week*\n'
+        '>5 minutes in Workiz tells you if this week\'s ads + outreach are converting.\n'
+        '>Check:\n'
+        '>  1. Jobs booked this week → are you on pace for monthly goal?\n'
+        '>  2. Revenue booked this week → residential vs. commercial split?\n'
+        '>  3. Outstanding quotes → follow up on any estimate sitting > 3 days\n'
+        '>  4. Lead source → which source (ad, outreach reply, past customer, neighbor canvass) drove the most?\n'
+        '>Run Workiz report: `cd /Users/bradleyneal/forestcity && python3 workers/workiz_report.py daily`\n'
+        '>Target: 8–12 jobs/week in peak season = $4,800–$8,400/week at $600 avg job value.\n'
+        '>Outstanding quote follow-up: `outputs/tommy/quote_followup_sequence_2026-05-21.md`'
+    )
+    if post_slack(msg):
+        alert_sentinel.parent.mkdir(exist_ok=True)
+        try:
+            alert_sentinel.write_text(week_str)
+        except Exception:
+            pass
+        log(f'Weekly booking velocity check reminder posted — week {week_str}')
+
+
 def _check_gbp_weekly_post():
     """Fire every Monday May 26 – Sept 30.
     Google Business Profile posts keep Forest City active in Maps rankings during peak season.
@@ -2327,6 +2368,7 @@ def _main_body():
     _check_week2_facebook_ads()
     _check_google_lsa_status_weekly()
     _check_neighbor_canvass_weekly()
+    _check_weekly_booking_velocity()
     _check_gbp_weekly_post()
     _check_october_final_push()
     _check_early_cuyahoga_opportunity()

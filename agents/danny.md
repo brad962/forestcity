@@ -856,6 +856,26 @@ Events drive 20,000–70,000+ fans = maximum visible staining on all surfaces. F
 
 ---
 
+### Coworking Spaces & Flex Offices
+
+**Status:** PENDING — first pull June 8 Cuyahoga
+
+**Target:** Coworking Space Manager, Flex Office Manager, Coworking Manager, Shared Workspace Manager, Business Center Manager, Executive Suite Manager, Shared Office Director, Coworking Director, Flexible Workspace Manager.
+
+**Why:** IWG/Regus operates 5+ NE Ohio locations (Beachwood, Westlake, Independence, Solon, Akron). WeWork has a downtown Cleveland location. Industrious and Serendipity Labs are expanding into the Cleveland market. These operators manage large commercial buildings with shared entry lobbies, parking structures, and exterior facades. Facility managers and building operators sign vendor contracts — the tenants are B2B professionals who expect premium appearance. Unlike single-tenant buildings, coworking operators serve dozens of member companies under one roof, making exterior cleanliness a direct reflection on the brand.
+
+**Revenue per visit:** Lobby/entry + parking structure exterior + building facade. $800–$2,000/visit per location. IWG NE Ohio portfolio at 5 locations × 2 visits/year = $8K–$20K/year. Zero competitors cold-calling coworking facility operators in NE Ohio.
+
+**Pitch angle:** "Your members are paying $500–$2,000/month for a premium address. The entry lobby and parking deck tell them whether it's worth it. We do quarterly exterior cleans at all 5 of your NE Ohio IWG locations — one invoice, one vendor contact."
+
+**Apollo titles:** `coworking space manager`, `flex office manager`, `coworking manager`, `shared workspace manager`, `business center manager`, `executive suite manager`, `shared office director`, `coworking director`, `flexible workspace manager` — added to DANNY_TITLES and PROPERTY_MANAGER_TITLES.
+
+**Apollo keywords (live Run 142):** `coworking space`, `flex office`, `shared workspace`, `coworking`, `executive suite`, `flexible office`, `serviced office`, `shared office`, `regus`, `iwg`, `wework`, `industrious office`, `flexible workspace` — added to DANNY_ORG_KEYWORDS.
+
+**Sequence:** Route to Property Manager sequence. First pull: June 8 Cuyahoga.
+
+---
+
 ## Peak Season Angle — HOA Budget Season (May–June)
 HOA boards typically hold their annual budget and vendor approval meetings in May–June before the summer maintenance season. This means property managers and community association managers are ACTIVELY reviewing vendor lists RIGHT NOW. The PM sequence Touch 1 and any LinkedIn outreach should reference this window: "HOA boards are approving their summer vendor lists this month" or "Most associations lock in their exterior maintenance vendor before July." This creates urgency without being pushy — it's calendar-based fact. Works especially well for community associations, HOA management companies, and multifamily operators who work on fiscal budgets.
 
