@@ -409,6 +409,18 @@ PROPERTY_MANAGER_TITLES = [
     'warehouse club manager', 'warehouse club general manager', 'wholesale club manager',
     'wholesale club district manager', 'warehouse club facilities manager', 'membership store manager',
     'warehouse store manager', 'membership warehouse manager', 'wholesale store manager',
+    # Optical/Vision Centers (added 2026-05-30 run 139)
+    'optometry district manager', 'vision center manager', 'optical center manager',
+    'eyecare district manager', 'eye care center manager', 'optical district manager',
+    'optometric practice manager', 'vision care manager',
+    # Medical/Clinical Labs (added 2026-05-30 run 139)
+    'laboratory district manager', 'lab district manager', 'clinical lab manager',
+    'patient service center manager', 'laboratory facilities manager', 'lab operations manager',
+    'laboratory operations manager', 'clinical laboratory manager',
+    # Tax Preparation Offices (added 2026-05-30 run 139)
+    'tax district manager', 'tax preparation manager', 'tax office manager',
+    'tax center manager', 'tax services district manager', 'tax franchise manager',
+    'tax preparation district manager',
 ]
 
 REALTOR_TITLES = [

@@ -596,6 +596,35 @@ DANNY_TITLES = [
     'warehouse club manager', 'warehouse club general manager', 'wholesale club manager',
     'wholesale club district manager', 'warehouse club facilities manager', 'membership store manager',
     'warehouse store manager', 'membership warehouse manager', 'wholesale store manager',
+    # Optical/Vision Centers — LensCrafters (30+ NE Ohio), MyEyeDr (10+ NE Ohio), Visionworks,
+    # Pearle Vision (Luxottica), America's Best, For Eyes, National Vision; strip-mall storefronts
+    # with 300-600+ patients/week; parking lots + building exteriors must meet corporate brand standards;
+    # district managers oversee 10-20 locations and sign vendor contracts; state optometry licensing
+    # = facility appearance standard; $300-$700/location; 15-location district = $18K-$42K/year;
+    # zero competitors cold-calling optical retail district managers in NE Ohio; first pull June 8 Cuyahoga (added 2026-05-30 run 139)
+    'optometry district manager', 'vision center manager', 'optical center manager',
+    'eyecare district manager', 'eye care center manager', 'optical district manager',
+    'optometric practice manager', 'vision care manager',
+    # Medical/Clinical Labs — Quest Diagnostics (50+ NE Ohio patient service centers), LabCorp (40+ NE Ohio),
+    # ARUP Laboratories, BioReference Laboratories, Cleveland Clinic outpatient labs, UH diagnostic labs;
+    # patients visit for blood draws + specimen collection = very high recurring foot traffic;
+    # CLIA (Clinical Laboratory Improvement Amendments) federal certification = facility appearance standard;
+    # district managers sign vendor contracts for multi-center coverage;
+    # $300-$700/center; quarterly = $1.2K-$2.8K/center; 20-center district = $24K-$56K/year;
+    # zero competitors cold-calling lab district managers; first pull June 8 Cuyahoga (added 2026-05-30 run 139)
+    'laboratory district manager', 'lab district manager', 'clinical lab manager',
+    'patient service center manager', 'laboratory facilities manager', 'lab operations manager',
+    'laboratory operations manager', 'clinical laboratory manager',
+    # Tax Preparation Offices — H&R Block (100+ NE Ohio locations), Jackson Hewitt Tax Service (60+ NE Ohio),
+    # Liberty Tax Service (40+ NE Ohio); strip-mall storefronts that are open Jan-April but physically
+    # present year-round; May-September = peak facility maintenance window (post-season exterior cleaning);
+    # district managers sign vendor contracts for 10-20 location territories;
+    # pitch angle: "Tax season is over — let us clean up the mess 4 months of client traffic left behind";
+    # $300-$600/location; 10-location district = $12K-$24K/year; zero competitors targeting this segment;
+    # first pull June 8 Cuyahoga (added 2026-05-30 run 139)
+    'tax district manager', 'tax preparation manager', 'tax office manager',
+    'tax center manager', 'tax services district manager', 'tax franchise manager',
+    'tax preparation district manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -933,6 +962,20 @@ DANNY_ORG_KEYWORDS = [
     'warehouse club', 'membership warehouse', 'wholesale club', 'wholesale retail',
     'membership retail', 'warehouse retail', 'costco', "sam's club", "bj's wholesale",
     'membership store', 'warehouse store',
+    # Optical/Vision Centers — LensCrafters, MyEyeDr, Visionworks, Pearle Vision, America's Best, For Eyes, National Vision;
+    # strip-mall storefronts; district managers sign vendor contracts; first pull June 8 Cuyahoga (added 2026-05-30 run 139)
+    'optical center', 'vision center', 'eyecare center', 'eye care center', 'optometry practice',
+    'optical retail', 'vision retail', 'lenscrafters', 'pearle vision', 'visionworks',
+    'myeyedr', "america's best eyecare", 'for eyes optical', 'national vision',
+    # Medical/Clinical Labs — Quest Diagnostics, LabCorp, Cleveland Clinic outpatient labs, UH diagnostic labs;
+    # CLIA federal certification = facility appearance standard; first pull June 8 Cuyahoga (added 2026-05-30 run 139)
+    'clinical laboratory', 'medical laboratory', 'diagnostic laboratory', 'patient service center',
+    'blood draw center', 'lab testing center', 'quest diagnostics', 'labcorp',
+    'laboratory services', 'diagnostic testing center',
+    # Tax Preparation Offices — H&R Block, Jackson Hewitt, Liberty Tax; May-September = peak maintenance window;
+    # pitch: "Tax season is over — let us clean up"; first pull June 8 Cuyahoga (added 2026-05-30 run 139)
+    'tax preparation', 'tax services', 'tax office', 'tax franchise', "h&r block",
+    'jackson hewitt', 'liberty tax', 'tax center', 'tax preparation services', 'income tax services',
 ]
 
 CARLA_SEARCHES = [

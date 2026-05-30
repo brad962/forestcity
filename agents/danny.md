@@ -738,6 +738,66 @@ Events drive 20,000–70,000+ fans = maximum visible staining on all surfaces. F
 
 ---
 
+### Optical / Vision Centers (NEW — May 2026, Run 139)
+
+**Status:** PENDING — first pull June 8 Cuyahoga
+
+**Target:** Optometry District Manager, Vision Center Manager, Optical Center Manager, Eyecare District Manager, Eye Care Center Manager, Optical District Manager, Optometric Practice Manager, Vision Care Manager.
+
+**Why:** NE Ohio has 50+ strip-mall optical retail locations across LensCrafters (30+), MyEyeDr (10+), Visionworks, Pearle Vision (Luxottica), America's Best, For Eyes, and National Vision. These are high-traffic storefronts averaging 300–600 patients/week. State optometry licensing requirements + corporate brand standards = facility appearance is non-negotiable. District managers oversee 10–20 locations and are the decision-maker for vendor contracts. No competitor is cold-calling optical retail district managers in NE Ohio. First-mover advantage is available now.
+
+**Revenue per visit:** $300–$700/location. Quarterly = $1,200–$2,800/location. A 15-location district at 4 visits/year = $18K–$42K/year.
+
+**Pitch angle:** "Your storefronts see 300–600 patients a week. State optometry licensing means appearance standards aren't optional. We cover all 15 of your NE Ohio locations on a quarterly schedule — one invoice, one contact, done."
+
+**Apollo titles:** `optometry district manager`, `vision center manager`, `optical center manager`, `eyecare district manager`, `eye care center manager`, `optical district manager`, `optometric practice manager`, `vision care manager` — added to DANNY_TITLES and PROPERTY_MANAGER_TITLES.
+
+**Apollo keywords (live Run 139):** `optical center`, `vision center`, `eyecare center`, `eye care center`, `optometry practice`, `optical retail`, `vision retail`, `lenscrafters`, `pearle vision`, `visionworks`, `myeyedr`, `america's best eyecare`, `for eyes optical`, `national vision` — added to DANNY_ORG_KEYWORDS.
+
+**Sequence:** Route to Property Manager sequence (multi-site facility management angle). First pull: June 8 Cuyahoga.
+
+---
+
+### Medical / Clinical Labs (NEW — May 2026, Run 139)
+
+**Status:** PENDING — first pull June 8 Cuyahoga
+
+**Target:** Laboratory District Manager, Lab District Manager, Clinical Lab Manager, Patient Service Center Manager, Laboratory Facilities Manager, Lab Operations Manager, Laboratory Operations Manager, Clinical Laboratory Manager.
+
+**Why:** NE Ohio has 90+ patient service centers from Quest Diagnostics (50+) and LabCorp (40+), plus ARUP, BioReference, Cleveland Clinic outpatient labs, and UH diagnostic labs. Patients visit for blood draws and specimen collection — very high recurring foot traffic. CLIA (Clinical Laboratory Improvement Amendments) federal certification = facility appearance standard regulated by law. District managers sign vendor contracts covering 10–20 centers per territory. No competitor is cold-calling lab district managers. This is a completely untapped segment.
+
+**Revenue per visit:** $300–$700/center. Quarterly = $1,200–$2,800/center. A 20-center district at 4 visits/year = $24K–$56K/year.
+
+**Pitch angle:** "CLIA certification means your facility standards aren't optional — they're federal. We service 20 of your NE Ohio patient service centers on a quarterly schedule. One vendor, one invoice, zero compliance gaps."
+
+**Apollo titles:** `laboratory district manager`, `lab district manager`, `clinical lab manager`, `patient service center manager`, `laboratory facilities manager`, `lab operations manager`, `laboratory operations manager`, `clinical laboratory manager` — added to DANNY_TITLES and PROPERTY_MANAGER_TITLES.
+
+**Apollo keywords (live Run 139):** `clinical laboratory`, `medical laboratory`, `diagnostic laboratory`, `patient service center`, `blood draw center`, `lab testing center`, `quest diagnostics`, `labcorp`, `laboratory services`, `diagnostic testing center` — added to DANNY_ORG_KEYWORDS.
+
+**Sequence:** Route to Property Manager sequence (multi-site facility management angle). First pull: June 8 Cuyahoga.
+
+---
+
+### Tax Preparation Offices (NEW — May 2026, Run 139)
+
+**Status:** PENDING — first pull June 8 Cuyahoga
+
+**Target:** Tax District Manager, Tax Preparation Manager, Tax Office Manager, Tax Center Manager, Tax Services District Manager, Tax Franchise Manager, Tax Preparation District Manager.
+
+**Why:** NE Ohio has 200+ strip-mall tax prep storefronts: H&R Block (100+), Jackson Hewitt Tax Service (60+), Liberty Tax Service (40+). These offices are OPEN January–April and physically present year-round. May–September is the peak exterior maintenance window — post-tax-season, when the rush is over and managers have time to sign vendor contracts. District managers control 10–20 location territories. No competitor is targeting this segment. Timing pitch is uniquely compelling: January–April traffic ends, building surfaces are covered in 4 months of winter road grime, and facilities staff have bandwidth again.
+
+**Revenue per visit:** $300–$600/location. A 10-location district at 2 visits/year = $6K–$12K/year. Seasonally predictable — builds reliable off-peak revenue.
+
+**Pitch angle:** "Tax season is over — let us clean up the mess that 4 months of client traffic left behind. We handle all 10 of your NE Ohio locations in one mobilization. Book now for June delivery before your district manager review."
+
+**Apollo titles:** `tax district manager`, `tax preparation manager`, `tax office manager`, `tax center manager`, `tax services district manager`, `tax franchise manager`, `tax preparation district manager` — added to DANNY_TITLES and PROPERTY_MANAGER_TITLES.
+
+**Apollo keywords (live Run 139):** `tax preparation`, `tax services`, `tax office`, `tax franchise`, `h&r block`, `jackson hewitt`, `liberty tax`, `tax center`, `tax preparation services`, `income tax services` — added to DANNY_ORG_KEYWORDS.
+
+**Sequence:** Route to Property Manager sequence (multi-site facility management angle). First pull: June 8 Cuyahoga.
+
+---
+
 ## Peak Season Angle — HOA Budget Season (May–June)
 HOA boards typically hold their annual budget and vendor approval meetings in May–June before the summer maintenance season. This means property managers and community association managers are ACTIVELY reviewing vendor lists RIGHT NOW. The PM sequence Touch 1 and any LinkedIn outreach should reference this window: "HOA boards are approving their summer vendor lists this month" or "Most associations lock in their exterior maintenance vendor before July." This creates urgency without being pushy — it's calendar-based fact. Works especially well for community associations, HOA management companies, and multifamily operators who work on fiscal budgets.
 
