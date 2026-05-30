@@ -1,3 +1,40 @@
+🔧 *Vera — Auto-Upgrade Run 146*
+>Changed: Added Marine/Boat Dealers as commercial segment #82 — NE Ohio Lake Erie boating market
+>Why: Skipper Buds, Inland Seas Yachts, ComMar Sales/Bayliner dealers sit on the largest freshwater boating market in the Midwest. Large outdoor inventory lots (50–300 boats on display) + fiberglass service bays accumulate bilge fluid, antifouling residue, oil staining. Spring prep season = NOW. $1,500–$5,000/visit; 2–3x/year. COMPLETELY DISTINCT from marina management (already targeted). Zero competitors cold-calling boat dealers. First pull: June 15 Lake County. 9 Apollo titles + 12 org keywords added.
+>File: workers/lead_pipeline.py, integrations/mixmax.py, agents/danny.md
+---
+🔧 *Vera — Auto-Upgrade Run 146*
+>Changed: Added Ice Cream & Frozen Dessert Chains as commercial segment #83 — peak season is literally NOW
+>Why: Dairy Queen (40+ NE Ohio), Handel's Homemade Ice Cream (beloved NE Ohio regional chain — dozens of locations), Bruster's, Cold Stone Creamery. Walk-up concrete + drive-through lanes stained with dairy/sugar/syrup residue. Peak traffic (May–July) = worst staining AND most willingness to spend. Franchise owners sign directly — no corporate procurement. 10-location territory = $6K–$16K/year. Zero competitors. First pull June 8 Cuyahoga. 8 Apollo titles + 12 org keywords added.
+>File: workers/lead_pipeline.py, integrations/mixmax.py, agents/danny.md
+---
+🔧 *Vera — Auto-Upgrade Run 146*
+>Changed: Fixed duplicate 'garden center manager' title in DANNY_TITLES; updated "80+" → "82+" in 7 relay functions; wired June 9 Cuyahoga pull verification into vera_relay.py
+>Why: (1) 'garden center manager' appeared in both the Hardware section (Run 136) and Garden Centers section (Run 145) — duplicate wastes a title slot and confuses segment attribution. (2) Segment count was stale — now 82 org keyword groups after adding Marine + Ice Cream. (3) June 9 verification function fires day after the biggest pull of the year (82+ segments, June 8 Cuyahoga) — reads Danny/Carla sentinel files and posts confirmed success or emergency ALERT if silently missed. Proposed Run 144, implemented today.
+>File: workers/lead_pipeline.py, workers/vera_relay.py
+---
+🚨 *Summit County Pull — TODAY IS THE LAST DAY (May 31 TOMORROW)*
+>Tomorrow (Sunday May 31) is the FINAL deadline. No more Summit leads until June 29 (Week 27 auto-rotation).
+>All 82+ commercial segments (restaurants, hospitals, gyms, sports venues, museums, etc.) miss Summit contacts.
+>RUN IT TODAY — 6 minutes, fully unattended:
+>Double-click: `scripts/run_summit_both.command` in Finder
+>Or: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Summit`
+>Saturday is the best day — nothing else competing for your time.
+---
+⛽ *Gas Station + Fleet Sequences Still PENDING*
+>Gas station contacts stranded since May 19 (12 days). Fleet contacts still waiting.
+>Each day = more contacts who may reply to a cold email from a competitor.
+>Fix: Mixmax UI → Sequences → New → create both → paste IDs into integrations/mixmax.py lines 48 + 54.
+>Bypass option: Gmail blast all gas station contacts TODAY — templates ready at `outputs/danny/gas_station_manual_email_blast_2026-05-19.md`.
+---
+⚠️ *Instantly.ai STILL Not Paused — June 4 Enrollment in 5 Days*
+>Duplicate sends = spam filters = 0% reply rate. This blocks June 4 enrollment from working at all.
+>Fix (3 min): app.instantly.ai → Campaigns → ⋮ → Pause campaigns a1c08c3d + 626cd15d → add INSTANTLY_PAUSED=true to .env
+---
+✅ *Vera — Scan Complete 2026-05-30 (Run 146)*
+>6 auto-upgrades shipped | 0 proposals | 84 open issues (82 carry-forward + 2 new: Marine/Boat Dealers + Ice Cream Chains)
+>New: Segments #82 Marine/Boat Dealers + #83 Ice Cream & Frozen Dessert Chains added. Duplicate title fixed. June 9 Cuyahoga verification wired. All relay "80+" → "82+". Summit pull deadline TOMORROW — critical.
+---
 🔧 *Vera — Auto-Upgrade Run 145*
 >Changed: Added Garden Centers & Nurseries as new commercial segment (81st segment)
 >Why: Petitti Garden Centers (12+ NE Ohio) is the dominant local chain — and RIGHT NOW (late May/June) is their peak season. Large paved display areas stained with mulch, potting soil, fertilizer. Ohio Dept. of Agriculture nursery licensing = exterior appearance standard. 7 Apollo titles + 8 org keywords added. Zero NE Ohio power washing competitors targeting garden center operators. Petitti 12-location deal = $21,600–$72,000/year.

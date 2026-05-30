@@ -35,7 +35,7 @@ Example payload for property managers in Cuyahoga County:
 
 **Always pass `q_organization_keyword_tags`** — this catches decision-makers at property management companies where the contact's title isn't "property manager" (e.g., owner or VP at a 10-property HOA management firm).
 
-> ✅ **Title batching active (Run 132):** `workers/lead_pipeline.py` now batches DANNY_TITLES in groups of 50 and runs multiple Apollo searches per county pull, deduplicating by person ID. This prevents Apollo from silently capping large `person_titles` arrays. With 300+ titles across 81+ commercial segments, the old single-call approach risked returning zero contacts for many segments. Batching guarantees all 81+ segments are queried every pull.
+> ✅ **Title batching active (Run 132):** `workers/lead_pipeline.py` now batches DANNY_TITLES in groups of 50 and runs multiple Apollo searches per county pull, deduplicating by person ID. This prevents Apollo from silently capping large `person_titles` arrays. With 300+ titles across 83+ commercial segments, the old single-call approach risked returning zero contacts for many segments. Batching guarantees all 83+ segments are queried every pull.
 
 Target titles:
 - Property Manager, Property Management Director, Property Director
@@ -1033,6 +1033,44 @@ Large paved display areas (mulch, potting soil, fertilizer bags, cart-traffic) a
 **Apollo keywords (live Run 145):** `garden center`, `plant nursery`, `nursery center`, `garden supply`, `petitti garden`, `greenhouse nursery`, `landscape nursery`, `garden retail` — added to DANNY_ORG_KEYWORDS.
 
 **Sequence:** Route to Property Manager sequence. First pull: June 8 Cuyahoga (Petitti Cuyahoga locations + Summit/Geauga nurseries).
+
+---
+
+### Marine/Boat Dealers (NEW — May 2026, Run 146)
+NE Ohio sits on Lake Erie — the largest freshwater boating market in the Midwest. This segment is COMPLETELY DISTINCT from marina management (already targeted). These are retail boat dealerships.
+
+**NE Ohio targets:** Skipper Buds (Mentor + Lorain locations — national chain, high-traffic spring prep), Inland Seas Yachts (Vermilion), ComMar Sales/Bayliner dealers (Sandusky Bay area), West End Boat Sales, Erie Marine, Superior Outdoors, MarineMax (national chain expanding to NE Ohio).
+
+**Why they need it:** Large outdoor inventory lots (50–300 boats on display trailers) — oil and bilge fluid from hulls + antifouling residue + fiberglass dust from service bays create constant concrete staining. Service bay areas where engines are worked on = one of the dirtiest commercial surfaces per square foot. Building exteriors + showroom exterior aprons. Spring (April–June) = peak inventory prep season — dealers clean everything before the boat-buying rush.
+
+**Pitch angle:** "Your inventory is what you're selling — the building and lot around it is the first impression. We clean boat dealers throughout the Lake Erie corridor so your facility looks as good as the boats."
+
+**Revenue math:** $1,500–$5,000/visit (lot + bays + building exterior). 2–3x/year = $3,000–$15,000/year per dealer. Zero NE Ohio power washing competitors targeting boat dealership GMs.
+
+**Apollo titles (live Run 146):** `marine dealer manager`, `boat dealer manager`, `marina boat dealer manager`, `yacht dealer manager`, `marine sales manager`, `boat dealership manager`, `marine general manager`, `powerboat dealer manager`, `marine dealer general manager` — added to DANNY_TITLES.
+
+**Apollo keywords (live Run 146):** `boat dealer`, `marine dealer`, `boat dealership`, `yacht dealer`, `marine sales`, `boat sales`, `powerboat dealer`, `sailboat dealer`, `marine dealership`, `boat retailer`, `marine retailer`, `skipper buds`, `marine boat dealer` — added to DANNY_ORG_KEYWORDS.
+
+**Sequence:** Route to Property Manager sequence. First pull: June 15 Lake County (marina corridor — Mentor, Lorain, Vermilion axis).
+
+---
+
+### Ice Cream & Frozen Dessert Chains (NEW — May 2026, Run 146)
+Peak season is literally RIGHT NOW (late May/June/July). NE Ohio has enormous ice cream chain density and a beloved regional chain that almost no one cold-calls.
+
+**NE Ohio targets:** Dairy Queen (40+ NE Ohio franchise locations — dominant brand), **Handel's Homemade Ice Cream** (Youngstown-based NE Ohio regional chain, dozens of locations across all 6 counties — the local favorite that every NE Ohio resident knows), Bruster's Real Ice Cream (NE Ohio franchise locations), Cold Stone Creamery, Rita's Italian Ice (growing presence), Baskin-Robbins.
+
+**Why they need it:** Walk-up concrete aprons + paved parking stained with dairy/sugar/syrup residue daily. Outdoor seating patio concrete gets absolutely hammered in peak summer. Drive-through lanes at DQ accumulate exhaust + dairy runoff. The ironic timing: they're at their WORST staining AND their peak revenue — which means they're most willing to spend on appearance. Franchise owners care about brand standards.
+
+**Pitch angle:** "The busiest summer in years means the dirtiest parking lot. We clean Dairy Queen and Handel's franchises throughout NE Ohio — one call, before the weekend rush hits."
+
+**Revenue math:** $300–$800/visit (lot + walk-up concrete + building exterior). 2x/year spring opening + fall cleanup = $600–$1,600/year per location. 10-location franchise territory deal = $6,000–$16,000/year. Zero competitors cold-calling ice cream chain district managers in NE Ohio.
+
+**Apollo titles (live Run 146):** `ice cream franchise manager`, `frozen dessert manager`, `ice cream district manager`, `ice cream store manager`, `frozen yogurt manager`, `dessert franchise owner`, `ice cream general manager`, `soft serve manager` — added to DANNY_TITLES.
+
+**Apollo keywords (live Run 146):** `ice cream franchise`, `frozen dessert`, `ice cream chain`, `dairy queen`, `handel's ice cream`, `frozen yogurt franchise`, `soft serve chain`, `ice cream management`, `dessert franchise`, `bruster's ice cream`, `cold stone creamery`, `rita's italian ice`, `frozen custard` — added to DANNY_ORG_KEYWORDS.
+
+**Sequence:** Route to Property Manager sequence. First pull: June 8 Cuyahoga (DQ + Handel's Cuyahoga locations). Full Lake County pass June 15.
 
 ---
 

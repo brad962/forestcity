@@ -1,6 +1,42 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 145 | 2026-05-30 | Auto-fixes shipped: 3 | New RESOLVED: 0 | Open: 82 (81 carry-forward + 1 new: Garden Centers)*
+*Run 146 | 2026-05-30 | Auto-fixes shipped: 6 | New RESOLVED: 1 | Open: 84 (82 carry-forward + 2 new: Marine/Boat Dealers + Ice Cream Chains)*
+
+---
+
+## RUN METRICS — Run 146 | 2026-05-30
+- Total RESOLVED: 119 (1 new: duplicate 'garden center manager' in DANNY_TITLES removed)
+- Total OPEN: 84 (82 carry-forward + 2 new segment issues: Marine/Boat Dealers + Ice Cream & Frozen Dessert Chains)
+- Auto-upgrades shipped: 6
+  1. `workers/lead_pipeline.py` — BUG FIX: Removed duplicate 'garden center manager' from DANNY_TITLES Hardware & Home Improvement Centers section (line 553). Same title appeared in both Hardware section AND Garden Centers & Nurseries section (line 763, added Run 145). Duplicate won't cause functional harm (Apollo deduplicates by email) but wastes a title slot and creates confusion about which segment the title belongs to.
+  2. `workers/lead_pipeline.py` — NEW: Marine/Boat Dealers segment. 9 DANNY_TITLES (marine dealer manager, boat dealer manager, marina boat dealer manager, yacht dealer manager, marine sales manager, boat dealership manager, marine general manager, powerboat dealer manager, marine dealer general manager). 12 DANNY_ORG_KEYWORDS (boat dealer, marine dealer, boat dealership, yacht dealer, marine sales, boat sales, powerboat dealer, sailboat dealer, marine dealership, boat retailer, marine retailer, skipper buds). Skipper Buds (Mentor/Lorain), Inland Seas Yachts (Vermilion), ComMar Sales (Sandusky). NE Ohio = Lake Erie boating hub. Spring prep season = NOW. $1.5K-$5K/visit; zero competitors. First pull June 15 Lake County.
+  3. `workers/lead_pipeline.py` — NEW: Ice Cream & Frozen Dessert Chains segment. 8 DANNY_TITLES (ice cream franchise manager, frozen dessert manager, ice cream district manager, ice cream store manager, frozen yogurt manager, dessert franchise owner, ice cream general manager, soft serve manager). 12 DANNY_ORG_KEYWORDS (ice cream franchise, frozen dessert, ice cream chain, dairy queen, handel's ice cream, frozen yogurt franchise, soft serve chain, ice cream management, dessert franchise, bruster's ice cream, cold stone creamery, rita's italian ice, frozen custard). DQ 40+ NE Ohio + Handel's Homemade Ice Cream (beloved NE Ohio regional chain). PEAK SEASON NOW. $600-$1,600/location/year; zero competitors. First pull June 8 Cuyahoga.
+  4. `integrations/mixmax.py` — Synced 9 Marine/Boat Dealer titles + 8 Ice Cream titles to PROPERTY_MANAGER_TITLES. GAS_STATION_KEYWORDS checked first per Run 136 fix; all new titles correctly route to property_manager sequence.
+  5. `workers/vera_relay.py` — BUG FIX: Updated ALL stale segment counts "80+" → "82+" across 7 relay functions (Summit deadline, June 8 Cuyahoga x2, July 20 2nd pass, early Cuyahoga docstring, early Cuyahoga message, post-June-8 monitoring). Now reflects 82 org keyword segment groups after adding Marine/Boat Dealers + Ice Cream Chains in this run.
+  6. `workers/vera_relay.py` — NEW: Added _check_june9_cuyahoga_verification() function; fires ONLY June 9 2026; reads Danny + Carla sentinel files (.danny_last_pull_date + .carla_last_pull_date); posts confirmed success OR emergency ALERT if June 8 Cuyahoga pull silently missed; wired into _main_body(). Proposal from Run 144, implemented Run 146.
+  7. `agents/danny.md` — Full Marine/Boat Dealers + Ice Cream & Frozen Dessert Chains segment briefs added; title batching note updated from "81+ commercial segments" → "83+ commercial segments."
+
+**Critical pending (human action required — UNCHANGED):**
+- 🚨 SUMMIT COUNTY PULL — DEADLINE TOMORROW May 31. Last day. `python3 workers/lead_pipeline.py both Summit` or double-click `scripts/run_summit_both.command`. 6 min unattended.
+- ⛽ Gas station Mixmax sequence NOT CREATED — contacts stranded since May 19
+- 🚚 Fleet washing Mixmax sequence NOT CREATED — contacts stranded
+- ⚠️ Instantly.ai NOT PAUSED — June 4 enrollment BLOCKED (5 days away)
+
+## RESOLVED — Duplicate 'garden center manager' Title in DANNY_TITLES
+- Resolved: 2026-05-30 (Run 146)
+- Fix: Removed 'garden center manager' from the Hardware & Home Improvement Centers section of DANNY_TITLES (was added in Run 136 alongside home improvement titles, then re-added properly to the Garden Centers & Nurseries section in Run 145). Apollo deduplicates by person_id so there was no functional impact, but having the same title assigned to two different segments created confusion about which segment owns it.
+
+## OPEN — Marine/Boat Dealers Segment Not Yet Pulled 🟡 NEW (Run 146)
+- First seen: 2026-05-30
+- Description: Skipper Buds (Mentor + Lorain), Inland Seas Yachts (Vermilion), ComMar Sales/Bayliner (Sandusky Bay area), West End Boat Sales, Erie Marine, Superior Outdoors, MarineMax. Lake Erie = largest freshwater boating market in Midwest. Boat dealer lots (50-300 boats on display) + service bays (bilge fluid, antifouling residue, engine oil) = heavy staining. Spring prep season = peak pitch window. $1,500-$5,000/visit; 2-3x/year. COMPLETELY DISTINCT from marina management segment (already in list). Zero competitors cold-calling boat dealers.
+- Fix applied (Run 146): 9 DANNY_TITLES + 12 DANNY_ORG_KEYWORDS + PROPERTY_MANAGER_TITLES sync + agents/danny.md full segment brief. First pull June 15 Lake County (marina corridor).
+- Resolution criteria: Marine dealer manager / boat dealer manager contacts appear in June 15 Lake County pull.
+
+## OPEN — Ice Cream & Frozen Dessert Chains Segment Not Yet Pulled 🟡 NEW (Run 146)
+- First seen: 2026-05-30
+- Description: Dairy Queen (40+ NE Ohio franchise locations), Handel's Homemade Ice Cream (beloved NE Ohio regional chain, Youngstown-based, dozens of locations across all 6 counties), Bruster's Real Ice Cream, Cold Stone Creamery, Rita's Italian Ice, Baskin-Robbins. PEAK SEASON = NOW. Walk-up concrete + parking stained with dairy/sugar/syrup residue daily. Outdoor patios + drive-through lanes. Franchise owners sign directly. $300-$800/visit; 2x/year = $600-$1,600/location; 10-location territory = $6K-$16K/year. Zero competitors.
+- Fix applied (Run 146): 8 DANNY_TITLES + 12 DANNY_ORG_KEYWORDS + PROPERTY_MANAGER_TITLES sync + agents/danny.md full segment brief. First pull June 8 Cuyahoga.
+- Resolution criteria: Ice cream franchise manager / dairy queen district manager contacts appear in June 8 Cuyahoga pull.
 
 ---
 

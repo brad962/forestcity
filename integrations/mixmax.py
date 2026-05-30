@@ -468,6 +468,14 @@ PROPERTY_MANAGER_TITLES = [
     'garden center manager', 'nursery manager', 'garden center district manager',
     'plant nursery manager', 'nursery district manager', 'garden supply manager',
     'greenhouse manager',
+    # Marine/Boat Dealers (added 2026-05-30 run 146)
+    'marine dealer manager', 'boat dealer manager', 'marina boat dealer manager',
+    'yacht dealer manager', 'marine sales manager', 'boat dealership manager',
+    'marine general manager', 'powerboat dealer manager', 'marine dealer general manager',
+    # Ice Cream & Frozen Dessert Chains (added 2026-05-30 run 146)
+    'ice cream franchise manager', 'frozen dessert manager', 'ice cream district manager',
+    'ice cream store manager', 'frozen yogurt manager', 'dessert franchise owner',
+    'ice cream general manager', 'soft serve manager',
 ]
 
 REALTOR_TITLES = [

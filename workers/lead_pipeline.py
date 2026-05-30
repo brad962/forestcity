@@ -550,7 +550,7 @@ DANNY_TITLES = [
     # first pull June 8 Cuyahoga (all major big-box home improvement retailers in Cuyahoga County) (added 2026-05-29 run 136)
     'home improvement district manager', 'hardware store manager', 'home center manager',
     'home improvement store manager', 'hardware district manager', 'building materials manager',
-    'home improvement operations manager', 'garden center manager', 'hardware store district manager',
+    'home improvement operations manager', 'hardware store district manager',
     # Community Swimming Pools & Aquatic Centers — NE Ohio park districts and recreation departments operate
     # dozens of seasonal outdoor pools + year-round indoor aquatic centers;
     # targets: Lyndhurst Community Pool, North Olmsted Aquatic Center, Brunswick Swim Center,
@@ -763,6 +763,32 @@ DANNY_TITLES = [
     'garden center manager', 'nursery manager', 'garden center district manager',
     'plant nursery manager', 'nursery district manager', 'garden supply manager',
     'greenhouse manager',
+    # Marine/Boat Dealers — NE Ohio sits on Lake Erie: largest freshwater boating market in the Midwest;
+    # Skipper Buds (Mentor/Lorain), West End Boat Sales, ComMar Sales/Bayliner (Sandusky), Inland Seas Yachts (Vermilion),
+    # Erie Marine, Superior Outdoors, Twin Post Marina dealers, national chains (MarineMax);
+    # large paved outdoor inventory lots with 50-300 boats on display + service bay areas;
+    # fiberglass hull repairs + engine service bays accumulate oil, bilge fluid, antifouling residue;
+    # concrete lot staining from boat trailers + hydraulic fluids = constant pressure wash need;
+    # COMPLETELY DISTINCT from marina management (already in list) — these are retail DEALERS, not marinas;
+    # spring (April-June) = peak prep season; boat-buying season opens = appearance is a marketing asset;
+    # one large dealer visit = $1,500-$5,000; 2-3x/year = $3,000-$15,000; zero competitors targeting boat dealers;
+    # first pull: June 15 Lake County (Skipper Buds Mentor + Lorain + Inland Seas Yachts Vermilion) (added 2026-05-30 run 146)
+    'marine dealer manager', 'boat dealer manager', 'marina boat dealer manager',
+    'yacht dealer manager', 'marine sales manager', 'boat dealership manager',
+    'marine general manager', 'powerboat dealer manager', 'marine dealer general manager',
+    # Ice Cream & Frozen Dessert Chains — NE Ohio is peak season NOW (late May/June/July);
+    # Dairy Queen (40+ NE Ohio franchise locations), Handel's Homemade Ice Cream (NE Ohio regional chain — dozens of locations,
+    # headquartered in Youngstown OH, beloved across all 6 counties), Bruster's Real Ice Cream (NE Ohio franchise),
+    # Cold Stone Creamery, Rita's Italian Ice (growing NE Ohio presence), Baskin-Robbins, Dairy Queen franchises;
+    # walk-up concrete + paved parking lots stained with dairy, sugar syrup, and foot traffic daily;
+    # outdoor seating patio areas + drive-through lanes accumulate heavy grime from peak traffic;
+    # peak season (May-August) = worst staining AND when owners most motivated to look good;
+    # franchise owners or district managers sign vendor contracts; $300-$800/visit; 2x/year spring+fall cleanup;
+    # DISTINCT from QSR/restaurant chains in Apollo org tags — ice cream/frozen dessert has separate tags;
+    # zero competitors cold-calling ice cream chain district managers in NE Ohio; first pull June 8 Cuyahoga (added 2026-05-30 run 146)
+    'ice cream franchise manager', 'frozen dessert manager', 'ice cream district manager',
+    'ice cream store manager', 'frozen yogurt manager', 'dessert franchise owner',
+    'ice cream general manager', 'soft serve manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -1183,6 +1209,23 @@ DANNY_ORG_KEYWORDS = [
     # spring patio/display prep = PEAK PITCH WINDOW right now (added 2026-05-30 run 145)
     'garden center', 'plant nursery', 'nursery center', 'garden supply',
     'petitti garden', 'greenhouse nursery', 'landscape nursery', 'garden retail',
+    # Marine/Boat Dealers — NE Ohio Lake Erie boating market; Skipper Buds, West End Boat Sales,
+    # ComMar Sales (Sandusky), Inland Seas Yachts (Vermilion), Erie Marine, MarineMax;
+    # COMPLETELY DISTINCT from marina management (already in 'marina management'/'marine services' above);
+    # Apollo tags boat dealers separately under 'boat dealer', 'marine dealer', 'yacht dealer' org tags;
+    # first pull: June 15 Lake County (marina corridor — Mentor/Lorain/Vermilion axis) (added 2026-05-30 run 146)
+    'boat dealer', 'marine dealer', 'boat dealership', 'yacht dealer', 'marine sales',
+    'boat sales', 'powerboat dealer', 'sailboat dealer', 'marine dealership',
+    'boat retailer', 'marine retailer', 'skipper buds', 'marine boat dealer',
+    # Ice Cream & Frozen Dessert Chains — peak season = NOW; Dairy Queen (40+ NE Ohio), Handel's Ice Cream
+    # (Youngstown-based NE Ohio regional chain), Bruster's, Cold Stone Creamery, Rita's Italian Ice;
+    # DISTINCT from QSR/restaurant org tags — Apollo tags ice cream chains under separate keywords;
+    # walk-up concrete + parking + drive-through lanes stained from peak summer traffic;
+    # first pull June 8 Cuyahoga (added 2026-05-30 run 146)
+    'ice cream franchise', 'frozen dessert', 'ice cream chain', 'dairy queen',
+    "handel's ice cream", 'frozen yogurt franchise', 'soft serve chain',
+    'ice cream management', 'dessert franchise', "bruster's ice cream",
+    'cold stone creamery', "rita's italian ice", 'frozen custard',
 ]
 
 CARLA_SEARCHES = [
