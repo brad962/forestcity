@@ -479,6 +479,14 @@ PROPERTY_MANAGER_TITLES = [
     # Party/Event Rental Companies (added 2026-05-30 run 147)
     'event rental manager', 'party rental manager', 'party supply manager', 'event equipment manager',
     'tent rental manager', 'special event manager', 'party rental owner', 'event rental owner',
+    # Trampoline Parks & Indoor Adventure Centers (added 2026-05-30 run 148)
+    'trampoline park manager', 'indoor adventure park manager', 'trampoline park franchise owner',
+    'adventure park director', 'trampoline park general manager', 'indoor play center manager',
+    'bounce park manager',
+    # Moving & Relocation Companies (added 2026-05-30 run 148)
+    'moving company manager', 'moving company operations manager', 'relocation services manager',
+    'moving and storage manager', 'van lines agent manager', 'relocation manager',
+    'moving company general manager',
 ]
 
 REALTOR_TITLES = [

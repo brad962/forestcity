@@ -35,7 +35,7 @@ Example payload for property managers in Cuyahoga County:
 
 **Always pass `q_organization_keyword_tags`** — this catches decision-makers at property management companies where the contact's title isn't "property manager" (e.g., owner or VP at a 10-property HOA management firm).
 
-> ✅ **Title batching active (Run 132):** `workers/lead_pipeline.py` now batches DANNY_TITLES in groups of 50 and runs multiple Apollo searches per county pull, deduplicating by person ID. This prevents Apollo from silently capping large `person_titles` arrays. With 300+ titles across 84+ commercial segments, the old single-call approach risked returning zero contacts for many segments. Batching guarantees all 84+ segments are queried every pull.
+> ✅ **Title batching active (Run 132):** `workers/lead_pipeline.py` now batches DANNY_TITLES in groups of 50 and runs multiple Apollo searches per county pull, deduplicating by person ID. This prevents Apollo from silently capping large `person_titles` arrays. With 300+ titles across 86+ commercial segments, the old single-call approach risked returning zero contacts for many segments. Batching guarantees all 84+ segments are queried every pull.
 
 Target titles:
 - Property Manager, Property Management Director, Property Director
@@ -1088,6 +1088,38 @@ Peak wedding/graduation/corporate event season is May–September. NE Ohio has d
 **Apollo keywords (live Run 147):** `party rental`, `event rental`, `tent rental`, `party supply`, `event equipment rental`, `special event rental`, `party supply store`, `wedding rental`, `event equipment` — added to DANNY_ORG_KEYWORDS.
 
 **Sequence:** Route to Property Manager sequence (facility/vendor contract angle). First pull: June 8 Cuyahoga.
+
+### Trampoline Parks & Indoor Adventure Centers (NEW — May 2026, Run 148)
+Peak summer season is NOW. NE Ohio has multiple large franchise trampoline park locations whose building exteriors and parking lots are completely ignored by every power washing company.
+
+**NE Ohio targets:** Sky Zone Trampoline Park (Beachwood, Mentor, North Olmsted, Strongsville), Urban Air Adventure Park (Strongsville, Mentor, Stow), Altitude Trampoline Park (multiple locations), Scene75 Entertainment Center (Berea — NE Ohio's largest entertainment complex at 200,000 sq ft), Pump It Up (inflatable party franchise locations).
+
+**Why they need it:** These facilities run at maximum capacity June–August with summer birthday parties, day camps, and open jump. Large building exteriors see constant traffic and weather exposure. Massive parking lots get beaten up by summer foot traffic — gum, spills, tire marks, staining. Most franchise owners focus 100% on the interior experience and completely ignore the exterior. The contrast is jarring — gleaming interior, dirty exterior. Franchise owners sign vendor contracts directly without corporate procurement. Summer = peak revenue = most willing to invest in appearance. DISTINCT from bowling alleys and family entertainment centers already targeted — these are jump/activity-specific franchise facilities with specific Apollo org tags.
+
+**Revenue math:** $1,200–$3,500/visit (parking lot + building exterior + signage areas). 2x/year (spring opening prep + post-summer reset) = $2,400–$7,000/year per location. Zero NE Ohio competitors cold-calling trampoline park franchise owners.
+
+**Apollo titles (live Run 148):** `trampoline park manager`, `indoor adventure park manager`, `trampoline park franchise owner`, `adventure park director`, `trampoline park general manager`, `indoor play center manager`, `bounce park manager` — added to DANNY_TITLES + PROPERTY_MANAGER_TITLES (mixmax.py).
+
+**Apollo keywords (live Run 148):** `trampoline park`, `sky zone`, `urban air`, `altitude trampoline`, `indoor adventure park`, `bounce park`, `indoor play center`, `trampoline franchise`, `adventure zone`, `jump zone` — added to DANNY_ORG_KEYWORDS.
+
+**Sequence:** Route to Property Manager sequence (facility/vendor contract angle). First pull: June 8 Cuyahoga.
+
+### Moving & Relocation Companies (NEW — May 2026, Run 148)
+Peak moving season is May–September. NE Ohio has dozens of moving company terminals and warehouse facilities that are completely overlooked as power washing customers.
+
+**NE Ohio targets:** Two Men and a Truck (5+ NE Ohio franchise locations: Mentor, Brunswick, Akron, Medina, North Olmsted), Gentle Giant Moving (Cleveland area), O'Brien's Moving & Storage, Johnson Moving & Storage (Atlas Van Lines agent — Cleveland), Bekins/Mayflower/United Van Lines agent locations, College Hunks Hauling Junk (franchise locations).
+
+**Why they need it:** Moving company terminals have large concrete-floored warehouse loading bays where trucks dock daily. After winter, salt, road grime, and mud from trucks tracked across the facility floor and parking lot creates serious accumulation. The parking lot/truck staging area takes punishment all season — diesel exhaust residue, fork truck grease, hydraulic fluid. The building exterior often goes years without being washed because the owner is focused on operations, not appearances. Spring = worst post-winter grime AND peak moving season = they're busiest AND most visible. CRITICAL DISTINCTION from Carla's fleet targets: Carla pitches moving company *owners* as referral partners ($50 for referring a client). Danny pitches the *facility* itself — the terminal building, loading dock, parking lot. These are different contacts with different needs. A moving company operations manager doesn't want $50 referrals — they want their warehouse dock clean. Peak moving season = NOW.
+
+**Revenue math:** $1,500–$4,500/visit (warehouse loading dock concrete + parking lot + building exterior + loading bays). 2x/year (spring prep + fall post-season) = $3,000–$9,000/year per terminal. Zero NE Ohio competitors targeting moving company facility managers.
+
+**Apollo titles (live Run 148):** `moving company manager`, `moving company operations manager`, `relocation services manager`, `moving and storage manager`, `van lines agent manager`, `relocation manager`, `moving company general manager` — added to DANNY_TITLES + PROPERTY_MANAGER_TITLES (mixmax.py).
+
+**Apollo keywords (live Run 148):** `moving and storage`, `relocation services`, `two men and a truck`, `van lines`, `moving services`, `relocation company`, `commercial movers`, `residential movers`, `moving franchise`, `storage and moving` — added to DANNY_ORG_KEYWORDS.
+
+**Routing note:** Contacts at companies named "XYZ Moving Company" where the title is just "owner" or "founder" will naturally route to Carla's contractor sequence (Carla owns the referral partner angle for moving company owners). Danny's segment targets operations/facility managers at these terminals — separate contacts with facility management needs.
+
+**Sequence:** Route to Property Manager sequence (facility exterior maintenance angle). First pull: June 8 Cuyahoga.
 
 ---
 

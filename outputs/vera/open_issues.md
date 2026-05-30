@@ -1,6 +1,38 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 147 | 2026-05-30 | Auto-fixes shipped: 4 | New RESOLVED: 0 | Open: 85 (84 carry-forward + 1 new: Party/Event Rental Segment Not Yet Pulled)*
+*Run 148 | 2026-05-30 | Auto-fixes shipped: 4 | New RESOLVED: 0 | Open: 87 (85 carry-forward + 2 new: Trampoline Parks + Moving Companies)*
+
+---
+
+## RUN METRICS — Run 148 | 2026-05-30
+- Total RESOLVED: 119 (0 new)
+- Total OPEN: 87 (85 carry-forward + 2 new segment tracking issues)
+- Auto-upgrades shipped: 4
+  1. `workers/lead_pipeline.py` — NEW: Trampoline Parks & Indoor Adventure Centers as segment #85. 7 DANNY_TITLES (trampoline park manager, indoor adventure park manager, trampoline park franchise owner, adventure park director, trampoline park general manager, indoor play center manager, bounce park manager). 10 DANNY_ORG_KEYWORDS (trampoline park, sky zone, urban air, altitude trampoline, indoor adventure park, bounce park, indoor play center, trampoline franchise, adventure zone, jump zone). Sky Zone (Beachwood/Mentor/N. Olmsted/Strongsville), Urban Air (Strongsville/Mentor/Stow), Altitude Trampoline, Scene75 (Berea — 200K sq ft). Peak summer season = NOW. Zero competitors. $1,200-$3,500/visit, 2x/year. First pull June 8 Cuyahoga.
+  2. `workers/lead_pipeline.py` — NEW: Moving & Relocation Companies as segment #86. 7 DANNY_TITLES (moving company manager, moving company operations manager, relocation services manager, moving and storage manager, van lines agent manager, relocation manager, moving company general manager). 10 DANNY_ORG_KEYWORDS (moving and storage, relocation services, two men and a truck, van lines, moving services, relocation company, commercial movers, residential movers, moving franchise, storage and moving). Two Men and a Truck (5+ NE Ohio), Gentle Giant, O'Brien's Moving, Johnson Moving & Storage (Atlas Van Lines agent). PEAK MOVING SEASON = NOW. DISTINCT from fleet (Carla owns truck washing; Danny owns facility exterior + parking lot). Zero competitors. $1,500-$4,500/visit, 2x/year. First pull June 8 Cuyahoga.
+  3. `integrations/mixmax.py` — Synced 7 Trampoline Park titles + 7 Moving Company titles (14 total) to PROPERTY_MANAGER_TITLES. GAS_STATION_KEYWORDS checked first per Run 136 fix; all new titles correctly route to property_manager sequence.
+  4. `workers/vera_relay.py` — Updated ALL stale segment counts "84+" → "86+" across all 11 relay functions. Updated June 8 Cuyahoga countdown message to include trampoline parks (Sky Zone/Urban Air/Scene75) + moving companies. Updated early Cuyahoga opportunity message to include both new segments.
+
+**Critical pending (human action required — UNCHANGED):**
+- 🚨 SUMMIT COUNTY PULL — DEADLINE TOMORROW May 31. FINAL DAY. `python3 workers/lead_pipeline.py both Summit` or double-click `scripts/run_summit_both.command`. 6 min unattended.
+- ⛽ Gas station Mixmax sequence NOT CREATED — contacts stranded since May 19
+- 🚚 Fleet washing Mixmax sequence NOT CREATED — contacts stranded
+- ⚠️ Instantly.ai NOT PAUSED — June 4 enrollment BLOCKED (4 days away)
+
+**Proposal pending:**
+- 💡 Tommy writes June 1–7 Facebook posts immediately — page goes dark June 1 without new content (awaiting YES from Bradley)
+
+## OPEN — Trampoline Parks & Indoor Adventure Centers Segment Not Yet Pulled 🟡 NEW (Run 148)
+- First seen: 2026-05-30 (Run 148)
+- Description: Sky Zone Trampoline Park (Beachwood/Mentor/N. Olmsted/Strongsville), Urban Air Adventure Park (Strongsville/Mentor/Stow), Altitude Trampoline Park, Scene75 Entertainment Center (Berea — 200,000 sq ft NE Ohio's largest entertainment complex), Pump It Up. DISTINCT Apollo org tags from 'family entertainment center'/'bowling center' already targeted. Summer peak = NOW. Large building facades + massive parking lots. Franchise owners sign directly. $1,200-$3,500/visit; 2x/year. Zero competitors.
+- Fix applied (Run 148): 7 DANNY_TITLES + 10 DANNY_ORG_KEYWORDS + PROPERTY_MANAGER_TITLES sync + agents/danny.md full segment brief. First pull June 8 Cuyahoga.
+- Resolution criteria: Trampoline park manager / Sky Zone / Urban Air contacts appear in June 8 Cuyahoga pull output.
+
+## OPEN — Moving & Relocation Companies Segment Not Yet Pulled 🟡 NEW (Run 148)
+- First seen: 2026-05-30 (Run 148)
+- Description: Two Men and a Truck (5+ NE Ohio franchise locations), Gentle Giant Moving (Cleveland), O'Brien's Moving & Storage, Johnson Moving & Storage (Atlas Van Lines agent — Cleveland), Bekins/Mayflower/United Van Lines NE Ohio agents. PEAK MOVING SEASON = MAY-SEPTEMBER. Large warehouse/terminal + truck lots accumulate winter salt + mud. DISTINCT from fleet (Carla owns the vehicle washing; Danny owns the FACILITY exterior + loading dock + parking lot). Facility managers / operations managers sign vendor contracts for building washing — different contacts from the owners Carla targets for referrals. $1,500-$4,500/visit; 2x/year. Zero competitors cold-calling moving company facilities.
+- Fix applied (Run 148): 7 DANNY_TITLES + 10 DANNY_ORG_KEYWORDS + PROPERTY_MANAGER_TITLES sync + agents/danny.md full segment brief. Routing note added: owner contacts at "XYZ Moving Company" naturally route to Carla via CONTRACTOR_TITLES; operations/facility manager contacts route to Danny via PROPERTY_MANAGER_TITLES. First pull June 8 Cuyahoga.
+- Resolution criteria: Moving company manager / relocation services manager contacts appear in June 8 Cuyahoga pull.
 
 ---
 

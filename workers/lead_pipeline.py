@@ -798,6 +798,14 @@ DANNY_TITLES = [
     # first pull June 8 Cuyahoga (added 2026-05-30 run 147)
     'event rental manager', 'party rental manager', 'party supply manager', 'event equipment manager',
     'tent rental manager', 'special event manager', 'party rental owner', 'event rental owner',
+    # Trampoline Parks & Indoor Adventure Centers (added 2026-05-30 run 148)
+    'trampoline park manager', 'indoor adventure park manager', 'trampoline park franchise owner',
+    'adventure park director', 'trampoline park general manager', 'indoor play center manager',
+    'bounce park manager',
+    # Moving & Relocation Companies (added 2026-05-30 run 148)
+    'moving company manager', 'moving company operations manager', 'relocation services manager',
+    'moving and storage manager', 'van lines agent manager', 'relocation manager',
+    'moving company general manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -1243,6 +1251,22 @@ DANNY_ORG_KEYWORDS = [
     # first pull June 8 Cuyahoga (added 2026-05-30 run 147)
     'party rental', 'event rental', 'tent rental', 'party supply', 'event equipment rental',
     'special event rental', 'party supply store', 'wedding rental', 'event equipment',
+    # Trampoline Parks & Indoor Adventure Centers — Sky Zone (Beachwood/Mentor/N. Olmsted/Strongsville),
+    # Urban Air Adventure Park (Strongsville/Mentor/Stow), Altitude Trampoline, Scene75 Entertainment Center (Berea);
+    # DISTINCT from 'family entertainment center'/'bowling center' already above;
+    # summer peak season = NOW; large building exteriors + massive parking lots; franchise owners sign directly;
+    # zero NE Ohio competitors cold-calling trampoline park franchise owners; first pull June 8 Cuyahoga (added 2026-05-30 run 148)
+    'trampoline park', 'sky zone', 'urban air', 'altitude trampoline', 'indoor adventure park',
+    'bounce park', 'indoor play center', 'trampoline franchise', 'adventure zone', 'jump zone',
+    # Moving & Relocation Companies — Two Men and a Truck (5+ NE Ohio franchises), Gentle Giant Moving,
+    # O'Brien's Moving & Storage, Johnson Moving & Storage (Atlas Van Lines agent), Bekins/Mayflower agents;
+    # PEAK MOVING SEASON = NOW (May-September); large warehouse/terminal + truck lots accumulate road salt + mud;
+    # DISTINCT from fleet washing (Carla targets fleet trucks; Danny targets the FACILITY exterior + parking lot);
+    # facility managers sign vendor contracts for building washing, not truck washing;
+    # zero NE Ohio competitors cold-calling moving company facility contacts; first pull June 8 Cuyahoga (added 2026-05-30 run 148)
+    'moving and storage', 'relocation services', 'two men and a truck', 'van lines',
+    'moving services', 'relocation company', 'commercial movers', 'residential movers',
+    'moving franchise', 'storage and moving',
 ]
 
 CARLA_SEARCHES = [

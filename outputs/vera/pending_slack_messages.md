@@ -45,3 +45,29 @@
 ✅ *Vera — Scan Complete 2026-05-30 (Run 147)*
 >4 auto-upgrades shipped | 1 proposal (Tommy Facebook batch) | 84 open issues (82 carry-forward + 2 new segment tracking: Party/Event Rental now live in code)
 >New this run: Segment #84 Party/Event Rental Companies added. All "82+"/"83+" → "84+" corrected across relay (11 instances). June 8 + June 15 relay messages updated with new segments. Summit pull FINAL WINDOW = today.
+---
+🔧 *Vera — Auto-Upgrade Run 148*
+>Changed: Added Trampoline Parks & Indoor Adventure Centers as commercial segment #85
+>Why: Sky Zone (4 NE Ohio locations), Urban Air (3 locations), Scene75 Entertainment Center (Berea — 200K sq ft NE Ohio's largest). Peak summer season = NOW. Franchise owners sign directly. Zero competitors. DISTINCT from bowling/FEC segments already in pipeline. $1,200-$3,500/visit; 2x/year. 7 Apollo titles + 10 org keywords added. First pull June 8 Cuyahoga.
+>File: workers/lead_pipeline.py, integrations/mixmax.py, agents/danny.md
+---
+🔧 *Vera — Auto-Upgrade Run 148*
+>Changed: Added Moving & Relocation Companies as commercial segment #86
+>Why: Two Men and a Truck (5+ NE Ohio), Gentle Giant, O'Brien's, Johnson Moving & Storage. PEAK MOVING SEASON = NOW (May-Sept). Large terminal warehouses + loading dock concrete + parking lots accumulate winter grime + diesel. DISTINCT from fleet (Carla owns the truck washing; Danny owns the FACILITY). Operations managers sign vendor contracts — not the same contacts as Carla's referral partner targets. Zero competitors. $1,500-$4,500/visit; 2x/year. 7 Apollo titles + 10 org keywords added. First pull June 8 Cuyahoga.
+>File: workers/lead_pipeline.py, integrations/mixmax.py, agents/danny.md
+---
+🔧 *Vera — Auto-Upgrade Run 148*
+>Changed: Updated segment count "84+" → "86+" across all 11 relay functions + June 8 Cuyahoga message now lists trampoline parks (Sky Zone/Urban Air/Scene75) + moving companies. Early Cuyahoga opportunity message updated with both new segments.
+>Why: Segments #85 + #86 added this run. All relay countdown messages, verification functions, and commercial opportunity messages now reflect correct count.
+>File: workers/vera_relay.py
+---
+🚨 *Summit County Pull — TOMORROW IS THE DEADLINE (May 31)*
+>Today (Saturday May 30) is your last low-pressure day. Tomorrow (Sunday May 31) is the absolute final day before Summit misses ALL 86+ commercial segments until June 29.
+>Run now — 6 minutes, fully unattended, nothing to watch:
+>Double-click: `scripts/run_summit_both.command` in Finder
+>Or: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Summit`
+>Saturday before summer is the easiest time to run a 6-minute background script. Don't wait until Sunday.
+---
+✅ *Vera — Scan Complete 2026-05-30 (Run 148)*
+>4 auto-upgrades shipped | 0 new proposals | 87 open issues (85 carry-forward + 2 new: Trampoline Parks + Moving Companies)
+>New this run: Segment #85 Trampoline Parks (Sky Zone/Urban Air/Scene75) + Segment #86 Moving & Relocation Companies. Both fire June 8 Cuyahoga. "84+" → "86+" corrected across 11 relay instances. Routing note: moving company OWNERS naturally go to Carla (referral partner); operations managers go to Danny (facility customer). Summit deadline = TOMORROW.
