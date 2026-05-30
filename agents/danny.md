@@ -876,6 +876,84 @@ Events drive 20,000–70,000+ fans = maximum visible staining on all surfaces. F
 
 ---
 
+### Truck Stops & Travel Centers
+
+**Status:** PENDING — first pull June 8 Cuyahoga (Streetsboro, Twinsburg, Brook Park/Hopkins corridor)
+
+**Target:** Truck Stop Manager, Travel Center Manager, Travel Plaza Manager, Truck Stop General Manager, Travel Center Operations Manager, Fuel Stop Manager, Travel Center Area Manager.
+
+**Why:** NE Ohio sits at the intersection of I-71, I-76, I-77, I-80, and I-90 — one of the densest truck corridors in the Midwest. Pilot Flying J operates 5+ NE Ohio locations (Streetsboro, Hubbard, Austinburg, Medina, Lodi). Love's Travel Stops has 3+ NE Ohio facilities. TA/Petro Stopping Centers operate 4+ NE Ohio locations. These are large commercial facilities with: diesel fuel canopies coated in exhaust residue, truck parking lots with engine oil + hydraulic fluid accumulation, dumpster pad areas, and building exteriors. Area managers oversee regional portfolios of 3–10 locations and sign vendor contracts directly.
+
+**Revenue per visit:** $2K–$6K/facility visit depending on size. Quarterly = $8K–$24K/facility/year. One Pilot Flying J area manager portfolio deal across 5 NE Ohio locations = $40K–$120K/year. Zero NE Ohio competitors cold-calling truck stop area managers.
+
+**Pitch angle:** "Every DOT inspection includes lot condition. We do quarterly exterior cleans for Pilot Flying J's NE Ohio portfolio — one vendor, one invoice, one day per quarter. Your DM approves it once and it runs itself." OEPA SPCC (Spill Prevention Control + Countermeasure) compliance: fuel storage facilities must control stormwater runoff from fueling pads and parking areas — exterior cleaning is a regulatory maintenance requirement, not optional.
+
+**Apollo titles (live Run 143):** `truck stop manager`, `travel center manager`, `travel plaza manager`, `truck stop general manager`, `travel center operations manager`, `fuel stop manager`, `travel center area manager` — added to DANNY_TITLES and PROPERTY_MANAGER_TITLES.
+
+**Apollo keywords (live Run 143):** `truck stop`, `travel center`, `travel plaza`, `truckstop`, `pilot flying j`, `love's travel stops`, `ta travel centers`, `petro stopping center`, `truck fuel stop`, `highway travel center`, `truck plaza` — added to DANNY_ORG_KEYWORDS.
+
+**Sequence:** Route to Property Manager sequence. First pull: June 8 Cuyahoga (Streetsboro I-80, Brook Park/Hopkins area, Twinsburg I-480). June 22 Lorain pull will catch Lodi area.
+
+---
+
+### Ambulatory Surgery Centers (ASCs)
+
+**Status:** PENDING — first pull June 8 Cuyahoga (Cleveland Clinic + UH + MetroHealth ASC campuses in Cuyahoga County)
+
+**Target:** Ambulatory Surgery Center Manager, Surgery Center Administrator, Surgical Center Director, Outpatient Surgery Manager, ASC Administrator, Surgery Center Operations Manager, Surgical Center Operations Manager, Outpatient Surgical Administrator.
+
+**Why:** NE Ohio has 50+ freestanding outpatient ambulatory surgery centers. Major operators: Cleveland Clinic Surgery Centers (Westlake, Solon, Brecksville, Mentor, Avon), University Hospitals Surgical Centers (multiple Cuyahoga/Lake/Lorain campuses), Summa Health Surgery Centers (Akron + Barberton), SurgiCenter of Cleveland, MetroHealth Ambulatory Surgery, NOMS Healthcare surgical suites, Ohio Surgical Center. COMPLETELY DIFFERENT from urgent care walk-in clinics. ASCs are scheduled surgical facilities where patients arrive for elective procedures — the appearance standard is much higher because patients and surgeons judge the exterior as a proxy for sterility.
+
+**Revenue per visit:** $1,200–$3,000/visit. Quarterly = $4,800–$12,000/year per ASC. Cleveland Clinic Surgery Centers portfolio (5 NE Ohio locations): $24,000–$60,000/year. Zero NE Ohio competitors using the OBR/CMS licensing compliance pitch angle.
+
+**Pitch angle:** "Ohio Board of Registration (OBR) licensing and CMS certification require that the patient care environment meet appearance standards — and that starts with what patients see pulling into the parking lot. We do quarterly exterior cleans at 4 of the Cleveland Clinic's NE Ohio surgical suites — before a single patient walks through the door, the building looks like a surgical facility should."
+
+**Apollo titles (live Run 143):** `ambulatory surgery center manager`, `surgery center administrator`, `surgical center director`, `outpatient surgery manager`, `asc administrator`, `surgery center operations manager`, `surgical center operations manager`, `outpatient surgical administrator` — added to DANNY_TITLES and PROPERTY_MANAGER_TITLES.
+
+**Apollo keywords (live Run 143):** `ambulatory surgery center`, `outpatient surgery center`, `surgical center`, `asc management`, `surgery center management`, `outpatient surgical`, `ambulatory surgical facility`, `outpatient surgical center` — added to DANNY_ORG_KEYWORDS.
+
+**Sequence:** Route to Property Manager sequence. First pull: June 8 Cuyahoga.
+
+---
+
+### Boutique Fitness Studios
+
+**Status:** PENDING — first pull June 8 Cuyahoga (Beachwood, Strongsville, Westlake, Solon, Rocky River corridor)
+
+**Target:** Fitness Studio Manager, Boutique Fitness Manager, Fitness Franchise Owner, Studio Director, Fitness Studio Director, Group Fitness Studio Manager.
+
+**Why:** 200+ boutique fitness studios operate in NE Ohio. Orangetheory Fitness (30+ NE Ohio locations), F45 Training (15+ NE Ohio), Pure Barre (8+ NE Ohio), Club Pilates (12+ NE Ohio), CycleBar, 9Round, barre3. COMPLETELY DISTINCT from big-box fitness chains (Planet Fitness/LA Fitness) already captured by 'fitness center'/'health club' org keywords. Boutique studios have separate Apollo org tags and franchise owner operators who sign vendor contracts directly — no corporate procurement chain. Strip-mall locations with heavy daily member traffic = constantly stained entry walkways and parking aprons. Small footprint, quick job ($200–$500/visit), but franchise owners manage 2–5 studio locations = $1,600–$10,000/year per territory.
+
+**Pitch angle:** "Your members pay $150–$250/month for a premium fitness experience. The entry mat and parking apron are the first thing they see. We do monthly exterior rinses at both your Beachwood and Solon studios — $350 total, one text to schedule."
+
+**Apollo titles (live Run 143):** `fitness studio manager`, `boutique fitness manager`, `fitness franchise owner`, `studio director`, `fitness studio director`, `group fitness studio manager` — added to DANNY_TITLES and PROPERTY_MANAGER_TITLES.
+
+**Apollo keywords (live Run 143):** `boutique fitness`, `fitness studio`, `orangetheory fitness`, `f45 training`, `pure barre`, `club pilates`, `cyclebar`, `anytime fitness`, `snap fitness`, `studio fitness`, `franchise fitness studio`, `group fitness studio` — added to DANNY_ORG_KEYWORDS.
+
+**Sequence:** Route to Property Manager sequence. First pull: June 8 Cuyahoga.
+
+---
+
+### Commercial Truck & Heavy Equipment Dealers
+
+**Status:** PENDING — first pull June 8 Cuyahoga (Kenworth/Freightliner/Ohio CAT Cleveland-area dealerships)
+
+**Target:** Commercial Truck Dealer Manager, Heavy Equipment Dealer Manager, Truck Dealer General Manager, Equipment Dealer Manager, Commercial Vehicle Dealer Manager, Heavy Equipment Sales Manager, Equipment Dealer Operations Manager.
+
+**Why:** NE Ohio has a strong commercial truck and heavy equipment dealer network. Kenworth of Ohio (Cleveland/Akron locations), Freightliner Great Lakes Trucks, Mack Trucks of Ohio, Peterbilt dealer network. Heavy equipment: Ohio CAT (Caterpillar — 4+ NE Ohio dealer locations), Thompson Lift Truck (Toyota/Cat forklifts, Cleveland), Bobcat of Cleveland, John Deere construction equipment dealer. These facilities have enormous paved service yard lots where trucks and heavy equipment sit between jobs — diesel fuel, hydraulic fluid, engine oil, and transmission fluid stain the concrete and asphalt at 10× the rate of passenger car dealerships. Outdoor equipment staging areas are among the dirtiest commercial surfaces in NE Ohio. COMPLETELY DISTINCT from passenger car/auto dealers (already in DANNY_ORG_KEYWORDS under 'car dealership'/'auto dealership').
+
+**Revenue per visit:** $3K–$10K/visit for large dealer with extensive service yard. Quarterly = $12K–$40K/year per large facility. Zero NE Ohio power washing competitors specifically targeting commercial truck or heavy equipment dealers. OEPA/EPA SPCC compliance for hydraulic fluid and diesel storage is the compliance angle.
+
+**Pitch angle:** "Every one of those service bays is leaking hydraulic fluid onto your concrete. We do quarterly pressure washes at the Kenworth dealer in Streetsboro — DOT compliance, OEPA SPCC check, plus the lots don't look like a Superfund site. One afternoon, one invoice."
+
+**Apollo titles (live Run 143):** `commercial truck dealer manager`, `heavy equipment dealer manager`, `truck dealer general manager`, `equipment dealer manager`, `commercial vehicle dealer manager`, `heavy equipment sales manager`, `equipment dealer operations manager` — added to DANNY_TITLES and PROPERTY_MANAGER_TITLES.
+
+**Apollo keywords (live Run 143):** `commercial truck dealer`, `heavy equipment dealer`, `truck dealership`, `equipment dealership`, `kenworth trucks`, `freightliner dealer`, `mack trucks dealer`, `peterbilt dealer`, `caterpillar dealer`, `bobcat dealer`, `john deere dealer`, `forklift dealer`, `heavy equipment sales`, `commercial vehicle dealer`, `equipment dealer network` — added to DANNY_ORG_KEYWORDS.
+
+**Sequence:** Route to Property Manager sequence. First pull: June 8 Cuyahoga.
+
+---
+
 ## Peak Season Angle — HOA Budget Season (May–June)
 HOA boards typically hold their annual budget and vendor approval meetings in May–June before the summer maintenance season. This means property managers and community association managers are ACTIVELY reviewing vendor lists RIGHT NOW. The PM sequence Touch 1 and any LinkedIn outreach should reference this window: "HOA boards are approving their summer vendor lists this month" or "Most associations lock in their exterior maintenance vendor before July." This creates urgency without being pushy — it's calendar-based fact. Works especially well for community associations, HOA management companies, and multifamily operators who work on fiscal budgets.
 

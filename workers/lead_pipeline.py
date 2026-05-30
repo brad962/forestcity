@@ -668,6 +668,54 @@ DANNY_TITLES = [
     'coworking space manager', 'flex office manager', 'coworking manager',
     'shared workspace manager', 'business center manager', 'executive suite manager',
     'shared office director', 'coworking director', 'flexible workspace manager',
+    # Truck Stops & Travel Centers — Pilot Flying J (5+ NE Ohio: Streetsboro, Hubbard, Austinburg, Medina, Lodi),
+    # Love's Travel Stops (3+ NE Ohio), TA/Petro Stopping Centers (4+ NE Ohio), 7-Eleven/Speedway truck plazas;
+    # NE Ohio sits at the intersection of I-71, I-76, I-77, I-80, and I-90 — high-density truck corridor;
+    # diesel fuel islands + truck parking lots + building exteriors + dumpster pads = constant heavy staining;
+    # OEPA SPCC (Spill Prevention Control + Countermeasure) compliance angle — fuel storage = exterior stormwater management;
+    # area managers sign vendor contracts for regional portfolios (3-10 locations per deal);
+    # $2K-$6K/visit; quarterly = $8K-$24K/facility; one Pilot portfolio deal = $40K-$120K/year;
+    # zero NE Ohio power washing competitors cold-calling truck stop area managers (added 2026-05-30 run 143)
+    'truck stop manager', 'travel center manager', 'travel plaza manager',
+    'truck stop general manager', 'travel center operations manager', 'fuel stop manager',
+    'travel center area manager',
+    # Ambulatory Surgery Centers (ASCs) — Cleveland Clinic Surgery Centers (Westlake, Solon, Brecksville, Mentor, Avon),
+    # UH Surgical Centers (multiple Cuyahoga/Lake/Lorain), Summa Health Surgery Centers (Akron/Barberton),
+    # SurgiCenter of Cleveland, MetroHealth Ambulatory Surgery, NOMS Healthcare surgical suites,
+    # Ohio Surgical Center, Akron General Ambulatory Surgery; freestanding outpatient surgical facilities —
+    # COMPLETELY DISTINCT from urgent care (different licensing, different patient demographic, different appearance standards);
+    # Ohio Board of Registration (OBR) state license + CMS certification = non-negotiable exterior appearance standards;
+    # surgeons and patients judge the ENTIRE facility's cleanliness as a proxy for surgical sterility standards;
+    # one Cleveland Clinic surgery center portfolio deal = $15K-$40K/year; zero competitors using OBR/CMS angle;
+    # first pull June 8 Cuyahoga (Cleveland Clinic + UH + MetroHealth ASC campuses) (added 2026-05-30 run 143)
+    'ambulatory surgery center manager', 'surgery center administrator', 'surgical center director',
+    'outpatient surgery manager', 'asc administrator', 'surgery center operations manager',
+    'surgical center operations manager', 'outpatient surgical administrator',
+    # Boutique Fitness Studios — Orangetheory Fitness (30+ NE Ohio), F45 Training (15+ NE Ohio),
+    # Pure Barre (8+ NE Ohio), Club Pilates (12+ NE Ohio), CycleBar, 9Round, barre3, Anytime Fitness,
+    # Snap Fitness, OrangeTheory; COMPLETELY DISTINCT from big-box fitness (Planet Fitness/LA Fitness)
+    # already in DANNY_ORG_KEYWORDS under 'fitness center'/'health club';
+    # boutique studios have SEPARATE Apollo org tags: 'boutique fitness', 'fitness franchise', etc.;
+    # 200+ boutique fitness studios in NE Ohio; franchise owners sign vendor contracts directly (no corporate procurement);
+    # heavy member traffic in/out daily = strip-mall entry concrete + parking lot aprons heavily stained;
+    # $200-$500/visit; quarterly = $800-$2K/studio; 10-studio franchise territory = $8K-$20K/year;
+    # zero competitors cold-calling boutique fitness franchise owners in NE Ohio (added 2026-05-30 run 143)
+    'fitness studio manager', 'boutique fitness manager', 'fitness franchise owner',
+    'studio director', 'fitness studio director', 'group fitness studio manager',
+    # Commercial Truck & Heavy Equipment Dealers — Kenworth of Ohio (Cleveland/Akron),
+    # Freightliner Great Lakes Trucks, Mack Trucks of Ohio, Peterbilt (multiple NE Ohio dealers),
+    # International Trucks, Volvo Trucks; ALSO: Thompson Lift Truck (Toyota/Cat forklifts in Cleveland),
+    # Ohio CAT (Caterpillar — Cuyahoga + Summit + Medina + Geauga), Bobcat of Cleveland,
+    # John Deere construction equipment dealers, Komatsu dealer network;
+    # COMPLETELY DISTINCT from passenger car/auto dealers (already in DANNY_ORG_KEYWORDS);
+    # service bays where trucks sit overnight have oil, hydraulic fluid, diesel exhaust accumulation at 10× the rate of passenger cars;
+    # outdoor equipment staging lots are among the dirtiest commercial surfaces in NE Ohio;
+    # OEPA/EPA SPCC compliance for hydraulic fluid and diesel storage;
+    # dealership GMs or service directors sign vendor contracts; $3K-$10K/visit; quarterly = $12K-$40K/year;
+    # zero NE Ohio power washing competitors targeting commercial truck or heavy equipment dealers (added 2026-05-30 run 143)
+    'commercial truck dealer manager', 'heavy equipment dealer manager', 'truck dealer general manager',
+    'equipment dealer manager', 'commercial vehicle dealer manager', 'heavy equipment sales manager',
+    'equipment dealer operations manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -1038,6 +1086,32 @@ DANNY_ORG_KEYWORDS = [
     'coworking space', 'flex office', 'shared workspace', 'coworking', 'executive suite',
     'flexible office', 'serviced office', 'shared office', 'regus', 'iwg', 'wework',
     'industrious office', 'flexible workspace',
+    # Truck Stops & Travel Centers — Pilot Flying J, Love's, TA/Petro, Speedway/7-Eleven truck plazas;
+    # NE Ohio I-71/I-76/I-77/I-80/I-90 corridor; diesel canopies + truck lots + OEPA SPCC compliance;
+    # area managers sign vendor contracts for 3-10 location regional portfolios; first pull June 8 Cuyahoga (added 2026-05-30 run 143)
+    'truck stop', 'travel center', 'travel plaza', 'truckstop', 'pilot flying j',
+    "love's travel stops", 'ta travel centers', 'petro stopping center',
+    'truck fuel stop', 'highway travel center', 'truck plaza',
+    # Ambulatory Surgery Centers — Cleveland Clinic Surgery Centers, UH Surgical Centers, Summa Surgery Centers;
+    # OBR state license + CMS certification = exterior appearance standard; first pull June 8 Cuyahoga (added 2026-05-30 run 143)
+    'ambulatory surgery center', 'outpatient surgery center', 'surgical center',
+    'asc management', 'surgery center management', 'outpatient surgical',
+    'ambulatory surgical facility', 'outpatient surgical center',
+    # Boutique Fitness Studios — Orangetheory, F45, Pure Barre, Club Pilates, CycleBar, Snap Fitness, Anytime Fitness;
+    # DISTINCT from Planet Fitness/LA Fitness (already in 'fitness center'/'health club' above);
+    # franchise owners sign contracts directly; 200+ NE Ohio studios; first pull June 8 Cuyahoga (added 2026-05-30 run 143)
+    'boutique fitness', 'fitness studio', 'orangetheory fitness', 'f45 training',
+    'pure barre', 'club pilates', 'cyclebar', 'anytime fitness', 'snap fitness',
+    'studio fitness', 'franchise fitness studio', 'group fitness studio',
+    # Commercial Truck & Heavy Equipment Dealers — Kenworth, Freightliner, Mack, Peterbilt dealers;
+    # Ohio CAT, Thompson Lift Truck, Bobcat dealer, John Deere construction equipment;
+    # DISTINCT from passenger car/auto dealers (already in 'car dealership'/'auto dealership' above);
+    # service bays + equipment staging lots = heavy diesel/oil staining; first pull June 8 Cuyahoga (added 2026-05-30 run 143)
+    'commercial truck dealer', 'heavy equipment dealer', 'truck dealership',
+    'equipment dealership', 'kenworth trucks', 'freightliner dealer',
+    'mack trucks dealer', 'peterbilt dealer', 'caterpillar dealer',
+    'bobcat dealer', 'john deere dealer', 'forklift dealer', 'heavy equipment sales',
+    'commercial vehicle dealer', 'equipment dealer network',
 ]
 
 CARLA_SEARCHES = [

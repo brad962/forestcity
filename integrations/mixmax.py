@@ -439,6 +439,21 @@ PROPERTY_MANAGER_TITLES = [
     'coworking space manager', 'flex office manager', 'coworking manager',
     'shared workspace manager', 'business center manager', 'executive suite manager',
     'shared office director', 'coworking director', 'flexible workspace manager',
+    # Truck Stops & Travel Centers (added 2026-05-30 run 143)
+    'truck stop manager', 'travel center manager', 'travel plaza manager',
+    'truck stop general manager', 'travel center operations manager', 'fuel stop manager',
+    'travel center area manager',
+    # Ambulatory Surgery Centers (added 2026-05-30 run 143)
+    'ambulatory surgery center manager', 'surgery center administrator', 'surgical center director',
+    'outpatient surgery manager', 'asc administrator', 'surgery center operations manager',
+    'surgical center operations manager', 'outpatient surgical administrator',
+    # Boutique Fitness Studios (added 2026-05-30 run 143)
+    'fitness studio manager', 'boutique fitness manager', 'fitness franchise owner',
+    'studio director', 'fitness studio director', 'group fitness studio manager',
+    # Commercial Truck & Heavy Equipment Dealers (added 2026-05-30 run 143)
+    'commercial truck dealer manager', 'heavy equipment dealer manager', 'truck dealer general manager',
+    'equipment dealer manager', 'commercial vehicle dealer manager', 'heavy equipment sales manager',
+    'equipment dealer operations manager',
 ]
 
 REALTOR_TITLES = [

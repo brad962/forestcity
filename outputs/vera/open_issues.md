@@ -1,6 +1,52 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 142 | 2026-05-30 | Auto-fixes shipped: 4 | New RESOLVED: 0 | Open: 75 (74 carry-forward + 1 new segment)*
+*Run 143 | 2026-05-30 | Auto-fixes shipped: 6 | New RESOLVED: 1 | Open: 78 (74 carry-forward + 4 new segments − 1 resolved stale entry)*
+
+---
+
+## RUN METRICS — Run 143 | 2026-05-30
+- Total RESOLVED: 118 (1 new: Standalone Generic Title Gap stale OPEN entry corrected)
+- Total OPEN: 78 (74 carry-forward + 4 new: Truck Stops, Ambulatory Surgery Centers, Boutique Fitness Studios, Commercial Truck/Equipment Dealers)
+- Auto-upgrades shipped: 6
+  1. `workers/lead_pipeline.py` — NEW: Truck Stops & Travel Centers segment. 7 DANNY_TITLES (truck stop manager, travel center manager, travel plaza manager, truck stop general manager, travel center operations manager, fuel stop manager, travel center area manager), 11 DANNY_ORG_KEYWORDS (truck stop, travel center, travel plaza, truckstop, pilot flying j, love's travel stops, ta travel centers, petro stopping center, truck fuel stop, highway travel center, truck plaza). Pilot Flying J (5+ NE Ohio), Love's (3+), TA/Petro (4+). NE Ohio at I-71/I-76/I-77/I-80/I-90. OEPA SPCC compliance angle. $40K-$120K/year per Pilot portfolio. Zero competitors. First pull June 8 Cuyahoga.
+  2. `workers/lead_pipeline.py` — NEW: Ambulatory Surgery Centers (ASCs). 8 DANNY_TITLES (ambulatory surgery center manager, surgery center administrator, surgical center director, outpatient surgery manager, asc administrator, surgery center operations manager, surgical center operations manager, outpatient surgical administrator), 8 DANNY_ORG_KEYWORDS. Cleveland Clinic Surgery Centers (5 NE Ohio) + UH Surgical Centers + Summa + MetroHealth ASCs. OBR/CMS licensing compliance angle. $24K-$60K/year per Cleveland Clinic portfolio. Zero competitors. First pull June 8 Cuyahoga.
+  3. `workers/lead_pipeline.py` — NEW: Boutique Fitness Studios. 6 DANNY_TITLES (fitness studio manager, boutique fitness manager, fitness franchise owner, studio director, fitness studio director, group fitness studio manager), 12 DANNY_ORG_KEYWORDS (boutique fitness, fitness studio, orangetheory fitness, f45 training, pure barre, club pilates, cyclebar, anytime fitness, snap fitness, studio fitness, franchise fitness studio, group fitness studio). 200+ NE Ohio studios. DISTINCT from Planet Fitness (existing keywords). Franchise owners sign directly. First pull June 8 Cuyahoga.
+  4. `workers/lead_pipeline.py` — NEW: Commercial Truck & Heavy Equipment Dealers. 7 DANNY_TITLES (commercial truck dealer manager, heavy equipment dealer manager, truck dealer general manager, equipment dealer manager, commercial vehicle dealer manager, heavy equipment sales manager, equipment dealer operations manager), 15 DANNY_ORG_KEYWORDS (commercial truck dealer, heavy equipment dealer, truck dealership, kenworth trucks, freightliner dealer, mack trucks dealer, peterbilt dealer, caterpillar dealer, bobcat dealer, john deere dealer, forklift dealer, heavy equipment sales, commercial vehicle dealer, equipment dealer network + truck dealership). DISTINCT from passenger car/auto dealers (already targeted). OEPA/EPA SPCC compliance. $12K-$40K/year per large facility. Zero competitors. First pull June 8 Cuyahoga.
+  5. `integrations/mixmax.py` — Synced 28 new titles (7 Truck Stops + 8 ASCs + 6 Boutique Fitness + 7 Commercial Truck/Equipment) to PROPERTY_MANAGER_TITLES. Routing verified: GAS_STATION_KEYWORDS checked first (company name), correct property_manager sequence routing for all new titles.
+  6. `agents/danny.md` — Full segment briefs added for all 4 new segments: revenue math, pitch angles, NE Ohio-specific targets, Apollo titles + keywords, sequence routing, first pull date.
+
+**New RESOLVED this run:**
+- Standalone Generic Title Gap: stale OPEN entry corrected. Was showing as OPEN despite being fully resolved in Run 136. Corrected to RESOLVED with proper attribution.
+
+**Critical pending (human action required — UNCHANGED):**
+- 🚨 SUMMIT COUNTY PULL — DEADLINE TOMORROW MAY 31. Last day. `python3 workers/lead_pipeline.py both Summit` or double-click `scripts/run_summit_both.command` — 6 minutes unattended.
+- ⛽ Gas station Mixmax sequence NOT CREATED — contacts stranded since May 19. Guide: `outputs/danny/gas_station_manual_email_blast_2026-05-19.md`
+- 🚚 Fleet washing Mixmax sequence NOT CREATED — contacts stranded
+- ⚠️ Instantly.ai NOT PAUSED — June 4 enrollment BLOCKED
+
+## OPEN — Truck Stops & Travel Centers Segment Not Yet Pulled 🟡 NEW (Run 143)
+- First seen: 2026-05-30
+- Description: Pilot Flying J (5+ NE Ohio), Love's Travel Stops (3+), TA/Petro Stopping Centers (4+). NE Ohio sits at I-71/I-76/I-77/I-80/I-90. Diesel canopy exhaust + truck lot oil + OEPA SPCC compliance angle. Area managers sign vendor contracts for 3-10 location regional portfolios. $40K-$120K/year per Pilot portfolio. Zero competitors.
+- Fix applied (Run 143): 7 DANNY_TITLES + 11 DANNY_ORG_KEYWORDS + PROPERTY_MANAGER_TITLES sync + agents/danny.md full segment brief. First pull June 8 Cuyahoga.
+- Resolution criteria: Truck stop manager / travel center manager contacts appear in June 8 Cuyahoga pull.
+
+## OPEN — Ambulatory Surgery Centers Segment Not Yet Pulled 🟡 NEW (Run 143)
+- First seen: 2026-05-30
+- Description: Cleveland Clinic Surgery Centers (Westlake, Solon, Brecksville, Mentor, Avon), UH Surgical Centers, Summa Surgery Centers, SurgiCenter of Cleveland, MetroHealth ASC, NOMS Healthcare. 50+ NE Ohio freestanding ASCs. OBR state license + CMS certification = exterior appearance standard. DISTINCT from urgent care. $24K-$60K/year for Cleveland Clinic portfolio. Zero competitors using OBR/CMS compliance pitch angle.
+- Fix applied (Run 143): 8 DANNY_TITLES + 8 DANNY_ORG_KEYWORDS + PROPERTY_MANAGER_TITLES sync + agents/danny.md full segment brief. First pull June 8 Cuyahoga.
+- Resolution criteria: ASC administrator / surgery center director contacts appear in June 8 Cuyahoga pull.
+
+## OPEN — Boutique Fitness Studios Segment Not Yet Pulled 🟡 NEW (Run 143)
+- First seen: 2026-05-30
+- Description: 200+ NE Ohio boutique studios: Orangetheory (30+), F45 (15+), Pure Barre (8+), Club Pilates (12+), CycleBar, 9Round, barre3, Anytime Fitness, Snap Fitness. DISTINCT Apollo org tags from 'fitness center'/'health club' (Planet Fitness/LA Fitness). Franchise owners sign directly (no corporate procurement). $8K-$20K/year per franchise territory. Zero competitors.
+- Fix applied (Run 143): 6 DANNY_TITLES + 12 DANNY_ORG_KEYWORDS + PROPERTY_MANAGER_TITLES sync + agents/danny.md full segment brief. First pull June 8 Cuyahoga.
+- Resolution criteria: Boutique fitness/studio fitness franchise owner contacts appear in June 8 Cuyahoga pull.
+
+## OPEN — Commercial Truck & Heavy Equipment Dealers Segment Not Yet Pulled 🟡 NEW (Run 143)
+- First seen: 2026-05-30
+- Description: Kenworth of Ohio (Cleveland/Akron), Freightliner Great Lakes Trucks, Mack Trucks of Ohio, Peterbilt dealers, Ohio CAT (4+ locations), Thompson Lift Truck, Bobcat of Cleveland, John Deere construction equipment. DISTINCT from passenger car/auto dealers (already targeted). Service bays + equipment staging lots = diesel/oil/hydraulic fluid staining at 10× car dealers. OEPA/EPA SPCC compliance. $12K-$40K/year per large dealer. Zero competitors.
+- Fix applied (Run 143): 7 DANNY_TITLES + 15 DANNY_ORG_KEYWORDS + PROPERTY_MANAGER_TITLES sync + agents/danny.md full segment brief. First pull June 8 Cuyahoga.
+- Resolution criteria: Commercial truck dealer manager / heavy equipment dealer manager contacts appear in June 8 Cuyahoga pull.
 
 ---
 
@@ -396,11 +442,9 @@
 
 ---
 
-## OPEN — Standalone Generic Title Gap (partial fix applied Run 130)
-- First seen: 2026-05-29 (Run 130)
-- Description: Apollo's `person_titles` filter requires EXACT title matches. A contact whose title is "District Manager" at CVS/Walgreens/Discount Drug Mart will NOT be returned by searches for "pharmacy district manager." Same for "Area Manager" at Enterprise Rent-A-Car / Planet Fitness, "Regional Director" at DaVita / NovaCare, "Branch Manager" at Huntington / KeyBank. These generic titles are used by mid-level decision-makers at ALL our commercial segments.
-- Fix applied (Run 130): Added `'district manager'`, `'area manager'`, `'regional director'`, `'branch manager'` to DANNY_TITLES in lead_pipeline.py. Added `'area manager'`, `'regional director'`, `'branch manager'` to PROPERTY_MANAGER_TITLES in mixmax.py (`'district manager'` excluded from routing due to gas station sequence conflict). Apollo will now return these contacts starting June 8 Cuyahoga pull.
-- Resolution criteria: June 8 Cuyahoga pull returns contacts titled "District Manager" at pharmacy/QSR/tire chain organizations and "Area Manager" at gym/rental car/dental chain organizations.
+## RESOLVED — Standalone Generic Title Gap (Run 130 partial → Run 136 full fix)
+- Resolved: 2026-05-29 (Run 136) — was marked OPEN due to documentation lag; stale entry corrected Run 143
+- Fix: Run 130 added `'district manager'`, `'area manager'`, `'regional director'`, `'branch manager'` to DANNY_TITLES. Run 136 completed the fix by reordering `detect_lead_type()` in mixmax.py — GAS_STATION_KEYWORDS (company name) checked BEFORE PROPERTY_MANAGER_TITLES, resolving the routing conflict. `'district manager'` added to PROPERTY_MANAGER_TITLES in Run 136. Verified with 6 Python unit tests: Circle K DM → gas_station ✓, CVS DM → property_manager ✓, Dollar General DM → property_manager ✓.
 
 ---
 

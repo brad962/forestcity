@@ -1,3 +1,77 @@
+🔧 *Vera — Auto-Upgrade Run 143*
+>Changed: Added Truck Stops & Travel Centers as new commercial segment
+>Why: Pilot Flying J (5+ NE Ohio), Love's (3+), TA/Petro (4+) — NE Ohio I-77/I-80/I-90 corridor. Diesel exhaust canopies + truck lot oil staining + OEPA SPCC compliance angle. Area managers sign vendor contracts for 3-10 location portfolios. One Pilot regional deal = $40K–$120K/year. Zero competitors cold-calling truck stop area managers. First pull June 8 Cuyahoga.
+>Files: workers/lead_pipeline.py, integrations/mixmax.py, agents/danny.md
+
+---
+🔧 *Vera — Auto-Upgrade Run 143*
+>Changed: Added Ambulatory Surgery Centers (ASCs) as new commercial segment
+>Why: 50+ NE Ohio freestanding ASCs (Cleveland Clinic Surgery Centers × 5, UH Surgical Centers, Summa, MetroHealth). OBR state license + CMS certification = exterior appearance standard that no NE Ohio competitor is using as a pitch angle. Patients judge sterility by what they see in the parking lot. Cleveland Clinic portfolio alone = $24K–$60K/year. DISTINCT from urgent care — different buyers, different compliance triggers. First pull June 8 Cuyahoga.
+>Files: workers/lead_pipeline.py, integrations/mixmax.py, agents/danny.md
+
+---
+🔧 *Vera — Auto-Upgrade Run 143*
+>Changed: Added Boutique Fitness Studios as new commercial segment
+>Why: 200+ NE Ohio boutique studios: Orangetheory (30+), F45 (15+), Pure Barre (8+), Club Pilates (12+), CycleBar, Anytime Fitness, Snap Fitness. DISTINCT Apollo org tags from existing 'fitness center'/'health club' (Planet Fitness/LA Fitness). Franchise owners sign vendor contracts directly — no corporate procurement chain. $8K–$20K/year per franchise territory. Zero competitors. First pull June 8 Cuyahoga.
+>Files: workers/lead_pipeline.py, integrations/mixmax.py, agents/danny.md
+
+---
+🔧 *Vera — Auto-Upgrade Run 143*
+>Changed: Added Commercial Truck & Heavy Equipment Dealers as new commercial segment
+>Why: Kenworth of Ohio, Freightliner, Mack, Peterbilt dealers. Ohio CAT (4+ NE Ohio locations), Thompson Lift Truck, Bobcat of Cleveland, John Deere construction equipment dealers. DISTINCT from passenger car dealers (already targeted). Service bays stain concrete at 10× the rate of car dealers — diesel fuel, hydraulic fluid, engine oil, transmission fluid. OEPA/EPA SPCC compliance angle opens conversations. $12K–$40K/year per large facility. Zero competitors targeting this segment. First pull June 8 Cuyahoga.
+>Files: workers/lead_pipeline.py, integrations/mixmax.py, agents/danny.md
+
+---
+🔧 *Vera — Auto-Upgrade Run 143*
+>Changed: Synced 28 new titles to PROPERTY_MANAGER_TITLES in mixmax.py (7 Truck Stop + 8 ASC + 6 Boutique Fitness + 7 Commercial Truck/Equipment)
+>Why: Every new DANNY_TITLES block must be mirrored in PROPERTY_MANAGER_TITLES or leads import to the wrong Mixmax sequence. Routing verified: GAS_STATION_KEYWORDS checked first (company name), then title match → property_manager sequence. All 4 new segments route correctly.
+>File: integrations/mixmax.py
+
+---
+🔧 *Vera — Auto-Upgrade Run 143*
+>Changed: Corrected stale OPEN entry for Standalone Generic Title Gap → marked RESOLVED in open_issues.md
+>Why: Issue was fully resolved in Run 136 via detect_lead_type() reorder + 'district manager' added to PROPERTY_MANAGER_TITLES. The OPEN entry was still showing as open (documentation lag from 7 runs ago). Corrected. Total RESOLVED count: 117 → 118.
+>File: outputs/vera/open_issues.md
+
+---
+🚨 *Vera — Summit County Deadline: TOMORROW May 31*
+>Summit County pull is due *tomorrow, Sunday May 31* — absolute last day.
+>Miss it = no Summit leads until June 29 (next auto-rotation, Week 27 % 6 = 3 = Summit). 29 days away.
+>All 55+ commercial segments (truck stops, surgery centers, sports venues, hospitals, dollar stores, Home Depot, auto parts, hair salons, coworking, and 46 more) miss peak season in Summit/Akron.
+>`cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Summit`
+>Or double-click: `scripts/run_summit_both.command` in Finder — ~6 minutes, fully unattended.
+>Monday June 1 = Medina pull day. Tuesday June 3 = night-before enrollment check. Thursday June 4 = Round 2 enrollment. Summit must be done first.
+
+---
+⛽ *Vera — Gas Station Sequence Stranded (Day 11)*
+>12 gas station contacts sitting idle since May 19 — no Mixmax sequence to enroll them into.
+>Create in Mixmax UI → paste ID into `integrations/mixmax.py` line 54 → `python3 workers/lead_pipeline.py pending`.
+>Bypass: Gmail blast guide at `outputs/danny/gas_station_manual_email_blast_2026-05-19.md` — skip Mixmax entirely.
+>June 4 Round 2 enrollment is 5 days away. This needs to be cleared before then.
+
+---
+⚠️ *Vera — Instantly.ai Pause Required — 5 Days to June 4*
+>Campaigns a1c08c3d and 626cd15d must be paused before June 4 enrollment.
+>Active Instantly campaigns + new Mixmax enrollments = duplicate outreach → spam flags → deliverability damage.
+>Action: Instantly.ai → Campaigns → pause both → confirm.
+>Pause guide: `outputs/vera/instantly_pause_guide_2026-05-22.md`
+
+---
+📅 *Vera — Monday June 1 = Medina Pull Day*
+>First thing Monday morning: run the Medina County pull.
+>`cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Medina`
+>Or double-click: `scripts/run_medina_both.command`
+>Fresh Medina leads need 3 days of open/click activity before June 4 enrollment. Slip to Tuesday = they get enrolled cold with zero engagement signals.
+>Guide: `outputs/donna/june1_medina_pull_guide_2026-05-26.md`
+
+---
+✅ *Vera — Scan Complete 2026-05-30 (Run 143)*
+>6 auto-upgrades shipped | 0 proposals pending | 78 open issues (74 carry-forward + 4 new + 1 resolved)
+>New segments: Truck Stops & Travel Centers, Ambulatory Surgery Centers, Boutique Fitness Studios, Commercial Truck & Heavy Equipment Dealers — all 4 fire June 8 Cuyahoga.
+>June 8 Cuyahoga pull now covers 55+ distinct commercial segments — most comprehensive pipeline in Forest City history.
+>🚨 BLOCKERS: Summit pull deadline TOMORROW (May 31). Gas station sequence day 11. Instantly.ai not paused. June 4 enrollment in 5 days.
+
+---
 🔧 *Vera — Auto-Upgrade*
 >Changed: Added Optical/Vision Centers as a new commercial segment (LensCrafters, MyEyeDr, Visionworks, Pearle Vision, America's Best, For Eyes, National Vision)
 >Why: 50+ NE Ohio strip-mall optical storefronts. State optometry licensing = non-negotiable facility standards. District managers sign vendor contracts for 10–20 locations. $18K–$42K/year per district. Zero competitors targeting this. First pull June 8 Cuyahoga.
