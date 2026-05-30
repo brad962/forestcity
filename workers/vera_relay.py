@@ -851,7 +851,8 @@ def _check_june8_geauga_portage():
         f'>   dialysis (DaVita/Fresenius 50+ centers), concert venues (Blossom, Jacobs Pavilion),\n'
         f'>   dollar stores (DG/FD/DT 300+ locations), auto parts (O\'Reilly/AutoZone/NAPA), hardware\n'
         f'>   (Home Depot/Lowe\'s), sports venues (Cavs/Guardians/Browns), cannabis dispensaries,\n'
-        f'>   blood/plasma centers, coin laundries, warehouse clubs (Costco/Sam\'s), wireless retail + more.\n'
+        f'>   blood/plasma centers, coin laundries, warehouse clubs (Costco/Sam\'s), wireless retail,\n'
+        f'>   wineries/distilleries, motorcycle/powersport dealers, RV/camper dealers + more.\n'
         f'> ✅ Title + org keyword batching active (Run 134): all 51+ segments fully queried.\n'
         f'>{note}\n'
         f'>Shortcut: double-click `scripts/run_cuyahoga_both.command` in Finder (no typing required)\n'
@@ -2303,7 +2304,7 @@ def _check_post_june8_commercial_monitoring():
     ) if day_num == 1 else ''
     msg = (
         f'🏙️ *Post-Cuyahoga Pull — Day {day_num} Commercial Enrollment Watch (June {today.day})*\n'
-        f'>The June 8 Cuyahoga pull enrolled the largest commercial batch of the season (51+ segments).\n'
+        f'>The June 8 Cuyahoga pull enrolled the largest commercial batch of the season (54+ segments).\n'
         f'>First opens expected today — DSO district managers, hospital FMs, government facilities contacts.\n'
         f'{title_batch_note}'
         f'>Run Nina\'s hot leads report: `cd /Users/bradleyneal/forestcity && python3 workers/nina_report.py daily`\n'
@@ -2318,6 +2319,46 @@ def _check_post_june8_commercial_monitoring():
         except Exception:
             pass
         log(f'Post-June 8 commercial enrollment monitoring posted — Day {day_num}')
+
+
+def _check_fathers_day_blast():
+    """Fire June 15–20: remind Bradley to run a Father's Day residential re-engagement blast.
+    Father's Day = June 21. Past residential customers with driveways/patios/siding = natural June recipients.
+    Fastest non-ad revenue during the post-June-8 lull before sequences warm up.
+    Tommy wrote the June residential blast guide (past_customer_june_blast_2026-05-27.md) —
+    adapt those scripts for Father's Day angle. Self-deactivates June 21."""
+    from datetime import date as _date_fd
+    today = _date_fd.today()
+    start = _date_fd(2026, 6, 15)
+    end   = _date_fd(2026, 6, 20)
+    if not (start <= today <= end):
+        return
+
+    alert_sentinel = BASE_DIR / 'outputs' / 'vera' / '.fathers_day_blast_sent_date'
+    today_str = today.strftime('%Y-%m-%d')
+    if alert_sentinel.exists() and alert_sentinel.read_text().strip() == today_str:
+        return
+
+    days_left = (_date_fd(2026, 6, 21) - today).days
+    label = 'TOMORROW — LAST WINDOW' if days_left == 1 else f'{days_left} days until Father\'s Day'
+
+    msg = (
+        f'👨 *Father\'s Day Residential Blast — {label} (June {today.day})*\n'
+        f'>Father\'s Day = June 21. Homeowners whose dads care about curb appeal are a perfect June re-engage.\n'
+        f'>Past residential customers who booked in 2024–2025 and haven\'t returned = prime list.\n'
+        f'>Text angle: "Get Dad\'s driveway, patio, and house washed before the weekend — one call, one visit."\n'
+        f'>Or: "Father\'s Day gift that actually gets used: a clean driveway. We have openings this week."\n'
+        f'>Open Tommy\'s past customer scripts: `outputs/tommy/past_customer_june_blast_2026-05-27.md`\n'
+        f'>Look up 2024–2025 residential jobs in Workiz → pull phone numbers → 15 min of texts = $1,000–$3,000.\n'
+        f'>Commercial sequences are sending — residential texting fills the booking calendar while they warm up.'
+    )
+    if post_slack(msg):
+        alert_sentinel.parent.mkdir(exist_ok=True)
+        try:
+            alert_sentinel.write_text(today_str)
+        except Exception:
+            pass
+        log(f"Father's Day residential blast reminder posted — {label}")
 
 
 def _main_body():
@@ -2375,6 +2416,7 @@ def _main_body():
     _check_spring_2027_early_booking()
     _check_june2_medina_verification()
     _check_post_june8_commercial_monitoring()
+    _check_fathers_day_blast()
 
     # Fetch first so origin/main is current before flush checks origin/main..HEAD
     git(['fetch', 'origin'])

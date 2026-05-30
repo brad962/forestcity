@@ -1,6 +1,42 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 143 | 2026-05-30 | Auto-fixes shipped: 6 | New RESOLVED: 1 | Open: 78 (74 carry-forward + 4 new segments − 1 resolved stale entry)*
+*Run 144 | 2026-05-30 | Auto-fixes shipped: 5 | New RESOLVED: 0 | Open: 81 (78 carry-forward + 3 new segments)*
+
+---
+
+## RUN METRICS — Run 144 | 2026-05-30
+- Total RESOLVED: 118 (none new this run)
+- Total OPEN: 81 (78 carry-forward + 3 new: Wineries/Distilleries, Motorcycle/Powersport Dealers, RV/Camper Dealers)
+- Auto-upgrades shipped: 5
+  1. `workers/lead_pipeline.py` — NEW: Wineries & Distilleries segment. 6 DANNY_TITLES (winery manager, vineyard manager, winery general manager, distillery manager, distillery general manager, tasting room manager). 10 DANNY_ORG_KEYWORDS (winery, vineyard, winery management, wine production, craft distillery, distillery, bourbon distillery, whiskey distillery, spirits production, tasting room). Ferrante/Debonne/Erie Shore wineries + Tom's Foolery/Cleveland Whiskey distilleries. DISTINCT from craft brewery Apollo tags. Spring patio opening = prime pitch window. $600–$2,000/visit. Zero competitors. First pull June 8 Cuyahoga.
+  2. `workers/lead_pipeline.py` — NEW: Motorcycle & Powersport Dealers segment. 7 DANNY_TITLES (motorcycle dealer manager, powersport dealer manager, motorcycle dealership manager, motorcycle dealer general manager, powersports manager, motorcycle store manager, motorsport dealer manager). 10 DANNY_ORG_KEYWORDS (motorcycle dealer, powersport dealer, motorcycle dealership, powersports dealer, harley davidson dealer, kawasaki dealer, yamaha dealer, honda powersports, motorcycle sales, powersport sales). Harley-Davidson/Honda/Kawasaki NE Ohio dealers. DISTINCT from car dealers. $800–$2,500/visit quarterly. Zero competitors. First pull June 8 Cuyahoga.
+  3. `workers/lead_pipeline.py` — NEW: RV & Camper Dealers segment. 7 DANNY_TITLES (rv dealer manager, rv dealership manager, rv dealer general manager, camper dealer manager, recreational vehicle dealer manager, rv store manager, motorhome dealer manager). 11 DANNY_ORG_KEYWORDS (rv dealer, rv dealership, recreational vehicle dealer, camper dealer, motorhome dealer, rv sales, camping world, rv world, campers inn, rv rental, travel trailer dealer). RV World of Ohio + Camping World Streetsboro/Avon. DISTINCT from car dealers. $2,500–$8,000/visit. Zero competitors. First pull June 8 Cuyahoga.
+  4. `integrations/mixmax.py` — Synced 20 new titles (6 Winery + 7 Motorcycle/Powersport + 7 RV/Camper) to PROPERTY_MANAGER_TITLES. Routing verified: GAS_STATION_KEYWORDS checked first per Run 136 fix; all new titles correctly route to property_manager sequence.
+  5. `workers/vera_relay.py` — NEW: _check_fathers_day_blast() fires June 15–20. Father's Day (June 21) residential re-engagement hook. Uses Tommy's existing past customer blast scripts with holiday angle. Wired into _main_body(). Also updated June 8 relay message to list wineries/motorcycle/RV dealers; updated post-June-8 monitoring message from "51+ segments" to "54+".
+
+**Critical pending (human action required — UNCHANGED):**
+- 🚨 SUMMIT COUNTY PULL — DEADLINE TOMORROW May 31. Last day. `python3 workers/lead_pipeline.py both Summit` or double-click `scripts/run_summit_both.command`.
+- ⛽ Gas station Mixmax sequence NOT CREATED — contacts stranded since May 19
+- 🚚 Fleet washing Mixmax sequence NOT CREATED — contacts stranded
+- ⚠️ Instantly.ai NOT PAUSED — June 4 enrollment BLOCKED (5 days away)
+
+## OPEN — Wineries & Distilleries Segment Not Yet Pulled 🟡 NEW (Run 144)
+- First seen: 2026-05-30
+- Description: Ferrante Winery, Debonne Vineyards, Erie Shore Vineyard, Cuyahoga Valley Winery, Tom's Foolery Distillery (Burton), Cleveland Whiskey. DISTINCT from craft brewery Apollo tags — separate 'winery'/'vineyard'/'distillery' org tags. Spring patio opening = prime pitch window. $600–$2,000/visit. Zero competitors.
+- Fix applied (Run 144): 6 DANNY_TITLES + 10 DANNY_ORG_KEYWORDS + PROPERTY_MANAGER_TITLES sync + agents/danny.md full segment brief. First pull June 8 Cuyahoga (Tom's Foolery/Cleveland Whiskey/Cuyahoga Valley Winery). Full Lake County wine trail pull June 15.
+- Resolution criteria: Winery manager / distillery manager contacts appear in June 8 or June 15 pull.
+
+## OPEN — Motorcycle & Powersport Dealers Segment Not Yet Pulled 🟡 NEW (Run 144)
+- First seen: 2026-05-30
+- Description: Harley-Davidson of Cleveland (N. Olmsted/Avon Lake), Mike's Famous H-D (Mentor), Northeast Ohio Powersports (Euclid), Honda Powersports, Kawasaki/Yamaha/Polaris dealers. DISTINCT from car dealers. Service bays accumulate oil+grease at 10× car rate. OSHA stormwater compliance. $800–$2,500/visit quarterly. Zero competitors.
+- Fix applied (Run 144): 7 DANNY_TITLES + 10 DANNY_ORG_KEYWORDS + PROPERTY_MANAGER_TITLES sync + agents/danny.md full segment brief. First pull June 8 Cuyahoga.
+- Resolution criteria: Motorcycle dealer manager / powersport dealer manager contacts appear in June 8 pull.
+
+## OPEN — RV & Camper Dealers Segment Not Yet Pulled 🟡 NEW (Run 144)
+- First seen: 2026-05-30
+- Description: RV World of Ohio (Hudson/Cuyahoga Falls), Camping World (Streetsboro + Avon), Campers Inn RV (Sandusky). ENORMOUS paved lots (50-500 RVs on display). Service bays with diesel/black water/gray water staining. Spring = peak inventory prep season. $2,500–$8,000/visit. Zero competitors.
+- Fix applied (Run 144): 7 DANNY_TITLES + 11 DANNY_ORG_KEYWORDS + PROPERTY_MANAGER_TITLES sync + agents/danny.md full segment brief. First pull June 8 Cuyahoga (Streetsboro/Hudson area).
+- Resolution criteria: RV dealer manager / camper dealer manager contacts appear in June 8 pull.
 
 ---
 

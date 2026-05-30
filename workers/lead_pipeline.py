@@ -716,6 +716,39 @@ DANNY_TITLES = [
     'commercial truck dealer manager', 'heavy equipment dealer manager', 'truck dealer general manager',
     'equipment dealer manager', 'commercial vehicle dealer manager', 'heavy equipment sales manager',
     'equipment dealer operations manager',
+    # Wineries & Distilleries — Ferrante Winery (Geneva-on-the-Lake), Cuyahoga Valley Winery (Brecksville),
+    # Debonne Vineyards (Madison), Erie Shore Vineyard (North Kingsville), Tom's Foolery Distillery (Burton),
+    # Cleveland Whiskey (Cleveland), BottleHouse Brewing & Mead Winery (Cleveland Heights/Lakewood);
+    # outdoor patios + parking lots + building facades + barrel aging areas;
+    # spring patio opening (April-May) = PRIME pitch window — they're cleaning and prepping for season;
+    # seasonal events + wedding rentals = appearance is marketing; owner or GM signs vendor contracts directly;
+    # COMPLETELY DISTINCT from craft breweries (separate Apollo org tags: 'winery', 'vineyard', 'distillery');
+    # $600-$2,000/visit; 2-3x/year = $1,200-$6,000 per winery; zero competitors cold-calling winery GMs (added 2026-05-30 run 144)
+    'winery manager', 'vineyard manager', 'winery general manager', 'distillery manager',
+    'distillery general manager', 'tasting room manager',
+    # Motorcycle & Powersport Dealers — Harley-Davidson of Cleveland (N. Olmsted/Avon Lake), H-D Lake Erie,
+    # Mike's Famous Harley-Davidson (Mentor/Akron), Northeast Ohio Powersports (Euclid),
+    # Honda Powersports, Kawasaki dealers, Yamaha dealers, Polaris dealers, Can-Am/Sea-Doo dealers;
+    # showroom floors + service bays where motorcycles/ATVs sit = oil, grease, hydraulic fluid on concrete;
+    # outdoor display lots with bikes = tire marks + weathering stains on aprons;
+    # COMPLETELY DISTINCT from car dealers (separate Apollo tags: 'motorcycle dealer', 'powersport dealer');
+    # OSHA stormwater compliance for oil runoff from service areas;
+    # dealership GMs sign vendor contracts; $800-$2,500/visit; 4x/year = $3,200-$10,000/year;
+    # zero NE Ohio power washing competitors targeting motorcycle/powersport dealer GMs (added 2026-05-30 run 144)
+    'motorcycle dealer manager', 'powersport dealer manager', 'motorcycle dealership manager',
+    'motorcycle dealer general manager', 'powersports manager', 'motorcycle store manager',
+    'motorsport dealer manager',
+    # RV & Camper Dealers — RV World of Ohio (Hudson/Cuyahoga Falls), Camping World (Streetsboro + Avon),
+    # Campers Inn RV (Sandusky area), Holiday Motorhomes, Giant Recreation World, national chains;
+    # ENORMOUS paved lots with 50-500 RVs/trailers on display = massive square footage of stained asphalt;
+    # service bay areas with black water/gray water hoses, diesel exhaust, generator oil staining;
+    # building exteriors + showroom entry areas + service drive aprons;
+    # spring (April-May) = inventory prep season before camping season opener;
+    # one large dealer lot visit = $2,500-$8,000; 2-3x/year = $5,000-$24,000/year per dealer;
+    # COMPLETELY DISTINCT from car dealers (separate Apollo org tags: 'rv dealer', 'camper dealer');
+    # zero NE Ohio power washing competitors targeting RV dealership GMs (added 2026-05-30 run 144)
+    'rv dealer manager', 'rv dealership manager', 'rv dealer general manager', 'camper dealer manager',
+    'recreational vehicle dealer manager', 'rv store manager', 'motorhome dealer manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -1112,6 +1145,23 @@ DANNY_ORG_KEYWORDS = [
     'mack trucks dealer', 'peterbilt dealer', 'caterpillar dealer',
     'bobcat dealer', 'john deere dealer', 'forklift dealer', 'heavy equipment sales',
     'commercial vehicle dealer', 'equipment dealer network',
+    # Wineries & Distilleries — DISTINCT Apollo org tags from 'craft brewery'/'taproom' already above;
+    # Ferrante, Debonne, Erie Shore, Cuyahoga Valley Winery + Cleveland Whiskey/Tom's Foolery Distillery;
+    # spring patio opening = prime pitch window; outdoor event space = appearance is marketing (added 2026-05-30 run 144)
+    'winery', 'vineyard', 'winery management', 'wine production', 'craft distillery',
+    'distillery', 'bourbon distillery', 'whiskey distillery', 'spirits production', 'tasting room',
+    # Motorcycle & Powersport Dealers — DISTINCT from 'car dealership'/'auto dealership' already above;
+    # Harley-Davidson dealers, Honda Powersports, Kawasaki, Yamaha, Polaris, Can-Am, Sea-Doo dealers;
+    # service bays + display lots = heavy grease + oil staining; zero competitors (added 2026-05-30 run 144)
+    'motorcycle dealer', 'powersport dealer', 'motorcycle dealership', 'powersports dealer',
+    'harley davidson dealer', 'kawasaki dealer', 'yamaha dealer', 'honda powersports',
+    'motorcycle sales', 'powersport sales',
+    # RV & Camper Dealers — DISTINCT from 'car rental'/'car dealership' already above;
+    # RV World of Ohio, Camping World, Campers Inn RV, Holiday Motorhomes;
+    # enormous paved lots + service bays; spring = peak prep season (added 2026-05-30 run 144)
+    'rv dealer', 'rv dealership', 'recreational vehicle dealer', 'camper dealer',
+    'motorhome dealer', 'rv sales', 'camping world', 'rv world', 'campers inn',
+    'rv rental', 'travel trailer dealer',
 ]
 
 CARLA_SEARCHES = [

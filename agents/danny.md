@@ -35,7 +35,7 @@ Example payload for property managers in Cuyahoga County:
 
 **Always pass `q_organization_keyword_tags`** — this catches decision-makers at property management companies where the contact's title isn't "property manager" (e.g., owner or VP at a 10-property HOA management firm).
 
-> ✅ **Title batching active (Run 132):** `workers/lead_pipeline.py` now batches DANNY_TITLES in groups of 50 and runs multiple Apollo searches per county pull, deduplicating by person ID. This prevents Apollo from silently capping large `person_titles` arrays. With 250+ titles across 51+ commercial segments, the old single-call approach risked returning zero contacts for many segments. Batching guarantees all 51+ segments are queried every pull.
+> ✅ **Title batching active (Run 132):** `workers/lead_pipeline.py` now batches DANNY_TITLES in groups of 50 and runs multiple Apollo searches per county pull, deduplicating by person ID. This prevents Apollo from silently capping large `person_titles` arrays. With 300+ titles across 54+ commercial segments, the old single-call approach risked returning zero contacts for many segments. Batching guarantees all 54+ segments are queried every pull.
 
 Target titles:
 - Property Manager, Property Management Director, Property Director
@@ -951,6 +951,66 @@ Events drive 20,000–70,000+ fans = maximum visible staining on all surfaces. F
 **Apollo keywords (live Run 143):** `commercial truck dealer`, `heavy equipment dealer`, `truck dealership`, `equipment dealership`, `kenworth trucks`, `freightliner dealer`, `mack trucks dealer`, `peterbilt dealer`, `caterpillar dealer`, `bobcat dealer`, `john deere dealer`, `forklift dealer`, `heavy equipment sales`, `commercial vehicle dealer`, `equipment dealer network` — added to DANNY_ORG_KEYWORDS.
 
 **Sequence:** Route to Property Manager sequence. First pull: June 8 Cuyahoga.
+
+---
+
+### Wineries & Distilleries (NEW — May 2026, Run 144)
+
+**Status:** PENDING — first pull June 8 Cuyahoga (Tom's Foolery Distillery + Cleveland Whiskey + Cuyahoga Valley Winery are all Cuyahoga County)
+
+**Target:** Winery Manager, Vineyard Manager, Winery General Manager, Distillery Manager, Distillery General Manager, Tasting Room Manager.
+
+**Why:** NE Ohio has a thriving winery + distillery scene that is COMPLETELY DISTINCT from craft breweries in Apollo (different org tags). Ferrante Winery (Geneva-on-the-Lake), Debonne Vineyards (Madison), Erie Shore Vineyard (North Kingsville), Cuyahoga Valley Winery (Brecksville), Virant Family Winery, Maeloc Hard Cider. Distilleries: Tom's Foolery Distillery (Burton, Geauga County), Cleveland Whiskey (Cleveland West Side), BottleHouse Brewing & Mead Winery (Cleveland Heights/Lakewood). These venues have outdoor patios, barrel aging areas, paved parking lots, and building facades. Spring patio opening (April-May) is the PRIME pitch window — owners are doing facility prep for the season. Seasonal wedding rentals and private events mean appearance IS marketing — they photograph everything.
+
+**Revenue per visit:** $600–$2,000/visit. 2-3x/year = $1,200–$6,000 per winery. Owner or GM signs vendor contracts directly (no corporate procurement layer). Zero NE Ohio power washing competitors targeting winery/distillery owners.
+
+**Pitch angle:** "You open for patio season in two weeks — let us pressure wash the parking lot, patio concrete, and building exterior before your first weekend rush. Wedding season photos start on your entrance, not inside."
+
+**Apollo titles (live Run 144):** `winery manager`, `vineyard manager`, `winery general manager`, `distillery manager`, `distillery general manager`, `tasting room manager` — added to DANNY_TITLES and PROPERTY_MANAGER_TITLES.
+
+**Apollo keywords (live Run 144):** `winery`, `vineyard`, `winery management`, `wine production`, `craft distillery`, `distillery`, `bourbon distillery`, `whiskey distillery`, `spirits production`, `tasting room` — added to DANNY_ORG_KEYWORDS.
+
+**Sequence:** Route to Property Manager sequence. First pull: June 8 Cuyahoga (Cuyahoga Valley Winery + Cleveland Whiskey/Tom's Foolery). Full NE Ohio wine trail pull on Lake County rotation (June 15) — Geneva-on-the-Lake wine corridor.
+
+---
+
+### Motorcycle & Powersport Dealers (NEW — May 2026, Run 144)
+
+**Status:** PENDING — first pull June 8 Cuyahoga (Harley-Davidson of Cleveland, Northeast Ohio Powersports — both Cuyahoga County)
+
+**Target:** Motorcycle Dealer Manager, Powersport Dealer Manager, Motorcycle Dealership Manager, Motorcycle Dealer General Manager, Powersports Manager, Motorcycle Store Manager, Motorsport Dealer Manager.
+
+**Why:** NE Ohio has a robust motorcycle and powersport dealer network. Major dealers: Harley-Davidson of Cleveland (North Olmsted/Avon Lake area), H-D Lake Erie, Mike's Famous Harley-Davidson (Mentor), Northeast Ohio Powersports (Euclid), Honda Powersports dealers, Kawasaki dealers, Yamaha dealers, Polaris dealers (ATV, Ranger, Slingshot), Can-Am/Sea-Doo dealers. COMPLETELY DISTINCT from car dealers in Apollo (separate org tags: 'motorcycle dealer', 'powersport dealer'). Service bays where motorcycles/ATVs are worked on have oil, grease, and hydraulic fluid on concrete at higher accumulation rates than passenger cars due to the nature of the work. Outdoor display lots have tire marks and weathering staining on aprons. OSHA stormwater compliance for oil runoff from service areas.
+
+**Revenue per visit:** $800–$2,500/visit. Quarterly = $3,200–$10,000/year per dealer. Dealership GMs sign vendor contracts. Zero NE Ohio power washing competitors targeting motorcycle/powersport dealer GMs.
+
+**Pitch angle:** "Your service bay floor and display lot apron look the way all motorcycle shops look — but yours doesn't have to. We do quarterly pressure washes for dealers in the area. One afternoon, your whole service entrance and display lot looks brand new for the spring riding season."
+
+**Apollo titles (live Run 144):** `motorcycle dealer manager`, `powersport dealer manager`, `motorcycle dealership manager`, `motorcycle dealer general manager`, `powersports manager`, `motorcycle store manager`, `motorsport dealer manager` — added to DANNY_TITLES and PROPERTY_MANAGER_TITLES.
+
+**Apollo keywords (live Run 144):** `motorcycle dealer`, `powersport dealer`, `motorcycle dealership`, `powersports dealer`, `harley davidson dealer`, `kawasaki dealer`, `yamaha dealer`, `honda powersports`, `motorcycle sales`, `powersport sales` — added to DANNY_ORG_KEYWORDS.
+
+**Sequence:** Route to Property Manager sequence. First pull: June 8 Cuyahoga.
+
+---
+
+### RV & Camper Dealers (NEW — May 2026, Run 144)
+
+**Status:** PENDING — first pull June 8 Cuyahoga (area near Hudson/Streetsboro RV World of Ohio and Camping World Streetsboro)
+
+**Target:** RV Dealer Manager, RV Dealership Manager, RV Dealer General Manager, Camper Dealer Manager, Recreational Vehicle Dealer Manager, RV Store Manager, Motorhome Dealer Manager.
+
+**Why:** NE Ohio has several large RV and camper dealers. Key targets: RV World of Ohio (Hudson/Cuyahoga Falls area), Camping World (Streetsboro + Avon — two of the largest RV retailers in the region), Campers Inn RV (Sandusky area), Holiday Motorhomes (NE Ohio), Lazy Days RV, Giant Recreation World. COMPLETELY DISTINCT from car dealers in Apollo (separate org tags: 'rv dealer', 'camper dealer'). These dealers have ENORMOUS paved lots — 50 to 500 RVs and trailers parked on display, plus service bay areas where black water/gray water hoses are used and diesel/generator oil stains the concrete. Building exteriors + showroom entry areas + service drive aprons. Spring (April-May) is the peak inventory prep season before camping season opens. High-value accounts: one large dealer lot visit is $2,500–$8,000.
+
+**Revenue per visit:** $2,500–$8,000/visit. 2-3x/year = $5,000–$24,000/year per dealer. Zero NE Ohio power washing competitors targeting RV dealership GMs.
+
+**Pitch angle:** "You're prepping inventory for camping season — so is your lot going to look like it? We do the lot wash, service apron, and building exterior in one day before your spring open house."
+
+**Apollo titles (live Run 144):** `rv dealer manager`, `rv dealership manager`, `rv dealer general manager`, `camper dealer manager`, `recreational vehicle dealer manager`, `rv store manager`, `motorhome dealer manager` — added to DANNY_TITLES and PROPERTY_MANAGER_TITLES.
+
+**Apollo keywords (live Run 144):** `rv dealer`, `rv dealership`, `recreational vehicle dealer`, `camper dealer`, `motorhome dealer`, `rv sales`, `camping world`, `rv world`, `campers inn`, `rv rental`, `travel trailer dealer` — added to DANNY_ORG_KEYWORDS.
+
+**Sequence:** Route to Property Manager sequence. First pull: June 8 Cuyahoga (Streetsboro/Hudson area).
 
 ---
 

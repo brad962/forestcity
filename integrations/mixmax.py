@@ -454,6 +454,16 @@ PROPERTY_MANAGER_TITLES = [
     'commercial truck dealer manager', 'heavy equipment dealer manager', 'truck dealer general manager',
     'equipment dealer manager', 'commercial vehicle dealer manager', 'heavy equipment sales manager',
     'equipment dealer operations manager',
+    # Wineries & Distilleries (added 2026-05-30 run 144)
+    'winery manager', 'vineyard manager', 'winery general manager', 'distillery manager',
+    'distillery general manager', 'tasting room manager',
+    # Motorcycle & Powersport Dealers (added 2026-05-30 run 144)
+    'motorcycle dealer manager', 'powersport dealer manager', 'motorcycle dealership manager',
+    'motorcycle dealer general manager', 'powersports manager', 'motorcycle store manager',
+    'motorsport dealer manager',
+    # RV & Camper Dealers (added 2026-05-30 run 144)
+    'rv dealer manager', 'rv dealership manager', 'rv dealer general manager', 'camper dealer manager',
+    'recreational vehicle dealer manager', 'rv store manager', 'motorhome dealer manager',
 ]
 
 REALTOR_TITLES = [
