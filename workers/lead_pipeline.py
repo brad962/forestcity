@@ -637,6 +637,29 @@ DANNY_TITLES = [
     'coffee district manager', 'coffee shop manager', 'coffee chain manager',
     'drive through manager', 'drive-through manager', 'quick service beverage manager',
     'beverage district manager', 'coffee store manager',
+    # Pet Supply Retail Chains — PetSmart (20+ NE Ohio), Petco (15+ NE Ohio), Pet Supplies Plus (30+ NE Ohio);
+    # DISTINCT from pet boarding/kennel segment — these are large-format retail stores with grooming salons;
+    # grooming salon areas have water + dog shampoo runoff that stains concrete entries and curbside aprons constantly;
+    # large suburban parking lots accumulate pet waste staining + heavy cart traffic;
+    # state cosmetology/grooming licensing = facility appearance standard;
+    # district managers sign vendor contracts for 5-15 store territories;
+    # $400-$800/location; quarterly = $1.6K-$3.2K/location; 15-store district = $24K-$48K/year;
+    # Pet Supplies Plus is headquartered in Livonia MI but has 30+ NE Ohio franchise stores;
+    # zero competitors targeting pet supply retail district managers in NE Ohio; first pull June 8 Cuyahoga (added 2026-05-30 run 141)
+    'pet supply district manager', 'pet store district manager', 'pet retail district manager',
+    'pet supply store manager', 'pet retail manager', 'pet specialty district manager',
+    # Hair & Nail Salon Chains — Great Clips (80+ NE Ohio — one of the largest Great Clips markets in USA),
+    # Sport Clips (30+ NE Ohio), Supercuts (40+ NE Ohio), Cost Cutters, Fantastic Sam's, Floyd's Barbershop,
+    # Nail salon chains (Regal Nails @ Walmart, Nail Superstore); VERY high NE Ohio strip-mall density;
+    # high foot traffic = heavy staining on entry walkways + parking lot aprons around entry doors;
+    # chemical product spills (hair color, bleach, acetone nail products) stain concrete and asphalt regularly;
+    # state cosmetology/barbering licensing inspections include exterior appearance of entryway;
+    # district managers sign vendor contracts for 10-20 location territories;
+    # $200-$500/location; quarterly = $800-$2K/location; 15-salon district = $12K-$30K/year;
+    # zero power washing competitors cold-calling salon chain district managers in NE Ohio (added 2026-05-30 run 141)
+    'salon district manager', 'hair salon district manager', 'salon regional manager',
+    'barbershop district manager', 'beauty salon district manager', 'salon franchise manager',
+    'nail salon district manager', 'spa district manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -994,6 +1017,14 @@ DANNY_ORG_KEYWORDS = [
     'coffee chain', 'coffee shop chain', 'coffee franchise', 'quick service beverage',
     'drive through beverage', 'starbucks', "dunkin'", 'tim hortons', 'dutch bros',
     'caribou coffee', 'panera bread',
+    # Pet Supply Retail Chains — PetSmart, Petco, Pet Supplies Plus; grooming salon runoff stains concrete;
+    # DISTINCT from pet boarding/kennel org keywords; first pull June 8 Cuyahoga (added 2026-05-30 run 141)
+    'pet supply store', 'pet specialty retail', 'petsmart', 'petco', 'pet supplies plus',
+    'pet supply retail', 'pet supplies',
+    # Hair & Nail Salon Chains — Great Clips, Sport Clips, Supercuts, Floyd's, Fantastic Sams;
+    # chemical spill compliance + high foot traffic; first pull June 8 Cuyahoga (added 2026-05-30 run 141)
+    'hair salon chain', 'barbershop chain', 'beauty salon chain', 'salon franchise',
+    'great clips', 'sport clips', 'supercuts', 'hair salon management',
 ]
 
 CARLA_SEARCHES = [

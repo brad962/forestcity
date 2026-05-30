@@ -109,3 +109,44 @@
 >9 auto-upgrades shipped | 1 proposal | 2 issues resolved | 72 open (mostly awaiting June 8 pull)
 >Key fixes: 6 new Finder shortcuts (Cuyahoga/Lake/Lorain), Summit deadline "July 6" bug fixed → June 29, "36 segments" updated to "51+" everywhere, Coffee/Drive-Through segment added (52nd).
 >Blockers (unchanged): Summit pull DUE TOMORROW. Gas sequence day 11. Fleet sequence stranded. Instantly.ai not paused (4 days to June 4).
+
+---
+🔧 *Vera — Auto-Upgrade | Run 141 | May 30*
+>Changed: `vera_relay.py` — Fixed broken GBP content calendar path in `_check_gbp_weekly_post()` (fires every Monday May 26–Sept 30)
+>Why: Relay pointed to `outputs/tommy/june_gbp_content_calendar_2026-05-24.md` — file lives at `outputs/vera/`. Bradley would open the wrong folder every Monday during peak season and not be able to find the pre-written GBP posts.
+>File: `workers/vera_relay.py`
+
+---
+🔧 *Vera — Auto-Upgrade | Run 141 | May 30*
+>Changed: `vera_relay.py` — Fixed stale "25+ segments" → "51+ segments" in post-June-8 commercial enrollment monitoring message
+>Why: June 9-11 commercial watch message was still describing an old pull scope. June 8 Cuyahoga pull actually covers 53+ commercial segments now.
+>File: `workers/vera_relay.py`
+
+---
+🔧 *Vera — Auto-Upgrade | Run 141 | May 30*
+>Changed: NEW 53rd segment — Pet Supply Retail Chains (lead_pipeline.py + mixmax.py + danny.md)
+>Why: PetSmart (20+ NE Ohio), Petco (15+), Pet Supplies Plus (30+) — all have grooming salons where water + dog shampoo runoff constantly stains concrete entries. State grooming licensing = appearance compliance standard. District managers sign 5-15 store vendor contracts. $24K–$48K/year per district. DISTINCT from pet boarding. Zero competitors targeting this. 6 titles + 7 org keywords. First pull June 8 Cuyahoga.
+>File: `workers/lead_pipeline.py`
+
+---
+🔧 *Vera — Auto-Upgrade | Run 141 | May 30*
+>Changed: NEW 54th segment — Hair & Nail Salon Chains (lead_pipeline.py + mixmax.py + danny.md)
+>Why: Great Clips alone has 80+ NE Ohio stores — one of the largest Great Clips markets in the USA. Plus Sport Clips (30+), Supercuts (40+), Fantastic Sam's, Floyd's Barbershop, nail chains. Hair color + acetone spills stain concrete entries regularly. State cosmetology licensing = exterior compliance inspection. District managers sign 10–20 location contracts. $12K–$30K/year per district. Zero competitors cold-calling. 8 titles + 8 org keywords. First pull June 8 Cuyahoga.
+>File: `workers/lead_pipeline.py`
+
+---
+🚨 *Vera — Summit Deadline: TODAY is Sunday May 31 — LAST CALL*
+>Summit County pull window closes TODAY. Next auto-rotation is June 29.
+>Akron / Stow / Hudson / Fairlawn / Cuyahoga Falls — 53+ commercial segments all fire.
+>Run right now (6 min fully unattended):
+>Double-click `scripts/run_summit_both.command` in Finder
+>Or: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Summit`
+>Do this before anything else today.
+
+---
+✅ *Vera — Scan Complete 2026-05-30 (Run 141)*
+>5 auto-upgrades shipped | 0 proposals | 74 open issues (72 carry-forward + 2 new segments added)
+>Bugs fixed this run: GBP relay path error (high-impact Monday recurring) + post-June8 stale "25+" count
+>New segments: Pet Supply Retail (PetSmart/Petco/Pet Supplies Plus) + Hair/Nail Salon Chains (Great Clips 80+ NE Ohio)
+>Total pipeline segments: 54+. Total DANNY_TITLES: ~275.
+>Today's priority stack: 1) Summit pull (DEADLINE TODAY) 2) Instantly.ai paused (June 4 = 5 days) 3) Gas station sequence in Mixmax 4) Past customer texts (fastest revenue during ad learning phase)

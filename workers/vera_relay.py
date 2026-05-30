@@ -2160,7 +2160,7 @@ def _check_gbp_weekly_post():
         '📍 *GBP Post Due — Google Business Profile (Monday)*\n'
         '>One GBP post/week keeps Forest City active in Maps rankings during peak season.\n'
         '>Competitors go silent all summer — an active GBP stands out in local search.\n'
-        '>June content calendar (pre-written posts ready to copy): `outputs/tommy/june_gbp_content_calendar_2026-05-24.md`\n'
+        '>June content calendar (pre-written posts ready to copy): `outputs/vera/june_gbp_content_calendar_2026-05-24.md`\n'
         '>Best-performing hook: before/after with location tag ("Just finished this driveway in [City] — result speaks for itself.")\n'
         '>Post types that drive leads: before/after photo, seasonal availability notice, job spotlight, 5-star review share.\n'
         '>5 minutes: Google Business Profile Manager → Posts → Add Update → publish.'
@@ -2262,7 +2262,7 @@ def _check_post_june8_commercial_monitoring():
     ) if day_num == 1 else ''
     msg = (
         f'🏙️ *Post-Cuyahoga Pull — Day {day_num} Commercial Enrollment Watch (June {today.day})*\n'
-        f'>The June 8 Cuyahoga pull enrolled the largest commercial batch of the season (25+ segments).\n'
+        f'>The June 8 Cuyahoga pull enrolled the largest commercial batch of the season (51+ segments).\n'
         f'>First opens expected today — DSO district managers, hospital FMs, government facilities contacts.\n'
         f'{title_batch_note}'
         f'>Run Nina\'s hot leads report: `cd /Users/bradleyneal/forestcity && python3 workers/nina_report.py daily`\n'

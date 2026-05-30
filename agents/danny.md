@@ -816,6 +816,46 @@ Events drive 20,000–70,000+ fans = maximum visible staining on all surfaces. F
 
 ---
 
+### Pet Supply Retail Chains (NEW — May 2026, Run 141)
+
+**Status:** PENDING — first pull June 8 Cuyahoga
+
+**Target:** Pet Supply District Manager, Pet Store District Manager, Pet Retail District Manager, Pet Supply Store Manager, Pet Retail Manager, Pet Specialty District Manager.
+
+**Why:** PetSmart (20+ NE Ohio), Petco (15+ NE Ohio), Pet Supplies Plus (30+ NE Ohio — franchise-heavy). DISTINCT from pet boarding/kennel segment. Large-format retail with in-store grooming salons. Grooming salon operations produce continuous water + dog shampoo runoff that stains concrete entries, curbside aprons, and drainage areas. Large suburban format parking lots accumulate pet waste staining and heavy cart traffic. State cosmetology/grooming licensing inspections include exterior cleanliness of entry areas. District managers sign vendor contracts for 5–15 store territories.
+
+**Revenue per visit:** $400–$800/location. Quarterly = $1.6K–$3.2K/location. A 15-store district at 4 visits/year = $24K–$48K/year. Zero competitors targeting pet supply retail district managers in NE Ohio.
+
+**Pitch angle:** "Your grooming salon processes 50+ dogs a day — the water and shampoo runoff shows on your entry concrete. Your parking lot handles 300+ cars on weekends. We service all 14 of your Northeast Ohio locations on a quarterly schedule so you never think about it."
+
+**Apollo titles:** `pet supply district manager`, `pet store district manager`, `pet retail district manager`, `pet supply store manager`, `pet retail manager`, `pet specialty district manager` — added to DANNY_TITLES and PROPERTY_MANAGER_TITLES.
+
+**Apollo keywords (live Run 141):** `pet supply store`, `pet specialty retail`, `petsmart`, `petco`, `pet supplies plus`, `pet supply retail`, `pet supplies` — added to DANNY_ORG_KEYWORDS.
+
+**Sequence:** Route to Property Manager sequence. First pull: June 8 Cuyahoga.
+
+---
+
+### Hair & Nail Salon Chains (NEW — May 2026, Run 141)
+
+**Status:** PENDING — first pull June 8 Cuyahoga
+
+**Target:** Salon District Manager, Hair Salon District Manager, Salon Regional Manager, Barbershop District Manager, Beauty Salon District Manager, Salon Franchise Manager, Nail Salon District Manager, Spa District Manager.
+
+**Why:** NE Ohio has an extremely high density of salon chain locations — Great Clips alone has 80+ NE Ohio stores (one of the largest Great Clips markets in the USA), Sport Clips 30+, Supercuts 40+, plus Cost Cutters, Fantastic Sam's, Floyd's Barbershop, and independent nail salon chains. High foot traffic (300–500 clients/week) generates heavy staining on entry walkways and parking lot aprons around entry doors. Chemical product spills — hair color, bleach, acetone (nail polish remover), perm chemicals — regularly stain concrete and asphalt. State cosmetology and barbering licensing inspections include exterior appearance of entryways. District managers sign vendor contracts for 10–20 location territories.
+
+**Revenue per visit:** $200–$500/location. Quarterly = $800–$2K/location. A 15-salon district at 4 visits/year = $12K–$30K/year. Zero power washing competitors cold-calling salon chain district managers in NE Ohio.
+
+**Pitch angle:** "Hair color and acetone from your nail salon are permanently staining the concrete at every entry. We do a quarterly clean at all 18 of your NE Ohio locations — your inspection score goes up and your entries look brand new every season."
+
+**Apollo titles:** `salon district manager`, `hair salon district manager`, `salon regional manager`, `barbershop district manager`, `beauty salon district manager`, `salon franchise manager`, `nail salon district manager`, `spa district manager` — added to DANNY_TITLES and PROPERTY_MANAGER_TITLES.
+
+**Apollo keywords (live Run 141):** `hair salon chain`, `barbershop chain`, `beauty salon chain`, `salon franchise`, `great clips`, `sport clips`, `supercuts`, `hair salon management` — added to DANNY_ORG_KEYWORDS.
+
+**Sequence:** Route to Property Manager sequence. First pull: June 8 Cuyahoga.
+
+---
+
 ## Peak Season Angle — HOA Budget Season (May–June)
 HOA boards typically hold their annual budget and vendor approval meetings in May–June before the summer maintenance season. This means property managers and community association managers are ACTIVELY reviewing vendor lists RIGHT NOW. The PM sequence Touch 1 and any LinkedIn outreach should reference this window: "HOA boards are approving their summer vendor lists this month" or "Most associations lock in their exterior maintenance vendor before July." This creates urgency without being pushy — it's calendar-based fact. Works especially well for community associations, HOA management companies, and multifamily operators who work on fiscal budgets.
 

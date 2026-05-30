@@ -425,6 +425,16 @@ PROPERTY_MANAGER_TITLES = [
     'coffee district manager', 'coffee shop manager', 'coffee chain manager',
     'drive through manager', 'drive-through manager', 'quick service beverage manager',
     'beverage district manager', 'coffee store manager',
+    # Pet Supply Retail Chains — PetSmart, Petco, Pet Supplies Plus; grooming salon chemical spill compliance;
+    # routing to Property Manager sequence (facility vendor contract angle) (added 2026-05-30 run 141)
+    'pet supply district manager', 'pet store district manager', 'pet retail district manager',
+    'pet supply store manager', 'pet retail manager', 'pet specialty district manager',
+    # Hair & Nail Salon Chains — Great Clips, Sport Clips, Supercuts, Fantastic Sams, Floyd's Barbershop;
+    # state cosmetology licensing + chemical spill compliance = exterior cleaning compliance need;
+    # routing to Property Manager sequence (facility management / vendor contract angle) (added 2026-05-30 run 141)
+    'salon district manager', 'hair salon district manager', 'salon regional manager',
+    'barbershop district manager', 'beauty salon district manager', 'salon franchise manager',
+    'nail salon district manager', 'spa district manager',
 ]
 
 REALTOR_TITLES = [

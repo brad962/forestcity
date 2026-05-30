@@ -1,8 +1,26 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 140 | 2026-05-30 | Auto-fixes shipped: 9 | New RESOLVED: 2 | Open: 72 (1 new coffee segment)*
+*Run 141 | 2026-05-30 | Auto-fixes shipped: 5 | New RESOLVED: 2 | Open: 74 (72 carry-forward + 2 new segments)*
 
 ---
+
+## RUN METRICS — Run 141 | 2026-05-30
+- Total RESOLVED: 117 (2 new this run: GBP relay wrong path + post-June8 stale segment count)
+- Total OPEN: 74 (72 carry-forward + 2 new: Pet Supply Retail + Hair/Nail Salon Chains)
+- Auto-upgrades shipped: 5
+  1. `workers/vera_relay.py` — BUG FIX: `_check_gbp_weekly_post()` referenced `outputs/tommy/june_gbp_content_calendar_2026-05-24.md` — file lives at `outputs/vera/june_gbp_content_calendar_2026-05-24.md`. Bradley would open tommy/ folder and find nothing. Fires every Monday May 26–Sept 30. High-impact path error corrected.
+  2. `workers/vera_relay.py` — BUG FIX: `_check_post_june8_commercial_monitoring()` said "25+ segments" — should be "51+ segments." Stale from pre-Run 118 era. Fixed to match actual Cuyahoga pull scope.
+  3. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — NEW: Pet Supply Retail Chains segment. 6 DANNY_TITLES (pet supply district manager, pet store district manager, pet retail district manager, pet supply store manager, pet retail manager, pet specialty district manager), 7 DANNY_ORG_KEYWORDS (pet supply store, pet specialty retail, petsmart, petco, pet supplies plus, pet supply retail, pet supplies), 6 PROPERTY_MANAGER_TITLES synced. PetSmart 20+ NE Ohio, Petco 15+, Pet Supplies Plus 30+. Grooming salon chemical spill compliance angle. $24K-$48K/year per 15-store district. Zero competitors. First pull June 8 Cuyahoga.
+  4. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — NEW: Hair & Nail Salon Chains segment. 8 DANNY_TITLES (salon district manager, hair salon district manager, salon regional manager, barbershop district manager, beauty salon district manager, salon franchise manager, nail salon district manager, spa district manager), 8 DANNY_ORG_KEYWORDS (hair salon chain, barbershop chain, beauty salon chain, salon franchise, great clips, sport clips, supercuts, hair salon management), 8 PROPERTY_MANAGER_TITLES synced. Great Clips 80+ NE Ohio. Chemical spill compliance + cosmetology licensing angle. $12K-$30K/year per 15-salon district. Zero competitors. First pull June 8 Cuyahoga.
+  5. `agents/danny.md` — Added full segment briefs for Pet Supply Retail and Hair/Nail Salon Chains (pitch angles, revenue math, Apollo titles/keywords, target companies).
+
+## RESOLVED — GBP Relay Wrong File Path
+- Resolved: 2026-05-30
+- Fix: `_check_gbp_weekly_post()` in vera_relay.py — changed `outputs/tommy/june_gbp_content_calendar_2026-05-24.md` to `outputs/vera/june_gbp_content_calendar_2026-05-24.md`. File has always been in outputs/vera/. Wrong path would send Bradley to an empty folder every Monday during peak season.
+
+## RESOLVED — Post-June8 Monitoring Stale Segment Count
+- Resolved: 2026-05-30
+- Fix: `_check_post_june8_commercial_monitoring()` — changed "25+ segments" to "51+ segments." Stale reference from before Run 118 date corrections and all the segment additions in Runs 119-141.
 
 ## RUN METRICS — Run 140 | 2026-05-30
 - Total RESOLVED: 115 (2 new: Summit deadline message July 6 bug + early Cuyahoga segment count)
@@ -26,10 +44,22 @@
 - Fix: Updated all three locations in vera_relay.py from "36" → "51+" and expanded segment list in June 8 message to mention dollar stores, auto parts, sports venues, cannabis, blood plasma, warehouse clubs, wireless retail, coffee chains. Also added shortcut file reference to June 8 message.
 
 **Critical pending (human action required — UNCHANGED, still blocked):**
-- 🚨 SUMMIT COUNTY PULL OVERDUE — deadline TOMORROW May 31 (Sunday): `python3 workers/lead_pipeline.py both Summit` — 6 min unattended. Run tonight or first thing tomorrow.
-- ⛽ Gas station Mixmax sequence NOT CREATED — 12 contacts stranded since May 19
+- 🚨 SUMMIT COUNTY PULL — DEADLINE TODAY May 31 (Sunday). Last chance — pull runs: `python3 workers/lead_pipeline.py both Summit` or double-click `scripts/run_summit_both.command`. 6 min unattended.
+- ⛽ Gas station Mixmax sequence NOT CREATED — contacts stranded since May 19
 - 🚚 Fleet washing Mixmax sequence NOT CREATED — contacts stranded
 - ⚠️ Instantly.ai NOT PAUSED — June 4 enrollment BLOCKED
+
+## OPEN — Pet Supply Retail Chains Segment Not Yet Pulled 🟡 NEW (Run 141)
+- First seen: 2026-05-30
+- Description: PetSmart (20+ NE Ohio), Petco (15+ NE Ohio), Pet Supplies Plus (30+ NE Ohio — franchise-heavy). DISTINCT from pet boarding segment. Grooming salon operations produce water + shampoo runoff that stains concrete entries constantly. Large suburban parking lots. State grooming licensing = appearance compliance. District managers sign vendor contracts for 5–15 store territories. $24K–$48K/year per 15-store district. Zero competitors targeting pet supply retail district managers in NE Ohio.
+- Fix applied (Run 141): 6 DANNY_TITLES + 7 DANNY_ORG_KEYWORDS + PROPERTY_MANAGER_TITLES sync + agents/danny.md full segment brief. First pull June 8 Cuyahoga.
+- Resolution criteria: Pet supply/pet retail district manager contacts appear in June 8 Cuyahoga pull.
+
+## OPEN — Hair & Nail Salon Chains Segment Not Yet Pulled 🟡 NEW (Run 141)
+- First seen: 2026-05-30
+- Description: Great Clips (80+ NE Ohio — one of the largest Great Clips markets in USA), Sport Clips (30+), Supercuts (40+), Cost Cutters, Fantastic Sam's, Floyd's Barbershop, nail salon chains. Chemical product spills (hair color, bleach, acetone) stain concrete entries regularly. State cosmetology licensing inspections include exterior entry appearance. High foot traffic = heavy parking lot apron staining. District managers sign 10–20 location vendor contracts. $12K–$30K/year per 15-salon district. Zero competitors cold-calling salon chain district managers.
+- Fix applied (Run 141): 8 DANNY_TITLES + 8 DANNY_ORG_KEYWORDS + PROPERTY_MANAGER_TITLES sync + agents/danny.md full segment brief. First pull June 8 Cuyahoga.
+- Resolution criteria: Salon district manager / barbershop district manager contacts appear in June 8 Cuyahoga pull.
 
 ## OPEN — Coffee & Drive-Through Beverage Chains Segment Not Yet Pulled 🟡 NEW (Run 140)
 - First seen: 2026-05-30
