@@ -1196,3 +1196,9 @@
 [2026-05-31 02:10] Vera | Run 152 — Auto-upgrade: agents/danny.md — Full segment briefs for Chiropractic Chains (#93) + Escape Rooms/Interactive Entertainment (#94) added. Revenue math, NE Ohio targets, pitch angles, Apollo keywords, sequence routing. Title batching note: 92+ → 94+ commercial segments | agents/danny.md | Done
 [2026-05-31 02:10] Vera | Run 152 — Updated outputs/vera/open_issues.md: Run 152 header; 2 new OPEN issues (Chiropractic + Escape Rooms segments not yet pulled); 121 resolved, 94 open | outputs/vera/open_issues.md | Done
 [2026-05-31 02:10] Vera | Run 152 — Slack messages written to pending_slack_messages.md: Summit/Medina/Instantly urgency alerts, 5 auto-upgrade notifications, 2 proposals (Father's Day blast + Instagram launch), scan complete summary | outputs/vera/pending_slack_messages.md | Done
+[2026-05-31 00:00] Vera | Run 153 started — persistent troubleshooting + peak season audit | open_issues.md | Done
+[2026-05-31 00:00] Vera | Run 153 — AUTO-UPGRADE: vera_relay.py — Fixed 4 stale "86+" → "94+" segment count references in Cuyahoga June 8, Lake County June 15, post-Cuyahoga monitoring, and June 9 verification messages | workers/vera_relay.py | Done
+[2026-05-31 00:00] Vera | Run 153 — AUTO-UPGRADE: CLAUDE.md — Updated "51+" → "94+" in Quick Shortcuts table and June 8 Cuyahoga warning callout | CLAUDE.md | Done
+[2026-05-31 00:00] Vera | Run 153 — PROPOSAL: June 5-6 cron pre-flight check for June 8 Cuyahoga pull — eliminates silent cron failure risk on biggest pull day of season | pending_slack_messages.md | Done
+[2026-05-31 00:00] Vera | Run 153 — Updated open_issues.md (Run 153 metrics, 2 auto-upgrades, 0 new OPEN) | outputs/vera/open_issues.md | Done
+[2026-05-31 00:00] Vera | Run 153 — Wrote pending_slack_messages.md (2 auto-upgrade notes + 1 proposal + Summit deadline + Medina reminder + Instantly warning + gas station alert + scan complete) | outputs/vera/pending_slack_messages.md | Done

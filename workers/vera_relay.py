@@ -856,7 +856,7 @@ def _check_june8_geauga_portage():
         f'>   marine/boat dealers, ice cream chains (Dairy Queen/Handel\'s), party/event rental,\n'
         f'>   trampoline parks (Sky Zone/Urban Air/Scene75), moving companies (Two Men and a Truck),\n'
         f'>   off-price retail (TJ Maxx/Marshalls/HomeGoods/Burlington), truck rental (U-Haul/Penske/Ryder) + more.\n'
-        f'> ✅ Title + org keyword batching active (Run 134): all 86+ segments fully queried.\n'
+        f'> ✅ Title + org keyword batching active (Run 134+): all 94+ segments fully queried.\n'
         f'>{note}\n'
         f'>Shortcut: double-click `scripts/run_cuyahoga_both.command` in Finder (no typing required)\n'
         f'>Command: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Cuyahoga`'
@@ -945,7 +945,7 @@ def _check_june15_cuyahoga():
         f'>Marina segment: Mentor Harbor, Sheffield Lake, Euclid shoreline — pre-season marina cleaning window.\n'
         f'>Marine/Boat Dealers: Skipper Buds (Mentor/Lorain), Inland Seas Yachts (Vermilion) — FIRST PULL this run.\n'
         f'>Also: hotel chains (Mentor/Willoughby corridor), senior living, fitness centers (Lake County YMCAs).\n'
-        f'> ✅ Title + org keyword batching active (Run 134): all 86+ segments fully queried.\n'
+        f'> ✅ Title + org keyword batching active (Run 134+): all 94+ segments fully queried.\n'
         f'>{note}\n'
         f'>Command: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Lake`'
     )
@@ -2311,7 +2311,7 @@ def _check_post_june8_commercial_monitoring():
     ) if day_num == 1 else ''
     msg = (
         f'🏙️ *Post-Cuyahoga Pull — Day {day_num} Commercial Enrollment Watch (June {today.day})*\n'
-        f'>The June 8 Cuyahoga pull enrolled the largest commercial batch of the season (86+ segments).\n'
+        f'>The June 8 Cuyahoga pull enrolled the largest commercial batch of the season (94+ segments).\n'
         f'>First opens expected today — DSO district managers, hospital FMs, government facilities contacts.\n'
         f'{title_batch_note}'
         f'>Run Nina\'s hot leads report: `cd /Users/bradleyneal/forestcity && python3 workers/nina_report.py daily`\n'
@@ -2413,7 +2413,7 @@ def _check_june9_cuyahoga_verification():
     """Fire ONLY on June 9 — the day after the June 8 Cuyahoga pull (biggest pull of the year).
     Reads Danny + Carla sentinel files (.danny_last_pull_date / .carla_last_pull_date) to confirm
     the pull actually ran. Posts confirmed success OR an emergency ALERT if it was silently missed.
-    June 8 = 86+ segments, largest single-day commercial pull of peak season. One-time, self-deactivating.
+    June 8 = 94+ segments, largest single-day commercial pull of peak season. One-time, self-deactivating.
     Proposed Run 144, implemented Run 146."""
     from datetime import date as _date_j9
     today = _date_j9.today()

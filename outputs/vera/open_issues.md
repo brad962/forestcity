@@ -1,6 +1,23 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 152 | 2026-05-31 | Auto-fixes shipped: 5 | New RESOLVED: 0 | Open: 94 (92 carry-forward + 2 new: Chiropractic Chains + Escape Rooms/Interactive Entertainment)*
+*Run 153 | 2026-05-31 | Auto-fixes shipped: 2 | New RESOLVED: 0 | Open: 94 (all carry-forward; 0 new this run)*
+
+---
+
+## RUN METRICS — Run 153 | 2026-05-31
+- Total RESOLVED: 121 (0 new this run)
+- Total OPEN: 94 (all carry-forward)
+- Auto-upgrades shipped: 2
+  1. `workers/vera_relay.py` — BUG FIX: 4 stale "86+" segment count references updated to "94+" — Cuyahoga June 8 countdown batching note, Lake County June 15 countdown batching note, post-Cuyahoga commercial enrollment watch message, June 9 Cuyahoga verification docstring.
+  2. `CLAUDE.md` — BUG FIX: 2 stale "51+" segment count references updated to "94+" — Quick Shortcuts table (run_cuyahoga_pull.command row) and June 8 Cuyahoga warning callout.
+- Proposals: 1 (June 5–6 cron pre-flight check for June 8 Cuyahoga pull)
+
+**Critical pending (human action required — URGENT TODAY):**
+- 🚨 SUMMIT COUNTY PULL — **TODAY MAY 31 IS THE ABSOLUTE FINAL DAY.** Miss it = no Summit County leads until June 29. Double-click `scripts/run_summit_both.command` or: `python3 workers/lead_pipeline.py both Summit`. 6 min unattended.
+- 📍 MEDINA COUNTY PULL — **TOMORROW JUNE 1.** Double-click `scripts/run_medina_both.command` tomorrow morning.
+- ⛽ Gas station Mixmax sequence NOT CREATED — contacts stranded since May 19 (13 days). Bypass: Gmail blast guide `outputs/danny/gas_station_manual_email_blast_2026-05-19.md` — no Mixmax setup required.
+- 🚚 Fleet washing Mixmax sequence NOT CREATED — contacts stranded since May 18 (13 days).
+- ⚠️ Instantly.ai NOT PAUSED — June 4 enrollment BLOCKED in 4 days.
 
 ---
 
