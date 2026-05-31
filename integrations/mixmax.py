@@ -535,6 +535,11 @@ PROPERTY_MANAGER_TITLES = [
     # routing to Property Manager sequence (facility vendor contract angle) (added 2026-05-31 run 154)
     'rv storage manager', 'outdoor storage facility manager', 'rv park manager',
     'boat storage manager', 'marine dry storage manager', 'vehicle storage manager',
+    # Ice Rinks & Indoor Ice Arenas — Palace Ice Arenas (Solon/Twinsburg), Mentor Ice Arena, OBM Arena;
+    # summer = maintenance window (ice out = full exterior access); DISTINCT Apollo tags from sports complex;
+    # routing to Property Manager sequence (facility management / summer maintenance window angle) (added 2026-05-31 run 155)
+    'ice rink manager', 'ice arena manager', 'ice arena director', 'skating center director',
+    'ice facility manager', 'ice sports manager', 'skating rink manager', 'hockey arena manager',
 ]
 
 REALTOR_TITLES = [

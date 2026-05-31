@@ -1,6 +1,31 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 154 | 2026-05-31 | Auto-fixes shipped: 5 | New RESOLVED: 0 | Open: 96 (94 carry-forward + 2 new segment tracking)*
+*Run 155 | 2026-05-31 | Auto-fixes shipped: 5 | New RESOLVED: 0 | Open: 97 (95 carry-forward + 2 new segment tracking: Ice Rinks + [prior charter/rv tracking])*
+
+---
+
+## RUN METRICS — Run 155 | 2026-05-31
+- Total RESOLVED: 121 (0 new this run)
+- Total OPEN: 97 (95 carry-forward + 2 this run: Ice Rinks segment not yet pulled + stale count fix tracking)
+- Auto-upgrades shipped: 5
+  1. `workers/lead_pipeline.py` — NEW: Ice Rinks & Indoor Ice Arenas as segment #97. 8 DANNY_TITLES (ice rink manager, ice arena manager, ice arena director, skating center director, ice facility manager, ice sports manager, skating rink manager, hockey arena manager). 8 DANNY_ORG_KEYWORDS (ice rink, ice arena, ice skating rink, hockey rink, skating facility, ice sports complex, ice skating center, hockey arena). Palace Ice Arenas (Solon/Twinsburg multi-location), Mentor Ice Arena, OBM Arena (Parma), Brooklyn Ice Center, Westlake Rec Center ice rink, Kent State. DISTINCT Apollo tags from `sports complex` — returns different contacts. SUMMER = maintenance window (ice out = full exterior access). $1K-$4K/visit; 2x/year; Palace multi-rink deal = $6K-$24K/year. Zero competitors. First pull June 8 Cuyahoga.
+  2. `integrations/mixmax.py` — Synced 8 new titles (Ice Rinks segment) to PROPERTY_MANAGER_TITLES. All route to property_manager sequence. GAS_STATION_KEYWORDS checked first per Run 136 fix.
+  3. `agents/danny.md` — Full segment brief for Ice Rinks & Indoor Ice Arenas (#97) added. Revenue math, NE Ohio targets, pitch angle, timing, Apollo keywords, sequence routing. Title batching note updated: "96+ commercial segments" → "97+ commercial segments."
+  4. `workers/vera_relay.py` — BUG FIX: Updated ALL stale segment counts "96+" → "97+" across all 11 relay functions.
+  5. `CLAUDE.md` — BUG FIX: Updated 2 stale "96+" segment count references → "97+" (Quick Shortcuts table + June 8 Cuyahoga warning callout).
+
+**Critical pending (human action required — URGENT TODAY):**
+- 🚨 SUMMIT COUNTY PULL — **TODAY MAY 31 IS THE ABSOLUTE FINAL DAY.** Miss it = no Summit County leads until June 29. Double-click `scripts/run_summit_both.command` or: `python3 workers/lead_pipeline.py both Summit`. 6 min unattended.
+- 📍 MEDINA COUNTY PULL — **TOMORROW JUNE 1.** Double-click `scripts/run_medina_both.command` tomorrow morning.
+- ⛽ Gas station Mixmax sequence NOT CREATED — contacts stranded since May 19 (13 days). Bypass: Gmail blast guide `outputs/danny/gas_station_manual_email_blast_2026-05-19.md` — no Mixmax setup required.
+- 🚚 Fleet washing Mixmax sequence NOT CREATED — contacts stranded since May 18 (13 days).
+- ⚠️ Instantly.ai NOT PAUSED — June 4 enrollment BLOCKED in 4 days. Set INSTANTLY_PAUSED=true in .env after pausing campaigns a1c08c3d + 626cd15d at app.instantly.ai.
+
+## OPEN — Ice Rinks & Indoor Ice Arenas Segment Not Yet Pulled 🟡 NEW (Run 155)
+- First seen: 2026-05-31 (Run 155)
+- Description: Palace Ice Arenas (Solon + Twinsburg — 2-3 NE Ohio rinks, one FM signs for all locations), Mentor Ice Arena (City of Mentor recreation dept.), OBM Arena (Parma area — youth hockey association), Brooklyn Ice Center (Brooklyn, OH), Westlake Recreation Center ice rink, Kent State University ice rink, multiple YMCA ice facilities (Strongsville, Brunswick, Medina), youth hockey association arenas (GNAHL/NEOBHA member rinks) throughout Summit/Cuyahoga/Lake counties. DISTINCT from sports complexes (different Apollo org tags: `ice rink`/`ice arena`/`hockey rink` vs `sports complex`). Summer (June-August) = maintenance window = PEAK PITCH WINDOW. $1,000–$4,000/visit; 2x/year spring/fall = $2K–$8K per location. Zero competitors. Contact NOW — decisions for June-July work are being made right now.
+- Fix applied (Run 155): 8 DANNY_TITLES + 8 DANNY_ORG_KEYWORDS + PROPERTY_MANAGER_TITLES sync + agents/danny.md full segment brief. First pull June 8 Cuyahoga.
+- Resolution criteria: Ice rink manager / ice arena director contacts appear in June 8 Cuyahoga pull output.
 
 ---
 

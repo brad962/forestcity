@@ -35,7 +35,7 @@ Example payload for property managers in Cuyahoga County:
 
 **Always pass `q_organization_keyword_tags`** — this catches decision-makers at property management companies where the contact's title isn't "property manager" (e.g., owner or VP at a 10-property HOA management firm).
 
-> ✅ **Title batching active (Run 132):** `workers/lead_pipeline.py` now batches DANNY_TITLES in groups of 50 and runs multiple Apollo searches per county pull, deduplicating by person ID. This prevents Apollo from silently capping large `person_titles` arrays. With 300+ titles across 96+ commercial segments, the old single-call approach risked returning zero contacts for many segments. Batching guarantees all 96+ segments are queried every pull.
+> ✅ **Title batching active (Run 132):** `workers/lead_pipeline.py` now batches DANNY_TITLES in groups of 50 and runs multiple Apollo searches per county pull, deduplicating by person ID. This prevents Apollo from silently capping large `person_titles` arrays. With 300+ titles across 97+ commercial segments, the old single-call approach risked returning zero contacts for many segments. Batching guarantees all 97+ segments are queried every pull.
 
 Target titles:
 - Property Manager, Property Management Director, Property Director
@@ -1218,6 +1218,18 @@ Peak moving season is May–September. NE Ohio has dozens of moving company term
 **Timing:** Spring commissioning season = May-June = PEAK PITCH WINDOW for this segment. Contact immediately. Second pitch window: September-October before winter storage returns. This is the highest-urgency timing segment in the current run.
 **Apollo keywords (live Run 154):** `rv storage`, `outdoor rv storage`, `boat and rv storage`, `marine dry storage`, `outdoor vehicle storage`, `outdoor storage facility`, `rv resort storage` — added to DANNY_ORG_KEYWORDS.
 **Sequence:** Route to Property Manager sequence (facility appearance / seasonal timing angle). First pull: June 8 Cuyahoga; June 15 Lake County (marina/storage corridor); June 22 Lorain County (Avon Lake shoreline).
+
+---
+
+### Ice Rinks & Indoor Ice Arenas (NEW — May 2026, Run 155)
+**Status:** Org keywords + titles live in DANNY_ORG_KEYWORDS/DANNY_TITLES as of Run 155. First pull June 8 Cuyahoga; June 15 Lake County (Mentor Ice Arena); June 29 Summit County (2nd pass covers Medina/Summit ice facilities).
+**Target:** Ice Rink Manager, Ice Arena Manager, Ice Arena Director, Skating Center Director, Ice Facility Manager, Ice Sports Manager, Skating Rink Manager, Hockey Arena Manager
+**Why:** NE Ohio has 20+ dedicated ice rinks and indoor ice arenas — a segment completely untargeted by any power washing competitor. SUMMER IS THE MAINTENANCE WINDOW: June through August the ice is out or usage is minimal, giving facility staff full access to building exteriors, lobby entrances, parking lots, and surrounding concrete. This is the ONLY window to do exterior cleaning without disrupting the fall/winter/spring hockey and public skating season. Facility directors are actively planning summer maintenance in May-June — RIGHT NOW is the pitch window. DISTINCT from sports complexes and youth athletic complexes already in the segment list: Apollo indexes dedicated ice skating facilities under `ice rink`/`ice arena`/`hockey rink` org tags, which return zero overlap with `sports complex` keyword searches. Key NE Ohio facilities: Palace Ice Arenas (multi-location operator: Solon + Twinsburg area — one FM signs for both), Mentor Ice Arena (City of Mentor recreation department — large suburban rink), OBM Arena (Parma area — youth hockey association), Brooklyn Ice Center, Westlake Recreation Center ice rink, Kent State University ice rink, various YMCA ice facilities (Strongsville, Brunswick, Medina area), and youth hockey association arenas (GNAHL, NEOBHA member rinks) throughout Summit/Cuyahoga/Lake counties.
+**Revenue per visit:** $1,000–$4,000 (large parking lot + building exterior + lobby entrance + concourse area). 2x/year (spring post-hockey-season + early fall pre-season) = $2,000–$8,000/year per location. Multi-location operator deal (Palace Ice Arenas: 2-3 NE Ohio rinks) = $6,000–$24,000/year on a single vendor contract. Zero competitors cold-calling ice arena facility managers in NE Ohio.
+**Pitch angle:** "Summer is your window. The ice is out, you've got access, and your building hasn't been cleaned since last fall. Most ice rink managers I work with schedule one exterior clean in late June or July — parking lot, building facade, lobby entrance — while hockey registration season hasn't started yet. We work around your facility schedule. Want to see what we can fit in before fall leagues start?"
+**Timing:** Contact NOW (May-June) — ice facilities are exiting their busy spring hockey and public skating season and entering the summer maintenance window. Facility directors make vendor decisions in May-June for June-July work. Second pitch window: August before fall hockey registration opens.
+**Apollo keywords (live Run 155):** `ice rink`, `ice arena`, `ice skating rink`, `hockey rink`, `skating facility`, `ice sports complex`, `ice skating center`, `hockey arena` — added to DANNY_ORG_KEYWORDS.
+**Sequence:** Route to Property Manager sequence (facility management / summer maintenance window angle). First pull: June 8 Cuyahoga; June 15 Lake County (Mentor Ice Arena + Lake Erie shoreline rinks); June 29 Summit County 2nd pass.
 
 ---
 

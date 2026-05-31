@@ -1209,3 +1209,11 @@
 [2026-05-31 00:01] Vera | Run 154 — AUTO-UPGRADE: Full segment briefs for Charter Schools (#95) + Outdoor RV & Boat Storage (#96) added to agents/danny.md. Revenue math, NE Ohio targets, pitch angles, Apollo keywords, sequence routing. | agents/danny.md | Done
 [2026-05-31 00:01] Vera | Run 154 — Updated outputs/vera/open_issues.md with Run 154 metrics + 2 new segment tracking issues (#95 Charter Schools, #96 RV Storage). | outputs/vera/open_issues.md | Done
 [2026-05-31 00:01] Vera | Run 154 — Slack messages written to outputs/vera/pending_slack_messages.md. 3 auto-upgrade notifications + 4 urgent human-action reminders + 1 scan complete summary. | outputs/vera/pending_slack_messages.md | Done
+[2026-05-31 08:00] Vera | Run 155 — Added Ice Rinks & Indoor Ice Arenas titles (8) to DANNY_TITLES | workers/lead_pipeline.py | Done
+[2026-05-31 08:01] Vera | Run 155 — Added Ice Rinks org keywords (8) to DANNY_ORG_KEYWORDS | workers/lead_pipeline.py | Done
+[2026-05-31 08:02] Vera | Run 155 — Synced Ice Rinks titles to PROPERTY_MANAGER_TITLES | integrations/mixmax.py | Done
+[2026-05-31 08:03] Vera | Run 155 — Added full Ice Rinks segment brief; updated title batching note 96+→97+ | agents/danny.md | Done
+[2026-05-31 08:04] Vera | Run 155 — Updated 96+→97+ across 11 occurrences | workers/vera_relay.py | Done
+[2026-05-31 08:05] Vera | Run 155 — Updated 96+→97+ across 2 occurrences | CLAUDE.md | Done
+[2026-05-31 08:06] Vera | Run 155 — Updated open_issues.md: Run 155 header, Ice Rinks tracking issue added, 97 open issues | outputs/vera/open_issues.md | Done
+[2026-05-31 08:07] Vera | Run 155 — Wrote Run 155 Slack messages (6 messages) | outputs/vera/pending_slack_messages.md | Done

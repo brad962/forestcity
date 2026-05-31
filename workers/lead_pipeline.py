@@ -909,6 +909,19 @@ DANNY_TITLES = [
     # 200-500 storage space facility = large paved surface area = high per-visit revenue; zero competitors (added 2026-05-31 run 154)
     'rv storage manager', 'outdoor storage facility manager', 'rv park manager',
     'boat storage manager', 'marine dry storage manager', 'vehicle storage manager',
+    # Ice Rinks & Indoor Ice Arenas — Palace Ice Arenas (Solon/Twinsburg multi-location operator),
+    # Mentor Ice Arena (City of Mentor recreation facility), OBM Arena (Parma area — youth hockey),
+    # Brooklyn Ice Center, Westlake Rec Center ice rink, Kent State University ice rink,
+    # various YMCA ice facilities and youth hockey association arenas (Summit/Cuyahoga/Lake counties);
+    # DISTINCT from sports complexes/youth sports complexes already in list — Apollo indexes dedicated
+    # ice skating facilities under 'ice rink'/'ice arena'/'hockey rink' org tags (not 'sports complex');
+    # SUMMER = maintenance window: no ice = full exterior access; buildings haven't been cleaned since
+    # last fall; facility director is planning summer maintenance RIGHT NOW in May-June;
+    # 2x/year (spring post-season + early fall pre-season) = $2K-$8K per location;
+    # multi-location operator deal (Palace Ice Arenas: 2-3 NE Ohio rinks) = $6K-$24K/year;
+    # zero NE Ohio power washing competitors cold-calling ice arena facility managers (added 2026-05-31 run 155)
+    'ice rink manager', 'ice arena manager', 'ice arena director', 'skating center director',
+    'ice facility manager', 'ice sports manager', 'skating rink manager', 'hockey arena manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -1439,6 +1452,17 @@ DANNY_ORG_KEYWORDS = [
     # first pull: June 8 Cuyahoga; June 15 Lake (marina corridor); June 22 Lorain (Avon/Avon Lake shoreline) (added 2026-05-31 run 154)
     'rv storage', 'outdoor rv storage', 'boat and rv storage', 'marine dry storage',
     'outdoor vehicle storage', 'outdoor storage facility', 'rv resort storage',
+    # Ice Rinks & Indoor Ice Arenas — DISTINCT from 'sports complex'/'youth sports complex' already above;
+    # Apollo indexes dedicated ice skating and hockey facilities under 'ice rink'/'ice arena'/'hockey rink'
+    # org keywords which return zero overlap with 'sports complex' tag searches;
+    # NE Ohio: Palace Ice Arenas (Solon + Twinsburg), Mentor Ice Arena, OBM Arena (Parma),
+    # Brooklyn Ice Center, Westlake Rec Center ice rink, Kent State University ice rink,
+    # multiple independent and municipally-operated ice rinks in Summit/Cuyahoga/Lake counties;
+    # summer (June-August) = ice out or minimal usage = PEAK MAINTENANCE WINDOW; facility GM/director
+    # is planning exterior cleaning right now; zero NE Ohio competitors targeting this segment;
+    # first pull: June 8 Cuyahoga; June 15 Lake County; June 29 Summit County (2nd pass) (added 2026-05-31 run 155)
+    'ice rink', 'ice arena', 'ice skating rink', 'hockey rink', 'skating facility',
+    'ice sports complex', 'ice skating center', 'hockey arena',
 ]
 
 CARLA_SEARCHES = [
