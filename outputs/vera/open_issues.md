@@ -1,6 +1,32 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 159 | 2026-05-31 | Auto-fixes shipped: 7 | New RESOLVED: 0 | Open: 108 (105 carry-forward + 3 new segment tracking: Adult Day Programs + Diagnostic Imaging + Swim Schools)*
+*Run 160 | 2026-05-31 | Auto-fixes shipped: 5 | New RESOLVED: 0 | Open: 110 (108 carry-forward + 2 new segment tracking: Massage Therapy Chains + Non-Profit Organizations)*
+
+---
+
+## RUN METRICS — Run 160 | 2026-05-31
+- Total RESOLVED: 121 (0 new this run)
+- Total OPEN: 110 (108 carry-forward + 2 this run: Massage Therapy & Wellness Chains + Non-Profit & Social Service Organizations)
+- Auto-upgrades shipped: 5
+  1. `workers/lead_pipeline.py` — NEW: Massage Therapy & Wellness Chains as segment #109. 8 DANNY_TITLES (massage therapy manager, massage center manager, wellness studio manager, massage franchise owner, wellness center manager, spa franchise manager, massage clinic manager, therapeutic massage manager). 8 DANNY_ORG_KEYWORDS (massage therapy, massage center, massage franchise, wellness studio, massage clinic, therapeutic massage, massage chain, massage envy). Massage Envy (30+ NE Ohio), Elements Massage (8+ NE Ohio), Hand & Stone, LaVida. Ohio Massage Therapy Board licensing = exterior appearance standard. Franchise owners = independent purchasers = fast close. $300-$800/visit; 10-location territory = $6K-$16K/year. Zero competitors. First pull June 8 Cuyahoga.
+  2. `workers/lead_pipeline.py` — NEW: Non-Profit & Social Service Organizations as segment #110. 8 DANNY_TITLES (nonprofit executive director, social services director, nonprofit facilities director, nonprofit operations manager, thrift store district manager, food bank operations director, community services manager, social service agency director). 9 DANNY_ORG_KEYWORDS (nonprofit organization, social services organization, charitable organization, community service organization, food bank, thrift store, salvation army, human services organization, community outreach organization). Salvation Army NE Ohio (6+ chapters), Catholic Charities Diocese of Cleveland (20+ locations), Second Harvest Food Bank, Habitat for Humanity ReStores. Donor-trust appearance standard. $500-$2,000/facility; multi-chapter deal = $10K-$25K/year. Zero competitors. First pull June 8 Cuyahoga.
+  3. `integrations/mixmax.py` — Synced 16 new titles (8 Massage Therapy + 8 Non-Profit) to PROPERTY_MANAGER_TITLES. All route correctly to property_manager sequence. GAS_STATION_KEYWORDS checked first per Run 136 fix.
+  4. `workers/vera_relay.py` — Updated ALL stale segment counts '108+' → '110+' across 11 relay functions.
+  5. `agents/danny.md` — Full segment briefs for Massage Therapy Chains (#109) + Non-Profit Organizations (#110) added. Title batching note updated: '108+ commercial segments' → '110+ commercial segments'. CLAUDE.md June 8 Cuyahoga callouts updated '108+' → '110+'.
+
+---
+
+## OPEN — Massage Therapy & Wellness Chains Segment Not Yet Pulled 🟡 NEW (Run 160)
+- First seen: 2026-05-31
+- Description: Segment #109 code is live in lead_pipeline.py + mixmax.py + danny.md. Awaiting first Apollo pull on June 8 Cuyahoga rotation. Massage Envy (30+ NE Ohio) + Elements Massage (8+ NE Ohio) + Hand & Stone are the primary targets.
+- Attempts:
+  - 2026-05-31: Added segment to lead_pipeline.py DANNY_TITLES + DANNY_ORG_KEYWORDS; synced to mixmax.py; wrote danny.md brief. Segment will fire June 8 Cuyahoga pull. → Code deployed, awaiting run.
+
+## OPEN — Non-Profit & Social Service Organizations Segment Not Yet Pulled 🟡 NEW (Run 160)
+- First seen: 2026-05-31
+- Description: Segment #110 code is live in lead_pipeline.py + mixmax.py + danny.md. Awaiting first Apollo pull on June 8 Cuyahoga rotation. Salvation Army NE Ohio, Catholic Charities, Second Harvest Food Bank, Habitat for Humanity ReStores are the primary targets.
+- Attempts:
+  - 2026-05-31: Added segment to lead_pipeline.py DANNY_TITLES + DANNY_ORG_KEYWORDS; synced to mixmax.py; wrote danny.md brief. Segment will fire June 8 Cuyahoga pull. → Code deployed, awaiting run.
 
 ---
 

@@ -1043,6 +1043,31 @@ DANNY_TITLES = [
     'swim school director', 'swim school manager', 'swim academy director', 'swim school owner',
     'swim school franchise owner', 'aquatic learning director', 'learn to swim director',
     'swim program manager',
+    # Massage Therapy & Wellness Chains — Massage Envy (30+ NE Ohio franchise locations),
+    # Elements Massage (8+ NE Ohio), Hand & Stone Massage & Facial Spa (4+ NE Ohio), LaVida Massage;
+    # DISTINCT from hair/nail salon chains (different Apollo org tags: 'massage therapy' vs 'hair salon'/'nail salon');
+    # Ohio State Massage Therapy Board licensing = exterior appearance standard;
+    # high repeat client foot traffic (weekly or bi-weekly appointments) = persistent oil stain + grime on entry concrete;
+    # franchise owners sign vendor contracts independently (1-3 locations each = fast close, no procurement committee);
+    # $300-$800/location; 2x/year = $600-$1,600; 10-franchise territory = $6K-$16K/year;
+    # zero competitors cold-calling massage therapy franchise owners in NE Ohio; first pull June 8 Cuyahoga (added 2026-05-31 run 160)
+    'massage therapy manager', 'massage center manager', 'wellness studio manager',
+    'massage franchise owner', 'wellness center manager', 'spa franchise manager',
+    'massage clinic manager', 'therapeutic massage manager',
+    # Non-Profit & Social Service Organizations — Salvation Army NE Ohio (6+ chapter facilities + thrift stores),
+    # Catholic Charities Diocese of Cleveland (20+ program offices), United Way of Greater Cleveland,
+    # Volunteers of America of Greater Ohio, Second Harvest Food Bank of NE Ohio, Habitat for Humanity ReStores
+    # (5+ NE Ohio locations), Lutheran Metropolitan Ministry, Jewish Family Service Association of Cleveland;
+    # DISTINCT from all existing segments — these are non-profit/social service orgs with DISTINCT Apollo org tags
+    # ('nonprofit organization', 'social services', 'food bank', 'thrift store');
+    # donor perception is the fundraising platform — clean, maintained facilities signal organizational credibility;
+    # large building footprints (thrift store warehouses, food bank distribution facilities, service center complexes);
+    # executive directors sign vendor contracts; most have no active power washing vendor relationship;
+    # $500-$2,000/facility; 2x/year; multi-location chapter deal = $10K-$25K/year;
+    # zero competitors cold-calling nonprofit operations directors for power washing in NE Ohio; first pull June 8 Cuyahoga (added 2026-05-31 run 160)
+    'nonprofit executive director', 'social services director', 'nonprofit facilities director',
+    'nonprofit operations manager', 'thrift store district manager', 'food bank operations director',
+    'community services manager', 'social service agency director',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -1671,6 +1696,22 @@ DANNY_ORG_KEYWORDS = [
     # (Goldfish Swim School Strongsville/North Olmsted, British Swim School NE Ohio locations) (added 2026-05-31 run 159)
     'swim school', 'swim academy', 'swimming school', 'learn to swim', 'aquatic learning',
     'swimming lessons', 'swim studio', 'children swim school',
+    # Massage Therapy & Wellness Chains — DISTINCT from 'hair salon chain'/'salon franchise' already above;
+    # Apollo org tags: 'massage therapy', 'massage center', 'massage franchise' return zero overlap with salon tags;
+    # Massage Envy (30+ NE Ohio), Elements Massage (8+ NE Ohio), Hand & Stone, LaVida;
+    # first pull June 8 Cuyahoga (Massage Envy Strongsville/Mentor/Westlake + Elements Massage Beachwood/Solon) (added 2026-05-31 run 160)
+    'massage therapy', 'massage center', 'massage franchise', 'wellness studio',
+    'massage clinic', 'therapeutic massage', 'massage chain', 'massage envy',
+    # Non-Profit & Social Service Organizations — Salvation Army NE Ohio, Catholic Charities Diocese of Cleveland,
+    # United Way of Greater Cleveland, Volunteers of America, Second Harvest Food Bank, Habitat for Humanity ReStore,
+    # Lutheran Metropolitan Ministry, Jewish Family Service Association;
+    # DISTINCT Apollo org tags: 'nonprofit organization', 'social services', 'food bank', 'thrift store'
+    # return zero overlap with ANY existing DANNY_ORG_KEYWORDS above;
+    # large facility footprints (thrift store warehouses, food bank complexes, service center buildings);
+    # donor-trust appearance standard = genuine external cleaning urgency; first pull June 8 Cuyahoga (added 2026-05-31 run 160)
+    'nonprofit organization', 'social services organization', 'charitable organization',
+    'community service organization', 'food bank', 'thrift store', 'salvation army',
+    'human services organization', 'community outreach organization',
 ]
 
 CARLA_SEARCHES = [

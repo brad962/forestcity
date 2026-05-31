@@ -593,6 +593,16 @@ PROPERTY_MANAGER_TITLES = [
     'swim school director', 'swim school manager', 'swim academy director', 'swim school owner',
     'swim school franchise owner', 'aquatic learning director', 'learn to swim director',
     'swim program manager',
+    # Massage Therapy & Wellness Chains — Massage Envy, Elements Massage, Hand & Stone, LaVida;
+    # franchise owners sign vendor contracts independently; routing to property_manager sequence (added 2026-05-31 run 160)
+    'massage therapy manager', 'massage center manager', 'wellness studio manager',
+    'massage franchise owner', 'wellness center manager', 'spa franchise manager',
+    'massage clinic manager', 'therapeutic massage manager',
+    # Non-Profit & Social Service Organizations — Salvation Army, Catholic Charities, United Way, food banks;
+    # executive directors sign vendor contracts; routing to property_manager sequence (added 2026-05-31 run 160)
+    'nonprofit executive director', 'social services director', 'nonprofit facilities director',
+    'nonprofit operations manager', 'thrift store district manager', 'food bank operations director',
+    'community services manager', 'social service agency director',
 ]
 
 REALTOR_TITLES = [

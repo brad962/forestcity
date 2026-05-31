@@ -251,7 +251,7 @@ def _check_summit_deadline():
     msg = (
         f'{urgency_emoji} *Summit County Pull — {days_label} (Deadline May 31)*\n'
         f'>Miss this window = no Summit leads until June 29 (next auto-rotation, Week 27).\n'
-        f'>All 108+ commercial segments (restaurants, banks, gyms, hospitals, sports venues + more) miss peak season.\n'
+        f'>All 110+ commercial segments (restaurants, banks, gyms, hospitals, sports venues + more) miss peak season.\n'
         f'>Danny only: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py danny Summit`\n'
         f'>Danny + Carla (recommended): `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Summit`\n'
         f'>Or double-click: `scripts/run_summit_both.command` in Finder — both workers, one click.'
@@ -845,7 +845,7 @@ def _check_june8_geauga_portage():
     msg = (
         f'🏙️ *Cuyahoga County Pull — {label} (June 8) — LARGEST MARKET*\n'
         f'>Week 24 rotation: Cleveland, Parma, Lakewood, Strongsville, Beachwood. Highest lead volume of all 6 counties.\n'
-        f'>All 108+ commercial segments fire here: hospitals (Cleveland Clinic, UH, MetroHealth), museums\n'
+        f'>All 110+ commercial segments fire here: hospitals (Cleveland Clinic, UH, MetroHealth), museums\n'
         f'>   (Cleveland Museum of Art, Metroparks Zoo, Rock Hall), YMCA of Greater Cleveland (12 branches),\n'
         f'>   DSO chains (Aspen Dental, Heartland), government/transit (GCRTA, Port of Cleveland, city halls),\n'
         f'>   dialysis (DaVita/Fresenius 50+ centers), concert venues (Blossom, Jacobs Pavilion),\n'
@@ -858,7 +858,7 @@ def _check_june8_geauga_portage():
         f'>   off-price retail (TJ Maxx/Marshalls/HomeGoods/Burlington), truck rental (U-Haul/Penske/Ryder),\n'
         f'>   used car lots (CarMax/DriveTime/independent), outdoor power equipment (STIHL/Husqvarna/Cub Cadet),\n'
         f'>   vocational & trade schools (CVCC/Ohio Technical College/Auburn CTE) + more.\n'
-        f'> ✅ Title + org keyword batching active (Run 134+): all 108+ segments fully queried.\n'
+        f'> ✅ Title + org keyword batching active (Run 134+): all 110+ segments fully queried.\n'
         f'>{note}\n'
         f'>Shortcut: double-click `scripts/run_cuyahoga_both.command` in Finder (no typing required)\n'
         f'>Command: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Cuyahoga`'
@@ -947,7 +947,7 @@ def _check_june15_cuyahoga():
         f'>Marina segment: Mentor Harbor, Sheffield Lake, Euclid shoreline — pre-season marina cleaning window.\n'
         f'>Marine/Boat Dealers: Skipper Buds (Mentor/Lorain), Inland Seas Yachts (Vermilion) — FIRST PULL this run.\n'
         f'>Also: hotel chains (Mentor/Willoughby corridor), senior living, fitness centers (Lake County YMCAs).\n'
-        f'> ✅ Title + org keyword batching active (Run 134+): all 108+ segments fully queried.\n'
+        f'> ✅ Title + org keyword batching active (Run 134+): all 110+ segments fully queried.\n'
         f'>{note}\n'
         f'>Command: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Lake`'
     )
@@ -1430,7 +1430,7 @@ def _check_july20_cuyahoga_2():
         f'📍 *Cuyahoga County 2nd Pass — {label} (July 20)*\n'
         f'>Week 30 rotation: Cuyahoga — Cleveland, Lakewood, Parma, Strongsville, Berea, Westlake, Rocky River.\n'
         f'>Second pass: catches non-opens from June 8 + school districts now in active summer window.\n'
-        f'>Highest-volume market — all 108+ commercial segments at max capacity.\n'
+        f'>Highest-volume market — all 110+ commercial segments at max capacity.\n'
         f'>{note}\n'
         f'>Command: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Cuyahoga`'
     )
@@ -2009,7 +2009,7 @@ def _check_neighbor_canvass_weekly():
 
 def _check_early_cuyahoga_opportunity():
     """Fire May 28–June 7 — one-time window to run an EARLY Cuyahoga pull.
-    108+ commercial segments won't get Cuyahoga contacts until the scheduled June 8 pull.
+    110+ commercial segments won't get Cuyahoga contacts until the scheduled June 8 pull.
     Running Cuyahoga NOW gives those contacts extra days in the sequence before June 4 enrollment.
     This is additive — does NOT replace the June 8 rotation pull, it SUPPLEMENTS it.
     Self-deactivates June 8 (Cuyahoga IS the scheduled pull that day)."""
@@ -2028,7 +2028,7 @@ def _check_early_cuyahoga_opportunity():
     days_to_june8 = (_date_ec(2026, 6, 8) - today).days
     msg = (
         f'🏙️ *Early Cuyahoga Pull Opportunity — {days_to_june8} Days Before Scheduled June 8 Pull*\n'
-        f'>108+ commercial segments (hospital campuses, municipal facilities, DSO dental groups, YMCA branches,\n'
+        f'>110+ commercial segments (hospital campuses, municipal facilities, DSO dental groups, YMCA branches,\n'
         f'>tire chains, movie theaters, bowling, pet boarding, dialysis, sports complexes, museums, food\n'
         f'>processing, airports, concert venues, craft breweries, dollar stores, auto parts, hardware,\n'
         f'>sports venues, cannabis dispensaries, blood/plasma centers, coin laundries, warehouse clubs,\n'
@@ -2315,7 +2315,7 @@ def _check_post_june8_commercial_monitoring():
     ) if day_num == 1 else ''
     msg = (
         f'🏙️ *Post-Cuyahoga Pull — Day {day_num} Commercial Enrollment Watch (June {today.day})*\n'
-        f'>The June 8 Cuyahoga pull enrolled the largest commercial batch of the season (108+ segments).\n'
+        f'>The June 8 Cuyahoga pull enrolled the largest commercial batch of the season (110+ segments).\n'
         f'>First opens expected today — DSO district managers, hospital FMs, government facilities contacts.\n'
         f'{title_batch_note}'
         f'>Run Nina\'s hot leads report: `cd /Users/bradleyneal/forestcity && python3 workers/nina_report.py daily`\n'
@@ -2417,7 +2417,7 @@ def _check_june9_cuyahoga_verification():
     """Fire ONLY on June 9 — the day after the June 8 Cuyahoga pull (biggest pull of the year).
     Reads Danny + Carla sentinel files (.danny_last_pull_date / .carla_last_pull_date) to confirm
     the pull actually ran. Posts confirmed success OR an emergency ALERT if it was silently missed.
-    June 8 = 108+ segments, largest single-day commercial pull of peak season. One-time, self-deactivating.
+    June 8 = 110+ segments, largest single-day commercial pull of peak season. One-time, self-deactivating.
     Proposed Run 144, implemented Run 146."""
     from datetime import date as _date_j9
     today = _date_j9.today()
@@ -2440,7 +2440,7 @@ def _check_june9_cuyahoga_verification():
         msg = (
             '✅ *Cuyahoga Pull Confirmed — June 8 Ran Successfully (Danny + Carla)*\n'
             '>Danny sentinel: June 8 ✓ | Carla sentinel: June 8 ✓\n'
-            '>All 108+ commercial segments enrolled. First opens expected June 11–13 (Touch 1 Day 0 → opens by Day 3).\n'
+            '>All 110+ commercial segments enrolled. First opens expected June 11–13 (Touch 1 Day 0 → opens by Day 3).\n'
             '>Action: Run Nina\'s daily report Monday June 9 morning to surface hot leads before they cool.\n'
             '>`cd /Users/bradleyneal/forestcity && python3 workers/nina_report.py daily`\n'
             '>DSO district manager / hospital FM / government contact replied? Book a site walk immediately — annual contract.'
@@ -2459,7 +2459,7 @@ def _check_june9_cuyahoga_verification():
             '>Danny sentinel NOT dated June 8. Largest commercial pull of the year may have been silently missed.\n'
             '>RUN NOW (15–20 min): `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Cuyahoga`\n'
             '>Or double-click: `scripts/run_cuyahoga_both.command` in Finder — no typing required.\n'
-            '>108+ commercial segments. Missing this = no hospital/DSO/government/museum contacts for the entire season.\n'
+            '>110+ commercial segments. Missing this = no hospital/DSO/government/museum contacts for the entire season.\n'
             '>Check cron first: `cat logs/cron.log | tail -30` — if cron ran but sentinel is absent, re-run anyway.'
         )
 
