@@ -525,6 +525,16 @@ PROPERTY_MANAGER_TITLES = [
     'escape room manager', 'escape room franchise owner', 'escape room owner', 'escape room operator',
     'interactive entertainment manager', 'escape room general manager', 'escape room director',
     'immersive experience manager', 'entertainment venue franchise owner',
+    # Charter Schools & Charter Management Organizations — Ohio charter authorizer compliance = exterior appearance standard;
+    # CMO facilities directors sign multi-campus vendor contracts; routing to Property Manager sequence (added 2026-05-31 run 154)
+    'charter school director', 'charter management director', 'charter school principal',
+    'charter academy director', 'charter operations director', 'director of school operations',
+    'charter principal', 'cmo facilities director',
+    # Outdoor RV & Boat Storage Facilities — spring commissioning = peak pitch window (right now);
+    # large paved/gravel surfaces accumulate winter salt + algae; owner-operators sign vendor contracts;
+    # routing to Property Manager sequence (facility vendor contract angle) (added 2026-05-31 run 154)
+    'rv storage manager', 'outdoor storage facility manager', 'rv park manager',
+    'boat storage manager', 'marine dry storage manager', 'vehicle storage manager',
 ]
 
 REALTOR_TITLES = [

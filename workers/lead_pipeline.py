@@ -889,6 +889,26 @@ DANNY_TITLES = [
     'escape room manager', 'escape room franchise owner', 'escape room owner', 'escape room operator',
     'interactive entertainment manager', 'escape room general manager', 'escape room director',
     'immersive experience manager', 'entertainment venue franchise owner',
+    # Charter Schools & Charter Management Organizations — DISTINCT from public school districts ('school district' tag above)
+    # and private/independent schools ('private school' tag above); 'charter school' is a separate Apollo org tag;
+    # NE Ohio: Breakthrough Schools (12 Cleveland campuses), Constellation Schools (7+ campuses), Citizens Academy,
+    # MC2 STEM High School, Intergenerational School, Hope Academy (35+ OH statewide), Ohio Department of Education
+    # authorizer compliance = facility appearance review; CMO facilities directors sign multi-campus vendor contracts;
+    # summer (June-August) = buildings empty = peak exterior maintenance window (same as public schools);
+    # $800-$3,000/building; 2x/year; 10-campus CMO deal = $16K-$60K/year; zero competitors targeting this segment (added 2026-05-31 run 154)
+    'charter school director', 'charter management director', 'charter school principal',
+    'charter academy director', 'charter operations director', 'director of school operations',
+    'charter principal', 'cmo facilities director',
+    # Outdoor RV & Boat Storage Facilities — DISTINCT from marinas (wet slips/docking, already in list) and self-storage
+    # (indoor climate-controlled units); standalone outdoor yards storing boats, RVs, travel trailers, farm equipment;
+    # NE Ohio: Lake Road Storage (Mentor-on-the-Lake), Northcoast Boat & RV Storage, Lakeshore Storage, Bass Lake Marina
+    # dry storage, multiple independent operators along Lake Erie corridor (Lake/Lorain/Erie county border);
+    # spring commissioning season = RIGHT NOW; customers picking up boats/RVs want a clean, presentable facility;
+    # enormous concrete/gravel pads accumulate 6 months of winter salt, bird droppings, algae from pooling;
+    # owner-operators sign vendor contracts directly; $1,500-$5,000/visit; 2x/year (spring + fall close) = $3K-$10K/year;
+    # 200-500 storage space facility = large paved surface area = high per-visit revenue; zero competitors (added 2026-05-31 run 154)
+    'rv storage manager', 'outdoor storage facility manager', 'rv park manager',
+    'boat storage manager', 'marine dry storage manager', 'vehicle storage manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -1406,6 +1426,19 @@ DANNY_ORG_KEYWORDS = [
     'escape room', 'escape game', 'escape experience', 'room escape',
     'breakout games', 'interactive entertainment venue', 'immersive experience venue',
     'escape room franchise', 'puzzle room', 'entertainment escape',
+    # Charter Schools & Charter Management Organizations — 'charter school' is a DISTINCT Apollo org tag
+    # from 'private school' + 'school district' already in list; NE Ohio has 100+ charter campuses;
+    # CMO: charter management organization signs multi-campus vendor contracts;
+    # Ohio charter authorizer facility compliance inspections = exterior appearance = procurement driver;
+    # first pull: June 8 Cuyahoga (Cleveland has highest charter school density in Ohio — 50+ campuses) (added 2026-05-31 run 154)
+    'charter school', 'charter academy', 'charter management organization', 'charter management',
+    # Outdoor RV & Boat Storage Facilities — DISTINCT from 'marina management'/'boat storage' (marina/wet-slip tag above)
+    # and 'self storage'/'self-storage' (indoor climate-controlled units); standalone outdoor yards for boats/RVs/travel trailers;
+    # NE Ohio Lake Erie corridor (Lake/Lorain/Erie county lines) has dense concentration of these facilities;
+    # spring commissioning = peak pitch window RIGHT NOW; large concrete/gravel pads = high-revenue per visit;
+    # first pull: June 8 Cuyahoga; June 15 Lake (marina corridor); June 22 Lorain (Avon/Avon Lake shoreline) (added 2026-05-31 run 154)
+    'rv storage', 'outdoor rv storage', 'boat and rv storage', 'marine dry storage',
+    'outdoor vehicle storage', 'outdoor storage facility', 'rv resort storage',
 ]
 
 CARLA_SEARCHES = [

@@ -1,6 +1,37 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 153 | 2026-05-31 | Auto-fixes shipped: 2 | New RESOLVED: 0 | Open: 94 (all carry-forward; 0 new this run)*
+*Run 154 | 2026-05-31 | Auto-fixes shipped: 5 | New RESOLVED: 0 | Open: 96 (94 carry-forward + 2 new segment tracking)*
+
+---
+
+## RUN METRICS — Run 154 | 2026-05-31
+- Total RESOLVED: 121 (0 new this run)
+- Total OPEN: 96 (94 carry-forward + 2 new segment tracking issues)
+- Auto-upgrades shipped: 5
+  1. `workers/lead_pipeline.py` — NEW: Charter Schools & Charter Management Organizations as segment #95. 8 DANNY_TITLES (charter school director, charter management director, charter school principal, charter academy director, charter operations director, director of school operations, charter principal, cmo facilities director). 4 DANNY_ORG_KEYWORDS (charter school, charter academy, charter management organization, charter management). Breakthrough Schools (12 campuses), Constellation Schools (7+), Hope Academy, Citizens Academy, MC2 STEM. Ohio charter authorizer compliance = exterior appearance standard. CMO signs multi-campus vendor contracts. Summer maintenance window = June-August. $800-$3,000/building; 10-campus CMO deal = $16K-$60K/year. Zero competitors. First pull June 8 Cuyahoga.
+  2. `workers/lead_pipeline.py` — NEW: Outdoor RV & Boat Storage Facilities as segment #96. 6 DANNY_TITLES (rv storage manager, outdoor storage facility manager, rv park manager, boat storage manager, marine dry storage manager, vehicle storage manager). 7 DANNY_ORG_KEYWORDS (rv storage, outdoor rv storage, boat and rv storage, marine dry storage, outdoor vehicle storage, outdoor storage facility, rv resort storage). DISTINCT from marinas (wet slips) + self-storage (indoor). Lake Road Storage (Mentor-on-the-Lake), Northcoast Boat & RV Storage, Lakeshore Storage, Bass Lake Marina dry storage. Spring commissioning = RIGHT NOW = peak pitch window. $1,500-$5,000/visit; 2x/year = $3K-$10K/year. Zero competitors. First pull June 8 Cuyahoga; June 15 Lake; June 22 Lorain.
+  3. `integrations/mixmax.py` — Synced 14 new titles (8 Charter Schools + 6 RV Storage) to PROPERTY_MANAGER_TITLES. All route to property_manager sequence. GAS_STATION_KEYWORDS checked first per Run 136 fix.
+  4. `workers/vera_relay.py` — BUG FIX: Updated ALL stale segment counts "94+" → "96+" across all 11 relay functions.
+  5. `agents/danny.md` — Full segment briefs for Charter Schools (#95) + Outdoor RV & Boat Storage (#96) added. Revenue math, NE Ohio targets, pitch angles, Apollo keywords, sequence routing. Title batching note updated: "94+ commercial segments" → "96+ commercial segments."
+
+**Critical pending (human action required — URGENT TODAY):**
+- 🚨 SUMMIT COUNTY PULL — **TODAY MAY 31 IS THE ABSOLUTE FINAL DAY.** Miss it = no Summit County leads until June 29. Double-click `scripts/run_summit_both.command` or: `python3 workers/lead_pipeline.py both Summit`. 6 min unattended.
+- 📍 MEDINA COUNTY PULL — **TOMORROW JUNE 1.** Double-click `scripts/run_medina_both.command` tomorrow morning.
+- ⛽ Gas station Mixmax sequence NOT CREATED — contacts stranded since May 19 (13 days). Bypass: Gmail blast guide `outputs/danny/gas_station_manual_email_blast_2026-05-19.md` — no Mixmax setup required.
+- 🚚 Fleet washing Mixmax sequence NOT CREATED — contacts stranded since May 18 (13 days).
+- ⚠️ Instantly.ai NOT PAUSED — June 4 enrollment BLOCKED in 4 days.
+
+## OPEN — Charter Schools & Charter Management Organizations Segment Not Yet Pulled 🟡 NEW (Run 154)
+- First seen: 2026-05-31 (Run 154)
+- Description: Breakthrough Schools (12 Cleveland campuses — one CMO FM signs for all), Constellation Schools (7+ campuses, Cuyahoga/Lake/Lorain), Hope Academy (35+ OH statewide), Citizens Academy (Cleveland), MC2 STEM High School (Cleveland STEM magnet), Intergenerational School, Mastery Schools Cleveland. DISTINCT from public school districts ('school district' tag, Run 119) and private/independent schools ('private school' tag, Run 99) — 'charter school' is a separate Apollo org tag returning zero overlap. Ohio DOE authorizer compliance reviews include facility appearance inspection. CMO facilities director signs multi-campus vendor contracts (5-15 buildings per decision). Summer (June-August) = buildings empty = peak maintenance window. $800-$3,000/building; 2x/year; 10-campus CMO deal = $16,000-$60,000/year. Zero competitors cold-calling charter CMO facilities directors in NE Ohio.
+- Fix applied (Run 154): 8 DANNY_TITLES + 4 DANNY_ORG_KEYWORDS + PROPERTY_MANAGER_TITLES sync + agents/danny.md full segment brief. First pull June 8 Cuyahoga.
+- Resolution criteria: Charter school director / CMO facilities director contacts appear in June 8 Cuyahoga pull output.
+
+## OPEN — Outdoor RV & Boat Storage Facilities Segment Not Yet Pulled 🟡 NEW (Run 154)
+- First seen: 2026-05-31 (Run 154)
+- Description: Lake Road Storage (Mentor-on-the-Lake), Northcoast Boat & RV Storage, Lakeshore Storage (multi-location NE Ohio operator), Bass Lake Marina dry storage (Portage County), Great Lakes Marine Storage, Cleveland Boat Storage, Avon Lake Boat Storage, multiple independent operators — Lake/Lorain/Erie county border. DISTINCT from marinas (wet slips/docking, already in marina segment) and self-storage (indoor climate-controlled, already in self-storage segment). Enormous concrete/gravel pads for 200-500 boats/RVs accumulate 6 months of winter salt + algae + bird droppings. Spring commissioning = RIGHT NOW = peak pitch window. Owner-operators sign vendor contracts directly (no procurement committee). $1,500-$5,000/visit; 2x/year (spring + fall) = $3,000-$10,000/year per facility. Lake County/Lorain County concentration = high density pull in June 15 + June 22 county rotations.
+- Fix applied (Run 154): 6 DANNY_TITLES + 7 DANNY_ORG_KEYWORDS + PROPERTY_MANAGER_TITLES sync + agents/danny.md full segment brief. First pull June 8 Cuyahoga; June 15 Lake County (marina corridor); June 22 Lorain County (Avon Lake shoreline).
+- Resolution criteria: RV storage manager / boat storage manager contacts appear in June 8 or June 15 pull output.
 
 ---
 
