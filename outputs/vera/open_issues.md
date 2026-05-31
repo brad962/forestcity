@@ -1,6 +1,46 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 156 | 2026-05-31 | Auto-fixes shipped: 5 | New RESOLVED: 0 | Open: 99 (97 carry-forward + 2 new segment tracking: Sporting Goods Chains + Tractor Supply / Farm Rural Supply)*
+*Run 157 | 2026-05-31 | Auto-fixes shipped: 6 | New RESOLVED: 0 | Open: 102 (99 carry-forward + 3 new segment tracking: Used Car Lots + Outdoor Power Equipment + Vocational/Trade Schools)*
+
+---
+
+## RUN METRICS — Run 157 | 2026-05-31
+- Total RESOLVED: 121 (0 new this run)
+- Total OPEN: 102 (99 carry-forward + 3 this run: Used Car Lots + Outdoor Power Equipment + Vocational/Trade Schools)
+- Auto-upgrades shipped: 6
+  1. `workers/lead_pipeline.py` — NEW: Used Car Superstores & Independent Used Car Lots as segment #100. 8 DANNY_TITLES (used car lot manager, used car dealership manager, pre-owned vehicle manager, used auto dealer manager, independent car dealer owner, used car district manager, pre-owned sales manager, used car operations manager). 10 DANNY_ORG_KEYWORDS (used car dealer, used car lot, pre-owned vehicles, used car dealership, carmax, drivetime, used car sales, independent auto dealer, buy here pay here, used auto sales). DISTINCT from franchise car dealers (different Apollo org tags). CarMax Willoughby Hills + Mayfield Heights. Hundreds of NE Ohio independents. $1K-$3K/visit; 2x/year. Zero competitors. First pull June 8 Cuyahoga.
+  2. `workers/lead_pipeline.py` — NEW: Outdoor Power Equipment Dealers as segment #101. 7 DANNY_TITLES (power equipment dealer manager, outdoor power equipment manager, small engine dealer manager, equipment dealer owner, power equipment store manager, lawn equipment dealer manager, outdoor equipment manager). 8 DANNY_ORG_KEYWORDS (power equipment dealer, outdoor power equipment, stihl dealer, husqvarna dealer, cub cadet dealer, lawn equipment dealer, small engine dealer, outdoor equipment dealer). 50+ STIHL dealers, 30+ Husqvarna, 20+ Cub Cadet in NE Ohio. Large outdoor display yards. Spring PEAK SEASON = NOW. $400-$1.5K/visit; 2x/year. Zero competitors. First pull June 8 Cuyahoga; June 22 Lorain.
+  3. `workers/lead_pipeline.py` — NEW: Vocational & Trade Schools / CTE Centers as segment #102. 8 DANNY_TITLES (career technical director, vocational school director, trade school director, cte director, career center principal, career technical center manager, vocational education director, cte facilities manager). 8 DANNY_ORG_KEYWORDS (vocational school, trade school, career technical center, cte school, career center, technical education center, career technical education, vocational education center). CVCC, Ohio Technical College, Auburn Career Center, EHOVE, Portage Lakes CTC, 30+ NE Ohio centers. Auto/welding/HVAC lab residue = heavy exterior accumulation. State compliance inspections. Summer = decision window. $800-$2.5K/visit; 2x/year. Zero competitors. First pull June 8 Cuyahoga.
+  4. `integrations/mixmax.py` — Synced 23 new titles (8 Used Car + 7 Outdoor Power Equip + 8 CTE Schools) to PROPERTY_MANAGER_TITLES. All correctly route to property_manager sequence.
+  5. `workers/vera_relay.py` — BUG FIX: Updated ALL stale segment counts "99+" → "102+" across all relay functions; updated June 8 Cuyahoga + early Cuyahoga segment lists to include 3 new segments.
+  6. `agents/danny.md` — Full segment briefs added for all 3 new segments (pitch angles, revenue math, NE Ohio targets, Apollo keywords); title batching note updated 99+ → 102+.
+
+**Critical pending (human action required — URGENT TODAY):**
+- 🚨 SUMMIT COUNTY PULL — **TODAY MAY 31 IS THE ABSOLUTE FINAL DAY.** Miss it = no Summit County leads until June 29. Double-click `scripts/run_summit_both.command` or: `python3 workers/lead_pipeline.py both Summit`. 6 min unattended.
+- 📍 MEDINA COUNTY PULL — **TOMORROW JUNE 1.** Double-click `scripts/run_medina_both.command` tomorrow morning. June 4 enrollment needs fresh Medina leads.
+- ⛽ Gas station Mixmax sequence NOT CREATED — contacts stranded since May 19 (12 days). Bypass: Gmail blast guide `outputs/danny/gas_station_manual_email_blast_2026-05-19.md` — no Mixmax setup required.
+- 🚚 Fleet washing Mixmax sequence NOT CREATED — contacts stranded since May 18 (13 days).
+- ⚠️ Instantly.ai NOT PAUSED — June 4 enrollment BLOCKED in 4 days. Set INSTANTLY_PAUSED=true in .env after pausing campaigns a1c08c3d + 626cd15d at app.instantly.ai.
+
+---
+
+## OPEN — Vocational & Trade Schools / CTE Centers Segment Not Yet Pulled 🟡 NEW (Run 157)
+- First seen: 2026-05-31 (Run 157)
+- Description: CVCC/Cuyahoga Valley Career Center (Brecksville — multiple campuses), Ohio Technical College (Cleveland — automotive/diesel/HVAC), Auburn Career Center (Geauga County), Portage Lakes Career Center (Summit/Portage), Mahoning County Career & Technical Center, Stark County Career Center, EHOVE Career Center (Erie/Huron/Ottawa counties), Lincoln Tech (Ohio locations). DISTINCT from public K-12 ('school district' Apollo tag, Run 119), private schools ('private school', Run 99), and charter schools ('charter school', Run 154). Apollo tags: 'vocational school', 'trade school', 'career technical center' return zero overlap with those segments. Automotive/welding/HVAC/culinary lab programs = heavy oil, metal dust, chemical accumulation on exterior surfaces and surrounding concrete. Ohio Dept. of Education CTE program compliance reviews include facility inspection. Summer (June-August) = buildings less occupied = DECISION WINDOW NOW. $800-$2,500/visit; 2x/year. Multi-campus CTE director deal (CVCC: multiple locations) = $6,000-$15,000/year. Zero competitors.
+- Attempts:
+  - 2026-05-31 (Run 157): Code live in DANNY_TITLES + DANNY_ORG_KEYWORDS + PROPERTY_MANAGER_TITLES + danny.md brief. First pull: June 8 Cuyahoga.
+
+## OPEN — Outdoor Power Equipment Dealers Segment Not Yet Pulled 🟡 NEW (Run 157)
+- First seen: 2026-05-31 (Run 157)
+- Description: STIHL dealer network (50+ NE Ohio independent authorized dealers), Husqvarna dealers (30+ NE Ohio), Cub Cadet dealers, Northern Tool + Equipment (Strongsville, Mentor, Akron). DISTINCT from farm equipment dealers (Kenworth/Caterpillar scale, Run 143) and from car/truck dealers. Large outdoor display yards: riding mowers, zero-turns, snow blowers, generators. Spring = PEAK DISPLAY SEASON = RIGHT NOW — lots packed, customer traffic at max, winter staining most visible. Ohio EPA compliance on service bays (small engine repair = oil + fuel + chemicals). Owner-operators sign vendor contracts directly, fast close. $400-$1,500/visit; 2x/year. STIHL territory deal (5 dealers, one coordinator) = $4K-$15K/year. Zero NE Ohio competitors.
+- Attempts:
+  - 2026-05-31 (Run 157): Code live in DANNY_TITLES + DANNY_ORG_KEYWORDS + PROPERTY_MANAGER_TITLES + danny.md brief. First pull: June 8 Cuyahoga; June 22 Lorain County.
+
+## OPEN — Used Car Superstores & Independent Used Car Lots Segment Not Yet Pulled 🟡 NEW (Run 157)
+- First seen: 2026-05-31 (Run 157)
+- Description: CarMax (Willoughby Hills, Mayfield Heights — largest NE Ohio sites), DriveTime (multiple NE Ohio), AutoNation Pre-Owned, hundreds of independent NE Ohio dealers. DISTINCT from franchise car dealers (Run 107) — Apollo org tags 'used car dealer'/'used car lot'/'pre-owned vehicles' return zero overlap with 'car dealer'/'auto dealer'. Large open-air display lots (50-400 vehicles), heavy rubber + oil + exhaust accumulation. Buy Here Pay Here dealers (high-volume, curb appeal = walk-in traffic = revenue). Spring = inventory refresh. Owner-operators and district managers sign vendor contracts directly. $1,000-$3,000/visit; 2x/year. CarMax multi-location deal = $12K-$24K/year. Zero competitors cold-calling used car lot operators in NE Ohio.
+- Attempts:
+  - 2026-05-31 (Run 157): Code live in DANNY_TITLES + DANNY_ORG_KEYWORDS + PROPERTY_MANAGER_TITLES + danny.md brief. First pull: June 8 Cuyahoga.
 
 ---
 

@@ -548,6 +548,21 @@ PROPERTY_MANAGER_TITLES = [
     'tractor supply district manager', 'tractor supply store manager', 'farm supply district manager',
     'farm supply store manager', 'rural supply manager', 'farm store manager',
     'agricultural retail manager', 'farm supply operations manager',
+    # Used Car Superstores & Independent Used Car Lots — routing to Property Manager sequence
+    # (vendor contract / facility lot maintenance angle); CarMax, DriveTime, independent lots (added 2026-05-31 run 157)
+    'used car lot manager', 'used car dealership manager', 'pre-owned vehicle manager',
+    'used auto dealer manager', 'independent car dealer owner', 'used car district manager',
+    'pre-owned sales manager', 'used car operations manager',
+    # Outdoor Power Equipment Dealers — routing to Property Manager sequence
+    # (facility lot / outdoor display yard maintenance angle); STIHL, Husqvarna, Cub Cadet dealers (added 2026-05-31 run 157)
+    'power equipment dealer manager', 'outdoor power equipment manager', 'small engine dealer manager',
+    'equipment dealer owner', 'power equipment store manager', 'lawn equipment dealer manager',
+    'outdoor equipment manager',
+    # Vocational & Trade Schools / CTE Centers — routing to Property Manager sequence
+    # (facility maintenance / compliance angle); EHOVE, Auburn, CVCC, Portage Lakes (added 2026-05-31 run 157)
+    'career technical director', 'vocational school director', 'trade school director',
+    'cte director', 'career center principal', 'career technical center manager',
+    'vocational education director', 'cte facilities manager',
 ]
 
 REALTOR_TITLES = [

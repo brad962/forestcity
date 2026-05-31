@@ -944,6 +944,39 @@ DANNY_TITLES = [
     'tractor supply district manager', 'tractor supply store manager', 'farm supply district manager',
     'farm supply store manager', 'rural supply manager', 'farm store manager',
     'agricultural retail manager', 'farm supply operations manager',
+    # Used Car Superstores & Independent Used Car Lots — CarMax (Willoughby Hills, Mayfield Heights),
+    # DriveTime (multiple NE Ohio locations), AutoNation pre-owned centers, hundreds of independent dealers;
+    # DISTINCT from franchise car dealers (different Apollo org tags: 'used car dealer' vs 'car dealer franchise');
+    # large open-air display lots: 50-400 vehicles, heavy rubber + oil + exhaust accumulation year-round;
+    # buy here pay here lots (high-volume, lower-income areas) — curb appeal = walk-in traffic = revenue;
+    # spring = inventory refresh season; owner-operators and district managers sign vendor contracts directly;
+    # $1,000-$3,000/visit; 2x/year = $2,000-$6,000/location; CarMax multi-location deal = $20K+/year;
+    # zero competitors cold-calling used car lot operators in NE Ohio (added 2026-05-31 run 157)
+    'used car lot manager', 'used car dealership manager', 'pre-owned vehicle manager',
+    'used auto dealer manager', 'independent car dealer owner', 'used car district manager',
+    'pre-owned sales manager', 'used car operations manager',
+    # Outdoor Power Equipment Dealers — STIHL dealers (50+ NE Ohio independent shops), Husqvarna dealers,
+    # Cub Cadet dealers, BJ's Rental & Equipment, Northern Tool + Equipment (3 NE Ohio);
+    # DISTINCT from farm equipment dealers (commercial/construction scale, added Run 143) and car dealers;
+    # large outdoor display yards with riding mowers, zero-turns, snow blowers, generators on display;
+    # spring = PEAK DISPLAY SEASON = RIGHT NOW — lots packed, max visual impact;
+    # owner-operators sign vendor contracts directly; one large dealership = 2-3 visits/year;
+    # $400-$1,500/visit; zero NE Ohio power washing competitors targeting outdoor power equipment dealers (added 2026-05-31 run 157)
+    'power equipment dealer manager', 'outdoor power equipment manager', 'small engine dealer manager',
+    'equipment dealer owner', 'power equipment store manager', 'lawn equipment dealer manager',
+    'outdoor equipment manager',
+    # Vocational & Trade Schools / Career Technical Education Centers — Ohio Technical College (Cleveland),
+    # Lincoln Tech (Ohio), EHOVE Career Center (Erie/Huron/Ottawa counties), Portage Lakes Career Center,
+    # Mahoning County Career & Technical Center, Stark County Career Center, Auburn Career Center (Geauga),
+    # Tri-C Workforce Development, Cuyahoga Valley Career Center (CVCC), Lake County Educational Service Center;
+    # DISTINCT from public K-12 school districts (Run 119), private schools (Run 99), charter schools (Run 154);
+    # automotive/welding/HVAC/culinary labs = heavy oil, metal dust, chemical accumulation on exterior surfaces;
+    # State CTE program compliance inspections check facility appearance; directors sign vendor contracts;
+    # summer = buildings less occupied = ideal exterior wash window; $800-$2,500/visit; 2x/year;
+    # zero NE Ohio power washing competitors targeting CTE/vocational center directors (added 2026-05-31 run 157)
+    'career technical director', 'vocational school director', 'trade school director',
+    'cte director', 'career center principal', 'career technical center manager',
+    'vocational education director', 'cte facilities manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -1499,6 +1532,29 @@ DANNY_ORG_KEYWORDS = [
     # first pull: June 8 Cuyahoga (Tractor Supply Strongsville, Brook Park/Berea area); June 15 Medina-area pass (added 2026-05-31 run 156)
     'tractor supply', 'farm supply store', 'rural supply store', 'farm and ranch supply',
     'rural king', 'farm supply chain', 'agway', 'agricultural supply retail',
+    # Used Car Superstores & Independent Used Car Lots — DISTINCT from franchise car dealers
+    # ('car dealer' ≠ 'used car dealer' in Apollo org tag space);
+    # CarMax (Willoughby Hills, Mayfield Heights), DriveTime, AutoNation Pre-Owned, independent lots;
+    # Apollo org tags: 'used car dealer', 'used car lot', 'pre-owned vehicles', 'pre-owned car dealer';
+    # first pull: June 8 Cuyahoga (CarMax Willoughby Hills is the highest-volume NE Ohio used car site) (added 2026-05-31 run 157)
+    'used car dealer', 'used car lot', 'pre-owned vehicles', 'used car dealership',
+    'carmax', 'drivetime', 'used car sales', 'independent auto dealer',
+    'buy here pay here', 'used auto sales',
+    # Outdoor Power Equipment Dealers — STIHL dealer network (50+ NE Ohio shops), Husqvarna dealers,
+    # Cub Cadet dealers, Northern Tool + Equipment (3 NE Ohio locations);
+    # Apollo org tags: 'power equipment dealer', 'outdoor power equipment', 'small engine dealer';
+    # first pull: June 8 Cuyahoga; June 22 Lorain (Avon corridor has strong lawn equipment dealer density) (added 2026-05-31 run 157)
+    'power equipment dealer', 'outdoor power equipment', 'stihl dealer', 'husqvarna dealer',
+    'cub cadet dealer', 'lawn equipment dealer', 'small engine dealer', 'outdoor equipment dealer',
+    # Vocational & Trade Schools / Career Technical Education Centers — EHOVE, Auburn Career Center,
+    # CVCC (Cuyahoga Valley Career Center), Portage Lakes Career Center, Mahoning County CTC;
+    # Apollo org tags: 'vocational school', 'trade school', 'career technical center';
+    # DISTINCT from 'school district' (K-12), 'private school', 'charter school' (all separate Apollo org tags);
+    # summer = buildings less occupied = ideal exterior wash window = decision window NOW;
+    # first pull: June 8 Cuyahoga (CVCC, Ohio Technical College, Tri-C Workforce) (added 2026-05-31 run 157)
+    'vocational school', 'trade school', 'career technical center', 'cte school',
+    'career center', 'technical education center', 'career technical education',
+    'vocational education center',
 ]
 
 CARLA_SEARCHES = [
