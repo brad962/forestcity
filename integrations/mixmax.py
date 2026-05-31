@@ -603,6 +603,21 @@ PROPERTY_MANAGER_TITLES = [
     'nonprofit executive director', 'social services director', 'nonprofit facilities director',
     'nonprofit operations manager', 'thrift store district manager', 'food bank operations director',
     'community services manager', 'social service agency director',
+    # Auto Glass Repair & Windshield Replacement Chains — Safelite, Glass America (Cleveland HQ);
+    # district managers sign multi-location vendor contracts; routing to property_manager sequence (added 2026-05-31 run 161)
+    'auto glass manager', 'auto glass district manager', 'windshield repair manager',
+    'glass repair center manager', 'auto glass franchise owner', 'auto glass operations manager',
+    'windshield replacement manager', 'auto glass general manager',
+    # Furniture & Home Furnishings Retail Chains — Ashley, Value City, Bob's Discount Furniture;
+    # district managers sign multi-location vendor contracts; routing to property_manager sequence (added 2026-05-31 run 161)
+    'furniture store manager', 'furniture district manager', 'furniture retail manager',
+    'home furnishings store manager', 'furniture store general manager',
+    'furniture district operations manager', 'home furnishings district manager', 'furniture showroom manager',
+    # Salon Suites & Booth Rental Studios — Sola Salon Studios, MY SALON Suite, Phenix Salon Suites;
+    # franchise owners sign vendor contracts independently; routing to property_manager sequence (added 2026-05-31 run 161)
+    'salon suite manager', 'salon suites director', 'salon suite franchise owner',
+    'booth rental manager', 'salon suite operations manager', 'salon suite property manager',
+    'salon suite general manager',
 ]
 
 REALTOR_TITLES = [

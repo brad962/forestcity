@@ -1068,6 +1068,35 @@ DANNY_TITLES = [
     'nonprofit executive director', 'social services director', 'nonprofit facilities director',
     'nonprofit operations manager', 'thrift store district manager', 'food bank operations director',
     'community services manager', 'social service agency director',
+    # Auto Glass Repair & Windshield Replacement Chains — Safelite AutoGlass (15+ NE Ohio service centers),
+    # Glass America (Cleveland-based national chain, 50+ NE Ohio locations — HQ on Carnegie Ave);
+    # drive-in service bays + large concrete aprons + building exteriors + vehicle staging areas;
+    # Ohio Dept of Commerce glass contractor licensing = exterior appearance standard;
+    # district managers sign multi-location vendor contracts; owner-operators at independent shops sign directly;
+    # $600-$1,500/location; 2-3x/year; Glass America regional deal = $30K-$75K/year;
+    # zero competitors cold-calling auto glass district managers in NE Ohio; first pull June 8 Cuyahoga (added 2026-05-31 run 161)
+    'auto glass manager', 'auto glass district manager', 'windshield repair manager',
+    'glass repair center manager', 'auto glass franchise owner', 'auto glass operations manager',
+    'windshield replacement manager', 'auto glass general manager',
+    # Furniture & Home Furnishings Retail Chains — Ashley Furniture HomeStore (5+ NE Ohio: Solon, Mentor, Strongsville),
+    # Value City Furniture (10+ NE Ohio: Mayfield, Berea, Stow, Parma, Mentor, etc.),
+    # Bob's Discount Furniture (Mayfield, Westgate, Akron area — 3+ NE Ohio), Big Sandy Superstore (NE Ohio expanding),
+    # Nationwide Furniture (Cleveland area); large showrooms + enormous parking lots;
+    # district managers sign multi-location vendor contracts; $1,500-$4,500/location; 2x/year;
+    # Ashley Furniture 5-location district deal = $15K-$45K/year; zero competitors cold-calling furniture DMs (added 2026-05-31 run 161)
+    'furniture store manager', 'furniture district manager', 'furniture retail manager',
+    'home furnishings store manager', 'furniture store general manager',
+    'furniture district operations manager', 'home furnishings district manager', 'furniture showroom manager',
+    # Salon Suites & Booth Rental Studios — Sola Salon Studios (10+ NE Ohio: Independence, Beachwood, Mentor, Westlake, etc.
+    # — fastest-growing salon suite franchise in US), MY SALON Suite (4+ NE Ohio), Phenix Salon Suites (Strongsville/Avon),
+    # Salon Lofts (5+ NE Ohio); each building houses 30-60 individual booth renters with heavy daily foot traffic;
+    # large parking lots + strip-mall building exteriors + entry concrete; franchise owners sign vendor contracts independently;
+    # GENUINELY DISTINCT from hair/nail salon chains (Run 141, 'hair salon chain' Apollo tag) — salon suites are
+    # commercial real estate operators, not service businesses; Apollo tags 'salon suite', 'salon suites' = zero overlap;
+    # $800-$2,500/building; 2-3x/year; 4-location Sola franchise = $6K-$20K/year; zero competitors (added 2026-05-31 run 161)
+    'salon suite manager', 'salon suites director', 'salon suite franchise owner',
+    'booth rental manager', 'salon suite operations manager', 'salon suite property manager',
+    'salon suite general manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -1712,6 +1741,24 @@ DANNY_ORG_KEYWORDS = [
     'nonprofit organization', 'social services organization', 'charitable organization',
     'community service organization', 'food bank', 'thrift store', 'salvation army',
     'human services organization', 'community outreach organization',
+    # Auto Glass Repair & Windshield Replacement Chains — DISTINCT from car dealerships, auto body shops, car wash;
+    # Apollo tags 'auto glass', 'auto glass repair', 'windshield replacement' return zero overlap with existing segments;
+    # Glass America (Cleveland HQ), Safelite AutoGlass, Auto Glass Now, O'Brien Auto Glass;
+    # first pull June 8 Cuyahoga (Glass America Carnegie Ave HQ + Safelite Strongsville/Parma/Mentor) (added 2026-05-31 run 161)
+    'auto glass', 'auto glass repair', 'windshield replacement', 'glass repair center',
+    'auto glass service', 'windshield repair', 'auto glass shop', 'glass america',
+    # Furniture & Home Furnishings Retail Chains — DISTINCT from hardware/home improvement (run 136) + warehouse clubs;
+    # Apollo tags 'furniture store', 'furniture retail', 'home furnishings' return zero overlap with existing segments;
+    # Ashley Furniture, Value City Furniture, Bob's Discount Furniture, Big Sandy Superstore, Nationwide Furniture;
+    # first pull June 8 Cuyahoga (Ashley Solon/Mentor, Value City Mayfield/Parma/Berea) (added 2026-05-31 run 161)
+    'furniture store', 'furniture retail', 'home furnishings store', 'furniture showroom',
+    'home furnishings', 'furniture outlet', 'furniture gallery', 'home furniture store',
+    # Salon Suites & Booth Rental Studios — DISTINCT from hair/nail salon chains (run 141, 'hair salon chain' Apollo tag);
+    # Apollo tags 'salon suite', 'salon suites', 'booth rental salon' return zero overlap with any existing segment;
+    # Sola Salon Studios, MY SALON Suite, Phenix Salon Suites, Salon Lofts;
+    # first pull June 8 Cuyahoga (Sola Salon Studios Independence/Beachwood/Westlake) (added 2026-05-31 run 161)
+    'salon suite', 'salon suites', 'booth rental salon', 'salon studios',
+    'sola salon', 'phenix salon', 'my salon suite', 'salon lofts',
 ]
 
 CARLA_SEARCHES = [

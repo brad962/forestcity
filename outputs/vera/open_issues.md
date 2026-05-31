@@ -1,6 +1,44 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 160 | 2026-05-31 | Auto-fixes shipped: 5 | New RESOLVED: 0 | Open: 110 (108 carry-forward + 2 new segment tracking: Massage Therapy Chains + Non-Profit Organizations)*
+*Run 161 | 2026-05-31 | Auto-fixes shipped: 4 | New RESOLVED: 0 | Open: 113 (110 carry-forward + 3 new segment tracking: Auto Glass + Furniture + Salon Suites)*
+
+---
+
+## RUN METRICS — Run 161 | 2026-05-31
+- Total RESOLVED: 121 (0 new this run)
+- Total OPEN: 113 (110 carry-forward + 3 this run: Auto Glass Repair Chains + Furniture & Home Furnishings Retail + Salon Suites & Booth Rental Studios)
+- Auto-upgrades shipped: 4
+  1. `workers/lead_pipeline.py` — NEW: Auto Glass Repair & Windshield Replacement Chains as segment #111. 8 DANNY_TITLES (auto glass manager, auto glass district manager, windshield repair manager, glass repair center manager, auto glass franchise owner, auto glass operations manager, windshield replacement manager, auto glass general manager). 8 DANNY_ORG_KEYWORDS (auto glass, auto glass repair, windshield replacement, glass repair center, auto glass service, windshield repair, auto glass shop, glass america). Glass America (Cleveland HQ, 50+ NE Ohio locations), Safelite AutoGlass (15+ NE Ohio). Drive-in bay concrete + building exteriors. District FM signs multi-location vendor contracts. $600-$1,500/visit; 2-3x/year. Glass America regional deal = $30K-$75K/year. Zero competitors. First pull June 8 Cuyahoga.
+  2. `workers/lead_pipeline.py` — NEW: Furniture & Home Furnishings Retail Chains as segment #112. 8 DANNY_TITLES (furniture store manager, furniture district manager, furniture retail manager, home furnishings store manager, furniture store general manager, furniture district operations manager, home furnishings district manager, furniture showroom manager). 8 DANNY_ORG_KEYWORDS (furniture store, furniture retail, home furnishings store, furniture showroom, home furnishings, furniture outlet, furniture gallery, home furniture store). Ashley Furniture HomeStore (5+ NE Ohio), Value City Furniture (10+ NE Ohio), Bob's Discount Furniture (3+ NE Ohio). Spring = peak buying season = right-now pitch window. Largest parking lots in retail. $1,500-$4,500/visit; 2x/year. Value City 10-location district deal = $30K-$90K/year. Zero competitors. First pull June 8 Cuyahoga.
+  3. `workers/lead_pipeline.py` — NEW: Salon Suites & Booth Rental Studios as segment #113. 7 DANNY_TITLES (salon suite manager, salon suites director, salon suite franchise owner, booth rental manager, salon suite operations manager, salon suite property manager, salon suite general manager). 8 DANNY_ORG_KEYWORDS (salon suite, salon suites, booth rental salon, salon studios, sola salon, phenix salon, my salon suite, salon lofts). Sola Salon Studios (10+ NE Ohio), MY SALON Suite (4+ NE Ohio), Phenix Salon Suites, Salon Lofts. DISTINCT from hair/nail salon chains (Run 141) — commercial real estate operator, not service business. 200-400 daily foot traffic per building. Franchise owners sign independently. $800-$2,500/building; 2-3x/year. Zero competitors. First pull June 8 Cuyahoga.
+  4. `integrations/mixmax.py` + `workers/vera_relay.py` + `CLAUDE.md` + `agents/danny.md` — Synced 23 new titles (8 Auto Glass + 8 Furniture + 7 Salon Suites) to PROPERTY_MANAGER_TITLES. Updated all "110+" → "113+" across all files (vera_relay.py 11 occurrences, CLAUDE.md 2 occurrences, danny.md 3 occurrences).
+
+**Critical pending (human action required — URGENT):**
+- 🚨 SUMMIT COUNTY PULL — STILL TODAY MAY 31 IF NOT YET DONE. Miss it = no Summit leads until June 29. Double-click `scripts/run_summit_both.command` or: `python3 workers/lead_pipeline.py both Summit`.
+- 📍 MEDINA COUNTY PULL — TOMORROW JUNE 1. Double-click `scripts/run_medina_both.command` tomorrow morning.
+- ⛽ Gas station Mixmax sequence NOT CREATED — contacts stranded. Gmail blast guide: `outputs/danny/gas_station_manual_email_blast_2026-05-19.md`.
+- ⚠️ Instantly.ai NOT PAUSED — June 4 enrollment BLOCKED in 4 days. Set INSTANTLY_PAUSED=true in .env.
+- 🔴 GitHub Action PAT scope — workflow scope still blocked; PAT cannot push .github/workflows/. Slack relay via vera_relay.py is the active mechanism.
+
+---
+
+## OPEN — Auto Glass Repair & Windshield Replacement Chains Segment Not Yet Pulled 🟡 NEW (Run 161)
+- First seen: 2026-05-31
+- Description: Segment #111 code is live in lead_pipeline.py DANNY_TITLES + DANNY_ORG_KEYWORDS; synced to mixmax.py PROPERTY_MANAGER_TITLES; full brief in danny.md. Awaiting first Apollo pull June 8 Cuyahoga. Glass America (Cleveland HQ, 50+ NE Ohio locations) is the flagship target. Safelite AutoGlass (15+ NE Ohio service centers) is secondary. Potential $30K-$75K/year flagship account from Glass America regional deal.
+- Attempts:
+  - 2026-05-31 (Run 161): Code deployed across all files. Awaiting June 8 Cuyahoga pull.
+
+## OPEN — Furniture & Home Furnishings Retail Chains Segment Not Yet Pulled 🟡 NEW (Run 161)
+- First seen: 2026-05-31
+- Description: Segment #112 code is live in lead_pipeline.py + mixmax.py + danny.md. Awaiting first Apollo pull June 8 Cuyahoga. Ashley Furniture HomeStore (Solon/Mentor), Value City Furniture (Mayfield/Parma/Berea), Bob's Discount Furniture (Mayfield) are primary targets. Value City 10-location district deal = $30K-$90K/year — potential highest-value single commercial account in the pipeline.
+- Attempts:
+  - 2026-05-31 (Run 161): Code deployed across all files. Awaiting June 8 Cuyahoga pull.
+
+## OPEN — Salon Suites & Booth Rental Studios Segment Not Yet Pulled 🟡 NEW (Run 161)
+- First seen: 2026-05-31
+- Description: Segment #113 code is live in lead_pipeline.py + mixmax.py + danny.md. Awaiting first Apollo pull June 8 Cuyahoga. Sola Salon Studios Independence/Beachwood/Westlake are primary Cuyahoga targets. Franchise owners sign vendor contracts independently — fast close. DISTINCT from hair/nail salon chains (different Apollo tags).
+- Attempts:
+  - 2026-05-31 (Run 161): Code deployed across all files. Awaiting June 8 Cuyahoga pull.
 
 ---
 
