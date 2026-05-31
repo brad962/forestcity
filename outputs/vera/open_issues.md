@@ -1,6 +1,37 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 155 | 2026-05-31 | Auto-fixes shipped: 5 | New RESOLVED: 0 | Open: 97 (95 carry-forward + 2 new segment tracking: Ice Rinks + [prior charter/rv tracking])*
+*Run 156 | 2026-05-31 | Auto-fixes shipped: 5 | New RESOLVED: 0 | Open: 99 (97 carry-forward + 2 new segment tracking: Sporting Goods Chains + Tractor Supply / Farm Rural Supply)*
+
+---
+
+## RUN METRICS — Run 156 | 2026-05-31
+- Total RESOLVED: 121 (0 new this run)
+- Total OPEN: 99 (97 carry-forward + 2 this run: Sporting Goods Chains + Tractor Supply segment tracking)
+- Auto-upgrades shipped: 5
+  1. `workers/lead_pipeline.py` — NEW: Sporting Goods Chains as segment #98. 8 DANNY_TITLES (sporting goods district manager, sporting goods store manager, sporting goods manager, sporting goods regional manager, sports retail district manager, sports store manager, athletic retail manager, sporting goods operations manager). 10 DANNY_ORG_KEYWORDS (sporting goods, sporting goods store, sporting goods retail, sports retail, dick's sporting goods, academy sports, play it again sports, sporting goods chain, athletic retail, sports equipment retail). Dick's (10+ NE Ohio), Academy Sports (3 NE Ohio), Play It Again Sports (8+ NE Ohio). Large paved anchor-mall lots. District manager vendor contracts. $600-$2K/location; 10-location district = $24K-$80K/year. Zero competitors. First pull June 8 Cuyahoga.
+  2. `workers/lead_pipeline.py` — NEW: Tractor Supply Co. & Farm/Rural Supply Chains as segment #99. 8 DANNY_TITLES (tractor supply district manager, tractor supply store manager, farm supply district manager, farm supply store manager, rural supply manager, farm store manager, agricultural retail manager, farm supply operations manager). 8 DANNY_ORG_KEYWORDS (tractor supply, farm supply store, rural supply store, farm and ranch supply, rural king, farm supply chain, agway, agricultural supply retail). TSC has 20+ NE Ohio locations (Medina/Lorain/Summit/Geauga/Portage interface). Rural King 4 NE Ohio. Large outdoor display yards. District contracts. $800-$2.5K/location; 5-location district = $8K-$25K/year. Zero competitors. First pull June 8 Cuyahoga; June 15 Medina County.
+  3. `integrations/mixmax.py` — Synced 16 new titles (8 Sporting Goods + 8 Tractor Supply) to PROPERTY_MANAGER_TITLES. All route to property_manager sequence.
+  4. `workers/vera_relay.py` — BUG FIX: Updated ALL stale segment counts "97+" → "99+" across all relay functions (11 locations).
+  5. `CLAUDE.md` + `agents/danny.md` — Updated "97+" → "99+" in Quick Shortcuts table, June 8 Cuyahoga warning callout, and title batching note.
+
+**Critical pending (human action required — URGENT TODAY):**
+- 🚨 SUMMIT COUNTY PULL — **TODAY MAY 31 IS THE ABSOLUTE FINAL DAY.** Miss it = no Summit County leads until June 29. Double-click `scripts/run_summit_both.command` or: `python3 workers/lead_pipeline.py both Summit`. 6 min unattended.
+- 📍 MEDINA COUNTY PULL — **TOMORROW JUNE 1.** Double-click `scripts/run_medina_both.command` tomorrow morning.
+- ⛽ Gas station Mixmax sequence NOT CREATED — contacts stranded since May 19 (13 days). Bypass: Gmail blast guide `outputs/danny/gas_station_manual_email_blast_2026-05-19.md` — no Mixmax setup required.
+- 🚚 Fleet washing Mixmax sequence NOT CREATED — contacts stranded since May 18 (13 days).
+- ⚠️ Instantly.ai NOT PAUSED — June 4 enrollment BLOCKED in 4 days. Set INSTANTLY_PAUSED=true in .env after pausing campaigns a1c08c3d + 626cd15d at app.instantly.ai.
+
+## OPEN — Sporting Goods Chains Segment Not Yet Pulled 🟡 NEW (Run 156)
+- First seen: 2026-05-31 (Run 156)
+- Description: Dick's Sporting Goods (10+ NE Ohio anchor-mall locations: Great Northern/North Olmsted, SouthPark/Strongsville, Macedonia Commons, Belden Village/Akron, Twinsburg, Mentor, Berea, Cuyahoga Falls + more), Academy Sports & Outdoors (3 NE Ohio — entering Ohio market aggressively), Play It Again Sports (8+ NE Ohio franchise-owned). DISTINCT from sports complexes/YMCA/athletic facilities (already in list) — BIG-BOX SPORTING GOODS RETAIL with enormous paved anchor-mall lots, building exteriors, seasonal outdoor display areas, dumpster pad areas. District managers sign vendor contracts for 5-15 stores. $600-$2,000/visit; 10-location district = $24K-$80K/year. Zero competitors cold-calling sporting goods retail DMs in NE Ohio.
+- Fix applied (Run 156): 8 DANNY_TITLES + 10 DANNY_ORG_KEYWORDS + PROPERTY_MANAGER_TITLES sync + agents/danny.md full segment brief. First pull June 8 Cuyahoga.
+- Resolution criteria: Sporting goods district manager / regional manager contacts appear in June 8 Cuyahoga pull output.
+
+## OPEN — Tractor Supply / Farm Rural Supply Segment Not Yet Pulled 🟡 NEW (Run 156)
+- First seen: 2026-05-31 (Run 156)
+- Description: Tractor Supply Co. (20+ NE Ohio, concentrated in Medina/Lorain/Summit/Geauga/Portage counties — rural-suburban interface), Rural King (4 NE Ohio: Grafton, Tallmadge, Ravenna, Mantua area), Southern States Cooperative (Chardon area), Agway independents (Portage/Geauga). GENUINELY DISTINCT segment not covered by any existing 97 segments — outdoor display yards (grills/lawn equipment/chick brooders/fencing), equipment staging pads, large parking lots, building exteriors. Spring = display lots packed = staining season = peak pitch window RIGHT NOW. District managers sign vendor contracts for 3-8 stores. $800-$2,500/visit; 5-location district = $8K-$25K/year. Zero competitors cold-calling farm supply DMs in NE Ohio.
+- Fix applied (Run 156): 8 DANNY_TITLES + 8 DANNY_ORG_KEYWORDS + PROPERTY_MANAGER_TITLES sync + agents/danny.md full segment brief. First pull June 8 Cuyahoga; June 15 Medina County.
+- Resolution criteria: Tractor supply district manager / farm supply manager contacts appear in June 8 Cuyahoga pull output.
 
 ---
 

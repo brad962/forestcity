@@ -1217,3 +1217,10 @@
 [2026-05-31 08:05] Vera | Run 155 — Updated 96+→97+ across 2 occurrences | CLAUDE.md | Done
 [2026-05-31 08:06] Vera | Run 155 — Updated open_issues.md: Run 155 header, Ice Rinks tracking issue added, 97 open issues | outputs/vera/open_issues.md | Done
 [2026-05-31 08:07] Vera | Run 155 — Wrote Run 155 Slack messages (6 messages) | outputs/vera/pending_slack_messages.md | Done
+[2026-05-31 06:10] Vera | Run 156 | Auto-upgrade: Added Sporting Goods Chains (#98) to lead_pipeline.py DANNY_TITLES (8 titles) + DANNY_ORG_KEYWORDS (10 keywords). First pull June 8 Cuyahoga. | Done
+[2026-05-31 06:10] Vera | Run 156 | Auto-upgrade: Added Tractor Supply / Farm Rural Supply Chains (#99) to lead_pipeline.py DANNY_TITLES (8 titles) + DANNY_ORG_KEYWORDS (8 keywords). First pull June 8 Cuyahoga + June 15 Medina. | Done
+[2026-05-31 06:10] Vera | Run 156 | Auto-upgrade: Synced 16 new titles (Sporting Goods + Tractor Supply) to integrations/mixmax.py PROPERTY_MANAGER_TITLES. | Done
+[2026-05-31 06:10] Vera | Run 156 | Auto-upgrade: Added full segment briefs for #98 and #99 to agents/danny.md (pitch, timing, revenue, NE Ohio targets, Apollo keywords). | Done
+[2026-05-31 06:10] Vera | Run 156 | Auto-upgrade: Count sync 97+ -> 99+ across vera_relay.py (11x), CLAUDE.md (2x), agents/danny.md (all refs). | Done
+[2026-05-31 06:10] Vera | Run 156 | Updated outputs/vera/open_issues.md with Run 156 header + 2 new OPEN segment tracking issues. Total OPEN: 99. | Done
+[2026-05-31 06:10] Vera | Run 156 | Wrote outputs/vera/pending_slack_messages.md (7 messages: 5 auto-upgrade + 2 urgency alerts + scan summary). | Done

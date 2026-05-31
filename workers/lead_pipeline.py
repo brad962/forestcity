@@ -922,6 +922,28 @@ DANNY_TITLES = [
     # zero NE Ohio power washing competitors cold-calling ice arena facility managers (added 2026-05-31 run 155)
     'ice rink manager', 'ice arena manager', 'ice arena director', 'skating center director',
     'ice facility manager', 'ice sports manager', 'skating rink manager', 'hockey arena manager',
+    # Sporting Goods Chains — Dick's Sporting Goods (10+ NE Ohio: Strongsville, Macedonia, Mentor, Twinsburg,
+    # North Olmsted, Avon, Berea, Akron, Cuyahoga Falls + more), Academy Sports & Outdoors (3 NE Ohio),
+    # Play It Again Sports (franchise-owned, 8+ NE Ohio); DISTINCT from sports facilities/YMCA (already in list);
+    # large paved parking lots (Dick's anchors major shopping centers: Great Northern, SouthPark, Belden Village);
+    # building exteriors + seasonal outdoor display areas + dumpster pad areas;
+    # district managers sign vendor contracts for 5-15 store territories;
+    # $600-$2,000/location; quarterly = $2.4K-$8K/location; 10-location district = $24K-$80K/year;
+    # zero competitors cold-calling sporting goods retail district managers in NE Ohio (added 2026-05-31 run 156)
+    'sporting goods district manager', 'sporting goods store manager', 'sporting goods manager',
+    'sporting goods regional manager', 'sports retail district manager', 'sports store manager',
+    'athletic retail manager', 'sporting goods operations manager',
+    # Tractor Supply Co. & Farm/Rural Supply Chains — Tractor Supply Co. (20+ NE Ohio), Rural King (4 NE Ohio),
+    # Southern States, Agway; DISTINCT from all existing segments — genuine rural-suburban NE Ohio segment
+    # concentrated in Medina/Lorain/Summit/Geauga counties along the rural-suburban interface;
+    # large outdoor display yards + garden/supply lots + equipment staging areas + building exteriors;
+    # spring/summer = display lots packed with grills, lawn equipment, chick brooders, fencing = staining season;
+    # district managers sign vendor contracts for 3-8 store territories;
+    # $800-$2,500/location; 5-location district = $4K-$12.5K/year;
+    # zero NE Ohio power washing competitors targeting farm supply store district managers (added 2026-05-31 run 156)
+    'tractor supply district manager', 'tractor supply store manager', 'farm supply district manager',
+    'farm supply store manager', 'rural supply manager', 'farm store manager',
+    'agricultural retail manager', 'farm supply operations manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -1463,6 +1485,20 @@ DANNY_ORG_KEYWORDS = [
     # first pull: June 8 Cuyahoga; June 15 Lake County; June 29 Summit County (2nd pass) (added 2026-05-31 run 155)
     'ice rink', 'ice arena', 'ice skating rink', 'hockey rink', 'skating facility',
     'ice sports complex', 'ice skating center', 'hockey arena',
+    # Sporting Goods Chains — Dick's Sporting Goods, Academy Sports, Play It Again Sports, DICK'S;
+    # DISTINCT from 'sports complex'/'athletic complex'/'ymca' already above — retail stores, not facilities;
+    # Apollo org tags: 'sporting goods', 'sporting goods store', 'sports retail', 'sporting goods retail';
+    # first pull: June 8 Cuyahoga (Dick's anchors Great Northern, SouthPark, Macedonia + Belden Village, Macedonia) (added 2026-05-31 run 156)
+    'sporting goods', 'sporting goods store', 'sporting goods retail', 'sports retail',
+    "dick's sporting goods", 'academy sports', 'play it again sports', 'sporting goods chain',
+    'athletic retail', 'sports equipment retail',
+    # Tractor Supply Co. & Farm/Rural Supply Chains — DISTINCT from ALL existing segments;
+    # NE Ohio rural-suburban interface: Medina (Wadsworth/Medina city), Lorain (Grafton/Oberlin), Summit (Tallmadge),
+    # Geauga (Chardon), Portage (Ravenna) — 20+ Tractor Supply locations; 4 Rural King in NE Ohio;
+    # Apollo org tags: 'tractor supply', 'farm supply', 'rural supply', 'farm and ranch supply';
+    # first pull: June 8 Cuyahoga (Tractor Supply Strongsville, Brook Park/Berea area); June 15 Medina-area pass (added 2026-05-31 run 156)
+    'tractor supply', 'farm supply store', 'rural supply store', 'farm and ranch supply',
+    'rural king', 'farm supply chain', 'agway', 'agricultural supply retail',
 ]
 
 CARLA_SEARCHES = [

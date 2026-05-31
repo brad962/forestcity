@@ -540,6 +540,14 @@ PROPERTY_MANAGER_TITLES = [
     # routing to Property Manager sequence (facility management / summer maintenance window angle) (added 2026-05-31 run 155)
     'ice rink manager', 'ice arena manager', 'ice arena director', 'skating center director',
     'ice facility manager', 'ice sports manager', 'skating rink manager', 'hockey arena manager',
+    # Sporting Goods Chains (added 2026-05-31 run 156)
+    'sporting goods district manager', 'sporting goods store manager', 'sporting goods manager',
+    'sporting goods regional manager', 'sports retail district manager', 'sports store manager',
+    'athletic retail manager', 'sporting goods operations manager',
+    # Tractor Supply Co. & Farm/Rural Supply Chains (added 2026-05-31 run 156)
+    'tractor supply district manager', 'tractor supply store manager', 'farm supply district manager',
+    'farm supply store manager', 'rural supply manager', 'farm store manager',
+    'agricultural retail manager', 'farm supply operations manager',
 ]
 
 REALTOR_TITLES = [
