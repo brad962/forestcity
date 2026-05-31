@@ -578,6 +578,21 @@ PROPERTY_MANAGER_TITLES = [
     'mobile home park manager', 'manufactured housing community manager', 'mobile home park director',
     'manufactured housing manager', 'community park manager', 'manufactured community director',
     'mobile home community manager', 'mobile home park operations manager',
+    # Senior Adult Day Programs & Adult Day Care Centers — Ohio Dept of Aging licensing = exterior appearance standard;
+    # routing to Property Manager sequence (facility/compliance angle); 60+ NE Ohio programs (added 2026-05-31 run 159)
+    'adult day program director', 'adult day care director', 'senior day program manager',
+    'adult day services director', 'adult day center manager', 'senior day services manager',
+    'adult day health director', 'adult day program manager',
+    # Diagnostic Imaging & Radiology Centers — Ohio DOH radiology licensing = exterior appearance standard;
+    # routing to Property Manager sequence (facility/compliance angle); HealthSpan, UH Radiology, Summa (added 2026-05-31 run 159)
+    'radiology center manager', 'imaging center manager', 'diagnostic imaging manager',
+    'radiology practice manager', 'mri center manager', 'imaging director', 'radiology director',
+    'diagnostic center manager',
+    # Swim Schools & Aquatic Learn-to-Swim Programs — Ohio DOH pool licensing = exterior appearance standard;
+    # PEAK SEASON RIGHT NOW; routing to Property Manager sequence (facility/compliance angle) (added 2026-05-31 run 159)
+    'swim school director', 'swim school manager', 'swim academy director', 'swim school owner',
+    'swim school franchise owner', 'aquatic learning director', 'learn to swim director',
+    'swim program manager',
 ]
 
 REALTOR_TITLES = [

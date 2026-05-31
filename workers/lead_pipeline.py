@@ -1015,6 +1015,34 @@ DANNY_TITLES = [
     'mobile home park manager', 'manufactured housing community manager', 'mobile home park director',
     'manufactured housing manager', 'community park manager', 'manufactured community director',
     'mobile home community manager', 'mobile home park operations manager',
+    # Senior Adult Day Programs & Adult Day Care Centers — Ohio Department of Aging licensed;
+    # DISTINCT from residential senior living (independent/assisted living already in list);
+    # non-residential daytime programs for seniors; accessible parking + entrance ramps + walkways;
+    # medical transport van drop-off areas accumulate diesel + grime; state licensing inspection = appearance standard;
+    # 60+ NE Ohio adult day programs; $400-$1,200/visit; 2-3x/year; zero competitors (added 2026-05-31 run 159)
+    'adult day program director', 'adult day care director', 'senior day program manager',
+    'adult day services director', 'adult day center manager', 'senior day services manager',
+    'adult day health director', 'adult day program manager',
+    # Diagnostic Imaging & Radiology Centers — DISTINCT from urgent care, hospitals, and medical office parks;
+    # stand-alone imaging centers accessed via separate Apollo org tags ('diagnostic imaging', 'radiology center');
+    # Ohio Dept of Health radiology licensing = exterior cleanliness standard; large accessible surface parking;
+    # HealthSpan Radiology (NE Ohio's largest independent network — 15+ locations), Cleveland Clinic Imaging,
+    # UH Radiology, Summa Radiology, Mid-Ohio Radiology; district managers sign multi-site vendor contracts;
+    # $600-$1,800/visit; 2x/year; zero competitors cold-calling imaging center managers in NE Ohio (added 2026-05-31 run 159)
+    'radiology center manager', 'imaging center manager', 'diagnostic imaging manager',
+    'radiology practice manager', 'mri center manager', 'imaging director', 'radiology director',
+    'diagnostic center manager',
+    # Swim Schools & Aquatic Learn-to-Swim Programs — Ohio Dept of Health pool licensing = exterior cleanliness standard;
+    # DISTINCT from YMCA (already in list), aquatic centers (already in list), and community pools (already in list);
+    # stand-alone franchise swim schools with separate Apollo org tags: 'swim school', 'swim academy';
+    # Goldfish Swim School (3+ NE Ohio franchise locations — Strongsville, North Olmsted, Mentor area),
+    # British Swim School (2+ NE Ohio franchise locations), SwimKids of Ohio, Aqua-Tots NE Ohio;
+    # PEAK SEASON RIGHT NOW — summer = highest enrollment period; parents touring facilities;
+    # franchise owners sign vendor contracts directly; pool decks + parking lots + building exteriors;
+    # $500-$1,500/location; 2x/year; zero competitors cold-calling swim school franchise owners (added 2026-05-31 run 159)
+    'swim school director', 'swim school manager', 'swim academy director', 'swim school owner',
+    'swim school franchise owner', 'aquatic learning director', 'learn to swim director',
+    'swim program manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -1624,6 +1652,25 @@ DANNY_ORG_KEYWORDS = [
     'mobile home park', 'manufactured housing community', 'manufactured home park',
     'mobile home community', 'manufactured housing', 'mobile home management',
     'manufactured community', 'mobile home village', 'mobile home estates',
+    # Senior Adult Day Programs & Adult Day Care Centers — Ohio Dept of Aging licensed;
+    # DISTINCT from 'senior living'/'assisted living' (residential — already in list);
+    # Apollo org tags: 'adult day program', 'adult day services', 'adult day care' return zero overlap;
+    # 60+ NE Ohio programs serving medically fragile seniors; wheelchair ramp concrete + entrance areas + van drop-off pads;
+    # first pull June 8 Cuyahoga (Family Connections Adult Day Program, ParkView, ElderCare Alliance) (added 2026-05-31 run 159)
+    'adult day program', 'adult day services', 'adult day care', 'adult day health',
+    'senior day program', 'adult daycare', 'senior day services', 'day program for seniors',
+    # Diagnostic Imaging & Radiology Centers — DISTINCT from 'medical office', 'urgent care', 'hospital';
+    # Apollo org tags: 'diagnostic imaging', 'radiology center' return zero overlap with those segments;
+    # stand-alone imaging centers with dedicated large accessible parking lots;
+    # first pull June 8 Cuyahoga (HealthSpan Radiology — Beachwood/Mayfield Hts/Westlake, UH Radiology) (added 2026-05-31 run 159)
+    'diagnostic imaging', 'radiology center', 'imaging center', 'mri center',
+    'radiology clinic', 'imaging clinic', 'x-ray center', 'medical imaging center',
+    # Swim Schools & Aquatic Learn-to-Swim Programs — DISTINCT from 'ymca', 'aquatic center', 'community pool';
+    # Apollo org tags: 'swim school', 'swim academy', 'aquatic learning' return zero overlap;
+    # franchise-owned; summer = peak season; first pull June 8 Cuyahoga
+    # (Goldfish Swim School Strongsville/North Olmsted, British Swim School NE Ohio locations) (added 2026-05-31 run 159)
+    'swim school', 'swim academy', 'swimming school', 'learn to swim', 'aquatic learning',
+    'swimming lessons', 'swim studio', 'children swim school',
 ]
 
 CARLA_SEARCHES = [

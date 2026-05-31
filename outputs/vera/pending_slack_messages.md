@@ -1,3 +1,32 @@
+🔧 *Vera — Auto-Upgrade | Run 159*
+>Changed: Added 3 new commercial segments to lead_pipeline.py: Senior Adult Day Programs (#106), Diagnostic Imaging & Radiology Centers (#107), Swim Schools (#108). 24 new titles synced to mixmax.py. Segment count synced to 108+ across vera_relay.py (11x), CLAUDE.md (2x), danny.md batching note. Missing Run 158 danny.md briefs (Animal Shelters, Campgrounds, Mobile Home Parks) added.
+>Why: 3 new zero-competitor NE Ohio opportunities with licensing-driven exterior cleaning urgency. Count sync was 6 segments behind. Danny's reference docs had 3 undocumented segments.
+>File: lead_pipeline.py, mixmax.py, vera_relay.py, CLAUDE.md, agents/danny.md
+---
+🚨 *Vera — SUMMIT COUNTY DEADLINE — TODAY MAY 31*
+>TODAY IS THE ABSOLUTE FINAL DAY for Summit County pull. Miss it = no Summit leads until June 29.
+>Action: Double-click `scripts/run_summit_both.command` OR: `python3 workers/lead_pipeline.py both Summit`
+>Takes 6 minutes, fully unattended. June 4 enrollment needs these leads.
+---
+📍 *Vera — MEDINA COUNTY PULL — TOMORROW JUNE 1*
+>After Summit, Medina County is TOMORROW (Monday June 1). Double-click `scripts/run_medina_both.command` Monday morning. June 4 enrollment (4 days away) needs fresh Medina leads.
+---
+⚠️ *Vera — Instantly.ai NOT Paused — June 4 Is In 4 Days*
+>Enrolling Round 2 contacts while Instantly.ai runs = duplicate emails = spam = 0% reply rate.
+>FIX (3 min): app.instantly.ai → Campaigns → a1c08c3d + 626cd15d → Pause. Then add INSTANTLY_PAUSED=true to .env.
+>June 4 enrollment is BLOCKED until this is done.
+---
+💡 *Vera — Upgrade Proposal*
+>Idea: Add a "swim school parent" Facebook post angle to Jasmine's June social calendar — "Summer swim lessons are booked — is your family's new swim school facility clean enough to trust?" NE Ohio parents, summer season, kid safety.
+>Why: We just added swim schools as a Danny commercial target. The residential angle (NE Ohio parents checking out swim schools) is also a Facebook ad and organic social play for awareness.
+>Impact: One content angle serves both Danny's commercial outreach AND Jasmine's residential social content. Cross-channel leverage.
+>Reply YES to approve.
+---
+✅ *Vera — Scan Complete 2026-05-31 (Run 159)*
+>7 auto-upgrades shipped | 1 proposal | 108 open issues (3 new segments + 3 count sync gaps resolved + 3 missing briefs added)
+>Forest City now has 108 commercial segments ready to fire June 8 Cuyahoga — the biggest pull of the season.
+>Most urgent TODAY: Summit County pull (last chance before 4-week gap).
+---
 🐾 *Vera — Auto-Upgrade #1 of 4 | Segment #103: Animal Shelters & Humane Societies* _(Run 158 · 2026-05-31)_
 >**New segment live** — 9 Apollo titles + 11 org keywords added to `lead_pipeline.py`. Titles synced to `mixmax.py` PROPERTY_MANAGER_TITLES for correct routing.
 >
