@@ -1,6 +1,38 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 151 | 2026-05-31 | Auto-fixes shipped: 5 | New RESOLVED: 1 (GBP Weekly Post Relay Gap) | Open: 92 (90 carry-forward + 2 new: Motorsports Venues + Print/Business Services)*
+*Run 152 | 2026-05-31 | Auto-fixes shipped: 5 | New RESOLVED: 0 | Open: 94 (92 carry-forward + 2 new: Chiropractic Chains + Escape Rooms/Interactive Entertainment)*
+
+---
+
+## RUN METRICS — Run 152 | 2026-05-31
+- Total RESOLVED: 121 (0 new this run)
+- Total OPEN: 94 (92 carry-forward + 2 new segment tracking issues)
+- Auto-upgrades shipped: 5
+  1. `workers/lead_pipeline.py` — NEW: Chiropractic Chains & Spinal Care Groups as segment #93. 8 DANNY_TITLES (chiropractic district manager, chiropractor practice manager, chiropractic clinic manager, chiropractic regional manager, chiropractic franchise owner, spine center manager, chiropractic practice director, spinal care manager). 9 DANNY_ORG_KEYWORDS (chiropractic clinic, chiropractic center, chiropractor group, the joint chiropractic, chiroone, chiropractic franchise, spinal care center, spine clinic, chiropractic management). The Joint Chiropractic (10+ NE Ohio franchise locations), ChiroOne, independent multi-location chiro practices. Strip-mall storefronts with high weekly patient traffic; Ohio chiropractic board licensing = exterior appearance standard; franchise owners = fast close. $300–$700/visit; 2×/year = $600–$1,400/location. Zero competitors. First pull June 8 Cuyahoga.
+  2. `workers/lead_pipeline.py` — NEW: Escape Rooms & Interactive Entertainment as segment #94. 9 DANNY_TITLES (escape room manager, escape room franchise owner, escape room owner, escape room operator, interactive entertainment manager, escape room general manager, escape room director, immersive experience manager, entertainment venue franchise owner). 10 DANNY_ORG_KEYWORDS (escape room, escape game, escape experience, room escape, breakout games, interactive entertainment venue, immersive experience venue, escape room franchise, puzzle room, entertainment escape). NE Ohio: Breakout Games (Strongsville + Independence), room2escape (Parma), Scene 75 Entertainment (Berea — 100K sq ft), Paranormal Escape, Cleveland Escape. Summer = peak escape room season. Franchise owners = independent purchasers. $400–$1,000/visit; 2–3×/year. Zero competitors. First pull June 8 Cuyahoga.
+  3. `integrations/mixmax.py` — Synced 17 new titles (8 Chiropractic + 9 Escape Rooms) to PROPERTY_MANAGER_TITLES. All route to property_manager sequence. GAS_STATION_KEYWORDS checked first per Run 136 fix.
+  4. `workers/vera_relay.py` — BUG FIX: Updated ALL stale segment counts "92+" → "94+" across 7 relay functions (Summit deadline, June 8 Cuyahoga x2, early Cuyahoga opportunity x2, post-June-8 monitoring, June 9 verification, July 20 2nd pass).
+  5. `agents/danny.md` — Full segment briefs for Chiropractic Chains (#93) + Escape Rooms/Interactive Entertainment (#94) added. Revenue math, NE Ohio targets, pitch angles, Apollo keywords, sequence routing. Title batching note updated: "92+ commercial segments" → "94+ commercial segments."
+
+**Critical pending (human action required — URGENT TODAY/TOMORROW):**
+- 🚨 SUMMIT COUNTY PULL — **TODAY MAY 31 IS THE ABSOLUTE FINAL DAY.** Miss it = no Summit County leads until June 29. Double-click `scripts/run_summit_both.command` or: `python3 workers/lead_pipeline.py both Summit`. 6 min unattended.
+- 📍 MEDINA COUNTY PULL — **TOMORROW JUNE 1.** Double-click `scripts/run_medina_both.command` tomorrow morning.
+- ⛽ Gas station Mixmax sequence NOT CREATED — contacts stranded since May 19 (13 days). Bypass: Gmail blast guide `outputs/danny/gas_station_manual_email_blast_2026-05-19.md` — no Mixmax setup required.
+- 🚚 Fleet washing Mixmax sequence NOT CREATED — contacts stranded since May 18 (13 days).
+- ⚠️ Instantly.ai NOT PAUSED — June 4 enrollment BLOCKED in 4 days.
+- 📘 **June 1 Facebook post** — ready at `outputs/jasmine/facebook_post_june1_2026-05-31.md`. Post tomorrow morning 8–9am.
+
+## OPEN — Chiropractic Chains & Spinal Care Groups Segment Not Yet Pulled 🟡 NEW (Run 152)
+- First seen: 2026-05-31 (Run 152)
+- Description: The Joint Chiropractic (10+ NE Ohio franchise locations), ChiroOne Wellness Centers, independent multi-location chiropractic practices. Strip-mall storefronts with high weekly patient foot traffic. Ohio State Chiropractic Board licensing = exterior appearance compliance standard. Franchise owners are independent purchasing decision-makers (fast close). $300–$700/visit; 2×/year spring + fall cleanup; 10-location territory = $6K–$14K/year. DISTINCT from physical therapy (different Ohio licensing body, different Apollo org tags). Zero competitors.
+- Fix applied (Run 152): 8 DANNY_TITLES + 9 DANNY_ORG_KEYWORDS + PROPERTY_MANAGER_TITLES sync + agents/danny.md full segment brief. First pull June 8 Cuyahoga.
+- Resolution criteria: Chiropractic franchise owner / clinic manager contacts appear in June 8 Cuyahoga pull output.
+
+## OPEN — Escape Rooms & Interactive Entertainment Venues Segment Not Yet Pulled 🟡 NEW (Run 152)
+- First seen: 2026-05-31 (Run 152)
+- Description: Breakout Games (Strongsville + Independence, OH franchise locations), room2escape (Parma), Paranormal Escape (Cleveland), Scene 75 Entertainment Center (Berea — 100,000+ sq ft indoor entertainment venue with enormous parking lot), Cleveland Escape, Puzzled Escape Games, Nickle City Fun Center (Euclid). DISTINCT from trampoline parks + bowling alleys (different Apollo org tags). Summer = peak season (birthday parties, corporate team-building, family outings). Franchise owners are independent purchasers — fast YES/NO, no procurement committee. Parking lots + building exteriors + entry canopies take high-volume evening/weekend staining. $400–$1,000/visit; 2–3×/year. Zero power washing competitors cold-calling escape room operators in NE Ohio.
+- Fix applied (Run 152): 9 DANNY_TITLES + 10 DANNY_ORG_KEYWORDS + PROPERTY_MANAGER_TITLES sync + agents/danny.md full segment brief. First pull June 8 Cuyahoga.
+- Resolution criteria: Escape room franchise owner / interactive entertainment manager contacts appear in June 8 Cuyahoga pull output.
 
 ---
 

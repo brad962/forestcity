@@ -865,6 +865,30 @@ DANNY_TITLES = [
     'print center manager', 'print shop district manager', 'printing services manager',
     'fedex office manager', 'ups store franchise owner', 'business services manager',
     'shipping center manager', 'copy center manager',
+    # Chiropractic Chains & Spinal Care Groups — The Joint Chiropractic (15+ NE Ohio franchise locations),
+    # ChiroOne Wellness Centers, Ohio State Chiropractic Board member practices, Spine & Rehab Group;
+    # DISTINCT from physical therapy (different Ohio licensing body: Ohio State Chiropractic Board);
+    # franchise owners sign vendor contracts directly for individual locations without corporate procurement;
+    # strip-mall storefronts with high patient foot traffic = persistent oil stain + salt residue on entry concrete;
+    # Ohio chiropractic board licensing inspections include patient-facing exterior appearance standard;
+    # $300–$700/visit; 2×/year spring + fall cleanup; 10-location territory = $6K–$14K/year;
+    # zero NE Ohio power washing competitors cold-calling chiropractic franchise owners (added 2026-05-31 run 152)
+    'chiropractic district manager', 'chiropractor practice manager', 'chiropractic clinic manager',
+    'chiropractic regional manager', 'chiropractic franchise owner', 'spine center manager',
+    'chiropractic practice director', 'spinal care manager',
+    # Escape Rooms & Interactive Entertainment Venues — NE Ohio: Breakout Games (franchise locations in
+    # Strongsville + Independence), room2escape (Parma), Paranormal Escape (Cleveland), Cleveland Escape,
+    # Scene 75 Entertainment Center (Berea — NE Ohio's largest indoor entertainment venue: 100,000+ sq ft),
+    # Puzzled Escape Games, Escapades Ohio, Nickle City Fun Center (Euclid);
+    # DISTINCT from trampoline parks (already in list) + bowling alleys (already in list);
+    # parking lots + building exteriors + entrance canopies stained from high evening/weekend traffic;
+    # summer peak = families + birthday parties + corporate team-building events = HIGH visibility pressure;
+    # franchise owners sign vendor contracts directly (1-3 locations each = fast close, no procurement committee);
+    # $400–$1,000/location visit; 2–3×/year = $800–$3,000/year per location; zero competitors cold-calling;
+    # first pull: June 8 Cuyahoga (Scene 75 Berea, Breakout Games Strongsville + Independence) (added 2026-05-31 run 152)
+    'escape room manager', 'escape room franchise owner', 'escape room owner', 'escape room operator',
+    'interactive entertainment manager', 'escape room general manager', 'escape room director',
+    'immersive experience manager', 'entertainment venue franchise owner',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -1367,6 +1391,21 @@ DANNY_ORG_KEYWORDS = [
     # first pull: June 8 Cuyahoga (all major FedEx Office + UPS Store locations in Cuyahoga County) (added 2026-05-31 run 151)
     'printing services', 'business services center', 'print shop', 'shipping center',
     'copy center', 'ups store franchise', 'business print services', 'print and ship',
+    # Chiropractic Chains & Spinal Care Groups — DISTINCT from physical therapy/urgent care already above;
+    # The Joint Chiropractic franchise + ChiroOne + independent multi-location practices;
+    # Ohio State Chiropractic Board licensing = exterior appearance standard;
+    # first pull June 8 Cuyahoga (The Joint Chiropractic has 3+ Cuyahoga County locations) (added 2026-05-31 run 152)
+    'chiropractic clinic', 'chiropractic center', 'chiropractor group',
+    'the joint chiropractic', 'chiroone', 'chiropractic franchise',
+    'spinal care center', 'spine clinic', 'chiropractic management',
+    # Escape Rooms & Interactive Entertainment Venues — Breakout Games (franchise), room2escape, Paranormal Escape,
+    # Scene 75 Entertainment Center (Berea — 100K+ sq ft indoor venue), Cleveland Escape, Puzzled Escape Games;
+    # DISTINCT from trampoline parks ('trampoline park' tag above) + bowling ('bowling' tag above);
+    # peak evening/weekend traffic + corporate team-building events = heavy staining + high appearance stakes;
+    # first pull June 8 Cuyahoga (Scene 75 Berea, Breakout Games Strongsville + Independence) (added 2026-05-31 run 152)
+    'escape room', 'escape game', 'escape experience', 'room escape',
+    'breakout games', 'interactive entertainment venue', 'immersive experience venue',
+    'escape room franchise', 'puzzle room', 'entertainment escape',
 ]
 
 CARLA_SEARCHES = [

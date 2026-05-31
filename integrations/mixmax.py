@@ -515,6 +515,16 @@ PROPERTY_MANAGER_TITLES = [
     'print center manager', 'print shop district manager', 'printing services manager',
     'fedex office manager', 'ups store franchise owner', 'business services manager',
     'shipping center manager', 'copy center manager',
+    # Chiropractic Chains & Spinal Care Groups — The Joint Chiropractic, ChiroOne franchise owners;
+    # Ohio chiropractic licensing = exterior appearance standard; routing to Property Manager sequence (added 2026-05-31 run 152)
+    'chiropractic district manager', 'chiropractor practice manager', 'chiropractic clinic manager',
+    'chiropractic regional manager', 'chiropractic franchise owner', 'spine center manager',
+    'chiropractic practice director', 'spinal care manager',
+    # Escape Rooms & Interactive Entertainment — Breakout Games, Scene 75, room2escape;
+    # franchise owners sign vendor contracts; routing to Property Manager sequence (added 2026-05-31 run 152)
+    'escape room manager', 'escape room franchise owner', 'escape room owner', 'escape room operator',
+    'interactive entertainment manager', 'escape room general manager', 'escape room director',
+    'immersive experience manager', 'entertainment venue franchise owner',
 ]
 
 REALTOR_TITLES = [
