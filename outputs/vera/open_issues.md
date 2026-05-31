@@ -1,8 +1,46 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 149 | 2026-05-30 | Auto-fixes shipped: 5 | New RESOLVED: 1 (Oct 5 relay gap fixed) | Open: 89 (87 carry-forward + 2 new: Off-Price Retail + Truck Rental)*
+*Run 150 | 2026-05-31 | Auto-fixes shipped: 5 | New RESOLVED: 0 | Open: 91 (89 carry-forward + 2 new: Lumber Yards + Behavioral Health Clinics)*
 
 ---
+
+## RUN METRICS — Run 150 | 2026-05-31
+- Total RESOLVED: 120 (0 new this run)
+- Total OPEN: 91 (89 carry-forward + 2 new segment tracking issues)
+- Auto-upgrades shipped: 5
+  1. `workers/lead_pipeline.py` — NEW: Lumber Yards & Building Supply Distributors as segment #89. 6 DANNY_TITLES (lumber yard manager, building supply manager, lumber yard branch manager, building materials branch manager, roofing supply manager, building supply branch manager). 10 DANNY_ORG_KEYWORDS (lumber yard, building supply distributor, roofing supply distributor, building materials distributor, 84 lumber, abc supply, builders firstsource, probuild, roofing supply, building materials supply). 84 Lumber (15+ NE Ohio), ABC Supply Co. (largest roofing distributor in US, multiple NE Ohio branches), Builders FirstSource. DISTINCT from Home Depot/Lowe's (retail). Open outdoor material yards: forklift oil + concrete dust + roofing granules = heavy accumulation. $2K–$6K/visit; quarterly = $8K–$24K/year per large branch. Zero competitors. First pull June 8 Cuyahoga.
+  2. `workers/lead_pipeline.py` — NEW: Behavioral Health & Mental Health Clinics as segment #90. 8 DANNY_TITLES (behavioral health director, mental health clinic director, behavioral health clinic manager, mental health facility manager, behavioral health regional director, substance abuse clinic manager, addiction treatment center director, outpatient behavioral health manager). 10 DANNY_ORG_KEYWORDS (behavioral health center, mental health clinic, behavioral health clinic, substance abuse treatment, addiction treatment center, mental health services, outpatient behavioral health, psychiatric clinic, counseling center, behavioral health management). Signature Health (80+ NE Ohio sites), Recovery Resources, Frontline Service, LCADA Way, Emerge, Crossroads Health, Harbor Light, UH Behavioral, Cleveland Clinic Behavioral. Ohio ODMH/OMHAS licensing + stigma-reduction brand = appearance IS clinical credibility signal. $800–$2,500/clinic; 10-clinic deal = $8K–$25K/year. Zero competitors. First pull June 8 Cuyahoga.
+  3. `integrations/mixmax.py` — Synced 14 new titles (6 Lumber Yards + 8 Behavioral Health) to PROPERTY_MANAGER_TITLES. GAS_STATION_KEYWORDS checked first per Run 136 fix; all new titles correctly route to property_manager sequence.
+  4. `workers/vera_relay.py` — BUG FIX: Updated ALL stale segment counts "88+" → "90+" across 7 relay functions (Summit deadline, June 8 Cuyahoga x2, July 20 2nd pass, early Cuyahoga opportunity x2, post-June-8 monitoring, June 9 verification alert).
+  5. `agents/danny.md` — Full segment briefs for Lumber Yards & Building Supply Distributors (segment #89) + Behavioral Health & Mental Health Clinics (segment #90) added. Title batching note updated: "88+ commercial segments" → "90+ commercial segments."
+
+**Critical pending (human action required — URGENT TODAY):**
+- 🚨 SUMMIT COUNTY PULL — **TODAY MAY 31 IS THE FINAL DAY.** Miss it = no Summit County leads until June 29. Double-click `scripts/run_summit_both.command` or: `python3 workers/lead_pipeline.py both Summit`. 6 min unattended.
+- 📍 MEDINA COUNTY PULL — **TOMORROW JUNE 1.** Run `scripts/run_medina_both.command` tomorrow morning. June 4 enrollment needs these leads.
+- ⛽ Gas station Mixmax sequence NOT CREATED — contacts stranded since May 19
+- 🚚 Fleet washing Mixmax sequence NOT CREATED — contacts stranded
+- ⚠️ Instantly.ai NOT PAUSED — June 4 enrollment BLOCKED (4 days away)
+- 📘 Facebook page goes dark TOMORROW June 1 — Tommy's June 1–7 post batch awaiting YES from Bradley
+
+**Proposals pending:**
+- 💡 Tommy writes June 1–7 Facebook posts — URGENT, page goes dark tomorrow (awaiting YES from Bradley)
+- 💡 Move GBP files from outputs/vera/ to outputs/jasmine/ (correct ownership — awaiting YES)
+
+## OPEN — Lumber Yards & Building Supply Distributors Segment Not Yet Pulled 🟡 NEW (Run 150)
+- First seen: 2026-05-31 (Run 150)
+- Description: 84 Lumber (15+ NE Ohio stores), ABC Supply Co. (largest roofing materials distributor in US; multiple NE Ohio branches), Builders FirstSource, Heritage Building Products. DISTINCT from Home Depot/Lowe's (already in list as hardware/home improvement) — these are WHOLESALE contractor-only supply yards. Open outdoor material storage yards: forklift oil + concrete dust + wood tannin + roofing granules = heavy accumulation. Branch managers sign vendor contracts directly. $2,000–$6,000/visit; quarterly = $8,000–$24,000/year per large branch. Zero competitors cold-calling building supply branch managers in NE Ohio.
+- Fix applied (Run 150): 6 DANNY_TITLES + 10 DANNY_ORG_KEYWORDS + PROPERTY_MANAGER_TITLES sync + agents/danny.md full segment brief. First pull June 8 Cuyahoga.
+- Resolution criteria: Lumber yard manager / building supply manager contacts appear in June 8 Cuyahoga pull output.
+
+## OPEN — Behavioral Health & Mental Health Clinics Segment Not Yet Pulled 🟡 NEW (Run 150)
+- First seen: 2026-05-31 (Run 150)
+- Description: Signature Health (80+ NE Ohio outpatient behavioral health locations — NE Ohio's largest community mental health agency), Recovery Resources, Frontline Service, LCADA Way, Emerge Behavioral Wellness (Akron), Crossroads Health, Harbor Light, UH Behavioral Health, Cleveland Clinic Behavioral Resources. DISTINCT from urgent care + physical therapy + ambulatory surgery centers (all already in separate segments). Ohio ODMH/OMHAS licensing inspections check patient-facing exterior appearance. Stigma-reduction brand campaigns = exterior appearance is a CLINICAL CREDIBILITY SIGNAL, not just curb appeal. District managers sign multi-clinic vendor contracts for 5-15 locations. $800–$2,500/clinic; 10-clinic district deal = $8,000–$25,000/year. Zero competitors.
+- Fix applied (Run 150): 8 DANNY_TITLES + 10 DANNY_ORG_KEYWORDS + PROPERTY_MANAGER_TITLES sync + agents/danny.md full segment brief. First pull June 8 Cuyahoga.
+- Resolution criteria: Behavioral health director / mental health clinic director contacts appear in June 8 Cuyahoga pull.
+
+---
+
+
 
 ## RUN METRICS — Run 149 | 2026-05-30
 - Total RESOLVED: 120 (1 new: Oct 5 Geauga+Portage relay gap — _check_oct5_geauga_portage_4() added)

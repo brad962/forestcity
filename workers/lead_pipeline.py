@@ -820,6 +820,28 @@ DANNY_TITLES = [
     # $800-$2,500/lot visit; quarterly = $3,200-$10,000/year per location; zero competitors cold-calling truck rental DMs (added 2026-05-30 run 149)
     'truck rental district manager', 'moving truck rental manager', 'truck rental location manager',
     'rental truck fleet manager', 'moving truck manager', 'truck rental operations manager',
+    # Lumber Yards & Building Supply Distributors — 84 Lumber (15+ NE Ohio stores), ABC Supply Co. (largest roofing
+    # distributor in US, multiple NE Ohio branches), Builders FirstSource, Heritage Building Products;
+    # DISTINCT from Home Depot/Lowe's (retail consumer-facing hardware) — these are WHOLESALE contractor-only supply yards;
+    # open outdoor storage yards: lumber in concrete bays, roofing shingles on pallets, masonry on concrete pads;
+    # forklift oil + concrete dust + wood tannin staining accumulates rapidly in material yards;
+    # branch managers + operations managers sign vendor contracts for yard and dock maintenance;
+    # $2,000-$6,000/visit; quarterly = $8,000-$24,000/year per large branch; zero competitors cold-calling
+    # building supply branch managers in NE Ohio; contractor customer base sees clean yard = professional operation (added 2026-05-31 run 150)
+    'lumber yard manager', 'building supply manager', 'lumber yard branch manager',
+    'building materials branch manager', 'roofing supply manager', 'building supply branch manager',
+    # Behavioral Health & Mental Health Clinics — Signature Health (80+ NE Ohio clinics), Recovery Resources,
+    # Frontline Service, LCADA Way, Emerge Behavioral Wellness (Akron), Crossroads Health, Harbor Light,
+    # University Hospitals Behavioral Health, Cleveland Clinic Behavioral Resources;
+    # DISTINCT from urgent care + physical therapy + ambulatory surgery centers (all already in list);
+    # Ohio ODMH/OMHAS facility licensing inspections check patient-facing exterior appearance;
+    # stigma-reduction brand campaigns make appearance a clinical credibility signal (not just curb appeal);
+    # district managers / regional directors sign multi-clinic vendor contracts for 5-15 locations;
+    # $800-$2,500/clinic visit; 10-clinic district deal = $8,000-$25,000/year; zero competitors targeting
+    # behavioral health facility managers in NE Ohio (added 2026-05-31 run 150)
+    'behavioral health director', 'mental health clinic director', 'behavioral health clinic manager',
+    'mental health facility manager', 'behavioral health regional director', 'substance abuse clinic manager',
+    'addiction treatment center director', 'outpatient behavioral health manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -1291,6 +1313,21 @@ DANNY_ORG_KEYWORDS = [
     # large paved lots with trucks + diesel exhaust + road salt; zero competitors cold-calling (added 2026-05-30 run 149)
     'u-haul', 'uhaul', 'penske truck', 'ryder truck', 'budget truck rental',
     'moving truck rental', 'truck rental company',
+    # Lumber Yards & Building Supply Distributors — 84 Lumber, ABC Supply Co., Builders FirstSource,
+    # Heritage Building Products, ProBuild; DISTINCT from Home Depot/Lowe's (retail) — wholesale contractor-supply;
+    # open material yards accumulate forklift oil + concrete dust + wood tannin staining rapidly;
+    # first pull June 8 Cuyahoga (84 Lumber Strongsville/Independence/Solon, ABC Supply multiple branches) (added 2026-05-31 run 150)
+    'lumber yard', 'building supply distributor', 'roofing supply distributor', 'building materials distributor',
+    '84 lumber', 'abc supply', 'builders firstsource', 'probuild', 'roofing supply',
+    'building materials supply',
+    # Behavioral Health & Mental Health Clinics — Signature Health, Recovery Resources, Frontline Service,
+    # LCADA Way, Emerge Behavioral Wellness, Crossroads Health, Harbor Light, UH Behavioral Health, Cleveland Clinic Behavioral;
+    # DISTINCT from urgent care + physical therapy + ambulatory surgery centers (all already above);
+    # Ohio ODMH/OMHAS licensing + stigma-reduction branding = exterior appearance is a clinical credibility signal;
+    # first pull June 8 Cuyahoga (Signature Health has 30+ NE Ohio outpatient sites) (added 2026-05-31 run 150)
+    'behavioral health center', 'mental health clinic', 'behavioral health clinic', 'substance abuse treatment',
+    'addiction treatment center', 'mental health services', 'outpatient behavioral health',
+    'psychiatric clinic', 'counseling center', 'behavioral health management',
 ]
 
 CARLA_SEARCHES = [

@@ -496,6 +496,15 @@ PROPERTY_MANAGER_TITLES = [
     # routing to Property Manager sequence (facility management / lot maintenance angle) (added 2026-05-30 run 149)
     'truck rental district manager', 'moving truck rental manager', 'truck rental location manager',
     'rental truck fleet manager', 'moving truck manager', 'truck rental operations manager',
+    # Lumber Yards & Building Supply Distributors — 84 Lumber, ABC Supply, Builders FirstSource;
+    # routing to Property Manager sequence (facility / vendor contract angle) (added 2026-05-31 run 150)
+    'lumber yard manager', 'building supply manager', 'lumber yard branch manager',
+    'building materials branch manager', 'roofing supply manager', 'building supply branch manager',
+    # Behavioral Health & Mental Health Clinics — Signature Health, Recovery Resources, Frontline Service;
+    # routing to Property Manager sequence (facility / compliance angle) (added 2026-05-31 run 150)
+    'behavioral health director', 'mental health clinic director', 'behavioral health clinic manager',
+    'mental health facility manager', 'behavioral health regional director', 'substance abuse clinic manager',
+    'addiction treatment center director', 'outpatient behavioral health manager',
 ]
 
 REALTOR_TITLES = [
