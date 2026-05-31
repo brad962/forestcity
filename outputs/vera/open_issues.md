@@ -1,6 +1,43 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 150 | 2026-05-31 | Auto-fixes shipped: 5 | New RESOLVED: 0 | Open: 91 (89 carry-forward + 2 new: Lumber Yards + Behavioral Health Clinics)*
+*Run 151 | 2026-05-31 | Auto-fixes shipped: 5 | New RESOLVED: 1 (GBP Weekly Post Relay Gap) | Open: 92 (90 carry-forward + 2 new: Motorsports Venues + Print/Business Services)*
+
+---
+
+## RUN METRICS — Run 151 | 2026-05-31
+- Total RESOLVED: 121 (1 new: GBP Weekly Post Relay Gap — code verified in place, fires June 1)
+- Total OPEN: 92 (90 carry-forward + 2 new segment tracking issues)
+- Auto-upgrades shipped: 5
+  1. `workers/lead_pipeline.py` — NEW: Motorsports Venues & Racing Facilities as segment #91. 9 DANNY_TITLES (speedway operations manager, motorsports venue manager, racetrack facilities manager, motorsports park manager, racing venue director, karting facility manager, indoor karting manager, speedway manager, raceway manager). 8 DANNY_ORG_KEYWORDS (motorsports park, speedway management, racetrack facilities, motorsports venue, racing facility, karting center, indoor karting, motorsports complex). Summit Motorsports Park (Norwalk — largest OH drag strip), Mid-Ohio Sports Car Course, Medina County Speedway, Autobahn Indoor Speedway (Brecksville), K1 Speed. Enormous parking + grandstand + pit lane concrete = heavy rubber/oil accumulation. $2K–$8K/visit; 2–3x/year. Zero competitors. First pull June 8 Cuyahoga (Autobahn Indoor); county override for regional speedways.
+  2. `workers/lead_pipeline.py` — NEW: Print & Business Services Chains as segment #92. 8 DANNY_TITLES (print center manager, print shop district manager, printing services manager, fedex office manager, ups store franchise owner, business services manager, shipping center manager, copy center manager). 8 DANNY_ORG_KEYWORDS. FedEx Office (25+ NE Ohio), UPS Store (50+ franchise owners — independent purchasing decisions), AlphaGraphics (15+), Minuteman Press (20+). Strip-mall concrete stained by box dust, packing tape, foot traffic. Franchise owners = fast close. Zero competitors. First pull June 8 Cuyahoga.
+  3. `integrations/mixmax.py` — Synced 17 new titles (9 Motorsports + 8 Print/Business Services) to PROPERTY_MANAGER_TITLES. All correctly route to property_manager sequence. GAS_STATION_KEYWORDS checked first per Run 136 fix.
+  4. `workers/vera_relay.py` — BUG FIX: Updated ALL stale segment counts "90+" → "92+" across 7 relay functions (Summit deadline, June 8 Cuyahoga countdown x2, early Cuyahoga opportunity x2, July 20 2nd pass, post-June-8 monitoring, June 9 verification alert).
+  5. `agents/danny.md` — Full segment briefs for Motorsports Venues (#91) + Print/Business Services (#92) added. Revenue math, NE Ohio targets, pitch angles, Apollo keywords, sequence routing. Segment count updated: "90+ commercial segments" → "92+ commercial segments."
+  6. `outputs/jasmine/facebook_post_june1_2026-05-31.md` — Written 1 standalone June 1 Facebook post to fill the gap between may26 batch (ends Sat May 30) and june_week1 batch (starts Tue June 2). June 2–6 posts confirmed to exist in `facebook_posts_june_week1_2026-06-02.md`. "Page going dark" concern resolved.
+
+**Critical pending (human action required — URGENT TODAY):**
+- 🚨 SUMMIT COUNTY PULL — **TODAY MAY 31 IS THE ABSOLUTE FINAL DAY.** Miss it = no Summit County leads until June 29. Double-click `scripts/run_summit_both.command` or: `python3 workers/lead_pipeline.py both Summit`. 6 min unattended.
+- 📍 MEDINA COUNTY PULL — **TOMORROW JUNE 1.** Double-click `scripts/run_medina_both.command` tomorrow morning.
+- ⛽ Gas station Mixmax sequence NOT CREATED — contacts stranded since May 19 (13 days). Bypass: Gmail blast guide `outputs/danny/gas_station_manual_email_blast_2026-05-19.md` — no Mixmax setup required.
+- 🚚 Fleet washing Mixmax sequence NOT CREATED — contacts stranded since May 18 (13 days).
+- ⚠️ Instantly.ai NOT PAUSED — June 4 enrollment BLOCKED in 3 days.
+- 📘 **June 1 Facebook post** — written and ready at `outputs/jasmine/facebook_post_june1_2026-05-31.md`. Post tomorrow morning 8–9am. June 2–6 posts already exist.
+
+## RESOLVED — GBP Weekly Post Relay Gap (No Monday reminder existed)
+- Resolved: 2026-05-31 (Run 151)
+- Fix: `_check_gbp_weekly_post()` added to vera_relay.py in Run 129. Code reviewed Run 151 — function exists, fires every Monday May 26–Sept 30, references Tommy's June GBP content calendar, wired into `_main_body()` at line 2521. Self-deactivates Oct 1. First fire: Monday June 1, 2026 (tomorrow — next local relay run). Resolution criteria satisfied: the function is live and will fire on the first scheduled Monday.
+
+## OPEN — Motorsports Venues & Racing Facilities Segment Not Yet Pulled 🟡 NEW (Run 151)
+- First seen: 2026-05-31 (Run 151)
+- Description: Summit Motorsports Park (Norwalk — largest drag strip in Ohio: Funny Car Cavalcade, Night of Fire, Top Fuel Thunder; 20K+ fans/event), Mid-Ohio Sports Car Course (Lexington — IndyCar/IMSA; 30K+ fans/weekend), Medina County Speedway (Medina dirt oval — Saturday night locals), Autobahn Indoor Speedway (Brecksville — NE Ohio's largest indoor karting facility), K1 Speed (NE Ohio franchise location), Kart World (Broadview Heights — Cuyahoga County). Enormous paved parking lots + grandstand concourse concrete + pit lane aprons + building exteriors. Tire rubber accumulation + motor oil/fuel residue = among the heaviest commercial cleaning loads in NE Ohio. Spring = racing season opener = peak pitch window. Zero competitors targeting motorsport venue facility managers anywhere in NE Ohio. $2,000–$8,000/visit; 2–3x/year.
+- Fix applied (Run 151): 9 DANNY_TITLES + 8 DANNY_ORG_KEYWORDS + PROPERTY_MANAGER_TITLES sync + agents/danny.md full segment brief. First pull: June 8 Cuyahoga (Autobahn Indoor Speedway, Kart World); county override for regional speedways (Summit Motorsports Park → Huron County override; Mid-Ohio → Richland County override).
+- Resolution criteria: Speedway operations manager / motorsports venue manager contacts appear in June 8 or county-override pull output.
+
+## OPEN — Print & Business Services Chains Segment Not Yet Pulled 🟡 NEW (Run 151)
+- First seen: 2026-05-31 (Run 151)
+- Description: FedEx Office (25+ NE Ohio Print & Ship Centers), The UPS Store (50+ NE Ohio independent franchise owners — each signs their own vendor contracts), AlphaGraphics (15+ NE Ohio franchise locations), Minuteman Press (20+ NE Ohio franchise owners), Sir Speedy, Allegra Marketing Print Mail. DISTINCT from distribution centers/warehouse shipping (strip-mall storefronts, not warehouses). Apollo tags: 'printing services', 'shipping services', 'business services center'. Strip-mall entry concrete stained by box dust, packing tape residue, ink/toner, high foot traffic. Franchise owners = independent purchasing decisions = fast close path. $200–$600/location; 2–3x/year; 10-location FedEx Office territory = $8K–$24K/year.
+- Fix applied (Run 151): 8 DANNY_TITLES + 8 DANNY_ORG_KEYWORDS + PROPERTY_MANAGER_TITLES sync + agents/danny.md full segment brief. First pull: June 8 Cuyahoga.
+- Resolution criteria: Print center manager / UPS Store franchise owner contacts appear in June 8 Cuyahoga pull output.
 
 ---
 

@@ -505,6 +505,16 @@ PROPERTY_MANAGER_TITLES = [
     'behavioral health director', 'mental health clinic director', 'behavioral health clinic manager',
     'mental health facility manager', 'behavioral health regional director', 'substance abuse clinic manager',
     'addiction treatment center director', 'outpatient behavioral health manager',
+    # Motorsports Venues & Racing Facilities — routing to Property Manager sequence (facility management angle)
+    # Summit Motorsports Park, Mid-Ohio Sports Car Course, Autobahn Indoor Speedway; (added 2026-05-31 run 151)
+    'speedway operations manager', 'motorsports venue manager', 'racetrack facilities manager',
+    'motorsports park manager', 'racing venue director', 'karting facility manager',
+    'indoor karting manager', 'speedway manager', 'raceway manager',
+    # Print & Business Services Chains — routing to Property Manager sequence (franchise facility angle)
+    # FedEx Office, UPS Store franchise owners, AlphaGraphics, Minuteman Press; (added 2026-05-31 run 151)
+    'print center manager', 'print shop district manager', 'printing services manager',
+    'fedex office manager', 'ups store franchise owner', 'business services manager',
+    'shipping center manager', 'copy center manager',
 ]
 
 REALTOR_TITLES = [

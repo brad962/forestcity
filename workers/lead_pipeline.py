@@ -842,6 +842,29 @@ DANNY_TITLES = [
     'behavioral health director', 'mental health clinic director', 'behavioral health clinic manager',
     'mental health facility manager', 'behavioral health regional director', 'substance abuse clinic manager',
     'addiction treatment center director', 'outpatient behavioral health manager',
+    # Motorsports Venues & Racing Facilities — Summit Motorsports Park (Norwalk — largest drag strip in OH:
+    # Funny Car Cavalcade, Night of Fire), Mid-Ohio Sports Car Course (Lexington — road racing, IndyCar),
+    # Medina County Speedway (Medina — dirt oval), Mahoning Valley Speedway (Youngstown area),
+    # indoor karting: Autobahn Indoor Speedway (Brecksville), K1 Speed, Kart World;
+    # enormous paved parking lots + grandstand concourse concrete + pit lane aprons + building exteriors;
+    # tire rubber accumulation + oil/fuel residue from racing operations = constant high-intensity staining;
+    # spring (April-June) = racing season opener = peak pitch window for pre-season cleaning contracts;
+    # facility managers / venue directors sign vendor contracts; zero competitors targeting motorsport venues;
+    # $2,000-$8,000/visit; 2-3x/year = $4,000-$24,000/year per venue (added 2026-05-31 run 151)
+    'speedway operations manager', 'motorsports venue manager', 'racetrack facilities manager',
+    'motorsports park manager', 'racing venue director', 'karting facility manager',
+    'indoor karting manager', 'speedway manager', 'raceway manager',
+    # Print & Business Services Chains — FedEx Office (25+ NE Ohio), UPS Store (50+ NE Ohio franchise owners),
+    # AlphaGraphics (15+ NE Ohio), Minuteman Press (20+ NE Ohio), Sir Speedy, The UPS Store;
+    # strip-mall entry concrete stained by box dust, packing tape residue, heavy foot traffic;
+    # state franchise brand standards = exterior appearance maintained to corporate spec;
+    # UPS Store franchise owners are INDEPENDENT BUSINESS OWNERS who sign their own vendor contracts (1-3 stores each);
+    # FedEx Office district managers oversee 5-10 locations in NE Ohio territory;
+    # $200-$600/location; quarterly = $800-$2,400/location; 10-location territory = $8K-$24K/year;
+    # DISTINCT Apollo org tags from restaurant/retail — tagged 'printing services', 'shipping services' (added 2026-05-31 run 151)
+    'print center manager', 'print shop district manager', 'printing services manager',
+    'fedex office manager', 'ups store franchise owner', 'business services manager',
+    'shipping center manager', 'copy center manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -1328,6 +1351,22 @@ DANNY_ORG_KEYWORDS = [
     'behavioral health center', 'mental health clinic', 'behavioral health clinic', 'substance abuse treatment',
     'addiction treatment center', 'mental health services', 'outpatient behavioral health',
     'psychiatric clinic', 'counseling center', 'behavioral health management',
+    # Motorsports Venues & Racing Facilities — Summit Motorsports Park, Mid-Ohio Sports Car Course,
+    # Medina County Speedway, Autobahn Indoor Speedway (Brecksville), K1 Speed, Kart World;
+    # DISTINCT from sports complexes/athletic facilities (youth sports, indoor soccer) — different Apollo tags;
+    # paved track aprons + parking lots + grandstand concourses = heavy rubber/oil/fuel staining;
+    # first pull: June 8 Cuyahoga (Autobahn Indoor Speedway, Brecksville); June 22 Lorain/June 29 Summit
+    # for regional speedways (Summit Motorsports Park is Huron County — first pull with county override) (added 2026-05-31 run 151)
+    'motorsports park', 'speedway management', 'racetrack facilities', 'motorsports venue',
+    'racing facility', 'karting center', 'indoor karting', 'motorsports complex',
+    # Print & Business Services Chains — FedEx Office, UPS Store (50+ NE Ohio franchise owners),
+    # AlphaGraphics, Minuteman Press, Sir Speedy, Allegra Marketing Print Mail;
+    # DISTINCT from distribution centers (shipping facilities) — strip-mall storefronts, not warehouses;
+    # Apollo tags: 'printing services', 'shipping services', 'business services center';
+    # franchise owners sign vendor contracts directly for 1-3 store territories;
+    # first pull: June 8 Cuyahoga (all major FedEx Office + UPS Store locations in Cuyahoga County) (added 2026-05-31 run 151)
+    'printing services', 'business services center', 'print shop', 'shipping center',
+    'copy center', 'ups store franchise', 'business print services', 'print and ship',
 ]
 
 CARLA_SEARCHES = [
