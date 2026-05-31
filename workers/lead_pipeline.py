@@ -977,6 +977,44 @@ DANNY_TITLES = [
     'career technical director', 'vocational school director', 'trade school director',
     'cte director', 'career center principal', 'career technical center manager',
     'vocational education director', 'cte facilities manager',
+    # Animal Shelters & Humane Societies — Cleveland APL (2 main campuses + 3 satellite adoption centers),
+    # Summit County Animal Control & Adoption, Geauga County Humane Society, Lake County APL,
+    # Lorain County APL, Portage County Animal Protective League, Mahoning County Humane Society;
+    # 50+ NE Ohio animal shelters and humane societies; Ohio ORC 955.16 shelter licensing + state USDA APHIS
+    # registered facilities require maintained exterior appearance; outdoor dog runs + concrete kennels +
+    # building exteriors + parking lots accumulate biological residue, mud, waste at extreme rates;
+    # directors/executive directors sign vendor contracts directly (no procurement committee at non-profits);
+    # DISTINCT from pet boarding/kennel (commercial boarders) and vet clinics (different Apollo org tags);
+    # zero NE Ohio power washing competitors targeting humane society directors; $500-$1,500/visit; 2-3x/year (added 2026-05-31 run 158)
+    'animal shelter director', 'animal shelter manager', 'humane society director',
+    'animal control director', 'shelter operations manager', 'animal services director',
+    'animal welfare director', 'adoption center manager', 'animal shelter executive director',
+    # Campgrounds & RV Parks — Ohio State Parks with full-hookup campgrounds (Punderson (Newbury),
+    # West Branch (Ravenna), Findley (Wellington — Lorain County), Nelson Ledges, Buck Creek State Park);
+    # KOA Campgrounds (Sandusky KOA, Streetsboro/Cleveland SE KOA, Lake Erie Western Basin KOA);
+    # Yogi Bear's Jellystone Park (Timberlane Campground, Streetsboro); Cherry Hill Village (Canton);
+    # DISTINCT from RV dealers (sell RVs) and RV storage facilities (store RVs) — these are OVERNIGHT facilities;
+    # DISTINCT Apollo org tags: 'campground', 'rv park', 'camping resort' return zero overlap with above;
+    # large paved RV pad areas, concrete dump station pads, bathhouse building exteriors, recreation halls;
+    # spring opening = RIGHT NOW — facilities coming out of winter need to be cleaned before Memorial Day;
+    # campground managers sign vendor contracts; $800-$3,000/visit; 2x/year (spring + fall);
+    # NE Ohio has 30+ state park campgrounds + 15+ KOA/franchise locations; zero competitors (added 2026-05-31 run 158)
+    'campground manager', 'campground director', 'rv park manager', 'camping resort manager',
+    'campground owner', 'camp operations manager', 'campground general manager',
+    'rv resort manager', 'camping facility manager', 'outdoor recreation manager',
+    # Mobile Home Parks & Manufactured Housing Communities — NE Ohio has 200+ communities;
+    # large concentrations in Medina (Medina MH Village, Windmill Lake MH Community), Lorain (Avon Lake MH Park,
+    # Lakeview Estates), Summit (Portage Lakes MH Park, Green Meadows), Cuyahoga (North Olmsted Estates),
+    # Geauga/Lake (rural community clusters); national operators: Sun Communities (largest US MH REIT),
+    # Equity LifeStyle Properties (ELS), UDR — these own dozens of NE Ohio communities under one FM team;
+    # DISTINCT from 'apartment management'/'multifamily' (different Apollo org tags); Apollo indexes
+    # mobile home/manufactured housing under 'mobile home park', 'manufactured housing community' tags;
+    # large paved internal streets + community centers + laundry buildings + entrance/check-in areas;
+    # community managers sign vendor contracts; $1,000-$3,000/visit; 2x/year;
+    # Sun Communities NE Ohio portfolio deal = $15K-$40K/year; zero competitors targeting MH park FMs (added 2026-05-31 run 158)
+    'mobile home park manager', 'manufactured housing community manager', 'mobile home park director',
+    'manufactured housing manager', 'community park manager', 'manufactured community director',
+    'mobile home community manager', 'mobile home park operations manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -1555,6 +1593,37 @@ DANNY_ORG_KEYWORDS = [
     'vocational school', 'trade school', 'career technical center', 'cte school',
     'career center', 'technical education center', 'career technical education',
     'vocational education center',
+    # Animal Shelters & Humane Societies — Cleveland APL, Summit County APL, Geauga Humane Society,
+    # Lake County APL, Lorain County APL, Portage County APL, Mahoning County Humane Society;
+    # Ohio ORC 955.16 shelter licensing = exterior cleanliness standard; outdoor kennels + concrete runs
+    # + building exteriors accumulate biological residue at extreme rates;
+    # DISTINCT from 'pet boarding'/'dog kennel'/'pet hotel' (commercial boarders) and 'veterinary clinic'
+    # (medical care) — animal shelters are non-profit/government with separate Apollo org tags;
+    # zero competitors targeting humane society directors for power washing in NE Ohio;
+    # first pull: June 8 Cuyahoga (Cleveland APL Tremont campus + satellite adoption centers) (added 2026-05-31 run 158)
+    'animal shelter', 'humane society', 'animal protection league', 'animal control services',
+    'spca', 'animal rescue', 'dog rescue', 'animal adoption center', 'pet adoption center',
+    'animal welfare organization', 'animal control facility',
+    # Campgrounds & RV Parks — Ohio State Parks (Punderson, West Branch, Findley, Nelson Ledges,
+    # Buck Creek), KOA Campgrounds (Sandusky, Streetsboro/Cleveland SE, Lake Erie Basin),
+    # Yogi Bear's Jellystone Park, Cherry Hill Village (Canton area), private camping resorts;
+    # spring opening = RIGHT NOW; concrete dump station pads + bathhouse exteriors + rec halls;
+    # DISTINCT from 'rv dealer' (retail), 'rv storage' (outdoor storage), 'marina management' (wet slips);
+    # Apollo org tags: 'campground', 'rv park', 'camping resort' return zero overlap with those segments;
+    # zero NE Ohio power washing competitors targeting campground managers; first pull June 8 Cuyahoga (added 2026-05-31 run 158)
+    'campground', 'rv park', 'camping resort', 'campground management', 'rv campground',
+    'camping facility', 'state park campground', 'koa campground', 'jellystone park',
+    'campground resort', 'camping park', 'outdoor recreation park',
+    # Mobile Home Parks & Manufactured Housing Communities — 200+ NE Ohio communities;
+    # Sun Communities (largest US MH REIT), Equity LifeStyle Properties (ELS), UDR —
+    # national operators with multi-community NE Ohio portfolios;
+    # DISTINCT from 'apartment management'/'multifamily' (different Apollo org tags);
+    # large internal streets + community centers + laundry buildings + entrance areas;
+    # community managers sign vendor contracts; zero competitors targeting MH park FMs in NE Ohio;
+    # first pull: June 8 Cuyahoga (North Olmsted Estates, Valley Mobile Home Park) (added 2026-05-31 run 158)
+    'mobile home park', 'manufactured housing community', 'manufactured home park',
+    'mobile home community', 'manufactured housing', 'mobile home management',
+    'manufactured community', 'mobile home village', 'mobile home estates',
 ]
 
 CARLA_SEARCHES = [

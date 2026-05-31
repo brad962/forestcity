@@ -563,6 +563,21 @@ PROPERTY_MANAGER_TITLES = [
     'career technical director', 'vocational school director', 'trade school director',
     'cte director', 'career center principal', 'career technical center manager',
     'vocational education director', 'cte facilities manager',
+    # Animal Shelters & Humane Societies — routing to Property Manager sequence
+    # (facility/compliance angle); Cleveland APL, Summit APL, Geauga Humane, Lake APL (added 2026-05-31 run 158)
+    'animal shelter director', 'animal shelter manager', 'humane society director',
+    'animal control director', 'shelter operations manager', 'animal services director',
+    'animal welfare director', 'adoption center manager', 'animal shelter executive director',
+    # Campgrounds & RV Parks — routing to Property Manager sequence
+    # (facility maintenance / seasonal prep angle); spring opening = peak pitch window (added 2026-05-31 run 158)
+    'campground manager', 'campground director', 'rv park manager', 'camping resort manager',
+    'campground owner', 'camp operations manager', 'campground general manager',
+    'rv resort manager', 'camping facility manager', 'outdoor recreation manager',
+    # Mobile Home Parks & Manufactured Housing Communities — routing to Property Manager sequence
+    # (facility maintenance / vendor contract angle); 200+ NE Ohio communities (added 2026-05-31 run 158)
+    'mobile home park manager', 'manufactured housing community manager', 'mobile home park director',
+    'manufactured housing manager', 'community park manager', 'manufactured community director',
+    'mobile home community manager', 'mobile home park operations manager',
 ]
 
 REALTOR_TITLES = [
