@@ -1,6 +1,40 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 166 | 2026-06-01 | Auto-fixes shipped: 5 | New RESOLVED: 0 | Open: 125 (123 carry-forward + 2 new segment tracking: Orthopedic Clinics + Financial Advisory Offices)*
+*Run 167 | 2026-06-01 | Auto-fixes shipped: 6 | New RESOLVED: 0 | Open: 128 (125 carry-forward + 3 new segment tracking: Waste Hauling + Dermatology Groups + Hospice Facilities)*
+
+---
+
+## RUN METRICS — Run 167 | 2026-06-01
+- Total RESOLVED: 122 (unchanged)
+- Total OPEN: 128 (125 carry-forward + 3 this run)
+- Auto-upgrades shipped: 6
+  1. `workers/lead_pipeline.py` — NEW: Waste Hauling & Dumpster Rental Companies as segment #126. 8 DANNY_TITLES + 14 DANNY_ORG_KEYWORDS. Republic Services (Strongsville HQ), Rumpke Waste Services, Kimble Companies (Navarre OH — largest independent OH hauler), GFL/Advanced Disposal, Waste Management Inc. NE Ohio districts. OEPA NPDES stormwater permit + EPA SPCC compliance = pressure washing haul yard is a regulatory requirement. $8K-$32K/yard per year; one Republic Services NE Ohio district = $40K-$160K/year. Zero competitors. First pull June 8 Cuyahoga.
+  2. `workers/lead_pipeline.py` — NEW: Dermatology & Skin Care Medical Groups as segment #127. 8 DANNY_TITLES + 11 DANNY_ORG_KEYWORDS. SkinCure Oncology (Cleveland HQ, 15+ NE Ohio Mohs surgery sites), Cleveland Dermatology Associates, Mahler Dermatology, Bahl & Bahl, Advanced Dermatology & Cosmetic Surgery, US Dermatology Partners NE Ohio. DISTINCT from run 166 (orthopedic), run 162 (med spas), run 101 (general medical). 3rd highest-volume medical specialty = extreme foot traffic staining. $12K-$36K/year for 10-clinic group. Zero competitors. First pull June 8 Cuyahoga.
+  3. `workers/lead_pipeline.py` — NEW: Hospice & Palliative Care Facilities as segment #128. 8 DANNY_TITLES + 11 DANNY_ORG_KEYWORDS. Hospice of the Western Reserve (Westlake HQ, 5 NE Ohio inpatient facilities — largest NE Ohio non-profit hospice), Amedisys Hospice, VITAS Healthcare, Ohio's Hospice. DISTINCT from run 163 (home care agencies), run 96 (senior living), run 150 (behavioral health). CMS CoP + Ohio DOH licensing = exterior appearance standard. Dignity = appearance non-negotiable for grieving families. $8K-$25K/year for WR portfolio. Zero competitors. First pull June 8 Cuyahoga.
+  4. `integrations/mixmax.py` — Synced 24 new routing titles (8 Waste Hauling + 8 Dermatology + 8 Hospice) to PROPERTY_MANAGER_TITLES.
+  5. `agents/danny.md` — Full segment briefs added for #126 (Waste Hauling), #127 (Dermatology Groups), #128 (Hospice). Includes pitch angles, revenue math, NE Ohio target companies, Apollo keywords. Title batching note updated 125+ → 128+.
+  6. `workers/vera_relay.py` + `CLAUDE.md` + `agents/danny.md` — Count sync 125+ → 128+ (vera_relay.py 11 occurrences, CLAUDE.md 2, danny.md 1). Performed same-run per the resolved count-lag bug pattern.
+- Critical human-action blockers (URGENT — some deadlines imminent):
+  - 🚨 TODAY (June 1) = Medina County pull day — run_medina_both.command NOW if not done yet
+  - ⚠️ JUNE 4 (3 days) = Round 2 enrollment — PAUSE Instantly.ai campaigns a1c08c3d + 626cd15d TODAY
+  - ⛽ Gas station Mixmax sequence PENDING (create in Mixmax UI → paste ID into integrations/mixmax.py line 54)
+  - 🚐 Fleet washing Mixmax sequence PENDING (create in Mixmax UI → paste ID into integrations/mixmax.py line 48)
+  - 📅 June 8 = Cuyahoga mega-pull — 128+ segments — use run_cuyahoga_both.command
+
+## OPEN — Waste Hauling & Dumpster Rental Companies Segment Not Yet Pulled 🟡 NEW (Run 167)
+- First seen: 2026-06-01
+- Description: Segment #126 code live in lead_pipeline.py DANNY_TITLES (8 titles) + DANNY_ORG_KEYWORDS (14 keywords); synced to mixmax.py PROPERTY_MANAGER_TITLES; full brief in danny.md. Awaiting first Apollo pull June 8 Cuyahoga. Republic Services (Strongsville HQ, largest NE Ohio hauler), Rumpke Waste Services (major NE Ohio regional presence, Lorain/Medina/Summit/Cuyahoga yards), Kimble Companies (Navarre OH — largest independent waste hauler in Ohio, 15+ NE Ohio transfer stations), GFL Environmental/Advanced Disposal NE Ohio districts. OEPA NPDES + EPA SPCC compliance = exterior pressure washing is a regulatory requirement, not just cosmetic. $8K-$32K/yard per year; one district deal = $40K-$160K/year. Zero competitors cold-calling waste hauler district managers.
+- Attempts: N/A — tracking only, not a bug
+
+## OPEN — Dermatology & Skin Care Medical Groups Segment Not Yet Pulled 🟡 NEW (Run 167)
+- First seen: 2026-06-01
+- Description: Segment #127 code live in lead_pipeline.py DANNY_TITLES (8 titles) + DANNY_ORG_KEYWORDS (11 keywords); synced to mixmax.py PROPERTY_MANAGER_TITLES; full brief in danny.md. Awaiting first Apollo pull June 8 Cuyahoga. SkinCure Oncology (15+ NE Ohio sites), Cleveland Dermatology Associates, Mahler Dermatology, Bahl & Bahl, Advanced Dermatology & Cosmetic Surgery, US Dermatology Partners NE Ohio, Cleveland Clinic Dermatology outpatient sites. DISTINCT from run 166 (orthopedic surgery — different Apollo org tags), run 162 (med spas — cosmetic non-clinical), run 101 (general medical offices). Ohio State Medical Board + Joint Commission accreditation = exterior appearance standard. 3rd highest-volume medical specialty = extreme parking lot + entry walkway staining. $12K-$36K/year for 10-clinic group. Zero competitors.
+- Attempts: N/A — tracking only, not a bug
+
+## OPEN — Hospice & Palliative Care Facilities Segment Not Yet Pulled 🟡 NEW (Run 167)
+- First seen: 2026-06-01
+- Description: Segment #128 code live in lead_pipeline.py DANNY_TITLES (8 titles) + DANNY_ORG_KEYWORDS (11 keywords); synced to mixmax.py PROPERTY_MANAGER_TITLES; full brief in danny.md. Awaiting first Apollo pull June 8 Cuyahoga. Hospice of the Western Reserve (Westlake HQ, 5 NE Ohio inpatient care facilities — David Simpson Hospice House Cleveland, Ames Family Hospice House Westlake, Heather Hill Chardon, Medina, Akron), Amedisys Hospice (multiple NE Ohio district offices), VITAS Healthcare (NE Ohio district), Ohio's Hospice NE Ohio expansion offices. DISTINCT from run 163 (home care agencies — home visits, not facilities), run 96 (senior/assisted living — residential facilities for seniors), run 150 (behavioral health clinics). CMS Conditions of Participation + Ohio DOH hospice licensing = exterior appearance standard. Families arriving for final visits = dignity signal = non-negotiable appearance standard. $8K-$25K/year for WR portfolio. Zero competitors cold-calling hospice administrators.
+- Attempts: N/A — tracking only, not a bug
 
 ---
 

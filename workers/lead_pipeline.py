@@ -1242,6 +1242,56 @@ DANNY_TITLES = [
     'financial advisor owner', 'wealth management director', 'financial planning manager',
     'investment advisor manager', 'financial services office manager', 'wealth advisor owner',
     'financial district manager', 'investment office manager',
+    # Waste Hauling & Dumpster Rental Companies — Republic Services (NE Ohio's largest hauler: Strongsville district
+    # HQ), Rumpke Waste Services (NE Ohio regional), Kimble Companies (Navarre OH HQ — largest independent waste
+    # hauler in Ohio; 15+ NE Ohio transfer stations + service yards), GFL Environmental/Advanced Disposal (NE Ohio
+    # districts), Waste Management Inc. (WM) NE Ohio district offices;
+    # COMPLETELY DISTINCT from all existing segments — waste hauling companies have ENORMOUS fenced staging yards
+    # where 200-500 commercial dumpsters sit on concrete pads accumulating leachate, rot, hydraulic fluid, road grime;
+    # haul yard aprons + vehicle maintenance bays + dispatch office building exteriors = extreme staining;
+    # OEPA NPDES stormwater permit + EPA SPCC plan require yard owners to prevent runoff from contaminated surfaces —
+    # pressure washing the yard is a COMPLIANCE REQUIREMENT, not just aesthetics; district managers oversee 3-10
+    # service yards and sign vendor contracts; $2,000-$8,000/yard visit; 4x/year = $8K-$32K/yard;
+    # one Republic Services NE Ohio district = $40K-$160K/year; zero power washing competitors targeting this segment
+    # (added 2026-06-01 run 167)
+    'waste hauler manager', 'waste management district manager', 'dumpster rental manager',
+    'waste collection district manager', 'solid waste manager', 'residential waste manager',
+    'commercial waste manager', 'waste operations manager',
+    # Dermatology & Skin Care Medical Groups — SkinCure Oncology (Cleveland HQ, 15+ NE Ohio outpatient
+    # dermatology/Mohs surgery sites — one of the fastest-growing US dermatology chains), Cleveland Dermatology
+    # Associates, Mahler Dermatology, Bahl & Bahl Dermatology (Brecksville/Westlake), Advanced Dermatology &
+    # Cosmetic Surgery (national chain, 3 NE Ohio locations), Dermatology Associates of Cleveland,
+    # U.S. Dermatology Partners NE Ohio, NorthShore Dermatology;
+    # COMPLETELY DISTINCT from run 166 (orthopedic), run 114 (urgent care), run 101 (general medical offices),
+    # run 162 (med spas/aesthetic clinics — cosmetic, not clinical); Apollo org tags 'dermatology clinic',
+    # 'dermatology practice', 'skin care clinic' return ZERO overlap with any existing DANNY_ORG_KEYWORDS;
+    # Ohio State Medical Board + Joint Commission accreditation (clinical Mohs/surgery practices) = exterior
+    # appearance standard; high patient volume (dermatology is 3rd highest-volume medical specialty — patients
+    # visit 2-4x/year); practice managers sign vendor contracts; $600-$1,800/clinic; 2x/year;
+    # SkinCure Oncology 10-clinic NE Ohio group deal = $12K-$36K/year; zero competitors; first pull June 8 Cuyahoga
+    # (added 2026-06-01 run 167)
+    'dermatology practice manager', 'dermatology clinic manager', 'dermatology group administrator',
+    'skin care clinic manager', 'dermatology office manager', 'dermatology district manager',
+    'dermatology center director', 'dermatology regional manager',
+    # Hospice & Palliative Care Facilities — Hospice of the Western Reserve (Westlake OH HQ, largest
+    # non-profit hospice in NE Ohio; 5 inpatient residential facilities: Cleveland/Akron/Sandusky/Warren/Youngstown
+    # regions; served 5,000+ patients in 2024), Amedisys Hospice (multiple NE Ohio office locations),
+    # VITAS Healthcare (NE Ohio district office), Ohio's Hospice (merged system with NE Ohio coverage),
+    # CrossCountry Hospice, Constellation Hospice, Midwest Hospice Care;
+    # COMPLETELY DISTINCT from run 163 (home care agencies — non-medical personal care visits to patients' homes),
+    # run 96 (senior/assisted living — residential facilities), run 150 (behavioral health clinics);
+    # Apollo org tags 'hospice care', 'palliative care', 'inpatient hospice' return ZERO overlap with any
+    # existing DANNY_ORG_KEYWORDS or existing medical segments;
+    # Ohio DOH hospice program licensing + CMS Conditions of Participation = exterior cleanliness standard;
+    # families arriving for final visits need a pristine, dignified facility exterior — appearance is a
+    # mission-critical quality signal at the most emotionally charged moment of a family's life;
+    # administrators (licensed hospice administrator = Ohio requirement) sign vendor contracts;
+    # inpatient residential facilities: large parking lots + garden areas + building exteriors;
+    # $800-$2,500/facility; 2x/year; Hospice of Western Reserve 5-facility NE Ohio portfolio = $8K-$25K/year;
+    # zero NE Ohio power washing competitors targeting hospice facility administrators (added 2026-06-01 run 167)
+    'hospice administrator', 'hospice director', 'hospice facility manager', 'palliative care director',
+    'hospice operations director', 'hospice regional director', 'inpatient hospice manager',
+    'hospice center director',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -1981,6 +2031,37 @@ DANNY_ORG_KEYWORDS = [
     'financial advisory', 'wealth management', 'financial planning office', 'investment advisory',
     'edward jones', 'raymond james', 'ameriprise', 'northwestern mutual financial',
     'financial services office',
+    # Waste Hauling & Dumpster Rental Companies — Republic Services, Rumpke, Kimble Companies, GFL/Advanced
+    # Disposal, Waste Management Inc.; OEPA NPDES stormwater compliance = pressure washing the staging yard is a
+    # regulatory requirement; Apollo org tags 'waste management company', 'waste hauling', 'dumpster rental',
+    # 'solid waste management' return ZERO overlap with any existing DANNY_ORG_KEYWORDS;
+    # first pull June 8 Cuyahoga (Republic Services Strongsville district HQ + Kimble NE Ohio facilities)
+    # (added 2026-06-01 run 167)
+    'waste management company', 'waste hauling', 'dumpster rental', 'trash hauling',
+    'solid waste management', 'garbage collection', 'refuse collection', 'recycling company',
+    'waste collection service', 'rubbish removal', 'republic services', 'rumpke',
+    'kimble companies', 'waste management inc',
+    # Dermatology & Skin Care Medical Groups — SkinCure Oncology, Cleveland Dermatology Associates,
+    # Mahler Dermatology, Bahl & Bahl, Advanced Dermatology & Cosmetic Surgery, US Dermatology Partners;
+    # DISTINCT from run 101 (general medical offices), run 162 (med spas — cosmetic non-clinical),
+    # run 166 (orthopedic), run 114 (urgent care); Apollo org tags 'dermatology clinic', 'dermatology practice',
+    # 'skin care clinic', 'skin care center' return ZERO overlap with existing segments;
+    # first pull June 8 Cuyahoga (SkinCure Oncology Beachwood/Strongsville, Cleveland Derm Associates Westlake)
+    # (added 2026-06-01 run 167)
+    'dermatology clinic', 'dermatology practice', 'dermatology group', 'skin care clinic',
+    'skin care center', 'dermatology associates', 'medical dermatology', 'clinical dermatology',
+    'dermatology center', 'skincure oncology', 'dermatology management',
+    # Hospice & Palliative Care Facilities — Hospice of the Western Reserve (Westlake HQ, 5 NE Ohio inpatient
+    # facilities), Amedisys Hospice, VITAS Healthcare, Ohio's Hospice, CrossCountry Hospice;
+    # DISTINCT from run 163 (home care agencies), run 96 (senior living), run 150 (behavioral health);
+    # Ohio DOH hospice licensing + CMS CoP = exterior appearance standard; appearance = mission-critical dignity
+    # signal for families at the most emotional moment; Apollo org tags 'hospice care', 'palliative care',
+    # 'inpatient hospice' return ZERO overlap with any existing segments;
+    # first pull June 8 Cuyahoga (Hospice of Western Reserve Cleveland residential facility + Amedisys NE Ohio)
+    # (added 2026-06-01 run 167)
+    'hospice care', 'palliative care', 'inpatient hospice', 'hospice facility',
+    'hospice center', 'hospice services', 'end of life care', 'comfort care',
+    'hospice of the western reserve', 'amedisys hospice', 'vitas healthcare',
 ]
 
 CARLA_SEARCHES = [

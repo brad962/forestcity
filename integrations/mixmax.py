@@ -685,6 +685,21 @@ PROPERTY_MANAGER_TITLES = [
     'financial advisor owner', 'wealth management director', 'financial planning manager',
     'investment advisor manager', 'financial services office manager', 'wealth advisor owner',
     'financial district manager', 'investment office manager',
+    # Waste Hauling & Dumpster Rental Companies — routing to property_manager sequence
+    # (vendor contract / facility compliance angle) (added 2026-06-01 run 167)
+    'waste hauler manager', 'waste management district manager', 'dumpster rental manager',
+    'waste collection district manager', 'solid waste manager', 'waste operations manager',
+    'commercial waste manager', 'residential waste manager',
+    # Dermatology & Skin Care Medical Groups — routing to property_manager sequence
+    # (facility management / compliance angle) (added 2026-06-01 run 167)
+    'dermatology practice manager', 'dermatology clinic manager', 'dermatology group administrator',
+    'skin care clinic manager', 'dermatology office manager', 'dermatology district manager',
+    'dermatology center director', 'dermatology regional manager',
+    # Hospice & Palliative Care Facilities — routing to property_manager sequence
+    # (facility management / compliance angle) (added 2026-06-01 run 167)
+    'hospice administrator', 'hospice director', 'hospice facility manager', 'palliative care director',
+    'hospice operations director', 'hospice regional director', 'inpatient hospice manager',
+    'hospice center director',
 ]
 
 REALTOR_TITLES = [
