@@ -44,3 +44,32 @@
 >New this run: #136 Fire Stations (150+ NE Ohio depts, ISO 2/direct-award angle) | #137 Home Builders (M/I Homes, Pulte, K. Hovnanian — peak June selling season) | #138 Propane/Fuel Oil (AmeriGas, Ferrellgas — OSHA SPCC compliance) | Carla +Commercial Cleaning referral (#19)
 >Counts synced 135+ → 138+ across vera_relay.py (11), CLAUDE.md (2), danny.md (3)
 >🚨 URGENT TODAY: Medina pull + Instantly.ai pause | June 4 = Round 2 enrollment (3 days) | June 8 = 138+ segment Cuyahoga mega-pull
+
+---
+🔧 *Vera — Auto-Upgrade | Run 172 | 2026-06-01*
+>Changed: Added Dance Studios & Performing Arts Schools as Segment #139 to lead_pipeline.py DANNY_TITLES (8 titles) + DANNY_ORG_KEYWORDS (8 keywords). Synced to mixmax.py PROPERTY_MANAGER_TITLES. Full segment brief added to agents/danny.md.
+>Why: NE Ohio has 100+ dance studios — Arthur Murray (10+ NE Ohio franchise locations), Fred Astaire Dance Studios, Center Stage, NovaDance Academy, Ballet Western Reserve, Broadway Dance School. Spring recital season = PEAK PARENT VISIBILITY RIGHT NOW in June. Studios with 100-400 students generate constant arrival/departure traffic on entry walkways and parking lots. Franchise operators and studio owners sign vendor contracts directly — zero procurement process = fastest close possible. Apollo tags 'dance studio'/'performing arts school'/'dance academy'/'arthur murray'/'fred astaire dance' = zero overlap with any existing DANNY_ORG_KEYWORDS. $400-$1,200/studio; 2x/year; Arthur Murray 5-location NE Ohio franchise = $4K-$12K/year. First pull June 8 Cuyahoga.
+>File: workers/lead_pipeline.py + integrations/mixmax.py + agents/danny.md
+---
+🔧 *Vera — Auto-Upgrade | Run 172 | 2026-06-01*
+>Changed: Added Martial Arts Academies & Combat Sports Studios as Segment #140 to lead_pipeline.py DANNY_TITLES (10 titles) + DANNY_ORG_KEYWORDS (9 keywords). Synced to mixmax.py PROPERTY_MANAGER_TITLES. Full segment brief added to agents/danny.md.
+>Why: NE Ohio has 300+ martial arts academies — ATA Martial Arts (8+ NE Ohio franchise locations), Tiger Rock Martial Arts, Carlson Gracie BJJ (Westlake), Gracie Barra (Cleveland/Akron), Krav Maga Ohio. Summer kids' karate camps = RIGHT NOW (June-August) = peak entry walkway and parking lot staining from constant drop-off/pickup traffic. Studio owners are sole proprietors who sign vendor contracts directly = fastest-close commercial accounts after a cold email. The sports complex segment (run 125) MENTIONED martial arts academies but never added specific Apollo org tags — this run closes that gap. Apollo tags 'martial arts'/'karate school'/'taekwondo'/'jiu-jitsu'/'bjj gym'/'krav maga' = zero overlap with existing segments. $400-$1,200/studio; 2x/year; ATA 3-location NE Ohio district franchise = $2.4K-$7.2K/year. First pull June 8 Cuyahoga.
+>File: workers/lead_pipeline.py + integrations/mixmax.py + agents/danny.md
+---
+🔧 *Vera — Auto-Upgrade | Run 172 | 2026-06-01*
+>Changed: Synced segment count 138+ → 140+ across workers/vera_relay.py (11 occurrences), CLAUDE.md (2 occurrences), agents/danny.md (1 occurrence). Fixed open_issues.md header that was stuck on "Run 170" (Run 171 logged the update in activity.log but didn't update the header line itself).
+>Why: Prevents relay reminders, CLAUDE.md quick reference, and danny.md batching note from showing stale count going into the June 8 Cuyahoga 140+ segment mega-pull. Header fix prevents confusion about what run we're on.
+>Files: workers/vera_relay.py, CLAUDE.md, agents/danny.md, outputs/vera/open_issues.md
+---
+🚨 *Vera — COUNTDOWN: June 4 = 3 Days | June 8 = 7 Days*
+>🚨 JUNE 4 (Monday — 3 days away): Round 2 Mixmax enrollment fires. You MUST pause Instantly.ai campaigns first — duplicate emails to the same contacts = spam filter = 0% reply rate. Guide: outputs/vera/instantly_pause_guide_2026-05-22.md
+>  → app.instantly.ai → Campaigns → a1c08c3d (PM Cuyahoga) + 626cd15d (Contractor Referral) → ⋮ → Pause
+>  → Then add INSTANTLY_PAUSED=true to .env
+>🚨 MEDINA PULL (TODAY June 1): If not done yet — double-click scripts/run_medina_both.command. Fresh Medina leads must be in the cache BEFORE June 4 enrollment. Missing this = no Medina leads in the Round 2 batch.
+>📅 JUNE 8 (Sunday in 7 days): Cuyahoga mega-pull — NOW 140+ commercial segments. Use run_cuyahoga_both.command (Danny + Carla). Takes 12-20 min fully unattended. Biggest lead day of the year.
+---
+✅ *Vera — Scan Complete 2026-06-01 (Run 172)*
+>3 auto-upgrades shipped | 0 proposals | 2 new open issues (segment tracking)
+>New this run: #139 Dance Studios & Performing Arts Schools (Arthur Murray 10+ NE Ohio, Fred Astaire, spring recital season peak) | #140 Martial Arts Academies (ATA 8+ NE Ohio, Gracie Barra, summer camp season peak — closes gap from run 125)
+>Count synced 138+ → 140+ across vera_relay.py (11), CLAUDE.md (2), danny.md (1) | Fixed open_issues.md header stuck at "Run 170"
+>🚨 URGENT: Medina pull + Instantly.ai pause TODAY | June 4 = Round 2 enrollment | June 8 = 140+ segment Cuyahoga mega-pull

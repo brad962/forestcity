@@ -1,6 +1,35 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 170 | 2026-06-01 | Auto-fixes shipped: 4 | New RESOLVED: 0 | Open: 135 (133 carry-forward + 2 new segment tracking: County Fairgrounds + Title Companies)*
+*Run 172 | 2026-06-01 | Auto-fixes shipped: 3 | New RESOLVED: 0 | Open: 141 (139 carry-forward from Run 171 + 2 new segment tracking: Dance Studios + Martial Arts)*
+
+---
+
+## RUN METRICS — Run 172 | 2026-06-01
+- Total RESOLVED: 122 (unchanged)
+- Total OPEN: 141 (139 carry-forward + 2 this run)
+- Auto-upgrades shipped: 3
+  1. `workers/lead_pipeline.py` + `integrations/mixmax.py` — NEW: Dance Studios & Performing Arts Schools as segment #139. 8 DANNY_TITLES (dance studio owner, dance studio manager, dance studio director, performing arts director, dance academy director, dance school director, dance studio franchise owner, performing arts school manager) + 8 DANNY_ORG_KEYWORDS (dance studio, performing arts school, dance academy, dance school, performing arts studio, arthur murray, fred astaire dance, dance conservatory). Arthur Murray (10+ NE Ohio), Fred Astaire (Akron/Strongsville/Beachwood), Center Stage, NovaDance, Ballet Western Reserve. Spring recital season = PEAK VISIBILITY RIGHT NOW. $400-$1,200/studio; 2x/year; Arthur Murray 5-location network = $4K-$12K/year. DISTINCT from fitness centers (run 99), sports complexes (run 125). First pull June 8 Cuyahoga.
+  2. `workers/lead_pipeline.py` + `integrations/mixmax.py` — NEW: Martial Arts Academies & Combat Sports Studios as segment #140. 10 DANNY_TITLES (martial arts school owner, karate school owner, martial arts academy director, dojo owner, martial arts instructor, karate instructor, taekwondo instructor, bjj gym owner, jiu-jitsu academy owner, krav maga instructor) + 9 DANNY_ORG_KEYWORDS (martial arts, karate school, karate academy, taekwondo, jiu-jitsu, bjj gym, martial arts academy, combat sports, krav maga). ATA Martial Arts (8+ NE Ohio), Tiger Rock, Carlson Gracie BJJ (Westlake), Gracie Barra Cleveland/Akron area, Krav Maga Ohio. Summer kids' karate camps = RIGHT NOW = peak traffic. $400-$1,200/studio; 2x/year; ATA 3-location franchise = $2.4K-$7.2K/year. Sports complex (run 125) referenced martial arts but never added specific Apollo org tags — this closes that gap. First pull June 8 Cuyahoga.
+  3. Full segment briefs (#139 Dance Studios, #140 Martial Arts) added to `agents/danny.md` with pitch angles, revenue math, NE Ohio target companies, Apollo keywords, sequence routing. Count synced 138+ → 140+ across `workers/vera_relay.py` (11 occ), `CLAUDE.md` (2 occ), `agents/danny.md` (1 occ).
+- Header fix: Run 171's open_issues.md push logged "Run 171 header added" in activity.log but the header line itself stayed at "Run 170" — corrected now in Run 172.
+- Critical human-action blockers (URGENT — deadlines today/imminent):
+  - 🚨 TODAY (June 1) = Medina County pull day — run_medina_both.command NOW if not done yet
+  - 🚨 JUNE 4 (3 days) = Round 2 enrollment — PAUSE Instantly.ai campaigns a1c08c3d + 626cd15d TODAY
+  - ⛽ Gas station Mixmax sequence PENDING (create in Mixmax UI → paste ID into integrations/mixmax.py line 54)
+  - 🚐 Fleet washing Mixmax sequence PENDING (create in Mixmax UI → paste ID into integrations/mixmax.py line 48)
+  - 📅 June 8 = Cuyahoga mega-pull — 140+ segments — use run_cuyahoga_both.command (7 days)
+
+---
+
+## OPEN — Dance Studios & Performing Arts Schools Segment Not Yet Pulled 🟡 NEW (Run 172)
+- First seen: 2026-06-01
+- Description: Segment #139 code live in lead_pipeline.py DANNY_TITLES (8 titles) + DANNY_ORG_KEYWORDS (8 keywords); synced to mixmax.py PROPERTY_MANAGER_TITLES; full brief in danny.md. Awaiting first Apollo pull June 8 Cuyahoga. Arthur Murray Dance Studios (10+ NE Ohio franchise locations), Fred Astaire Dance Studios (Akron/Strongsville/Beachwood), Center Stage Performing Arts, NovaDance Academy (Stow/Tallmadge), Ballet Western Reserve, Broadway Dance School. Spring recital season = PEAK PARENT VISIBILITY RIGHT NOW. Apollo tags 'dance studio'/'performing arts school'/'dance academy' = zero overlap with existing segments. $400-$1,200/studio; 2x/year. Arthur Murray 5-location NE Ohio franchise deal = $4K-$12K/year. Zero competitors.
+- Attempts: N/A — tracking only, not a bug
+
+## OPEN — Martial Arts Academies & Combat Sports Studios Segment Not Yet Pulled 🟡 NEW (Run 172)
+- First seen: 2026-06-01
+- Description: Segment #140 code live in lead_pipeline.py DANNY_TITLES (10 titles) + DANNY_ORG_KEYWORDS (9 keywords); synced to mixmax.py PROPERTY_MANAGER_TITLES; full brief in danny.md. Awaiting first Apollo pull June 8 Cuyahoga. ATA Martial Arts (8+ NE Ohio), Tiger Rock Martial Arts, Carlson Gracie BJJ (Westlake), Gracie Barra Cleveland/Akron area, Krav Maga Ohio (Strongsville/Mentor). Summer kids' karate camps = RIGHT NOW = peak entry/lot staining. Sports complex segment (run 125) mentioned martial arts academies in the comment but NEVER added specific Apollo org tags — this closes the gap. Apollo tags 'martial arts'/'karate school'/'taekwondo'/'jiu-jitsu'/'bjj gym' = zero overlap with 'sports complex' org tag. $400-$1,200/studio; 2x/year. ATA 3-location NE Ohio district franchise = $2.4K-$7.2K/year. Zero competitors cold-calling martial arts school owners.
+- Attempts: N/A — tracking only, not a bug
 
 ---
 

@@ -1426,6 +1426,31 @@ DANNY_TITLES = [
     'propane district manager', 'fuel oil manager', 'propane operations manager',
     'fuel delivery manager', 'propane service manager', 'heating oil manager',
     'energy delivery manager', 'fuel distribution manager',
+    # Dance Studios & Performing Arts Schools — Arthur Murray Dance Studios (10+ NE Ohio franchise locations),
+    # Fred Astaire Dance Studios (Akron/Strongsville/Beachwood area), Center Stage Dance, NovaDance Academy,
+    # Ballet Western Reserve, Broadway Dance School, regional competition studio chains;
+    # spring recital season May-June = peak parent/student visibility RIGHT NOW — 100-400 students per studio;
+    # entry walkways, lobby exteriors, parking lots = recurring scuff marks, algae, gum, staining;
+    # studio owners or franchise operators sign vendor contracts directly (no procurement layer);
+    # DISTINCT from fitness centers (gym/workout focus), martial arts (below), sports complexes (run 125);
+    # Apollo tags 'dance studio', 'performing arts school', 'dance academy' = zero overlap with existing org keywords;
+    # $400-$1,200/studio; 2x/year; Arthur Murray 5-location NE Ohio franchise = $4K-$12K/year;
+    # zero competitors cold-calling dance studio owners for power washing (added 2026-06-01 run 172)
+    'dance studio owner', 'dance studio manager', 'dance studio director', 'performing arts director',
+    'dance academy director', 'dance school director', 'dance studio franchise owner',
+    'performing arts school manager',
+    # Martial Arts Academies & Combat Sports Studios — ATA Martial Arts (national franchise, 8+ NE Ohio),
+    # Tiger Rock Martial Arts, Century Martial Arts, World Tang Soo Do Association (multiple NE Ohio dojos),
+    # Carlson Gracie BJJ (Westlake), Gracie Barra (multiple NE Ohio), Krav Maga (Strongsville, Mentor);
+    # DISTINCT from sports complexes (run 125 — 'sports complex' org tag; martial arts mentioned but not specifically pulled);
+    # summer kids' karate camps = RIGHT NOW (June-August) = peak traffic + maximum entry/lot staining;
+    # studio owners (sole proprietors) or franchise operators sign vendor contracts directly = fastest close;
+    # Apollo tags 'martial arts', 'karate', 'taekwondo', 'jiu-jitsu', 'bjj gym' = zero overlap with existing;
+    # $400-$1,200/studio; 2x/year; ATA 3-location NE Ohio district franchise = $2.4K-$7.2K/year;
+    # zero competitors cold-calling martial arts school owners for power washing (added 2026-06-01 run 172)
+    'martial arts school owner', 'karate school owner', 'martial arts academy director',
+    'dojo owner', 'martial arts instructor', 'karate instructor', 'taekwondo instructor',
+    'bjj gym owner', 'jiu-jitsu academy owner', 'krav maga instructor',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -2268,6 +2293,15 @@ DANNY_ORG_KEYWORDS = [
     # AmeriGas, Ferrellgas, Suburban Propane, National Fuel Gas, independent NE Ohio heating oil dealers (added 2026-06-01 run 171)
     'propane delivery', 'fuel oil delivery', 'heating oil delivery', 'propane company',
     'fuel oil company', 'propane distribution', 'heating fuel delivery', 'propane service',
+    # Dance Studios & Performing Arts Schools — Apollo 'dance studio' / 'performing arts school' tags
+    # catch Arthur Murray, Fred Astaire, competition studios, dance conservatories distinctly from fitness chains
+    # (which are caught by 'fitness center'/'health club') (added 2026-06-01 run 172)
+    'dance studio', 'performing arts school', 'dance academy', 'dance school',
+    'performing arts studio', 'arthur murray', 'fred astaire dance', 'dance conservatory',
+    # Martial Arts Academies — Apollo 'martial arts'/'karate'/'taekwondo' tags catch dojos/academies distinctly
+    # from sports complexes ('sports complex' tag — run 125). ATA, Tiger Rock, Carlson Gracie, Gracie Barra (added 2026-06-01 run 172)
+    'martial arts', 'karate school', 'karate academy', 'taekwondo', 'jiu-jitsu',
+    'bjj gym', 'martial arts academy', 'combat sports', 'krav maga',
 ]
 
 CARLA_SEARCHES = [

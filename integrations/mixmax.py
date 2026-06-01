@@ -755,6 +755,14 @@ PROPERTY_MANAGER_TITLES = [
     'propane district manager', 'fuel oil manager', 'propane operations manager',
     'fuel delivery manager', 'propane service manager', 'heating oil manager',
     'energy delivery manager', 'fuel distribution manager',
+    # Dance Studios & Performing Arts Schools (added 2026-06-01 run 172)
+    'dance studio owner', 'dance studio manager', 'dance studio director', 'performing arts director',
+    'dance academy director', 'dance school director', 'dance studio franchise owner',
+    'performing arts school manager',
+    # Martial Arts Academies & Combat Sports Studios (added 2026-06-01 run 172)
+    'martial arts school owner', 'karate school owner', 'martial arts academy director',
+    'dojo owner', 'martial arts instructor', 'karate instructor', 'taekwondo instructor',
+    'bjj gym owner', 'jiu-jitsu academy owner', 'krav maga instructor',
 ]
 
 REALTOR_TITLES = [
