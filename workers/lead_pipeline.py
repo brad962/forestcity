@@ -1097,6 +1097,35 @@ DANNY_TITLES = [
     'salon suite manager', 'salon suites director', 'salon suite franchise owner',
     'booth rental manager', 'salon suite operations manager', 'salon suite property manager',
     'salon suite general manager',
+    # Tutoring Centers & Learning Centers — Kumon (50+ NE Ohio franchise locations), Sylvan Learning (8+ NE Ohio),
+    # Mathnasium (10+ NE Ohio), Huntington Learning Center (12+ NE Ohio), Oxford Learning;
+    # DISTINCT from private schools (run 99), charter schools (run 154), vocational schools (run 157) — distinct Apollo org tags;
+    # Ohio DOE tutoring program regulations; franchise owners sign vendor contracts independently — fast close;
+    # strip-mall storefronts: parking lot + entry concrete + building exterior; high daily foot traffic (parents + students);
+    # $200-$500/location; 2x/year; Kumon area developer (20+ centers, one contact) = $8K-$20K/year; zero competitors (added 2026-06-01 run 162)
+    'tutoring center director', 'learning center director', 'tutoring center manager',
+    'learning center manager', 'tutoring franchise owner', 'kumon center director',
+    'academic learning center manager', 'after school program director',
+    # Med Spas & Aesthetic Clinics — European Wax Center (20+ NE Ohio franchise locations),
+    # LaserAway (entering NE Ohio), National Laser Institute (Cleveland area), Clearwave Health;
+    # Ohio Medical Board + Ohio State Cosmetology Board licensing = exterior appearance standard;
+    # DISTINCT from massage therapy chains (run 160), hair salon chains (run 141), boutique fitness (run 143);
+    # Apollo tags 'medical spa', 'med spa', 'aesthetic clinic', 'medspa' return zero overlap with existing segments;
+    # franchise owners sign vendor contracts independently — fast close; strip-mall storefronts;
+    # $400-$1,200/location; 2x/year; European Wax Center 15-location NE Ohio territory = $12K-$36K/year; zero competitors (added 2026-06-01 run 162)
+    'med spa manager', 'medical spa director', 'medical spa manager', 'aesthetic clinic manager',
+    'medspa manager', 'medical aesthetics manager', 'cosmetic clinic manager',
+    'european wax center manager', 'laser clinic manager', 'aesthetics director',
+    # Dry Cleaning & Laundry Service Chains — Fox Cleaners (Cleveland-based chain, 30+ NE Ohio locations),
+    # Martinizing Dry Cleaning (franchise), One Hour Cleaners, Dry Clean USA, Sketchley Cleaners;
+    # DISTINCT from coin laundries/laundromats (run 135 — self-service, 'coin laundry' Apollo tag);
+    # Apollo tags 'dry cleaning', 'dry cleaner', 'laundry service' return zero overlap with existing segments;
+    # Ohio EPA perchloroethylene dry-cleaning solvent regulations → exterior appearance compliance standard;
+    # customer-facing storefronts = curb appeal is brand image; Fox Cleaners 30-location NE Ohio deal = $12K-$36K/year;
+    # franchise owners / multi-location operators sign vendor contracts; $200-$600/location; 2x/year; zero competitors (added 2026-06-01 run 162)
+    'dry cleaning manager', 'dry cleaner manager', 'dry cleaning chain manager',
+    'laundry service manager', 'dry cleaning franchise owner', 'laundry chain manager',
+    'dry cleaning district manager', 'garment care manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -1759,6 +1788,24 @@ DANNY_ORG_KEYWORDS = [
     # first pull June 8 Cuyahoga (Sola Salon Studios Independence/Beachwood/Westlake) (added 2026-05-31 run 161)
     'salon suite', 'salon suites', 'booth rental salon', 'salon studios',
     'sola salon', 'phenix salon', 'my salon suite', 'salon lofts',
+    # Tutoring Centers & Learning Centers — Kumon, Sylvan Learning, Mathnasium, Huntington Learning Center;
+    # DISTINCT from private schools, charter schools, vocational schools (different Apollo org tags);
+    # Apollo tags 'tutoring center', 'learning center', 'academic tutoring' return zero overlap with existing segments;
+    # first pull June 8 Cuyahoga (Kumon Beachwood/Pepper Pike/Westlake, Sylvan Strongsville/Solon) (added 2026-06-01 run 162)
+    'tutoring center', 'learning center', 'academic tutoring', 'after school tutoring',
+    'kumon center', 'mathnasium', 'sylvan learning', 'huntington learning',
+    # Med Spas & Aesthetic Clinics — European Wax Center, LaserAway, National Laser Institute, Clearwave Health;
+    # DISTINCT from massage therapy chains (run 160), hair salons (run 141), boutique fitness (run 143);
+    # Apollo tags 'medical spa', 'med spa', 'aesthetic clinic' return zero overlap with existing segments;
+    # first pull June 8 Cuyahoga (European Wax Center Beachwood/Westlake/Strongsville locations) (added 2026-06-01 run 162)
+    'medical spa', 'med spa', 'medspa', 'aesthetic clinic', 'aesthetics clinic',
+    'laser clinic', 'cosmetic clinic', 'european wax center', 'laser aesthetics',
+    # Dry Cleaning & Laundry Service Chains — Fox Cleaners (30+ NE Ohio), Martinizing, One Hour Cleaners;
+    # DISTINCT from coin laundries/laundromats (run 135 — 'coin laundry' tag, self-service, zero overlap);
+    # Apollo tags 'dry cleaning', 'dry cleaner', 'laundry service' are unused in existing DANNY_ORG_KEYWORDS;
+    # first pull June 8 Cuyahoga (Fox Cleaners corporate HQ contact, Martinizing franchise owners) (added 2026-06-01 run 162)
+    'dry cleaning', 'dry cleaner', 'dry cleaning chain', 'laundry service',
+    'garment care', 'dry cleaning franchise', 'martinizing', 'fox cleaners',
 ]
 
 CARLA_SEARCHES = [

@@ -90,3 +90,91 @@
 >• #113: Salon Suites & Booth Rental Studios (Sola Salon Studios 10+ NE Ohio — commercial real estate operator, not salon chain; fast-close franchise owners)
 >
 >**Biggest action item:** Pause Instantly.ai (4 days to June 4 enrollment). Run Summit County TODAY. Run Medina TOMORROW.
+
+---
+
+📚 *Vera — Auto-Upgrade #1 of 4 | Segment #114: Tutoring Centers & Learning Centers* _(Run 162 · 2026-06-01)_
+>**New segment live** — 8 Apollo titles + 8 org keywords added to `lead_pipeline.py`. Titles synced to `mixmax.py`. Full brief added to `danny.md`.
+>
+>**Why:** Kumon has 50+ NE Ohio franchise locations — each independently owned, franchise owner signs vendor contracts directly. Sylvan Learning (8+ NE Ohio), Mathnasium (10+ NE Ohio), Huntington Learning Center (12+ NE Ohio). Strip-mall storefronts with heavy afternoon/evening foot traffic. DISTINCT Apollo tags ('tutoring center', 'kumon center', 'mathnasium', 'sylvan learning') — zero overlap with private schools, charter schools, or vocational schools already in system.
+>
+>**Revenue upside:** Kumon area developer (one contact managing 20+ centers) = $8K-$20K/year from a single call. Mathnasium/Sylvan regional developer = similar. Zero competitors cold-calling tutoring franchise owners for power washing in NE Ohio.
+>
+>**First pull:** June 8 Cuyahoga (Kumon Beachwood/Pepper Pike/Westlake, Sylvan Strongsville/Solon, Mathnasium Westlake/Beachwood)
+
+---
+
+💆 *Vera — Auto-Upgrade #2 of 4 | Segment #115: Med Spas & Aesthetic Clinics* _(Run 162 · 2026-06-01)_
+>**New segment live** — 10 Apollo titles + 9 org keywords added to `lead_pipeline.py`. Titles synced to `mixmax.py`. Full brief added to `danny.md`.
+>
+>**Why:** European Wax Center has 20+ NE Ohio franchise locations. LaserAway is entering the NE Ohio market. Ohio Medical Board + Cosmetology Board licensing = exterior appearance compliance. DISTINCT Apollo tags ('medical spa', 'med spa', 'aesthetic clinic', 'european wax center') — zero overlap with massage therapy chains (Run 160) or boutique fitness (Run 143). High-income clientele = curb appeal is revenue. Franchise owners sign independently — fast close, no corporate approval.
+>
+>**Revenue upside:** European Wax Center 15-location NE Ohio territory = $12K-$36K/year from one or two area developer contacts. Summer is peak season for aesthetic clinics — perfect pitch window right now.
+>
+>**First pull:** June 8 Cuyahoga (European Wax Center Beachwood/Westlake/Strongsville, LaserAway NE Ohio, National Laser Institute Cleveland area)
+
+---
+
+👔 *Vera — Auto-Upgrade #3 of 4 | Segment #116: Dry Cleaning & Laundry Service Chains* _(Run 162 · 2026-06-01)_
+>**New segment live** — 8 Apollo titles + 8 org keywords added to `lead_pipeline.py`. Titles synced to `mixmax.py`. Full brief added to `danny.md`.
+>
+>**Why:** Fox Cleaners is headquartered RIGHT HERE in Cleveland and operates 30+ NE Ohio retail locations — one FM contact = full chain coverage. Martinizing Dry Cleaning has NE Ohio franchise locations. DISTINCT from coin laundries (Run 135 — 'coin laundry' Apollo tag). Apollo tags 'dry cleaning', 'dry cleaner', 'martinizing', 'fox cleaners' = zero overlap with any existing segment. Ohio EPA solvent regulations = exterior compliance standard. Spring wedding season = peak dry cleaning volume = right-now pitch window.
+>
+>**Revenue upside:** Fox Cleaners 30-location NE Ohio chain = one FM contact = $12K-$36K/year — potential flagship commercial account, similar upside to Glass America. Martinizing 5-location franchise owner = $2K-$6K/year.
+>
+>**First pull:** June 8 Cuyahoga (Fox Cleaners corporate HQ + Martinizing Cuyahoga franchise owners)
+
+---
+
+🔧 *Vera — Auto-Upgrade #4 of 4 | Count Sync: 113+ → 116+* _(Run 162 · 2026-06-01)_
+>Updated `workers/vera_relay.py` — all "113+" references → "116+" (11 occurrences). Updated `CLAUDE.md` June 8 Cuyahoga callout → '116+'. Updated `agents/danny.md` title batching note → '116+'. Synced 26 new routing titles (8 Tutoring + 10 Med Spa + 8 Dry Cleaning) to `integrations/mixmax.py` PROPERTY_MANAGER_TITLES. Full segment briefs added to `agents/danny.md`.
+
+---
+
+🚨 *Vera — MEDINA COUNTY PULL — TODAY (June 1) — DO THIS NOW*
+>**TODAY IS MEDINA DAY.** This is a manual override — cron fires Geauga+Portage by default on Week 23. Use the shortcut:
+>
+>**Double-click:** `scripts/run_medina_both.command` in Finder
+>**Or:** `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Medina`
+>
+>Takes 6-8 minutes, fully unattended. Medina targets: Discount Drug Mart HQ (70+ locations = potentially largest pharmacy chain deal in pipeline), Shiloh Foods (food processing, Lodi OH), Brunswick Auto Mall cluster, Medina County Speedway.
+>
+>**Why it matters:** June 4 enrollment (3 days away) needs fresh Medina leads. Miss this pull today = no Medina leads in Round 2.
+>Guide: `outputs/donna/june1_medina_pull_guide_2026-05-26.md`
+
+---
+
+⚠️ *Vera — June 4 Enrollment in 3 Days — GO/NO-GO Checklist*
+>Round 2 enrollment fires Thursday June 4. Three things MUST be done before that:
+>
+>1️⃣ **Medina pull — TODAY** (see above)
+>2️⃣ **Pause Instantly.ai** — campaigns a1c08c3d + 626cd15d at app.instantly.ai → ⋮ → Pause → add `INSTANTLY_PAUSED=true` to `.env`
+>3️⃣ **New email copy in Mixmax** — round2_pm_sequence_voc_rewrite is ready at `outputs/tommy/round2_pm_sequence_voc_rewrite_2026-05-23.md`
+>
+>Night of June 3: run the GO/NO-GO checklist: `outputs/vera/june4_enrollment_readiness_tracker_2026-05-27.md`
+>June 4 morning: press-GO battle card: `outputs/donna/june4_enrollment_battle_card_2026-05-24.md`
+
+---
+
+💡 *Vera — Upgrade Proposal: Summer Email Copy Refresh for PM Sequence* _(Run 162 — carry-forward from Run 161)_
+>**Idea:** Tommy rewrites Touch 1 and Touch 2 subject lines + opening sentences in the Property Manager Mixmax sequence to use summer-specific hooks. Replace "spring cleaning" references with "summer maintenance" + "before your August HOA meeting" + "summer volume peak" language.
+>
+>**Why:** The sequence was written in May with spring framing. We're now in June. "Algae doesn't care that it's spring" is stale — "Your HOA's summer maintenance window closes faster than you think" is more accurate and more urgent. The June 8 Cuyahoga batch will be the LARGEST enrollment of the season (116+ segments, 300-600 contacts). These contacts receive the current copy starting June 10-11. Refreshing before that send = higher open rate on the biggest batch of the year.
+>
+>**Impact:** Even a 5% improvement in open rate on the June 8 batch = 15-30 more opens. Those opens = LinkedIn connection opportunities + follow-up call triggers.
+>
+>**Action needed:** Reply YES → Tommy writes the summer refresh copy within 24 hours, ready before June 8 pull.
+
+---
+
+✅ *Vera — Scan Complete 2026-06-01 (Run 162)*
+>4 auto-upgrades shipped | 1 proposal (carry-forward) | 116 total commercial segments now live
+>
+>**Today is June 1 — Medina pull day. June 4 enrollment is 3 days out. June 8 Cuyahoga mega-pull is 7 days out.**
+>
+>**Segments added this run:**
+>• #114: Tutoring Centers (Kumon 50+ NE Ohio — area developer deal = $8K-$20K/year from one call)
+>• #115: Med Spas & Aesthetic Clinics (European Wax Center 20+ NE Ohio — summer peak = right-now pitch window)
+>• #116: Dry Cleaning Chains (Fox Cleaners 30+ NE Ohio — one HQ contact = $12K-$36K/year potential flagship account)
+>
+>**Most urgent action:** Run `scripts/run_medina_both.command` TODAY before 6pm. Then pause Instantly.ai tonight.

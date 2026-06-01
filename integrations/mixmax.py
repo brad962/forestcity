@@ -618,6 +618,22 @@ PROPERTY_MANAGER_TITLES = [
     'salon suite manager', 'salon suites director', 'salon suite franchise owner',
     'booth rental manager', 'salon suite operations manager', 'salon suite property manager',
     'salon suite general manager',
+    # Tutoring Centers & Learning Centers — Kumon (50+ NE Ohio), Sylvan, Mathnasium, Huntington Learning;
+    # franchise owners sign independently; routing to property_manager sequence (added 2026-06-01 run 162)
+    'tutoring center director', 'learning center director', 'tutoring center manager',
+    'learning center manager', 'tutoring franchise owner', 'kumon center director',
+    'academic learning center manager', 'after school program director',
+    # Med Spas & Aesthetic Clinics — European Wax Center (20+ NE Ohio), LaserAway, National Laser Institute;
+    # franchise owners sign independently; routing to property_manager sequence (added 2026-06-01 run 162)
+    'med spa manager', 'medical spa director', 'medical spa manager', 'aesthetic clinic manager',
+    'medspa manager', 'medical aesthetics manager', 'cosmetic clinic manager',
+    'european wax center manager', 'laser clinic manager', 'aesthetics director',
+    # Dry Cleaning & Laundry Service Chains — Fox Cleaners (30+ NE Ohio), Martinizing, One Hour Cleaners;
+    # DISTINCT from coin laundries (run 135); franchise owners + multi-location operators sign contracts;
+    # routing to property_manager sequence (added 2026-06-01 run 162)
+    'dry cleaning manager', 'dry cleaner manager', 'dry cleaning chain manager',
+    'laundry service manager', 'dry cleaning franchise owner', 'laundry chain manager',
+    'dry cleaning district manager', 'garment care manager',
 ]
 
 REALTOR_TITLES = [

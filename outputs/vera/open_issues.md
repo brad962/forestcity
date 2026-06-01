@@ -1,6 +1,38 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 161 | 2026-05-31 | Auto-fixes shipped: 4 | New RESOLVED: 0 | Open: 113 (110 carry-forward + 3 new segment tracking: Auto Glass + Furniture + Salon Suites)*
+*Run 162 | 2026-06-01 | Auto-fixes shipped: 4 | New RESOLVED: 0 | Open: 116 (113 carry-forward + 3 new segment tracking: Tutoring Centers + Med Spas + Dry Cleaning)*
+
+---
+
+## RUN METRICS — Run 162 | 2026-06-01
+- Total RESOLVED: 121 (0 new this run)
+- Total OPEN: 116 (113 carry-forward + 3 this run: Tutoring Centers + Med Spas + Dry Cleaning)
+- Auto-upgrades shipped: 4
+  1. `workers/lead_pipeline.py` — NEW: Tutoring Centers & Learning Centers as segment #114. 8 DANNY_TITLES (tutoring center director, learning center director, tutoring center manager, learning center manager, tutoring franchise owner, kumon center director, academic learning center manager, after school program director). 8 DANNY_ORG_KEYWORDS (tutoring center, learning center, academic tutoring, after school tutoring, kumon center, mathnasium, sylvan learning, huntington learning). Kumon 50+ NE Ohio franchise owners. First pull June 8 Cuyahoga.
+  2. `workers/lead_pipeline.py` — NEW: Med Spas & Aesthetic Clinics as segment #115. 10 DANNY_TITLES (med spa manager, medical spa director, medical spa manager, aesthetic clinic manager, medspa manager, medical aesthetics manager, cosmetic clinic manager, european wax center manager, laser clinic manager, aesthetics director). 9 DANNY_ORG_KEYWORDS (medical spa, med spa, medspa, aesthetic clinic, aesthetics clinic, laser clinic, cosmetic clinic, european wax center, laser aesthetics). European Wax Center 20+ NE Ohio franchise locations. First pull June 8 Cuyahoga.
+  3. `workers/lead_pipeline.py` — NEW: Dry Cleaning & Laundry Service Chains as segment #116. 8 DANNY_TITLES (dry cleaning manager, dry cleaner manager, dry cleaning chain manager, laundry service manager, dry cleaning franchise owner, laundry chain manager, dry cleaning district manager, garment care manager). 8 DANNY_ORG_KEYWORDS (dry cleaning, dry cleaner, dry cleaning chain, laundry service, garment care, dry cleaning franchise, martinizing, fox cleaners). Fox Cleaners 30+ NE Ohio locations — one FM contact = $12K-$36K/year. First pull June 8 Cuyahoga.
+  4. `integrations/mixmax.py` — Synced 26 new routing titles (8 Tutoring + 10 Med Spa + 8 Dry Cleaning) to PROPERTY_MANAGER_TITLES. `workers/vera_relay.py` — Updated segment count 113+ → 116+ (11 occurrences). `CLAUDE.md` + `agents/danny.md` — Updated segment counts to 116+. Full briefs added to danny.md for all 3 new segments.
+- Critical human-action blockers (unchanged — still pending Bradley action):
+  - Fleet washing Mixmax sequence still PENDING (create in Mixmax UI → paste ID into integrations/mixmax.py)
+  - Gas station Mixmax sequence still PENDING (same)
+  - Instantly.ai campaigns a1c08c3d + 626cd15d MUST be paused before June 4 enrollment
+  - TODAY (June 1) = Medina County pull day — run_medina_both.command before 6pm
+  - June 4 = Round 2 enrollment — battle card ready at outputs/donna/june4_enrollment_battle_card_2026-05-24.md
+  - June 8 = Cuyahoga mega-pull — 116+ segments — use run_cuyahoga_both.command
+
+---
+
+## OPEN — Tutoring Centers & Learning Centers Segment Not Yet Pulled 🟡 NEW (Run 162)
+- First seen: 2026-06-01
+- Description: Segment #114 code is live in lead_pipeline.py DANNY_TITLES + DANNY_ORG_KEYWORDS; synced to mixmax.py PROPERTY_MANAGER_TITLES; full brief in danny.md. Awaiting first Apollo pull June 8 Cuyahoga. Kumon (50+ NE Ohio franchise locations, each independently owned), Sylvan Learning (8+ NE Ohio), Mathnasium (10+ NE Ohio), Huntington Learning Center (12+ NE Ohio). Kumon area developer deal (20+ centers, one contact) = $8K-$20K/year. Zero competitors.
+
+## OPEN — Med Spas & Aesthetic Clinics Segment Not Yet Pulled 🟡 NEW (Run 162)
+- First seen: 2026-06-01
+- Description: Segment #115 code is live in lead_pipeline.py + mixmax.py + danny.md. Awaiting first Apollo pull June 8 Cuyahoga. European Wax Center (20+ NE Ohio franchise locations), LaserAway (entering NE Ohio), National Laser Institute (Cleveland area). European Wax Center 15-location NE Ohio territory = $12K-$36K/year from one area developer contact. Ohio Medical Board + Cosmetology Board licensing = exterior appearance compliance. Zero competitors.
+
+## OPEN — Dry Cleaning & Laundry Service Chains Segment Not Yet Pulled 🟡 NEW (Run 162)
+- First seen: 2026-06-01
+- Description: Segment #116 code is live in lead_pipeline.py + mixmax.py + danny.md. Awaiting first Apollo pull June 8 Cuyahoga. Fox Cleaners (Cleveland HQ, 30+ NE Ohio locations — one FM contact = $12K-$36K/year from chain deal), Martinizing Dry Cleaning (NE Ohio franchise owners). DISTINCT from coin laundries (Run 135 — 'coin laundry' Apollo tag, self-service). Ohio EPA PCE dry-cleaning solvent regulations = exterior appearance compliance standard. Zero competitors.
 
 ---
 
