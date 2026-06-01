@@ -1292,6 +1292,50 @@ DANNY_TITLES = [
     'hospice administrator', 'hospice director', 'hospice facility manager', 'palliative care director',
     'hospice operations director', 'hospice regional director', 'inpatient hospice manager',
     'hospice center director',
+    # Community Colleges & Technical Institutes — Cuyahoga Community College (Unified/Western/Eastern/Metro
+    # campuses), Lakeland Community College (Kirtland), Lorain County CC (Elyria), Stark State College (Canton),
+    # Sinclair CC NE Ohio, Ohio State ATI; DISTINCT from K-12 vocational/CTE centers (run 157 — 'career technical',
+    # 'vocational school' Apollo tags) and main universities (not yet targeted);
+    # summer = academic maintenance window (buildings empty June-August = peak exterior cleaning access);
+    # campus facilities director signs contracts for MULTIPLE buildings in a single deal;
+    # large paved parking lots (hundreds of spaces) + building exteriors + covered walkways + amphitheater plazas;
+    # $8K-$25K per campus; multi-campus system deal = $40K-$80K/year; zero competitors targeting college FM contacts;
+    # first pull June 8 Cuyahoga (Tri-C Metro + Western + Eastern campuses all in Cuyahoga County) (added 2026-06-01 run 168)
+    'community college facilities director', 'community college facilities manager',
+    'college campus facilities director', 'higher education facilities director',
+    'campus facilities director', 'community college maintenance director',
+    'college grounds director', 'technical college facilities manager',
+    # Medical Equipment & Device Manufacturers — Invacare Corporation (Elyria HQ — home medical equipment),
+    # Steris Corporation (Mentor HQ — global sterilization + infection prevention), Nordson Corporation (Westlake HQ),
+    # Swagelok Company (Solon — fluid system components), Materion Corporation (Mayfield Heights — medical alloys),
+    # Natus Medical (Middleburg Heights), Mentice AB US office; LARGEST NE OHIO EMPLOYER SEGMENT NOT YET TARGETED;
+    # DISTINCT from distribution centers (run 105 — logistics/fulfillment), medical offices (run 101 — patient-facing),
+    # manufacturing (run 118 — general industrial, different Apollo org tags);
+    # FDA GMP 21 CFR Part 820 Quality System Regulation = exterior facility cleanliness standard for all
+    # FDA-registered device manufacturers; ISO 13485 certification audits check facility exterior appearance;
+    # loading docks + manufacturing building exteriors + parking + shipping/receiving bays;
+    # $3K-$12K/facility; 4x/year = $12K-$48K/year per large facility; Invacare + Steris alone = $50K+/year potential;
+    # zero competitors targeting medical device plant operations managers in NE Ohio (added 2026-06-01 run 168)
+    'medical device operations manager', 'medical equipment operations manager',
+    'medical device facility manager', 'medical manufacturing manager',
+    'medical equipment plant manager', 'medical device plant operations manager',
+    'biomedical equipment manager', 'medical device manufacturing director',
+    # Pain Management & Spine Clinics — Cleveland Clinic Pain Management (multiple NE Ohio sites),
+    # University Hospitals Pain Clinic, Summa Health Pain Management, National Spine & Pain Centers NE Ohio,
+    # OhioHealth Pain Centers, Greater Cleveland Urology (Pain division), Interventional Pain Solutions;
+    # COMPLETELY DISTINCT from orthopedic (run 166 — surgical, 'orthopedic clinic' Apollo tag),
+    # chiropractic (run 152 — non-MD, 'chiropractic' Apollo tag), PT chains (run 126 — 'physical therapy' Apollo tag),
+    # urgent care (run 114 — acute episodic), behavioral health (run 150 — mental health focus);
+    # pain management = MD/DO interventional procedures (injections, nerve blocks, ablation);
+    # Ohio Medical Board + DEA registration = stringent facility licensing; inspection checks exterior appearance;
+    # CHRONIC patients visit weekly or bi-weekly = highest visit frequency of any specialty clinic segment;
+    # heavy recurring foot traffic = parking lot + entry concrete heavily stained; state licensing urgency angle;
+    # $800-$2,500/clinic; 2x/year = $1,600-$5,000; 10-clinic network = $16K-$50K/year; zero competitors;
+    # first pull June 8 Cuyahoga (Cleveland Clinic Pain Mgmt Beachwood + UH Pain Clinic Westlake) (added 2026-06-01 run 168)
+    'pain management clinic manager', 'pain management practice manager',
+    'pain clinic director', 'pain management director',
+    'pain center manager', 'interventional pain manager',
+    'pain management administrator', 'pain medicine practice manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -2062,6 +2106,33 @@ DANNY_ORG_KEYWORDS = [
     'hospice care', 'palliative care', 'inpatient hospice', 'hospice facility',
     'hospice center', 'hospice services', 'end of life care', 'comfort care',
     'hospice of the western reserve', 'amedisys hospice', 'vitas healthcare',
+    # Community Colleges & Technical Institutes — Cuyahoga Community College (Unified/Western/Eastern/Metro),
+    # Lakeland Community College, Lorain County CC, Stark State College, Sinclair CC NE Ohio, Ohio State ATI;
+    # DISTINCT from K-12 vocational schools (run 157 — 'career technical', 'vocational school' Apollo tags),
+    # main universities (not yet targeted); summer = academic maintenance window = peak exterior cleaning window;
+    # campus facilities director signs contracts covering multiple buildings in a single deal;
+    # first pull June 8 Cuyahoga (Tri-C Metro/Western/Eastern all in Cuyahoga County) (added 2026-06-01 run 168)
+    'community college', 'community college campus', 'technical college',
+    'junior college', 'college district', 'two year college',
+    'community college facilities', 'community college district',
+    # Medical Equipment & Device Manufacturers — Invacare Corporation (Elyria HQ), Steris Corporation (Mentor HQ),
+    # Nordson Corporation (Westlake HQ), Swagelok Company (Solon), Materion Corporation (Mayfield Heights),
+    # Natus Medical (Middleburg Heights); DISTINCT from medical offices (run 101 — patient-facing outpatient),
+    # distribution centers (run 105 — logistics), general manufacturing (run 118 — non-FDA regulated);
+    # FDA GMP 21 CFR Part 820 Quality System Regulation + ISO 13485 certification = exterior cleanliness standard;
+    # first pull June 8 Cuyahoga (Steris Corporation Mentor/global HQ + Nordson Westlake HQ) (added 2026-06-01 run 168)
+    'medical device manufacturer', 'medical device company', 'medical equipment manufacturer',
+    'medical equipment company', 'biomedical company', 'medical technology company',
+    'surgical instrument manufacturer', 'medical instrument manufacturer', 'medical device',
+    # Pain Management & Spine Clinics — Cleveland Clinic Pain Management, UH Pain Clinic, Summa Health Pain
+    # Management, National Spine & Pain Centers NE Ohio; DISTINCT from orthopedic (run 166 — 'orthopedic clinic'),
+    # chiropractic (run 152 — 'chiropractic'), PT (run 126 — 'physical therapy'), urgent care (run 114);
+    # MD/DO interventional procedures; Ohio Medical Board + DEA registration = facility licensing;
+    # chronic patients visit weekly = highest foot traffic of any specialty clinic type;
+    # first pull June 8 Cuyahoga (CC Pain Mgmt Beachwood + National Spine NE Ohio) (added 2026-06-01 run 168)
+    'pain management clinic', 'pain management center', 'pain clinic',
+    'interventional pain', 'chronic pain management', 'pain treatment center',
+    'pain medicine clinic', 'spine and pain', 'pain management practice',
 ]
 
 CARLA_SEARCHES = [

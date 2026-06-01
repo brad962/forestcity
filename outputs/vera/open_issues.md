@@ -1,6 +1,40 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 167 | 2026-06-01 | Auto-fixes shipped: 6 | New RESOLVED: 0 | Open: 128 (125 carry-forward + 3 new segment tracking: Waste Hauling + Dermatology Groups + Hospice Facilities)*
+*Run 168 | 2026-06-01 | Auto-fixes shipped: 4 | New RESOLVED: 0 | Open: 131 (128 carry-forward + 3 new segment tracking: Community Colleges + Medical Device Manufacturers + Pain Management Clinics)*
+
+---
+
+## RUN METRICS — Run 168 | 2026-06-01
+- Total RESOLVED: 122 (unchanged)
+- Total OPEN: 131 (128 carry-forward + 3 this run)
+- Auto-upgrades shipped: 4
+  1. `workers/lead_pipeline.py` — NEW: Community Colleges & Technical Institutes as segment #129. 8 DANNY_TITLES + 8 DANNY_ORG_KEYWORDS. Cuyahoga Community College (Tri-C, 4 Cuyahoga County campuses), Lakeland CC, Lorain County CC, Stark State, Sinclair NE Ohio, Ohio State ATI. DISTINCT from vocational/CTE centers (run 157 — K-12 joint vocational schools, 'career technical' Apollo tag), charter schools (run 154), private schools (DANNY_ORG_KEYWORDS 'private school'). Summer = academic maintenance window = buildings empty = peak cleaning window. One FM contact = multi-campus contract. $32K-$100K/year from one Tri-C facilities director contact. First pull June 8 Cuyahoga.
+  2. `workers/lead_pipeline.py` — NEW: Medical Equipment & Device Manufacturers as segment #130. 8 DANNY_TITLES + 9 DANNY_ORG_KEYWORDS. Steris Corporation (Mentor HQ), Invacare Corporation (Elyria HQ), Nordson Corporation (Westlake HQ), Swagelok (Solon), Materion (Mayfield Heights). DISTINCT from distribution centers (run 105), medical offices (run 101), general manufacturing (run 118). FDA 21 CFR Part 820 QSR + ISO 13485 = exterior cleanliness documented in GMP compliance. Steris + Invacare alone = $50K-$200K/year potential. First pull June 8 Cuyahoga.
+  3. `workers/lead_pipeline.py` — NEW: Pain Management & Spine Clinics as segment #131. 8 DANNY_TITLES + 9 DANNY_ORG_KEYWORDS. Cleveland Clinic Pain Management (6+ NE Ohio sites), UH Pain Clinic, Summa Health Pain Medicine, National Spine & Pain Centers. DISTINCT from ortho (run 166), chiropractic (run 152), PT (run 126), urgent care (run 114). Chronic patients visit every 2-4 weeks = highest visit frequency = highest staining rate. Ohio Medical Board + DEA registration = facility licensing. One practice manager contact (CC Pain Mgmt) = $16K-$50K/year. First pull June 8 Cuyahoga.
+  4. `integrations/mixmax.py` — Synced 24 new routing titles (8 Community Colleges + 8 Medical Device + 8 Pain Management) to PROPERTY_MANAGER_TITLES. `workers/vera_relay.py` — Updated segment count 128+ → 131+ (11 occurrences). `CLAUDE.md` — Updated 128+ → 131+ (2 occurrences). `agents/danny.md` — Updated count + full segment briefs for #129, #130, #131 with pitch angles, revenue math, NE Ohio target companies, Apollo keywords, sequence routing. Performed same-run per the resolved count-lag bug pattern.
+- Critical human-action blockers (URGENT — deadlines imminent):
+  - 🚨 TODAY (June 1) = Medina County pull day — run_medina_both.command NOW if not done yet
+  - ⚠️ JUNE 4 (3 days) = Round 2 enrollment — PAUSE Instantly.ai campaigns a1c08c3d + 626cd15d TODAY
+  - ⛽ Gas station Mixmax sequence PENDING (create in Mixmax UI → paste ID into integrations/mixmax.py line 54)
+  - 🚐 Fleet washing Mixmax sequence PENDING (create in Mixmax UI → paste ID into integrations/mixmax.py line 48)
+  - 📅 June 8 = Cuyahoga mega-pull — 131+ segments — use run_cuyahoga_both.command (7 days)
+
+## OPEN — Community Colleges & Technical Institutes Segment Not Yet Pulled 🟡 NEW (Run 168)
+- First seen: 2026-06-01
+- Description: Segment #129 code live in lead_pipeline.py DANNY_TITLES (8 titles) + DANNY_ORG_KEYWORDS (8 keywords); synced to mixmax.py PROPERTY_MANAGER_TITLES; full brief in danny.md. Awaiting first Apollo pull June 8 Cuyahoga. Cuyahoga Community College/Tri-C (4 Cuyahoga County campuses — largest community college in NE Ohio), Lakeland Community College (Kirtland), LCCC (Elyria), Stark State (Canton), Sinclair CC NE Ohio satellite. DISTINCT from vocational/CTE K-12 centers (run 157), charter schools (run 154). Summer academic maintenance window = buildings empty = full exterior access June-August. $32K-$100K/year from one Tri-C facilities director. Zero competitors.
+- Attempts: N/A — tracking only, not a bug
+
+## OPEN — Medical Equipment & Device Manufacturers Segment Not Yet Pulled 🟡 NEW (Run 168)
+- First seen: 2026-06-01
+- Description: Segment #130 code live in lead_pipeline.py DANNY_TITLES (8 titles) + DANNY_ORG_KEYWORDS (9 keywords); synced to mixmax.py PROPERTY_MANAGER_TITLES; full brief in danny.md. Awaiting first Apollo pull June 8 Cuyahoga. Steris Corporation (Mentor HQ — global sterilization leader, ~2,500 NE Ohio employees, multiple campuses), Nordson Corporation (Westlake HQ), Invacare Corp (Elyria HQ — June 22 Lorain pull), Swagelok (Solon — June 29 Summit pull). DISTINCT from medical offices (run 101 — patient-facing clinical), distribution centers (run 105 — logistics), general manufacturing (run 118 — heavy industrial non-FDA). FDA 21 CFR Part 820 + ISO 13485 = exterior cleanliness in GMP compliance documentation. Zero competitors cold-calling medical device plant operations managers in NE Ohio.
+- Attempts: N/A — tracking only, not a bug
+
+## OPEN — Pain Management & Spine Clinics Segment Not Yet Pulled 🟡 NEW (Run 168)
+- First seen: 2026-06-01
+- Description: Segment #131 code live in lead_pipeline.py DANNY_TITLES (8 titles) + DANNY_ORG_KEYWORDS (9 keywords); synced to mixmax.py PROPERTY_MANAGER_TITLES; full brief in danny.md. Awaiting first Apollo pull June 8 Cuyahoga. Cleveland Clinic Pain Management (Beachwood + Fairview Park + Strongsville + Solon + Hillcrest + Marymount — 6+ NE Ohio sites from one FM contact), UH Pain Clinic (Westlake + Brecksville + Solon), Summa Health Pain Medicine (Akron + Barberton), National Spine & Pain Centers NE Ohio. DISTINCT from orthopedic (run 166 — 'orthopedic clinic' tag), chiropractic (run 152 — 'chiropractic' tag), PT (run 126), urgent care (run 114). Ohio Medical Board + DEA registration = facility licensing with appearance standard. Chronic patients visit every 2-4 weeks = highest parking staining rate of any specialty. One CC Pain Mgmt practice manager contact = 6+ sites = $16K-$50K/year. Zero competitors.
+- Attempts: N/A — tracking only, not a bug
+
+---
 
 ---
 

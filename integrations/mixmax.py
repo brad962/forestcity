@@ -700,6 +700,24 @@ PROPERTY_MANAGER_TITLES = [
     'hospice administrator', 'hospice director', 'hospice facility manager', 'palliative care director',
     'hospice operations director', 'hospice regional director', 'inpatient hospice manager',
     'hospice center director',
+    # Community Colleges & Technical Institutes — routing to property_manager sequence
+    # (campus facilities / vendor contract angle) (added 2026-06-01 run 168)
+    'community college facilities director', 'community college facilities manager',
+    'college campus facilities director', 'higher education facilities director',
+    'campus facilities director', 'community college maintenance director',
+    'college grounds director', 'technical college facilities manager',
+    # Medical Equipment & Device Manufacturers — routing to property_manager sequence
+    # (FDA GMP / facility compliance angle) (added 2026-06-01 run 168)
+    'medical device operations manager', 'medical equipment operations manager',
+    'medical device facility manager', 'medical manufacturing manager',
+    'medical equipment plant manager', 'medical device plant operations manager',
+    'biomedical equipment manager', 'medical device manufacturing director',
+    # Pain Management & Spine Clinics — routing to property_manager sequence
+    # (Ohio Medical Board licensing / facility compliance angle) (added 2026-06-01 run 168)
+    'pain management clinic manager', 'pain management practice manager',
+    'pain clinic director', 'pain management director',
+    'pain center manager', 'interventional pain manager',
+    'pain management administrator', 'pain medicine practice manager',
 ]
 
 REALTOR_TITLES = [
