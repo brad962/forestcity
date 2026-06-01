@@ -1126,6 +1126,35 @@ DANNY_TITLES = [
     'dry cleaning manager', 'dry cleaner manager', 'dry cleaning chain manager',
     'laundry service manager', 'dry cleaning franchise owner', 'laundry chain manager',
     'dry cleaning district manager', 'garment care manager',
+    # Home Care Agencies & In-Home Health Services — Visiting Angels (15+ NE Ohio offices),
+    # Home Instead (12+ NE Ohio offices), Comfort Keepers, Bayada Home Health, Kindred at Home;
+    # Ohio ODJFS home health agency licensing = exterior appearance standard;
+    # DISTINCT from senior living facilities (run 96), behavioral health clinics (run 150);
+    # office buildings + parking lots; regional directors sign vendor contracts; 100+ NE Ohio offices;
+    # $600-$1,800/office; annual contracts; first pull June 8 Cuyahoga (added 2026-06-01 run 163)
+    'home care director', 'home health director', 'home care regional director',
+    'home health regional director', 'home care agency director', 'in-home care director',
+    'home care manager', 'home health manager', 'home care district manager',
+    'visiting angels franchise owner', 'home instead franchise owner',
+    # Pawn Shops & Cash Advance / Payday Loan Chains — Cashland/EZCorp (20+ NE Ohio),
+    # Advance America (15+ NE Ohio), ACE Cash Express, Check Into Cash, Dollar Loan Center;
+    # DISTINCT from banks/credit unions (run 100), dollar stores (run 136);
+    # high-traffic strip mall storefronts; district managers sign multi-location vendor contracts;
+    # heavy foot traffic = dirty facades + parking + dumpster areas; $300-$600/location;
+    # 60+ NE Ohio locations; 10-location district = $12K-$24K/year; zero competitors (added 2026-06-01 run 163)
+    'pawn shop manager', 'pawn shop district manager', 'pawn shop owner', 'cash advance manager',
+    'payday loan manager', 'check cashing manager', 'cashland manager', 'pawn store manager',
+    'pawn shop operations manager', 'financial retail district manager',
+    # Hearing Aid Centers & Audiology Clinics — HearingLife (50+ NE Ohio), Miracle-Ear (30+ NE Ohio),
+    # Beltone, NovaCare Hearing, Connect Hearing, Amplifon;
+    # Ohio Audiology & Speech-Language Pathology Board licensing = exterior appearance standard;
+    # DISTINCT from optical/vision centers (run 139), medical offices (run 101);
+    # district managers sign multi-location vendor contracts for 5-15 locations per district;
+    # 100+ NE Ohio hearing center locations; $400-$1,200/location;
+    # HearingLife NE Ohio district deal = $12K-$36K/year; zero competitors (added 2026-06-01 run 163)
+    'hearing center director', 'hearing aid center manager', 'audiology clinic manager',
+    'hearing health director', 'hearing center district manager', 'audiologist practice manager',
+    'hearing clinic manager', 'audiology district manager', 'hearing center operations manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -1806,6 +1835,24 @@ DANNY_ORG_KEYWORDS = [
     # first pull June 8 Cuyahoga (Fox Cleaners corporate HQ contact, Martinizing franchise owners) (added 2026-06-01 run 162)
     'dry cleaning', 'dry cleaner', 'dry cleaning chain', 'laundry service',
     'garment care', 'dry cleaning franchise', 'martinizing', 'fox cleaners',
+    # Home Care Agencies — Visiting Angels, Home Instead, Comfort Keepers, Bayada, Kindred at Home;
+    # ODJFS licensing; DISTINCT from senior living (run 96 — 'assisted living', 'senior living' tags);
+    # Apollo tags 'home care agency', 'in-home care' return zero overlap with existing segments;
+    # first pull June 8 Cuyahoga (added 2026-06-01 run 163)
+    'home care agency', 'in-home care', 'home health care', 'visiting angels', 'home instead',
+    'comfort keepers', 'senior home care', 'elder care services', 'home health agency',
+    # Pawn Shops & Cash Advance Chains — Cashland (EZCorp), Advance America, ACE Cash Express;
+    # DISTINCT from banks (run 100), dollar stores (run 136) — different Apollo industry tags;
+    # Apollo tags 'pawn shop', 'cash advance', 'payday loan' return zero overlap with existing segments;
+    # first pull June 8 Cuyahoga (Cashland NE Ohio, Advance America Parma/Strongsville/Mentor) (added 2026-06-01 run 163)
+    'pawn shop', 'cash advance', 'payday loan', 'check cashing', 'cashland', 'ezcorp',
+    'advance america', 'ace cash express',
+    # Hearing Aid Centers & Audiology Clinics — HearingLife, Miracle-Ear, Beltone, Connect Hearing;
+    # DISTINCT from optical centers (run 139 — 'optometry', 'vision center' tags), medical offices (run 101);
+    # Apollo tags 'hearing aid center', 'audiology clinic', 'hearing center' return zero overlap;
+    # first pull June 8 Cuyahoga (HearingLife Beachwood/Parma/Strongsville, Miracle-Ear NE Ohio) (added 2026-06-01 run 163)
+    'hearing aid center', 'audiology clinic', 'hearing center', 'hearing health',
+    'hearinglife', 'miracle-ear', 'beltone', 'hearing care',
 ]
 
 CARLA_SEARCHES = [

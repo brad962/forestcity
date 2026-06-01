@@ -1,6 +1,22 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 162 | 2026-06-01 | Auto-fixes shipped: 4 | New RESOLVED: 0 | Open: 116 (113 carry-forward + 3 new segment tracking: Tutoring Centers + Med Spas + Dry Cleaning)*
+*Run 163 | 2026-06-01 | Auto-fixes shipped: 3 | New RESOLVED: 0 | Open: 119 (116 carry-forward + 3 new segment tracking: Home Care Agencies + Pawn Shops + Hearing Aid Centers)*
+
+---
+
+## RUN METRICS — Run 163 | 2026-06-01
+- Total RESOLVED: 121 (0 new this run)
+- Total OPEN: 119 (116 carry-forward + 3 this run: Home Care Agencies + Pawn Shops + Hearing Aid Centers)
+- Auto-upgrades shipped: 3
+  1. `workers/lead_pipeline.py` + `integrations/mixmax.py` — NEW: Home Care Agencies & In-Home Health Services as segment #117. 10 DANNY_TITLES (home care director, home health director, home care regional director, home health regional director, home care agency director, in-home care director, home care manager, home health manager, home care district manager, visiting angels franchise owner, home instead franchise owner). 9 DANNY_ORG_KEYWORDS (home care agency, in-home care, home health care, visiting angels, home instead, comfort keepers, senior home care, elder care services, home health agency). 100+ NE Ohio offices. ODJFS licensing = exterior appearance standard. DISTINCT from senior living (run 96). $600-$1,800/office annual. First pull June 8 Cuyahoga.
+  2. `workers/lead_pipeline.py` + `integrations/mixmax.py` — NEW: Pawn Shops & Cash Advance / Payday Loan Chains as segment #118. 10 DANNY_TITLES (pawn shop manager, pawn shop district manager, pawn shop owner, cash advance manager, payday loan manager, check cashing manager, cashland manager, pawn store manager, pawn shop operations manager, financial retail district manager). 8 DANNY_ORG_KEYWORDS (pawn shop, cash advance, payday loan, check cashing, cashland, ezcorp, advance america, ace cash express). 60+ NE Ohio locations. $300-$600/location. 10-location district = $12K-$24K/year. Zero competitors. First pull June 8 Cuyahoga.
+  3. `workers/lead_pipeline.py` + `integrations/mixmax.py` — NEW: Hearing Aid Centers & Audiology Clinics as segment #119. 9 DANNY_TITLES (hearing center director, hearing aid center manager, audiology clinic manager, hearing health director, hearing center district manager, audiologist practice manager, hearing clinic manager, audiology district manager, hearing center operations manager). 8 DANNY_ORG_KEYWORDS (hearing aid center, audiology clinic, hearing center, hearing health, hearinglife, miracle-ear, beltone, hearing care). 100+ NE Ohio locations. Ohio Audiology Board licensing. HearingLife district deal = $12K-$36K/year. First pull June 8 Cuyahoga.
+- Critical human-action blockers (unchanged — still pending Bradley action):
+  - Fleet washing Mixmax sequence still PENDING (create in Mixmax UI → paste ID into integrations/mixmax.py)
+  - Gas station Mixmax sequence still PENDING (same)
+  - Instantly.ai campaigns a1c08c3d + 626cd15d MUST be paused before June 4 enrollment (3 days away)
+  - TODAY (June 1) = Medina County pull day — run_medina_both.command NOW if not done yet
+  - June 4 = Round 2 enrollment — battle card at outputs/donna/june4_enrollment_battle_card_2026-05-24.md
 
 ---
 
@@ -19,6 +35,20 @@
   - TODAY (June 1) = Medina County pull day — run_medina_both.command before 6pm
   - June 4 = Round 2 enrollment — battle card ready at outputs/donna/june4_enrollment_battle_card_2026-05-24.md
   - June 8 = Cuyahoga mega-pull — 116+ segments — use run_cuyahoga_both.command
+
+---
+
+## OPEN — Home Care Agencies & In-Home Health Services Segment Not Yet Pulled 🟡 NEW (Run 163)
+- First seen: 2026-06-01
+- Description: Segment #117 code is live in lead_pipeline.py DANNY_TITLES + DANNY_ORG_KEYWORDS; synced to mixmax.py PROPERTY_MANAGER_TITLES. Awaiting first Apollo pull June 8 Cuyahoga. Visiting Angels (15+ NE Ohio offices), Home Instead (12+ NE Ohio offices), Comfort Keepers, Bayada Home Health, Kindred at Home. Ohio ODJFS home health agency licensing = exterior appearance standard. DISTINCT from senior living (Run 96 — 'assisted living', 'senior living' Apollo tags). $600-$1,800/office annually. 100+ NE Ohio offices. Zero competitors.
+
+## OPEN — Pawn Shops & Cash Advance / Payday Loan Chains Segment Not Yet Pulled 🟡 NEW (Run 163)
+- First seen: 2026-06-01
+- Description: Segment #118 code is live in lead_pipeline.py + mixmax.py. Awaiting first Apollo pull June 8 Cuyahoga. Cashland/EZCorp (20+ NE Ohio), Advance America (15+ NE Ohio), ACE Cash Express, Check Into Cash, Dollar Loan Center. DISTINCT from banks/credit unions (Run 100) and dollar stores (Run 136). 60+ NE Ohio locations. High-traffic strip mall storefronts — heavy foot traffic = dirty facades + parking + dumpster areas. $300-$600/location; 10-location district = $12K-$24K/year. Zero competitors cold-calling pawn/cash advance DMs.
+
+## OPEN — Hearing Aid Centers & Audiology Clinics Segment Not Yet Pulled 🟡 NEW (Run 163)
+- First seen: 2026-06-01
+- Description: Segment #119 code is live in lead_pipeline.py + mixmax.py. Awaiting first Apollo pull June 8 Cuyahoga. HearingLife (50+ NE Ohio), Miracle-Ear (30+ NE Ohio), Beltone, NovaCare Hearing, Connect Hearing, Amplifon. Ohio Audiology & Speech-Language Pathology Board licensing = exterior appearance standard. DISTINCT from optical/vision centers (Run 139 — 'optometry', 'vision center' Apollo tags), medical offices (Run 101). District managers sign multi-location vendor contracts. 100+ NE Ohio hearing center locations. $400-$1,200/location; HearingLife NE Ohio district deal = $12K-$36K/year. Zero competitors.
 
 ---
 

@@ -634,6 +634,22 @@ PROPERTY_MANAGER_TITLES = [
     'dry cleaning manager', 'dry cleaner manager', 'dry cleaning chain manager',
     'laundry service manager', 'dry cleaning franchise owner', 'laundry chain manager',
     'dry cleaning district manager', 'garment care manager',
+    # Home Care Agencies & In-Home Health Services — Visiting Angels, Home Instead, Comfort Keepers;
+    # routing to property_manager sequence (facility/vendor contract angle) (added 2026-06-01 run 163)
+    'home care director', 'home health director', 'home care regional director',
+    'home health regional director', 'home care agency director', 'in-home care director',
+    'home care manager', 'home health manager', 'home care district manager',
+    'visiting angels franchise owner', 'home instead franchise owner',
+    # Pawn Shops & Cash Advance / Payday Loan Chains — Cashland/EZCorp, Advance America, ACE Cash Express;
+    # routing to property_manager sequence (facility vendor contract angle) (added 2026-06-01 run 163)
+    'pawn shop manager', 'pawn shop district manager', 'pawn shop owner', 'cash advance manager',
+    'payday loan manager', 'check cashing manager', 'cashland manager', 'pawn store manager',
+    'pawn shop operations manager', 'financial retail district manager',
+    # Hearing Aid Centers & Audiology Clinics — HearingLife, Miracle-Ear, Beltone, Connect Hearing;
+    # routing to property_manager sequence (facility vendor contract angle) (added 2026-06-01 run 163)
+    'hearing center director', 'hearing aid center manager', 'audiology clinic manager',
+    'hearing health director', 'hearing center district manager', 'audiologist practice manager',
+    'hearing clinic manager', 'audiology district manager', 'hearing center operations manager',
 ]
 
 REALTOR_TITLES = [
