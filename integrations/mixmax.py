@@ -650,6 +650,21 @@ PROPERTY_MANAGER_TITLES = [
     'hearing center director', 'hearing aid center manager', 'audiology clinic manager',
     'hearing health director', 'hearing center district manager', 'audiologist practice manager',
     'hearing clinic manager', 'audiology district manager', 'hearing center operations manager',
+    # Staffing & Temporary Employment Agencies — Robert Half, Manpower, Kelly Services, Adecco, Aerotek;
+    # routing to property_manager sequence (facility vendor contract angle) (added 2026-06-01 run 164)
+    'staffing branch manager', 'staffing district manager', 'workforce solutions manager',
+    'employment agency manager', 'temp agency manager', 'staffing operations manager',
+    'staffing agency director', 'workforce director',
+    # Big Box Electronics Retail — Best Buy (10+ NE Ohio), Micro Center (Westgate Cleveland);
+    # routing to property_manager sequence (facility vendor contract angle) (added 2026-06-01 run 164)
+    'electronics retail district manager', 'electronics store district manager', 'best buy manager',
+    'consumer electronics manager', 'electronics retail manager', 'big box electronics manager',
+    'electronics district manager', 'consumer electronics district manager',
+    # Rent-to-Own / Consumer Lease Chains — Rent-A-Center (25+ NE Ohio), Aaron's Holdings (15+ NE Ohio);
+    # routing to property_manager sequence (facility vendor contract angle) (added 2026-06-01 run 164)
+    'rent to own manager', 'rent-to-own manager', 'rent to own district manager',
+    'consumer lease manager', 'furniture rental manager', 'appliance rental manager',
+    'aarons store manager', 'rentacenter manager', 'rent to own district director',
 ]
 
 REALTOR_TITLES = [

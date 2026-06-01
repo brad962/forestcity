@@ -1155,6 +1155,53 @@ DANNY_TITLES = [
     'hearing center director', 'hearing aid center manager', 'audiology clinic manager',
     'hearing health director', 'hearing center district manager', 'audiologist practice manager',
     'hearing clinic manager', 'audiology district manager', 'hearing center operations manager',
+    # Staffing & Temporary Employment Agencies — Robert Half (multiple NE Ohio offices), Manpower (10+ NE Ohio),
+    # Kelly Services (NE Ohio HQ Troy MI but large Cleveland branch), Adecco (8+ NE Ohio), Randstad (8+ NE Ohio),
+    # Aerotek/Allegis Group (Allegis HQ Hanover MD; Aerotek Cleveland office = major industrial/tech placement hub),
+    # Integrity Staffing Solutions (Amazon-partnered, Cleveland-area warehousing staff);
+    # COMPLETELY DISTINCT from manufacturing/industrial (run 118 — factory buildings/loading docks),
+    # distribution centers (run 105), and corporate parks (run 101 — DANNY_ORG_KEYWORDS 'corporate park');
+    # staffing agencies are OFFICE buildings in suburban business parks and strip mall storefronts —
+    # Apollo tags them under 'staffing agency', 'temporary staffing', 'employment agency', 'workforce solutions';
+    # branch managers and district directors sign vendor contracts for exterior maintenance;
+    # 50+ staffing agency branches across NE Ohio 7-county area; parking lots + building exteriors;
+    # May-June = peak staffing season (summer industrial hiring surge, Amazon surge prep) = agencies are VISIBLE;
+    # $400-$1,200/office visit; 2x/year = $800-$2,400/office; 10-office district deal = $8K-$24K/year;
+    # zero competitors cold-calling staffing agency branch managers in NE Ohio; first pull June 8 Cuyahoga (added 2026-06-01 run 164)
+    'staffing branch manager', 'staffing district manager', 'workforce solutions manager',
+    'employment agency manager', 'temp agency manager', 'staffing operations manager',
+    'staffing agency director', 'workforce director',
+    # Big Box Electronics Retail — Best Buy (10+ large-format NE Ohio stores: Strongsville, Macedonia, Mentor,
+    # North Olmsted, Berea, Avon, Akron/Montrose, Cuyahoga Falls, Twinsburg, Mayfield Heights);
+    # Micro Center (Westgate Cleveland — flagship single-location but enormous store; largest private tech retailer in US);
+    # COMPLETELY DISTINCT from wireless/telecom retail (run 137 — small strip-mall kiosks),
+    # auto parts stores (run 136), and hardware/home improvement (run 136);
+    # Best Buy stores anchor major NE Ohio shopping centers (SouthPark, Great Northern, Belden Village side);
+    # ENORMOUS parking lots (5-10 acres) + building exteriors + seasonal outdoor display areas;
+    # heavy foot traffic (electronics buyers bring kids) = constantly stained entry concrete + cart aprons;
+    # Best Buy district managers oversee 5-8 stores and sign vendor contracts for exterior maintenance;
+    # $800-$2,500/location (large parking lot + building exterior + display pad); 2x/year;
+    # 10-store district = $16K-$50K/year; zero competitors cold-calling Best Buy district managers;
+    # Micro Center = single large-format store = owner/GM contact; first pull June 8 Cuyahoga (added 2026-06-01 run 164)
+    'electronics retail district manager', 'electronics store district manager', 'best buy manager',
+    'consumer electronics manager', 'electronics retail manager', 'big box electronics manager',
+    'electronics district manager', 'consumer electronics district manager',
+    # Rent-to-Own / Consumer Lease Chains — Rent-A-Center (25+ NE Ohio locations), Aaron's Holdings/Aarons (15+ NE Ohio),
+    # FlexShopper (online but NE Ohio storefronts), Rainbow Rent (local NE Ohio chain);
+    # COMPLETELY DISTINCT from pawn shops (run 163 — buy/sell model) and dollar stores (run 136 — outright purchase);
+    # rent-to-own stores have VERY HIGH daily foot traffic (weekly payment collection days = 2-3x traffic spike);
+    # Apollo tags 'rent to own', 'rent-to-own', 'consumer lease', 'furniture rental', 'appliance rental',
+    # 'aarons', 'rent-a-center', 'rentacenter' — zero overlap with existing DANNY_ORG_KEYWORDS;
+    # heavy foot traffic + vehicle traffic in/out = chronically stained entry concrete + parking lot aprons;
+    # state consumer rental licensing = licensed retail facility exterior appearance standard;
+    # district managers oversee 5-12 locations and sign multi-location vendor contracts;
+    # $300-$700/location (parking lot + entry concrete + building exterior); 2x/year = $600-$1,400/location;
+    # 10-location district deal = $6K-$14K/year; zero competitors cold-calling rent-to-own district managers;
+    # NE Ohio has highest rent-to-own density in OH due to working-class suburban demographic base;
+    # first pull June 8 Cuyahoga (Rent-A-Center + Aaron's Cuyahoga County district) (added 2026-06-01 run 164)
+    'rent to own manager', 'rent-to-own manager', 'rent to own district manager',
+    'consumer lease manager', 'furniture rental manager', 'appliance rental manager',
+    'aarons store manager', 'rentacenter manager', 'rent to own district director',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -1853,6 +1900,27 @@ DANNY_ORG_KEYWORDS = [
     # first pull June 8 Cuyahoga (HearingLife Beachwood/Parma/Strongsville, Miracle-Ear NE Ohio) (added 2026-06-01 run 163)
     'hearing aid center', 'audiology clinic', 'hearing center', 'hearing health',
     'hearinglife', 'miracle-ear', 'beltone', 'hearing care',
+    # Staffing & Temporary Employment Agencies — Robert Half, Manpower, Kelly Services, Adecco, Randstad,
+    # Aerotek/Allegis Group (large Cleveland industrial/tech staffing hub), Integrity Staffing Solutions;
+    # DISTINCT from manufacturing/industrial (run 118), distribution centers (run 105), corporate parks (run 101);
+    # staffing agency branch offices have parking lots + building exteriors needing periodic maintenance;
+    # 50+ staffing branches across NE Ohio 7-county area; May-June = peak industrial hiring surge (added 2026-06-01 run 164)
+    'staffing agency', 'temporary staffing', 'employment agency', 'temp agency',
+    'workforce solutions', 'staffing solutions', 'temp staffing', 'staffing firm',
+    'robert half', 'manpower', 'kelly services', 'adecco', 'randstad', 'aerotek',
+    # Big Box Electronics Retail — Best Buy (10+ large-format NE Ohio stores), Micro Center (Westgate Cleveland);
+    # DISTINCT from wireless/telecom retail (run 137 — kiosks), hardware/home improvement (run 136);
+    # enormous parking lots (5-10 acres) + building exteriors + seasonal outdoor display areas;
+    # district managers sign vendor contracts for 5-8 store territories; first pull June 8 Cuyahoga (added 2026-06-01 run 164)
+    'electronics retail', 'consumer electronics retail', 'electronics store', 'best buy',
+    'micro center', 'big box electronics', 'electronics chain', 'consumer electronics store',
+    # Rent-to-Own / Consumer Lease Chains — Rent-A-Center (25+ NE Ohio), Aaron's Holdings (15+ NE Ohio);
+    # DISTINCT from pawn shops (run 163 — buy/sell model), dollar stores (run 136 — outright purchase);
+    # high daily foot traffic (weekly payment collection days = traffic spike); strip-mall storefronts;
+    # district managers sign multi-location vendor contracts; first pull June 8 Cuyahoga (added 2026-06-01 run 164)
+    'rent to own', 'rent-to-own', 'consumer lease', 'furniture rental store',
+    'appliance rental store', 'aarons', 'rent-a-center', 'rentacenter', 'consumer rental',
+    'rent to own chain', 'lease to own',
 ]
 
 CARLA_SEARCHES = [

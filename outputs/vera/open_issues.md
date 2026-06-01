@@ -1,6 +1,38 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 163 | 2026-06-01 | Auto-fixes shipped: 3 | New RESOLVED: 0 | Open: 119 (116 carry-forward + 3 new segment tracking: Home Care Agencies + Pawn Shops + Hearing Aid Centers)*
+*Run 164 | 2026-06-01 | Auto-fixes shipped: 6 | New RESOLVED: 1 | Open: 121 (116 carry-forward + 2 persistent count syncs resolved + 3 new segment tracking: Staffing Agencies + Big Box Electronics + Rent-to-Own)*
+
+---
+
+## RUN METRICS — Run 164 | 2026-06-01
+- Total RESOLVED: 122 (1 new this run: Recurring Count Sync Bug)
+- Total OPEN: 121 (119 carry-forward minus 1 resolved + 3 this run: Staffing Agencies + Big Box Electronics + Rent-to-Own)
+- Auto-upgrades shipped: 6
+  1. `workers/vera_relay.py` — BUG FIX: updated ALL stale "116+" segment counts → "119+" (11 occurrences); Run 163 added segments #117-119 but skipped this sync step. Same recurring pattern caught and fixed.
+  2. `CLAUDE.md` — BUG FIX: updated "116+" → "119+" in Quick Shortcuts table + June 8 Cuyahoga callout. Then immediately updated "119+" → "122+" after new segment additions this run.
+  3. `agents/danny.md` — BUG FIX: title batching note updated "116+" → "119+" → "122+". ALSO: full briefs added for segments #117 (Home Care Agencies), #118 (Pawn Shops), #119 (Hearing Aid Centers) — these were missing from Run 163.
+  4. `workers/lead_pipeline.py` — NEW: Staffing & Temporary Employment Agencies as segment #120; 8 DANNY_TITLES + 14 DANNY_ORG_KEYWORDS. Robert Half, Manpower, Aerotek/Allegis, Adecco, Randstad, Kelly Services — 50+ NE Ohio branches. $400-$1,200/office; 2x/year; first pull June 8 Cuyahoga.
+  5. `workers/lead_pipeline.py` — NEW: Big Box Electronics Retail as segment #121; 8 DANNY_TITLES + 8 DANNY_ORG_KEYWORDS. Best Buy (10+ NE Ohio large-format stores) + Micro Center Westgate Cleveland. $800-$2,500/location; 2x/year; one Best Buy district manager contact = 8+ stores. First pull June 8 Cuyahoga.
+  6. `workers/lead_pipeline.py` + `integrations/mixmax.py` — NEW: Rent-to-Own / Consumer Lease Chains as segment #122; 9 DANNY_TITLES + 11 DANNY_ORG_KEYWORDS. Rent-A-Center (25+ NE Ohio), Aaron's Holdings (15+ NE Ohio). $300-$700/location; 2x/year; 12-location Rent-A-Center district deal = $7K-$17K/year. First pull June 8 Cuyahoga.
+
+## OPEN — Staffing & Temporary Employment Agencies Segment Not Yet Pulled 🟡 NEW (Run 164)
+- First seen: 2026-06-01
+- Description: Segment #120 code live in lead_pipeline.py + mixmax.py as of Run 164. Awaiting June 8 Cuyahoga pull.
+- Attempts: N/A — tracking only, not a bug
+
+## OPEN — Big Box Electronics Retail Segment Not Yet Pulled 🟡 NEW (Run 164)
+- First seen: 2026-06-01
+- Description: Segment #121 code live in lead_pipeline.py + mixmax.py as of Run 164. Awaiting June 8 Cuyahoga pull.
+- Attempts: N/A — tracking only, not a bug
+
+## OPEN — Rent-to-Own / Consumer Lease Chains Segment Not Yet Pulled 🟡 NEW (Run 164)
+- First seen: 2026-06-01
+- Description: Segment #122 code live in lead_pipeline.py + mixmax.py as of Run 164. Awaiting June 8 Cuyahoga pull.
+- Attempts: N/A — tracking only, not a bug
+
+## RESOLVED — Recurring Count Sync Bug (116+ not updated after new segments)
+- Resolved: 2026-06-01 (Run 164)
+- Fix: Vera now syncs vera_relay.py + CLAUDE.md + danny.md count in same run that adds new segments, before closing. Run 163 added #117-119 but skipped the sync; Run 164 caught and fixed it on first check. Going forward: count sync is performed immediately after new segment code lands, within the same run.
 
 ---
 
