@@ -1388,6 +1388,44 @@ DANNY_TITLES = [
     'title company manager', 'title office manager', 'title branch manager',
     'settlement agent manager', 'closing attorney office manager', 'title company branch manager',
     'real estate closing manager', 'title services manager', 'title operations manager',
+    # Fire Stations & Fire Departments — 150+ municipal fire stations across 7-county NE Ohio service area
+    # (Cleveland, Parma, Lakewood, Strongsville, Mentor, Lorain, Elyria, Akron, Medina, Brunswick townships);
+    # apparatus bay concrete aprons + exterior building facades + equipment training pads + parking lots =
+    # recurring pressure wash need; summer (June-August) = annual exterior maintenance window for municipalities;
+    # ISO 2 Public Protection Classification: station condition/maintenance affects community fire insurance ratings;
+    # fire chief or city FM signs vendor contracts; small contracts routinely direct-awarded <$25K without competitive bid;
+    # DISTINCT from municipal/government segment (run 124 — city halls + admin buildings) — fire stations have
+    # dedicated fire district budgets, separate from city general facilities, and are Apollo-tagged under 'fire department';
+    # $800-$2,500/station; 2x/year; one township FD (5 stations) = $8K-$25K/year; zero competitors (added 2026-06-01 run 171)
+    'fire station manager', 'fire department director', 'fire chief', 'fire rescue director',
+    'fire station director', 'fire district manager', 'fire station facilities manager',
+    'fire department facilities coordinator',
+    # Home Builders & Residential Real Estate Developers — M/I Homes NE Ohio, Pulte/Del Webb (Cuyahoga/Summit),
+    # K. Hovnanian Homes (Greater Cleveland), Maronda Homes NE Ohio, Fischer Homes, Integrity Homes NE Ohio,
+    # DiVosta, Epcon Communities, Smith Homes, Independence Landing; model homes pressure-washed before EVERY
+    # showing/open house; community entrance monuments, welcome sign structures, model home sidewalks + facades;
+    # sales center exteriors = buyer's first impression when signing the largest check of their life;
+    # June = PEAK NE Ohio new home showing season — construction debris on walks + staining from equipment;
+    # DISTINCT from realtors (existing homes, Carla's territory) and title companies (run 170 — closing offices);
+    # Apollo org tags 'home builder', 'residential developer', 'new home construction' return zero overlap with existing;
+    # $300-$800/model home wash; $500-$1,500/community entrance; one active development = $1,200-$4,000/year;
+    # zero competitors cold-calling home builder construction/sales managers for pressure washing (added 2026-06-01 run 171)
+    'home builder manager', 'residential construction manager', 'new home sales manager',
+    'community sales manager', 'home development manager', 'residential developer manager',
+    'new home community manager', 'model home manager',
+    # Propane & Fuel Oil Delivery Companies — AmeriGas (largest US propane supplier, multiple NE Ohio service centers),
+    # Ferrellgas (NE Ohio operations), Suburban Propane NE Ohio, Energy One/National Fuel Gas (Akron HQ),
+    # Ohio Valley Gas, Superior Plus Energy, Westmore Fuel, local independent heating oil dealers;
+    # fuel storage yards: large concrete pads with persistent oil/fuel staining + propane cylinder staging areas +
+    # vehicle maintenance bays; OSHA SPCC (Spill Prevention Control & Countermeasure) + EPA Tier II hazmat compliance;
+    # oil/fuel staining = EPA violation risk + slip hazard = recurring regulatory pressure to stay clean;
+    # DISTINCT from gas stations (retail consumer-facing) — these are WHOLESALE/commercial delivery operations;
+    # Apollo tags 'propane delivery', 'fuel oil delivery', 'heating oil' return zero overlap with gas station keywords;
+    # $800-$2,500/facility; 2x/year; AmeriGas district (3-5 NE Ohio service centers) = $5K-$25K/year;
+    # zero competitors cold-calling propane/fuel oil operations managers for power washing (added 2026-06-01 run 171)
+    'propane district manager', 'fuel oil manager', 'propane operations manager',
+    'fuel delivery manager', 'propane service manager', 'heating oil manager',
+    'energy delivery manager', 'fuel distribution manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -2213,6 +2251,23 @@ DANNY_ORG_KEYWORDS = [
     # June = peak real estate closing season = peak pitch window RIGHT NOW (added 2026-06-01 run 170)
     'title company', 'title insurance', 'title agency', 'real estate closing',
     'settlement services', 'closing services', 'title search', 'property title',
+    # Fire Stations & Fire Departments — dedicated Apollo org tag; DISTINCT from 'municipal facilities' (run 124);
+    # fire departments have separate district budgets and are tagged by Apollo under 'fire department'/'fire district';
+    # NE Ohio: Cleveland Fire (26 stations), Parma Fire (6), Lakewood Fire (5), 100+ township/suburban fire depts;
+    # one department FM = contract covering all stations in that department (added 2026-06-01 run 171)
+    'fire department', 'fire station', 'fire district', 'fire rescue', 'fire protection district',
+    'municipal fire department', 'volunteer fire department',
+    # Home Builders & Residential Real Estate Developers — DISTINCT from existing real estate management keywords;
+    # 'home builder', 'residential developer', 'new home construction' catch builder orgs Apollo tags distinctly from
+    # 'property management' / 'real estate management' (which catch existing-property PMs, not new construction);
+    # June = peak NE Ohio new construction showing season (added 2026-06-01 run 171)
+    'home builder', 'residential developer', 'new home construction', 'home development',
+    'housing development', 'real estate development', 'new home community', 'home construction',
+    # Propane & Fuel Oil Delivery Companies — DISTINCT from gas stations (retail/consumer facing);
+    # Apollo tags 'propane delivery', 'fuel oil delivery', 'heating oil' catch wholesale delivery operations;
+    # AmeriGas, Ferrellgas, Suburban Propane, National Fuel Gas, independent NE Ohio heating oil dealers (added 2026-06-01 run 171)
+    'propane delivery', 'fuel oil delivery', 'heating oil delivery', 'propane company',
+    'fuel oil company', 'propane distribution', 'heating fuel delivery', 'propane service',
 ]
 
 CARLA_SEARCHES = [
@@ -2251,6 +2306,20 @@ CARLA_SEARCHES = [
                   'property association', 'homeowners association management',
                   'condominium management', 'condo association', 'community association'],
      'label': 'HOA Management Companies'},
+    # Commercial cleaning & janitorial companies — PERFECT complementary referral partner:
+    # they clean the INSIDE of every building we pressure wash the outside of; zero service overlap;
+    # natural pitch: "I refer you on the inside jobs; you refer me on the outside"; both benefit;
+    # they're inside every commercial building, office park, medical clinic, and retail strip;
+    # they see dirty building facades, stained parking lots, and grimy entrances on EVERY visit;
+    # Jan-Pro Franchising (NE Ohio franchise network), ServiceMaster Clean, Coverall Cleaning,
+    # Anago Cleaning Systems, ABM Industries (large national), Jani-King; all have NE Ohio operators;
+    # owner/franchise operator decides referral relationships independently; added 2026-06-01 run 171
+    {'type': 'contractors', 'titles': ['owner', 'president', 'founder', 'operator', 'franchise owner'],
+     'keywords': ['commercial cleaning', 'janitorial service', 'building cleaning',
+                  'commercial janitorial', 'office cleaning', 'facility cleaning',
+                  'jan-pro', 'servicemaster clean', 'coverall cleaning', 'anago',
+                  'abm industries', 'jani-king', 'commercial cleaning franchise'],
+     'label': 'Commercial Cleaning Companies'},
 ]
 
 # Rotating county batches for Carla — mirrors Danny's county rotation

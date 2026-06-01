@@ -740,6 +740,21 @@ PROPERTY_MANAGER_TITLES = [
     'title company manager', 'title office manager', 'title branch manager',
     'settlement agent manager', 'closing attorney office manager', 'title company branch manager',
     'real estate closing manager', 'title services manager', 'title operations manager',
+    # Fire Stations & Fire Departments — routing to property_manager sequence
+    # (ISO 2 rating / facility maintenance compliance angle) (added 2026-06-01 run 171)
+    'fire station manager', 'fire department director', 'fire chief', 'fire rescue director',
+    'fire station director', 'fire district manager', 'fire station facilities manager',
+    'fire department facilities coordinator',
+    # Home Builders & Residential Real Estate Developers — routing to property_manager sequence
+    # (first impression / model home curb appeal / June peak selling season angle) (added 2026-06-01 run 171)
+    'home builder manager', 'residential construction manager', 'new home sales manager',
+    'community sales manager', 'home development manager', 'residential developer manager',
+    'new home community manager', 'model home manager',
+    # Propane & Fuel Oil Delivery Companies — routing to property_manager sequence
+    # (OSHA SPCC / EPA compliance / fuel staining = regulatory liability angle) (added 2026-06-01 run 171)
+    'propane district manager', 'fuel oil manager', 'propane operations manager',
+    'fuel delivery manager', 'propane service manager', 'heating oil manager',
+    'energy delivery manager', 'fuel distribution manager',
 ]
 
 REALTOR_TITLES = [

@@ -3388,3 +3388,40 @@ Key resolved issues by category:
 - Proposals: 1 (see Slack — Summer copy variant for insurance agencies: "Your clients visit during the biggest decisions of their lives — home protection, auto coverage. First impression starts at the parking lot." Time-specific pitch for the post-renewal-season cleanup window.)
 - Key active trackers: Medina pull = TODAY; June 4 enrollment = 3 days out; June 8 Cuyahoga pull = 7 days; 123+ segments ready.
 - Highest priority TODAY (June 1): (1) Double-click `scripts/run_medina_both.command` — 6 minutes unattended (2) Confirm Instantly.ai paused (3) Bridge emails to any 2+ open contacts
+
+## OPEN — Fire Stations & Fire Departments Segment Not Yet Pulled 🟡 NEW (Run 171)
+- First seen: 2026-06-01
+- Description: Fire Stations & Fire Departments segment added. 8 DANNY_TITLES (fire station manager, fire department director, fire chief, fire rescue director, fire station director, fire district manager, fire station facilities manager, fire department facilities coordinator) + 7 DANNY_ORG_KEYWORDS (fire department, fire station, fire district, fire rescue, fire protection district, municipal fire department, volunteer fire department) + 8 PROPERTY_MANAGER_TITLES live as of Run 171. 150+ NE Ohio municipal fire stations, Cleveland Fire (26 stations), 100+ township/suburban depts. ISO 2 rating + direct-award contracts. First pull June 8 Cuyahoga.
+- Attempts:
+  - 2026-06-01 (Run 171): Code added — awaiting first pull June 8 Cuyahoga
+
+## OPEN — Home Builders & Residential Real Estate Developers Segment Not Yet Pulled 🟡 NEW (Run 171)
+- First seen: 2026-06-01
+- Description: Home Builders & Residential Developers segment added. 8 DANNY_TITLES + 8 DANNY_ORG_KEYWORDS + 8 PROPERTY_MANAGER_TITLES live. M/I Homes, Pulte/Del Webb, K. Hovnanian, Maronda, Fischer Homes in NE Ohio. Model home washing before every showing. June = peak selling season. First pull June 8 Cuyahoga.
+- Attempts:
+  - 2026-06-01 (Run 171): Code added — awaiting first pull June 8 Cuyahoga
+
+## OPEN — Propane & Fuel Oil Delivery Companies Segment Not Yet Pulled 🟡 NEW (Run 171)
+- First seen: 2026-06-01
+- Description: Propane & Fuel Oil Delivery segment added. 8 DANNY_TITLES + 8 DANNY_ORG_KEYWORDS + 8 PROPERTY_MANAGER_TITLES live. AmeriGas, Ferrellgas, Suburban Propane, National Fuel Gas NE Ohio. OSHA SPCC + EPA compliance angle. First pull June 8 Cuyahoga.
+- Attempts:
+  - 2026-06-01 (Run 171): Code added — awaiting first pull June 8 Cuyahoga
+
+## OPEN — Commercial Cleaning as Carla Referral Partner — Not Yet Outreach Launched 🟡 NEW (Run 171)
+- First seen: 2026-06-01
+- Description: Commercial Cleaning / Janitorial companies added as Partner Type #19 to carla.md AND CARLA_SEARCHES in lead_pipeline.py. Jan-Pro, ServiceMaster Clean, Coverall, Anago, ABM Industries, Jani-King NE Ohio franchise owners. Perfect complementary referral: they clean inside, we clean outside. No contacts pulled yet. Next Carla pull will include this category.
+- Attempts:
+  - 2026-06-01 (Run 171): Code + carla.md updated — awaiting next Carla pull to get contacts
+
+## RUN METRICS — Run 171 | 2026-06-01
+- Total RESOLVED: 122 (0 new this run)
+- Total OPEN: 138+ (4 new: Fire Stations #136, Home Builders #137, Propane/Fuel Oil #138, Commercial Cleaning Carla segment)
+- Auto-upgrades shipped: 5
+  1. workers/lead_pipeline.py — NEW: Fire Stations & Fire Departments as segment #136. 8 DANNY_TITLES + 7 DANNY_ORG_KEYWORDS. Cleveland Fire (26 stations), Parma/Lakewood/Strongsville/Mentor/Elyria/Akron fire departments + 100+ township FDs. ISO 2 rating compliance angle + direct-award <$25K. First pull June 8 Cuyahoga.
+  2. workers/lead_pipeline.py — NEW: Home Builders & Residential Developers as segment #137. 8 DANNY_TITLES + 8 DANNY_ORG_KEYWORDS. M/I Homes, Pulte, K. Hovnanian, Maronda, Fischer Homes NE Ohio. Model home washing before every showing. June = peak selling season. First pull June 8 Cuyahoga.
+  3. workers/lead_pipeline.py — NEW: Propane & Fuel Oil Delivery Companies as segment #138. 8 DANNY_TITLES + 8 DANNY_ORG_KEYWORDS. AmeriGas, Ferrellgas, Suburban Propane, National Fuel Gas NE Ohio. OSHA SPCC + EPA Tier II compliance angle. First pull June 8 Cuyahoga.
+  4. workers/lead_pipeline.py + agents/carla.md — Commercial Cleaning / Janitorial companies added as Carla Partner Type #19 to CARLA_SEARCHES + carla.md. Jan-Pro, ServiceMaster Clean, Coverall, Anago, ABM Industries, Jani-King. Zero overlap with our services = perfect complementary referral relationship. Pitch: "You clean the inside, we clean the outside."
+  5. integrations/mixmax.py — Synced 24 new routing titles (8 Fire Stations + 8 Home Builders + 8 Propane/Fuel Oil) to PROPERTY_MANAGER_TITLES. All new segment leads route correctly to property_manager sequence on Mixmax import. Count sync 135+ → 138+ across vera_relay.py (11 occ), CLAUDE.md (2 occ), agents/danny.md (3 occ). Full segment briefs for #136-#138 added to danny.md with pitch angles, revenue math, NE Ohio target companies, Apollo keywords, sequence routing.
+- Deliverables written: 0 (all work was code + content updates)
+- Proposals: 1 (see Slack — Fire Department Pitch Package: Tommy writes a specific fire station outreach email variant that leads with the ISO 2 rating angle rather than the generic commercial property manager email — this audience responds to operational/regulatory language, not "curb appeal")
+- Key active trackers: Medina pull = TODAY (if not done yet); June 4 enrollment = 3 days; June 8 Cuyahoga 138+ segment mega-pull = 7 days
