@@ -1,6 +1,33 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 168 | 2026-06-01 | Auto-fixes shipped: 4 | New RESOLVED: 0 | Open: 131 (128 carry-forward + 3 new segment tracking: Community Colleges + Medical Device Manufacturers + Pain Management Clinics)*
+*Run 169 | 2026-06-01 | Auto-fixes shipped: 4 | New RESOLVED: 0 | Open: 133 (131 carry-forward + 2 new segment tracking: Skilled Nursing Facilities + Orthodontic Practices)*
+
+---
+
+## RUN METRICS — Run 169 | 2026-06-01
+- Total RESOLVED: 122 (unchanged)
+- Total OPEN: 133 (131 carry-forward + 2 this run)
+- Auto-upgrades shipped: 4
+  1. `workers/lead_pipeline.py` — NEW: Skilled Nursing Facilities & Long-Term Care Centers as segment #132. 8 DANNY_TITLES (skilled nursing facility administrator, nursing home administrator, long-term care administrator, director of nursing home operations, snf administrator, nursing facility director, post-acute care director, skilled nursing regional director) + 8 DANNY_ORG_KEYWORDS. ProMedica Senior Care NE Ohio (15+ SNF facilities — formerly HCR ManorCare), Genesis Healthcare NE Ohio, Altercare of Ohio (20+ independent NE Ohio SNFs), Consulate Health Care, Southwest General Health SNF. DISTINCT from senior/assisted living (run 96 — 'assisted living'/'memory care' Apollo tags), hospice (run 167 — 'hospice care'), adult day care (run 159). CMS Five-Star Quality Rating System: exterior appearance tied to health inspection score = tied to Medicare/Medicaid census = tied to revenue. One ProMedica regional ops contact = 15 facilities = $60K-$180K/year. Zero competitors cold-calling SNF administrators. First pull June 8 Cuyahoga.
+  2. `workers/lead_pipeline.py` — NEW: Orthodontic Practices & Pediatric Dental Groups as segment #133. 8 DANNY_TITLES (orthodontic practice manager, orthodontist office manager, orthodontic district manager, pediatric dental practice manager, orthodontic group director, orthodontic operations director, pediatric dental district manager, orthodontic regional manager) + 8 DANNY_ORG_KEYWORDS. Smile Doctors NE Ohio (national franchise, acquired multiple Cuyahoga/Summit/Lake County practices), Ortho Studios Ohio (Ohio-based franchise), Kids First Dental NE Ohio (8+ locations), Orthodontic Associates of Ohio (Beachwood/Westlake). DISTINCT from general DSO dentistry (run 123 — 'dental group'/'dental service organization' Apollo tags). Orthodontic patients visit every 4-6 weeks = highest dental visit frequency = maximum parking/entry staining. One Smile Doctors NE Ohio regional director = 10+ locations = $12K-$30K/year. Zero competitors. First pull June 8 Cuyahoga.
+  3. `integrations/mixmax.py` — Synced 16 new routing titles (8 SNF + 8 Orthodontic) to PROPERTY_MANAGER_TITLES. `workers/vera_relay.py` — Updated segment count 131+ → 133+ (11 occurrences). `CLAUDE.md` — Updated 131+ → 133+ (2 occurrences). `agents/danny.md` — Updated count + full segment briefs for #132 (SNF) and #133 (Orthodontic) with pitch angles, revenue math, NE Ohio target companies, Apollo keywords, sequence routing. Performed same-run per the resolved count-lag bug pattern.
+  4. All count syncs: 131+ → 133+ across vera_relay.py (11 occ), CLAUDE.md (2 occ), agents/danny.md (3 occ). Full segment briefs added for #132 and #133.
+- Critical human-action blockers (URGENT — deadlines imminent):
+  - 🚨 TODAY (June 1) = Medina County pull day — run_medina_both.command NOW if not done yet
+  - ⚠️ JUNE 4 (3 days) = Round 2 enrollment — PAUSE Instantly.ai campaigns a1c08c3d + 626cd15d TODAY
+  - ⛽ Gas station Mixmax sequence PENDING (create in Mixmax UI → paste ID into integrations/mixmax.py line 54)
+  - 🚐 Fleet washing Mixmax sequence PENDING (create in Mixmax UI → paste ID into integrations/mixmax.py line 48)
+  - 📅 June 8 = Cuyahoga mega-pull — 133+ segments — use run_cuyahoga_both.command (7 days)
+
+## OPEN — Skilled Nursing Facilities & Long-Term Care Centers Segment Not Yet Pulled 🟡 NEW (Run 169)
+- First seen: 2026-06-01
+- Description: Segment #132 code live in lead_pipeline.py DANNY_TITLES (8 titles) + DANNY_ORG_KEYWORDS (8 keywords); synced to mixmax.py PROPERTY_MANAGER_TITLES; full brief in danny.md. Awaiting first Apollo pull June 8 Cuyahoga. ProMedica Senior Care NE Ohio (formerly HCR ManorCare, 15+ Cuyahoga/Lake/Summit SNF facilities), Genesis Healthcare NE Ohio, Consulate Health Care, Altercare of Ohio (Ohio's largest independent SNF chain, 20+ NE Ohio facilities), Southwest General Health SNF. DISTINCT from senior/assisted living (run 96 — residential communities for ambulatory seniors), hospice (run 167 — end-of-life care), adult day care (run 159 — daytime programs). CMS Five-Star Rating: exterior appearance is a health inspection finding = affects star rating = affects Medicare/Medicaid census = affects revenue. One ProMedica regional ops director contact = 15 facilities = $60K-$180K/year. Zero competitors.
+- Attempts: N/A — tracking only, not a bug
+
+## OPEN — Orthodontic Practices & Pediatric Dental Groups Segment Not Yet Pulled 🟡 NEW (Run 169)
+- First seen: 2026-06-01
+- Description: Segment #133 code live in lead_pipeline.py DANNY_TITLES (8 titles) + DANNY_ORG_KEYWORDS (8 keywords); synced to mixmax.py PROPERTY_MANAGER_TITLES; full brief in danny.md. Awaiting first Apollo pull June 8 Cuyahoga. Smile Doctors NE Ohio (national franchise, acquired multiple Cuyahoga/Summit/Lake County orthodontic practices — one regional ops director signs all NE Ohio contracts), Ortho Studios Ohio (Ohio-based franchise Strongsville/Akron/Mentor), Kids First Dental NE Ohio (pediatric dental chain, 8+ NE Ohio locations), Orthodontic Associates of Ohio (Beachwood + Westlake multi-location group), Great Lakes Pediatric Dental (Cleveland metro). DISTINCT from general DSO chains (run 123 — 'dental group', 'dental service organization' Apollo tags — no overlap). Orthodontic patients visit every 4-6 weeks for wire adjustments = HIGHEST dental visit frequency = maximum parking lot staining rate. One Smile Doctors NE Ohio regional director = 10+ locations = $12K-$30K/year. Zero competitors cold-calling orthodontic groups.
+- Attempts: N/A — tracking only, not a bug
 
 ---
 

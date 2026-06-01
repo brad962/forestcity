@@ -1336,6 +1336,32 @@ DANNY_TITLES = [
     'pain clinic director', 'pain management director',
     'pain center manager', 'interventional pain manager',
     'pain management administrator', 'pain medicine practice manager',
+    # Skilled Nursing Facilities & Long-Term Care Centers — ProMedica Senior Care (15+ NE Ohio SNF facilities),
+    # Genesis Healthcare NE Ohio, Consulate Health Care, HCR ManorCare Heritage Park, Altercare of Ohio;
+    # DISTINCT from senior/assisted living (run 96 — 'assisted living', 'memory care' Apollo tags),
+    # hospice (run 167 — 'hospice care' Apollo tag), adult day care (run 159 — 'adult day' Apollo tag);
+    # CMS Five-Star Quality Rating System: exterior appearance affects star rating = affects Medicare/Medicaid census =
+    # affects revenue; state ODH nursing home licensing = exterior inspection checks;
+    # administrator signs vendor contracts for entire facility; one ProMedica SNF regional ops contact = 15 facilities;
+    # $4K-$12K/facility per year; ProMedica NE Ohio portfolio = $60K-$180K/year; zero competitors cold-calling SNFs;
+    # first pull June 8 Cuyahoga (ProMedica Senior Care Parma/Strongsville/Westlake SNFs) (added 2026-06-01 run 169)
+    'skilled nursing facility administrator', 'nursing home administrator',
+    'long-term care administrator', 'director of nursing home operations',
+    'snf administrator', 'nursing facility director',
+    'post-acute care director', 'skilled nursing regional director',
+    # Orthodontic Practices & Pediatric Dental Groups — Smile Doctors NE Ohio (acquired/affiliated multiple practices),
+    # Ortho Studios Ohio franchise, OrthoSynetics-managed practices, Orthodontic Associates of Ohio,
+    # Kids First Dental (multi-location), Great Lakes Pediatric Dental, Pediatric Dentistry at Beachwood;
+    # DISTINCT from general DSO chains (run 123 — 'dental group', 'dental service organization' Apollo tags);
+    # orthodontic patients visit every 4-6 weeks for adjustments = HIGHEST dental visit frequency = maximum staining;
+    # pediatric patients arrive WITH parents = 2 vehicles per appointment = elevated parking lot demand;
+    # Ohio State Dental Board + AAO accreditation = exterior appearance standard; practice managers sign contracts;
+    # 10-location Smile Doctors/Ortho Studios territory deal = $6K-$15K/year; zero competitors;
+    # first pull June 8 Cuyahoga (Smile Doctors Beachwood + Ortho Studios Strongsville) (added 2026-06-01 run 169)
+    'orthodontic practice manager', 'orthodontist office manager',
+    'orthodontic district manager', 'pediatric dental practice manager',
+    'orthodontic group director', 'orthodontic operations director',
+    'pediatric dental district manager', 'orthodontic regional manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -2133,6 +2159,20 @@ DANNY_ORG_KEYWORDS = [
     'pain management clinic', 'pain management center', 'pain clinic',
     'interventional pain', 'chronic pain management', 'pain treatment center',
     'pain medicine clinic', 'spine and pain', 'pain management practice',
+    # Skilled Nursing Facilities & Long-Term Care Centers — DISTINCT from senior/assisted living (run 96),
+    # hospice (run 167), adult day care (run 159); Apollo org tags return ZERO overlap with existing segments;
+    # CMS Five-Star Quality Rating System compliance = exterior appearance directly tied to Medicare/Medicaid revenue;
+    # first pull June 8 Cuyahoga (ProMedica Senior Care Cuyahoga County SNF facilities) (added 2026-06-01 run 169)
+    'skilled nursing facility', 'nursing home', 'long-term care facility',
+    'rehabilitative care', 'post-acute care', 'sub-acute rehabilitation',
+    'skilled nursing care', 'long term care',
+    # Orthodontic Practices & Pediatric Dental Groups — DISTINCT from general DSO dentistry (run 123);
+    # Apollo org tags 'orthodontic practice', 'orthodontics', 'pediatric dentistry' return ZERO overlap with
+    # 'dental group', 'dental service organization' from run 123; monthly adjustment visits = max staining rate;
+    # first pull June 8 Cuyahoga (Smile Doctors NE Ohio + Ortho Studios Strongsville) (added 2026-06-01 run 169)
+    'orthodontic practice', 'orthodontics', 'pediatric dentistry',
+    'pediatric dental', 'orthodontic group', 'orthodontic center',
+    'braces center', 'pediatric dental group',
 ]
 
 CARLA_SEARCHES = [

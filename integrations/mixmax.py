@@ -718,6 +718,18 @@ PROPERTY_MANAGER_TITLES = [
     'pain clinic director', 'pain management director',
     'pain center manager', 'interventional pain manager',
     'pain management administrator', 'pain medicine practice manager',
+    # Skilled Nursing Facilities & Long-Term Care Centers — routing to property_manager sequence
+    # (CMS Five-Star Rating compliance / ODH facility licensing angle) (added 2026-06-01 run 169)
+    'skilled nursing facility administrator', 'nursing home administrator',
+    'long-term care administrator', 'director of nursing home operations',
+    'snf administrator', 'nursing facility director',
+    'post-acute care director', 'skilled nursing regional director',
+    # Orthodontic Practices & Pediatric Dental Groups — routing to property_manager sequence
+    # (Ohio State Dental Board / AAO accreditation compliance angle) (added 2026-06-01 run 169)
+    'orthodontic practice manager', 'orthodontist office manager',
+    'orthodontic district manager', 'pediatric dental practice manager',
+    'orthodontic group director', 'orthodontic operations director',
+    'pediatric dental district manager', 'orthodontic regional manager',
 ]
 
 REALTOR_TITLES = [

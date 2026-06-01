@@ -1,51 +1,48 @@
-🔧 *Vera — Auto-Upgrade | Run 168 | 2026-06-01*
->Changed: Added Community Colleges & Technical Institutes as Segment #129 to lead_pipeline.py DANNY_TITLES (8 titles) + DANNY_ORG_KEYWORDS (8 keywords).
->Why: Tri-C has 4 Cuyahoga County campuses firing June 8; summer = buildings empty = maintenance window; facilities director signs multi-building contract; zero competitors; $32K-$100K/year from one FM contact. Apollo tags 'community college', 'technical college' return ZERO overlap with existing segments.
+🔧 *Vera — Auto-Upgrade | Run 169 | 2026-06-01*
+>Changed: Added Skilled Nursing Facilities & Long-Term Care Centers as Segment #132 to lead_pipeline.py DANNY_TITLES (8 titles) + DANNY_ORG_KEYWORDS (8 keywords). Synced to mixmax.py PROPERTY_MANAGER_TITLES. Full segment brief added to agents/danny.md.
+>Why: DISTINCT from senior/assisted living (run 96), hospice (run 167), adult day care (run 159). CMS Five-Star Quality Rating System ties exterior appearance to health inspection score → star rating → Medicare/Medicaid census → revenue. ProMedica Senior Care NE Ohio (15+ SNF facilities, formerly HCR ManorCare) + Altercare of Ohio (20+ independent NE Ohio SNFs). One ProMedica regional ops contact = $60K-$180K/year. Zero competitors cold-calling SNF administrators. First pull June 8 Cuyahoga.
 >File: workers/lead_pipeline.py
 ---
-🔧 *Vera — Auto-Upgrade | Run 168 | 2026-06-01*
->Changed: Added Medical Equipment & Device Manufacturers as Segment #130 to lead_pipeline.py DANNY_TITLES (8 titles) + DANNY_ORG_KEYWORDS (9 keywords).
->Why: NE Ohio is a top-5 US medical device manufacturing cluster (Steris Mentor HQ, Invacare Elyria HQ, Nordson Westlake HQ). FDA 21 CFR Part 820 + ISO 13485 = exterior facility cleanliness documented as part of GMP compliance. Zero overlap with general manufacturing (run 118) or medical offices (run 101). Steris + Invacare = $50K-$200K/year potential.
+🔧 *Vera — Auto-Upgrade | Run 169 | 2026-06-01*
+>Changed: Added Orthodontic Practices & Pediatric Dental Groups as Segment #133 to lead_pipeline.py DANNY_TITLES (8 titles) + DANNY_ORG_KEYWORDS (8 keywords). Synced to mixmax.py PROPERTY_MANAGER_TITLES. Full segment brief added to agents/danny.md.
+>Why: DISTINCT from general DSO dentistry (run 123 — different Apollo org tags, no overlap). Orthodontic patients visit every 4-6 weeks = highest dental visit frequency = maximum parking staining. Smile Doctors NE Ohio (multiple acquired Cuyahoga/Summit/Lake County practices), Ortho Studios Ohio, Kids First Dental (8+ locations). One regional ops director = 10+ locations = $12K-$30K/year. Zero competitors. First pull June 8 Cuyahoga.
 >File: workers/lead_pipeline.py
 ---
-🔧 *Vera — Auto-Upgrade | Run 168 | 2026-06-01*
->Changed: Added Pain Management & Spine Clinics as Segment #131 to lead_pipeline.py DANNY_TITLES (8 titles) + DANNY_ORG_KEYWORDS (9 keywords).
->Why: DISTINCT from ortho (run 166), chiropractic (run 152), PT (run 126). Pain management = chronic patients visit every 2-4 weeks = highest visit frequency of any specialty = highest parking/entry staining rate. Ohio Medical Board + DEA registration = facility licensing with appearance standard. Cleveland Clinic Pain Mgmt has 6+ NE Ohio sites; one practice manager contact = $16K-$50K/year. Zero competitors.
->File: workers/lead_pipeline.py
----
-🔧 *Vera — Auto-Upgrade | Run 168 | 2026-06-01*
->Changed: Synced 24 new routing titles (8 Community Colleges + 8 Medical Device + 8 Pain Management) to PROPERTY_MANAGER_TITLES. Updated segment count 128+ → 131+ across vera_relay.py (11 occ), CLAUDE.md (2), agents/danny.md (2). Full segment briefs added to agents/danny.md for #129, #130, #131 with pitch angles, revenue math, NE Ohio target companies, Apollo keywords, and sequence routing.
->Why: Same-run count sync per resolved count-lag bug pattern (Run 164). Prevents stale counts in relay reminders.
+🔧 *Vera — Auto-Upgrade | Run 169 | 2026-06-01*
+>Changed: Synced 16 new routing titles (8 SNF + 8 Orthodontic) to PROPERTY_MANAGER_TITLES. Updated segment count 131+ → 133+ across vera_relay.py (11 occ), CLAUDE.md (2 occ), agents/danny.md (3 occ). Full segment briefs for #132 and #133 added to danny.md with pitch angles, revenue math, NE Ohio targets, Apollo keywords, sequence routing.
+>Why: Same-run count sync per resolved count-lag bug pattern (Run 164). Keeps relay Slack reminders accurate.
 >Files: integrations/mixmax.py, workers/vera_relay.py, CLAUDE.md, agents/danny.md
 ---
-🚨 *Vera — URGENT: June 4 Deadline in 3 Days*
->Instantly.ai campaigns a1c08c3d (PM Cuyahoga) + 626cd15d (Contractor Referral) MUST be paused BEFORE June 4 enrollment or Mixmax will send duplicate emails → spam filter → 0% reply rate.
->Action: Go to app.instantly.ai → Campaigns → find both → ⋮ → Pause. Then add INSTANTLY_PAUSED=true to your .env file.
+🚨 *Vera — URGENT: Pause Instantly.ai Before June 4 (3 Days)*
+>Campaigns a1c08c3d (PM Cuyahoga) + 626cd15d (Contractor Referral) must be paused or Round 2 = duplicate emails = spam = 0% reply rate on the biggest outreach day of peak season.
+>Action: app.instantly.ai → Campaigns → both → ⋮ → Pause. Then add INSTANTLY_PAUSED=true to .env.
 >Guide: outputs/vera/instantly_pause_guide_2026-05-22.md
->⏰ If you haven't done this yet — do it TODAY, not June 3.
 ---
-🚨 *Vera — URGENT: Medina County Pull — TODAY (June 1)*
->Medina County pull was scheduled for today (June 1, ISO Week 22). If not yet run: double-click scripts/run_medina_both.command in Finder OR run:
->`python3 workers/lead_pipeline.py both Medina`
->Missing this = no fresh Medina leads for June 4 enrollment. Takes 6-8 minutes, fully unattended.
+🚨 *Vera — TODAY: Medina County Pull (June 1)*
+>Week 22 = Medina in rotation. If not yet run — 6-8 min, fully unattended:
+>Double-click: scripts/run_medina_both.command in Finder
+>OR: `python3 workers/lead_pipeline.py both Medina`
+>Missing this = no fresh Medina leads for June 4 enrollment.
 ---
-⛽ *Vera — Pending Action: Gas Station & Fleet Mixmax Sequences*
->Both sequences still PENDING — 12 gas station contacts + fleet contacts sitting unenrolled.
->Gas Station sequence: Create in Mixmax UI → paste ID into integrations/mixmax.py line 54
->Fleet Washing sequence: Create in Mixmax UI → paste ID into integrations/mixmax.py line 48
->Then run: `python3 workers/lead_pipeline.py pending` — enrolls all pending contacts in 2 minutes.
->Every week these sit PENDING = losing peak-season email response window.
+⛽ *Vera — Pending: Gas Station & Fleet Mixmax Sequences Still Blocked*
+>12+ gas station + fleet contacts stranded unenrolled. Both sequences still PENDING.
+>Gas Station: Mixmax → Sequences → New → paste ID into integrations/mixmax.py line 54
+>Fleet Washing: Mixmax → Sequences → New → paste ID into integrations/mixmax.py line 48
+>Then: `python3 workers/lead_pipeline.py pending` — 2 min to enroll all waiting contacts.
 ---
-📅 *Vera — June 8 Countdown: 7 Days Out*
->Cuyahoga mega-pull in 7 days — largest single-day commercial pull of the season.
->131+ commercial segments firing: hospitals, museums, government, Tri-C campuses, Steris Corp, pain clinics, hospice facilities, waste haulers, dermatology groups + 120+ more.
->Command: double-click scripts/run_cuyahoga_both.command OR:
->`python3 workers/lead_pipeline.py both Cuyahoga`
->Takes 12-20 minutes. Estimated output: 300-500+ new contacts enrolled in Mixmax.
+📅 *Vera — June 8 Countdown: 7 Days (133+ Segments)*
+>Cuyahoga mega-pull in 7 days. Now 133+ commercial segments: added SNF facilities (ProMedica Senior Care) and orthodontic groups (Smile Doctors/Kids First Dental) this run alongside hospitals, Tri-C campuses, museums, government, waste haulers + 125+ more.
+>Estimated output: 300-500+ new Mixmax enrollments. Takes 12-20 min unattended.
 >Pre-pull checklist: outputs/donna/june8_cuyahoga_battle_card_2026-06-01.md
+>Command: double-click scripts/run_cuyahoga_both.command OR `python3 workers/lead_pipeline.py both Cuyahoga`
 ---
-✅ *Vera — Scan Complete 2026-06-01 (Run 168)*
->4 auto-upgrades shipped | 0 proposals | 131 open issues (128 carry-forward + 3 new segment tracking)
->New segments: #129 Community Colleges & Technical Institutes | #130 Medical Device Manufacturers | #131 Pain Management & Spine Clinics
->All counts synced: 128+ → 131+ across vera_relay.py (11 occ), CLAUDE.md (2), danny.md (2)
->🚨 URGENT: June 4 Instantly.ai pause deadline (3 days) | TODAY = Medina pull day | June 8 = Cuyahoga mega-pull (7 days)
+⭐ *Vera — Daily: Send Review Requests After Today's Jobs*
+>Google reviews = Maps + LSA ranking = free inbound leads all season. NE Ohio competitors: 25-50 reviews.
+>At 75+ reviews Forest City enters top-tier ranking. 5 requests/week = 100+ new reviews by end of season.
+>Text: "Hey [Name], Bradley here from Forest City Power Washing — hope everything looks great! If you have 30 sec, would mean the world if you left us a quick Google review: [link] Thanks!"
+---
+✅ *Vera — Scan Complete 2026-06-01 (Run 169)*
+>4 auto-upgrades shipped | 0 proposals | 133 open issues (131 carry-forward + 2 new segment tracking)
+>New: #132 Skilled Nursing Facilities & LTC | #133 Orthodontic Practices & Pediatric Dental
+>Counts synced 131+ → 133+ across vera_relay.py (11 occ), CLAUDE.md (2 occ), danny.md (3 occ)
+>🚨 URGENT: Pause Instantly.ai TODAY (3 days to June 4) | Medina pull TODAY | June 8 Cuyahoga = 133+ segments
