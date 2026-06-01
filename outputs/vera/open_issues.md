@@ -1,6 +1,38 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 164 | 2026-06-01 | Auto-fixes shipped: 6 | New RESOLVED: 1 | Open: 121 (116 carry-forward + 2 persistent count syncs resolved + 3 new segment tracking: Staffing Agencies + Big Box Electronics + Rent-to-Own)*
+*Run 166 | 2026-06-01 | Auto-fixes shipped: 5 | New RESOLVED: 0 | Open: 125 (123 carry-forward + 2 new segment tracking: Orthopedic Clinics + Financial Advisory Offices)*
+
+---
+
+## RUN METRICS — Run 166 | 2026-06-01
+- Total RESOLVED: 122 (unchanged)
+- Total OPEN: 125 (123 carry-forward + 2 this run)
+- Auto-upgrades shipped: 5
+  1. `workers/lead_pipeline.py` — NEW: Orthopedic & Sports Medicine Clinics as segment #124. 8 DANNY_TITLES + 8 DANNY_ORG_KEYWORDS. OrthoNEOA (25+ NE Ohio locations, Ohio's largest ortho group), Cleveland Orthopedic & Spine, UH Orthopaedics outpatient offices, Premier Orthopedics. Pre/post-op patients arrive with a driver = 2 vehicles per visit = high parking lot demand. Ohio Medical Board + Joint Commission = exterior appearance standard. $600-$1,800/visit; 2x/year; OrthoNEOA multi-location deal = $30K-$90K/year. First pull June 8 Cuyahoga.
+  2. `workers/lead_pipeline.py` — NEW: Financial Advisory & Wealth Management Offices as segment #125. 8 DANNY_TITLES + 9 DANNY_ORG_KEYWORDS. Edward Jones (60+ NE Ohio branch offices), Raymond James (30+), Ameriprise (40+), Northwestern Mutual (20+). Clients discuss retirement/estate planning = highest-stakes visits = professional exterior non-negotiable. Individual advisors sign vendor contracts directly — no procurement committee, fast close. $200-$600/visit; 2x/year. First pull June 8 Cuyahoga.
+  3. `integrations/mixmax.py` — Synced 16 new routing titles (8 Orthopedic + 8 Financial Advisory) to PROPERTY_MANAGER_TITLES.
+  4. `agents/danny.md` — Full segment briefs added for #124 (Orthopedic & Sports Medicine) and #125 (Financial Advisory). Includes pitch angles, revenue math, NE Ohio target companies, Apollo keywords, and sequence routing.
+  5. `workers/vera_relay.py` + `CLAUDE.md` + `agents/danny.md` — Count sync 123+ → 125+ (vera_relay.py 11 occurrences, CLAUDE.md 2, danny.md 1). Performed same-run per the resolved count-lag bug pattern.
+- DELIVERABLE: `outputs/donna/june8_cuyahoga_battle_card_2026-06-01.md` — full June 8 pre-pull checklist, execution guide, expected outputs, revenue math, troubleshooting table. 7 days out.
+- Critical human-action blockers (unchanged — still pending Bradley action):
+  - Fleet washing Mixmax sequence PENDING (create in Mixmax UI → paste ID into integrations/mixmax.py line 48)
+  - Gas station Mixmax sequence PENDING (same — paste ID into line 54)
+  - Instantly.ai campaigns a1c08c3d + 626cd15d MUST be paused before June 4 enrollment (3 days)
+  - TODAY (June 1) = Medina County pull day — run_medina_both.command NOW if not done
+  - June 4 = Round 2 enrollment — battle card: outputs/donna/june4_enrollment_battle_card_2026-05-24.md
+  - June 8 = Cuyahoga mega-pull — battle card: outputs/donna/june8_cuyahoga_battle_card_2026-06-01.md
+
+## OPEN — Orthopedic & Sports Medicine Clinics Segment Not Yet Pulled 🟡 NEW (Run 166)
+- First seen: 2026-06-01
+- Description: Segment #124 code live in lead_pipeline.py DANNY_TITLES (8 titles) + DANNY_ORG_KEYWORDS (8 keywords); synced to mixmax.py PROPERTY_MANAGER_TITLES; full brief in danny.md. Awaiting first Apollo pull June 8 Cuyahoga. OrthoNEOA (Beachwood/Strongsville HQ + 25 clinic locations), Cleveland Orthopedic & Spine (Strongsville/Westlake/Parma), UH Orthopaedics outpatient offices (Westlake, Twinsburg, Solon), Premier Orthopedics (Akron/Fairlawn). Ohio Medical Board licensing + Joint Commission accreditation = exterior appearance standard. Pre/post-surgical patient parking demand = 2 vehicles per visit = chronically stained concrete. DISTINCT from PT (Run 126), urgent care (Run 114), diagnostic imaging (Run 159). $600-$1,800/visit; OrthoNEOA district deal = $30K-$90K/year. Zero competitors.
+- Attempts: N/A — tracking only, not a bug
+
+## OPEN — Financial Advisory & Wealth Management Offices Segment Not Yet Pulled 🟡 NEW (Run 166)
+- First seen: 2026-06-01
+- Description: Segment #125 code live in lead_pipeline.py DANNY_TITLES (8 titles) + DANNY_ORG_KEYWORDS (9 keywords); synced to mixmax.py PROPERTY_MANAGER_TITLES; full brief in danny.md. Awaiting first Apollo pull June 8 Cuyahoga. Edward Jones (60+ NE Ohio offices — highest FA office density in OH), Ameriprise Financial advisors (40+ NE Ohio offices, Beachwood area cluster), Raymond James (30+ NE Ohio), Northwestern Mutual (20+ NE Ohio). DISTINCT from insurance agencies (Run 165 — insurance product sales, different Apollo org tags) and bank branches (Run 100 — depository institutions). Individual advisors sign vendor contracts independently — no corporate FM, fast close. $200-$600/visit; 2x/year; Edward Jones territory contact (5+ offices) = $2K-$6K/year. Zero competitors.
+- Attempts: N/A — tracking only, not a bug
+
+---
 
 ---
 

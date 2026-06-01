@@ -1220,6 +1220,28 @@ DANNY_TITLES = [
     'insurance agency owner', 'insurance agency manager', 'insurance district manager',
     'insurance office manager', 'independent insurance agent', 'insurance franchise owner',
     'state farm agent', 'allstate agent', 'erie insurance agent', 'insurance agency director',
+    # Orthopedic & Sports Medicine Clinics — OrthoNEOA (25+ NE Ohio locations, Ohio's largest ortho group),
+    # Cleveland Orthopedic & Spine, UH Orthopaedics outpatient offices, Premier Orthopedics,
+    # Ohio Orthopedic Associates, Beacon Orthopaedics; DISTINCT from PT chains (run 126 — rehabilitation
+    # post-op recovery), urgent care (run 114 — walk-in), diagnostic imaging (run 159 — radiology);
+    # pre/post-op surgical patients + large family-member waiting groups = heavy parking lot demand;
+    # Ohio Medical Board + Joint Commission accreditation = exterior appearance standard;
+    # practice managers sign vendor contracts for entire clinic group; $600-$1,800/visit; 2x/year;
+    # OrthoNEOA multi-location deal = $18K-$54K/year; zero competitors cold-calling ortho PMs (added 2026-06-01 run 166)
+    'orthopedic practice manager', 'sports medicine manager', 'orthopedic clinic manager',
+    'orthopedic surgery center manager', 'sports medicine director', 'orthopedic center manager',
+    'sports medicine clinic manager', 'orthopedic group manager',
+    # Financial Advisory & Wealth Management Offices — Edward Jones (60+ NE Ohio branch offices),
+    # Raymond James (30+ NE Ohio), Ameriprise Financial (40+ NE Ohio), Northwestern Mutual (20+ NE Ohio),
+    # Merrill Lynch/BofA advisory offices; DISTINCT from insurance agencies (run 165 — insurance product
+    # sales, different Apollo org tags) and bank branches (run 100 — depository institution buildings);
+    # clients visit for retirement planning + estate discussions = highest-stakes visits = pristine
+    # client-facing appearance is non-negotiable; individual advisors own/lease office space and sign
+    # vendor contracts independently (no corporate FM); Ohio Div. of Securities licensing = appearance standard;
+    # $200-$600/visit; 2x/year; Edward Jones 5-office territory = $2K-$6K/year; zero competitors (added 2026-06-01 run 166)
+    'financial advisor owner', 'wealth management director', 'financial planning manager',
+    'investment advisor manager', 'financial services office manager', 'wealth advisor owner',
+    'financial district manager', 'investment office manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -1946,6 +1968,19 @@ DANNY_ORG_KEYWORDS = [
     'insurance agency', 'independent insurance', 'insurance office', 'state farm',
     'allstate insurance', 'erie insurance', 'nationwide insurance', 'farmers insurance',
     'insurance franchise',
+    # Orthopedic & Sports Medicine Clinics — DISTINCT from 'medical office', 'outpatient facility',
+    # 'diagnostic imaging', 'urgent care'; Apollo org tags 'orthopedic clinic', 'sports medicine'
+    # return zero overlap with any existing DANNY_ORG_KEYWORDS;
+    # first pull June 8 Cuyahoga (OrthoNEOA Beachwood/Strongsville offices, UH Ortho Westlake) (added 2026-06-01 run 166)
+    'orthopedic clinic', 'orthopedic surgery', 'sports medicine', 'orthopedic group',
+    'orthopaedic clinic', 'orthopedic associates', 'orthopedic center', 'sports medicine clinic',
+    # Financial Advisory & Wealth Management Offices — DISTINCT from 'insurance agency', 'bank branch';
+    # Apollo tags 'financial advisory', 'wealth management', 'edward jones', 'ameriprise',
+    # 'raymond james' return zero overlap with any existing DANNY_ORG_KEYWORDS;
+    # first pull June 8 Cuyahoga (Edward Jones offices, Ameriprise advisors in Cuyahoga County) (added 2026-06-01 run 166)
+    'financial advisory', 'wealth management', 'financial planning office', 'investment advisory',
+    'edward jones', 'raymond james', 'ameriprise', 'northwestern mutual financial',
+    'financial services office',
 ]
 
 CARLA_SEARCHES = [

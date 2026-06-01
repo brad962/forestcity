@@ -672,6 +672,19 @@ PROPERTY_MANAGER_TITLES = [
     'insurance agency owner', 'insurance agency manager', 'insurance district manager',
     'insurance office manager', 'independent insurance agent', 'insurance franchise owner',
     'state farm agent', 'allstate agent', 'erie insurance agent', 'insurance agency director',
+    # Orthopedic & Sports Medicine Clinics — OrthoNEOA, Cleveland Orthopedic & Spine, UH Orthopaedics;
+    # DISTINCT from PT chains (run 126), urgent care (run 114), diagnostic imaging (run 159);
+    # practice managers sign vendor contracts; routing to property_manager sequence (added 2026-06-01 run 166)
+    'orthopedic practice manager', 'sports medicine manager', 'orthopedic clinic manager',
+    'orthopedic surgery center manager', 'sports medicine director', 'orthopedic center manager',
+    'sports medicine clinic manager', 'orthopedic group manager',
+    # Financial Advisory & Wealth Management Offices — Edward Jones, Raymond James, Ameriprise;
+    # DISTINCT from insurance agencies (run 165), bank branches (run 100);
+    # individual advisors sign vendor contracts independently (no corporate FM);
+    # routing to property_manager sequence (client-facing exterior / trust angle) (added 2026-06-01 run 166)
+    'financial advisor owner', 'wealth management director', 'financial planning manager',
+    'investment advisor manager', 'financial services office manager', 'wealth advisor owner',
+    'financial district manager', 'investment office manager',
 ]
 
 REALTOR_TITLES = [
