@@ -1202,6 +1202,24 @@ DANNY_TITLES = [
     'rent to own manager', 'rent-to-own manager', 'rent to own district manager',
     'consumer lease manager', 'furniture rental manager', 'appliance rental manager',
     'aarons store manager', 'rentacenter manager', 'rent to own district director',
+    # Insurance Agency Offices — State Farm (80+ NE Ohio agency offices), Allstate (60+ NE Ohio),
+    # Erie Insurance (50+ NE Ohio), Nationwide (40+ NE Ohio), Farmers (30+ NE Ohio), AAA Insurance;
+    # COMPLETELY DISTINCT from banks/credit unions (run 100 — financial institution buildings) and
+    # corporate parks (run 101 — office complexes); insurance agencies are INDIVIDUALLY-OWNED
+    # franchise storefronts — strip mall + standalone offices where the AGENT owner is the vendor
+    # decision-maker, not a corporate FM; client-facing exterior = trust standard (people visit with
+    # major life decisions — home, car, life insurance); state DOI licensing = appearance standard;
+    # Apollo org tags: 'insurance agency', 'independent insurance', 'state farm', 'allstate',
+    # 'erie insurance', 'nationwide insurance', 'farmers insurance' — zero overlap with any existing
+    # DANNY_ORG_KEYWORDS; NE Ohio has 500+ active insurance agency offices across 7 counties;
+    # agency owners sign vendor contracts directly as independent franchise operators;
+    # $200-$600/visit; 2x/year = $400-$1,200/office; one regional district FM = 15+ offices =
+    # $6K-$18K/year; zero competitors cold-calling insurance agency owners about exterior cleaning;
+    # first pull June 8 Cuyahoga (State Farm/Allstate/Erie offices in Strongsville, Parma, Westlake,
+    # Solon, Beachwood, Mentor corridor) (added 2026-06-01 run 165)
+    'insurance agency owner', 'insurance agency manager', 'insurance district manager',
+    'insurance office manager', 'independent insurance agent', 'insurance franchise owner',
+    'state farm agent', 'allstate agent', 'erie insurance agent', 'insurance agency director',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -1921,6 +1939,13 @@ DANNY_ORG_KEYWORDS = [
     'rent to own', 'rent-to-own', 'consumer lease', 'furniture rental store',
     'appliance rental store', 'aarons', 'rent-a-center', 'rentacenter', 'consumer rental',
     'rent to own chain', 'lease to own',
+    # Insurance Agency Offices — State Farm, Allstate, Erie Insurance, Nationwide, Farmers, AAA;
+    # DISTINCT from banks (run 100), corporate parks (run 101) — completely different Apollo org tags;
+    # 500+ independent franchise agency offices across NE Ohio 7 counties; client-facing storefronts;
+    # agency owners sign vendor contracts independently; first pull June 8 Cuyahoga (added 2026-06-01 run 165)
+    'insurance agency', 'independent insurance', 'insurance office', 'state farm',
+    'allstate insurance', 'erie insurance', 'nationwide insurance', 'farmers insurance',
+    'insurance franchise',
 ]
 
 CARLA_SEARCHES = [

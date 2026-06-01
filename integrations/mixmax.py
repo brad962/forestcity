@@ -665,6 +665,13 @@ PROPERTY_MANAGER_TITLES = [
     'rent to own manager', 'rent-to-own manager', 'rent to own district manager',
     'consumer lease manager', 'furniture rental manager', 'appliance rental manager',
     'aarons store manager', 'rentacenter manager', 'rent to own district director',
+    # Insurance Agency Offices — State Farm, Allstate, Erie Insurance, Nationwide, Farmers, AAA;
+    # 500+ NE Ohio franchise agency offices; agency owners sign vendor contracts directly;
+    # routing to property_manager sequence (client-facing exterior / vendor contract angle);
+    # (added 2026-06-01 run 165)
+    'insurance agency owner', 'insurance agency manager', 'insurance district manager',
+    'insurance office manager', 'independent insurance agent', 'insurance franchise owner',
+    'state farm agent', 'allstate agent', 'erie insurance agent', 'insurance agency director',
 ]
 
 REALTOR_TITLES = [

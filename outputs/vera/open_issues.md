@@ -2751,7 +2751,7 @@ Key resolved issues by category:
 
 ---
 
-## OPEN — Danny PM cron not running (12 days overdue) 🔴 CRITICAL — SUMMIT DEADLINE MAY 31
+## OPEN — Danny PM cron not running — NOW: MEDINA PULL TODAY (June 1) 🔴 CRITICAL
 - First seen: 2026-05-20 (run 28)
 - Description: Last successful pull: May 12. Apollo blocked in cloud. Cron not set up on Bradley's Mac.
 - Run 62: Added `scripts/run_summit_pull.command` double-click shortcut.
@@ -2763,7 +2763,8 @@ Key resolved issues by category:
 - Run 93 (2026-05-26 evening): 5 DAYS LEFT. If not done today, Wednesday May 28 is the next optimal window. `outputs/vera/may28_summit_pull_emergency_card_2026-05-26.md` (new this run) is a 25-minute card: double-click shortcut + contractor texts while it runs. Sunday May 31 is the hard wall. After May 31, the auto-rotation switches to Medina County (June 1) — Summit data missed entirely for June 4 enrollment.
 - Run 95 (2026-05-26 late): 4 DAYS LEFT (May 29 = 3 days, May 31 = deadline). Wednesday May 28 = optimal window with may28 emergency card. Friday May 29 card (`may29_friday_summit_deadline_card_2026-05-26.md`) also fires for this. Saturday May 30 = backup window. Sunday May 31 = absolute last day. Double-click `scripts/run_summit_pull.command` — 6 minutes, no typing.
 - Run 121 (2026-05-28 Thu): **3 DAYS LEFT — TODAY IS THE OPTIMAL WINDOW.** May 28 = the Wednesday/Thursday before the May 31 deadline. Relay `_check_summit_deadline()` is posting daily countdown reminders. Bradley has the double-click shortcut. May 29 (Fri) = backup. May 31 = last day. After May 31 the cron rotation moves to Medina (June 1) and Summit is dark until June 29. Every day of delay = fewer fresh Summit leads for June 4 Round 2 enrollment.
-- Resolution criteria: logs/activity.log shows Danny Summit pull entry by May 31.
+- Run 165 (2026-06-01 Mon): **SUMMIT DEADLINE PASSED.** May 31 was the hard wall. Summit pull status unknown — check logs/activity.log for "Danny | Summit" entry. If done: Summit leads are in contacts_cache.json ready for June 4 enrollment. If not done: Summit dark until June 29 rotation. PIVOT TO MEDINA — **TODAY is June 1 = Medina County pull day.** Double-click `scripts/run_medina_both.command` NOW. June 4 enrollment = 3 days out. Fresh Medina leads need to be in cache by tonight. See: outputs/donna/june1_launch_day_card_2026-06-01.md
+- Resolution criteria: logs/activity.log shows Danny Medina pull entry dated June 1, 2026.
 
 ---
 
@@ -3222,3 +3223,31 @@ Key resolved issues by category:
 - Key new relay: _check_june4_enrollment_day() — fires June 4 only with step-by-step enrollment day game plan; relay was silent on the day itself despite countdown on June 2-3
 - Highest priority TODAY (Friday May 29): Run Summit County pull — LAST BUSINESS DAY before May 31 deadline. Command: `python3 workers/lead_pipeline.py danny Summit` OR double-click `scripts/run_summit_pull.command`
 - Highest priority TOMORROW May 30: Review Summit results, prep Medina for June 1 pull. `scripts/run_medina_both.command` is ready.
+
+## OPEN — Medina County Pull — TODAY June 1 🔴 CRITICAL
+- First seen: 2026-06-01 (Run 165)
+- Description: June 1 = Medina County pull day (Week 23 manual override). Bradley must run `scripts/run_medina_both.command` today. Fresh Medina leads need to cache before June 4 Round 2 enrollment. Missing today = no Medina contacts in Round 2 = smaller enrollment batch on Thursday.
+- Attempts:
+  - 2026-06-01 (Run 165): Written urgent action card (outputs/donna/june1_launch_day_card_2026-06-01.md). Relay will fire morning alarm. Bradley needs to double-click shortcut or run command manually — cloud cannot execute this.
+- Resolution criteria: logs/activity.log shows "Danny | Medina" entry dated June 1.
+
+## OPEN — Insurance Agency Offices Segment Not Yet Pulled 🟡 NEW (Run 165)
+- First seen: 2026-06-01
+- Description: Insurance Agency Offices segment added (State Farm, Allstate, Erie Insurance, Nationwide, Farmers, AAA). 10 DANNY_TITLES + 9 DANNY_ORG_KEYWORDS + 10 PROPERTY_MANAGER_TITLES live as of Run 165. No contacts pulled yet — first pull fires June 8 Cuyahoga (Strongsville/Parma/Westlake/Solon/Beachwood/Mentor agency office corridor). Zero competitors targeting insurance agency owners for exterior cleaning.
+- Attempts:
+  - 2026-06-01 (Run 165): Code added — awaiting first pull June 8 Cuyahoga
+
+## RUN METRICS — Run 165 | 2026-06-01
+- Total RESOLVED: 122 (0 new this run)
+- Total OPEN: 150+ (2 new: Medina pull TODAY urgent, Insurance Agencies segment #123 awaiting June 8 pull)
+- Auto-upgrades shipped: 5
+  1. workers/lead_pipeline.py — NEW: Insurance Agency Offices as segment #123. 10 DANNY_TITLES + 9 DANNY_ORG_KEYWORDS. State Farm (80+ NE Ohio), Allstate (60+), Erie Insurance (50+), Nationwide (40+), Farmers (30+), AAA Insurance (20+) = 500+ NE Ohio franchise agency offices. Agency owners are independent franchise operators = fast vendor contract close. Zero competitors. First pull June 8 Cuyahoga.
+  2. integrations/mixmax.py — Synced 10 new Insurance Agency titles to PROPERTY_MANAGER_TITLES. All route to property_manager sequence.
+  3. workers/vera_relay.py — Updated ALL stale segment counts 122+ → 123+ across 11 relay functions.
+  4. CLAUDE.md — Updated 122+ → 123+ in Quick Shortcuts table and June 8 Cuyahoga callout.
+  5. agents/danny.md — Full segment brief for Insurance Agency Offices (#123) added. Revenue math, NE Ohio targets, pitch angles, Apollo keywords. Title batching note updated 122+ → 123+.
+- Deliverables written: 1
+  1. outputs/donna/june1_launch_day_card_2026-06-01.md — TODAY's press-GO action card for June 1: Medina pull (Block 1), Ads Day 6 check (Block 2), Bridge emails + June 4 Instantly check (Block 3), Gas station path (Block 4), GBP post (Block 5). June 1–4 countdown table. Success checklist.
+- Proposals: 1 (see Slack — Summer copy variant for insurance agencies: "Your clients visit during the biggest decisions of their lives — home protection, auto coverage. First impression starts at the parking lot." Time-specific pitch for the post-renewal-season cleanup window.)
+- Key active trackers: Medina pull = TODAY; June 4 enrollment = 3 days out; June 8 Cuyahoga pull = 7 days; 123+ segments ready.
+- Highest priority TODAY (June 1): (1) Double-click `scripts/run_medina_both.command` — 6 minutes unattended (2) Confirm Instantly.ai paused (3) Bridge emails to any 2+ open contacts

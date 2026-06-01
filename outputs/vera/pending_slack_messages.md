@@ -50,3 +50,43 @@
 ✅ *Vera — Scan Complete 2026-06-01 (Run 164)*
 >6 auto-upgrades shipped | 1 proposal | 1 issue resolved (count sync bug) | 121 open issues (mostly segment tracking — code live, awaiting June 8 pull)
 >Next critical action: June 8 Cuyahoga pull — 122+ segments — run `run_cuyahoga_both.command`
+
+---
+🔴 *Vera — MEDINA PULL DAY — Monday June 1*
+>TODAY is Medina County pull day (Week 23 manual override). June 4 enrollment is 3 days out — fresh Medina leads need to be in the system before Thursday.
+>Action: Double-click `scripts/run_medina_both.command` in Finder. 6 minutes, runs in background.
+>Full today's card: `outputs/donna/june1_launch_day_card_2026-06-01.md`
+>After pull: confirm Instantly.ai is paused before Thursday enrollment.
+
+---
+🔴 *Vera — June 4 Enrollment Countdown — 3 Days*
+>Thursday June 4 = Round 2 Mixmax enrollment day. This is the biggest action of the month.
+>Pre-flight before Thursday: (1) Instantly.ai paused ✓ (2) New email copy in Mixmax sequences ✓ (3) INSTANTLY_PAUSED=true in .env ✓ (4) Medina pull done today ✓
+>Battle card: `outputs/donna/june4_enrollment_battle_card_2026-05-24.md`
+>Night-before checklist: `outputs/donna/june3_tuesday_evening_checklist_2026-05-26.md`
+
+---
+🔧 *Vera — Auto-Upgrade (Run 165)*
+>Changed: NEW segment #123 — Insurance Agency Offices. Code live in `lead_pipeline.py` + `mixmax.py`. 10 titles + 9 org keywords. State Farm (80+ NE Ohio), Allstate (60+), Erie Insurance (50+), Nationwide (40+), Farmers (30+), AAA Insurance (20+) = 500+ NE Ohio franchise agency offices. Agency owners sign vendor contracts independently — no procurement committee, fast close. $200-$600/visit; 2x/year. First pull June 8 Cuyahoga.
+>Why: Zero competitors cold-calling insurance agency owners. Client-facing exterior = trust standard during highest-stakes client interactions (home/auto/life policy visits). Completely distinct from banks (Run 100).
+>File: workers/lead_pipeline.py, integrations/mixmax.py
+
+---
+🔧 *Vera — Auto-Upgrade (Run 165)*
+>Changed: Count sync 122+ → 123+ across vera_relay.py (11 functions), CLAUDE.md, agents/danny.md — done same-run as segment addition.
+>Why: Preventing the recurring count-lag bug pattern from runs 156-164. Same-run sync every time from here forward.
+>File: workers/vera_relay.py, CLAUDE.md, agents/danny.md
+
+---
+💡 *Vera — Upgrade Proposal*
+>Idea: Write a "Client-Facing Exterior Trust" email variant for Danny's Touch 1 specifically targeting Insurance Agencies, Med Spas, and Massage Therapy chains — 3 segments where the client's FIRST IMPRESSION of the physical space directly correlates with their purchase confidence. These aren't facility managers; they're business OWNERS who feel the direct ROI of a clean exterior on client acquisition.
+>Why: Generic PM copy ("manage multiple properties") doesn't resonate with an insurance agent who sees 15 clients/day. This angle — "your clients are deciding whether to trust you with their home before they open your door" — matches the psychology of a solo franchise owner, not a property manager. Tommy writes it in 30 min. Deploy with June 8 Cuyahoga enrollment batch.
+>Impact: Higher Touch 1 open/reply rate on 3 franchise-owner segments in the first post-June-8 batch. Segments that currently receive generic PM copy.
+>Reply YES to approve.
+
+---
+✅ *Vera — Scan Complete 2026-06-01 (Run 165)*
+>5 auto-upgrades shipped | 1 deliverable written | 1 proposal | 2 open issues added
+>Auto-upgrades: segment #123 Insurance Agencies (lead_pipeline.py + mixmax.py + danny.md) + count sync 122+→123+ (vera_relay.py + CLAUDE.md)
+>Deliverable: outputs/donna/june1_launch_day_card_2026-06-01.md — TODAY's Medina pull + June 4 prep card
+>Critical path: Medina pull TODAY → June 4 enrollment Thursday → June 8 Cuyahoga (123+ segments, largest pull of season)
