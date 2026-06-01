@@ -1362,6 +1362,32 @@ DANNY_TITLES = [
     'orthodontic district manager', 'pediatric dental practice manager',
     'orthodontic group director', 'orthodontic operations director',
     'pediatric dental district manager', 'orthodontic regional manager',
+    # County Fairgrounds & Agricultural Exhibition Facilities — Cuyahoga County Fair (Berea),
+    # Summit County Fair (Tallmadge), Medina County Fair (Medina), Lake County Fair (Painesville Twp),
+    # Lorain County Fair (Wellington), Geauga County Fair (Burton — Ohio's oldest), Portage County Fair (Ravenna);
+    # 7 county fairgrounds in the 7-county service area = perfect geographic alignment;
+    # Ohio Dept of Agriculture / county fair board licensing = facility appearance inspection standard;
+    # June/July pre-fair pressure washing of concrete livestock pavilions + midway areas + parking lots;
+    # facilities directors/superintendents sign vendor contracts; $3,000-$8,000/visit; 2x/year (spring prep + post-fair);
+    # DISTINCT from convention centers (run 128 — I-X Center, Cleveland Convention Center) which are year-round;
+    # county fairgrounds are seasonal agricultural venues with distinct Apollo org tags;
+    # zero competitors cold-calling county fair facilities directors (added 2026-06-01 run 170)
+    'fairgrounds manager', 'county fair director', 'exhibition grounds manager',
+    'fairgrounds facilities manager', 'county fairgrounds director', 'fair operations manager',
+    'agricultural fair manager', 'fair facility director', 'fair superintendent',
+    # Title Companies & Real Estate Closing Offices — Stewart Title (Cleveland HQ), Chicago Title Insurance,
+    # First American Title, Fidelity National Title, Ohio Title Agency, Buckeye Title Agency,
+    # Western Reserve Title, HomePoint Title, WFG National Title, Old Republic Title, plus 100+ independent
+    # closing attorney offices across Cuyahoga/Lake/Lorain/Summit/Medina/Geauga/Portage;
+    # client-facing offices where NE Ohio homebuyers close the largest transaction of their lives;
+    # curb appeal = direct trust signal; June = peak real estate closing season = peak pitch window;
+    # DISTINCT from realtors (Carla's referral territory) and financial advisors (run 166);
+    # 200+ NE Ohio title company offices across 7 counties; office managers sign vendor contracts;
+    # $600-$1,500/office; 2x/year; multi-office territory deal = $12K-$30K/year;
+    # zero competitors cold-calling title company office managers (added 2026-06-01 run 170)
+    'title company manager', 'title office manager', 'title branch manager',
+    'settlement agent manager', 'closing attorney office manager', 'title company branch manager',
+    'real estate closing manager', 'title services manager', 'title operations manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -2173,6 +2199,20 @@ DANNY_ORG_KEYWORDS = [
     'orthodontic practice', 'orthodontics', 'pediatric dentistry',
     'pediatric dental', 'orthodontic group', 'orthodontic center',
     'braces center', 'pediatric dental group',
+    # County Fairgrounds & Agricultural Exhibition Facilities — 7 NE Ohio county fairgrounds;
+    # June/July pre-fair = perfect pitch window; ODA/county fair board inspection = appearance standard;
+    # DISTINCT from convention centers (run 128 — I-X Center, convention halls) which are year-round commercial venues;
+    # Apollo org tags 'county fairgrounds', 'county fair', 'agricultural fair' return zero overlap with existing keywords
+    # (added 2026-06-01 run 170)
+    'county fairgrounds', 'county fair', 'agricultural fair', 'fairgrounds',
+    'exhibition grounds', 'fair grounds', 'agricultural exhibition',
+    # Title Companies & Real Estate Closing Offices — Stewart Title, Chicago Title, First American,
+    # Fidelity National Title, Ohio Title Agency, Buckeye Title, WFG National Title;
+    # DISTINCT from realtors (realtor sequence) and financial advisors (run 166);
+    # 'title insurance', 'title company', 'real estate closing' return zero overlap with existing DANNY_ORG_KEYWORDS;
+    # June = peak real estate closing season = peak pitch window RIGHT NOW (added 2026-06-01 run 170)
+    'title company', 'title insurance', 'title agency', 'real estate closing',
+    'settlement services', 'closing services', 'title search', 'property title',
 ]
 
 CARLA_SEARCHES = [

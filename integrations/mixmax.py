@@ -730,6 +730,16 @@ PROPERTY_MANAGER_TITLES = [
     'orthodontic district manager', 'pediatric dental practice manager',
     'orthodontic group director', 'orthodontic operations director',
     'pediatric dental district manager', 'orthodontic regional manager',
+    # County Fairgrounds & Agricultural Exhibition Facilities — routing to property_manager sequence
+    # (Ohio Dept of Agriculture / county fair board licensing / seasonal maintenance angle) (added 2026-06-01 run 170)
+    'fairgrounds manager', 'county fair director', 'exhibition grounds manager',
+    'fairgrounds facilities manager', 'county fairgrounds director', 'fair operations manager',
+    'agricultural fair manager', 'fair facility director', 'fair superintendent',
+    # Title Companies & Real Estate Closing Offices — routing to property_manager sequence
+    # (client-facing exterior / professional trust signal angle) (added 2026-06-01 run 170)
+    'title company manager', 'title office manager', 'title branch manager',
+    'settlement agent manager', 'closing attorney office manager', 'title company branch manager',
+    'real estate closing manager', 'title services manager', 'title operations manager',
 ]
 
 REALTOR_TITLES = [

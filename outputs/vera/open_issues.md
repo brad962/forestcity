@@ -1,23 +1,33 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 169 | 2026-06-01 | Auto-fixes shipped: 4 | New RESOLVED: 0 | Open: 133 (131 carry-forward + 2 new segment tracking: Skilled Nursing Facilities + Orthodontic Practices)*
+*Run 170 | 2026-06-01 | Auto-fixes shipped: 4 | New RESOLVED: 0 | Open: 135 (133 carry-forward + 2 new segment tracking: County Fairgrounds + Title Companies)*
 
 ---
 
-## RUN METRICS — Run 169 | 2026-06-01
+## RUN METRICS — Run 170 | 2026-06-01
 - Total RESOLVED: 122 (unchanged)
-- Total OPEN: 133 (131 carry-forward + 2 this run)
+- Total OPEN: 135 (133 carry-forward + 2 this run)
 - Auto-upgrades shipped: 4
-  1. `workers/lead_pipeline.py` — NEW: Skilled Nursing Facilities & Long-Term Care Centers as segment #132. 8 DANNY_TITLES (skilled nursing facility administrator, nursing home administrator, long-term care administrator, director of nursing home operations, snf administrator, nursing facility director, post-acute care director, skilled nursing regional director) + 8 DANNY_ORG_KEYWORDS. ProMedica Senior Care NE Ohio (15+ SNF facilities — formerly HCR ManorCare), Genesis Healthcare NE Ohio, Altercare of Ohio (20+ independent NE Ohio SNFs), Consulate Health Care, Southwest General Health SNF. DISTINCT from senior/assisted living (run 96 — 'assisted living'/'memory care' Apollo tags), hospice (run 167 — 'hospice care'), adult day care (run 159). CMS Five-Star Quality Rating System: exterior appearance tied to health inspection score = tied to Medicare/Medicaid census = tied to revenue. One ProMedica regional ops contact = 15 facilities = $60K-$180K/year. Zero competitors cold-calling SNF administrators. First pull June 8 Cuyahoga.
-  2. `workers/lead_pipeline.py` — NEW: Orthodontic Practices & Pediatric Dental Groups as segment #133. 8 DANNY_TITLES (orthodontic practice manager, orthodontist office manager, orthodontic district manager, pediatric dental practice manager, orthodontic group director, orthodontic operations director, pediatric dental district manager, orthodontic regional manager) + 8 DANNY_ORG_KEYWORDS. Smile Doctors NE Ohio (national franchise, acquired multiple Cuyahoga/Summit/Lake County practices), Ortho Studios Ohio (Ohio-based franchise), Kids First Dental NE Ohio (8+ locations), Orthodontic Associates of Ohio (Beachwood/Westlake). DISTINCT from general DSO dentistry (run 123 — 'dental group'/'dental service organization' Apollo tags). Orthodontic patients visit every 4-6 weeks = highest dental visit frequency = maximum parking/entry staining. One Smile Doctors NE Ohio regional director = 10+ locations = $12K-$30K/year. Zero competitors. First pull June 8 Cuyahoga.
-  3. `integrations/mixmax.py` — Synced 16 new routing titles (8 SNF + 8 Orthodontic) to PROPERTY_MANAGER_TITLES. `workers/vera_relay.py` — Updated segment count 131+ → 133+ (11 occurrences). `CLAUDE.md` — Updated 131+ → 133+ (2 occurrences). `agents/danny.md` — Updated count + full segment briefs for #132 (SNF) and #133 (Orthodontic) with pitch angles, revenue math, NE Ohio target companies, Apollo keywords, sequence routing. Performed same-run per the resolved count-lag bug pattern.
-  4. All count syncs: 131+ → 133+ across vera_relay.py (11 occ), CLAUDE.md (2 occ), agents/danny.md (3 occ). Full segment briefs added for #132 and #133.
+  1. `workers/lead_pipeline.py` — NEW: County Fairgrounds & Agricultural Exhibition Facilities as segment #134. 9 DANNY_TITLES (fairgrounds manager, county fair director, exhibition grounds manager, fairgrounds facilities manager, county fairgrounds director, fair operations manager, agricultural fair manager, fair facility director, fair superintendent) + 7 DANNY_ORG_KEYWORDS (county fairgrounds, county fair, agricultural fair, fairgrounds, exhibition grounds, fair grounds, agricultural exhibition). 7 NE Ohio county fairgrounds in 7-county service area: Cuyahoga (Berea), Summit (Tallmadge), Medina, Lake (Painesville), Lorain (Wellington), Geauga (Burton — Ohio's oldest), Portage (Ravenna). Pre-fair June/July = perfect pitch window. $3K-$8K/visit; 2x/year; all 7 = $42K-$112K/year. Zero competitors. DISTINCT from convention centers (run 128). First pull June 8 Cuyahoga.
+  2. `workers/lead_pipeline.py` — NEW: Title Companies & Real Estate Closing Offices as segment #135. 9 DANNY_TITLES (title company manager, title office manager, title branch manager, settlement agent manager, closing attorney office manager, title company branch manager, real estate closing manager, title services manager, title operations manager) + 8 DANNY_ORG_KEYWORDS (title company, title insurance, title agency, real estate closing, settlement services, closing services, title search, property title). 200+ NE Ohio title offices: Stewart Title (Cleveland HQ), Chicago Title, First American, Fidelity National, Ohio Title Agency, Buckeye Title, Western Reserve Title, WFG National, Old Republic + 100+ independent closing attorneys. June = peak real estate closing season. $600-$1,500/office; 2x/year; 10-office territory = $12K-$30K/year. DISTINCT from realtors (Carla's territory) and financial advisors (run 166). Zero competitors. First pull June 8 Cuyahoga.
+  3. `integrations/mixmax.py` — Synced 18 new routing titles (9 County Fairgrounds + 9 Title Company) to PROPERTY_MANAGER_TITLES. Full segment briefs for #134 and #135 added to `agents/danny.md` with pitch angles, revenue math, NE Ohio target companies, Apollo keywords, sequence routing.
+  4. All count syncs: 133+ → 135+ across `workers/vera_relay.py` (11 occ), `CLAUDE.md` (2 occ), `agents/danny.md` (1 occ batching note). Same-run count sync per resolved count-lag bug pattern.
 - Critical human-action blockers (URGENT — deadlines imminent):
   - 🚨 TODAY (June 1) = Medina County pull day — run_medina_both.command NOW if not done yet
   - ⚠️ JUNE 4 (3 days) = Round 2 enrollment — PAUSE Instantly.ai campaigns a1c08c3d + 626cd15d TODAY
   - ⛽ Gas station Mixmax sequence PENDING (create in Mixmax UI → paste ID into integrations/mixmax.py line 54)
   - 🚐 Fleet washing Mixmax sequence PENDING (create in Mixmax UI → paste ID into integrations/mixmax.py line 48)
-  - 📅 June 8 = Cuyahoga mega-pull — 133+ segments — use run_cuyahoga_both.command (7 days)
+  - 📅 June 8 = Cuyahoga mega-pull — 135+ segments — use run_cuyahoga_both.command (7 days)
+
+## OPEN — County Fairgrounds & Agricultural Exhibition Facilities Segment Not Yet Pulled 🟡 NEW (Run 170)
+- First seen: 2026-06-01
+- Description: Segment #134 code live in lead_pipeline.py DANNY_TITLES (9 titles) + DANNY_ORG_KEYWORDS (7 keywords); synced to mixmax.py PROPERTY_MANAGER_TITLES; full brief in danny.md. Awaiting first Apollo pull June 8 Cuyahoga (Cuyahoga County Fairgrounds Berea). 7 NE Ohio county fairgrounds in 7-county service area. Pre-fair June/July = perfect pitch window. $3K-$8K/visit; 2x/year. DISTINCT from convention centers (run 128). Zero competitors.
+- Attempts: N/A — tracking only, not a bug
+
+## OPEN — Title Companies & Real Estate Closing Offices Segment Not Yet Pulled 🟡 NEW (Run 170)
+- First seen: 2026-06-01
+- Description: Segment #135 code live in lead_pipeline.py DANNY_TITLES (9 titles) + DANNY_ORG_KEYWORDS (8 keywords); synced to mixmax.py PROPERTY_MANAGER_TITLES; full brief in danny.md. Awaiting first Apollo pull June 8 Cuyahoga. 200+ NE Ohio title offices. June = peak real estate closing season = peak pitch window right now. $600-$1,500/office; 2x/year. DISTINCT from realtors (Carla) and financial advisors (run 166). Zero competitors.
+- Attempts: N/A — tracking only, not a bug
 
 ## OPEN — Skilled Nursing Facilities & Long-Term Care Centers Segment Not Yet Pulled 🟡 NEW (Run 169)
 - First seen: 2026-06-01
