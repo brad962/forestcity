@@ -825,6 +825,21 @@ PROPERTY_MANAGER_TITLES = [
     'equipment rental branch manager', 'equipment rental manager', 'rental equipment manager',
     'rental yard manager', 'equipment rental operations manager', 'rental branch general manager',
     'construction equipment rental manager', 'heavy equipment rental manager',
+    # Public Housing Authorities & Affordable Housing — CMHA, AMHA, Lake/Lorain/Medina CMHAs;
+    # HUD-funded direct-award vendor contracts; routing to property_manager sequence (added 2026-06-02 run 180)
+    'housing authority maintenance director', 'housing authority facilities manager', 'public housing director',
+    'housing development manager', 'housing authority property manager', 'affordable housing director',
+    'public housing facilities manager', 'housing authority operations manager',
+    # TV & Radio Broadcasting Stations — WEWS, WJW Fox 8, WKYC, iHeartMedia, Cumulus Media Cleveland;
+    # brand image = on-camera exterior = non-negotiable appearance; routing to property_manager sequence (added 2026-06-02 run 180)
+    'broadcast facility manager', 'station operations manager', 'television station manager',
+    'broadcast operations director', 'radio station manager', 'media facility director',
+    'broadcast engineering manager', 'television facility manager',
+    # Pharmaceutical Manufacturing & Research Facilities — STERIS Corporation (Mentor OH), Ferro Corporation;
+    # FDA 21 CFR Part 211 compliance; routing to property_manager sequence (added 2026-06-02 run 180)
+    'pharmaceutical plant manager', 'pharma facility manager', 'pharmaceutical operations manager',
+    'drug manufacturing manager', 'pharmaceutical plant superintendent', 'biotech facility manager',
+    'pharmaceutical manufacturing manager', 'pharmaceutical plant operations manager',
 ]
 
 REALTOR_TITLES = [

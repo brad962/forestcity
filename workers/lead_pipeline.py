@@ -1588,6 +1588,41 @@ DANNY_TITLES = [
     'equipment rental branch manager', 'equipment rental manager', 'rental equipment manager',
     'rental yard manager', 'equipment rental operations manager', 'rental branch general manager',
     'construction equipment rental manager', 'heavy equipment rental manager',
+    # Public Housing Authorities & Affordable Housing Management — CMHA (Cuyahoga Metropolitan Housing Authority,
+    # 5,600+ units), AMHA (Akron Metropolitan Housing Authority, 3,200+ units), Lake County CMHA,
+    # Lorain Metropolitan Housing Authority, Medina County Housing Authority;
+    # COMPLETELY DISTINCT from private property managers (those are for-profit PM firms);
+    # government HUD-funded authorities operate direct-award vendor contracts without competitive bidding <$25K;
+    # large paved parking lots + walkways + building facades + common area concrete across hundreds of properties;
+    # maintenance directors sign vendor contracts; $800–$2,500/site; annual county-wide contract = $20K–$80K/year;
+    # zero competitors cold-calling public housing maintenance directors in NE Ohio (added 2026-06-02 run 180)
+    'housing authority maintenance director', 'housing authority facilities manager', 'public housing director',
+    'housing development manager', 'housing authority property manager', 'affordable housing director',
+    'public housing facilities manager', 'housing authority operations manager',
+    # TV & Radio Broadcasting Stations & Media Facilities — WEWS Cleveland (ABC affiliate, Scripps Media),
+    # WJW Fox 8 (iHeartMedia), WKYC (NBC affiliate, Tegna), WUAB (My Network TV, Nexstar),
+    # iHeartMedia Cleveland (WTAM 1100, WMMS 100.7, WKRK 92.3, WENZ 107.9), Cumulus Media Cleveland;
+    # transmitter buildings + satellite dish farms + parking areas + building facades;
+    # COMPLETELY DISTINCT from corporate office parks — broadcasting facilities have unique outdoor structures;
+    # station FMs or engineering directors sign vendor contracts; $1,500–$4,000/site; 2x/year;
+    # brand image = on-camera outdoor shots for news promos = non-negotiable appearance standard;
+    # zero competitors cold-calling broadcast facility managers in NE Ohio (added 2026-06-02 run 180)
+    'broadcast facility manager', 'station operations manager', 'television station manager',
+    'broadcast operations director', 'radio station manager', 'media facility director',
+    'broadcast engineering manager', 'television facility manager',
+    # Pharmaceutical Manufacturing & Research Facilities — STERIS Corporation (Mentor OH — Fortune 500,
+    # largest sterile processing company globally), Ferro Corporation (Cleveland — specialty materials/pharma),
+    # OhioHealth pharmaceutical research (Columbus but with NE Ohio outpatient research sites),
+    # Summa Health / UH clinical research facilities, Noven Pharmaceuticals;
+    # COMPLETELY DISTINCT from general manufacturing (run 118) and medical device (run 168);
+    # FDA 21 CFR Part 211 (current Good Manufacturing Practice for finished pharmaceuticals) mandates
+    # facility appearance and contamination control — exterior cleaning is a compliance line item;
+    # plant FMs + EHS managers sign vendor contracts; $3,000–$12,000/visit; 4x/year;
+    # STERIS Mentor campus alone is a $15K–$40K/year account; zero competitors targeting pharma FMs;
+    # first pull June 8 Cuyahoga (STERIS Mentor corridor + Ferro Corporation HQ) (added 2026-06-02 run 180)
+    'pharmaceutical plant manager', 'pharma facility manager', 'pharmaceutical operations manager',
+    'drug manufacturing manager', 'pharmaceutical plant superintendent', 'biotech facility manager',
+    'pharmaceutical manufacturing manager', 'pharmaceutical plant operations manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -2545,6 +2580,22 @@ DANNY_ORG_KEYWORDS = [
     'equipment rental', 'construction equipment rental', 'tool rental', 'aerial equipment rental',
     'united rentals', 'sunbelt rentals', 'herc rentals', 'blueline rental', 'h&e equipment',
     'nesco rentals', 'ahern rentals', 'industrial equipment rental',
+    # Public Housing Authorities — HUD-funded government authorities; DISTINCT from private PM firms
+    # ('property management' already in list) and general government facilities ('city facilities', run 124);
+    # Apollo tags 'housing authority', 'metropolitan housing' return ZERO overlap (added 2026-06-02 run 180)
+    'housing authority', 'metropolitan housing', 'public housing', 'affordable housing',
+    'hud housing', 'housing development corporation', 'community development housing', 'section 8 housing',
+    # TV & Radio Broadcasting — DISTINCT from 'media' (too broad), 'entertainment' (covered by venues/concerts);
+    # Apollo tags 'television station', 'radio station', 'broadcasting company' are unique org-level tags;
+    # iHeartMedia + Cumulus + Scripps + Tegna + Nexstar are the major parent companies (added 2026-06-02 run 180)
+    'broadcasting company', 'television station', 'radio station', 'broadcast media',
+    'tv station', 'iheartmedia', 'cumulus media', 'television broadcasting',
+    # Pharmaceutical Manufacturing — DISTINCT from 'manufacturing' (run 118 — general industrial),
+    # 'medical device' (run 168 — device/equipment), 'food processing' (run 127 — food/beverage);
+    # Apollo tags 'pharmaceutical', 'biotechnology' are clean, high-precision org-level matches;
+    # STERIS (Mentor OH), Ferro Corporation (Cleveland HQ) are anchor companies (added 2026-06-02 run 180)
+    'pharmaceutical', 'pharmaceuticals', 'drug manufacturing', 'biotech', 'biotechnology',
+    'pharmaceutical manufacturing', 'pharma company', 'pharmaceutical plant',
 ]
 
 CARLA_SEARCHES = [

@@ -1,6 +1,6 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 179 | 2026-06-02 | Auto-fixes shipped: 4 | New RESOLVED: 0 | Open: 155 (153 carry-forward from Run 178 + 2 new tracking: USPS Postal Facilities #153 + Equipment Rental #154)*
+*Run 180 | 2026-06-02 | Auto-fixes shipped: 4 | New RESOLVED: 0 | Open: 158 (155 carry-forward from Run 179 + 3 new tracking: Public Housing #155 + Broadcasting Stations #156 + Pharma Manufacturing #157)*
 
 ---
 
@@ -3634,3 +3634,33 @@ Key resolved issues by category:
 - Deliverables written: 0 (all code + content updates)
 - Proposals: 1 (see Slack — VFW/Legion veteran discount pitch package: Tommy writes a dedicated outreach email that leads with the veterans support angle + 10% discount offer; post commanders respond to community-first language, not generic commercial cold email)
 - Key active trackers: June 4 = 2 days away (Round 2 enrollment — PAUSE INSTANTLY TODAY); June 8 = 6 days (145+ segment Cuyahoga mega-pull); Gas station + fleet sequences still PENDING; Medina pull status unknown
+
+## OPEN — Public Housing Authorities Segment Not Yet Pulled 🟡 NEW (Run 180)
+- First seen: 2026-06-02
+- Description: Public Housing Authorities & Affordable Housing Management segment added (#155). 8 DANNY_TITLES (housing authority maintenance director, housing authority facilities manager, public housing director, housing development manager, housing authority property manager, affordable housing director, public housing facilities manager, housing authority operations manager) + 8 DANNY_ORG_KEYWORDS (housing authority, metropolitan housing, public housing, affordable housing, hud housing, housing development corporation, community development housing, section 8 housing) + 8 PROPERTY_MANAGER_TITLES live. CMHA (5,600+ Cuyahoga units), AMHA (3,200+ Summit units), Lake/Lorain/Medina CMHAs. Direct-award HUD vendor contracts <$25K — no bid process. $20K–$80K/year county-wide blanket contract. Zero competitors. First pull June 8 Cuyahoga.
+- Attempts:
+  - 2026-06-02: Code added (Run 180) — awaiting first pull June 8 Cuyahoga
+
+## OPEN — TV & Radio Broadcasting Stations Segment Not Yet Pulled 🟡 NEW (Run 180)
+- First seen: 2026-06-02
+- Description: TV & Radio Broadcasting Stations & Media Facilities segment added (#156). 8 DANNY_TITLES (broadcast facility manager, station operations manager, television station manager, broadcast operations director, radio station manager, media facility director, broadcast engineering manager, television facility manager) + 8 DANNY_ORG_KEYWORDS (broadcasting company, television station, radio station, broadcast media, tv station, iheartmedia, cumulus media, television broadcasting) + 8 PROPERTY_MANAGER_TITLES live. WEWS, WJW Fox 8, WKYC, iHeartMedia Cleveland (WTAM/WMMS/WKRK), Cumulus Media. On-camera building appearance = brand pitch unique to this segment. $15K–$40K/year for 5-station parent company deal. Zero competitors. First pull June 8 Cuyahoga.
+- Attempts:
+  - 2026-06-02: Code added (Run 180) — awaiting first pull June 8 Cuyahoga
+
+## OPEN — Pharmaceutical Manufacturing Segment Not Yet Pulled 🟡 NEW (Run 180)
+- First seen: 2026-06-02
+- Description: Pharmaceutical Manufacturing & Research Facilities segment added (#157). 8 DANNY_TITLES (pharmaceutical plant manager, pharma facility manager, pharmaceutical operations manager, drug manufacturing manager, pharmaceutical plant superintendent, biotech facility manager, pharmaceutical manufacturing manager, pharmaceutical plant operations manager) + 8 DANNY_ORG_KEYWORDS (pharmaceutical, pharmaceuticals, drug manufacturing, biotech, biotechnology, pharmaceutical manufacturing, pharma company, pharmaceutical plant) + 8 PROPERTY_MANAGER_TITLES live. STERIS Corporation (Mentor OH, Fortune 500), Ferro Corporation, Lubrizol. FDA 21 CFR Part 211 GMP compliance = exterior cleaning is a written regulatory line item. STERIS Mentor campus alone = $15K–$40K/year anchor account. Zero competitors. First pull June 8 Cuyahoga.
+- Attempts:
+  - 2026-06-02: Code added (Run 180) — awaiting first pull June 8 Cuyahoga
+
+## RUN METRICS — Run 180 | 2026-06-02
+- Total RESOLVED: 122 (unchanged)
+- Total OPEN: 158 (155 carry-forward + 3 new: Public Housing #155, Broadcasting #156, Pharma Manufacturing #157)
+- Auto-upgrades shipped: 4
+  1. workers/lead_pipeline.py — NEW: Public Housing Authorities & Affordable Housing Management as segment #155. 8 DANNY_TITLES + 8 DANNY_ORG_KEYWORDS. CMHA (5,600+ Cuyahoga units) + AMHA (3,200+ Summit units) + Lake/Lorain/Medina CMHAs. Direct-award HUD vendor contracts, no bid process. $20K–$80K/year county-wide blanket. First pull June 8 Cuyahoga.
+  2. workers/lead_pipeline.py — NEW: TV & Radio Broadcasting Stations as segment #156. 8 DANNY_TITLES + 8 DANNY_ORG_KEYWORDS. WEWS, WJW Fox 8, WKYC, iHeartMedia Cleveland, Cumulus Media. On-camera building appearance pitch unique to segment. $15K–$40K/year for 5-station parent co deal. First pull June 8 Cuyahoga.
+  3. workers/lead_pipeline.py — NEW: Pharmaceutical Manufacturing & Research Facilities as segment #157. 8 DANNY_TITLES + 8 DANNY_ORG_KEYWORDS. STERIS Corporation (Fortune 500, Mentor OH), Ferro Corp, Lubrizol. FDA 21 CFR Part 211 GMP = exterior cleaning is regulatory compliance line item. STERIS campus = $15K–$40K/year anchor. First pull June 8 Cuyahoga.
+  4. integrations/mixmax.py — Synced 24 new routing titles (8 Public Housing + 8 Broadcasting + 8 Pharma) to PROPERTY_MANAGER_TITLES. Count sync 154+ → 157+ across vera_relay.py (all occurrences), CLAUDE.md (2 occurrences), agents/danny.md (full briefs added for all 3 segments).
+- Deliverables written: 0 (all code + content updates)
+- Proposals: 2 (Gas/fleet sequence creation — PENDING 6+ weeks, unlock 50+ stalled contacts; June 8 Cuyahoga mega-pull 20-min calendar block)
+- Key active trackers: June 4 enrollment = 2 days (Instantly.ai pause + INSTANTLY_PAUSED=true CRITICAL); June 8 Cuyahoga 157+ segment mega-pull = 6 days; Gas station + fleet sequences = PENDING 6+ weeks
