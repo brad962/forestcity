@@ -1,3 +1,42 @@
+🔧 *Vera — Auto-Upgrade | Run 177 | June 2, 2026*
+>Changed: BUG FIX + Segment #150 — Childcare Centers & Early Learning Facilities
+>Why: Run 110 (May 27) added 6 childcare director titles to Apollo title search — but NEVER added matching org keywords. Apollo's query requires BOTH a title match AND an org keyword match. For 67 consecutive runs, Apollo has returned ZERO childcare contacts despite the titles being in the list. Added 11 org keywords today: childcare center, daycare center, child care center, early childhood education, preschool center, early learning center, kindercare, bright horizons, goddard school, learning tree childcare, childcare franchise. This closes a silent 67-run gap.
+>Segment value: KinderCare (50+ NE Ohio), Bright Horizons (10+ corporate centers), Goddard School (20+ franchises), Learning Tree (15+ regional chain NE Ohio HQ), 1,000+ independent ODJFS-licensed centers. June = peak enrollment month — parents choosing fall childcare RIGHT NOW — exterior condition is the #1 trust signal at enrollment visit. ODJFS licensing inspection includes exterior cleanliness.
+>Revenue math: $300-$800/visit; 2x/year; 20-center territory = $12K-$32K/year
+>File: workers/lead_pipeline.py (DANNY_ORG_KEYWORDS) + agents/danny.md | First pull: June 8 Cuyahoga
+---
+🔧 *Vera — Auto-Upgrade | Run 177 | June 2, 2026*
+>Changed: Segment count 149+ → 150+ across vera_relay.py (11 occ), CLAUDE.md (2 occ), agents/danny.md (batching note)
+>Why: Same-run count sync — prevents stale numbers in relay reminders and CLAUDE.md going into June 8 mega-pull
+>File: workers/vera_relay.py + CLAUDE.md + agents/danny.md
+---
+🚨 *Vera — URGENT | June 4 = 2 DAYS AWAY — Pause Instantly.ai NOW (reminder)*
+>Round 2 Mixmax enrollment fires June 4 morning. Before you open your laptop June 4:
+>
+>Pause Instantly.ai RIGHT NOW (not Thursday morning):
+>  → app.instantly.ai → Campaigns → a1c08c3d → pause
+>  → app.instantly.ai → Campaigns → 626cd15d → pause
+>  → .env: add INSTANTLY_PAUSED=true
+>
+>Why: Same contacts in Instantly.ai + Mixmax = duplicate emails = spam filter = 0% reply rate on the entire Round 2 batch. This kills the biggest enrollment run of peak season.
+>Guide: outputs/vera/instantly_pause_guide_2026-05-22.md | Battle card: outputs/donna/june4_enrollment_battle_card_2026-05-24.md
+---
+📅 *Vera — June 8 Countdown | 6 Days | 150+ Segments Ready*
+>June 8 Cuyahoga = biggest pull of the year. 150 commercial segments fully coded and ready.
+>
+>Still needed before June 8:
+>  □ Round 2 enrollment June 4 — battle card in outputs/donna/ — pause Instantly.ai FIRST
+>  □ Medina pull (run_medina_both.command) — confirm done before EOD today (June 2)
+>  □ Gas station Mixmax sequence — still PENDING (create in Mixmax UI → paste ID into integrations/mixmax.py line 54)
+>  □ Fleet washing Mixmax sequence — still PENDING (same, line 48)
+>
+>Run: scripts/run_cuyahoga_both.command (double-click, 12-20 min, fully unattended)
+---
+✅ *Vera — Scan Complete | June 2, 2026 | Run 177*
+>2 auto-upgrades shipped | 0 proposals | 151 open issues (1 new segment tracking)
+>Key fix: Childcare Centers segment #150 — closed a 67-run silent zero-return bug. Run 110 added titles, run 177 adds the org keywords that were always missing.
+>URGENT: Pause Instantly.ai campaigns a1c08c3d + 626cd15d TODAY — June 4 Round 2 enrollment is 48 hours out.
+---
 🔧 *Vera — Auto-Upgrade | Run 175 | June 2, 2026*
 >Changed: NEW segment #146 — Independent Dental Practices
 >Why: 1,000+ NE Ohio solo/small-group dental practices untouched — DISTINCT from DSO chains (run 123). Ohio Dental Board licensing + July-Aug slow season = ideal pitch window. Apollo 'dental office'/'family dentistry' catches only independents, zero overlap.

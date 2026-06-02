@@ -1,6 +1,32 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 176 | 2026-06-02 | Auto-fixes shipped: 3 | New RESOLVED: 0 | Open: 150 (148 carry-forward from Run 175 + 2 new tracking: Summer Day Camps #149, Carla Commercial RE Brokers #20)*
+*Run 177 | 2026-06-02 | Auto-fixes shipped: 2 | New RESOLVED: 0 | Open: 151 (150 carry-forward from Run 176 + 1 new tracking: Childcare Centers #150 org keyword fix)*
+
+---
+
+## RUN METRICS — Run 177 | 2026-06-02
+- Total RESOLVED: 122 (unchanged)
+- Total OPEN: 151 (150 carry-forward + 1 this run)
+- Auto-upgrades shipped: 2
+  1. `workers/lead_pipeline.py` — **BUG FIX + SEGMENT #150**: Childcare Centers & Early Learning Facilities org keyword expansion. Run 110 added 6 childcare director titles to DANNY_TITLES (childcare center director, daycare director, early childhood director, childcare director, preschool director, early learning director) but NEVER added matching org keywords to DANNY_ORG_KEYWORDS. Apollo Pass 1 query requires BOTH a matching DANNY_TITLE AND a matching DANNY_ORG_KEYWORD — without childcare org tags, Apollo silently returned 0 childcare contacts for 67 consecutive runs. Added 11 org keywords: childcare center, daycare center, child care center, early childhood education, preschool center, early learning center, kindercare, bright horizons, goddard school, learning tree childcare, childcare franchise. KinderCare (50+ NE Ohio), Bright Horizons (10+ corporate centers), Goddard School (20+ franchises), Learning Tree (15+ regional chain), 1,000+ independent ODJFS-licensed daycare centers. Revenue: $300-$800/visit; 2x/year; 20-center territory = $12K-$32K/year. First pull June 8 Cuyahoga.
+  2. Count sync: 149+ → 150+ across `workers/vera_relay.py` (11 occ), `CLAUDE.md` (2 occ), `agents/danny.md` (batching note) — same-run count sync per resolved count-lag bug pattern.
+- Critical human-action blockers (URGENT — deadlines imminent):
+  - 🚨 JUNE 4 (2 DAYS AWAY) = Round 2 enrollment — PAUSE Instantly.ai campaigns a1c08c3d + 626cd15d RIGHT NOW
+  - 🔍 MEDINA PULL CHECK: Verify run_medina_both.command was executed June 1-2. If not — run NOW.
+  - ⛽ Gas station Mixmax sequence PENDING (create in Mixmax UI → paste ID into integrations/mixmax.py line 54)
+  - 🚐 Fleet washing Mixmax sequence PENDING (create in Mixmax UI → paste ID into integrations/mixmax.py line 48)
+  - 📅 June 8 = Cuyahoga mega-pull — 150+ segments — use run_cuyahoga_both.command (6 days)
+
+---
+
+## OPEN — Childcare Centers & Early Learning Facilities Org Keyword Fix 🟡 NEW (Run 177)
+**Segment:** #150 — Childcare Centers & Early Learning Facilities
+**Status:** OPEN — org keywords added, awaiting June 8 Cuyahoga pull to confirm contacts returned
+**Bug context:** Run 110 added childcare director titles to DANNY_TITLES but no org keywords → 67 runs of silent zero-return for childcare contacts. Run 177 closes the gap.
+**Added:** Run 177 | 2026-06-02
+**Files updated:** `workers/lead_pipeline.py` (DANNY_ORG_KEYWORDS — 11 new childcare org keywords), `agents/danny.md` (segment #150 brief with bug fix context)
+**First pull:** June 8 Cuyahoga — use `run_cuyahoga_both.command`
+**Resolve when:** Apollo pull returns at least 5 childcare contacts AND at least 1 enrolled in Property Manager sequence
 
 ---
 

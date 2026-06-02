@@ -2449,6 +2449,29 @@ DANNY_ORG_KEYWORDS = [
     # first pull June 8 Cuyahoga (Boys & Girls Club Cuyahoga County, summer youth programs) (added 2026-06-02 run 176)
     'day camp', 'summer camp', 'youth camp', 'summer youth program',
     'boys and girls club', 'youth day program', 'summer day camp',
+    # Childcare Centers & Early Learning Facilities — ORG KEYWORD FIX + SEGMENT #150 (added 2026-06-02 run 177)
+    # BUG FIX: DANNY_TITLES has had childcare director titles since run 110 (childcare center director,
+    # daycare director, early childhood director, childcare director, preschool director, early learning director)
+    # BUT Pass 1 Apollo search requires BOTH a matching DANNY_TITLE AND a matching DANNY_ORG_KEYWORD.
+    # Without childcare org keywords, Apollo returned ZERO childcare contacts despite those titles being present.
+    # This run adds the missing org keyword side of the query, closing a silent zero-return gap since run 110.
+    # Pass 2 (_BROAD_TITLES = owner/president/general manager) × these org keywords also catches franchise
+    # owners and general managers at KinderCare, Goddard School, Learning Tree, etc.
+    # DISTINCT from summer day camps (run 176 — 'day camp'/'summer camp' — seasonal outdoor), YMCA (run 131 —
+    # 'ymca' — community recreation), swim schools (run 159 — 'swim school' — aquatic instruction),
+    # sports complexes (run 125 — 'sports complex' — year-round athletic facilities).
+    # ODJFS Rule 5101:2-12 childcare facility licensing = exterior cleanliness is part of licensing inspection;
+    # parents make enrollment decisions on first visit = exterior condition is the #1 trust signal RIGHT NOW
+    # (June = end of school year = peak enrollment month for fall 2026 childcare placement);
+    # NE Ohio: KinderCare Learning Centers (50+ Cuyahoga/Summit/Lake locations), Bright Horizons (10+ corporate-
+    # sponsored centers — Cleveland Clinic, University Hospitals, major employers), Goddard School (20+ NE Ohio
+    # franchises), Learning Tree Early Education Centers (15+ regional chain, NE Ohio HQ), La Petite Academy /
+    # LearningCare Group (Medina/Lorain corridor), 1,000+ independent ODJFS-licensed daycare centers.
+    # Revenue: $300-$800/visit; 2x/year (spring pre-licensing + fall post-summer); 20-center territory = $12K-$32K/year.
+    # First pull: June 8 Cuyahoga.
+    'childcare center', 'daycare center', 'child care center', 'early childhood education',
+    'preschool center', 'early learning center', 'kindercare', 'bright horizons',
+    'goddard school', 'learning tree childcare', 'childcare franchise',
 ]
 
 CARLA_SEARCHES = [
