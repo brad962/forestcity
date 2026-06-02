@@ -786,6 +786,21 @@ PROPERTY_MANAGER_TITLES = [
     'law firm administrator', 'legal office manager', 'law office manager', 'legal administrator',
     'law firm facilities manager', 'legal facilities director', 'office services manager',
     'law firm operations manager',
+    # Independent Dental Practices — solo/small-group offices (DISTINCT from DSO chains run 123);
+    # Ohio State Dental Board licensing = exterior appearance standard; routing to property_manager sequence (added 2026-06-02 run 175)
+    'dental office manager', 'dental practice manager', 'dental administrator',
+    'dental office administrator', 'dental practice director', 'general dentistry manager',
+    'dental clinic administrator', 'dental office director',
+    # Accounting & CPA Firms — post-tax-season window; client-facing professional exterior;
+    # routing to property_manager sequence (professional trust / vendor contract angle) (added 2026-06-02 run 175)
+    'cpa firm manager', 'accounting firm administrator', 'accounting practice manager',
+    'cpa office administrator', 'accounting firm director', 'public accounting manager',
+    'cpa managing partner', 'audit firm manager',
+    # Flooring & Tile Showrooms — delivery truck staining; exterior appearance for customer-facing retail;
+    # routing to property_manager sequence (facility vendor contract angle) (added 2026-06-02 run 175)
+    'flooring showroom manager', 'flooring store manager', 'flooring district manager',
+    'tile showroom manager', 'carpet store manager', 'flooring operations manager',
+    'flooring franchise owner', 'flooring store director',
 ]
 
 REALTOR_TITLES = [

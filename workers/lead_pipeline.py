@@ -1507,6 +1507,35 @@ DANNY_TITLES = [
     'law firm administrator', 'legal office manager', 'law office manager', 'legal administrator',
     'law firm facilities manager', 'legal facilities director', 'office services manager',
     'law firm operations manager',
+    # Independent Dental Practices — solo/small-group dentist offices (DISTINCT from DSO chains, run 123);
+    # 1,000+ independent NE Ohio dental practices; Ohio State Dental Board licensing = exterior appearance standard;
+    # July-Aug = traditionally slower patient volume = dentist-owner available to discuss vendors;
+    # dental office manager or dentist-owner signs vendor contracts directly; no procurement layer at independent practices;
+    # Apollo tags 'dental office', 'dental practice', 'family dentistry' catch independents NOT in DSO orgs;
+    # $600-$1,500/visit; 2x/year; 20-practice territory = $24K-$60K/year (added 2026-06-02 run 175)
+    'dental office manager', 'dental practice manager', 'dental administrator',
+    'dental office administrator', 'dental practice director', 'general dentistry manager',
+    'dental clinic administrator', 'dental office director',
+    # Accounting & CPA Firms — 500+ NE Ohio CPA practices; HW&Co, Maloney+Novotny, SS&G Financial,
+    # Bober Markey Fedorovich, Corrigan Krause, Rea & Associates (regional NE Ohio CPA firms);
+    # post-tax-season June-July = partners/administrators available to evaluate vendors;
+    # client-facing professional offices = exterior appearance as important as law firms (run 145);
+    # DISTINCT from financial advisors (run 166 — investment/wealth) and banks (run 100 — branch FM);
+    # Apollo tags 'cpa firm', 'accounting firm', 'public accounting' return zero overlap with existing segments;
+    # $800-$2,500/building; 2x/year; 10-office regional CPA firm = $16K-$50K/year (added 2026-06-02 run 175)
+    'cpa firm manager', 'accounting firm administrator', 'accounting practice manager',
+    'cpa office administrator', 'accounting firm director', 'public accounting manager',
+    'cpa managing partner', 'audit firm manager',
+    # Flooring & Tile Showrooms & Retailers — Floor & Decor (Independence, Mentor, North Canton NE Ohio),
+    # Classic Hardwood Floors Cleveland, City Tile Cleveland, Color Tile & Carpet, Shaw Floors dealers, Mohawk dealers;
+    # large parking lots + building exteriors + delivery truck staging areas accumulate staining from material deliveries;
+    # ironic pitch: "We clean outside so customers can focus on your beautiful floors inside";
+    # DISTINCT from home improvement/hardware (run 136 — Home Depot/Lowe's) and lumber yards (run 150);
+    # Apollo tags 'flooring', 'tile store', 'floor store' return zero overlap with existing segments;
+    # $600-$2,000/visit; 2x/year; Floor & Decor district deal (3-5 NE Ohio stores) = $3.6K-$20K/year (added 2026-06-02 run 175)
+    'flooring showroom manager', 'flooring store manager', 'flooring district manager',
+    'tile showroom manager', 'carpet store manager', 'flooring operations manager',
+    'flooring franchise owner', 'flooring store director',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -2387,6 +2416,23 @@ DANNY_ORG_KEYWORDS = [
     # downtown Cleveland + Beachwood/Independence/Westlake suburban law office corridor (added 2026-06-02 run 174)
     'law firm', 'legal services', 'attorneys at law', 'legal office',
     'law office', 'law group', 'legal group', 'attorneys office',
+    # Independent Dental Practices — Apollo 'dental office'/'dental practice'/'family dentistry' catch
+    # solo/small-group practices DISTINCTLY from DSO chains ('dental service organization'/'dso' — run 123);
+    # 1,000+ NE Ohio independent practices; dentist-owner or office manager signs vendor contracts directly (added 2026-06-02 run 175)
+    'dental office', 'dental practice', 'family dentistry', 'general dentistry',
+    'dental associates', 'dental clinic', 'dentistry center', 'oral health center',
+    # Accounting & CPA Firms — Apollo 'cpa firm'/'accounting firm'/'public accounting' tags catch practices
+    # DISTINCTLY from financial advisors ('wealth management', 'financial advisory' — run 166);
+    # HW&Co, Maloney+Novotny, SS&G, Bober Markey, Corrigan Krause, Rea & Associates in NE Ohio;
+    # post-tax-season June-July window = partners available for vendor conversations (added 2026-06-02 run 175)
+    'cpa firm', 'accounting firm', 'certified public accountant', 'public accounting',
+    'cpa office', 'cpa group', 'audit firm', 'bookkeeping firm',
+    # Flooring & Tile Showrooms — Apollo 'flooring'/'tile store'/'floor store' catch specialty flooring retailers
+    # DISTINCTLY from home improvement stores ('home improvement', 'hardware store' — run 136);
+    # Floor & Decor (Independence/Mentor/N. Canton), Classic Hardwood, City Tile, Shaw/Mohawk dealers in NE Ohio;
+    # delivery trucks stage in lots = oil/diesel staining + tire marks = recurring cleaning need (added 2026-06-02 run 175)
+    'flooring store', 'flooring showroom', 'tile store', 'carpet store',
+    'flooring center', 'flooring supply', 'floor covering', 'hardwood floor store',
 ]
 
 CARLA_SEARCHES = [

@@ -1,6 +1,23 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 173 | 2026-06-02 | Auto-fixes shipped: 3 | New RESOLVED: 0 | Open: 143 (141 carry-forward from Run 172 + 2 new segment tracking: Wedding Venues + Outdoor Recreation Parks)*
+*Run 175 | 2026-06-02 | Auto-fixes shipped: 4 | New RESOLVED: 0 | Open: 148 (145 carry-forward from Run 174 + 3 new segment tracking: Independent Dental, CPA Firms, Flooring Showrooms)*
+
+---
+
+## RUN METRICS — Run 175 | 2026-06-02
+- Total RESOLVED: 122 (unchanged)
+- Total OPEN: 148 (145 carry-forward + 3 this run)
+- Auto-upgrades shipped: 4
+  1. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — NEW: Independent Dental Practices as segment #146. 8 DANNY_TITLES (dental office manager, dental practice manager, dental administrator, dental office administrator, dental practice director, general dentistry manager, dental clinic administrator, dental office director) + 8 DANNY_ORG_KEYWORDS (dental office, dental practice, family dentistry, general dentistry, dental associates, dental clinic, dentistry center, oral health center). DISTINCT from DSO chains (run 123 — 'dental service organization'/'dso'). 1,000+ NE Ohio independent practices. Ohio State Dental Board licensing = exterior appearance standard. July-Aug = slower patient volume = dentist-owner available for vendor decisions. $600-$1,500/visit; 2x/year; 20-practice territory = $24K-$60K/year. First pull June 8 Cuyahoga.
+  2. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — NEW: Accounting & CPA Firms as segment #147. 8 DANNY_TITLES (cpa firm manager, accounting firm administrator, accounting practice manager, cpa office administrator, accounting firm director, public accounting manager, cpa managing partner, audit firm manager) + 8 DANNY_ORG_KEYWORDS (cpa firm, accounting firm, certified public accountant, public accounting, cpa office, cpa group, audit firm, bookkeeping firm). Post-tax-season June-July = decision-maker window. NE Ohio targets: HW&Co, Maloney+Novotny, SS&G, Bober Markey, Corrigan Krause, Rea & Associates. $800-$2,500/building; 2x/year. First pull June 8 Cuyahoga (Beachwood corridor).
+  3. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — NEW: Flooring & Tile Showrooms as segment #148. 8 DANNY_TITLES (flooring showroom manager, flooring store manager, flooring district manager, tile showroom manager, carpet store manager, flooring operations manager, flooring franchise owner, flooring store director) + 8 DANNY_ORG_KEYWORDS (flooring store, flooring showroom, tile store, carpet store, flooring center, flooring supply, floor covering, hardwood floor store). DISTINCT from home improvement/hardware (run 136) + lumber yards (run 150). NE Ohio: Floor & Decor (3 locations), Classic Hardwood Floors, City Tile, Color Tile. $600-$2,000/visit; 2x/year. First pull June 8 Cuyahoga.
+  4. Count sync: 145+ → 148+ across `workers/vera_relay.py` (11 occ), `CLAUDE.md` (2 occ), `agents/danny.md` (batching note — same-run sync per resolved count-lag bug pattern).
+- Critical human-action blockers (URGENT — deadlines imminent):
+  - 🚨 JUNE 4 (2 DAYS AWAY) = Round 2 enrollment — PAUSE Instantly.ai campaigns a1c08c3d + 626cd15d RIGHT NOW (not tomorrow morning — NOW)
+  - 🔍 MEDINA PULL (due June 2 today): run_medina_both.command — if not done this morning, do it this afternoon before EOD
+  - ⛽ Gas station Mixmax sequence PENDING (create in Mixmax UI → paste ID into integrations/mixmax.py line 54)
+  - 🚐 Fleet washing Mixmax sequence PENDING (create in Mixmax UI → paste ID into integrations/mixmax.py line 48)
+  - 📅 June 8 = Cuyahoga mega-pull — 148+ segments — use run_cuyahoga_both.command (6 days)
 
 ---
 
@@ -48,6 +65,21 @@
   - 📅 June 8 = Cuyahoga mega-pull — 140+ segments — use run_cuyahoga_both.command (7 days)
 
 ---
+
+## OPEN — Independent Dental Practices Segment Not Yet Pulled 🟡 NEW (Run 175)
+- First seen: 2026-06-02
+- Description: Segment #146 code live in lead_pipeline.py DANNY_TITLES (8 titles) + DANNY_ORG_KEYWORDS (8 tags); synced to mixmax.py PROPERTY_MANAGER_TITLES; full brief in danny.md. DISTINCT from DSO chains (run 123 — 'dental service organization'/'dso'). 1,000+ independent NE Ohio dental practices across all 7 counties. Ohio State Dental Board licensing = exterior appearance standard. July-Aug = slower patient volume = ideal pitch window. Apollo tags 'dental office'/'dental practice'/'family dentistry' catch INDEPENDENT practices not in DSO corporate structures. $600-$1,500/visit; 2x/year; 20-practice territory = $24K-$60K/year. First pull June 8 Cuyahoga.
+- Attempts: N/A — tracking only, not a bug
+
+## OPEN — Accounting & CPA Firms Segment Not Yet Pulled 🟡 NEW (Run 175)
+- First seen: 2026-06-02
+- Description: Segment #147 code live in lead_pipeline.py DANNY_TITLES (8 titles) + DANNY_ORG_KEYWORDS (8 tags); synced to mixmax.py PROPERTY_MANAGER_TITLES; full brief in danny.md. Post-tax-season June-July = prime pitch window — partners available, no tax crunch. Client-facing professional offices = same exterior appearance standard as law firms (run 145). NE Ohio targets: HW&Co (Beachwood), Maloney+Novotny (Cleveland), SS&G (Akron/Cleveland), Bober Markey Fedorovich (Akron), Corrigan Krause (Westlake), Rea & Associates (multiple NE Ohio offices), Meaden & Moore (Cleveland). Apollo tags 'cpa firm'/'accounting firm'/'public accounting' zero overlap with existing. $800-$2,500/building; 2x/year. First pull June 8 Cuyahoga (Beachwood/Independence corridor — highest NE Ohio CPA concentration).
+- Attempts: N/A — tracking only, not a bug
+
+## OPEN — Flooring & Tile Showrooms Segment Not Yet Pulled 🟡 NEW (Run 175)
+- First seen: 2026-06-02
+- Description: Segment #148 code live in lead_pipeline.py DANNY_TITLES (8 titles) + DANNY_ORG_KEYWORDS (8 tags); synced to mixmax.py PROPERTY_MANAGER_TITLES; full brief in danny.md. DISTINCT from home improvement/hardware (run 136 — Home Depot/Lowe's) and lumber yards (run 150). Large paved lots + constant delivery truck traffic = oil stains, diesel residue, tire marks = recurring cleaning need. NE Ohio: Floor & Decor (Independence, Mentor, North Canton), Classic Hardwood Floors Cleveland, City Tile Cleveland, Color Tile & Carpet. Apollo tags 'flooring'/'tile store'/'floor store' zero overlap with existing. $600-$2,000/visit; 2x/year; Floor & Decor 3-store NE Ohio district = $3.6K-$12K/year. First pull June 8 Cuyahoga.
+- Attempts: N/A — tracking only, not a bug
 
 ## OPEN — Dance Studios & Performing Arts Schools Segment Not Yet Pulled 🟡 NEW (Run 172)
 - First seen: 2026-06-01

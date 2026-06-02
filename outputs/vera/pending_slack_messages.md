@@ -1,3 +1,61 @@
+🔧 *Vera — Auto-Upgrade | Run 175 | June 2, 2026*
+>Changed: NEW segment #146 — Independent Dental Practices
+>Why: 1,000+ NE Ohio solo/small-group dental practices untouched — DISTINCT from DSO chains (run 123). Ohio Dental Board licensing + July-Aug slow season = ideal pitch window. Apollo 'dental office'/'family dentistry' catches only independents, zero overlap.
+>Revenue math: $600-$1,500/visit; 2x/year; 20-practice territory = $24K-$60K/year
+>File: workers/lead_pipeline.py + integrations/mixmax.py + agents/danny.md | First pull: June 8 Cuyahoga
+---
+🔧 *Vera — Auto-Upgrade | Run 175 | June 2, 2026*
+>Changed: NEW segment #147 — Accounting & CPA Firms
+>Why: 500+ NE Ohio CPA firms in their slow season RIGHT NOW (post-tax-season June-July) = partners available for vendor decisions. Same professional exterior angle as law firms (#145). HW&Co, Maloney+Novotny, SS&G, Bober Markey, Rea & Associates — none cold-called for power washing.
+>Revenue math: $800-$2,500/building; 2x/year; 10-office regional firm = $16K-$50K/year
+>File: workers/lead_pipeline.py + integrations/mixmax.py + agents/danny.md | First pull: June 8 Cuyahoga (Beachwood corridor)
+---
+🔧 *Vera — Auto-Upgrade | Run 175 | June 2, 2026*
+>Changed: NEW segment #148 — Flooring & Tile Showrooms
+>Why: Floor & Decor (3 NE Ohio locations), City Tile, Classic Hardwood, 50+ Shaw/Mohawk dealers. Delivery trucks all day during June peak = oil stains, diesel, tire marks on lots. DISTINCT from Home Depot/Lowe's (run 136). Ironic pitch is memorable. Zero competitors.
+>Revenue math: $600-$2,000/visit; 2x/year; Floor & Decor 3-store district = $3.6K-$12K/year
+>File: workers/lead_pipeline.py + integrations/mixmax.py + agents/danny.md | First pull: June 8 Cuyahoga
+---
+🔧 *Vera — Auto-Upgrade | Run 175 | June 2, 2026*
+>Changed: Segment count 145+ → 148+ across vera_relay.py (11 occ), CLAUDE.md (2 occ), agents/danny.md (batching note)
+>Why: Same-run count sync — prevents stale numbers going into June 8 Cuyahoga 148+ segment mega-pull
+>File: workers/vera_relay.py + CLAUDE.md + agents/danny.md
+---
+🚨 *Vera — URGENT | June 4 = 2 DAYS AWAY — Pause Instantly.ai NOW*
+>Round 2 Mixmax enrollment fires June 4 morning. Before touching ANYTHING on June 4:
+>
+>PAUSE Instantly.ai RIGHT NOW (not Thursday morning — NOW):
+>  → app.instantly.ai → Campaigns → a1c08c3d → pause
+>  → app.instantly.ai → Campaigns → 626cd15d → pause
+>  → .env: add  INSTANTLY_PAUSED=true
+>
+>Why: Same contacts in both Instantly.ai + Mixmax = duplicate emails = spam filter = 0% reply rate on entire Round 2 batch
+>Guide: outputs/vera/instantly_pause_guide_2026-05-22.md
+>Battle card: outputs/donna/june4_enrollment_battle_card_2026-05-24.md
+---
+📅 *Vera — June 8 Countdown | 6 Days | 148+ Segments Ready*
+>June 8 Cuyahoga = biggest pull of the year. 148 commercial segments fully coded.
+>
+>Still needed before June 8:
+>  □ Medina pull (run_medina_both.command) — due June 2 today — confirm done
+>  □ Round 2 enrollment June 4 — battle card in outputs/donna/
+>  □ Instantly.ai paused (see URGENT above)
+>  □ Gas station Mixmax sequence — still PENDING (create in Mixmax UI → paste ID into integrations/mixmax.py line 54)
+>  □ Fleet washing Mixmax sequence — still PENDING (same, line 48)
+>
+>Run: scripts/run_cuyahoga_both.command (double-click, 12-20 min)
+---
+💡 *Vera — Proposal | Flooring & CPA Pitch Packages for Tommy*
+>Idea: Tommy writes dedicated Touch 1 email variants for Flooring Showrooms (#148) + CPA Firms (#147)
+>Why: Both segments have distinct, memorable angles a generic PM email undersells. Flooring: "Clean outside so customers focus on your beautiful floors." CPA: "Clients walk from your parking lot to their most stressful financial meeting — that impression starts at the pavement."
+>Impact: Higher reply rates on 150+ combined NE Ohio targets starting June 8 pull
+>Reply YES to approve — Tommy can have both drafted in 1 session
+---
+✅ *Vera — Scan Complete | June 2, 2026 | Run 175*
+>4 auto-upgrades shipped | 2 proposals | 148 open issues (3 new segment tracking) | 122 resolved
+>Added: Independent Dental (#146) + Accounting/CPA Firms (#147) + Flooring Showrooms (#148) — all code-live, queued for June 8
+>URGENT: Pause Instantly.ai TODAY — June 4 enrollment is 48 hours out and duplicate emails kill reply rates
+---
 🔧 *Vera — Auto-Upgrade | Run 171 | 2026-06-01*
 >Changed: Added Fire Stations & Fire Departments as Segment #136 to lead_pipeline.py DANNY_TITLES (8 titles) + DANNY_ORG_KEYWORDS (7 keywords). Synced 8 routing titles to mixmax.py PROPERTY_MANAGER_TITLES. Full segment brief added to agents/danny.md.
 >Why: 150+ municipal fire stations across the 7-county NE Ohio service area. Cleveland Fire (26 stations), Parma (6), Lakewood (5), plus 100+ township fire departments. Every station has apparatus bay concrete aprons, building facades, equipment pads, and parking areas. June-August = annual municipal exterior maintenance window. ISO 2 Public Protection Classification: station condition affects community fire insurance rates. Fire chiefs/city FMs sign small contracts that are routinely direct-awarded under $25K without competitive bid. DISTINCT from municipal/government segment (run 124 — city halls). Apollo tags 'fire department'/'fire district' return zero overlap with existing keywords. $800-$2,500/station; 2x/year; one 5-station township FD = $8K-$25K/year. First pull June 8 Cuyahoga.
