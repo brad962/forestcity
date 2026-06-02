@@ -840,6 +840,14 @@ PROPERTY_MANAGER_TITLES = [
     'pharmaceutical plant manager', 'pharma facility manager', 'pharmaceutical operations manager',
     'drug manufacturing manager', 'pharmaceutical plant superintendent', 'biotech facility manager',
     'pharmaceutical manufacturing manager', 'pharmaceutical plant operations manager',
+    # Scrap Metal Dealers & Metal Recycling Facilities — routing to property_manager sequence (added 2026-06-02 run 181)
+    'scrap yard manager', 'metal recycling manager', 'scrap metal operations manager',
+    'recycling facility manager', 'scrap operations director', 'yard operations manager',
+    'metal recycling director', 'scrap metal yard manager',
+    # Data Centers & Colocation Facilities — routing to property_manager sequence (added 2026-06-02 run 181)
+    'data center manager', 'data center operations manager', 'colocation facility manager',
+    'data center facilities manager', 'colo facility manager', 'infrastructure manager',
+    'data center general manager', 'colocation operations manager',
 ]
 
 REALTOR_TITLES = [

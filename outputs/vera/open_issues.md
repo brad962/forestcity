@@ -1,10 +1,40 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 180 | 2026-06-02 | Auto-fixes shipped: 4 | New RESOLVED: 0 | Open: 158 (155 carry-forward from Run 179 + 3 new tracking: Public Housing #155 + Broadcasting Stations #156 + Pharma Manufacturing #157)*
+*Run 181 | 2026-06-02 | Auto-fixes shipped: 3 | New RESOLVED: 0 | Open: 160 (158 carry-forward from Run 180 + 2 new tracking: Scrap Metal #158 + Data Centers #159)*
 
 ---
 
-## RUN METRICS — Run 179 | 2026-06-02
+## RUN METRICS — Run 181 | 2026-06-02
+- Total RESOLVED: 122 (unchanged)
+- Total OPEN: 160 (158 carry-forward + 2 this run)
+- Auto-upgrades shipped: 3
+  1. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — NEW: Scrap Metal Dealers & Metal Recycling Facilities as segment #158. 8 DANNY_TITLES (scrap yard manager, metal recycling manager, scrap metal operations manager, recycling facility manager, scrap operations director, yard operations manager, metal recycling director, scrap metal yard manager) + 8 DANNY_ORG_KEYWORDS (scrap metal, metal recycling, scrap dealer, metal salvage, ferrous metals, scrap yard, metal scrap yard, non-ferrous recycling). EPA NPDES SWPPP compliance angle = regulatory budget line item. Sims Metal Management (multiple NE Ohio yards), OmniSource/Steel Technologies, Reserve Iron & Metal (Cleveland), Metal Management Cleveland. $2K–$6K/visit; 4x/year; multi-yard territory = $32K–$96K/year. Zero competitors. First pull June 8 Cuyahoga.
+  2. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — NEW: Data Centers & Colocation Facilities as segment #159. 8 DANNY_TITLES (data center manager, data center operations manager, colocation facility manager, data center facilities manager, colo facility manager, infrastructure manager, data center general manager, colocation operations manager) + 7 DANNY_ORG_KEYWORDS (data center, colocation facility, server hosting, managed hosting, colocation services, data center operations, internet exchange point). Security-approved vendor contract angle = exclusive long-term contracts once approved. Expedient Technology (Independence OH), Iron Mountain (Beachwood), Zayo Group Cleveland PoP, OnX Enterprise Solutions. $2K–$5K/visit; 2x/year; anchor account = $15K–$30K/year. Zero competitors. First pull June 8 Cuyahoga.
+  3. Count sync: 157+ → 159+ across `workers/vera_relay.py` (11 occ), `CLAUDE.md` (2 occ), `agents/danny.md` (batching note). Same-run count sync.
+- Critical human-action blockers (URGENT — deadlines imminent):
+  - 🚨 JUNE 4 (2 DAYS AWAY) = Round 2 enrollment — PAUSE Instantly.ai campaigns a1c08c3d + 626cd15d TONIGHT (8th consecutive run flagging this — 48 hours left)
+  - 🔍 MEDINA PULL CHECK (due June 2 today): Verify run_medina_both.command was executed. If not — run NOW before end of day.
+  - ⛽ Gas station Mixmax sequence PENDING (create in Mixmax UI → paste ID into integrations/mixmax.py line 54)
+  - 🚐 Fleet washing Mixmax sequence PENDING (create in Mixmax UI → paste ID into integrations/mixmax.py line 48)
+  - 📅 June 8 = Cuyahoga mega-pull — 159+ segments — use run_cuyahoga_both.command (6 days)
+
+---
+
+## OPEN — Scrap Metal Dealers & Metal Recycling Facilities Segment Not Yet Pulled 🟡 NEW (Run 181)
+- First seen: 2026-06-02
+- Description: Segment #158. Scrap Metal Dealers & Metal Recycling Facilities. 8 DANNY_TITLES + 8 DANNY_ORG_KEYWORDS live in lead_pipeline.py as of Run 181. Synced to mixmax.py PROPERTY_MANAGER_TITLES. Full segment brief in danny.md. NE Ohio targets: Sims Metal Management (multiple NE Ohio yards), OmniSource/Steel Technologies, Metal Management Cleveland, Reserve Iron & Metal, General Iron, Cohen Brothers Recycling. EPA NPDES SWPPP compliance = quarterly cleaning budget line item. COMPLETELY DISTINCT from towing/auto salvage (run 113) and metal fabrication/manufacturing (run 118). $2K–$6K/visit; 4x/year; multi-yard territory = $32K–$96K/year. Zero competitors. First pull June 8 Cuyahoga (Cleveland industrial corridor).
+- Attempts:
+  - 2026-06-02: Added titles + org keywords to lead_pipeline.py, mixmax.py routing, danny.md brief → waiting for June 8 local pull to confirm Apollo returns contacts
+
+## OPEN — Data Centers & Colocation Facilities Segment Not Yet Pulled 🟡 NEW (Run 181)
+- First seen: 2026-06-02
+- Description: Segment #159. Data Centers & Colocation Facilities. 8 DANNY_TITLES + 7 DANNY_ORG_KEYWORDS live in lead_pipeline.py as of Run 181. Synced to mixmax.py PROPERTY_MANAGER_TITLES. Full segment brief in danny.md. NE Ohio targets: Expedient Technology (Independence OH — largest NE Ohio colocation provider), Iron Mountain (Beachwood OH), Zayo Group Cleveland PoP, OnX Enterprise Solutions (Cleveland HQ), Sungard Availability Services. Security-cleared vendor = exclusive long-term contract with no re-bidding. COMPLETELY DISTINCT from corporate park FMs (run 101) and IT companies (general). $2K–$5K/visit; 2x/year; Expedient multi-building campus = $15K–$30K/year anchor account. Zero competitors. First pull June 8 Cuyahoga (Independence/Beachwood tech corridor).
+- Attempts:
+  - 2026-06-02: Added titles + org keywords to lead_pipeline.py, mixmax.py routing, danny.md brief → waiting for June 8 local pull to confirm Apollo returns contacts
+
+---
+
+## RUN METRICS — Run 180 | 2026-06-02
 - Total RESOLVED: 122 (unchanged)
 - Total OPEN: 155 (153 carry-forward + 2 this run)
 - Auto-upgrades shipped: 4

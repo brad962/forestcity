@@ -1623,6 +1623,38 @@ DANNY_TITLES = [
     'pharmaceutical plant manager', 'pharma facility manager', 'pharmaceutical operations manager',
     'drug manufacturing manager', 'pharmaceutical plant superintendent', 'biotech facility manager',
     'pharmaceutical manufacturing manager', 'pharmaceutical plant operations manager',
+    # Scrap Metal Dealers & Metal Recycling Facilities — NE Ohio is a major scrap metals hub
+    # (steel industry legacy); OmniSource/Steel Technologies (Cleveland), Sims Metal Management
+    # (multiple NE Ohio yards), Metal Management (Cleveland), TriState Metals (Youngstown),
+    # Reserve Iron & Metal (Cleveland), General Iron, Cohen Brothers Recycling (Cincinnati/NE Ohio);
+    # large paved yards + truck staging areas + scale pads + loading bays accumulate extreme concrete
+    # staining from metal dust, rust runoff, hydraulic fluid, diesel exhaust, and coolants;
+    # EPA stormwater permit NPDES for metals runoff = power washing of concrete is a compliance
+    # line item on every facility's stormwater pollution prevention plan (SWPPP);
+    # COMPLETELY DISTINCT from towing/auto salvage ('salvage yard'/'junkyard' Apollo tags — run 113)
+    # and manufacturing ('metal fabrication'/'steel manufacturer' Apollo tags — run 118);
+    # scrap metal org tags ('scrap metal', 'metal recycling', 'ferrous metals') return zero overlap;
+    # yard managers or operations directors sign vendor contracts directly; $2,000–$6,000/yard visit;
+    # 4x/year; multi-yard regional operator contract = $32K–$96K/year; zero competitors targeting
+    # scrap yard managers for power washing in NE Ohio (added 2026-06-02 run 181)
+    'scrap yard manager', 'metal recycling manager', 'scrap metal operations manager',
+    'recycling facility manager', 'scrap operations director', 'yard operations manager',
+    'metal recycling director', 'scrap metal yard manager',
+    # Data Centers & Colocation Facilities — Expedient Technology (Independence OH — largest NE Ohio
+    # colocation provider), Zayo Group (Cleveland Points of Presence), Iron Mountain (Beachwood OH —
+    # data center + records storage), OnX Enterprise Solutions (Cleveland HQ), Sungard Availability
+    # Services, Cleveland Clinic enterprise data center (Beachwood), University Hospitals IT campus;
+    # building exteriors + parking + loading dock areas require regular cleaning;
+    # COMPLETELY DISTINCT from corporate park FMs (run 101 — general office park management) and
+    # IT/tech companies (general corporate); 'data center'/'colocation facility' Apollo org tags
+    # return zero overlap with any existing DANNY_ORG_KEYWORDS;
+    # security-certified local vendors get exclusive long-term service contracts (no competitive bid
+    # once security clearance is established); facility operations managers sign vendor contracts;
+    # $2,000–$5,000/visit; 2x/year; data center campus = $8K–$20K/year anchor account;
+    # zero power washing competitors cold-calling data center FMs in NE Ohio (added 2026-06-02 run 181)
+    'data center manager', 'data center operations manager', 'colocation facility manager',
+    'data center facilities manager', 'colo facility manager', 'infrastructure manager',
+    'data center general manager', 'colocation operations manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -2596,6 +2628,20 @@ DANNY_ORG_KEYWORDS = [
     # STERIS (Mentor OH), Ferro Corporation (Cleveland HQ) are anchor companies (added 2026-06-02 run 180)
     'pharmaceutical', 'pharmaceuticals', 'drug manufacturing', 'biotech', 'biotechnology',
     'pharmaceutical manufacturing', 'pharma company', 'pharmaceutical plant',
+    # Scrap Metal Dealers & Metal Recycling Facilities — DISTINCT from 'salvage yard'/'junkyard'
+    # (towing/auto salvage — run 113) and 'metal fabrication'/'steel manufacturer' (manufacturing — run 118);
+    # NE Ohio scrap metals hub: OmniSource, Sims Metal Management, Metal Management, TriState Metals;
+    # EPA NPDES stormwater permit = SWPPP requires concrete cleaning → compliance pitch angle;
+    # Apollo tags 'scrap metal'/'metal recycling'/'ferrous metals' return ZERO overlap with existing tags (added 2026-06-02 run 181)
+    'scrap metal', 'metal recycling', 'scrap dealer', 'metal salvage', 'ferrous metals',
+    'scrap yard', 'metal scrap yard', 'non-ferrous recycling',
+    # Data Centers & Colocation Facilities — DISTINCT from 'corporate campus'/'tech park' (run 101),
+    # general IT companies, and telecommunications ('telecom retail' — run 137);
+    # Expedient Technology (Independence OH), Zayo Group Cleveland PoP, Iron Mountain Beachwood,
+    # OnX Enterprise Solutions; security-certified local vendors get exclusive long-term contracts;
+    # Apollo tags 'data center'/'colocation facility' return ZERO overlap with any existing tags (added 2026-06-02 run 181)
+    'data center', 'colocation facility', 'server hosting', 'managed hosting',
+    'colocation services', 'data center operations', 'internet exchange point',
 ]
 
 CARLA_SEARCHES = [
