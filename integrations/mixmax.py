@@ -805,6 +805,16 @@ PROPERTY_MANAGER_TITLES = [
     # routing to property_manager sequence (facility/compliance angle) (added 2026-06-02 run 176)
     'day camp director', 'summer camp director', 'youth program director', 'youth day camp director',
     'summer youth director', 'camp director', 'day camp manager', 'youth summer program manager',
+    # B2B Wholesale Supply Houses (Plumbing, HVAC, Electrical) — routing to property_manager sequence
+    # (facility vendor contract angle); branch managers sign vendor contracts (added 2026-06-02 run 178)
+    'plumbing supply branch manager', 'hvac supply branch manager', 'electrical supply branch manager',
+    'plumbing wholesale manager', 'hvac wholesale manager', 'mechanical supply manager',
+    'industrial supply branch manager', 'supply house manager', 'wholesale distribution manager',
+    # School Bus Companies & Charter Motor Coach Operators — routing to property_manager sequence
+    # (facility vendor contract / depot maintenance angle) (added 2026-06-02 run 178)
+    'school bus company manager', 'student transportation manager', 'bus fleet manager',
+    'charter bus manager', 'motor coach manager', 'school bus operations manager',
+    'bus transportation manager', 'student transport director',
 ]
 
 REALTOR_TITLES = [
@@ -1104,8 +1114,18 @@ def get_sequence_recipients(sequence_type: str) -> list:
         with urllib.request.urlopen(url, timeout=10) as resp:
             data = json.loads(resp.read())
         if isinstance(data, list):
-            return data
-        return data.get('results', data.get('recipients', []))
+            results = data
+        else:
+            results = data.get('results', data.get('recipients', []))
+        if len(results) == 200:
+            import sys
+            print(
+                f'⚠️  WARNING: {sequence_type} sequence returned exactly 200 recipients — '
+                'Mixmax API limit reached. Additional contacts are not shown in this report. '
+                'Enrollment counts and hot-lead detection may be incomplete.',
+                file=sys.stderr
+            )
+        return results
     except Exception:
         return []
 

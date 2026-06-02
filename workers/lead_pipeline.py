@@ -1546,6 +1546,27 @@ DANNY_TITLES = [
     # $400-$1,200/facility; 2x/year (spring pre-opening + fall close); first pull June 8 Cuyahoga (added 2026-06-02 run 176)
     'day camp director', 'summer camp director', 'youth program director', 'youth day camp director',
     'summer youth director', 'camp director', 'day camp manager', 'youth summer program manager',
+    # B2B Wholesale Supply Houses (Plumbing, HVAC, Electrical) — branch managers sign vendor contracts;
+    # large loading docks + parts lots + vehicle staging areas; constant truck traffic = oil/diesel staining;
+    # DISTINCT from distribution centers (run 105), manufacturing (run 118), hardware stores (run 136);
+    # Ferguson Enterprises (Strongsville/Euclid/Brooklyn Heights/Akron), Hajoca Corp (Cleveland/Akron),
+    # Winsupply (multi-location franchise NE Ohio), Graybar Electric (Independence/Akron),
+    # Rexel USA (Valley View/Mentor), McNaughton-McKay Electric (Twinsburg/Elyria);
+    # $600–$2,000/visit; 4x/year; Ferguson 4-branch territory = $9.6K–$32K/year; zero competitors;
+    # first pull June 8 Cuyahoga (added 2026-06-02 run 178)
+    'plumbing supply branch manager', 'hvac supply branch manager', 'electrical supply branch manager',
+    'plumbing wholesale manager', 'hvac wholesale manager', 'mechanical supply manager',
+    'industrial supply branch manager', 'supply house manager', 'wholesale distribution manager',
+    # School Bus Companies & Charter Motor Coach Operators — large bus depot lots accumulate diesel exhaust
+    # + hydraulic fluid + road salt + tire marks; DISTINCT from school districts (run 119 — facilities/
+    # buildings directors) and public transit (run 124 — GCRTA municipal transit authority);
+    # private contract carriers sign independent vendor contracts per depot or region;
+    # First Student / National Express US (10+ NE Ohio school district contracts),
+    # Durham School Services, Transdev North America, GO Transportation (Ohio charter bus);
+    # $800–$3,000/bus depot visit; 4x/year; 3-depot territory = $9.6K–$36K/year; first pull June 8 Cuyahoga (added 2026-06-02 run 178)
+    'school bus company manager', 'student transportation manager', 'bus fleet manager',
+    'charter bus manager', 'motor coach manager', 'school bus operations manager',
+    'bus transportation manager', 'student transport director',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -2472,6 +2493,23 @@ DANNY_ORG_KEYWORDS = [
     'childcare center', 'daycare center', 'child care center', 'early childhood education',
     'preschool center', 'early learning center', 'kindercare', 'bright horizons',
     'goddard school', 'learning tree childcare', 'childcare franchise',
+    # B2B Wholesale Supply Houses (Plumbing, HVAC, Electrical) — Ferguson, Hajoca, Winsupply, Graybar, Rexel;
+    # DISTINCT from manufacturing (run 118 — 'manufacturing plant'), distribution centers (run 105 — food/retail
+    # logistics hubs), hardware stores (run 136 — 'home improvement'/'hardware store' retail);
+    # Apollo org tags catch B2B-only trade supply houses that general retail/distribution tags miss entirely;
+    # NE Ohio has 30+ Ferguson/Hajoca/Winsupply/Rexel/Graybar branches across 7 counties;
+    # HVAC wholesalers: Johnstone Supply, Carrier Enterprise, Lennox Parts Plus (dealer-owned) (added 2026-06-02 run 178)
+    'plumbing supply', 'hvac supply', 'electrical supply', 'mechanical supply',
+    'plumbing wholesale', 'hvac wholesale', 'electrical wholesale', 'industrial supply house',
+    'plumbing distributor', 'hvac distributor', 'electrical distributor', 'ferguson enterprises',
+    'winsupply', 'graybar electric', 'rexel electrical', 'johnstone supply',
+    # School Bus Companies & Charter Motor Coach Operators — DISTINCT from school districts
+    # ('school district', 'board of education' — run 119 — the real estate / facilities side) and
+    # public transit ('transit facility', 'gcrta' — run 124 — public authority); these are PRIVATE
+    # contract bus operators with their own maintenance depots and vendor budgets (added 2026-06-02 run 178)
+    'school bus company', 'student transportation', 'school bus fleet', 'charter bus company',
+    'motor coach company', 'bus transportation company', 'charter coach company',
+    'first student', 'durham school services', 'national express bus',
 ]
 
 CARLA_SEARCHES = [
