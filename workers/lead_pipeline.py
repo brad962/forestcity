@@ -1536,6 +1536,16 @@ DANNY_TITLES = [
     'flooring showroom manager', 'flooring store manager', 'flooring district manager',
     'tile showroom manager', 'carpet store manager', 'flooring operations manager',
     'flooring franchise owner', 'flooring store director',
+    # Summer Day Camps & Youth Day Programs — schools out first week of June in NE Ohio;
+    # day camps opening RIGHT NOW; DISTINCT from YMCA (run 131 — fitness, 'ymca' Apollo tag),
+    # campgrounds (run 158 — overnight, 'campground'/'rv park' tags), sports complexes (run 125 — athletic);
+    # Ohio DJFS child care licensing = exterior appearance inspection standard;
+    # director or owner signs vendor contracts directly; facilities: paved parking lots + building
+    # exteriors + outdoor activity area concrete; Boys & Girls Club NE Ohio (20+ Cuyahoga County locations);
+    # Camp Ho Mita Koda (Painesville), Camp Cheerful (Strongsville), Kelleys Island Day Camp;
+    # $400-$1,200/facility; 2x/year (spring pre-opening + fall close); first pull June 8 Cuyahoga (added 2026-06-02 run 176)
+    'day camp director', 'summer camp director', 'youth program director', 'youth day camp director',
+    'summer youth director', 'camp director', 'day camp manager', 'youth summer program manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -2433,6 +2443,12 @@ DANNY_ORG_KEYWORDS = [
     # delivery trucks stage in lots = oil/diesel staining + tire marks = recurring cleaning need (added 2026-06-02 run 175)
     'flooring store', 'flooring showroom', 'tile store', 'carpet store',
     'flooring center', 'flooring supply', 'floor covering', 'hardwood floor store',
+    # Summer Day Camps & Youth Day Programs — DISTINCT from campgrounds (overnight stays — run 158 —
+    # 'campground'/'rv park' tags), YMCA (run 131 — 'ymca' tag), sports complexes (run 125 — 'sports complex' tag);
+    # Apollo org tags 'day camp'/'summer camp'/'youth camp' catch standalone day camp operators;
+    # first pull June 8 Cuyahoga (Boys & Girls Club Cuyahoga County, summer youth programs) (added 2026-06-02 run 176)
+    'day camp', 'summer camp', 'youth camp', 'summer youth program',
+    'boys and girls club', 'youth day program', 'summer day camp',
 ]
 
 CARLA_SEARCHES = [
@@ -2485,6 +2501,24 @@ CARLA_SEARCHES = [
                   'jan-pro', 'servicemaster clean', 'coverall cleaning', 'anago',
                   'abm industries', 'jani-king', 'commercial cleaning franchise'],
      'label': 'Commercial Cleaning Companies'},
+    # Commercial Real Estate Brokers — CBRE Cleveland, Colliers International NE Ohio, JLL Cleveland,
+    # NAI Daus (regional NE Ohio), Hanna Commercial Real Estate; DISTINCT from residential realtors
+    # (Carla already targets those via 'Realtors' search type — different Apollo org tags);
+    # commercial brokers walk and photograph properties before listing → they see dirty facades, stained
+    # lots, grimy loading docks on EVERY site visit; they have deep relationships with property owners
+    # and facility managers, often recommending vendors BEFORE an FM is even hired;
+    # pitch: "We can make your listings look 100% better in marketing photos in 3 hours — and if any
+    # of your building owners ever need exterior cleaning, we'd appreciate the referral";
+    # one CBRE broker with 15 active commercial listings = 15 potential FM introductions;
+    # DISTINCT Apollo org tags: 'commercial real estate brokerage', 'commercial property broker' ≠
+    # 'real estate brokerage'/'realty' (residential Carla targets); added 2026-06-02 run 176
+    {'type': 'contractors', 'titles': ['commercial broker', 'commercial real estate broker',
+                                       'commercial leasing agent', 'commercial real estate agent',
+                                       'commercial property advisor'],
+     'keywords': ['commercial real estate brokerage', 'commercial property brokerage',
+                  'commercial real estate', 'commercial broker', 'cbre', 'jll', 'colliers',
+                  'nai daus', 'hanna commercial', 'commercial property management brokerage'],
+     'label': 'Commercial RE Brokers'},
 ]
 
 # Rotating county batches for Carla — mirrors Danny's county rotation

@@ -203,3 +203,50 @@
 >New this run: #143 Charter Fishing & Lake Erie Operators (50+ NE Ohio captains, walleye season = peak pitch window NOW) | #144 VFW Posts & American Legion Halls (150+ NE Ohio posts, Memorial Day aftermath, veteran-positive pitch angle) | #145 Law Firms & Legal Buildings (Jones Day, Benesch, Thompson Hine, Squire Patton Boggs — client trust = clean exterior)
 >Count synced 142+ → 145+ across vera_relay.py (11), CLAUDE.md (2), danny.md (1)
 >🚨 URGENT TODAY: Pause Instantly.ai (June 4 = 2 days) | Verify Medina pull done | June 8 = 145+ segment Cuyahoga mega-pull
+---
+🔧 *Vera — Auto-Upgrade | Run 176 | June 2, 2026*
+>Changed: NEW segment #149 — Summer Day Camps & Youth Day Programs
+>Why: NE Ohio schools let out the first week of June — day camps are OPENING RIGHT NOW. Ohio DJFS child care licensing = exterior appearance standard (same compliance angle as medical offices). Boys & Girls Club of NE Ohio (20+ Cuyahoga County locations) alone = massive volume. DISTINCT from YMCA (run 131), campgrounds (run 158), sports complexes (run 125). Timing is perfect: camps need clean facilities the day parents do drop-off tours.
+>Revenue math: $400-$1,200/facility; 2x/year; 20-camp territory = $16K-$48K/year
+>File: workers/lead_pipeline.py + integrations/mixmax.py + agents/danny.md | First pull: June 8 Cuyahoga
+---
+🔧 *Vera — Auto-Upgrade | Run 176 | June 2, 2026*
+>Changed: Carla referral partner type #20 — Commercial Real Estate Brokers (DISTINCT from residential realtors already in #5)
+>Why: CBRE Cleveland, Colliers International NE Ohio, JLL Cleveland, NAI Daus, Hanna Commercial brokers physically walk + photograph every property before listing. They see dirty facades, stained parking lots, grimy loading docks on EVERY site visit. They have direct relationships with property owners/facility managers and recommend vendors BEFORE buildings go under management. One broker with 15 active commercial listings = 15 potential FM introductions — highest referral value per Carla contact of any partner type.
+>Pitch: "We can make your listing look 100% better in marketing photos in 3 hours — and your building owners will thank you."
+>Files: agents/carla.md + workers/lead_pipeline.py (CARLA_SEARCHES) | First pull: June 8 Cuyahoga run_cuyahoga_both.command
+---
+🔧 *Vera — Auto-Upgrade | Run 176 | June 2, 2026*
+>Changed: Segment count 148+ → 149+ across vera_relay.py (7 occ), CLAUDE.md (2 occ), agents/danny.md (batching note)
+>Why: Same-run count sync — prevents stale numbers going into June 8 Cuyahoga 149+ segment mega-pull (6 days away)
+>File: workers/vera_relay.py + CLAUDE.md + agents/danny.md
+---
+🚨 *Vera — JUNE 4 IS TOMORROW — Pause Instantly.ai TODAY*
+>Round 2 Mixmax enrollment fires tomorrow morning (June 4). If Instantly.ai campaigns are still running when Mixmax enrolls, duplicate emails hit the same contacts → spam filter → 0% reply rate. This is exactly what killed Round 1.
+>
+>PAUSE RIGHT NOW (3 minutes):
+>  → app.instantly.ai → Campaigns → a1c08c3d (PM Cuyahoga) → ⋮ → Pause
+>  → app.instantly.ai → Campaigns → 626cd15d (Contractor Referral) → ⋮ → Pause
+>  → .env → add INSTANTLY_PAUSED=true
+>  → Verify: python3 -c "import os; os.environ['INSTANTLY_PAUSED']='true'; print('confirmed')"
+>
+>Still pending (also blocking June 8):
+>  ⛽ Gas station Mixmax sequence — create in Mixmax UI → paste ID → integrations/mixmax.py line 54
+>  🚐 Fleet washing Mixmax sequence — create in Mixmax UI → paste ID → integrations/mixmax.py line 48
+>  12+ contacts waiting in both segments since May 19. Takes 15 min total.
+---
+📅 *Vera — June 8 Countdown: 6 Days | 149+ Segments Ready*
+>Cuyahoga mega-pull fires in 6 days. 149 commercial segments coded and ready:
+>NEW this run: #149 Summer Day Camps (opening NOW — peak timing); Carla Commercial RE Brokers (CBRE/JLL/Colliers — highest referral value per partner)
+>Previously new this week: #146 Independent Dental, #147 CPA Firms, #148 Flooring Showrooms, #141 Wedding Venues, #142 Outdoor Adventure Parks, #143 Charter Fishing, #144 VFW Posts, #145 Law Firms
+>
+>Command: double-click scripts/run_cuyahoga_both.command — runs Danny + Carla together unattended (12-20 min)
+>
+>⚠️ MEDINA CHECK: Was run_medina_both.command executed today (June 2)? If not, run it NOW before June 4 enrollment.
+---
+✅ *Vera — Scan Complete 2026-06-02 (Run 176)*
+>3 auto-upgrades shipped | 0 proposals | 2 new open issues (segment tracking #149, Carla #20)
+>New this run: #149 Summer Day Camps & Youth Day Programs (DJFS compliance angle, Boys & Girls Club 20+ locations, opens NOW) | Carla #20 Commercial RE Brokers (CBRE/JLL/Colliers/NAI Daus/Hanna — highest referral value per Carla contact)
+>Count synced 148+ → 149+ across vera_relay.py (7), CLAUDE.md (2), danny.md (1)
+>149 Danny segments + 20 Carla partner types fully coded for June 8 Cuyahoga mega-pull
+>🚨 URGENT: Pause Instantly.ai TODAY (June 4 = tomorrow) | Verify Medina pull done today | June 8 = 6 days

@@ -1,23 +1,42 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 175 | 2026-06-02 | Auto-fixes shipped: 4 | New RESOLVED: 0 | Open: 148 (145 carry-forward from Run 174 + 3 new segment tracking: Independent Dental, CPA Firms, Flooring Showrooms)*
+*Run 176 | 2026-06-02 | Auto-fixes shipped: 3 | New RESOLVED: 0 | Open: 150 (148 carry-forward from Run 175 + 2 new tracking: Summer Day Camps #149, Carla Commercial RE Brokers #20)*
 
 ---
 
-## RUN METRICS — Run 175 | 2026-06-02
+## RUN METRICS — Run 176 | 2026-06-02
 - Total RESOLVED: 122 (unchanged)
-- Total OPEN: 148 (145 carry-forward + 3 this run)
-- Auto-upgrades shipped: 4
-  1. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — NEW: Independent Dental Practices as segment #146. 8 DANNY_TITLES (dental office manager, dental practice manager, dental administrator, dental office administrator, dental practice director, general dentistry manager, dental clinic administrator, dental office director) + 8 DANNY_ORG_KEYWORDS (dental office, dental practice, family dentistry, general dentistry, dental associates, dental clinic, dentistry center, oral health center). DISTINCT from DSO chains (run 123 — 'dental service organization'/'dso'). 1,000+ NE Ohio independent practices. Ohio State Dental Board licensing = exterior appearance standard. July-Aug = slower patient volume = dentist-owner available for vendor decisions. $600-$1,500/visit; 2x/year; 20-practice territory = $24K-$60K/year. First pull June 8 Cuyahoga.
-  2. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — NEW: Accounting & CPA Firms as segment #147. 8 DANNY_TITLES (cpa firm manager, accounting firm administrator, accounting practice manager, cpa office administrator, accounting firm director, public accounting manager, cpa managing partner, audit firm manager) + 8 DANNY_ORG_KEYWORDS (cpa firm, accounting firm, certified public accountant, public accounting, cpa office, cpa group, audit firm, bookkeeping firm). Post-tax-season June-July = decision-maker window. NE Ohio targets: HW&Co, Maloney+Novotny, SS&G, Bober Markey, Corrigan Krause, Rea & Associates. $800-$2,500/building; 2x/year. First pull June 8 Cuyahoga (Beachwood corridor).
-  3. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — NEW: Flooring & Tile Showrooms as segment #148. 8 DANNY_TITLES (flooring showroom manager, flooring store manager, flooring district manager, tile showroom manager, carpet store manager, flooring operations manager, flooring franchise owner, flooring store director) + 8 DANNY_ORG_KEYWORDS (flooring store, flooring showroom, tile store, carpet store, flooring center, flooring supply, floor covering, hardwood floor store). DISTINCT from home improvement/hardware (run 136) + lumber yards (run 150). NE Ohio: Floor & Decor (3 locations), Classic Hardwood Floors, City Tile, Color Tile. $600-$2,000/visit; 2x/year. First pull June 8 Cuyahoga.
-  4. Count sync: 145+ → 148+ across `workers/vera_relay.py` (11 occ), `CLAUDE.md` (2 occ), `agents/danny.md` (batching note — same-run sync per resolved count-lag bug pattern).
+- Total OPEN: 150 (148 carry-forward + 2 this run)
+- Auto-upgrades shipped: 3
+  1. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — NEW: Summer Day Camps & Youth Day Programs as segment #149. 8 DANNY_TITLES (day camp director, summer camp director, youth program director, youth day camp director, summer youth director, camp director, day camp manager, youth summer program manager) + 7 DANNY_ORG_KEYWORDS (day camp, summer camp, youth camp, summer youth program, boys and girls club, youth day program, summer day camp). DISTINCT from YMCA (run 131), campgrounds (run 158), sports complexes (run 125). NE Ohio schools let out first week of June — camps are OPENING NOW. Ohio DJFS child care licensing = exterior appearance standard (compliance angle). NE Ohio targets: Boys & Girls Club of Northeast Ohio (20+ Cuyahoga County locations), Camp Ho Mita Koda (Painesville), Camp Cheerful (Strongsville), Erie Shores Camp, Freedom Summer Camp, Camp Whitewood, Jewish Federation camps (Beachwood), YMCA day camps (distinct org tag overlap kept separate). $400-$1,200/facility; 2x/year; 20-camp territory = $16K-$48K/year. Pitch: "Clean facilities the day parents drop off kids." First pull June 8 Cuyahoga.
+  2. `agents/carla.md` + `workers/lead_pipeline.py` CARLA_SEARCHES — NEW: Commercial Real Estate Brokers as Carla referral partner type #20. DISTINCT from residential realtors (already in Carla #5). CBRE Cleveland, Colliers International NE Ohio, JLL Cleveland, NAI Daus, Hanna Commercial. Brokers physically walk + photograph properties before every listing — see dirty facades, stained lots, grimy loading docks on EVERY site visit. Deep relationships with property owners + facility managers; often recommend vendors BEFORE building goes under management. Pitch: "We can make your listing look 100% better in marketing photos in 3 hours." One CBRE broker with 15 active commercial listings = 15 potential FM introductions = highest referral value per contact of any Carla partner type. Apollo titles added: commercial broker, commercial real estate broker, commercial leasing agent, commercial real estate agent, commercial property advisor. Keywords: commercial real estate brokerage, commercial property brokerage, cbre, jll, colliers, nai daus, hanna commercial.
+  3. Count sync: 148+ → 149+ across `workers/vera_relay.py` (7 occ), `CLAUDE.md` (2 occ), `agents/danny.md` (batching note — same-run sync per resolved count-lag bug pattern).
 - Critical human-action blockers (URGENT — deadlines imminent):
   - 🚨 JUNE 4 (2 DAYS AWAY) = Round 2 enrollment — PAUSE Instantly.ai campaigns a1c08c3d + 626cd15d RIGHT NOW (not tomorrow morning — NOW)
   - 🔍 MEDINA PULL (due June 2 today): run_medina_both.command — if not done this morning, do it this afternoon before EOD
   - ⛽ Gas station Mixmax sequence PENDING (create in Mixmax UI → paste ID into integrations/mixmax.py line 54)
   - 🚐 Fleet washing Mixmax sequence PENDING (create in Mixmax UI → paste ID into integrations/mixmax.py line 48)
-  - 📅 June 8 = Cuyahoga mega-pull — 148+ segments — use run_cuyahoga_both.command (6 days)
+  - 📅 June 8 = Cuyahoga mega-pull — 149+ segments — use run_cuyahoga_both.command (6 days)
+
+---
+
+## OPEN — Summer Day Camps & Youth Day Programs Segment Not Yet Pulled 🟡 NEW (Run 176)
+**Segment:** #149 — Summer Day Camps & Youth Day Programs
+**Status:** OPEN — waiting for June 8 Cuyahoga pull
+**Added:** Run 176 | 2026-06-02
+**Files updated:** `workers/lead_pipeline.py` (DANNY_TITLES + DANNY_ORG_KEYWORDS), `integrations/mixmax.py` (PROPERTY_MANAGER_TITLES), `agents/danny.md` (segment #149 brief)
+**First pull:** June 8 Cuyahoga — use `run_cuyahoga_both.command`
+**Resolve when:** Apollo pull includes day camp contacts AND at least 1 contact enrolled in Property Manager sequence
+
+---
+
+## OPEN — Carla Commercial RE Brokers Not Yet Pulled 🟡 NEW (Run 176)
+**Partner type:** #20 — Commercial Real Estate Brokers
+**Status:** OPEN — no Apollo pull yet for this segment
+**Added:** Run 176 | 2026-06-02
+**Files updated:** `agents/carla.md` (partner type #20 brief), `workers/lead_pipeline.py` (CARLA_SEARCHES — Commercial RE Brokers entry)
+**First pull:** Next Carla county pull (June 8 Cuyahoga — run_cuyahoga_both.command)
+**Resolve when:** At least 5 commercial broker contacts pulled + outreach copy generated
 
 ---
 

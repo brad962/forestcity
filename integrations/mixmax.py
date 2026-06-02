@@ -801,6 +801,10 @@ PROPERTY_MANAGER_TITLES = [
     'flooring showroom manager', 'flooring store manager', 'flooring district manager',
     'tile showroom manager', 'carpet store manager', 'flooring operations manager',
     'flooring franchise owner', 'flooring store director',
+    # Summer Day Camps & Youth Day Programs — Ohio DJFS child care licensing = exterior appearance standard;
+    # routing to property_manager sequence (facility/compliance angle) (added 2026-06-02 run 176)
+    'day camp director', 'summer camp director', 'youth program director', 'youth day camp director',
+    'summer youth director', 'camp director', 'day camp manager', 'youth summer program manager',
 ]
 
 REALTOR_TITLES = [

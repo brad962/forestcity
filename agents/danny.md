@@ -35,7 +35,7 @@ Example payload for property managers in Cuyahoga County:
 
 **Always pass `q_organization_keyword_tags`** — this catches decision-makers at property management companies where the contact's title isn't "property manager" (e.g., owner or VP at a 10-property HOA management firm).
 
-> ✅ **Title batching active (Run 132):** `workers/lead_pipeline.py` now batches DANNY_TITLES in groups of 50 and runs multiple Apollo searches per county pull, deduplicating by person ID. This prevents Apollo from silently capping large `person_titles` arrays. With 300+ titles across 148+ commercial segments, the old single-call approach risked returning zero contacts for many segments. Batching guarantees all 148+ segments are queried every pull.
+> ✅ **Title batching active (Run 132):** `workers/lead_pipeline.py` now batches DANNY_TITLES in groups of 50 and runs multiple Apollo searches per county pull, deduplicating by person ID. This prevents Apollo from silently capping large `person_titles` arrays. With 300+ titles across 149+ commercial segments, the old single-call approach risked returning zero contacts for many segments. Batching guarantees all 149+ segments are queried every pull.
 
 Target titles:
 - Property Manager, Property Management Director, Property Director
@@ -1804,6 +1804,14 @@ Peak moving season is May–September. NE Ohio has dozens of moving company term
 **Pitch angle:** "We clean the outside so your customers can focus on the beautiful floors inside. Delivery trucks park all day — we handle the oil stains, tire marks, and concrete buildup in your lot and entry area. We serve flooring stores across NE Ohio — scheduled on Sundays or early morning to avoid customer disruption."
 **Apollo keywords (live Run 175):** `flooring store`, `flooring showroom`, `tile store`, `carpet store`, `flooring center`, `flooring supply`, `floor covering`, `hardwood floor store` — added to DANNY_ORG_KEYWORDS.
 **Sequence:** Route to Property Manager sequence (facility vendor contract / retail appearance angle). First pull: June 8 Cuyahoga (Floor & Decor Independence + regional dealers in Cuyahoga corridor).
+
+### Summer Day Camps & Youth Day Programs (NEW — June 2026, Run 176)
+**Why:** NE Ohio schools let out the first week of June — day camps are OPENING RIGHT NOW. Day camp operators run standalone facilities with parking lots, entrance walkways, building exteriors, and outdoor activity area concrete that accumulate staining from high-traffic daily use. Ohio DJFS (Department of Job & Family Services) child care licensing requires maintained exterior appearance — creating a compliance angle identical to urgent care centers and senior living. Director or owner signs vendor contracts directly with no procurement layer. DISTINCT from YMCA (run 131 — fitness/recreation facilities, 'ymca' Apollo tag), campgrounds (run 158 — overnight stays, 'campground' tag), sports complexes (run 125 — year-round athletic facilities, 'sports complex' tag). Apollo tags 'day camp', 'summer camp', 'youth camp' return zero overlap with existing segments.
+**NE Ohio targets:** Boys & Girls Club of Northeast Ohio (20+ Cuyahoga County locations — largest youth org in NE Ohio), Camp Ho Mita Koda (Painesville — diabetes youth camp, large facility), Camp Cheerful (Strongsville — Variety Club), Erie Shores Camp (Erie County near Lorain border), Freedom Summer Camp (Cleveland), Cleveland Metropolitan School District summer programs, individual church-run and community-based day camp operators across all 7 counties.
+**Revenue math:** $400-$1,200/facility; 2x/year (spring pre-opening + fall close); Boys & Girls Club 20-location Cuyahoga portfolio = $8K-$24K/year under one director contract. Small standalone camps = $400-$800/visit, fast close.
+**Pitch angle:** "Summer camps need clean facilities the day parents drop off their kids for the first time. We handle building exteriors, parking lots, and entrance walkways — scheduled before your first session week. Ohio DJFS licensing inspections include exterior appearance. Let us handle it so you focus on the program."
+**Apollo keywords (live Run 176):** `day camp`, `summer camp`, `youth camp`, `summer youth program`, `boys and girls club`, `youth day program`, `summer day camp` — added to DANNY_ORG_KEYWORDS.
+**Sequence:** Route to Property Manager sequence (facility management / compliance angle). First pull: June 8 Cuyahoga (Boys & Girls Club Cuyahoga County director + large day camp operators).
 
 ---
 
