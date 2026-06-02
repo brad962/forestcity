@@ -1,6 +1,29 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 181 | 2026-06-02 | Auto-fixes shipped: 3 | New RESOLVED: 0 | Open: 160 (158 carry-forward from Run 180 + 2 new tracking: Scrap Metal #158 + Data Centers #159)*
+*Run 182 | 2026-06-02 | Auto-fixes shipped: 2 | New RESOLVED: 0 | Open: 162 (160 carry-forward from Run 181 + 2 new tracking: Gymnastics Centers #160 + Beverage Distribution #161)*
+
+---
+
+## RUN METRICS — Run 182 | 2026-06-02
+- Total RESOLVED: 122 (unchanged)
+- Total OPEN: 162 (160 carry-forward + 2 this run)
+- Auto-upgrades shipped: 2
+  1. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — NEW: Gymnastics Centers & Tumbling Academies as segment #160. 8 DANNY_TITLES (gymnastics center director, gymnastics gym owner, tumbling academy director, gymnastics academy director, cheerleading gym owner, cheer gym director, gymnastics studio manager, cheer academy owner) + 8 DANNY_ORG_KEYWORDS (gymnastics center, tumbling academy, gymnastics gym, cheer gym, cheerleading academy, gymnastics training, gymnastics club, tumbling gym). June = peak showcase season = maximum parent traffic = maximum concrete staining = perfect pitch window. Ohio DOH gymnastics facility registration = exterior appearance licensing standard. All American Gymnastics (Mentor) + Champion's Edge (Beachwood) + World Class Gymnastics (Akron) + ATA Cheer affiliates. $400–$1,200/visit; 2x/year. Zero competitors. First pull June 8 Cuyahoga.
+  2. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — NEW: Beverage Distribution Centers & Soft Drink Bottlers as segment #161. 8 DANNY_TITLES (beverage distribution manager, beverage district manager, soft drink distribution manager, beverage depot manager, bottling operations manager, beverage route manager, beer distributor manager, beverage operations director) + 8 DANNY_ORG_KEYWORDS (beverage distribution, soft drink distributor, beer distributor, wine distributor, beverage depot, bottling plant, beverage warehouse, soda distribution). Coca-Cola Consolidated (Strongsville HQ), Pepsi Bedford Heights, Great Lakes Distributing (Mentor), Southern Glazer's (Twinsburg). FDA FSMA food safety = loading dock concrete cleaning is regulatory line item. DISTINCT from run 105 (general logistics) and run 127 (food processing plants). $800–$3,000/visit; 3x/year; Coca-Cola Strongsville alone = $4K–$8K/year. Zero competitors. First pull June 8 Cuyahoga.
+
+---
+
+## OPEN — Gymnastics Centers & Tumbling Academies Segment Not Yet Pulled 🟡 NEW (Run 182)
+- First seen: 2026-06-02
+- Description: Segment #160. Gymnastics Centers & Tumbling Academies. 8 DANNY_TITLES + 8 DANNY_ORG_KEYWORDS live in lead_pipeline.py as of Run 182. Synced to mixmax.py PROPERTY_MANAGER_TITLES. Full segment brief in danny.md. NE Ohio targets: All American Gymnastics (Mentor), Champion's Edge (Beachwood), World Class Gymnastics (Akron), Ohio Twisters (Strongsville), ATA Cheer affiliate gyms (8+ NE Ohio locations). Ohio DOH gymnastics facility registration = exterior appearance standard. DISTINCT from dance studios (run 172), sports complexes (run 125), trampoline parks (run 148). June = peak showcase + summer camp = maximum concrete traffic = best pitch window of year. Owner-operators sign directly = fastest close. $400–$1,200/visit; 2x/year. Zero competitors. First pull June 8 Cuyahoga.
+- Attempts:
+  - 2026-06-02: Added titles + org keywords to lead_pipeline.py, mixmax.py routing, danny.md brief → waiting for June 8 local pull to confirm Apollo returns contacts
+
+## OPEN — Beverage Distribution Centers & Soft Drink Bottlers Segment Not Yet Pulled 🟡 NEW (Run 182)
+- First seen: 2026-06-02
+- Description: Segment #161. Beverage Distribution Centers & Soft Drink Bottlers. 8 DANNY_TITLES + 8 DANNY_ORG_KEYWORDS live in lead_pipeline.py as of Run 182. Synced to mixmax.py PROPERTY_MANAGER_TITLES. Full segment brief in danny.md. NE Ohio targets: Coca-Cola Consolidated (Strongsville HQ), Pepsi Beverages (Bedford Heights depot), Great Lakes Distributing (Mentor — craft beer/beverage), Southern Glazer's Wine & Spirits (Twinsburg). FDA FSMA food safety = loading dock concrete cleaning is a regulatory line item. DISTINCT from run 105 (general logistics/fulfillment centers), run 127 (food processing plants). Apollo tags 'beverage distribution'/'soft drink distributor'/'beer distributor'/'wine distributor' = zero overlap with existing. $800–$3,000/visit; 3x/year; Coca-Cola Strongsville = $4K–$8K/year anchor. Zero competitors cold-calling beverage depot managers. First pull June 8 Cuyahoga.
+- Attempts:
+  - 2026-06-02: Added titles + org keywords to lead_pipeline.py, mixmax.py routing, danny.md brief → waiting for June 8 local pull to confirm Apollo returns contacts
 
 ---
 

@@ -848,6 +848,14 @@ PROPERTY_MANAGER_TITLES = [
     'data center manager', 'data center operations manager', 'colocation facility manager',
     'data center facilities manager', 'colo facility manager', 'infrastructure manager',
     'data center general manager', 'colocation operations manager',
+    # Gymnastics Centers & Tumbling Academies — routing to property_manager sequence (added 2026-06-02 run 182)
+    'gymnastics center director', 'gymnastics gym owner', 'tumbling academy director',
+    'gymnastics academy director', 'cheerleading gym owner', 'cheer gym director',
+    'gymnastics studio manager', 'cheer academy owner',
+    # Beverage Distribution Centers & Soft Drink Bottlers — routing to property_manager sequence (added 2026-06-02 run 182)
+    'beverage distribution manager', 'beverage district manager', 'soft drink distribution manager',
+    'beverage depot manager', 'bottling operations manager', 'beverage route manager',
+    'beer distributor manager', 'beverage operations director',
 ]
 
 REALTOR_TITLES = [

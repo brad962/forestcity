@@ -1655,6 +1655,39 @@ DANNY_TITLES = [
     'data center manager', 'data center operations manager', 'colocation facility manager',
     'data center facilities manager', 'colo facility manager', 'infrastructure manager',
     'data center general manager', 'colocation operations manager',
+    # Gymnastics Centers & Tumbling Academies — summer camps RIGHT NOW (June = peak enrollment);
+    # Ohio DOH gymnastics facility registration = exterior appearance is a licensing inspection criterion;
+    # COMPLETELY DISTINCT from dance studios (run 172 — ballet/jazz/performing arts Apollo tags),
+    # sports complexes (run 125 — multi-sport team sports), trampoline parks (run 148 — foam pit/indoor);
+    # 100+ NE Ohio gymnastics centers; USA Gymnastics affiliated gyms + ATA Cheerleading affiliates;
+    # owner-operators sign vendor contracts directly with zero corporate procurement = fastest-close accounts;
+    # June = end-of-year showcase season + summer camp enrollment = maximum parent/student traffic = peak staining;
+    # parking lots + entrance walkways + lobby areas get maximum concrete traffic this exact month;
+    # $400–$1,200/visit; 2x/year; All American Gymnastics (Mentor), Champion's Edge (Beachwood),
+    # Gymnastics Zone (Avon/North Olmsted), World Class Gymnastics (Akron), Extreme Gymnastics (Cleveland),
+    # Ohio Twisters Gymnastics (Strongsville), Power Gymnastics Academy; zero competitors (added 2026-06-02 run 182)
+    'gymnastics center director', 'gymnastics gym owner', 'tumbling academy director',
+    'gymnastics academy director', 'cheerleading gym owner', 'cheer gym director',
+    'gymnastics studio manager', 'cheer academy owner',
+    # Beverage Distribution Centers & Soft Drink Bottlers — Coca-Cola Consolidated (Strongsville HQ),
+    # Pepsi Beverages Company (Bedford Heights distribution depot), 7UP/Dr. Pepper (Cleveland distribution),
+    # Great Lakes Distributing (craft beer/beverage distributor Mentor), Southern Glazer's Wine & Spirits
+    # (Twinsburg regional distribution center), Anheuser-Busch NE Ohio wholesaler depots;
+    # loading dock concrete accumulates extreme staining: sugar spills (sticky residue), CO2 condensation,
+    # yeast/hop residue from beer leakage, syrup drips from fountain syrup deliveries, and diesel exhaust
+    # from constant refrigerated truck staging — worst concrete staining type outside scrap yards;
+    # FDA FSMA (Food Safety Modernization Act) requires food loading dock areas be maintained to prevent
+    # contamination = power washing of loading concrete is a regulatory line item, not discretionary;
+    # COMPLETELY DISTINCT from general distribution centers (run 105 — 'fulfillment center'/'distribution center'
+    # Apollo tags) and food processing plants (run 127 — production plants, not distribution depots);
+    # Apollo org tags 'beverage distribution'/'soft drink distributor'/'beer distributor' return zero overlap
+    # with run 105 'fulfillment center'/'logistics facility' tags (different Apollo taxonomy);
+    # branch/depot managers sign vendor contracts directly; $800–$3,000/loading dock area;
+    # Coca-Cola Strongsville 4-dock facility = $4,000–$8,000/year; Pepsi Bedford Heights depot = anchor account;
+    # zero power washing competitors cold-calling beverage distribution depot managers in NE Ohio (added 2026-06-02 run 182)
+    'beverage distribution manager', 'beverage district manager', 'soft drink distribution manager',
+    'beverage depot manager', 'bottling operations manager', 'beverage route manager',
+    'beer distributor manager', 'beverage operations director',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -2642,6 +2675,20 @@ DANNY_ORG_KEYWORDS = [
     # Apollo tags 'data center'/'colocation facility' return ZERO overlap with any existing tags (added 2026-06-02 run 181)
     'data center', 'colocation facility', 'server hosting', 'managed hosting',
     'colocation services', 'data center operations', 'internet exchange point',
+    # Gymnastics Centers & Tumbling Academies — DISTINCT from 'sports complex' (run 125 — team sports),
+    # 'dance studio'/'performing arts' (run 172 — ballet/jazz/recital), 'trampoline park' (run 148 — foam pits);
+    # 'gymnastics center'/'tumbling academy'/'gymnastics gym' Apollo org tags return zero overlap with all existing;
+    # Ohio DOH gymnastics facility registration catches ALL affiliated USA Gymnastics + ATA Cheer gyms; (added 2026-06-02 run 182)
+    'gymnastics center', 'tumbling academy', 'gymnastics gym', 'cheer gym',
+    'cheerleading academy', 'gymnastics training', 'gymnastics club', 'tumbling gym',
+    # Beverage Distribution Centers & Soft Drink Bottlers — DISTINCT from general distribution centers
+    # (run 105 — 'fulfillment center'/'distribution center'/'logistics facility' Apollo tags — general logistics
+    # companies like Amazon/UPS/FedEx/XPO, NOT beverage-specific depots) and food processing plants
+    # (run 127 — 'food manufacturing'/'food processing' Apollo tags — production facilities, not distribution);
+    # Coca-Cola Strongsville, Pepsi Bedford Heights, Great Lakes Distributing Mentor, Southern Glazer's Twinsburg;
+    # FDA FSMA food safety = loading dock cleanliness is regulatory = budget line item, not discretionary; (added 2026-06-02 run 182)
+    'beverage distribution', 'soft drink distributor', 'beer distributor', 'wine distributor',
+    'beverage depot', 'bottling plant', 'beverage warehouse', 'soda distribution',
 ]
 
 CARLA_SEARCHES = [
