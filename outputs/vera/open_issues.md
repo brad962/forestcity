@@ -3482,3 +3482,33 @@ Key resolved issues by category:
 - Deliverables written: 0 (all work was code + content updates)
 - Proposals: 1 (see Slack — Fire Department Pitch Package: Tommy writes a specific fire station outreach email variant that leads with the ISO 2 rating angle rather than the generic commercial property manager email — this audience responds to operational/regulatory language, not "curb appeal")
 - Key active trackers: Medina pull = TODAY (if not done yet); June 4 enrollment = 3 days; June 8 Cuyahoga 138+ segment mega-pull = 7 days
+
+## OPEN — Charter Fishing & Lake Erie Boat Tour Operators Segment Not Yet Pulled 🟡 NEW (Run 174)
+- First seen: 2026-06-02
+- Description: Charter Fishing segment added (#143). 8 DANNY_TITLES (charter boat captain, fishing charter owner, etc.) + 8 DANNY_ORG_KEYWORDS (charter fishing, fishing charter, lake erie charter, etc.) + 8 PROPERTY_MANAGER_TITLES live. 50+ independent charter operators along Lake Erie shoreline. June-August = PEAK walleye season = best pitch window. First pull June 8 Cuyahoga (Westlake/Lorain Harbor); June 15 Lake (Mentor Headlands).
+- Attempts:
+  - 2026-06-02 (Run 174): Code added — awaiting first pull June 8 Cuyahoga
+
+## OPEN — VFW Posts & American Legion Halls Segment Not Yet Pulled 🟡 NEW (Run 174)
+- First seen: 2026-06-02
+- Description: VFW Posts & American Legion Halls segment added (#144). 8 DANNY_TITLES (post commander, vfw commander, etc.) + 8 DANNY_ORG_KEYWORDS (vfw post, american legion, veterans of foreign wars, etc.) + 8 PROPERTY_MANAGER_TITLES live. 90+ VFW posts + 60+ American Legion posts = 150+ NE Ohio facilities. Memorial Day just passed = facilities in active use. First pull June 8 Cuyahoga.
+- Attempts:
+  - 2026-06-02 (Run 174): Code added — awaiting first pull June 8 Cuyahoga
+
+## OPEN — Law Firms & Legal Office Buildings Segment Not Yet Pulled 🟡 NEW (Run 174)
+- First seen: 2026-06-02
+- Description: Law Firms & Legal Office Buildings segment added (#145). 8 DANNY_TITLES (law firm administrator, legal office manager, etc.) + 8 DANNY_ORG_KEYWORDS (law firm, legal services, attorneys at law, etc.) + 8 PROPERTY_MANAGER_TITLES live. Jones Day, Benesch, Thompson Hine, Hahn Loeser, Squire Patton Boggs in downtown Cleveland + suburban satellite offices. Client-facing professional trust angle. First pull June 8 Cuyahoga (downtown Cleveland law corridor).
+- Attempts:
+  - 2026-06-02 (Run 174): Code added — awaiting first pull June 8 Cuyahoga
+
+## RUN METRICS — Run 174 | 2026-06-02
+- Total RESOLVED: 122 (0 new this run)
+- Total OPEN: 141+ (3 new: Charter Fishing #143, VFW Posts #144, Law Firms #145 — all code live, awaiting June 8 pull)
+- Auto-upgrades shipped: 4
+  1. workers/lead_pipeline.py — NEW: Charter Fishing & Lake Erie Boat Tour Operators as segment #143. 8 DANNY_TITLES + 8 DANNY_ORG_KEYWORDS. 50+ NE Ohio charter operators; June-August peak walleye season = pitch window RIGHT NOW. First pull June 8 Cuyahoga.
+  2. workers/lead_pipeline.py — NEW: VFW Posts & American Legion Halls as segment #144. 8 DANNY_TITLES + 8 DANNY_ORG_KEYWORDS. 150+ NE Ohio veterans organization facilities. Memorial Day aftermath = peak awareness. First pull June 8 Cuyahoga.
+  3. workers/lead_pipeline.py — NEW: Law Firms & Legal Office Buildings as segment #145. 8 DANNY_TITLES + 8 DANNY_ORG_KEYWORDS. Jones Day, Benesch, Thompson Hine, Hahn Loeser, Squire Patton Boggs. Professional trust angle. First pull June 8 Cuyahoga.
+  4. integrations/mixmax.py — Synced 24 new routing titles (8 Charter Fishing + 8 VFW/Legion + 8 Law Firms) to PROPERTY_MANAGER_TITLES. Count sync 142+ → 145+ across vera_relay.py (11 occ), CLAUDE.md (2 occ), agents/danny.md (1 occ).
+- Deliverables written: 0 (all code + content updates)
+- Proposals: 1 (see Slack — VFW/Legion veteran discount pitch package: Tommy writes a dedicated outreach email that leads with the veterans support angle + 10% discount offer; post commanders respond to community-first language, not generic commercial cold email)
+- Key active trackers: June 4 = 2 days away (Round 2 enrollment — PAUSE INSTANTLY TODAY); June 8 = 6 days (145+ segment Cuyahoga mega-pull); Gas station + fleet sequences still PENDING; Medina pull status unknown

@@ -773,6 +773,19 @@ PROPERTY_MANAGER_TITLES = [
     'mini golf manager', 'miniature golf manager', 'go-kart park manager', 'go kart park owner',
     'batting cage manager', 'axe throwing venue manager', 'outdoor recreation park owner',
     'family fun park manager', 'outdoor entertainment park manager',
+    # Charter Fishing & Lake Erie Boat Tour Operators — owner-operators route to property_manager sequence
+    # (vendor contract / facility maintenance angle); peak walleye season June-August (added 2026-06-02 run 174)
+    'charter boat captain', 'fishing charter owner', 'charter fishing owner', 'boat charter owner',
+    'lake charter captain', 'charter boat operator', 'fishing guide owner', 'charter captain',
+    # VFW Posts & American Legion Halls — post commanders route to property_manager sequence
+    # (facility management / vendor contract angle); 150+ NE Ohio posts (added 2026-06-02 run 174)
+    'vfw post commander', 'american legion commander', 'post commander', 'veterans post director',
+    'veterans facility manager', 'post adjutant', 'vfw commander', 'legion post adjutant',
+    # Law Firms & Legal Office Buildings — administrators route to property_manager sequence
+    # (professional appearance / facility vendor contract angle); downtown + suburban NE Ohio offices (added 2026-06-02 run 174)
+    'law firm administrator', 'legal office manager', 'law office manager', 'legal administrator',
+    'law firm facilities manager', 'legal facilities director', 'office services manager',
+    'law firm operations manager',
 ]
 
 REALTOR_TITLES = [

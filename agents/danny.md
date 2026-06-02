@@ -35,7 +35,7 @@ Example payload for property managers in Cuyahoga County:
 
 **Always pass `q_organization_keyword_tags`** — this catches decision-makers at property management companies where the contact's title isn't "property manager" (e.g., owner or VP at a 10-property HOA management firm).
 
-> ✅ **Title batching active (Run 132):** `workers/lead_pipeline.py` now batches DANNY_TITLES in groups of 50 and runs multiple Apollo searches per county pull, deduplicating by person ID. This prevents Apollo from silently capping large `person_titles` arrays. With 300+ titles across 142+ commercial segments, the old single-call approach risked returning zero contacts for many segments. Batching guarantees all 142+ segments are queried every pull.
+> ✅ **Title batching active (Run 132):** `workers/lead_pipeline.py` now batches DANNY_TITLES in groups of 50 and runs multiple Apollo searches per county pull, deduplicating by person ID. This prevents Apollo from silently capping large `person_titles` arrays. With 300+ titles across 145+ commercial segments, the old single-call approach risked returning zero contacts for many segments. Batching guarantees all 145+ segments are queried every pull.
 
 Target titles:
 - Property Manager, Property Management Director, Property Director
@@ -1750,6 +1750,36 @@ Peak moving season is May–September. NE Ohio has dozens of moving company term
 **Pitch angle:** "Your pain management patients visit your clinic every 3-4 weeks, sometimes for years. That's more traffic through your parking lot than most specialty clinics see in a month. We handle exterior pressure washing for medical practice groups across NE Ohio — scheduled before clinic hours, service documentation included for your compliance files. Ohio Medical Board licensing inspections include facility exterior — let's make sure you pass with no findings."
 **Apollo keywords (live Run 168):** `pain management clinic`, `pain management center`, `pain clinic`, `interventional pain`, `chronic pain management`, `pain treatment center`, `pain medicine clinic`, `spine and pain`, `pain management practice` — added to DANNY_ORG_KEYWORDS.
 **Sequence:** Route to Property Manager sequence (Ohio Medical Board licensing / facility compliance angle). First pull: June 8 Cuyahoga (Cleveland Clinic Pain Mgmt Beachwood + UH Pain Clinic Westlake); June 15 Lake (NorthShore Pain Mgmt Mentor corridor); June 29 Summit (Summa Health Pain Medicine Akron + National Spine & Pain Centers Fairlawn).
+
+---
+
+### Charter Fishing & Lake Erie Boat Tour Operators (NEW — June 2026, Run 174)
+**Why:** 50+ independent charter operators along the Lake Erie shoreline — Lorain, Huron, Mentor Headlands, Westlake, Vermilion, Sandusky Bay corridor. June–August = PEAK walleye + perch charter season RIGHT NOW. Dock areas, concrete launch ramps, parking lots, and bait station pads accumulate algae, fish waste, and grime from constant boat traffic. Owner-operators (captains) sign vendor contracts directly — zero procurement process = fastest-close accounts in the commercial pipeline. DISTINCT from marinas (run 109 — marina management companies managing storage + slip rental); these are INDEPENDENT charter fishing operations.
+**NE Ohio targets:** Captain Joe's Fishing Charters (Huron), Erie Charters (Lorain/Huron), Fishing with John (Lorain), North Coast Charters (Westlake), Black Bay Sportfishing (Mentor Headlands), Walleye Connection (Huron), 50+ independent captains on Lake Erie.
+**Revenue math:** $400-$1,200/dock + launch area; 2x/year (pre-season May-June + post-season Sept-Oct); 15-charter NE Ohio territory = $12K-$36K/year. One-call close rate high.
+**Pitch angle:** "Before your charter season peaks this July 4th weekend — let us pressure wash your dock, launch ramp, and parking area. We work early mornings before you launch. One visit, done in 2 hours."
+**Apollo keywords (live Run 174):** `charter fishing`, `fishing charter`, `lake erie charter`, `charter boat`, `boat charter`, `fishing guide`, `lake fishing charter`, `walleye charter` — added to DANNY_ORG_KEYWORDS.
+**Sequence:** Route to Property Manager sequence (facility vendor contract angle). First pull: June 8 Cuyahoga (Westlake/Lorain Harbor charters); June 15 Lake (Mentor Headlands charter corridor); June 22 Lorain (Vermilion/Huron area charters).
+
+---
+
+### VFW Posts & American Legion Halls (NEW — June 2026, Run 174)
+**Why:** 90+ VFW posts + 60+ American Legion posts = 150+ NE Ohio veterans organization facilities. Memorial Day just passed (May 26) — facilities were at peak usage for ceremonies, events, and member gatherings. Post commanders are actively thinking about facility maintenance right now. Large parking lots + brick/concrete building exteriors + banquet hall wings + outdoor ceremony areas. Post commanders sign vendor contracts directly with small-purchase authority (typically under $5K direct award — no board vote required). DISTINCT from government/municipal facilities (run 124 — city halls, county admin buildings); these are privately managed nonprofit buildings with their own facilities budgets.
+**NE Ohio targets:** VFW Post 5795 (Parma — largest VFW post in Ohio), VFW Post 1037 (Cleveland), American Legion Post 193 (Westlake), American Legion Post 218 (Akron), 140+ additional posts across all 7 NE Ohio counties.
+**Revenue math:** $600-$1,500/post; 2x/year (spring + fall); full 150-post NE Ohio territory = $90K-$225K/year potential. Post commander is local = easy to reach by phone or email after cold outreach.
+**Pitch angle:** "We support veterans organizations with priority scheduling and a 10% discount. Your post parking lot and building need a refresh after a busy Memorial Day — we can be there within 2 weeks." Veteran-positive angle = unique differentiator vs. generic competitors.
+**Apollo keywords (live Run 174):** `vfw post`, `american legion`, `veterans of foreign wars`, `veterans organization`, `american legion post`, `vfw hall`, `veterans hall`, `veterans post` — added to DANNY_ORG_KEYWORDS.
+**Sequence:** Route to Property Manager sequence (facility management / vendor contract angle). First pull: June 8 Cuyahoga (Cleveland/Parma VFW + Legion clusters); June 29 Summit (Akron area veterans posts).
+
+---
+
+### Law Firms & Legal Office Buildings (NEW — June 2026, Run 174)
+**Why:** NE Ohio's major law firms occupy multi-story downtown Cleveland office buildings and suburban satellite offices — parking garages, building facades, entrance plazas, and ground-level walkways. Client reception is a professional trust signal identical to medical or financial offices. Law firm administrators and office managers sign vendor contracts without procurement committees at mid-size firms. DISTINCT from financial advisors (run 166 — small individual offices) and corporate tech parks (run 101 — tech campus operators). Apollo tags law firms under 'law firm', 'legal services', 'attorneys at law' — zero overlap with existing segment keywords.
+**NE Ohio targets:** Jones Day (largest private law firm, Cleveland HQ + multiple satellite offices), Benesch Friedlander (Cleveland), Thompson Hine (Cleveland + Columbus suburban offices), Hahn Loeser & Parks (Cleveland + Akron), Roetzel & Andress (Akron HQ + NE Ohio offices), Squire Patton Boggs (Cleveland Global HQ), McCarthy Lebit (Cleveland), Reminger Co. LPA (Cleveland), Zashin & Rich (Cleveland), Brennan Manna Diamond (Akron/multiple NE Ohio).
+**Revenue math:** $1,500-$5,000/building; 2x/year; 10-office downtown firm (multiple building floors, shared garage) = $30K-$100K/year. Large firms have dedicated facilities managers who actively manage vendor contracts.
+**Pitch angle:** "Your clients walk from the parking garage to your lobby on the most important day of their case. That first impression starts at the pavement. We clean parking structures, building entrances, and exterior facades for law firm clients across NE Ohio — scheduled on weekends or early morning to avoid client-facing disruption."
+**Apollo keywords (live Run 174):** `law firm`, `legal services`, `attorneys at law`, `legal office`, `law office`, `law group`, `legal group`, `attorneys office` — added to DANNY_ORG_KEYWORDS.
+**Sequence:** Route to Property Manager sequence (professional appearance / facility vendor contract angle). First pull: June 8 Cuyahoga (downtown Cleveland law corridor — E. 9th/Ontario/Superior); June 29 Summit (Akron law firms — Main St. corridor).
 
 ---
 

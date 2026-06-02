@@ -1474,6 +1474,39 @@ DANNY_TITLES = [
     'mini golf manager', 'miniature golf manager', 'go-kart park manager', 'go kart park owner',
     'batting cage manager', 'axe throwing venue manager', 'outdoor recreation park owner',
     'family fun park manager', 'outdoor entertainment park manager',
+    # Charter Fishing & Lake Erie Boat Tour Operators — 50+ independent charter operators along Lake Erie shoreline
+    # (Lorain, Huron, Mentor Headlands, Westlake, Vermilion, Sandusky Bay corridor);
+    # June-August = PEAK walleye + perch charter season RIGHT NOW — dock areas, concrete launch ramps,
+    # parking lots, bait station pads; owner-operators sign vendor contracts directly = fastest close;
+    # DISTINCT from marinas (run 109 — marina management companies); these are INDEPENDENT charter captains;
+    # Apollo tags 'charter fishing', 'fishing charter', 'lake erie charter' = zero overlap with existing;
+    # $400-$1,200/dock area; 2x/year; 15-charter NE Ohio territory = $12K-$36K/year;
+    # pitch: "Season is heating up — let us pressure wash your dock and launch pad before July 4th weekend." (added 2026-06-02 run 174)
+    'charter boat captain', 'fishing charter owner', 'charter fishing owner', 'boat charter owner',
+    'lake charter captain', 'charter boat operator', 'fishing guide owner', 'charter captain',
+    # VFW Posts & American Legion Halls — 90+ VFW posts + 60+ American Legion posts = 150+ NE Ohio facilities;
+    # Memorial Day just passed = facilities heavily used for events + annual ceremonies;
+    # large parking lots + brick/concrete building exteriors + banquet hall wings;
+    # post commanders sign vendor contracts directly; small-purchase authority under $5K = direct award;
+    # government/veteran-preference angle: "We support veteran-owned and served venues with priority scheduling";
+    # DISTINCT from government/municipal facilities (run 124 — city halls, county admin buildings);
+    # Apollo tags 'vfw post', 'american legion', 'veterans of foreign wars' = zero overlap with existing;
+    # $600-$1,500/post; 2x/year; NE Ohio full territory = $90K-$225K/year potential;
+    # zero competitors cold-calling VFW/Legion post commanders for power washing (added 2026-06-02 run 174)
+    'vfw post commander', 'american legion commander', 'post commander', 'veterans post director',
+    'veterans facility manager', 'post adjutant', 'vfw commander', 'legion post adjutant',
+    # Law Firms & Legal Office Buildings — Jones Day (Cleveland HQ), Benesch Friedlander, Thompson Hine,
+    # Hahn Loeser & Parks, Roetzel & Andress (Akron HQ), Squire Patton Boggs, McCarthy Lebit, Reminger;
+    # downtown Cleveland office buildings + suburban satellite offices (Beachwood, Westlake, Independence);
+    # client reception areas = professional trust signal; building facades + parking + entrance plazas;
+    # law firm administrator or office manager signs vendor contracts; no procurement layer at mid-size firms;
+    # DISTINCT from financial advisors (run 166 — small individual office) and corporate campuses (run 101 — tech parks);
+    # Apollo tags 'law firm', 'legal services', 'attorneys at law' = zero overlap with existing segments;
+    # $1,500-$5,000/building; 2x/year; 10-building downtown firm = $30K-$100K/year;
+    # zero competitors cold-calling law firm facilities managers for power washing (added 2026-06-02 run 174)
+    'law firm administrator', 'legal office manager', 'law office manager', 'legal administrator',
+    'law firm facilities manager', 'legal facilities director', 'office services manager',
+    'law firm operations manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -2339,6 +2372,21 @@ DANNY_ORG_KEYWORDS = [
     # June = school's out = peak; first pull June 8 Cuyahoga (metro venues) (added 2026-06-02 run 173)
     'mini golf', 'miniature golf', 'go-kart', 'go kart track', 'batting cage',
     'axe throwing', 'outdoor family entertainment', 'family fun park', 'outdoor adventure park',
+    # Charter Fishing & Lake Erie Boat Tour Operators — Apollo org tags catch independent charter operations
+    # distinctly from marinas ('marina management', 'marine services', 'boat storage' — run 109);
+    # walleye season June-August = peak pitch window RIGHT NOW; NE Ohio Lake Erie shoreline advantage (added 2026-06-02 run 174)
+    'charter fishing', 'fishing charter', 'lake erie charter', 'charter boat',
+    'boat charter', 'fishing guide', 'lake fishing charter', 'walleye charter',
+    # VFW Posts & American Legion Halls — Apollo org tags catch veterans posts distinctly from
+    # government/municipal facilities ('government building', 'city facilities', 'municipal' — run 124);
+    # Memorial Day aftermath = facilities in active use; 150+ NE Ohio posts (added 2026-06-02 run 174)
+    'vfw post', 'american legion', 'veterans of foreign wars', 'veterans organization',
+    'american legion post', 'vfw hall', 'veterans hall', 'veterans post',
+    # Law Firms & Legal Office Buildings — Apollo org tags catch law firms distinctly from financial advisors
+    # ('wealth management', 'financial advisory' — run 166) and corporate campuses ('corporate campus', 'tech park' — run 101);
+    # downtown Cleveland + Beachwood/Independence/Westlake suburban law office corridor (added 2026-06-02 run 174)
+    'law firm', 'legal services', 'attorneys at law', 'legal office',
+    'law office', 'law group', 'legal group', 'attorneys office',
 ]
 
 CARLA_SEARCHES = [

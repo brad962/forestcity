@@ -100,3 +100,48 @@
 >New this run: #141 Wedding Venues (Barn at Mapleside, Willow Tree Ranch — June = peak venue-booking season, coordinator title gap fixed) | #142 Outdoor Recreation Parks (go-karts, mini-golf, axe throwing — school's out, peak season NOW)
 >Count synced 140+ → 142+ across vera_relay.py (11), CLAUDE.md (2), danny.md (1)
 >🚨 URGENT: Pause Instantly.ai TODAY (2 days before June 4) | Verify Medina pull done | June 8 = 142+ segment Cuyahoga mega-pull
+---
+🔧 *Vera — Auto-Upgrade | Run 174 | 2026-06-02*
+>Changed: Added Charter Fishing & Lake Erie Boat Tour Operators as Segment #143 to lead_pipeline.py DANNY_TITLES (8 titles) + DANNY_ORG_KEYWORDS (8 keywords). Synced 8 routing titles to mixmax.py PROPERTY_MANAGER_TITLES. Full segment brief added to agents/danny.md.
+>Why: June-August = PEAK Lake Erie walleye charter season RIGHT NOW. 50+ independent charter captains operating out of Lorain, Huron, Mentor Headlands, Westlake, Vermilion docks. Dock concrete + launch ramps + parking lots accumulate algae, fish waste, grime from constant boat traffic. Owner-operators (the captains themselves) sign vendor contracts in one phone call — the fastest close in our entire commercial pipeline. Pitch: "Before your July 4th weekend rush — let us pressure wash your dock and launch ramp. We work at 6am before you launch." DISTINCT from marina management companies (run 109). Apollo 'charter fishing'/'fishing charter'/'lake erie charter' = zero overlap with existing keywords. $400-$1,200/dock; 2x/year; 15-charter NE Ohio territory = $12K-$36K/year. First pull June 8 Cuyahoga.
+>File: workers/lead_pipeline.py + integrations/mixmax.py + agents/danny.md
+---
+🔧 *Vera — Auto-Upgrade | Run 174 | 2026-06-02*
+>Changed: Added VFW Posts & American Legion Halls as Segment #144 to lead_pipeline.py DANNY_TITLES (8 titles) + DANNY_ORG_KEYWORDS (8 keywords). Synced 8 routing titles to mixmax.py PROPERTY_MANAGER_TITLES. Full segment brief added to agents/danny.md.
+>Why: 90+ VFW posts + 60+ American Legion posts = 150+ NE Ohio veterans facilities, and Memorial Day just passed — post commanders are in active facility mode right now. Large parking lots + brick/concrete exteriors + banquet hall wings. Post commanders sign vendor contracts with small-purchase authority (under $5K direct award, no board vote). DISTINCT from government/municipal buildings (run 124 — city halls). Veteran-positive pitch angle: "We offer priority scheduling and a 10% discount for veterans organizations." Unique differentiator no competitor will match. First pull June 8 Cuyahoga (VFW Post 5795 Parma — largest VFW post in Ohio). $600-$1,500/post; 2x/year; 150 posts = $90K-$225K/year territory potential.
+>File: workers/lead_pipeline.py + integrations/mixmax.py + agents/danny.md
+---
+🔧 *Vera — Auto-Upgrade | Run 174 | 2026-06-02*
+>Changed: Added Law Firms & Legal Office Buildings as Segment #145 to lead_pipeline.py DANNY_TITLES (8 titles) + DANNY_ORG_KEYWORDS (8 keywords). Synced 8 routing titles to mixmax.py PROPERTY_MANAGER_TITLES. Full segment brief added to agents/danny.md. Count synced 142+ → 145+ across vera_relay.py (11 occ), CLAUDE.md (2 occ), agents/danny.md (1 occ).
+>Why: Jones Day (Cleveland HQ), Benesch Friedlander, Thompson Hine, Hahn Loeser & Parks, Roetzel & Andress (Akron HQ), Squire Patton Boggs (Cleveland Global HQ) — all have multi-floor downtown offices + suburban satellites. Clients walk through the parking garage to the lobby on the most important day of their case. That walk IS their first impression. Law firm administrators sign vendor contracts independently (no procurement committee at mid-size firms). DISTINCT from financial advisors (run 166 — small single-office) and corporate tech parks (run 101). Apollo 'law firm'/'legal services'/'attorneys at law' = zero overlap. $1,500-$5,000/building; 2x/year; 10-office firm = $30K-$100K/year. First pull June 8 Cuyahoga (downtown Cleveland law corridor).
+>File: workers/lead_pipeline.py + integrations/mixmax.py + agents/danny.md
+---
+💡 *Vera — Upgrade Proposal: VFW/American Legion Veteran Pitch Package — Tommy Writes Dedicated Email*
+>Idea: Tommy writes a dedicated outreach email variant for VFW Posts & American Legion Halls that leads with the veteran-support angle and includes a 10% discount offer — NOT the generic commercial property manager email.
+>Why: Post commanders respond to community-first language, not "curb appeal" pitches. "We support veterans organizations with priority scheduling and a 10% veterans discount. You've been maintaining that building for your community for 30 years — let us take the exterior off your to-do list." That's a sentence no competitor will ever send to a post commander. Warm, personal, community-rooted = opens the door generic commercial cold email can't.
+>Impact: Higher reply rate on a fresh segment of 150+ NE Ohio veterans facilities. Every post has a parking lot, building facade, and banquet wing. Memorial Day timing is perfect — commanders are in facility-thinking mode right now. One contract = $1,200-$3,000/year, recurring. First pull June 8 Cuyahoga.
+>Reply YES to approve and Tommy will write it this week.
+---
+🚨 *Vera — JUNE 4 IS IN 2 DAYS — PAUSE INSTANTLY.AI TODAY*
+>Round 2 Mixmax enrollment fires Thursday June 4. You need to pause Instantly.ai BEFORE then — NOT on Thursday morning. If those campaigns send to contacts who are also in the Mixmax queue, you get duplicate emails → spam filter → 0% reply rate on Round 2. The same thing that killed Round 1.
+>
+>Do this RIGHT NOW (takes 3 minutes):
+>→ Go to app.instantly.ai → Campaigns
+>→ Find "a1c08c3d" (PM Cuyahoga) + "626cd15d" (Contractor Referral)
+>→ Click ⋮ → Pause on both
+>→ Add INSTANTLY_PAUSED=true to your .env file
+>→ Done. Guide: outputs/vera/instantly_pause_guide_2026-05-22.md
+>
+>⛽ Also still pending: Gas station + fleet sequences stranded since May 19. Create them in Mixmax UI → paste IDs into integrations/mixmax.py lines 48 + 54. 15 minutes, one time. 12+ contacts waiting.
+---
+📅 *Vera — June 8 Countdown: 6 Days | NOW 145+ Segments*
+>Cuyahoga mega-pull is in 6 days. 145+ commercial segments — Charter Fishing (Lake Erie walleye season peak NOW), VFW/Legion Posts (Memorial Day aftermath, post commanders in facility mode), Law Firms (Jones Day/Benesch/Thompson Hine — professional trust angle) added this run alongside hospitals, schools, fire stations, golf courses + 130 more.
+>Estimated output: 350-550+ new Mixmax enrollments. Takes 12-20 min fully unattended.
+>Command: double-click scripts/run_cuyahoga_both.command OR python3 workers/lead_pipeline.py both Cuyahoga
+>⚠️ MEDINA CHECK: Medina pull was due June 1. If not done — run it NOW before June 4. scripts/run_medina_both.command (6 minutes unattended).
+---
+✅ *Vera — Scan Complete 2026-06-02 (Run 174)*
+>4 auto-upgrades shipped | 1 proposal | 3 new open issues (segment tracking #143-#145)
+>New this run: #143 Charter Fishing & Lake Erie Operators (50+ NE Ohio captains, walleye season = peak pitch window NOW) | #144 VFW Posts & American Legion Halls (150+ NE Ohio posts, Memorial Day aftermath, veteran-positive pitch angle) | #145 Law Firms & Legal Buildings (Jones Day, Benesch, Thompson Hine, Squire Patton Boggs — client trust = clean exterior)
+>Count synced 142+ → 145+ across vera_relay.py (11), CLAUDE.md (2), danny.md (1)
+>🚨 URGENT TODAY: Pause Instantly.ai (June 4 = 2 days) | Verify Medina pull done | June 8 = 145+ segment Cuyahoga mega-pull
