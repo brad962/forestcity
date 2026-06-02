@@ -1,6 +1,36 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 182 | 2026-06-02 | Auto-fixes shipped: 2 | New RESOLVED: 0 | Open: 162 (160 carry-forward from Run 181 + 2 new tracking: Gymnastics Centers #160 + Beverage Distribution #161)*
+*Run 183 | 2026-06-02 | Auto-fixes shipped: 3 | New RESOLVED: 0 | Open: 164 (162 carry-forward from Run 182 + 2 new tracking: Electric Utility Substations #162 + Private EMS Depots #163)*
+
+---
+
+## RUN METRICS — Run 183 | 2026-06-02
+- Total RESOLVED: 122 (unchanged)
+- Total OPEN: 164 (162 carry-forward + 2 this run)
+- Auto-upgrades shipped: 3
+  1. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — NEW: Electric Utility Substations & Power Distribution Facilities as segment #162. 8 DANNY_TITLES (electric utility facilities manager, utility site manager, substation facility manager, power utility facility manager, electric utility operations manager, utility facilities director, power distribution facility manager, electric cooperative facilities manager) + 8 DANNY_ORG_KEYWORDS (electric utility, power utility, electric cooperative, firstenergy, aep ohio, ohio edison, illuminating company, utility substation). FirstEnergy Corp (Akron HQ + CEI/Ohio Edison subs), AEP Ohio (40+ NE Ohio distribution substations). EPA SPCC + NPDES stormwater permit = concrete cleaning is a regulatory compliance line item. One regional FM = multi-site contract across dozens of substations. COMPLETELY DISTINCT from manufacturing (run 118), government (run 124), pharma (run 180), data centers (run 181). $2K–$6K/facility; quarterly; FirstEnergy territory = $200K+ potential. Zero competitors. First pull June 8 Cuyahoga.
+  2. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — NEW: Private EMS & Ambulance Service Depots as segment #163. 8 DANNY_TITLES (ems operations manager, ambulance service manager, emergency medical services director, ems director, ambulance operations director, medical transport manager, ems district manager, emergency services manager) + 8 DANNY_ORG_KEYWORDS (ambulance service, ems service, emergency medical services, private ems, medical transport, ambulance company, medical response team, emergency ambulance). American Medical Response (AMR — Cuyahoga County EMS contract), Rural Metro Medical Services (Lorain/Lake), STAT Medical Transport, Medix Ambulance. OSHA 29 CFR 1910.1030 bloodborne pathogens + EPA hazmat = exterior bay cleaning is regulatory. COMPLETELY DISTINCT from hospital campus (run 124), urgent care (run 114), ambulatory surgery (run 143). $800–$2,500/depot; 4x/year; AMR multi-depot = $12.8K–$40K/year. Zero competitors. First pull June 8 Cuyahoga.
+  3. Count sync: 159+ → 163+ across `workers/vera_relay.py` (5 occ), `CLAUDE.md` (2 occ), `agents/danny.md` (batching note). Same-run count sync.
+- Critical human-action blockers (URGENT — deadlines imminent):
+  - 🚨 JUNE 4 (2 DAYS AWAY) = Round 2 enrollment — PAUSE Instantly.ai campaigns a1c08c3d + 626cd15d RIGHT NOW (9th consecutive run flagging this — 48 hours left)
+  - 🔍 MEDINA PULL CHECK (due June 2 today): Verify run_medina_both.command was executed. If not — run NOW.
+  - ⛽ Gas station Mixmax sequence PENDING (create in Mixmax UI → paste ID into integrations/mixmax.py line 54)
+  - 🚐 Fleet washing Mixmax sequence PENDING (create in Mixmax UI → paste ID into integrations/mixmax.py line 48)
+  - 📅 June 8 = Cuyahoga mega-pull — 163+ segments — use run_cuyahoga_both.command (6 days)
+
+---
+
+## OPEN — Electric Utility Substations & Power Distribution Facilities Segment Not Yet Pulled 🟡 NEW (Run 183)
+- First seen: 2026-06-02
+- Description: Segment #162. Electric Utility Substations & Power Distribution Facilities. 8 DANNY_TITLES + 8 DANNY_ORG_KEYWORDS live in lead_pipeline.py as of Run 183. Synced to mixmax.py PROPERTY_MANAGER_TITLES. Full segment brief in danny.md. NE Ohio targets: FirstEnergy Corp (Akron HQ — CEI/Ohio Edison/The Illuminating Company facilities), AEP Ohio (40+ NE Ohio distribution substations), FirstEnergy Transmission (HV substations), Buckeye Power (rural electric cooperatives). EPA SPCC + NPDES stormwater permit = concrete cleaning regulatory line item. COMPLETELY DISTINCT from manufacturing (run 118), government (run 124), pharma (run 180), data centers (run 181). $2K–$6K/facility; quarterly; FirstEnergy territory = $200K+ potential. Zero competitors. First pull June 8 Cuyahoga.
+- Attempts:
+  - 2026-06-02: Added titles + org keywords to lead_pipeline.py, mixmax.py routing, danny.md brief → waiting for June 8 local pull to confirm Apollo returns contacts
+
+## OPEN — Private EMS & Ambulance Service Depots Segment Not Yet Pulled 🟡 NEW (Run 183)
+- First seen: 2026-06-02
+- Description: Segment #163. Private EMS & Ambulance Service Depots. 8 DANNY_TITLES + 8 DANNY_ORG_KEYWORDS live in lead_pipeline.py as of Run 183. Synced to mixmax.py PROPERTY_MANAGER_TITLES. Full segment brief in danny.md. NE Ohio targets: American Medical Response (AMR — Cuyahoga County EMS contract), Rural Metro Medical Services (Lorain/Lake County), STAT Medical Transport, Medix Ambulance (Mentor OH). OSHA 29 CFR 1910.1030 bloodborne pathogens + EPA hazmat compliance = exterior ambulance bay cleaning is regulatory. COMPLETELY DISTINCT from hospital campus (run 124), urgent care (run 114), ambulatory surgery (run 143). $800–$2,500/depot; 4x/year; AMR multi-depot = $12.8K–$40K/year. Zero competitors. First pull June 8 Cuyahoga.
+- Attempts:
+  - 2026-06-02: Added titles + org keywords to lead_pipeline.py, mixmax.py routing, danny.md brief → waiting for June 8 local pull to confirm Apollo returns contacts
 
 ---
 

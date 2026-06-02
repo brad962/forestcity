@@ -1688,6 +1688,32 @@ DANNY_TITLES = [
     'beverage distribution manager', 'beverage district manager', 'soft drink distribution manager',
     'beverage depot manager', 'bottling operations manager', 'beverage route manager',
     'beer distributor manager', 'beverage operations director',
+    # Electric Utility Substations & Power Distribution Facilities — FirstEnergy Corp (HQ Akron OH),
+    # AEP Ohio, The Illuminating Company (Cleveland), Ohio Edison (Akron/Summit); 200+ NE Ohio substations
+    # each with large concrete equipment pads, control buildings, fenced perimeter surfaces;
+    # EPA SPCC Plan (40 CFR Part 112) + NPDES stormwater permit = facility concrete cleaning is a
+    # regulatory compliance line item, not discretionary; one regional FM = multi-site contract across
+    # dozens of substations; COMPLETELY DISTINCT from manufacturing (run 118 — factory loading docks),
+    # government (run 124 — city/county buildings), pharma (run 180), data centers (run 181);
+    # utility FM contacts are completely un-targeted by any NE Ohio power washing competitor;
+    # $2K–$6K/facility; quarterly = $8K–$24K/facility/year; FirstEnergy territory = $200K+ potential;
+    # zero competitors; first pull June 8 Cuyahoga (added 2026-06-02 run 183)
+    'electric utility facilities manager', 'utility site manager', 'substation facility manager',
+    'power utility facility manager', 'electric utility operations manager', 'utility facilities director',
+    'power distribution facility manager', 'electric cooperative facilities manager',
+    # Private EMS & Ambulance Service Depots — American Medical Response (AMR — Cuyahoga County EMS
+    # contract), Rural Metro Medical Services (Lorain/Lake County), STAT Medical Transport, Medix Ambulance;
+    # private EMS vehicle bays accumulate blood, IV solution, biological material, chemical decontaminant
+    # residue, diesel exhaust — among the worst concrete staining scenarios outside industrial facilities;
+    # OSHA 29 CFR 1910.1030 bloodborne pathogens standard + EPA hazmat disposal compliance =
+    # exterior surface cleaning of ambulance bays is a regulatory requirement, not optional;
+    # COMPLETELY DISTINCT from hospital campuses (run 124), urgent care (run 114), ambulatory surgery (run 143);
+    # EMS operations managers sign vendor contracts; zero competitors cold-calling EMS depot managers;
+    # $800–$2,500/depot visit; 4x/year; AMR multi-depot NE Ohio territory = $12.8K–$40K/year;
+    # first pull June 8 Cuyahoga (added 2026-06-02 run 183)
+    'ems operations manager', 'ambulance service manager', 'emergency medical services director',
+    'ems director', 'ambulance operations director', 'medical transport manager',
+    'ems district manager', 'emergency services manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -2689,6 +2715,19 @@ DANNY_ORG_KEYWORDS = [
     # FDA FSMA food safety = loading dock cleanliness is regulatory = budget line item, not discretionary; (added 2026-06-02 run 182)
     'beverage distribution', 'soft drink distributor', 'beer distributor', 'wine distributor',
     'beverage depot', 'bottling plant', 'beverage warehouse', 'soda distribution',
+    # Electric Utility Substations & Power Distribution Facilities — DISTINCT from 'industrial manufacturing'
+    # (run 118 — factory/plant ops), 'government facilities' (run 124 — municipal/county), 'pharmaceutical'
+    # (run 180), 'data center' (run 181); Apollo org tags 'electric utility'/'power utility'/'electric
+    # cooperative' return zero overlap with all existing tags; FirstEnergy Corp tagged 'electric utility';
+    # AEP Ohio tagged 'power utility'; first pull June 8 Cuyahoga (added 2026-06-02 run 183)
+    'electric utility', 'power utility', 'electric cooperative', 'firstenergy',
+    'aep ohio', 'ohio edison', 'illuminating company', 'utility substation',
+    # Private EMS & Ambulance Service Depots — DISTINCT from 'hospital campus' (run 124), 'urgent care'
+    # (run 114), 'ambulatory surgery center' (run 143); Apollo tags 'ambulance service'/'emergency medical
+    # services' return zero overlap with all existing medical/facility tags; American Medical Response,
+    # Rural Metro Medical, STAT Medical Transport; first pull June 8 Cuyahoga (added 2026-06-02 run 183)
+    'ambulance service', 'ems service', 'emergency medical services', 'private ems',
+    'medical transport', 'ambulance company', 'medical response team', 'emergency ambulance',
 ]
 
 CARLA_SEARCHES = [

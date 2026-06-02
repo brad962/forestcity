@@ -856,6 +856,16 @@ PROPERTY_MANAGER_TITLES = [
     'beverage distribution manager', 'beverage district manager', 'soft drink distribution manager',
     'beverage depot manager', 'bottling operations manager', 'beverage route manager',
     'beer distributor manager', 'beverage operations director',
+    # Electric Utility Substations & Power Distribution Facilities — routing to property_manager sequence
+    # (EPA SPCC/NPDES compliance / facility vendor contract angle) (added 2026-06-02 run 183)
+    'electric utility facilities manager', 'utility site manager', 'substation facility manager',
+    'power utility facility manager', 'electric utility operations manager', 'utility facilities director',
+    'power distribution facility manager', 'electric cooperative facilities manager',
+    # Private EMS & Ambulance Service Depots — routing to property_manager sequence
+    # (OSHA bloodborne pathogens / EPA hazmat compliance angle) (added 2026-06-02 run 183)
+    'ems operations manager', 'ambulance service manager', 'emergency medical services director',
+    'ems director', 'ambulance operations director', 'medical transport manager',
+    'ems district manager', 'emergency services manager',
 ]
 
 REALTOR_TITLES = [
