@@ -1567,6 +1567,27 @@ DANNY_TITLES = [
     'school bus company manager', 'student transportation manager', 'bus fleet manager',
     'charter bus manager', 'motor coach manager', 'school bus operations manager',
     'bus transportation manager', 'student transport director',
+    # USPS & Postal Service Facilities — NE Ohio Cleveland P&DC (9850 E 30th St) + Akron P&DC +
+    # 100+ delivery unit offices; USPS FAC (Federal Acquisition Circular) contractor standards;
+    # large loading docks + concrete mail-staging aprons + parking lots + vehicle bays accumulate
+    # diesel exhaust + road grime + road salt every day; postmasters and facility managers sign
+    # vendor contracts independently; COMPLETELY DISTINCT from municipal government (run 124 — city halls)
+    # and distribution centers (run 105 — private logistics); $500–$2,000/facility; 2x/year (added 2026-06-02 run 179)
+    'postmaster', 'postal facility manager', 'usps facility manager', 'postal station manager',
+    'mail processing facility manager', 'postal district manager', 'postal operations supervisor',
+    'postal service manager', 'post office manager', 'usps operations manager',
+    # Construction & Industrial Equipment Rental Companies — United Rentals (10+ NE Ohio branches),
+    # Sunbelt Rentals (7+ NE Ohio branches), H&E Equipment Services, BlueLine Rental,
+    # HERC Rentals, RSC Equipment Rental, Nesco Resource, Ahern Rentals;
+    # COMPLETELY DISTINCT from construction equipment DEALERS (run 143 — showrooms with new equipment);
+    # rental branch lots have heavy equipment sitting outdoors 24/7 — excavators, boom lifts, skid steers,
+    # concrete saws; hydraulic fluid + diesel + mud = extreme surface staining beyond any other segment;
+    # OSHA SPCC stormwater compliance for hydraulic fluid and diesel storage is a regulatory angle;
+    # branch managers sign vendor contracts independently (no corporate procurement);
+    # $2,000–$6,000/branch; 4x/year = $8K–$24K/year per branch; zero competitors targeting this (added 2026-06-02 run 179)
+    'equipment rental branch manager', 'equipment rental manager', 'rental equipment manager',
+    'rental yard manager', 'equipment rental operations manager', 'rental branch general manager',
+    'construction equipment rental manager', 'heavy equipment rental manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -2510,6 +2531,20 @@ DANNY_ORG_KEYWORDS = [
     'school bus company', 'student transportation', 'school bus fleet', 'charter bus company',
     'motor coach company', 'bus transportation company', 'charter coach company',
     'first student', 'durham school services', 'national express bus',
+    # USPS & Postal Service Facilities — DISTINCT from municipal government ('city hall', 'county building'
+    # run 124) and private logistics/distribution centers ('distribution center', 'fulfillment center' run 105);
+    # Apollo tags 'usps', 'postal service', 'post office', 'mail processing' return ZERO overlap with
+    # existing DANNY_ORG_KEYWORDS; NE Ohio has Cleveland P&DC + Akron P&DC + 100+ delivery offices;
+    # postmasters sign vendor contracts via GSA schedules; no competitors cold-calling postal FMs (added 2026-06-02 run 179)
+    'usps', 'postal service', 'post office', 'united states postal service',
+    'mail processing', 'postal distribution', 'postal facility', 'usps processing',
+    # Construction & Industrial Equipment Rental — DISTINCT from construction equipment dealers
+    # ('commercial truck dealer', 'heavy equipment dealer' run 143 — those are SALES showrooms);
+    # Apollo tags 'equipment rental', 'construction equipment rental', 'tool rental' return
+    # ZERO overlap with existing DANNY_ORG_KEYWORDS; named NE Ohio operator keywords are unique; (added 2026-06-02 run 179)
+    'equipment rental', 'construction equipment rental', 'tool rental', 'aerial equipment rental',
+    'united rentals', 'sunbelt rentals', 'herc rentals', 'blueline rental', 'h&e equipment',
+    'nesco rentals', 'ahern rentals', 'industrial equipment rental',
 ]
 
 CARLA_SEARCHES = [

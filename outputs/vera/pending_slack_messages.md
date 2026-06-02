@@ -42,3 +42,27 @@
 >4 auto-upgrades shipped | 0 proposals | 153 open items (151 carry-forward tracking + 2 new segments)
 >152+ commercial segments now live — all fire on June 8 Cuyahoga mega-pull (6 days away).
 >Critical gap: Instantly.ai PAUSE deadline is June 4 — 2 days. That's the one action that can't wait and can't be automated. Everything else is ready.
+---
+🔧 *Vera — Auto-Upgrade | Run 179 | 2026-06-02*
+>Changed: Added Segment #153 — USPS & Postal Service Facilities to lead_pipeline.py + mixmax.py + danny.md
+>Why: Cleveland P&DC + Akron P&DC + 100+ NE Ohio post offices have large loading dock concrete areas where mail trucks pull in/out all day — diesel + road salt accumulation at bus depot rates. Postmasters and facility managers sign vendor contracts independently via GSA schedules. DISTINCT from municipal government (city halls, Run 124) and private distribution (Amazon/UPS, Run 105). Zero competitors cold-calling USPS facility contacts.
+>Revenue math: $500–$2,000/facility; 2x/year; 10 post office contracts = $10K–$40K/year; Cleveland P&DC alone = $5K–$15K/year
+>File: workers/lead_pipeline.py, integrations/mixmax.py, agents/danny.md
+---
+🔧 *Vera — Auto-Upgrade | Run 179 | 2026-06-02*
+>Changed: Added Segment #154 — Construction & Industrial Equipment Rental Companies to lead_pipeline.py + mixmax.py + danny.md
+>Why: United Rentals, Sunbelt Rentals, HERC Rentals, BlueLine, H&E Equipment — each with 7–10+ NE Ohio branches. Outdoor equipment staging lots collect more hydraulic fluid + diesel + mud than almost any other commercial surface. OSHA SPCC stormwater compliance = regulatory pitch angle. Branch managers sign independently with no corporate procurement. COMPLETELY DISTINCT from construction equipment DEALERS (Run 143). Zero competitors targeting equipment rental branch managers.
+>Revenue math: $2,000–$6,000/branch; 4x/year = $8K–$24K/year per branch; 3-branch regional FM contact = $24K–$72K/year
+>File: workers/lead_pipeline.py, integrations/mixmax.py, agents/danny.md
+---
+🔧 *Vera — Auto-Upgrade | Run 179 | 2026-06-02*
+>Changed: Segment count updated 152+ → 154+ across vera_relay.py (10 occurrences), CLAUDE.md (2 occurrences)
+>Why: Same-run count sync after adding segments #153 + #154 — prevents relay from announcing stale counts in June 8 Cuyahoga countdown messages
+>File: workers/vera_relay.py, CLAUDE.md
+---
+✅ *Vera — Scan Complete | 2026-06-02 | Run 179*
+>4 auto-upgrades shipped | 0 proposals | 155 open issues (153 carry-forward + 2 new: USPS Postal #153 + Equipment Rental #154)
+>Commercial segment total: 154 segments active in lead_pipeline.py
+>Next critical date: JUNE 8 = Cuyahoga mega-pull (154+ segments) — use run_cuyahoga_both.command
+>Urgent: JUNE 4 Round 2 enrollment → PAUSE Instantly.ai campaigns a1c08c3d + 626cd15d IMMEDIATELY
+>Urgent: Gas station sequence PENDING + Fleet sequence PENDING — create in Mixmax UI, paste IDs into integrations/mixmax.py

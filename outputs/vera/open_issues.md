@@ -1,25 +1,37 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 178 | 2026-06-02 | Auto-fixes shipped: 4 | New RESOLVED: 0 | Open: 153 (151 carry-forward from Run 177 + 2 new tracking: B2B Supply Houses #151 + School Bus Companies #152)*
+*Run 179 | 2026-06-02 | Auto-fixes shipped: 4 | New RESOLVED: 0 | Open: 155 (153 carry-forward from Run 178 + 2 new tracking: USPS Postal Facilities #153 + Equipment Rental #154)*
 
 ---
 
-## RUN METRICS — Run 178 | 2026-06-02
+## RUN METRICS — Run 179 | 2026-06-02
 - Total RESOLVED: 122 (unchanged)
-- Total OPEN: 153 (151 carry-forward + 2 this run)
+- Total OPEN: 155 (153 carry-forward + 2 this run)
 - Auto-upgrades shipped: 4
-  1. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — NEW: B2B Wholesale Supply Houses (Plumbing, HVAC, Electrical) as segment #151. 9 DANNY_TITLES (plumbing supply branch manager, hvac supply branch manager, electrical supply branch manager, plumbing wholesale manager, hvac wholesale manager, mechanical supply manager, industrial supply branch manager, supply house manager, wholesale distribution manager) + 16 DANNY_ORG_KEYWORDS (plumbing supply, hvac supply, electrical supply, mechanical supply, plumbing wholesale, hvac wholesale, electrical wholesale, industrial supply house, plumbing distributor, hvac distributor, electrical distributor, ferguson enterprises, winsupply, graybar electric, rexel electrical, johnstone supply). DISTINCT from distribution centers (run 105 — food/retail logistics), manufacturing (run 118 — production plants), hardware stores (run 136 — consumer retail). Ferguson Enterprises (4 NE Ohio branches), Hajoca Corp, Winsupply, Graybar Electric, Rexel USA, McNaughton-McKay Electric, Johnstone Supply. $600–$2,000/visit; 4x/year; Ferguson 4-branch territory = $9.6K–$32K/year. Zero competitors. First pull June 8 Cuyahoga.
-  2. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — NEW: School Bus Companies & Charter Motor Coach Operators as segment #152. 8 DANNY_TITLES (school bus company manager, student transportation manager, bus fleet manager, charter bus manager, motor coach manager, school bus operations manager, bus transportation manager, student transport director) + 10 DANNY_ORG_KEYWORDS (school bus company, student transportation, school bus fleet, charter bus company, motor coach company, bus transportation company, charter coach company, first student, durham school services, national express bus). DISTINCT from school districts (run 119 — facilities/buildings directors) and public transit (run 124 — GCRTA municipal authority). First Student / National Express US, Durham School Services, Transdev, GO Transportation. Summer = bus fleets idle = depot access = peak cleaning window. $800–$3,000/bus depot; 4x/year; 3-depot territory = $9.6K–$36K/year. Zero competitors cold-calling bus depot managers. First pull June 8 Cuyahoga.
-  3. `integrations/mixmax.py` — BUG FIX: `get_sequence_recipients()` returned exactly 200 results with no warning, silently missing any contacts beyond the API limit. Added cap-detection: when response length == 200, prints a stderr warning that the Mixmax limit was hit and additional contacts are not shown. Nina's hot-lead report and pipeline counts may have been under-counting since the Property Manager sequence grew beyond 200 enrollments. This ensures the cap is visible rather than silent.
-  4. Count sync: 152+ across `workers/vera_relay.py` (5 occ), `CLAUDE.md` (2 occ), `agents/danny.md` (2 occ). Same-run count sync per resolved count-lag bug pattern.
+  1. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — NEW: USPS & Postal Service Facilities as segment #153. 10 DANNY_TITLES (postmaster, postal facility manager, usps facility manager, postal station manager, mail processing facility manager, postal district manager, postal operations supervisor, postal service manager, post office manager, usps operations manager) + 8 DANNY_ORG_KEYWORDS (usps, postal service, post office, united states postal service, mail processing, postal distribution, postal facility, usps processing). DISTINCT from municipal government (run 124 — city halls) and private distribution centers (run 105 — Amazon/UPS/FedEx). Cleveland P&DC + Akron P&DC + 100+ NE Ohio delivery offices. $500–$2,000/facility; 2x/year; zero competitors cold-calling postal FMs. First pull June 8 Cuyahoga.
+  2. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — NEW: Construction & Industrial Equipment Rental Companies as segment #154. 8 DANNY_TITLES (equipment rental branch manager, equipment rental manager, rental equipment manager, rental yard manager, equipment rental operations manager, rental branch general manager, construction equipment rental manager, heavy equipment rental manager) + 12 DANNY_ORG_KEYWORDS (equipment rental, construction equipment rental, tool rental, aerial equipment rental, united rentals, sunbelt rentals, herc rentals, blueline rental, h&e equipment, nesco rentals, ahern rentals, industrial equipment rental). DISTINCT from construction equipment DEALERS (run 143 — showrooms). United Rentals (10+ NE Ohio), Sunbelt (7+), HERC, BlueLine, H&E Equipment. Hydraulic fluid + diesel + mud accumulation = extreme staining. $2,000–$6,000/branch; 4x/year = $8K–$24K/year; OSHA SPCC compliance angle. Zero competitors. First pull June 8 Cuyahoga.
+  3. Count sync: 154+ across `workers/vera_relay.py` (10 occ), `CLAUDE.md` (2 occ). Same-run count sync per resolved count-lag bug pattern.
+  4. `agents/danny.md` — Added full segment briefs for USPS Postal Facilities (#153) and Equipment Rental (#154) with NE Ohio targets, revenue math, pitch angles, Apollo keywords, and first pull guidance.
 - Critical human-action blockers (URGENT — deadlines imminent):
   - 🚨 JUNE 4 (2 DAYS AWAY) = Round 2 enrollment — PAUSE Instantly.ai campaigns a1c08c3d + 626cd15d RIGHT NOW
   - 🔍 MEDINA PULL (due TODAY June 2): run_medina_both.command — if not done yet, do it before EOD
   - ⛽ Gas station Mixmax sequence PENDING (create in Mixmax UI → paste ID into integrations/mixmax.py line 54)
   - 🚐 Fleet washing Mixmax sequence PENDING (create in Mixmax UI → paste ID into integrations/mixmax.py line 48)
-  - 📅 June 8 = Cuyahoga mega-pull — 152+ segments — use run_cuyahoga_both.command (6 days)
+  - 📅 June 8 = Cuyahoga mega-pull — 154+ segments — use run_cuyahoga_both.command (6 days)
 
 ---
+
+## OPEN — USPS & Postal Service Facilities Segment Not Yet Pulled 🟡 NEW (Run 179)
+- First seen: 2026-06-02
+- Description: Segment #153. USPS Postal Facilities (Cleveland P&DC, Akron P&DC, 100+ delivery offices). Titles + org keywords live in DANNY_TITLES + DANNY_ORG_KEYWORDS as of Run 179. First pull June 8 Cuyahoga.
+- Attempts:
+  - 2026-06-02: Added titles + org keywords to lead_pipeline.py, mixmax.py routing, danny.md brief → waiting for June 8 local pull to confirm Apollo returns contacts
+
+## OPEN — Construction & Industrial Equipment Rental Companies Segment Not Yet Pulled 🟡 NEW (Run 179)
+- First seen: 2026-06-02
+- Description: Segment #154. United Rentals, Sunbelt Rentals, HERC, BlueLine, H&E Equipment (10+ NE Ohio branches each). Titles + org keywords live as of Run 179. First pull June 8 Cuyahoga.
+- Attempts:
+  - 2026-06-02: Added titles + org keywords to lead_pipeline.py, mixmax.py routing, danny.md brief → waiting for June 8 local pull to confirm Apollo returns contacts
 
 ## OPEN — B2B Wholesale Supply Houses Segment Not Yet Pulled 🟡 NEW (Run 178)
 - First seen: 2026-06-02

@@ -815,6 +815,16 @@ PROPERTY_MANAGER_TITLES = [
     'school bus company manager', 'student transportation manager', 'bus fleet manager',
     'charter bus manager', 'motor coach manager', 'school bus operations manager',
     'bus transportation manager', 'student transport director',
+    # USPS & Postal Service Facilities — routing to property_manager sequence
+    # (federal facility maintenance / compliance angle) (added 2026-06-02 run 179)
+    'postmaster', 'postal facility manager', 'usps facility manager', 'postal station manager',
+    'mail processing facility manager', 'postal district manager', 'postal operations supervisor',
+    'postal service manager', 'post office manager', 'usps operations manager',
+    # Construction & Industrial Equipment Rental Companies — routing to property_manager sequence
+    # (OSHA SPCC stormwater compliance / facility vendor contract angle) (added 2026-06-02 run 179)
+    'equipment rental branch manager', 'equipment rental manager', 'rental equipment manager',
+    'rental yard manager', 'equipment rental operations manager', 'rental branch general manager',
+    'construction equipment rental manager', 'heavy equipment rental manager',
 ]
 
 REALTOR_TITLES = [
