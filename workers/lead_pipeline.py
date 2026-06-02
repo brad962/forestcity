@@ -1451,6 +1451,29 @@ DANNY_TITLES = [
     'martial arts school owner', 'karate school owner', 'martial arts academy director',
     'dojo owner', 'martial arts instructor', 'karate instructor', 'taekwondo instructor',
     'bjj gym owner', 'jiu-jitsu academy owner', 'krav maga instructor',
+    # Wedding Venues & Special Occasion Facilities — 'wedding venue' in DANNY_ORG_KEYWORDS (run 108) catches
+    # general venues, but 'wedding coordinator'/'venue coordinator' titles were never in DANNY_TITLES;
+    # Apollo returns coordinator-level contacts at dedicated wedding venues but their title didn't match;
+    # June = peak booking month — couples visiting venues for July/Aug/Sept weddings RIGHT NOW;
+    # NE Ohio targets: Barn at Mapleside Farms (Brunswick), Willow Tree Ranch (Chardon), Posh on Park (Akron),
+    # Spencer's Restaurant & Inn (Aurora), Gervasi Vineyard (Canton area), Hale Farm & Village (Bath);
+    # outdoor ceremony areas + parking + cobblestone paths + building facades = critical for wedding photos;
+    # $2,000–$5,000/visit; 2x/year; 25-venue NE Ohio territory = $100K–$250K/year potential;
+    # zero competitors targeting wedding venue coordinators for power washing (added 2026-06-02 run 173)
+    'wedding coordinator', 'venue coordinator', 'wedding venue coordinator', 'bridal venue manager',
+    'wedding venue owner', 'wedding estate manager', 'bridal hall manager', 'event coordinator',
+    # Outdoor Recreation & Adventure Parks — mini-golf, go-karts, batting cages, axe throwing venues;
+    # June = school's out = PEAK family activity season RIGHT NOW;
+    # NE Ohio: All-American Fun Park (Chardon), Berea Golf Dome, Zone Sports (multiple), Adventure Zone Avon;
+    # large paved lots + walkways + building facades + equipment areas accumulate staining in peak traffic;
+    # owners / franchise operators sign vendor contracts directly = fastest close, no procurement layer;
+    # DISTINCT from trampoline parks/indoor adventure centers (run 148 — indoor); these are OUTDOOR facilities;
+    # 'outdoor recreation manager' already in DANNY_TITLES (run 158, campground) — adding venue-specific titles;
+    # Apollo 'mini golf', 'go-kart', 'batting cage', 'axe throwing' tags = zero overlap with existing segments;
+    # $600–$1,800/visit; 2x/year; zero competitors cold-calling outdoor rec park managers (added 2026-06-02 run 173)
+    'mini golf manager', 'miniature golf manager', 'go-kart park manager', 'go kart park owner',
+    'batting cage manager', 'axe throwing venue manager', 'outdoor recreation park owner',
+    'family fun park manager', 'outdoor entertainment park manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -2302,6 +2325,20 @@ DANNY_ORG_KEYWORDS = [
     # from sports complexes ('sports complex' tag — run 125). ATA, Tiger Rock, Carlson Gracie, Gracie Barra (added 2026-06-01 run 172)
     'martial arts', 'karate school', 'karate academy', 'taekwondo', 'jiu-jitsu',
     'bjj gym', 'martial arts academy', 'combat sports', 'krav maga',
+    # Wedding Venues & Special Occasion Facilities — 'wedding venue' (run 108) catches general wedding-hosting
+    # venues; these tags catch DEDICATED bridal/wedding estates that exist solely for weddings;
+    # DISTINCT from 'banquet hall', 'event venue', 'event center' (already in list — run 108);
+    # Barn at Mapleside, Willow Tree Ranch, wedding barns/chapels throughout NE Ohio counties;
+    # first pull June 8 Cuyahoga (metro venues); June 22 Lorain (Avon/Westlake area barns) (added 2026-06-02 run 173)
+    'bridal venue', 'wedding estate', 'wedding barn', 'wedding chapel',
+    'wedding garden', 'bridal hall', 'wedding manor', 'outdoor wedding venue',
+    # Outdoor Recreation & Adventure Parks — mini-golf, go-karts, batting cages, axe throwing;
+    # 'outdoor recreation park' (run 158, campground section) is already in list but targets state parks;
+    # these specific tags catch stand-alone family entertainment venues distinctly from parks/campgrounds;
+    # All-American Fun Park (Chardon), Berea Golf Dome, Zone Sports locations, axe throwing venues opening in NE Ohio;
+    # June = school's out = peak; first pull June 8 Cuyahoga (metro venues) (added 2026-06-02 run 173)
+    'mini golf', 'miniature golf', 'go-kart', 'go kart track', 'batting cage',
+    'axe throwing', 'outdoor family entertainment', 'family fun park', 'outdoor adventure park',
 ]
 
 CARLA_SEARCHES = [

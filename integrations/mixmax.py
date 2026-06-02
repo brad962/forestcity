@@ -763,6 +763,16 @@ PROPERTY_MANAGER_TITLES = [
     'martial arts school owner', 'karate school owner', 'martial arts academy director',
     'dojo owner', 'martial arts instructor', 'karate instructor', 'taekwondo instructor',
     'bjj gym owner', 'jiu-jitsu academy owner', 'krav maga instructor',
+    # Wedding Venues & Special Occasion Facilities — fills title routing gap; 'wedding venue' org keyword
+    # already in list (run 108) but wedding coordinator/venue coordinator titles were absent from DANNY_TITLES;
+    # routing to property_manager sequence (facility vendor contract / appearance angle) (added 2026-06-02 run 173)
+    'wedding coordinator', 'venue coordinator', 'wedding venue coordinator', 'bridal venue manager',
+    'wedding venue owner', 'wedding estate manager', 'bridal hall manager', 'event coordinator',
+    # Outdoor Recreation & Adventure Parks — mini-golf, go-karts, batting cages, axe throwing venues;
+    # owners/operators sign vendor contracts; routing to property_manager sequence (added 2026-06-02 run 173)
+    'mini golf manager', 'miniature golf manager', 'go-kart park manager', 'go kart park owner',
+    'batting cage manager', 'axe throwing venue manager', 'outdoor recreation park owner',
+    'family fun park manager', 'outdoor entertainment park manager',
 ]
 
 REALTOR_TITLES = [

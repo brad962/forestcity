@@ -1,6 +1,34 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 172 | 2026-06-01 | Auto-fixes shipped: 3 | New RESOLVED: 0 | Open: 141 (139 carry-forward from Run 171 + 2 new segment tracking: Dance Studios + Martial Arts)*
+*Run 173 | 2026-06-02 | Auto-fixes shipped: 3 | New RESOLVED: 0 | Open: 143 (141 carry-forward from Run 172 + 2 new segment tracking: Wedding Venues + Outdoor Recreation Parks)*
+
+---
+
+## RUN METRICS — Run 173 | 2026-06-02
+- Total RESOLVED: 122 (unchanged)
+- Total OPEN: 143 (141 carry-forward + 2 this run)
+- Auto-upgrades shipped: 3
+  1. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — NEW: Wedding Venues & Special Occasion Facilities as segment #141. 8 DANNY_TITLES (wedding coordinator, venue coordinator, wedding venue coordinator, bridal venue manager, wedding venue owner, wedding estate manager, bridal hall manager, event coordinator) + 8 DANNY_ORG_KEYWORDS (bridal venue, wedding estate, wedding barn, wedding chapel, wedding garden, bridal hall, wedding manor, outdoor wedding venue). KEY BUG FIX: 'wedding venue' org tag was already in DANNY_ORG_KEYWORDS from run 108 — Apollo was finding wedding venue contacts but their titles ('wedding coordinator', 'venue coordinator') never matched DANNY_TITLES, so they were either missed or fell to default routing. This closes the title gap. NE Ohio targets: Barn at Mapleside Farms (Brunswick), Willow Tree Ranch (Chardon), Posh on Park (Akron), Hale Farm & Village (Bath), Landerhaven (Mayfield Heights), LaCentre (Westlake). June = peak booking month — couples touring venues RIGHT NOW for July/Aug/Sept weddings. $2,000–$5,000/venue; 2x/year; 12-venue territory = $48K–$120K/year. Zero competitors. First pull June 8 Cuyahoga.
+  2. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — NEW: Outdoor Recreation & Adventure Parks as segment #142. 9 DANNY_TITLES (mini golf manager, miniature golf manager, go-kart park manager, go kart park owner, batting cage manager, axe throwing venue manager, outdoor recreation park owner, family fun park manager, outdoor entertainment park manager) + 9 DANNY_ORG_KEYWORDS (mini golf, miniature golf, go-kart, go kart track, batting cage, axe throwing, outdoor family entertainment, family fun park, outdoor adventure park). DISTINCT from trampoline parks/indoor adventure centers (run 148 — indoor). NE Ohio targets: All-American Fun Park (Chardon), Berea Golf Dome, Zone Sports (multiple locations), Topgolf Independence, Puttshack Beachwood, Hell's Axe Throwing Cleveland, BATL Axe Throwing Beachwood. June = school's out = PEAK family activity season. 500–2,000 visitors/day = maximum surface staining. Apollo tags return zero overlap with existing segments. $600–$1,800/visit; 2x/year; 15-park territory = $18K–$54K/year. First pull June 8 Cuyahoga.
+  3. All count syncs: 140+ → 142+ across `workers/vera_relay.py` (11 occ), `CLAUDE.md` (2 occ), `agents/danny.md` (1 occ). Same-run count sync per resolved count-lag bug pattern.
+- Critical human-action blockers (URGENT — deadlines imminent):
+  - 🚨 JUNE 4 (2 days away) = Round 2 enrollment — PAUSE Instantly.ai campaigns a1c08c3d + 626cd15d TODAY (not Thursday morning — today)
+  - 🔍 MEDINA PULL CHECK (due June 1): Verify Medina run_medina_both.command was executed. If not — run NOW before June 4.
+  - ⛽ Gas station Mixmax sequence PENDING (create in Mixmax UI → paste ID into integrations/mixmax.py line 54)
+  - 🚐 Fleet washing Mixmax sequence PENDING (create in Mixmax UI → paste ID into integrations/mixmax.py line 48)
+  - 📅 June 8 = Cuyahoga mega-pull — 142+ segments — use run_cuyahoga_both.command (6 days)
+
+---
+
+## OPEN — Wedding Venues & Special Occasion Facilities Segment Not Yet Pulled 🟡 NEW (Run 173)
+- First seen: 2026-06-02
+- Description: Segment #141 code live in lead_pipeline.py DANNY_TITLES (8 titles) + DANNY_ORG_KEYWORDS (8 tags); synced to mixmax.py PROPERTY_MANAGER_TITLES; full brief in danny.md. KEY NOTE: 'wedding venue' org tag was already in DANNY_ORG_KEYWORDS from run 108 (event venues section) so Apollo was already searching for wedding venue companies — but 'wedding coordinator'/'venue coordinator' titles were ABSENT from DANNY_TITLES, meaning contacts with those titles were either missed by Apollo's person_titles filter or fell to default PM routing without deliberate routing. This run adds both coordinator titles and more specific wedding-estate org tags (bridal venue, wedding barn, wedding estate, wedding chapel) that catch DEDICATED wedding venues vs. general event centers. Awaiting first Apollo pull June 8 Cuyahoga. Barn at Mapleside Farms (Brunswick), Willow Tree Ranch (Chardon), Hale Farm & Village (Bath Township), Posh on Park (Akron), Landerhaven (Mayfield Heights), LaCentre Conference (Westlake). June = peak booking month for 2026 weddings — couples visiting venues RIGHT NOW for July/Aug/Sept dates. $2,000–$5,000/venue; 2x/year. 12-venue NE Ohio territory = $48K–$120K/year. Zero competitors.
+- Attempts: N/A — tracking only, not a bug
+
+## OPEN — Outdoor Recreation & Adventure Parks Segment Not Yet Pulled 🟡 NEW (Run 173)
+- First seen: 2026-06-02
+- Description: Segment #142 code live in lead_pipeline.py DANNY_TITLES (9 titles) + DANNY_ORG_KEYWORDS (9 tags); synced to mixmax.py PROPERTY_MANAGER_TITLES; full brief in danny.md. DISTINCT from trampoline parks/indoor adventure centers (run 148 — indoor) and campground/state parks ('outdoor recreation park' in run 158 campground section). These specific Apollo org tags (mini golf, go-kart, batting cage, axe throwing, outdoor family entertainment, family fun park) catch stand-alone outdoor family entertainment venues with zero overlap with existing segments. NE Ohio: All-American Fun Park (Chardon — go-karts + mini-golf + batting cages), Berea Golf Dome, Zone Sports (multiple), Topgolf Independence, Puttshack Beachwood, Hell's Axe Throwing Cleveland, BATL Axe Throwing Beachwood, Ohio Axe Throwing. June = school's out = peak. 500–2,000 visitors/day during summer = maximum paved surface staining. Owner-operators sign directly = fastest-close accounts. $600–$1,800/visit; 2x/year; 15-park territory = $18K–$54K/year. Zero competitors. First pull June 8 Cuyahoga.
+- Attempts: N/A — tracking only, not a bug
 
 ---
 

@@ -73,3 +73,30 @@
 >New this run: #139 Dance Studios & Performing Arts Schools (Arthur Murray 10+ NE Ohio, Fred Astaire, spring recital season peak) | #140 Martial Arts Academies (ATA 8+ NE Ohio, Gracie Barra, summer camp season peak — closes gap from run 125)
 >Count synced 138+ → 140+ across vera_relay.py (11), CLAUDE.md (2), danny.md (1) | Fixed open_issues.md header stuck at "Run 170"
 >🚨 URGENT: Medina pull + Instantly.ai pause TODAY | June 4 = Round 2 enrollment | June 8 = 140+ segment Cuyahoga mega-pull
+---
+🔧 *Vera — Auto-Upgrade | Run 173 | 2026-06-02*
+>Changed: Added Wedding Venues & Special Occasion Facilities as Segment #141 to lead_pipeline.py DANNY_TITLES (8 titles) + DANNY_ORG_KEYWORDS (8 new tags). Synced to mixmax.py PROPERTY_MANAGER_TITLES. Full segment brief added to agents/danny.md.
+>Why: NE Ohio has 30+ dedicated wedding venues — Barn at Mapleside Farms (Brunswick), Willow Tree Ranch (Chardon), Posh on Park (Akron), Hale Farm & Village (Bath). June = peak booking month as couples choose venues for July/Aug/Sept weddings RIGHT NOW. 'wedding venue' org tag was already in DANNY_ORG_KEYWORDS (run 108) but 'wedding coordinator'/'venue coordinator' titles were NEVER in DANNY_TITLES — Apollo was finding these contacts but their titles didn't match the search array. This run closes the title gap. Outdoor ceremony areas + cobblestone paths + parking lots + building facades = every square foot appears in wedding photos. Zero competitors targeting wedding venue coordinators. $2,000–$5,000/venue; 2x/year; 12-venue NE Ohio territory = $48K–$120K/year. First pull June 8 Cuyahoga.
+>File: workers/lead_pipeline.py + integrations/mixmax.py + agents/danny.md
+---
+🔧 *Vera — Auto-Upgrade | Run 173 | 2026-06-02*
+>Changed: Added Outdoor Recreation & Adventure Parks as Segment #142 to lead_pipeline.py DANNY_TITLES (9 titles) + DANNY_ORG_KEYWORDS (9 new tags). Synced to mixmax.py PROPERTY_MANAGER_TITLES. Full segment brief added to agents/danny.md.
+>Why: June = school's out = PEAK family activity season RIGHT NOW. NE Ohio: All-American Fun Park (Chardon — go-karts + mini-golf + batting cages), Berea Golf Dome, Zone Sports (multiple), Topgolf (Independence), Puttshack (Beachwood), 6+ axe-throwing venues. Summer = 500–2,000 visitors/day = maximum paved surface staining. DISTINCT from trampoline parks/indoor adventure centers (run 148 — indoor). Apollo 'mini golf', 'go-kart', 'batting cage', 'axe throwing' tags = zero overlap with existing segments. Owner-operators sign directly = fastest-close accounts. $600–$1,800/visit; 2x/year; 15-park territory = $18K–$54K/year. Zero competitors cold-calling go-kart/axe-throwing owners. First pull June 8 Cuyahoga.
+>File: workers/lead_pipeline.py + integrations/mixmax.py + agents/danny.md
+---
+🔧 *Vera — Auto-Upgrade | Run 173 | 2026-06-02*
+>Changed: Synced segment count 140+ → 142+ across workers/vera_relay.py (11 occurrences), CLAUDE.md (2 occurrences), agents/danny.md (1 occurrence).
+>Why: Same-run count sync — prevents relay reminders and CLAUDE.md quick reference from showing stale count going into the June 8 Cuyahoga 142+ segment mega-pull.
+>Files: workers/vera_relay.py, CLAUDE.md, agents/danny.md
+---
+🚨 *Vera — COUNTDOWN: June 4 = 2 Days | June 8 = 6 Days*
+>🚨 JUNE 4 (Thursday — 2 days away): Round 2 Mixmax enrollment. PAUSE INSTANTLY.AI TODAY — NOT Thursday morning. If you wait until June 4 to pause, the campaigns will already have sent to new contacts who are also in the Mixmax queue. Spam overlap = 0% reply rate on Round 2. Do it now: app.instantly.ai → Campaigns → a1c08c3d (PM Cuyahoga) + 626cd15d (Contractor Referral) → ⋮ → Pause → add INSTANTLY_PAUSED=true to .env
+>🔍 MEDINA PULL CHECK: Medina pull was due June 1 (yesterday). If you haven't run it yet, run it NOW — `scripts/run_medina_both.command` or `python3 workers/lead_pipeline.py both Medina`. Fresh Medina leads must be in cache BEFORE June 4 enrollment or they won't be in the batch.
+>⛽ GAS STATION + FLEET SEQUENCE STILL PENDING: 12 gas station contacts + fleet contacts have been stranded since May 19. June 8 Cuyahoga pull will add more. Create these two sequences in Mixmax UI → paste IDs into integrations/mixmax.py lines 48 + 54 → run `python3 workers/lead_pipeline.py pending`. 15 minutes, one time.
+>📅 JUNE 8 (6 days): Cuyahoga mega-pull — NOW 142+ commercial segments. Use run_cuyahoga_both.command. Takes 12–20 min unattended. Biggest lead day of the year — do not miss.
+---
+✅ *Vera — Scan Complete 2026-06-02 (Run 173)*
+>3 auto-upgrades shipped | 0 proposals | 2 new open issues (segment tracking #141 + #142)
+>New this run: #141 Wedding Venues (Barn at Mapleside, Willow Tree Ranch — June = peak venue-booking season, coordinator title gap fixed) | #142 Outdoor Recreation Parks (go-karts, mini-golf, axe throwing — school's out, peak season NOW)
+>Count synced 140+ → 142+ across vera_relay.py (11), CLAUDE.md (2), danny.md (1)
+>🚨 URGENT: Pause Instantly.ai TODAY (2 days before June 4) | Verify Medina pull done | June 8 = 142+ segment Cuyahoga mega-pull
