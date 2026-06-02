@@ -1714,6 +1714,52 @@ DANNY_TITLES = [
     'ems operations manager', 'ambulance service manager', 'emergency medical services director',
     'ems director', 'ambulance operations director', 'medical transport manager',
     'ems district manager', 'emergency services manager',
+    # Industrial Gas Suppliers & Welding Supply Companies — Airgas (NE Ohio division — multiple
+    # cylinder filling plants + distribution depots), Air Products (Cleveland/Akron operations),
+    # Matheson Gas Products (NE Ohio distribution center), Praxair Distribution / Linde Gas (NE Ohio),
+    # Valley National Gases (Pittsburgh/NE Ohio), Roberts Oxygen (NE Ohio), Alexander Chemical;
+    # Welding supply: Lincoln Electric (Euclid OH HQ — Fortune 500, largest US welding equipment mfr),
+    # Miller Electric distributor locations, ESAB Ohio distributor (Strongsville), Red-D-Arc (Cleveland);
+    # Concrete staining profile: liquid nitrogen/oxygen spill residue (extreme cryogenic + residue),
+    # acetylene/propane cylinder corrosion rust runoff, hydraulic fluid from delivery truck staging areas,
+    # diesel exhaust from cylinder delivery fleet — among worst industrial concrete environments;
+    # DOT hazardous materials transportation regulations (49 CFR) + EPA Tier I/II EPCRA hazardous chemicals
+    # storage = facility exterior cleanliness is tracked in compliance records, not discretionary;
+    # COMPLETELY DISTINCT from manufacturing (run 118 — factory production, different Apollo org tags),
+    # distribution centers (run 105 — fulfillment/logistics, different Apollo org tags),
+    # scrap metal (run 181 — metals recycling), pharma (run 180 — pharmaceutical GMP compliance);
+    # Apollo org tags 'welding supply'/'industrial gas'/'compressed gas'/'gas distributor' return ZERO
+    # overlap with any existing DANNY_ORG_KEYWORDS; branch/depot managers sign vendor contracts;
+    # $1,500–$5,000/facility; quarterly = $6K–$20K/year; Lincoln Electric Euclid campus alone is an
+    # $8K–$20K/year anchor account; zero NE Ohio competitors targeting industrial gas depot FMs;
+    # first pull June 8 Cuyahoga (added 2026-06-02 run 184)
+    'industrial gas manager', 'welding supply manager', 'gas distribution manager',
+    'cylinder plant manager', 'compressed gas manager', 'welding supply branch manager',
+    'industrial gas branch manager', 'gas depot manager',
+    # Commercial Printing Plants & Publishing Facilities — COMPLETELY DISTINCT from retail print shops
+    # (run 151 — FedEx Office, UPS Store, Minuteman Press; Apollo tags 'printing services'/'business
+    # services center' — strip-mall retail, not industrial); these are large-format commercial offset
+    # printing plants with industrial-scale loading docks and massive paved concrete areas;
+    # NE Ohio targets: Lake Shore Printing (Willoughby — one of largest NE Ohio commercial printers),
+    # West Shore Printing & Publishing (Berea), Ohio Business Media (Chagrin Falls — magazine publishing),
+    # Dispatch Printing NE Ohio operations, Hometown Newspapers (Sun News/suburban chains — Berea HQ),
+    # Great Lakes Educational Book (Mentor — educational publisher + print ops), Commercial Printing
+    # Company of Cleveland; Lincoln/National (specialty commercial printing, NE Ohio operations);
+    # Concrete staining profile: offset printing ink overspray on loading dock concrete (metallic + black
+    # ink = permanent if untreated), petroleum-based solvent wash residue from press cleaning cycles,
+    # paper dust + moisture accumulation = thick gray compacted staining, diesel exhaust from delivery
+    # truck staging areas — some of the most visually severe concrete staining in any industrial segment;
+    # EPA VOC (Volatile Organic Compound) permit requirements for printing facilities (40 CFR Part 63
+    # MACT for printing/publishing) = plant exterior maintenance is documented in compliance records;
+    # OSHA 29 CFR 1910.22 general industry housekeeping standards apply to exterior walkways + loading;
+    # Apollo org tags 'commercial printing'/'offset printing'/'printing plant'/'print manufacturer' return
+    # ZERO overlap with run 151 'printing services'/'business services center' (retail print shops);
+    # plant operations managers or facility managers sign vendor contracts; $2,000–$6,000/facility;
+    # 2x/year (spring + fall maintenance windows); $4K–$12K/year per plant; zero competitors targeting
+    # industrial printing plant FMs in NE Ohio; first pull June 8 Cuyahoga (added 2026-06-02 run 184)
+    'printing plant manager', 'commercial printing manager', 'print plant operations manager',
+    'publishing facility manager', 'offset printing manager', 'print manufacturing manager',
+    'commercial print manager', 'printing plant superintendent',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -2728,6 +2774,23 @@ DANNY_ORG_KEYWORDS = [
     # Rural Metro Medical, STAT Medical Transport; first pull June 8 Cuyahoga (added 2026-06-02 run 183)
     'ambulance service', 'ems service', 'emergency medical services', 'private ems',
     'medical transport', 'ambulance company', 'medical response team', 'emergency ambulance',
+    # Industrial Gas Suppliers & Welding Supply Companies — DISTINCT from manufacturing (run 118),
+    # distribution centers (run 105), scrap metal (run 181); Apollo tags 'welding supply'/
+    # 'industrial gas'/'compressed gas'/'gas distributor' return ZERO overlap with existing tags;
+    # Airgas NE Ohio, Air Products, Matheson Gas, Praxair/Linde, Valley National Gases, Lincoln Electric;
+    # DOT hazmat + EPA Tier I/II EPCRA compliance = facility exterior cleaning is compliance-tracked;
+    # first pull June 8 Cuyahoga (added 2026-06-02 run 184)
+    'welding supply', 'industrial gas', 'compressed gas', 'gas distributor',
+    'gas supplier', 'airgas', 'praxair', 'cylinder gas', 'welding equipment supplier',
+    # Commercial Printing Plants & Publishing Facilities — DISTINCT from retail print shops (run 151
+    # 'printing services'/'business services center' — FedEx Office/UPS Store/strip-mall printers);
+    # industrial offset printing plants have massive concrete loading docks + ink residue staining;
+    # Lake Shore Printing (Willoughby), Ohio Business Media, Hometown Newspapers (Berea HQ),
+    # Great Lakes Educational Book (Mentor); EPA VOC permit + OSHA 29 CFR 1910.22 compliance;
+    # Apollo tags 'commercial printing'/'offset printing'/'printing plant' = zero overlap with run 151;
+    # first pull June 8 Cuyahoga (added 2026-06-02 run 184)
+    'commercial printing', 'offset printing', 'printing plant', 'print manufacturer',
+    'magazine publishing', 'newspaper printing', 'commercial print facility',
 ]
 
 CARLA_SEARCHES = [

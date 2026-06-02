@@ -866,6 +866,16 @@ PROPERTY_MANAGER_TITLES = [
     'ems operations manager', 'ambulance service manager', 'emergency medical services director',
     'ems director', 'ambulance operations director', 'medical transport manager',
     'ems district manager', 'emergency services manager',
+    # Industrial Gas & Welding Supply — routing to property_manager sequence
+    # (DOT hazmat / EPA Tier I compliance angle) (added 2026-06-02 run 184)
+    'industrial gas manager', 'welding supply manager', 'gas distribution manager',
+    'cylinder plant manager', 'compressed gas manager', 'welding supply branch manager',
+    'industrial gas branch manager', 'gas depot manager',
+    # Commercial Printing Plants — routing to property_manager sequence
+    # (EPA VOC permit / OSHA 29 CFR 1910.22 compliance angle) (added 2026-06-02 run 184)
+    'printing plant manager', 'commercial printing manager', 'print plant operations manager',
+    'publishing facility manager', 'offset printing manager', 'print manufacturing manager',
+    'commercial print manager', 'printing plant superintendent',
 ]
 
 REALTOR_TITLES = [

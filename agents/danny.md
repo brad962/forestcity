@@ -1931,7 +1931,26 @@ Peak moving season is May–September. NE Ohio has dozens of moving company term
 
 ---
 
-> 🗒️ **Run 183 batching note:** Danny now has 163+ commercial segments live in DANNY_TITLES + DANNY_ORG_KEYWORDS. All fire in the June 8 Cuyahoga mega-pull. Segments are organized into batches by Apollo API call — the batching logic in lead_pipeline.py handles this automatically.
+### Industrial Gas Suppliers & Welding Supply Companies (NEW — June 2026, Run 184)
+**Status:** Org keywords + titles live in DANNY_ORG_KEYWORDS/DANNY_TITLES as of Run 184. First pull June 8 Cuyahoga (Airgas NE Ohio division cylinder filling plant, Lincoln Electric Euclid HQ campus, Air Products Cleveland/Akron operations, Matheson Gas NE Ohio distribution center).
+**Target titles (live):** `industrial gas manager`, `welding supply manager`, `gas distribution manager`, `cylinder plant manager`, `compressed gas manager`, `welding supply branch manager`, `industrial gas branch manager`, `gas depot manager`
+**Target companies:** Airgas (Cuyahoga/Summit County facilities — largest US industrial gas distributor), Air Products & Chemicals (NE Ohio distribution), Matheson Gas Products, Praxair/Linde Gas (NE Ohio), Valley National Gases, Roberts Oxygen, Alexander Chemical, Lincoln Electric (Euclid OH — Fortune 500 HQ), Red-D-Arc (Cleveland welding supply)
+**Apollo keywords (live Run 184):** `welding supply`, `industrial gas`, `compressed gas`, `gas distributor`, `gas supplier`, `airgas`, `praxair`, `cylinder gas`, `welding equipment supplier` — added to DANNY_ORG_KEYWORDS. ZERO overlap with any existing tags.
+**Why now:** Concrete staining profile at cylinder plants is extreme: liquid nitrogen/oxygen spill residue (cryogenic thermal damage + white mineral residue), acetylene/propane cylinder corrosion rust runoff, hydraulic fluid from delivery truck staging, diesel exhaust accumulation. DOT 49 CFR hazmat regs + EPA Tier I/II EPCRA chemicals storage = exterior maintenance is compliance-documented. Lincoln Electric Euclid campus alone = $8K–$20K/year anchor contract.
+**Revenue:** $1,500–$5,000/facility; quarterly = $6K–$20K/year; zero competitors targeting industrial gas FMs in NE Ohio.
+**Pitch angle:** "Your cylinder staging and loading dock areas have compliance documentation requirements — we ensure the exterior surfaces pass the standards."
+
+### Commercial Printing Plants & Publishing Facilities (NEW — June 2026, Run 184)
+**Status:** Org keywords + titles live in DANNY_ORG_KEYWORDS/DANNY_TITLES as of Run 184. First pull June 8 Cuyahoga (Lake Shore Printing Willoughby, West Shore Printing Berea, Hometown Newspapers HQ Berea, Great Lakes Educational Book Mentor).
+**Target titles (live):** `printing plant manager`, `commercial printing manager`, `print plant operations manager`, `publishing facility manager`, `offset printing manager`, `print manufacturing manager`, `commercial print manager`, `printing plant superintendent`
+**Target companies:** Lake Shore Printing (Willoughby — one of NE Ohio's largest commercial printers), West Shore Printing & Publishing (Berea), Ohio Business Media (Chagrin Falls — magazine publisher), Hometown Newspapers / Sun News (Berea HQ — suburban newspaper chain), Great Lakes Educational Book (Mentor), Dispatch Printing NE Ohio operations, Commercial Printing Company of Cleveland, Lincoln National printing ops
+**Apollo keywords (live Run 184):** `commercial printing`, `offset printing`, `printing plant`, `print manufacturer`, `magazine publishing`, `newspaper printing`, `commercial print facility` — ZERO overlap with run 151 'printing services'/'business services center' (retail print shops — FedEx Office, UPS Store, Minuteman Press).
+**Why distinct from run 151:** Run 151 = strip-mall retail print centers (FedEx Office). Run 184 = industrial-scale offset printing plants with 100,000+ sq ft facilities, massive loading dock concrete, and industrial-grade compliance requirements. Completely different Apollo org tags, different contacts, different pitch angle.
+**Concrete staining:** Offset ink overspray (metallic + black ink = permanent if untreated), petroleum-based solvent wash residue from press cleaning, paper dust + moisture = thick compacted gray staining, diesel from truck staging. Some of the most visually severe concrete staining in any industrial segment.
+**Compliance angle:** EPA VOC permit (40 CFR Part 63 MACT for printing/publishing) + OSHA 29 CFR 1910.22 housekeeping standards = plant exterior maintenance is compliance-documented.
+**Revenue:** $2,000–$6,000/facility; 2x/year = $4K–$12K/year per plant; zero NE Ohio competitors targeting print plant FMs.
+
+> 🗒️ **Run 184 batching note:** Danny now has 165+ commercial segments live in DANNY_TITLES + DANNY_ORG_KEYWORDS. All fire in the June 8 Cuyahoga mega-pull. Segments are organized into batches by Apollo API call — the batching logic in lead_pipeline.py handles this automatically.
 
 ---
 

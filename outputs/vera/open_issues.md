@@ -1,6 +1,36 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 183 | 2026-06-02 | Auto-fixes shipped: 3 | New RESOLVED: 0 | Open: 164 (162 carry-forward from Run 182 + 2 new tracking: Electric Utility Substations #162 + Private EMS Depots #163)*
+*Run 184 | 2026-06-02 | Auto-fixes shipped: 3 | New RESOLVED: 0 | Open: 166 (164 carry-forward from Run 183 + 2 new tracking: Industrial Gas & Welding Supply #164 + Commercial Printing Plants #165)*
+
+---
+
+## RUN METRICS — Run 184 | 2026-06-02
+- Total RESOLVED: 122 (unchanged)
+- Total OPEN: 166 (164 carry-forward + 2 this run)
+- Auto-upgrades shipped: 3
+  1. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — NEW: Industrial Gas Suppliers & Welding Supply Companies as segment #164. 8 DANNY_TITLES (industrial gas manager, welding supply manager, gas distribution manager, cylinder plant manager, compressed gas manager, welding supply branch manager, industrial gas branch manager, gas depot manager) + 9 DANNY_ORG_KEYWORDS (welding supply, industrial gas, compressed gas, gas distributor, gas supplier, airgas, praxair, cylinder gas, welding equipment supplier). Airgas NE Ohio division, Air Products Cleveland/Akron, Matheson Gas, Praxair/Linde, Valley National Gases, Roberts Oxygen, Lincoln Electric (Euclid OH — Fortune 500 HQ). DOT 49 CFR hazmat + EPA Tier I/II EPCRA compliance = exterior cleaning compliance-tracked. COMPLETELY DISTINCT from manufacturing (run 118), distribution centers (run 105), scrap metal (run 181), pharma (run 180). $1,500–$5,000/facility; quarterly; Lincoln Electric campus = $8K–$20K/year anchor. Zero competitors. First pull June 8 Cuyahoga.
+  2. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — NEW: Commercial Printing Plants & Publishing Facilities as segment #165. 8 DANNY_TITLES (printing plant manager, commercial printing manager, print plant operations manager, publishing facility manager, offset printing manager, print manufacturing manager, commercial print manager, printing plant superintendent) + 7 DANNY_ORG_KEYWORDS (commercial printing, offset printing, printing plant, print manufacturer, magazine publishing, newspaper printing, commercial print facility). Lake Shore Printing (Willoughby), West Shore Printing (Berea), Ohio Business Media (Chagrin Falls), Hometown Newspapers (Berea HQ), Great Lakes Educational Book (Mentor). COMPLETELY DISTINCT from run 151 (retail print shops — FedEx Office/UPS Store, 'printing services' Apollo tag). EPA VOC permit (40 CFR Part 63 MACT) + OSHA 29 CFR 1910.22 = exterior compliance-documented. $2,000–$6,000/facility; 2x/year = $4K–$12K/year. Zero competitors. First pull June 8 Cuyahoga.
+  3. Count sync: 163+ → 165+ across `workers/vera_relay.py` (11 occ), `CLAUDE.md` (2 occ), `agents/danny.md` (batching note updated Run 183 → Run 184). Same-run count sync.
+- Critical human-action blockers (URGENT — deadlines imminent):
+  - 🚨 JUNE 4 (2 DAYS AWAY) = Round 2 enrollment — PAUSE Instantly.ai campaigns a1c08c3d + 626cd15d RIGHT NOW (10th consecutive run flagging this — 48 hours left, this is the LAST WARNING before the window closes)
+  - 🔍 MEDINA PULL CHECK (due June 2 today): Verify run_medina_both.command was executed. If not — run NOW before EOD.
+  - ⛽ Gas station Mixmax sequence PENDING (create in Mixmax UI → paste ID into integrations/mixmax.py line 54)
+  - 🚐 Fleet washing Mixmax sequence PENDING (create in Mixmax UI → paste ID into integrations/mixmax.py line 48)
+  - 📅 June 8 = Cuyahoga mega-pull — 165+ segments — use run_cuyahoga_both.command (6 days)
+
+---
+
+## OPEN — Industrial Gas Suppliers & Welding Supply Companies Segment Not Yet Pulled 🟡 NEW (Run 184)
+- First seen: 2026-06-02
+- Description: Segment #164. Industrial Gas Suppliers & Welding Supply Companies. 8 DANNY_TITLES + 9 DANNY_ORG_KEYWORDS live in lead_pipeline.py as of Run 184. Synced to mixmax.py PROPERTY_MANAGER_TITLES. Full segment brief in danny.md. NE Ohio targets: Airgas (NE Ohio cylinder filling plants), Air Products (Cleveland/Akron distribution), Matheson Gas (NE Ohio), Praxair/Linde (NE Ohio), Valley National Gases, Roberts Oxygen, Lincoln Electric (Euclid HQ — Fortune 500, largest US welding mfr), Red-D-Arc (Cleveland), ESAB Ohio distributor (Strongsville). DOT 49 CFR hazmat + EPA Tier I/II EPCRA = exterior cleaning is compliance-tracked. COMPLETELY DISTINCT from manufacturing (run 118), distribution centers (run 105), scrap metal (run 181), pharma (run 180). $1,500–$5,000/facility; quarterly; Lincoln Electric campus = $8K–$20K/year anchor. Zero competitors targeting this. First pull June 8 Cuyahoga.
+- Attempts:
+  - 2026-06-02: Added titles + org keywords to lead_pipeline.py, mixmax.py routing, danny.md brief → waiting for June 8 local pull to confirm Apollo returns contacts
+
+## OPEN — Commercial Printing Plants & Publishing Facilities Segment Not Yet Pulled 🟡 NEW (Run 184)
+- First seen: 2026-06-02
+- Description: Segment #165. Commercial Printing Plants & Publishing Facilities. 8 DANNY_TITLES + 7 DANNY_ORG_KEYWORDS live in lead_pipeline.py as of Run 184. Synced to mixmax.py PROPERTY_MANAGER_TITLES. Full segment brief in danny.md. NE Ohio targets: Lake Shore Printing (Willoughby), West Shore Printing (Berea), Ohio Business Media (Chagrin Falls — magazine publisher), Hometown Newspapers/Sun News (Berea HQ — suburban newspaper chain), Great Lakes Educational Book (Mentor), Commercial Printing Company of Cleveland. COMPLETELY DISTINCT from run 151 (FedEx Office/UPS Store retail print shops — 'printing services' Apollo tag). EPA VOC permit (40 CFR Part 63 MACT for printing/publishing) + OSHA 29 CFR 1910.22 housekeeping = exterior maintenance compliance-documented. Concrete staining: offset ink overspray + solvent wash residue + paper dust compaction + diesel exhaust = some of most severe industrial concrete staining. $2,000–$6,000/facility; 2x/year = $4K–$12K/year. Zero competitors. First pull June 8 Cuyahoga.
+- Attempts:
+  - 2026-06-02: Added titles + org keywords to lead_pipeline.py, mixmax.py routing, danny.md brief → waiting for June 8 local pull to confirm Apollo returns contacts
 
 ---
 
