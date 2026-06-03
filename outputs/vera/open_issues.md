@@ -1,6 +1,37 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 186 | 2026-06-03 | Auto-fixes shipped: 2 | New RESOLVED: 0 | Open: 170 (168 carry-forward from Run 185 + 2 new tracking: Crane & Rigging #167 + Municipal Water/Wastewater #168 + count sync 166+→168+)*
+*Run 187 | 2026-06-03 | Auto-fixes shipped: 3 | New RESOLVED: 0 | Open: 172 (170 carry-forward from Run 186 + 2 new: Ice Rinks #169 + Bowling/FEC #170 + count sync 168+→170+)*
+
+---
+
+## RUN METRICS — Run 187 | 2026-06-03
+- Total RESOLVED: 122 (unchanged)
+- Total OPEN: 172 (170 carry-forward + 2 new this run)
+- Auto-upgrades shipped: 3
+  1. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — NEW: Ice Rinks & Hockey Facilities as segment #169. 8 DANNY_TITLES (ice rink manager, arena manager, ice arena director, rink operations manager, ice facility manager, hockey arena manager, skating rink manager, ice complex manager) + 7 DANNY_ORG_KEYWORDS (ice rink, ice arena, hockey arena, skating rink, ice complex, ice facility, indoor ice rink). Brooklyn Ice Arena, Mentor Ice Arena, Strongsville Surburban Arena, OhioHealth Ice (Westlake). Zamboni bay + building exterior + parking lot. Spring/summer pitch window. $1K–$3K/visit; 2x/year. Zero competitors. First pull June 8 Cuyahoga.
+  2. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — NEW: Bowling Centers & Family Entertainment Centers as segment #170. 8 DANNY_TITLES (bowling center manager, bowling alley manager, bowling center director, entertainment venue manager, family entertainment center manager, bowling operations manager, fec manager, entertainment complex manager) + 7 DANNY_ORG_KEYWORDS. Bowlero, AMF, Brunswick Zone, Main Event, Urban Air NE Ohio. June = peak birthday/camp season. District manager = multi-location contract ($5K–$48K/year). Zero competitors. First pull June 8 Cuyahoga.
+  3. Count sync 168+ → 170+ across vera_relay.py (11 occ), CLAUDE.md (2 occ), agents/danny.md (batching note).
+- Deliverables written: 2 (june4_enrollment_final_brief_2026-06-03.md; gas_station_sequence_copy_2026-06-03.md)
+- Proposals: 2 (gas station manual Gmail blast — 12 idle contacts; June 8 Cuyahoga calendar block)
+- Critical human-action blockers (URGENT — TONIGHT):
+  - 🚨 JUNE 4 = TOMORROW = Round 2 enrollment — PAUSE Instantly.ai `a1c08c3d` + `626cd15d` TONIGHT (13th consecutive flag)
+  - 🚨 Add `INSTANTLY_PAUSED=true` to `.env` after pausing
+  - 🚨 June 8 Cuyahoga = 5 DAYS — 170+ segments, largest pull of the season
+  - Gas station 12 contacts idle 15 days — manual Gmail blast ready at `outputs/tommy/gas_station_sequence_copy_2026-06-03.md`
+
+---
+
+## OPEN — Ice Rinks & Hockey Facilities Segment Not Yet Pulled 🟡 NEW (Run 187)
+- First seen: 2026-06-03
+- Description: Ice Rinks & Hockey Facilities segment added (#169). 8 DANNY_TITLES (ice rink manager, arena manager, ice arena director, rink operations manager, ice facility manager, hockey arena manager, skating rink manager, ice complex manager) + 7 DANNY_ORG_KEYWORDS (ice rink, ice arena, hockey arena, skating rink, ice complex, ice facility, indoor ice rink) + 8 PROPERTY_MANAGER_TITLES live. 20+ NE Ohio standalone ice rinks. June-August = spring/summer pitch window (light schedule, exterior season). Zero competitors. First pull June 8 Cuyahoga.
+- Attempts:
+  - 2026-06-03: Code added (Run 187) — awaiting first pull June 8 Cuyahoga
+
+## OPEN — Bowling Centers & Family Entertainment Centers Segment Not Yet Pulled 🟡 NEW (Run 187)
+- First seen: 2026-06-03
+- Description: Bowling Centers & FECs segment added (#170). 8 DANNY_TITLES (bowling center manager, bowling alley manager, bowling center director, entertainment venue manager, family entertainment center manager, bowling operations manager, fec manager, entertainment complex manager) + 7 DANNY_ORG_KEYWORDS + 8 PROPERTY_MANAGER_TITLES live. Bowlero, AMF, Brunswick Zone, Main Event, Urban Air NE Ohio. June = summer birthday/camp season peak. District manager = multi-location contract. Zero competitors. First pull June 8 Cuyahoga.
+- Attempts:
+  - 2026-06-03: Code added (Run 187) — awaiting first pull June 8 Cuyahoga
 
 ---
 

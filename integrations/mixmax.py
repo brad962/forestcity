@@ -890,6 +890,15 @@ PROPERTY_MANAGER_TITLES = [
     'water plant superintendent', 'wastewater treatment manager', 'utilities facilities manager',
     'water treatment plant manager', 'sewer district operations manager', 'public utilities director',
     'water utilities manager', 'wastewater plant superintendent',
+    # Ice Rinks & Hockey Facilities — segment #169; spring/summer exterior clean + Zamboni bay compliance
+    # angle; route to property_manager sequence (facility vendor contract) (added 2026-06-03 run 187)
+    'ice rink manager', 'arena manager', 'ice arena director', 'rink operations manager',
+    'ice facility manager', 'hockey arena manager', 'skating rink manager', 'ice complex manager',
+    # Bowling Centers & Family Entertainment Centers — segment #170; summer peak season exterior clean
+    # angle; route to property_manager sequence (facility vendor contract) (added 2026-06-03 run 187)
+    'bowling center manager', 'bowling alley manager', 'bowling center director',
+    'entertainment venue manager', 'family entertainment center manager', 'bowling operations manager',
+    'fec manager', 'entertainment complex manager',
 ]
 
 REALTOR_TITLES = [

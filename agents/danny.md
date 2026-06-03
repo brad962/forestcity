@@ -1974,7 +1974,7 @@ Peak moving season is May–September. NE Ohio has dozens of moving company term
 
 **First pull:** June 8 Cuyahoga — `run_cuyahoga_both.command`
 
-> 🗒️ **Run 186 batching note:** Danny now has 168+ commercial segments live in DANNY_TITLES + DANNY_ORG_KEYWORDS. All fire in the June 8 Cuyahoga mega-pull. Segments are organized into batches by Apollo API call — the batching logic in lead_pipeline.py handles this automatically.
+> 🗒️ **Run 187 batching note:** Danny now has 170+ commercial segments live in DANNY_TITLES + DANNY_ORG_KEYWORDS. All fire in the June 8 Cuyahoga mega-pull. Segments are organized into batches by Apollo API call — the batching logic in lead_pipeline.py handles this automatically.
 
 ---
 
@@ -2061,6 +2061,46 @@ Save lead lists to `/outputs/danny/` as:
 **DISTINCT from:** Municipal facilities (run 124 — city halls/admin buildings/public works offices), electric utilities (run 162 — FirstEnergy/AEP substations), industrial manufacturing (run 118)
 
 **Sequence:** Route to Property Manager sequence (OEPA compliance / regulatory angle). First pull: June 8 Cuyahoga — NEORSD Southerly/Easterly/Westerly plants are all in Cuyahoga County.
+
+---
+
+## Segment #169 — Ice Rinks & Hockey Facilities *(added Run 187 | 2026-06-03)*
+
+**Why:** NE Ohio is one of the densest youth hockey markets in the country — the Ohio Hockey Association and USAH Ohio district have dozens of suburban ice rinks operating year-round. These facilities have a very specific cleaning problem: hydraulic fluid and lubricant drips from Zamboni machines stain the concrete bay area; ice melt chemicals accelerate concrete spalling; parking lots and building exteriors collect winter grime. Spring and summer are the ideal pitch window — ice schedules lighten, exterior cleaning season opens, and facility managers are planning their annual maintenance budgets. Zero competitors are calling ice rink managers.
+
+**NE Ohio targets:** Brooklyn Ice Arena (Southwest Cleveland), Mentor Ice Arena (Lake County), Strongsville Surburban Arena (Southwest Cuyahoga), OhioHealth Ice Burg — Westlake location, Sheffield Lake Ice Arena, Kent State Ice Arena (Summit/Portage adjacent), Serpentini Chevrolet Theatre / Cleveland area rinks
+
+**Revenue math:** $1,000–$3,000/visit × 2 visits/year = $2K–$6K/year per rink. NE Ohio has 20+ standalone ice arenas — territory potential = $40K–$120K/year.
+
+**Pitch angle:** "Spring is when the parking lot and exterior finally get attention — ice melt residue, Zamboni exhaust buildup, and winter grime. One visit before your summer camps and adult leagues start. We'll make the facility look sharp for your peak revenue weeks."
+
+**Apollo titles (live in DANNY_TITLES as of Run 187):** `ice rink manager`, `arena manager`, `ice arena director`, `rink operations manager`, `ice facility manager`, `hockey arena manager`, `skating rink manager`, `ice complex manager`
+
+**Apollo org keywords (live in DANNY_ORG_KEYWORDS as of Run 187):** `ice rink`, `ice arena`, `hockey arena`, `skating rink`, `ice complex`, `ice facility`, `indoor ice rink`
+
+**DISTINCT from:** Sports venues/arenas (run 130 — NBA/NHL/AHL professional venues), recreation centers (run 125 — municipal parks/rec), gymnastics centers (run 160)
+
+**Sequence:** Route to Property Manager sequence (facility maintenance/vendor contract angle). First pull: June 8 Cuyahoga — Brooklyn Ice Arena, OhioHealth Ice Westlake, Strongsville Surburban Arena.
+
+---
+
+## Segment #170 — Bowling Centers & Family Entertainment Centers *(added Run 187 | 2026-06-03)*
+
+**Why:** Bowling centers and FECs have heavy foot traffic across large parking lots and building entrances — and they're completely ignored by power washing companies. Bowlero/AMF/Brunswick Zone chains operate with district managers who sign vendor contracts across 3-8 locations. Family entertainment centers (Main Event, Urban Air, Scene 75-style properties) have outdoor areas, go-kart tracks, and large parking lots that accumulate grime fast. June = start of summer birthday party and camp season = these facilities must look their best for peak revenue weeks. One district manager contact = multi-location contract.
+
+**NE Ohio targets:** Bowlero (multiple NE Ohio locations), AMF Maple Heights Lanes, AMF Leroy Lanes (Eastlake), Brunswick Zone Tallmadge (Akron market), Main Event Entertainment (Westlake), Urban Air Adventure Park (multiple locations), Stars & Strikes (Strongsville area)
+
+**Revenue math:** $800–$2,000/visit × 2-3 visits/year = $1.6K–$6K/year per facility. District manager oversees 3-8 locations = $5K–$48K/year per district relationship.
+
+**Pitch angle:** "Summer birthday season is your biggest revenue window — June through August. Your parking lot and entrance are the first thing families see when they pull in. We can do a full exterior clean in 2-3 hours, early morning before you open. One visit, guaranteed curb appeal for the whole summer rush."
+
+**Apollo titles (live in DANNY_TITLES as of Run 187):** `bowling center manager`, `bowling alley manager`, `bowling center director`, `entertainment venue manager`, `family entertainment center manager`, `bowling operations manager`, `fec manager`, `entertainment complex manager`
+
+**Apollo org keywords (live in DANNY_ORG_KEYWORDS as of Run 187):** `bowling center`, `bowling alley`, `bowling lanes`, `family entertainment center`, `entertainment complex`, `bowling management`, `entertainment venue management`
+
+**DISTINCT from:** Event venues (run 108 — wedding/banquet halls), sports venues (run 130 — professional arenas), recreation centers (run 125 — municipal rec)
+
+**Sequence:** Route to Property Manager sequence (facility maintenance/seasonal urgency angle). First pull: June 8 Cuyahoga — Bowlero and Main Event both have NE Ohio locations in Cuyahoga County.
 
 ---
 

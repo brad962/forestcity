@@ -1,3 +1,48 @@
+🔧 *Vera — Auto-Upgrade | Run 187 | June 3*
+>Changed: NEW segment #169 — Ice Rinks & Hockey Facilities added to lead_pipeline.py DANNY_TITLES (8 titles: ice rink manager, arena manager, ice arena director, rink operations manager, ice facility manager, hockey arena manager, skating rink manager, ice complex manager) + DANNY_ORG_KEYWORDS (7 keywords: ice rink, ice arena, hockey arena, skating rink, ice complex, ice facility, indoor ice rink). Synced to mixmax.py PROPERTY_MANAGER_TITLES.
+>Why: NE Ohio = one of the densest youth hockey markets in the US. 20+ standalone ice arenas. Zamboni bay + building exterior + parking lot = recurring cleaning need. Spring/summer = ideal pitch window (light schedule, exterior season). Zero competitors cold-calling arena managers. Revenue: $1K–$3K/visit × 2/year = $2K–$6K/rink. Full brief in danny.md.
+>File: workers/lead_pipeline.py, integrations/mixmax.py, agents/danny.md
+---
+🔧 *Vera — Auto-Upgrade | Run 187 | June 3*
+>Changed: NEW segment #170 — Bowling Centers & Family Entertainment Centers added to DANNY_TITLES (8 titles) + DANNY_ORG_KEYWORDS (7 keywords). Bowlero, AMF, Brunswick Zone, Main Event, Urban Air. Synced to mixmax.py PROPERTY_MANAGER_TITLES.
+>Why: June = summer birthday/camp season = peak revenue for these venues. District manager = multi-location contract ($5K–$48K/year). Zero competitors targeting this segment. Full brief in danny.md.
+>File: workers/lead_pipeline.py, integrations/mixmax.py, agents/danny.md
+---
+🔧 *Vera — Auto-Upgrade | Run 187 | June 3*
+>Changed: Count sync 168+ → 170+ across vera_relay.py (11 occ), CLAUDE.md (2 occ), danny.md (batching note). Same-run sync before June 8 mega-pull.
+>Why: All relay reminders, dashboard references, and danny.md brief now show accurate 170+ segment count.
+>File: workers/vera_relay.py, CLAUDE.md, agents/danny.md
+---
+🚨 *Vera — CRITICAL ACTION TONIGHT | June 3*
+>TOMORROW IS JUNE 4 — ROUND 2 ENROLLMENT DAY (13th consecutive flag)
+>
+>Before bed tonight — ONE action:
+>app.instantly.ai → Campaigns → ⋮ → Pause `a1c08c3d` + `626cd15d`
+>Then open `.env` → add: `INSTANTLY_PAUSED=true`
+>
+>5 minutes tonight = clean enrollment tomorrow = leads actually receiving emails.
+>Full June 4 morning game plan (60 min): `outputs/donna/june4_enrollment_final_brief_2026-06-03.md`
+>Expected: 40-60 contacts enrolled, 5+ quotes in play by Friday.
+---
+💡 *Vera — Upgrade Proposal | Run 187*
+>Idea: Gas station — 12 idle contacts — manual Gmail blast TODAY. Copy is ready: `outputs/tommy/gas_station_sequence_copy_2026-06-03.md`. Subject "Quick question about your lot." BCC all 12. Done in 5 minutes.
+>Why: 15 days zero outreach on 12 pulled contacts. Manual blast unlocks revenue this week, no Mixmax sequence needed.
+>Impact: 12 cold touches → est. 1-2 replies → 1 quote this week.
+>Reply YES to approve.
+---
+💡 *Vera — Upgrade Proposal | Run 187*
+>Idea: Block 20 min Monday June 8 at 7am for the Cuyahoga mega-pull. 170+ segments: hospitals, law firms, schools, water utilities, data centers, pharma plants, ice rinks, bowling centers — the full NE Ohio commercial market. Runs 12-20 min unattended.
+>Why: Biggest pull of the season. Cuyahoga = largest market in NE Ohio.
+>Impact: Est. 100-200 fresh contacts enrolled in Mixmax by 9am Monday.
+>Reply YES for the exact command + pre-pull checklist.
+---
+✅ *Vera — Scan Complete | June 3, 2026 | Run 187*
+>3 auto-upgrades shipped | 2 proposals | 172 open issues (170 carry-forward + 2 new: Ice Rinks #169, Bowling/FEC #170)
+>Deliverables: june4_enrollment_final_brief_2026-06-03.md + gas_station_sequence_copy_2026-06-03.md
+>🔴 TONIGHT: Pause Instantly.ai → INSTANTLY_PAUSED=true in .env
+>🔴 TOMORROW (June 4): 60-min enrollment session — 40-60 contacts going active
+>🟡 June 8: 170+ segment Cuyahoga mega-pull
+---
 🔧 *Vera — Auto-Upgrade | Run 186 | 2026-06-03*
 >Changed: NEW Segment #167 — Crane & Rigging Service Companies. 8 DANNY_TITLES (crane yard manager, rigging manager, crane operations manager, lift superintendent, crane company manager, rigging contractor manager, crane service director, lifting services manager) + 7 DANNY_ORG_KEYWORDS (crane rental, crane service, rigging company, crane company, rigging contractor, lifting services, industrial rigging). Synced to mixmax.py PROPERTY_MANAGER_TITLES.
 >Why: NE Ohio's industrial corridor has serious crane activity — Cleveland Crane & Engineering, Barnhart, Maxim Crane Works all run staging yards with hydraulic drip, rust streaks, heavy concrete staining. OSHA compliance angle. $1,500–$4,000/visit quarterly. ZERO competitors call crane yard managers. Fires June 8 Cuyahoga pull.

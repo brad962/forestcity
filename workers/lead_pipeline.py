@@ -1797,6 +1797,23 @@ DANNY_TITLES = [
     'water plant superintendent', 'wastewater treatment manager', 'utilities facilities manager',
     'water treatment plant manager', 'sewer district operations manager', 'public utilities director',
     'water utilities manager', 'wastewater plant superintendent',
+    # Ice Rinks & Hockey Facilities — Brooklyn Ice Arena, Mentor Ice Arena, Strongsville Surburban Arena,
+    # OhioHealth Ice Burg (Westlake), Sheffield Lake Ice Arena, Kent State Ice Arena;
+    # NE Ohio = one of the densest hockey markets in the US (Ohio Hockey Assoc. + USAH Ohio district);
+    # Zamboni bay + concrete rink surround + building exterior + parking lot; spring/summer = ideal pitch
+    # window (rink schedules lighten, exterior maintenance season opens); hydraulic fluid + ice melt
+    # chemical residue = concrete staining unique to this segment; $1,000–$3,000/visit; 2x/year;
+    # zero competitors cold-calling arena managers in NE Ohio; first pull June 8 Cuyahoga (added 2026-06-03 run 187)
+    'ice rink manager', 'arena manager', 'ice arena director', 'rink operations manager',
+    'ice facility manager', 'hockey arena manager', 'skating rink manager', 'ice complex manager',
+    # Bowling Centers & Family Entertainment Centers — Bowlero (multiple NE Ohio), AMF Maple Heights Lanes,
+    # AMF Leroy Lanes (Eastlake), Brunswick Zone Tallmadge, Main Event (Westlake), Urban Air Adventure Park;
+    # large parking lots + building exteriors + food service entrance canopies + go-kart/outdoor areas;
+    # June = start of summer birthday/camp season = appearance must be perfect for peak revenue weeks;
+    # $800–$2,000/visit; 2-3x/year; district FMs oversee 3-8 locations; zero competitors; (added 2026-06-03 run 187)
+    'bowling center manager', 'bowling alley manager', 'bowling center director',
+    'entertainment venue manager', 'family entertainment center manager', 'bowling operations manager',
+    'fec manager', 'entertainment complex manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -2843,6 +2860,16 @@ DANNY_ORG_KEYWORDS = [
     # NEORSD, Akron Metro Sewer, city water/sewer utility tags; (added 2026-06-03 run 186)
     'water treatment', 'wastewater treatment', 'sewer district', 'municipal water', 'sanitary district',
     'water utility', 'water reclamation',
+    # Ice Rinks & Hockey Facilities — DISTINCT from sports venues/arenas (run 130 — NBA/NHL/AHL venues);
+    # Apollo tags 'ice rink'/'ice arena'/'hockey arena' return operators of standalone rinks only;
+    # zero overlap with existing sports/entertainment tags; first pull June 8 Cuyahoga (added 2026-06-03 run 187)
+    'ice rink', 'ice arena', 'hockey arena', 'skating rink', 'ice complex',
+    'ice facility', 'indoor ice rink',
+    # Bowling Centers & Family Entertainment Centers — DISTINCT from event venues (run 108) and sports venues (run 130);
+    # Apollo 'bowling center'/'family entertainment' tags return stand-alone bowling + FEC operators only;
+    # zero overlap with existing entertainment/venue tags; first pull June 8 Cuyahoga (added 2026-06-03 run 187)
+    'bowling center', 'bowling alley', 'bowling lanes', 'family entertainment center',
+    'entertainment complex', 'bowling management', 'entertainment venue management',
 ]
 
 CARLA_SEARCHES = [
