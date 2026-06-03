@@ -876,6 +876,12 @@ PROPERTY_MANAGER_TITLES = [
     'printing plant manager', 'commercial printing manager', 'print plant operations manager',
     'publishing facility manager', 'offset printing manager', 'print manufacturing manager',
     'commercial print manager', 'printing plant superintendent',
+    # Aquatic Management Companies — company-level FMs who manage 10-50 pools for HOAs/apartments/municipalities;
+    # DISTINCT from facility-level pool managers (run 136 — aquatic center director, pool facility manager);
+    # route to property_manager sequence (facility vendor contract angle) (added 2026-06-03 run 185)
+    'aquatics operations manager', 'pool management director', 'aquatics services manager',
+    'pool operations manager', 'aquatic operations director', 'pool services director',
+    'aquatics program director', 'aquatic services manager',
 ]
 
 REALTOR_TITLES = [

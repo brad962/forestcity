@@ -1,6 +1,38 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 184 | 2026-06-02 | Auto-fixes shipped: 3 | New RESOLVED: 0 | Open: 166 (164 carry-forward from Run 183 + 2 new tracking: Industrial Gas & Welding Supply #164 + Commercial Printing Plants #165)*
+*Run 185 | 2026-06-03 | Auto-fixes shipped: 2 | New RESOLVED: 0 | Open: 168 (166 carry-forward from Run 184 + 2 new tracking: Aquatic Management Companies #166 segment added + count sync 165+→166+)*
+
+---
+
+## RUN METRICS — Run 185 | 2026-06-03
+- Total RESOLVED: 122 (unchanged)
+- Total OPEN: 168 (166 carry-forward + 2 this run)
+- Auto-upgrades shipped: 2
+  1. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — NEW: Aquatic Management Companies & Pool Operations Services as segment #166. 8 DANNY_TITLES (aquatics operations manager, pool management director, aquatics services manager, pool operations manager, aquatic operations director, pool services director, aquatics program director, aquatic services manager) + 6 DANNY_ORG_KEYWORDS (pool management company, aquatics management, pool management services, aquatic management, swimming pool management, pool operations services). DISTINCT from community swimming pools (run 136 — facility-level titles). United Aquatics (Berea OH — 50+ managed pools), Aquatic Management Services, Pool Management Group, American Pool NE Ohio. One 20-pool company = $16K–$40K revenue from ONE cold email. June = pool startup week = peak timing. Ohio EPA NPDES + OH DOH pool licensing = compliance angle. Zero competitors. First pull June 8 Cuyahoga.
+  2. Count sync: 165+ → 166+ across `workers/vera_relay.py` (11 occ), `CLAUDE.md` (2 occ), `agents/danny.md` (batching note Run 184 → Run 185). Same-run count sync.
+- Critical human-action blockers (URGENT — TONIGHT IS THE DEADLINE):
+  - 🚨 JUNE 4 = TOMORROW = Round 2 enrollment — PAUSE Instantly.ai campaigns a1c08c3d + 626cd15d TONIGHT (11th consecutive run flagging this — tonight is the absolute last chance)
+  - 🚨 Read outputs/donna/june4_enrollment_battle_card_2026-05-24.md TONIGHT — set 7:30am alarm
+  - 🔍 MEDINA PULL CHECK: Verify run_medina_both.command ran June 1-2 (grep "Medina" logs/activity.log)
+  - ⛽ Gas station Mixmax sequence PENDING (create in Mixmax UI → paste ID into integrations/mixmax.py line 54)
+  - 🚐 Fleet washing Mixmax sequence PENDING (create in Mixmax UI → paste ID into integrations/mixmax.py line 48)
+  - 📅 June 8 = Cuyahoga mega-pull — 166+ segments — use run_cuyahoga_both.command (5 days)
+
+---
+
+## OPEN — Aquatic Management Companies & Pool Operations Services Segment Not Yet Pulled 🟡 NEW (Run 185)
+- First seen: 2026-06-03
+- Description: Segment #166. Aquatic Management Companies & Pool Operations Services (DISTINCT from community swimming pools run 136). 8 DANNY_TITLES + 6 DANNY_ORG_KEYWORDS live in lead_pipeline.py as of Run 185. Synced to mixmax.py PROPERTY_MANAGER_TITLES. Full segment brief in danny.md. NE Ohio targets: United Aquatics (Berea OH — NE Ohio's largest pool operator with 50+ managed pools), Aquatic Management Services (NE Ohio franchise territory), Pool Management Group (national franchise with NE Ohio coverage), American Pool (Cleveland-area franchise), Great Lakes Aquatic Management, Belfor Aquatics, Signature Aquatics. One company contact = potential 10-50 soft-wash jobs per season. June = pool startup week = contacts on-site commissioning pools and seeing dirty decks/bath houses every day. Ohio EPA NPDES permit + Ohio Dept of Health pool licensing inspection = exterior appearance is compliance-documented. $800–$2,000/pool; 20-pool company = $16K–$40K from ONE outreach. Zero competitors cold-calling aquatic management companies. First pull June 8 Cuyahoga.
+- Attempts:
+  - 2026-06-03: Added 8 titles + 6 org keywords to lead_pipeline.py, mixmax.py routing, danny.md brief → waiting for June 8 local pull to confirm Apollo returns contacts
+
+---
+
+## OPEN — Count Sync 165+ → 166+ Verification 🟡 NEW (Run 185)
+- First seen: 2026-06-03
+- Description: Count updated 165+ → 166+ in vera_relay.py (11 occ), CLAUDE.md (2 occ), danny.md (batching note). Verify no missed occurrences cause relay to report stale count on June 8.
+- Attempts:
+  - 2026-06-03: replace_all edit confirmed in vera_relay.py + CLAUDE.md → marked done pending push confirmation
 
 ---
 

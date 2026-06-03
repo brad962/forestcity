@@ -1760,6 +1760,19 @@ DANNY_TITLES = [
     'printing plant manager', 'commercial printing manager', 'print plant operations manager',
     'publishing facility manager', 'offset printing manager', 'print manufacturing manager',
     'commercial print manager', 'printing plant superintendent',
+    # Aquatic Management Companies & Pool Operations Services — DISTINCT from community swimming pools
+    # (run 136 — facility-level: aquatic center director, pool facility manager, natatorium manager).
+    # These are COMPANIES that manage 10-50 pools FOR others: HOAs, apartment complexes, municipalities, schools.
+    # United Aquatics (NE Ohio's largest pool operator), Aquatic Management Services, Pool Management Group,
+    # American Pool (NE Ohio franchise territory), Great Lakes Aquatic Management, Belfor Aquatics.
+    # One company = potential 10-50 soft-wash jobs from a single outreach. PEAK TIMING: June = pool startup
+    # week; companies are on-site commissioning every managed pool — and the pool deck concrete, bath house
+    # exterior, and perimeter parking are all in plain sight. $800–$2,000/pool; 20-pool company =
+    # $16K–$40K revenue from ONE contact. Zero competitors cold-calling aquatic management companies.
+    # First pull June 8 Cuyahoga. (added 2026-06-03 run 185)
+    'aquatics operations manager', 'pool management director', 'aquatics services manager',
+    'pool operations manager', 'aquatic operations director', 'pool services director',
+    'aquatics program director', 'aquatic services manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -2791,6 +2804,11 @@ DANNY_ORG_KEYWORDS = [
     # first pull June 8 Cuyahoga (added 2026-06-02 run 184)
     'commercial printing', 'offset printing', 'printing plant', 'print manufacturer',
     'magazine publishing', 'newspaper printing', 'commercial print facility',
+    # Aquatic Management Companies — companies that manage 10-50 outdoor/indoor pools for HOAs,
+    # apartments, municipalities, schools; DISTINCT from pool facilities themselves (run 136);
+    # June = pool startup season = peak pitch window; first pull June 8 Cuyahoga (added 2026-06-03 run 185)
+    'pool management company', 'aquatics management', 'pool management services',
+    'aquatic management', 'swimming pool management', 'pool operations services',
 ]
 
 CARLA_SEARCHES = [

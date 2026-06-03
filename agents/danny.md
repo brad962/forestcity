@@ -1950,7 +1950,31 @@ Peak moving season is May–September. NE Ohio has dozens of moving company term
 **Compliance angle:** EPA VOC permit (40 CFR Part 63 MACT for printing/publishing) + OSHA 29 CFR 1910.22 housekeeping standards = plant exterior maintenance is compliance-documented.
 **Revenue:** $2,000–$6,000/facility; 2x/year = $4K–$12K/year per plant; zero NE Ohio competitors targeting print plant FMs.
 
-> 🗒️ **Run 184 batching note:** Danny now has 165+ commercial segments live in DANNY_TITLES + DANNY_ORG_KEYWORDS. All fire in the June 8 Cuyahoga mega-pull. Segments are organized into batches by Apollo API call — the batching logic in lead_pipeline.py handles this automatically.
+---
+
+## Segment #166 — Aquatic Management Companies & Pool Operations Services *(added Run 185 | 2026-06-03)*
+
+**What it is:** Companies (not facilities) that manage 10–50 outdoor or indoor pools on behalf of HOAs, apartment complexes, municipalities, school districts, and private clubs. COMPLETELY DISTINCT from community swimming pools (run 136 — the facilities themselves). These are third-party operators — one company = potential 10–50 wash jobs from a single outreach.
+
+**Why June is perfect:** June = pool startup week across NE Ohio. Every aquatic management company is physically on-site commissioning pools RIGHT NOW — and they see the pool deck concrete, bath house exteriors, and surrounding parking up close every day. First impression of summer for residents and patrons.
+
+**NE Ohio targets:** United Aquatics (Berea OH — largest NE Ohio pool operator, 50+ managed pools), Aquatic Management Services (NE Ohio franchise territory), Pool Management Group, American Pool (Cleveland-area franchise), Great Lakes Aquatic Management, Belfor Aquatics, Signature Aquatics.
+
+**Apollo keywords live:** `pool management company`, `aquatics management`, `pool management services`, `aquatic management`, `swimming pool management`, `pool operations services`
+
+**Decision-maker titles:** aquatics operations manager, pool management director, aquatics services manager, pool operations manager, aquatic operations director, pool services director, aquatics program director, aquatic services manager
+
+**Revenue math:** $800–$2,000 per pool; company with 20 managed pools = $16K–$40K revenue from ONE cold email. Quarterly or annual contract.
+
+**Pitch angle:** "You're the ones commissioning pools across NE Ohio this month — and the pool deck concrete and bath house siding that your residents see on day one sets the tone for the whole summer. One pre-season wash per property, recurring."
+
+**Compliance angle:** Ohio EPA NPDES permit for pool chemical discharge + Ohio Health Dept. pool licensing inspection = exterior appearance is inspected and documented.
+
+**Sequence routing:** Property Manager sequence (facility vendor contract angle).
+
+**First pull:** June 8 Cuyahoga — `run_cuyahoga_both.command`
+
+> 🗒️ **Run 185 batching note:** Danny now has 166+ commercial segments live in DANNY_TITLES + DANNY_ORG_KEYWORDS. All fire in the June 8 Cuyahoga mega-pull. Segments are organized into batches by Apollo API call — the batching logic in lead_pipeline.py handles this automatically.
 
 ---
 
