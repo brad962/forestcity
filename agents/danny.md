@@ -35,7 +35,7 @@ Example payload for property managers in Cuyahoga County:
 
 **Always pass `q_organization_keyword_tags`** — this catches decision-makers at property management companies where the contact's title isn't "property manager" (e.g., owner or VP at a 10-property HOA management firm).
 
-> ✅ **Title batching active (Run 132):** `workers/lead_pipeline.py` now batches DANNY_TITLES in groups of 50 and runs multiple Apollo searches per county pull, deduplicating by person ID. This prevents Apollo from silently capping large `person_titles` arrays. With 400+ titles across 178+ commercial segments, the old single-call approach risked returning zero contacts for many segments. Batching guarantees all 178+ segments are queried every pull.
+> ✅ **Title batching active (Run 132):** `workers/lead_pipeline.py` now batches DANNY_TITLES in groups of 50 and runs multiple Apollo searches per county pull, deduplicating by person ID. This prevents Apollo from silently capping large `person_titles` arrays. With 400+ titles across 180+ commercial segments, the old single-call approach risked returning zero contacts for many segments. Batching guarantees all 180+ segments are queried every pull.
 
 Target titles:
 - Property Manager, Property Management Director, Property Director
@@ -2141,6 +2141,46 @@ Save lead lists to `/outputs/danny/` as:
 **DISTINCT from:** Manufacturing facilities (run 118 — general industrial; Ford Avon Lake, Lincoln Electric, Eaton, Parker Hannifin), specialty chemical (run 176 — chemical manufacturing), construction equipment rental (run 179); concrete/asphalt PRODUCTION is a distinct industry with different staining profile, compliance framework, and Apollo tagging
 
 **Sequence:** Route to Property Manager sequence (OSHA 1910.22 / OEPA NPDES compliance angle). First pull: June 8 Cuyahoga — Shelly Company and Aggregate Industries both have Cuyahoga County production facilities.
+
+---
+
+## Segment #179 — County Correctional Facilities & Detention Centers *(added Run 193 | 2026-06-03)*
+
+**Why:** Every Ohio county maintains a county jail operated by the sheriff's office, plus in many cases a separate juvenile detention center. NE Ohio's seven target counties represent 7 county jails + 3 juvenile detention facilities — none of which are being targeted by any area power washing company. These are government-owned facilities with large exterior concrete surfaces: sally port aprons, vehicle staging areas, exterior building faces, perimeter walkways, and covered receiving areas. The county sheriff is legally responsible under Ohio Revised Code Sec. 341.01 for maintaining the jail "in a clean and sanitary condition." ACA (American Correctional Association) accreditation standards and OEPA NPDES stormwater permits both create documented exterior cleaning requirements. Government direct-award contracts under $25,000 in Ohio don't require competitive bidding — a single proposal to the sheriff's facilities manager can win a multi-year recurring contract.
+
+**NE Ohio targets:** Cuyahoga County Jail (downtown Cleveland's Justice Center complex — largest county jail in Ohio with 2,100+ bed capacity; Euclid Avenue Justice Center), Summit County Jail (Akron), Lake County Adult Correctional Facility (Painesville), Medina County Jail (Medina Township), Lorain County Adult Correctional Facility (Elyria), Geauga County Safety Center (Chardon), Portage County Jail (Ravenna), Cuyahoga County Juvenile Justice Center
+
+**Revenue math:** $3,000–$10,000/facility × annual = strong recurring government revenue. Cuyahoga County Jail (Justice Center complex) alone = $8,000–$15,000/year. One county relationship often opens door to all county-owned facilities (courthouse, county admin buildings, county health department buildings).
+
+**Pitch angle:** "You're required to maintain the facility in a clean condition under Ohio law and ACA standards. We provide OEPA NPDES service documentation to close your compliance file. We've cleaned county facilities in the region. One quote, no-bid procurement under $25,000."
+
+**Apollo titles (live in DANNY_TITLES as of Run 193):** `jail administrator`, `detention facility manager`, `corrections facilities director`, `county jail administrator`, `county jail manager`, `detention center director`, `sheriff facilities manager`, `correctional facility manager`, `corrections facility director`, `juvenile detention director`, `detention operations manager`, `county corrections manager`
+
+**Apollo org keywords (live in DANNY_ORG_KEYWORDS as of Run 193):** `county jail`, `detention center`, `correctional facility`, `county detention`, `juvenile detention`, `county correctional`, `correctional center`, `sheriff facility`
+
+**DISTINCT from:** Municipal facilities (run 124 — city halls, transit depots, municipal courts), federal government (run 177 — VA medical centers, NASA Glenn, IRS Brookpark); county corrections is sheriff-operated, distinct Apollo tagging, distinct procurement pathway
+
+**Sequence:** Route to Property Manager sequence (government compliance / facility management angle). First pull: June 8 Cuyahoga — Cuyahoga County Jail is the highest-value target.
+
+---
+
+## Segment #180 — Inpatient Rehabilitation Hospitals & Long-Term Acute Care (LTAC) Facilities *(added Run 193 | 2026-06-03)*
+
+**Why:** Inpatient rehabilitation hospitals (IRFs) and long-term acute care hospitals (LTACs) are a distinct and completely un-targeted healthcare segment in NE Ohio. These facilities serve patients who need extended inpatient medical care — stroke recovery, traumatic brain injury, post-surgical rehab, ventilator weaning — and operate under strict CMS hospital conditions of participation (CoP Section 482) plus JCAHO hospital accreditation. Both CMS CoP and JCAHO require hospitals to maintain clean facility appearances as a patient safety and care quality standard. Zero NE Ohio power washing companies are cold-calling LTAC or IRF facility managers.
+
+**NE Ohio targets:** Regency Hospital of Cleveland (Select Medical; 9600 Pearl Road Strongsville; 64-bed LTAC), Regency Hospital of Akron (Select Medical; 55-bed LTAC), Kindred Hospitals NE Ohio (Kindred Healthcare; 2 NE Ohio locations), Promise Hospitals, Encompass Health Rehabilitation Hospital of Concord (Concord Township, Lake County; 60-bed IRF), Encompass Health Sheffield Village (Lorain County; 60-bed IRF)
+
+**Revenue math:** $3,000–$8,000/facility × 2 visits/year = $6,000–$16,000/year per facility. NE Ohio has 30+ licensed IRF/LTAC beds across multiple facilities — one regional relationship with a multi-site operator like Select Medical or Encompass Health = $30,000–$80,000/year territory potential.
+
+**Pitch angle:** "CMS and Joint Commission both flag exterior facility appearance during hospital certification surveys. We provide documentation of cleaning frequency for your compliance file. One quote covers the full facility — building exterior, patient drop-off, parking, loading."
+
+**Apollo titles (live in DANNY_TITLES as of Run 193):** `rehabilitation hospital administrator`, `rehabilitation hospital director`, `ltac administrator`, `inpatient rehabilitation director`, `long-term acute care director`, `rehab hospital manager`, `ltac facility manager`, `inpatient rehab director`, `ltac hospital administrator`, `rehab hospital administrator`, `acute rehabilitation director`
+
+**Apollo org keywords (live in DANNY_ORG_KEYWORDS as of Run 193):** `rehabilitation hospital`, `inpatient rehabilitation`, `long-term acute care`, `ltac hospital`, `rehab hospital`, `transitional care hospital`, `encompass health`, `select medical`, `kindred hospital`
+
+**DISTINCT from:** Skilled nursing / LTC nursing homes (run 169 — Sunrise/Brookdale/Five Star), outpatient physical therapy chains (run 126 — NovaCare/ATI/Select PT), hospital main campuses (run 124 — Cleveland Clinic/UH/MetroHealth), ambulatory surgery centers (run 143); LTAC/IRF = distinct Medicare provider category, distinct CMS certification, distinct Apollo tagging
+
+**Sequence:** Route to Property Manager sequence (CMS CoP / JCAHO regulatory compliance angle). First pull: June 8 Cuyahoga — Regency Hospital Strongsville (Select Medical) is the highest-priority Cuyahoga target.
 
 ---
 

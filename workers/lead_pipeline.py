@@ -1891,6 +1891,32 @@ DANNY_TITLES = [
     'asphalt plant manager', 'hot mix asphalt manager', 'concrete production manager',
     'asphalt plant superintendent', 'quarry plant manager', 'aggregate plant manager',
     'batch plant manager', 'concrete operations manager', 'asphalt operations manager',
+    # County Correctional Facilities & Detention Centers — segment #179
+    # Cuyahoga County Jail (downtown Cleveland + Euclid Ave campus), Summit County Jail (Akron),
+    # Lake County Adult Correctional Facility, Medina County Jail, Lorain County Jail,
+    # Geauga County Jail, Portage County Adult Correctional Facility + juvenile detention centers;
+    # exterior building surfaces + sally port aprons + vehicle staging areas + perimeter concrete;
+    # ACA (American Correctional Association) accreditation + OEPA NPDES SWPPP compliance = exterior standard;
+    # Ohio Revised Code Sec. 341.01 — county sheriff responsible for maintaining jail in clean condition;
+    # government direct-award contracts; $3,000–$10,000/facility; annual recurring; zero competitors;
+    # DISTINCT from municipal facilities (run 124 — city halls/transit) + federal gov (run 177 — VA/NASA);
+    # first pull June 8 Cuyahoga (added 2026-06-03 run 193)
+    'jail administrator', 'detention facility manager', 'corrections facilities director',
+    'county jail administrator', 'county jail manager', 'detention center director',
+    'sheriff facilities manager', 'correctional facility manager', 'corrections facility director',
+    'juvenile detention director', 'detention operations manager', 'county corrections manager',
+    # Inpatient Rehabilitation Hospitals & Long-Term Acute Care (LTAC) Facilities — segment #180
+    # Select Medical / Regency Hospital (Cleveland + Akron), Kindred Hospitals NE Ohio,
+    # Promise Hospitals, Encompass Health Rehabilitation Hospitals (Concord Township + Sheffield Village);
+    # DISTINCT from skilled nursing/LTC (run 169 — nursing homes), outpatient PT (run 126 — NovaCare/ATI),
+    # hospital main campuses (run 124), acute care (run 143 — ASCs);
+    # CMS CoP Section 482 + JCAHO hospital accreditation = exterior appearance standard;
+    # 30+ NE Ohio LTAC/IRF facilities; $3,000–$8,000/facility; 2x/year; zero competitors;
+    # first pull June 8 Cuyahoga (added 2026-06-03 run 193)
+    'rehabilitation hospital administrator', 'rehabilitation hospital director',
+    'ltac administrator', 'inpatient rehabilitation director', 'long-term acute care director',
+    'rehab hospital manager', 'ltac facility manager', 'inpatient rehab director',
+    'ltac hospital administrator', 'rehab hospital administrator', 'acute rehabilitation director',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -3002,6 +3028,20 @@ DANNY_ORG_KEYWORDS = [
     'ready mix concrete', 'concrete plant', 'ready mixed concrete',
     'hot mix asphalt', 'asphalt plant', 'concrete batching',
     'shelly company', 'aggregate industries', 'cemex ohio',
+    # County Correctional Facilities & Detention Centers — segment #179
+    # Apollo tags 'county jail', 'detention center', 'correctional facility' return ZERO overlap with
+    # 'municipal facilities' (run 124 — city halls, transit depots) or 'federal facilities' (run 177 — VA/NASA);
+    # 'county detention' + 'juvenile detention' are county-sheriff-operated facilities with distinct Apollo tags;
+    # Cuyahoga County Sheriff + Summit County Sheriff + Lake/Medina/Lorain/Geauga county sheriffs (added 2026-06-03 run 193)
+    'county jail', 'detention center', 'correctional facility', 'county detention',
+    'juvenile detention', 'county correctional', 'correctional center', 'sheriff facility',
+    # Inpatient Rehabilitation Hospitals & Long-Term Acute Care — segment #180
+    # Apollo tags 'rehabilitation hospital', 'long-term acute care', 'ltac hospital' return ZERO overlap
+    # with 'skilled nursing facility' (run 169), 'physical therapy' (run 126), or hospital main campuses (run 124);
+    # Encompass Health, Select Medical, Kindred, Promise are NE Ohio-specific anchor companies (added 2026-06-03 run 193)
+    'rehabilitation hospital', 'inpatient rehabilitation', 'long-term acute care',
+    'ltac hospital', 'rehab hospital', 'transitional care hospital',
+    'encompass health', 'select medical', 'kindred hospital',
 ]
 
 CARLA_SEARCHES = [

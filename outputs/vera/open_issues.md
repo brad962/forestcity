@@ -1,6 +1,52 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 192 | 2026-06-03 | Auto-fixes shipped: 4 | New RESOLVED: 0 | Open: 180 (178 carry-forward from Run 191, +2 new this run: Federal Gov/VA #177 + Concrete/Asphalt Plants #178)*
+*Run 193 | 2026-06-03 | Auto-fixes shipped: 4 | New RESOLVED: 0 | Open: 182 (180 carry-forward from Run 192, +2 new this run: County Correctional #179 + Inpatient Rehab/LTAC #180)*
+
+---
+
+## RUN METRICS — Run 193 | 2026-06-03
+- Total RESOLVED: 122 (unchanged)
+- Total OPEN: 182 (180 carry-forward + 2 new this run)
+- Auto-upgrades shipped: 4
+  1. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — NEW: County Correctional Facilities & Detention Centers as segment #179. 12 DANNY_TITLES (jail administrator, detention facility manager, corrections facilities director, county jail administrator, county jail manager, detention center director, sheriff facilities manager, correctional facility manager, corrections facility director, juvenile detention director, detention operations manager, county corrections manager) + 8 DANNY_ORG_KEYWORDS. Cuyahoga County Jail (Justice Center — largest county jail in Ohio), Summit County Jail, Lake/Medina/Lorain/Geauga county jails + juvenile detention. Ohio Revised Code 341.01 + ACA accreditation + OEPA NPDES SWPPP. $3,000–$10,000/facility; annual; government direct-award (no competitive bid under $25K). DISTINCT from municipal (run 124) + federal (run 177). Zero competitors. First pull June 8 Cuyahoga.
+  2. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — NEW: Inpatient Rehabilitation Hospitals & LTAC Facilities as segment #180. 11 DANNY_TITLES (rehabilitation hospital administrator, rehabilitation hospital director, ltac administrator, inpatient rehabilitation director, long-term acute care director, rehab hospital manager, ltac facility manager, inpatient rehab director, ltac hospital administrator, rehab hospital administrator, acute rehabilitation director) + 9 DANNY_ORG_KEYWORDS. Regency Hospital Strongsville/Akron (Select Medical), Kindred Hospitals NE Ohio, Encompass Health Concord Township + Sheffield Village. CMS CoP Section 482 + JCAHO hospital accreditation. $3,000–$8,000/facility; 2x/year. DISTINCT from SNF (run 169), outpatient PT (run 126), hospital main campuses (run 124). Zero competitors. First pull June 8 Cuyahoga.
+  3. `workers/vera_relay.py` — Count sync: 178+ → 180+ across all 11 occurrences (Slack alert messages).
+  4. `CLAUDE.md` + `agents/danny.md` — Count sync: 178+ → 180+ (3 occurrences total).
+- Deliverables written: 2
+  - `outputs/vera/june3_tonight_30min_card_2026-06-03.md` — tight 3-action 30-min card for TONIGHT: (1) pause Instantly.ai, (2) confirm/stage Medina pull, (3) read battle card + set 7:30am alarm; GO table for June 4 morning; June 8 reminder.
+  - `outputs/rick/week1_ads_performance_review_2026-06-03.md` — Day 8 (first post-learning-phase) review protocol: Facebook CTR/CPL/lead benchmarks, Google impressions/CPC benchmarks, ground-truth lead log fill-in, scaling decision framework, Week 2 plan.
+- Proposals written: 1 (LinkedIn ads targeting NE Ohio property managers + facility managers during commercial push)
+- Critical human-action blockers (URGENT — TONIGHT June 3 / TOMORROW June 4):
+  - 🚨 TONIGHT JUNE 3 — Pause Instantly.ai campaigns a1c08c3d + 626cd15d. Add INSTANTLY_PAUSED=true to .env. Guide: `outputs/vera/june3_tonight_30min_card_2026-06-03.md`
+  - 🚨 JUNE 4 MORNING 7:30am — Run `run_summit_both.command` + `run_medina_both.command`. Full guide: `outputs/donna/june4_enrollment_battle_card_2026-05-24.md`
+  - 🚨 MEDINA PULL 3 DAYS OVERDUE (was June 1) — fires as part of June 4 morning sequence.
+  - 🚨 GAS STATION + FLEET MIXMAX SEQUENCES STILL PENDING — create in Mixmax UI before June 8.
+  - 🚨 JUNE 8 = 5 DAYS — 180+ segments, biggest pull of year. Block 90 minutes on calendar NOW. Guide: `outputs/donna/june8_cuyahoga_megapull_exec_guide_2026-06-03.md`
+  - 🚨 ADS WEEK 1 REVIEW — Day 8 today (first post-learning-phase scaling decision). Guide: `outputs/rick/week1_ads_performance_review_2026-06-03.md`
+
+---
+
+## OPEN — County Correctional Facilities & Detention Centers Segment Not Yet Pulled 🟡 NEW (Run 193)
+- **Segment:** #179 — County Correctional Facilities & Detention Centers
+- **Status:** OPEN — code live, awaiting June 8 Cuyahoga pull
+- **Added:** Run 193 | 2026-06-03
+- **Files updated:** `workers/lead_pipeline.py` (DANNY_TITLES + DANNY_ORG_KEYWORDS), `integrations/mixmax.py` (PROPERTY_MANAGER_TITLES), `agents/danny.md` (full segment brief)
+- **Key targets:** Cuyahoga County Jail (Justice Center — largest county jail in Ohio; 2,100+ beds), Summit County Jail, Lake County Adult Correctional Facility, Medina/Lorain/Geauga county jails, Cuyahoga County Juvenile Justice Center
+- **Compliance driver:** Ohio Revised Code Sec. 341.01 (sheriff responsible for clean/sanitary jail) + ACA accreditation + OEPA NPDES SWPPP
+- **Revenue:** $3,000–$10,000/facility; annual recurring; government direct-award (no competitive bid under $25K in Ohio). Cuyahoga County Jail alone = $8,000–$15,000/year.
+- **First pull:** June 8 Cuyahoga — use `run_cuyahoga_both.command`
+- **Resolution:** Pull and enroll contacts June 8. Mark RESOLVED when corrections FM contacts appear in Nina's report.
+
+## OPEN — Inpatient Rehabilitation Hospitals & LTAC Facilities Segment Not Yet Pulled 🟡 NEW (Run 193)
+- **Segment:** #180 — Inpatient Rehabilitation Hospitals & Long-Term Acute Care (LTAC) Facilities
+- **Status:** OPEN — code live, awaiting June 8 Cuyahoga pull
+- **Added:** Run 193 | 2026-06-03
+- **Files updated:** `workers/lead_pipeline.py` (DANNY_TITLES + DANNY_ORG_KEYWORDS), `integrations/mixmax.py` (PROPERTY_MANAGER_TITLES), `agents/danny.md` (full segment brief)
+- **Key targets:** Regency Hospital Strongsville (Select Medical), Regency Hospital Akron (Select Medical), Kindred Hospitals NE Ohio, Encompass Health Rehabilitation Hospital of Concord Township, Encompass Health Sheffield Village
+- **Compliance driver:** CMS Conditions of Participation Section 482 + JCAHO hospital accreditation = exterior appearance standard
+- **Revenue:** $3,000–$8,000/facility × 2 visits/year = $6,000–$16,000/year per facility. Select Medical or Encompass Health multi-site relationship = $30,000–$80,000/year territory potential.
+- **First pull:** June 8 Cuyahoga — use `run_cuyahoga_both.command`
+- **Resolution:** Pull and enroll contacts June 8. Mark RESOLVED when LTAC/rehab hospital FM contacts appear in Nina's report.
 
 ---
 

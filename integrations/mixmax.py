@@ -944,6 +944,22 @@ PROPERTY_MANAGER_TITLES = [
     'asphalt plant manager', 'hot mix asphalt manager', 'concrete production manager',
     'asphalt plant superintendent', 'quarry plant manager', 'aggregate plant manager',
     'batch plant manager', 'concrete operations manager', 'asphalt operations manager',
+    # County Correctional Facilities & Detention Centers — segment #179; DISTINCT from municipal (run 124)
+    # and federal government (run 177); county sheriff-operated jails + juvenile detention centers;
+    # ACA accreditation + OEPA NPDES SWPPP = exterior appearance standard; zero competitors;
+    # routing to property_manager sequence (government compliance / facility management angle) (added 2026-06-03 run 193)
+    'jail administrator', 'detention facility manager', 'corrections facilities director',
+    'county jail administrator', 'county jail manager', 'detention center director',
+    'sheriff facilities manager', 'correctional facility manager', 'corrections facility director',
+    'juvenile detention director', 'detention operations manager', 'county corrections manager',
+    # Inpatient Rehabilitation Hospitals & Long-Term Acute Care (LTAC) Facilities — segment #180
+    # DISTINCT from skilled nursing (run 169), outpatient PT (run 126), hospital main campuses (run 124);
+    # CMS CoP Section 482 + JCAHO accreditation = exterior appearance standard;
+    # routing to property_manager sequence (regulatory compliance / facility management angle) (added 2026-06-03 run 193)
+    'rehabilitation hospital administrator', 'rehabilitation hospital director',
+    'ltac administrator', 'inpatient rehabilitation director', 'long-term acute care director',
+    'rehab hospital manager', 'ltac facility manager', 'inpatient rehab director',
+    'ltac hospital administrator', 'rehab hospital administrator', 'acute rehabilitation director',
 ]
 
 REALTOR_TITLES = [
