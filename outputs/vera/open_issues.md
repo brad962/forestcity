@@ -1,6 +1,49 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 190 | 2026-06-03 | Auto-fixes shipped: 4 | New RESOLVED: 0 | Open: 176 (175 carry-forward from Run 189, +1 new this run: Residential Group Homes #174)*
+*Run 191 | 2026-06-03 | Auto-fixes shipped: 5 | New RESOLVED: 0 | Open: 178 (176 carry-forward from Run 190, +2 new this run: Restaurant Equipment #175 + Specialty Chemical #176)*
+
+---
+
+## RUN METRICS — Run 191 | 2026-06-03
+- Total RESOLVED: 122 (unchanged)
+- Total OPEN: 178 (176 carry-forward + 2 new this run)
+- Auto-upgrades shipped: 5
+  1. `workers/lead_pipeline.py` + `integrations/mixmax.py` — NEW: Restaurant Equipment & Commercial Kitchen Supply as segment #175. 8 DANNY_TITLES (restaurant equipment manager, commercial kitchen supply manager, food service equipment manager, restaurant supply manager, kitchen equipment district manager, food equipment operations manager, restaurant supply district manager, commercial food equipment manager) + 8 DANNY_ORG_KEYWORDS. Eastern Restaurant Supply (Cleveland), American Restaurant Equipment (Akron), Wasserstrom NE Ohio warehouse, WebstaurantStore distribution hub. FDA FSMA compliance = exterior appearance standard. $2,000–$5,000/facility; 2–3×/year; zero competitors. First pull June 8 Cuyahoga.
+  2. `workers/lead_pipeline.py` + `integrations/mixmax.py` — NEW: Specialty Chemical Manufacturers & Polymer Plants as segment #176. 8 DANNY_TITLES (chemical plant manager, chemical operations manager, specialty chemical manager, polymer plant manager, chemical facility manager, chemical manufacturing manager, chemical plant superintendent, polymer operations manager) + 12 DANNY_ORG_KEYWORDS. Lubrizol Wickliffe, RPM International Medina, Materion Mayfield Heights, Vibrantz Technologies. EPA 40 CFR Part 68 RMP + OSHA PSM 29 CFR 1910.119 compliance driver. $3,000–$10,000/facility; quarterly; zero competitors. First pull June 8 Cuyahoga.
+  3. `workers/vera_relay.py` — Count sync: 174+ → 176+ across all 11 occurrences.
+  4. `CLAUDE.md` — Count sync: 174+ → 176+ (2 occurrences — quick reference table + June 8 warning).
+  5. `agents/danny.md` — Count sync: 174+ → 176+ (batching note).
+- Deliverables written: 1 — `outputs/donna/june8_cuyahoga_megapull_exec_guide_2026-06-03.md` (night-of-June-7 check + morning-of-June-8 execution; 176+ segments; what fires for first time; troubleshooting guide)
+- Critical human-action blockers (URGENT — TODAY June 3 / TOMORROW June 4):
+  - 🚨 JUNE 4 = TOMORROW — Round 2 enrollment day. Run Medina + Summit batches. Check Instantly.ai paused. Battle card: `outputs/donna/june4_enrollment_battle_card_2026-05-24.md`
+  - 🚨 MEDINA PULL WAS JUNE 1 — 2 DAYS OVERDUE. Run `run_medina_both.command` NOW if not yet done.
+  - 🚨 GAS STATION + FLEET MIXMAX IDs STILL PENDING — 12+ contacts unenrolled 15+ days. Create in Mixmax UI BEFORE June 8.
+  - 🚨 JUNE 8 = 5 DAYS — 176+ segments, biggest pull of year. Block 90 minutes on calendar. Guide: `outputs/donna/june8_cuyahoga_megapull_exec_guide_2026-06-03.md`
+  - 🚨 INSTANTLY.AI campaigns a1c08c3d + 626cd15d — must be PAUSED before June 4 enrollment. Add INSTANTLY_PAUSED=true to .env.
+
+---
+
+## OPEN — Specialty Chemical Manufacturers & Polymer Plants Segment Not Yet Pulled 🟡 NEW (Run 191)
+- **Segment:** #176 — Specialty Chemical Manufacturers & Polymer Plants
+- **Status:** OPEN — code live, awaiting June 8 Cuyahoga pull
+- **Added:** Run 191 | 2026-06-03
+- **Files updated:** `workers/lead_pipeline.py` (DANNY_TITLES + DANNY_ORG_KEYWORDS), `integrations/mixmax.py` (PROPERTY_MANAGER_TITLES)
+- **Key targets:** Lubrizol Corporation (Wickliffe OH HQ), RPM International (Medina OH HQ), Vibrantz Technologies/Ferro (Mayfield Heights), Materion Corporation (Mayfield Heights), BASF Cleveland
+- **Compliance driver:** EPA 40 CFR Part 68 RMP + OSHA PSM 29 CFR 1910.119 + OEPA NPDES SWPPP = documented exterior cleaning requirement
+- **Revenue:** $3,000–$10,000/facility; quarterly; zero competitors cold-calling chemical plant FMs
+- **First pull:** June 8 Cuyahoga — use `run_cuyahoga_both.command`
+- **Resolution:** Pull and enroll contacts June 8. Mark RESOLVED when contacts appear in Nina's report.
+
+## OPEN — Restaurant Equipment & Commercial Kitchen Supply Segment Not Yet Pulled 🟡 NEW (Run 191)
+- **Segment:** #175 — Restaurant Equipment & Commercial Kitchen Supply Companies
+- **Status:** OPEN — code live, awaiting June 8 Cuyahoga pull
+- **Added:** Run 191 | 2026-06-03
+- **Files updated:** `workers/lead_pipeline.py` (DANNY_TITLES + DANNY_ORG_KEYWORDS), `integrations/mixmax.py` (PROPERTY_MANAGER_TITLES)
+- **Key targets:** Eastern Restaurant Supply (Cleveland), American Restaurant Equipment (Akron), Wasserstrom NE Ohio warehouse, WebstaurantStore distribution hub, Sysco NE Ohio division
+- **Compliance driver:** NASDA food equipment dealer licensing + FDA FSMA compliance = exterior appearance standard
+- **Revenue:** $2,000–$5,000/facility; 2–3×/year; zero competitors cold-calling restaurant supply FMs
+- **First pull:** June 8 Cuyahoga — use `run_cuyahoga_both.command`
+- **Resolution:** Pull and enroll contacts June 8. Mark RESOLVED when contacts appear in Nina's report.
 
 ---
 

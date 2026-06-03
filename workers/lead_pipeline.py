@@ -1853,6 +1853,24 @@ DANNY_TITLES = [
     'group home administrator', 'group home director', 'residential group home manager',
     'dodd home manager', 'icf administrator', 'supported living manager',
     'residential care manager', 'community living manager',
+    # Restaurant Equipment & Commercial Kitchen Supply Companies — segment #175
+    # Eastern Restaurant Supply (Cleveland), American Restaurant Equipment (Akron), Wasserstrom NE Ohio
+    # warehouse, WebstaurantStore distribution hub, Sysco NE Ohio division;
+    # DISTINCT from restaurants/QSR (run 106), food processing plants (run 127), distribution centers (run 105);
+    # NASDA food equipment dealer licensing + FDA FSMA compliance = exterior appearance standard;
+    # $2,000–$5,000/facility; 2–3×/year; zero competitors; first pull June 8 Cuyahoga (added 2026-06-03 run 191)
+    'restaurant equipment manager', 'commercial kitchen supply manager', 'food service equipment manager',
+    'restaurant supply manager', 'kitchen equipment district manager', 'food equipment operations manager',
+    'restaurant supply district manager', 'commercial food equipment manager',
+    # Specialty Chemical Manufacturers & Polymer Plants — segment #176
+    # Lubrizol Corporation (Wickliffe OH HQ), RPM International (Medina OH HQ), Vibrantz Technologies/Ferro
+    # (Mayfield Heights), Materion Corporation (Mayfield Heights), Omnova Solutions (Beachwood), BASF Cleveland;
+    # DISTINCT from manufacturing (run 118), pharma (run 180), industrial gas (run 184);
+    # EPA 40 CFR Part 68 RMP + OSHA PSM 29 CFR 1910.119 + OEPA NPDES SWPPP = exterior compliance-documented;
+    # $3,000–$10,000/facility; quarterly; zero competitors; first pull June 8 Cuyahoga (added 2026-06-03 run 191)
+    'chemical plant manager', 'chemical operations manager', 'specialty chemical manager',
+    'polymer plant manager', 'chemical facility manager', 'chemical manufacturing manager',
+    'chemical plant superintendent', 'polymer operations manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -2932,6 +2950,24 @@ DANNY_ORG_KEYWORDS = [
     'group home', 'residential group home', 'supported living',
     'intermediate care facility', 'community living facility',
     'dodd certified', 'developmental disabilities home', 'icf dd',
+    # Restaurant Equipment & Commercial Kitchen Supply Companies — segment #175
+    # Eastern Restaurant Supply (Cleveland), American Restaurant Equipment (Akron), Wasserstrom NE Ohio warehouse;
+    # DISTINCT from 'restaurant chain'/'food service management' (run 106) and 'food processing plant' (run 127);
+    # Apollo tags 'restaurant equipment', 'commercial kitchen supply', 'food service equipment' return zero overlap;
+    # first pull June 8 Cuyahoga (added 2026-06-03 run 191)
+    'restaurant equipment', 'commercial kitchen supply', 'food service equipment',
+    'restaurant supply company', 'kitchen equipment supplier', 'commercial kitchen equipment',
+    'food equipment distributor', 'restaurant supply distributor',
+    # Specialty Chemical Manufacturers & Polymer Plants — segment #176
+    # Lubrizol Corporation (Wickliffe OH HQ), RPM International (Medina OH HQ), Vibrantz Technologies/Ferro
+    # (Mayfield Heights), Materion Corporation (Mayfield Heights), Omnova Solutions (Beachwood), BASF Cleveland;
+    # DISTINCT from 'manufacturing plant' (run 118), 'pharmaceutical' (run 180), 'industrial gas' (run 184);
+    # Apollo tags 'specialty chemical', 'polymer manufacturer', 'chemical manufacturing' return zero overlap;
+    # EPA 40 CFR Part 68 RMP + OSHA PSM 29 CFR 1910.119 = compliance-documented exterior cleaning contracts;
+    # first pull June 8 Cuyahoga (Lubrizol Wickliffe, Materion Mayfield Heights) (added 2026-06-03 run 191)
+    'specialty chemical', 'polymer manufacturer', 'chemical manufacturing company',
+    'specialty chemicals', 'polymer plant', 'chemical plant', 'specialty chemical company',
+    'lubrizol', 'rpm international', 'vibrantz technologies', 'materion corporation',
 ]
 
 CARLA_SEARCHES = [

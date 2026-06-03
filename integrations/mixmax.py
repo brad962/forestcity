@@ -921,6 +921,14 @@ PROPERTY_MANAGER_TITLES = [
     'group home administrator', 'group home director', 'residential group home manager',
     'dodd home manager', 'icf administrator', 'supported living manager',
     'residential care manager', 'community living manager',
+    # Restaurant Equipment & Commercial Kitchen Supply Companies — segment #175 (added 2026-06-03 run 191)
+    'restaurant equipment manager', 'commercial kitchen supply manager', 'food service equipment manager',
+    'restaurant supply manager', 'kitchen equipment district manager', 'food equipment operations manager',
+    'restaurant supply district manager', 'commercial food equipment manager',
+    # Specialty Chemical Manufacturers & Polymer Plants — segment #176 (added 2026-06-03 run 191)
+    'chemical plant manager', 'chemical operations manager', 'specialty chemical manager',
+    'polymer plant manager', 'chemical facility manager', 'chemical manufacturing manager',
+    'chemical plant superintendent', 'polymer operations manager',
 ]
 
 REALTOR_TITLES = [
