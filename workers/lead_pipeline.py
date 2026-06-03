@@ -636,7 +636,7 @@ DANNY_TITLES = [
     # zero competitors cold-calling coffee chain district managers in NE Ohio; first pull June 8 Cuyahoga (added 2026-05-30 run 140)
     'coffee district manager', 'coffee shop manager', 'coffee chain manager',
     'drive through manager', 'drive-through manager', 'quick service beverage manager',
-    'beverage district manager', 'coffee store manager',
+    'coffee store manager',
     # Pet Supply Retail Chains — PetSmart (20+ NE Ohio), Petco (15+ NE Ohio), Pet Supplies Plus (30+ NE Ohio);
     # DISTINCT from pet boarding/kennel segment — these are large-format retail stores with grooming salons;
     # grooming salon areas have water + dog shampoo runoff that stains concrete entries and curbside aprons constantly;
@@ -907,7 +907,7 @@ DANNY_TITLES = [
     # enormous concrete/gravel pads accumulate 6 months of winter salt, bird droppings, algae from pooling;
     # owner-operators sign vendor contracts directly; $1,500-$5,000/visit; 2x/year (spring + fall close) = $3K-$10K/year;
     # 200-500 storage space facility = large paved surface area = high per-visit revenue; zero competitors (added 2026-05-31 run 154)
-    'rv storage manager', 'outdoor storage facility manager', 'rv park manager',
+    'rv storage manager', 'outdoor storage facility manager',
     'boat storage manager', 'marine dry storage manager', 'vehicle storage manager',
     # Ice Rinks & Indoor Ice Arenas — Palace Ice Arenas (Solon/Twinsburg multi-location operator),
     # Mentor Ice Arena (City of Mentor recreation facility), OBM Arena (Parma area — youth hockey),
@@ -1803,17 +1803,17 @@ DANNY_TITLES = [
     # Zamboni bay + concrete rink surround + building exterior + parking lot; spring/summer = ideal pitch
     # window (rink schedules lighten, exterior maintenance season opens); hydraulic fluid + ice melt
     # chemical residue = concrete staining unique to this segment; $1,000–$3,000/visit; 2x/year;
-    # zero competitors cold-calling arena managers in NE Ohio; first pull June 8 Cuyahoga (added 2026-06-03 run 187)
-    'ice rink manager', 'arena manager', 'ice arena director', 'rink operations manager',
-    'ice facility manager', 'hockey arena manager', 'skating rink manager', 'ice complex manager',
-    # Bowling Centers & Family Entertainment Centers — Bowlero (multiple NE Ohio), AMF Maple Heights Lanes,
-    # AMF Leroy Lanes (Eastlake), Brunswick Zone Tallmadge, Main Event (Westlake), Urban Air Adventure Park;
-    # large parking lots + building exteriors + food service entrance canopies + go-kart/outdoor areas;
-    # June = start of summer birthday/camp season = appearance must be perfect for peak revenue weeks;
-    # $800–$2,000/visit; 2-3x/year; district FMs oversee 3-8 locations; zero competitors; (added 2026-06-03 run 187)
-    'bowling center manager', 'bowling alley manager', 'bowling center director',
-    'entertainment venue manager', 'family entertainment center manager', 'bowling operations manager',
+    # new unique titles only — deduped against run 155 block (added 2026-06-03 run 187, deduped run 188)
+    'arena manager', 'rink operations manager', 'ice complex manager',
+    # Bowling Centers & FECs — new unique titles only; deduped against run 120 block (run 188)
+    'entertainment venue manager', 'bowling operations manager',
     'fec manager', 'entertainment complex manager',
+    # EV Charging Network Operators — segment #171; ChargePoint, EVgo, Blink, BP Pulse, Electrify America;
+    # concrete charging pads + canopy structures; regional ops managers sign vendor contracts;
+    # $10K-$30K/year per territory deal; zero competitors; first pull June 8 Cuyahoga (added 2026-06-03 run 188)
+    'ev charging station manager', 'electric vehicle charging manager', 'ev network operations manager',
+    'charging infrastructure manager', 'ev facility manager', 'charging station operations director',
+    'ev charging operations manager', 'ev infrastructure director',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -2870,6 +2870,12 @@ DANNY_ORG_KEYWORDS = [
     # zero overlap with existing entertainment/venue tags; first pull June 8 Cuyahoga (added 2026-06-03 run 187)
     'bowling center', 'bowling alley', 'bowling lanes', 'family entertainment center',
     'entertainment complex', 'bowling management', 'entertainment venue management',
+    # EV Charging Network Operators — segment #171; ChargePoint (100+ NE Ohio), EVgo, Blink, BP Pulse, Electrify America;
+    # concrete pads = tire rubber, brake dust, coolant leaks; canopy structures = grime;
+    # regional network ops managers sign vendor contracts; $10K-$30K/year per territory deal;
+    # zero competitors cold-calling EV network FMs; first pull June 8 Cuyahoga (added 2026-06-03 run 188)
+    'ev charging', 'electric vehicle charging', 'charging station network', 'ev network',
+    'chargepoint', 'evgo', 'blink charging', 'electrify america', 'bp pulse', 'ev infrastructure',
 ]
 
 CARLA_SEARCHES = [

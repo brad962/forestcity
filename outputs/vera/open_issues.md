@@ -3871,3 +3871,15 @@ Key resolved issues by category:
 - Deliverables written: 0 (all code + content updates)
 - Proposals: 2 (Gas/fleet sequence creation — PENDING 6+ weeks, unlock 50+ stalled contacts; June 8 Cuyahoga mega-pull 20-min calendar block)
 - Key active trackers: June 4 enrollment = 2 days (Instantly.ai pause + INSTANTLY_PAUSED=true CRITICAL); June 8 Cuyahoga 157+ segment mega-pull = 6 days; Gas station + fleet sequences = PENDING 6+ weeks
+
+---
+
+## RUN METRICS — Run 188 | 2026-06-03
+- Total RESOLVED: 122 (unchanged — focus was deduplication + new segment)
+- Total OPEN: 172 (unchanged — segment tracking issues, all pre-existing)
+- Auto-upgrades shipped: 3
+  1. `integrations/mixmax.py` — DEDUP FIX: Removed 12 duplicate entries from PROPERTY_MANAGER_TITLES. Duplicates: garden center manager (hardware block had it + garden centers block), rv park manager (rv storage + campgrounds), beverage district manager (coffee + beverage distribution), and 8 ice rink/bowling titles from the run 187 re-add (already existed in run 155 and run 120 blocks). Kept NEW unique run 187 titles: arena manager, rink operations manager, ice complex manager, entertainment venue manager, bowling operations manager, fec manager, entertainment complex manager. Now at 1,281 entries, 0 dups.
+  2. `workers/lead_pipeline.py` — DEDUP FIX: Removed 11 duplicate entries from DANNY_TITLES (same issues minus garden center which was already resolved previously). Now at 1,280 entries, 0 dups. Same de-dup applied to DANNY_ORG_KEYWORDS (beverage district manager removed from coffee section, rv park manager removed from rv storage section).
+  3. `workers/lead_pipeline.py` + `integrations/mixmax.py` — NEW Segment #171: EV Charging Network Operators. 8 DANNY_TITLES (ev charging station manager, electric vehicle charging manager, ev network operations manager, charging infrastructure manager, ev facility manager, charging station operations director, ev charging operations manager, ev infrastructure director) + 10 DANNY_ORG_KEYWORDS (ev charging, electric vehicle charging, charging station network, ev network, chargepoint, evgo, blink charging, electrify america, bp pulse, ev infrastructure). ChargePoint (100+ NE Ohio stations), EVgo, Blink. Concrete pads + canopy structures. $10K-$30K/year per territory deal. Zero competitors. First pull June 8 Cuyahoga.
+- Deliverables written: 0
+- Critical action: TONIGHT (June 3) = last window to pause Instantly.ai before June 4 enrollment TOMORROW MORNING

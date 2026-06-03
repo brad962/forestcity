@@ -379,7 +379,7 @@ PROPERTY_MANAGER_TITLES = [
     # one Home Depot district = $30K-$100K/year; premium accounts (added 2026-05-29 run 136)
     'home improvement district manager', 'hardware store manager', 'home center manager',
     'home improvement store manager', 'hardware district manager', 'building materials manager',
-    'home improvement operations manager', 'garden center manager', 'hardware store district manager',
+    'home improvement operations manager', 'hardware store district manager',
     # Community Swimming Pools & Aquatic Centers — NE Ohio municipal pools (Lyndhurst, North Olmsted,
     # Brunswick Swim Center, Westlake Rec Center, Rocky River Recreation Center, Shaker Heights Natatorium,
     # Solon Rec Center, Twinsburg Family Aquatic Center, Strongsville Rec Center pool, Brecksville pool);
@@ -424,7 +424,7 @@ PROPERTY_MANAGER_TITLES = [
     # Coffee & Drive-Through Beverage Chains (added 2026-05-30 run 140)
     'coffee district manager', 'coffee shop manager', 'coffee chain manager',
     'drive through manager', 'drive-through manager', 'quick service beverage manager',
-    'beverage district manager', 'coffee store manager',
+    'coffee store manager',
     # Pet Supply Retail Chains — PetSmart, Petco, Pet Supplies Plus; grooming salon chemical spill compliance;
     # routing to Property Manager sequence (facility vendor contract angle) (added 2026-05-30 run 141)
     'pet supply district manager', 'pet store district manager', 'pet retail district manager',
@@ -533,7 +533,7 @@ PROPERTY_MANAGER_TITLES = [
     # Outdoor RV & Boat Storage Facilities — spring commissioning = peak pitch window (right now);
     # large paved/gravel surfaces accumulate winter salt + algae; owner-operators sign vendor contracts;
     # routing to Property Manager sequence (facility vendor contract angle) (added 2026-05-31 run 154)
-    'rv storage manager', 'outdoor storage facility manager', 'rv park manager',
+    'rv storage manager', 'outdoor storage facility manager',
     'boat storage manager', 'marine dry storage manager', 'vehicle storage manager',
     # Ice Rinks & Indoor Ice Arenas — Palace Ice Arenas (Solon/Twinsburg), Mentor Ice Arena, OBM Arena;
     # summer = maintenance window (ice out = full exterior access); DISTINCT Apollo tags from sports complex;
@@ -890,15 +890,19 @@ PROPERTY_MANAGER_TITLES = [
     'water plant superintendent', 'wastewater treatment manager', 'utilities facilities manager',
     'water treatment plant manager', 'sewer district operations manager', 'public utilities director',
     'water utilities manager', 'wastewater plant superintendent',
-    # Ice Rinks & Hockey Facilities — segment #169; spring/summer exterior clean + Zamboni bay compliance
-    # angle; route to property_manager sequence (facility vendor contract) (added 2026-06-03 run 187)
-    'ice rink manager', 'arena manager', 'ice arena director', 'rink operations manager',
-    'ice facility manager', 'hockey arena manager', 'skating rink manager', 'ice complex manager',
-    # Bowling Centers & Family Entertainment Centers — segment #170; summer peak season exterior clean
-    # angle; route to property_manager sequence (facility vendor contract) (added 2026-06-03 run 187)
-    'bowling center manager', 'bowling alley manager', 'bowling center director',
-    'entertainment venue manager', 'family entertainment center manager', 'bowling operations manager',
+    # Ice Rinks & Hockey Facilities — segment #169; new titles added run 187 (deduped against run 155 block)
+    'arena manager', 'rink operations manager', 'ice complex manager',
+    # Bowling Centers & Family Entertainment Centers — segment #170; new titles added run 187 (deduped against run 120 block)
+    'entertainment venue manager', 'bowling operations manager',
     'fec manager', 'entertainment complex manager',
+    # EV Charging Network Operators — segment #171; ChargePoint (100+ NE Ohio), EVgo, Blink, BP Pulse, Electrify America;
+    # concrete charging pads = rubber streaks, brake dust, coolant leaks; canopy structures = bird droppings + grime;
+    # regional network ops managers sign vendor contracts for all stations in a territory;
+    # $500-$1,500/location; 20-station regional deal = $10K-$30K/year; zero competitors cold-calling these FMs;
+    # NE Ohio EV infrastructure growing fast (I-90/I-77 corridors); first pull June 8 Cuyahoga (added 2026-06-03 run 188)
+    'ev charging station manager', 'electric vehicle charging manager', 'ev network operations manager',
+    'charging infrastructure manager', 'ev facility manager', 'charging station operations director',
+    'ev charging operations manager', 'ev infrastructure director',
 ]
 
 REALTOR_TITLES = [
