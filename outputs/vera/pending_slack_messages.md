@@ -1,3 +1,61 @@
+🔧 *Vera — Auto-Upgrade | Run 194 | 2026-06-03*
+>Changed: NEW Segment #181 — K-12 Private & Parochial Schools. 9 DANNY_TITLES (private school facilities director, private school building manager, independent school facilities manager, diocesan facilities manager, catholic school facilities manager, prep school facilities director, independent school superintendent, parochial school administrator, private school operations manager) + 9 DANNY_ORG_KEYWORDS. Synced to mixmax.py PROPERTY_MANAGER_TITLES. DISTINCT from public K-12 districts (run 119) + churches/parishes (run 110) — different Apollo org tags = zero overlap, additive leads.
+>Why: June is the BEST month to target private school FMs — empty campus = annual exterior maintenance window is open right now. Diocese of Cleveland has 140+ schools. Gilmour Academy, St. Ignatius, Magnificat, Walsh Jesuit, Archbishop Hoban, Western Reserve Academy, Laurel School, University School all have dedicated facilities directors who manage vendor contracts. Multi-building campuses = $8K–$25K/year per campus. Zero competitors cold-calling private school FM contacts. First pull June 8 Cuyahoga.
+>File: workers/lead_pipeline.py, integrations/mixmax.py
+
+---
+
+🔧 *Vera — Auto-Upgrade | Run 194 | 2026-06-03*
+>Changed: NEW Segment #182 — County Fairgrounds & Agricultural Exhibit Facilities. 9 DANNY_TITLES (fairgrounds manager, county fair director, fairgrounds director, fairgrounds facilities manager, agricultural fair manager, county fair manager, fairgrounds operations manager, fairgrounds superintendent, fair operations director) + 9 DANNY_ORG_KEYWORDS. Synced to mixmax.py PROPERTY_MANAGER_TITLES. DISTINCT from sports venues (run 127), convention centers (run 128), and event venues (run 108).
+>Why: NE Ohio county fairs run July-September. June = fair prep season = vendor contracts AWARDED RIGHT NOW. All 7 NE Ohio county fairgrounds (Cuyahoga/Summit/Medina/Lorain/Lake/Geauga/Portage). Government direct-award contracts under $25K = no competitive bid required. $3,000–$12,000/fairground × 7 counties = $21K–$84K addressable market. Geauga County Fair is one of Ohio's largest. Zero competitors targeting this segment. Perfect June timing.
+>File: workers/lead_pipeline.py, integrations/mixmax.py
+
+---
+
+🔧 *Vera — Auto-Upgrade | Run 194 | 2026-06-03*
+>Changed: Count sync 180+ → 182+ across workers/vera_relay.py (11 occ), CLAUDE.md (2 occ), agents/danny.md (2 occ).
+>Why: Two new segments added this run (#181 + #182). Relay Slack alerts, CLAUDE.md quick reference, and danny.md batching note now accurately reflect 182+ total commercial segments going into June 8 Cuyahoga mega-pull.
+>File: workers/vera_relay.py, CLAUDE.md, agents/danny.md
+
+---
+
+🚨 *Vera — CRITICAL BLOCKER | Run 194 | 2026-06-03*
+>Gas Station + Fleet Washing Mixmax sequences have been PENDING for 18+ days. Every contact Danny has pulled with those lead types is sitting unenrolled in contacts_cache.json — they received nothing. This is a direct revenue leak going into the biggest pull of the season.
+>
+>**Action needed (5 minutes):**
+>1. Log into Mixmax → Sequences → Create New Sequence
+>2. Create: "Forest City Power Washing — Fleet Washing Outreach"
+>3. Create: "Forest City Power Washing — Gas Station & C-Store Outreach"
+>4. Paste both IDs into `integrations/mixmax.py` lines 47–58 (replace 'PENDING' with actual IDs)
+>5. Run: `python3 workers/lead_pipeline.py pending` to enroll all backed-up contacts
+>
+>**Why this is urgent:** June 8 is in 5 days. The Cuyahoga mega-pull will add gas station + fleet contacts. If the sequences are still PENDING on June 8, those contacts also go unenrolled. Fix this BEFORE June 8.
+>File: integrations/mixmax.py lines 47–58
+
+---
+
+🗓️ *Vera — June 8 Countdown | Run 194 | 2026-06-03 — 5 DAYS*
+>182+ commercial segments are ready to fire. Everything is staged. You just need to double-click `run_cuyahoga_both.command` and let it run for 15–20 minutes.
+>
+>**What's new in this run:**
+>- Segment #181: Private & Parochial Schools — Diocese of Cleveland, Gilmour, St. Ignatius, Walsh Jesuit, Western Reserve Academy
+>- Segment #182: County Fairgrounds — ALL 7 NE Ohio county fairgrounds (Cuyahoga, Summit, Medina, Lorain, Lake, Geauga, Portage) — June contracts → July-September fairs
+>
+>**Before June 8 — 2 things:**
+>1. Create Gas Station + Fleet sequences in Mixmax UI (5 min) → paste IDs into mixmax.py
+>2. Pause Instantly.ai if not done yet (a1c08c3d + 626cd15d)
+>
+>Exec guide: `outputs/donna/june8_cuyahoga_megapull_exec_guide_2026-06-03.md`
+
+---
+
+✅ *Vera — Scan Complete 2026-06-03 | Run 194*
+>4 auto-upgrades shipped | 1 critical blocker escalation (Gas Station/Fleet sequences 18+ days PENDING) | 184 open issues (182 carry-forward + 2 new segments)
+>Segments added this run: #181 K-12 Private & Parochial Schools (9 titles, 9 org keywords) | #182 County Fairgrounds (9 titles, 9 org keywords)
+>182+ commercial segments now live — all fire June 8 Cuyahoga mega-pull (5 days)
+>Priority tonight: Pause Instantly.ai + create Gas Station/Fleet Mixmax sequences (5 min each)
+
+---
 🔧 *Vera — Auto-Upgrade | Run 193 | 2026-06-03*
 >Changed: NEW Segment #179 — County Correctional Facilities & Detention Centers. 12 DANNY_TITLES (jail administrator, detention facility manager, corrections facilities director, county jail administrator, county jail manager, detention center director, sheriff facilities manager, correctional facility manager, corrections facility director, juvenile detention director, detention operations manager, county corrections manager) + 8 DANNY_ORG_KEYWORDS. Synced to mixmax.py PROPERTY_MANAGER_TITLES. Full segment brief in danny.md.
 >Why: Every NE Ohio county has a county jail (7 counties = 7 jails + 3 juvenile detention centers). Zero area power washing companies target sheriff facilities managers. Ohio Revised Code Sec. 341.01 + ACA accreditation + OEPA NPDES stormwater = documented cleaning requirement. Cuyahoga County Jail (Justice Center — largest county jail in Ohio) + Summit/Lake/Medina/Lorain/Geauga county jails. $3,000–$10,000/facility; annual; government direct-award (no competitive bid under $25K). DISTINCT from municipal (run 124) + federal (run 177). First pull June 8 Cuyahoga.

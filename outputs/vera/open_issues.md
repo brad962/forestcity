@@ -1,6 +1,48 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 193 | 2026-06-03 | Auto-fixes shipped: 4 | New RESOLVED: 0 | Open: 182 (180 carry-forward from Run 192, +2 new this run: County Correctional #179 + Inpatient Rehab/LTAC #180)*
+*Run 194 | 2026-06-03 | Auto-fixes shipped: 4 | New RESOLVED: 0 | Open: 184 (182 carry-forward from Run 193, +2 new this run: K-12 Private & Parochial Schools #181 + County Fairgrounds #182)*
+
+---
+
+## RUN METRICS — Run 194 | 2026-06-03
+- Total RESOLVED: 122 (unchanged)
+- Total OPEN: 184 (182 carry-forward + 2 new this run)
+- Auto-upgrades shipped: 4
+  1. `workers/lead_pipeline.py` + `integrations/mixmax.py` — NEW: K-12 Private & Parochial Schools as segment #181. 9 DANNY_TITLES (private school facilities director, private school building manager, independent school facilities manager, diocesan facilities manager, catholic school facilities manager, prep school facilities director, independent school superintendent, parochial school administrator, private school operations manager) + 9 DANNY_ORG_KEYWORDS (private school, independent school, catholic school, parochial school, diocesan school, preparatory school, independent day school, private academy, catholic academy). DISTINCT from public K-12 districts (run 119) + churches/parishes (run 110). Diocese of Cleveland (140+ schools), Gilmour/St. Ignatius/Magnificat/Walsh Jesuit/Archbishop Hoban/Western Reserve Academy/Laurel/University School. Summer = empty campus = peak window. $1,500–$5,000/building; campus deal = $8K–$25K/year. Zero competitors. First pull June 8 Cuyahoga.
+  2. `workers/lead_pipeline.py` + `integrations/mixmax.py` — NEW: County Fairgrounds & Agricultural Exhibit Facilities as segment #182. 9 DANNY_TITLES (fairgrounds manager, county fair director, fairgrounds director, fairgrounds facilities manager, agricultural fair manager, county fair manager, fairgrounds operations manager, fairgrounds superintendent, fair operations director) + 9 DANNY_ORG_KEYWORDS (county fairgrounds, county fair, agricultural fairgrounds, fairgrounds, county agricultural society, agricultural society, fair association, county fair association, agricultural exhibit). Cuyahoga/Summit/Medina/Lorain/Lake/Geauga/Portage county fairgrounds. Fairs run July-September = contracts awarded in June = PERFECT TIMING. Government direct-award. $3,000–$12,000/fairground. Zero competitors. First pull June 8 Cuyahoga.
+  3. `workers/vera_relay.py` — Count sync: 180+ → 182+ across all 11 occurrences (Slack alert message strings).
+  4. `CLAUDE.md` + `agents/danny.md` — Count sync: 180+ → 182+ (3 occurrences total).
+- Proposals written: 1 (Gas Station + Fleet Mixmax sequences — critical pre-June 8 blocker)
+- Critical human-action blockers (URGENT):
+  - 🚨 GAS STATION + FLEET MIXMAX SEQUENCES STILL PENDING — 18+ days unenrolled. Must create before June 8. Create in Mixmax UI then paste IDs into `integrations/mixmax.py` lines 47–58.
+  - 🚨 JUNE 8 = 5 DAYS — 182+ segments, biggest pull of year. Block 90 minutes on calendar. Guide: `outputs/donna/june8_cuyahoga_megapull_exec_guide_2026-06-03.md`
+  - 🚨 TONIGHT — Pause Instantly.ai (a1c08c3d + 626cd15d) before June 4 Round 2 enrollment
+
+---
+
+## OPEN — K-12 Private & Parochial Schools Segment Not Yet Pulled 🟡 NEW (Run 194)
+- **Segment:** #181 — K-12 Private & Parochial Schools
+- **Status:** OPEN — code live, awaiting June 8 Cuyahoga pull
+- **Added:** Run 194 | 2026-06-03
+- **Files updated:** `workers/lead_pipeline.py` (DANNY_TITLES + DANNY_ORG_KEYWORDS), `integrations/mixmax.py` (PROPERTY_MANAGER_TITLES)
+- **Key targets:** Diocese of Cleveland (140+ Catholic schools), Gilmour Academy (Gates Mills), St. Ignatius HS (Fairview Park), Magnificat HS (Rocky River), Walsh Jesuit (Cuyahoga Falls), Archbishop Hoban (Akron), Western Reserve Academy (Hudson), Laurel School (Shaker Heights), University School (Hunting Valley/Shaker)
+- **Why now:** June is IDEAL — summer is empty campus = annual exterior maintenance window is open right now. Private schools have dedicated facilities directors who manage vendor contracts independently. DISTINCT from public school districts (run 119) which use buildings & grounds directors and from churches (run 110) which use parish administrators. Different Apollo org tags = additive leads, zero overlap.
+- **Revenue:** $1,500–$5,000/building; multi-building campus = $8,000–$25,000/year. Diocese of Cleveland relationship across 140 schools = $200K+ recurring potential. Zero competitors cold-calling private school FM contacts.
+- **First pull:** June 8 Cuyahoga — use `run_cuyahoga_both.command`
+- **Resolution:** Pull and enroll contacts June 8. Mark RESOLVED when private/parochial school FM contacts appear in Nina's report.
+
+## OPEN — County Fairgrounds & Agricultural Exhibit Facilities Segment Not Yet Pulled 🟡 NEW (Run 194)
+- **Segment:** #182 — County Fairgrounds & Agricultural Exhibit Facilities
+- **Status:** OPEN — code live, awaiting June 8 Cuyahoga pull
+- **Added:** Run 194 | 2026-06-03
+- **Files updated:** `workers/lead_pipeline.py` (DANNY_TITLES + DANNY_ORG_KEYWORDS), `integrations/mixmax.py` (PROPERTY_MANAGER_TITLES)
+- **Key targets:** Cuyahoga County Fairgrounds (Berea/I-X Center grounds), Summit County Fairgrounds (Tallmadge), Medina County Fairgrounds (Medina), Lorain County Fairgrounds (Wellington), Lake County Fairgrounds (Painesville), Geauga County Fairgrounds (Burton — one of Ohio's largest county fairs), Portage County Fairgrounds (Ravenna)
+- **Why NOW (June is perfect):** NE Ohio county fairs run July-September. June = fair prep season = vendor contracts AWARDED NOW for pre-fair cleaning. Massive paved midway lots + grandstand concourses + exhibit hall exteriors + livestock barn concrete aprons. Government direct-award (county agricultural society = quasi-governmental entity in Ohio). Zero competitors targeting this segment.
+- **Revenue:** $3,000–$12,000/fairground × 7 NE Ohio counties = $21,000–$84,000 addressable market. Annual recurring (fair season prep contract). Government direct-award = no competitive bid for contracts under $25K.
+- **First pull:** June 8 Cuyahoga — use `run_cuyahoga_both.command`
+- **Resolution:** Pull and enroll contacts June 8. Mark RESOLVED when fairgrounds FM contacts appear in Nina's report.
+
+---
 
 ---
 

@@ -960,6 +960,20 @@ PROPERTY_MANAGER_TITLES = [
     'ltac administrator', 'inpatient rehabilitation director', 'long-term acute care director',
     'rehab hospital manager', 'ltac facility manager', 'inpatient rehab director',
     'ltac hospital administrator', 'rehab hospital administrator', 'acute rehabilitation director',
+    # K-12 Private & Parochial Schools — segment #181; DISTINCT from public school districts (run 119)
+    # and churches/parishes (run 110); private school facilities directors manage vendor contracts
+    # independently; routing to property_manager sequence (facility management angle) (added 2026-06-03 run 194)
+    'private school facilities director', 'private school building manager',
+    'independent school facilities manager', 'diocesan facilities manager',
+    'catholic school facilities manager', 'prep school facilities director',
+    'independent school superintendent', 'parochial school administrator',
+    'private school operations manager',
+    # County Fairgrounds & Agricultural Exhibit Facilities — segment #182; DISTINCT from sports venues
+    # (run 127), convention centers (run 128), event venues (run 108); county agricultural society FMs
+    # sign direct-award contracts; routing to property_manager sequence (added 2026-06-03 run 194)
+    'fairgrounds manager', 'county fair director', 'fairgrounds director',
+    'fairgrounds facilities manager', 'agricultural fair manager', 'county fair manager',
+    'fairgrounds operations manager', 'fairgrounds superintendent', 'fair operations director',
 ]
 
 REALTOR_TITLES = [

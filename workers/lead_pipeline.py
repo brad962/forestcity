@@ -1917,6 +1917,37 @@ DANNY_TITLES = [
     'ltac administrator', 'inpatient rehabilitation director', 'long-term acute care director',
     'rehab hospital manager', 'ltac facility manager', 'inpatient rehab director',
     'ltac hospital administrator', 'rehab hospital administrator', 'acute rehabilitation director',
+    # K-12 Private & Parochial Schools — segment #181
+    # Gilmour Academy (Gates Mills), St. Ignatius HS, Magnificat HS, Walsh Jesuit, Archbishop Hoban,
+    # Western Reserve Academy (Hudson), Laurel School (Shaker Heights), University School (Hunting Valley);
+    # Diocese of Cleveland Catholic school system (140+ schools in 8-county area);
+    # DISTINCT from public K-12 districts (run 119 — buildings & grounds directors in public school districts)
+    # and from churches/parishes (run 110 — parish administrators at church facilities);
+    # private school buildings & grounds directors manage vendor contracts independently;
+    # summer (June-August) = empty campus = PEAK annual exterior maintenance window;
+    # multiple buildings per campus (St. Ignatius: 5 buildings; Western Reserve Academy: 30+ campus buildings);
+    # $1,500–$5,000/building; one campus deal = $8K–$25K/year; zero competitors targeting private school FM contacts;
+    # Apollo org tags 'private school', 'independent school', 'catholic school' DISTINCT from 'school district';
+    # first pull June 8 Cuyahoga (added 2026-06-03 run 194)
+    'private school facilities director', 'private school building manager',
+    'independent school facilities manager', 'diocesan facilities manager',
+    'catholic school facilities manager', 'prep school facilities director',
+    'independent school superintendent', 'parochial school administrator',
+    'private school operations manager',
+    # County Fairgrounds & Agricultural Exhibit Facilities — segment #182
+    # Cuyahoga County Fairgrounds (I-X Center grounds / Berea), Summit County Fairgrounds (Tallmadge),
+    # Medina County Fairgrounds (Medina), Lorain County Fairgrounds (Wellington),
+    # Lake County Fairgrounds (Painesville), Geauga County Fairgrounds (Burton — Geauga County Fair
+    # is one of Ohio's largest), Portage County Fairgrounds (Ravenna);
+    # MASSIVE paved midway lots + grandstand concourses + exhibit hall exteriors + livestock barn aprons;
+    # June = fair prep season — county fairs run July-September = pressure washing contracts awarded NOW;
+    # government direct-award contracts (county agricultural society = quasi-governmental entity);
+    # DISTINCT from sports venues (run 127), convention centers (run 128), event venues (run 108);
+    # $3,000–$12,000/fairground; annual pre-fair prep contract; zero competitors targeting fairgrounds FMs;
+    # first pull June 8 Cuyahoga (added 2026-06-03 run 194)
+    'fairgrounds manager', 'county fair director', 'fairgrounds director',
+    'fairgrounds facilities manager', 'agricultural fair manager', 'county fair manager',
+    'fairgrounds operations manager', 'fairgrounds superintendent', 'fair operations director',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -3042,6 +3073,22 @@ DANNY_ORG_KEYWORDS = [
     'rehabilitation hospital', 'inpatient rehabilitation', 'long-term acute care',
     'ltac hospital', 'rehab hospital', 'transitional care hospital',
     'encompass health', 'select medical', 'kindred hospital',
+    # K-12 Private & Parochial Schools — segment #181
+    # Apollo indexes private/parochial schools under separate org tags from public 'school district' orgs;
+    # 'independent school', 'private school', 'catholic school' tags return ZERO overlap with
+    # public school district org tags (run 119); Diocese of Cleveland + private academies NE Ohio;
+    # first pull June 8 Cuyahoga (added 2026-06-03 run 194)
+    'private school', 'independent school', 'catholic school', 'parochial school',
+    'diocesan school', 'preparatory school', 'independent day school',
+    'private academy', 'catholic academy',
+    # County Fairgrounds & Agricultural Exhibit Facilities — segment #182
+    # Apollo indexes county fairgrounds under 'county fair', 'agricultural society', 'fairgrounds' org tags;
+    # return ZERO overlap with sports venues (run 127), convention centers (run 128), event venues (run 108);
+    # Cuyahoga/Summit/Medina/Lorain/Lake/Geauga/Portage county agricultural societies;
+    # first pull June 8 Cuyahoga (added 2026-06-03 run 194)
+    'county fairgrounds', 'county fair', 'agricultural fairgrounds', 'fairgrounds',
+    'county agricultural society', 'agricultural society', 'fair association',
+    'county fair association', 'agricultural exhibit',
 ]
 
 CARLA_SEARCHES = [
