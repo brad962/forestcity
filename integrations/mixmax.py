@@ -882,6 +882,14 @@ PROPERTY_MANAGER_TITLES = [
     'aquatics operations manager', 'pool management director', 'aquatics services manager',
     'pool operations manager', 'aquatic operations director', 'pool services director',
     'aquatics program director', 'aquatic services manager',
+    # Crane & Rigging Companies — segment #167 (added 2026-06-03 run 186)
+    'crane yard manager', 'rigging manager', 'crane operations manager', 'lift superintendent',
+    'crane company manager', 'rigging contractor manager', 'crane service director',
+    'lifting services manager',
+    # Municipal Water & Wastewater Treatment — segment #168 (added 2026-06-03 run 186)
+    'water plant superintendent', 'wastewater treatment manager', 'utilities facilities manager',
+    'water treatment plant manager', 'sewer district operations manager', 'public utilities director',
+    'water utilities manager', 'wastewater plant superintendent',
 ]
 
 REALTOR_TITLES = [

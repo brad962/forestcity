@@ -1773,6 +1773,30 @@ DANNY_TITLES = [
     'aquatics operations manager', 'pool management director', 'aquatics services manager',
     'pool operations manager', 'aquatic operations director', 'pool services director',
     'aquatics program director', 'aquatic services manager',
+    # Crane & Rigging Service Companies — Cleveland Crane & Engineering, Barnhart Crane & Rigging,
+    # Maxim Crane Works (Cleveland), American Erectors, Laurel Crane & Service, LaborMax Crane (Strongsville);
+    # large outdoor equipment staging yards with concrete pads; hydraulic oil drip + lubricant residue +
+    # rust streaks = heavy industrial concrete staining; OSHA 29 CFR 1926.1400 crane regs require clean
+    # maintenance areas; COMPLETELY DISTINCT from construction equipment rental (run 154 — United Rentals)
+    # and manufacturing (run 118); crane yard manager signs vendor contracts directly; $1,500–$4,000/visit;
+    # quarterly; multi-crane territory = $6K–$16K/year; zero competitors cold-calling crane yards;
+    # first pull June 8 Cuyahoga (NE Ohio industrial corridor — heavy construction activity) (added 2026-06-03 run 186)
+    'crane yard manager', 'rigging manager', 'crane operations manager', 'lift superintendent',
+    'crane company manager', 'rigging contractor manager', 'crane service director',
+    'lifting services manager',
+    # Municipal Water & Wastewater Treatment Facilities — NEORSD (Northeast Ohio Regional Sewer District,
+    # 7 treatment plants), Akron Metropolitan Sewer District, Lorain/Elyria/Medina city water departments,
+    # Geauga-Trumbull Solid Waste District, Northeast Ohio Water Authority (NEOWA);
+    # large concrete infrastructure: settling basins, pump station exteriors, chemical storage pads,
+    # loading docks for chemical deliveries; spring moisture = peak biofilm/algae on treatment structures;
+    # OEPA NPDES SWPPP permit = exterior cleaning is a documented compliance budget line item;
+    # COMPLETELY DISTINCT from municipal facilities (run 124 — city halls/admin) and electric utilities (run 162);
+    # Apollo org tags 'water treatment', 'wastewater treatment', 'sewer district' have zero overlap with existing;
+    # $2,000–$6,000/facility visit; quarterly; NEORSD 7-plant territory = $56K–$168K/year potential;
+    # zero competitors cold-calling water plant superintendents in NE Ohio; first pull June 8 Cuyahoga (added 2026-06-03 run 186)
+    'water plant superintendent', 'wastewater treatment manager', 'utilities facilities manager',
+    'water treatment plant manager', 'sewer district operations manager', 'public utilities director',
+    'water utilities manager', 'wastewater plant superintendent',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -2809,6 +2833,16 @@ DANNY_ORG_KEYWORDS = [
     # June = pool startup season = peak pitch window; first pull June 8 Cuyahoga (added 2026-06-03 run 185)
     'pool management company', 'aquatics management', 'pool management services',
     'aquatic management', 'swimming pool management', 'pool operations services',
+    # Crane & Rigging Service Companies — distinct from construction equipment rental (run 154 — United Rentals/Sunbelt/HERC);
+    # these companies OWN and OPERATE cranes from fixed staging yards; Apollo tags crane operators separately
+    # from equipment rental companies; (added 2026-06-03 run 186)
+    'crane rental', 'crane service', 'rigging company', 'crane company', 'rigging contractor',
+    'lifting services', 'industrial rigging',
+    # Municipal Water & Wastewater Treatment Facilities — COMPLETELY DISTINCT from 'municipal facilities' (run 124);
+    # 'water treatment', 'wastewater treatment', 'sewer district' return zero overlap with any existing tags;
+    # NEORSD, Akron Metro Sewer, city water/sewer utility tags; (added 2026-06-03 run 186)
+    'water treatment', 'wastewater treatment', 'sewer district', 'municipal water', 'sanitary district',
+    'water utility', 'water reclamation',
 ]
 
 CARLA_SEARCHES = [

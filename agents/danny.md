@@ -1974,7 +1974,7 @@ Peak moving season is May–September. NE Ohio has dozens of moving company term
 
 **First pull:** June 8 Cuyahoga — `run_cuyahoga_both.command`
 
-> 🗒️ **Run 185 batching note:** Danny now has 166+ commercial segments live in DANNY_TITLES + DANNY_ORG_KEYWORDS. All fire in the June 8 Cuyahoga mega-pull. Segments are organized into batches by Apollo API call — the batching logic in lead_pipeline.py handles this automatically.
+> 🗒️ **Run 186 batching note:** Danny now has 168+ commercial segments live in DANNY_TITLES + DANNY_ORG_KEYWORDS. All fire in the June 8 Cuyahoga mega-pull. Segments are organized into batches by Apollo API call — the batching logic in lead_pipeline.py handles this automatically.
 
 ---
 
@@ -2023,6 +2023,46 @@ Save lead lists to `/outputs/danny/` as:
 - `pm_sequence_touch1_rewrite_[date].md` — rewritten Touch 1 email variants for PM sequence
 - `round2_enrollment_plan_[date].md` — Round 2 Mixmax enrollment plan (county batch, timing, checklist)
 - `gas_station_manual_email_blast_[date].md` — direct Gmail blast guide for the 18 idle gas station contacts; bypasses Mixmax PENDING sequence blocker; 3 email templates + send schedule; use while waiting for Mixmax sequence creation
+
+## Segment #167 — Crane & Rigging Service Companies *(added Run 186 | 2026-06-03)*
+
+**Why:** NE Ohio's industrial corridor runs some of the heaviest crane activity in the Midwest. These companies operate large outdoor staging yards — concrete pads where cranes idle between jobs. Hydraulic oil, grease, and lubricant drip from massive equipment constantly. Rust streaks from aging steel. The concrete looks terrible and it's a safety issue. OSHA 29 CFR 1926.1400 requires clean, maintained equipment areas. These companies have their own yard managers who sign vendor contracts — no procurement bureaucracy. And ZERO competitors are calling them.
+
+**NE Ohio targets:** Cleveland Crane & Engineering (Cleveland), Barnhart Crane & Rigging (multiple NE Ohio locations), Maxim Crane Works (Cleveland yard), American Erectors (Medina area), Laurel Crane & Service (Northeast Ohio), LaborMax Crane (Strongsville), CC&E (Cleveland Crane & Engineering)
+
+**Revenue math:** $1,500–$4,000/visit × quarterly = $6K–$16K/year per yard. Multi-location crane companies (Barnhart, Maxim) = potential $20K–$60K/year per territory relationship.
+
+**Pitch angle:** "You move heavy iron for a living — your yard should look like you take that seriously. One visit, we'll handle the hydraulic drip, the rust streaks, and the concrete staining. Your crews notice. Your clients notice when they come to inspect equipment."
+
+**Apollo titles (live in DANNY_TITLES as of Run 186):** `crane yard manager`, `rigging manager`, `crane operations manager`, `lift superintendent`, `crane company manager`, `rigging contractor manager`, `crane service director`, `lifting services manager`
+
+**Apollo org keywords (live in DANNY_ORG_KEYWORDS as of Run 186):** `crane rental`, `crane service`, `rigging company`, `crane company`, `rigging contractor`, `lifting services`, `industrial rigging`
+
+**DISTINCT from:** Construction equipment rental (run 154 — United Rentals/Sunbelt/HERC rent to others), manufacturing (run 118 — factories), distribution centers (run 105 — logistics/freight)
+
+**Sequence:** Route to Property Manager sequence (industrial compliance / safety angle). First pull: June 8 Cuyahoga (NE Ohio industrial corridor — Cleveland/Parma/Independence).
+
+---
+
+## Segment #168 — Municipal Water & Wastewater Treatment Facilities *(added Run 186 | 2026-06-03)*
+
+**Why:** These facilities have some of the most concrete in any public infrastructure category — settling basins, pump station exteriors, chemical storage pad areas, loading docks for chlorine/chemical deliveries. Spring moisture is peak biofilm and algae season on exposed concrete. OEPA NPDES stormwater permits (SWPPP) require documented exterior maintenance — so budget already exists. The utility facilities managers who sign these contracts are completely cold-contact territory. No one calls them.
+
+**NE Ohio targets:** Northeast Ohio Regional Sewer District (NEORSD — 7 treatment plants in Cuyahoga County alone), Akron Metropolitan Sewer District, City of Lorain water/sewer utilities, City of Elyria utilities, Medina County Sanitary Engineering, Northeast Ohio Water Authority (NEOWA)
+
+**Revenue math:** $2,000–$6,000/facility visit × quarterly = $8K–$24K/year per facility. NEORSD alone has 7 plants — a single relationship with their facilities coordinator = $56K–$168K/year potential. Best anchor account of any single segment.
+
+**Pitch angle:** "Your NPDES permit requires documented exterior maintenance. We provide certificates of service for each visit — keeps your compliance file clean. We've done work at [comparable facility if available]. One call, we quote the full site."
+
+**Apollo titles (live in DANNY_TITLES as of Run 186):** `water plant superintendent`, `wastewater treatment manager`, `utilities facilities manager`, `water treatment plant manager`, `sewer district operations manager`, `public utilities director`, `water utilities manager`, `wastewater plant superintendent`
+
+**Apollo org keywords (live in DANNY_ORG_KEYWORDS as of Run 186):** `water treatment`, `wastewater treatment`, `sewer district`, `municipal water`, `sanitary district`, `water utility`, `water reclamation`
+
+**DISTINCT from:** Municipal facilities (run 124 — city halls/admin buildings/public works offices), electric utilities (run 162 — FirstEnergy/AEP substations), industrial manufacturing (run 118)
+
+**Sequence:** Route to Property Manager sequence (OEPA compliance / regulatory angle). First pull: June 8 Cuyahoga — NEORSD Southerly/Easterly/Westerly plants are all in Cuyahoga County.
+
+---
 
 ## Logging
 After completing a task, add a line to `/logs/activity.log`:

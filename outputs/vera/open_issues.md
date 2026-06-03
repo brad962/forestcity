@@ -1,12 +1,43 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 185 | 2026-06-03 | Auto-fixes shipped: 2 | New RESOLVED: 0 | Open: 168 (166 carry-forward from Run 184 + 2 new tracking: Aquatic Management Companies #166 segment added + count sync 165+→166+)*
+*Run 186 | 2026-06-03 | Auto-fixes shipped: 2 | New RESOLVED: 0 | Open: 170 (168 carry-forward from Run 185 + 2 new tracking: Crane & Rigging #167 + Municipal Water/Wastewater #168 + count sync 166+→168+)*
+
+---
+
+## RUN METRICS — Run 186 | 2026-06-03
+- Total RESOLVED: 122 (unchanged)
+- Total OPEN: 170 (168 carry-forward + 2 this run)
+- Auto-upgrades shipped: 2
+  1. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — NEW: Crane & Rigging Service Companies as segment #167. 8 DANNY_TITLES (crane yard manager, rigging manager, crane operations manager, lift superintendent, crane company manager, rigging contractor manager, crane service director, lifting services manager) + 7 DANNY_ORG_KEYWORDS (crane rental, crane service, rigging company, crane company, rigging contractor, lifting services, industrial rigging). Cleveland Crane & Engineering, Barnhart Crane & Rigging, Maxim Crane Works. $1,500–$4,000/visit; quarterly; multi-location territory = $20K–$60K/year. OSHA 29 CFR 1926.1400 compliance angle. DISTINCT from construction equipment rental (run 154). Zero competitors. First pull June 8 Cuyahoga.
+  2. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — NEW: Municipal Water & Wastewater Treatment Facilities as segment #168. 8 DANNY_TITLES (water plant superintendent, wastewater treatment manager, utilities facilities manager, water treatment plant manager, sewer district operations manager, public utilities director, water utilities manager, wastewater plant superintendent) + 7 DANNY_ORG_KEYWORDS (water treatment, wastewater treatment, sewer district, municipal water, sanitary district, water utility, water reclamation). NEORSD (7 plants), Akron Metro Sewer, Lorain/Elyria/Medina utilities. OEPA NPDES SWPPP compliance angle. $2,000–$6,000/facility; quarterly; NEORSD 7-plant territory = $56K–$168K/year. DISTINCT from municipal facilities (run 124) and electric utilities (run 162). Zero competitors. First pull June 8 Cuyahoga.
+  3. Count sync: 166+ → 168+ across `workers/vera_relay.py` (11 occ), `CLAUDE.md` (2 occ), `agents/danny.md` (batching note Run 185 → Run 186). Same-run count sync.
+- Critical human-action blockers (URGENT — TONIGHT IS THE LAST CHANCE):
+  - 🚨 JUNE 4 = TOMORROW = Round 2 enrollment — PAUSE Instantly.ai campaigns a1c08c3d + 626cd15d TONIGHT (12th consecutive run flagging this)
+  - 🚨 Read outputs/donna/june4_enrollment_battle_card_2026-05-24.md TONIGHT — set 7:30am alarm
+  - 🚨 June 8 Cuyahoga = 5 DAYS — 168+ segments, largest pull of the season
+  - Gas station + fleet Mixmax sequences still PENDING (30+ contacts sitting unenrolled)
+
+---
+
+## OPEN — Crane & Rigging Service Companies Segment Not Yet Pulled 🟡 NEW (Run 186)
+- First seen: 2026-06-03
+- Description: Segment #167. Crane & Rigging Service Companies. 8 DANNY_TITLES + 7 DANNY_ORG_KEYWORDS live in lead_pipeline.py as of Run 186. Synced to mixmax.py PROPERTY_MANAGER_TITLES. Full segment brief in danny.md. NE Ohio targets: Cleveland Crane & Engineering, Barnhart Crane & Rigging, Maxim Crane Works (Cleveland), American Erectors (Medina), Laurel Crane & Service, LaborMax Crane (Strongsville). OSHA 29 CFR 1926.1400 compliance angle. $1,500–$4,000/visit; quarterly; multi-location territory = $20K–$60K/year. DISTINCT from construction equipment rental (run 154) and manufacturing (run 118). Zero competitors cold-calling crane yard managers. First pull June 8 Cuyahoga.
+- Attempts:
+  - 2026-06-03: Added 8 titles + 7 org keywords to lead_pipeline.py, mixmax.py routing, danny.md brief → waiting for June 8 local pull to confirm Apollo returns contacts
+
+---
+
+## OPEN — Municipal Water & Wastewater Treatment Facilities Segment Not Yet Pulled 🟡 NEW (Run 186)
+- First seen: 2026-06-03
+- Description: Segment #168. Municipal Water & Wastewater Treatment Facilities. 8 DANNY_TITLES + 7 DANNY_ORG_KEYWORDS live in lead_pipeline.py as of Run 186. Synced to mixmax.py PROPERTY_MANAGER_TITLES. Full segment brief in danny.md. NE Ohio targets: NEORSD (7 treatment plants), Akron Metropolitan Sewer District, City of Lorain/Elyria/Medina utilities, Northeast Ohio Water Authority. OEPA NPDES SWPPP compliance angle. $2,000–$6,000/facility; quarterly; NEORSD 7-plant territory = $56K–$168K/year. DISTINCT from municipal facilities (run 124 — city halls) and electric utilities (run 162 — FirstEnergy substations). Zero competitors cold-calling water plant superintendents. First pull June 8 Cuyahoga.
+- Attempts:
+  - 2026-06-03: Added 8 titles + 7 org keywords to lead_pipeline.py, mixmax.py routing, danny.md brief → waiting for June 8 local pull to confirm Apollo returns contacts
 
 ---
 
 ## RUN METRICS — Run 185 | 2026-06-03
 - Total RESOLVED: 122 (unchanged)
-- Total OPEN: 168 (166 carry-forward + 2 this run)
+- Total OPEN: 168 (168 carry-forward + 2 this run)
 - Auto-upgrades shipped: 2
   1. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — NEW: Aquatic Management Companies & Pool Operations Services as segment #166. 8 DANNY_TITLES (aquatics operations manager, pool management director, aquatics services manager, pool operations manager, aquatic operations director, pool services director, aquatics program director, aquatic services manager) + 6 DANNY_ORG_KEYWORDS (pool management company, aquatics management, pool management services, aquatic management, swimming pool management, pool operations services). DISTINCT from community swimming pools (run 136 — facility-level titles). United Aquatics (Berea OH — 50+ managed pools), Aquatic Management Services, Pool Management Group, American Pool NE Ohio. One 20-pool company = $16K–$40K revenue from ONE cold email. June = pool startup week = peak timing. Ohio EPA NPDES + OH DOH pool licensing = compliance angle. Zero competitors. First pull June 8 Cuyahoga.
   2. Count sync: 165+ → 166+ across `workers/vera_relay.py` (11 occ), `CLAUDE.md` (2 occ), `agents/danny.md` (batching note Run 184 → Run 185). Same-run count sync.
