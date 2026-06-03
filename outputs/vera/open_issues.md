@@ -1,6 +1,43 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 187 | 2026-06-03 | Auto-fixes shipped: 3 | New RESOLVED: 0 | Open: 172 (170 carry-forward from Run 186 + 2 new: Ice Rinks #169 + Bowling/FEC #170 + count sync 168+→170+)*
+*Run 189 | 2026-06-03 | Auto-fixes shipped: 3 | New RESOLVED: 0 | Open: 175 (172 carry-forward from Run 187, +1 EV Charging #171 from Run 188, +2 new this run: Steel Service Centers #172 + Fraternal Orgs #173)*
+
+---
+
+## RUN METRICS — Run 189 | 2026-06-03
+- Total RESOLVED: 122 (unchanged)
+- Total OPEN: 175 (172 carry-forward + 1 Run 188 EV Charging + 2 new this run)
+- Auto-upgrades shipped: 3
+  1. `workers/lead_pipeline.py` + `integrations/mixmax.py` — NEW: Steel Service Centers & Metal Distributors as segment #172. 8 DANNY_TITLES (steel service center manager, metal service center manager, metals distribution manager, steel distribution manager, steel processing manager, metals operations director, service center branch manager, metals facility manager) + 6 DANNY_ORG_KEYWORDS (steel service center, metal service center, steel distributor, steel distribution, metal processing, steel processing). Olympic Steel (Bedford Heights HQ), Metals USA (Independence), Reliance Steel, Chapel Steel. OSHA 1910.22 + EPA NPDES SWPPP. $2K–$8K/visit; quarterly; zero competitors. First pull June 8 Cuyahoga.
+  2. `workers/lead_pipeline.py` + `integrations/mixmax.py` — NEW: Fraternal & Social Organizations as segment #173. 8 DANNY_TITLES (lodge manager, lodge administrator, fraternal lodge manager, elks lodge manager, moose lodge manager, social club manager, hall manager, fraternal organization manager) + 7 DANNY_ORG_KEYWORDS (elks lodge, moose lodge, eagles club, knights of columbus, fraternal organization, lodge hall, social fraternal club). 400+ NE Ohio locations. Elks (80+), Moose (70+), Eagles (100+), Knights of Columbus (150+). Zero competitors. First pull June 8 Cuyahoga.
+  3. Segment count sync: 170+ → 173+ across CLAUDE.md (2 occ), agents/danny.md (batching note 159+ → 173+, 300+ titles → 400+ titles).
+- Deliverables written: 0 (code-only run)
+- Run 188 note: EV Charging Network Operators (#171) was added to lead_pipeline.py + mixmax.py in a prior partial run on 2026-06-03 but open_issues.md was not updated. Added here retroactively.
+- Critical human-action blockers (URGENT — TODAY June 3):
+  - 🚨 MEDINA PULL WAS JUNE 1 — NOW 2 DAYS OVERDUE. Run `run_medina_both.command` NOW.
+  - 🚨 GAS STATION + FLEET MIXMAX IDs STILL PENDING — 12+ contacts sitting unenrolled for 15+ days. Create sequences in Mixmax UI → paste IDs into integrations/mixmax.py lines 47-58. This MUST happen before June 8.
+  - 🚨 JUNE 8 = 5 DAYS — 173+ segments, biggest pull of the year. Block 90 minutes on calendar.
+  - 🚨 INSTANTLY.AI overlap — pause campaigns a1c08c3d + 626cd15d if not already done; add INSTANTLY_PAUSED=true to .env
+
+---
+
+## OPEN — Steel Service Centers & Metal Distributors Segment Not Yet Pulled 🟡 NEW (Run 189)
+- First seen: 2026-06-03
+- Description: Steel Service Centers segment added (#172). 8 DANNY_TITLES + 6 DANNY_ORG_KEYWORDS live. Olympic Steel (Bedford Heights HQ), Metals USA (Independence OH), Service Center Corp, Worthington Industries NE Ohio ops, Reliance Steel, Chapel Steel, Samuel Service Centers. 50+ facilities in the Cuyahoga/Lake/Lorain corridor. OSHA 1910.22 + EPA NPDES SWPPP compliance angle. $2,000–$8,000/visit; quarterly = $8,000–$32,000/year. DISTINCT from scrap metal (run 181) and manufacturing (run 118). Zero competitors. First pull June 8 Cuyahoga (Bedford Heights/Independence corridor).
+- Attempts:
+  - 2026-06-03: Code added (Run 189) — awaiting first pull June 8 Cuyahoga
+
+## OPEN — Fraternal & Social Organizations Segment Not Yet Pulled 🟡 NEW (Run 189)
+- First seen: 2026-06-03
+- Description: Fraternal & Social Organizations segment added (#173). 8 DANNY_TITLES + 7 DANNY_ORG_KEYWORDS live. Elks Lodge (80+ NE Ohio chapters), Moose Lodge (70+), Fraternal Order of Eagles (100+), Knights of Columbus (150+ NE Ohio councils). 400+ total NE Ohio locations. Meeting halls + parking lots + event spaces. Lodge manager / hall administrator signs contracts directly. $500–$1,500/visit; 1-2x/year. DISTINCT from VFW/American Legion (run 174). Zero power washing competitors. First pull June 8 Cuyahoga.
+- Attempts:
+  - 2026-06-03: Code added (Run 189) — awaiting first pull June 8 Cuyahoga
+
+## OPEN — EV Charging Network Operators Segment Not Yet Pulled 🟡 (Run 188)
+- First seen: 2026-06-03
+- Description: EV Charging segment added in Run 188 (#171). ChargePoint, EVgo, Blink, BP Pulse, Electrify America. Concrete charging pads + canopy structures. Regional network ops managers sign vendor contracts. $10K–$30K/year per territory. Zero competitors. First pull June 8 Cuyahoga.
+- Attempts:
+  - 2026-06-03: Code added (Run 188 partial) — awaiting first pull June 8 Cuyahoga
 
 ---
 

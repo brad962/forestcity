@@ -1814,6 +1814,32 @@ DANNY_TITLES = [
     'ev charging station manager', 'electric vehicle charging manager', 'ev network operations manager',
     'charging infrastructure manager', 'ev facility manager', 'charging station operations director',
     'ev charging operations manager', 'ev infrastructure director',
+    # Steel Service Centers & Metal Distributors — segment #172; Olympic Steel (Bedford Heights HQ),
+    # Metals USA (Independence OH), Service Center Corp, Worthington Industries NE Ohio ops, Reliance Steel,
+    # Chapel Steel, Samuel Service Centers; 50+ facilities in the Cuyahoga/Lake/Lorain corridor;
+    # NE Ohio = heart of US steel service center industry (Cleveland-area warehoused more flat-rolled steel
+    # than any metro outside Pittsburgh); processing bays + loading docks coated in cutting fluid, metal
+    # chips, rust staining, lubricating oil, and mill scale dust; OSHA 29 CFR 1910.22 (floor/aisle
+    # cleanliness) + EPA NPDES SWPPP stormwater permit = regulatory urgency for exterior cleaning;
+    # COMPLETELY DISTINCT from scrap metal dealers (run 181 — ferrous recycling Apollo tags) and
+    # manufacturing plants (run 118 — 'metal fabrication'/'steel manufacturer' production tags);
+    # $2,000–$8,000/visit; quarterly = $8,000–$32,000/year per facility; zero competitors targeting
+    # steel service center FMs in NE Ohio; first pull June 8 Cuyahoga (Bedford Heights/Independence corridor)
+    # (added 2026-06-03 run 189)
+    'steel service center manager', 'metal service center manager', 'metals distribution manager',
+    'steel distribution manager', 'steel processing manager', 'metals operations director',
+    'service center branch manager', 'metals facility manager',
+    # Fraternal & Social Organizations — segment #173; Elks Lodge (80+ NE Ohio chapters), Moose Lodge (70+),
+    # Fraternal Order of Eagles (100+), Knights of Columbus (150+ NE Ohio councils), Boy Scouts council
+    # service centers; COMPLETELY DISTINCT from VFW/American Legion (run 174 — veterans service orgs);
+    # meeting halls + parking lots + building exteriors; lodge manager or hall administrator signs vendor
+    # contracts directly with zero procurement layer; these organizations host weddings, graduation parties,
+    # and community banquets — appearance is a direct reflection of the community they serve;
+    # pitch: "Your lodge is a community institution — it should look like one";
+    # $500–$1,500/visit; 1-2x/year; 400+ NE Ohio locations; zero power washing competitors;
+    # first pull June 8 Cuyahoga (added 2026-06-03 run 189)
+    'lodge manager', 'lodge administrator', 'fraternal lodge manager', 'elks lodge manager',
+    'moose lodge manager', 'social club manager', 'hall manager', 'fraternal organization manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -2876,6 +2902,17 @@ DANNY_ORG_KEYWORDS = [
     # zero competitors cold-calling EV network FMs; first pull June 8 Cuyahoga (added 2026-06-03 run 188)
     'ev charging', 'electric vehicle charging', 'charging station network', 'ev network',
     'chargepoint', 'evgo', 'blink charging', 'electrify america', 'bp pulse', 'ev infrastructure',
+    # Steel Service Centers & Metal Distributors — segment #172; DISTINCT from scrap metal (run 181)
+    # and manufacturing (run 118); Apollo 'steel service center'/'metal service center' tags are a
+    # separate taxonomy that returns zero overlap with 'metal fabrication'/'scrap metal' org tags;
+    # NE Ohio steel service center corridor runs Bedford Heights → Independence → Garfield Heights (added 2026-06-03 run 189)
+    'steel service center', 'metal service center', 'steel distributor', 'steel distribution',
+    'metal processing', 'steel processing',
+    # Fraternal & Social Organizations — segment #173; DISTINCT from VFW/American Legion (run 174);
+    # Apollo 'elks lodge'/'moose lodge'/'knights of columbus' tags return zero overlap with any
+    # existing veteran, community, or nonprofit tags in the keyword list (added 2026-06-03 run 189)
+    'elks lodge', 'moose lodge', 'eagles club', 'knights of columbus',
+    'fraternal organization', 'lodge hall', 'social fraternal club',
 ]
 
 CARLA_SEARCHES = [

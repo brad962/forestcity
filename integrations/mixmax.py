@@ -903,6 +903,16 @@ PROPERTY_MANAGER_TITLES = [
     'ev charging station manager', 'electric vehicle charging manager', 'ev network operations manager',
     'charging infrastructure manager', 'ev facility manager', 'charging station operations director',
     'ev charging operations manager', 'ev infrastructure director',
+    # Steel Service Centers & Metal Distributors — segment #172; Olympic Steel (Bedford Heights HQ),
+    # Metals USA (Independence OH), Reliance Steel, Chapel Steel, Service Center Corp;
+    # OSHA 1910.22 + EPA NPDES SWPPP compliance; $2,000–$8,000/visit; first pull June 8 Cuyahoga (added 2026-06-03 run 189)
+    'steel service center manager', 'metal service center manager', 'metals distribution manager',
+    'steel distribution manager', 'steel processing manager', 'metals operations director',
+    'service center branch manager', 'metals facility manager',
+    # Fraternal & Social Organizations — segment #173; Elks, Moose, Eagles, Knights of Columbus;
+    # DISTINCT from VFW/Legion (run 174); 400+ NE Ohio locations; zero competitors; first pull June 8 Cuyahoga (added 2026-06-03 run 189)
+    'lodge manager', 'lodge administrator', 'fraternal lodge manager', 'elks lodge manager',
+    'moose lodge manager', 'social club manager', 'hall manager', 'fraternal organization manager',
 ]
 
 REALTOR_TITLES = [
