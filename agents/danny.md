@@ -35,7 +35,7 @@ Example payload for property managers in Cuyahoga County:
 
 **Always pass `q_organization_keyword_tags`** — this catches decision-makers at property management companies where the contact's title isn't "property manager" (e.g., owner or VP at a 10-property HOA management firm).
 
-> ✅ **Title batching active (Run 132):** `workers/lead_pipeline.py` now batches DANNY_TITLES in groups of 50 and runs multiple Apollo searches per county pull, deduplicating by person ID. This prevents Apollo from silently capping large `person_titles` arrays. With 400+ titles across 176+ commercial segments, the old single-call approach risked returning zero contacts for many segments. Batching guarantees all 176+ segments are queried every pull.
+> ✅ **Title batching active (Run 132):** `workers/lead_pipeline.py` now batches DANNY_TITLES in groups of 50 and runs multiple Apollo searches per county pull, deduplicating by person ID. This prevents Apollo from silently capping large `person_titles` arrays. With 400+ titles across 178+ commercial segments, the old single-call approach risked returning zero contacts for many segments. Batching guarantees all 178+ segments are queried every pull.
 
 Target titles:
 - Property Manager, Property Management Director, Property Director
@@ -2101,6 +2101,46 @@ Save lead lists to `/outputs/danny/` as:
 **DISTINCT from:** Event venues (run 108 — wedding/banquet halls), sports venues (run 130 — professional arenas), recreation centers (run 125 — municipal rec)
 
 **Sequence:** Route to Property Manager sequence (facility maintenance/seasonal urgency angle). First pull: June 8 Cuyahoga — Bowlero and Main Event both have NE Ohio locations in Cuyahoga County.
+
+---
+
+## Segment #177 — Federal Government & VA Healthcare Facilities *(added Run 192 | 2026-06-03)*
+
+**Why:** Federal government facilities are completely untapped by every power washing company in NE Ohio — nobody cold-calls VA facility managers or GSA building managers. Yet these facilities have the same parking lots, building facades, loading docks, and stained concrete as any commercial property. The compliance angle is iron-clad: UFC 3-301 (Unified Facilities Criteria for exterior appearance), Clean Water Act Section 438 stormwater management, and VA Directive 1810 (environmental compliance). Decision-makers at federal facilities are frustrated with procurement complexity and genuinely respond to vendors who come to them with a straightforward proposal and proof of insurance.
+
+**NE Ohio targets:** VA Northeast Ohio Healthcare System (Wade Park Medical Center + Brecksville Campus + 18 Community-Based Outpatient Clinics), IRS Brookpark Service Center (largest federal employer in Brook Park — 1,800+ employees), NASA Glenn Research Center (Brookpark — 3,400 acre federal campus), Federal Reserve Bank of Cleveland (East 6th St downtown), US District Court for the Northern District of Ohio (Carl Stokes Federal Courthouse, Cleveland), US Bankruptcy Court Northern Ohio, Army Reserve Center Garfield Heights, Army Reserve Center Strongsville, Ohio National Guard armories (18+ Cuyahoga County locations)
+
+**Revenue math:** $3,000–$15,000/facility visit depending on scope (VA medical campuses are large). Annual recurring. Compliance certificates per visit = documented value. NASA Glenn or IRS Brookpark contract alone = $25K–$60K/year at scale.
+
+**Pitch angle:** "We provide documented service certificates with each visit — keeps your compliance file current for UFC 3-301 and stormwater inspection requirements. We work with government facilities and carry full insurance. One call, we quote the full site."
+
+**Apollo titles (live in DANNY_TITLES as of Run 192):** `federal building manager`, `va facility manager`, `veterans affairs facility manager`, `federal facilities manager`, `federal property manager`, `national guard facilities manager`, `army reserve facilities manager`, `federal facility manager`
+
+**Apollo org keywords (live in DANNY_ORG_KEYWORDS as of Run 192):** `veterans affairs`, `va healthcare`, `va medical center`, `department of veterans affairs`, `federal facilities`, `gsa facilities`, `national guard`, `army reserve center`
+
+**DISTINCT from:** Municipal/government (run 124 — city halls, county buildings, township offices, transit depots); military installations (not targeted); this segment targets FEDERAL civilian facilities only
+
+**Sequence:** Route to Property Manager sequence (regulatory compliance / facility management angle). First pull: June 8 Cuyahoga — VA Northeast Ohio Wade Park, NASA Glenn Research Center, IRS Brookpark, Federal Reserve Bank of Cleveland.
+
+---
+
+## Segment #178 — Ready-Mix Concrete & Asphalt Production Facilities *(added Run 192 | 2026-06-03)*
+
+**Why:** NE Ohio is in the middle of a multi-year infrastructure construction boom (I-90 interchange, I-480/I-77, Opportunity Corridor, suburban road expansion). Ready-mix concrete plants and asphalt production facilities are running at full capacity. These facilities have one of the worst exterior staining profiles of any commercial property — concrete dust accumulates on every building surface, asphalt fumes coat facades, aggregate runoff stains parking lots, and cement slurry pools around batch plant footings. Plant managers are under pressure to maintain OSHA 1910.22 (walking surfaces) and OEPA NPDES stormwater permit compliance. Zero power washing companies target this segment.
+
+**NE Ohio targets:** Shelly Company (Medina County HQ — NE Ohio's largest paving and aggregates company; 20+ production facilities across 7 counties), Aggregate Industries NE Ohio (subsidiary of Holcim; multiple batch plants), CEMEX NE Ohio division (Cleveland-area batch plants), Martin Marietta NE Ohio (Lorain County quarries and batch operations), Hanson Aggregates (Lake and Portage County), Kokosing Materials (commercial asphalt), All American Asphalt/Paving (Summit County)
+
+**Revenue math:** $2,000–$6,000/plant visit × quarterly = $8K–$24K/year per plant. Shelly Company alone has 20+ NE Ohio locations — one regional FM relationship = $160K–$480K/year potential. DISTINCT revenue profile from any other commercial segment.
+
+**Pitch angle:** "Ready-mix and asphalt plants have some of the toughest staining we clean — cement slurry, aggregate dust, asphalt fumes. We have the equipment for it. We provide OEPA NPDES service certificates that document your stormwater compliance. One call to quote the full site."
+
+**Apollo titles (live in DANNY_TITLES as of Run 192):** `ready mix concrete manager`, `concrete plant manager`, `concrete plant superintendent`, `asphalt plant manager`, `hot mix asphalt manager`, `concrete production manager`, `asphalt plant superintendent`, `quarry plant manager`, `aggregate plant manager`, `batch plant manager`, `concrete operations manager`, `asphalt operations manager`
+
+**Apollo org keywords (live in DANNY_ORG_KEYWORDS as of Run 192):** `ready mix concrete`, `concrete plant`, `ready mixed concrete`, `hot mix asphalt`, `asphalt plant`, `concrete batching`, `shelly company`, `aggregate industries`, `cemex ohio`
+
+**DISTINCT from:** Manufacturing facilities (run 118 — general industrial; Ford Avon Lake, Lincoln Electric, Eaton, Parker Hannifin), specialty chemical (run 176 — chemical manufacturing), construction equipment rental (run 179); concrete/asphalt PRODUCTION is a distinct industry with different staining profile, compliance framework, and Apollo tagging
+
+**Sequence:** Route to Property Manager sequence (OSHA 1910.22 / OEPA NPDES compliance angle). First pull: June 8 Cuyahoga — Shelly Company and Aggregate Industries both have Cuyahoga County production facilities.
 
 ---
 

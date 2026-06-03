@@ -1,6 +1,47 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 191 | 2026-06-03 | Auto-fixes shipped: 5 | New RESOLVED: 0 | Open: 178 (176 carry-forward from Run 190, +2 new this run: Restaurant Equipment #175 + Specialty Chemical #176)*
+*Run 192 | 2026-06-03 | Auto-fixes shipped: 4 | New RESOLVED: 0 | Open: 180 (178 carry-forward from Run 191, +2 new this run: Federal Gov/VA #177 + Concrete/Asphalt Plants #178)*
+
+---
+
+## RUN METRICS — Run 192 | 2026-06-03
+- Total RESOLVED: 122 (unchanged)
+- Total OPEN: 180 (178 carry-forward + 2 new this run)
+- Auto-upgrades shipped: 4
+  1. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — NEW: Federal Government & VA Healthcare Facilities as segment #177. 8 DANNY_TITLES (federal building manager, va facility manager, veterans affairs facility manager, federal facilities manager, federal property manager, national guard facilities manager, army reserve facilities manager, federal facility manager) + 8 DANNY_ORG_KEYWORDS. VA Northeast Ohio (Wade Park + Brecksville + 18 CBOCs), IRS Brookpark, NASA Glenn, Federal Reserve Cleveland, National Guard Armories (18+ Cuyahoga). UFC 3-301 + Clean Water Act Section 438 compliance. $3,000–$15,000/facility. DISTINCT from municipal/government (run 124). Zero competitors. First pull June 8 Cuyahoga.
+  2. `workers/lead_pipeline.py` + `integrations/mixmax.py` + `agents/danny.md` — NEW: Ready-Mix Concrete & Asphalt Production Facilities as segment #178. 12 DANNY_TITLES (ready mix concrete manager, concrete plant manager, concrete plant superintendent, asphalt plant manager, hot mix asphalt manager, concrete production manager, asphalt plant superintendent, quarry plant manager, aggregate plant manager, batch plant manager, concrete operations manager, asphalt operations manager) + 9 DANNY_ORG_KEYWORDS. Shelly Company (20+ NE Ohio plants), Aggregate Industries, CEMEX, Martin Marietta. OSHA 1910.22 + OEPA NPDES SWPPP compliance. $2,000–$6,000/plant; quarterly. DISTINCT from manufacturing (run 118). Zero competitors. First pull June 8 Cuyahoga.
+  3. `workers/vera_relay.py` — Extended `_check_past_customer_blast` date range from June 7 → July 31. Updated message to remove stale "ads are in learning phase" framing — past customer outreach is evergreen high-ROI throughout all of peak season.
+  4. Count sync: 176+ → 178+ across `workers/vera_relay.py` (11 occ), `CLAUDE.md` (2 occ), `agents/danny.md` (1 occ).
+- Proposals written: 2 (GBP weekly reminder function; Workiz job completion → Annual Plan + review request alert)
+- Critical human-action blockers (URGENT — TONIGHT June 3 / TOMORROW June 4):
+  - 🚨 JUNE 4 = TOMORROW — Pause Instantly.ai campaigns a1c08c3d + 626cd15d TONIGHT. Add INSTANTLY_PAUSED=true to .env. Stage run_medina_both.command + run_summit_both.command. Set 7:30am alarm.
+  - 🚨 MEDINA PULL STILL OVERDUE (was June 1) — run as Step 2 of June 4 battle card tomorrow morning.
+  - 🚨 GAS STATION + FLEET MIXMAX SEQUENCES STILL PENDING — create in Mixmax UI before June 8.
+  - 🚨 JUNE 8 = 5 DAYS — 178+ segments, biggest pull of year. Guide: outputs/donna/june8_cuyahoga_megapull_exec_guide_2026-06-03.md
+
+---
+
+## OPEN — Federal Government & VA Healthcare Facilities Segment Not Yet Pulled 🟡 NEW (Run 192)
+- **Segment:** #177 — Federal Government & VA Healthcare Facilities
+- **Status:** OPEN — code live, awaiting June 8 Cuyahoga pull
+- **Added:** Run 192 | 2026-06-03
+- **Files updated:** `workers/lead_pipeline.py` (DANNY_TITLES + DANNY_ORG_KEYWORDS), `integrations/mixmax.py` (PROPERTY_MANAGER_TITLES), `agents/danny.md` (full segment brief)
+- **Key targets:** VA Northeast Ohio Healthcare System (Wade Park Medical Center, Brecksville Campus, 18 CBOCs), IRS Brookpark Service Center, NASA Glenn Research Center, Federal Reserve Bank of Cleveland, US District Court Northern Ohio, National Guard Armories (18+ Cuyahoga County)
+- **Compliance driver:** UFC 3-301 + Clean Water Act Section 438 stormwater compliance + VA Directive 1810 environmental compliance
+- **Revenue:** $3,000–$15,000/facility; annual recurring; NASA Glenn or IRS Brookpark alone = $25K–$60K/year
+- **First pull:** June 8 Cuyahoga — use `run_cuyahoga_both.command`
+- **Resolution:** Pull and enroll contacts June 8. Mark RESOLVED when VA/federal contacts appear in Nina's report.
+
+## OPEN — Ready-Mix Concrete & Asphalt Production Facilities Segment Not Yet Pulled 🟡 NEW (Run 192)
+- **Segment:** #178 — Ready-Mix Concrete & Asphalt Production Facilities
+- **Status:** OPEN — code live, awaiting June 8 Cuyahoga pull
+- **Added:** Run 192 | 2026-06-03
+- **Files updated:** `workers/lead_pipeline.py` (DANNY_TITLES + DANNY_ORG_KEYWORDS), `integrations/mixmax.py` (PROPERTY_MANAGER_TITLES), `agents/danny.md` (full segment brief)
+- **Key targets:** Shelly Company (Medina County HQ — 20+ NE Ohio plants), Aggregate Industries NE Ohio, CEMEX NE Ohio division, Martin Marietta (Lorain County quarries), Hanson Aggregates, Kokosing Materials
+- **Compliance driver:** OSHA 1910.22 (walking surfaces) + OEPA NPDES SWPPP (stormwater permit documentation)
+- **Revenue:** $2,000–$6,000/plant × quarterly = $8K–$24K/year per plant. Shelly Company 20+ plants = $160K–$480K/year territory potential.
+- **First pull:** June 8 Cuyahoga — use `run_cuyahoga_both.command`
+- **Resolution:** Pull and enroll contacts June 8. Mark RESOLVED when concrete/asphalt FM contacts appear in Nina's report.
 
 ---
 

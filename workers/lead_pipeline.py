@@ -1871,6 +1871,26 @@ DANNY_TITLES = [
     'chemical plant manager', 'chemical operations manager', 'specialty chemical manager',
     'polymer plant manager', 'chemical facility manager', 'chemical manufacturing manager',
     'chemical plant superintendent', 'polymer operations manager',
+    # Federal Government & VA Healthcare Facilities — segment #177
+    # VA Northeast Ohio Healthcare System (Wade Park Cleveland + Brecksville + 18 CBOCs), IRS Brookpark Service
+    # Center, NASA Glenn Research Center (Brookpark), Federal Reserve Bank of Cleveland, US District Court
+    # Northern Ohio; National Guard Armories (18+ Cuyahoga area), Army Reserve Centers, GSA-managed federal
+    # buildings; DISTINCT from municipal/government (run 124 — city/county/township facilities);
+    # these are FEDERAL-tier FMs with UFC 3-301 + Clean Water Act Section 438 stormwater compliance;
+    # $3,000–$15,000/facility; zero competitors cold-calling VA FMs; first pull June 8 Cuyahoga (added 2026-06-03 run 192)
+    'federal building manager', 'va facility manager', 'veterans affairs facility manager',
+    'federal facilities manager', 'federal property manager', 'national guard facilities manager',
+    'army reserve facilities manager', 'federal facility manager',
+    # Ready-Mix Concrete & Asphalt Production Facilities — segment #178
+    # Shelly Company (Medina County HQ — NE Ohio's largest paving/aggregate company), Aggregate Industries NE Ohio,
+    # CEMEX NE Ohio division, Martin Marietta (Lorain County quarries), Hanson Aggregates (Lake/Portage County);
+    # concrete dust + asphalt residue + aggregate runoff = documented OSHA 1910.22 + OEPA NPDES SWPPP staining;
+    # DISTINCT from manufacturing (run 118 — general industrial), specialty chemical (run 176);
+    # 80+ NE Ohio plants; $2,000–$6,000/plant; quarterly; zero competitors; first pull June 8 Cuyahoga (added 2026-06-03 run 192)
+    'ready mix concrete manager', 'concrete plant manager', 'concrete plant superintendent',
+    'asphalt plant manager', 'hot mix asphalt manager', 'concrete production manager',
+    'asphalt plant superintendent', 'quarry plant manager', 'aggregate plant manager',
+    'batch plant manager', 'concrete operations manager', 'asphalt operations manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -2968,6 +2988,20 @@ DANNY_ORG_KEYWORDS = [
     'specialty chemical', 'polymer manufacturer', 'chemical manufacturing company',
     'specialty chemicals', 'polymer plant', 'chemical plant', 'specialty chemical company',
     'lubrizol', 'rpm international', 'vibrantz technologies', 'materion corporation',
+    # Federal Government & VA Healthcare Facilities — segment #177
+    # Apollo tags 'veterans affairs', 'va healthcare', 'va medical center' return zero overlap with
+    # 'municipal facilities' (run 124 — city/county/township); federal government is a DISTINCT Apollo cluster;
+    # 'national guard', 'army reserve center', 'gsa facilities' are federally-unique org tags;
+    # first pull June 8 Cuyahoga (VA Northeast Ohio, NASA Glenn, IRS Brookpark) (added 2026-06-03 run 192)
+    'veterans affairs', 'va healthcare', 'va medical center', 'department of veterans affairs',
+    'federal facilities', 'gsa facilities', 'national guard', 'army reserve center',
+    # Ready-Mix Concrete & Asphalt Production Facilities — segment #178
+    # Apollo tags 'ready mix concrete', 'hot mix asphalt', 'concrete plant', 'batch plant' return
+    # zero overlap with 'manufacturing plant' (run 118) or 'specialty chemical' (run 176);
+    # shelly company/aggregate industries/cemex are NE Ohio-specific anchor companies (added 2026-06-03 run 192)
+    'ready mix concrete', 'concrete plant', 'ready mixed concrete',
+    'hot mix asphalt', 'asphalt plant', 'concrete batching',
+    'shelly company', 'aggregate industries', 'cemex ohio',
 ]
 
 CARLA_SEARCHES = [

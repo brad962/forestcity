@@ -929,6 +929,21 @@ PROPERTY_MANAGER_TITLES = [
     'chemical plant manager', 'chemical operations manager', 'specialty chemical manager',
     'polymer plant manager', 'chemical facility manager', 'chemical manufacturing manager',
     'chemical plant superintendent', 'polymer operations manager',
+    # Federal Government & VA Healthcare Facilities — segment #177; DISTINCT from municipal government (run 124
+    # which covers city/county/township); these are FEDERAL-tier FMs at VA medical centers, IRS service
+    # centers, NASA Glenn, federal courthouses, National Guard armories, GSA-managed buildings;
+    # routing to property_manager sequence (regulatory compliance / facility management angle) (added 2026-06-03 run 192)
+    'federal building manager', 'va facility manager', 'veterans affairs facility manager',
+    'federal facilities manager', 'federal property manager', 'national guard facilities manager',
+    'army reserve facilities manager', 'federal facility manager',
+    # Ready-Mix Concrete & Asphalt Production Facilities — segment #178; DISTINCT from manufacturing (run 118);
+    # concrete dust + asphalt residue + aggregate runoff; OSHA 1910.22 + OEPA NPDES SWPPP compliance;
+    # Shelly Company (Medina HQ), Aggregate Industries, CEMEX, Martin Marietta NE Ohio;
+    # routing to property_manager sequence (OSHA/OEPA compliance angle) (added 2026-06-03 run 192)
+    'ready mix concrete manager', 'concrete plant manager', 'concrete plant superintendent',
+    'asphalt plant manager', 'hot mix asphalt manager', 'concrete production manager',
+    'asphalt plant superintendent', 'quarry plant manager', 'aggregate plant manager',
+    'batch plant manager', 'concrete operations manager', 'asphalt operations manager',
 ]
 
 REALTOR_TITLES = [
