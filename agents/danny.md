@@ -35,7 +35,7 @@ Example payload for property managers in Cuyahoga County:
 
 **Always pass `q_organization_keyword_tags`** — this catches decision-makers at property management companies where the contact's title isn't "property manager" (e.g., owner or VP at a 10-property HOA management firm).
 
-> ✅ **Title batching active (Run 132):** `workers/lead_pipeline.py` now batches DANNY_TITLES in groups of 50 and runs multiple Apollo searches per county pull, deduplicating by person ID. This prevents Apollo from silently capping large `person_titles` arrays. With 400+ titles across 173+ commercial segments, the old single-call approach risked returning zero contacts for many segments. Batching guarantees all 159+ segments are queried every pull.
+> ✅ **Title batching active (Run 132):** `workers/lead_pipeline.py` now batches DANNY_TITLES in groups of 50 and runs multiple Apollo searches per county pull, deduplicating by person ID. This prevents Apollo from silently capping large `person_titles` arrays. With 400+ titles across 174+ commercial segments, the old single-call approach risked returning zero contacts for many segments. Batching guarantees all 174+ segments are queried every pull.
 
 Target titles:
 - Property Manager, Property Management Director, Property Director

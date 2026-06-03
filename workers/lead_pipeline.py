@@ -1840,6 +1840,19 @@ DANNY_TITLES = [
     # first pull June 8 Cuyahoga (added 2026-06-03 run 189)
     'lodge manager', 'lodge administrator', 'fraternal lodge manager', 'elks lodge manager',
     'moose lodge manager', 'social club manager', 'hall manager', 'fraternal organization manager',
+    # Residential Group Homes & DODD-Licensed Care Facilities — segment #174;
+    # Ohio DODD Medicaid waiver residential programs: group homes (5-8 residents), ICF/DD facilities,
+    # supported living homes, community living facilities; DISTINCT from skilled nursing (run 169),
+    # senior assisted living (run 94), home care agencies (run 163);
+    # DODD Rule 5123:2-3 + CMS CoP exterior cleanliness standard = compliance driver;
+    # administrators sign vendor contracts directly — no property management layer;
+    # 2,000+ licensed facilities in Cuyahoga County alone; managed by Elara Caring, LADD Inc,
+    # Buckeye Community Health Plan providers, Residential Opportunities Inc (ROI), OAKS of NE Ohio;
+    # $400–$900/visit; 2x/year; 1 management company with 20 homes = $16K–$36K/year;
+    # zero competitors cold-calling group home administrators; first pull June 8 Cuyahoga (added 2026-06-03 run 190)
+    'group home administrator', 'group home director', 'residential group home manager',
+    'dodd home manager', 'icf administrator', 'supported living manager',
+    'residential care manager', 'community living manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -2913,6 +2926,12 @@ DANNY_ORG_KEYWORDS = [
     # existing veteran, community, or nonprofit tags in the keyword list (added 2026-06-03 run 189)
     'elks lodge', 'moose lodge', 'eagles club', 'knights of columbus',
     'fraternal organization', 'lodge hall', 'social fraternal club',
+    # Residential Group Homes & DODD-Licensed Care Facilities — segment #174;
+    # Ohio DODD Rule 5123:2-3 org tags; 'group home' and 'supported living' return zero overlap
+    # with skilled nursing, assisted living, or home care agency tags (added 2026-06-03 run 190)
+    'group home', 'residential group home', 'supported living',
+    'intermediate care facility', 'community living facility',
+    'dodd certified', 'developmental disabilities home', 'icf dd',
 ]
 
 CARLA_SEARCHES = [

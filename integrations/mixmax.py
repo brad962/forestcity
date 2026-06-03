@@ -913,6 +913,14 @@ PROPERTY_MANAGER_TITLES = [
     # DISTINCT from VFW/Legion (run 174); 400+ NE Ohio locations; zero competitors; first pull June 8 Cuyahoga (added 2026-06-03 run 189)
     'lodge manager', 'lodge administrator', 'fraternal lodge manager', 'elks lodge manager',
     'moose lodge manager', 'social club manager', 'hall manager', 'fraternal organization manager',
+    # Residential Group Homes & DODD-Licensed Care Facilities — segment #174; Ohio DODD Medicaid waiver
+    # residential programs: group homes (5-8 residents), ICF/DD, supported living, community living;
+    # DISTINCT from skilled nursing (run 169), senior assisted living (run 94), home care agencies (run 163);
+    # DODD Rule 5123:2-3 + CMS CoP exterior cleanliness compliance; routing to property_manager sequence
+    # (facility compliance / vendor contract angle); first pull June 8 Cuyahoga (added 2026-06-03 run 190)
+    'group home administrator', 'group home director', 'residential group home manager',
+    'dodd home manager', 'icf administrator', 'supported living manager',
+    'residential care manager', 'community living manager',
 ]
 
 REALTOR_TITLES = [

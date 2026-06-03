@@ -1,6 +1,34 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
-*Run 189 | 2026-06-03 | Auto-fixes shipped: 3 | New RESOLVED: 0 | Open: 175 (172 carry-forward from Run 187, +1 EV Charging #171 from Run 188, +2 new this run: Steel Service Centers #172 + Fraternal Orgs #173)*
+*Run 190 | 2026-06-03 | Auto-fixes shipped: 4 | New RESOLVED: 0 | Open: 176 (175 carry-forward from Run 189, +1 new this run: Residential Group Homes #174)*
+
+---
+
+## RUN METRICS — Run 190 | 2026-06-03
+- Total RESOLVED: 122 (unchanged)
+- Total OPEN: 176 (175 carry-forward + 1 new this run)
+- Auto-upgrades shipped: 4
+  1. `workers/lead_pipeline.py` + `integrations/mixmax.py` — NEW: Residential Group Homes & DODD-Licensed Care Facilities as segment #174. 8 DANNY_TITLES (group home administrator, group home director, residential group home manager, dodd home manager, icf administrator, supported living manager, residential care manager, community living manager) + 8 DANNY_ORG_KEYWORDS (group home, residential group home, supported living, intermediate care facility, community living facility, dodd certified, developmental disabilities home, icf dd). Ohio DODD Rule 5123:2-3 + CMS CoP exterior cleanliness compliance driver. 2,000+ licensed facilities in Cuyahoga County alone. Elara Caring, LADD Inc, ROI, OAKS of NE Ohio. $400–$900/visit; 2x/year; zero competitors. First pull June 8 Cuyahoga.
+  2. `workers/vera_relay.py` — Count sync: 170+ → 174+ across all 11 occurrences (Slack alert messages for Summit countdown, June 8 Cuyahoga countdown, June 9 verification, Lake/Lorain/Summit/Medina countdowns).
+  3. `CLAUDE.md` — Count sync: 173+ → 174+ (2 occurrences — quick reference table + June 8 warning).
+  4. `agents/danny.md` — Count sync: 173+ → 174+ AND stale "159+ segments" reference fixed to "174+ segments" in batching note (was inconsistent with the 174+ stated 2 sentences earlier in same paragraph).
+- Deliverables written: 0 (code-only run)
+- Critical human-action blockers (URGENT — TODAY June 3 / TOMORROW June 4):
+  - 🚨 JUNE 4 = TOMORROW — Round 2 enrollment day. Run Medina + Summit batches. Check Instantly.ai paused. Battle card: `outputs/donna/june4_enrollment_battle_card_2026-05-24.md`
+  - 🚨 MEDINA PULL WAS JUNE 1 — 2 DAYS OVERDUE. Run `run_medina_both.command` NOW if not yet done.
+  - 🚨 GAS STATION + FLEET MIXMAX IDs STILL PENDING — 12+ contacts unenrolled 15+ days. Create in Mixmax UI BEFORE June 8.
+  - 🚨 JUNE 8 = 5 DAYS — 174+ segments, biggest pull of year. Block 90 minutes on calendar.
+  - 🚨 INSTANTLY.AI campaigns a1c08c3d + 626cd15d — must be PAUSED before June 4 enrollment. Add INSTANTLY_PAUSED=true to .env.
+
+---
+
+## OPEN — Residential Group Homes & DODD-Licensed Care Facilities Segment Not Yet Pulled 🟡 NEW (Run 190)
+- **Segment:** #174 — Residential Group Homes & DODD-Licensed Care Facilities
+- **Status:** OPEN — code live, awaiting June 8 Cuyahoga pull
+- **Added:** Run 190 | 2026-06-03
+- **Files updated:** `workers/lead_pipeline.py` (DANNY_TITLES + DANNY_ORG_KEYWORDS), `integrations/mixmax.py` (PROPERTY_MANAGER_TITLES)
+- **First pull:** June 8 Cuyahoga — use `run_cuyahoga_both.command`
+- **Resolve when:** Apollo pull returns at least 5 group home contacts AND at least 1 enrolled in Property Manager sequence
 
 ---
 
