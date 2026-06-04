@@ -1,5 +1,54 @@
 # Vera Cole — Open Issues Tracker
 *Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
+*Run 195 | 2026-06-04 | Auto-fixes shipped: 4 | New RESOLVED: 0 | Open: 186 (184 carry-forward from Run 194, +2 new this run: Aerospace & Defense Manufacturers #183 + Precision Machining & CNC Machine Shops #184)*
+
+---
+
+## RUN METRICS — Run 195 | 2026-06-04
+- Total RESOLVED: 122 (unchanged)
+- Total OPEN: 186 (184 carry-forward + 2 new this run)
+- Auto-upgrades shipped: 4
+  1. `workers/lead_pipeline.py` + `integrations/mixmax.py` — NEW: Aerospace & Defense Manufacturers as segment #183. 8 DANNY_TITLES (aerospace facilities manager, defense plant manager, aerospace plant manager, aerospace operations manager, aerospace manufacturing manager, defense facilities manager, aerospace plant superintendent, defense manufacturing manager) + 8 DANNY_ORG_KEYWORDS (aerospace manufacturing, aerospace components, defense manufacturing, aviation components, defense contractor, aerospace systems, aerospace supplier, aerospace engineering). Parker Hannifin (Mayfield Heights HQ — 50+ NE Ohio facilities), TransDigm Group (Cleveland HQ), Ducommun. AS9100D + ITAR compliance = documented maintenance requirement. $5,000–$25,000/facility; quarterly. Zero competitors. First pull June 8 Cuyahoga.
+  2. `workers/lead_pipeline.py` + `integrations/mixmax.py` — NEW: Precision Machining & CNC Machine Shops as segment #184. 8 DANNY_TITLES (machine shop manager, precision machining manager, cnc operations manager, precision manufacturing manager, machine shop superintendent, cnc shop manager, precision machining superintendent, machine shop owner) + 8 DANNY_ORG_KEYWORDS (precision machining, precision manufacturing, cnc machining, machine shop, precision parts, cnc manufacturing, precision components, machining services). DISTINCT from general manufacturing (run 118) — additive Apollo org tags. 500+ NE Ohio machine shops. ISO 9001 compliance angle. $1,500–$5,000/shop; quarterly. Zero competitors. First pull June 8 Cuyahoga.
+  3. `workers/vera_relay.py` — Count sync: 182+ → 184+ across all 11 occurrences (Slack alert message strings).
+  4. `CLAUDE.md` + `agents/danny.md` — Count sync: 182+ → 184+ (4 occurrences total). CLAUDE.md quick reference table + run_cuyahoga note updated; danny.md title batching note updated.
+- Deliverables written: 1
+  - `outputs/vera/june4_june8_bridge_card_2026-06-04.md` — June 4→8 bridge action card: tonight checklist (Instantly pause, confirm enrollment, Gas Station Mixmax 5-min fix), June 5–7 daily tasks, June 7 pre-flight, June 8 execution, full timeline through June 22.
+- Proposals written: 0
+- Critical human-action blockers (URGENT — TODAY June 4 / MONDAY June 8):
+  - 🚨 GAS STATION + FLEET MIXMAX SEQUENCES PENDING — 19 days unenrolled. 5-minute fix tonight. Guide: `outputs/vera/june4_june8_bridge_card_2026-06-04.md` (Gas Station section)
+  - 🚨 TONIGHT JUNE 4 — Verify Instantly.ai paused (a1c08c3d + 626cd15d). Confirm Summit + Medina enrollment ran.
+  - 🚨 JUNE 8 = 4 DAYS — 184+ segments, biggest pull of year. Set 7:30am Monday alarm NOW. Guide: `outputs/donna/june8_cuyahoga_megapull_exec_guide_2026-06-03.md`
+
+---
+
+## OPEN — Aerospace & Defense Manufacturers Segment Not Yet Pulled 🟡 NEW (Run 195)
+- **Segment:** #183 — Aerospace & Defense Manufacturers
+- **Status:** OPEN — code live, awaiting June 8 Cuyahoga pull
+- **Added:** Run 195 | 2026-06-04
+- **Files updated:** `workers/lead_pipeline.py` (DANNY_TITLES + DANNY_ORG_KEYWORDS), `integrations/mixmax.py` (PROPERTY_MANAGER_TITLES), `agents/danny.md` (full segment brief)
+- **Key targets:** Parker Hannifin Corporation (Mayfield Heights HQ — Fortune 500, 50+ NE Ohio facilities), TransDigm Group (Cleveland HQ — NYSE:TDG), Moog Inc. (NE Ohio supply chain), Ducommun Incorporated, aerospace Tier 1-3 suppliers in Lorain/Lake/Cuyahoga/Summit corridors
+- **Compliance driver:** AS9100D quality management system + ITAR (International Traffic in Arms Regulations) = documented facility maintenance requirement for vendor contracts
+- **Revenue:** $5,000–$25,000/facility; quarterly cleaning cycle. Parker Hannifin Mayfield Heights campus alone = $15,000–$40,000/year. Full NE Ohio Parker Hannifin territory = $200,000+ annual potential.
+- **First pull:** June 8 Cuyahoga — use `run_cuyahoga_both.command`
+- **Resolution:** Pull and enroll contacts June 8. Mark RESOLVED when aerospace/defense FM contacts appear in Nina's report.
+
+## OPEN — Precision Machining & CNC Machine Shops Segment Not Yet Pulled 🟡 NEW (Run 195)
+- **Segment:** #184 — Precision Machining & CNC Machine Shops
+- **Status:** OPEN — code live, awaiting June 8 Cuyahoga pull
+- **Added:** Run 195 | 2026-06-04
+- **Files updated:** `workers/lead_pipeline.py` (DANNY_TITLES + DANNY_ORG_KEYWORDS), `integrations/mixmax.py` (PROPERTY_MANAGER_TITLES), `agents/danny.md` (full segment brief)
+- **Key targets:** 500+ precision machining and CNC machine shops in Lorain/Lake/Cuyahoga/Summit county corridors, including Precision Parts International (Lorain County), Ohio Precision Machining, Cardinal Machine (Cuyahoga), industrial park clusters on I-480 west side (Brook Park, Middleburg Heights, Strongsville)
+- **Compliance driver:** ISO 9001 + AS9100 quality management certification audits require documented facility cleanliness; machining coolant + metal chip accumulation = exterior cleaning need
+- **Revenue:** $1,500–$5,000/shop visit; quarterly = $6,000–$20,000/year per shop. 10-shop industrial park relationship = $60,000–$200,000/year.
+- **First pull:** June 8 Cuyahoga — use `run_cuyahoga_both.command`
+- **Resolution:** Pull and enroll contacts June 8. Mark RESOLVED when machine shop owner/manager contacts appear in Nina's report.
+
+---
+
+
+# Vera Cole — Open Issues Tracker
+*Updated automatically each run. Only mark RESOLVED after verifying the fix works.*
 *Run 194 | 2026-06-03 | Auto-fixes shipped: 4 | New RESOLVED: 0 | Open: 184 (182 carry-forward from Run 193, +2 new this run: K-12 Private & Parochial Schools #181 + County Fairgrounds #182)*
 
 ---

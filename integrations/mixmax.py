@@ -974,6 +974,18 @@ PROPERTY_MANAGER_TITLES = [
     'fairgrounds manager', 'county fair director', 'fairgrounds director',
     'fairgrounds facilities manager', 'agricultural fair manager', 'county fair manager',
     'fairgrounds operations manager', 'fairgrounds superintendent', 'fair operations director',
+    # Aerospace & Defense Manufacturers — segment #183; Parker Hannifin, TransDigm, Ducommun;
+    # AS9100D + ITAR compliance = documented facility maintenance requirement;
+    # routing to property_manager sequence (facility management / compliance angle) (added 2026-06-04 run 195)
+    'aerospace facilities manager', 'defense plant manager', 'aerospace plant manager',
+    'aerospace operations manager', 'aerospace manufacturing manager',
+    'defense facilities manager', 'aerospace plant superintendent', 'defense manufacturing manager',
+    # Precision Machining & CNC Machine Shops — segment #184; DISTINCT ORG TAGS from general manufacturing (run 118);
+    # ISO 9001 / AS9100 compliance; 500+ NE Ohio machine shops; direct vendor contracts with shop owners/managers;
+    # routing to property_manager sequence (facility vendor contract angle) (added 2026-06-04 run 195)
+    'machine shop manager', 'precision machining manager', 'cnc operations manager',
+    'precision manufacturing manager', 'machine shop superintendent',
+    'cnc shop manager', 'precision machining superintendent', 'machine shop owner',
 ]
 
 REALTOR_TITLES = [

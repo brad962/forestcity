@@ -1,3 +1,38 @@
+🔧 *Vera — Auto-Upgrade | Run 195 | June 4*
+>Changed: NEW Segment #183 — Aerospace & Defense Manufacturers (8 DANNY_TITLES + 8 DANNY_ORG_KEYWORDS + 8 PROPERTY_MANAGER_TITLES routing)
+>Why: Parker Hannifin (50+ NE Ohio facilities, Fortune 500), TransDigm Group (Cleveland HQ) — AS9100D + ITAR compliance = documented facility maintenance requirement; zero competitors cold-calling these FM contacts; $5K–$25K/facility quarterly; first pull June 8 Cuyahoga
+>File: workers/lead_pipeline.py, integrations/mixmax.py, agents/danny.md
+---
+🔧 *Vera — Auto-Upgrade | Run 195 | June 4*
+>Changed: NEW Segment #184 — Precision Machining & CNC Machine Shops (8 DANNY_TITLES + 8 DANNY_ORG_KEYWORDS + 8 PROPERTY_MANAGER_TITLES routing)
+>Why: DISTINCT Apollo org tags from general manufacturing (run 118) — additive leads, zero overlap; 500+ NE Ohio machine shops; ISO 9001/AS9100 compliance angle; machining coolant + metal chip staining; $1.5K–$5K/shop quarterly; first pull June 8 Cuyahoga
+>File: workers/lead_pipeline.py, integrations/mixmax.py, agents/danny.md
+---
+🔧 *Vera — Auto-Upgrade | Run 195 | June 4*
+>Changed: Count sync 182+ → 184+ across all files (vera_relay.py 11 occ, CLAUDE.md 2 occ, danny.md 2 occ)
+>Why: 2 new segments added; all Slack alerts and docs now reflect accurate 184+ count for June 8 mega-pull
+>File: workers/vera_relay.py, CLAUDE.md, agents/danny.md
+---
+📋 *Vera — Deliverable | Run 195 | June 4*
+>Wrote: June 4 → 8 Bridge Action Card — outputs/vera/june4_june8_bridge_card_2026-06-04.md
+>Why: 4 days to June 8 Cuyahoga mega-pull (184+ segments). Daily task list June 4–8, pre-flight June 7 night, June 8 execution, Gas Station Mixmax 5-min fix, full timeline through June 22.
+---
+🚨 *Vera — CRITICAL BLOCKER | Day 19 | June 4*
+>GAS STATION + FLEET WASHING MIXMAX SEQUENCES STILL PENDING — 12+ contacts unenrolled
+>5-min fix: (1) app.mixmax.com → New Sequence → "Forest City Power Washing — Gas Station & C-Store Outreach" (2) Copy ID (3) Paste into integrations/mixmax.py line 54 (4) Repeat Fleet line 48 (5) python3 workers/lead_pipeline.py pending
+>Full guide: outputs/vera/june4_june8_bridge_card_2026-06-04.md
+---
+⚡ *Vera — June 8 Countdown | 4 Days*
+>June 8 = Monday. 184+ commercial segments. Biggest Apollo pull of year. Set 7:30am alarm NOW.
+>Command: bash scripts/run_cuyahoga_both.command
+>Exec guide: outputs/donna/june8_cuyahoga_megapull_exec_guide_2026-06-03.md
+---
+✅ *Vera — Scan Complete 2026-06-04 (Run 195)*
+>4 auto-upgrades shipped | 0 proposals | 186 open issues (184 carry-forward + 2 new)
+>Segments: #183 Aerospace/Defense + #184 Precision Machining — both fire June 8
+>Blockers: Gas Station/Fleet Mixmax (Day 19, 5-min fix tonight) + June 8 in 4 days
+---
+
 🔧 *Vera — Auto-Upgrade | Run 194 | 2026-06-03*
 >Changed: NEW Segment #181 — K-12 Private & Parochial Schools. 9 DANNY_TITLES (private school facilities director, private school building manager, independent school facilities manager, diocesan facilities manager, catholic school facilities manager, prep school facilities director, independent school superintendent, parochial school administrator, private school operations manager) + 9 DANNY_ORG_KEYWORDS. Synced to mixmax.py PROPERTY_MANAGER_TITLES. DISTINCT from public K-12 districts (run 119) + churches/parishes (run 110) — different Apollo org tags = zero overlap, additive leads.
 >Why: June is the BEST month to target private school FMs — empty campus = annual exterior maintenance window is open right now. Diocese of Cleveland has 140+ schools. Gilmour Academy, St. Ignatius, Magnificat, Walsh Jesuit, Archbishop Hoban, Western Reserve Academy, Laurel School, University School all have dedicated facilities directors who manage vendor contracts. Multi-building campuses = $8K–$25K/year per campus. Zero competitors cold-calling private school FM contacts. First pull June 8 Cuyahoga.

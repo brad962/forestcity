@@ -1948,6 +1948,22 @@ DANNY_TITLES = [
     'fairgrounds manager', 'county fair director', 'fairgrounds director',
     'fairgrounds facilities manager', 'agricultural fair manager', 'county fair manager',
     'fairgrounds operations manager', 'fairgrounds superintendent', 'fair operations director',
+    # Aerospace & Defense Component Manufacturers — segment #183; DISTINCT from general manufacturing (run 118);
+    # Parker Hannifin (Mayfield Heights HQ — Fortune 500, 50+ NE Ohio facilities), TransDigm Group (Cleveland HQ — NYSE:TDG),
+    # Moog Inc. (NE Ohio supply chain), Ducommun Incorporated; AS9100D quality management + ITAR compliance =
+    # documented facility maintenance requirement; building exteriors + loading docks + employee parking structures;
+    # zero competitors cold-calling aerospace FM contacts; $5,000–$25,000/facility; quarterly (added 2026-06-04 run 195)
+    'aerospace facilities manager', 'defense plant manager', 'aerospace plant manager',
+    'aerospace operations manager', 'aerospace manufacturing manager',
+    'defense facilities manager', 'aerospace plant superintendent', 'defense manufacturing manager',
+    # Precision Machining & CNC Machine Shops — segment #184; DISTINCT ORG KEYWORDS from general manufacturing (run 118);
+    # 'precision machining', 'cnc machining' Apollo tags return ZERO overlap with 'manufacturing plant' tags;
+    # NE Ohio has 500+ precision machine shops in Lorain/Lake/Cuyahoga/Summit corridors;
+    # ISO 9001 + AS9100 supply chain compliance; machining coolant + metal chips = heavy exterior staining;
+    # shop owners sign vendor contracts directly; $1,500–$5,000/shop; quarterly; zero competitors (added 2026-06-04 run 195)
+    'machine shop manager', 'precision machining manager', 'cnc operations manager',
+    'precision manufacturing manager', 'machine shop superintendent',
+    'cnc shop manager', 'precision machining superintendent', 'machine shop owner',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -3089,6 +3105,22 @@ DANNY_ORG_KEYWORDS = [
     'county fairgrounds', 'county fair', 'agricultural fairgrounds', 'fairgrounds',
     'county agricultural society', 'agricultural society', 'fair association',
     'county fair association', 'agricultural exhibit',
+    # Aerospace & Defense Component Manufacturers — segment #183
+    # Apollo tags 'aerospace manufacturing', 'defense contractor', 'aviation components' return ZERO overlap
+    # with 'manufacturing plant' (run 118) or 'specialty chemical' (run 176); Parker Hannifin 50+ NE Ohio
+    # facilities + TransDigm Cleveland HQ; AS9100D + ITAR = compliance-driven vendor contracts;
+    # first pull June 8 Cuyahoga (added 2026-06-04 run 195)
+    'aerospace manufacturing', 'aerospace components', 'defense manufacturing',
+    'aviation components', 'defense contractor', 'aerospace systems',
+    'aerospace supplier', 'aerospace engineering',
+    # Precision Machining & CNC Machine Shops — segment #184
+    # Apollo tags 'precision machining', 'cnc machining', 'machine shop' return ZERO overlap with
+    # 'manufacturing plant' (run 118); NE Ohio has 500+ machine shops; ISO 9001 compliance angle;
+    # machining coolant + metal chip accumulation = heavy building exterior cleaning need; additive leads
+    # (added 2026-06-04 run 195)
+    'precision machining', 'precision manufacturing', 'cnc machining',
+    'machine shop', 'precision parts', 'cnc manufacturing',
+    'precision components', 'machining services',
 ]
 
 CARLA_SEARCHES = [

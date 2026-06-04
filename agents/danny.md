@@ -35,7 +35,7 @@ Example payload for property managers in Cuyahoga County:
 
 **Always pass `q_organization_keyword_tags`** — this catches decision-makers at property management companies where the contact's title isn't "property manager" (e.g., owner or VP at a 10-property HOA management firm).
 
-> ✅ **Title batching active (Run 132):** `workers/lead_pipeline.py` now batches DANNY_TITLES in groups of 50 and runs multiple Apollo searches per county pull, deduplicating by person ID. This prevents Apollo from silently capping large `person_titles` arrays. With 400+ titles across 182+ commercial segments, the old single-call approach risked returning zero contacts for many segments. Batching guarantees all 182+ segments are queried every pull.
+> ✅ **Title batching active (Run 132):** `workers/lead_pipeline.py` now batches DANNY_TITLES in groups of 50 and runs multiple Apollo searches per county pull, deduplicating by person ID. This prevents Apollo from silently capping large `person_titles` arrays. With 400+ titles across 184+ commercial segments, the old single-call approach risked returning zero contacts for many segments. Batching guarantees all 184+ segments are queried every pull.
 
 Target titles:
 - Property Manager, Property Management Director, Property Director
@@ -2181,6 +2181,48 @@ Save lead lists to `/outputs/danny/` as:
 **DISTINCT from:** Skilled nursing / LTC nursing homes (run 169 — Sunrise/Brookdale/Five Star), outpatient physical therapy chains (run 126 — NovaCare/ATI/Select PT), hospital main campuses (run 124 — Cleveland Clinic/UH/MetroHealth), ambulatory surgery centers (run 143); LTAC/IRF = distinct Medicare provider category, distinct CMS certification, distinct Apollo tagging
 
 **Sequence:** Route to Property Manager sequence (CMS CoP / JCAHO regulatory compliance angle). First pull: June 8 Cuyahoga — Regency Hospital Strongsville (Select Medical) is the highest-priority Cuyahoga target.
+
+---
+
+## Segment #183 — Aerospace & Defense Component Manufacturers *(added Run 195 | 2026-06-04)*
+
+**Why:** NE Ohio is one of the most concentrated aerospace manufacturing corridors in the United States. Parker Hannifin (Mayfield Heights HQ, Fortune 500) has 50+ facilities in the NE Ohio region and is the world's largest manufacturer of motion and control technologies. TransDigm Group (Cleveland HQ, NYSE: TDG) is a major aerospace component manufacturer. These facilities operate under AS9100D quality management system requirements and ITAR (International Traffic in Arms Regulations) compliance — both of which require documented facility maintenance procedures including exterior cleaning records. Zero NE Ohio power washing companies are cold-calling aerospace FM contacts. The typical Parker Hannifin division building has a large employee parking lot, building exterior, loading dock areas, and potentially a grounds-level production facility footprint — all recurring pressure washing needs.
+
+**NE Ohio targets:** Parker Hannifin Corporation HQ campus (Mayfield Heights — multiple buildings on Innovation Drive), Parker Hannifin Aerospace Group (Iroquois Ave Wickliffe, Williams International Ogden UT suppliers in NE Ohio), TransDigm Group Inc. HQ (Cleveland downtown + subsidiary facilities), Moog Inc. NE Ohio supply chain operations, Ducommun Incorporated components facilities, HEICO Corporation NE Ohio operations, plus hundreds of Tier 1-3 aerospace supply chain manufacturers across Lorain/Lake/Cuyahoga/Summit counties
+
+**Revenue math:** $5,000–$25,000/facility; quarterly cleaning cycle (AS9100D documentation requirement). Parker Hannifin's Mayfield Heights campus alone = $15,000–$40,000/year. Full NE Ohio Parker Hannifin territory = $200,000+ annual potential for a dedicated service relationship with their facilities group.
+
+**Pitch angle:** "Your AS9100D quality management system requires documented facility maintenance procedures. We provide ITAR-compliant service documentation for your facility records. Building exterior, dock areas, employee parking — quarterly clean, quarterly record. One contract covers the compliance requirement."
+
+**Apollo titles (live in DANNY_TITLES as of Run 195):** `aerospace facilities manager`, `defense plant manager`, `aerospace plant manager`, `aerospace operations manager`, `aerospace manufacturing manager`, `defense facilities manager`, `aerospace plant superintendent`, `defense manufacturing manager`
+
+**Apollo org keywords (live in DANNY_ORG_KEYWORDS as of Run 195):** `aerospace manufacturing`, `aerospace components`, `defense manufacturing`, `aviation components`, `defense contractor`, `aerospace systems`, `aerospace supplier`, `aerospace engineering`
+
+**DISTINCT from:** General manufacturing (run 118 — Ford Avon Lake, Lincoln Electric, Eaton; general industrial org tags), specialty chemical (run 176 — Lubrizol/RPM International; chemical manufacturing tags); aerospace manufacturing is a distinct industry with distinct Apollo org tagging, stricter compliance framework, and zero current competitive outreach
+
+**Sequence:** Route to Property Manager sequence (AS9100D / ITAR compliance angle). First pull: June 8 Cuyahoga — Parker Hannifin HQ campus (Mayfield Heights) and TransDigm Cleveland HQ are the highest-priority first targets.
+
+---
+
+## Segment #184 — Precision Machining & CNC Machine Shops *(added Run 195 | 2026-06-04)*
+
+**Why:** NE Ohio has more than 500 precision machining and CNC machine shops concentrated in the Lorain/Lake/Cuyahoga/Summit county corridors — a legacy of the region's aerospace, automotive, and industrial manufacturing base. These shops operate as Tier 1, 2, and 3 suppliers to aerospace, automotive, and defense OEMs, and most hold ISO 9001 and/or AS9100 quality management certifications. Certification audits require documented facility cleanliness — and that means the exterior of the building, the loading dock area, and the employee/visitor parking lot all need to be documented as clean. Machining coolant fluid, metal chip accumulation, and cutting oil residue create heavy staining on building exteriors and concrete pads around dock areas. Shop owners and plant managers sign vendor contracts directly — no corporate procurement layer. Zero NE Ohio power washing companies are cold-calling CNC machine shops.
+
+**NE Ohio targets:** Hundreds of precision machining shops across Cuyahoga, Lake, Lorain, Summit, and Medina counties, including: Precision Parts International (Lorain County), Ohio Precision Machining (multiple NE Ohio locations), Cardinal Machine (Cuyahoga County), and 490+ independent shops ranging from 5,000 to 100,000 sq ft; clustered along I-480, I-90, I-76, and Route 82 corridors
+
+**Revenue math:** $1,500–$5,000/shop visit; quarterly cleaning cycle = $6,000–$20,000/year per shop. 10-shop relationship in a single industrial park = $60,000–$200,000/year. NE Ohio has dozens of industrial parks with 10–30 machining shops each — one industrial park contact chain = significant recurring revenue.
+
+**Pitch angle:** "Your ISO 9001 audit requires documented facility maintenance. We clean building exteriors, loading docks, and employee parking areas and provide service documentation that closes your facility maintenance record. Takes 2–3 hours. One quote."
+
+**Apollo titles (live in DANNY_TITLES as of Run 195):** `machine shop manager`, `precision machining manager`, `cnc operations manager`, `precision manufacturing manager`, `machine shop superintendent`, `cnc shop manager`, `precision machining superintendent`, `machine shop owner`
+
+**Apollo org keywords (live in DANNY_ORG_KEYWORDS as of Run 195):** `precision machining`, `precision manufacturing`, `cnc machining`, `machine shop`, `precision parts`, `cnc manufacturing`, `precision components`, `machining services`
+
+**DISTINCT from:** General manufacturing (run 118 — broad org tags; automotive/industrial general; Ford Avon Lake, Lincoln Electric); precision machining shops have distinct Apollo tagging under 'precision machining'/'cnc machining' separate from 'manufacturing plant'/'industrial manufacturer' — additive leads with zero overlap. DO NOT double-count leads who appear in both segments — deduplicate by email.
+
+**Sequence:** Route to Property Manager sequence (ISO 9001 / AS9100 facility compliance angle). First pull: June 8 Cuyahoga — Cuyahoga County alone has 150+ precision machining shops; industrial park clusters on I-480 west side (Brook Park, Middleburg Heights, Strongsville) are highest density.
+
+> 🗒️ **Run 195 batching note:** Danny now has 184+ commercial segments live in DANNY_TITLES + DANNY_ORG_KEYWORDS. All fire in the June 8 Cuyahoga mega-pull. The batching logic in lead_pipeline.py handles title + org keyword batching automatically.
 
 ---
 
