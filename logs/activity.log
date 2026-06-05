@@ -1525,3 +1525,4 @@
 [2026-06-05 07:06] Vera | Run 196 — SLACK MESSAGES written to outputs/vera/pending_slack_messages.md: 2 segment auto-upgrade notifications, 1 count sync notification, 1 structural fix notification, 1 deliverable notification, 1 critical Gas Station/Fleet Day 21 escalation, 1 June 8 countdown (3 days), 1 scan complete summary. | outputs/vera/pending_slack_messages.md | Done
 [2026-06-05 12:33] Nina | Daily hot leads report — 0 replied, 0 hot, 0 due today, 0 due tomorrow, 0 stale estimates | hot_leads_2026-06-05.md | Done
 [2026-06-05 12:33] Nina | Workiz daily report - Power Washing jobs | Workiz API unavailable — run locally. | Done
+[2026-06-05 12:33:46] Nina | Daily Reports (Hot Leads + Workiz) — completed (API 403s from remote env; reports saved to outputs/nina/)
