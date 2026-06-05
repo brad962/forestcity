@@ -1964,6 +1964,30 @@ DANNY_TITLES = [
     'machine shop manager', 'precision machining manager', 'cnc operations manager',
     'precision manufacturing manager', 'machine shop superintendent',
     'cnc shop manager', 'precision machining superintendent', 'machine shop owner',
+    # Public Transit Agencies & Bus Depot Facilities — segment #185
+    # GCRTA (Greater Cleveland RTA), Metro RTA (Akron), SARTA (Canton/Stark), LAKETRAN (Lake County),
+    # Lorain County Transit, Medina County transit; bus garage concrete floors + transit center plazas +
+    # maintenance yards = recurring cleaning need; FTA ADA compliance + ODOT transit standards;
+    # DISTINCT from municipal government (run 124) — transit-specific Apollo org keywords not covered by
+    # 'city facilities manager'; DISTINCT from school bus companies (run 178) — public transit, not school transport;
+    # $8,000–$25,000/depot facility; GCRTA alone has 5+ facilities = $40K–$125K/year; zero competitors;
+    # first pull June 8 Cuyahoga (added 2026-06-05 run 196)
+    'transit operations director', 'bus depot operations manager', 'transit system facilities manager',
+    'transit depot manager', 'transit agency facilities manager', 'bus garage manager',
+    'public transit facilities director', 'transit maintenance facilities manager',
+    # Industrial Real Estate & Logistics Park Management — segment #186
+    # ProLogis Cleveland/Independence (Fortune 500, 5M+ sq ft NE Ohio), Duke Realty NE Ohio, Scannell Properties,
+    # Opus Group, Pizzuti Companies, NRP Group; own/manage 50–200 industrial buildings per company =
+    # ONE FM contact = 50–200 potential cleaning jobs at $1,500–$5,000 each;
+    # DISTINCT from Carla's commercial RE brokers (transactional sales, run 176) — these are property
+    # maintenance managers, not listing agents; DISTINCT Apollo org keywords = additive leads, zero overlap
+    # with residential/office property management ('commercial property management' existing tag); building
+    # exteriors + loading dock facades + massive paved lots = quarterly recurring contract;
+    # $1,500–$5,000/building × 100-building portfolio = $150K–$500K/year from ONE REIT relationship;
+    # zero competitors targeting industrial REIT FMs; first pull June 8 Cuyahoga (added 2026-06-05 run 196)
+    'industrial property manager', 'logistics real estate manager', 'warehouse property manager',
+    'industrial park manager', 'logistics park manager', 'industrial campus manager',
+    'industrial portfolio manager', 'warehouse campus manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -3121,6 +3145,18 @@ DANNY_ORG_KEYWORDS = [
     'precision machining', 'precision manufacturing', 'cnc machining',
     'machine shop', 'precision parts', 'cnc manufacturing',
     'precision components', 'machining services',
+    # Public Transit Agencies & Bus Depot Facilities — segment #185
+    # GCRTA, Metro RTA, SARTA, LAKETRAN org keywords; DISTINCT from city/municipal org tags (run 124);
+    # Apollo returns transit authority contacts under these org keywords that 'city' tags miss;
+    # bus garages + transit centers + maintenance yards = recurring cleaning need (added 2026-06-05 run 196)
+    'transit authority', 'public transit', 'metropolitan transit', 'bus rapid transit',
+    'regional transit', 'transit agency', 'transit commission',
+    # Industrial Real Estate & Logistics Park Management — segment #186
+    # ProLogis/Duke Realty/Scannell/Opus NE Ohio org keywords; DISTINCT from 'commercial property management' (existing)
+    # and 'commercial real estate' (existing); industrial-specific tags return REIT/logistics park FMs
+    # that general PM tags miss; additive Apollo leads, zero overlap with residential/office PM (added 2026-06-05 run 196)
+    'industrial real estate', 'logistics real estate', 'industrial park', 'warehouse real estate',
+    'industrial reit', 'industrial property management', 'logistics campus',
 ]
 
 CARLA_SEARCHES = [

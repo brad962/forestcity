@@ -986,6 +986,16 @@ PROPERTY_MANAGER_TITLES = [
     'machine shop manager', 'precision machining manager', 'cnc operations manager',
     'precision manufacturing manager', 'machine shop superintendent',
     'cnc shop manager', 'precision machining superintendent', 'machine shop owner',
+    # Public Transit Agencies & Bus Depot Facilities — segment #185; routing to property_manager sequence
+    # GCRTA, Metro RTA, SARTA, LAKETRAN; FTA ADA compliance angle; (added 2026-06-05 run 196)
+    'transit operations director', 'bus depot operations manager', 'transit system facilities manager',
+    'transit depot manager', 'transit agency facilities manager', 'bus garage manager',
+    'public transit facilities director', 'transit maintenance facilities manager',
+    # Industrial Real Estate & Logistics Park Management — segment #186; routing to property_manager sequence
+    # ProLogis, Duke Realty, Scannell; DISTINCT from Carla's commercial RE brokers (run 176); (added 2026-06-05 run 196)
+    'industrial property manager', 'logistics real estate manager', 'warehouse property manager',
+    'industrial park manager', 'logistics park manager', 'industrial campus manager',
+    'industrial portfolio manager', 'warehouse campus manager',
 ]
 
 REALTOR_TITLES = [

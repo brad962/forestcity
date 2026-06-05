@@ -35,7 +35,7 @@ Example payload for property managers in Cuyahoga County:
 
 **Always pass `q_organization_keyword_tags`** — this catches decision-makers at property management companies where the contact's title isn't "property manager" (e.g., owner or VP at a 10-property HOA management firm).
 
-> ✅ **Title batching active (Run 132):** `workers/lead_pipeline.py` now batches DANNY_TITLES in groups of 50 and runs multiple Apollo searches per county pull, deduplicating by person ID. This prevents Apollo from silently capping large `person_titles` arrays. With 400+ titles across 184+ commercial segments, the old single-call approach risked returning zero contacts for many segments. Batching guarantees all 184+ segments are queried every pull.
+> ✅ **Title batching active (Run 132):** `workers/lead_pipeline.py` now batches DANNY_TITLES in groups of 50 and runs multiple Apollo searches per county pull, deduplicating by person ID. This prevents Apollo from silently capping large `person_titles` arrays. With 400+ titles across 186+ commercial segments, the old single-call approach risked returning zero contacts for many segments. Batching guarantees all 186+ segments are queried every pull.
 
 Target titles:
 - Property Manager, Property Management Director, Property Director
@@ -2222,7 +2222,33 @@ Save lead lists to `/outputs/danny/` as:
 
 **Sequence:** Route to Property Manager sequence (ISO 9001 / AS9100 facility compliance angle). First pull: June 8 Cuyahoga — Cuyahoga County alone has 150+ precision machining shops; industrial park clusters on I-480 west side (Brook Park, Middleburg Heights, Strongsville) are highest density.
 
-> 🗒️ **Run 195 batching note:** Danny now has 184+ commercial segments live in DANNY_TITLES + DANNY_ORG_KEYWORDS. All fire in the June 8 Cuyahoga mega-pull. The batching logic in lead_pipeline.py handles title + org keyword batching automatically.
+> 🗒️ **Run 195 batching note:** Danny now has 186+ commercial segments live in DANNY_TITLES + DANNY_ORG_KEYWORDS. All fire in the June 8 Cuyahoga mega-pull. The batching logic in lead_pipeline.py handles title + org keyword batching automatically.
+
+### Segment #185 — Public Transit Agencies & Bus Depot Facilities (Run 196 | 2026-06-05)
+
+**Why this segment:** GCRTA (Greater Cleveland RTA), Metro RTA (Akron), SARTA (Canton/Stark County), LAKETRAN (Lake County), Lorain County Transit. Bus garage concrete floors, transit center plazas, maintenance yards, and bus wash facility exteriors accumulate grime at a pace that exceeds most commercial segments. FTA ADA accessibility requirements + ODOT Ohio transit program compliance = exterior cleanliness standard at every public-facing facility. DISTINCT from municipal government (run 124) — transit-specific Apollo org keywords return FM contacts that city/county tags miss. DISTINCT from school bus companies (run 178).
+
+**Revenue math:** $8,000–$25,000/depot facility. GCRTA operates 5+ bus garages (Triskett, East 79th, Hayden, Payne, Woodhill) + Waterfront Line/Red Line/Blue Line/Green Line maintenance facilities. Full GCRTA relationship = $40,000–$125,000/year recurring. Metro RTA (Akron) + SARTA + LAKETRAN add another $30,000–$75,000. Zero competitors targeting transit FM contacts.
+
+**Pitch angle:** "We clean parking lots and building exteriors for government facilities throughout Northeast Ohio — transit agencies often have the highest exterior maintenance load of any government facility due to diesel exhaust, oil runoff, and high foot traffic. We can schedule around your service windows."
+
+**Apollo org keywords added:** transit authority, public transit, metropolitan transit, bus rapid transit, regional transit, transit agency, transit commission.
+
+**Sequence:** Route to Property Manager sequence (government compliance / facility management angle). First pull: June 8 Cuyahoga.
+
+### Segment #186 — Industrial Real Estate & Logistics Park Management (Run 196 | 2026-06-05)
+
+**Why this segment:** ProLogis Cleveland/Independence (Fortune 500, 5M+ sq ft NE Ohio industrial portfolio), Duke Realty NE Ohio, Scannell Properties (I-71/I-77 corridor), Opus Group, Pizzuti Companies, NRP Group. Industrial REITs and logistics park management companies OWN and MANAGE 50–200 buildings per company — meaning ONE property manager contact represents 50–200 potential cleaning jobs. DISTINCT from Carla's commercial real estate brokers (run 176) who are transactional listing agents — these are ongoing maintenance managers who sign vendor contracts for all buildings in their portfolio. DISTINCT from general property managers (residential/office focus). Industrial-specific Apollo org keywords return REIT/logistics park FMs that 'commercial property management' tags miss.
+
+**Revenue math:** $1,500–$5,000/building × 100-building portfolio = $150,000–$500,000/year from ONE property management relationship. Building exteriors (loading dock facades, concrete aprons, truck courts), massive paved parking lots, and employee entry areas accumulate diesel exhaust + road salt + algae at high rates. OSHA 1910.22 slip/fall standard + tenant lease appearance requirements create recurring compliance urgency.
+
+**Pitch angle:** "We serve industrial parks throughout Northeast Ohio — parking lots, loading dock areas, and building facades. For portfolio managers, we can schedule recurring contracts across multiple properties so you're not chasing maintenance on each one individually."
+
+**Apollo org keywords added:** industrial real estate, logistics real estate, industrial park, warehouse real estate, industrial reit, industrial property management, logistics campus.
+
+**Sequence:** Route to Property Manager sequence (facility management / compliance angle). First pull: June 8 Cuyahoga.
+
+> 🗒️ **Run 196 batching note:** Danny now has 186+ commercial segments live in DANNY_TITLES + DANNY_ORG_KEYWORDS. Both new segments (#185 Public Transit + #186 Industrial REIT) fire in the June 8 Cuyahoga mega-pull. 3 days away — set your 7:30am alarm.
 
 ---
 

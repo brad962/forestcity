@@ -150,11 +150,11 @@ No Terminal required — just open Finder, navigate to the `forestcity/scripts/`
 | `run_summit_both.command` | Summit | 21 | May 31 | Danny + Carla |
 | `run_medina_pull.command` | Medina | 22 | June 1 | Danny only |
 | `run_medina_both.command` | Medina | 22 | June 1 | Danny + Carla |
-| `run_cuyahoga_pull.command` | Cuyahoga | 24 | **June 8** | Danny only — 184+ commercial segments |
+| `run_cuyahoga_pull.command` | Cuyahoga | 24 | **June 8** | Danny only — 186+ commercial segments |
 | `run_cuyahoga_both.command` | Cuyahoga | 24 | **June 8** | Danny + Carla — BIGGEST pull of year |
 | `run_lake_pull.command` | Lake | 25 | June 15 | Danny only — marina corridor |
 | `run_lake_both.command` | Lake | 25 | June 15 | Danny + Carla |
 | `run_lorain_pull.command` | Lorain | 26 | June 22 | Danny only — Avon corridor |
 | `run_lorain_both.command` | Lorain | 26 | June 22 | Danny + Carla |
 
-> ⚠️ **June 8 Cuyahoga** is the largest pull of the season — 184+ commercial segments including hospitals, sports venues, museums, government facilities, schools, and more. Takes 12-20 minutes. Use `run_cuyahoga_both.command`.
+> ⚠️ **June 8 Cuyahoga** is the largest pull of the season — 186+ commercial segments including hospitals, sports venues, museums, government facilities, schools, and more. Takes 12-20 minutes. Use `run_cuyahoga_both.command`.
