@@ -35,7 +35,7 @@ Example payload for property managers in Cuyahoga County:
 
 **Always pass `q_organization_keyword_tags`** — this catches decision-makers at property management companies where the contact's title isn't "property manager" (e.g., owner or VP at a 10-property HOA management firm).
 
-> ✅ **Title batching active (Run 132):** `workers/lead_pipeline.py` now batches DANNY_TITLES in groups of 50 and runs multiple Apollo searches per county pull, deduplicating by person ID. This prevents Apollo from silently capping large `person_titles` arrays. With 400+ titles across 186+ commercial segments, the old single-call approach risked returning zero contacts for many segments. Batching guarantees all 186+ segments are queried every pull.
+> ✅ **Title batching active (Run 132):** `workers/lead_pipeline.py` now batches DANNY_TITLES in groups of 50 and runs multiple Apollo searches per county pull, deduplicating by person ID. This prevents Apollo from silently capping large `person_titles` arrays. With 400+ titles across 188+ commercial segments, the old single-call approach risked returning zero contacts for many segments. Batching guarantees all 188+ segments are queried every pull.
 
 Target titles:
 - Property Manager, Property Management Director, Property Director
@@ -2222,7 +2222,7 @@ Save lead lists to `/outputs/danny/` as:
 
 **Sequence:** Route to Property Manager sequence (ISO 9001 / AS9100 facility compliance angle). First pull: June 8 Cuyahoga — Cuyahoga County alone has 150+ precision machining shops; industrial park clusters on I-480 west side (Brook Park, Middleburg Heights, Strongsville) are highest density.
 
-> 🗒️ **Run 195 batching note:** Danny now has 186+ commercial segments live in DANNY_TITLES + DANNY_ORG_KEYWORDS. All fire in the June 8 Cuyahoga mega-pull. The batching logic in lead_pipeline.py handles title + org keyword batching automatically.
+> 🗒️ **Run 195 batching note:** Danny now has 188+ commercial segments live in DANNY_TITLES + DANNY_ORG_KEYWORDS. All fire in the June 8 Cuyahoga mega-pull. The batching logic in lead_pipeline.py handles title + org keyword batching automatically.
 
 ### Segment #185 — Public Transit Agencies & Bus Depot Facilities (Run 196 | 2026-06-05)
 
@@ -2248,7 +2248,7 @@ Save lead lists to `/outputs/danny/` as:
 
 **Sequence:** Route to Property Manager sequence (facility management / compliance angle). First pull: June 8 Cuyahoga.
 
-> 🗒️ **Run 196 batching note:** Danny now has 186+ commercial segments live in DANNY_TITLES + DANNY_ORG_KEYWORDS. Both new segments (#185 Public Transit + #186 Industrial REIT) fire in the June 8 Cuyahoga mega-pull. 3 days away — set your 7:30am alarm.
+> 🗒️ **Run 196 batching note:** Danny now has 188+ commercial segments live in DANNY_TITLES + DANNY_ORG_KEYWORDS. Both new segments (#185 Public Transit + #186 Industrial REIT) fire in the June 8 Cuyahoga mega-pull. 3 days away — set your 7:30am alarm.
 
 ---
 

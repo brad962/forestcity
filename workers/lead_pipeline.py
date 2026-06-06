@@ -1988,6 +1988,23 @@ DANNY_TITLES = [
     'industrial property manager', 'logistics real estate manager', 'warehouse property manager',
     'industrial park manager', 'logistics park manager', 'industrial campus manager',
     'industrial portfolio manager', 'warehouse campus manager',
+    # Indoor Shooting Ranges & Archery Centers — segment #187; 50+ NE Ohio ranges;
+    # large parking lots + building exteriors + range surroundings; owner/operators sign vendor contracts;
+    # NRA-affiliated compliance standard; spring pre-season = peak pitch window (ranges get dirty over winter);
+    # $800-$2,500/visit; 2x/year = $1,600-$5,000/year per range; zero competitors cold-calling;
+    # first pull June 8 Cuyahoga (added 2026-06-06 run 197)
+    'shooting range manager', 'gun range manager', 'indoor range manager',
+    'archery center director', 'shooting sports manager', 'firearms range manager',
+    'gun range owner', 'archery range owner',
+    # Cannabis Cultivation & Processing Facilities — segment #188; Ohio rec. cannabis legal Nov 2023;
+    # grow licenses now active; DISTINCT from dispensaries (run 135) — these are production facilities;
+    # industrial-scale exterior maintenance: large secured perimeters + equipment areas + loading zones;
+    # Ohio State Board of Pharmacy licensing = exterior appearance standard;
+    # $3,000-$8,000/facility; quarterly recurring; zero competitors cold-calling cannabis grow FMs;
+    # first pull June 8 Cuyahoga (added 2026-06-06 run 197)
+    'cannabis cultivation manager', 'grow facility manager', 'cultivation director',
+    'cannabis operations manager', 'cannabis plant manager', 'marijuana operations manager',
+    'grow operations manager', 'cannabis facility manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -3157,6 +3174,14 @@ DANNY_ORG_KEYWORDS = [
     # that general PM tags miss; additive Apollo leads, zero overlap with residential/office PM (added 2026-06-05 run 196)
     'industrial real estate', 'logistics real estate', 'industrial park', 'warehouse real estate',
     'industrial reit', 'industrial property management', 'logistics campus',
+    # Indoor Shooting Ranges & Archery Centers — segment #187 org keywords (added 2026-06-06 run 197)
+    # Apollo returns shooting range owner/manager contacts under these org tags; additive, zero overlap
+    'shooting range', 'gun range', 'indoor range', 'archery center',
+    'shooting sports', 'firearms range', 'indoor shooting',
+    # Cannabis Cultivation & Processing Facilities — segment #188 org keywords (added 2026-06-06 run 197)
+    # DISTINCT from 'cannabis dispensary' (run 135); these are production/grow facility tags in Apollo
+    'cannabis cultivation', 'marijuana cultivation', 'cannabis grow', 'cannabis processor',
+    'marijuana processor', 'cannabis producer', 'cannabis grower',
 ]
 
 CARLA_SEARCHES = [

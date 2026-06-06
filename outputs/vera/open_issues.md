@@ -1,6 +1,6 @@
 # Vera Cole — Open Issues Tracker
-*Run 196 | 2026-06-05 | Compact version — historical run entries archived in git history*
-*188 open (186 carry-forward + 2 new this run) | 122 resolved*
+*Run 197 | 2026-06-06 | Compact version — historical run entries archived in git history*
+*190 open (188 carry-forward + 2 new this run) | 122 resolved*
 
 > ⚠️ **FILE SIZE NOTE:** This file was 572KB as of Run 195 due to prepending a full header every run.
 > Rewritten as a compact rolling summary on Run 196. Full history is in git log.
@@ -22,6 +22,22 @@
   6. Run `python3 workers/lead_pipeline.py pending` to enroll the waiting contacts
 - **Last attempt this run:** N/A — code fix is not possible from Vera's side. This requires Bradley to create the sequences in Mixmax UI. 21 consecutive runs flagged. Once Bradley creates the sequences, this resolves in 6 minutes.
 - **Full guide:** `outputs/vera/june4_june8_bridge_card_2026-06-04.md` (Gas Station section)
+
+---
+
+## NEW OPEN — Run 197 | 2026-06-06
+
+### OPEN — Indoor Shooting Ranges & Archery Centers (Segment #187)
+- **Status:** Code live — awaiting June 8 Cuyahoga pull
+- **Files updated:** `workers/lead_pipeline.py` (DANNY_TITLES + DANNY_ORG_KEYWORDS), `integrations/mixmax.py` (PROPERTY_MANAGER_TITLES)
+- **Key targets:** 50+ NE Ohio indoor ranges; owner-operators sign vendor contracts; $800-$2,500/visit; 2x/year; zero competitors
+- **Resolution:** Pull and enroll June 8. Mark resolved when shooting range contacts appear in Nina's report.
+
+### OPEN — Cannabis Cultivation & Processing Facilities (Segment #188)
+- **Status:** Code live — awaiting June 8 Cuyahoga pull
+- **Files updated:** `workers/lead_pipeline.py` (DANNY_TITLES + DANNY_ORG_KEYWORDS), `integrations/mixmax.py` (PROPERTY_MANAGER_TITLES)
+- **Key targets:** Ohio rec. cannabis grow facilities; DISTINCT from dispensaries (run 135); Ohio State Board of Pharmacy licensing = exterior appearance standard; $3,000-$8,000/facility; quarterly
+- **Resolution:** Pull and enroll June 8. Mark resolved when cannabis cultivation contacts appear in Nina's report.
 
 ---
 
@@ -54,10 +70,12 @@ The vast majority of open issues are segment tracking issues in the same state: 
 | #1–#182 | Segments awaiting June 8 pull (all coded) | Open — code live | June 8, 2026 |
 | #183 | Aerospace & Defense Manufacturers | Open — code live | June 8, 2026 |
 | #184 | Precision Machining & CNC Machine Shops | Open — code live | June 8, 2026 |
-| #185 | Public Transit Agencies & Bus Depots | NEW — code live (Run 196) | June 8, 2026 |
-| #186 | Industrial Real Estate & Logistics Parks | NEW — code live (Run 196) | June 8, 2026 |
+| #185 | Public Transit Agencies & Bus Depots | Code live (Run 196) | June 8, 2026 |
+| #186 | Industrial Real Estate & Logistics Parks | Code live (Run 196) | June 8, 2026 |
+| #187 | Indoor Shooting Ranges & Archery Centers | NEW — code live (Run 197) | June 8, 2026 |
+| #188 | Cannabis Cultivation & Processing Facilities | NEW — code live (Run 197) | June 8, 2026 |
 
-**Total open: 188 | Total resolved: 122**
+**Total open: 190 | Total resolved: 122**
 
 > ✅ All "awaiting June 8 pull" issues resolve on the same day (June 8). The Gas Station + Fleet Mixmax sequences are the only issues requiring a Bradley action before June 8.
 

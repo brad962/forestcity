@@ -996,6 +996,17 @@ PROPERTY_MANAGER_TITLES = [
     'industrial property manager', 'logistics real estate manager', 'warehouse property manager',
     'industrial park manager', 'logistics park manager', 'industrial campus manager',
     'industrial portfolio manager', 'warehouse campus manager',
+    # Indoor Shooting Ranges & Archery Centers — segment #187; routing to property_manager sequence
+    # (facility vendor contract / seasonal prep angle) (added 2026-06-06 run 197)
+    'shooting range manager', 'gun range manager', 'indoor range manager',
+    'archery center director', 'shooting sports manager', 'firearms range manager',
+    'gun range owner', 'archery range owner',
+    # Cannabis Cultivation & Processing Facilities — segment #188; routing to property_manager sequence
+    # (Ohio State Board of Pharmacy licensing / facility compliance angle); DISTINCT from dispensaries (run 135)
+    # (added 2026-06-06 run 197)
+    'cannabis cultivation manager', 'grow facility manager', 'cultivation director',
+    'cannabis operations manager', 'cannabis plant manager', 'marijuana operations manager',
+    'grow operations manager', 'cannabis facility manager',
 ]
 
 REALTOR_TITLES = [
