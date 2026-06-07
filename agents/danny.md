@@ -35,7 +35,7 @@ Example payload for property managers in Cuyahoga County:
 
 **Always pass `q_organization_keyword_tags`** — this catches decision-makers at property management companies where the contact's title isn't "property manager" (e.g., owner or VP at a 10-property HOA management firm).
 
-> ✅ **Title batching active (Run 132):** `workers/lead_pipeline.py` now batches DANNY_TITLES in groups of 50 and runs multiple Apollo searches per county pull, deduplicating by person ID. This prevents Apollo from silently capping large `person_titles` arrays. With 400+ titles across 188+ commercial segments, the old single-call approach risked returning zero contacts for many segments. Batching guarantees all 188+ segments are queried every pull.
+> ✅ **Title batching active (Run 132):** `workers/lead_pipeline.py` now batches DANNY_TITLES in groups of 50 and runs multiple Apollo searches per county pull, deduplicating by person ID. This prevents Apollo from silently capping large `person_titles` arrays. With 400+ titles across 190+ commercial segments, the old single-call approach risked returning zero contacts for many segments. Batching guarantees all 190+ segments are queried every pull.
 
 Target titles:
 - Property Manager, Property Management Director, Property Director
@@ -2222,7 +2222,7 @@ Save lead lists to `/outputs/danny/` as:
 
 **Sequence:** Route to Property Manager sequence (ISO 9001 / AS9100 facility compliance angle). First pull: June 8 Cuyahoga — Cuyahoga County alone has 150+ precision machining shops; industrial park clusters on I-480 west side (Brook Park, Middleburg Heights, Strongsville) are highest density.
 
-> 🗒️ **Run 195 batching note:** Danny now has 188+ commercial segments live in DANNY_TITLES + DANNY_ORG_KEYWORDS. All fire in the June 8 Cuyahoga mega-pull. The batching logic in lead_pipeline.py handles title + org keyword batching automatically.
+> 🗒️ **Run 195 batching note:** Danny now has 190+ commercial segments live in DANNY_TITLES + DANNY_ORG_KEYWORDS. All fire in the June 8 Cuyahoga mega-pull. The batching logic in lead_pipeline.py handles title + org keyword batching automatically.
 
 ### Segment #185 — Public Transit Agencies & Bus Depot Facilities (Run 196 | 2026-06-05)
 
@@ -2248,7 +2248,43 @@ Save lead lists to `/outputs/danny/` as:
 
 **Sequence:** Route to Property Manager sequence (facility management / compliance angle). First pull: June 8 Cuyahoga.
 
-> 🗒️ **Run 196 batching note:** Danny now has 188+ commercial segments live in DANNY_TITLES + DANNY_ORG_KEYWORDS. Both new segments (#185 Public Transit + #186 Industrial REIT) fire in the June 8 Cuyahoga mega-pull. 3 days away — set your 7:30am alarm.
+> 🗒️ **Run 196 batching note:** Danny now has 190+ commercial segments live in DANNY_TITLES + DANNY_ORG_KEYWORDS. Both new segments (#185 Public Transit + #186 Industrial REIT) fire in the June 8 Cuyahoga mega-pull. 3 days away — set your 7:30am alarm.
+
+---
+
+## Segment #189 — Multi-Site Fitness Chain District Operations *(added Run 198 | 2026-06-07)*
+
+**Why:** NE Ohio has ~25 Planet Fitness locations across 3-4 franchise groups, ~40 Anytime Fitness locations across multiple franchise networks, plus Gold's Gym (8 locations), LA Fitness (8 locations), Crunch Fitness, and Snap Fitness franchise groups. Each franchise group has a district or area manager who signs ONE vendor contract covering ALL locations in their territory. DISTINCT from individual gym managers (run 99 — `gym manager`/`fitness director`) and boutique studio owners (run 143 — `fitness franchise owner`/`studio director`). Target here: multi-site CHAIN OPERATOR level.
+
+**Revenue math:** $800-$2,000/location visit; 8-location district contract = $6,400-$16,000/year. 3 multi-site district contracts = $19,200-$48,000/year in recurring revenue. Large paved lots + building exteriors + concrete entry aprons at every location. Brand appearance is non-negotiable (franchise agreement compliance requires it).
+
+**Pitch angle:** "We handle parking lots, entry concrete, and exterior facades for fitness locations throughout Northeast Ohio — most fitness district managers set us up on a quarterly schedule across all their locations so they're not chasing maintenance property by property."
+
+**Apollo titles (live in DANNY_TITLES as of Run 198):** `health club district manager`, `gym district manager`, `fitness chain operations manager`, `multi-club manager`, `fitness operations director`, `fitness area manager`, `health club operations director`, `gym operations manager`
+
+**Apollo org keywords (live in DANNY_ORG_KEYWORDS as of Run 198):** `fitness management company`, `health club chain`, `fitness network`, `gym chain`, `fitness portfolio`, `fitness group`
+
+**Sequence:** Route to Property Manager sequence (multi-site vendor contract / facility management angle). First pull: June 8 Cuyahoga.
+
+---
+
+## Segment #190 — Cold Storage & Refrigerated Warehouse Networks *(added Run 198 | 2026-06-07)*
+
+**Why:** NE Ohio is a major cold chain hub. Lineage Logistics (world's largest cold storage REIT — multiple Cleveland-area facilities), Americold (Cleveland-area), US Cold Storage NE Ohio, Burris Logistics, Performance Food Group cold warehouses. STANDALONE COLD STORAGE OPERATORS — not food manufacturers who happen to have cold storage (run 127 already covers that under food plant org tags). These companies' sole function is storing/moving frozen/refrigerated products. Their Apollo org tags are entirely different from food manufacturers.
+
+**Revenue math:** Loading dock concrete (heavy brake fluid/diesel/hydraulic fluid staining from constant truck traffic), refrigerated bay exteriors, truck court pads. USDA AMS cold storage facility licensing + EPA SPCC/NPDES compliance = documented maintenance requirement. $2,000-$6,000/facility visit; quarterly = $8,000-$24,000/year per facility. 3-facility district relationship = $24,000-$72,000/year.
+
+**Pitch angle:** "We clean loading dock areas, refrigerated bay exteriors, and truck courts for cold storage facilities throughout Northeast Ohio — USDA and EPA compliance documentation included with every service visit. Works around your receiving schedules."
+
+**Apollo titles (live in DANNY_TITLES as of Run 198):** `cold storage facility manager`, `cold storage operations manager`, `refrigerated warehouse manager`, `temperature controlled facility manager`, `cold chain facility manager`, `cold storage district manager`, `refrigerated storage manager`, `cold storage regional manager`
+
+**Apollo org keywords (live in DANNY_ORG_KEYWORDS as of Run 198):** `cold storage logistics`, `refrigerated logistics`, `temperature controlled warehouse`, `cold chain warehouse`, `refrigerated distribution`, `cold warehouse`
+
+**DISTINCT from:** Food manufacturers with cold storage (run 127 — `cold storage manager` in PM titles covers food facility FMs under food processing org tags); general warehouses (run 105 — `warehouse manager` covers general logistics/fulfillment).
+
+**Sequence:** Route to Property Manager sequence (USDA/EPA compliance / facility management angle). First pull: June 8 Cuyahoga — Lineage Logistics and Americold have major Cuyahoga County facilities.
+
+> 🗒️ **Run 198 batching note:** Danny now has 190+ commercial segments live in DANNY_TITLES + DANNY_ORG_KEYWORDS. Both new segments (#189 Fitness Chain District Ops + #190 Cold Storage Networks) fire in the June 8 Cuyahoga mega-pull. **TOMORROW — set your 7:30am alarm NOW.**
 
 ---
 

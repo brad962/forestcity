@@ -2005,6 +2005,32 @@ DANNY_TITLES = [
     'cannabis cultivation manager', 'grow facility manager', 'cultivation director',
     'cannabis operations manager', 'cannabis plant manager', 'marijuana operations manager',
     'grow operations manager', 'cannabis facility manager',
+    # Multi-Site Fitness Chain District Operations — segment #189; Planet Fitness franchise groups
+    # (3-8+ NE Ohio locations per franchisee), Anytime Fitness franchise networks (40+ NE Ohio),
+    # Gold's Gym regional operators, LA Fitness regional FMs, Crunch Fitness franchise groups;
+    # DISTINCT from individual gym managers (run 99 — gym manager/fitness director already in list)
+    # and boutique studio owners (run 143 — fitness franchise owner/studio director already in list);
+    # multi-site district FMs sign one vendor contract covering all locations in their territory;
+    # large paved parking lots + building exteriors + concrete entry aprons across every location;
+    # $800-$2,000/location; 8-location district = $6,400-$16,000/year; zero competitors cold-calling
+    # fitness chain district managers; first pull June 8 Cuyahoga (added 2026-06-07 run 198)
+    'health club district manager', 'gym district manager', 'fitness chain operations manager',
+    'multi-club manager', 'fitness operations director', 'fitness area manager',
+    'health club operations director', 'gym operations manager',
+    # Cold Storage & Refrigerated Warehouse Networks — segment #190; Lineage Logistics (multiple
+    # Cleveland-area facilities — world's largest cold storage REIT), Americold Cleveland,
+    # US Cold Storage NE Ohio, NewCold, Burris Logistics, Performance Food Group cold warehouses;
+    # DISTINCT from food manufacturers with cold storage (run 127 — org tag 'food processing plant'/'food manufacturer');
+    # DISTINCT from general warehouses (run 105 — 'warehouse manager' already in list but targets
+    # distribution/fulfillment; cold storage companies have distinct Apollo org tags);
+    # loading dock concrete + refrigerated bay exteriors + truck court areas = heavy staining
+    # from brake fluid, hydraulic fluid, diesel, and constant heavy vehicle traffic;
+    # USDA AMS cold storage facility licensing + EPA SPCC/NPDES compliance = exterior cleanliness standard;
+    # $2,000-$6,000/facility visit; quarterly = $8,000-$24,000/year; NE Ohio = major cold chain hub;
+    # zero competitors cold-calling cold storage network FMs; first pull June 8 Cuyahoga (added 2026-06-07 run 198)
+    'cold storage facility manager', 'cold storage operations manager', 'refrigerated warehouse manager',
+    'temperature controlled facility manager', 'cold chain facility manager',
+    'cold storage district manager', 'refrigerated storage manager', 'cold storage regional manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -3182,6 +3208,20 @@ DANNY_ORG_KEYWORDS = [
     # DISTINCT from 'cannabis dispensary' (run 135); these are production/grow facility tags in Apollo
     'cannabis cultivation', 'marijuana cultivation', 'cannabis grow', 'cannabis processor',
     'marijuana processor', 'cannabis producer', 'cannabis grower',
+    # Multi-Site Fitness Chain District Operations — segment #189 org keywords (added 2026-06-07 run 198)
+    # DISTINCT from 'fitness center'/'health club'/'gym management' (run 99 — individual gym location tags)
+    # and 'boutique fitness'/'fitness studio' (run 143 — studio owner tags);
+    # these org tags catch multi-location FITNESS CHAIN OPERATORS in Apollo (franchise groups, chain operators)
+    # vs. individual gym locations; Planet Fitness franchise groups, Anytime Fitness networks, etc.
+    'fitness management company', 'health club chain', 'fitness network',
+    'gym chain', 'fitness portfolio', 'fitness group',
+    # Cold Storage & Refrigerated Warehouse Networks — segment #190 org keywords (added 2026-06-07 run 198)
+    # DISTINCT from 'cold storage warehouse'/'food plant management' (run 127 — food manufacturer context);
+    # DISTINCT from 'warehouse'/'distribution center' (run 105 — general logistics/fulfillment);
+    # these org tags catch STANDALONE COLD STORAGE OPERATORS in Apollo (Lineage, Americold, US Cold Storage)
+    # vs. food manufacturers that happen to have cold storage (already captured under food processing tags)
+    'cold storage logistics', 'refrigerated logistics', 'temperature controlled warehouse',
+    'cold chain warehouse', 'refrigerated distribution', 'cold warehouse',
 ]
 
 CARLA_SEARCHES = [

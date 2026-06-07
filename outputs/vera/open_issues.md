@@ -1,6 +1,6 @@
 # Vera Cole — Open Issues Tracker
-*Run 197 | 2026-06-06 | Compact version — historical run entries archived in git history*
-*190 open (188 carry-forward + 2 new this run) | 122 resolved*
+*Run 198 | 2026-06-07 | Compact version — historical run entries archived in git history*
+*192 open (190 carry-forward + 2 new this run) | 122 resolved*
 
 > ⚠️ **FILE SIZE NOTE:** This file was 572KB as of Run 195 due to prepending a full header every run.
 > Rewritten as a compact rolling summary on Run 196. Full history is in git log.
@@ -8,7 +8,25 @@
 
 ---
 
-## 🚨 CRITICAL BLOCKER — Gas Station + Fleet Washing Mixmax Sequences (Day 21)
+## NEW OPEN — Run 198 | 2026-06-07
+
+### OPEN — Multi-Site Fitness Chain District Operations (Segment #189)
+- **Status:** Code live — awaiting June 8 Cuyahoga pull
+- **Files updated:** `workers/lead_pipeline.py` (DANNY_TITLES + DANNY_ORG_KEYWORDS), `integrations/mixmax.py` (PROPERTY_MANAGER_TITLES), `agents/danny.md` (full segment brief)
+- **Key targets:** Planet Fitness franchise groups (25+ NE Ohio), Anytime Fitness franchise networks (40+ NE Ohio), Gold's Gym regional (8 NE Ohio), LA Fitness regional (8 NE Ohio)
+- **Revenue:** $6,400-$16,000/year per 8-location district contract; zero competitors cold-calling fitness chain district managers
+- **Resolution:** Pull and enroll June 8. Mark resolved when fitness chain district manager contacts appear in Nina's report.
+
+### OPEN — Cold Storage & Refrigerated Warehouse Networks (Segment #190)
+- **Status:** Code live — awaiting June 8 Cuyahoga pull
+- **Files updated:** `workers/lead_pipeline.py` (DANNY_TITLES + DANNY_ORG_KEYWORDS), `integrations/mixmax.py` (PROPERTY_MANAGER_TITLES), `agents/danny.md` (full segment brief)
+- **Key targets:** Lineage Logistics (multiple Cleveland-area facilities — world's largest cold storage REIT), Americold Cleveland, US Cold Storage NE Ohio, Burris Logistics, Performance Food Group cold warehouses
+- **Revenue:** $8,000-$24,000/year per facility; quarterly USDA/EPA compliance angle; 3-facility district = $24K-$72K/year
+- **Resolution:** Pull and enroll June 8. Mark resolved when cold storage FM contacts appear in Nina's report.
+
+---
+
+## 🚨 CRITICAL BLOCKER — Gas Station + Fleet Washing Mixmax Sequences (Day 23)
 
 - **First seen:** 2026-05-15 (Run ~55)
 - **Status:** OPEN — both sequences still `'id': 'PENDING'` in `integrations/mixmax.py` lines 47–58
@@ -72,10 +90,12 @@ The vast majority of open issues are segment tracking issues in the same state: 
 | #184 | Precision Machining & CNC Machine Shops | Open — code live | June 8, 2026 |
 | #185 | Public Transit Agencies & Bus Depots | Code live (Run 196) | June 8, 2026 |
 | #186 | Industrial Real Estate & Logistics Parks | Code live (Run 196) | June 8, 2026 |
-| #187 | Indoor Shooting Ranges & Archery Centers | NEW — code live (Run 197) | June 8, 2026 |
-| #188 | Cannabis Cultivation & Processing Facilities | NEW — code live (Run 197) | June 8, 2026 |
+| #187 | Indoor Shooting Ranges & Archery Centers | Code live (Run 197) | June 8, 2026 |
+| #188 | Cannabis Cultivation & Processing Facilities | Code live (Run 197) | June 8, 2026 |
+| #189 | Multi-Site Fitness Chain District Operations | NEW — code live (Run 198) | June 8, 2026 |
+| #190 | Cold Storage & Refrigerated Warehouse Networks | NEW — code live (Run 198) | June 8, 2026 |
 
-**Total open: 190 | Total resolved: 122**
+**Total open: 192 | Total resolved: 122**
 
 > ✅ All "awaiting June 8 pull" issues resolve on the same day (June 8). The Gas Station + Fleet Mixmax sequences are the only issues requiring a Bradley action before June 8.
 

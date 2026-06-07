@@ -1007,6 +1007,22 @@ PROPERTY_MANAGER_TITLES = [
     'cannabis cultivation manager', 'grow facility manager', 'cultivation director',
     'cannabis operations manager', 'cannabis plant manager', 'marijuana operations manager',
     'grow operations manager', 'cannabis facility manager',
+    # Multi-Site Fitness Chain District Operations — segment #189; routing to property_manager sequence
+    # (multi-site vendor contract / facility management angle); DISTINCT from individual gym managers
+    # (gym manager/fitness director run 99) and boutique studio owners (fitness franchise owner run 143);
+    # district-level fitness chain FMs sign one contract covering all locations in their territory
+    # (added 2026-06-07 run 198)
+    'health club district manager', 'gym district manager', 'fitness chain operations manager',
+    'multi-club manager', 'fitness operations director', 'fitness area manager',
+    'health club operations director', 'gym operations manager',
+    # Cold Storage & Refrigerated Warehouse Networks — segment #190; routing to property_manager sequence
+    # (USDA AMS cold storage licensing / EPA SPCC-NPDES compliance / facility management angle);
+    # DISTINCT from food manufacturers with cold storage (run 127 cold storage manager already in list);
+    # standalone cold storage REIT/network FMs — Lineage Logistics, Americold, US Cold Storage
+    # (added 2026-06-07 run 198)
+    'cold storage facility manager', 'cold storage operations manager', 'refrigerated warehouse manager',
+    'temperature controlled facility manager', 'cold chain facility manager',
+    'cold storage district manager', 'refrigerated storage manager', 'cold storage regional manager',
 ]
 
 REALTOR_TITLES = [
