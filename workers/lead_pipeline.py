@@ -2031,6 +2031,26 @@ DANNY_TITLES = [
     'cold storage facility manager', 'cold storage operations manager', 'refrigerated warehouse manager',
     'temperature controlled facility manager', 'cold chain facility manager',
     'cold storage district manager', 'refrigerated storage manager', 'cold storage regional manager',
+    # Intermodal Rail Terminals & Freight Hub Facilities — segment #191; CSX Collinwood Terminal (Cleveland's
+    # largest Class I rail freight facility), Norfolk Southern Cleveland Consolidated Terminal,
+    # Wheeling & Lake Erie Railway, CPKC (Canadian Pacific Kansas City) Cleveland hub;
+    # OSHA 29 CFR 1926 + EPA SPCC stormwater compliance = documented exterior maintenance requirement;
+    # locomotive service pits + freight cargo building facades + massive paved truck court areas = heavy staining;
+    # terminal facility managers sign vendor contracts; $5,000–$20,000/year per terminal;
+    # zero competitors cold-calling rail terminal FM contacts in NE Ohio; first pull June 8 Cuyahoga (added 2026-06-08 run 199)
+    'rail terminal manager', 'intermodal terminal manager', 'freight terminal manager',
+    'rail yard manager', 'intermodal facility manager', 'freight hub manager',
+    'rail operations manager', 'terminal operations director', 'rail terminal superintendent',
+    # Commercial Parking Management Portfolio Companies — segment #192; SP+ Corporation (formerly Standard
+    # Parking Plus), Impark, ABM Parking Services, InterPark, Lanier Parking, Premium Parking;
+    # DISTINCT from individual parking structure managers (run 128 — single-facility titles);
+    # these are PORTFOLIO-LEVEL management companies operating 50-200+ NE Ohio lots/garages;
+    # one regional operations manager contact = vendor deal across entire NE Ohio portfolio;
+    # $500-$2,000/location × 30-lot portfolio = $15,000-$60,000/year from ONE contact;
+    # zero competitors cold-calling parking management company regional ops managers; first pull June 8 Cuyahoga (added 2026-06-08 run 199)
+    'parking management regional manager', 'parking portfolio manager', 'parking network manager',
+    'parking operations regional manager', 'parking management director', 'parking services director',
+    'valet parking manager', 'parking management operations director', 'parking company regional director',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -3222,6 +3242,16 @@ DANNY_ORG_KEYWORDS = [
     # vs. food manufacturers that happen to have cold storage (already captured under food processing tags)
     'cold storage logistics', 'refrigerated logistics', 'temperature controlled warehouse',
     'cold chain warehouse', 'refrigerated distribution', 'cold warehouse',
+    # Intermodal Rail Terminals & Freight Hub Facilities — segment #191 org keywords (added 2026-06-08 run 199)
+    # DISTINCT from 'freight terminal'/'distribution center' (run 105 — road-based logistics);
+    # these org tags catch RAIL TERMINAL OPERATORS in Apollo vs. general logistics companies
+    'intermodal terminal', 'rail terminal', 'freight rail', 'railroad terminal',
+    'intermodal facility', 'rail yard', 'rail hub', 'freight hub',
+    # Commercial Parking Management Portfolio Companies — segment #192 org keywords (added 2026-06-08 run 199)
+    # DISTINCT from 'parking garage management'/'parking structure' (run 128 — individual facility tags);
+    # these org tags catch PARKING MANAGEMENT COMPANIES (SP+, Impark, ABM Parking, Lanier) in Apollo
+    'parking management company', 'parking services company', 'commercial parking management',
+    'valet parking management', 'parking portfolio management', 'parking management services',
 ]
 
 CARLA_SEARCHES = [

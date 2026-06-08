@@ -1,45 +1,39 @@
-🔧 *Vera — Auto-Upgrade | Run 198 | June 7*
->Changed: NEW Segment #189 — Multi-Site Fitness Chain District Operations (8 DANNY_TITLES + 6 DANNY_ORG_KEYWORDS + 8 PROPERTY_MANAGER_TITLES routing)
->Why: Planet Fitness franchise groups (25+ NE Ohio locations across 3-4 groups), Anytime Fitness networks (40+ NE Ohio), Gold's Gym (8), LA Fitness (8) — district FMs sign ONE contract covering all locations in territory; DISTINCT from individual gym managers (run 99) and boutique studio owners (run 143); large paved lots + building exteriors at every location; $6,400-$16,000/year per 8-location district; zero competitors cold-calling fitness chain district managers; first pull June 8 Cuyahoga
+🔧 *Vera — Auto-Upgrade | Run 199 | June 8*
+>Changed: NEW Segment #191 — Intermodal Rail Terminals & Freight Hub Facilities (9 DANNY_TITLES + 8 DANNY_ORG_KEYWORDS + 9 PROPERTY_MANAGER_TITLES routing)
+>Why: CSX Collinwood Terminal (Cleveland's largest Class I rail facility), Norfolk Southern Cleveland Consolidated Terminal, Wheeling & Lake Erie Railway, CPKC Cleveland hub — OSHA 29 CFR 1926 + EPA SPCC compliance angle; locomotive service pits + massive paved truck court areas = heavy staining; $5,000–$20,000/year per terminal; zero competitors cold-calling rail terminal FMs in NE Ohio; fires in today's June 8 Cuyahoga pull
 >File: workers/lead_pipeline.py, integrations/mixmax.py
 ---
-🔧 *Vera — Auto-Upgrade | Run 198 | June 7*
->Changed: NEW Segment #190 — Cold Storage & Refrigerated Warehouse Networks (8 DANNY_TITLES + 6 DANNY_ORG_KEYWORDS + 8 PROPERTY_MANAGER_TITLES routing)
->Why: Lineage Logistics (world's largest cold storage REIT — multiple Cleveland facilities), Americold Cleveland, US Cold Storage NE Ohio, Burris Logistics — DISTINCT from food manufacturers with cold storage (run 127 org tags); loading dock concrete + refrigerated bay exteriors = heavy staining; USDA AMS + EPA SPCC/NPDES compliance = documented maintenance requirement; $8K-$24K/facility/year; zero competitors cold-calling cold storage network FMs; first pull June 8 Cuyahoga
+🔧 *Vera — Auto-Upgrade | Run 199 | June 8*
+>Changed: NEW Segment #192 — Commercial Parking Management Portfolio Companies (9 DANNY_TITLES + 6 DANNY_ORG_KEYWORDS + 9 PROPERTY_MANAGER_TITLES routing)
+>Why: SP+ Corporation (formerly Standard Parking Plus), Impark, ABM Parking Services, InterPark, Lanier Parking — DISTINCT from individual parking structure managers (run 128); these are PORTFOLIO-LEVEL operators managing 50–200+ NE Ohio lots; ONE regional operations manager contact = vendor deal across entire NE Ohio portfolio; $15,000–$60,000/year from ONE call; fires in today's June 8 Cuyahoga pull
 >File: workers/lead_pipeline.py, integrations/mixmax.py
 ---
-🔧 *Vera — Count Sync | Run 198 | June 7*
->Changed: 188+ → 190+ across workers/vera_relay.py (11 occ), CLAUDE.md (2 occ), agents/danny.md (3 occ)
->Why: 2 new segments added (#189 Fitness Chain District Ops + #190 Cold Storage Networks); all Slack countdown alerts + CLAUDE.md quick reference + danny.md batching note now reflect accurate 190+ count for June 8 Cuyahoga mega-pull
->File: workers/vera_relay.py, CLAUDE.md, agents/danny.md
+🔧 *Vera — Count Sync | Run 199 | June 8*
+>Changed: 190+ → 192+ across CLAUDE.md (2 occ), workers/vera_relay.py (all occ), agents/danny.md (3 occ)
+>Why: 2 new segments added (#191 Intermodal Rail + #192 Parking Portfolio); all count references now accurate for June 8 Cuyahoga mega-pull
+>File: CLAUDE.md, workers/vera_relay.py, agents/danny.md
 ---
-📋 *Vera — Deliverable | Run 198 | June 7 (Sunday)*
->Wrote: Sunday June 7 Final Pre-Flight Card — outputs/vera/sunday_june7_final_preflight_2026-06-07.md
->3 tonight actions (Gas Station/Fleet Mixmax 5-min fix + Instantly pause confirm + 7:30am alarm), June 8 execution table (7:30am → run_cuyahoga_both.command → pending enrollment), full segment revenue table showing all 190+ first-pull categories, post-pull calendar June 8 → June 29.
+📋 *Vera — Deliverable | Run 199 | June 8 (JUNE 8 MEGA-PULL DAY)*
+>Wrote: June 8 Post-Pull Action Card — outputs/vera/june8_post_pull_action_card_2026-06-08.md
+>What to do immediately after the Cuyahoga pull fires: enrollment verification, pending enrollment command, Nina daily report, hot lead timeline (first opens June 11-13), Tier 1 priority contacts table, revenue projections ($39K-$258K pipeline), troubleshooting if 0 contacts
+>Read this after run_cuyahoga_both.command completes
 ---
-🚨 *Vera — CRITICAL BLOCKER | Day 23 | June 7 (Sunday) — LAST NIGHT BEFORE JUNE 8*
->GAS STATION + FLEET WASHING MIXMAX SEQUENCES STILL PENDING — contacts unenrolled since May 15
->TONIGHT IS YOUR LAST WINDOW. June 8 pull fires at 7am tomorrow. Gas station + fleet contacts need sequences LIVE so `python3 workers/lead_pipeline.py pending` can enroll them right after the pull.
+📋 *Vera — Deliverable | Run 199 | June 8*
+>Wrote: June 9–14 Bridge Sprint — outputs/donna/june9_14_bridge_sprint_2026-06-08.md
+>Day-by-day actions June 9–14: June 11 is the critical hot-leads day (first opens from Cuyahoga pull); LinkedIn connect protocol; success metrics table; Lake County June 15 preview
+>Read this Monday morning after the post-pull card
+---
+🚨 *Vera — CRITICAL BLOCKER | Day 24 | June 8 — CUYAHOGA PULL DAY*
+>GAS STATION + FLEET WASHING MIXMAX SEQUENCES STILL PENDING — 24 days, contacts unenrolled since May 15
+>The June 8 Cuyahoga pull is firing RIGHT NOW — new gas station + fleet contacts are being pulled into contacts_cache.json. They will sit unenrolled until sequences exist.
 >Fix takes 5 minutes:
 >(1) app.mixmax.com → Sequences → New → "Forest City Power Washing — Gas Station & C-Store Outreach" → copy ID → integrations/mixmax.py line 54
 >(2) Repeat for Fleet → "Forest City Power Washing — Fleet Washing Outreach" → line 48
->(3) After June 8 pull: python3 workers/lead_pipeline.py pending
->Full guide: outputs/vera/sunday_june7_final_preflight_2026-06-07.md (Action ① at top)
+>(3) After pull completes: python3 workers/lead_pipeline.py pending
+>This unblocks BOTH segments today. Peak season window is shrinking.
 ---
-⏰ *Vera — June 8 Countdown | TOMORROW MORNING — Set Your 7:30am Alarm NOW*
->JUNE 8 IS TOMORROW. 190+ commercial segments. The biggest pull of peak season.
->What fires tomorrow:
->• Hospitals: Cleveland Clinic, UH, MetroHealth, Summa campuses
->• Transit: GCRTA (5+ bus garages + rail maintenance) — $40K-$125K/year from ONE agency
->• Industrial REIT: ProLogis Cleveland (5M+ sq ft) — $150K-$500K/year from ONE FM contact
->• NEW: Fitness chain district managers (Planet Fitness groups, Anytime Fitness networks)
->• NEW: Cold storage networks (Lineage Logistics, Americold Cleveland)
->• Museums, sports venues, cannabis grow facilities, shooting ranges + 182 other segments
->Command: double-click scripts/run_cuyahoga_both.command in Finder (12-20 min unattended)
->Pre-flight guide: outputs/vera/sunday_june7_final_preflight_2026-06-07.md
----
-✅ *Vera — Scan Complete 2026-06-07 (Run 198)*
->2 auto-upgrades shipped | 0 proposals | 192 open issues (190 carry-forward + 2 new: #189 Fitness Chain District Ops + #190 Cold Storage Networks)
->Sunday final pre-flight card written for June 8 morning execution
->CRITICAL: Gas Station/Fleet Mixmax sequences still PENDING (Day 23) — fix TONIGHT — last window before June 8
->JUNE 8 TOMORROW — 190+ segments, 7:30am alarm — biggest pull of peak season
+✅ *Vera — Scan Complete 2026-06-08 (Run 199)*
+>2 auto-upgrades shipped (Segments #191 + #192) | 1 count sync | 2 deliverables | 194 open issues (192 carry-forward + 2 new: #191 Intermodal Rail + #192 Parking Portfolio)
+>JUNE 8 MEGA-PULL IS TODAY — 192+ segments — run scripts/run_cuyahoga_both.command at 7:30am if not already running
+>Post-pull card: outputs/vera/june8_post_pull_action_card_2026-06-08.md | Bridge sprint: outputs/donna/june9_14_bridge_sprint_2026-06-08.md
+>CRITICAL: Gas Station/Fleet Mixmax sequences still PENDING (Day 24) — 5-minute fix in Mixmax UI unblocks both segments today

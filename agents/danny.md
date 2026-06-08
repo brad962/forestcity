@@ -35,7 +35,7 @@ Example payload for property managers in Cuyahoga County:
 
 **Always pass `q_organization_keyword_tags`** — this catches decision-makers at property management companies where the contact's title isn't "property manager" (e.g., owner or VP at a 10-property HOA management firm).
 
-> ✅ **Title batching active (Run 132):** `workers/lead_pipeline.py` now batches DANNY_TITLES in groups of 50 and runs multiple Apollo searches per county pull, deduplicating by person ID. This prevents Apollo from silently capping large `person_titles` arrays. With 400+ titles across 190+ commercial segments, the old single-call approach risked returning zero contacts for many segments. Batching guarantees all 190+ segments are queried every pull.
+> ✅ **Title batching active (Run 132):** `workers/lead_pipeline.py` now batches DANNY_TITLES in groups of 50 and runs multiple Apollo searches per county pull, deduplicating by person ID. This prevents Apollo from silently capping large `person_titles` arrays. With 400+ titles across 192+ commercial segments, the old single-call approach risked returning zero contacts for many segments. Batching guarantees all 192+ segments are queried every pull.
 
 Target titles:
 - Property Manager, Property Management Director, Property Director
@@ -2222,7 +2222,7 @@ Save lead lists to `/outputs/danny/` as:
 
 **Sequence:** Route to Property Manager sequence (ISO 9001 / AS9100 facility compliance angle). First pull: June 8 Cuyahoga — Cuyahoga County alone has 150+ precision machining shops; industrial park clusters on I-480 west side (Brook Park, Middleburg Heights, Strongsville) are highest density.
 
-> 🗒️ **Run 195 batching note:** Danny now has 190+ commercial segments live in DANNY_TITLES + DANNY_ORG_KEYWORDS. All fire in the June 8 Cuyahoga mega-pull. The batching logic in lead_pipeline.py handles title + org keyword batching automatically.
+> 🗒️ **Run 195 batching note:** Danny now has 192+ commercial segments live in DANNY_TITLES + DANNY_ORG_KEYWORDS. All fire in the June 8 Cuyahoga mega-pull. The batching logic in lead_pipeline.py handles title + org keyword batching automatically.
 
 ### Segment #185 — Public Transit Agencies & Bus Depot Facilities (Run 196 | 2026-06-05)
 
@@ -2248,7 +2248,7 @@ Save lead lists to `/outputs/danny/` as:
 
 **Sequence:** Route to Property Manager sequence (facility management / compliance angle). First pull: June 8 Cuyahoga.
 
-> 🗒️ **Run 196 batching note:** Danny now has 190+ commercial segments live in DANNY_TITLES + DANNY_ORG_KEYWORDS. Both new segments (#185 Public Transit + #186 Industrial REIT) fire in the June 8 Cuyahoga mega-pull. 3 days away — set your 7:30am alarm.
+> 🗒️ **Run 196 batching note:** Danny now has 192+ commercial segments live in DANNY_TITLES + DANNY_ORG_KEYWORDS. Both new segments (#185 Public Transit + #186 Industrial REIT) fire in the June 8 Cuyahoga mega-pull. 3 days away — set your 7:30am alarm.
 
 ---
 
@@ -2284,7 +2284,9 @@ Save lead lists to `/outputs/danny/` as:
 
 **Sequence:** Route to Property Manager sequence (USDA/EPA compliance / facility management angle). First pull: June 8 Cuyahoga — Lineage Logistics and Americold have major Cuyahoga County facilities.
 
-> 🗒️ **Run 198 batching note:** Danny now has 190+ commercial segments live in DANNY_TITLES + DANNY_ORG_KEYWORDS. Both new segments (#189 Fitness Chain District Ops + #190 Cold Storage Networks) fire in the June 8 Cuyahoga mega-pull. **TOMORROW — set your 7:30am alarm NOW.**
+> 🗒️ **Run 198 batching note:** Danny now has 192+ commercial segments live in DANNY_TITLES + DANNY_ORG_KEYWORDS. Both new segments (#189 Fitness Chain District Ops + #190 Cold Storage Networks) fire in the June 8 Cuyahoga mega-pull. **TOMORROW — set your 7:30am alarm NOW.**
+
+> 🗒️ **Run 199 batching note (June 8 — TODAY):** Danny now has 192+ commercial segments live in DANNY_TITLES + DANNY_ORG_KEYWORDS. Two new segments added this morning: #191 Intermodal Rail Terminals & Freight Hubs (CSX Collinwood, NS Cleveland, W&LE — OSHA/SPCC compliance angle) + #192 Commercial Parking Management Portfolio Companies (SP+, Impark, ABM Parking — one contact = 50–200 lot portfolio deal). Both fire in today's Cuyahoga mega-pull. Post-pull action card: `outputs/vera/june8_post_pull_action_card_2026-06-08.md`. Next pull: Lake County June 15.
 
 ---
 

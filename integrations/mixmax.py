@@ -1023,6 +1023,18 @@ PROPERTY_MANAGER_TITLES = [
     'cold storage facility manager', 'cold storage operations manager', 'refrigerated warehouse manager',
     'temperature controlled facility manager', 'cold chain facility manager',
     'cold storage district manager', 'refrigerated storage manager', 'cold storage regional manager',
+    # Intermodal Rail Terminals & Freight Hub Facilities — segment #191; routing to property_manager sequence
+    # (OSHA 29 CFR 1926 + EPA SPCC stormwater compliance angle); CSX Collinwood Terminal, NS Cleveland,
+    # Wheeling & Lake Erie Railway; first pull June 8 Cuyahoga (added 2026-06-08 run 199)
+    'rail terminal manager', 'intermodal terminal manager', 'freight terminal manager',
+    'rail yard manager', 'intermodal facility manager', 'freight hub manager',
+    'rail operations manager', 'terminal operations director', 'rail terminal superintendent',
+    # Commercial Parking Management Portfolio Companies — segment #192; routing to property_manager sequence
+    # (facility management / multi-site vendor contract angle); SP+, Impark, ABM Parking, Lanier Parking;
+    # DISTINCT from individual parking structure managers (run 128); first pull June 8 Cuyahoga (added 2026-06-08 run 199)
+    'parking management regional manager', 'parking portfolio manager', 'parking network manager',
+    'parking operations regional manager', 'parking management director', 'parking services director',
+    'valet parking manager', 'parking management operations director', 'parking company regional director',
 ]
 
 REALTOR_TITLES = [
