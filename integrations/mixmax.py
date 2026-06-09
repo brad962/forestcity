@@ -1035,6 +1035,19 @@ PROPERTY_MANAGER_TITLES = [
     'parking management regional manager', 'parking portfolio manager', 'parking network manager',
     'parking operations regional manager', 'parking management director', 'parking services director',
     'valet parking manager', 'parking management operations director', 'parking company regional director',
+    # Co-Packing & Contract Manufacturing Facilities — segment #193; routing to property_manager sequence
+    # (FDA 21 CFR + OSHA compliance angle); DISTINCT from food plants (run 127) + general mfg (run 118)
+    # first pull Lake County June 15 (added 2026-06-09 run 200)
+    'co-packing operations manager', 'contract manufacturing manager', 'packaging plant manager',
+    'co-manufacturing director', 'contract packaging manager', 'co-pack facility manager',
+    'toll manufacturing manager', 'packaging operations manager',
+    # Semiconductor & PCB/Electronics Manufacturers — segment #194; routing to property_manager sequence
+    # (ISO 14001 + OEPA NPDES compliance angle); DISTINCT from aerospace (run 183) + medical device (run 168)
+    # Parker Hannifin Electronics (Mayfield Heights), API Technologies, Greatbatch (Lake County)
+    # first pull Lake County June 15 (added 2026-06-09 run 200)
+    'semiconductor plant manager', 'pcb manufacturing manager', 'circuit board plant manager',
+    'electronics plant manager', 'printed circuit board manager', 'electronics manufacturing manager',
+    'semiconductor facility manager', 'electronics operations manager',
 ]
 
 REALTOR_TITLES = [

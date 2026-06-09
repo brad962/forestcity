@@ -2051,6 +2051,28 @@ DANNY_TITLES = [
     'parking management regional manager', 'parking portfolio manager', 'parking network manager',
     'parking operations regional manager', 'parking management director', 'parking services director',
     'valet parking manager', 'parking management operations director', 'parking company regional director',
+    # Co-Packing & Contract Manufacturing Facilities — segment #193; DISTINCT from general manufacturing
+    # (run 118 — captive plant FMs) and food processing (run 127 — branded food plants);
+    # these are THIRD-PARTY contract packagers and toll manufacturers who package/produce for brands;
+    # FDA 21 CFR Part 110/117 (food co-packing) + OSHA 1910.22 compliance angle;
+    # NE Ohio contract manufacturing sector: Invacare (Elyria), Nidec Motor Corp, Ferro Corp co-pack division;
+    # 100+ NE Ohio contract packagers; loading dock areas + building exteriors = recurring pressure wash;
+    # plant managers/operations directors sign vendor contracts directly; $3K-$8K/facility;
+    # zero competitors cold-calling co-packing facility FMs in NE Ohio; first pull Lake June 15 (added 2026-06-09 run 200)
+    'co-packing operations manager', 'contract manufacturing manager', 'packaging plant manager',
+    'co-manufacturing director', 'contract packaging manager', 'co-pack facility manager',
+    'toll manufacturing manager', 'packaging operations manager',
+    # Semiconductor & PCB/Electronics Circuit Board Manufacturers — segment #194;
+    # DISTINCT from aerospace/defense (run 183) and medical device (run 168);
+    # NE Ohio electronics manufacturing: Parker Hannifin Electronics (Mayfield Heights),
+    # API Technologies (Cleveland), Benchmark Electronics, Greatbatch (Lake County),
+    # Vishay Intertechnology (Cleveland), Keithley Instruments (Solon);
+    # ISO 14001 + OEPA NPDES permit = documented exterior maintenance requirement;
+    # cleanrooms require clean exterior perimeters — audit-ready appearance standard;
+    # $3K-$12K/facility; zero competitors cold-calling NE Ohio electronics plant FMs; first pull Lake June 15 (added 2026-06-09 run 200)
+    'semiconductor plant manager', 'pcb manufacturing manager', 'circuit board plant manager',
+    'electronics plant manager', 'printed circuit board manager', 'electronics manufacturing manager',
+    'semiconductor facility manager', 'electronics operations manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -3252,6 +3274,17 @@ DANNY_ORG_KEYWORDS = [
     # these org tags catch PARKING MANAGEMENT COMPANIES (SP+, Impark, ABM Parking, Lanier) in Apollo
     'parking management company', 'parking services company', 'commercial parking management',
     'valet parking management', 'parking portfolio management', 'parking management services',
+    # Co-Packing & Contract Manufacturing Facilities — segment #193 org keywords (added 2026-06-09 run 200)
+    # DISTINCT from 'food processing'/'food manufacturer' (run 127 branded food plants);
+    # DISTINCT from 'manufacturing plant'/'industrial facility' (run 118 captive manufacturers);
+    # these org tags catch THIRD-PARTY CONTRACT MANUFACTURERS in Apollo
+    'contract manufacturing', 'co-packing', 'co-manufacturing', 'toll manufacturing',
+    'contract packaging', 'co-pack', 'packaging services', 'outsourced manufacturing',
+    # Semiconductor & PCB/Electronics Manufacturers — segment #194 org keywords (added 2026-06-09 run 200)
+    # DISTINCT from 'aerospace'/'defense manufacturer' (run 183) and 'medical device' (run 168);
+    # these org tags catch ELECTRONICS/PCB MANUFACTURERS in Apollo (Parker Hannifin Electronics, API Technologies)
+    'semiconductor manufacturer', 'circuit board manufacturer', 'pcb manufacturer',
+    'electronics manufacturer', 'printed circuit board', 'electronics assembly',
 ]
 
 CARLA_SEARCHES = [

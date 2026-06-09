@@ -2286,7 +2286,9 @@ Save lead lists to `/outputs/danny/` as:
 
 > 🗒️ **Run 198 batching note:** Danny now has 192+ commercial segments live in DANNY_TITLES + DANNY_ORG_KEYWORDS. Both new segments (#189 Fitness Chain District Ops + #190 Cold Storage Networks) fire in the June 8 Cuyahoga mega-pull. **TOMORROW — set your 7:30am alarm NOW.**
 
-> 🗒️ **Run 199 batching note (June 8 — TODAY):** Danny now has 192+ commercial segments live in DANNY_TITLES + DANNY_ORG_KEYWORDS. Two new segments added this morning: #191 Intermodal Rail Terminals & Freight Hubs (CSX Collinwood, NS Cleveland, W&LE — OSHA/SPCC compliance angle) + #192 Commercial Parking Management Portfolio Companies (SP+, Impark, ABM Parking — one contact = 50–200 lot portfolio deal). Both fire in today's Cuyahoga mega-pull. Post-pull action card: `outputs/vera/june8_post_pull_action_card_2026-06-08.md`. Next pull: Lake County June 15.
+> 🗒️ **Run 199 batching note (June 8):** Danny had 192+ commercial segments live in DANNY_TITLES + DANNY_ORG_KEYWORDS for the Cuyahoga mega-pull. Two segments added June 8 morning: #191 Intermodal Rail Terminals & Freight Hubs + #192 Commercial Parking Management Portfolio Companies. Both fired in the June 8 Cuyahoga pull. Post-pull action card: `outputs/vera/june8_post_pull_action_card_2026-06-08.md`.
+
+> 🗒️ **Run 200 batching note (June 9):** Danny now has 194+ commercial segments live in DANNY_TITLES + DANNY_ORG_KEYWORDS. Two new segments added this run: #193 Co-Packing & Contract Manufacturing Facilities (FDA 21 CFR/OSHA compliance angle; 100+ NE Ohio contract packagers; $3K-$8K/facility) + #194 Semiconductor & PCB/Electronics Manufacturers (ISO 14001/OEPA NPDES compliance; Parker Hannifin Electronics, API Technologies, Greatbatch — Lake County density). Both fire in the **Lake County June 15 pull**. Use `run_lake_both.command` on June 15.
 
 ---
 

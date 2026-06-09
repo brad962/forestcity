@@ -1,6 +1,6 @@
 # Vera Cole — Open Issues Tracker
-*Run 199 | 2026-06-08 | Compact version — historical run entries archived in git history*
-*192 open (190 carry-forward + 2 new this run) | 122 resolved*
+*Run 200 | 2026-06-09 | Compact version — historical run entries archived in git history*
+*194 open (192 carry-forward + 2 new this run) | 122 resolved*
 
 > ⚠️ **FILE SIZE NOTE:** This file was 572KB as of Run 195 due to prepending a full header every run.
 > Rewritten as a compact rolling summary on Run 196. Full history is in git log.
@@ -8,7 +8,23 @@
 
 ---
 
-## NEW OPEN — Run 199 | 2026-06-08
+## NEW OPEN — Run 200 | 2026-06-09
+
+### OPEN — Co-Packing & Contract Manufacturing Facilities (Segment #193)
+- **Status:** Code live — first pull Lake County June 15
+- **Files updated:** `workers/lead_pipeline.py` (DANNY_TITLES + DANNY_ORG_KEYWORDS), `integrations/mixmax.py` (PROPERTY_MANAGER_TITLES), `agents/danny.md` (Run 200 batching note)
+- **Key targets:** Lake County contract packagers and toll manufacturers; FDA 21 CFR Part 110/117 compliance angle; $3K-$8K/facility; OSHA 1910.22; DISTINCT from food plants (run 127) and general manufacturing (run 118)
+- **Resolution:** Pull fires June 15. Mark resolved when co-packing contacts appear in Nina's report.
+
+### OPEN — Semiconductor & PCB/Electronics Manufacturers (Segment #194)
+- **Status:** Code live — first pull Lake County June 15
+- **Files updated:** `workers/lead_pipeline.py` (DANNY_TITLES + DANNY_ORG_KEYWORDS), `integrations/mixmax.py` (PROPERTY_MANAGER_TITLES), `agents/danny.md` (Run 200 batching note)
+- **Key targets:** Integer Holdings Corp (formerly Greatbatch, Lake County), API Technologies, Benchmark Electronics, Parker Hannifin Electronics (Mayfield Heights); ISO 14001 + OEPA NPDES compliance; $3K-$12K/facility; DISTINCT from aerospace (run 183) and medical device (run 168)
+- **Resolution:** Pull fires June 15. Mark resolved when electronics manufacturer contacts appear in Nina's report.
+
+---
+
+## Previously Open — Run 199 | 2026-06-08
 
 ### OPEN — Intermodal Rail Terminals & Freight Hub Facilities (Segment #191)
 - **Status:** Code live — first pull June 8 Cuyahoga (today)
@@ -44,28 +60,20 @@
 
 ## Active Open Issues — Summary Table
 
-Today is June 8. The Cuyahoga mega-pull fires today. All 190+ "awaiting June 8 pull" segments now have the pull in motion. Resolution status changes from "awaiting" to "verify enrollment" — mark fully resolved when contacts appear in Nina's report June 9-11.
+Today is June 9. The June 8 Cuyahoga mega-pull should have fired yesterday. Verify contacts are appearing in contacts_cache.json and enrolled in Mixmax. Run Nina's hot leads report to confirm.
 
 | Issue # | Segment | Status | Expected Resolution |
 |---------|---------|--------|---------------------|
-| Gas Station | Gas Station & C-Store Mixmax sequence | 🚨 BLOCKER — needs 5-min Mixmax UI fix | Bradley action required |
-| Fleet Washing | Fleet Washing Mixmax sequence | 🚨 BLOCKER — needs 5-min Mixmax UI fix | Bradley action required |
-| #1–#182 | Segments awaiting June 8 pull (all coded) | **Pull fired June 8 — verify enrollment June 9** | Confirm contacts in Nina report June 9-11 |
-| #183 | Aerospace & Defense Manufacturers | **Pull fired June 8** | Confirm contacts in Nina report |
-| #184 | Precision Machining & CNC Machine Shops | **Pull fired June 8** | Confirm contacts in Nina report |
-| #185 | Public Transit Agencies & Bus Depots | **Pull fired June 8** | Confirm contacts in Nina report |
-| #186 | Industrial Real Estate & Logistics Parks | **Pull fired June 8** | Confirm contacts in Nina report |
-| #187 | Indoor Shooting Ranges & Archery Centers | **Pull fired June 8** | Confirm contacts in Nina report |
-| #188 | Cannabis Cultivation & Processing Facilities | **Pull fired June 8** | Confirm contacts in Nina report |
-| #189 | Multi-Site Fitness Chain District Operations | **Pull fired June 8** | Confirm contacts in Nina report |
-| #190 | Cold Storage & Refrigerated Warehouse Networks | **Pull fired June 8** | Confirm contacts in Nina report |
-| #191 | Intermodal Rail Terminals & Freight Hubs | NEW — code live (Run 199) — pull fires today | Confirm contacts in Nina report |
-| #192 | Commercial Parking Management Portfolio Companies | NEW — code live (Run 199) — pull fires today | Confirm contacts in Nina report |
+| Gas Station | Gas Station & C-Store Mixmax sequence | 🚨 BLOCKER Day 25+ — needs 5-min Mixmax UI fix BEFORE June 15 Lake pull | Bradley action required TONIGHT (June 14 at latest) |
+| Fleet Washing | Fleet Washing Mixmax sequence | 🚨 BLOCKER Day 25+ — same as above | Bradley action required TONIGHT (June 14 at latest) |
+| #1–#192 | Segments — June 8 Cuyahoga pull | **VERIFY: run `check_replies.py` + read `contacts_cache.json`** | Confirm contacts enrolled, first opens June 9-11 |
+| #193 | Co-Packing & Contract Manufacturing | NEW (Run 200) — code live — pull fires Lake June 15 | Confirm contacts in Nina report June 16-18 |
+| #194 | Semiconductor & PCB/Electronics Manufacturers | NEW (Run 200) — code live — pull fires Lake June 15 | Confirm contacts in Nina report June 16-18 |
 
 **Total open: 194 | Total resolved: 122**
 
-> ✅ June 8 Cuyahoga pull fires today. All 192+ segments are in motion. Next verification milestone: Nina's hot leads report June 9-11 confirms enrollment.
-> Gas Station + Fleet sequences remain the only issues requiring a Bradley action (Mixmax UI, 5 minutes).
+> ⚠️ June 8 Cuyahoga pull should have fired. KEY ACTION TODAY: verify enrollment by running `check_replies.py`. First opens from June 8 batch expected today (June 9) through June 11. Hot leads (2+ opens) = call within 24 hours.
+> Gas Station + Fleet sequences remain the only issues requiring a Bradley action (Mixmax UI, 5 minutes). Must fix before Lake County June 15 pull.
 
 ---
 
