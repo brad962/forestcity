@@ -1580,6 +1580,7 @@
 [2026-06-09 07:06] Vera | Run 200 — DELIVERABLE: outputs/vera/lake_county_june15_preflight_2026-06-09.md — Lake County June 15 Pre-Flight Card: 6-action June 14 night checklist, 7:30am execution guide with copy-paste commands, high-priority segment targets table (marinas/charter fishing/Greatbatch/golf/senior living + new #193/#194), revenue math (200-400 new contacts expected), post-pull calendar June 15-22, Gas Station/Fleet fix guide. | outputs/vera/lake_county_june15_preflight_2026-06-09.md | Done
 [2026-06-09 07:07] Vera | Run 200 — Updated outputs/vera/open_issues.md — Run 200 header, 2 new OPEN issues (#193 Co-Packing + #194 Semiconductor/PCB), summary table updated (June 9 verification state for June 8 pull), total open: 194. | outputs/vera/open_issues.md | Done
 [2026-06-09 07:08] Vera | Run 200 — SLACK MESSAGES written to outputs/vera/pending_slack_messages.md: 2 segment auto-upgrade notifications, 1 count sync notification, 1 deliverable notification, 1 Gas Station/Fleet Day 25+ CRITICAL escalation, 3 proposals (LinkedIn gap/Rick Week 2 ads/Tommy 4 service pages), 1 scan complete summary. | outputs/vera/pending_slack_messages.md | Done
-[2026-06-09 12:34] Nina | Daily hot leads report — 0 replied, 0 hot, 0 due today, 0 due tomorrow, 0 stale estimates | hot_leads_2026-06-09.md | Done
-[2026-06-09 12:34] Nina | Workiz daily report - Power Washing jobs | Workiz API unavailable — run locally. | Done
-[2026-06-09 12:34:49] Nina | Daily Reports (Hot Leads + Workiz) — hot_leads_2026-06-09.md + workiz_daily_2026-06-09.md generated (API 403: Mixmax/Workiz blocked in cloud — run locally for live data; 36 overdue pipeline contacts logged)
+[2026-06-09 12:34] Danny | Apollo pull — Apollo returned 0 people — API may be blocked or rate limited (Cuyahoga) | none | Done
+[2026-06-09 12:34] Carla | Apollo pull — Apollo returned 0 people — API may be blocked or rate limited | none | Done
+[2026-06-09 12:35:06] Danny + Carla | Daily Lead Pull | lead_pull_2026-06-09.md | Done
+[2026-06-09 12:35:25] Danny + Carla | Daily Lead Pull | lead_pull_2026-06-09.md | Done
