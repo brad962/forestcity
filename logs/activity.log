@@ -1582,3 +1582,4 @@
 [2026-06-09 07:08] Vera | Run 200 — SLACK MESSAGES written to outputs/vera/pending_slack_messages.md: 2 segment auto-upgrade notifications, 1 count sync notification, 1 deliverable notification, 1 Gas Station/Fleet Day 25+ CRITICAL escalation, 3 proposals (LinkedIn gap/Rick Week 2 ads/Tommy 4 service pages), 1 scan complete summary. | outputs/vera/pending_slack_messages.md | Done
 [2026-06-09 12:34] Nina | Daily hot leads report — 0 replied, 0 hot, 0 due today, 0 due tomorrow, 0 stale estimates | hot_leads_2026-06-09.md | Done
 [2026-06-09 12:34] Nina | Workiz daily report - Power Washing jobs | Workiz API unavailable — run locally. | Done
+[2026-06-09 12:34:49] Nina | Daily Reports (Hot Leads + Workiz) — hot_leads_2026-06-09.md + workiz_daily_2026-06-09.md generated (API 403: Mixmax/Workiz blocked in cloud — run locally for live data; 36 overdue pipeline contacts logged)
