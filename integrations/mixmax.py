@@ -1048,6 +1048,13 @@ PROPERTY_MANAGER_TITLES = [
     'semiconductor plant manager', 'pcb manufacturing manager', 'circuit board plant manager',
     'electronics plant manager', 'printed circuit board manager', 'electronics manufacturing manager',
     'semiconductor facility manager', 'electronics operations manager',
+    # Boat Repair & Marine Service Centers — segment #195; routing to property_manager sequence
+    # (facility maintenance / vendor contract angle); DISTINCT from marinas (run 109), boat dealers (run 146),
+    # charter fishing (run 174); repair yards + equipment bays = algae + oil staining;
+    # first pull Lake County June 15 (added 2026-06-10 run 201)
+    'marine service manager', 'boat yard manager', 'marine repair manager', 'boat repair manager',
+    'marine service director', 'boat yard superintendent', 'marine maintenance supervisor',
+    'marine operations director',
 ]
 
 REALTOR_TITLES = [

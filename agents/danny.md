@@ -2290,6 +2290,8 @@ Save lead lists to `/outputs/danny/` as:
 
 > 🗒️ **Run 200 batching note (June 9):** Danny now has 194+ commercial segments live in DANNY_TITLES + DANNY_ORG_KEYWORDS. Two new segments added this run: #193 Co-Packing & Contract Manufacturing Facilities (FDA 21 CFR/OSHA compliance angle; 100+ NE Ohio contract packagers; $3K-$8K/facility) + #194 Semiconductor & PCB/Electronics Manufacturers (ISO 14001/OEPA NPDES compliance; Parker Hannifin Electronics, API Technologies, Greatbatch — Lake County density). Both fire in the **Lake County June 15 pull**. Use `run_lake_both.command` on June 15.
 
+> 🗒️ **Run 201 batching note (June 10):** Danny now has **195+ commercial segments** live in DANNY_TITLES + DANNY_ORG_KEYWORDS. New segment added this run: **#195 Boat Repair & Marine Service Centers** (Lake Erie corridor; repair yards + equipment bays + covered storage; DISTINCT from marinas/boat dealers/charter fishing; Grand River Marine Service, Fairport Harbor Boat Works, Mentor Marine as priority targets; $2,400–$7,500/year per facility; zero competitors). Fires in the **Lake County June 15 pull** — 5 days away.
+
 ---
 
 ## Logging

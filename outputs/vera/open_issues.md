@@ -1,6 +1,6 @@
 # Vera Cole — Open Issues Tracker
-*Run 200 | 2026-06-09 | Compact version — historical run entries archived in git history*
-*194 open (192 carry-forward + 2 new this run) | 122 resolved*
+*Run 201 | 2026-06-10 | Compact version — historical run entries archived in git history*
+*195 open (194 carry-forward + 1 new this run) | 122 resolved*
 
 > ⚠️ **FILE SIZE NOTE:** This file was 572KB as of Run 195 due to prepending a full header every run.
 > Rewritten as a compact rolling summary on Run 196. Full history is in git log.
@@ -8,7 +8,17 @@
 
 ---
 
-## NEW OPEN — Run 200 | 2026-06-09
+## NEW OPEN — Run 201 | 2026-06-10
+
+### OPEN — Boat Repair & Marine Service Centers (Segment #195)
+- **Status:** Code live — first pull Lake County June 15
+- **Files updated:** `workers/lead_pipeline.py` (DANNY_TITLES + DANNY_ORG_KEYWORDS), `integrations/mixmax.py` (PROPERTY_MANAGER_TITLES), `agents/danny.md` (Run 201 batching note)
+- **Key targets:** Grand River Marine Service, Fairport Harbor Boat Works, Mentor Marine; DISTINCT from marinas (run 109), boat dealers (run 146), charter fishing (run 174); $800–$2,500/visit; 3x/year; zero competitors
+- **Resolution:** Pull fires June 15. Mark resolved when marine service contacts appear in Nina's report.
+
+---
+
+## Previously Open — Run 200 | 2026-06-09
 
 ### OPEN — Co-Packing & Contract Manufacturing Facilities (Segment #193)
 - **Status:** Code live — first pull Lake County June 15
@@ -70,10 +80,10 @@ Today is June 9. The June 8 Cuyahoga mega-pull should have fired yesterday. Veri
 | #193 | Co-Packing & Contract Manufacturing | NEW (Run 200) — code live — pull fires Lake June 15 | Confirm contacts in Nina report June 16-18 |
 | #194 | Semiconductor & PCB/Electronics Manufacturers | NEW (Run 200) — code live — pull fires Lake June 15 | Confirm contacts in Nina report June 16-18 |
 
-**Total open: 194 | Total resolved: 122**
+**Total open: 195 | Total resolved: 122**
 
-> ⚠️ June 8 Cuyahoga pull should have fired. KEY ACTION TODAY: verify enrollment by running `check_replies.py`. First opens from June 8 batch expected today (June 9) through June 11. Hot leads (2+ opens) = call within 24 hours.
-> Gas Station + Fleet sequences remain the only issues requiring a Bradley action (Mixmax UI, 5 minutes). Must fix before Lake County June 15 pull.
+> ⚠️ **JUNE 11 IS FIRST HOT LEADS DAY.** Run `python3 workers/nina_report.py daily` tomorrow morning. Hot leads (2+ opens) from June 8 Cuyahoga batch expected June 11–13. Connect on LinkedIn within 2 hours of seeing the open.
+> Gas Station + Fleet sequences remain the only issues requiring a Bradley action (Mixmax UI, 10 minutes). **Must fix before Lake County June 15 pull — 5 days away.**
 
 ---
 

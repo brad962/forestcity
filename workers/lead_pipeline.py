@@ -2073,6 +2073,17 @@ DANNY_TITLES = [
     'semiconductor plant manager', 'pcb manufacturing manager', 'circuit board plant manager',
     'electronics plant manager', 'printed circuit board manager', 'electronics manufacturing manager',
     'semiconductor facility manager', 'electronics operations manager',
+    # Boat Repair & Marine Service Centers — segment #195; routing to property_manager sequence
+    # (facility maintenance / vendor contract angle); Lake Erie corridor peak window = June–August;
+    # repair yards + equipment bays + covered boat storage areas = algae + oil staining;
+    # DISTINCT from marinas (run 109 — slip docking/seasonal storage), boat dealers (run 146 — retail sales),
+    # charter fishing (run 174 — excursion operators);
+    # NE Ohio targets: Grand River Marine Service, Fairport Harbor Boat Works, Mentor Marine, Chagrin Falls Marine;
+    # $800–$2,500/visit; 3x/year = $2,400–$7,500/year; zero competitors cold-calling marine repair FMs;
+    # first pull Lake County June 15 (added 2026-06-10 run 201)
+    'marine service manager', 'boat yard manager', 'marine repair manager', 'boat repair manager',
+    'marine service director', 'boat yard superintendent', 'marine maintenance supervisor',
+    'marine operations director',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -3285,6 +3296,11 @@ DANNY_ORG_KEYWORDS = [
     # these org tags catch ELECTRONICS/PCB MANUFACTURERS in Apollo (Parker Hannifin Electronics, API Technologies)
     'semiconductor manufacturer', 'circuit board manufacturer', 'pcb manufacturer',
     'electronics manufacturer', 'printed circuit board', 'electronics assembly',
+    # Boat Repair & Marine Service Centers — segment #195 org keywords (added 2026-06-10 run 201)
+    # DISTINCT from 'marina'/'boat storage' (run 109 slip/storage ops), 'boat dealer' (run 146 retail),
+    # 'charter fishing' (run 174 excursion ops); these org tags catch MARINE REPAIR / SERVICE YARDS in Apollo
+    'marine service center', 'boat repair', 'marine repair', 'boat yard',
+    'marine maintenance', 'hull repair', 'boat service center', 'watercraft repair',
 ]
 
 CARLA_SEARCHES = [
