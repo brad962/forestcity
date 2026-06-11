@@ -2084,6 +2084,19 @@ DANNY_TITLES = [
     'marine service manager', 'boat yard manager', 'marine repair manager', 'boat repair manager',
     'marine service director', 'boat yard superintendent', 'marine maintenance supervisor',
     'marine operations director',
+    # Craft Breweries & Taprooms — segment #196 (added 2026-06-11 run 202)
+    # NE Ohio has 100+ craft breweries: Platform Beer (Cleveland), Great Lakes Brewing (Ohio City), Market Garden Brewery,
+    # Fat Head's Brewery (Middleburg Heights), Willoughby Brewing (Lake County — fires June 15), Hoppin' Frog (Akron),
+    # Thirsty Dog Brewing (Akron), Elliot Brewing (Willoughby), Forest City Brewery (yes, same name — Cleveland),
+    # Cornerstone Brewing, Birdfish Brewing (Chesterland), Chagrin Valley Brewing, Buckeye Brewing;
+    # outdoor seating areas + loading dock concrete + parking lots + patio/deck surfaces accumulate grime during
+    # peak outdoor season (May–Sept = maximum visibility); brewery/taproom manager signs vendor contracts;
+    # $800–$2,500/visit; 3x/year = $2,400–$7,500/year; zero competitors cold-calling this segment;
+    # DISTINCT from restaurants (run 106 — org tags: 'restaurant', 'dining', 'food service');
+    # first pull: Cuyahoga retroactive + Lake County June 15 (Willoughby Brewing is a flagship Lake County target)
+    'brewery manager', 'taproom manager', 'brewery operations manager', 'brewery director',
+    'taproom director', 'craft brewery manager', 'production brewery manager',
+    'beverage facility manager', 'brewery owner',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -3301,6 +3314,11 @@ DANNY_ORG_KEYWORDS = [
     # 'charter fishing' (run 174 excursion ops); these org tags catch MARINE REPAIR / SERVICE YARDS in Apollo
     'marine service center', 'boat repair', 'marine repair', 'boat yard',
     'marine maintenance', 'hull repair', 'boat service center', 'watercraft repair',
+    # Craft Breweries & Taprooms — segment #196 org keywords (added 2026-06-11 run 202)
+    # DISTINCT from restaurants (run 106 — 'restaurant', 'dining', 'food service', 'qsr');
+    # these org tags catch CRAFT BREWERIES specifically in Apollo — 100+ in NE Ohio 7 counties
+    'craft brewery', 'craft beer', 'taproom', 'microbrewery', 'craft brewing',
+    'brewpub', 'production brewery', 'regional brewery', 'brewing company',
 ]
 
 CARLA_SEARCHES = [

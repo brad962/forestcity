@@ -2292,6 +2292,8 @@ Save lead lists to `/outputs/danny/` as:
 
 > 🗒️ **Run 201 batching note (June 10):** Danny now has **195+ commercial segments** live in DANNY_TITLES + DANNY_ORG_KEYWORDS. New segment added this run: **#195 Boat Repair & Marine Service Centers** (Lake Erie corridor; repair yards + equipment bays + covered storage; DISTINCT from marinas/boat dealers/charter fishing; Grand River Marine Service, Fairport Harbor Boat Works, Mentor Marine as priority targets; $2,400–$7,500/year per facility; zero competitors). Fires in the **Lake County June 15 pull** — 5 days away.
 
+> 🗒️ **Run 202 batching note (June 11):** Danny now has **196+ commercial segments** live in DANNY_TITLES + DANNY_ORG_KEYWORDS. New segment added this run: **#196 Craft Breweries & Taprooms** (100+ NE Ohio craft breweries — Platform Beer, Great Lakes Brewing, Market Garden, Fat Head's, Willoughby Brewing [Lake County flagship target], Hoppin' Frog, Thirsty Dog, Forest City Brewery; outdoor seating areas + loading dock concrete + parking lots + patio/deck surfaces = recurring pressure wash need during peak outdoor season; $800–$2,500/visit; 3x/year = $2,400–$7,500/year; zero competitors cold-calling this segment). **TODAY is the first hot leads day** from the June 8 Cuyahoga pull — run `python3 workers/nina_report.py daily` and connect on LinkedIn within 2 hours of any 2+ open contact. Lake County pull fires June 15 — Willoughby Brewing is a priority brewery target.
+
 ---
 
 ## Logging

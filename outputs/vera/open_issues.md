@@ -1,6 +1,6 @@
 # Vera Cole — Open Issues Tracker
-*Run 201 | 2026-06-10 | Compact version — historical run entries archived in git history*
-*195 open (194 carry-forward + 1 new this run) | 122 resolved*
+*Run 202 | 2026-06-11 | Compact version — historical run entries archived in git history*
+*196 open (195 carry-forward + 1 new this run) | 122 resolved*
 
 > ⚠️ **FILE SIZE NOTE:** This file was 572KB as of Run 195 due to prepending a full header every run.
 > Rewritten as a compact rolling summary on Run 196. Full history is in git log.
@@ -8,7 +8,18 @@
 
 ---
 
-## NEW OPEN — Run 201 | 2026-06-10
+## NEW OPEN — Run 202 | 2026-06-11
+
+### OPEN — Craft Breweries & Taprooms (Segment #196)
+- **Status:** Code live — first pull Lake County June 15 (Willoughby Brewing is flagship Lake target); Cuyahoga retroactive
+- **Files updated:** `workers/lead_pipeline.py` (DANNY_TITLES + DANNY_ORG_KEYWORDS), `integrations/mixmax.py` (PROPERTY_MANAGER_TITLES), `agents/danny.md` (Run 202 batching note)
+- **Key targets:** Willoughby Brewing (Lake County), Platform Beer (Cleveland), Great Lakes Brewing (Ohio City), Market Garden, Fat Head's (Middleburg Heights), Forest City Brewery, Hoppin' Frog (Akron), Thirsty Dog (Akron); DISTINCT from restaurants (run 106)
+- **Revenue:** $800–$2,500/visit; 3x/year = $2,400–$7,500/year; 100+ NE Ohio targets; zero competitors cold-calling this segment
+- **Resolution:** Pull fires June 15. Mark resolved when brewery contacts appear in Nina's report.
+
+---
+
+## Previously Open — Run 201 | 2026-06-10
 
 ### OPEN — Boat Repair & Marine Service Centers (Segment #195)
 - **Status:** Code live — first pull Lake County June 15
@@ -64,26 +75,28 @@
   4. Paste into `integrations/mixmax.py` line 54 (replace `'PENDING'`)
   5. Repeat for Fleet: "Forest City Power Washing — Fleet Washing Outreach" → line 48
   6. Run `python3 workers/lead_pipeline.py pending` to enroll the waiting contacts
-- **Last attempt this run:** N/A — code fix is not possible from Vera's side. This requires Bradley to create the sequences in Mixmax UI. 23+ consecutive runs flagged. Once Bradley creates the sequences, this resolves in 6 minutes.
+- **Last attempt Run 202:** N/A — code fix is not possible from Vera's side. This requires Bradley to create the sequences in Mixmax UI. **Day 27+ consecutive runs flagged.** Lake County pull fires June 15 — 4 days away. All gas/fleet contacts from Summit, Medina, Cuyahoga + upcoming Lake County will be unenrolled unless Bradley creates these sequences. **FINAL WINDOW: June 11–14 night.**
 
 ---
 
 ## Active Open Issues — Summary Table
 
-Today is June 9. The June 8 Cuyahoga mega-pull should have fired yesterday. Verify contacts are appearing in contacts_cache.json and enrolled in Mixmax. Run Nina's hot leads report to confirm.
+*Updated Run 202 | June 11 — FIRST HOT LEADS DAY from June 8 Cuyahoga batch*
 
 | Issue # | Segment | Status | Expected Resolution |
 |---------|---------|--------|---------------------|
-| Gas Station | Gas Station & C-Store Mixmax sequence | 🚨 BLOCKER Day 25+ — needs 5-min Mixmax UI fix BEFORE June 15 Lake pull | Bradley action required TONIGHT (June 14 at latest) |
-| Fleet Washing | Fleet Washing Mixmax sequence | 🚨 BLOCKER Day 25+ — same as above | Bradley action required TONIGHT (June 14 at latest) |
-| #1–#192 | Segments — June 8 Cuyahoga pull | **VERIFY: run `check_replies.py` + read `contacts_cache.json`** | Confirm contacts enrolled, first opens June 9-11 |
-| #193 | Co-Packing & Contract Manufacturing | NEW (Run 200) — code live — pull fires Lake June 15 | Confirm contacts in Nina report June 16-18 |
-| #194 | Semiconductor & PCB/Electronics Manufacturers | NEW (Run 200) — code live — pull fires Lake June 15 | Confirm contacts in Nina report June 16-18 |
+| Gas Station | Gas Station & C-Store Mixmax sequence | 🚨 BLOCKER Day 27+ — create in Mixmax UI TONIGHT (June 11–14) | Bradley action — 10 min in Mixmax UI |
+| Fleet Washing | Fleet Washing Mixmax sequence | 🚨 BLOCKER Day 27+ — same as above | Bradley action — 10 min in Mixmax UI |
+| #1–#195 | Segments — June 8 Cuyahoga mega-pull | TODAY: run `python3 workers/nina_report.py daily` — first hot leads expected (2+ opens) | First hot leads June 11–13 |
+| #193 | Co-Packing & Contract Manufacturing | Code live — pull fires Lake June 15 | Confirm contacts in Nina report June 16-18 |
+| #194 | Semiconductor & PCB/Electronics Manufacturers | Code live — pull fires Lake June 15 | Confirm contacts in Nina report June 16-18 |
+| #195 | Boat Repair & Marine Service Centers | Code live — pull fires Lake June 15 | Confirm contacts in Nina report June 16-18 |
+| #196 | Craft Breweries & Taprooms | NEW (Run 202) — code live — pull fires Lake June 15 (Willoughby Brewing) | Confirm contacts in Nina report June 16-18 |
 
-**Total open: 195 | Total resolved: 122**
+**Total open: 196 | Total resolved: 122**
 
-> ⚠️ **JUNE 11 IS FIRST HOT LEADS DAY.** Run `python3 workers/nina_report.py daily` tomorrow morning. Hot leads (2+ opens) from June 8 Cuyahoga batch expected June 11–13. Connect on LinkedIn within 2 hours of seeing the open.
-> Gas Station + Fleet sequences remain the only issues requiring a Bradley action (Mixmax UI, 10 minutes). **Must fix before Lake County June 15 pull — 5 days away.**
+> ⚠️ **TODAY IS FIRST HOT LEADS DAY.** Run `python3 workers/nina_report.py daily` NOW. Hot leads (2+ opens) from June 8 Cuyahoga batch expected June 11–13. Connect on LinkedIn within 2 hours of seeing any open.
+> Gas Station + Fleet sequences: **must fix before Lake pull June 15 — 4 days away.** Guide: `outputs/vera/lake_county_june15_preflight_2026-06-09.md`
 
 ---
 

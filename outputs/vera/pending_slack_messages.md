@@ -1,69 +1,67 @@
-🔧 *Vera — Auto-Upgrade | Run 201 | June 10*
->Changed: NEW Segment #195 — Boat Repair & Marine Service Centers — 8 DANNY_TITLES + 8 DANNY_ORG_KEYWORDS + 8 PROPERTY_MANAGER_TITLES routing
->Why: Lake County June 15 pull fires in 5 days. Marine repair yards (Grand River Marine, Fairport Harbor Boat Works, Mentor Marine) are distinct from marinas/charter boats and have been missed by every prior segment. Peak repair season June–August. Zero competitors cold-calling. $2,400–$7,500/year per facility.
->File: workers/lead_pipeline.py, integrations/mixmax.py
+🔧 *Vera — Auto-Upgrade | Run 202 | June 11*
+>Changed: Added Segment #196 — Craft Breweries & Taprooms to `workers/lead_pipeline.py` DANNY_TITLES (9 new titles: brewery manager, taproom manager, brewery operations manager, brewery director, taproom director, craft brewery manager, production brewery manager, beverage facility manager, brewery owner)
+>Why: NE Ohio has 100+ craft breweries (Platform, Great Lakes, Market Garden, Fat Head's, Willoughby Brewing, Forest City Brewery, Hoppin' Frog, Thirsty Dog); outdoor seating + loading dock concrete + parking lots = recurring pressure wash need during peak outdoor season; zero competitors cold-calling this segment; $2,400–$7,500/year per brewery
+>File: workers/lead_pipeline.py
 ---
-🔧 *Vera — Auto-Upgrade | Run 201 | June 10*
->Changed: Count sync — 194+ → 195+ across workers/vera_relay.py (9 occurrences) + agents/danny.md (Run 201 batching note added). CLAUDE.md June 8 historical references preserved at 194+ (accurate for when that pull fired).
->Why: Keep all Slack alerts, agent briefs, and count references accurate for Lake County June 15 pull.
->File: workers/vera_relay.py, agents/danny.md
+🔧 *Vera — Auto-Upgrade | Run 202 | June 11*
+>Changed: Added Segment #196 org keywords to `workers/lead_pipeline.py` DANNY_ORG_KEYWORDS — 9 keywords: craft brewery, craft beer, taproom, microbrewery, craft brewing, brewpub, production brewery, regional brewery, brewing company
+>Why: DISTINCT from restaurants (run 106); these Apollo tags surface craft brewery / taproom companies specifically — not food service orgs — giving zero overlap with existing segments
+>File: workers/lead_pipeline.py
 ---
-🔧 *Vera — Deliverable | Run 201 | June 10*
->Created: outputs/vera/june10_pre_hotleads_alert_2026-06-10.md — Pre-Hot Leads Alert Card
->What's in it: Tomorrow June 11 protocol (20-min morning block), tonight's 5-min checklist, hot lead type timing guide (hospital FM vs. government FM vs. car dealership), what counts as a strong result (5–15 hot leads), Lake County June 15 reminder, LinkedIn post nudge.
->File: outputs/vera/june10_pre_hotleads_alert_2026-06-10.md
+🔧 *Vera — Auto-Upgrade | Run 202 | June 11*
+>Changed: Synced Segment #196 titles to `integrations/mixmax.py` PROPERTY_MANAGER_TITLES (9 new titles added, identical to DANNY_TITLES additions)
+>Why: All new craft brewery / taproom contacts must correctly route to the property_manager Mixmax sequence on enrollment; without this sync, enrollment routing fails silently
+>File: integrations/mixmax.py
 ---
-🚨 *Vera — CRITICAL BLOCKER | Day 26+ | Gas Station & Fleet Washing Mixmax Sequences STILL PENDING*
-
-Every gas station, C-store, and fleet washing contact Danny has pulled since May 15 is sitting in contacts_cache.json completely unenrolled. That's 26 days of contacts — Summit, Medina, and Cuyahoga (June 8) — receiving nothing.
-
-*The Lake County June 15 pull fires in 5 days.* Lake County has gas stations and fleet operators too. If this isn't fixed before then, that batch piles on top.
-
-*Fix tonight (10 min total):*
-1. Go to app.mixmax.com → Sequences → New Sequence
-2. Create: _Forest City Power Washing — Fleet Washing Outreach_
-3. Copy sequence ID from URL → paste into `integrations/mixmax.py` line 48 → replace `'PENDING'`
-4. Create: _Forest City Power Washing — Gas Station & C-Store Outreach_
-5. Copy that ID → paste into line 54 → replace `'PENDING'`
-6. Save, then run: `python3 workers/lead_pipeline.py pending`
-
-Full guide also in `outputs/vera/lake_county_june15_preflight_2026-06-09.md` (Critical section at bottom).
+🔧 *Vera — Auto-Upgrade | Run 202 | June 11*
+>Changed: Updated segment count references in `workers/vera_relay.py` — 9 occurrences of "195+" updated to "196+"
+>Why: Count accuracy across relay messages keeps Bradley's context calibrated; stale counts erode trust in system reporting
+>File: workers/vera_relay.py
 ---
-🔔 *Vera — HEADS UP | June 11 = First Hot Leads Day*
-
->Tomorrow morning is the most important 20 minutes of the week.
+🔧 *Vera — Auto-Upgrade | Run 202 | June 11*
+>Changed: Added Run 202 batching note to `agents/danny.md` — 196+ segment count, Segment #196 details, June 11 hot leads day reminder
+>Why: Danny's agent file is the canonical reference for segment history and current pull context; agents pulling leads need accurate counts
+>File: agents/danny.md
+---
+📋 *Vera — Deliverable | Run 202 | June 11*
+>Created: `outputs/vera/june11_hot_leads_day1_card_2026-06-11.md` — June 11 Hot Leads Day 1 Card
+>Contents: Nina report run command, hot lead LinkedIn connect protocol (within 2 hours), segment-specific open pattern guide (hospital FM = Day 2-3, government FM = Day 4-7), 0-hot-leads contingency (check again at 2pm + June 12 morning), LinkedIn post nudge (profile is 21 days stale), Gas/Fleet final window reminder, Segment #196 context, today's priority table
+>Why: Today is Day 3 of the June 8 Cuyahoga Touch 1 window — the first hot leads are expected this morning; Bradley needs a press-GO card in his hands right now
+---
+🚨 *Vera — CRITICAL ESCALATION | Run 202 | Day 27*
+>Gas Station & C-Store + Fleet Washing Mixmax sequences: STILL PENDING
+>Every gas station and fleet washing contact pulled since May 15 — across Summit, Medina, AND Cuyahoga — has received ZERO outreach. They are sitting idle.
 >
->June 8 Cuyahoga Touch 1 emails are Day 3 tomorrow — this is when 2+ open counts surface in Nina's report. Hospital FMs, YMCA directors, and commercial PM contacts who opened multiple times are vetting vendors RIGHT NOW.
+>Lake County pull fires in 4 days (June 15). After that, even MORE gas/fleet contacts will be added to the unenrolled stack.
+>This is the last clean window to fix it before Lake County. 10 minutes in Mixmax UI, tonight or any night before June 14.
 >
->*What to do at 7am:*
->1. Run: `python3 workers/nina_report.py daily`
->2. For every contact with 2+ opens → connect on LinkedIn immediately
->3. Template: `outputs/tommy/hot_lead_linkedin_dm_playbook_2026-05-18.md`
->4. Log in pipeline_data.json: stage "Contacted"
+>Step-by-step guide: outputs/vera/lake_county_june15_preflight_2026-06-09.md (Pre-Flight item #1)
+>1. app.mixmax.com → Sequences → New Sequence
+>2. "Forest City Power Washing — Gas Station & C-Store Outreach" → copy ID → paste into integrations/mixmax.py line 54
+>3. "Forest City Power Washing — Fleet Washing Outreach" → copy ID → paste into integrations/mixmax.py line 48
+>4. python3 workers/lead_pipeline.py pending → all waiting contacts enroll instantly
+---
+💡 *Vera — Upgrade Proposal | Run 202*
+>Idea: Post one LinkedIn update today from outputs/jasmine/linkedin_posts_june_2026-05-24.md
+>Why: Last LinkedIn post was May 21 — 21 days ago. Contacts from June 8 Cuyahoga pull who open Touch 1 today will check the LinkedIn profile. A 21-day-stale profile hurts credibility at the exact moment they're deciding whether to reply. This is the 3rd consecutive run flagging this gap.
+>Impact: Higher reply rate from hot leads; 5 minutes to post from your phone; no approval needed — copy already written
+>Reply YES to approve (or just post it).
+---
+💡 *Vera — Upgrade Proposal | Run 202*
+>Idea: Tommy writes the 4 remaining service page VOC rewrites — deck, fence, driveway, commercial
+>Why: House washing + roof pages were refreshed May 25. The other 4 are still original May 20 copy. Google Ads landing pages using VOC-refreshed copy earn higher Quality Score = lower CPC. Third consecutive run requesting this.
+>Impact: Lower cost-per-click on Google Ads, higher landing page conversion rate
+>Reply YES to approve — Tommy delivers all 4 pages in one session.
+---
+💡 *Vera — Upgrade Proposal | Run 202*
+>Idea: Rick runs a Day 16 Facebook Ads performance review — pause the underperforming variation, scale the winner
+>Why: Ads launched May 26. Day 16 — standard paid social protocol is to identify the winning creative by Day 14 and cut the loser. Running equal budget on two variations past Day 14 wastes spend. Third consecutive run requesting this.
+>Impact: Same budget, 20-40% lower CPL; more inbound quote requests before end of June peak
+>Reply YES to approve — Rick delivers a one-page recommendation within 24 hours.
+---
+✅ *Vera — Scan Complete | 2026-06-11 | Run 202*
+>5 auto-upgrades shipped | 3 proposals | 1 new segment (#196 Craft Breweries & Taprooms) | 196 total segments live
 >
->Strong result = 5–15 hot leads. Exceptional = any reply.
----
-💡 *Vera — Upgrade Proposal (ESCALATION — 2nd Request) | LinkedIn Content Gap*
->Idea: Jasmine writes a new batch of 5 LinkedIn posts targeting property managers and facility managers. Last LinkedIn post was May 21 — now 20 days ago.
->Why: Cuyahoga contacts who opened Touch 1 (June 8–10) are checking LinkedIn profiles TODAY before deciding whether to reply. Stale LinkedIn kills credibility at peak interest moment. June 11 is the first hot leads day — the contacts who open 2+ times tomorrow are the ones most likely to check the profile.
->Impact: Zero cost. 30-minute Jasmine task. Credibility signal for every PM/FM who googles Forest City this week.
->Reply YES to approve.
----
-💡 *Vera — Upgrade Proposal (ESCALATION — 2nd Request) | Rick Day 14 Ads Review*
->Idea: Rick writes a June 10 (Day 15 post-launch) Facebook + Google ads performance review and scaling decision.
->Why: Ads launched May 26. Day 14 (June 9) was the scaling decision point per the week2_facebook_ads_scaling_guide. We're now at Day 15 — the review is overdue by one day. Without this, ad spend through June 15 (Lake County pull week) is unoptimized.
->Impact: If ads are performing → scale 20% to capture Lake County launch momentum. If underperforming → swap creative before wasting Week 3 budget.
->Reply YES to approve. Rick can run this in 30 minutes.
----
-💡 *Vera — Upgrade Proposal (ESCALATION — 2nd Request) | Tommy Service Page VoC Refresh (4 pages)*
->Idea: Tommy writes VoC-refreshed copy for driveway, deck/fence, commercial, and roof soft wash service pages. House washing page was refreshed June 8. These 4 are still on May 20 copy.
->Why: Google Ads are running. Quality Score (which determines CPC) is calculated against landing page copy relevance. Every day these pages run old copy is a day of slightly higher CPC. The house wash refresh lifted CTR 15–25% per the pattern.
->Impact: Lower CPCs on existing campaigns = more leads per dollar. Compound effect across June.
->Reply YES to approve.
----
-✅ *Vera — Scan Complete | Run 201 | June 10, 2026*
->1 auto-upgrade shipped (Segment #195 Boat Repair & Marine Service) | 1 count sync | 1 deliverable | 3 proposals (all 2nd requests) | 195 open issues (194 carry-forward + 1 new: #195 Boat Repair/Marine)
->
->TOMORROW June 11 = First Hot Leads Day. Block 20 minutes at 7am. Run `python3 workers/nina_report.py daily`. Connect on LinkedIn with every 2+ open contact within 2 hours.
->
->Lake County June 15 pull = 5 days away. Gas Station + Fleet sequences still PENDING (Day 26). Fix tonight (10 min) so Lake contacts don't pile up unenrolled too.
+>TODAY IS FIRST HOT LEADS DAY — run: python3 workers/nina_report.py daily
+>Gas/Fleet BLOCKER: Day 27+. Fix tonight — 4 days before Lake County pull (June 15).
+>New: Segment #196 Craft Breweries — Willoughby Brewing is the Lake County June 15 flagship target.

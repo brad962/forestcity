@@ -1055,6 +1055,12 @@ PROPERTY_MANAGER_TITLES = [
     'marine service manager', 'boat yard manager', 'marine repair manager', 'boat repair manager',
     'marine service director', 'boat yard superintendent', 'marine maintenance supervisor',
     'marine operations director',
+    # Craft Breweries & Taprooms — segment #196; routing to property_manager sequence
+    # (facility maintenance / vendor contract angle); DISTINCT from restaurants (run 106);
+    # Willoughby Brewing = flagship Lake County target; first pull Lake County June 15 (added 2026-06-11 run 202)
+    'brewery manager', 'taproom manager', 'brewery operations manager', 'brewery director',
+    'taproom director', 'craft brewery manager', 'production brewery manager',
+    'beverage facility manager', 'brewery owner',
 ]
 
 REALTOR_TITLES = [
