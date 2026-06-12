@@ -1628,3 +1628,4 @@
 [2026-06-12 12:38] Danny | Apollo pull — Apollo returned 0 people — API may be blocked or rate limited (Cuyahoga) | none | Done
 [2026-06-12 12:38] Carla | Apollo pull — Apollo returned 0 people — API may be blocked or rate limited | none | Done
 [2026-06-12 12:38] Danny + Carla | Daily Lead Pull | outputs/danny/lead_pull_2026-06-12.md | Done — Apollo blocked by network policy (api.apollo.io not in allowlist)
+[2026-06-12 12:37] Office | Daily morning briefing | morning_2026-06-12.md | Done
