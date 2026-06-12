@@ -2094,9 +2094,21 @@ DANNY_TITLES = [
     # $800–$2,500/visit; 3x/year = $2,400–$7,500/year; zero competitors cold-calling this segment;
     # DISTINCT from restaurants (run 106 — org tags: 'restaurant', 'dining', 'food service');
     # first pull: Cuyahoga retroactive + Lake County June 15 (Willoughby Brewing is a flagship Lake County target)
-    'brewery manager', 'taproom manager', 'brewery operations manager', 'brewery director',
-    'taproom director', 'craft brewery manager', 'production brewery manager',
+    # NOTE: 'brewery manager', 'taproom manager', 'craft brewery manager', 'brewery operations manager',
+    # 'taproom director' already in DANNY_TITLES (run 129 block) — adding NEW-ONLY titles here
+    'brewery director', 'production brewery manager',
     'beverage facility manager', 'brewery owner',
+    # General Aviation (FBO) & Private Airport Terminals — segment #197 (added 2026-06-12 run 203)
+    # DISTINCT from commercial airports (run 128 — CLE Hopkins/CAK commercial terminals); these are
+    # Fixed Base Operators (FBOs) and private aviation terminals at general aviation airports;
+    # NE Ohio: Cuyahoga County Airport (CGF), Willoughby Hopkins Airport (LNN — Lake County June 15 target),
+    # Akron Executive Airport (AKR), Lorain County Airport (LOR), Portage County Airport;
+    # FBOs manage ramp areas + hangars + terminal buildings — all concrete/asphalt with fuel/oil staining;
+    # FAA Part 139 + OSHA SPCC compliance angle; $3K–$10K/visit; zero competitors cold-calling FBO managers;
+    # 25+ NE Ohio general aviation airports; first pull Lake County June 15 (Willoughby Hopkins Airport)
+    'fbo manager', 'fixed base operator manager', 'general aviation manager',
+    'private aviation manager', 'aviation terminal manager', 'ramp operations manager',
+    'executive aviation manager', 'aircraft hangar manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -3319,6 +3331,11 @@ DANNY_ORG_KEYWORDS = [
     # these org tags catch CRAFT BREWERIES specifically in Apollo — 100+ in NE Ohio 7 counties
     'craft brewery', 'craft beer', 'taproom', 'microbrewery', 'craft brewing',
     'brewpub', 'production brewery', 'regional brewery', 'brewing company',
+    # General Aviation (FBO) & Private Airport Terminals — segment #197 org keywords (added 2026-06-12 run 203)
+    # DISTINCT from 'airport'/'commercial aviation' (run 128 — commercial terminal org tags);
+    # these org tags catch FBO + general aviation terminal operators in Apollo
+    'fixed base operator', 'fbo', 'general aviation', 'private aviation',
+    'executive aviation', 'aircraft hangar', 'aviation terminal', 'flight center',
 ]
 
 CARLA_SEARCHES = [

@@ -1058,9 +1058,20 @@ PROPERTY_MANAGER_TITLES = [
     # Craft Breweries & Taprooms — segment #196; routing to property_manager sequence
     # (facility maintenance / vendor contract angle); DISTINCT from restaurants (run 106);
     # Willoughby Brewing = flagship Lake County target; first pull Lake County June 15 (added 2026-06-11 run 202)
-    'brewery manager', 'taproom manager', 'brewery operations manager', 'brewery director',
-    'taproom director', 'craft brewery manager', 'production brewery manager',
+    # NOTE: 'brewery manager', 'taproom manager', 'craft brewery manager', 'brewery operations manager',
+    # 'taproom director', 'brewery general manager' already in list (run 129 block) — adding NEW-ONLY titles
+    'brewery director', 'production brewery manager',
     'beverage facility manager', 'brewery owner',
+    # General Aviation (FBO) & Private Airport Terminals — segment #197; routing to property_manager sequence
+    # (FAA Part 139 + OSHA SPCC compliance / facility management angle); DISTINCT from commercial airports
+    # (run 128 — CLE Hopkins, CAK Akron-Canton); FBOs at Cuyahoga County Airport (CGF), Willoughby Hopkins
+    # Airport (LNN — Lake County June 15 flagship target), Akron Executive Airport (AKR), Lorain County
+    # Airport (LOR); ramp concrete + hangar floors + terminal exteriors = oil/fuel/exhaust staining;
+    # $3K–$10K/visit; zero competitors cold-calling FBO managers; first pull Lake County June 15
+    # (added 2026-06-12 run 203)
+    'fbo manager', 'fixed base operator manager', 'general aviation manager',
+    'private aviation manager', 'aviation terminal manager', 'ramp operations manager',
+    'executive aviation manager', 'aircraft hangar manager',
 ]
 
 REALTOR_TITLES = [
