@@ -2109,6 +2109,18 @@ DANNY_TITLES = [
     'fbo manager', 'fixed base operator manager', 'general aviation manager',
     'private aviation manager', 'aviation terminal manager', 'ramp operations manager',
     'executive aviation manager', 'aircraft hangar manager',
+    # Commercial/Wholesale Nursery & Greenhouse Production Facilities — segment #198;
+    # Lake County = "Nursery Capital of Ohio" — 200+ wholesale nurseries in Lake/Geauga/Lorain counties;
+    # DISTINCT from retail garden centers (run 145 — 'garden center manager', 'nursery manager');
+    # wholesale operations directors + production managers at 50-500 acre growing facilities;
+    # building facades + equipment bays + loading docks + greenhouse glass = heavy algae accumulation;
+    # Ohio Dept. of Agriculture nursery dealer licensing = exterior facility appearance standard;
+    # Willoway Nurseries, Lake County Nursery Exchange, Berns Nurseries, Heritage Farm Nurseries = top targets;
+    # $2K-$8K/facility; quarterly = $8K-$32K/year; zero competitors; first pull Lake County June 15
+    # (added 2026-06-13 run 204)
+    'nursery operations manager', 'greenhouse production manager', 'wholesale nursery manager',
+    'commercial nursery manager', 'growing operations director', 'plant production manager',
+    'nursery facility manager', 'greenhouse operations manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -3336,6 +3348,12 @@ DANNY_ORG_KEYWORDS = [
     # these org tags catch FBO + general aviation terminal operators in Apollo
     'fixed base operator', 'fbo', 'general aviation', 'private aviation',
     'executive aviation', 'aircraft hangar', 'aviation terminal', 'flight center',
+    # Commercial/Wholesale Nursery & Greenhouse Production Facilities — segment #198 org keywords
+    # DISTINCT from retail garden centers (run 145 — 'garden center', 'plant nursery', 'garden supply');
+    # these org tags catch WHOLESALE/COMMERCIAL nursery production operators in Apollo
+    # (Lake County specialty — highest density of commercial nurseries in NE Ohio) (added 2026-06-13 run 204)
+    'wholesale nursery', 'commercial nursery', 'nursery production', 'greenhouse grower',
+    'plant production facility', 'growing operations', 'nursery exchange', 'ornamental grower',
 ]
 
 CARLA_SEARCHES = [

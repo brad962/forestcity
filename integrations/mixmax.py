@@ -1072,6 +1072,12 @@ PROPERTY_MANAGER_TITLES = [
     'fbo manager', 'fixed base operator manager', 'general aviation manager',
     'private aviation manager', 'aviation terminal manager', 'ramp operations manager',
     'executive aviation manager', 'aircraft hangar manager',
+    # Commercial/Wholesale Nursery & Greenhouse Production Facilities — segment #198;
+    # routing to property_manager sequence (facility vendor contract / compliance angle)
+    # Lake County June 15 first pull (added 2026-06-13 run 204)
+    'nursery operations manager', 'greenhouse production manager', 'wholesale nursery manager',
+    'commercial nursery manager', 'growing operations director', 'plant production manager',
+    'nursery facility manager', 'greenhouse operations manager',
 ]
 
 REALTOR_TITLES = [

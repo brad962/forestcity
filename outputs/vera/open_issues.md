@@ -1,6 +1,6 @@
 # Vera Cole — Open Issues Tracker
-*Run 203 | 2026-06-12 | Compact version — historical run entries archived in git history*
-*197 open (196 carry-forward + 1 new this run) | 122 resolved*
+*Run 204 | 2026-06-13 | Compact version — historical run entries archived in git history*
+*199 open (197 carry-forward + 2 new this run) | 122 resolved*
 
 > ⚠️ **FILE SIZE NOTE:** This file was 572KB as of Run 195 due to prepending a full header every run.
 > Rewritten as a compact rolling summary on Run 196. Full history is in git log.
@@ -8,7 +8,27 @@
 
 ---
 
-## NEW OPEN — Run 203 | 2026-06-12
+## NEW OPEN — Run 204 | 2026-06-13
+
+### OPEN — Commercial/Wholesale Nursery & Greenhouse Production Facilities (Segment #198)
+- **Status:** Code live — titles + org keywords in `lead_pipeline.py` + `mixmax.py`; first pull Lake County June 15 (2 days)
+- **Files updated:** `workers/lead_pipeline.py` (DANNY_TITLES + DANNY_ORG_KEYWORDS), `integrations/mixmax.py` (PROPERTY_MANAGER_TITLES), `agents/danny.md` (Run 204 batching note)
+- **Key targets:** Willoway Nurseries, Lake County Nursery Exchange, Berns Nurseries, Heritage Farm Nurseries; Ohio Dept. of Agriculture nursery dealer licensing compliance angle; $2K-$8K/facility; quarterly = $8K-$32K/year; zero competitors cold-calling wholesale nursery ops managers
+- **Lake County angle:** Lake County is Ohio's "Nursery Capital" with 200+ commercial/wholesale nurseries — this segment has higher concentration here than any other county
+- **Resolution:** Pull fires June 15. Mark resolved when nursery/greenhouse contacts appear in Nina's report.
+
+### OPEN — danny.md File Size Bloat (Technical Debt)
+- **First seen:** 2026-06-13 (Run 204)
+- **Description:** `agents/danny.md` is 466KB (2,310 lines) — exceeds the 256KB tool read limit. Every new segment adds 200-400 words of documentation directly to danny.md. When Claude activates Danny, it cannot read the full file. The most recent segments are at the bottom — which means the most critical current instructions may be invisible.
+- **Root cause:** Each run adds full segment documentation (why, revenue math, pitch angle, Apollo titles, org keywords, distinct-from) directly inline in the agent file rather than referencing a separate segment library.
+- **Impact:** MEDIUM-HIGH — Danny activation may miss recent segments and current batching notes; risk grows with each run
+- **Proposed fix:** Archive all segment documentation blocks (runs 87-197) to `docs/commercial_segments_archive.md`. Keep in `danny.md`: core instructions, last 3 batching notes, and a pointer to the archive. This would reduce danny.md to ~15KB.
+- **Attempts:**
+  - 2026-06-13 (Run 204): Identified and logged. Added compact batching note (no full docs block) to prevent further growth. Proposed fix to Bradley in pending_slack_messages.md.
+
+---
+
+## Previously NEW OPEN — Run 203 | 2026-06-12
 
 ### OPEN — General Aviation (FBO) & Private Airport Terminals (Segment #197)
 - **Status:** Code live — first pull Lake County June 15 (Willoughby Hopkins Airport/LNN is Day-1 priority)
@@ -98,23 +118,26 @@
 
 ## Active Open Issues — Summary Table
 
-*Updated Run 203 | June 12 — Lake County June 15 pull in 3 days | Gas/Fleet blocker Day 28*
+*Updated Run 204 | June 13 — Lake County June 15 pull MONDAY (2 days) | Gas/Fleet blocker Day 30 | HOT LEADS WINDOW CLOSES TODAY*
 
 | Issue # | Segment | Status | Expected Resolution |
 |---------|---------|--------|---------------------|
-| Gas Station | Gas Station & C-Store Mixmax sequence | 🚨 BLOCKER Day 28 — NEW ANGLE: complete email copy in `gas_fleet_sequence_copy_2026-06-12.md` | Bradley action — paste copy + replace PENDING in mixmax.py |
-| Fleet Washing | Fleet Washing Mixmax sequence | 🚨 BLOCKER Day 28 — same as above; copy ready to paste | Bradley action — paste copy + replace PENDING in mixmax.py |
-| #1–#196 | Segments — June 8 Cuyahoga mega-pull | Hot leads window June 11–13 — run Nina report locally | First hot leads June 11–13 |
-| #193 | Co-Packing & Contract Manufacturing | Code live — pull fires Lake June 15 in 3 days | Confirm contacts in Nina report June 16–18 |
-| #194 | Semiconductor & PCB/Electronics Manufacturers | Code live — pull fires Lake June 15 | Confirm contacts in Nina report June 16–18 |
-| #195 | Boat Repair & Marine Service Centers | Code live — pull fires Lake June 15 | Confirm contacts in Nina report June 16–18 |
+| Gas Station | Gas Station & C-Store Mixmax sequence | 🚨 BLOCKER Day 30 — complete email copy in `gas_fleet_sequence_copy_2026-06-12.md` | Bradley action — paste copy + replace PENDING in mixmax.py |
+| Fleet Washing | Fleet Washing Mixmax sequence | 🚨 BLOCKER Day 30 — same as above; copy ready to paste | Bradley action — paste copy + replace PENDING in mixmax.py |
+| danny.md | File size bloat — 466KB exceeds tool read limit | NEW (Run 204) — proposed archive of segment docs to `docs/commercial_segments_archive.md` | Bradley approves → Vera executes in 1 run |
+| #1–#197 | Segments — June 8 Cuyahoga mega-pull | 🚨 HOT LEADS WINDOW CLOSES TODAY (June 13) — run Nina report locally NOW | Run nina_report.py today or window closes |
+| #193 | Co-Packing & Contract Manufacturing | Code live — pull fires Lake June 15 Monday | Confirm contacts in Nina report June 16–18 |
+| #194 | Semiconductor & PCB/Electronics Manufacturers | Code live — pull fires Lake June 15 Monday | Confirm contacts in Nina report June 16–18 |
+| #195 | Boat Repair & Marine Service Centers | Code live — pull fires Lake June 15 Monday | Confirm contacts in Nina report June 16–18 |
 | #196 | Craft Breweries & Taprooms | Code live — Willoughby Brewing = Lake June 15 target | Confirm contacts in Nina report June 16–18 |
-| #197 | General Aviation (FBO) & Private Airport Terminals | NEW (Run 203) — code live — Willoughby Hopkins Airport (LNN) = Lake June 15 flagship target | Confirm FBO contacts in Nina report June 16–18 |
+| #197 | General Aviation (FBO) & Private Airport Terminals | Code live — Willoughby Hopkins Airport (LNN) = Lake June 15 flagship target | Confirm FBO contacts in Nina report June 16–18 |
+| #198 | Commercial/Wholesale Nursery & Greenhouse Production | NEW (Run 204) — code live — Lake County Nursery Capital angle | Confirm nursery contacts in Nina report June 16–18 |
 
-**Total open: 197 | Total resolved: 122**
+**Total open: 199 | Total resolved: 122**
 
-> ⚠️ **GAS/FLEET BLOCKER — NEW APPROACH (Day 28):** Complete ready-to-paste email sequence copy now in `outputs/vera/gas_fleet_sequence_copy_2026-06-12.md`. No writing needed — just open Mixmax, paste the 3 emails for each sequence, and replace PENDING in `integrations/mixmax.py`. 10 minutes total. Lake County pull fires June 15 (3 days) — all Lake County gas station + fleet contacts will be unenrolled without this fix.
-> Hot leads window from June 8 Cuyahoga batch: **June 11–13.** Run `python3 workers/nina_report.py daily` locally.
+> 🚨 **HOT LEADS WINDOW CLOSES TODAY (June 13):** June 8 Cuyahoga batch 3-day hot window = June 11–13. TODAY IS THE LAST DAY. Run `python3 workers/nina_report.py daily` locally RIGHT NOW before 5pm.
+> 🚨 **GAS/FLEET BLOCKER — Day 30:** Complete ready-to-paste email sequence copy in `outputs/vera/gas_fleet_sequence_copy_2026-06-12.md`. 10 minutes. Lake County pull fires Monday June 15 — all Lake County gas/fleet contacts unenrolled without this fix.
+> 📅 **LAKE COUNTY PULL — MONDAY JUNE 15:** Double-click `scripts/run_lake_both.command` at 7am Monday.
 
 ---
 
