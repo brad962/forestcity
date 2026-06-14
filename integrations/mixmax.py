@@ -1126,6 +1126,11 @@ GAS_STATION_KEYWORDS = [
     'getgo', 'giant eagle fuel', 'bp station', 'shell station',
     'pilot flying j', 'pilot travel', 'kwik trip', 'citgo',
     'exxon', 'mobil', 'valero', 'fuel center',
+    # Additional NE Ohio / Northeast regional C-store chains (added 2026-06-14 run 205)
+    # Kwik Fill / Country Fair: significant Western NY + NE Ohio chain; Lake & Geauga county presence
+    'kwik fill', 'country fair stores', 'country fair gas',
+    # United Dairy Farmers (UDF): Ohio-native C-store + dairy chain; 180+ OH locations; strong NE Ohio presence
+    'united dairy farmers', 'udf convenience', 'udf store',
     # NOTE: 'district manager' removed — too generic; non-gas-station DMs would mismatch.
     # Company name keywords are sufficient for routing.
 ]

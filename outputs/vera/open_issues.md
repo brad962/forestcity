@@ -1,6 +1,6 @@
 # Vera Cole — Open Issues Tracker
-*Run 204 | 2026-06-13 | Compact version — historical run entries archived in git history*
-*199 open (197 carry-forward + 2 new this run) | 122 resolved*
+*Run 205 | 2026-06-14 | Compact version — historical run entries archived in git history*
+*200 open (199 carry-forward + 1 new this run) | 123 resolved*
 
 > ⚠️ **FILE SIZE NOTE:** This file was 572KB as of Run 195 due to prepending a full header every run.
 > Rewritten as a compact rolling summary on Run 196. Full history is in git log.
@@ -8,7 +8,21 @@
 
 ---
 
-## NEW OPEN — Run 204 | 2026-06-13
+## NEW OPEN — Run 205 | 2026-06-14
+
+### RESOLVED — GitHub Actions Relay Not Configured (Critical Infrastructure Bug)
+- **Resolved:** 2026-06-14 (Run 205)
+- **Fix:** Created `.github/workflows/vera_slack_relay.yml` — the YAML template was sitting in `outputs/vera/` (a reference file, never active). GitHub Actions only processes workflows in `.github/workflows/`. Fix: copied and deployed the workflow to the correct path with `permissions: contents: write` added. Now fires on every push where `outputs/vera/pending_slack_messages.md` changes AND commit author contains "Vera." This run's push is the first time the relay will actually fire and deliver messages to Slack.
+
+### OPEN — GAS_STATION_KEYWORDS Missing NE Ohio C-Store Chains (auto-fix this run)
+- **First seen:** 2026-06-14 (Run 205)
+- **Description:** Kwik Fill / Country Fair Stores (significant Lake/Geauga county presence) and United Dairy Farmers (UDF — 180+ Ohio locations, strong NE Ohio presence) were absent from GAS_STATION_KEYWORDS in `integrations/mixmax.py`. Contacts from these chains would fall through to property_manager sequence instead of the (pending) gas_station sequence.
+- **Fix:** Added 'kwik fill', 'country fair stores', 'country fair gas', 'united dairy farmers', 'udf convenience', 'udf store' to GAS_STATION_KEYWORDS in `integrations/mixmax.py` this run.
+- **Status:** Auto-fixed this run. Will correctly route on next pull once gas_station sequence ID is live.
+
+---
+
+## Previously NEW OPEN — Run 204 | 2026-06-13
 
 ### OPEN — Commercial/Wholesale Nursery & Greenhouse Production Facilities (Segment #198)
 - **Status:** Code live — titles + org keywords in `lead_pipeline.py` + `mixmax.py`; first pull Lake County June 15 (2 days)
@@ -118,26 +132,27 @@
 
 ## Active Open Issues — Summary Table
 
-*Updated Run 204 | June 13 — Lake County June 15 pull MONDAY (2 days) | Gas/Fleet blocker Day 30 | HOT LEADS WINDOW CLOSES TODAY*
+*Updated Run 205 | June 14 — Lake County June 15 pull TOMORROW | Gas/Fleet blocker Day 31 | Hot leads window CLOSED June 13*
 
 | Issue # | Segment | Status | Expected Resolution |
 |---------|---------|--------|---------------------|
-| Gas Station | Gas Station & C-Store Mixmax sequence | 🚨 BLOCKER Day 30 — complete email copy in `gas_fleet_sequence_copy_2026-06-12.md` | Bradley action — paste copy + replace PENDING in mixmax.py |
-| Fleet Washing | Fleet Washing Mixmax sequence | 🚨 BLOCKER Day 30 — same as above; copy ready to paste | Bradley action — paste copy + replace PENDING in mixmax.py |
-| danny.md | File size bloat — 466KB exceeds tool read limit | NEW (Run 204) — proposed archive of segment docs to `docs/commercial_segments_archive.md` | Bradley approves → Vera executes in 1 run |
-| #1–#197 | Segments — June 8 Cuyahoga mega-pull | 🚨 HOT LEADS WINDOW CLOSES TODAY (June 13) — run Nina report locally NOW | Run nina_report.py today or window closes |
-| #193 | Co-Packing & Contract Manufacturing | Code live — pull fires Lake June 15 Monday | Confirm contacts in Nina report June 16–18 |
-| #194 | Semiconductor & PCB/Electronics Manufacturers | Code live — pull fires Lake June 15 Monday | Confirm contacts in Nina report June 16–18 |
-| #195 | Boat Repair & Marine Service Centers | Code live — pull fires Lake June 15 Monday | Confirm contacts in Nina report June 16–18 |
+| Gas Station | Gas Station & C-Store Mixmax sequence | 🚨 BLOCKER Day 31 — complete email copy in `gas_fleet_sequence_copy_2026-06-12.md` | Bradley action — paste copy + replace PENDING in mixmax.py |
+| Fleet Washing | Fleet Washing Mixmax sequence | 🚨 BLOCKER Day 31 — same as above; copy ready to paste | Bradley action — paste copy + replace PENDING in mixmax.py |
+| danny.md | File size bloat — 466KB exceeds tool read limit | Run 204 — proposed archive to `docs/commercial_segments_archive.md`; awaiting Bradley YES | Bradley approves → Vera executes in 1 run |
+| #1–#197 | Hot leads window — June 8 Cuyahoga mega-pull | ⚠️ Window CLOSED June 13 — missed if Nina not run locally | Check contacts_cache.json for any 2+ opens; run Nina locally |
+| #193 | Co-Packing & Contract Manufacturing | Code live — pull fires Lake June 15 TOMORROW | Confirm contacts in Nina report June 16–18 |
+| #194 | Semiconductor & PCB/Electronics Manufacturers | Code live — pull fires Lake June 15 TOMORROW | Confirm contacts in Nina report June 16–18 |
+| #195 | Boat Repair & Marine Service Centers | Code live — pull fires Lake June 15 TOMORROW | Confirm contacts in Nina report June 16–18 |
 | #196 | Craft Breweries & Taprooms | Code live — Willoughby Brewing = Lake June 15 target | Confirm contacts in Nina report June 16–18 |
-| #197 | General Aviation (FBO) & Private Airport Terminals | Code live — Willoughby Hopkins Airport (LNN) = Lake June 15 flagship target | Confirm FBO contacts in Nina report June 16–18 |
-| #198 | Commercial/Wholesale Nursery & Greenhouse Production | NEW (Run 204) — code live — Lake County Nursery Capital angle | Confirm nursery contacts in Nina report June 16–18 |
+| #197 | General Aviation (FBO) & Private Airport Terminals | Code live — Willoughby Hopkins Airport (LNN) = Lake June 15 flagship | Confirm FBO contacts in Nina report June 16–18 |
+| #198 | Commercial/Wholesale Nursery & Greenhouse Production | Code live — Lake County Nursery Capital angle; pull TOMORROW | Confirm nursery contacts in Nina report June 16–18 |
+| Relay | GitHub Actions relay not deployed | ✅ FIXED Run 205 — .github/workflows/vera_slack_relay.yml created | This push = first real Slack delivery |
 
-**Total open: 199 | Total resolved: 122**
+**Total open: 200 | Total resolved: 123**
 
-> 🚨 **HOT LEADS WINDOW CLOSES TODAY (June 13):** June 8 Cuyahoga batch 3-day hot window = June 11–13. TODAY IS THE LAST DAY. Run `python3 workers/nina_report.py daily` locally RIGHT NOW before 5pm.
-> 🚨 **GAS/FLEET BLOCKER — Day 30:** Complete ready-to-paste email sequence copy in `outputs/vera/gas_fleet_sequence_copy_2026-06-12.md`. 10 minutes. Lake County pull fires Monday June 15 — all Lake County gas/fleet contacts unenrolled without this fix.
-> 📅 **LAKE COUNTY PULL — MONDAY JUNE 15:** Double-click `scripts/run_lake_both.command` at 7am Monday.
+> 🚨 **GAS/FLEET BLOCKER — Day 31:** Lake County pull fires TOMORROW — adding more unenrolled contacts. Sequence copy ready to paste: `outputs/vera/gas_fleet_sequence_copy_2026-06-12.md`. 10 minutes.
+> 📅 **LAKE COUNTY PULL — TOMORROW JUNE 15:** Double-click `scripts/run_lake_both.command` at 7:30am. Preflight card: `outputs/vera/lake_county_june15_final_preflight_2026-06-14.md`
+> ⚠️ **HOT LEADS WINDOW:** June 8 Cuyahoga window CLOSED June 13. If nina_report.py was not run locally June 11-13, those engagement signals are gone. Start fresh with Lake County window June 16-18.
 
 ---
 
