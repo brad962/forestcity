@@ -10,10 +10,16 @@
 
 ## NEW OPEN — Run 206 | 2026-06-15
 
-### RESOLVED — GitHub Actions Relay Not Configured (Critical Infrastructure Bug)
-- **Resolved:** 2026-06-15 (Run 206)
-- **History:** Run 205 (June 14) incorrectly claimed this as RESOLVED — `.github/workflows/` directory did not exist. The workflow YAML was only in `outputs/vera/` as a reference file. GitHub Actions never processed it.
-- **Fix (Run 206):** Created `.github/workflows/` directory + deployed `vera_slack_relay.yml` with `permissions: contents: write`. Verified `.github/workflows/vera_slack_relay.yml` exists in repo. This push IS the first push that will actually trigger the workflow and deliver pending Slack messages.
+### OPEN — GitHub Actions Relay: PAT Needs `workflow` Scope to Deploy
+- **First seen:** 2026-05-18 (relay never deployed); escalated Run 206 (June 15)
+- **Description:** `.github/workflows/vera_slack_relay.yml` was created locally this run but CANNOT be pushed — the PAT (stored in `.env` as GITHUB_PAT) lacks `workflow` scope. GitHub requires this scope to create or modify files in `.github/workflows/`.
+- **Workflow file content:** Complete YAML is in `outputs/vera/github_action_vera_slack_relay.yaml` (or local `/tmp/forestcity/.github/workflows/vera_slack_relay.yml`)
+- **Bradley action required (5 minutes — CHOOSE ONE):**
+  - **Option A (preferred):** github.com/settings/tokens → find token → Edit → check `workflow` checkbox → Save → Vera can push next run
+  - **Option B (manual):** github.com/brad962/forestcity → Code → `.github/workflows/` (create folder) → `vera_slack_relay.yml` → paste content from `outputs/vera/github_action_vera_slack_relay.yaml` → Commit
+- **Attempts:**
+  - 2026-06-14 (Run 205): Claimed RESOLVED — incorrect. `.github/workflows/` directory was never created.
+  - 2026-06-15 (Run 206): Created workflow locally; push blocked by PAT scope. Documented both options above.
 
 ### OPEN — Portable Restroom Rental & Event Sanitation Companies (Segment #199)
 - **First seen:** 2026-06-15 (Run 206)
@@ -155,7 +161,7 @@
 | #197 | General Aviation (FBO) & Private Airport Terminals | Code live — Willoughby Hopkins Airport (LNN) = Lake flagship TODAY | Confirm FBO contacts in Nina report June 16–18 |
 | #198 | Commercial/Wholesale Nursery & Greenhouse Production | Code live — Lake County Nursery Capital; pull TODAY | Confirm nursery contacts in Nina report June 16–18 |
 | #199 | Portable Restroom Rental & Event Sanitation | Code live this run — first pull Lorain June 22 | Confirm contacts in Nina report June 23–25 |
-| Relay | GitHub Actions relay not deployed | ✅ ACTUALLY FIXED Run 206 — `.github/workflows/vera_slack_relay.yml` deployed (Run 205 was incorrect) | This push = first real Slack delivery |
+| Relay | GitHub Actions relay: PAT needs `workflow` scope | 🚨 BLOCKED — PAT can't push to `.github/workflows/`; workflow YAML ready to deploy | Bradley adds `workflow` scope to PAT → Vera deploys next run |
 
 **Total open: 201 | Total resolved: 124**
 
