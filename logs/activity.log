@@ -1652,3 +1652,4 @@
 [2026-06-15 08:52] Vera | Run 206 — UPDATED: open_issues.md — Correctly re-opened GitHub Actions relay as OPEN with PAT workflow scope blocker documented; two options for Bradley (PAT scope upgrade OR manual GitHub UI deployment); workflow YAML content reference in outputs/vera/github_action_vera_slack_relay.yaml | outputs/vera/open_issues.md | Done
 [2026-06-15 08:52] Vera | Run 206 — UPDATED: pending_slack_messages.md — Revised to reflect PAT scope blocker; removed false 'relay fixed' message; added clear 5-min fix instructions for Bradley | outputs/vera/pending_slack_messages.md | Done
 [2026-06-15 12:31] Jasmine | Weekly Facebook posts - 5 posts written | facebook_posts_week_2026-06-15.md | Done
+[2026-06-15 12:32] Nina | Daily hot leads report — 0 replied, 0 hot, 0 due today, 0 due tomorrow, 0 stale estimates | hot_leads_2026-06-15.md | Done
