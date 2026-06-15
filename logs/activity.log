@@ -1655,3 +1655,4 @@
 [2026-06-15 12:32] Nina | Daily hot leads report — 0 replied, 0 hot, 0 due today, 0 due tomorrow, 0 stale estimates | hot_leads_2026-06-15.md | Done
 [2026-06-15 12:32] Nina | Weekly pipeline report — 0 enrolled, 0 replied, 0 hot leads | weekly_report_2026-06-15.md | Done
 [2026-06-15 12:33] Nina | Workiz daily report - Power Washing jobs | Workiz API unavailable — run locally. | Done
+[2026-06-15 12:33:08 UTC] Nina | Daily Reports (Hot Leads + Workiz) — nina_report.py: completed (0 hot leads, Mailchimp 403 — API key/permissions issue); workiz_report.py: completed (Workiz API 403 — token issue)
