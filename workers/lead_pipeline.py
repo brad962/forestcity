@@ -2121,6 +2121,15 @@ DANNY_TITLES = [
     'nursery operations manager', 'greenhouse production manager', 'wholesale nursery manager',
     'commercial nursery manager', 'growing operations director', 'plant production manager',
     'nursery facility manager', 'greenhouse operations manager',
+    # Portable Restroom Rental & Event Sanitation Companies — segment #199; routing to property_manager sequence
+    # (EPA NPDES stormwater / OSHA 29 CFR 1910.22 compliance angle); DISTINCT from waste haulers (run 167)
+    # and municipal water/wastewater (run 186 — government utility); staging yards = algae + chemical
+    # residue + grime on concrete; Mr. John, Porta-Jon, Pioneer Services Group, United Site Services NE Ohio;
+    # $2K–$6K/facility; quarterly = $8K–$24K/year; zero competitors cold-calling; first pull Lorain June 22
+    # (added 2026-06-15 run 206)
+    'portable restroom manager', 'portable sanitation manager', 'sanitation services manager',
+    'porta potty manager', 'portable toilet manager', 'field sanitation manager',
+    'restroom trailer manager', 'portable restroom regional manager', 'sanitation fleet manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -3354,6 +3363,16 @@ DANNY_ORG_KEYWORDS = [
     # (Lake County specialty — highest density of commercial nurseries in NE Ohio) (added 2026-06-13 run 204)
     'wholesale nursery', 'commercial nursery', 'nursery production', 'greenhouse grower',
     'plant production facility', 'growing operations', 'nursery exchange', 'ornamental grower',
+    # Portable Restroom Rental & Event Sanitation Companies — segment #199 org keywords
+    # DISTINCT from 'waste management'/'solid waste' (run 167 — trash haulers) and 'municipal water'/
+    # 'sanitary district' (run 186 — government water utilities); Apollo 'portable restroom rental'/
+    # 'portable sanitation' org tags return zero overlap with any existing facility/waste tags;
+    # NE Ohio operators: Mr. John Inc. (Stow OH), Porta-Jon Inc. (NE Ohio), Pioneer Services Group,
+    # United Site Services, Sani-Hut (rental fleet + staging yards); first pull Lorain June 22
+    # (added 2026-06-15 run 206)
+    'portable restroom rental', 'porta potty rental', 'portable sanitation',
+    'portable toilet rental', 'restroom trailer rental', 'event sanitation services',
+    'portable restroom company', 'sanitation rental',
 ]
 
 CARLA_SEARCHES = [

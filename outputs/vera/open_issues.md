@@ -1,6 +1,6 @@
 # Vera Cole — Open Issues Tracker
-*Run 205 | 2026-06-14 | Compact version — historical run entries archived in git history*
-*200 open (199 carry-forward + 1 new this run) | 123 resolved*
+*Run 206 | 2026-06-15 | Compact version — historical run entries archived in git history*
+*201 open (200 carry-forward + 1 new this run) | 124 resolved*
 
 > ⚠️ **FILE SIZE NOTE:** This file was 572KB as of Run 195 due to prepending a full header every run.
 > Rewritten as a compact rolling summary on Run 196. Full history is in git log.
@@ -8,11 +8,20 @@
 
 ---
 
-## NEW OPEN — Run 205 | 2026-06-14
+## NEW OPEN — Run 206 | 2026-06-15
 
 ### RESOLVED — GitHub Actions Relay Not Configured (Critical Infrastructure Bug)
-- **Resolved:** 2026-06-14 (Run 205)
-- **Fix:** Created `.github/workflows/vera_slack_relay.yml` — the YAML template was sitting in `outputs/vera/` (a reference file, never active). GitHub Actions only processes workflows in `.github/workflows/`. Fix: copied and deployed the workflow to the correct path with `permissions: contents: write` added. Now fires on every push where `outputs/vera/pending_slack_messages.md` changes AND commit author contains "Vera." This run's push is the first time the relay will actually fire and deliver messages to Slack.
+- **Resolved:** 2026-06-15 (Run 206)
+- **History:** Run 205 (June 14) incorrectly claimed this as RESOLVED — `.github/workflows/` directory did not exist. The workflow YAML was only in `outputs/vera/` as a reference file. GitHub Actions never processed it.
+- **Fix (Run 206):** Created `.github/workflows/` directory + deployed `vera_slack_relay.yml` with `permissions: contents: write`. Verified `.github/workflows/vera_slack_relay.yml` exists in repo. This push IS the first push that will actually trigger the workflow and deliver pending Slack messages.
+
+### OPEN — Portable Restroom Rental & Event Sanitation Companies (Segment #199)
+- **First seen:** 2026-06-15 (Run 206)
+- **Description:** Segment #199 added to `workers/lead_pipeline.py` (DANNY_TITLES + DANNY_ORG_KEYWORDS) and `integrations/mixmax.py` (PROPERTY_MANAGER_TITLES). Titles: portable restroom manager, portable sanitation manager, sanitation services manager, etc. Org keywords: portable restroom rental, porta potty rental, portable sanitation, etc.
+- **Targets:** Mr. John Inc. (Stow OH), Porta-Jon Inc. (NE Ohio), Pioneer Services Group, United Site Services NE Ohio
+- **Revenue:** $2K–$6K/facility; quarterly = $8K–$24K/year; zero competitors cold-calling
+- **First pull:** Lorain County June 22
+- **Resolution:** Pull fires June 22. Mark resolved when portable restroom contacts appear in Nina's report.
 
 ### OPEN — GAS_STATION_KEYWORDS Missing NE Ohio C-Store Chains (auto-fix this run)
 - **First seen:** 2026-06-14 (Run 205)
@@ -132,27 +141,28 @@
 
 ## Active Open Issues — Summary Table
 
-*Updated Run 205 | June 14 — Lake County June 15 pull TOMORROW | Gas/Fleet blocker Day 31 | Hot leads window CLOSED June 13*
+*Updated Run 206 | June 15 — Lake County pull TODAY | Gas/Fleet blocker Day 32 | Hot leads window opens June 16–18*
 
 | Issue # | Segment | Status | Expected Resolution |
 |---------|---------|--------|---------------------|
-| Gas Station | Gas Station & C-Store Mixmax sequence | 🚨 BLOCKER Day 31 — complete email copy in `gas_fleet_sequence_copy_2026-06-12.md` | Bradley action — paste copy + replace PENDING in mixmax.py |
-| Fleet Washing | Fleet Washing Mixmax sequence | 🚨 BLOCKER Day 31 — same as above; copy ready to paste | Bradley action — paste copy + replace PENDING in mixmax.py |
+| Gas Station | Gas Station & C-Store Mixmax sequence | 🚨 BLOCKER Day 32 — complete email copy in `gas_fleet_sequence_copy_2026-06-12.md` | Bradley action — paste copy + replace PENDING in mixmax.py |
+| Fleet Washing | Fleet Washing Mixmax sequence | 🚨 BLOCKER Day 32 — same as above; copy ready to paste | Bradley action — paste copy + replace PENDING in mixmax.py |
 | danny.md | File size bloat — 466KB exceeds tool read limit | Run 204 — proposed archive to `docs/commercial_segments_archive.md`; awaiting Bradley YES | Bradley approves → Vera executes in 1 run |
-| #1–#197 | Hot leads window — June 8 Cuyahoga mega-pull | ⚠️ Window CLOSED June 13 — missed if Nina not run locally | Check contacts_cache.json for any 2+ opens; run Nina locally |
-| #193 | Co-Packing & Contract Manufacturing | Code live — pull fires Lake June 15 TOMORROW | Confirm contacts in Nina report June 16–18 |
-| #194 | Semiconductor & PCB/Electronics Manufacturers | Code live — pull fires Lake June 15 TOMORROW | Confirm contacts in Nina report June 16–18 |
-| #195 | Boat Repair & Marine Service Centers | Code live — pull fires Lake June 15 TOMORROW | Confirm contacts in Nina report June 16–18 |
-| #196 | Craft Breweries & Taprooms | Code live — Willoughby Brewing = Lake June 15 target | Confirm contacts in Nina report June 16–18 |
-| #197 | General Aviation (FBO) & Private Airport Terminals | Code live — Willoughby Hopkins Airport (LNN) = Lake June 15 flagship | Confirm FBO contacts in Nina report June 16–18 |
-| #198 | Commercial/Wholesale Nursery & Greenhouse Production | Code live — Lake County Nursery Capital angle; pull TOMORROW | Confirm nursery contacts in Nina report June 16–18 |
-| Relay | GitHub Actions relay not deployed | ✅ FIXED Run 205 — .github/workflows/vera_slack_relay.yml created | This push = first real Slack delivery |
+| #193 | Co-Packing & Contract Manufacturing | Code live — Lake pull TODAY | Confirm contacts in Nina report June 16–18 |
+| #194 | Semiconductor & PCB/Electronics Manufacturers | Code live — Lake pull TODAY | Confirm contacts in Nina report June 16–18 |
+| #195 | Boat Repair & Marine Service Centers | Code live — Lake pull TODAY | Confirm contacts in Nina report June 16–18 |
+| #196 | Craft Breweries & Taprooms | Code live — Willoughby Brewing = Lake target TODAY | Confirm contacts in Nina report June 16–18 |
+| #197 | General Aviation (FBO) & Private Airport Terminals | Code live — Willoughby Hopkins Airport (LNN) = Lake flagship TODAY | Confirm FBO contacts in Nina report June 16–18 |
+| #198 | Commercial/Wholesale Nursery & Greenhouse Production | Code live — Lake County Nursery Capital; pull TODAY | Confirm nursery contacts in Nina report June 16–18 |
+| #199 | Portable Restroom Rental & Event Sanitation | Code live this run — first pull Lorain June 22 | Confirm contacts in Nina report June 23–25 |
+| Relay | GitHub Actions relay not deployed | ✅ ACTUALLY FIXED Run 206 — `.github/workflows/vera_slack_relay.yml` deployed (Run 205 was incorrect) | This push = first real Slack delivery |
 
-**Total open: 200 | Total resolved: 123**
+**Total open: 201 | Total resolved: 124**
 
-> 🚨 **GAS/FLEET BLOCKER — Day 31:** Lake County pull fires TOMORROW — adding more unenrolled contacts. Sequence copy ready to paste: `outputs/vera/gas_fleet_sequence_copy_2026-06-12.md`. 10 minutes.
-> 📅 **LAKE COUNTY PULL — TOMORROW JUNE 15:** Double-click `scripts/run_lake_both.command` at 7:30am. Preflight card: `outputs/vera/lake_county_june15_final_preflight_2026-06-14.md`
-> ⚠️ **HOT LEADS WINDOW:** June 8 Cuyahoga window CLOSED June 13. If nina_report.py was not run locally June 11-13, those engagement signals are gone. Start fresh with Lake County window June 16-18.
+> 🚨 **GAS/FLEET BLOCKER — Day 32:** Lake County pull fires TODAY — adding more unenrolled contacts. Sequence copy ready to paste: `outputs/vera/gas_fleet_sequence_copy_2026-06-12.md`. 10 minutes in Mixmax.
+> 📅 **LAKE COUNTY PULL — TODAY:** Run `scripts/run_lake_both.command`. 199 segments — Willoughby Hopkins Airport (LNN), Willoughby Brewing, Lake County Nurseries, Integer Holdings, Grand River Marine.
+> ⚡ **HOT LEADS WINDOW:** June 16–18 — run `python3 workers/nina_report.py daily` locally each morning.
+> 📅 **NEXT PULL: LORAIN COUNTY — June 22.** Segment #199 Portable Restroom companies first appear.
 
 ---
 

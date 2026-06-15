@@ -1078,6 +1078,13 @@ PROPERTY_MANAGER_TITLES = [
     'nursery operations manager', 'greenhouse production manager', 'wholesale nursery manager',
     'commercial nursery manager', 'growing operations director', 'plant production manager',
     'nursery facility manager', 'greenhouse operations manager',
+    # Portable Restroom Rental & Event Sanitation Companies — segment #199; routing to property_manager sequence
+    # (EPA NPDES stormwater compliance / facility vendor contract angle); DISTINCT from waste haulers (run 167);
+    # staging yards + service yards = concrete chemical residue; Mr. John, Porta-Jon, United Site Services;
+    # first pull Lorain June 22 (added 2026-06-15 run 206)
+    'portable restroom manager', 'portable sanitation manager', 'sanitation services manager',
+    'porta potty manager', 'portable toilet manager', 'field sanitation manager',
+    'restroom trailer manager', 'portable restroom regional manager', 'sanitation fleet manager',
 ]
 
 REALTOR_TITLES = [
