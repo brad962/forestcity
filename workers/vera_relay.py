@@ -251,7 +251,7 @@ def _check_summit_deadline():
     msg = (
         f'{urgency_emoji} *Summit County Pull — {days_label} (Deadline May 31)*\n'
         f'>Miss this window = no Summit leads until June 29 (next auto-rotation, Week 27).\n'
-        f'>All 197+ commercial segments (restaurants, banks, gyms, hospitals, sports venues + more) miss peak season.\n'
+        f'>All 200+ commercial segments (restaurants, banks, gyms, hospitals, sports venues + more) miss peak season.\n'
         f'>Danny only: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py danny Summit`\n'
         f'>Danny + Carla (recommended): `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Summit`\n'
         f'>Or double-click: `scripts/run_summit_both.command` in Finder — both workers, one click.'
@@ -845,7 +845,7 @@ def _check_june8_geauga_portage():
     msg = (
         f'🏙️ *Cuyahoga County Pull — {label} (June 8) — LARGEST MARKET*\n'
         f'>Week 24 rotation: Cleveland, Parma, Lakewood, Strongsville, Beachwood. Highest lead volume of all 6 counties.\n'
-        f'>All 197+ commercial segments fire here: hospitals (Cleveland Clinic, UH, MetroHealth), museums\n'
+        f'>All 200+ commercial segments fire here: hospitals (Cleveland Clinic, UH, MetroHealth), museums\n'
         f'>   (Cleveland Museum of Art, Metroparks Zoo, Rock Hall), YMCA of Greater Cleveland (12 branches),\n'
         f'>   DSO chains (Aspen Dental, Heartland), government/transit (GCRTA, Port of Cleveland, city halls),\n'
         f'>   dialysis (DaVita/Fresenius 50+ centers), concert venues (Blossom, Jacobs Pavilion),\n'
@@ -859,7 +859,7 @@ def _check_june8_geauga_portage():
         f'>   used car lots (CarMax/DriveTime/independent), outdoor power equipment (STIHL/Husqvarna/Cub Cadet),\n'
         f'>   vocational & trade schools (CVCC/Ohio Technical College/Auburn CTE),\n'
         f'>   summer day camps & youth programs (Boys & Girls Club, Camp Cheerful) + more.\n'
-        f'> ✅ Title + org keyword batching active (Run 134+): all 196+ segments fully queried.\n'
+        f'> ✅ Title + org keyword batching active (Run 134+): all 200+ segments fully queried.\n'
         f'>{note}\n'
         f'>Shortcut: double-click `scripts/run_cuyahoga_both.command` in Finder (no typing required)\n'
         f'>Command: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Cuyahoga`'
@@ -948,7 +948,7 @@ def _check_june15_cuyahoga():
         f'>Marina segment: Mentor Harbor, Sheffield Lake, Euclid shoreline — pre-season marina cleaning window.\n'
         f'>Marine/Boat Dealers: Skipper Buds (Mentor/Lorain), Inland Seas Yachts (Vermilion) — FIRST PULL this run.\n'
         f'>Also: hotel chains (Mentor/Willoughby corridor), senior living, fitness centers (Lake County YMCAs).\n'
-        f'> ✅ Title + org keyword batching active (Run 134+): all 196+ segments fully queried.\n'
+        f'> ✅ Title + org keyword batching active (Run 134+): all 200+ segments fully queried.\n'
         f'>{note}\n'
         f'>Command: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Lake`'
     )
@@ -1431,7 +1431,7 @@ def _check_july20_cuyahoga_2():
         f'📍 *Cuyahoga County 2nd Pass — {label} (July 20)*\n'
         f'>Week 30 rotation: Cuyahoga — Cleveland, Lakewood, Parma, Strongsville, Berea, Westlake, Rocky River.\n'
         f'>Second pass: catches non-opens from June 8 + school districts now in active summer window.\n'
-        f'>Highest-volume market — all 197+ commercial segments at max capacity.\n'
+        f'>Highest-volume market — all 200+ commercial segments at max capacity.\n'
         f'>{note}\n'
         f'>Command: `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Cuyahoga`'
     )
@@ -2010,7 +2010,7 @@ def _check_neighbor_canvass_weekly():
 
 def _check_early_cuyahoga_opportunity():
     """Fire May 28–June 7 — one-time window to run an EARLY Cuyahoga pull.
-    197+ commercial segments won't get Cuyahoga contacts until the scheduled June 8 pull.
+    200+ commercial segments won't get Cuyahoga contacts until the scheduled June 8 pull.
     Running Cuyahoga NOW gives those contacts extra days in the sequence before June 4 enrollment.
     This is additive — does NOT replace the June 8 rotation pull, it SUPPLEMENTS it.
     Self-deactivates June 8 (Cuyahoga IS the scheduled pull that day)."""
@@ -2029,7 +2029,7 @@ def _check_early_cuyahoga_opportunity():
     days_to_june8 = (_date_ec(2026, 6, 8) - today).days
     msg = (
         f'🏙️ *Early Cuyahoga Pull Opportunity — {days_to_june8} Days Before Scheduled June 8 Pull*\n'
-        f'>197+ commercial segments (hospital campuses, municipal facilities, DSO dental groups, YMCA branches,\n'
+        f'>200+ commercial segments (hospital campuses, municipal facilities, DSO dental groups, YMCA branches,\n'
         f'>tire chains, movie theaters, bowling, pet boarding, dialysis, sports complexes, museums, food\n'
         f'>processing, airports, concert venues, craft breweries, dollar stores, auto parts, hardware,\n'
         f'>sports venues, cannabis dispensaries, blood/plasma centers, coin laundries, warehouse clubs,\n'
@@ -2441,7 +2441,7 @@ def _check_june9_cuyahoga_verification():
         msg = (
             '✅ *Cuyahoga Pull Confirmed — June 8 Ran Successfully (Danny + Carla)*\n'
             '>Danny sentinel: June 8 ✓ | Carla sentinel: June 8 ✓\n'
-            '>All 197+ commercial segments enrolled. First opens expected June 11–13 (Touch 1 Day 0 → opens by Day 3).\n'
+            '>All 200+ commercial segments enrolled. First opens expected June 11–13 (Touch 1 Day 0 → opens by Day 3).\n'
             '>Action: Run Nina\'s daily report Monday June 9 morning to surface hot leads before they cool.\n'
             '>`cd /Users/bradleyneal/forestcity && python3 workers/nina_report.py daily`\n'
             '>DSO district manager / hospital FM / government contact replied? Book a site walk immediately — annual contract.'
@@ -2460,7 +2460,7 @@ def _check_june9_cuyahoga_verification():
             '>Danny sentinel NOT dated June 8. Largest commercial pull of the year may have been silently missed.\n'
             '>RUN NOW (15–20 min): `cd /Users/bradleyneal/forestcity && python3 workers/lead_pipeline.py both Cuyahoga`\n'
             '>Or double-click: `scripts/run_cuyahoga_both.command` in Finder — no typing required.\n'
-            '>197+ commercial segments. Missing this = no hospital/DSO/government/museum contacts for the entire season.\n'
+            '>200+ commercial segments. Missing this = no hospital/DSO/government/museum contacts for the entire season.\n'
             '>Check cron first: `cat logs/cron.log | tail -30` — if cron ran but sentinel is absent, re-run anyway.'
         )
 

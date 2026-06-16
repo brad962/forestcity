@@ -1085,6 +1085,13 @@ PROPERTY_MANAGER_TITLES = [
     'portable restroom manager', 'portable sanitation manager', 'sanitation services manager',
     'porta potty manager', 'portable toilet manager', 'field sanitation manager',
     'restroom trailer manager', 'portable restroom regional manager', 'sanitation fleet manager',
+    # FQHCs & Community Health Centers — segment #200; routing to property_manager sequence
+    # (HRSA + OSHA + ODH licensing compliance angle); DISTINCT from hospital campuses (run 124),
+    # urgent care (run 114), behavioral health (run 150), outpatient medical (run 101);
+    # first pull Lorain June 22 (added 2026-06-16 run 207)
+    'fqhc administrator', 'community health center director', 'federally qualified health center director',
+    'community clinic director', 'neighborhood health center manager', 'public health facilities manager',
+    'health district facilities director', 'community health center administrator',
 ]
 
 REALTOR_TITLES = [

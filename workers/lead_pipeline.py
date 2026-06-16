@@ -2130,6 +2130,18 @@ DANNY_TITLES = [
     'portable restroom manager', 'portable sanitation manager', 'sanitation services manager',
     'porta potty manager', 'portable toilet manager', 'field sanitation manager',
     'restroom trailer manager', 'portable restroom regional manager', 'sanitation fleet manager',
+    # FQHCs & Community Health Centers — segment #200; routing to property_manager sequence
+    # (HRSA federal designation + OSHA + Ohio Dept of Health licensing = exterior appearance compliance);
+    # DISTINCT from hospital main campuses (run 124), urgent care chains (run 114), behavioral health clinics
+    # (run 150), outpatient medical offices (run 101), ambulatory surgery centers (run 143);
+    # Care Alliance Health Center (Cleveland), Near West Healthcare, Northeast Neighborhood Health,
+    # Lake County General Health District, Cuyahoga County Board of Health community sites, Lorain County
+    # General Health District; government direct-award vendor contracts;
+    # $1,500–$4,000/facility; quarterly = $6K–$16K/year per site; zero competitors cold-calling;
+    # first pull Lorain June 22 (added 2026-06-16 run 207)
+    'fqhc administrator', 'community health center director', 'federally qualified health center director',
+    'community clinic director', 'neighborhood health center manager', 'public health facilities manager',
+    'health district facilities director', 'community health center administrator',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -3373,6 +3385,17 @@ DANNY_ORG_KEYWORDS = [
     'portable restroom rental', 'porta potty rental', 'portable sanitation',
     'portable toilet rental', 'restroom trailer rental', 'event sanitation services',
     'portable restroom company', 'sanitation rental',
+    # FQHCs & Community Health Centers — segment #200 org keywords
+    # DISTINCT from hospital systems (run 124 — 'health system', 'hospital network'), urgent care (run 114 —
+    # 'urgent care center'), behavioral health (run 150 — 'behavioral health', 'mental health clinic');
+    # Apollo 'federally qualified health center'/'community health center' tags return ZERO overlap with
+    # any existing medical/facility org tags in DANNY_ORG_KEYWORDS;
+    # NE Ohio operators: Care Alliance (Cleveland), Near West Healthcare, Northeast Neighborhood Health
+    # (Euclid), Lake County General Health District (Willoughby), Lorain County General Health District
+    # (first pull June 22) (added 2026-06-16 run 207)
+    'federally qualified health center', 'fqhc', 'community health center', 'neighborhood health center',
+    'community clinic', 'public health department', 'county health department',
+    'community health clinic', 'health district office',
 ]
 
 CARLA_SEARCHES = [

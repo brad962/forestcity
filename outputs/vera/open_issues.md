@@ -1,10 +1,22 @@
 # Vera Cole — Open Issues Tracker
-*Run 206 | 2026-06-15 | Compact version — historical run entries archived in git history*
-*201 open (200 carry-forward + 1 new this run) | 124 resolved*
+*Run 207 | 2026-06-16 | Compact version — historical run entries archived in git history*
+*202 open (201 carry-forward + 1 new this run) | 124 resolved*
 
 > ⚠️ **FILE SIZE NOTE:** This file was 572KB as of Run 195 due to prepending a full header every run.
 > Rewritten as a compact rolling summary on Run 196. Full history is in git log.
 > Going forward: update the metrics line at top + append new issues only (no full run header dumps).
+
+---
+
+## NEW OPEN — Run 207 | 2026-06-16
+
+### OPEN — FQHCs & Community Health Centers (Segment #200)
+- **First seen:** 2026-06-16 (Run 207)
+- **Description:** Segment #200 added to `workers/lead_pipeline.py` (DANNY_TITLES + DANNY_ORG_KEYWORDS) and `integrations/mixmax.py` (PROPERTY_MANAGER_TITLES). Titles: fqhc administrator, community health center director, federally qualified health center director, community clinic director, neighborhood health center manager, public health facilities manager, health district facilities director, community health center administrator. Org keywords: federally qualified health center, fqhc, community health center, neighborhood health center, community clinic, public health department, county health department, community health clinic, health district office.
+- **Targets:** Care Alliance Health Center (Cleveland), Near West Healthcare, Northeast Neighborhood Health (Euclid), Lake County General Health District (Willoughby), Lorain County General Health District
+- **Revenue:** $1,500–$4,000/facility; quarterly = $6K–$16K/year; government direct-award contracts possible; zero competitors cold-calling
+- **First pull:** Lorain County June 22
+- **Resolution:** Pull fires June 22. Mark resolved when FQHC/community health contacts appear in Nina's report.
 
 ---
 
@@ -133,7 +145,7 @@
 
 - **First seen:** 2026-05-15 (Run ~55)
 - **Status:** OPEN — both sequences still `'id': 'PENDING'` in `integrations/mixmax.py` lines 47–58
-- **Impact:** All gas station + fleet washing contacts Danny has pulled since May 15 are sitting in `contacts_cache.json` unenrolled. They received NOTHING. This includes contacts pulled in Summit (Week 21), Medina (Week 22), and Cuyahoga (Week 24 — June 8 today). Every week they sit unenrolled = lost peak season window.
+- **Impact:** All gas station + fleet washing contacts Danny has pulled since May 15 are sitting in `contacts_cache.json` unenrolled. They received NOTHING. This includes contacts pulled in Summit (Week 21), Medina (Week 22), Cuyahoga (Week 24), and Lake (Week 25 — June 15). Every week they sit unenrolled = lost peak season window. Day 33 as of June 16.
 - **What's needed:** 5 minutes in Mixmax UI:
   1. Go to app.mixmax.com → Sequences → New Sequence
   2. Create: "Forest City Power Washing — Gas Station & C-Store Outreach"
@@ -141,34 +153,34 @@
   4. Paste into `integrations/mixmax.py` line 54 (replace `'PENDING'`)
   5. Repeat for Fleet: "Forest City Power Washing — Fleet Washing Outreach" → line 48
   6. Run `python3 workers/lead_pipeline.py pending` to enroll the waiting contacts
-- **Last attempt Run 203 (NEW ANGLE):** Previous guides described WHAT to do — not HOW with specific copy. This run delivers the COMPLETE email sequence text (3 touches each, both sequences) to `outputs/vera/gas_fleet_sequence_copy_2026-06-12.md`. Bradley can paste directly without writing anything. Reduces friction to: open Mixmax → create shell → paste 3 emails per sequence → copy IDs → replace PENDING. **Day 28.** Lake County pull fires June 15 — 3 days away. All Lake County gas/fleet contacts will be unenrolled without this fix.
+- **Last attempt Run 203 (NEW ANGLE):** Previous guides described WHAT to do — not HOW with specific copy. This run delivers the COMPLETE email sequence text (3 touches each, both sequences) to `outputs/vera/gas_fleet_sequence_copy_2026-06-12.md`. Bradley can paste directly without writing anything. Reduces friction to: open Mixmax → create shell → paste 3 emails per sequence → copy IDs → replace PENDING. **Day 33.** Lake County pull ran June 15 — Lake gas/fleet contacts now unenrolled too.
 
 ---
 
 ## Active Open Issues — Summary Table
 
-*Updated Run 206 | June 15 — Lake County pull TODAY | Gas/Fleet blocker Day 32 | Hot leads window opens June 16–18*
+*Updated Run 207 | June 16 — Hot leads window Day 1 | Gas/Fleet blocker Day 33 | Lorain County pull June 22*
 
 | Issue # | Segment | Status | Expected Resolution |
 |---------|---------|--------|---------------------|
-| Gas Station | Gas Station & C-Store Mixmax sequence | 🚨 BLOCKER Day 32 — complete email copy in `gas_fleet_sequence_copy_2026-06-12.md` | Bradley action — paste copy + replace PENDING in mixmax.py |
-| Fleet Washing | Fleet Washing Mixmax sequence | 🚨 BLOCKER Day 32 — same as above; copy ready to paste | Bradley action — paste copy + replace PENDING in mixmax.py |
+| Gas Station | Gas Station & C-Store Mixmax sequence | 🚨 BLOCKER Day 33 — complete email copy in `gas_fleet_sequence_copy_2026-06-12.md` | Bradley action — paste copy + replace PENDING in mixmax.py |
+| Fleet Washing | Fleet Washing Mixmax sequence | 🚨 BLOCKER Day 33 — same as above; copy ready to paste | Bradley action — paste copy + replace PENDING in mixmax.py |
 | danny.md | File size bloat — 466KB exceeds tool read limit | Run 204 — proposed archive to `docs/commercial_segments_archive.md`; awaiting Bradley YES | Bradley approves → Vera executes in 1 run |
-| #193 | Co-Packing & Contract Manufacturing | Code live — Lake pull TODAY | Confirm contacts in Nina report June 16–18 |
-| #194 | Semiconductor & PCB/Electronics Manufacturers | Code live — Lake pull TODAY | Confirm contacts in Nina report June 16–18 |
-| #195 | Boat Repair & Marine Service Centers | Code live — Lake pull TODAY | Confirm contacts in Nina report June 16–18 |
-| #196 | Craft Breweries & Taprooms | Code live — Willoughby Brewing = Lake target TODAY | Confirm contacts in Nina report June 16–18 |
-| #197 | General Aviation (FBO) & Private Airport Terminals | Code live — Willoughby Hopkins Airport (LNN) = Lake flagship TODAY | Confirm FBO contacts in Nina report June 16–18 |
-| #198 | Commercial/Wholesale Nursery & Greenhouse Production | Code live — Lake County Nursery Capital; pull TODAY | Confirm nursery contacts in Nina report June 16–18 |
-| #199 | Portable Restroom Rental & Event Sanitation | Code live this run — first pull Lorain June 22 | Confirm contacts in Nina report June 23–25 |
+| #193 | Co-Packing & Contract Manufacturing | Code live — Lake pull ran June 15 | Confirm contacts in Nina report June 16–18 |
+| #194 | Semiconductor & PCB/Electronics Manufacturers | Code live — Lake pull ran June 15 | Confirm contacts in Nina report June 16–18 |
+| #195 | Boat Repair & Marine Service Centers | Code live — Lake pull ran June 15 | Confirm contacts in Nina report June 16–18 |
+| #196 | Craft Breweries & Taprooms | Code live — Lake pull ran June 15 | Confirm contacts in Nina report June 16–18 |
+| #197 | General Aviation (FBO) & Private Airport Terminals | Code live — Lake pull ran June 15 | Confirm FBO contacts in Nina report June 16–18 |
+| #198 | Commercial/Wholesale Nursery & Greenhouse Production | Code live — Lake pull ran June 15 | Confirm nursery contacts in Nina report June 16–18 |
+| #199 | Portable Restroom Rental & Event Sanitation | Code live — first pull Lorain June 22 | Confirm contacts in Nina report June 23–25 |
+| #200 | FQHCs & Community Health Centers | Code live this run — first pull Lorain June 22 | Confirm contacts in Nina report June 23–25 |
 | Relay | GitHub Actions relay: PAT needs `workflow` scope | 🚨 BLOCKED — PAT can't push to `.github/workflows/`; workflow YAML ready to deploy | Bradley adds `workflow` scope to PAT → Vera deploys next run |
 
-**Total open: 201 | Total resolved: 124**
+**Total open: 202 | Total resolved: 124**
 
-> 🚨 **GAS/FLEET BLOCKER — Day 32:** Lake County pull fires TODAY — adding more unenrolled contacts. Sequence copy ready to paste: `outputs/vera/gas_fleet_sequence_copy_2026-06-12.md`. 10 minutes in Mixmax.
-> 📅 **LAKE COUNTY PULL — TODAY:** Run `scripts/run_lake_both.command`. 199 segments — Willoughby Hopkins Airport (LNN), Willoughby Brewing, Lake County Nurseries, Integer Holdings, Grand River Marine.
-> ⚡ **HOT LEADS WINDOW:** June 16–18 — run `python3 workers/nina_report.py daily` locally each morning.
-> 📅 **NEXT PULL: LORAIN COUNTY — June 22.** Segment #199 Portable Restroom companies first appear.
+> 🚨 **GAS/FLEET BLOCKER — Day 33:** Sequence copy ready to paste: `outputs/vera/gas_fleet_sequence_copy_2026-06-12.md`. 10 minutes in Mixmax. Lake + Cuyahoga contacts sitting unenrolled.
+> ⚡ **HOT LEADS WINDOW — TODAY June 16:** Run `python3 workers/nina_report.py daily` locally NOW. Connect on LinkedIn within 2 hours of any 2+ open contact. Window closes June 18.
+> 📅 **NEXT PULL: LORAIN COUNTY — June 22.** Segments #199 + #200 first fire here. `scripts/run_lorain_both.command`. Action card: `outputs/vera/june16_hot_leads_window_card_2026-06-16.md`.
 
 ---
 
