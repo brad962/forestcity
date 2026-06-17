@@ -1092,6 +1092,12 @@ PROPERTY_MANAGER_TITLES = [
     'fqhc administrator', 'community health center director', 'federally qualified health center director',
     'community clinic director', 'neighborhood health center manager', 'public health facilities manager',
     'health district facilities director', 'community health center administrator',
+    # Steel Fabrication & Structural Steel Shops — segment #201; routing to property_manager sequence
+    # (OSHA 1910.22 / OEPA NPDES compliance angle); DISTINCT from steel service centers (run 189)
+    # and general manufacturing (run 118); first pull Lorain June 22 (added 2026-06-17 run 208)
+    'steel fabrication plant manager', 'structural steel operations manager', 'steel fabricator superintendent',
+    'fabrication shop manager', 'structural fab manager', 'metal fabrication plant manager',
+    'steel shop superintendent', 'fabrication facility manager',
 ]
 
 REALTOR_TITLES = [

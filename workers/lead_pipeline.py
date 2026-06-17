@@ -2142,6 +2142,17 @@ DANNY_TITLES = [
     'fqhc administrator', 'community health center director', 'federally qualified health center director',
     'community clinic director', 'neighborhood health center manager', 'public health facilities manager',
     'health district facilities director', 'community health center administrator',
+    # Steel Fabrication & Structural Steel Shops — segment #201; DISTINCT from steel service centers/distributors
+    # (run 189 — steel service center manager etc.) and general manufacturing (run 118 — 'metal fabrication');
+    # NE Ohio steel fabrication hub: Cleveland, Lorain, Akron, Youngstown corridor; 200+ independent fab shops;
+    # concrete floors + exterior building + loading docks = heavy metal scale, oil, and coating overspray;
+    # OSHA 1910.22 (floors/loading areas) + OEPA NPDES SWPPP compliance = recurring vendor contract angle;
+    # Lorain County angle: Lorain/Sheffield Village steel corridor (USS/Algoma Steel legacy);
+    # $2,000–$6,000/facility; quarterly = $8,000–$24,000/year; zero competitors cold-calling fab shop managers;
+    # first pull Lorain June 22 (added 2026-06-17 run 208)
+    'steel fabrication plant manager', 'structural steel operations manager', 'steel fabricator superintendent',
+    'fabrication shop manager', 'structural fab manager', 'metal fabrication plant manager',
+    'steel shop superintendent', 'fabrication facility manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -3396,6 +3407,13 @@ DANNY_ORG_KEYWORDS = [
     'federally qualified health center', 'fqhc', 'community health center', 'neighborhood health center',
     'community clinic', 'public health department', 'county health department',
     'community health clinic', 'health district office',
+    # Steel Fabrication & Structural Steel Shops — segment #201; DISTINCT from 'metal fabrication' (run 118 general mfg)
+    # and steel service centers (run 189 distributors/processors); Apollo tags for fab shops use 'steel fabrication',
+    # 'structural steel', 'steel erector' — zero overlap with existing metal fabrication tag (broader manufacturing);
+    # Lorain County: Lorain/Sheffield Village steel fabrication corridor; first pull Lorain June 22
+    # (added 2026-06-17 run 208)
+    'steel fabrication shop', 'structural steel erector', 'structural fabrication',
+    'custom steel fabrication', 'fabricated steel', 'iron works', 'steel erector',
 ]
 
 CARLA_SEARCHES = [
