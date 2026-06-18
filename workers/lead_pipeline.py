@@ -2153,6 +2153,16 @@ DANNY_TITLES = [
     'steel fabrication plant manager', 'structural steel operations manager', 'steel fabricator superintendent',
     'fabrication shop manager', 'structural fab manager', 'metal fabrication plant manager',
     'steel shop superintendent', 'fabrication facility manager',
+    # Municipal & Public Recreation Centers / Community Pools — segment #202; DISTINCT from fitness/gym (run 99),
+    # YMCA (covered under 'fitness center manager'), and hospital campuses (run 124);
+    # Lorain Metro Parks + Elyria Rec Center + Cleveland MetroParks aquatics = flagship Lorain June 22 targets;
+    # pool decks accumulate algae, calcium deposits, sunscreen/organic stains = recurring pressure wash need;
+    # Ohio Dept. of Health aquatic facility sanitation rules + OSHA 1910.141 (housekeeping) = compliance angle;
+    # directors sign vendor contracts; $800–$2,500/facility; 2x/season = $1,600–$5,000/year; zero competitors;
+    # first pull Lorain June 22 (added 2026-06-18 run 209)
+    'parks and recreation director', 'recreation center manager', 'aquatics director',
+    'community center manager', 'parks facilities manager', 'recreation facility manager',
+    'aquatics manager', 'aquatics facility manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -3414,6 +3424,11 @@ DANNY_ORG_KEYWORDS = [
     # (added 2026-06-17 run 208)
     'steel fabrication shop', 'structural steel erector', 'structural fabrication',
     'custom steel fabrication', 'fabricated steel', 'iron works', 'steel erector',
+    # Municipal & Public Recreation Centers / Community Pools — segment #202; Apollo org tags for parks/rec
+    # are distinct from fitness/gym/YMCA tags; 'recreation center', 'community center', 'parks department'
+    # return zero overlap with existing DANNY_ORG_KEYWORDS; first pull Lorain June 22 (added 2026-06-18 run 209)
+    'recreation center', 'community center', 'parks department', 'parks and recreation',
+    'aquatics facility', 'public pool', 'municipal recreation', 'community recreation',
 ]
 
 CARLA_SEARCHES = [

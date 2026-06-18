@@ -1098,6 +1098,12 @@ PROPERTY_MANAGER_TITLES = [
     'steel fabrication plant manager', 'structural steel operations manager', 'steel fabricator superintendent',
     'fabrication shop manager', 'structural fab manager', 'metal fabrication plant manager',
     'steel shop superintendent', 'fabrication facility manager',
+    # Municipal & Public Recreation Centers / Community Pools — segment #202; routing to property_manager sequence;
+    # Ohio Dept. Health aquatic sanitation + OSHA 1910.141 compliance angle; first pull Lorain June 22
+    # (added 2026-06-18 run 209)
+    'parks and recreation director', 'recreation center manager', 'aquatics director',
+    'community center manager', 'parks facilities manager', 'recreation facility manager',
+    'aquatics manager', 'aquatics facility manager',
 ]
 
 REALTOR_TITLES = [
