@@ -2163,6 +2163,22 @@ DANNY_TITLES = [
     'parks and recreation director', 'recreation center manager', 'aquatics director',
     'community center manager', 'parks facilities manager', 'recreation facility manager',
     'aquatics manager', 'aquatics facility manager',
+    # Private & Independent Colleges and Universities — Segment #203; DISTINCT from K-12 public school
+    # districts (run 119 — 'buildings and grounds director' at school district orgs), vocational/trade schools
+    # (run 157 — 'career technical director'), and corporate campus FMs (run 101 — tech/office park context);
+    # Oberlin College (Lorain County — flagship Lorain June 22 target), Lake Erie College (Lake County),
+    # Baldwin Wallace University (Berea/Cuyahoga), John Carroll University (Cuyahoga), Notre Dame College
+    # (South Euclid), Ursuline College (Pepper Pike), Hiram College (Portage), Case Western Reserve (Cuyahoga);
+    # June = PEAK WINDOW: summer break begins = buildings empty = annual exterior maintenance window;
+    # brick building facades + large paved parking lots + quad walkways + loading dock areas;
+    # endowment-funded facilities budgets = not subject to municipal budget cycles;
+    # HLC (Higher Learning Commission) accreditation campus facility appearance standards;
+    # 'director of physical plant' = quintessential higher-ed FM title NOT already in DANNY_TITLES;
+    # $3,000–$15,000/campus visit; 2-3x/year = $6K–$45K/year per campus; zero competitors cold-calling;
+    # first pull Lorain June 22 (Oberlin flagship); retroactive Cuyahoga/Lake (added 2026-06-19 run 210)
+    'director of physical plant', 'physical plant director', 'physical plant manager',
+    'campus physical plant manager', 'associate vp of facilities', 'associate vice president of facilities',
+    'university facilities director', 'college facilities director',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -3429,6 +3445,16 @@ DANNY_ORG_KEYWORDS = [
     # return zero overlap with existing DANNY_ORG_KEYWORDS; first pull Lorain June 22 (added 2026-06-18 run 209)
     'recreation center', 'community center', 'parks department', 'parks and recreation',
     'aquatics facility', 'public pool', 'municipal recreation', 'community recreation',
+    # Private & Independent Colleges and Universities — Segment #203; Apollo org tags 'private university',
+    # 'liberal arts college', 'private college' return zero overlap with existing DANNY_ORG_KEYWORDS;
+    # 'university' and 'college' as standalone tags are too broad (catch community colleges, trade schools);
+    # 'private university' + 'private college' + 'liberal arts college' are the precise Apollo tags that surface
+    # Oberlin College, Lake Erie College, Baldwin Wallace, John Carroll, Notre Dame College, Ursuline, Hiram;
+    # DISTINCT from 'charter school'/'charter management organization' (run 154 charter schools),
+    # 'vocational school'/'career technical' (run 157 trade schools), and 'community college' (run 180);
+    # Oberlin = flagship Lorain June 22 target; first pull Lorain June 22 (added 2026-06-19 run 210)
+    'private university', 'private college', 'liberal arts college',
+    'independent college', 'independent university', 'liberal arts university',
 ]
 
 CARLA_SEARCHES = [

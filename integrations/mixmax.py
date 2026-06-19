@@ -1104,6 +1104,15 @@ PROPERTY_MANAGER_TITLES = [
     'parks and recreation director', 'recreation center manager', 'aquatics director',
     'community center manager', 'parks facilities manager', 'recreation facility manager',
     'aquatics manager', 'aquatics facility manager',
+    # Private & Independent Colleges and Universities — Segment #203; routing to property_manager sequence
+    # (HLC accreditation facility appearance standards / endowment-funded FM budget angle);
+    # DISTINCT from K-12 school districts (run 119) and vocational/trade schools (run 157);
+    # Oberlin College (Lorain), Lake Erie College (Lake), Baldwin Wallace/John Carroll/Notre Dame (Cuyahoga);
+    # 'director of physical plant' = quintessential higher-ed FM title; first pull Lorain June 22
+    # (added 2026-06-19 run 210)
+    'director of physical plant', 'physical plant director', 'physical plant manager',
+    'campus physical plant manager', 'associate vp of facilities', 'associate vice president of facilities',
+    'university facilities director', 'college facilities director',
 ]
 
 REALTOR_TITLES = [

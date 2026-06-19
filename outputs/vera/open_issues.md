@@ -1,10 +1,22 @@
 # Vera Cole — Open Issues Tracker
-*Run 209 | 2026-06-18 | Compact version — historical run entries archived in git history*
-*205 open (203 carry-forward + 2 new this run) | 124 resolved*
+*Run 210 | 2026-06-19 | Compact version — historical run entries archived in git history*
+*206 open (205 carry-forward + 1 new this run) | 124 resolved*
 
 > ⚠️ **FILE SIZE NOTE:** This file was 572KB as of Run 195 due to prepending a full header every run.
 > Rewritten as a compact rolling summary on Run 196. Full history is in git log.
 > Going forward: update the metrics line at top + append new issues only (no full run header dumps).
+
+---
+
+## NEW OPEN — Run 210 | 2026-06-19
+
+### OPEN — Private & Independent Colleges and Universities (Segment #203)
+- **First seen:** 2026-06-19 (Run 210)
+- **Description:** Segment #203 added to `workers/lead_pipeline.py` (DANNY_TITLES + DANNY_ORG_KEYWORDS) and `integrations/mixmax.py` (PROPERTY_MANAGER_TITLES). Titles: director of physical plant, physical plant director, physical plant manager, campus physical plant manager, associate vp of facilities, associate vice president of facilities, university facilities director, college facilities director. Org keywords: private university, private college, liberal arts college, independent college, independent university, liberal arts university.
+- **Targets:** Oberlin College (Lorain County — flagship June 22 target), Lake Erie College (Painesville, Lake County), Baldwin Wallace University (Berea, Cuyahoga), John Carroll University (University Heights, Cuyahoga), Notre Dame College (South Euclid, Cuyahoga), Ursuline College (Pepper Pike, Cuyahoga), Hiram College (Hiram, Portage County).
+- **Revenue:** $3,000–$15,000/campus visit; 2-3x/year = $6K–$45K/year per campus; June = PEAK WINDOW (summer break, buildings empty, annual maintenance). HLC accreditation = facility appearance standard. Endowment-funded budgets = not subject to municipal cycles. DISTINCT from K-12 school districts (run 119), charter schools (run 154), vocational/trade schools (run 157). Zero competitors cold-calling higher-ed physical plant directors.
+- **First pull:** Lorain June 22 (Oberlin flagship); retroactive Cuyahoga/Lake on next county rotation.
+- **Resolution:** Pull fires June 22. Mark resolved when college/university contacts appear in Nina's report.
 
 ---
 
@@ -199,7 +211,7 @@
 
 ## Active Open Issues — Summary Table
 
-*Updated Run 209 | June 18 — Hot leads window Day 3/FINAL (TODAY) | Gas/Fleet blocker Day 35 | Lorain County pull June 22 (4 days) | Apollo API BLOCKED 7+ days*
+*Updated Run 210 | June 19 — Hot leads window CLOSED | Gas/Fleet blocker Day 36 | Lorain County pull June 22 (3 days) | Apollo API BLOCKED 8+ days*
 
 | Issue # | Segment | Status | Expected Resolution |
 |---------|---------|--------|---------------------|
@@ -216,15 +228,15 @@
 | #199 | Portable Restroom Rental & Event Sanitation | Code live — first pull Lorain June 22 | Confirm contacts in Nina report June 23–25 |
 | #200 | FQHCs & Community Health Centers | Code live — first pull Lorain June 22 | Confirm contacts in Nina report June 23–25 |
 | #201 | Steel Fabrication & Structural Steel Shops | Code live — first pull Lorain June 22 | Confirm contacts in Nina report June 23–25 |
-| #202 | Municipal & Public Recreation Centers / Community Pools | Code live this run — first pull Lorain June 22 | Confirm contacts in Nina report June 23–25 |
+| #202 | Municipal & Public Recreation Centers / Community Pools | Code live — first pull Lorain June 22 | Confirm contacts in Nina report June 23–25 |
+| #203 | Private & Independent Colleges and Universities | Code live this run — first pull Lorain June 22 | Oberlin = flagship target; confirm contacts in Nina report June 23–25 |
 | Relay | GitHub Actions relay: PAT needs `workflow` scope | 🚨 BLOCKED — git push confirmed same block as REST API; definitive error: "refusing to allow PAT without workflow scope"; workflow YAML ready in outputs/vera/github_action_vera_slack_relay.yaml | Bradley: Option A — github.com/settings/tokens → add workflow scope. Option B — manually create .github/workflows/vera_slack_relay.yml in GitHub UI |
 
-**Total open: 205 | Total resolved: 124**
+**Total open: 206 | Total resolved: 124**
 
-> 🚨 **APOLLO API BLOCKED — Day 7+:** ALL lead generation stopped in cloud environment. Lorain June 22 pull will also pull 0 leads unless fixed. Add `api.apollo.io` to egress allowlist OR run lead pulls locally.
-> 🚨 **GAS/FLEET BLOCKER — Day 35:** Sequence copy ready: `outputs/vera/gas_fleet_sequence_copy_2026-06-12.md`. 10 minutes in Mixmax. 5 counties of contacts unenrolled.
-> ⚡ **HOT LEADS WINDOW — Day 3/FINAL (June 18 TODAY):** Run `python3 workers/nina_report.py daily` locally NOW. Last chance on Lake County June 15 opens.
-> 📅 **NEXT PULL: LORAIN COUNTY — June 22 (4 days).** Segments #199–#202 first fire here. Run locally (Apollo blocked in cloud). `scripts/run_lorain_both.command`.
+> 🚨 **APOLLO API BLOCKED — Day 8+:** ALL lead generation stopped in cloud environment. Lorain June 22 pull will also pull 0 leads unless fixed. Add `api.apollo.io` to egress allowlist OR run lead pulls locally.
+> 🚨 **GAS/FLEET BLOCKER — Day 36:** Sequence copy ready: `outputs/vera/gas_fleet_sequence_copy_2026-06-12.md`. 10 minutes in Mixmax. 5 counties of contacts unenrolled.
+> 📅 **NEXT PULL: LORAIN COUNTY — June 22 (3 days).** Segments #199–#203 first fire here. Run locally (Apollo blocked in cloud). `scripts/run_lorain_both.command`.
 
 ---
 
