@@ -1726,4 +1726,7 @@
 [2026-06-19 12:32] Nina | Daily hot leads report — 0 replied, 0 hot, 0 due today, 0 due tomorrow, 0 stale estimates | hot_leads_2026-06-19.md | Done
 [2026-06-19 12:32] Nina | Workiz daily report - Power Washing jobs | Workiz API unavailable — run locally. | Done
 [2026-06-19 12:32:34 UTC] Nina | Daily Reports (Hot Leads + Workiz) — Hot leads: Mixmax API 403 (cloud-blocked), 36 overdue pipeline contacts. Workiz: API 403 (cloud-blocked). Reports saved to outputs/nina/.
+[2026-06-19 12:36] Danny | Apollo pull — Apollo returned 0 people — API may be blocked or rate limited (Lake) | none | Done
+[2026-06-19 12:36] Carla | Apollo pull — Apollo returned 0 people — API may be blocked or rate limited | none | Done
+[2026-06-19 12:36] Danny + Carla | Daily Lead Pull | BLOCKED — api.apollo.io not in network egress allowlist; 0 leads pulled | 2026-06-19 | Done
 [2026-06-19 12:36] Donna | Weekly strategy report written | strategy_brief_2026-06-19.md | Done
