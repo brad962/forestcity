@@ -1725,3 +1725,4 @@
 [2026-06-19 07:07] Vera | Run 210 — SLACK MESSAGES written to outputs/vera/pending_slack_messages.md: 2 auto-upgrade notifications, 1 Apollo block Day 8 critical (Lorain June 22 3 days), 1 Gas/Fleet Day 36 critical, 1 GitHub relay troubleshooting update, 1 Lorain June 22 preflight reminder, 4 proposals (danny.md archive Day 10 + LinkedIn posts Day 8 + commercial service pages Day 8 + July 4th sprint Day 5), 1 scan complete summary. | outputs/vera/pending_slack_messages.md | Done
 [2026-06-19 12:32] Nina | Daily hot leads report — 0 replied, 0 hot, 0 due today, 0 due tomorrow, 0 stale estimates | hot_leads_2026-06-19.md | Done
 [2026-06-19 12:32] Nina | Workiz daily report - Power Washing jobs | Workiz API unavailable — run locally. | Done
+[2026-06-19 12:32:34 UTC] Nina | Daily Reports (Hot Leads + Workiz) — Hot leads: Mixmax API 403 (cloud-blocked), 36 overdue pipeline contacts. Workiz: API 403 (cloud-blocked). Reports saved to outputs/nina/.
