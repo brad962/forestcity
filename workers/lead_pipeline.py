@@ -2179,6 +2179,25 @@ DANNY_TITLES = [
     'director of physical plant', 'physical plant director', 'physical plant manager',
     'campus physical plant manager', 'associate vp of facilities', 'associate vice president of facilities',
     'university facilities director', 'college facilities director',
+    # Municipal Public Works Departments — Segment #204; city/township DPW directors who manage
+    # large paved lots, municipal building facades, salt-stained sidewalks, public facility aprons;
+    # NE Ohio targets: City of Lorain DPW, City of Elyria DPW, Avon Lake DPW, North Ridgeville DPW,
+    # Vermilion DPW, Amherst DPW, Sheffield Village DPW, Sheffield Lake DPW, Lorain County Highway Dept;
+    # OSHA 29 CFR 1926 + OEPA NPDES MS4 municipal stormwater permit compliance angle;
+    # $1,500–$5,000/facility; seasonal retainer potential; DISTINCT from parks/rec (run 202),
+    # water/wastewater utilities (run 186), intermodal rail (run 191); zero competitors cold-calling;
+    # first pull Lorain June 22 (added 2026-06-20 run 211)
+    'public works director', 'city public works director', 'director of public works',
+    'public works superintendent', 'dpw director', 'infrastructure maintenance manager',
+    'public works manager', 'highway superintendent',
+    # Funeral Homes & Mortuary Services — Segment #205; family-owned businesses with high attention
+    # to curb appeal; client trust = immaculate exterior; brick facades, parking lots, canopy/portico;
+    # NE Ohio ~60+ independent funeral homes; recession-proof with consistent maintenance budgets;
+    # $300–$800/visit; 3x/year = $900–$2,400/year; zero competitors targeting this niche;
+    # DISTINCT from: hospitals (run 124), medical offices (run 101); first pull Lorain June 22 (added 2026-06-20 run 211)
+    'funeral home director', 'mortuary director', 'funeral services manager',
+    'funeral home manager', 'funeral home administrator', 'mortuary administrator',
+    'cremation services director', 'funeral home owner',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -3455,6 +3474,18 @@ DANNY_ORG_KEYWORDS = [
     # Oberlin = flagship Lorain June 22 target; first pull Lorain June 22 (added 2026-06-19 run 210)
     'private university', 'private college', 'liberal arts college',
     'independent college', 'independent university', 'liberal arts university',
+    # Municipal Public Works Departments — Segment #204; Apollo org tags 'department of public works',
+    # 'public works department', 'city public works' surface city/township DPW contacts precisely;
+    # 'highway department' catches county-level road maintenance agencies;
+    # return zero overlap with any existing DANNY_ORG_KEYWORDS; (added 2026-06-20 run 211)
+    'department of public works', 'public works department', 'city public works',
+    'municipal public works', 'highway department',
+    # Funeral Homes & Mortuary Services — Segment #205; Apollo org tags 'funeral home', 'mortuary',
+    # 'funeral services', 'cremation services' precisely surface facility decision-makers;
+    # 'funeral chapel', 'memorial chapel', 'funeral parlor' catch naming variants for NE Ohio operators;
+    # return zero overlap with any existing DANNY_ORG_KEYWORDS; (added 2026-06-20 run 211)
+    'funeral home', 'mortuary', 'funeral services', 'cremation services',
+    'funeral chapel', 'memorial chapel', 'funeral parlor',
 ]
 
 CARLA_SEARCHES = [

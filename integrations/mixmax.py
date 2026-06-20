@@ -1113,6 +1113,16 @@ PROPERTY_MANAGER_TITLES = [
     'director of physical plant', 'physical plant director', 'physical plant manager',
     'campus physical plant manager', 'associate vp of facilities', 'associate vice president of facilities',
     'university facilities director', 'college facilities director',
+    # Municipal Public Works Departments — Segment #204; all DPW contacts route to property_manager
+    # sequence (compliance pitch; MS4 stormwater + OEPA NPDES angle); (added 2026-06-20 run 211)
+    'public works director', 'city public works director', 'director of public works',
+    'public works superintendent', 'dpw director', 'infrastructure maintenance manager',
+    'public works manager', 'highway superintendent',
+    # Funeral Homes & Mortuary Services — Segment #205; curb appeal pitch matches property_manager
+    # sequence tone perfectly (appearance = client trust); (added 2026-06-20 run 211)
+    'funeral home director', 'mortuary director', 'funeral services manager',
+    'funeral home manager', 'funeral home administrator', 'mortuary administrator',
+    'cremation services director', 'funeral home owner',
 ]
 
 REALTOR_TITLES = [
