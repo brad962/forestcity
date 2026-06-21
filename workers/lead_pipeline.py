@@ -2198,6 +2198,17 @@ DANNY_TITLES = [
     'funeral home director', 'mortuary director', 'funeral services manager',
     'funeral home manager', 'funeral home administrator', 'mortuary administrator',
     'cremation services director', 'funeral home owner',
+    # Modular Building & Relocatable Space Rental Companies — Segment #206; Williams Scotsman,
+    # Mobile Mini, ATCO Structures, Pac-Van (General Finance), NRS National Relocatable;
+    # staging/storage yards packed with modular units = concrete staining from oil, algae, rust;
+    # OSHA 29 CFR 1926.50 + EPA NPDES stormwater compliance for outdoor staging yards;
+    # DISTINCT from equipment rental (run 179 — construction equip), mobile home parks (run 158 — permanent);
+    # Lorain County angle: NE Ohio construction boom (Ford Avon Lake, I-90 projects, new mfg expansions);
+    # $2K–$6K/facility; quarterly = $8K–$24K/year; zero competitors cold-calling modular building FMs;
+    # first pull Lorain June 22 (added 2026-06-21 run 212)
+    'modular building branch manager', 'relocatable building manager', 'portable building manager',
+    'modular building operations manager', 'modular space manager', 'temporary structures manager',
+    'modular building regional manager', 'portable building branch manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -3486,6 +3497,14 @@ DANNY_ORG_KEYWORDS = [
     # return zero overlap with any existing DANNY_ORG_KEYWORDS; (added 2026-06-20 run 211)
     'funeral home', 'mortuary', 'funeral services', 'cremation services',
     'funeral chapel', 'memorial chapel', 'funeral parlor',
+    # Modular Building & Relocatable Space Rental Companies — Segment #206; Williams Scotsman,
+    # Mobile Mini, ATCO Structures, Pac-Van, NRS; Apollo org tags 'modular building', 'relocatable building',
+    # 'portable building' surface staging yard / branch office contacts precisely;
+    # DISTINCT from equipment rental (run 179), mobile home parks (run 158), manufacturing (run 118);
+    # return zero overlap with any existing DANNY_ORG_KEYWORDS; first pull Lorain June 22 (added 2026-06-21 run 212)
+    'modular building rental', 'modular building company', 'relocatable buildings',
+    'portable buildings rental', 'modular space rental', 'temporary structures rental',
+    'modular office rental',
 ]
 
 CARLA_SEARCHES = [

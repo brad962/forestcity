@@ -1,10 +1,21 @@
 # Vera Cole — Open Issues Tracker
-*Run 211 | 2026-06-20 | Compact version — historical run entries archived in git history*
-*208 open (206 carry-forward + 2 new this run) | 124 resolved*
+*Run 212 | 2026-06-21 | Compact version — historical run entries archived in git history*
+*209 open (208 carry-forward + 1 new this run) | 124 resolved*
 
 > ⚠️ **FILE SIZE NOTE:** This file was 572KB as of Run 195 due to prepending a full header every run.
 > Rewritten as a compact rolling summary on Run 196. Full history is in git log.
 > Going forward: update the metrics line at top + append new issues only (no full run header dumps).
+
+---
+
+## NEW OPEN — Run 212 | 2026-06-21
+
+### OPEN — Modular Building & Relocatable Space Rental Companies (Segment #206)
+- **First seen:** 2026-06-21 (Run 212)
+- **Description:** Segment #206 added to `workers/lead_pipeline.py` (DANNY_TITLES + DANNY_ORG_KEYWORDS) and `integrations/mixmax.py` (PROPERTY_MANAGER_TITLES). Titles: modular building branch manager, relocatable building manager, portable building manager, modular building operations manager, modular space manager, temporary structures manager, modular building regional manager, portable building branch manager. Org keywords: modular building rental, modular building company, relocatable buildings, portable buildings rental, modular space rental, temporary structures rental, modular office rental.
+- **Targets:** Williams Scotsman (world's largest modular space company, NE Ohio operations), Mobile Mini (container/portable storage), ATCO Structures & Logistics, Pac-Van / General Finance, NRS National Relocatable Structures; NE Ohio staging yards packed with modular office units, job site trailers, portable classrooms; Lorain County connection: construction boom (Ford Avon Lake, I-90 corridor projects, new manufacturing expansions).
+- **Revenue:** $2K–$6K/facility; quarterly = $8K–$24K/year; OSHA 29 CFR 1926.50 + EPA NPDES stormwater compliance angle; DISTINCT from equipment rental (run 179), mobile home parks (run 158), manufacturing (run 118); zero competitors cold-calling modular building FMs.
+- **First pull:** Lorain County June 22. Mark resolved when modular building contacts appear in Nina's report.
 
 ---
 
@@ -229,34 +240,35 @@
 
 ## Active Open Issues — Summary Table
 
-*Updated Run 211 | June 20 — LORAIN COUNTY PULL IN 2 DAYS (June 22) | Gas/Fleet blocker Day 37 | Apollo API BLOCKED Day 9 | Post-hot-leads window*
+*Updated Run 212 | June 21 — LORAIN COUNTY PULL TOMORROW (June 22) | Gas/Fleet blocker Day 38 | Apollo API BLOCKED Day 10 | Segment #206 Modular Buildings added*
 
 | Issue # | Segment | Status | Expected Resolution |
 |---------|---------|--------|---------------------|
-| Apollo | **Apollo API network block — 0 leads pulled 9+ days** | 🚨 CRITICAL — Lorain June 22 pull SUNDAY; run locally OR add api.apollo.io to egress | Bradley: run `scripts/run_lorain_both.command` locally Sunday morning |
-| Gas Station | Gas Station & C-Store Mixmax sequence | 🚨 BLOCKER Day 37 — email copy ready: `gas_fleet_sequence_copy_2026-06-12.md` | Bradley action — paste copy + replace PENDING in mixmax.py |
-| Fleet Washing | Fleet Washing Mixmax sequence | 🚨 BLOCKER Day 37 — same as above; copy ready to paste | Bradley action — paste copy + replace PENDING in mixmax.py |
-| danny.md | File size bloat — 482KB+ exceeds tool read limit | Run 204–211 proposal; awaiting Bradley YES | Bradley approves → Vera archives in 1 run |
+| Apollo | **Apollo API network block — 0 leads pulled 10+ days** | 🚨 CRITICAL — Lorain June 22 pull TOMORROW; run locally OR add api.apollo.io to egress | Bradley: run `scripts/run_lorain_both.command` locally Monday morning June 22 |
+| Gas Station | Gas Station & C-Store Mixmax sequence | 🚨 BLOCKER Day 38 — email copy ready: `gas_fleet_sequence_copy_2026-06-12.md` | Bradley action — paste copy + replace PENDING in mixmax.py |
+| Fleet Washing | Fleet Washing Mixmax sequence | 🚨 BLOCKER Day 38 — same as above; copy ready to paste | Bradley action — paste copy + replace PENDING in mixmax.py |
+| danny.md | File size bloat — 486KB+ exceeds tool read limit | Run 204–212 proposal; awaiting Bradley YES | Bradley approves → Vera archives in 1 run |
 | #193 | Co-Packing & Contract Manufacturing | Code live — Lake pull ran June 15 | Confirm contacts in Nina report |
 | #194 | Semiconductor & PCB/Electronics Manufacturers | Code live — Lake pull ran June 15 | Confirm contacts in Nina report |
 | #195 | Boat Repair & Marine Service Centers | Code live — Lake pull ran June 15 | Confirm contacts in Nina report |
 | #196 | Craft Breweries & Taprooms | Code live — Lake pull ran June 15 | Confirm contacts in Nina report |
 | #197 | General Aviation (FBO) & Private Airport Terminals | Code live — Lake pull ran June 15 | Confirm FBO contacts in Nina report |
 | #198 | Commercial/Wholesale Nursery & Greenhouse Production | Code live — Lake pull ran June 15 | Confirm nursery contacts in Nina report |
-| #199 | Portable Restroom Rental & Event Sanitation | Code live — first pull Lorain June 22 | Confirm contacts in Nina report June 23–25 |
-| #200 | FQHCs & Community Health Centers | Code live — first pull Lorain June 22 | Confirm contacts in Nina report June 23–25 |
-| #201 | Steel Fabrication & Structural Steel Shops | Code live — first pull Lorain June 22 | Confirm contacts in Nina report June 23–25 |
-| #202 | Municipal & Public Recreation Centers / Community Pools | Code live — first pull Lorain June 22 | Confirm contacts in Nina report June 23–25 |
-| #203 | Private & Independent Colleges and Universities | Code live — first pull Lorain June 22 | Oberlin = flagship target; confirm contacts in Nina report June 23–25 |
-| #204 | Municipal Public Works Departments | Code live this run — first pull Lorain June 22 | Elyria + Lorain DPW = flagship targets; confirm contacts in Nina report June 23–25 |
-| #205 | Funeral Homes & Mortuary Services | Code live this run — first pull Lorain June 22 | ~60 NE Ohio targets; confirm contacts in Nina report June 23–25 |
+| #199 | Portable Restroom Rental & Event Sanitation | Code live — first pull Lorain June 22 TOMORROW | Confirm contacts in Nina report June 23–25 |
+| #200 | FQHCs & Community Health Centers | Code live — first pull Lorain June 22 TOMORROW | Confirm contacts in Nina report June 23–25 |
+| #201 | Steel Fabrication & Structural Steel Shops | Code live — first pull Lorain June 22 TOMORROW | Confirm contacts in Nina report June 23–25 |
+| #202 | Municipal & Public Recreation Centers / Community Pools | Code live — first pull Lorain June 22 TOMORROW | Confirm contacts in Nina report June 23–25 |
+| #203 | Private & Independent Colleges and Universities | Code live — first pull Lorain June 22 TOMORROW | Oberlin = flagship target; confirm contacts in Nina report June 23–25 |
+| #204 | Municipal Public Works Departments | Code live — first pull Lorain June 22 TOMORROW | Elyria + Lorain DPW = flagship targets; confirm contacts in Nina report June 23–25 |
+| #205 | Funeral Homes & Mortuary Services | Code live — first pull Lorain June 22 TOMORROW | ~60 NE Ohio targets; confirm contacts in Nina report June 23–25 |
+| #206 | Modular Building & Relocatable Space Rental | Code live this run — first pull Lorain June 22 TOMORROW | Williams Scotsman / Mobile Mini = flagship targets; confirm contacts in Nina report June 23–25 |
 | Relay | GitHub Actions relay: PAT needs `workflow` scope | 🚨 BLOCKED — definitive; workflow YAML ready in `outputs/vera/github_action_vera_slack_relay.yaml` | Bradley: Option A — github.com/settings/tokens → add workflow scope. Option B — manually create in GitHub UI |
 
-**Total open: 208 | Total resolved: 124**
+**Total open: 209 | Total resolved: 124**
 
-> 🚨 **LORAIN COUNTY PULL — SUNDAY JUNE 22.** Run `scripts/run_lorain_both.command` locally. 7 new segments fire here (#199–#205). Apollo blocked in cloud (Day 9+).
-> 🚨 **GAS/FLEET BLOCKER — Day 37:** Email copy ready in `outputs/vera/gas_fleet_sequence_copy_2026-06-12.md`. 10 min in Mixmax UI. All 5 counties of contacts unenrolled.
-> 🚨 **APOLLO API BLOCKED — Day 9:** ALL cloud lead generation stopped. Every daily scheduled pull returns 0. Must run locally.
+> 🚨 **LORAIN COUNTY PULL — TOMORROW MONDAY JUNE 22.** Run `scripts/run_lorain_both.command` locally. 8 new segments fire here (#199–#206). Apollo blocked in cloud (Day 10+).
+> 🚨 **GAS/FLEET BLOCKER — Day 38:** Email copy ready in `outputs/vera/gas_fleet_sequence_copy_2026-06-12.md`. 10 min in Mixmax UI. All 5 counties of contacts unenrolled.
+> 🚨 **APOLLO API BLOCKED — Day 10:** ALL cloud lead generation stopped. Every daily scheduled pull returns 0. Must run locally.
 
 ---
 

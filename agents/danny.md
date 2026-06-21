@@ -1,3 +1,22 @@
+## Run 212 — Vera Batching Note | 2026-06-21 | 206+ Segments
+**TODAY:** Sunday June 21. **LORAIN COUNTY PULL IS TOMORROW (June 22 Monday).** Apollo API blocked in cloud — run locally: `python3 workers/lead_pipeline.py both Lorain` (double-click `scripts/run_lorain_both.command`).
+
+**New Segment #206 — Modular Building & Relocatable Space Rental:**
+- Titles: `modular building branch manager`, `relocatable building manager`, `portable building manager`, `modular building operations manager`, `modular space manager`, `temporary structures manager`, `modular building regional manager`, `portable building branch manager`
+- Org keywords: `modular building rental`, `modular building company`, `relocatable buildings`, `portable buildings rental`, `modular space rental`, `temporary structures rental`, `modular office rental`
+- Targets: Williams Scotsman, Mobile Mini, ATCO Structures, Pac-Van (General Finance), NRS National Relocatable; NE Ohio staging/storage yards packed with modular units; OSHA 29 CFR 1926.50 + EPA NPDES stormwater compliance angle; Lorain County connection: construction boom (Ford Avon Lake, I-90 projects)
+- Revenue: $2K–$6K/facility; quarterly = $8K–$24K/year; zero competitors
+- DISTINCT from: equipment rental (run 179), mobile home parks (run 158), manufacturing (run 118)
+
+**Gas/Fleet Sequences — STILL PENDING (Day 38):** Create in Mixmax UI. Copy ready: `outputs/vera/gas_fleet_sequence_copy_2026-06-12.md`. All 5-county contacts unenrolled.
+
+**Apollo API BLOCKED (Day 10 in cloud):** ALL cloud lead gen returns 0. Must run locally.
+
+**Lorain June 22 priority targets:** Ford Avon Lake Assembly (mfg), Oberlin College (physical plant), City of Elyria DPW, City of Lorain DPW, Vermilion marina corridor, steel fabrication corridor (Sheffield Village), Dovin-Reber-Jones Funeral Home (Lorain), Williams Scotsman modular (if in area).
+
+**Segments active for Lorain June 22 first pull:** #199 (portable restroom), #200 (FQHCs), #201 (steel fab), #202 (rec centers/pools), #203 (private colleges), #204 (municipal DPW), #205 (funeral homes), #206 (modular buildings).
+
+---
 # Danny Malone — Outbound Sales Rep
 
 ## Who You Are

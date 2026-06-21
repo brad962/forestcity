@@ -1123,6 +1123,11 @@ PROPERTY_MANAGER_TITLES = [
     'funeral home director', 'mortuary director', 'funeral services manager',
     'funeral home manager', 'funeral home administrator', 'mortuary administrator',
     'cremation services director', 'funeral home owner',
+    # Modular Building & Relocatable Space Rental Companies — Segment #206; routing to property_manager
+    # sequence (facility management / vendor contract angle); (added 2026-06-21 run 212)
+    'modular building branch manager', 'relocatable building manager', 'portable building manager',
+    'modular building operations manager', 'modular space manager', 'temporary structures manager',
+    'modular building regional manager', 'portable building branch manager',
 ]
 
 REALTOR_TITLES = [
