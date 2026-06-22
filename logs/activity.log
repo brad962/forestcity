@@ -1762,6 +1762,13 @@
 [2026-06-22 07:04] Vera | Run 213 — AUTO-UPGRADE: integrations/mixmax.py PROPERTY_MANAGER_TITLES — Segment #207 routing sync (8 titles). All new metal stamping/sheet metal contacts correctly route to property_manager Mixmax sequence on enrollment. | integrations/mixmax.py | Done
 [2026-06-22 07:05] Vera | Run 213 — Updated outputs/vera/open_issues.md — Run 213 header; 1 new OPEN issue (#207 Metal Stamping & Sheet Metal Fabrication); Apollo block updated to Day 11 confirmed; Gas/Fleet updated to Day 39; Lorain County updated to TODAY; summary table updated (210 open, 124 resolved). | outputs/vera/open_issues.md | Done
 [2026-06-22 07:06] Vera | Run 213 — SLACK MESSAGES written to outputs/vera/pending_slack_messages.md: 1 auto-upgrade notification (Segment #207), 1 Lorain County TODAY alert (207 segments, 9 new firing), 1 Gas/Fleet Day 39 critical, 1 Apollo block Day 11 confirmed, 1 GitHub relay troubleshooting update, 4 proposals (danny.md archive Day 13 + LinkedIn queue builder Day 11 + commercial service pages Day 11 + July 4th sprint Day 8), 1 scan complete summary. | outputs/vera/pending_slack_messages.md | Done
+[2026-06-22 12:32] Nina | Daily hot leads report — 0 replied, 0 hot, 0 due today, 0 due tomorrow, 0 stale estimates | hot_leads_2026-06-22.md | Done
+[2026-06-22 12:32] Nina | Workiz daily report - Power Washing jobs | Workiz API unavailable — run locally. | Done
+[2026-06-22 12:33] Nina | Weekly pipeline report — 0 enrolled, 0 replied, 0 hot leads | weekly_report_2026-06-22.md | Done
+[2026-06-22 12:33] Nina | Weekly Pipeline Report | nina_weekly_2026-06-22.md | Done
+[2026-06-22 12:34] Marcus | Weekly intelligence update - VOC + competitor report refreshed | voc_library_2026-06-22.md | Done
 [2026-06-22 07:30] Jasmine | Weekly Facebook posts - 5 posts written | facebook_posts_week_2026-06-29.md | Done
 [2026-06-22 07:30] Jasmine | Weekly Facebook posts - 5 posts written | facebook_posts_week_2026-06-29.md | Done
 [2026-06-22 08:15] Donna | Weekly strategy report written | strategy_brief_2026-06-22.md | Done
+[2026-06-22 12:35] Tommy | Weekly copy refresh - driveway & concrete page written | service_page_driveway-concrete_2026-06-22.md | Done
+[2026-06-22 12:35] Rick | Weekly ad refresh - 5 Facebook ads + 10 RSA headlines | ad_refresh_2026-06-22.md | Done
