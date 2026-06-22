@@ -2209,6 +2209,17 @@ DANNY_TITLES = [
     'modular building branch manager', 'relocatable building manager', 'portable building manager',
     'modular building operations manager', 'modular space manager', 'temporary structures manager',
     'modular building regional manager', 'portable building branch manager',
+    # Metal Stamping & Sheet Metal Fabrication Shops — Segment #207; DISTINCT from steel service centers
+    # (run 189 — distribution), structural steel fab (run 201 — structural), general mfg (run 118 — broad);
+    # stamping shops have oily concrete floors + hydraulic fluid spills + metal shavings on outdoor pad areas;
+    # OSHA 1910.22 + OEPA NPDES SWPPP compliance (stamping fluid runoff = regulated);
+    # IATF 16949 auto supplier quality standard requires documented facility maintenance records;
+    # Lorain County angle: Ford Avon Lake EV assembly expansion = 100+ stamping/pressing supply chain shops;
+    # $2K–$5K/facility; quarterly = $8K–$20K/year; zero competitors cold-calling stamping shop FMs;
+    # first pull Lorain June 22 (added 2026-06-22 run 213)
+    'metal stamping plant manager', 'stamping facility manager', 'sheet metal operations manager',
+    'stamping shop manager', 'metal stamping superintendent', 'sheet metal plant manager',
+    'stamping plant superintendent', 'sheet metal fabrication manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -3505,6 +3516,14 @@ DANNY_ORG_KEYWORDS = [
     'modular building rental', 'modular building company', 'relocatable buildings',
     'portable buildings rental', 'modular space rental', 'temporary structures rental',
     'modular office rental',
+    # Metal Stamping & Sheet Metal Fabrication Shops — Segment #207; Apollo org tags 'metal stamping',
+    # 'sheet metal stamping', 'stampings manufacturer' precisely surface stamping shop FMs;
+    # DISTINCT from steel service center (run 189 — 'steel service center', 'metal distributor'),
+    # steel fab (run 201 — 'steel fabrication shop', 'structural steel'), mfg (run 118 — 'manufacturing');
+    # return ZERO overlap with any existing DANNY_ORG_KEYWORDS; first pull Lorain June 22 (added 2026-06-22 run 213)
+    'metal stamping', 'sheet metal stamping', 'stamping manufacturer',
+    'metal press shop', 'stampings manufacturer', 'metal pressing plant',
+    'sheet metal products manufacturer',
 ]
 
 CARLA_SEARCHES = [

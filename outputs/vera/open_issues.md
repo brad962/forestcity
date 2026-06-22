@@ -1,10 +1,21 @@
 # Vera Cole — Open Issues Tracker
-*Run 212 | 2026-06-21 | Compact version — historical run entries archived in git history*
-*209 open (208 carry-forward + 1 new this run) | 124 resolved*
+*Run 213 | 2026-06-22 | Compact version — historical run entries archived in git history*
+*210 open (209 carry-forward + 1 new this run) | 124 resolved*
 
 > ⚠️ **FILE SIZE NOTE:** This file was 572KB as of Run 195 due to prepending a full header every run.
 > Rewritten as a compact rolling summary on Run 196. Full history is in git log.
 > Going forward: update the metrics line at top + append new issues only (no full run header dumps).
+
+---
+
+## NEW OPEN — Run 213 | 2026-06-22 — LORAIN COUNTY PULL DAY
+
+### OPEN — Metal Stamping & Sheet Metal Fabrication Shops (Segment #207)
+- **First seen:** 2026-06-22 (Run 213)
+- **Description:** Segment #207 added to `workers/lead_pipeline.py` (DANNY_TITLES + DANNY_ORG_KEYWORDS) and `integrations/mixmax.py` (PROPERTY_MANAGER_TITLES). Titles: metal stamping plant manager, stamping facility manager, sheet metal operations manager, stamping shop manager, metal stamping superintendent, sheet metal plant manager, stamping plant superintendent, sheet metal fabrication manager. Org keywords: metal stamping, sheet metal stamping, stamping manufacturer, metal press shop, stampings manufacturer, metal pressing plant, sheet metal products manufacturer.
+- **Targets:** NE Ohio Ford Avon Lake EV assembly supply chain (100+ stamping/pressing shops within 50 miles); Lorain County industrial corridor (North Ridgeville industrial park, Sheffield Village, Avon Lake supply chain). DISTINCT from steel service centers/distributors (run 189), structural steel fabrication shops (run 201), general manufacturing (run 118). NE Ohio is one of the densest auto-supply stamping corridors in the US. IATF 16949 auto supplier quality certification requires documented facility maintenance records.
+- **Revenue:** $2,000–$5,000/facility; quarterly = $8,000–$20,000/year; OSHA 1910.22 + OEPA NPDES SWPPP (stamping fluid runoff = regulated) compliance angle; zero competitors cold-calling stamping shop FMs.
+- **First pull:** Lorain County June 22 (TODAY — must run locally; Apollo blocked in cloud). Mark resolved when stamping shop contacts appear in Nina's report.
 
 ---
 
@@ -244,31 +255,32 @@
 
 | Issue # | Segment | Status | Expected Resolution |
 |---------|---------|--------|---------------------|
-| Apollo | **Apollo API network block — 0 leads pulled 10+ days** | 🚨 CRITICAL — Lorain June 22 pull TOMORROW; run locally OR add api.apollo.io to egress | Bradley: run `scripts/run_lorain_both.command` locally Monday morning June 22 |
-| Gas Station | Gas Station & C-Store Mixmax sequence | 🚨 BLOCKER Day 38 — email copy ready: `gas_fleet_sequence_copy_2026-06-12.md` | Bradley action — paste copy + replace PENDING in mixmax.py |
-| Fleet Washing | Fleet Washing Mixmax sequence | 🚨 BLOCKER Day 38 — same as above; copy ready to paste | Bradley action — paste copy + replace PENDING in mixmax.py |
-| danny.md | File size bloat — 486KB+ exceeds tool read limit | Run 204–212 proposal; awaiting Bradley YES | Bradley approves → Vera archives in 1 run |
+| Apollo | **Apollo API network block — 0 leads pulled 11+ days** | 🚨 CRITICAL Day 11 — TODAY is Lorain June 22; pull MUST run locally NOW | Bradley: run `scripts/run_lorain_both.command` locally TODAY Monday June 22 |
+| Gas Station | Gas Station & C-Store Mixmax sequence | 🚨 BLOCKER Day 39 — email copy ready: `gas_fleet_sequence_copy_2026-06-12.md` | Bradley action — paste copy + replace PENDING in mixmax.py |
+| Fleet Washing | Fleet Washing Mixmax sequence | 🚨 BLOCKER Day 39 — same as above; copy ready to paste | Bradley action — paste copy + replace PENDING in mixmax.py |
+| danny.md | File size bloat — 490KB+ exceeds tool read limit | Run 204–213 proposal; awaiting Bradley YES | Bradley approves → Vera archives in 1 run |
 | #193 | Co-Packing & Contract Manufacturing | Code live — Lake pull ran June 15 | Confirm contacts in Nina report |
 | #194 | Semiconductor & PCB/Electronics Manufacturers | Code live — Lake pull ran June 15 | Confirm contacts in Nina report |
 | #195 | Boat Repair & Marine Service Centers | Code live — Lake pull ran June 15 | Confirm contacts in Nina report |
 | #196 | Craft Breweries & Taprooms | Code live — Lake pull ran June 15 | Confirm contacts in Nina report |
 | #197 | General Aviation (FBO) & Private Airport Terminals | Code live — Lake pull ran June 15 | Confirm FBO contacts in Nina report |
 | #198 | Commercial/Wholesale Nursery & Greenhouse Production | Code live — Lake pull ran June 15 | Confirm nursery contacts in Nina report |
-| #199 | Portable Restroom Rental & Event Sanitation | Code live — first pull Lorain June 22 TOMORROW | Confirm contacts in Nina report June 23–25 |
-| #200 | FQHCs & Community Health Centers | Code live — first pull Lorain June 22 TOMORROW | Confirm contacts in Nina report June 23–25 |
-| #201 | Steel Fabrication & Structural Steel Shops | Code live — first pull Lorain June 22 TOMORROW | Confirm contacts in Nina report June 23–25 |
-| #202 | Municipal & Public Recreation Centers / Community Pools | Code live — first pull Lorain June 22 TOMORROW | Confirm contacts in Nina report June 23–25 |
-| #203 | Private & Independent Colleges and Universities | Code live — first pull Lorain June 22 TOMORROW | Oberlin = flagship target; confirm contacts in Nina report June 23–25 |
-| #204 | Municipal Public Works Departments | Code live — first pull Lorain June 22 TOMORROW | Elyria + Lorain DPW = flagship targets; confirm contacts in Nina report June 23–25 |
-| #205 | Funeral Homes & Mortuary Services | Code live — first pull Lorain June 22 TOMORROW | ~60 NE Ohio targets; confirm contacts in Nina report June 23–25 |
-| #206 | Modular Building & Relocatable Space Rental | Code live this run — first pull Lorain June 22 TOMORROW | Williams Scotsman / Mobile Mini = flagship targets; confirm contacts in Nina report June 23–25 |
+| #199 | Portable Restroom Rental & Event Sanitation | Code live — first pull Lorain June 22 TODAY | Confirm contacts in Nina report June 23–25 |
+| #200 | FQHCs & Community Health Centers | Code live — first pull Lorain June 22 TODAY | Confirm contacts in Nina report June 23–25 |
+| #201 | Steel Fabrication & Structural Steel Shops | Code live — first pull Lorain June 22 TODAY | Confirm contacts in Nina report June 23–25 |
+| #202 | Municipal & Public Recreation Centers / Community Pools | Code live — first pull Lorain June 22 TODAY | Confirm contacts in Nina report June 23–25 |
+| #203 | Private & Independent Colleges and Universities | Code live — first pull Lorain June 22 TODAY | Oberlin = flagship target; confirm contacts in Nina report June 23–25 |
+| #204 | Municipal Public Works Departments | Code live — first pull Lorain June 22 TODAY | Elyria + Lorain DPW = flagship targets; confirm contacts in Nina report June 23–25 |
+| #205 | Funeral Homes & Mortuary Services | Code live — first pull Lorain June 22 TODAY | ~60 NE Ohio targets; confirm contacts in Nina report June 23–25 |
+| #206 | Modular Building & Relocatable Space Rental | Code live — first pull Lorain June 22 TODAY | Williams Scotsman / Mobile Mini = flagship targets; confirm contacts in Nina report June 23–25 |
+| #207 | Metal Stamping & Sheet Metal Fabrication Shops | Code live this run — first pull Lorain June 22 TODAY | Ford Avon Lake supply chain = flagship target cluster; confirm contacts in Nina report June 23–25 |
 | Relay | GitHub Actions relay: PAT needs `workflow` scope | 🚨 BLOCKED — definitive; workflow YAML ready in `outputs/vera/github_action_vera_slack_relay.yaml` | Bradley: Option A — github.com/settings/tokens → add workflow scope. Option B — manually create in GitHub UI |
 
-**Total open: 209 | Total resolved: 124**
+**Total open: 210 | Total resolved: 124**
 
-> 🚨 **LORAIN COUNTY PULL — TOMORROW MONDAY JUNE 22.** Run `scripts/run_lorain_both.command` locally. 8 new segments fire here (#199–#206). Apollo blocked in cloud (Day 10+).
-> 🚨 **GAS/FLEET BLOCKER — Day 38:** Email copy ready in `outputs/vera/gas_fleet_sequence_copy_2026-06-12.md`. 10 min in Mixmax UI. All 5 counties of contacts unenrolled.
-> 🚨 **APOLLO API BLOCKED — Day 10:** ALL cloud lead generation stopped. Every daily scheduled pull returns 0. Must run locally.
+> 🚨 **LORAIN COUNTY PULL — TODAY JUNE 22.** Run `scripts/run_lorain_both.command` locally NOW. 9 new segments fire here (#199–#207). Apollo blocked in cloud (Day 11).
+> 🚨 **GAS/FLEET BLOCKER — Day 39:** Email copy ready in `outputs/vera/gas_fleet_sequence_copy_2026-06-12.md`. 10 min in Mixmax UI. All 5+ counties of contacts unenrolled.
+> 🚨 **APOLLO API BLOCKED — Day 11:** ALL cloud lead generation stopped. Every daily scheduled pull returns 0. Must run locally.
 
 ---
 

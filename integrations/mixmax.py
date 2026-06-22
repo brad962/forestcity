@@ -1128,6 +1128,14 @@ PROPERTY_MANAGER_TITLES = [
     'modular building branch manager', 'relocatable building manager', 'portable building manager',
     'modular building operations manager', 'modular space manager', 'temporary structures manager',
     'modular building regional manager', 'portable building branch manager',
+    # Metal Stamping & Sheet Metal Fabrication Shops — Segment #207; routing to property_manager
+    # sequence (OSHA 1910.22 / OEPA NPDES / IATF 16949 compliance angle);
+    # DISTINCT from steel service centers (run 189), steel fab (run 201), general mfg (run 118);
+    # Ford Avon Lake EV supply chain = 100+ stamping shops in Lorain County corridor;
+    # first pull Lorain June 22 (added 2026-06-22 run 213)
+    'metal stamping plant manager', 'stamping facility manager', 'sheet metal operations manager',
+    'stamping shop manager', 'metal stamping superintendent', 'sheet metal plant manager',
+    'stamping plant superintendent', 'sheet metal fabrication manager',
 ]
 
 REALTOR_TITLES = [
