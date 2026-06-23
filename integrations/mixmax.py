@@ -1136,6 +1136,14 @@ PROPERTY_MANAGER_TITLES = [
     'metal stamping plant manager', 'stamping facility manager', 'sheet metal operations manager',
     'stamping shop manager', 'metal stamping superintendent', 'sheet metal plant manager',
     'stamping plant superintendent', 'sheet metal fabrication manager',
+    # Powder Coating & Industrial Surface Finishing Shops — Segment #208; routing to property_manager
+    # sequence (EPA NESHAP 6H / OEPA NPDES / OSHA 1910.22 compliance angle);
+    # DISTINCT from general mfg (run 118), machine shops (run 184), steel fab (run 201), stamping (run 207);
+    # NE Ohio corridors: Elyria/Sheffield Village/Avon Lake/Strongsville industrial parks;
+    # first pull Geauga+Portage / Cuyahoga 2nd pass (added 2026-06-23 run 214)
+    'powder coating shop manager', 'surface finishing manager', 'powder coat operations manager',
+    'industrial coating manager', 'surface treatment manager', 'plating operations manager',
+    'powder coating plant manager', 'anodizing operations manager',
 ]
 
 REALTOR_TITLES = [

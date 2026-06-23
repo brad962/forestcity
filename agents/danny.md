@@ -1,3 +1,23 @@
+## Run 214 — Vera Batching Note | 2026-06-23 | 208+ Segments
+**TODAY:** Monday June 23. Day after Lorain County pull (June 22). Lorain results TBD — Apollo blocked in cloud; pull must run locally via `scripts/run_lorain_both.command`. Next county: **Geauga + Portage** (likely Week 27, ~June 29).
+
+**New Segment #208 — Powder Coating & Industrial Surface Finishing Shops:**
+- Titles: `powder coating shop manager`, `surface finishing manager`, `powder coat operations manager`, `industrial coating manager`, `surface treatment manager`, `plating operations manager`, `powder coating plant manager`, `anodizing operations manager`
+- Org keywords: `powder coating`, `powder coat shop`, `industrial coating`, `surface finishing`, `electroplating`, `metal finishing`, `anodizing shop`, `plating shop`
+- Targets: NE Ohio industrial corridors — Elyria, Sheffield Village, Avon Lake, Strongsville, Twinsburg industrial parks; powder coating lines accumulate overspray + iron phosphate pretreatment residue on surrounding floor areas
+- Compliance angle: EPA NESHAP 6H (powder coating overspray) + OSHA 1910.22 + OEPA NPDES (metal rinse water = regulated effluent)
+- Revenue: $1,500–$4,000/facility; quarterly = $6K–$16K/year; zero competitors cold-calling
+- DISTINCT from: general mfg (run 118), machine shops (run 184), steel fab (run 201), stamping (run 207)
+
+**Gas/Fleet Sequences — STILL PENDING (Day 41):** Create in Mixmax UI. Copy ready: `outputs/vera/gas_fleet_sequence_copy_2026-06-12.md`. All 5-county contacts unenrolled. Jim Lavigne (Certified Oil), Kevin Kayden (Speedway), Mark Elyden (truenorth) are 26 days overdue with no sequence to enroll into.
+
+**Apollo API BLOCKED (Day 12 in cloud):** ALL cloud lead gen returns 0. Must run locally.
+
+**36 pipeline contacts critically overdue (25-26 days):** Primarily contractor referral partners who were pulled in May and have NEVER been contacted. Run `python3 workers/nina_report.py weekly` locally to see full list + get current data.
+
+**Segments active for Geauga+Portage first pull:** All 208 segments live. High-value Geauga targets: marinas (Grand River, Fairport Harbor), wineries (Debonne Vineyards, Laurello), golf courses (Fowler's Mill, Aurora Country Club), food manufacturing (J.M. Smucker Orville OH nearby), nurseries/greenhouses (Geauga County = NE Ohio's nursery heartland).
+
+---
 ## Run 212 — Vera Batching Note | 2026-06-21 | 206+ Segments
 **TODAY:** Sunday June 21. **LORAIN COUNTY PULL IS TOMORROW (June 22 Monday).** Apollo API blocked in cloud — run locally: `python3 workers/lead_pipeline.py both Lorain` (double-click `scripts/run_lorain_both.command`).
 

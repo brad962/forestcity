@@ -2220,6 +2220,16 @@ DANNY_TITLES = [
     'metal stamping plant manager', 'stamping facility manager', 'sheet metal operations manager',
     'stamping shop manager', 'metal stamping superintendent', 'sheet metal plant manager',
     'stamping plant superintendent', 'sheet metal fabrication manager',
+    # Powder Coating & Industrial Surface Finishing Shops — Segment #208; DISTINCT from general mfg (run 118),
+    # machine shops (run 184), steel fab (run 201), stamping (run 207); EPA NESHAP 6H (powder coating
+    # overspray) + OSHA 1910.22 + OEPA NPDES (metal rinse water = regulated effluent) compliance angle;
+    # NE Ohio industrial corridors: Elyria/Sheffield Village/Avon Lake industrial parks + Strongsville/Twinsburg;
+    # floor areas around powder lines accumulate overspray + aluminum oxide + iron phosphate pretreatment residue;
+    # $1,500–$4,000/facility; quarterly = $6K–$16K/year; zero competitors cold-calling finishing shop FMs;
+    # first pull Geauga+Portage / Cuyahoga 2nd pass (added 2026-06-23 run 214)
+    'powder coating shop manager', 'surface finishing manager', 'powder coat operations manager',
+    'industrial coating manager', 'surface treatment manager', 'plating operations manager',
+    'powder coating plant manager', 'anodizing operations manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -3524,6 +3534,13 @@ DANNY_ORG_KEYWORDS = [
     'metal stamping', 'sheet metal stamping', 'stamping manufacturer',
     'metal press shop', 'stampings manufacturer', 'metal pressing plant',
     'sheet metal products manufacturer',
+    # Powder Coating & Industrial Surface Finishing Shops — Segment #208; Apollo org tags precisely
+    # surface finishing shop FMs; DISTINCT from steel service centers (run 189 — distribution),
+    # machine shops (run 184 — machining), general mfg (run 118 — broad manufacturing);
+    # zero overlap with any existing DANNY_ORG_KEYWORDS; first pull Geauga+Portage / Cuyahoga 2nd pass
+    # (added 2026-06-23 run 214)
+    'powder coating', 'powder coat shop', 'industrial coating', 'surface finishing',
+    'electroplating', 'metal finishing', 'anodizing shop', 'plating shop',
 ]
 
 CARLA_SEARCHES = [
