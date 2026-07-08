@@ -1144,6 +1144,12 @@ PROPERTY_MANAGER_TITLES = [
     'powder coating shop manager', 'surface finishing manager', 'powder coat operations manager',
     'industrial coating manager', 'surface treatment manager', 'plating operations manager',
     'powder coating plant manager', 'anodizing operations manager',
+    # Plastic Injection Molding & Plastics Manufacturing — Segment #209 routing sync; all new plastics/injection
+    # molding contacts correctly route to property_manager Mixmax sequence on enrollment;
+    # DISTINCT from general mfg, machine shops, metal stamping, powder coating (added 2026-07-08 run 215)
+    'injection molding plant manager', 'plastics facility manager', 'plastics operations manager',
+    'molding plant superintendent', 'plastics manufacturing manager', 'injection molding operations manager',
+    'plastics plant manager', 'thermoplastic operations manager',
 ]
 
 REALTOR_TITLES = [

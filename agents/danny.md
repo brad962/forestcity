@@ -1,3 +1,23 @@
+## Run 215 — Vera Batching Note | 2026-07-08 | 209+ Segments
+**TODAY:** Tuesday July 8. 15 days since Run 214 (June 23). Post-July 4th. Peak season still active in NE Ohio — parking lots, building exteriors, industrial facilities. Geauga+Portage pull MISSED June 29 (Apollo cloud block). Next pull coming ~July 13 (Week 29 rotation = Geauga+Portage). Must run locally.
+
+**New Segment #209 — Plastic Injection Molding & Plastics Manufacturing Facilities:**
+- Titles: `injection molding plant manager`, `plastics facility manager`, `plastics operations manager`, `molding plant superintendent`, `plastics manufacturing manager`, `injection molding operations manager`, `plastics plant manager`, `thermoplastic operations manager`
+- Org keywords: `injection molding`, `plastics manufacturer`, `plastic injection`, `plastics molding`, `thermoplastic manufacturer`, `polymer manufacturer`, `plastic components manufacturer`, `plastic molding company`
+- Targets: Ford + Honda NE Ohio auto supply chain (100+ plastics shops within 50mi); Cuyahoga/Lorain/Summit corridors; Eaton/Parker Hannifin/Avery Dennison plastics divisions
+- Compliance angle: OSHA 1910.22 + EPA RCRA (mold release agents = hazardous waste documentation required)
+- Revenue: $1,500–$4,000/facility; quarterly = $6K–$16K/year; zero competitors cold-calling
+- DISTINCT from: general mfg (run 118), machine shops (run 184), stamping (run 207), powder coating (run 208)
+
+**Gas/Fleet Sequences — STILL PENDING (Day 54):** Create in Mixmax UI. Copy ready: `outputs/vera/gas_fleet_sequence_copy_2026-06-12.md`. Jim Lavigne (Certified Oil), Kevin Kayden (Speedway), Mark Elyden (truenorth) are 41+ days overdue. All contacts from Summit/Medina/Cuyahoga/Lake/Lorain unenrolled.
+
+**Apollo API BLOCKED (Day 27 in cloud):** ALL cloud lead gen returns 0. Must run locally. EVERY county pull since June 11 has been 0. Geauga+Portage (~July 13) MUST run locally.
+
+**36+ pipeline contacts overdue (41+ days now):** These contractor referral partners from May have NEVER been contacted. Run `python3 workers/nina_report.py weekly` locally to get current state.
+
+**Geauga+Portage July 13 priority targets:** marinas (Grand River, Fairport Harbor), wineries (Debonne, Laurello), golf courses (Fowler's Mill, Aurora Country Club), J.M. Smucker (Orville nearby), wholesale nurseries (Geauga = Ohio nursery heartland), plastics mfg (new Segment #209).
+
+---
 ## Run 214 — Vera Batching Note | 2026-06-23 | 208+ Segments
 **TODAY:** Monday June 23. Day after Lorain County pull (June 22). Lorain results TBD — Apollo blocked in cloud; pull must run locally via `scripts/run_lorain_both.command`. Next county: **Geauga + Portage** (likely Week 27, ~June 29).
 

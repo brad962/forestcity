@@ -2230,6 +2230,17 @@ DANNY_TITLES = [
     'powder coating shop manager', 'surface finishing manager', 'powder coat operations manager',
     'industrial coating manager', 'surface treatment manager', 'plating operations manager',
     'powder coating plant manager', 'anodizing operations manager',
+    # Plastic Injection Molding & Plastics Manufacturing Facilities — Segment #209; DISTINCT from general mfg
+    # (run 118), machine shops (run 184), rubber/polymer (separate); Ford + Honda NE Ohio auto supply chain
+    # includes 100+ plastics/injection molding shops; pellet spills + mold release agent residue + chiller
+    # condensate accumulate on production floors; OSHA 1910.22 + EPA RCRA (mold release = hazardous waste
+    # documentation) compliance angle; NE Ohio concentration: Eaton/Parker Hannifin/Avery Dennison plastics
+    # divisions + independent molders in Cuyahoga/Lorain/Summit corridors;
+    # $1,500–$4,000/facility; quarterly = $6K–$16K/year; zero competitors cold-calling plastics plant FMs;
+    # first pull Geauga+Portage (next rotation ~July 13) (added 2026-07-08 run 215)
+    'injection molding plant manager', 'plastics facility manager', 'plastics operations manager',
+    'molding plant superintendent', 'plastics manufacturing manager', 'injection molding operations manager',
+    'plastics plant manager', 'thermoplastic operations manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -3541,6 +3552,14 @@ DANNY_ORG_KEYWORDS = [
     # (added 2026-06-23 run 214)
     'powder coating', 'powder coat shop', 'industrial coating', 'surface finishing',
     'electroplating', 'metal finishing', 'anodizing shop', 'plating shop',
+    # Plastic Injection Molding & Plastics Manufacturing — Segment #209; Apollo org tags precisely surface
+    # plastics/injection molding facilities; DISTINCT from general manufacturing (run 118), machine shops
+    # (run 184), metal stamping (run 207), powder coating (run 208); NE Ohio auto supply chain = dense
+    # plastics corridor; zero overlap with any existing DANNY_ORG_KEYWORDS;
+    # first pull Geauga+Portage ~July 13 (added 2026-07-08 run 215)
+    'injection molding', 'plastics manufacturer', 'plastic injection', 'plastics molding',
+    'thermoplastic manufacturer', 'polymer manufacturer', 'plastic components manufacturer',
+    'plastic molding company',
 ]
 
 CARLA_SEARCHES = [
