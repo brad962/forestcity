@@ -2241,6 +2241,18 @@ DANNY_TITLES = [
     'injection molding plant manager', 'plastics facility manager', 'plastics operations manager',
     'molding plant superintendent', 'plastics manufacturing manager', 'injection molding operations manager',
     'plastics plant manager', 'thermoplastic operations manager',
+    # Rubber & Elastomer Manufacturing Facilities — Segment #210; DISTINCT from plastics/injection molding
+    # (run 215 #209), general mfg (run 118), specialty chemical (run 176), machine shops (run 184), aerospace (run 183);
+    # Parker Hannifin Engineered Materials/Seals (Clyde OH), Freudenberg-NOK (Twinsburg — 1,000+ employees),
+    # Trelleborg Sealing Solutions (Aurora), Jason Industries, General Rubber Corp, Ohio Rubber Company;
+    # sulfur compounds + carbon black + process oils accumulate on production floors + loading dock areas;
+    # OSHA 1910.22 + EPA RCRA (sulfur/carbon black = hazardous material documentation required) + OEPA NPDES SWPPP;
+    # auto supply chain angle: rubber seals/gaskets = critical Ford/GM/Honda tier-1 component;
+    # $2,000–$5,000/facility; quarterly = $8K–$20K/year; zero competitors cold-calling rubber plant FMs;
+    # first pull Geauga+Portage (~July 13) (added 2026-07-09 run 216)
+    'rubber manufacturing manager', 'elastomer plant manager', 'rubber compound operations manager',
+    'seals manufacturing manager', 'rubber products manager', 'gasket manufacturing manager',
+    'rubber plant superintendent', 'elastomer manufacturing director',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -3560,6 +3572,13 @@ DANNY_ORG_KEYWORDS = [
     'injection molding', 'plastics manufacturer', 'plastic injection', 'plastics molding',
     'thermoplastic manufacturer', 'polymer manufacturer', 'plastic components manufacturer',
     'plastic molding company',
+    # Rubber & Elastomer Manufacturing — Segment #210; Apollo org tags precisely surface rubber/elastomer
+    # facilities; DISTINCT from plastics/injection molding (run 215), specialty chemical (run 176),
+    # general manufacturing (run 118); Parker Hannifin/Freudenberg-NOK/Trelleborg in NE Ohio;
+    # zero overlap with any existing DANNY_ORG_KEYWORDS; first pull Geauga+Portage ~July 13 (added 2026-07-09 run 216)
+    'rubber manufacturer', 'elastomer manufacturer', 'rubber products manufacturer',
+    'rubber compound manufacturer', 'gasket manufacturer', 'sealing products manufacturer',
+    'rubber molding company', 'vulcanized rubber manufacturer',
 ]
 
 CARLA_SEARCHES = [

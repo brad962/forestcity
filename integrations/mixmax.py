@@ -1150,6 +1150,12 @@ PROPERTY_MANAGER_TITLES = [
     'injection molding plant manager', 'plastics facility manager', 'plastics operations manager',
     'molding plant superintendent', 'plastics manufacturing manager', 'injection molding operations manager',
     'plastics plant manager', 'thermoplastic operations manager',
+    # Rubber & Elastomer Manufacturing — Segment #210 routing sync; all new rubber/elastomer
+    # manufacturing contacts correctly route to property_manager Mixmax sequence on enrollment;
+    # DISTINCT from plastics/injection molding (#209), general mfg, specialty chemical (added 2026-07-09 run 216)
+    'rubber manufacturing manager', 'elastomer plant manager', 'rubber compound operations manager',
+    'seals manufacturing manager', 'rubber products manager', 'gasket manufacturing manager',
+    'rubber plant superintendent', 'elastomer manufacturing director',
 ]
 
 REALTOR_TITLES = [

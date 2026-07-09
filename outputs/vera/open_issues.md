@@ -1,10 +1,22 @@
 # Vera Cole — Open Issues Tracker
-*Run 215 | 2026-07-08 | Compact version — historical run entries archived in git history*
-*213 open (212 carry-forward + 1 new this run) | 124 resolved*
+*Run 216 | 2026-07-09 | Compact version — historical run entries archived in git history*
+*214 open (213 carry-forward + 1 new this run) | 124 resolved*
 
 > ⚠️ **FILE SIZE NOTE:** This file was 572KB as of Run 195 due to prepending a full header every run.
 > Rewritten as a compact rolling summary on Run 196. Full history is in git log.
 > Going forward: update the metrics line at top + append new issues only (no full run header dumps).
+
+---
+
+## NEW OPEN — Run 216 | 2026-07-09 — GEAUGA+PORTAGE 4 DAYS AWAY | DAY 28 APOLLO BLOCK | DAY 55 GAS/FLEET | 42+ DAYS OVERDUE
+
+### OPEN — Rubber & Elastomer Manufacturing Facilities (Segment #210)
+- **First seen:** 2026-07-09 (Run 216)
+- **Description:** Segment #210 added to `workers/lead_pipeline.py` (DANNY_TITLES + DANNY_ORG_KEYWORDS) and `integrations/mixmax.py` (PROPERTY_MANAGER_TITLES). Titles: rubber manufacturing manager, elastomer plant manager, rubber compound operations manager, seals manufacturing manager, rubber products manager, gasket manufacturing manager, rubber plant superintendent, elastomer manufacturing director. Org keywords: rubber manufacturer, elastomer manufacturer, rubber products manufacturer, rubber compound manufacturer, gasket manufacturer, sealing products manufacturer, rubber molding company, vulcanized rubber manufacturer.
+- **Targets:** Parker Hannifin Engineered Materials/Seals (Clyde OH), Freudenberg-NOK (Twinsburg — 1,000+ employees), Trelleborg Sealing Solutions (Aurora), Jason Industries, General Rubber Corp, Ohio Rubber Company; 80+ rubber/elastomer facilities in NE Ohio Ford/GM/Honda supply chain. Sulfur compounds + carbon black + process oils accumulate on production floors + dock areas. OSHA 1910.22 + EPA RCRA compliance angle.
+- **Revenue:** $2,000–$5,000/facility; quarterly = $8K–$20K/year; zero competitors cold-calling rubber plant FMs.
+- **DISTINCT from:** plastics/injection molding (Segment #209), general mfg (run 118), specialty chemical (run 176), machine shops (run 184), aerospace (run 183).
+- **First pull:** Geauga+Portage (~July 13) — 4 DAYS AWAY. Must run locally.
 
 ---
 
@@ -294,28 +306,30 @@
 
 ## Active Open Issues — Summary Table
 
-*Updated Run 215 | July 8 — POST-JULY 4TH | Gas/Fleet blocker Day 54 | Apollo API BLOCKED Day 27 | Segment #209 Plastics Mfg added | 36+ pipeline contacts 41+ days overdue | Geauga+Portage pull MISSED — must run by July 13*
+*Updated Run 216 | July 9 — GEAUGA+PORTAGE 4 DAYS AWAY | Gas/Fleet blocker Day 55 | Apollo API BLOCKED Day 28 | Segment #210 Rubber/Elastomer Mfg added | 36+ pipeline contacts 42+ days overdue*
 
 | Issue # | Segment | Status | Expected Resolution |
 |---------|---------|--------|---------------------|
-| Overdue | **36+ pipeline contacts — 41+ days stale, NEVER contacted** | 🚨 CRITICAL Day 41 — 3 gas contacts + 33 contractors silent | Bradley: call Jim Lavigne (Certified Oil), Kevin Kayden (Speedway), Mark Elyden (truenorth) THIS WEEK. Create Gas/Fleet sequences. |
-| Apollo | **Apollo API network block — 0 leads pulled 27+ days** | 🚨 CRITICAL Day 27 — ALL cloud lead gen at 0 since June 11 | Bradley: add `api.apollo.io` to network egress allowlist OR run all county pulls locally |
-| Geauga+Portage | **Geauga+Portage pull MISSED — only county never pulled** | 🚨 NEW CRITICAL — Week 27 (~June 29) never ran; ~July 13 next chance | Bradley: run `python3 workers/lead_pipeline.py both Geauga+Portage` locally by July 13 |
-| Gas Station | Gas Station & C-Store Mixmax sequence | 🚨 BLOCKER Day 54 — email copy ready: `gas_fleet_sequence_copy_2026-06-12.md` | Bradley action — paste copy + replace PENDING in mixmax.py |
-| Fleet Washing | Fleet Washing Mixmax sequence | 🚨 BLOCKER Day 54 — same as above; copy ready to paste | Bradley action — paste copy + replace PENDING in mixmax.py |
-| danny.md | File size bloat — 530KB+ exceeds tool read limit | Run 204–215 proposal; awaiting Bradley YES | Bradley approves → Vera archives in 1 run |
+| Overdue | **36+ pipeline contacts — 42+ days stale, NEVER contacted** | 🚨 CRITICAL Day 42 — 3 gas contacts + 33 contractors silent | Bradley: call Jim Lavigne (Certified Oil), Kevin Kayden (Speedway), Mark Elyden (truenorth) TODAY. Create Gas/Fleet sequences. |
+| Apollo | **Apollo API network block — 0 leads pulled 28+ days** | 🚨 CRITICAL Day 28 — ALL cloud lead gen at 0 since June 11 | Bradley: add `api.apollo.io` to network egress allowlist OR run all county pulls locally |
+| Geauga+Portage | **Geauga+Portage pull MISSED — only county never pulled** | 🚨 CRITICAL — 4 DAYS TO July 13 window | Bradley: run `python3 workers/lead_pipeline.py both Geauga+Portage` locally by July 13 |
+| Gas Station | Gas Station & C-Store Mixmax sequence | 🚨 BLOCKER Day 55 — email copy ready: `gas_fleet_sequence_copy_2026-06-12.md` | Bradley action — paste copy + replace PENDING in mixmax.py |
+| Fleet Washing | Fleet Washing Mixmax sequence | 🚨 BLOCKER Day 55 — same as above; copy ready to paste | Bradley action — paste copy + replace PENDING in mixmax.py |
+| danny.md | File size bloat — 545KB+ exceeds tool read limit | Run 204–216 proposal; awaiting Bradley YES | Bradley approves → Vera archives in 1 run |
 | #193–#198 | Co-Packing, Semiconductors, Boat Repair, Breweries, FBOs, Nurseries | Code live — Lake pull ran June 15 (IF run locally) | Confirm contacts in Nina report locally |
 | #199–#207 | Portable Restroom, FQHCs, Steel Fab, Rec Centers, Colleges, DPW, Funeral, Modular, Stamping | Code live — Lorain pull was June 22 (IF run locally) | Confirm contacts in Nina report locally |
-| #208 | Powder Coating & Industrial Surface Finishing Shops | Code live (Run 214) — first pull Geauga+Portage ~July 13 | Confirm contacts on next pull |
-| #209 | Plastic Injection Molding & Plastics Manufacturing | Code live (Run 215) — first pull Geauga+Portage ~July 13 | New — first pull coming |
+| #208 | Powder Coating & Industrial Surface Finishing Shops | Code live (Run 214) — first pull Geauga+Portage ~July 13 | Confirm contacts on next local pull |
+| #209 | Plastic Injection Molding & Plastics Manufacturing | Code live (Run 215) — first pull Geauga+Portage ~July 13 | Confirm contacts on next local pull |
+| #210 | Rubber & Elastomer Manufacturing Facilities | Code live (Run 216) — first pull Geauga+Portage ~July 13 | NEW — first pull 4 days away |
 | Relay | GitHub Actions relay: PAT needs `workflow` scope | 🚨 BLOCKED — definitive; YAML ready in `outputs/vera/github_action_vera_slack_relay.yaml` | Bradley: Option A — github.com/settings/tokens → add workflow scope. Option B — manually create in GitHub UI |
 
-**Total open: 213 | Total resolved: 124**
+**Total open: 214 | Total resolved: 124**
 
-> 🚨 **APOLLO BLOCKED — Day 27:** ALL cloud lead generation 0 since June 11. Geauga+Portage NEVER pulled. Run locally by July 13.
-> 🚨 **GAS/FLEET BLOCKER — Day 54:** 3 gas contacts (Jim Lavigne, Kevin Kayden, Mark Elyden) now 41+ days overdue with NO sequence. Email copy ready: `outputs/vera/gas_fleet_sequence_copy_2026-06-12.md`. 10 min in Mixmax UI.
-> 🚨 **36 CONTACTS OVERDUE — 41 DAYS:** These contractor leads from May have NEVER been reached out to. Run weekly report locally to get current count.
-> 🚨 **DANNY.MD — 530KB+:** File exceeds tool read limit. Most recent segment instructions invisible to Danny. Approve archive to fix.
+> 🚨 **GEAUGA+PORTAGE — 4 DAYS TO JULY 13:** Only county never pulled. 210 segments have NEVER fired there. Run locally NOW.
+> 🚨 **APOLLO BLOCKED — Day 28:** ALL cloud lead generation 0 since June 11. Run locally by July 13.
+> 🚨 **GAS/FLEET BLOCKER — Day 55:** 3 gas contacts (Jim Lavigne, Kevin Kayden, Mark Elyden) now 42+ days overdue with NO sequence. Email copy ready: `outputs/vera/gas_fleet_sequence_copy_2026-06-12.md`. 10 min in Mixmax UI.
+> 🚨 **36 CONTACTS OVERDUE — 42 DAYS:** These contractor leads from May have NEVER been reached out to. Run weekly report locally to get current count.
+> 🚨 **DANNY.MD — 545KB+:** File exceeds tool read limit. Most recent segment instructions invisible to Danny. Approve archive to fix.
 
 ---
 

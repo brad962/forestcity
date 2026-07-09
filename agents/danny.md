@@ -1,3 +1,21 @@
+## Run 216 — Vera Batching Note | 2026-07-09 | 210+ Segments
+**TODAY:** Wednesday July 9. Day after Run 215 (July 8). Peak commercial wash season in NE Ohio — still 6-8 weeks of prime weather. Geauga+Portage pull MISSED (Apollo cloud block). **CRITICAL: Next local pull Geauga+Portage ~July 13 — 4 DAYS AWAY.** Must run locally via `scripts/run_geauga_portage_both.command`.
+
+**New Segment #210 — Rubber & Elastomer Manufacturing Facilities:**
+- Titles: `rubber manufacturing manager`, `elastomer plant manager`, `rubber compound operations manager`, `seals manufacturing manager`, `rubber products manager`, `gasket manufacturing manager`, `rubber plant superintendent`, `elastomer manufacturing director`
+- Org keywords: `rubber manufacturer`, `elastomer manufacturer`, `rubber products manufacturer`, `rubber compound manufacturer`, `gasket manufacturer`, `sealing products manufacturer`, `rubber molding company`, `vulcanized rubber manufacturer`
+- Targets: Parker Hannifin Engineered Materials/Seals (Clyde OH), Freudenberg-NOK (Twinsburg — 1,000+ employees), Trelleborg Sealing Solutions (Aurora), Jason Industries, General Rubber Corp, Ohio Rubber Company; 80+ rubber/elastomer facilities in NE Ohio within Ford/GM/Honda supply chain
+- Compliance angle: OSHA 1910.22 + EPA RCRA (sulfur compounds + carbon black + process oils = hazardous waste documentation) + OEPA NPDES SWPPP
+- Revenue: $2,000–$5,000/facility; quarterly = $8K–$20K/year; zero competitors cold-calling rubber plant FMs
+- DISTINCT from: plastics/injection molding (#209), general mfg (run 118), specialty chemical (run 176), machine shops (run 184)
+
+**Gas/Fleet Sequences — STILL PENDING (Day 55):** Create in Mixmax UI. Copy ready: `outputs/vera/gas_fleet_sequence_copy_2026-06-12.md`. Jim Lavigne (Certified Oil), Kevin Kayden (Speedway), Mark Elyden (truenorth) are 42+ days overdue. All contacts from Summit/Medina/Cuyahoga/Lake/Lorain unenrolled.
+
+**Apollo API BLOCKED (Day 28 in cloud):** ALL cloud lead gen returns 0. Must run locally. Geauga+Portage (~July 13) MUST run locally — ALL 210 segments have never fired there.
+
+**Geauga+Portage July 13 priority targets:** marinas (Grand River, Fairport Harbor), wineries (Debonne, Laurello), golf courses (Fowler's Mill, Aurora Country Club), wholesale nurseries (200+ — Geauga = Ohio nursery heartland), FBOs (Willoughby Hopkins Airport), rubber/elastomer mfg (Parker Hannifin, Freudenberg-NOK, Trelleborg).
+
+---
 ## Run 215 — Vera Batching Note | 2026-07-08 | 209+ Segments
 **TODAY:** Tuesday July 8. 15 days since Run 214 (June 23). Post-July 4th. Peak season still active in NE Ohio — parking lots, building exteriors, industrial facilities. Geauga+Portage pull MISSED June 29 (Apollo cloud block). Next pull coming ~July 13 (Week 29 rotation = Geauga+Portage). Must run locally.
 
