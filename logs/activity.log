@@ -1838,3 +1838,4 @@
 [2026-07-14 12:35] Office | Daily morning briefing | morning_2026-07-14.md | Done
 [2026-07-15 12:33] Nina | Daily hot leads report — 0 replied, 0 hot, 0 due today, 0 due tomorrow, 0 stale estimates | hot_leads_2026-07-15.md | Done
 [2026-07-15 12:33] Nina | Workiz daily report - Power Washing jobs | Workiz API unavailable — run locally. | Done
+[2026-07-15 12:33:48] Nina | Daily Reports (Hot Leads + Workiz) — Completed with API proxy errors (Mailchimp/Workiz blocked by network policy; 0 hot leads, 0 PW jobs retrieved)
