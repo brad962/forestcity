@@ -1156,6 +1156,12 @@ PROPERTY_MANAGER_TITLES = [
     'rubber manufacturing manager', 'elastomer plant manager', 'rubber compound operations manager',
     'seals manufacturing manager', 'rubber products manager', 'gasket manufacturing manager',
     'rubber plant superintendent', 'elastomer manufacturing director',
+    # Precast Concrete & Concrete Products Manufacturers — Segment #211 routing sync; all new precast concrete
+    # and concrete products contacts correctly route to property_manager Mixmax sequence on enrollment;
+    # DISTINCT from ready-mix concrete (run 192), general mfg (run 118) (added 2026-07-16 run 217)
+    'precast concrete operations manager', 'concrete products plant manager', 'precast plant superintendent',
+    'precast manufacturing manager', 'concrete products manager', 'precast concrete manager',
+    'concrete pipe plant manager', 'precast products director',
 ]
 
 REALTOR_TITLES = [

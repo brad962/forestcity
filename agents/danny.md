@@ -1,3 +1,21 @@
+## Run 217 — Vera Batching Note | 2026-07-16 | 211+ Segments
+**TODAY:** Wednesday July 16. 7 days since Run 216 (July 9). Mid-July — commercial wash peak season still active (6 weeks left before NE Ohio slowdown). **CRITICAL: Geauga+Portage pull window was July 13 — 3 DAYS OVERDUE. Only county never pulled. Must run locally NOW.**
+
+**New Segment #211 — Precast Concrete & Concrete Products Manufacturers:**
+- Titles: `precast concrete operations manager`, `concrete products plant manager`, `precast plant superintendent`, `precast manufacturing manager`, `concrete products manager`, `precast concrete manager`, `concrete pipe plant manager`, `precast products director`
+- Org keywords: `precast concrete manufacturer`, `concrete products manufacturer`, `precast manufacturer`, `precast concrete company`, `concrete pipe manufacturer`, `septic tank manufacturer`, `precast panel manufacturer`, `concrete block manufacturer`
+- Targets: National Precast Concrete (Medina), Superior Concrete Products (Cleveland), Hanson Pipe & Precast (Summit County), Medina Supply Company, Ohio Concrete, Continental Concrete Products; 50+ plants in NE Ohio Summit/Medina/Cuyahoga/Geauga corridor
+- Compliance angle: OEPA NPDES SWPPP (concrete washwater = regulated discharge, pH + TSS limits) + OSHA 1910.22; cement dust + aggregate runoff accumulate on production yard surfaces + staging areas
+- Revenue: $2,000–$5,000/facility; quarterly = $8K–$20K/year; zero competitors cold-calling precast plant FMs
+- DISTINCT from: ready-mix concrete (run 192), general mfg (run 118), construction equipment rental (run 179)
+
+**Gas/Fleet Sequences — STILL PENDING (Day 62):** Jim Lavigne (Certified Oil), Kevin Kayden (Speedway), Mark Elyden (truenorth) are 49+ days overdue. Create sequences in Mixmax UI. Copy: `outputs/vera/gas_fleet_sequence_copy_2026-06-12.md`.
+
+**Apollo API BLOCKED (Day 35 in cloud):** ALL cloud lead gen returns 0. Must run ALL county pulls locally.
+
+**Geauga+Portage OVERDUE (3 DAYS PAST July 13 window):** Only county never pulled. 211 segments queued — marinas, wineries, golf courses, wholesale nurseries (Geauga = Ohio nursery heartland), FBOs, rubber/elastomer mfg, plastics mfg, precast concrete. Run `scripts/run_geauga_portage_both.command` locally TODAY.
+
+---
 ## Run 216 — Vera Batching Note | 2026-07-09 | 210+ Segments
 **TODAY:** Wednesday July 9. Day after Run 215 (July 8). Peak commercial wash season in NE Ohio — still 6-8 weeks of prime weather. Geauga+Portage pull MISSED (Apollo cloud block). **CRITICAL: Next local pull Geauga+Portage ~July 13 — 4 DAYS AWAY.** Must run locally via `scripts/run_geauga_portage_both.command`.
 

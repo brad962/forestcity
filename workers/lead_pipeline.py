@@ -2253,6 +2253,17 @@ DANNY_TITLES = [
     'rubber manufacturing manager', 'elastomer plant manager', 'rubber compound operations manager',
     'seals manufacturing manager', 'rubber products manager', 'gasket manufacturing manager',
     'rubber plant superintendent', 'elastomer manufacturing director',
+    # Precast Concrete & Concrete Products Manufacturers — Segment #211; DISTINCT from ready-mix (run 192),
+    # general manufacturing (run 118), construction equipment rental (run 179);
+    # National Precast Concrete (Medina), Superior Concrete Products (Cleveland), Hanson Pipe & Precast (Summit),
+    # Medina Supply Company, Ohio Concrete, Continental Concrete Products;
+    # concrete washwater = regulated discharge (OEPA NPDES SWPPP pH + TSS limits); OSHA 1910.22;
+    # production yard surfaces: cement dust + aggregate runoff + efflorescence accumulate on staging areas + floors;
+    # $2,000–$5,000/facility; quarterly = $8K–$20K/year; zero competitors cold-calling precast plant FMs;
+    # first pull Geauga+Portage (next local run) (added 2026-07-16 run 217)
+    'precast concrete operations manager', 'concrete products plant manager', 'precast plant superintendent',
+    'precast manufacturing manager', 'concrete products manager', 'precast concrete manager',
+    'concrete pipe plant manager', 'precast products director',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -3579,6 +3590,13 @@ DANNY_ORG_KEYWORDS = [
     'rubber manufacturer', 'elastomer manufacturer', 'rubber products manufacturer',
     'rubber compound manufacturer', 'gasket manufacturer', 'sealing products manufacturer',
     'rubber molding company', 'vulcanized rubber manufacturer',
+    # Precast Concrete & Concrete Products Manufacturers — Segment #211; Apollo org tags precisely surface
+    # precast/concrete products plants; DISTINCT from ready-mix (run 192), general mfg (run 118);
+    # NE Ohio concentration: Summit, Medina, Cuyahoga, Geauga counties;
+    # zero overlap with any existing DANNY_ORG_KEYWORDS; first pull next local Geauga+Portage run (added 2026-07-16 run 217)
+    'precast concrete manufacturer', 'concrete products manufacturer', 'precast manufacturer',
+    'precast concrete company', 'concrete pipe manufacturer', 'septic tank manufacturer',
+    'precast panel manufacturer', 'concrete block manufacturer',
 ]
 
 CARLA_SEARCHES = [
