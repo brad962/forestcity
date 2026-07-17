@@ -1858,3 +1858,4 @@
 [2026-07-16 12:33] Nina | Workiz daily report - Power Washing jobs | Workiz API unavailable — run locally. | Done
 [2026-07-16 12:33] Nina | Daily Reports (Hot Leads + Workiz) — Mixmax API blocked (403), 36 overdue pipeline leads flagged; Workiz API blocked (403), run locally for job data | outputs/nina/hot_leads_2026-07-16.md + outputs/nina/workiz_daily_2026-07-16.md | Done
 [2026-07-16 12:35] Office | Daily morning briefing | morning_2026-07-16.md | Done
+[2026-07-17 12:33] Nina | Daily hot leads report — 0 replied, 0 hot, 0 due today, 0 due tomorrow, 0 stale estimates | hot_leads_2026-07-17.md | Done
