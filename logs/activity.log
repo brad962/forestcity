@@ -1858,7 +1858,7 @@
 [2026-07-16 12:33] Nina | Workiz daily report - Power Washing jobs | Workiz API unavailable — run locally. | Done
 [2026-07-16 12:33] Nina | Daily Reports (Hot Leads + Workiz) — Mixmax API blocked (403), 36 overdue pipeline leads flagged; Workiz API blocked (403), run locally for job data | outputs/nina/hot_leads_2026-07-16.md + outputs/nina/workiz_daily_2026-07-16.md | Done
 [2026-07-16 12:35] Office | Daily morning briefing | morning_2026-07-16.md | Done
-[2026-07-17 07:00] Donna | Weekly strategy report written | strategy_brief_2026-07-17.md | Done
-[2026-07-17 12:33] Nina | Daily hot leads report — 0 replied, 0 hot, 0 due today, 0 due tomorrow, 0 stale estimates | hot_leads_2026-07-17.md | Done
-[2026-07-17 12:33] Nina | Workiz daily report - Power Washing jobs | Workiz API unavailable — run locally. | Done
-[2026-07-17 12:33:33] Nina | Daily Reports (Hot Leads + Workiz) | hot_leads_2026-07-17.md generated (Mixmax API unavailable - cloud env) | workiz_daily_2026-07-17.md generated (Workiz API unavailable - cloud env) | 36 overdue manual pipeline leads flagged
+[2026-07-17 12:35] Danny | Apollo pull — Apollo returned 0 people — API may be blocked or rate limited (Geauga+Portage) | none | Done
+[2026-07-17 12:35] Carla | Apollo pull — Apollo returned 0 people — API may be blocked or rate limited | none | Done
+[2026-07-17 12:35] Danny + Carla | Daily Lead Pull | Apollo API blocked — 0 leads pulled (both Danny and Carla) | Pipeline ran successfully, no .env API keys found
+[2026-07-17 12:35] Danny + Carla | Daily Lead Pull | Apollo API blocked — 0 leads pulled (both Danny and Carla) | Pipeline ran successfully, no .env API keys found
