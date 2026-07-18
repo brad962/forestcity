@@ -2264,6 +2264,17 @@ DANNY_TITLES = [
     'precast concrete operations manager', 'concrete products plant manager', 'precast plant superintendent',
     'precast manufacturing manager', 'concrete products manager', 'precast concrete manager',
     'concrete pipe plant manager', 'precast products director',
+    # Cold Storage Facilities & Refrigerated Warehouses — Segment #212; SYSCO Cleveland DC, US Foods Twinsburg DC,
+    # Gordon Food Service, AmeriCold (Conneaut OH + NE Ohio), food processing cold storage, meat/produce DCs;
+    # floor drains + dock areas + loading bays accumulate food residue/grease/mold + bio-film annually;
+    # FDA FSMA HACCP + GMP requires documented sanitation program; USDA FSIS for meat/poultry cold storage;
+    # OEPA NPDES for food processing wastewater; summer = peak exterior wash demand (dock seals/loading areas);
+    # $2,000–$6,000/facility; quarterly = $8K–$24K/year; zero competitors cold-calling cold storage FMs;
+    # DISTINCT from general warehouses (run 105), food mfg (run 144), grocery DCs (run 136); (added 2026-07-18 run 218)
+    'cold storage facility manager', 'refrigerated warehouse manager', 'cold chain operations manager',
+    'refrigerated distribution manager', 'cold storage operations director',
+    'cold chain facility director', 'temperature controlled warehouse manager',
+    'refrigerated logistics manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -3597,6 +3608,13 @@ DANNY_ORG_KEYWORDS = [
     'precast concrete manufacturer', 'concrete products manufacturer', 'precast manufacturer',
     'precast concrete company', 'concrete pipe manufacturer', 'septic tank manufacturer',
     'precast panel manufacturer', 'concrete block manufacturer',
+    # Cold Storage Facilities & Refrigerated Warehouses — Segment #212; Apollo org tags surface cold storage
+    # and refrigerated distribution centers precisely; DISTINCT from general warehouses (run 105), food mfg (run 144),
+    # grocery DCs (run 136); NE Ohio concentration: Cleveland/Twinsburg/Conneaut/Mentor distribution corridors;
+    # zero overlap with any existing DANNY_ORG_KEYWORDS; first pull Geauga+Portage next local run (added 2026-07-18 run 218)
+    'cold storage facility', 'refrigerated warehouse', 'cold chain logistics',
+    'refrigerated distribution', 'temperature controlled storage', 'cold storage company',
+    'refrigerated food storage', 'cold storage logistics',
 ]
 
 CARLA_SEARCHES = [

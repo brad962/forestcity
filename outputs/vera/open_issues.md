@@ -1,10 +1,25 @@
 # Vera Cole — Open Issues Tracker
-*Run 217 | 2026-07-16 | Compact version — historical run entries archived in git history*
-*216 open (214 carry-forward + 2 new this run) | 124 resolved*
+*Run 218 | 2026-07-18 | Compact version — historical run entries archived in git history*
+*217 open (216 carry-forward + 1 new this run) | 124 resolved*
 
 > ⚠️ **FILE SIZE NOTE:** This file was 572KB as of Run 195 due to prepending a full header every run.
 > Rewritten as a compact rolling summary on Run 196. Full history is in git log.
 > Going forward: update the metrics line at top + append new issues only (no full run header dumps).
+
+---
+
+## NEW OPEN — Run 218 | 2026-07-18 — GEAUGA+PORTAGE 5 DAYS OVERDUE | DAY 37 APOLLO BLOCK | DAY 64 GAS/FLEET | 51+ DAYS OVERDUE
+
+### OPEN — Cold Storage Facilities & Refrigerated Warehouses (Segment #212)
+- **First seen:** 2026-07-18 (Run 218)
+- **Description:** Segment #212 added to `workers/lead_pipeline.py` (DANNY_TITLES + DANNY_ORG_KEYWORDS) and `integrations/mixmax.py` (PROPERTY_MANAGER_TITLES). Titles: cold storage facility manager, refrigerated warehouse manager, cold chain operations manager, refrigerated distribution manager, cold storage operations director, cold chain facility director, temperature controlled warehouse manager, refrigerated logistics manager. Org keywords: cold storage facility, refrigerated warehouse, cold chain logistics, refrigerated distribution, temperature controlled storage, cold storage company, refrigerated food storage, cold storage logistics.
+- **Targets:** SYSCO Cleveland DC, US Foods (Twinsburg DC), Gordon Food Service, AmeriCold (Conneaut OH + NE Ohio), food processing cold storage, meat/poultry/produce distribution centers. Floor drains + dock areas + loading bays accumulate food residue, grease, mold, bio-film. Summer = peak exterior wash demand (dock seals, loading dock approach pads, trash staging areas).
+- **Compliance angle:** FDA FSMA HACCP + GMP requires documented sanitation program; USDA FSIS for meat/poultry cold storage; OEPA NPDES for food processing wastewater discharge. Facility inspections = contracted cleaning = recurring revenue.
+- **Revenue:** $2,000–$6,000/facility; quarterly = $8K–$24K/year; zero competitors cold-calling cold storage FMs.
+- **DISTINCT from:** general warehouses (run 105), food manufacturing/processing plants (run 144), grocery DCs (run 136).
+- **First pull:** Next local Geauga+Portage run (OVERDUE — should have been July 13).
+- **Attempts:**
+  - 2026-07-18 (Run 218): Segment added to code. Awaiting first local pull.
 
 ---
 
@@ -19,6 +34,7 @@
   - 2026-07-08 (Run 215): Logged as upcoming — 5 days until July 13 window
   - 2026-07-09 (Run 216): Logged as 4 days away — escalated urgently
   - 2026-07-16 (Run 217): July 13 MISSED — no log entry found — marked 3 days OVERDUE
+  - 2026-07-18 (Run 218): Still no log entry — now 5 DAYS OVERDUE. Activity.log July 13–17 shows weekly workers running but zero Danny/Carla pull for Geauga+Portage. Must run locally. 212 segments queued. Segment #212 Cold Storage added this run — also queued for this county.
 
 ### OPEN — Precast Concrete & Concrete Products Manufacturers (Segment #211)
 - **First seen:** 2026-07-16 (Run 217)

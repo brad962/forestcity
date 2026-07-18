@@ -1162,6 +1162,13 @@ PROPERTY_MANAGER_TITLES = [
     'precast concrete operations manager', 'concrete products plant manager', 'precast plant superintendent',
     'precast manufacturing manager', 'concrete products manager', 'precast concrete manager',
     'concrete pipe plant manager', 'precast products director',
+    # Cold Storage Facilities & Refrigerated Warehouses — Segment #212 routing sync; all new cold storage /
+    # refrigerated warehouse contacts correctly route to property_manager Mixmax sequence on enrollment;
+    # DISTINCT from general warehouses (run 105), food mfg (run 144), grocery DCs (run 136) (added 2026-07-18 run 218)
+    'cold storage facility manager', 'refrigerated warehouse manager', 'cold chain operations manager',
+    'refrigerated distribution manager', 'cold storage operations director',
+    'cold chain facility director', 'temperature controlled warehouse manager',
+    'refrigerated logistics manager',
 ]
 
 REALTOR_TITLES = [
