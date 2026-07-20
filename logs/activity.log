@@ -1873,3 +1873,4 @@
 [2026-07-18 07:10] Vera | Run 218 — SLACK MESSAGES written to outputs/vera/pending_slack_messages.md: 1 auto-upgrade notification (Segment #212), 1 CRITICAL Geauga+Portage 5 days overdue, 1 Gas/Fleet Day 64 critical, 1 Apollo block Day 37 critical, 1 proposal (danny.md archive Day 19), 1 scan complete summary. | outputs/vera/pending_slack_messages.md | Done
 [2026-07-20 12:33] Nina | Daily hot leads report — 0 replied, 0 hot, 0 due today, 0 due tomorrow, 0 stale estimates | hot_leads_2026-07-20.md | Done
 [2026-07-20 12:33] Nina | Workiz daily report - Power Washing jobs | Workiz API unavailable — run locally. | Done
+2026-07-20 12:33:54 | Nina | Daily Reports (Hot Leads + Workiz) | Status: API unavailable (Mixmax + Workiz blocked by cloud proxy). Reports generated with warnings. Hot leads: 0 (36 overdue pipeline contacts). Workiz: 0 (network error 403).
