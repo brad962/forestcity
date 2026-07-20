@@ -1871,3 +1871,6 @@
 [2026-07-18 07:08] Vera | Run 218 — NEW OPEN ISSUE LOGGED: Segment #212 Cold Storage Facilities & Refrigerated Warehouses — code live, first pull next local Geauga+Portage run (5 days OVERDUE). | outputs/vera/open_issues.md | Done
 [2026-07-18 07:09] Vera | Run 218 — Updated outputs/vera/open_issues.md — Run 218 header; 1 new OPEN issue (Segment #212 Cold Storage); Apollo block updated to Day 37; Gas/Fleet updated to Day 64; overdue contacts updated to 51+ days; Geauga+Portage updated to 5 DAYS OVERDUE; summary table updated (217 open, 124 resolved). | outputs/vera/open_issues.md | Done
 [2026-07-18 07:10] Vera | Run 218 — SLACK MESSAGES written to outputs/vera/pending_slack_messages.md: 1 auto-upgrade notification (Segment #212), 1 CRITICAL Geauga+Portage 5 days overdue, 1 Gas/Fleet Day 64 critical, 1 Apollo block Day 37 critical, 1 proposal (danny.md archive Day 19), 1 scan complete summary. | outputs/vera/pending_slack_messages.md | Done
+[2026-07-20 12:35] Danny | Apollo pull — Apollo returned 0 people — API may be blocked or rate limited (Cuyahoga) | none | Done
+[2026-07-20 12:35] Carla | Apollo pull — Apollo returned 0 people — API may be blocked or rate limited | none | Done
+[2026-07-20 12:35] Danny + Carla | Daily Lead Pull | Pipeline ran — 0 leads (APOLLO_KEY missing from remote env — .env not present) | Cuyahoga batch
