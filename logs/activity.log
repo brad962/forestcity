@@ -1879,4 +1879,6 @@
 [2026-07-20 12:35] Carla | Apollo pull — Apollo returned 0 people — API may be blocked or rate limited | none | Done
 [2026-07-20 12:35] Danny + Carla | Daily Lead Pull | Pipeline ran — 0 leads (APOLLO_KEY missing from remote env — .env not present) | Cuyahoga batch
 [2026-07-20 12:40] Jasmine | Weekly Facebook posts - 5 posts written | facebook_posts_week_2026-07-20.md | Done
+[2026-07-20 12:40] Rick | Weekly ad refresh - 5 Facebook ads + 10 RSA headlines | ad_refresh_2026-07-20.md | Done
+[2026-07-20 12:37] Tommy | Weekly copy refresh - commercial page written | service_page_commercial_2026-07-20.md | Done
 [2026-07-20 12:38] Nina | Weekly pipeline report — 0 enrolled, 0 replied, 0 hot leads | weekly_report_2026-07-20.md | Done
