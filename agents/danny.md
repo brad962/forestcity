@@ -1,3 +1,21 @@
+## Run 219 — Vera Batching Note | 2026-07-21 | 213+ Segments
+**TODAY:** Monday July 21. 3 days since Run 218 (July 18). Mid-July — commercial wash peak season still active (4–5 weeks of prime NE Ohio weather remaining). **CRITICAL: Geauga+Portage pull window was July 13 — NOW 8 DAYS OVERDUE. Only county never pulled. Must run locally IMMEDIATELY via `scripts/run_geauga_portage_both.command`.**
+
+**New Segment #213 — Wire & Cable Manufacturing Facilities:**
+- Titles: `wire drawing manager`, `cable manufacturing manager`, `wire mill superintendent`, `cable operations manager`, `wire and cable plant manager`, `cable plant superintendent`, `wire mill manager`, `cable manufacturing director`
+- Org keywords: `wire manufacturer`, `cable manufacturer`, `wire and cable manufacturer`, `wire drawing`, `copper wire manufacturer`, `aluminum wire manufacturer`, `power cable manufacturer`, `wire rope manufacturer`
+- Targets: Prysmian Group NE Ohio (formerly General Cable — Highland Heights OH, once the HQ), TE Connectivity Lorain County, Superior Essex NE Ohio, Southwire Cleveland DC, Belden NE Ohio facilities, CommScope, AFC Cable (Atkore), + 50+ wire harness suppliers feeding Ford Avon Lake + Honda East Liberty EV/ICE assembly plants
+- Compliance angle: OSHA 1910.22 + EPA RCRA (wire drawing lubricants = petroleum-based, hazardous waste documentation required) + OEPA NPDES SWPPP (drawing compound runoff + copper particulate); copper oxide dust from annealing = orange/green staining on exterior concrete = visible power wash need
+- Revenue: $2,000–$5,000/facility; quarterly = $8K–$20K/year; zero competitors cold-calling wire/cable plant FMs
+- DISTINCT from: electronics/PCB mfg (#194), aerospace (#183), general mfg (run 118), machine shops (#184), rubber/elastomer (#210)
+
+**Gas/Fleet Sequences — STILL PENDING (Day 67):** Jim Lavigne (Certified Oil), Kevin Kayden (Speedway), Mark Elyden (truenorth) are 54+ days overdue. Create sequences in Mixmax UI. Complete copy: `outputs/vera/gas_fleet_sequence_copy_2026-06-12.md`.
+
+**Apollo API BLOCKED (Day 40 in cloud):** ALL cloud lead gen returns 0. Must run ALL county pulls locally.
+
+**Geauga+Portage OVERDUE (8 DAYS PAST July 13 window):** 213 segments queued — marinas, wineries, golf courses, wholesale nurseries (Geauga = Ohio nursery heartland), FBOs, rubber/elastomer mfg, plastics mfg, precast concrete, cold storage, wire/cable mfg. Run `scripts/run_geauga_portage_both.command` locally TODAY. Every day of delay loses summer leads.
+
+---
 ## Run 217 — Vera Batching Note | 2026-07-16 | 211+ Segments
 **TODAY:** Wednesday July 16. 7 days since Run 216 (July 9). Mid-July — commercial wash peak season still active (6 weeks left before NE Ohio slowdown). **CRITICAL: Geauga+Portage pull window was July 13 — 3 DAYS OVERDUE. Only county never pulled. Must run locally NOW.**
 

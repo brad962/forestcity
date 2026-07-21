@@ -2275,6 +2275,21 @@ DANNY_TITLES = [
     'refrigerated distribution manager', 'cold storage operations director',
     'cold chain facility director', 'temperature controlled warehouse manager',
     'refrigerated logistics manager',
+    # Wire & Cable Manufacturing Facilities — Segment #213; Prysmian Group NE Ohio (formerly General Cable,
+    # Highland Heights OH — was HQ), TE Connectivity Lorain County, Superior Essex NE Ohio,
+    # Southwire Cleveland DC, Belden NE Ohio, CommScope, AFC Cable (Atkore), wire harness suppliers to
+    # Ford Avon Lake + Honda East Liberty supply chain (50+ wire/harness facilities within 50 mi NE Ohio);
+    # wire drawing lubricants (petroleum-based drawing compound = OSHA + EPA RCRA documentation required)
+    # + copper oxide dust (annealing = orange/green staining on exterior concrete) + plastic insulation
+    # pellet residue accumulate on production floors around draw benches + loading dock areas;
+    # OSHA 1910.22 + EPA RCRA (drawing compound hazardous waste documentation) + OEPA NPDES SWPPP;
+    # DISTINCT from electronics/PCB mfg (run 194), aerospace (run 183), general mfg (run 118),
+    # machine shops (run 184), rubber/elastomer (run 216 #210);
+    # $2,000–$5,000/facility; quarterly = $8K–$20K/year; zero competitors cold-calling wire/cable plant FMs;
+    # first pull Geauga+Portage (OVERDUE — 8 days past July 13 window) (added 2026-07-21 run 219)
+    'wire drawing manager', 'cable manufacturing manager', 'wire mill superintendent',
+    'cable operations manager', 'wire and cable plant manager', 'cable plant superintendent',
+    'wire mill manager', 'cable manufacturing director',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -3615,6 +3630,17 @@ DANNY_ORG_KEYWORDS = [
     'cold storage facility', 'refrigerated warehouse', 'cold chain logistics',
     'refrigerated distribution', 'temperature controlled storage', 'cold storage company',
     'refrigerated food storage', 'cold storage logistics',
+    # Wire & Cable Manufacturing — Segment #213; Apollo org tags 'wire manufacturer', 'cable manufacturer',
+    # 'wire and cable manufacturer' surface wire/cable plant FMs precisely; 'wire drawing' catches
+    # specialized wire drawing operations distinctly; 'copper wire manufacturer' + 'aluminum wire manufacturer'
+    # catch the two primary material streams; 'power cable manufacturer' catches utility-grade cable plants;
+    # 'wire rope manufacturer' catches a distinct industrial segment (rigging/construction/marine cable);
+    # DISTINCT from electronics/PCB mfg (run 194 — 'semiconductor', 'pcb'), rubber/elastomer (run 216 —
+    # 'rubber manufacturer', 'elastomer manufacturer'), general mfg (run 118 — 'manufacturing');
+    # zero overlap with any existing DANNY_ORG_KEYWORDS; first pull Geauga+Portage (OVERDUE) (added 2026-07-21 run 219)
+    'wire manufacturer', 'cable manufacturer', 'wire and cable manufacturer',
+    'wire drawing', 'copper wire manufacturer', 'aluminum wire manufacturer',
+    'power cable manufacturer', 'wire rope manufacturer',
 ]
 
 CARLA_SEARCHES = [

@@ -1,10 +1,25 @@
 # Vera Cole — Open Issues Tracker
-*Run 218 | 2026-07-18 | Compact version — historical run entries archived in git history*
-*217 open (216 carry-forward + 1 new this run) | 124 resolved*
+*Run 219 | 2026-07-21 | Compact version — historical run entries archived in git history*
+*218 open (217 carry-forward + 1 new this run) | 124 resolved*
 
 > ⚠️ **FILE SIZE NOTE:** This file was 572KB as of Run 195 due to prepending a full header every run.
 > Rewritten as a compact rolling summary on Run 196. Full history is in git log.
 > Going forward: update the metrics line at top + append new issues only (no full run header dumps).
+
+---
+
+## NEW OPEN — Run 219 | 2026-07-21 — GEAUGA+PORTAGE 8 DAYS OVERDUE | DAY 40 APOLLO BLOCK | DAY 67 GAS/FLEET | 54+ DAYS OVERDUE
+
+### OPEN — Wire & Cable Manufacturing Facilities (Segment #213)
+- **First seen:** 2026-07-21 (Run 219)
+- **Description:** Segment #213 added to `workers/lead_pipeline.py` (DANNY_TITLES + DANNY_ORG_KEYWORDS) and `integrations/mixmax.py` (PROPERTY_MANAGER_TITLES). Titles: wire drawing manager, cable manufacturing manager, wire mill superintendent, cable operations manager, wire and cable plant manager, cable plant superintendent, wire mill manager, cable manufacturing director. Org keywords: wire manufacturer, cable manufacturer, wire and cable manufacturer, wire drawing, copper wire manufacturer, aluminum wire manufacturer, power cable manufacturer, wire rope manufacturer.
+- **Targets:** Prysmian Group NE Ohio (formerly General Cable, Highland Heights OH), TE Connectivity Lorain County, Superior Essex NE Ohio, Southwire Cleveland DC, Belden NE Ohio, CommScope, AFC Cable/Atkore NE Ohio, + 50+ wire harness sub-assembly suppliers to Ford Avon Lake + Honda East Liberty supply chain. Wire drawing lubricant residue + copper oxide dust (annealing) + plastic insulation pellet residue accumulate on production floors + exterior surfaces.
+- **Compliance angle:** OSHA 1910.22 + EPA RCRA (drawing compounds = petroleum-based hazardous waste documentation required) + OEPA NPDES SWPPP (drawing compound runoff + copper particulate discharge).
+- **Revenue:** $2,000–$5,000/facility; quarterly = $8K–$20K/year; zero competitors cold-calling wire/cable plant FMs.
+- **DISTINCT from:** electronics/PCB mfg (run 194), aerospace (run 183), general mfg (run 118), machine shops (run 184), rubber/elastomer (run 216 #210).
+- **First pull:** Next local Geauga+Portage run (OVERDUE — 8 days past July 13 window).
+- **Attempts:**
+  - 2026-07-21 (Run 219): Segment added to code. Awaiting first local pull.
 
 ---
 
@@ -344,31 +359,33 @@
 
 ## Active Open Issues — Summary Table
 
-*Updated Run 217 | July 16 — GEAUGA+PORTAGE 3 DAYS OVERDUE (July 13 MISSED) | Gas/Fleet blocker Day 62 | Apollo API BLOCKED Day 35 | Segment #211 Precast Concrete added | 36+ pipeline contacts 49+ days overdue*
+*Updated Run 219 | July 21 — GEAUGA+PORTAGE 8 DAYS OVERDUE (July 13 MISSED) | Gas/Fleet blocker Day 67 | Apollo API BLOCKED Day 40 | Segment #213 Wire & Cable Mfg added | 36+ pipeline contacts 54+ days overdue*
 
 | Issue # | Segment | Status | Expected Resolution |
 |---------|---------|--------|---------------------|
-| Geauga+Portage | **Geauga+Portage pull OVERDUE — July 13 window MISSED — only county never pulled** | 🚨 CRITICAL — 3 DAYS OVERDUE | Bradley: run `scripts/run_geauga_portage_both.command` locally TODAY. 211 segments queued. |
-| Overdue | **36+ pipeline contacts — 49+ days stale, NEVER contacted** | 🚨 CRITICAL Day 49 — 3 gas contacts + 33 contractors silent | Bradley: call Jim Lavigne (Certified Oil), Kevin Kayden (Speedway), Mark Elyden (truenorth) TODAY. Create Gas/Fleet sequences. |
-| Apollo | **Apollo API network block — 0 leads pulled 35+ days** | 🚨 CRITICAL Day 35 — ALL cloud lead gen at 0 since June 11 | Bradley: add `api.apollo.io` to network egress allowlist OR run all county pulls locally |
-| Gas Station | Gas Station & C-Store Mixmax sequence | 🚨 BLOCKER Day 62 — email copy ready: `gas_fleet_sequence_copy_2026-06-12.md` | Bradley action — paste copy + replace PENDING in mixmax.py |
-| Fleet Washing | Fleet Washing Mixmax sequence | 🚨 BLOCKER Day 62 — same as above; copy ready to paste | Bradley action — paste copy + replace PENDING in mixmax.py |
-| danny.md | File size bloat — 550KB+ exceeds tool read limit | Run 204–217 proposal; awaiting Bradley YES | Bradley approves → Vera archives in 1 run |
+| Geauga+Portage | **Geauga+Portage pull OVERDUE — July 13 window MISSED — only county never pulled** | 🚨 CRITICAL — 8 DAYS OVERDUE | Bradley: run `scripts/run_geauga_portage_both.command` locally TODAY. 213 segments queued. |
+| Overdue | **36+ pipeline contacts — 54+ days stale, NEVER contacted** | 🚨 CRITICAL Day 54 — 3 gas contacts + 33 contractors silent | Bradley: call Jim Lavigne (Certified Oil), Kevin Kayden (Speedway), Mark Elyden (truenorth) TODAY. Create Gas/Fleet sequences. |
+| Apollo | **Apollo API network block — 0 leads pulled 40+ days** | 🚨 CRITICAL Day 40 — ALL cloud lead gen at 0 since June 11 | Bradley: add `api.apollo.io` to network egress allowlist OR run all county pulls locally |
+| Gas Station | Gas Station & C-Store Mixmax sequence | 🚨 BLOCKER Day 67 — email copy ready: `gas_fleet_sequence_copy_2026-06-12.md` | Bradley action — paste copy + replace PENDING in mixmax.py |
+| Fleet Washing | Fleet Washing Mixmax sequence | 🚨 BLOCKER Day 67 — same as above; copy ready to paste | Bradley action — paste copy + replace PENDING in mixmax.py |
+| danny.md | File size bloat — 570KB+ exceeds tool read limit | Run 204–219 proposal; awaiting Bradley YES | Bradley approves → Vera archives in 1 run |
 | #193–#198 | Co-Packing, Semiconductors, Boat Repair, Breweries, FBOs, Nurseries | Code live — Lake pull ran June 15 (IF run locally) | Confirm contacts in Nina report locally |
 | #199–#207 | Portable Restroom, FQHCs, Steel Fab, Rec Centers, Colleges, DPW, Funeral, Modular, Stamping | Code live — Lorain pull was June 22 (IF run locally) | Confirm contacts in Nina report locally |
 | #208 | Powder Coating & Industrial Surface Finishing Shops | Code live (Run 214) — first pull Geauga+Portage OVERDUE | Confirm contacts on next local pull |
 | #209 | Plastic Injection Molding & Plastics Manufacturing | Code live (Run 215) — first pull Geauga+Portage OVERDUE | Confirm contacts on next local pull |
 | #210 | Rubber & Elastomer Manufacturing Facilities | Code live (Run 216) — first pull Geauga+Portage OVERDUE | Confirm contacts on next local pull |
-| #211 | Precast Concrete & Concrete Products Manufacturers | Code live (Run 217) — first pull Geauga+Portage OVERDUE | NEW — first pull overdue |
+| #211 | Precast Concrete & Concrete Products Manufacturers | Code live (Run 217) — first pull Geauga+Portage OVERDUE | Confirm contacts on next local pull |
+| #212 | Cold Storage Facilities & Refrigerated Warehouses | Code live (Run 218) — first pull Geauga+Portage OVERDUE | Confirm contacts on next local pull |
+| #213 | Wire & Cable Manufacturing Facilities | Code live (Run 219) — first pull Geauga+Portage OVERDUE | NEW — first pull overdue |
 | Relay | GitHub Actions relay: PAT needs `workflow` scope | 🚨 BLOCKED — definitive; YAML ready in `outputs/vera/github_action_vera_slack_relay.yaml` | Bradley: Option A — github.com/settings/tokens → add workflow scope. Option B — manually create in GitHub UI |
 
-**Total open: 216 | Total resolved: 124**
+**Total open: 218 | Total resolved: 124**
 
-> 🚨 **GEAUGA+PORTAGE — 3 DAYS OVERDUE (JULY 13 MISSED):** Only county never pulled. 211 segments queued. Run `scripts/run_geauga_portage_both.command` locally TODAY.
-> 🚨 **APOLLO BLOCKED — Day 35:** ALL cloud lead generation 0 since June 11. Run locally.
-> 🚨 **GAS/FLEET BLOCKER — Day 62:** 3 gas contacts (Jim Lavigne, Kevin Kayden, Mark Elyden) now 49+ days overdue with NO sequence. Email copy ready: `outputs/vera/gas_fleet_sequence_copy_2026-06-12.md`. 10 min in Mixmax UI.
-> 🚨 **36 CONTACTS OVERDUE — 49 DAYS:** These contractor leads from May have NEVER been reached out to.
-> 🚨 **DANNY.MD — 550KB+:** File exceeds tool read limit. Most recent segment instructions invisible to Danny. Approve archive to fix.
+> 🚨 **GEAUGA+PORTAGE — 8 DAYS OVERDUE (JULY 13 MISSED):** Only county never pulled. 213 segments queued. Run `scripts/run_geauga_portage_both.command` locally TODAY.
+> 🚨 **APOLLO BLOCKED — Day 40:** ALL cloud lead generation 0 since June 11. Run locally.
+> 🚨 **GAS/FLEET BLOCKER — Day 67:** 3 gas contacts (Jim Lavigne, Kevin Kayden, Mark Elyden) now 54+ days overdue with NO sequence. Email copy ready: `outputs/vera/gas_fleet_sequence_copy_2026-06-12.md`. 10 min in Mixmax UI.
+> 🚨 **36 CONTACTS OVERDUE — 54 DAYS:** These contractor leads from May have NEVER been reached out to.
+> 🚨 **DANNY.MD — 570KB+:** File exceeds tool read limit. Most recent segment instructions invisible to Danny. Approve archive to fix.
 
 ---
 

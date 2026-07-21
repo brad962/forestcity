@@ -1169,6 +1169,13 @@ PROPERTY_MANAGER_TITLES = [
     'refrigerated distribution manager', 'cold storage operations director',
     'cold chain facility director', 'temperature controlled warehouse manager',
     'refrigerated logistics manager',
+    # Wire & Cable Manufacturing Facilities — Segment #213 routing sync; all new wire/cable plant
+    # contacts correctly route to property_manager Mixmax sequence on enrollment;
+    # DISTINCT from electronics/PCB mfg (run 194), aerospace (run 183), general mfg (run 118),
+    # machine shops (run 184), rubber/elastomer (#210) (added 2026-07-21 run 219)
+    'wire drawing manager', 'cable manufacturing manager', 'wire mill superintendent',
+    'cable operations manager', 'wire and cable plant manager', 'cable plant superintendent',
+    'wire mill manager', 'cable manufacturing director',
 ]
 
 REALTOR_TITLES = [
