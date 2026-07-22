@@ -1176,6 +1176,13 @@ PROPERTY_MANAGER_TITLES = [
     'wire drawing manager', 'cable manufacturing manager', 'wire mill superintendent',
     'cable operations manager', 'wire and cable plant manager', 'cable plant superintendent',
     'wire mill manager', 'cable manufacturing director',
+    # Wood Products & Cabinet Manufacturing — Segment #214 routing sync; all new cabinet/millwork/woodworking
+    # contacts correctly route to property_manager Mixmax sequence on enrollment;
+    # DISTINCT from general manufacturing (run 118), machine shops (#184), plastics (#209);
+    # KraftMaid HQ is Middlefield OH (Geauga County) — highest-priority first pull county (added 2026-07-22 run 220)
+    'woodworking shop owner', 'cabinet manufacturing manager', 'millwork operations manager',
+    'custom furniture manufacturer', 'wood products plant manager', 'cabinet shop owner',
+    'woodworking operations manager', 'millwork plant manager',
 ]
 
 REALTOR_TITLES = [

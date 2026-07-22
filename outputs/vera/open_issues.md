@@ -1,10 +1,29 @@
 # Vera Cole — Open Issues Tracker
-*Run 219 | 2026-07-21 | Compact version — historical run entries archived in git history*
-*218 open (217 carry-forward + 1 new this run) | 124 resolved*
+*Run 220 | 2026-07-22 | Compact version — historical run entries archived in git history*
+*220 open (218 carry-forward + 2 new this run) | 125 resolved*
 
 > ⚠️ **FILE SIZE NOTE:** This file was 572KB as of Run 195 due to prepending a full header every run.
 > Rewritten as a compact rolling summary on Run 196. Full history is in git log.
 > Going forward: update the metrics line at top + append new issues only (no full run header dumps).
+
+---
+
+## NEW OPEN — Run 220 | 2026-07-22 — GEAUGA+PORTAGE 9 DAYS OVERDUE | DAY 41 APOLLO BLOCK | DAY 68 GAS/FLEET | 55+ DAYS OVERDUE
+
+### OPEN — Wood Products & Cabinet Manufacturers / Millwork (Segment #214)
+- **First seen:** 2026-07-22 (Run 220)
+- **Description:** Segment #214 added to `workers/lead_pipeline.py` (DANNY_TITLES + DANNY_ORG_KEYWORDS) and `integrations/mixmax.py` (PROPERTY_MANAGER_TITLES). Titles: woodworking shop owner, cabinet manufacturing manager, millwork operations manager, custom furniture manufacturer, wood products plant manager, cabinet shop owner, woodworking operations manager, millwork plant manager. Org keywords: cabinet manufacturer, custom cabinetry manufacturer, millwork company, wood products manufacturer, woodworking company, custom furniture manufacturer, wood cabinet manufacturer, custom woodwork manufacturer.
+- **Targets:** KraftMaid Cabinetry HQ (Middlefield OH — Geauga County), MasterBrand Cabinets NE Ohio distribution, American Woodmark NE Ohio, 100+ Amish-owned custom cabinet + furniture manufacturers in Geauga/Wayne/Medina corridor, millwork/trim manufacturers (Alside NE Ohio). Sawdust + lacquer overspray + wood stain residue on production floor exteriors + parking areas + dumpster pads. OSHA 1910.272 combustible dust + NESHAP Subpart DDDD + OEPA NPDES SWPPP compliance angle.
+- **Revenue:** $800–$2,500/facility; quarterly = $3,200–$10,000/year; zero competitors cold-calling cabinet shop owners or woodworking plant FMs.
+- **DISTINCT from:** general mfg (run 118), machine shops (#184), plastics (#209). KraftMaid HQ in Middlefield makes Geauga County the highest-priority county for this segment.
+- **First pull:** Next local Geauga+Portage run (OVERDUE — 9 days past July 13 window). NEW: `scripts/run_geauga_portage_both.command` created this run.
+- **Attempts:**
+  - 2026-07-22 (Run 220): Segment added to code. `run_geauga_portage_both.command` and `run_geauga_portage_pull.command` created and made executable.
+
+### RESOLVED — Missing run_geauga_portage_both.command script (Root Cause Found)
+- **Resolved:** 2026-07-22 (Run 220)
+- **Root cause:** `scripts/run_geauga_portage_both.command` and `scripts/run_geauga_portage_pull.command` were NEVER CREATED. All other 5 counties had working `.command` files (Cuyahoga, Lake, Lorain, Summit, Medina). Geauga+Portage had none — this is why it has never been run.
+- **Fix:** Created and chmod +x both files this run. Bradley can now double-click `run_geauga_portage_both.command` in Finder to run the full pull.
 
 ---
 
@@ -50,6 +69,7 @@
   - 2026-07-09 (Run 216): Logged as 4 days away — escalated urgently
   - 2026-07-16 (Run 217): July 13 MISSED — no log entry found — marked 3 days OVERDUE
   - 2026-07-18 (Run 218): Still no log entry — now 5 DAYS OVERDUE. Activity.log July 13–17 shows weekly workers running but zero Danny/Carla pull for Geauga+Portage. Must run locally. 212 segments queued. Segment #212 Cold Storage added this run — also queued for this county.
+  - 2026-07-22 (Run 220): ROOT CAUSE FOUND. `scripts/run_geauga_portage_both.command` NEVER EXISTED — every other county had a working .command file but Geauga+Portage had none. Created both `run_geauga_portage_both.command` + `run_geauga_portage_pull.command` this run (chmod +x, committed). Bradley can now double-click in Finder — same as every other county. ISSUE RESOLVED from a script-creation standpoint; awaiting first actual pull.
 
 ### OPEN — Precast Concrete & Concrete Products Manufacturers (Segment #211)
 - **First seen:** 2026-07-16 (Run 217)

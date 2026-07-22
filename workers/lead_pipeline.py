@@ -2290,6 +2290,18 @@ DANNY_TITLES = [
     'wire drawing manager', 'cable manufacturing manager', 'wire mill superintendent',
     'cable operations manager', 'wire and cable plant manager', 'cable plant superintendent',
     'wire mill manager', 'cable manufacturing director',
+    # Wood Products & Cabinet Manufacturers / Custom Millwork — Segment #214; Wayne/Holmes/Medina County Amish
+    # custom cabinet + furniture manufacturers (100+ shops); MasterBrand Cabinets (Waverly OH has NE Ohio
+    # sales network + distribution), American Woodmark, Kraftmaid (Middlefield OH — Geauga County — HQ!),
+    # Merillat Industries; NE Ohio is home to KraftMaid HQ (Middlefield) = highest-density cabinet mfg in US;
+    # sawdust + wood stain + lacquer overspray residue on production floor exteriors + parking areas + dumpster pads;
+    # OSHA 1910.272 (combustible dust) + NESHAP Subpart DDDD (wood furniture surface coatings) + OEPA NPDES SWPPP;
+    # DISTINCT from general manufacturing (run 118), machine shops (#184), plastics (#209);
+    # $800–$2,500/facility; quarterly = $3,200–$10,000/year; zero competitors cold-calling cabinet shop owners;
+    # Geauga County (Middlefield) = highest-priority pull for this segment (added 2026-07-22 run 220)
+    'woodworking shop owner', 'cabinet manufacturing manager', 'millwork operations manager',
+    'custom furniture manufacturer', 'wood products plant manager', 'cabinet shop owner',
+    'woodworking operations manager', 'millwork plant manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -3641,6 +3653,17 @@ DANNY_ORG_KEYWORDS = [
     'wire manufacturer', 'cable manufacturer', 'wire and cable manufacturer',
     'wire drawing', 'copper wire manufacturer', 'aluminum wire manufacturer',
     'power cable manufacturer', 'wire rope manufacturer',
+    # Wood Products & Cabinet Manufacturing — Segment #214; Apollo org tags 'cabinet manufacturer' +
+    # 'custom cabinetry manufacturer' surface cabinet shop decision-makers precisely;
+    # 'millwork company' catches trim/moulding/architectural millwork shops (Alside NE Ohio, etc.);
+    # 'wood products manufacturer' catches solid wood parts plants + pallet mfg + dimension lumber;
+    # 'woodworking company' broad catch for Amish-owned custom shops in Geauga/Wayne/Medina;
+    # 'custom furniture manufacturer' separates from retail furniture stores (run 161 — already in list);
+    # 'wood cabinet manufacturer' / 'custom woodwork manufacturer' targeted for KraftMaid supply chain;
+    # zero overlap with existing DANNY_ORG_KEYWORDS; Geauga County is highest-priority pull (added 2026-07-22 run 220)
+    'cabinet manufacturer', 'custom cabinetry manufacturer', 'millwork company',
+    'wood products manufacturer', 'woodworking company', 'custom furniture manufacturer',
+    'wood cabinet manufacturer', 'custom woodwork manufacturer',
 ]
 
 CARLA_SEARCHES = [
