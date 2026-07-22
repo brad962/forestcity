@@ -1924,3 +1924,6 @@
 [2026-07-22 12:33] Nina | Workiz daily report - Power Washing jobs | Workiz API unavailable — run locally. | Done
 [2026-07-22 12:33] Nina | Daily Reports (Hot Leads + Workiz) — Mailchimp/Mixmax API unavailable (proxy 403); 0 hot leads, 36 overdue pipeline contacts. Workiz API unavailable (proxy 403); Power Washing jobs require local run. Both reports saved to outputs/nina/. | hot_leads_2026-07-22.md + workiz_daily_2026-07-22.md | Done
 [2026-07-22 08:00] Office | Daily morning briefing | morning_2026-07-22.md | Done
+[2026-07-22 12:34] Danny | Apollo pull — Apollo returned 0 people — API may be blocked or rate limited (Cuyahoga) | none | Done
+[2026-07-22 12:34] Carla | Apollo pull — Apollo returned 0 people — API may be blocked or rate limited | none | Done
+[2026-07-22 12:35] Danny + Carla | Daily Lead Pull | outputs/danny/lead_pull_2026-07-22.md | Done (0 leads — Apollo API blocked Day 42 in cloud; .env missing)
