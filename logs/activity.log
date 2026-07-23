@@ -1943,4 +1943,5 @@
 [2026-07-23 12:33] Nina | Daily hot leads report — 0 replied, 0 hot, 0 due today, 0 due tomorrow, 0 stale estimates | hot_leads_2026-07-23.md | Done
 [2026-07-23 12:33] Nina | Workiz daily report - Power Washing jobs | Workiz API unavailable — run locally. | Done
 [2026-07-23 12:33] Nina | Daily Reports (Hot Leads + Workiz) — Mailchimp/Mixmax API unavailable (proxy 403); 0 hot leads, 36 overdue pipeline contacts. Workiz API unavailable (proxy 403); Power Washing jobs require local run. Both reports saved to outputs/nina/. | hot_leads_2026-07-23.md + workiz_daily_2026-07-23.md | Done
+[2026-07-23 12:35] Danny + Carla | Daily Lead Pull | Pipeline ran — 0 leads pulled (Apollo API: no .env credentials in remote session; API block Day 42 ongoing per prior Vera logs) | outputs/danny/lead_pull_2026-07-23.md | Done
 [2026-07-23 12:35] Office | Daily morning briefing | morning_2026-07-23.md | Done
