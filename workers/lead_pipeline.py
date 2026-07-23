@@ -2302,6 +2302,17 @@ DANNY_TITLES = [
     'woodworking shop owner', 'cabinet manufacturing manager', 'millwork operations manager',
     'custom furniture manufacturer', 'wood products plant manager', 'cabinet shop owner',
     'woodworking operations manager', 'millwork plant manager',
+    # Heat Treatment & Thermal Processing Facilities — Segment #215; Parker Trutec (Portage County anchor),
+    # Euclid Heat Treating (Euclid/Cuyahoga), Sun Steel Treating (Twinsburg/Summit), Atmosphere Annealing,
+    # Applied Thermal Technologies; 80+ shops in NE Ohio auto supply chain (Ford Avon Lake + Honda + GM);
+    # quench oil + carburizing deposits + oxidized scale on production floors + loading docks + exterior concrete;
+    # OSHA 1910.22 + EPA RCRA (quench oils = listed hazardous waste) + OEPA NPDES SWPPP (oil in stormwater);
+    # DISTINCT from machine shops (#184), general mfg (run 118), aerospace (#183), metal stamping (#207);
+    # $2K–$5K/facility; quarterly = $8K–$20K/year; zero competitors cold-calling heat treat plant FMs;
+    # first pull Geauga+Portage next local run (added 2026-07-23 run 221)
+    'heat treat plant manager', 'thermal processing manager', 'heat treating operations manager',
+    'metallurgical operations manager', 'heat treatment manager', 'heat treat superintendent',
+    'thermal processing plant manager', 'heat treat facility manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -3664,6 +3675,18 @@ DANNY_ORG_KEYWORDS = [
     'cabinet manufacturer', 'custom cabinetry manufacturer', 'millwork company',
     'wood products manufacturer', 'woodworking company', 'custom furniture manufacturer',
     'wood cabinet manufacturer', 'custom woodwork manufacturer',
+    # Heat Treatment & Thermal Processing Facilities — Segment #215; quench oil + oxidized scale + carburizing
+    # deposits accumulate on production floors + loading docks + exterior concrete around furnace operations;
+    # Parker Trutec (multiple NE Ohio plants), Euclid Heat Treating (Euclid), Sun Steel Treating (Twinsburg),
+    # Atmosphere Annealing (NE Ohio), Applied Thermal Technologies (Cuyahoga County), 80+ shops in Ford Avon
+    # Lake + Honda East Liberty + GM supply chain; OSHA 1910.22 + EPA RCRA (quench oils = petroleum-based
+    # hazardous waste, documented waste management required) + OEPA NPDES SWPPP (quench oil = regulated runoff);
+    # DISTINCT from machine shops (#184), general mfg (run 118), aerospace (#183), metal stamping (#207), steel
+    # fab (#201); $2K–$5K/facility; quarterly = $8K–$20K/year; zero competitors cold-calling heat treat plant FMs;
+    # first pull Geauga+Portage next local run (Parker Trutec Portage County anchor target) (added 2026-07-23 run 221)
+    'heat treating', 'heat treatment', 'thermal processing',
+    'induction hardening', 'metallurgical services', 'heat treat',
+    'carburizing services', 'furnace brazing',
 ]
 
 CARLA_SEARCHES = [

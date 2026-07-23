@@ -1183,6 +1183,13 @@ PROPERTY_MANAGER_TITLES = [
     'woodworking shop owner', 'cabinet manufacturing manager', 'millwork operations manager',
     'custom furniture manufacturer', 'wood products plant manager', 'cabinet shop owner',
     'woodworking operations manager', 'millwork plant manager',
+    # Heat Treatment & Thermal Processing Facilities — Segment #215 routing sync; all new heat treat/thermal
+    # processing contacts correctly route to property_manager Mixmax sequence on enrollment;
+    # DISTINCT from machine shops (#184), general mfg (run 118), aerospace (#183), metal stamping (#207);
+    # Parker Trutec (Portage County), Euclid Heat Treating, Sun Steel Treating (Twinsburg) (added 2026-07-23 run 221)
+    'heat treat plant manager', 'thermal processing manager', 'heat treating operations manager',
+    'metallurgical operations manager', 'heat treatment manager', 'heat treat superintendent',
+    'thermal processing plant manager', 'heat treat facility manager',
 ]
 
 REALTOR_TITLES = [

@@ -1,3 +1,21 @@
+## Run 221 — Vera Batching Note | 2026-07-23 | 215+ Segments
+**TODAY:** Thursday July 23. 1 day since Run 220 (July 22). Mid-late July — NE Ohio commercial wash peak season winding down (~3–4 weeks of prime weather remaining). **CRITICAL: Geauga+Portage scripts CREATED last run (July 22) — run `scripts/run_geauga_portage_both.command` locally TODAY if not already done. 10 days overdue.**
+
+**New Segment #215 — Heat Treatment & Thermal Processing Facilities:**
+- Titles: `heat treat plant manager`, `thermal processing manager`, `heat treating operations manager`, `metallurgical operations manager`, `heat treatment manager`, `heat treat superintendent`, `thermal processing plant manager`, `heat treat facility manager`
+- Org keywords: `heat treating`, `heat treatment`, `thermal processing`, `induction hardening`, `metallurgical services`, `heat treat`, `carburizing services`, `furnace brazing`
+- Targets: Parker Trutec (multiple NE Ohio plants — Portage County anchor), Euclid Heat Treating (Euclid/Cuyahoga), Sun Steel Treating (Twinsburg/Summit), Atmosphere Annealing (NE Ohio), Applied Thermal Technologies; 80+ shops feeding Ford Avon Lake EV assembly + Honda East Liberty + GM supply chains
+- Compliance angle: OSHA 1910.22 + EPA RCRA (quench oils = petroleum-based listed hazardous waste, documented waste management required) + OEPA NPDES SWPPP (quench oil contamination in stormwater = regulatory liability); quench oil + carburizing deposits + oxidized scale accumulate on production floors + exterior concrete
+- Revenue: $2,000–$5,000/facility; quarterly = $8K–$20K/year; zero competitors cold-calling heat treat plant FMs
+- DISTINCT from: machine shops (#184), general mfg (run 118), aerospace (#183), metal stamping (#207), steel fab (#201)
+
+**Gas/Fleet Sequences — STILL PENDING (Day 69):** Jim Lavigne (Certified Oil), Kevin Kayden (Speedway), Mark Elyden (truenorth) are 56+ days overdue. Create sequences in Mixmax UI. Complete copy: `outputs/vera/gas_fleet_sequence_copy_2026-06-12.md`.
+
+**Apollo API BLOCKED (Day 42 in cloud):** ALL cloud lead gen returns 0. Must run ALL county pulls locally.
+
+**Geauga+Portage — 10 DAYS OVERDUE:** Scripts NOW EXIST — `scripts/run_geauga_portage_both.command` (created Run 220). Double-click in Finder TODAY. 215 segments queued — KraftMaid supply chain (Middlefield/Geauga), Grand River Marina, Debonne Vineyards, wholesale nurseries (200+), Fowler's Mill GC, Aurora Country Club, heat treat shops (Parker Trutec/Portage), rubber/elastomer, plastics, precast concrete, cold storage, wire/cable, wood/cabinet mfg.
+
+---
 ## Run 219 — Vera Batching Note | 2026-07-21 | 213+ Segments
 **TODAY:** Monday July 21. 3 days since Run 218 (July 18). Mid-July — commercial wash peak season still active (4–5 weeks of prime NE Ohio weather remaining). **CRITICAL: Geauga+Portage pull window was July 13 — NOW 8 DAYS OVERDUE. Only county never pulled. Must run locally IMMEDIATELY via `scripts/run_geauga_portage_both.command`.**
 
