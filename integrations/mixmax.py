@@ -1190,6 +1190,13 @@ PROPERTY_MANAGER_TITLES = [
     'heat treat plant manager', 'thermal processing manager', 'heat treating operations manager',
     'metallurgical operations manager', 'heat treatment manager', 'heat treat superintendent',
     'thermal processing plant manager', 'heat treat facility manager',
+    # Metal Plating & Surface Finishing Facilities — Segment #216 routing sync; all new electroplating/metal
+    # finishing contacts correctly route to property_manager Mixmax sequence on enrollment;
+    # DISTINCT from machine shops (#184), aerospace (#183), metal stamping (#207), heat treatment (#215);
+    # Rotek Inc (Stow/Summit), Precision Surface Finishing (Euclid), 100+ NE Ohio job shops (added 2026-07-24 run 222)
+    'electroplating plant manager', 'metal plating operations manager', 'plating shop manager',
+    'metal finishing manager', 'plating facility manager', 'electroplating operations manager',
+    'metal plating superintendent', 'surface finishing manager',
 ]
 
 REALTOR_TITLES = [

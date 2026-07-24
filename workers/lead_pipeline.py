@@ -2313,6 +2313,18 @@ DANNY_TITLES = [
     'heat treat plant manager', 'thermal processing manager', 'heat treating operations manager',
     'metallurgical operations manager', 'heat treatment manager', 'heat treat superintendent',
     'thermal processing plant manager', 'heat treat facility manager',
+    # Metal Plating & Surface Finishing Facilities — Segment #216; Rotek Inc (Stow/Summit County), Precision
+    # Surface Finishing (Euclid/Cuyahoga), Advanced Plating Tech, Pioneer Metal Finishing (NE Ohio supply chain),
+    # 100+ job shops in Ford Avon Lake EV + Honda + GM auto supply chain; hexavalent chrome (Cr6) + sulfuric acid
+    # + cyanide plating residue + rinse tank overflow accumulate on production floors + loading docks + exterior
+    # concrete; OSHA 1910.94 (electroplating) + EPA RCRA F006 (electroplating wastewater = listed hazardous waste)
+    # + OEPA NPDES SWPPP (heavy metal runoff = regulatory liability); DISTINCT from machine shops (#184), aerospace
+    # (#183), metal stamping (#207), steel service centers (#172), heat treatment (#215), general mfg (run 118);
+    # $2K–$5K/facility; quarterly = $8K–$20K/year; zero competitors cold-calling plating shop FMs;
+    # first pull Geauga+Portage + Cuyahoga next local run (added 2026-07-24 run 222)
+    'electroplating plant manager', 'metal plating operations manager', 'plating shop manager',
+    'metal finishing manager', 'plating facility manager', 'electroplating operations manager',
+    'metal plating superintendent', 'surface finishing manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -3687,6 +3699,11 @@ DANNY_ORG_KEYWORDS = [
     'heat treating', 'heat treatment', 'thermal processing',
     'induction hardening', 'metallurgical services', 'heat treat',
     'carburizing services', 'furnace brazing',
+    # Metal Plating & Surface Finishing Facilities — Segment #216; Cr6 + cyanide + acid rinse residue
+    # on exterior concrete + loading docks; EPA RCRA F006 + OEPA NPDES SWPPP compliance angle;
+    # zero competitors cold-calling plating shop FMs (added 2026-07-24 run 222)
+    'metal plating', 'electroplating', 'metal finishing', 'plating shop',
+    'anodizing company', 'metal plating company', 'plating facility', 'electroplating company',
 ]
 
 CARLA_SEARCHES = [
