@@ -1965,3 +1965,4 @@
 [2026-07-24 07:17] Vera | Run 222 — Updated pending_slack_messages.md + open_issues.md + danny.md + activity.log to reflect confirmed PAT scope diagnosis. All other 8 file changes (Segment #216 + Geauga script updates) pushed to main. | outputs/vera/ | Done
 [2026-07-24 12:33] Nina | Daily hot leads report — 0 replied, 0 hot, 0 due today, 0 due tomorrow, 0 stale estimates | hot_leads_2026-07-24.md | Done
 [2026-07-24 12:33] Nina | Workiz daily report - Power Washing jobs | Workiz API unavailable — run locally. | Done
+[2026-07-24 12:33:51] Nina | Daily Reports (Hot Leads + Workiz) — Hot leads: 36 overdue pipeline items (Mixmax API unavailable in cloud), Workiz: API unavailable (403)
