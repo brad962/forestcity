@@ -1197,6 +1197,14 @@ PROPERTY_MANAGER_TITLES = [
     'electroplating plant manager', 'metal plating operations manager', 'plating shop manager',
     'metal finishing manager', 'plating facility manager', 'electroplating operations manager',
     'metal plating superintendent', 'surface finishing manager',
+    # Die Casting & Metal Casting Foundries — Segment #217 routing sync; all new die casting / foundry
+    # contacts correctly route to property_manager Mixmax sequence on enrollment;
+    # DISTINCT from machine shops (#184), heat treatment (#215), metal plating (#216), metal stamping (#207);
+    # General Aluminum Mfg (Ravenna/Portage), Joseph Industries (Ravenna), Die-Matic Corp (Brook Park),
+    # Shiloh Industries/Sound Holdings (Valley City + Brooklyn Heights) (added 2026-07-25 run 223)
+    'die casting plant manager', 'foundry manager', 'casting operations manager',
+    'metal foundry manager', 'die casting superintendent', 'foundry plant manager',
+    'casting plant manager', 'die casting operations manager',
 ]
 
 REALTOR_TITLES = [

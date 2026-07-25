@@ -2325,6 +2325,22 @@ DANNY_TITLES = [
     'electroplating plant manager', 'metal plating operations manager', 'plating shop manager',
     'metal finishing manager', 'plating facility manager', 'electroplating operations manager',
     'metal plating superintendent', 'surface finishing manager',
+    # Die Casting & Metal Casting Foundries — Segment #217; die release agents + graphite lubricants
+    # + aluminum oxide scaling + quench water contamination accumulate heavily on exterior floors, docks,
+    # and apron areas around casting presses; General Aluminum Mfg (Ravenna/Portage County — anchor for
+    # Geauga+Portage pull), Joseph Industries (Ravenna/Portage — gray iron foundry), Die-Matic Corp
+    # (Brook Park/Cuyahoga — aluminum die casting), Shiloh Industries/Sound Holdings (Valley City/Medina,
+    # Brooklyn Heights/Cuyahoga — Tier 1 Ford/GM aluminum castings), Hitchiner Mfg (investment casting),
+    # 80+ NE Ohio die casting + foundry shops in Ford Avon Lake EV + Honda East Liberty + GM supply chain;
+    # OSHA 1910.1025 (lead casting) + 1910.22 + EPA RCRA (foundry sand disposal documentation required)
+    # + OEPA NPDES SWPPP (cooling water + release agent runoff = regulated stormwater event);
+    # DISTINCT from machine shops (#184), heat treatment (#215), metal plating (#216), metal stamping (#207),
+    # aerospace (#183), general mfg (run 118); $3K–$8K/facility; quarterly = $12K–$32K/year;
+    # zero competitors cold-calling die casting plant managers; first pull Geauga+Portage OVERDUE
+    # (General Aluminum + Joseph Industries Ravenna/Portage = anchor targets) (added 2026-07-25 run 223)
+    'die casting plant manager', 'foundry manager', 'casting operations manager',
+    'metal foundry manager', 'die casting superintendent', 'foundry plant manager',
+    'casting plant manager', 'die casting operations manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -3704,6 +3720,19 @@ DANNY_ORG_KEYWORDS = [
     # zero competitors cold-calling plating shop FMs (added 2026-07-24 run 222)
     'metal plating', 'electroplating', 'metal finishing', 'plating shop',
     'anodizing company', 'metal plating company', 'plating facility', 'electroplating company',
+    # Die Casting & Metal Casting Foundries — Segment #217; Apollo org tags 'die casting' + 'metal foundry'
+    # surface die casting plant FMs with high precision; 'iron foundry' / 'aluminum foundry' / 'zinc die casting'
+    # catch the three dominant NE Ohio casting material streams; 'sand casting foundry' catches jobbing
+    # foundries (numerous in Summit/Portage); 'investment casting' catches precision casting shops (aerospace
+    # + auto + medical supply chain); 'gray iron foundry' specifically catches Joseph Industries (Ravenna OH);
+    # DISTINCT from machine shops (run 184 — 'machine shop', 'cnc machining'), heat treatment (run 221 —
+    # 'heat treating', 'heat treatment'), metal plating (run 222 — 'metal plating', 'electroplating'),
+    # metal stamping (run 213 — 'metal stamping'), general mfg (run 118 — 'manufacturing');
+    # zero overlap with any existing DANNY_ORG_KEYWORDS; General Aluminum Mfg (Ravenna/Portage) + Joseph
+    # Industries (Ravenna) = Geauga+Portage anchor targets for overdue pull (added 2026-07-25 run 223)
+    'die casting', 'metal foundry', 'iron foundry', 'aluminum foundry',
+    'zinc die casting', 'aluminum die casting', 'sand casting foundry',
+    'investment casting', 'gray iron foundry',
 ]
 
 CARLA_SEARCHES = [

@@ -1,3 +1,21 @@
+## Run 223 — Vera Batching Note | 2026-07-25 | 217+ Segments
+**TODAY:** Friday July 25. 1 day since Run 222 (July 24). Late July — NE Ohio commercial wash peak season final weeks (~1–2 weeks of prime weather remaining — urgency high). **CRITICAL: Geauga+Portage STILL not pulled. 12 days overdue. Run `scripts/run_geauga_portage_both.command` in Finder RIGHT NOW — unattended 12–20 min. 217 segments queued.**
+
+**New Segment #217 — Die Casting & Metal Casting Foundries:**
+- Titles: `die casting plant manager`, `foundry manager`, `casting operations manager`, `metal foundry manager`, `die casting superintendent`, `foundry plant manager`, `casting plant manager`, `die casting operations manager`
+- Org keywords: `die casting`, `metal foundry`, `iron foundry`, `aluminum foundry`, `zinc die casting`, `aluminum die casting`, `sand casting foundry`, `investment casting`, `gray iron foundry`
+- Targets: General Aluminum Mfg (Ravenna/Portage County — anchor Geauga+Portage target), Joseph Industries (Ravenna OH — gray iron foundry), Die-Matic Corp (Brook Park/Cuyahoga — aluminum die castings), Shiloh Industries/Sound Holdings (Valley City/Medina + Brooklyn Heights/Cuyahoga — Tier 1 Ford/GM aluminum castings), Hitchiner Manufacturing (investment casting), 80+ NE Ohio die casting + foundry shops in Ford Avon Lake EV + Honda East Liberty + GM supply chain
+- Compliance angle: OSHA 1910.1025 (lead casting) + 1910.22 + EPA RCRA (foundry sand disposal documentation required) + OEPA NPDES SWPPP (cooling water + release agent runoff = regulated stormwater event); die release agents + graphite lubricants + aluminum oxide scaling + quench water contamination accumulate heavily on exterior floors, docks, and apron areas around casting presses
+- Revenue: $3,000–$8,000/facility; quarterly = $12K–$32K/year; die casting plants = among the dirtiest industrial facilities; zero competitors cold-calling die casting plant managers
+- DISTINCT from: machine shops (#184), heat treatment (#215), metal plating (#216), metal stamping (#207), aerospace (#183), general mfg (run 118)
+
+**Gas/Fleet Sequences — STILL PENDING (Day 71):** Jim Lavigne (Certified Oil), Kevin Kayden (Speedway), Mark Elyden (truenorth) = 58+ days overdue. 10 min fix: app.mixmax.com → Sequences → New. Complete copy: `outputs/vera/gas_fleet_sequence_copy_2026-06-12.md`.
+
+**Apollo API BLOCKED (Day 44 in cloud):** ALL cloud lead gen returns 0. Must run ALL county pulls locally via .command files.
+
+**Geauga+Portage — 12 DAYS OVERDUE:** Scripts exist. Double-click `scripts/run_geauga_portage_both.command` in Finder. 217 segments queued — KraftMaid supply chain, Grand River Marina, Debonne/Laurello Vineyards, wholesale nurseries (200+), Fowler's Mill GC, Aurora CC, Parker Trutec heat treat, Rotek metal plating, General Aluminum + Joseph Industries die casting, rubber/elastomer, plastics, precast concrete, cold storage, wire/cable, wood/cabinet.
+
+---
 ## Run 222 — Vera Batching Note | 2026-07-24 | 216+ Segments
 **TODAY:** Thursday July 24. 1 day since Run 221 (July 23). Late July — NE Ohio commercial wash peak season final weeks (~2–3 weeks of prime weather remaining). **CRITICAL: Geauga+Portage still not pulled. 11 days overdue. Run `scripts/run_geauga_portage_both.command` in Finder RIGHT NOW — unattended 12–20 min.**
 

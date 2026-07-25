@@ -1,10 +1,25 @@
 # Vera Cole — Open Issues Tracker
-*Run 222 | 2026-07-24 | Compact version — historical run entries archived in git history*
-*222 open (221 carry-forward + 1 new this run) | 126 resolved*
+*Run 223 | 2026-07-25 | Compact version — historical run entries archived in git history*
+*223 open (222 carry-forward + 1 new this run) | 126 resolved*
 
 > ⚠️ **FILE SIZE NOTE:** This file was 572KB as of Run 195 due to prepending a full header every run.
 > Rewritten as a compact rolling summary on Run 196. Full history is in git log.
 > Going forward: update the metrics line at top + append new issues only (no full run header dumps).
+
+---
+
+## NEW OPEN — Run 223 | 2026-07-25 — GEAUGA+PORTAGE 12 DAYS OVERDUE (SCRIPTS READY) | DAY 44 APOLLO BLOCK | DAY 71 GAS/FLEET | 58+ DAYS OVERDUE
+
+### OPEN — Die Casting & Metal Casting Foundries (Segment #217)
+- **First seen:** 2026-07-25 (Run 223)
+- **Description:** Segment #217 added to `workers/lead_pipeline.py` (DANNY_TITLES + DANNY_ORG_KEYWORDS) and `integrations/mixmax.py` (PROPERTY_MANAGER_TITLES). Titles: die casting plant manager, foundry manager, casting operations manager, metal foundry manager, die casting superintendent, foundry plant manager, casting plant manager, die casting operations manager. Org keywords: die casting, metal foundry, iron foundry, aluminum foundry, zinc die casting, aluminum die casting, sand casting foundry, investment casting, gray iron foundry.
+- **Targets:** General Aluminum Mfg (Ravenna/Portage County — anchor Geauga+Portage target), Joseph Industries (Ravenna OH — gray iron foundry), Die-Matic Corp (Brook Park/Cuyahoga — aluminum die castings), Shiloh Industries/Sound Holdings (Valley City/Medina + Brooklyn Heights/Cuyahoga — Tier 1 Ford/GM aluminum castings), Hitchiner Manufacturing (investment casting), 80+ NE Ohio die casting + foundry shops in Ford Avon Lake EV + Honda East Liberty + GM supply chain.
+- **Compliance angle:** OSHA 1910.1025 (lead casting) + 1910.22 + EPA RCRA (foundry sand = listed hazardous waste, documented disposal required) + OEPA NPDES SWPPP (cooling water + release agent runoff = regulated stormwater event). Die release agents + graphite lubricants + aluminum oxide scaling + quench water contamination accumulate heavily on exterior floors, docks, and apron areas around casting presses.
+- **Revenue:** $3,000–$8,000/facility; quarterly = $12K–$32K/year; die casting plants = among the dirtiest industrial facilities in NE Ohio; zero competitors cold-calling die casting plant managers.
+- **DISTINCT from:** machine shops (#184), heat treatment (#215), metal plating (#216), metal stamping (#207), aerospace (#183), general mfg (run 118).
+- **First pull:** Geauga+Portage OVERDUE (General Aluminum + Joseph Industries Ravenna/Portage = anchor targets); also Cuyahoga (Die-Matic Corp Brook Park).
+- **Attempts:**
+  - 2026-07-25 (Run 223): Segment added to code. Awaiting first local pull.
 
 ---
 
@@ -422,7 +437,7 @@
 
 ## Active Open Issues — Summary Table
 
-*Updated Run 221 | July 23 — GEAUGA+PORTAGE 10 DAYS OVERDUE (SCRIPTS READY — RUN TODAY) | Gas/Fleet blocker Day 69 | Apollo API BLOCKED Day 42 | Segment #215 Heat Treatment & Thermal Processing added | 36+ pipeline contacts 56+ days overdue*
+*Updated Run 223 | July 25 — GEAUGA+PORTAGE 12 DAYS OVERDUE (SCRIPTS READY — RUN TODAY) | Gas/Fleet blocker Day 71 | Apollo API BLOCKED Day 44 | Segment #217 Die Casting & Metal Casting Foundries added | 36+ pipeline contacts 58+ days overdue*
 
 | Issue # | Segment | Status | Expected Resolution |
 |---------|---------|--------|---------------------|
@@ -442,15 +457,16 @@
 | #213 | Wire & Cable Manufacturing Facilities | Code live (Run 219) — first pull Geauga+Portage OVERDUE | Confirm contacts on next local pull |
 | #214 | Wood Products & Cabinet Manufacturers / Millwork | Code live (Run 220) — first pull Geauga+Portage OVERDUE | Confirm contacts on next local pull |
 | #215 | Heat Treatment & Thermal Processing Facilities | Code live (Run 221) — first pull Geauga+Portage OVERDUE | NEW — first pull overdue |
+| #217 | Die Casting & Metal Casting Foundries | Code live (Run 223) — first pull Geauga+Portage OVERDUE | NEW Run 223 — General Aluminum + Joseph Industries Ravenna/Portage = anchor targets |
 | Relay | GitHub Actions relay: PAT needs `workflow` scope | 🚨 BLOCKED — definitive; YAML ready in `outputs/vera/github_action_vera_slack_relay.yaml` | Bradley: Option A — github.com/settings/tokens → add workflow scope. Option B — manually create in GitHub UI |
 
-**Total open: 221 | Total resolved: 125**
+**Total open: 223 | Total resolved: 126**
 
-> 🚨 **GEAUGA+PORTAGE — 10 DAYS OVERDUE:** Scripts created Run 220. `run_geauga_portage_both.command` is IN Finder NOW. 215 segments queued including KraftMaid supply chain, Grand River Marina, Debonne Vineyards, 200+ wholesale nurseries, heat treat shops (Parker Trutec), rubber/elastomer, plastics, precast, cold storage, wire/cable, wood/cabinet. Double-click TODAY.
-> 🚨 **APOLLO BLOCKED — Day 42:** ALL cloud lead generation 0 since June 11. Run locally.
-> 🚨 **GAS/FLEET BLOCKER — Day 69:** 3 gas contacts (Jim Lavigne, Kevin Kayden, Mark Elyden) now 56+ days overdue with NO sequence. Email copy ready: `outputs/vera/gas_fleet_sequence_copy_2026-06-12.md`. 10 min in Mixmax UI.
-> 🚨 **36 CONTACTS OVERDUE — 56 DAYS:** These contractor leads from May have NEVER been reached out to.
-> 🚨 **DANNY.MD — 580KB+:** File exceeds tool read limit. Most recent segment instructions invisible to Danny. Approve archive to fix.
+> 🚨 **GEAUGA+PORTAGE — 12 DAYS OVERDUE:** Scripts created Run 220. `run_geauga_portage_both.command` is IN Finder NOW. 217 segments queued including KraftMaid supply chain, Grand River Marina, Debonne Vineyards, 200+ wholesale nurseries, heat treat shops (Parker Trutec), Rotek metal plating, General Aluminum + Joseph Industries die casting, rubber/elastomer, plastics, precast, cold storage, wire/cable, wood/cabinet. Double-click TODAY.
+> 🚨 **APOLLO BLOCKED — Day 44:** ALL cloud lead generation 0 since June 11. Run locally.
+> 🚨 **GAS/FLEET BLOCKER — Day 71:** 3 gas contacts (Jim Lavigne, Kevin Kayden, Mark Elyden) now 58+ days overdue with NO sequence. Email copy ready: `outputs/vera/gas_fleet_sequence_copy_2026-06-12.md`. 10 min in Mixmax UI.
+> 🚨 **36 CONTACTS OVERDUE — 58 DAYS:** These contractor leads from May have NEVER been reached out to.
+> 🚨 **DANNY.MD — 590KB+:** File exceeds tool read limit. Most recent segment instructions invisible to Danny. Approve archive to fix.
 
 ---
 
