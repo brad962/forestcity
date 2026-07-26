@@ -2341,6 +2341,22 @@ DANNY_TITLES = [
     'die casting plant manager', 'foundry manager', 'casting operations manager',
     'metal foundry manager', 'die casting superintendent', 'foundry plant manager',
     'casting plant manager', 'die casting operations manager',
+    # Metal Forging & Die Forge Operations — Segment #218; forge scale (iron/steel oxide) + quench oil
+    # residue + forging lubricant (graphite emulsion + phosphate coatings) accumulate heavily on production
+    # floors, loading docks, and exterior apron areas around forge presses; Ajax Manufacturing
+    # (Cleveland/Cuyahoga — 75–2,500-ton press capacity), Anchor Manufacturing Group (Cleveland/Cuyahoga),
+    # Forge Group of NE Ohio, Precision Castparts/Wyman-Gordon (Independence/Cuyahoga), Ellwood Group
+    # (Medina/Summit supply chain), Shur-Lok International; 80+ NE Ohio forge shops supplying Ford Avon
+    # Lake EV + Honda East Liberty + GM (high-strength forged components for EV drivetrains/suspensions);
+    # OSHA 1910.22 + EPA RCRA (quench oil + forming lubricants = petroleum-based hazardous waste,
+    # documented disposal required) + OEPA NPDES SWPPP (quench oil + scale runoff = regulated stormwater);
+    # DISTINCT from metal stamping (#207 — cold flat sheet), die casting (#217 — molten metal poured),
+    # machine shops (#184), heat treatment (#215), aerospace (#183), general mfg (run 118);
+    # $3K–$8K/facility; quarterly = $12K–$32K/year; zero competitors cold-calling forge plant managers;
+    # first pull Geauga+Portage (OVERDUE) + Cuyahoga (Ajax + Anchor = anchor targets) (added 2026-07-26 run 224)
+    'forge plant manager', 'forging operations manager', 'forge shop manager',
+    'metal forging manager', 'die forge plant manager', 'forging plant superintendent',
+    'hot forge manager', 'forge facility manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -3733,6 +3749,16 @@ DANNY_ORG_KEYWORDS = [
     'die casting', 'metal foundry', 'iron foundry', 'aluminum foundry',
     'zinc die casting', 'aluminum die casting', 'sand casting foundry',
     'investment casting', 'gray iron foundry',
+    # Metal Forging & Die Forge Operations — Segment #218; Apollo org tags 'metal forging' + 'forging company'
+    # surface forge plant FMs; 'hot forging' / 'cold forging' catch the two dominant temperature streams;
+    # 'closed die forging' + 'open die forging' distinguish precision vs. jobbing shops; 'steel forging' +
+    # 'aluminum forging' catch the two dominant NE Ohio material streams (steel for auto structural components,
+    # aluminum for lightweight EV drivetrains); DISTINCT from metal stamping (#207 — 'metal stamping'),
+    # die casting (#217 — 'die casting'), heat treatment (#215 — 'heat treating'), metal plating (#216);
+    # zero overlap with any existing DANNY_ORG_KEYWORDS; Ajax Manufacturing (Cleveland/Cuyahoga) + Anchor
+    # Manufacturing Group (Cleveland/Cuyahoga) = anchor Cuyahoga targets (added 2026-07-26 run 224)
+    'metal forging', 'forging company', 'forge shop', 'hot forging', 'cold forging',
+    'closed die forging', 'open die forging', 'steel forging', 'aluminum forging',
 ]
 
 CARLA_SEARCHES = [

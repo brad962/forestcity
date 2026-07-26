@@ -1205,6 +1205,12 @@ PROPERTY_MANAGER_TITLES = [
     'die casting plant manager', 'foundry manager', 'casting operations manager',
     'metal foundry manager', 'die casting superintendent', 'foundry plant manager',
     'casting plant manager', 'die casting operations manager',
+    # Metal Forging & Die Forge Operations — Segment #218 routing sync; all new forge shop contacts
+    # correctly route to property_manager Mixmax sequence on enrollment; DISTINCT from metal stamping
+    # (#207), die casting (#217), machine shops (#184), heat treatment (#215) (added 2026-07-26 run 224)
+    'forge plant manager', 'forging operations manager', 'forge shop manager',
+    'metal forging manager', 'die forge plant manager', 'forging plant superintendent',
+    'hot forge manager', 'forge facility manager',
 ]
 
 REALTOR_TITLES = [

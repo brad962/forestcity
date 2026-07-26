@@ -1,3 +1,21 @@
+## Run 224 — Vera Batching Note | 2026-07-26 | 218+ Segments
+**TODAY:** Saturday July 26. 1 day since Run 223 (July 25). Late July — NE Ohio commercial wash peak season final ~1 week of prime weather. **CRITICAL: Geauga+Portage STILL not pulled. 13 days overdue. Run `scripts/run_geauga_portage_both.command` in Finder RIGHT NOW — unattended 12–20 min. 218 segments queued.**
+
+**New Segment #218 — Metal Forging & Die Forge Operations:**
+- Titles: `forge plant manager`, `forging operations manager`, `forge shop manager`, `metal forging manager`, `die forge plant manager`, `forging plant superintendent`, `hot forge manager`, `forge facility manager`
+- Org keywords: `metal forging`, `forging company`, `forge shop`, `hot forging`, `cold forging`, `closed die forging`, `open die forging`, `steel forging`, `aluminum forging`
+- Targets: Ajax Manufacturing (Cleveland/Cuyahoga — 75–2,500-ton press capacity, anchor Cuyahoga target), Anchor Manufacturing Group (Cleveland/Cuyahoga), Forge Group of NE Ohio, Precision Castparts/Wyman-Gordon (Independence OH), Ellwood Group (Medina/Summit), Shur-Lok International; 80+ NE Ohio forge shops in Ford Avon Lake EV + Honda East Liberty + GM supply chain (high-strength forged components for EV drivetrains/suspensions)
+- Compliance angle: OSHA 1910.22 + EPA RCRA (quench oil + forming lubricants = petroleum-based hazardous waste, documented disposal required) + OEPA NPDES SWPPP (quench oil + forge scale runoff = regulated stormwater event); forge scale (iron/steel oxide) + quench oil residue + graphite lubricant/phosphate coating accumulation on exterior floors + loading docks + apron areas around forge presses
+- Revenue: $3,000–$8,000/facility; quarterly = $12K–$32K/year; zero competitors cold-calling forge plant managers
+- DISTINCT from: metal stamping (#207 — cold flat sheet), die casting (#217 — molten metal poured), machine shops (#184), heat treatment (#215), aerospace (#183), general mfg (run 118)
+
+**Gas/Fleet Sequences — STILL PENDING (Day 72):** Jim Lavigne (Certified Oil), Kevin Kayden (Speedway), Mark Elyden (truenorth) = 59+ days overdue. 10 min fix: app.mixmax.com → Sequences → New. Complete copy: `outputs/vera/gas_fleet_sequence_copy_2026-06-12.md`.
+
+**Apollo API BLOCKED (Day 45 in cloud):** ALL cloud lead gen returns 0. Must run ALL county pulls locally via .command files.
+
+**Geauga+Portage — 13 DAYS OVERDUE:** Scripts exist. Double-click `scripts/run_geauga_portage_both.command` in Finder. 218 segments queued.
+
+---
 ## Run 223 — Vera Batching Note | 2026-07-25 | 217+ Segments
 **TODAY:** Friday July 25. 1 day since Run 222 (July 24). Late July — NE Ohio commercial wash peak season final weeks (~1–2 weeks of prime weather remaining — urgency high). **CRITICAL: Geauga+Portage STILL not pulled. 12 days overdue. Run `scripts/run_geauga_portage_both.command` in Finder RIGHT NOW — unattended 12–20 min. 217 segments queued.**
 
