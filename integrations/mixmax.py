@@ -1211,6 +1211,12 @@ PROPERTY_MANAGER_TITLES = [
     'forge plant manager', 'forging operations manager', 'forge shop manager',
     'metal forging manager', 'die forge plant manager', 'forging plant superintendent',
     'hot forge manager', 'forge facility manager',
+    # Spring & Precision Metal Parts Manufacturers — Segment #219 routing sync; all new spring shop
+    # contacts correctly route to property_manager Mixmax sequence on enrollment; DISTINCT from
+    # wire/cable (#213), metal stamping (#207), forging (#218), machine shops (#184) (added 2026-07-27 run 225)
+    'spring manufacturing manager', 'coil spring plant manager', 'precision spring operations manager',
+    'spring production manager', 'spring plant superintendent', 'compression spring manager',
+    'spring shop manager', 'precision metal parts manager',
 ]
 
 REALTOR_TITLES = [

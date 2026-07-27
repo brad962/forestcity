@@ -1,3 +1,21 @@
+## Run 225 — Vera Batching Note | 2026-07-27 | 219+ Segments
+**TODAY:** Sunday July 27. 1 day since Run 224 (July 26). Late July — NE Ohio commercial wash final prime-weather window (≈1 week). **CRITICAL: Geauga+Portage STILL not pulled. 14 days overdue. Run `scripts/run_geauga_portage_both.command` in Finder RIGHT NOW — unattended 12–20 min. 219 segments queued.**
+
+**New Segment #219 — Spring & Precision Metal Parts Manufacturers:**
+- Titles: `spring manufacturing manager`, `coil spring plant manager`, `precision spring operations manager`, `spring production manager`, `spring plant superintendent`, `compression spring manager`, `spring shop manager`, `precision metal parts manager`
+- Org keywords: `spring manufacturer`, `coil spring manufacturer`, `compression spring manufacturer`, `torsion spring manufacturer`, `spring fabricator`, `metal spring company`, `precision spring manufacturer`, `custom spring manufacturer`
+- Targets: Associated Spring/Barnes Group (NE Ohio plants — auto/aerospace springs), Bergen Spring (NE Ohio), Newcomb Spring (NE Ohio plant), Ohio Spring (Cleveland area), Key Bellows (Cleveland — custom metal bellows/springs), National Spring; 50+ spring shops supplying Ford Avon Lake EV assembly (suspension springs, valve springs) + Honda East Liberty + GM supply chain + medical device manufacturers (catheter stylets, stent delivery systems)
+- Compliance angle: OSHA 1910.22 + EPA RCRA (metalworking/forming oils = petroleum-based listed hazardous waste, documented disposal required) + OEPA NPDES SWPPP (coiling oil + shot blast media runoff = regulated stormwater event); forming lubricant residue + shot peen/blast media + coiling oil mist accumulate on production floor exteriors + loading docks + dumpster pads around coiling/grinding equipment
+- Revenue: $1,500–$4,000/facility; quarterly = $6K–$16K/year; zero competitors cold-calling spring shop FMs
+- DISTINCT from: wire/cable (#213 — drawn wire, not coiled springs), machine shops (#184), metal stamping (#207), forging (#218), general mfg (run 118), aerospace (#183)
+
+**Gas/Fleet Sequences — STILL PENDING (Day 73):** Jim Lavigne (Certified Oil), Kevin Kayden (Speedway), Mark Elyden (truenorth) = 60+ days overdue. 10 min fix: app.mixmax.com → Sequences → New. Complete copy: `outputs/vera/gas_fleet_sequence_copy_2026-06-12.md`.
+
+**Apollo API BLOCKED (Day 46 in cloud):** ALL cloud lead gen returns 0. Must run ALL county pulls locally via .command files.
+
+**Geauga+Portage — 14 DAYS OVERDUE:** Scripts exist. Double-click `scripts/run_geauga_portage_both.command` in Finder. 219 segments queued.
+
+---
 ## Run 224 — Vera Batching Note | 2026-07-26 | 218+ Segments
 **TODAY:** Saturday July 26. 1 day since Run 223 (July 25). Late July — NE Ohio commercial wash peak season final ~1 week of prime weather. **CRITICAL: Geauga+Portage STILL not pulled. 13 days overdue. Run `scripts/run_geauga_portage_both.command` in Finder RIGHT NOW — unattended 12–20 min. 218 segments queued.**
 

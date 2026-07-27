@@ -2357,6 +2357,19 @@ DANNY_TITLES = [
     'forge plant manager', 'forging operations manager', 'forge shop manager',
     'metal forging manager', 'die forge plant manager', 'forging plant superintendent',
     'hot forge manager', 'forge facility manager',
+    # Spring & Precision Metal Parts Manufacturers — Segment #219; Apollo title tags 'spring manufacturing manager'
+    # + 'coil spring plant manager' surface spring shop FMs; NE Ohio = one of the densest spring mfg regions in
+    # North America (Associated Spring/Barnes Group, Bergen Spring, Newcomb Spring, Ohio Spring, Key Bellows);
+    # forming lubricant residue + shot peen/blast media + coiling oil mist accumulate on production floor exteriors
+    # + loading docks + dumpster pads; OSHA 1910.22 + EPA RCRA (metalworking/forming oils = petroleum-based
+    # listed hazardous waste, documented disposal required) + OEPA NPDES SWPPP (coiling oil + shot blast media
+    # runoff = regulated stormwater event); DISTINCT from wire/cable (#213 — drawn wire, not coiled springs),
+    # machine shops (#184), metal stamping (#207), general mfg (run 118), aerospace (#183);
+    # $1,500–$4,000/facility; quarterly = $6K–$16K/year; zero competitors cold-calling spring shop FMs;
+    # first pull Cuyahoga + Geauga+Portage (OVERDUE — 14 days) (added 2026-07-27 run 225)
+    'spring manufacturing manager', 'coil spring plant manager', 'precision spring operations manager',
+    'spring production manager', 'spring plant superintendent', 'compression spring manager',
+    'spring shop manager', 'precision metal parts manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -3759,6 +3772,18 @@ DANNY_ORG_KEYWORDS = [
     # Manufacturing Group (Cleveland/Cuyahoga) = anchor Cuyahoga targets (added 2026-07-26 run 224)
     'metal forging', 'forging company', 'forge shop', 'hot forging', 'cold forging',
     'closed die forging', 'open die forging', 'steel forging', 'aluminum forging',
+    # Spring & Precision Metal Parts Manufacturers — Segment #219; Apollo org tags 'spring manufacturer'
+    # + 'coil spring manufacturer' + 'compression spring manufacturer' surface NE Ohio spring shops;
+    # 'torsion spring manufacturer' + 'precision spring manufacturer' catch the two dominant spring-type
+    # streams (helical compression + torsion) used in auto/EV assembly (suspension springs, valve springs)
+    # + medical devices (catheter stylets, stent delivery systems); DISTINCT from wire/cable (#213 —
+    # 'wire manufacturer'/'cable manufacturer' already in DANNY_ORG_KEYWORDS), metal stamping (#207 —
+    # 'metal stamping'), forging (#218 — 'metal forging'/'forging company'), machine shops (#184);
+    # zero overlap with any existing DANNY_ORG_KEYWORDS; first pull Cuyahoga + Geauga+Portage (OVERDUE)
+    # (added 2026-07-27 run 225)
+    'spring manufacturer', 'coil spring manufacturer', 'compression spring manufacturer',
+    'torsion spring manufacturer', 'spring fabricator', 'metal spring company',
+    'precision spring manufacturer', 'custom spring manufacturer',
 ]
 
 CARLA_SEARCHES = [

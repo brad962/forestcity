@@ -1,10 +1,25 @@
 # Vera Cole — Open Issues Tracker
-*Run 224 | 2026-07-26 | Compact version — historical run entries archived in git history*
-*224 open (223 carry-forward + 1 new this run) | 126 resolved*
+*Run 225 | 2026-07-27 | Compact version — historical run entries archived in git history*
+*225 open (224 carry-forward + 1 new this run) | 126 resolved*
 
 > ⚠️ **FILE SIZE NOTE:** This file was 572KB as of Run 195 due to prepending a full header every run.
 > Rewritten as a compact rolling summary on Run 196. Full history is in git log.
 > Going forward: update the metrics line at top + append new issues only (no full run header dumps).
+
+---
+
+## NEW OPEN — Run 225 | 2026-07-27 — GEAUGA+PORTAGE 14 DAYS OVERDUE (SCRIPTS READY) | DAY 46 APOLLO BLOCK | DAY 73 GAS/FLEET | 60+ DAYS OVERDUE
+
+### OPEN — Spring & Precision Metal Parts Manufacturers (Segment #219)
+- **First seen:** 2026-07-27 (Run 225)
+- **Description:** Segment #219 added to `workers/lead_pipeline.py` (DANNY_TITLES + DANNY_ORG_KEYWORDS) and `integrations/mixmax.py` (PROPERTY_MANAGER_TITLES). Titles: spring manufacturing manager, coil spring plant manager, precision spring operations manager, spring production manager, spring plant superintendent, compression spring manager, spring shop manager, precision metal parts manager. Org keywords: spring manufacturer, coil spring manufacturer, compression spring manufacturer, torsion spring manufacturer, spring fabricator, metal spring company, precision spring manufacturer, custom spring manufacturer.
+- **Targets:** Associated Spring/Barnes Group (NE Ohio plants — auto/aerospace compression + valve springs), Bergen Spring (NE Ohio), Newcomb Spring (NE Ohio plant), Ohio Spring (Cleveland area), Key Bellows (Cleveland — custom metal bellows/springs), National Spring; 50+ spring shops supplying Ford Avon Lake EV assembly (suspension + valve springs), Honda East Liberty, GM supply chain, and medical device manufacturers (catheter stylets, stent delivery systems).
+- **Compliance angle:** OSHA 1910.22 + EPA RCRA (metalworking/forming oils = petroleum-based listed hazardous waste, documented disposal required) + OEPA NPDES SWPPP (coiling oil + shot blast media runoff = regulated stormwater event). Forming lubricant residue + shot peen/blast media + coiling oil mist accumulate heavily on production floor exteriors + loading docks + dumpster pads around coiling/grinding/tempering equipment.
+- **Revenue:** $1,500–$4,000/facility; quarterly = $6K–$16K/year; zero competitors cold-calling spring shop FMs.
+- **DISTINCT from:** wire/cable (#213 — drawn wire, not coiled springs), machine shops (#184), metal stamping (#207), forging (#218), general mfg (run 118), aerospace (#183).
+- **First pull:** Cuyahoga (Associated Spring/Bergen Spring = anchor Cuyahoga targets) + Geauga+Portage (OVERDUE — 14 days past July 13 window).
+- **Attempts:**
+  - 2026-07-27 (Run 225): Segment added to code. Awaiting first local pull.
 
 ---
 
@@ -452,16 +467,16 @@
 
 ## Active Open Issues — Summary Table
 
-*Updated Run 224 | July 26 — GEAUGA+PORTAGE 13 DAYS OVERDUE (SCRIPTS READY — RUN TODAY) | Gas/Fleet blocker Day 72 | Apollo API BLOCKED Day 45 | Segment #218 Metal Forging added | 36+ pipeline contacts 59+ days overdue*
+*Updated Run 225 | July 27 — GEAUGA+PORTAGE 14 DAYS OVERDUE (SCRIPTS READY — RUN TODAY) | Gas/Fleet blocker Day 73 | Apollo API BLOCKED Day 46 | Segment #219 Spring Mfg added | 36+ pipeline contacts 60+ days overdue*
 
 | Issue # | Segment | Status | Expected Resolution |
 |---------|---------|--------|---------------------|
-| Geauga+Portage | **Geauga+Portage pull OVERDUE — July 13 window MISSED — scripts NOW EXIST (Run 220)** | 🚨 CRITICAL — 13 DAYS OVERDUE | Bradley: double-click `scripts/run_geauga_portage_both.command` in Finder TODAY. 218 segments queued. |
-| Overdue | **36+ pipeline contacts — 59+ days stale, NEVER contacted** | 🚨 CRITICAL Day 59 — 3 gas contacts + 33 contractors silent | Bradley: call Jim Lavigne (Certified Oil), Kevin Kayden (Speedway), Mark Elyden (truenorth) TODAY. Create Gas/Fleet sequences. |
-| Apollo | **Apollo API network block — 0 leads pulled 45+ days** | 🚨 CRITICAL Day 45 — ALL cloud lead gen at 0 since June 11 | Bradley: add `api.apollo.io` to network egress allowlist OR run all county pulls locally |
-| Gas Station | Gas Station & C-Store Mixmax sequence | 🚨 BLOCKER Day 72 — email copy ready: `gas_fleet_sequence_copy_2026-06-12.md` | Bradley action — paste copy + replace PENDING in mixmax.py |
-| Fleet Washing | Fleet Washing Mixmax sequence | 🚨 BLOCKER Day 72 — same as above; copy ready to paste | Bradley action — paste copy + replace PENDING in mixmax.py |
-| danny.md | File size bloat — 600KB+ exceeds tool read limit | Run 204–224 proposal; awaiting Bradley YES | Bradley approves → Vera archives in 1 run |
+| Geauga+Portage | **Geauga+Portage pull OVERDUE — July 13 window MISSED — scripts NOW EXIST (Run 220)** | 🚨 CRITICAL — 14 DAYS OVERDUE | Bradley: double-click `scripts/run_geauga_portage_both.command` in Finder TODAY. 219 segments queued. |
+| Overdue | **36+ pipeline contacts — 60+ days stale, NEVER contacted** | 🚨 CRITICAL Day 60 — 3 gas contacts + 33 contractors silent | Bradley: call Jim Lavigne (Certified Oil), Kevin Kayden (Speedway), Mark Elyden (truenorth) TODAY. Create Gas/Fleet sequences. |
+| Apollo | **Apollo API network block — 0 leads pulled 46+ days** | 🚨 CRITICAL Day 46 — ALL cloud lead gen at 0 since June 11 | Bradley: add `api.apollo.io` to network egress allowlist OR run all county pulls locally |
+| Gas Station | Gas Station & C-Store Mixmax sequence | 🚨 BLOCKER Day 73 — email copy ready: `gas_fleet_sequence_copy_2026-06-12.md` | Bradley action — paste copy + replace PENDING in mixmax.py |
+| Fleet Washing | Fleet Washing Mixmax sequence | 🚨 BLOCKER Day 73 — same as above; copy ready to paste | Bradley action — paste copy + replace PENDING in mixmax.py |
+| danny.md | File size bloat — 600KB+ exceeds tool read limit | Run 204–225 proposal; awaiting Bradley YES | Bradley approves → Vera archives in 1 run |
 | #193–#198 | Co-Packing, Semiconductors, Boat Repair, Breweries, FBOs, Nurseries | Code live — Lake pull ran June 15 (IF run locally) | Confirm contacts in Nina report locally |
 | #199–#207 | Portable Restroom, FQHCs, Steel Fab, Rec Centers, Colleges, DPW, Funeral, Modular, Stamping | Code live — Lorain pull was June 22 (IF run locally) | Confirm contacts in Nina report locally |
 | #208 | Powder Coating & Industrial Surface Finishing Shops | Code live (Run 214) — first pull Geauga+Portage OVERDUE | Confirm contacts on next local pull |
@@ -474,15 +489,16 @@
 | #215 | Heat Treatment & Thermal Processing Facilities | Code live (Run 221) — first pull Geauga+Portage OVERDUE | Confirm contacts on next local pull |
 | #216 | Metal Plating & Surface Finishing Facilities | Code live (Run 222) — first pull Geauga+Portage OVERDUE | Confirm contacts on next local pull |
 | #217 | Die Casting & Metal Casting Foundries | Code live (Run 223) — first pull Geauga+Portage OVERDUE | General Aluminum + Joseph Industries Ravenna/Portage = anchor targets |
-| #218 | Metal Forging & Die Forge Operations | Code live (Run 224) — first pull Cuyahoga + Geauga+Portage OVERDUE | NEW Run 224 — Ajax Manufacturing + Anchor Manufacturing Group Cleveland = anchor Cuyahoga targets |
+| #218 | Metal Forging & Die Forge Operations | Code live (Run 224) — first pull Cuyahoga + Geauga+Portage OVERDUE | Ajax Manufacturing + Anchor Manufacturing Group Cleveland = anchor Cuyahoga targets |
+| #219 | Spring & Precision Metal Parts Manufacturers | Code live (Run 225) — first pull Cuyahoga + Geauga+Portage OVERDUE | NEW Run 225 — Associated Spring/Barnes Group + Bergen Spring = anchor Cuyahoga targets |
 | Relay | GitHub Actions relay: PAT needs `workflow` scope | 🚨 BLOCKED — definitive; YAML ready in `outputs/vera/github_action_vera_slack_relay.yaml` | Bradley: Option A — github.com/settings/tokens → add workflow scope. Option B — manually create in GitHub UI |
 
-**Total open: 224 | Total resolved: 126**
+**Total open: 225 | Total resolved: 126**
 
-> 🚨 **GEAUGA+PORTAGE — 13 DAYS OVERDUE:** Scripts created Run 220. `run_geauga_portage_both.command` is IN Finder NOW. 218 segments queued including KraftMaid supply chain, Grand River Marina, Debonne Vineyards, 200+ wholesale nurseries, heat treat shops (Parker Trutec), Rotek metal plating, General Aluminum + Joseph Industries die casting, Ajax/Anchor forge shops, rubber/elastomer, plastics, precast, cold storage, wire/cable, wood/cabinet. Double-click TODAY.
-> 🚨 **APOLLO BLOCKED — Day 45:** ALL cloud lead generation 0 since June 11. Run locally.
-> 🚨 **GAS/FLEET BLOCKER — Day 72:** 3 gas contacts (Jim Lavigne, Kevin Kayden, Mark Elyden) now 59+ days overdue with NO sequence. Email copy ready: `outputs/vera/gas_fleet_sequence_copy_2026-06-12.md`. 10 min in Mixmax UI.
-> 🚨 **36 CONTACTS OVERDUE — 59 DAYS:** These contractor leads from May have NEVER been reached out to.
+> 🚨 **GEAUGA+PORTAGE — 14 DAYS OVERDUE:** Scripts created Run 220. `run_geauga_portage_both.command` is IN Finder NOW. 219 segments queued including KraftMaid supply chain, Grand River Marina, Debonne Vineyards, 200+ wholesale nurseries, heat treat shops (Parker Trutec), Rotek metal plating, General Aluminum + Joseph Industries die casting, Ajax/Anchor forge shops, Associated Spring/Bergen Spring shops, rubber/elastomer, plastics, precast, cold storage, wire/cable, wood/cabinet. Double-click TODAY.
+> 🚨 **APOLLO BLOCKED — Day 46:** ALL cloud lead generation 0 since June 11. Run locally.
+> 🚨 **GAS/FLEET BLOCKER — Day 73:** 3 gas contacts (Jim Lavigne, Kevin Kayden, Mark Elyden) now 60+ days overdue with NO sequence. Email copy ready: `outputs/vera/gas_fleet_sequence_copy_2026-06-12.md`. 10 min in Mixmax UI.
+> 🚨 **36 CONTACTS OVERDUE — 60 DAYS:** These contractor leads from May have NEVER been reached out to.
 > 🚨 **DANNY.MD — 600KB+:** File exceeds tool read limit. Most recent segment instructions invisible to Danny. Approve archive to fix.
 
 ---
