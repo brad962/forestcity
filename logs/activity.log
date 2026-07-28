@@ -2039,3 +2039,4 @@
 [2026-07-28 12:34] Nina | Daily hot leads report — 0 replied, 0 hot, 0 due today, 0 due tomorrow, 0 stale estimates | hot_leads_2026-07-28.md | Done
 [2026-07-28 12:34] Nina | Workiz daily report - Power Washing jobs | Workiz API unavailable — run locally. | Done
 [2026-07-28 12:34] Office | Daily morning briefing | morning_2026-07-28.md | Done
+[2026-07-28 12:34:41] Nina | Daily Reports (Hot Leads + Workiz) | hot_leads_2026-07-28.md: 0 hot leads (Mixmax API blocked in cloud), 36 overdue manual pipeline items. workiz_daily_2026-07-28.md: Workiz API blocked in cloud. Both reports saved to outputs/nina/.
