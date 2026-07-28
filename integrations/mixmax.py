@@ -1217,6 +1217,13 @@ PROPERTY_MANAGER_TITLES = [
     'spring manufacturing manager', 'coil spring plant manager', 'precision spring operations manager',
     'spring production manager', 'spring plant superintendent', 'compression spring manager',
     'spring shop manager', 'precision metal parts manager',
+    # Industrial Galvanizing & Hot-Dip Coating Plants — Segment #220; routing sync — all galvanizing plant FM
+    # contacts correctly route to property_manager Mixmax sequence on enrollment; DISTINCT from metal plating
+    # (#216 — electroplating), die casting (#217), forging (#218), spring mfg (#219), machine shops (#184)
+    # (added 2026-07-28 run 226)
+    'galvanizing plant manager', 'hot-dip galvanizing manager', 'metal coating plant manager',
+    'galvanizing operations manager', 'galvanizing facility manager', 'metal galvanizing manager',
+    'structural galvanizing manager', 'hot dip galvanizing superintendent',
 ]
 
 REALTOR_TITLES = [

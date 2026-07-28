@@ -1,3 +1,21 @@
+## Run 226 — Vera Batching Note | 2026-07-28 | 220+ Segments
+**TODAY:** Monday July 28. 1 day since Run 225 (July 27). Late July — NE Ohio commercial wash season entering final stretch. **CRITICAL: Geauga+Portage STILL not pulled. 15 days overdue. Run `scripts/run_geauga_portage_both.command` in Finder RIGHT NOW — unattended 12–20 min. 220 segments queued.**
+
+**New Segment #220 — Industrial Galvanizing & Hot-Dip Coating Plants:**
+- Titles: `galvanizing plant manager`, `hot-dip galvanizing manager`, `metal coating plant manager`, `galvanizing operations manager`, `galvanizing facility manager`, `metal galvanizing manager`, `structural galvanizing manager`, `hot dip galvanizing superintendent`
+- Org keywords: `galvanizing company`, `hot dip galvanizing`, `galvanizing plant`, `metal coating company`, `zinc galvanizing`, `galvanizer`, `structural steel galvanizing`, `batch galvanizing`
+- Targets: North American Galvanizing & Coatings (Sheffield Village/Lorain County — anchor Lorain target), AZZ Galvanizing Services (NE Ohio plants), Eastern Ohio Hot Dip Galvanizing, independent job-shop galvanizers across Cleveland/Akron steel corridor; structural steel galvanizers serving NE Ohio construction boom (I-90/I-77 corridor projects, Ford Avon Lake, bridge/highway infrastructure)
+- Compliance angle: OSHA 1910.94 (open surface tank operations — caustic flux baths + acid pickling tanks) + EPA RCRA (zinc-bearing wastewater = listed hazardous waste risk, F006 classification) + OEPA NPDES SWPPP (zinc runoff = regulated stormwater event); zinc oxide scale + caustic pretreatment chemicals + zinc ash residue accumulate heavily on production floor exteriors + loading docks + dumpster pads around open-surface galvanizing tanks
+- Revenue: $2,000–$6,000/facility; quarterly = $8K–$24K/year; zero competitors cold-calling galvanizing plant FMs
+- DISTINCT from: metal plating (#216 — electroplating, not hot-dip), metal stamping (#207), die casting (#217), forging (#218), spring mfg (#219), machine shops (#184), structural steel fab (run 201 — fabricators who SEND steel to galvanizers)
+
+**Gas/Fleet Sequences — STILL PENDING (Day 74):** Jim Lavigne (Certified Oil), Kevin Kayden (Speedway), Mark Elyden (truenorth) = 61+ days overdue. 10 min fix: app.mixmax.com → Sequences → New. Complete copy: `outputs/vera/gas_fleet_sequence_copy_2026-06-12.md`.
+
+**Apollo API BLOCKED (Day 47 in cloud):** ALL cloud lead gen returns 0. Must run ALL county pulls locally via .command files.
+
+**Geauga+Portage — 15 DAYS OVERDUE:** Scripts exist. Double-click `scripts/run_geauga_portage_both.command` in Finder. 220 segments queued.
+
+---
 ## Run 225 — Vera Batching Note | 2026-07-27 | 219+ Segments
 **TODAY:** Sunday July 27. 1 day since Run 224 (July 26). Late July — NE Ohio commercial wash final prime-weather window (≈1 week). **CRITICAL: Geauga+Portage STILL not pulled. 14 days overdue. Run `scripts/run_geauga_portage_both.command` in Finder RIGHT NOW — unattended 12–20 min. 219 segments queued.**
 

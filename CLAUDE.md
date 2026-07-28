@@ -156,5 +156,8 @@ No Terminal required — just open Finder, navigate to the `forestcity/scripts/`
 | `run_lake_both.command` | Lake | 25 | June 15 | Danny + Carla |
 | `run_lorain_pull.command` | Lorain | 26 | June 22 | Danny only — Avon corridor |
 | `run_lorain_both.command` | Lorain | 26 | June 22 | Danny + Carla |
+| `run_geauga_portage_pull.command` | Geauga+Portage | 27 | **July 13** | Danny only — KraftMaid corridor, marinas, vineyards |
+| `run_geauga_portage_both.command` | Geauga+Portage | 27 | **July 13** | Danny + Carla — 220 segments queued, OVERDUE |
 
-> ⚠️ **June 8 Cuyahoga** is the largest pull of the season — 194+ commercial segments including hospitals, sports venues, museums, government facilities, schools, and more. Takes 12-20 minutes. Use `run_cuyahoga_both.command`.
+> ⚠️ **June 8 Cuyahoga** is the largest pull of the season — 220 commercial segments including hospitals, sports venues, museums, government facilities, schools, and more. Takes 12-20 minutes. Use `run_cuyahoga_both.command`.
+> ⚠️ **Geauga+Portage is overdue** — `run_geauga_portage_both.command` is in `scripts/`. Double-click in Finder. 220 segments queued including KraftMaid supply chain, Grand River Marina, Debonne/Laurello Vineyards, 200+ wholesale nurseries, and 20+ industrial segments. 12-20 min unattended.

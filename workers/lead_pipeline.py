@@ -2370,6 +2370,24 @@ DANNY_TITLES = [
     'spring manufacturing manager', 'coil spring plant manager', 'precision spring operations manager',
     'spring production manager', 'spring plant superintendent', 'compression spring manager',
     'spring shop manager', 'precision metal parts manager',
+    # Industrial Galvanizing & Hot-Dip Coating Plants — Segment #220; Apollo title tags 'galvanizing plant manager'
+    # + 'hot-dip galvanizing manager' surface NE Ohio galvanizing FMs; NE Ohio steel corridor = one of the densest
+    # structural steel galvanizing markets in the Midwest (North American Galvanizing & Coatings Sheffield Village/
+    # Lorain County = anchor Lorain target, AZZ Galvanizing Services multiple NE Ohio plants, Eastern Ohio Hot Dip
+    # Galvanizing, independent job-shop galvanizers across the Cleveland/Akron steel corridor);
+    # zinc oxide scale + caustic pretreatment chemicals (acid pickle/flux) + zinc ash residue accumulate heavily
+    # on production floor exteriors + loading docks + dumpster pads around open-surface galvanizing tanks;
+    # OSHA 1910.94 (open surface tank operations — caustic flux baths + acid pickling tanks) + EPA RCRA
+    # (zinc-bearing wastewater = listed hazardous waste risk, F006 classification) + OEPA NPDES SWPPP
+    # (zinc runoff = regulated stormwater event, permit violation trigger); DISTINCT from metal plating (#216 —
+    # electroplating, not hot-dip), metal stamping (#207), die casting (#217), forging (#218), spring mfg (#219),
+    # machine shops (#184), structural steel fab (run 201 — fabricators who SEND steel to galvanizers);
+    # $2,000–$6,000/facility; quarterly = $8K–$24K/year; zero competitors cold-calling galvanizing plant FMs;
+    # first pull Cuyahoga + Lorain County (North American Galvanizing Sheffield Village = anchor Lorain target)
+    # + Geauga+Portage (OVERDUE — 15 days past July 13 window) (added 2026-07-28 run 226)
+    'galvanizing plant manager', 'hot-dip galvanizing manager', 'metal coating plant manager',
+    'galvanizing operations manager', 'galvanizing facility manager', 'metal galvanizing manager',
+    'structural galvanizing manager', 'hot dip galvanizing superintendent',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -3784,6 +3802,16 @@ DANNY_ORG_KEYWORDS = [
     'spring manufacturer', 'coil spring manufacturer', 'compression spring manufacturer',
     'torsion spring manufacturer', 'spring fabricator', 'metal spring company',
     'precision spring manufacturer', 'custom spring manufacturer',
+    # Industrial Galvanizing & Hot-Dip Coating Plants — Segment #220; Apollo org tags 'galvanizing company'
+    # + 'hot dip galvanizing' surface NE Ohio galvanizing job shops; 'structural steel galvanizing' tags large
+    # contract galvanizers (North American Galvanizing & Coatings Sheffield Village/Lorain = anchor Lorain target);
+    # 'batch galvanizing' catches smaller job shops; DISTINCT from metal plating (#216 — electroplating),
+    # die casting (#217 — molten metal), forging (#218), spring mfg (#219), machine shops (#184);
+    # zero overlap with any existing DANNY_ORG_KEYWORDS; first pull Lorain (North American Galvanizing
+    # Sheffield Village) + Cuyahoga (AZZ Galvanizing Cleveland area) + Geauga+Portage (OVERDUE)
+    # (added 2026-07-28 run 226)
+    'galvanizing company', 'hot dip galvanizing', 'galvanizing plant', 'metal coating company',
+    'zinc galvanizing', 'galvanizer', 'structural steel galvanizing', 'batch galvanizing',
 ]
 
 CARLA_SEARCHES = [
