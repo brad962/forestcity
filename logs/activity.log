@@ -2040,3 +2040,6 @@
 [2026-07-28 12:34] Nina | Workiz daily report - Power Washing jobs | Workiz API unavailable — run locally. | Done
 [2026-07-28 12:34] Office | Daily morning briefing | morning_2026-07-28.md | Done
 [2026-07-28 12:34:41] Nina | Daily Reports (Hot Leads + Workiz) | hot_leads_2026-07-28.md: 0 hot leads (Mixmax API blocked in cloud), 36 overdue manual pipeline items. workiz_daily_2026-07-28.md: Workiz API blocked in cloud. Both reports saved to outputs/nina/.
+[2026-07-28 12:35] Danny | Apollo pull — Apollo returned 0 people — API may be blocked or rate limited (Lake) | none | Done
+[2026-07-28 12:35] Carla | Apollo pull — Apollo returned 0 people — API may be blocked or rate limited | none | Done
+[2026-07-28 12:35:52] Danny + Carla | Daily Lead Pull | Pipeline ran — Apollo returned 0 leads (API keys not in .env) | Done
