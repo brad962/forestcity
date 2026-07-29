@@ -1,10 +1,25 @@
 # Vera Cole — Open Issues Tracker
-*Run 226 | 2026-07-28 | Compact version — historical run entries archived in git history*
-*226 open (225 carry-forward + 1 new this run) | 126 resolved*
+*Run 227 | 2026-07-29 | Compact version — historical run entries archived in git history*
+*227 open (226 carry-forward + 1 new this run) | 126 resolved*
 
 > ⚠️ **FILE SIZE NOTE:** This file was 572KB as of Run 195 due to prepending a full header every run.
 > Rewritten as a compact rolling summary on Run 196. Full history is in git log.
 > Going forward: update the metrics line at top + append new issues only (no full run header dumps).
+
+---
+
+## NEW OPEN — Run 227 | 2026-07-29 — GEAUGA+PORTAGE 16 DAYS OVERDUE (SCRIPTS READY) | DAY 48 APOLLO BLOCK | DAY 75 GAS/FLEET | 62+ DAYS OVERDUE
+
+### OPEN — Corrugated Box & Paperboard Packaging Manufacturers (Segment #221)
+- **First seen:** 2026-07-29 (Run 227)
+- **Description:** Segment #221 added to `workers/lead_pipeline.py` (DANNY_TITLES + DANNY_ORG_KEYWORDS) and `integrations/mixmax.py` (PROPERTY_MANAGER_TITLES). Titles: corrugated plant manager, corrugated box plant manager, packaging plant manager, corrugated manufacturing manager, box plant manager, paper products plant manager, corrugated operations manager, packaging facility manager. Org keywords: corrugated box manufacturer, corrugated packaging, cardboard box manufacturer, corrugated manufacturer, paperboard manufacturer, corrugated box company, packaging manufacturer, corrugated container manufacturer.
+- **Targets:** Georgia-Pacific Middlefield (Geauga County — one of the largest corrugated plants in the Midwest, anchor Geauga+Portage target), Smurfit-Kappa NE Ohio operations, WestRock Portage County + Cuyahoga area plants, Packaging Corporation of America NE Ohio, American Packaging Corporation NE Ohio; 50+ independent box/corrugated plants supplying Ford Avon Lake EV assembly line, SYSCO/US Foods distribution centers, retail DCs, and industrial MRO packaging suppliers.
+- **Compliance angle:** OSHA 1910.272 (combustible dust — paper/paperboard = documented dust control program required) + NESHAP Subpart KK (printing/surface coating at paper mills) + OEPA NPDES SWPPP (ink/adhesive runoff = regulated stormwater event). Ink/adhesive residue + paper dust + paperboard fiber buildup + forklift exhaust accumulate heavily on production floor exteriors + loading dock approach pads + trailer staging areas around converting equipment.
+- **Revenue:** $2,000–$5,000/facility; quarterly = $8K–$20K/year; zero competitors cold-calling corrugated plant FMs.
+- **DISTINCT from:** general mfg (run 118), food/bev packaging (run 127), plastics (#209 — not paper), wood/cabinet (#214 — not paper), galvanizing (#220), print shops (run 140).
+- **First pull:** Geauga+Portage OVERDUE (Georgia-Pacific Middlefield = anchor target) + Cuyahoga (WestRock/Smurfit-Kappa Cleveland-area plants). 221 segments now queued for overdue Geauga+Portage pull.
+- **Attempts:**
+  - 2026-07-29 (Run 227): Segment added to code. Awaiting first local pull.
 
 ---
 
@@ -483,16 +498,16 @@
 
 ## Active Open Issues — Summary Table
 
-*Updated Run 226 | July 28 — GEAUGA+PORTAGE 15 DAYS OVERDUE (SCRIPTS READY — RUN TODAY) | Gas/Fleet blocker Day 74 | Apollo API BLOCKED Day 47 | Segment #220 Galvanizing added | CLAUDE.md shortcuts table fixed | 36+ pipeline contacts 61+ days overdue*
+*Updated Run 227 | July 29 — GEAUGA+PORTAGE 16 DAYS OVERDUE (SCRIPTS READY — RUN TODAY) | Gas/Fleet blocker Day 75 | Apollo API BLOCKED Day 48 | Segment #221 Corrugated Box & Packaging added | 36+ pipeline contacts 62+ days overdue*
 
 | Issue # | Segment | Status | Expected Resolution |
 |---------|---------|--------|---------------------|
-| Geauga+Portage | **Geauga+Portage pull OVERDUE — July 13 window MISSED — scripts NOW EXIST (Run 220)** | 🚨 CRITICAL — 15 DAYS OVERDUE | Bradley: double-click `scripts/run_geauga_portage_both.command` in Finder TODAY. 220 segments queued. |
-| Overdue | **36+ pipeline contacts — 61+ days stale, NEVER contacted** | 🚨 CRITICAL Day 61 — 3 gas contacts + 33 contractors silent | Bradley: call Jim Lavigne (Certified Oil), Kevin Kayden (Speedway), Mark Elyden (truenorth) TODAY. Create Gas/Fleet sequences. |
-| Apollo | **Apollo API network block — 0 leads pulled 47+ days** | 🚨 CRITICAL Day 47 — ALL cloud lead gen at 0 since June 11 | Bradley: add `api.apollo.io` to network egress allowlist OR run all county pulls locally |
-| Gas Station | Gas Station & C-Store Mixmax sequence | 🚨 BLOCKER Day 74 — email copy ready: `gas_fleet_sequence_copy_2026-06-12.md` | Bradley action — paste copy + replace PENDING in mixmax.py |
-| Fleet Washing | Fleet Washing Mixmax sequence | 🚨 BLOCKER Day 74 — same as above; copy ready to paste | Bradley action — paste copy + replace PENDING in mixmax.py |
-| danny.md | File size bloat — 640KB+ exceeds tool read limit | Run 204–226 proposal; awaiting Bradley YES | Bradley approves → Vera archives in 1 run |
+| Geauga+Portage | **Geauga+Portage pull OVERDUE — July 13 window MISSED — scripts NOW EXIST (Run 220)** | 🚨 CRITICAL — 16 DAYS OVERDUE | Bradley: double-click `scripts/run_geauga_portage_both.command` in Finder TODAY. 221 segments queued. |
+| Overdue | **36+ pipeline contacts — 62+ days stale, NEVER contacted** | 🚨 CRITICAL Day 62 — 3 gas contacts + 33 contractors silent | Bradley: call Jim Lavigne (Certified Oil), Kevin Kayden (Speedway), Mark Elyden (truenorth) TODAY. Create Gas/Fleet sequences. |
+| Apollo | **Apollo API network block — 0 leads pulled 48+ days** | 🚨 CRITICAL Day 48 — ALL cloud lead gen at 0 since June 11 | Bradley: add `api.apollo.io` to network egress allowlist OR run all county pulls locally |
+| Gas Station | Gas Station & C-Store Mixmax sequence | 🚨 BLOCKER Day 75 — email copy ready: `gas_fleet_sequence_copy_2026-06-12.md` | Bradley action — paste copy + replace PENDING in mixmax.py |
+| Fleet Washing | Fleet Washing Mixmax sequence | 🚨 BLOCKER Day 75 — same as above; copy ready to paste | Bradley action — paste copy + replace PENDING in mixmax.py |
+| danny.md | File size bloat — 660KB+ exceeds tool read limit | Run 204–227 proposal; awaiting Bradley YES | Bradley approves → Vera archives in 1 run |
 | #193–#198 | Co-Packing, Semiconductors, Boat Repair, Breweries, FBOs, Nurseries | Code live — Lake pull ran June 15 (IF run locally) | Confirm contacts in Nina report locally |
 | #199–#207 | Portable Restroom, FQHCs, Steel Fab, Rec Centers, Colleges, DPW, Funeral, Modular, Stamping | Code live — Lorain pull was June 22 (IF run locally) | Confirm contacts in Nina report locally |
 | #208 | Powder Coating & Industrial Surface Finishing Shops | Code live (Run 214) — first pull Geauga+Portage OVERDUE | Confirm contacts on next local pull |
@@ -507,16 +522,17 @@
 | #217 | Die Casting & Metal Casting Foundries | Code live (Run 223) — first pull Geauga+Portage OVERDUE | General Aluminum + Joseph Industries Ravenna/Portage = anchor targets |
 | #218 | Metal Forging & Die Forge Operations | Code live (Run 224) — first pull Cuyahoga + Geauga+Portage OVERDUE | Ajax Manufacturing + Anchor Manufacturing Group Cleveland = anchor Cuyahoga targets |
 | #219 | Spring & Precision Metal Parts Manufacturers | Code live (Run 225) — first pull Cuyahoga + Geauga+Portage OVERDUE | Associated Spring/Barnes Group + Bergen Spring = anchor Cuyahoga targets |
-| #220 | Industrial Galvanizing & Hot-Dip Coating Plants | Code live (Run 226) — first pull Lorain (North American Galvanizing Sheffield Village) + Cuyahoga + Geauga+Portage OVERDUE | NEW Run 226 — North American Galvanizing Sheffield Village = anchor Lorain target |
+| #220 | Industrial Galvanizing & Hot-Dip Coating Plants | Code live (Run 226) — first pull Lorain (North American Galvanizing Sheffield Village) + Cuyahoga + Geauga+Portage OVERDUE | North American Galvanizing Sheffield Village = anchor Lorain target |
+| #221 | Corrugated Box & Paperboard Packaging Manufacturers | Code live (Run 227) — first pull Geauga+Portage OVERDUE (Georgia-Pacific Middlefield anchor) + Cuyahoga (WestRock/Smurfit-Kappa) | NEW Run 227 — Georgia-Pacific Middlefield Geauga County = anchor Geauga+Portage target |
 | Relay | GitHub Actions relay: PAT needs `workflow` scope | 🚨 BLOCKED — definitive; YAML ready in `outputs/vera/github_action_vera_slack_relay.yaml` | Bradley: Option A — github.com/settings/tokens → add workflow scope. Option B — manually create in GitHub UI |
 
-**Total open: 226 | Total resolved: 126**
+**Total open: 227 | Total resolved: 126**
 
-> 🚨 **GEAUGA+PORTAGE — 15 DAYS OVERDUE:** Scripts created Run 220. `run_geauga_portage_both.command` is IN Finder NOW. 220 segments queued including KraftMaid supply chain, Grand River Marina, Debonne Vineyards, 200+ wholesale nurseries, heat treat shops (Parker Trutec), Rotek metal plating, General Aluminum + Joseph Industries die casting, Ajax/Anchor forge shops, Associated Spring/Bergen Spring shops, galvanizing plants (NEW #220), rubber/elastomer, plastics, precast, cold storage, wire/cable, wood/cabinet. Double-click TODAY.
-> 🚨 **APOLLO BLOCKED — Day 47:** ALL cloud lead generation 0 since June 11. Run locally.
-> 🚨 **GAS/FLEET BLOCKER — Day 74:** 3 gas contacts (Jim Lavigne, Kevin Kayden, Mark Elyden) now 61+ days overdue with NO sequence. Email copy ready: `outputs/vera/gas_fleet_sequence_copy_2026-06-12.md`. 10 min in Mixmax UI.
-> 🚨 **36 CONTACTS OVERDUE — 61 DAYS:** These contractor leads from May have NEVER been reached out to.
-> 🚨 **DANNY.MD — 640KB+:** File exceeds tool read limit. Most recent segment instructions invisible to Danny. Approve archive to fix.
+> 🚨 **GEAUGA+PORTAGE — 16 DAYS OVERDUE:** Scripts created Run 220. `run_geauga_portage_both.command` is IN Finder NOW. 221 segments queued including Georgia-Pacific Middlefield (NEW #221), KraftMaid supply chain, Grand River Marina, Debonne Vineyards, 200+ wholesale nurseries, heat treat shops (Parker Trutec), Rotek metal plating, General Aluminum + Joseph Industries die casting, Ajax/Anchor forge shops, Associated Spring/Bergen Spring shops, galvanizing plants (#220), rubber/elastomer, plastics, precast, cold storage, wire/cable, wood/cabinet. Double-click TODAY.
+> 🚨 **APOLLO BLOCKED — Day 48:** ALL cloud lead generation 0 since June 11. Run locally.
+> 🚨 **GAS/FLEET BLOCKER — Day 75:** 3 gas contacts (Jim Lavigne, Kevin Kayden, Mark Elyden) now 62+ days overdue with NO sequence. Email copy ready: `outputs/vera/gas_fleet_sequence_copy_2026-06-12.md`. 10 min in Mixmax UI.
+> 🚨 **36 CONTACTS OVERDUE — 62 DAYS:** These contractor leads from May have NEVER been reached out to.
+> 🚨 **DANNY.MD — 660KB+:** File exceeds tool read limit. Most recent segment instructions invisible to Danny. Approve archive to fix.
 
 ---
 

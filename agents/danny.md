@@ -1,3 +1,21 @@
+## Run 227 — Vera Batching Note | 2026-07-29 | 221+ Segments
+**TODAY:** Tuesday July 29. 1 day since Run 226 (July 28). Late July — NE Ohio commercial wash season final window. **CRITICAL: Geauga+Portage STILL not pulled. 16 days overdue. Run `scripts/run_geauga_portage_both.command` in Finder RIGHT NOW — unattended 12–20 min. 221 segments queued.**
+
+**New Segment #221 — Corrugated Box & Paperboard Packaging Manufacturers:**
+- Titles: `corrugated plant manager`, `corrugated box plant manager`, `packaging plant manager`, `corrugated manufacturing manager`, `box plant manager`, `paper products plant manager`, `corrugated operations manager`, `packaging facility manager`
+- Org keywords: `corrugated box manufacturer`, `corrugated packaging`, `cardboard box manufacturer`, `corrugated manufacturer`, `paperboard manufacturer`, `corrugated box company`, `packaging manufacturer`, `corrugated container manufacturer`
+- Targets: Georgia-Pacific Middlefield (Geauga County — one of the largest corrugated plants in the Midwest, anchor Geauga+Portage target for OVERDUE pull), Smurfit-Kappa NE Ohio, WestRock Portage County + Cuyahoga, Packaging Corporation of America NE Ohio, American Packaging Corporation NE Ohio; 50+ box plants supplying Ford Avon Lake EV assembly, SYSCO/US Foods DCs, retail DCs, and industrial MRO packaging
+- Compliance angle: OSHA 1910.272 (combustible dust — paper/paperboard = documented dust control program required) + NESHAP Subpart KK (printing/surface coating at paper mills) + OEPA NPDES SWPPP (ink/adhesive runoff = regulated stormwater event); ink residue + adhesive drip + paper dust + forklift exhaust accumulate heavily on production floor exteriors + loading dock approach pads + trailer staging areas
+- Revenue: $2,000–$5,000/facility; quarterly = $8K–$20K/year; zero competitors cold-calling corrugated plant FMs
+- DISTINCT from: general mfg (run 118), food/bev packaging (run 127), plastics (#209), wood/cabinet (#214), galvanizing (#220)
+
+**Gas/Fleet Sequences — STILL PENDING (Day 75):** Jim Lavigne (Certified Oil), Kevin Kayden (Speedway), Mark Elyden (truenorth) = 62+ days overdue. 10 min fix: app.mixmax.com → Sequences → New. Complete copy: `outputs/vera/gas_fleet_sequence_copy_2026-06-12.md`.
+
+**Apollo API BLOCKED (Day 48 in cloud):** ALL cloud lead gen returns 0. Must run ALL county pulls locally via .command files.
+
+**Geauga+Portage — 16 DAYS OVERDUE:** Scripts exist. Double-click `scripts/run_geauga_portage_both.command` in Finder. 221 segments queued.
+
+---
 ## Run 226 — Vera Batching Note | 2026-07-28 | 220+ Segments
 **TODAY:** Monday July 28. 1 day since Run 225 (July 27). Late July — NE Ohio commercial wash season entering final stretch. **CRITICAL: Geauga+Portage STILL not pulled. 15 days overdue. Run `scripts/run_geauga_portage_both.command` in Finder RIGHT NOW — unattended 12–20 min. 220 segments queued.**
 

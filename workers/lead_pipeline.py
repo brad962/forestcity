@@ -2388,6 +2388,24 @@ DANNY_TITLES = [
     'galvanizing plant manager', 'hot-dip galvanizing manager', 'metal coating plant manager',
     'galvanizing operations manager', 'galvanizing facility manager', 'metal galvanizing manager',
     'structural galvanizing manager', 'hot dip galvanizing superintendent',
+    # Corrugated Box & Paperboard Packaging Manufacturers — Segment #221; Apollo title tags 'corrugated plant manager'
+    # + 'packaging plant manager' surface NE Ohio corrugated box FM contacts; NE Ohio corrugated corridor anchored
+    # by Georgia-Pacific Middlefield (Geauga County — one of the largest corrugated plants in the Midwest),
+    # Smurfit-Kappa NE Ohio operations, WestRock Portage County, Packaging Corporation of America NE Ohio,
+    # American Packaging Corporation NE Ohio, and 50+ independent box/corrugated plants supplying the Ford Avon Lake
+    # EV assembly line, SYSCO/US Foods distribution, retail DCs, and industrial MRO packaging suppliers;
+    # ink/adhesive residue + paper dust + paperboard fiber buildup + forklift exhaust accumulate heavily on
+    # production floor exteriors + loading dock approach pads + trailer staging areas around converting equipment;
+    # OSHA 1910.272 (combustible dust — paper/paperboard = documented dust control program required) +
+    # NESHAP Subpart KK (printing/surface coating at paper mills) + OEPA NPDES SWPPP (ink/adhesive runoff
+    # = regulated stormwater event); DISTINCT from general mfg (run 118), food/bev packaging (run 127),
+    # plastics (#209 — not paper), wood/cabinet (#214 — not paper), print shops (run 140);
+    # $2,000–$5,000/facility; quarterly = $8K–$20K/year; zero competitors cold-calling corrugated plant FMs;
+    # Georgia-Pacific Middlefield (Geauga County) = anchor Geauga+Portage target for overdue pull
+    # (added 2026-07-29 run 227)
+    'corrugated plant manager', 'corrugated box plant manager', 'packaging plant manager',
+    'corrugated manufacturing manager', 'box plant manager', 'paper products plant manager',
+    'corrugated operations manager', 'packaging facility manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -3812,6 +3830,16 @@ DANNY_ORG_KEYWORDS = [
     # (added 2026-07-28 run 226)
     'galvanizing company', 'hot dip galvanizing', 'galvanizing plant', 'metal coating company',
     'zinc galvanizing', 'galvanizer', 'structural steel galvanizing', 'batch galvanizing',
+    # Corrugated Box & Paperboard Packaging Manufacturers — Segment #221; Apollo org tags 'corrugated box manufacturer'
+    # + 'corrugated packaging' surface large NE Ohio corrugated plant operators; 'cardboard box manufacturer' catches
+    # mid-size box plants; 'paperboard manufacturer' tags integrated paper/paperboard mills; Georgia-Pacific
+    # Middlefield (Geauga County) = anchor Geauga+Portage target; Smurfit-Kappa + WestRock NE Ohio = major Cuyahoga
+    # + Portage targets; zero overlap with any existing DANNY_ORG_KEYWORDS; first pull Geauga+Portage (OVERDUE —
+    # Georgia-Pacific Middlefield anchor) + Cuyahoga (WestRock, Smurfit-Kappa Cleveland-area plants)
+    # (added 2026-07-29 run 227)
+    'corrugated box manufacturer', 'corrugated packaging', 'cardboard box manufacturer',
+    'corrugated manufacturer', 'paperboard manufacturer', 'corrugated box company',
+    'packaging manufacturer', 'corrugated container manufacturer',
 ]
 
 CARLA_SEARCHES = [

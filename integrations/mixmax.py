@@ -1224,6 +1224,13 @@ PROPERTY_MANAGER_TITLES = [
     'galvanizing plant manager', 'hot-dip galvanizing manager', 'metal coating plant manager',
     'galvanizing operations manager', 'galvanizing facility manager', 'metal galvanizing manager',
     'structural galvanizing manager', 'hot dip galvanizing superintendent',
+    # Corrugated Box & Paperboard Packaging Manufacturers — Segment #221; routing sync — all corrugated plant FM
+    # contacts correctly route to property_manager Mixmax sequence on enrollment; DISTINCT from galvanizing (#220),
+    # plastics (#209), wood/cabinet (#214), food packaging (run 127), general mfg (run 118)
+    # (added 2026-07-29 run 227)
+    'corrugated plant manager', 'corrugated box plant manager', 'packaging plant manager',
+    'corrugated manufacturing manager', 'box plant manager', 'paper products plant manager',
+    'corrugated operations manager', 'packaging facility manager',
 ]
 
 REALTOR_TITLES = [
