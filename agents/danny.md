@@ -1,3 +1,21 @@
+## Run 228 — Vera Batching Note | 2026-07-30 | 222+ Segments
+**TODAY:** Wednesday July 30. 1 day since Run 227 (July 29). Late July — NE Ohio commercial wash season final window; every day of delay is revenue at risk. **CRITICAL: Geauga+Portage STILL not pulled. 17 days overdue. Run `scripts/run_geauga_portage_both.command` in Finder RIGHT NOW — unattended 12–20 min. 222 segments queued.**
+
+**New Segment #222 — Pharmaceutical & Nutraceutical Manufacturing Facilities:**
+- Titles: `pharmaceutical manufacturing manager`, `nutraceutical manufacturing manager`, `pharmaceutical plant manager`, `pharma operations manager`, `nutraceutical plant manager`, `pharmaceutical production manager`, `pharma facility manager`, `nutraceutical operations manager`
+- Org keywords: `pharmaceutical manufacturer`, `nutraceutical manufacturer`, `pharmaceutical manufacturing`, `nutraceutical manufacturing`, `pharmaceutical company`, `dietary supplement manufacturer`, `pharmaceutical plant`, `contract pharmaceutical manufacturer`
+- Targets: JM Smucker (Orrville/Wayne County — Folgers, Jif, Uncrustables = large anchor target), Vitamix (Olmsted Township/Cuyahoga — blending/manufacturing facility), Lubrizol Advanced Materials (Brecksville/Cuyahoga — pharma excipient manufacturing), Nestle Purina (Dunkirk OH), Cardinal Health NE Ohio distribution/manufacturing, Ashland Global Specialty Chemicals (Covington OH); 80+ CDMOs and dietary supplement producers in NE Ohio pharma/nutraceutical corridor
+- Compliance angle: FDA 21 CFR 211.28 (GMP — facility sanitation is documented compliance requirement, not just aesthetics) + FDA FSMA 21 CFR Part 117 (nutraceuticals/food-grade supplements) + OEPA NPDES SWPPP (ingredient/powder runoff = regulated stormwater event); loading dock approach pads + ingredient staging areas + production floor exteriors accumulate powder residue, ingredient spills, packaging film, and forklift exhaust
+- Revenue: $2,000–$6,000/facility; quarterly = $8K–$24K/year; FDA/GMP compliance angle = no-brainer close — exterior cleaning is documentable compliance activity
+- DISTINCT from: food/bev packaging (run 127), cold storage (#212), corrugated box (#221), general mfg (run 118)
+
+**Gas/Fleet Sequences — STILL PENDING (Day 76):** Jim Lavigne (Certified Oil), Kevin Kayden (Speedway), Mark Elyden (truenorth) = 63+ days overdue. 10 min fix: app.mixmax.com → Sequences → New. Complete copy: `outputs/vera/gas_fleet_sequence_copy_2026-06-12.md`.
+
+**Apollo API BLOCKED (Day 49 in cloud):** ALL cloud lead gen returns 0. Must run ALL county pulls locally via .command files.
+
+**Geauga+Portage — 17 DAYS OVERDUE:** Scripts exist. Double-click `scripts/run_geauga_portage_both.command` in Finder. 222 segments queued.
+
+---
 ## Run 227 — Vera Batching Note | 2026-07-29 | 221+ Segments
 **TODAY:** Tuesday July 29. 1 day since Run 226 (July 28). Late July — NE Ohio commercial wash season final window. **CRITICAL: Geauga+Portage STILL not pulled. 16 days overdue. Run `scripts/run_geauga_portage_both.command` in Finder RIGHT NOW — unattended 12–20 min. 221 segments queued.**
 

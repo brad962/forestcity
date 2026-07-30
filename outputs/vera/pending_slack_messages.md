@@ -1,3 +1,21 @@
+🔧 *Vera — Auto-Upgrade | Run 228 | 2026-07-30*
+>Changed: Segment #222 — Pharmaceutical & Nutraceutical Manufacturing Facilities added to `workers/lead_pipeline.py` (8 titles + 8 org keywords) and `integrations/mixmax.py` (routing sync). `agents/danny.md` Run 228 note prepended.
+>Why: FDA GMP (21 CFR 211.28) requires documented facility sanitation programs — exterior cleaning sells itself as a compliance activity, not just aesthetics. JM Smucker (Orrville), Vitamix (Olmsted Township), Lubrizol (Brecksville) = high-value anchor targets. $2K–$6K/facility; zero competitors cold-calling pharma/nutraceutical plant FMs in NE Ohio.
+>File: workers/lead_pipeline.py, integrations/mixmax.py, agents/danny.md
+---
+🚨 *Vera — CRITICAL | Geauga+Portage Pull — 17 DAYS OVERDUE | Run 228 | 2026-07-30*
+>222 segments queued for Geauga+Portage. July 13 window missed. Scripts exist — double-click `scripts/run_geauga_portage_both.command` in Finder (unattended, 12–20 min). Every additional day = more commercial leads locked out of the pipeline for end-of-season. KraftMaid HQ (Middlefield), Georgia-Pacific Middlefield, General Aluminum Mfg (Ravenna), Grand River Marina, 200+ Geauga nurseries — none contacted yet. DO IT TODAY.
+---
+🚨 *Vera — CRITICAL | Gas/Fleet Mixmax Sequences — Day 76 | Run 228 | 2026-07-30*
+>Jim Lavigne (Certified Oil), Kevin Kayden (Speedway), Mark Elyden (truenorth) = 63+ days with ZERO outreach. Gas station + fleet washing sequences STILL PENDING. 10-min fix: app.mixmax.com → Sequences → New. Email copy is ready: `outputs/vera/gas_fleet_sequence_copy_2026-06-12.md`. These are warm contacts going cold.
+---
+🚨 *Vera — CRITICAL | Apollo API Blocked — Day 49 in Cloud | Run 228 | 2026-07-30*
+>All 6-county pulls returning 0 leads from cloud. api.apollo.io not in egress allowlist. Every daily run = wasted cycle. ALL pulls must run locally via .command files (Cuyahoga, Lake, Lorain, Summit, Medina, AND the overdue Geauga+Portage). No cloud fix available — this requires Bradley running pulls locally.
+---
+✅ *Vera — Scan Complete 2026-07-30 | Run 228*
+>4 auto-upgrades shipped (Segment #222 pharma/nutraceutical: lead_pipeline.py titles + org keywords, mixmax.py routing sync, danny.md Run 228 note) | 0 proposals | 228 open issues (226 persistent pending Bradley action + 1 new Segment #222 awaiting first pull + 1 carry-forward Geauga+Portage pull overdue)
+>Persistent blockers still needing Bradley: (1) Geauga+Portage pull 17 days overdue — run the .command file; (2) Gas/Fleet Mixmax sequences Day 76 — create in app.mixmax.com; (3) Apollo API block Day 49 — run all pulls locally; (4) GitHub Actions PAT workflow scope — Option A: github.com/settings/tokens → add workflow scope (30 sec).
+---
 🔧 *Vera — Auto-Upgrade | Run 227 | 2026-07-29*
 >Changed: Segment #221 — Corrugated Box & Paperboard Packaging Manufacturers added to `workers/lead_pipeline.py` (8 titles + 8 org keywords) and `integrations/mixmax.py` (routing sync). `agents/danny.md` Run 227 note prepended.
 >Why: Georgia-Pacific Middlefield (Geauga County) is one of the largest corrugated plants in the Midwest — anchor target for the OVERDUE Geauga+Portage pull. Ink/adhesive residue + paper dust + forklift exhaust = dirty docks + OSHA 1910.272 combustible dust + OEPA NPDES compliance pressure. $2K–$5K/facility; 50+ NE Ohio targets; zero competitors cold-calling corrugated plant FMs.

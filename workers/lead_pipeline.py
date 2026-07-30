@@ -2406,6 +2406,26 @@ DANNY_TITLES = [
     'corrugated plant manager', 'corrugated box plant manager', 'packaging plant manager',
     'corrugated manufacturing manager', 'box plant manager', 'paper products plant manager',
     'corrugated operations manager', 'packaging facility manager',
+    # Pharmaceutical & Nutraceutical Manufacturing Facilities — Segment #222; Apollo title tags
+    # 'pharmaceutical manufacturing manager' + 'pharmaceutical plant manager' surface NE Ohio pharma FM contacts;
+    # FDA GMP/CGMP (21 CFR 211.28) requires documented facility sanitation programs — exterior cleaning is part of
+    # facility compliance; nutraceutical facilities subject to FDA FSMA (21 CFR Part 117) food-safety requirements;
+    # NE Ohio anchor targets: JM Smucker (Orrville/Wayne County — Folgers, Jif, Uncrustables production),
+    # Vitamix (Olmsted Township/Cuyahoga — blending/manufacturing facility), Nestle Purina (Dunkirk OH),
+    # Cardinal Health NE Ohio distribution/manufacturing, Ashland Global Specialty Chemicals (Covington OH),
+    # Lubrizol Advanced Materials (Brecksville/Cuyahoga — pharma excipient mfg), 80+ contract pharmaceutical
+    # manufacturers + dietary supplement producers in NE Ohio pharma/nutraceutical corridor;
+    # loading dock approach pads + ingredient staging areas + production floor exteriors accumulate
+    # powder residue, ingredient spills, packaging film, and forklift exhaust;
+    # FDA 21 CFR 211.28 + FDA FSMA 21 CFR 117 + OEPA NPDES SWPPP (ingredient runoff = regulated stormwater);
+    # DISTINCT from food/bev packaging (run 127), cold storage (#212), corrugated box (#221), general mfg (run 118);
+    # $2,000–$6,000/facility; quarterly = $8K–$24K/year; zero competitors cold-calling pharma/nutraceutical plant FMs;
+    # first pull Cuyahoga (Vitamix + Lubrizol Brecksville = anchor Cuyahoga targets) + Geauga+Portage (OVERDUE — 17 days)
+    # (added 2026-07-30 run 228)
+    'pharmaceutical manufacturing manager', 'nutraceutical manufacturing manager',
+    'pharmaceutical plant manager', 'pharma operations manager',
+    'nutraceutical plant manager', 'pharmaceutical production manager',
+    'pharma facility manager', 'nutraceutical operations manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -3840,6 +3860,17 @@ DANNY_ORG_KEYWORDS = [
     'corrugated box manufacturer', 'corrugated packaging', 'cardboard box manufacturer',
     'corrugated manufacturer', 'paperboard manufacturer', 'corrugated box company',
     'packaging manufacturer', 'corrugated container manufacturer',
+    # Pharmaceutical & Nutraceutical Manufacturing Facilities — Segment #222; Apollo org tags
+    # 'pharmaceutical manufacturer' + 'nutraceutical manufacturer' surface large NE Ohio pharma/nutraceutical
+    # facility operators; 'contract pharmaceutical manufacturer' catches CDMO/contract mfg accounts;
+    # 'dietary supplement manufacturer' tags standalone nutraceutical producers; JM Smucker Orrville/Wayne County
+    # = anchor Wayne County target; Vitamix Olmsted Township = anchor Cuyahoga target; Lubrizol Brecksville
+    # = high-value Cuyahoga pharma excipient target; zero overlap with any existing DANNY_ORG_KEYWORDS;
+    # first pull Cuyahoga (Vitamix + Lubrizol = anchor targets) + Geauga+Portage (OVERDUE — 17 days past July 13)
+    # (added 2026-07-30 run 228)
+    'pharmaceutical manufacturer', 'nutraceutical manufacturer', 'pharmaceutical manufacturing',
+    'nutraceutical manufacturing', 'pharmaceutical company', 'dietary supplement manufacturer',
+    'pharmaceutical plant', 'contract pharmaceutical manufacturer',
 ]
 
 CARLA_SEARCHES = [

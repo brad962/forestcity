@@ -1231,6 +1231,15 @@ PROPERTY_MANAGER_TITLES = [
     'corrugated plant manager', 'corrugated box plant manager', 'packaging plant manager',
     'corrugated manufacturing manager', 'box plant manager', 'paper products plant manager',
     'corrugated operations manager', 'packaging facility manager',
+    # Pharmaceutical & Nutraceutical Manufacturing Facilities — Segment #222; routing sync — all pharma/nutraceutical
+    # plant FM contacts correctly route to property_manager Mixmax sequence on enrollment; FDA GMP + FSMA compliance
+    # angle makes facility cleanliness a documented requirement, not just aesthetics; DISTINCT from corrugated (#221),
+    # food packaging (run 127), cold storage (#212), general mfg (run 118)
+    # (added 2026-07-30 run 228)
+    'pharmaceutical manufacturing manager', 'nutraceutical manufacturing manager',
+    'pharmaceutical plant manager', 'pharma operations manager',
+    'nutraceutical plant manager', 'pharmaceutical production manager',
+    'pharma facility manager', 'nutraceutical operations manager',
 ]
 
 REALTOR_TITLES = [

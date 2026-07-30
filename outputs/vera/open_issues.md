@@ -1,10 +1,25 @@
 # Vera Cole — Open Issues Tracker
-*Run 227 | 2026-07-29 | Compact version — historical run entries archived in git history*
-*227 open (226 carry-forward + 1 new this run) | 126 resolved*
+*Run 228 | 2026-07-30 | Compact version — historical run entries archived in git history*
+*228 open (227 carry-forward + 1 new this run) | 126 resolved*
 
 > ⚠️ **FILE SIZE NOTE:** This file was 572KB as of Run 195 due to prepending a full header every run.
 > Rewritten as a compact rolling summary on Run 196. Full history is in git log.
 > Going forward: update the metrics line at top + append new issues only (no full run header dumps).
+
+---
+
+## NEW OPEN — Run 228 | 2026-07-30 — GEAUGA+PORTAGE 17 DAYS OVERDUE (SCRIPTS READY) | DAY 49 APOLLO BLOCK | DAY 76 GAS/FLEET | 63+ DAYS OVERDUE
+
+### OPEN — Pharmaceutical & Nutraceutical Manufacturing Facilities (Segment #222)
+- **First seen:** 2026-07-30 (Run 228)
+- **Description:** Segment #222 added to `workers/lead_pipeline.py` (DANNY_TITLES + DANNY_ORG_KEYWORDS) and `integrations/mixmax.py` (PROPERTY_MANAGER_TITLES). Titles: pharmaceutical manufacturing manager, nutraceutical manufacturing manager, pharmaceutical plant manager, pharma operations manager, nutraceutical plant manager, pharmaceutical production manager, pharma facility manager, nutraceutical operations manager. Org keywords: pharmaceutical manufacturer, nutraceutical manufacturer, pharmaceutical manufacturing, nutraceutical manufacturing, pharmaceutical company, dietary supplement manufacturer, pharmaceutical plant, contract pharmaceutical manufacturer.
+- **Targets:** JM Smucker (Orrville/Wayne County — Folgers, Jif, Uncrustables = anchor Wayne County target), Vitamix (Olmsted Township/Cuyahoga — blending/mfg facility), Lubrizol Advanced Materials (Brecksville/Cuyahoga — pharma excipient mfg), Nestle Purina (Dunkirk OH), Cardinal Health NE Ohio distribution/manufacturing, Ashland Global Specialty Chemicals (Covington OH); 80+ CDMOs + dietary supplement producers in NE Ohio pharma/nutraceutical corridor.
+- **Compliance angle:** FDA 21 CFR 211.28 (GMP — facility cleanliness is documented compliance requirement, not just aesthetics) + FDA FSMA 21 CFR Part 117 (nutraceuticals/food-grade supplements) + OEPA NPDES SWPPP (ingredient/powder runoff = regulated stormwater event). Loading dock approach pads + ingredient staging areas + production floor exteriors accumulate powder residue, ingredient spills, packaging film, and forklift exhaust.
+- **Revenue:** $2,000–$6,000/facility; quarterly = $8K–$24K/year; FDA/GMP compliance angle = no-brainer close — exterior cleaning is documentable compliance activity; zero competitors cold-calling pharma/nutraceutical plant FMs.
+- **DISTINCT from:** food/bev packaging (run 127), cold storage (#212), corrugated box (#221), general mfg (run 118).
+- **First pull:** Cuyahoga (Vitamix Olmsted Township + Lubrizol Brecksville = anchor targets) + Geauga+Portage (OVERDUE — 17 days past July 13 window; 222 segments queued).
+- **Attempts:**
+  - 2026-07-30 (Run 228): Segment added to code. Awaiting first local pull.
 
 ---
 
