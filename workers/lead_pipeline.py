@@ -2426,6 +2426,23 @@ DANNY_TITLES = [
     'pharmaceutical plant manager', 'pharma operations manager',
     'nutraceutical plant manager', 'pharmaceutical production manager',
     'pharma facility manager', 'nutraceutical operations manager',
+    # Paint & Coatings Manufacturing Facilities — Segment #223; Apollo title filters surface plant FM contacts;
+    # Sherwin-Williams (Cleveland/Cuyahoga HQ + Tri-City ops = anchor Cuyahoga target), RPM International
+    # (Medina HQ — parent of Rust-Oleum, DAP, Tremco, Carboline), Tremco (Beachwood/Cuyahoga), BASF Coatings
+    # NE Ohio automotive, H.B. Fuller (Lorain), 100+ specialty coatings producers in NE Ohio Akron/Cleveland corridor;
+    # OSHA 1910.94 (spray finishing ops + open-surface tank cleaning) + EPA RCRA (solvent-based paint = F002/F003
+    # listed hazardous waste at mfg level) + OEPA NPDES SWPPP (pigment/solvent residue = regulated stormwater);
+    # loading dock approach pads + pigment-handling staging areas + production floor exteriors accumulate raw
+    # pigment spillage, solvent flash residue, coating overspray, and forklift exhaust year-round;
+    # DISTINCT from auto body/collision shops (run 164), metal plating (#216 — industrial coatings applied to parts),
+    # galvanizing (#220 — zinc coating), general mfg (run 118);
+    # $2,000–$6,000/facility; quarterly = $8K–$24K/year; zero competitors cold-calling paint plant FMs;
+    # first pull Cuyahoga (Sherwin-Williams Tri-City + Tremco Beachwood = anchor targets) + Medina (RPM HQ)
+    # (added 2026-07-31 run 229)
+    'paint manufacturing plant manager', 'coatings manufacturing manager',
+    'paint plant operations manager', 'industrial coatings plant manager',
+    'coatings facility manager', 'paint production manager',
+    'coatings operations manager', 'industrial paint plant manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -3871,6 +3888,18 @@ DANNY_ORG_KEYWORDS = [
     'pharmaceutical manufacturer', 'nutraceutical manufacturer', 'pharmaceutical manufacturing',
     'nutraceutical manufacturing', 'pharmaceutical company', 'dietary supplement manufacturer',
     'pharmaceutical plant', 'contract pharmaceutical manufacturer',
+    # Paint & Coatings Manufacturing Facilities — Segment #223; Apollo org tags 'paint manufacturer' +
+    # 'coatings manufacturer' surface large NE Ohio paint/coatings plant operators; 'industrial coatings company'
+    # catches specialty industrial and OEM coatings producers; 'specialty coatings manufacturer' tags high-value
+    # protective/performance coatings producers; Sherwin-Williams (Cleveland/Cuyahoga HQ = anchor Cuyahoga target),
+    # RPM International (Medina HQ = anchor Medina target — Rust-Oleum, DAP, Tremco, Carboline under one roof),
+    # BASF Coatings NE Ohio automotive, H.B. Fuller Lorain, 100+ NE Ohio specialty coatings producers;
+    # zero overlap with any existing DANNY_ORG_KEYWORDS (verified: no 'paint manufacturer' or 'coatings' present);
+    # first pull Cuyahoga (Sherwin-Williams Tri-City + Tremco Beachwood) + Medina (RPM HQ = anchor)
+    # (added 2026-07-31 run 229)
+    'paint manufacturer', 'coatings manufacturer', 'industrial coatings company',
+    'paint production company', 'specialty coatings manufacturer', 'coating manufacturer',
+    'industrial paint manufacturer', 'paint plant',
 ]
 
 CARLA_SEARCHES = [

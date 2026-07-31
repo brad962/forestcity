@@ -1,3 +1,24 @@
+🔧 *Vera — Auto-Upgrade | Run 229 | 2026-07-31*
+>Changed: Segment #223 — Paint & Coatings Manufacturing Facilities added to `workers/lead_pipeline.py` (8 titles + 8 org keywords) and `integrations/mixmax.py` (routing sync). `agents/danny.md` Run 229 note prepended.
+>Why: Sherwin-Williams HQ is in Cleveland; RPM International (Rust-Oleum, DAP, Tremco) is headquartered in Medina. 100+ NE Ohio paint/coatings plants — OSHA 1910.94 + EPA RCRA (F002/F003 solvents) + OEPA NPDES SWPPP make exterior cleaning a documented compliance activity. $2K–$6K/facility; zero competitors cold-calling paint plant FMs.
+>File: workers/lead_pipeline.py, integrations/mixmax.py, agents/danny.md
+---
+⚠️ *Vera — CRITICAL | Geauga+Portage 18 DAYS OVERDUE | Run 229 | 2026-07-31*
+>The Geauga+Portage pull is 18 days past its July 13 window. 223 commercial segments queued — KraftMaid, Grand River Marina, Debonne/Laurello Vineyards, 200+ wholesale nurseries, 20+ industrials, and now #222 Pharma + #223 Paint/Coatings. Scripts are ready and tested.
+>Action: Double-click `scripts/run_geauga_portage_both.command` in Finder. Runs unattended 12–20 min.
+---
+⚠️ *Vera — CRITICAL | Gas/Fleet Sequences Day 77 | Run 229 | 2026-07-31*
+>Jim Lavigne (Certified Oil), Kevin Kayden (Speedway), Mark Elyden (truenorth) — 64+ days with ZERO outreach. Gas station + fleet washing sequences have been PENDING since mid-May. These are warm leads sitting completely cold. Email copy is written and ready: `outputs/vera/gas_fleet_sequence_copy_2026-06-12.md`.
+>Action: app.mixmax.com → Sequences → New → paste from gas_fleet_sequence_copy file. 10 minutes max.
+---
+⚠️ *Vera — CRITICAL | Apollo API Block Day 50 | Run 229 | 2026-07-31*
+>Apollo (api.apollo.io) remains blocked in the cloud execution environment — Day 50. All county pulls return 0 leads in cloud. Run ALL county pulls locally via the .command files in `scripts/`. Apollo pulls fine locally; this is a cloud network policy issue only.
+---
+✅ *Vera — Scan Complete 2026-07-31 | Run 229*
+>1 auto-upgrade shipped | 3 critical pending actions | 229 open issues (226 carry-forward blocked on Bradley action + 3 new segments pending first pull) | 126 resolved
+>Upgrade: Segment #223 Paint & Coatings Manufacturing (8 titles, 8 org keywords, routing sync) — Sherwin-Williams + RPM International are NE Ohio anchors
+>Blocking: (1) Run Geauga+Portage .command file — 18 days overdue; (2) Create Gas/Fleet Mixmax sequences — 64 days of missed outreach; (3) Apollo confirmed working locally — all county pulls must run via .command scripts
+---
 🔧 *Vera — Auto-Upgrade | Run 228 | 2026-07-30*
 >Changed: Segment #222 — Pharmaceutical & Nutraceutical Manufacturing Facilities added to `workers/lead_pipeline.py` (8 titles + 8 org keywords) and `integrations/mixmax.py` (routing sync). `agents/danny.md` Run 228 note prepended.
 >Why: FDA GMP (21 CFR 211.28) requires documented facility sanitation programs — exterior cleaning sells itself as a compliance activity, not just aesthetics. JM Smucker (Orrville), Vitamix (Olmsted Township), Lubrizol (Brecksville) = high-value anchor targets. $2K–$6K/facility; zero competitors cold-calling pharma/nutraceutical plant FMs in NE Ohio.

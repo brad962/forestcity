@@ -1,10 +1,22 @@
 # Vera Cole — Open Issues Tracker
-*Run 228 | 2026-07-30 | Compact version — historical run entries archived in git history*
-*228 open (227 carry-forward + 1 new this run) | 126 resolved*
+*Run 229 | 2026-07-31 | Compact version — historical run entries archived in git history*
+*229 open (228 carry-forward + 1 new this run) | 126 resolved*
 
 > ⚠️ **FILE SIZE NOTE:** This file was 572KB as of Run 195 due to prepending a full header every run.
 > Rewritten as a compact rolling summary on Run 196. Full history is in git log.
 > Going forward: update the metrics line at top + append new issues only (no full run header dumps).
+
+---
+
+## NEW OPEN — Run 229 | 2026-07-31 — GEAUGA+PORTAGE 18 DAYS OVERDUE (SCRIPTS READY) | DAY 50 APOLLO BLOCK | DAY 77 GAS/FLEET | 64+ DAYS OVERDUE
+
+### OPEN — Paint & Coatings Manufacturing Facilities (Segment #223)
+- **First seen:** 2026-07-31 (Run 229)
+- **Description:** Segment #223 added to `workers/lead_pipeline.py` (DANNY_TITLES + DANNY_ORG_KEYWORDS) and `integrations/mixmax.py` (PROPERTY_MANAGER_TITLES). Titles: paint manufacturing plant manager, coatings manufacturing manager, paint plant operations manager, industrial coatings plant manager, coatings facility manager, paint production manager, coatings operations manager, industrial paint plant manager. Org keywords: paint manufacturer, coatings manufacturer, industrial coatings company, paint production company, specialty coatings manufacturer, coating manufacturer, industrial paint manufacturer, paint plant.
+- **Targets:** Sherwin-Williams Tri-City Operations (Cleveland/Cuyahoga — HQ city + major production campus), RPM International (Medina HQ — parent of Rust-Oleum, DAP, Tremco, Carboline), Tremco (Beachwood/Cuyahoga), BASF Coatings NE Ohio, H.B. Fuller (Lorain); 100+ specialty coatings producers in NE Ohio Akron/Cleveland industrial corridor.
+- **Status:** Code live. First pull: Cuyahoga (Sherwin-Williams Tri-City + Tremco Beachwood) + Medina (RPM HQ = anchor). Awaiting next local run.
+- **Attempts:**
+  - 2026-07-31: Added titles, org keywords, and PROPERTY_MANAGER_TITLES routing. Code live in lead_pipeline.py + mixmax.py → awaiting first local pull to confirm Apollo surfaces contacts.
 
 ---
 

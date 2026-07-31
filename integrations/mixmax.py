@@ -1240,6 +1240,17 @@ PROPERTY_MANAGER_TITLES = [
     'pharmaceutical plant manager', 'pharma operations manager',
     'nutraceutical plant manager', 'pharmaceutical production manager',
     'pharma facility manager', 'nutraceutical operations manager',
+    # Paint & Coatings Manufacturing Facilities — Segment #223 routing sync; all new paint/coatings
+    # plant FM contacts correctly route to property_manager Mixmax sequence on enrollment; Sherwin-Williams
+    # Tri-City + Tremco Beachwood = anchor Cuyahoga targets; RPM International Medina = anchor Medina target;
+    # OSHA 1910.94 spray finishing ops + EPA RCRA solvent-based paint (F002/F003 listed hazardous) + OEPA NPDES
+    # SWPPP compliance angle makes exterior cleaning a documentable safety requirement; DISTINCT from
+    # auto body/collision shops (run 164), metal plating (#216), galvanizing (#220), general mfg (run 118)
+    # (added 2026-07-31 run 229)
+    'paint manufacturing plant manager', 'coatings manufacturing manager',
+    'paint plant operations manager', 'industrial coatings plant manager',
+    'coatings facility manager', 'paint production manager',
+    'coatings operations manager', 'industrial paint plant manager',
 ]
 
 REALTOR_TITLES = [

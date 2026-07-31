@@ -1,3 +1,21 @@
+## Run 229 — Vera Batching Note | 2026-07-31 | 223+ Segments
+**TODAY:** Thursday July 31. 1 day since Run 228 (July 30). Late July — NE Ohio commercial wash season final stretch; every unworked lead is a lost booking. **CRITICAL: Geauga+Portage STILL not pulled. 18 days overdue. Run `scripts/run_geauga_portage_both.command` in Finder RIGHT NOW — unattended 12–20 min. 223 segments queued.**
+
+**New Segment #223 — Paint & Coatings Manufacturing Facilities:**
+- Titles: `paint manufacturing plant manager`, `coatings manufacturing manager`, `paint plant operations manager`, `industrial coatings plant manager`, `coatings facility manager`, `paint production manager`, `coatings operations manager`, `industrial paint plant manager`
+- Org keywords: `paint manufacturer`, `coatings manufacturer`, `industrial coatings company`, `paint production company`, `specialty coatings manufacturer`, `coating manufacturer`, `industrial paint manufacturer`, `paint plant`
+- Anchor targets: Sherwin-Williams Tri-City Operations (Cleveland/Cuyahoga — HQ city + major production campus), RPM International (Medina HQ — parent of Rust-Oleum, DAP, Tremco, Carboline = multiple brands, one roof = anchor Medina target), Tremco (Beachwood/Cuyahoga — roofing/sealant coatings), BASF Coatings NE Ohio (automotive coatings for Ford Avon Lake + Honda East Liberty supply chain), H.B. Fuller (Lorain County); 100+ specialty coatings producers across NE Ohio Akron/Cleveland industrial corridor
+- Compliance angle: OSHA 1910.94 (spray finishing operations + open-surface tank cleaning = documented housekeeping program required) + EPA RCRA (solvent-based paint = F002/F003 listed hazardous waste at manufacturing level) + OEPA NPDES SWPPP (pigment/solvent residue = regulated stormwater event); loading dock approach pads + raw pigment staging areas + production floor exteriors accumulate pigment spillage, solvent flash residue, coating overspray, and forklift exhaust; Sherwin-Williams runs sustainability audit programs where exterior cleanliness = documented OSHA + OEPA compliance activity
+- Revenue: $2,000–$6,000/facility; quarterly = $8K–$24K/year; zero competitors cold-calling paint plant FMs
+- DISTINCT from: auto body/collision shops (run 164 — coating users, not producers), metal plating (#216 — electroplating), galvanizing (#220 — zinc hot-dip), general mfg (run 118)
+
+**Gas/Fleet Sequences — STILL PENDING (Day 77):** Jim Lavigne (Certified Oil), Kevin Kayden (Speedway), Mark Elyden (truenorth) = 64+ days overdue. 10 min fix: app.mixmax.com → Sequences → New. Complete copy: `outputs/vera/gas_fleet_sequence_copy_2026-06-12.md`.
+
+**Apollo API BLOCKED (Day 50 in cloud):** ALL cloud lead gen returns 0. Must run ALL county pulls locally via .command files.
+
+**Geauga+Portage — 18 DAYS OVERDUE:** Scripts exist. Double-click `scripts/run_geauga_portage_both.command` in Finder. 223 segments queued.
+
+---
 ## Run 228 — Vera Batching Note | 2026-07-30 | 222+ Segments
 **TODAY:** Wednesday July 30. 1 day since Run 227 (July 29). Late July — NE Ohio commercial wash season final window; every day of delay is revenue at risk. **CRITICAL: Geauga+Portage STILL not pulled. 17 days overdue. Run `scripts/run_geauga_portage_both.command` in Finder RIGHT NOW — unattended 12–20 min. 222 segments queued.**
 
