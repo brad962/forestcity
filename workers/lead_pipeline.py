@@ -2443,6 +2443,26 @@ DANNY_TITLES = [
     'paint plant operations manager', 'industrial coatings plant manager',
     'coatings facility manager', 'paint production manager',
     'coatings operations manager', 'industrial paint plant manager',
+    # Rubber & Elastomer Manufacturing Facilities — Segment #224; Akron is "Rubber City" —
+    # Goodyear Tire (Akron HQ + Innovation Center), Parker Hannifin Polymer Systems (Wickliffe/Lake),
+    # Ohio Gasket & Shim (Mentor/Lake), Kent Elastomer Products (Kent/Portage), Precision Associates NE Ohio,
+    # Zeon Chemicals (Louisville OH — synthetic rubber = anchor Summit-adjacent target),
+    # Shiloh Industries rubber isolation mounts (Medina County), 200+ rubber goods manufacturers in
+    # Akron/Cuyahoga/Summit/Portage rubber corridor; OSHA 1910.94 (vulcanization = open-surface tank ops +
+    # exhaust ventilation compliance) + EPA RCRA (rubber process oil = petroleum-based hazardous waste,
+    # documented disposal required) + OEPA NPDES SWPPP (carbon black dust + process oil runoff = regulated
+    # stormwater event); carbon black dust + rubber process/compounding oil residue + sulfur/accelerator
+    # compound accumulate on production floor exteriors, loading docks, parking areas year-round;
+    # DISTINCT from specialty chemical/polymer plants (#176 — polymer compounding broadly),
+    # plastics/injection molding (#209 — thermoplastic, not vulcanized rubber),
+    # aerospace (#183 — Parker Hannifin aerospace division), general mfg (run 118);
+    # $2,000–$6,000/facility; quarterly = $8K–$24K/year; zero competitors cold-calling rubber plant FMs;
+    # first pull Cuyahoga (Goodyear Innovation Center adjacent + Parker Hannifin Wickliffe/Lake = anchor)
+    # + Portage (Kent Elastomer Products = anchor Geauga+Portage OVERDUE target)
+    # (added 2026-08-01 run 230)
+    'rubber products manager', 'rubber manufacturing manager', 'rubber plant manager',
+    'elastomer manufacturing manager', 'vulcanization manager', 'rubber compound operations manager',
+    'rubber products facility manager', 'rubber plant superintendent',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -3900,6 +3920,18 @@ DANNY_ORG_KEYWORDS = [
     'paint manufacturer', 'coatings manufacturer', 'industrial coatings company',
     'paint production company', 'specialty coatings manufacturer', 'coating manufacturer',
     'industrial paint manufacturer', 'paint plant',
+    # Rubber & Elastomer Manufacturing Facilities — Segment #224; Apollo org tags 'rubber manufacturer' +
+    # 'rubber products company' surface the largest NE Ohio rubber goods producers; 'elastomer manufacturer'
+    # catches synthetic rubber / EPDM / nitrile rubber specialty producers; 'rubber compound manufacturer'
+    # tags compounding houses that sell uncured stock to molders; 'custom rubber manufacturer' catches
+    # job-shop rubber molders (NE Ohio has 100+ job shops supplying Ford/Honda/GM supply chains);
+    # Akron Rubber City = Goodyear, Parker Hannifin Polymer, Zeon Chemicals, Ohio Gasket & Shim anchor targets;
+    # zero overlap with any existing DANNY_ORG_KEYWORDS (verified: no 'rubber' tag present in list);
+    # first pull Cuyahoga (Parker Hannifin Wickliffe = anchor) + Summit (Goodyear Akron = anchor) +
+    # Portage (Kent Elastomer Products = anchor Geauga+Portage OVERDUE target) (added 2026-08-01 run 230)
+    'rubber manufacturer', 'rubber products company', 'rubber goods manufacturer',
+    'elastomer manufacturer', 'rubber compound manufacturer', 'rubber molding company',
+    'vulcanized rubber manufacturer', 'custom rubber manufacturer',
 ]
 
 CARLA_SEARCHES = [

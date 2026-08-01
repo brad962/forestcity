@@ -1,10 +1,22 @@
 # Vera Cole — Open Issues Tracker
-*Run 229 | 2026-07-31 | Compact version — historical run entries archived in git history*
-*229 open (228 carry-forward + 1 new this run) | 126 resolved*
+*Run 230 | 2026-08-01 | Compact version — historical run entries archived in git history*
+*230 open (229 carry-forward + 1 new this run) | 126 resolved*
 
 > ⚠️ **FILE SIZE NOTE:** This file was 572KB as of Run 195 due to prepending a full header every run.
 > Rewritten as a compact rolling summary on Run 196. Full history is in git log.
 > Going forward: update the metrics line at top + append new issues only (no full run header dumps).
+
+---
+
+## NEW OPEN — Run 230 | 2026-08-01 — GEAUGA+PORTAGE 19 DAYS OVERDUE (SCRIPTS READY) | DAY 51 APOLLO BLOCK | DAY 78 GAS/FLEET | 65+ DAYS OVERDUE
+
+### OPEN — Rubber & Elastomer Manufacturing Facilities (Segment #224)
+- **First seen:** 2026-08-01 (Run 230)
+- **Description:** Segment #224 added to `workers/lead_pipeline.py` (DANNY_TITLES + DANNY_ORG_KEYWORDS) and `integrations/mixmax.py` (PROPERTY_MANAGER_TITLES). Titles: rubber products manager, rubber manufacturing manager, rubber plant manager, elastomer manufacturing manager, vulcanization manager, rubber compound operations manager, rubber products facility manager, rubber plant superintendent. Org keywords: rubber manufacturer, rubber products company, rubber goods manufacturer, elastomer manufacturer, rubber compound manufacturer, rubber molding company, vulcanized rubber manufacturer, custom rubber manufacturer.
+- **Targets:** Goodyear Tire (Akron HQ + Innovation Center = anchor Summit/Cuyahoga target), Parker Hannifin Polymer Systems (Wickliffe/Lake County = anchor Lake target), Ohio Gasket & Shim (Mentor/Lake County), Kent Elastomer Products (Kent/Portage County = anchor Geauga+Portage OVERDUE target), Zeon Chemicals (Louisville OH — synthetic rubber, Summit-adjacent), Shiloh Industries rubber isolation mounts (Medina County); 200+ rubber goods manufacturers in Akron/Cuyahoga/Summit/Portage rubber corridor.
+- **Status:** Code live. First pull: Cuyahoga (Parker Hannifin Wickliffe) + Summit (Goodyear Akron = anchor) + Portage (Kent Elastomer = anchor Geauga+Portage OVERDUE target). Awaiting next local run.
+- **Attempts:**
+  - 2026-08-01: Added titles, org keywords, and PROPERTY_MANAGER_TITLES routing. Code live in lead_pipeline.py + mixmax.py → awaiting first local pull to confirm Apollo surfaces contacts.
 
 ---
 

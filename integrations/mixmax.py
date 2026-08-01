@@ -1251,6 +1251,15 @@ PROPERTY_MANAGER_TITLES = [
     'paint plant operations manager', 'industrial coatings plant manager',
     'coatings facility manager', 'paint production manager',
     'coatings operations manager', 'industrial paint plant manager',
+    # Rubber & Elastomer Manufacturing Facilities — Segment #224; routes rubber plant FM contacts
+    # to property_manager Mixmax sequence (facility management / OSHA-OEPA compliance angle);
+    # Goodyear Tire (Akron HQ), Parker Hannifin Polymer (Wickliffe/Lake), Ohio Gasket & Shim (Mentor/Lake),
+    # Kent Elastomer Products (Kent/Portage), Zeon Chemicals (Louisville OH), Shiloh Industries (Medina);
+    # DISTINCT from specialty chemical/polymer plants (#176), plastics/injection molding (#209),
+    # aerospace (#183 Parker Hannifin aerospace), general mfg (run 118); (added 2026-08-01 run 230)
+    'rubber products manager', 'rubber manufacturing manager', 'rubber plant manager',
+    'elastomer manufacturing manager', 'vulcanization manager', 'rubber compound operations manager',
+    'rubber products facility manager', 'rubber plant superintendent',
 ]
 
 REALTOR_TITLES = [

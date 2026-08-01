@@ -1,3 +1,21 @@
+## Run 230 — Vera Batching Note | 2026-08-01 | 224+ Segments
+**TODAY:** Friday August 1. 1 day since Run 229 (July 31). August — NE Ohio commercial wash season winding down; every unworked lead is revenue slipping away before Q4. **CRITICAL: Geauga+Portage STILL not pulled. 19 days overdue (July 13 window). Run `scripts/run_geauga_portage_both.command` in Finder RIGHT NOW — unattended 12–20 min. 224 segments queued.**
+
+**New Segment #224 — Rubber & Elastomer Manufacturing Facilities:**
+- Titles: `rubber products manager`, `rubber manufacturing manager`, `rubber plant manager`, `elastomer manufacturing manager`, `vulcanization manager`, `rubber compound operations manager`, `rubber products facility manager`, `rubber plant superintendent`
+- Org keywords: `rubber manufacturer`, `rubber products company`, `rubber goods manufacturer`, `elastomer manufacturer`, `rubber compound manufacturer`, `rubber molding company`, `vulcanized rubber manufacturer`, `custom rubber manufacturer`
+- Anchor targets: Goodyear Tire (Akron HQ + Innovation Center — anchor Summit/Cuyahoga target), Parker Hannifin Polymer Systems (Wickliffe/Lake County — hose & seal manufacturing = anchor Lake target), Ohio Gasket & Shim (Mentor/Lake County), Kent Elastomer Products (Kent/Portage County = anchor Geauga+Portage OVERDUE target), Zeon Chemicals (Louisville OH — synthetic rubber adjacent to Summit), Shiloh Industries rubber isolation mounts (Medina County), 200+ rubber goods manufacturers across Akron/Cuyahoga/Summit/Portage rubber corridor ("Rubber City" region)
+- Compliance angle: OSHA 1910.94 (vulcanization = documented open-surface tank operations + exhaust ventilation compliance program required) + EPA RCRA (rubber process oil = petroleum-based hazardous waste, documented disposal required) + OEPA NPDES SWPPP (carbon black dust + compounding oil runoff = regulated stormwater event); carbon black dust + rubber process/compounding oil residue + sulfur/accelerator compound accumulate on production floor exteriors, loading docks, and parking areas; Goodyear Innovation Center has documented sustainability audit programs where exterior cleanliness = OSHA + OEPA compliance activity
+- Revenue: $2,000–$6,000/facility; quarterly = $8K–$24K/year; zero competitors cold-calling rubber plant FMs
+- DISTINCT from: specialty chemical/polymer plants (#176 — polymer compounding broadly, not vulcanized rubber goods), plastics/injection molding (#209 — thermoplastic), aerospace (#183 — Parker Hannifin aerospace division, not rubber goods), general mfg (run 118)
+
+**Gas/Fleet Sequences — STILL PENDING (Day 78):** Jim Lavigne (Certified Oil), Kevin Kayden (Speedway), Mark Elyden (truenorth) = 65+ days overdue. 10 min fix: app.mixmax.com → Sequences → New. Complete copy: `outputs/vera/gas_fleet_sequence_copy_2026-06-12.md`.
+
+**Apollo API BLOCKED (Day 51 in cloud):** ALL cloud lead gen returns 0. Must run ALL county pulls locally via .command files.
+
+**Geauga+Portage — 19 DAYS OVERDUE:** Scripts exist. Double-click `scripts/run_geauga_portage_both.command` in Finder. 224 segments queued.
+
+---
 ## Run 229 — Vera Batching Note | 2026-07-31 | 223+ Segments
 **TODAY:** Thursday July 31. 1 day since Run 228 (July 30). Late July — NE Ohio commercial wash season final stretch; every unworked lead is a lost booking. **CRITICAL: Geauga+Portage STILL not pulled. 18 days overdue. Run `scripts/run_geauga_portage_both.command` in Finder RIGHT NOW — unattended 12–20 min. 223 segments queued.**
 
