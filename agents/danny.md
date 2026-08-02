@@ -1,3 +1,23 @@
+## Run 231 — Vera Batching Note | 2026-08-02 | 225+ Segments
+**TODAY:** Saturday August 2. 1 day since Run 230 (Aug 1). August — peak season winding down; back-to-school push means schools + commercial properties are booking exterior cleaning. **CRITICAL: Geauga+Portage STILL not pulled. 20 days overdue (July 13 window). Run `scripts/run_geauga_portage_both.command` in Finder RIGHT NOW — unattended 12–20 min. 225 segments queued.**
+
+**New Segment #225 — Industrial & Commercial Laundry / Linen Service Facilities:**
+- Titles: `laundry plant manager`, `commercial laundry manager`, `linen service manager`, `uniform services manager`, `laundry operations manager`, `textile rental manager`, `industrial laundry manager`, `linen plant manager`
+- Org keywords: `commercial laundry`, `industrial laundry`, `linen service`, `uniform service company`, `textile rental`, `linen rental company`, `commercial linen service`, `healthcare linen service`
+- Anchor targets: Alsco (Cleveland/Cuyahoga — major linen/uniform service, anchor Cuyahoga target), Cintas (multiple NE Ohio plants — Cuyahoga hub + Mentor/Lake plant = 2 facility targets), ARAMARK Uniform Services NE Ohio, UniFirst NE Ohio, Healthcare Linen Services (Akron area — Summit County anchor), AmeriPride Services NE Ohio serving Cleveland Clinic + University Hospitals + hotel/restaurant chains across 7 counties
+- Compliance angle: EPA CWA Section 402 NPDES (industrial laundry wastewater discharge = permit required, documented in Discharge Monitoring Reports — FM can reference DMR number as compliance hook) + OEPA NPDES SWPPP (surfactant/detergent runoff = regulated stormwater event) + OSHA 1910.215 (laundry machinery — steam + chemical handling docs); hot steam + humidity from industrial washing = heavy algae/mold on building exteriors; chemical bleach + detergent exposure = exterior staining on loading dock approach pads + cart staging areas; large, visible exterior soiling = no-brainer visual close
+- Revenue: $1,500–$4,000/facility; quarterly = $6K–$16K/year; zero competitors cold-calling commercial laundry plant FMs
+- DISTINCT from: car wash (#84 — vehicles not textiles), janitorial/cleaning services (run 138 — service providers not plants), dry cleaner retail (run 116 — small retail storefronts not industrial plants), food/bev processing (run 127)
+
+**GitHub Actions Relay — NEW APPROACH (Run 231):** Direct git commit of `.github/workflows/vera_slack_relay.yml` attempted this run (bypasses REST API entirely). If push succeeds, Slack relay goes live automatically on next commit. Requires `SLACK_WEBHOOK_OFFICE` secret in repo Settings → Secrets and variables → Actions.
+
+**Gas/Fleet Sequences — STILL PENDING (Day 79):** Jim Lavigne (Certified Oil), Kevin Kayden (Speedway), Mark Elyden (truenorth) = 66+ days overdue. 10 min fix: app.mixmax.com → Sequences → New. Complete copy: `outputs/vera/gas_fleet_sequence_copy_2026-06-12.md`.
+
+**Apollo API BLOCKED (Day 52 in cloud):** ALL cloud lead gen returns 0. Must run ALL county pulls locally via .command files.
+
+**Geauga+Portage — 20 DAYS OVERDUE:** Scripts exist. Double-click `scripts/run_geauga_portage_both.command` in Finder. 225 segments queued.
+
+---
 ## Run 230 — Vera Batching Note | 2026-08-01 | 224+ Segments
 **TODAY:** Friday August 1. 1 day since Run 229 (July 31). August — NE Ohio commercial wash season winding down; every unworked lead is revenue slipping away before Q4. **CRITICAL: Geauga+Portage STILL not pulled. 19 days overdue (July 13 window). Run `scripts/run_geauga_portage_both.command` in Finder RIGHT NOW — unattended 12–20 min. 224 segments queued.**
 

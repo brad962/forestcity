@@ -1260,6 +1260,13 @@ PROPERTY_MANAGER_TITLES = [
     'rubber products manager', 'rubber manufacturing manager', 'rubber plant manager',
     'elastomer manufacturing manager', 'vulcanization manager', 'rubber compound operations manager',
     'rubber products facility manager', 'rubber plant superintendent',
+    # Industrial & Commercial Laundry / Linen Service Facilities — Segment #225 routing sync;
+    # all new laundry/linen plant FM contacts correctly route to property_manager sequence;
+    # DISTINCT from car wash (#84), janitorial services (run 138), dry cleaner retail (run 116);
+    # (added 2026-08-02 run 231)
+    'laundry plant manager', 'commercial laundry manager', 'linen service manager',
+    'uniform services manager', 'laundry operations manager', 'textile rental manager',
+    'industrial laundry manager', 'linen plant manager',
 ]
 
 REALTOR_TITLES = [

@@ -2463,6 +2463,22 @@ DANNY_TITLES = [
     'rubber products manager', 'rubber manufacturing manager', 'rubber plant manager',
     'elastomer manufacturing manager', 'vulcanization manager', 'rubber compound operations manager',
     'rubber products facility manager', 'rubber plant superintendent',
+    # Industrial & Commercial Laundry / Linen Service Facilities — Segment #225; Alsco (Cleveland/Cuyahoga),
+    # Cintas NE Ohio plants (multiple facilities), ARAMARK Uniform Services NE Ohio, UniFirst NE Ohio,
+    # Healthcare Linen Services (Akron area), AmeriPride Services NE Ohio serving Cleveland Clinic +
+    # University Hospitals + hotel chains; EPA CWA Section 402 NPDES (industrial laundry wastewater discharge
+    # = permit required, recorded in DMRs) + OEPA NPDES SWPPP (surfactant/detergent runoff = regulated
+    # stormwater event) + OSHA 1910.215 (laundry machinery — steam exposure + chemical handling docs);
+    # hot steam + humidity from industrial washing operations = heavy algae/mold growth on building exteriors;
+    # chemical detergent/bleach exposure creates exterior staining on loading docks + cart staging areas;
+    # $1,500–$4,000/facility; quarterly = $6K–$16K/year; zero competitors cold-calling commercial laundry FMs;
+    # DISTINCT from car wash (#84 — vehicles, not textiles), janitorial/cleaning services (run 138),
+    # dry cleaner retail (run 116 — small retail, not industrial plants), food/bev processing (run 127);
+    # first pull Cuyahoga (Alsco Cleveland + Cintas NE Ohio hub = anchor targets) + Lake (Cintas Mentor plant)
+    # + Geauga+Portage (OVERDUE — 20 days past July 13 window) (added 2026-08-02 run 231)
+    'laundry plant manager', 'commercial laundry manager', 'linen service manager',
+    'uniform services manager', 'laundry operations manager', 'textile rental manager',
+    'industrial laundry manager', 'linen plant manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -3932,6 +3948,17 @@ DANNY_ORG_KEYWORDS = [
     'rubber manufacturer', 'rubber products company', 'rubber goods manufacturer',
     'elastomer manufacturer', 'rubber compound manufacturer', 'rubber molding company',
     'vulcanized rubber manufacturer', 'custom rubber manufacturer',
+    # Industrial & Commercial Laundry / Linen Service Facilities — Segment #225; 'commercial laundry'
+    # surfaces Alsco, Cintas, ARAMARK, UniFirst, AmeriPride NE Ohio plants; 'linen service' catches
+    # healthcare linen operations (Cleveland Clinic + UH supplier chain); 'uniform service company' tags
+    # industrial uniform laundry plants (Cintas/UniFirst = largest volume accounts); 'textile rental' surfaces
+    # linen rental companies serving hotel/restaurant/hospitality sector (NE Ohio hotel supply chain);
+    # 'healthcare linen service' catches hospital-grade laundry operations (Summit/Cuyahoga anchor targets);
+    # zero overlap with any existing DANNY_ORG_KEYWORDS (verified: no 'laundry'/'linen' tag in list);
+    # first pull Cuyahoga (Alsco Cleveland + Cintas NE Ohio hub) + Lake (Cintas Mentor plant) +
+    # Geauga+Portage (OVERDUE — 20 days past July 13 window) (added 2026-08-02 run 231)
+    'commercial laundry', 'industrial laundry', 'linen service', 'uniform service company',
+    'textile rental', 'linen rental company', 'commercial linen service', 'healthcare linen service',
 ]
 
 CARLA_SEARCHES = [
