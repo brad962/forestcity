@@ -1,3 +1,17 @@
+🔧 *Vera — Auto-Upgrade | Run 232 | 2026-08-03*
+>Changed: Added Segment #226 — Precast & Prestressed Concrete Manufacturing Plants to lead_pipeline.py (8 titles + 8 org keywords) and mixmax.py PROPERTY_MANAGER_TITLES (routing sync). Run 232 batching note prepended to danny.md.
+>Why: Precast plants (Oldcastle Precast NE Ohio, Valley Precast, Great Lakes Precast) have large outdoor staging yards with concrete dust + form release agent + curing compound residue; EPA 40 CFR 122 NPDES + OEPA SWPPP compliance angle; $2.5K–$7K/facility quarterly; zero competitors.
+>File: workers/lead_pipeline.py, integrations/mixmax.py, agents/danny.md
+---
+⚠️ *Vera — Persistent Alert | Run 232 | 2026-08-03*
+>Geauga+Portage pull is 21 DAYS OVERDUE. 226 segments queued. Scripts are ready — double-click `scripts/run_geauga_portage_both.command` in Finder. 12–20 min unattended.
+>Gas/Fleet sequences: Day 80 (67+ days). Jim Lavigne, Kevin Kayden, Mark Elyden are live leads with no sequence. 10-min fix at app.mixmax.com. Copy at `outputs/vera/gas_fleet_sequence_copy_2026-06-12.md`.
+>Apollo cloud block: Day 53. All lead gen must run locally via .command files.
+---
+✅ *Vera — Scan Complete 2026-08-03*
+>1 auto-upgrade shipped | 0 new proposals | 232 open issues tracked
+>Segment #226 live: Precast & Prestressed Concrete (8 titles, 8 org keywords, routing synced). Persistent blockers unchanged — Geauga+Portage 21 days overdue, Gas/Fleet Day 80, Apollo cloud blocked Day 53.
+---
 🔧 *Vera — Auto-Upgrade | Run 231 | 2026-08-02*
 >Changed: Added Segment #225 — Industrial & Commercial Laundry / Linen Service Facilities to lead_pipeline.py (8 titles + 8 org keywords) and mixmax.py PROPERTY_MANAGER_TITLES (routing sync). Run 231 batching note prepended to danny.md.
 >Why: Commercial laundry plants (Alsco, Cintas, ARAMARK, UniFirst, Healthcare Linen — NE Ohio) have heavy exterior soiling from steam + chemical exposure; EPA CWA NPDES + OEPA SWPPP compliance angle; zero competitors targeting this segment; $1.5K–$4K/facility quarterly

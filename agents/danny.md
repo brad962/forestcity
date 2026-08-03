@@ -1,3 +1,21 @@
+## Run 232 — Vera Batching Note | 2026-08-03 | 226+ Segments
+**TODAY:** Sunday August 3. 1 day since Run 231 (Aug 2). August — peak season winding down; back-to-school commercial push continues. **CRITICAL: Geauga+Portage STILL not pulled. 21 days overdue (July 13 window). Run `scripts/run_geauga_portage_both.command` in Finder RIGHT NOW — unattended 12–20 min. 226 segments queued.**
+
+**New Segment #226 — Precast & Prestressed Concrete Manufacturing Plants:**
+- Titles: `precast plant manager`, `precast concrete plant manager`, `prestressed concrete manager`, `precast operations manager`, `precast facility manager`, `concrete products manager`, `precast manufacturing manager`, `precast plant superintendent`
+- Org keywords: `precast concrete`, `prestressed concrete`, `precast manufacturer`, `concrete products company`, `precast concrete manufacturer`, `precast building products`, `precast concrete plant`, `precast pipe manufacturer`
+- Anchor targets: Oldcastle Precast NE Ohio (CRH Americas network — one of largest precast networks in US; multiple NE Ohio plant locations), Valley Precast (Navarre OH — Stark County, adjacent to Summit service area), Great Lakes Precast (NE Ohio market), Medina County precast plants, independent precast producers in Cuyahoga/Lake/Lorain corridor; structural precast supply chain for I-90/I-480 ODOT rehabilitation projects, NEORSD sewer infrastructure, Ford Avon Lake EV assembly site prep, NE Ohio commercial/industrial construction boom
+- Compliance angle: EPA 40 CFR 122 NPDES (concrete washwater = regulated process wastewater; concrete slurry discharge requires permit; pH + TSS monitoring required at concrete products plants) + OEPA NPDES SWPPP (concrete dust + form release agent runoff + curing compound residue = regulated stormwater event) + OSHA 29 CFR 1910.22 (concrete dust accumulation on exterior surfaces = documented housekeeping hazard); large outdoor staging yards + loading dock approach pads + form stripping areas accumulate concrete dust, form release agents (petroleum/soap-based), curing compound overspray, aggregate spills, and efflorescence; summer heat = accelerated efflorescence staining on precast products + facility exteriors = visible compliance liability for plant FMs
+- Revenue: $2,500–$7,000/facility; quarterly = $10K–$28K/year; large outdoor staging yards = additional scope beyond standard building wash; zero competitors cold-calling precast plant FMs
+- DISTINCT from: ready-mix concrete (batch plant/delivery trucks — different segment), concrete contractors (they pour, not manufacture), masonry/block manufacturers (CMU block units, not structural precast), general mfg (run 118)
+
+**Gas/Fleet Sequences — STILL PENDING (Day 80):** Jim Lavigne (Certified Oil), Kevin Kayden (Speedway), Mark Elyden (truenorth) = 67+ days overdue. 10 min fix: app.mixmax.com → Sequences → New. Complete copy: `outputs/vera/gas_fleet_sequence_copy_2026-06-12.md`.
+
+**Apollo API BLOCKED (Day 53 in cloud):** ALL cloud lead gen returns 0. Must run ALL county pulls locally via .command files.
+
+**Geauga+Portage — 21 DAYS OVERDUE:** Scripts exist. Double-click `scripts/run_geauga_portage_both.command` in Finder. 226 segments queued.
+
+---
 ## Run 231 — Vera Batching Note | 2026-08-02 | 225+ Segments
 **TODAY:** Saturday August 2. 1 day since Run 230 (Aug 1). August — peak season winding down; back-to-school push means schools + commercial properties are booking exterior cleaning. **CRITICAL: Geauga+Portage STILL not pulled. 20 days overdue (July 13 window). Run `scripts/run_geauga_portage_both.command` in Finder RIGHT NOW — unattended 12–20 min. 225 segments queued.**
 

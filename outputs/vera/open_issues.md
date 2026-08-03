@@ -1,12 +1,22 @@
 # Vera Cole — Open Issues Tracker
-*Run 231 | 2026-08-02 | Compact version — historical run entries archived in git history*
-*231 open (230 carry-forward + 1 new this run) | 126 resolved*
+*Run 232 | 2026-08-03 | Compact version — historical run entries archived in git history*
+*232 open (231 carry-forward + 1 new this run) | 126 resolved*
 
 > ⚠️ **FILE SIZE NOTE:** This file was 572KB as of Run 195 due to prepending a full header every run.
 > Rewritten as a compact rolling summary on Run 196. Full history is in git log.
 > Going forward: update the metrics line at top + append new issues only (no full run header dumps).
 
 ---
+
+## NEW OPEN — Run 232 | 2026-08-03 — GEAUGA+PORTAGE 21 DAYS OVERDUE (SCRIPTS READY) | DAY 53 APOLLO BLOCK | DAY 80 GAS/FLEET | 67+ DAYS OVERDUE
+
+### OPEN — Precast & Prestressed Concrete Manufacturing Plants (Segment #226)
+- **First seen:** 2026-08-03 (Run 232)
+- **Description:** Segment #226 added to `workers/lead_pipeline.py` (DANNY_TITLES + DANNY_ORG_KEYWORDS) and `integrations/mixmax.py` (PROPERTY_MANAGER_TITLES). Titles: precast plant manager, precast concrete plant manager, prestressed concrete manager, precast operations manager, precast facility manager, concrete products manager, precast manufacturing manager, precast plant superintendent. Org keywords: precast concrete, prestressed concrete, precast manufacturer, concrete products company, precast concrete manufacturer, precast building products, precast concrete plant, precast pipe manufacturer.
+- **Targets:** Oldcastle Precast NE Ohio (CRH Americas network), Valley Precast (Navarre/Stark County), Great Lakes Precast, Medina County precast plants; ODOT/NEORSD infrastructure supply chain; 50+ precast producers across NE Ohio 7-county service area.
+- **Status:** Code live. Awaiting next local pull (Apollo blocked in cloud — must run locally via .command files).
+- **Attempts:**
+  - 2026-08-03 (Run 232): Added titles, org keywords, and PROPERTY_MANAGER_TITLES routing. Code live in lead_pipeline.py + mixmax.py → awaiting first local pull.
 
 ## NEW OPEN — Run 231 | 2026-08-02 — GEAUGA+PORTAGE 20 DAYS OVERDUE (SCRIPTS READY) | DAY 52 APOLLO BLOCK | DAY 79 GAS/FLEET | 66+ DAYS OVERDUE
 

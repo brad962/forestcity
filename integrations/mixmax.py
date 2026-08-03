@@ -1267,6 +1267,13 @@ PROPERTY_MANAGER_TITLES = [
     'laundry plant manager', 'commercial laundry manager', 'linen service manager',
     'uniform services manager', 'laundry operations manager', 'textile rental manager',
     'industrial laundry manager', 'linen plant manager',
+    # Precast & Prestressed Concrete Manufacturing Plants — Segment #226 routing sync;
+    # all new precast/prestressed concrete plant FM contacts correctly route to property_manager sequence;
+    # DISTINCT from ready-mix concrete (delivery trucks), concrete contractors (pour, not manufacture),
+    # masonry/block manufacturers (CMU block units); (added 2026-08-03 run 232)
+    'precast plant manager', 'precast concrete plant manager', 'prestressed concrete manager',
+    'precast operations manager', 'precast facility manager', 'concrete products manager',
+    'precast manufacturing manager', 'precast plant superintendent',
 ]
 
 REALTOR_TITLES = [

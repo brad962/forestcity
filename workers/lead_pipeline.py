@@ -2479,6 +2479,25 @@ DANNY_TITLES = [
     'laundry plant manager', 'commercial laundry manager', 'linen service manager',
     'uniform services manager', 'laundry operations manager', 'textile rental manager',
     'industrial laundry manager', 'linen plant manager',
+    # Precast & Prestressed Concrete Manufacturing Plants — Segment #226; Oldcastle Precast NE Ohio
+    # (CRH Americas network — one of largest precast networks in US; multiple NE Ohio plant locations),
+    # Valley Precast (Navarre/Stark County — adjacent to Summit County service area), Great Lakes Precast,
+    # Medina County precast plants, structural precast for I-90/I-480 ODOT rehabilitation projects +
+    # NEORSD sewer infrastructure + Ford Avon Lake EV assembly site prep + NE Ohio commercial construction boom;
+    # EPA 40 CFR 122 NPDES (concrete washwater = regulated process wastewater; concrete slurry discharge
+    # requires permit; pH + TSS monitoring required at concrete products plants) + OEPA NPDES SWPPP
+    # (concrete dust + form release agent runoff + curing compound residue = regulated stormwater event) +
+    # OSHA 29 CFR 1910.22 (concrete dust accumulation = documented housekeeping hazard); large outdoor
+    # staging yards + loading dock approach pads + form stripping areas accumulate concrete dust, form
+    # release agents (petroleum/soap-based), curing compound overspray, aggregate spills, efflorescence;
+    # summer heat = accelerated efflorescence staining on precast products + facility exteriors;
+    # $2,500–$7,000/facility; quarterly = $10K–$28K/year; large outdoor staging yards = additional scope;
+    # zero competitors cold-calling precast plant FMs; DISTINCT from ready-mix concrete (delivery trucks,
+    # not products), concrete contractors (pour, not manufacture), masonry/block (CMU units),
+    # general mfg (run 118) (added 2026-08-03 run 232)
+    'precast plant manager', 'precast concrete plant manager', 'prestressed concrete manager',
+    'precast operations manager', 'precast facility manager', 'concrete products manager',
+    'precast manufacturing manager', 'precast plant superintendent',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -3959,6 +3978,14 @@ DANNY_ORG_KEYWORDS = [
     # Geauga+Portage (OVERDUE — 20 days past July 13 window) (added 2026-08-02 run 231)
     'commercial laundry', 'industrial laundry', 'linen service', 'uniform service company',
     'textile rental', 'linen rental company', 'commercial linen service', 'healthcare linen service',
+    # Precast & Prestressed Concrete Manufacturing Plants — Segment #226; 'precast concrete' surfaces
+    # Oldcastle Precast, Valley Precast, Great Lakes Precast, independent NE Ohio precast producers;
+    # 'prestressed concrete' tags structural precast plants in I-90/I-480 + NEORSD supply chain;
+    # 'concrete products company' + 'precast manufacturer' catch mid-size independent producers;
+    # 'precast pipe manufacturer' catches culvert/sewer pipe producers (active NEORSD + ODOT supply chain);
+    # zero overlap with any existing DANNY_ORG_KEYWORDS (added 2026-08-03 run 232)
+    'precast concrete', 'prestressed concrete', 'precast manufacturer', 'concrete products company',
+    'precast concrete manufacturer', 'precast building products', 'precast concrete plant', 'precast pipe manufacturer',
 ]
 
 CARLA_SEARCHES = [
