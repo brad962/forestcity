@@ -2156,3 +2156,5 @@
 [2026-08-04 07:05] Vera | Run 233 — UPDATED: outputs/vera/open_issues.md — header updated to Run 233; Segment #227 open issue added (code live, awaiting first local pull); persistent alerts updated (Day 54 Apollo, Day 81 Gas/Fleet, 22 days Geauga+Portage). | outputs/vera/open_issues.md | Done
 [2026-08-04 07:06] Vera | Run 233 — WRITTEN: outputs/vera/pending_slack_messages.md — auto-upgrade notification (Segment #227) + persistent alert (Geauga+Portage 22 days / Gas+Fleet Day 81 / Apollo Day 54 / 36 overdue contacts) + scan complete summary. | outputs/vera/pending_slack_messages.md | Done
 [2026-08-04 07:10] Office | Daily morning briefing | morning_2026-08-04.md | Done
+[2026-08-04 12:35] Nina | Daily hot leads report — 0 replied, 0 hot, 0 due today, 0 due tomorrow, 0 stale estimates | hot_leads_2026-08-04.md | Done
+[2026-08-04 12:35] Nina | Workiz daily report - Power Washing jobs | Workiz API unavailable — run locally. | Done
