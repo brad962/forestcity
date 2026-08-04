@@ -1,3 +1,17 @@
+🔧 *Vera — Auto-Upgrade | Run 233 | 2026-08-04*
+>Changed: Added Segment #227 — Ready-Mix Concrete, Aggregate & Quarry Operations to lead_pipeline.py (8 titles + 8 org keywords) and mixmax.py PROPERTY_MANAGER_TITLES (routing sync). Run 233 batching note prepended to danny.md.
+>Why: NE Ohio has 100+ ready-mix batch plants + 50+ quarry/aggregate operations (Shelly & Sands, Medina Supply, LaFarge Holcim, Lehigh Hanson). EPA CGP washout compliance + OSHA silica dust = exterior cleaning is documented compliance activity. $1.5K–$5K/facility quarterly; zero competitors cold-calling batch plant FMs. DISTINCT from precast concrete (#226).
+>File: workers/lead_pipeline.py, integrations/mixmax.py, agents/danny.md
+---
+⚠️ *Vera — Persistent Alert | Run 233 | 2026-08-04*
+>Geauga+Portage pull is 22 DAYS OVERDUE. 227 segments queued. Scripts are ready — double-click `scripts/run_geauga_portage_both.command` in Finder. 12–20 min unattended. Every day = high-value leads (KraftMaid supply chain, Grand River Marina, Georgia-Pacific Middlefield, Kent Elastomer, General Aluminum Mfg) sitting untouched as season winds down.
+>Gas/Fleet sequences: Day 81. Jim Lavigne (Certified Oil), Kevin Kayden (Speedway), Mark Elyden (truenorth) = 68+ days with ZERO outreach. 10-min fix at app.mixmax.com → Sequences → New. Copy ready: `outputs/vera/gas_fleet_sequence_copy_2026-06-12.md`.
+>Apollo cloud block: Day 54. All lead gen must run locally via .command files on Bradley's Mac.
+---
+✅ *Vera — Scan Complete 2026-08-04 | Run 233*
+>1 auto-upgrade shipped | 0 new proposals | 233 open issues tracked
+>Segment #227 live: Ready-Mix Concrete, Aggregate & Quarry Operations (8 titles, 8 org keywords, routing synced). Persistent blockers unchanged — Geauga+Portage 22 days overdue, Gas/Fleet Day 81, Apollo cloud blocked Day 54. 36 overdue pipeline contacts need follow-up (33 never contacted per Nina weekly report).
+---
 🔧 *Vera — Auto-Upgrade | Run 232 | 2026-08-03*
 >Changed: Added Segment #226 — Precast & Prestressed Concrete Manufacturing Plants to lead_pipeline.py (8 titles + 8 org keywords) and mixmax.py PROPERTY_MANAGER_TITLES (routing sync). Run 232 batching note prepended to danny.md.
 >Why: Precast plants (Oldcastle Precast NE Ohio, Valley Precast, Great Lakes Precast) have large outdoor staging yards with concrete dust + form release agent + curing compound residue; EPA 40 CFR 122 NPDES + OEPA SWPPP compliance angle; $2.5K–$7K/facility quarterly; zero competitors.

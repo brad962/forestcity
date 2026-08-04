@@ -1,3 +1,21 @@
+## Run 233 — Vera Batching Note | 2026-08-04 | 227+ Segments
+**TODAY:** Monday August 4. 1 day since Run 232 (Aug 3). August — peak season still live; commercial back-to-school + fall prep contracts starting to close. **CRITICAL: Geauga+Portage STILL not pulled. 22 days overdue (July 13 window). Run `scripts/run_geauga_portage_both.command` in Finder RIGHT NOW — unattended 12–20 min. 227 segments queued.**
+
+**New Segment #227 — Ready-Mix Concrete, Aggregate & Quarry Operations:**
+- Titles: `ready-mix plant manager`, `batch plant manager`, `concrete plant manager`, `concrete plant operations manager`, `aggregate plant manager`, `quarry manager`, `quarry operations manager`, `ready-mix concrete manager`
+- Org keywords: `ready-mix concrete`, `ready mix concrete`, `concrete batch plant`, `aggregate company`, `sand and gravel company`, `quarry operations`, `crushed stone company`, `concrete mixing company`
+- Anchor targets: Shelly & Sands (Summit/Cuyahoga = primary anchor — one of NE Ohio's largest paving/aggregate/ready-mix companies), Medina Supply Company (quarry + batch plant, Medina County anchor), LaFarge Holcim (Cleveland-area ready-mix plants, Cuyahoga anchor), Lehigh Hanson (multiple NE Ohio batch plants), Barrett Paving Materials (NE Ohio batch plants), Independence Excavating (Cuyahoga), Complete Paving (Summit), 100+ independent batch plants across all 7 counties
+- Compliance angle: EPA CGP (Construction General Permit 2022 — all ready-mix batch plants producing concrete for construction projects must maintain concrete washout management plans; washout pit + truck washout apron + mixer drum rinse areas = documented stormwater compliance) + OEPA NPDES SWPPP (cement slurry, aggregate spillage, diesel residue from mixer truck fleet parking = regulated stormwater events) + OSHA 29 CFR 1910.1000 Table Z-3 (respirable crystalline silica from cement dust = documented exposure control plan required; exterior housekeeping = compliance activity); batch plant yard surfaces + truck staging aprons + loader traffic lanes accumulate cement slurry, aggregate spill, diesel/hydraulic oil from mixer trucks; quarterly exterior wash = documented CGP compliance activity
+- Revenue: $1,500–$5,000/facility; quarterly = $6K–$20K/year; 100+ NE Ohio batch plants = dense pipeline; zero competitors cold-calling ready-mix plant FMs or quarry operations managers
+- DISTINCT from: precast concrete (#226 — factory-manufactured products), concrete block manufacturer (#211 — CMU block units), concrete contractors (they pour, not produce), general mfg (run 118)
+
+**Gas/Fleet Sequences — STILL PENDING (Day 81):** Jim Lavigne (Certified Oil), Kevin Kayden (Speedway), Mark Elyden (truenorth) = 68+ days overdue. 10 min fix: app.mixmax.com → Sequences → New. Complete copy: `outputs/vera/gas_fleet_sequence_copy_2026-06-12.md`.
+
+**Apollo API BLOCKED (Day 54 in cloud):** ALL cloud lead gen returns 0. Must run ALL county pulls locally via .command files.
+
+**Geauga+Portage — 22 DAYS OVERDUE:** Scripts exist. Double-click `scripts/run_geauga_portage_both.command` in Finder. 227 segments queued.
+
+---
 ## Run 232 — Vera Batching Note | 2026-08-03 | 226+ Segments
 **TODAY:** Sunday August 3. 1 day since Run 231 (Aug 2). August — peak season winding down; back-to-school commercial push continues. **CRITICAL: Geauga+Portage STILL not pulled. 21 days overdue (July 13 window). Run `scripts/run_geauga_portage_both.command` in Finder RIGHT NOW — unattended 12–20 min. 226 segments queued.**
 

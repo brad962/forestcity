@@ -2498,6 +2498,22 @@ DANNY_TITLES = [
     'precast plant manager', 'precast concrete plant manager', 'prestressed concrete manager',
     'precast operations manager', 'precast facility manager', 'concrete products manager',
     'precast manufacturing manager', 'precast plant superintendent',
+    # Ready-Mix Concrete, Aggregate & Quarry Operations — Segment #227; Shelly & Sands (Cuyahoga/Summit
+    # anchor), Lehigh Hanson NE Ohio batch plants, LaFarge Holcim Cleveland area, Medina Supply Company
+    # (quarry + ready-mix, Medina County anchor), Hanson Aggregates NE Ohio, 100+ independent batch plants;
+    # DISTINCT from precast concrete (#226 — factory-manufactured products), concrete contractors (pour,
+    # not produce), concrete block manufacturer (#211), general mfg (run 118);
+    # EPA CGP (Construction General Permit) requires concrete washout management plans at batch plants —
+    # washout pits + truck washout aprons + batch plant yard surfaces accumulate cement slurry, aggregate
+    # spillage, diesel residue from mixer trucks; quarterly pressure wash = documented stormwater compliance;
+    # OSHA 29 CFR 1910.1000 (respirable silica dust — OEPA NPDES SWPPP aggregate runoff regulated);
+    # $1,500–$5,000/facility; quarterly = $6K–$20K/year; 100+ NE Ohio batch plants = dense pipeline;
+    # zero competitors cold-calling ready-mix plant FMs or quarry operations managers;
+    # first pull: Summit (Shelly & Sands = anchor) + Medina (Medina Supply Company quarry/batch = anchor)
+    # + Cuyahoga (LaFarge Holcim + Lehigh Hanson Cleveland area plants) (added 2026-08-04 run 233)
+    'ready-mix plant manager', 'batch plant manager', 'concrete plant manager',
+    'concrete plant operations manager', 'aggregate plant manager', 'quarry manager',
+    'quarry operations manager', 'ready-mix concrete manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -3986,6 +4002,19 @@ DANNY_ORG_KEYWORDS = [
     # zero overlap with any existing DANNY_ORG_KEYWORDS (added 2026-08-03 run 232)
     'precast concrete', 'prestressed concrete', 'precast manufacturer', 'concrete products company',
     'precast concrete manufacturer', 'precast building products', 'precast concrete plant', 'precast pipe manufacturer',
+    # Ready-Mix Concrete, Aggregate & Quarry Operations — Segment #227; Apollo org tags 'ready-mix concrete'
+    # + 'concrete batch plant' surface batch plant operators precisely; 'aggregate company' + 'sand and gravel
+    # company' + 'crushed stone company' catch quarry/aggregate operations; 'ready mix concrete' (no hyphen)
+    # catches alternate Apollo tag form; 'quarry operations' and 'concrete mixing company' broaden coverage
+    # to independent regional operators; DISTINCT from precast concrete (run 232/Segment #226 — 'precast concrete'
+    # already in list), concrete block (run #211 — 'concrete block manufacturer'), general mfg (run 118);
+    # zero overlap with any existing DANNY_ORG_KEYWORDS (verified: no 'ready-mix'/'batch plant'/'aggregate'/'quarry'
+    # or 'sand and gravel'/'crushed stone' present); first pull Summit (Shelly & Sands = anchor) + Medina
+    # (Medina Supply Company quarry/batch = anchor) + Cuyahoga (LaFarge Holcim + Lehigh Hanson area plants)
+    # (added 2026-08-04 run 233)
+    'ready-mix concrete', 'ready mix concrete', 'concrete batch plant',
+    'aggregate company', 'sand and gravel company', 'quarry operations',
+    'crushed stone company', 'concrete mixing company',
 ]
 
 CARLA_SEARCHES = [

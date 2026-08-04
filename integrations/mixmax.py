@@ -1274,6 +1274,13 @@ PROPERTY_MANAGER_TITLES = [
     'precast plant manager', 'precast concrete plant manager', 'prestressed concrete manager',
     'precast operations manager', 'precast facility manager', 'concrete products manager',
     'precast manufacturing manager', 'precast plant superintendent',
+    # Ready-Mix Concrete, Aggregate & Quarry Operations — Segment #227 routing sync;
+    # all new batch plant / quarry FM contacts correctly route to property_manager sequence;
+    # DISTINCT from precast concrete (#226 — manufactured products), concrete block (#211 — CMU block),
+    # concrete contractors (poured in place, not batch production); (added 2026-08-04 run 233)
+    'ready-mix plant manager', 'batch plant manager', 'concrete plant manager',
+    'concrete plant operations manager', 'aggregate plant manager', 'quarry manager',
+    'quarry operations manager', 'ready-mix concrete manager',
 ]
 
 REALTOR_TITLES = [

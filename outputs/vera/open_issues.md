@@ -1,12 +1,22 @@
 # Vera Cole — Open Issues Tracker
-*Run 232 | 2026-08-03 | Compact version — historical run entries archived in git history*
-*232 open (231 carry-forward + 1 new this run) | 126 resolved*
+*Run 233 | 2026-08-04 | Compact version — historical run entries archived in git history*
+*233 open (232 carry-forward + 1 new this run) | 126 resolved*
 
 > ⚠️ **FILE SIZE NOTE:** This file was 572KB as of Run 195 due to prepending a full header every run.
 > Rewritten as a compact rolling summary on Run 196. Full history is in git log.
 > Going forward: update the metrics line at top + append new issues only (no full run header dumps).
 
 ---
+
+## NEW OPEN — Run 233 | 2026-08-04 — GEAUGA+PORTAGE 22 DAYS OVERDUE (SCRIPTS READY) | DAY 54 APOLLO BLOCK | DAY 81 GAS/FLEET | 68+ DAYS OVERDUE
+
+### OPEN — Ready-Mix Concrete, Aggregate & Quarry Operations (Segment #227)
+- **First seen:** 2026-08-04 (Run 233)
+- **Description:** Segment #227 added to `workers/lead_pipeline.py` (DANNY_TITLES + DANNY_ORG_KEYWORDS) and `integrations/mixmax.py` (PROPERTY_MANAGER_TITLES). Titles: ready-mix plant manager, batch plant manager, concrete plant manager, concrete plant operations manager, aggregate plant manager, quarry manager, quarry operations manager, ready-mix concrete manager. Org keywords: ready-mix concrete, ready mix concrete, concrete batch plant, aggregate company, sand and gravel company, quarry operations, crushed stone company, concrete mixing company.
+- **Targets:** Shelly & Sands (Summit/Cuyahoga anchor), Medina Supply Company (quarry + batch, Medina anchor), LaFarge Holcim (Cleveland-area plants), Lehigh Hanson (NE Ohio batch plants), Barrett Paving Materials, 100+ independent batch plants across 7 counties.
+- **Status:** Code live. Awaiting next local pull (Apollo blocked in cloud — must run locally via .command files).
+- **Attempts:**
+  - 2026-08-04 (Run 233): Added titles, org keywords, and PROPERTY_MANAGER_TITLES routing. Code live in lead_pipeline.py + mixmax.py → awaiting first local pull.
 
 ## NEW OPEN — Run 232 | 2026-08-03 — GEAUGA+PORTAGE 21 DAYS OVERDUE (SCRIPTS READY) | DAY 53 APOLLO BLOCK | DAY 80 GAS/FLEET | 67+ DAYS OVERDUE
 
