@@ -2158,3 +2158,7 @@
 [2026-08-04 12:35] Danny | Apollo pull — Apollo returned 0 people — API may be blocked or rate limited (Lorain) | none | Done
 [2026-08-04 12:36] Carla | Apollo pull — Apollo returned 0 people — API may be blocked or rate limited | none | Done
 [2026-08-04 12:36:19] Danny + Carla | Daily Lead Pull | Pipeline ran — Apollo returned 0 results (no API keys in env) | Status: Complete
+[2026-08-04 07:10] Office | Daily morning briefing | morning_2026-08-04.md | Done
+[2026-08-04 12:35:25] Nina | Daily Reports (Hot Leads + Workiz) — hot_leads_2026-08-04.md + workiz_daily_2026-08-04.md generated. Note: Mixmax + Workiz APIs blocked by proxy (403); pipeline shows 36 overdue items.
+[2026-08-04 12:35] Nina | Daily hot leads report — 0 replied, 0 hot, 0 due today, 0 due tomorrow, 0 stale estimates | hot_leads_2026-08-04.md | Done
+[2026-08-04 12:35] Nina | Workiz daily report - Power Washing jobs | Workiz API unavailable — run locally. | Done
