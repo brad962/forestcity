@@ -2514,6 +2514,22 @@ DANNY_TITLES = [
     'ready-mix plant manager', 'batch plant manager', 'concrete plant manager',
     'concrete plant operations manager', 'aggregate plant manager', 'quarry manager',
     'quarry operations manager', 'ready-mix concrete manager',
+    # Asphalt Paving & Hot-Mix Asphalt (HMA) Plants — Segment #228; Shelly & Sands paving division
+    # (DISTINCT from #227 ready-mix — separate operations, separate FM contacts); Independence Excavating
+    # (Cuyahoga HMA fleet); Complete Paving (Summit); Karvo Paving; Perk Company; Kokosing; E&B Paving;
+    # 50+ independent HMA plants across NE Ohio serving ODOT I-90/I-77 rehab + commercial paving boom;
+    # EPA NESHAP Subpart LLL (HAP emissions — documented control + facility maintenance required) +
+    # OEPA NPDES SWPPP (bitumen drip + aggregate fines + asphalt millings = regulated stormwater) +
+    # OSHA 29 CFR 1926.701 + 1910.22; bitumen spillage + aggregate fines + mineral filler + diesel/hydraulic
+    # oil from HMA truck fleet accumulate on drum plant yard surfaces, loading aprons, scale approach pads;
+    # quarterly exterior wash = documented NESHAP + SWPPP compliance activity; $1,500–$4,000/facility;
+    # quarterly = $6K–$16K/year; zero competitors cold-calling asphalt plant managers;
+    # DISTINCT from: ready-mix concrete (#227 — cement, not asphalt), construction equipment rental (run 179),
+    # road contractors (HMA users, not producers), aggregate/quarry (#227 upstream supply), general mfg (run 118)
+    # (added 2026-08-09 run 234)
+    'asphalt plant manager', 'hot mix asphalt plant manager', 'hma plant manager',
+    'paving plant superintendent', 'asphalt operations manager', 'paving operations manager',
+    'hot-mix plant manager', 'asphalt plant operations manager',
 ]
 
 # Org-level keywords passed to Apollo q_organization_keyword_tags.
@@ -4015,6 +4031,18 @@ DANNY_ORG_KEYWORDS = [
     'ready-mix concrete', 'ready mix concrete', 'concrete batch plant',
     'aggregate company', 'sand and gravel company', 'quarry operations',
     'crushed stone company', 'concrete mixing company',
+    # Asphalt Paving & Hot-Mix Asphalt (HMA) Plants — Segment #228; 'asphalt plant' and 'hot mix asphalt'
+    # surface HMA drum plant operators precisely; 'hma plant' catches Apollo's abbreviated tag form;
+    # 'asphalt paving company' + 'asphalt production' broaden to smaller independent paving contractors
+    # that operate their own HMA batch equipment; 'hot-mix plant' (hyphenated) + 'asphalt mixing plant'
+    # catch alternate Apollo tag forms; 'paving contractor' (without asphalt) kept narrow to avoid
+    # concrete/pavement sealing contractors (non-target); zero overlap verified with existing
+    # DANNY_ORG_KEYWORDS; DISTINCT from ready-mix concrete (#227 — 'concrete batch plant' already present
+    # but targets cement production, not asphalt), construction equipment rental (run 179),
+    # general mfg (run 118); first pull Summit (Shelly & Sands paving + Complete Paving) +
+    # Cuyahoga (Independence Excavating) + Lorain (Karvo Paving) (added 2026-08-09 run 234)
+    'asphalt plant', 'hot mix asphalt', 'hma plant', 'asphalt paving company',
+    'asphalt production', 'hot-mix plant', 'asphalt mixing plant', 'paving contractor',
 ]
 
 CARLA_SEARCHES = [

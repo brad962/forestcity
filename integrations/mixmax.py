@@ -1281,6 +1281,11 @@ PROPERTY_MANAGER_TITLES = [
     'ready-mix plant manager', 'batch plant manager', 'concrete plant manager',
     'concrete plant operations manager', 'aggregate plant manager', 'quarry manager',
     'quarry operations manager', 'ready-mix concrete manager',
+    # Asphalt Paving & Hot-Mix Asphalt (HMA) Plants — Segment #228 routing sync;
+    # all HMA plant FM contacts routed to property_manager sequence; (added 2026-08-09 run 234)
+    'asphalt plant manager', 'hot mix asphalt plant manager', 'hma plant manager',
+    'paving plant superintendent', 'asphalt operations manager', 'paving operations manager',
+    'hot-mix plant manager', 'asphalt plant operations manager',
 ]
 
 REALTOR_TITLES = [

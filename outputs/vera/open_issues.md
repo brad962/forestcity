@@ -1,10 +1,33 @@
 # Vera Cole — Open Issues Tracker
-*Run 233 | 2026-08-04 | Compact version — historical run entries archived in git history*
-*233 open (232 carry-forward + 1 new this run) | 126 resolved*
+*Run 234 | 2026-08-09 | Compact version — historical run entries archived in git history*
+*235 open (233 carry-forward + 2 new this run) | 126 resolved*
 
 > ⚠️ **FILE SIZE NOTE:** This file was 572KB as of Run 195 due to prepending a full header every run.
 > Rewritten as a compact rolling summary on Run 196. Full history is in git log.
 > Going forward: update the metrics line at top + append new issues only (no full run header dumps).
+
+---
+
+## NEW OPEN — Run 234 | 2026-08-09 — GEAUGA+PORTAGE 27 DAYS OVERDUE (SCRIPTS READY) | DAY 59 APOLLO BLOCK | DAY 86 GAS/FLEET | 73+ DAYS OVERDUE | 5-DAY VERA RUN GAP
+
+### OPEN — Asphalt Paving & Hot-Mix Asphalt (HMA) Plants (Segment #228)
+- **First seen:** 2026-08-09 (Run 234)
+- **Description:** Segment #228 added to `workers/lead_pipeline.py` (DANNY_TITLES + DANNY_ORG_KEYWORDS) and `integrations/mixmax.py` (PROPERTY_MANAGER_TITLES). Titles: asphalt plant manager, hot mix asphalt plant manager, hma plant manager, paving plant superintendent, asphalt operations manager, paving operations manager, hot-mix plant manager, asphalt plant operations manager. Org keywords: asphalt plant, hot mix asphalt, hma plant, asphalt paving company, asphalt production, hot-mix plant, asphalt mixing plant, paving contractor.
+- **Targets:** Shelly & Sands paving/asphalt division (Summit/Cuyahoga — DISTINCT from #227 ready-mix, separate FM contact), Independence Excavating (Cuyahoga), Complete Paving (Summit), Karvo Paving (Summit/Cuyahoga), Perk Company NE Ohio, Kokosing Construction NE Ohio HMA plants, E&B Paving NE Ohio plants; 50+ independent HMA plants across all 7 counties serving ODOT I-90/I-77 rehab projects.
+- **Compliance angle:** EPA NESHAP Subpart LLL (HAP emissions — documented control + maintenance records required) + OEPA NPDES SWPPP (bitumen drip + aggregate fines + asphalt millings = regulated stormwater) + OSHA 29 CFR 1926.701 + 1910.22. Bitumen spillage + aggregate fines + mineral filler + diesel/hydraulic oil from HMA truck fleet accumulate on drum plant yards, loading aprons, scale approach pads. Quarterly exterior wash = documented NESHAP + SWPPP compliance.
+- **Revenue:** $1,500–$4,000/facility; quarterly = $6K–$16K/year; zero competitors cold-calling asphalt plant managers.
+- **DISTINCT from:** ready-mix concrete (#227), construction equipment rental (run 179), road contractors (HMA users, not producers), general mfg (run 118).
+- **Status:** Code live. Awaiting next local pull (Apollo blocked in cloud).
+- **Attempts:**
+  - 2026-08-09 (Run 234): Added titles, org keywords, and routing sync. Code live in lead_pipeline.py + mixmax.py → awaiting first local pull.
+
+### OPEN — 5-Day Vera Run Gap (Runs 234-238 window)
+- **First seen:** 2026-08-09 (Run 234)
+- **Description:** Last confirmed Vera run was 2026-08-04 (Run 233). Vera runs for Aug 5-8 are missing from activity.log. This is a 5-day gap in the automated audit cycle. No Vera runs logged for those dates, though other workers (Donna weekly strategy Aug 7) ran normally.
+- **Root cause:** Unknown — likely a scheduling gap or cloud session issue.
+- **Impact:** 5 days without monitoring; no new segment additions for Aug 5-8.
+- **Attempts:**
+  - 2026-08-09 (Run 234): Noted gap. Vera run gap does not affect committed code — lead_pipeline.py, mixmax.py, danny.md are all current through Segment #227 as of Aug 4.
 
 ---
 
@@ -610,11 +633,12 @@
 
 **Total open: 227 | Total resolved: 126**
 
-> 🚨 **GEAUGA+PORTAGE — 16 DAYS OVERDUE:** Scripts created Run 220. `run_geauga_portage_both.command` is IN Finder NOW. 221 segments queued including Georgia-Pacific Middlefield (NEW #221), KraftMaid supply chain, Grand River Marina, Debonne Vineyards, 200+ wholesale nurseries, heat treat shops (Parker Trutec), Rotek metal plating, General Aluminum + Joseph Industries die casting, Ajax/Anchor forge shops, Associated Spring/Bergen Spring shops, galvanizing plants (#220), rubber/elastomer, plastics, precast, cold storage, wire/cable, wood/cabinet. Double-click TODAY.
-> 🚨 **APOLLO BLOCKED — Day 48:** ALL cloud lead generation 0 since June 11. Run locally.
-> 🚨 **GAS/FLEET BLOCKER — Day 75:** 3 gas contacts (Jim Lavigne, Kevin Kayden, Mark Elyden) now 62+ days overdue with NO sequence. Email copy ready: `outputs/vera/gas_fleet_sequence_copy_2026-06-12.md`. 10 min in Mixmax UI.
-> 🚨 **36 CONTACTS OVERDUE — 62 DAYS:** These contractor leads from May have NEVER been reached out to.
-> 🚨 **DANNY.MD — 660KB+:** File exceeds tool read limit. Most recent segment instructions invisible to Danny. Approve archive to fix.
+> 🚨 **GEAUGA+PORTAGE — 27 DAYS OVERDUE (Run 234):** Scripts exist since Run 220. `run_geauga_portage_both.command` is in Finder. 228 segments queued including #228 HMA asphalt plants, #227 ready-mix/quarry, #221 Georgia-Pacific Middlefield corrugated, KraftMaid supply chain, Grand River Marina, Debonne/Laurello Vineyards, 200+ wholesale nurseries, 20+ industrial segments. Double-click TODAY — 12-20 min unattended.
+> 🚨 **APOLLO BLOCKED — Day 59 (Run 234):** ALL cloud lead generation 0 since June 11. Run locally.
+> 🚨 **GAS/FLEET BLOCKER — Day 86 (Run 234):** 3 gas contacts (Jim Lavigne, Kevin Kayden, Mark Elyden) now 73+ days overdue with NO sequence. Email copy ready: `outputs/vera/gas_fleet_sequence_copy_2026-06-12.md`. 10 min in Mixmax UI.
+> 🚨 **36 CONTACTS OVERDUE — 73+ DAYS (Run 234):** These contractor leads from May have NEVER been reached out to.
+> 🚨 **DANNY.MD BLOAT:** Partial archive done Run 234 (Runs 212-229 → `danny_batching_notes_archive_runs_212_229.md`). File 485KB (was 536KB). Segment documentation in agent instructions still 2,300+ lines. Full proposal pending Bradley YES for deeper archive to ~15KB.
+> 🚨 **VERA RUN GAP — 5 DAYS (Aug 4-9):** Runs 234-238 window missed. Root cause unknown. No segments added Aug 5-8. Monitoring resumed Run 234.
 
 ---
 
